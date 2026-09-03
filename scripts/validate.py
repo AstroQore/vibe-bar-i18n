@@ -34,6 +34,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 import shutil
 import sys
 import tempfile
@@ -279,6 +280,140 @@ def check_glossary(catalogs: Sequence[Catalog], problems: List[str]) -> None:
 
 
 # --------------------------------------------------------------------------
+# 10. Reuse before you add
+# --------------------------------------------------------------------------
+
+
+def _reuse_signature(text: str) -> str:
+    """What two strings must share before they count as the same sentence.
+
+    Case, surrounding whitespace, the trailing full stop and the ellipsis a
+    button adds are all presentation. Placeholder *names* are not compared
+    either: `{provider} is offline` and `{tool} is offline` are one sentence
+    with one translation, and letting the name divide them is how a catalog
+    grows two of everything.
+
+    A plural's branch text is *not* presentation — it is where the sentence
+    actually lives. Discarding everything inside braces would collapse
+    "{n, plural, one {# cycle} other {# cycles}}" and the same shape for
+    files onto one signature, so the second plural anybody added would fail
+    as a duplicate of the first. The walk below distinguishes the two kinds
+    of brace: an argument, whose name is dropped, and a branch body, whose
+    text is kept and recursed into.
+    """
+    return " ".join(_render(text.strip().lower().rstrip(".…")).split())
+
+
+_PLURAL_ARG = re.compile(r"\A\s*[a-z0-9_]+\s*,\s*(plural|selectordinal)\s*,(.*)\Z", re.S)
+
+
+def _matching_brace(text: str, start: int) -> int:
+    """Index of the `}` closing the `{` at `start`, or len(text) if unbalanced.
+
+    Unbalanced braces are a syntax problem, reported by the ICU check with a
+    message that says so. Returning the end of the string here means the
+    reuse check degrades to "treat the rest as one branch" rather than
+    raising a second, less helpful error about the same character.
+    """
+    depth = 0
+    for index in range(start, len(text)):
+        if text[index] == "{":
+            depth += 1
+        elif text[index] == "}":
+            depth -= 1
+            if depth == 0:
+                return index
+    return len(text)
+
+
+def _render(text: str) -> str:
+    """Normalize placeholder arguments; keep every other character."""
+    out: List[str] = []
+    index = 0
+    while index < len(text):
+        char = text[index]
+        if char != "{":
+            out.append(char)
+            index += 1
+            continue
+        close = _matching_brace(text, index)
+        body = text[index + 1 : close]
+        plural = _PLURAL_ARG.match(body)
+        if plural:
+            # The argument name varies freely; the plural type and the
+            # branches are the sentence.
+            out.append("{}")
+            out.append(plural.group(1))
+            out.append(_render_branches(plural.group(2)))
+        else:
+            out.append("{}")
+        index = close + 1
+    return "".join(out)
+
+
+def _render_branches(text: str) -> str:
+    """Keep selectors and branch text; normalize placeholders nested inside."""
+    out: List[str] = []
+    index = 0
+    while index < len(text):
+        char = text[index]
+        if char != "{":
+            out.append(char)
+            index += 1
+            continue
+        close = _matching_brace(text, index)
+        out.append("{")
+        out.append(_render(text[index + 1 : close]))
+        out.append("}")
+        index = close + 1
+    return "".join(out)
+
+
+def check_reuse(catalogs: Sequence[Catalog], problems: List[str]) -> None:
+    """Two keys whose English says the same thing are one key with two names.
+
+    Both clients render this catalog, and the moment the same sentence exists
+    twice they drift: one gets retranslated, the other does not, and a
+    reviewer comparing screenshots cannot tell which key a screen used. The
+    rule is reuse, and the check is here rather than in a document because a
+    document does not fail a pull request.
+
+    A genuine collision — two identical English strings that must stay
+    separately translatable, because some language distinguishes them — is
+    declared by giving one of them a `comment` containing `distinct-from:
+    <other.key>`, which is a sentence a reviewer can weigh.
+    """
+    by_locale = {catalog.locale: catalog for catalog in catalogs}
+    source = by_locale.get(SOURCE_LOCALE)
+    if source is None:
+        return
+
+    seen: dict = {}
+    for key in sorted(source.entries):
+        entry = source.entries[key]
+        signature = _reuse_signature(entry.value)
+        if not signature:
+            continue
+        first = seen.get(signature)
+        if first is None:
+            seen[signature] = key
+            continue
+        comments = " ".join(
+            filter(None, [source.entries[first].comment, entry.comment])
+        )
+        if ("distinct-from: %s" % first) in comments or (
+            "distinct-from: %s" % key
+        ) in comments:
+            continue
+        problems.append(
+            "%s: %s repeats the sentence already keyed as %s (%r); reuse that "
+            "key, or declare why it must stay separate with a comment saying "
+            "`distinct-from: %s`"
+            % (_catalog_label(source), key, first, entry.value, first)
+        )
+
+
+# --------------------------------------------------------------------------
 # 10. Generated-file freshness
 # --------------------------------------------------------------------------
 
@@ -364,6 +499,59 @@ def _read(path: str) -> Optional[str]:
 # --------------------------------------------------------------------------
 
 
+# --------------------------------------------------------------------------
+# 11. Self-test
+# --------------------------------------------------------------------------
+
+# What `_reuse_signature` must and must not collapse. These live here rather
+# than in a test directory because the function they pin has no other caller
+# and no other reader: a check that silently starts matching everything looks
+# exactly like a check that is passing.
+#
+# The first pair is the one that got away. The original signature dropped
+# every character inside braces, so two unrelated plurals both normalized to
+# nothing and the second plural anybody added would have failed as a
+# duplicate of the first.
+_REUSE_CASES = [
+    ("two plurals differ by their branch text",
+     "{count, plural, one {# cycle} other {# cycles}}",
+     "{count, plural, one {# file} other {# files}}", False),
+    ("a plural's argument name is not the sentence",
+     "{count, plural, one {# cycle} other {# cycles}}",
+     "{n, plural, one {# cycle} other {# cycles}}", True),
+    ("a placeholder name is not the sentence",
+     "{provider} is offline", "{tool} is offline", True),
+    ("a placeholder nested in a branch is still a placeholder",
+     "{n, plural, other {# of {total} used}}",
+     "{m, plural, other {# of {sum} used}}", True),
+    ("but the words around it are not",
+     "{n, plural, other {# of {total} used}}",
+     "{m, plural, other {# of {sum} left}}", False),
+    ("case and a trailing stop are presentation",
+     "Retry.", "retry", True),
+    ("an unbalanced brace degrades instead of raising",
+     "Unbalanced {oops", "Unbalanced {other", True),
+]
+
+
+def run_self_test(problems: List[str]) -> None:
+    for description, left, right, expected in _REUSE_CASES:
+        actual = _reuse_signature(left) == _reuse_signature(right)
+        if actual == expected:
+            continue
+        problems.append(
+            "self-test: %s — %r and %r %s (%r vs %r)"
+            % (
+                description,
+                left,
+                right,
+                "collapsed but must not" if actual else "must collapse but did not",
+                _reuse_signature(left),
+                _reuse_signature(right),
+            )
+        )
+
+
 def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument(
@@ -375,10 +563,12 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     problems: List[str] = []
     try:
+        run_self_test(problems)
         check_schemas(problems)
         catalogs = load_all()
         check_catalogs(catalogs, problems)
         check_glossary(catalogs, problems)
+        check_reuse(catalogs, problems)
         # Freshness last, and only on a catalog that already holds together:
         # regenerating from a broken catalog produces broken output, and
         # "the generated file is stale" is a confusing thing to say to

@@ -68,6 +68,12 @@ file is detail.
 7. **Nothing in a client reads `catalog/*.json` at runtime.** Clients call
    the generated API. That is what lets this repository change shape without
    touching a call site.
+8. **Every new user-facing string starts here.** Not in a view, not "for now"
+   — a literal added to a client is a string the other client cannot show and
+   no translator can see. Both clients enforce this on their side: the native
+   app's `Scripts/lint_localization.py` fails `swift test` on a literal in a
+   file that renders UI. § 4 covers the other half — reuse an existing key
+   before adding one.
 
 ## 3. Catalog format
 
@@ -140,7 +146,38 @@ Simplified Chinese has only `other`; English needs `one` and `other`. The
 Swift generator emits `.stringsdict` for any key whose value contains a
 plural.
 
-## 4. Adding a key
+## 4. Reuse before you add
+
+Both clients render this catalog, so a concept that exists on both screens
+must be **one key**, not one per client. The moment the same sentence exists
+under two keys they drift: one gets retranslated, the other does not, and
+nobody comparing two screenshots can tell which key each screen used.
+
+Before adding a key:
+
+1. Search `catalog/en.json` for the sentence, then for the concept —
+   `grep -i "resets in" catalog/en.json`, then look through the namespace it
+   would belong to. A key that says what you need under a different name is
+   the key you want; namespaces group by *surface*, and the same sentence on
+   two surfaces is still one sentence.
+2. If the other client already keyed it, use theirs. Neither client owns the
+   catalog, and a `platform.*` key for something both clients show is the
+   duplicate this rule exists to prevent — `platform.*` is for what only one
+   client *can* show, never for what one client happened to build first.
+3. Only then add a key.
+
+`scripts/validate.py` enforces the mechanical half: two source values that
+say the same thing — ignoring case, trailing punctuation and placeholder
+*names* — fail the build. A genuine collision, where two identical English
+strings must stay separately translatable because some language
+distinguishes them, is declared in a comment: `distinct-from: <other.key>`.
+That is a sentence a reviewer can weigh, which a silent duplicate is not.
+
+The half a script cannot check is meaning. `"No data recorded"` and
+`"Nothing recorded yet"` are one concept wearing two coats; the validator
+sees two sentences and lets both through. That one is on the reviewer.
+
+## 5. Adding a key
 
 1. Add it to `catalog/en.json` with a `comment` that says where it appears —
    a translator cannot see your screen.
@@ -153,7 +190,7 @@ plural.
    syntax, glossary compliance, schema, and generated-file freshness.
 5. Commit the catalog change and the regenerated output together.
 
-## 5. Adding a language
+## 6. Adding a language
 
 1. `catalog/<bcp47>.json` with the same keys, `locale` matching the filename.
 2. Register it in `scripts/generate.py`'s locale list if it is not derived
@@ -163,7 +200,7 @@ plural.
 4. The consuming clients need one change each: `CFBundleLocalizations` in the
    native app's `Info.plist`, and the language picker's option list in both.
 
-## 6. Translation style
+## 7. Translation style
 
 Written for Simplified Chinese first; the same spirit applies to any locale.
 
@@ -179,7 +216,7 @@ Written for Simplified Chinese first; the same spirit applies to any locale.
 - If a string cannot be translated well because the English is built from
   fragments, fix the key — do not translate the fragments.
 
-## 7. Versioning and release
+## 8. Versioning and release
 
 Semantic versioning on tags (`v0.3.1`).
 
@@ -207,7 +244,7 @@ permissive catalogue is a normal dependency of a copyleft app, and a
 translator contributing a language should not have to reason about copyleft
 to do it.
 
-## 8. Consuming it
+## 9. Consuming it
 
 **Swift** (native app):
 
@@ -238,7 +275,7 @@ t("quota.resetsIn", { days: 3, hours: 18 });
 Keys are a union type, so a typo is a compile error and a missing
 placeholder is a compile error.
 
-## 9. What does not belong here
+## 10. What does not belong here
 
 - Provider, model or harness names — those come from each client's own
   naming source and are listed in the glossary only so they are protected
