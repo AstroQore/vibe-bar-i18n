@@ -40,6 +40,31 @@ const pluralRules = new Map<string, Intl.PluralRules>();
  * catalog cannot get into that state — `validate.py` fails on it — but a
  * client built against an older catalog can.
  */
+/**
+ * Every argument name a message uses, in order of first appearance.
+ *
+ * Walks the parsed message rather than scanning for `{name`, because a
+ * plural's branch body is text, not arguments: `one {once}` names no
+ * argument called `once`. The Python side learned this the same way — see
+ * `_reuse_signature` in `scripts/validate.py`, which had the identical bug
+ * with the identical cause.
+ */
+export function placeholderNames(message: string): string[] {
+  const found: string[] = [];
+  const walk = (nodes: readonly Node[]): void => {
+    for (const node of nodes) {
+      if (node.kind === "arg" || node.kind === "plural") {
+        if (!found.includes(node.name)) found.push(node.name);
+      }
+      if (node.kind === "plural") {
+        for (const branch of node.branches) walk(branch.nodes);
+      }
+    }
+  };
+  walk(parse(message));
+  return found;
+}
+
 export function formatMessage(
   message: string,
   params: Readonly<Record<string, ParamValue>>,

@@ -14,18 +14,16 @@ import {
   type MessageKey,
 } from "../src/index.js";
 import { messages } from "../src/generated/catalog.js";
+import { placeholderNames } from "../src/icu.js";
 
 const keys = Object.keys(messages[sourceLocale]) as MessageKey[];
 
-/** Placeholder names declared by the source value, in order of appearance. */
-function placeholdersIn(message: string): string[] {
-  const found: string[] = [];
-  for (const match of message.matchAll(/\{([a-z][a-zA-Z0-9]*)/g)) {
-    const name = match[1] as string;
-    if (!found.includes(name)) found.push(name);
-  }
-  return found;
-}
+// Placeholder names come from the runtime's own parser. The regex that
+// used to live here read a plural's branch body as arguments — `one {once}`
+// declared an argument named "once", which no caller passes and no
+// translation can reproduce — so the first key with a bare word in a branch
+// failed as a placeholder mismatch. One parser, one answer.
+const placeholdersIn = placeholderNames;
 
 /** A parameter object that satisfies whatever the key declares. */
 function sampleParams(message: string): Record<string, string | number> {
