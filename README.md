@@ -1,8 +1,10 @@
 # vibe-bar-i18n
 
-Every user-facing string in [Vibe Bar](https://github.com/AstroQore/vibe-bar),
-authored once in `catalog/en.json` and consumed by both clients — the macOS
-menu-bar app through SwiftPM, the desktop app through npm. Strings only: no
+Every user-facing string in
+[Vibe Bar](https://github.com/AstroQore/vibe-bar) and
+[Vibe Bar Desktop](https://github.com/AstroQore/vibe-bar-desktop), authored
+once in `catalog/en.json` and consumed by both — the macOS menu-bar app
+through SwiftPM, the cross-platform client through npm. Strings only: no
 product logic lives here.
 
 `catalog/` is the source. `implementations/swift` and

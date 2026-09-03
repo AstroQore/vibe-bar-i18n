@@ -201,7 +201,8 @@ A release is: validate clean, regenerate clean, bump both versions, tag,
 push. There is no build artefact to upload — the generated files are in the
 tree.
 
-**Licence.** MIT, deliberately, while `vibe-bar` itself is AGPL-3.0-only: a
+**Licence.** MIT, deliberately, while `vibe-bar` is AGPL-3.0-only and
+`vibe-bar-desktop` carries its own: a
 permissive catalogue is a normal dependency of a copyleft app, and a
 translator contributing a language should not have to reason about copyleft
 to do it.
@@ -242,7 +243,8 @@ placeholder is a compile error.
 - Provider, model or harness names — those come from each client's own
   naming source and are listed in the glossary only so they are protected
   from translation.
-- Anything in `vibe-bar`'s `docs/contracts/` — those are generated from Swift
+- Anything in either client's `docs/contracts/` — those are generated from
+  code and describe behaviour, not wording. `vibe-bar`'s are generated from Swift
   and describe behaviour, not wording.
 - Log messages, MCP tool names, JSON keys, file paths, and anything a machine
   parses. Localizing a machine-readable string breaks the machine.
