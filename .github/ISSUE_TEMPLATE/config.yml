@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Something wrong in the app itself
+    url: https://github.com/AstroQore/vibe-bar/issues
+    about: This repository holds strings only. Behaviour, layout and truncation bugs belong with the client.

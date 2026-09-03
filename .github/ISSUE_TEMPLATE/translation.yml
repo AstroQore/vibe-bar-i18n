@@ -1,0 +1,31 @@
+name: Translation correction
+description: A string reads wrongly, unnaturally, or inconsistently in one language.
+labels: ["translation"]
+body:
+  - type: input
+    id: key
+    attributes:
+      label: Key
+      description: The dotted key, from catalog/en.json. Not the English text.
+      placeholder: quota.reset.in
+    validations:
+      required: true
+  - type: input
+    id: locale
+    attributes:
+      label: Locale
+      placeholder: zh-Hans
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What it says now, and what it should say
+      description: Include the suggested wording. If it depends on where the string appears, say where you saw it.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: Wrong meaning, unnatural phrasing, inconsistent with a neighbouring string, or too long for its control — whichever it is.

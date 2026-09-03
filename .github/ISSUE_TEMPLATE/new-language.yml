@@ -1,0 +1,25 @@
+name: New language
+description: Propose a language this catalogue does not carry yet.
+labels: ["new-language"]
+body:
+  - type: input
+    id: tag
+    attributes:
+      label: BCP 47 tag
+      description: The tag the file will be named for — ja, de, pt-BR, zh-Hant.
+    validations:
+      required: true
+  - type: checkboxes
+    id: understands
+    attributes:
+      label: Before you start
+      options:
+        - label: I have read AGENTS.md § 5 (adding a language) and § 6 (translation style).
+          required: true
+        - label: I understand every key must be present, and that an untranslated key ships with the English text rather than being omitted.
+          required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything the style guide does not cover for this language
+      description: Plural categories beyond one/other, script or spacing conventions, terms that should join the never-translate glossary.
