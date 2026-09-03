@@ -148,6 +148,11 @@
       "kind": "product"
     },
     {
+      "term": "Vibe Bar Desktop",
+      "kind": "product",
+      "note": "The cross-platform client. Listed separately from 'Vibe Bar' so a translation cannot render one and not the other."
+    },
+    {
       "term": "Sparkle",
       "kind": "product",
       "note": "The update framework, named in the updater UI."

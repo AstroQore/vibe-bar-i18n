@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Something wrong in the app itself
+  - name: Something wrong in the macOS app itself
     url: https://github.com/AstroQore/vibe-bar/issues
-    about: This repository holds strings only. Behaviour, layout and truncation bugs belong with the client.
+    about: This repository holds strings only. Behaviour, layout and truncation bugs in the menu-bar app belong there.
+  - name: Something wrong in Vibe Bar Desktop
+    url: https://github.com/AstroQore/vibe-bar-desktop/issues
+    about: Same rule for the cross-platform client — a string that is right here but wrong on screen is a client bug.
