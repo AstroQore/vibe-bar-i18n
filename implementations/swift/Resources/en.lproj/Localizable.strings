@@ -3,44 +3,764 @@
    Locale: en
    Plural keys live in Localizable.stringsdict, not here. */
 
-/* Button that abandons an action in progress. */
+/* Button that appends an entry to a list */
+"common.add" = "Add";
+
+/* Picker option and field placeholder meaning 'let Vibe Bar decide' */
+"common.auto" = "Auto";
+
+/* Button that abandons an action in progress. Key name matches the shared catalogue's common.cancel. */
 "common.cancel" = "Cancel";
+
+/* Confirmation shown in place of the Copy button */
+"common.copied" = "Copied";
+
+/* Button that copies a value to the clipboard */
+"common.copy" = "Copy";
+
+/* Destructive button */
+"common.delete" = "Delete";
+
+/* Button that closes a banner without acting on it */
+"common.dismiss" = "Dismiss";
+
+/* Tooltip on a drag handle */
+"common.dragToReorder" = "Drag to reorder";
+
+/* Compact countdown, whole days only */
+"common.duration.days" = "%lldd";
+
+/* Compact countdown, days and hours */
+"common.duration.daysHours" = "%1$lldd %2$lldh";
+
+/* Compact countdown, whole hours only */
+"common.duration.hours" = "%lldh";
+
+/* Compact countdown, hours and minutes */
+"common.duration.hoursMinutes" = "%1$lldh %2$lldm";
+
+/* Countdown under one minute */
+"common.duration.lessThanMinute" = "<1m";
+
+/* Compact countdown, minutes only */
+"common.duration.minutes" = "%lldm";
+
+/* Countdown that has reached zero */
+"common.duration.now" = "now";
+
+/* Field label for a user-chosen name */
+"common.name" = "Name";
 
 /* Empty state where a chart or list has nothing to draw yet. */
 "common.noData" = "No data recorded";
 
-/* Button that fetches the current numbers again. */
+/* A toggle's state, read as a value in a summary row */
+"common.off" = "Off";
+
+/* A toggle's state, read as a value in a summary row */
+"common.on" = "On";
+
+/* Secondary button on an empty state */
+"common.openSettings" = "Open Settings";
+
+/* A whole percentage. Both languages use the sign the same way; the key exists so a language that does not can move it. */
+"common.percent" = "%lld%%";
+
+/* Picker label for choosing a provider */
+"common.provider" = "Provider";
+
+/* Generic refresh button and tooltip */
 "common.refresh" = "Refresh";
 
-/* Button that runs the failed action again. */
+/* Tooltip on a per-card refresh button */
+"common.refreshSection" = "Refresh this section";
+
+/* Button that takes an item out of a list */
+"common.remove" = "Remove";
+
+/* Button on a failure state */
 "common.retry" = "Retry";
+
+/* Button that retries immediately, skipping a cooldown */
+"common.retryNow" = "Retry now";
+
+/* Button that commits an edited value */
+"common.save" = "Save";
+
+/* Freshness line under five seconds old */
+"common.updated.justNow" = "Updated just now";
+
+/* Freshness line when nothing has been fetched yet */
+"common.updated.never" = "Never updated";
+
+/* Freshness line, seconds */
+"common.updated.secondsAgo" = "Updated %lld seconds ago";
+
+/* Scope name for the combined cost card */
+"cost.allProviders" = "All providers";
+
+/* Empty cost history */
+"cost.empty.antigravity" = "No Antigravity conversation token metadata found yet.";
+
+/* Empty cost history */
+"cost.empty.claude" = "No Claude CLI sessions found yet.";
+
+/* Empty cost history; the harness name is never translated */
+"cost.empty.codex" = "No Codex CLI sessions found yet.";
+
+/* Empty cost history */
+"cost.empty.gemini" = "No Gemini CLI or chat-history usage found yet.";
+
+/* Empty cost history for a provider with no dedicated line; provider is a SubProvider name */
+"cost.empty.genericCLI" = "No %@ CLI sessions found yet.";
+
+/* Empty cost history */
+"cost.empty.grok" = "No Grok session usage found yet.";
+
+/* Title of the expanded cost popover; title is the card's own title */
+"cost.fullCharts" = "%@ — Full Charts";
+
+/* Empty Google AI cost card body */
+"cost.gemini.emptyDetail" = "Vibe Bar reads live AntiGravity quota from the desktop app when available, then falls back to the installed agy CLI. Cached values are marked stale when neither local source can refresh them.";
+
+/* Empty Google AI cost card headline */
+"cost.gemini.emptyTitle" = "No Gemini or AntiGravity usage found yet.";
+
+/* Empty cost card; the SubProvider and CLI names are never translated */
+"cost.googleAI.empty" = "No Gemini Web / AntiGravity usage yet — refresh after signing in to AntiGravity or agy.";
+
+/* Card title; the company name is never translated */
+"cost.googleAI.title" = "Google AI Cost";
+
+/* Card title on the Overview */
+"cost.history.allProviders" = "All Providers Cost History";
+
+/* All-caps metric label: the most expensive day on record */
+"cost.metric.peakDay" = "PEAK DAY";
+
+/* All-caps metric label */
+"cost.metric.peakTokenDay" = "PEAK TOK DAY";
+
+/* All-caps metric label on the Overview cost card */
+"cost.metric.sevenDay" = "7-DAY";
+
+/* All-caps metric label */
+"cost.metric.sevenDayTokens" = "7-DAY TOK";
+
+/* All-caps metric label */
+"cost.metric.thirtyDay" = "30-DAY";
+
+/* All-caps metric label */
+"cost.metric.thirtyDayTokens" = "30-DAY TOK";
+
+/* All-caps metric label */
+"cost.metric.todayTokens" = "TODAY TOK";
+
+/* All-caps metric label on the Overview cost card. English is set in caps by the copy; Chinese has no case. */
+"cost.metric.totalCost" = "TOTAL COST";
+
+/* All-caps metric label; 'tok' is the token unit and stays as spelled */
+"cost.metric.totalTokens" = "TOTAL TOK";
+
+/* All-caps metric label */
+"cost.metric.yesterdayTokens" = "YESTERDAY TOK";
+
+/* Scope subtitle on the Overview's combined Model Ranking card */
+"cost.modelRanking.allProvidersAllTime" = "All providers · all time";
+
+/* Default scope subtitle next to the Model Ranking title */
+"cost.modelRanking.allTime" = "All time";
+
+/* Card title: models ordered by spend */
+"cost.modelRanking.title" = "Model Ranking";
+
+/* Subtitle on an empty provider cost card */
+"cost.noUsageYet" = "No usage yet";
+
+/* Fallback when a provider has no cost history; provider is a SubProvider name and is never translated */
+"cost.notTracked" = "Cost history isn't tracked for %@.";
+
+/* Tooltip on the expand button of a cost card */
+"cost.openFullCharts" = "Open full charts";
 
 /* Effective price of a model. {rate} is a raw number the client renders; declared double so the generated API takes a Double rather than a pre-formatted string. */
 "cost.perThousandTokens" = "%f per 1K tokens";
 
+/* Cost card title on a provider page; provider is a SubProvider name and is never translated */
+"cost.provider.title" = "%@ Cost";
+
+/* Title of the expanded cost popover; provider is a company name and is never translated */
+"cost.providerFullCharts" = "%@ Cost — Full Charts";
+
+/* Tooltip on the Overview cost card's refresh button */
+"cost.refreshData" = "Refresh cost data";
+
+/* Tooltip on a provider cost card's refresh button; provider is a SubProvider or company name */
+"cost.refreshProvider" = "Refresh %@ cost";
+
+/* Empty cost card */
+"cost.spaceXAI.empty" = "No Grok or Cursor usage found yet.";
+
+/* Card title; the company name is never translated */
+"cost.spaceXAI.title" = "SpaceXAI Cost";
+
 /* Cost headline. {amount} arrives already formatted as currency by the client — the catalog never formats money, because the symbol, grouping and placement are the platform's job. */
 "cost.spentToday" = "%@ spent today";
 
-/* Provider card state: the browser session expired and the user must sign in again. */
+/* Cost timeframe label covering all recorded history */
+"cost.timeframe.all" = "All";
+
+/* Cost timeframe label, full form */
+"cost.timeframe.month" = "30 days";
+
+/* Cost timeframe label in a five-column summary row */
+"cost.timeframe.monthShort" = "30d";
+
+/* Cost timeframe label */
+"cost.timeframe.today" = "Today";
+
+/* Cost timeframe label, full form */
+"cost.timeframe.week" = "7 days";
+
+/* Cost timeframe label in a five-column summary row where space is tight */
+"cost.timeframe.weekShort" = "7d";
+
+/* Cost timeframe label */
+"cost.timeframe.yesterday" = "Yesterday";
+
+/* Card title on a provider page */
+"cost.title" = "Cost";
+
+/* This model's share of the last seven days' spend */
+"cost.topModel.share" = "%lld%% share";
+
+/* All-caps label on the tile showing the most-used model. English is set in caps by the copy itself; Chinese has no case, so the tile relies on weight and colour instead. */
+"cost.topModel.title" = "TOP MODEL";
+
+/* QuotaError: the provider rejected the key we hold */
+"error.credentialRejected" = "Credential rejected";
+
+/* QuotaError: the stored browser session expired */
 "error.needsReLogin" = "Needs re-login";
 
-/* Provider card state when the request never reached the provider. {reason} is the system's message, untranslated. */
+/* QuotaError: transport failure, no detail available */
+"error.network" = "Network error";
+
+/* QuotaError transport failure; reason is the provider's own message, untranslated */
 "error.networkWithReason" = "Network error: %@";
 
-/* Provider card state: no credential of any kind is configured. */
+/* QuotaError: no credential is stored for this provider */
 "error.noAccountFound" = "No account found";
 
-/* Provider card state: the provider refused the request for asking too often. */
+/* QuotaError: this provider has no quota path yet */
+"error.notImplemented" = "Not yet supported";
+
+/* QuotaError: the payload no longer parses and the adapter had nothing to add */
+"error.parseFailure" = "Response format changed";
+
+/* QuotaError: the provider is throttling us */
 "error.rateLimited" = "Rate limited, try later";
+
+/* QuotaError: unclassified failure with no detail */
+"error.unknown" = "Error";
+
+/* QuotaError: unclassified failure; reason is the underlying message, untranslated */
+"error.unknownDetail" = "Error: %@";
+
+/* Button that folds a provider's credential form away */
+"onboarding.apiKeys.hide" = "Hide";
+
+/* Intro paragraph of the API-key providers step */
+"onboarding.apiKeys.intro" = "These plans are tracked with an API key or a console cookie rather than a CLI login. Tick the ones you have — a ticked provider gets a card on the Misc page — and unfold a row to enter its credential now. Keys and cookies go to your login Keychain.";
+
+/* Button that unfolds a provider's credential form */
+"onboarding.apiKeys.setUp" = "Set up";
+
+/* Tooltip on a provider checkbox; provider is a SubProvider name and is never translated */
+"onboarding.apiKeys.showOnMiscPage" = "Show %@ on the Misc page";
+
+/* First-run assistant footer button */
+"onboarding.back" = "Back";
+
+/* First-run assistant footer button */
+"onboarding.continue" = "Continue";
+
+/* Caption under the batch import button */
+"onboarding.cookies.batchScope" = "This button covers the four plans above. The console-cookie plans on the next step have their own one-click batch import later, under Settings → Browser Cookies.";
+
+/* Batch import button in the setup assistant */
+"onboarding.cookies.importAll" = "Import from all browsers now";
+
+/* Button in the setup assistant */
+"onboarding.cookies.importFromBrowser" = "Import from browser";
+
+/* Button in the setup assistant */
+"onboarding.cookies.importGemini" = "Import Gemini cookies from browser";
+
+/* Button in the setup assistant */
+"onboarding.cookies.importGrok" = "Import Grok cookies from browser";
+
+/* Status line while an import runs */
+"onboarding.cookies.importing" = "Importing…";
+
+/* Intro paragraph of the browser-cookies step */
+"onboarding.cookies.intro" = "Web quotas — the ones the provider shows on its own site — come from the session your browser already has. Vibe Bar reads the cookie stores of the browsers on this Mac (Chrome and other Chromium browsers, Safari, Firefox), keeps only the few cookies each provider needs, and stores them in your login Keychain, never in a plaintext file. macOS may ask once for permission to read a browser's cookie key.";
+
+/* Status line before any import */
+"onboarding.cookies.notImported" = "Not imported yet";
+
+/* Button in the setup assistant */
+"onboarding.cookies.openWebViewLogin" = "Open WebView login";
+
+/* Status line after a successful import */
+"onboarding.cookies.saved" = "Cookies saved.";
+
+/* Caption under the batch import button */
+"onboarding.cookies.signInFirst" = "Sign in to chatgpt.com, claude.ai, gemini.google.com or grok.com in your browser first — an import can only find a session that exists. Providers you have not signed in to simply report nothing.";
+
+/* Summary row label */
+"onboarding.done.apiKeyProviders" = "API-key providers";
+
+/* Summary value counting saved cookie sets */
+"onboarding.done.cookieCount" = "%1$lld of %2$lld providers saved";
+
+/* Closing line of the final step */
+"onboarding.done.footer" = "Every one of these lives in Settings, and the assistant is one click away under Settings → System.";
+
+/* Intro line of the final step */
+"onboarding.done.intro" = "That is everything the menu bar needs. Finish opens the popover with whatever quota is already readable; the rest fills in on the first refresh.";
+
+/* Summary value counting visible misc providers */
+"onboarding.done.miscCount" = "%lld on the Misc page";
+
+/* Summary value when no core provider is visible */
+"onboarding.done.noneShown" = "None shown";
+
+/* Summary value before any price fetch */
+"onboarding.done.pricingBundled" = "Bundled table until the first fetch";
+
+/* Summary value; when is an already-formatted date */
+"onboarding.done.pricingMerged" = "Merged %@";
+
+/* First-run assistant footer button on the last step */
+"onboarding.finish" = "Finish";
+
+/* Button label */
+"onboarding.pricing.fetchNow" = "Fetch prices now";
+
+/* Button label while a price fetch runs */
+"onboarding.pricing.fetching" = "Fetching…";
+
+/* Closing line of the pricing step */
+"onboarding.pricing.footer" = "Prices are USD per one million tokens. Local overrides live under Settings → Model Pricing.";
+
+/* Refresh interval of exactly one hour, read inside a sentence */
+"onboarding.pricing.interval.hour" = "hour";
+
+/* Refresh interval in hours, read inside a sentence */
+"onboarding.pricing.interval.hours" = "%lld hours";
+
+/* Intro paragraph of the pricing step; interval is a duration phrase */
+"onboarding.pricing.intro" = "Token cost is computed on this Mac from your agents' session logs, priced with a catalog merged from several public price lists — higher-priority entries win when a model appears in more than one, your own overrides beat them all, and a bundled table is the offline floor. Catalogs refresh in the background every %@; fetching now gives the first cost numbers current prices.";
+
+/* Status line after a successful merge; when is an already-formatted date */
+"onboarding.pricing.merged" = "Merged %2$@ · %1$lld models";
+
+/* Status line before the first fetch */
+"onboarding.pricing.notFetched" = "Not fetched yet — the bundled table is in use.";
+
+/* Per-source status */
+"onboarding.pricing.source.failed" = "Cached %lld · refresh failed";
+
+/* Per-source status */
+"onboarding.pricing.source.models" = "%lld models";
+
+/* Per-source status in the pricing step */
+"onboarding.pricing.source.notRefreshed" = "Not refreshed";
+
+/* Per-source status */
+"onboarding.pricing.source.unchanged" = "%lld models · unchanged";
+
+/* First-run assistant footer button that closes the assistant without finishing */
+"onboarding.skip" = "Skip for now";
+
+/* Setup assistant step subtitle */
+"onboarding.step.apiKeyProviders.subtitle" = "Plans tracked with an API key or a console cookie.";
+
+/* Setup assistant step name */
+"onboarding.step.apiKeyProviders.title" = "Other plans";
+
+/* Setup assistant step subtitle */
+"onboarding.step.browserCookies.subtitle" = "Web quotas come from the session your browser already has.";
+
+/* Setup assistant step name */
+"onboarding.step.browserCookies.title" = "Browser cookies";
+
+/* Setup assistant step subtitle */
+"onboarding.step.done.subtitle" = "Everything here lives in Settings too.";
+
+/* Setup assistant step name */
+"onboarding.step.done.title" = "All set";
+
+/* Setup assistant step subtitle */
+"onboarding.step.pricing.subtitle" = "Where the token prices behind the cost numbers come from.";
+
+/* Setup assistant step name */
+"onboarding.step.pricing.title" = "Model pricing";
+
+/* Setup assistant step subtitle */
+"onboarding.step.subscriptions.subtitle" = "Turn on the plans you pay for.";
+
+/* Setup assistant step name */
+"onboarding.step.subscriptions.title" = "Subscriptions";
+
+/* Setup assistant step subtitle */
+"onboarding.step.welcome.subtitle" = "What Vibe Bar does, in one paragraph.";
+
+/* Setup assistant step name in the rail */
+"onboarding.step.welcome.title" = "Welcome";
+
+/* Credential hint */
+"onboarding.subscriptions.claude.detected" = "Claude Code login detected — quota will come from it.";
+
+/* Credential hint */
+"onboarding.subscriptions.claude.missing" = "No Claude Code login found. Run `claude login`, or import claude.ai cookies from your browser below.";
+
+/* Credential hint */
+"onboarding.subscriptions.claude.web" = "claude.ai cookies saved — quota will come from them.";
+
+/* Credential hint; the harness name is never translated */
+"onboarding.subscriptions.codex.detected" = "Codex CLI login detected — quota will come from it.";
+
+/* Credential hint; the command is never translated */
+"onboarding.subscriptions.codex.missing" = "No Codex CLI login found. Run `codex login`, or import ChatGPT cookies from your browser below.";
+
+/* Credential hint */
+"onboarding.subscriptions.codex.web" = "ChatGPT web cookies saved — quota will come from them.";
+
+/* Credential hint */
+"onboarding.subscriptions.gemini.hint" = "Gemini quota is read from gemini.google.com cookies; there is no CLI login or WebView path. AntiGravity is probed locally when it is running.";
+
+/* Credential hint; the path is never translated */
+"onboarding.subscriptions.grok.detected" = "~/.grok/auth.json detected — quota will come from it.";
+
+/* Credential hint */
+"onboarding.subscriptions.grok.missing" = "No ~/.grok/auth.json yet. Run `grok login`, or import grok.com cookies from your browser below.";
+
+/* Intro line of the subscriptions step */
+"onboarding.subscriptions.intro" = "Turn on the subscriptions you use. A provider that is off stays out of the Overview and the menu bar; turning one off later keeps its credentials and history.";
+
+/* Where this provider's quota can come from */
+"onboarding.subscriptions.productLine.claude" = "Claude Code · claude.ai web";
+
+/* Where this provider's quota can come from; the harness and SubProvider names are never translated */
+"onboarding.subscriptions.productLine.codex" = "Codex CLI · ChatGPT web";
+
+/* Where this provider's quota can come from */
+"onboarding.subscriptions.productLine.gemini" = "Gemini web · AntiGravity";
+
+/* Where this provider's quota can come from */
+"onboarding.subscriptions.productLine.grok" = "Grok CLI · grok.com · Cursor";
+
+/* Per-provider toggle in the setup assistant */
+"onboarding.subscriptions.showInOverview" = "Show in Overview";
+
+/* Heading over the first-run assistant's step rail */
+"onboarding.title" = "Setup";
+
+/* Feature row body */
+"onboarding.welcome.cost.detail" = "Priced locally from the agents' own session logs against a merged model price catalog.";
+
+/* Feature row title */
+"onboarding.welcome.cost.title" = "Token cost";
+
+/* Closing line of the welcome step */
+"onboarding.welcome.footer" = "This takes about two minutes. Every choice here can be changed later in Settings, and the assistant is one click away under Settings → System.";
+
+/* Opening paragraph of the setup assistant */
+"onboarding.welcome.intro" = "Vibe Bar sits in your menu bar and shows, at a glance, how much of each AI subscription you have left, what your coding agents are spending, and which sessions and skills live on this Mac. It reads the credentials the Codex, Claude Code, Gemini and Grok CLIs already keep here, adds web quotas from your browser's cookies when you ask it to, and never sends any of it anywhere but the provider it came from.";
+
+/* Feature row body */
+"onboarding.welcome.mcp.detail" = "Your agents can ask Vibe Bar for quota and cost over a Unix socket in your home directory.";
+
+/* Feature row title */
+"onboarding.welcome.mcp.title" = "Local MCP server";
+
+/* Feature row body */
+"onboarding.welcome.quotas.detail" = "Codex, Claude Code, Gemini, Grok and a shelf of API-key plans, each with its reset countdown.";
+
+/* Feature row title */
+"onboarding.welcome.quotas.title" = "Subscription quotas";
+
+/* Feature row body */
+"onboarding.welcome.sessions.detail" = "Browse, search and tidy agent sessions and shared skills from the Workbench.";
+
+/* Feature row title */
+"onboarding.welcome.sessions.title" = "Sessions and skills";
+
+/* Body of the launch-at-login step. macOS-only. */
+"platform.macos.launchAtLogin.detail" = "Vibe Bar is a menu-bar app with no Dock icon. Starting it at login keeps the quota readout and the local MCP server available from the moment you sign in; macOS may ask you to approve the login item in System Settings the first time.";
+
+/* Status line under the launch-at-login toggle. macOS-only. */
+"platform.macos.launchAtLogin.enabled" = "Enabled in macOS Login Items.";
+
+/* Setup assistant step subtitle. macOS-only. */
+"platform.macos.launchAtLogin.subtitle" = "Keep the readout in your menu bar from the moment you sign in.";
+
+/* Setup assistant step name. macOS-only: a login item has no counterpart on other clients. */
+"platform.macos.launchAtLogin.title" = "Launch at login";
+
+/* Toggle in the setup assistant. macOS-only. */
+"platform.macos.launchAtLogin.toggle" = "Launch Vibe Bar at login";
+
+/* Subtitle under the Machines page header */
+"popover.header.machinesSubtitle" = "End-to-end encrypted remote usage";
+
+/* Subtitle under the Misc Providers page header */
+"popover.header.miscSubtitle" = "Usage-only · sign in or paste a key";
+
+/* Subtitle under the Overview page header */
+"popover.header.overviewSubtitle" = "All providers · quota & cost";
+
+/* Tooltip on the Google AI page's refresh button; the SubProvider names are never translated */
+"popover.refreshGoogleAI" = "Refresh Gemini Web + AntiGravity";
+
+/* Tooltip on the SpaceXAI page's refresh button */
+"popover.refreshSpaceXAI" = "Refresh Grok + Cursor";
+
+/* Tooltip on a page switcher button; page is the tab's own label */
+"popover.showPage" = "Show %@";
+
+/* Popover tab listing remote machines */
+"popover.tab.machines" = "Machines";
+
+/* Popover tab covering the usage-only providers */
+"popover.tab.misc" = "Misc Providers";
+
+/* The Misc tab's label in the compact switcher, where the full name does not fit */
+"popover.tab.miscShort" = "Misc";
+
+/* Popover tab. The other tabs are company names (OpenAI, Anthropic, Google AI, SpaceXAI) and are never translated. */
+"popover.tab.overview" = "Overview";
 
 /* Empty state on a reset-history strip before any refill has been seen. */
 "quota.awaitingFirstObservation" = "Waiting for the first quota observation";
 
+/* Caption under a quota bar when the provider reported no reset time */
+"quota.bucket.noResetInfo" = "No reset info";
+
 /* Caption under the empty reset-history state, explaining when data starts appearing. */
 "quota.cycleRecordedOnRefill" = "A cycle is recorded when the quota refills";
 
-/* How much of a quota window is still available. */
+/* Empty state body; command is a CLI name such as codex or claude and is never translated */
+"quota.empty.needsLogin.detail" = "Run `%@ login` in your terminal, then refresh.";
+
+/* Empty state body */
+"quota.empty.network.detail" = "Couldn't reach the official API. Check your internet connection and try again.";
+
+/* Empty state body */
+"quota.empty.noAccount.detail" = "Log in with the official CLI on this Mac, then refresh.";
+
+/* Empty state body */
+"quota.empty.parseChanged.detail" = "The official API returned an unexpected shape. Try refreshing or update Vibe Bar.";
+
+/* Empty state body */
+"quota.empty.rateLimited.detail" = "The official API is asking us to wait. Try again in a moment.";
+
+/* Empty state headline */
+"quota.empty.rateLimited.headline" = "Rate limited";
+
+/* Forecast confidence level */
+"quota.forecast.confidence.high" = "High confidence";
+
+/* Forecast confidence level */
+"quota.forecast.confidence.learning" = "Learning";
+
+/* Forecast confidence level */
+"quota.forecast.confidence.medium" = "Medium confidence";
+
+/* What to do about an at-risk forecast */
+"quota.forecast.guidance.atRisk" = "Slow down or shift work to another quota";
+
+/* Remaining-mode guidance when there is headroom */
+"quota.forecast.guidance.available" = "Target %1$lld%% left · about %2$lld%% available";
+
+/* Remaining-mode guidance for a surplus verdict */
+"quota.forecast.guidance.surplus" = "About %2$lld%% likely unused beyond the %1$lld%% safety target";
+
+/* Used-mode guidance when there is headroom */
+"quota.forecast.guidance.usedAvailable" = "Target %1$lld%% used · about %2$lld%% capacity available";
+
+/* Used-mode guidance for a surplus verdict */
+"quota.forecast.guidance.usedSurplus" = "About %2$lld%% capacity may remain beyond the %1$lld%% used target";
+
+/* Used-mode guidance when nothing needs saying */
+"quota.forecast.guidance.usedWithinTarget" = "Within the %lld%% used target";
+
+/* What a watch verdict means */
+"quota.forecast.guidance.watch" = "Recent usage is above the safe range";
+
+/* Remaining-mode guidance when nothing needs saying */
+"quota.forecast.guidance.withinTarget" = "Within the %lld%% safety target";
+
+/* One-line forecast summary */
+"quota.forecast.reset.atRisk" = "Likely to run out before reset";
+
+/* One-line forecast summary */
+"quota.forecast.reset.enough" = "Forecast %lld%% left at reset";
+
+/* One-line forecast summary */
+"quota.forecast.reset.learning" = "Learning your pattern · about %lld%% left";
+
+/* One-line forecast summary */
+"quota.forecast.reset.surplus" = "Likely surplus · forecast %lld%% left";
+
+/* One-line forecast summary */
+"quota.forecast.reset.watch" = "May run short · forecast %lld%% left";
+
+/* Status line under the quota bar */
+"quota.forecast.status.atRisk" = "At risk · likely to run out before reset";
+
+/* Status line under the quota bar; value is the already-formatted forecast figure */
+"quota.forecast.status.enough" = "Enough · forecast %@ at reset";
+
+/* Status line under the quota bar */
+"quota.forecast.status.learning" = "Learning · about %@ at reset";
+
+/* Status line under the quota bar */
+"quota.forecast.status.surplus" = "Surplus · forecast %@ at reset";
+
+/* Status line under the quota bar */
+"quota.forecast.status.watch" = "Watch · forecast %@ at reset";
+
+/* Use-up line for an at-risk verdict with no ETA */
+"quota.forecast.useUp.beforeReset" = "Expected to run out before reset";
+
+/* Use-up ETA for a watch verdict, which is possible rather than certain */
+"quota.forecast.useUp.couldRunOut" = "Could run out in %@";
+
+/* Use-up ETA from the personal forecast */
+"quota.forecast.useUp.estimated" = "Estimated to run out in %@";
+
+/* Use-up line when the model does not predict exhaustion before the refill */
+"quota.forecast.useUp.lastsUntilReset" = "Projected to last until reset";
+
+/* Use-up line when no ETA can be derived */
+"quota.forecast.useUp.uncertain" = "Use-up time uncertain · may run short before reset";
+
+/* Forecast verdict: likely to run out before the reset */
+"quota.forecast.verdict.atRisk" = "At risk";
+
+/* Forecast verdict: the quota is projected to last comfortably */
+"quota.forecast.verdict.enough" = "Enough";
+
+/* Forecast verdict: not enough evidence yet to commit to one distinct-from: quota.forecast.confidence.learning — a verdict about the quota and a confidence level in the forecast are different judgements. */
+"quota.forecast.verdict.learning" = "Learning";
+
+/* Forecast verdict: a materially large share is likely to expire unused */
+"quota.forecast.verdict.surplus" = "Surplus";
+
+/* Forecast verdict: recent burn is above the safe range */
+"quota.forecast.verdict.watch" = "Watch";
+
+/* Very short age used inside a freshness badge */
+"quota.freshness.age.seconds" = "%llds";
+
+/* Fragment inside the freshness badge saying how old the shown numbers are */
+"quota.freshness.dataAge" = "data %@ old";
+
+/* Tooltip on a stale freshness badge */
+"quota.freshness.defaultHelp" = "Live quota has not refreshed within the expected interval.";
+
+/* The failed-refresh freshness badge, assembled from the three fragments above */
+"quota.freshness.line" = "%1$@ · %2$@ · %3$@";
+
+/* Fragment inside the freshness badge when nothing was ever cached */
+"quota.freshness.noCachedData" = "no cached data";
+
+/* Freshness badge when the last attempt failed moments ago */
+"quota.freshness.refreshFailed" = "Refresh failed";
+
+/* Freshness badge; age is a very short span */
+"quota.freshness.refreshFailedAgo" = "Refresh failed %@ ago";
+
+/* Freshness badge when a bucket has never been fetched successfully */
+"quota.freshness.staleNeverUpdated" = "Stale · never updated";
+
+/* Freshness badge; age is a very short span like 45s, 2m, 8h, 3d */
+"quota.freshness.staleUpdatedAgo" = "Stale · updated %@ ago";
+
+/* Quota group covering every model on a plan */
+"quota.group.allModels" = "All Models";
+
+/* Quota window shown as a group label */
+"quota.group.daily" = "Daily";
+
+/* Quota window shown as a group label: the rolling five-hour window */
+"quota.group.fiveHours" = "5 Hours";
+
+/* Quota window shown as a group label */
+"quota.group.monthly" = "Monthly";
+
+/* Empty state inside a quota group card */
+"quota.group.noUtilization" = "No utilization data — try refreshing.";
+
+/* Fallback group heading for a bucket with no group of its own */
+"quota.group.other" = "Other";
+
+/* Quota group for models outside the named ones */
+"quota.group.otherModels" = "Other Models";
+
+/* Quota window shown as a group label. The wire value stays English (it is a naming-contract value); only the shown label is translated. */
+"quota.group.weekly" = "Weekly";
+
+/* Quota group: a weekly credit balance rather than a percentage */
+"quota.group.weeklyCredits" = "Weekly Credits";
+
+/* What to do when no credential is stored */
+"quota.login.claude" = "Run claude login, then refresh.";
+
+/* What to do when no credential is stored; the command is never translated */
+"quota.login.codex" = "Run codex login, then refresh.";
+
+/* What to do when no credential is stored */
+"quota.login.cursor" = "Sign in to Cursor.app or import cursor.com cookies, then refresh.";
+
+/* What to do when no credential is stored */
+"quota.login.grok" = "Run grok login or import grok.com cookies, then refresh.";
+
+/* Fallback for a misc provider; provider is a SubProvider name */
+"quota.login.misc" = "Configure %@ in Settings → Misc Providers.";
+
+/* Caption saying the bar shows what is left */
+"quota.mode.remaining" = "remaining";
+
+/* Caption saying the bar shows what has been spent */
+"quota.mode.used" = "used";
+
+/* Legacy elapsed-time pace ETA on a Misc provider card */
+"quota.pace.lastsUntilReset" = "Lasts until reset";
+
+/* Legacy elapsed-time pace ETA on a Misc provider card */
+"quota.pace.runsOutIn" = "Runs out in %@";
+
+/* The forecast figure in Remaining mode, used inside the status line */
 "quota.remainingPercent" = "%lld%% left";
+
+/* Live countdown to a bucket's refill; duration is a compact span, sometimes followed by an absolute time */
+"quota.reset.in" = "resets in %@";
+
+/* A bucket whose reset time is behind us and which has not refreshed */
+"quota.reset.passed" = "reset passed";
+
+/* Reset passed, with the absolute time it should have happened */
+"quota.reset.passedAt" = "reset passed · %@";
+
+/* The count above, plus when the soonest one lapses */
+"quota.resetCredits.availableWithExpiry" = "%1$@ · next expires in %2$@";
+
+/* Card title for the manual rate-limit resets a Codex plan grants */
+"quota.resetCredits.title" = "Limit reset credits";
 
 /* Countdown beside a quota bar. Both values are whole numbers; the caller drops the day part when it is zero by using quota.resetsInHours instead. */
 "quota.resetsIn" = "resets in %1$lldd %2$lldh";
@@ -48,23 +768,974 @@
 /* Countdown beside a quota bar when less than a day remains. */
 "quota.resetsInHours" = "resets in %1$lldh %2$lldm";
 
-/* How much of a quota window has been consumed. The caller has already rounded the number. */
+/* Timeline axis tick */
+"quota.upcoming.axisDays" = "+%lldd";
+
+/* Timeline axis tick */
+"quota.upcoming.axisHours" = "+%lldh";
+
+/* Empty state on the resets timeline */
+"quota.upcoming.empty" = "Nothing refills in the next seven days.";
+
+/* Compact badge for the capacity a refill returns */
+"quota.upcoming.gain" = "+%lld%%";
+
+/* Scope caption next to the Upcoming Resets title */
+"quota.upcoming.horizon" = "next 7 days";
+
+/* Row caption on the resets timeline */
+"quota.upcoming.leftAndGain" = "%2$lld%% left now · +%1$lld%% comes back";
+
+/* Tooltip on a marker in the resets timeline; label names the bucket and is not translated */
+"quota.upcoming.markerHelp" = "%4$@ — %2$lld%% now, +%1$lld%% %3$@";
+
+/* Row caption: how long until a bucket refills and when that is */
+"quota.upcoming.resetsAt" = "resets %2$@ · %1$@";
+
+/* Card title for the resets timeline */
+"quota.upcoming.title" = "Upcoming Resets";
+
+/* Inline error row; reason is a provider message and is not translated */
+"quota.update.failed" = "Update failed: %@";
+
+/* The forecast figure in Used mode, used inside the status line */
 "quota.usedPercent" = "%lld%% used";
 
-/* Caption under a lane's name. {count} is how many completed cycles the average covers. */
-"resetHistory.laneAverage" = "avg wasted %1$lld%% · last %2$lld cycles";
+/* Screen-reader summary when there are no lanes */
+"resetHistory.a11y.empty" = "Reset history comparison. %@";
 
-/* Caption under a lane that has history recorded but no finished cycle. */
+/* Tail of the screen-reader summary when more lanes exist than are spoken. Leading space is intentional. */
+"resetHistory.a11y.more" = " And %lld more quotas.";
+
+/* Whole-module screen-reader text; the lanes are a drawing surface, so this is all VoiceOver gets */
+"resetHistory.a11y.summary" = "Reset history comparison, %6$@, bar height is the quota remaining at reset.%4$@ %1$@. %5$@ %2$@.%3$@";
+
+/* The truncation caveat as it appears inside the screen-reader summary. Leading space is intentional. */
+"resetHistory.a11y.truncation" = " Grid %@; the figures cover every one.";
+
+/* Segmented control: one column per cycle */
+"resetHistory.axis.cycle" = "Cycles";
+
+/* Tooltip on the Cycles axis option */
+"resetHistory.axis.cycleHelp" = "One column per cycle, newest aligned across every quota";
+
+/* Segmented control: cycles placed on a shared calendar */
+"resetHistory.axis.time" = "Time";
+
+/* Tooltip on the Time axis option */
+"resetHistory.axis.timeHelp" = "Each cycle where it actually happened, on a shared calendar";
+
+/* Caption on a completed column: how many cycles back it is. The leading character is a minus sign, not a hyphen. */
+"resetHistory.axisCyclesBack" = "−%lld";
+
+/* Caption on the live column of the reset-history grid distinct-from: common.duration.now — a cycle grid's live column and a countdown that reached zero are different things. */
+"resetHistory.axisNow" = "now";
+
+/* Empty-state copy for a lane */
+"resetHistory.lane.emptyState" = "No completed cycles yet — a cycle is recorded when the quota refills";
+
+/* One lane inside the screen-reader summary; label names the quota and is not translated */
+"resetHistory.lane.spokenNoCycles" = "%@: no completed cycles";
+
+/* One lane inside the screen-reader summary */
+"resetHistory.lane.spokenWaste" = "%2$@: %3$@%% wasted on average over %1$lld cycles";
+
+/* Line under a lane label that has never closed a cycle */
 "resetHistory.noCompletedCycles" = "No completed cycles yet";
+
+/* What the provider did to the clock on an early refill. This shape means a whole window lies ahead, so the extra capacity is usable. */
+"resetHistory.reset.earlyClockRestarted" = "refilled early, next window restarted";
+
+/* The opposite shape: less than a window remains, so the refill is easier to waste than to spend. */
+"resetHistory.reset.earlyClockUnchanged" = "refilled early, next reset unchanged";
+
+/* An early refill that matches neither shape */
+"resetHistory.reset.earlyUnclear" = "refilled early, onto a different schedule";
+
+/* Spoken window name */
+"resetHistory.spoken.allCycles" = "every recorded cycle";
+
+/* Spoken window name */
+"resetHistory.spoken.allTime" = "all recorded history";
+
+/* Spoken window name */
+"resetHistory.spoken.eightCycles" = "last 8 cycles";
+
+/* Spoken window name */
+"resetHistory.spoken.eightWeeks" = "last 8 weeks";
+
+/* Spoken window name used in the screen-reader summary */
+"resetHistory.spoken.fourCycles" = "last 4 cycles";
+
+/* Spoken window name */
+"resetHistory.spoken.fourWeeks" = "last 4 weeks";
+
+/* Spoken window name */
+"resetHistory.spoken.twelveCycles" = "last 12 cycles";
+
+/* Spoken window name */
+"resetHistory.spoken.twelveWeeks" = "last 12 weeks";
 
 /* Card title: every weekly-and-longer quota's reset history side by side. */
 "resetHistory.title" = "Reset History Compare";
 
-/* Header totals across every lane in the visible window. */
-"resetHistory.wastedSummary" = "%1$lld%% used · %2$lld%% wasted · %3$lld cycles";
+/* Header arithmetic when nothing has closed */
+"resetHistory.totals.none" = "No completed cycles in this window";
+
+/* Caveat when the grid draws fewer cycles than the numbers describe */
+"resetHistory.truncation" = "showing the newest %1$lld of %2$lld cycles";
+
+/* Header sentence when everything is being spent */
+"resetHistory.verdict.clean" = "Nothing is going noticeably to waste — %@%% of the refilled capacity was spent.";
+
+/* Header sentence: lanes exist but none has closed */
+"resetHistory.verdict.noCycles" = "No completed cycles yet — a cycle is recorded when a quota refills.";
+
+/* Header sentence: nothing to compare */
+"resetHistory.verdict.noQuota" = "No weekly or longer quota is being tracked yet.";
+
+/* Compact window picker label covering every recorded cycle distinct-from: cost.timeframe.all — every recorded cycle and an all-time date range are different spans. */
+"resetHistory.window.all" = "All";
+
+/* Compact window picker label on the time axis */
+"resetHistory.window.eightWeeks" = "8w";
+
+/* Compact window picker label on the time axis */
+"resetHistory.window.fourWeeks" = "4w";
+
+/* Compact window picker label on the time axis */
+"resetHistory.window.twelveWeeks" = "12w";
+
+/* Hint under the Antigravity source picker */
+"settings.antigravityCookieEnabled" = "Antigravity cookie import is enabled — sign in at antigravity.google first.";
+
+/* Hint under the Antigravity source picker */
+"settings.antigravityLocalOnly" = "Antigravity reads the locally running language server. Cookie import is deferred until the Antigravity Cloud endpoint ships.";
+
+/* Picker label */
+"settings.antigravitySource" = "Antigravity source";
+
+/* Current version line; version is a raw version string */
+"settings.appVersion" = "Vibe Bar %@";
+
+/* Badge on the version currently compiled in */
+"settings.bundled" = "bundled";
+
+/* Button that probes a company's credentials; company is an L1 company name and is never translated */
+"settings.checkConnections" = "Check %@ connections";
+
+/* Button label */
+"settings.checkForUpdates" = "Check for Updates…";
+
+/* Button that queries GitHub for a newer agent-session-kit */
+"settings.checkKitUpdates" = "Check for kit updates";
+
+/* Progress line while an update check runs */
+"settings.checkingGitHub" = "Checking github.com for the newest release…";
+
+/* Button label */
+"settings.clearCostData" = "Clear cost data";
+
+/* Heading over the per-provider connection rows */
+"settings.connectionHealth" = "Connection health";
+
+/* Intro under the Cost Data heading */
+"settings.costDataIntro" = "Cost is computed from local CLI session JSONL logs at ~/.codex/sessions and ~/.claude/projects. Web/desktop usage is not tracked.";
+
+/* Error under the delete-cookies button */
+"settings.couldNotDeleteCookies" = "Could not delete saved cookies.";
+
+/* Error line */
+"settings.couldNotDeleteGeminiCookies" = "Could not delete saved Gemini cookies.";
+
+/* Error line */
+"settings.couldNotDeleteGrokCookies" = "Could not delete saved Grok cookies.";
+
+/* Credential state line */
+"settings.cursorNoSession" = "No usable Cursor.app session — import cursor.com cookies below.";
+
+/* Credential state line */
+"settings.cursorSessionDetected" = "Cursor.app signed-in session detected";
+
+/* Row label */
+"settings.cursorSource" = "Cursor source";
+
+/* Value beside the Cursor source row */
+"settings.cursorSourceValue" = "Cursor.app → Web";
+
+/* Button that clears a provider's stored cookies */
+"settings.deleteCookies" = "Delete cookies";
+
+/* Button label */
+"settings.deleteGeminiCookies" = "Delete Gemini cookies";
+
+/* Button label */
+"settings.deleteGrokCookies" = "Delete Grok cookies";
+
+/* Banner shown when a second client overwrote a setting this one had changed */
+"settings.externalChange.title" = "Another Vibe Bar replaced your change";
+
+/* Confirmation line */
+"settings.geminiCookiesSaved" = "Gemini cookies saved.";
+
+/* Explanation on the Google AI settings page */
+"settings.geminiShared" = "Gemini and Antigravity share the same Google AI subscription quota. Cookie import is the only supported web path — there is no WebView login.";
+
+/* Row label for where Gemini quota is read from */
+"settings.geminiSource" = "Gemini source";
+
+/* Credential state line; the path is never translated */
+"settings.grokAuthDetected" = "~/.grok/auth.json detected";
+
+/* Confirmation line */
+"settings.grokCookiesSaved" = "Grok cookies saved.";
+
+/* Picker label for the retention window */
+"settings.keepHistory" = "Keep history";
+
+/* Caption under the retention picker */
+"settings.keepHistoryDetail" = "Applies to cost history and subscription fill history.";
+
+/* Description of the bundled agent-session-kit component */
+"settings.kitDetail" = "Session discovery, harness naming, and the MCP transport. A separate repository, pinned to an exact tag and compiled into this build.";
+
+/* Caption under the language picker in Settings */
+"settings.language.caption" = "Vibe Bar follows the macOS language unless you pick one here. Provider, model and harness names stay as their owners spell them.";
 
 /* Language option: follow the macOS language setting. */
 "settings.language.system" = "Match system";
 
-/* Settings row that chooses the interface language. */
+/* Settings row label for the in-app language override */
 "settings.language.title" = "Language";
+
+/* Toggle label */
+"settings.mcp.allowRefresh" = "Allow agents to refresh quota";
+
+/* Caption under the refresh toggle; quota.refresh is an MCP tool name and is never translated */
+"settings.mcp.allowRefreshDetail" = "With this on, an agent can ask Vibe Bar to re-fetch quota from your providers. Forced refreshes are rate-limited to one every %lld seconds. With it off the read-only tools keep working and quota.refresh reports that refreshing is disabled.";
+
+/* Toggle label */
+"settings.mcp.allowSkills" = "Allow agents to install skills";
+
+/* Caption under the skills toggle; skills.install is an MCP tool name */
+"settings.mcp.allowSkillsDetail" = "With this on, an agent can call skills.install to add a skill from a GitHub repository or a local folder. It goes through the same Skills manager as Workbench → Skills, so it writes only to ~/.agents/skills and the agent skills directories Vibe Bar manages — never over a folder a different skill already holds. With it off the tool reports that installing is disabled.";
+
+/* Caption on a copyable config snippet; the path is never translated */
+"settings.mcp.appendCodexConfig" = "Append to ~/.codex/config.toml.";
+
+/* Sub-heading over the setup instructions */
+"settings.mcp.connectAgent" = "Connect an agent";
+
+/* Row label for the live connection count */
+"settings.mcp.connectedClients" = "Connected clients";
+
+/* Toggle label */
+"settings.mcp.enable" = "Enable the local MCP server";
+
+/* Intro paragraph of the MCP settings section */
+"settings.mcp.intro" = "Vibe Bar can expose this Mac's quota, usage, cost and local agent sessions to your coding agents over MCP. The server listens on a Unix domain socket in your home directory — no network port is opened, and no token is created: the socket's file permissions are the access control.";
+
+/* Row label for when a client last spoke to the server */
+"settings.mcp.lastActivity" = "Last client activity";
+
+/* MCP server state: the socket is accepting connections */
+"settings.mcp.listening" = "Listening";
+
+/* Intro to the manual client configuration snippets; flag is a command-line flag and is never translated */
+"settings.mcp.manualIntro" = "Or configure a client by hand. Every client runs the same command — Vibe Bar's own binary with %@, which bridges stdin/stdout to the socket above.";
+
+/* Caption on a copyable config snippet */
+"settings.mcp.mergeCursorConfig" = "Merge into ~/.cursor/mcp.json.";
+
+/* Warning shown when the app runs from a build directory; path is a filesystem path */
+"settings.mcp.movePrompt" = "Vibe Bar is running from %@. Move it to /Applications before saving a client config, or the config breaks the next time you rebuild.";
+
+/* MCP server state: the socket is closed */
+"settings.mcp.notListening" = "Not listening";
+
+/* Heading for the generic client snippet */
+"settings.mcp.otherStdioClient" = "Any other stdio client";
+
+/* Caption on the generic client snippet */
+"settings.mcp.otherStdioDetail" = "One entry for the client's own mcpServers map.";
+
+/* Caption over the one-line setup prompt */
+"settings.mcp.quickestPath" = "The quickest path: paste this into any agent and let it configure itself, install the companion skill, and verify the connection.";
+
+/* Caption closing the MCP permissions section */
+"settings.mcp.readOnlyDetail" = "Everything else agents can reach is read-only: quota, token usage, cost, provider status, effective model prices, and the local session index (titles, projects, and — when session body indexing is on — message excerpts). Credentials, cookies and organization ids are never exposed, and email addresses are masked.";
+
+/* Caption on a copyable shell command */
+"settings.mcp.runInTerminal" = "Run in a terminal.";
+
+/* Label for the copyable one-line prompt */
+"settings.mcp.setupPrompt" = "Agent setup prompt";
+
+/* Caption under the setup prompt */
+"settings.mcp.setupPromptDetail" = "One line, works in any agent that can fetch a URL.";
+
+/* Row label for the socket path. The term stays as spelled. */
+"settings.mcp.socket" = "Socket";
+
+/* Caption under the MCP status rows. The quoted phrase is the message another tool prints and stays in English. */
+"settings.mcp.socketLifetime" = "The socket exists only while Vibe Bar is running. Agents configured below report “Vibe Bar is not running” when it is quit, which is the intended behaviour.";
+
+/* Row label for whether the MCP socket is listening. Distinct from status.overview.title, which is a provider's service status. */
+"settings.mcp.status" = "Status";
+
+/* Settings section heading for the local MCP server */
+"settings.mcp.title" = "MCP Server";
+
+/* Sub-heading over the permission toggles */
+"settings.mcp.whatAgentsMayDo" = "What agents may do";
+
+/* Shown when the watchdog is not running */
+"settings.menuBarHealthUnavailable" = "The menu bar health monitor is not attached in this process.";
+
+/* Button in the mini windows settings section */
+"settings.miniWindow.add" = "Add a mini window";
+
+/* Empty state under the add-bucket list */
+"settings.miniWindow.allBucketsIncluded" = "Every known bucket is already in this window.";
+
+/* Tooltip on the dismiss button of a built-in bucket */
+"settings.miniWindow.dismissBuiltIn" = "Dismiss this built-in bucket while the provider is not returning it. It comes back the moment the provider does.";
+
+/* Tooltip on the dismiss button of a runtime-discovered bucket */
+"settings.miniWindow.forgetDiscovered" = "Forget this discovered bucket — drops it from the list and from every window that selected it.";
+
+/* Tooltip on a style toggle; mode is a display-mode name */
+"settings.miniWindow.includeStyle" = "Include %@ in the double-click cycle";
+
+/* Tooltip explaining a disabled remove button */
+"settings.miniWindow.lastCannotBeRemoved" = "The last mini window cannot be removed.";
+
+/* Segment label: edit the shared names */
+"settings.miniWindow.namesAllWindows" = "Names: all windows";
+
+/* Segment label: edit only this display style's overrides; mode is a display-mode name */
+"settings.miniWindow.namesThisStyle" = "Only %@ here";
+
+/* Segment label: edit only this window's name overrides */
+"settings.miniWindow.namesThisWindow" = "Only “%@”";
+
+/* Empty state under the field list */
+"settings.miniWindow.noFieldsSelected" = "No fields selected — tick some above.";
+
+/* Caption over the list of buckets not yet in this window */
+"settings.miniWindow.notInWindow" = "Not in “%@” — tick a bucket to add it. Buckets the adapters discover at runtime appear here automatically; a dimmed row is remembered but not in the account's current response, and ✕ dismisses it until the provider returns it.";
+
+/* Badge on a remote machine's row in the mini window preview */
+"settings.miniWindow.offline" = "offline";
+
+/* Button that shows or hides a mini window */
+"settings.miniWindow.openClose" = "Open / Close";
+
+/* Caption over the per-style name fields */
+"settings.miniWindow.overridesStyle" = "Overrides for the %@ style of this window only. An empty field inherits the window name, then the shared one — shown as the placeholder.";
+
+/* Caption over the per-window name fields */
+"settings.miniWindow.overridesWindow" = "Name overrides for this window only. An empty field inherits the shared name — shown as the placeholder.";
+
+/* Tooltip on a row's remove control */
+"settings.miniWindow.removeFromWindow" = "Remove from this window";
+
+/* Tooltip on the remove button */
+"settings.miniWindow.removeHelp" = "Remove this mini window";
+
+/* Picker label for the mini window's row density */
+"settings.miniWindow.stripDensity" = "Strip density";
+
+/* Caption over the style cycle picker */
+"settings.miniWindow.styleCycle" = "Double-click on the window cycles its style. Tap a style to include it — the badge is its turn in the cycle. Nothing selected means every style, in this order.";
+
+/* Tooltip on the open/close button */
+"settings.miniWindow.toggleHelp" = "Toggle this mini window on screen";
+
+/* Caption over the mini window field tree */
+"settings.miniWindow.treeDetail" = "One tree for the window — grouped exactly as it folds them (company → SubProvider → quota group → bucket). Drag a row to reorder, ✕ to remove, and rename any level in place. First field renders leftmost (or topmost).";
+
+/* Field placeholder for the AK half of an AK/SK pair */
+"settings.misc.accessKeyId" = "Access Key ID (AKLT…)";
+
+/* Confirmation under an AK/SK field */
+"settings.misc.akSkSaved" = "AK/SK saved in Keychain.";
+
+/* Confirmation under a credential field */
+"settings.misc.apiKeySaved" = "API key saved in Keychain.";
+
+/* Tooltip on the button that forgets a stored workspace id */
+"settings.misc.clearWorkspace" = "Clear saved workspace";
+
+/* Tooltip on the button that adds a second instance of a provider */
+"settings.misc.clone" = "Clone %@";
+
+/* Console link row; title is the provider's own page name */
+"settings.misc.consoleLink" = "%@ →";
+
+/* Picker label for a provider's edition (Team, Personal, …) */
+"settings.misc.edition" = "Edition";
+
+/* Hint under the GitHub sign-in row */
+"settings.misc.githubSignInHint" = "Sign in with GitHub device flow.";
+
+/* Confirmation under the GitHub sign-in row */
+"settings.misc.githubTokenSaved" = "GitHub device token saved in Keychain.";
+
+/* Caption under the cookie import button */
+"settings.misc.importDetail" = "Adds or refreshes the first signed-in browser profile found; profiles already imported stay stacked, and this provider's quota is the average across every slot listed above. macOS may ask for your login-keychain password once per Chromium-family browser.";
+
+/* Hint under the Kiro row; the commands are never translated */
+"settings.misc.kiroHint" = "Run `kiro-cli login`, then Vibe Bar probes `kiro-cli chat --no-interactive /usage`.";
+
+/* Shown when a provider has no cookie import path */
+"settings.misc.noCookieSpec" = "No cookie spec is registered for %@.";
+
+/* Empty state in the cookie slot list */
+"settings.misc.noCookiesYet" = "No cookies imported yet — import from your browser or paste below.";
+
+/* Button that runs a local CLI probe */
+"settings.misc.probe" = "Probe";
+
+/* Field placeholder */
+"settings.misc.prompt.copilotHost" = "GitHub Enterprise host (optional, e.g. github.example.com)";
+
+/* Field placeholder */
+"settings.misc.prompt.dashscope" = "Paste DashScope API key (sk-...) — optional";
+
+/* Field placeholder */
+"settings.misc.prompt.kilo" = "Paste Kilo API key (optional)";
+
+/* Field placeholder */
+"settings.misc.prompt.minimax" = "Paste MiniMax Token Plan API key (sk-cp-... or MINIMAX_CODING_API_KEY)";
+
+/* Field placeholder */
+"settings.misc.prompt.openRouter" = "Paste OpenRouter API key (sk-or-v1-...)";
+
+/* Field placeholder */
+"settings.misc.prompt.openRouterHost" = "OpenRouter API URL (optional, defaults to https://openrouter.ai/api/v1)";
+
+/* Field placeholder */
+"settings.misc.prompt.warp" = "Paste Warp API key (wk-...)";
+
+/* Field placeholder */
+"settings.misc.prompt.workspace" = "Workspace ID or URL (optional, wrk_... or /workspace/wrk_.../go)";
+
+/* Field placeholder; the key prefix is a format example */
+"settings.misc.prompt.zai" = "Paste Z.ai API key (zai-...)";
+
+/* Picker label for a provider's service region */
+"settings.misc.region" = "Region";
+
+/* Tooltip on the button that clears a stored AK/SK pair */
+"settings.misc.removeAkSk" = "Remove stored %@ AK/SK";
+
+/* Tooltip on the button that clears a stored key */
+"settings.misc.removeApiKey" = "Remove stored %@ API key";
+
+/* Tooltip on a cookie slot's delete button */
+"settings.misc.removeCookieSlot" = "Remove this cookie slot";
+
+/* Tooltip on the button that deletes a cloned instance */
+"settings.misc.removeCopy" = "Remove this %@ copy";
+
+/* Destructive button in the remove-copy dialog */
+"settings.misc.removeCopyButton" = "Remove Copy";
+
+/* Confirmation dialog body */
+"settings.misc.removeCopyDetail" = "Its saved credentials are deleted from your Keychain — the API key or AK/SK and every imported cookie slot. This cannot be undone.";
+
+/* Confirmation dialog title */
+"settings.misc.removeCopyTitle" = "Remove this %@ copy?";
+
+/* Tooltip on the button that clears the GitHub token */
+"settings.misc.removeGithubToken" = "Remove stored GitHub device token";
+
+/* Tooltip on the rename button of a cloned instance */
+"settings.misc.rename" = "Rename this copy";
+
+/* Field placeholder for the SK half of an AK/SK pair. The term is the provider's own and stays as spelled. */
+"settings.misc.secretAccessKey" = "Secret Access Key";
+
+/* Button that starts a device-flow sign-in */
+"settings.misc.signIn" = "Sign in";
+
+/* Button that opens a WebView login */
+"settings.misc.signInViaWeb" = "Sign in via Web";
+
+/* Caption under the Tencent token plan row */
+"settings.misc.tencentTokenPlanNote" = "Personal Token Plan is currently available only in China mainland (cn-beijing). Clone this row to track Team and Personal together.";
+
+/* Picker label for a provider's plan variant */
+"settings.misc.variant" = "Variant";
+
+/* Button label while a device-flow sign-in is pending */
+"settings.misc.waiting" = "Waiting...";
+
+/* Caption under the workspace field */
+"settings.misc.workspaceNote" = "Only needed when the account owns more than one workspace — otherwise Vibe Bar uses the first one it finds.";
+
+/* Provider state: credentials are missing */
+"settings.needsSetup" = "Needs setup";
+
+/* Connection state before any probe has run */
+"settings.notChecked" = "Not checked";
+
+/* Line under the update-check button */
+"settings.notCheckedYet" = "Not checked. Nothing is fetched until you ask.";
+
+/* Picker label */
+"settings.openRefreshCooldown" = "Minimum open-refresh cooldown";
+
+/* Caption under the cooldown picker */
+"settings.openRefreshDetail" = "Opening the popover refreshes all visible providers at most once per cooldown period.";
+
+/* Link to a company's public status page */
+"settings.openStatusPage" = "Open %@ status page";
+
+/* Picker label choosing between remaining and used */
+"settings.percentShows" = "Percent shows";
+
+/* Field label for a user-chosen plan label override */
+"settings.planBadge" = "Plan badge";
+
+/* Caption under the plan badge field */
+"settings.planBadgeDetail" = "Leave blank to use the detected account plan.";
+
+/* Button that appends a blank rate card */
+"settings.pricing.addOverride" = "Add model override";
+
+/* Disclosure heading over the threshold rate fields */
+"settings.pricing.advancedTiers" = "Advanced tiers";
+
+/* Detail beside the local-overrides source */
+"settings.pricing.alwaysWins" = "Always wins";
+
+/* Name of the lowest-priority price source */
+"settings.pricing.bundledFallback" = "Bundled fallback";
+
+/* Rate field label */
+"settings.pricing.cacheReadAbove" = "Cache read above";
+
+/* Rate field label */
+"settings.pricing.cacheWriteAbove" = "Cache write above";
+
+/* Tooltip on a rate card's delete button */
+"settings.pricing.deleteOverride" = "Delete override";
+
+/* Placeholder in the model-name field of a rate card */
+"settings.pricing.exactModelName" = "Exact model name";
+
+/* Rate field label: the multiplier applied to a fast tier */
+"settings.pricing.fastMultiplier" = "Fast multiplier";
+
+/* Rate field label for input tokens beyond the threshold */
+"settings.pricing.inputAbove" = "Input above";
+
+/* Intro under the Model Pricing heading */
+"settings.pricing.intro" = "Catalogs refresh in the background. Higher entries win when the same provider and model name appears more than once.";
+
+/* Settings section heading over the user's own rate cards */
+"settings.pricing.localOverrides" = "Local overrides";
+
+/* Empty state in the overrides list */
+"settings.pricing.noOverrides" = "No local overrides.";
+
+/* Detail beside the bundled source */
+"settings.pricing.offlineFloor" = "Offline floor";
+
+/* Rate field label for output tokens beyond the threshold */
+"settings.pricing.outputAbove" = "Output above";
+
+/* Intro under the Local overrides heading */
+"settings.pricing.overridesIntro" = "Prices are USD per one million tokens. Leave cache fields empty when the provider does not publish them.";
+
+/* Settings section heading over the price-source list */
+"settings.pricing.priorityHealth" = "Priority and source health";
+
+/* Rate field label: input tokens */
+"settings.pricing.rateInput" = "Input";
+
+/* Rate field label: output tokens */
+"settings.pricing.rateOutput" = "Output";
+
+/* Button that fetches price catalogs immediately */
+"settings.pricing.refreshNow" = "Refresh now";
+
+/* Button label while a price refresh runs */
+"settings.pricing.refreshing" = "Refreshing…";
+
+/* Field label: the token count above which the higher rates apply */
+"settings.pricing.thresholdTokens" = "Threshold tokens";
+
+/* Footer showing when the bundled price table was built; date is a raw stamp */
+"settings.pricingDataDate" = "Pricing data: %@";
+
+/* Body of the Privacy section */
+"settings.privacyDetail" = "Tokens are read from local CLI credentials. Saved OpenAI and Claude Web cookies are stored in macOS Keychain, split by browser and WebView source. Legacy plaintext cookie files under ~/.vibebar/cookies are migrated once and deleted. Settings, quota cache, and cost summaries stay under ~/.vibebar.";
+
+/* Toggle label */
+"settings.privacyMode" = "Privacy mode";
+
+/* Caption under the privacy toggle */
+"settings.privacyModeDetail" = "Privacy mode keeps cost data off disk and clears local cost history, snapshots, and scan cache.";
+
+/* Provider state: credentials are usable */
+"settings.ready" = "Ready";
+
+/* Picker label for a background refresh interval */
+"settings.refreshEvery" = "Refresh every";
+
+/* Toggle label */
+"settings.refreshOnPopoverOpen" = "Refresh when the popover opens";
+
+/* Link label */
+"settings.releaseNotes" = "Release notes";
+
+/* Settings section heading. Core is the product term for this Mac's aggregator. */
+"settings.remote.core" = "Remote Core";
+
+/* Settings section heading */
+"settings.remote.costAggregation" = "Cost aggregation";
+
+/* Intro under the cost aggregation heading */
+"settings.remote.costAggregationIntro" = "Choose which remote machines join this Mac's local cost and token totals. Selection and aggregation stay on this Core; the Relay never sees plaintext usage.";
+
+/* Toggle that reveals the control-centre URL field */
+"settings.remote.differentControlCenter" = "Use a different control center";
+
+/* Button that abandons a pending join */
+"settings.remote.discard" = "Discard";
+
+/* Confirmation dialog body */
+"settings.remote.discardPendingDetail" = "Its pairing code is already spent, and the workspace still counts this Mac as its Core. To join again, revoke this Mac in the web control center, then create a fresh code.";
+
+/* Confirmation dialog title */
+"settings.remote.discardPendingTitle" = "Discard this pending join?";
+
+/* Settings section heading, and the destructive button in its dialog */
+"settings.remote.disconnect" = "Disconnect";
+
+/* Button that unpairs this Mac */
+"settings.remote.disconnectButton" = "Disconnect from Workspace…";
+
+/* Confirmation dialog body */
+"settings.remote.disconnectDetail" = "Reconnecting later requires a new pairing code or provisioning file.";
+
+/* Explanation under the Disconnect heading */
+"settings.remote.disconnectIntro" = "Disconnecting removes this Mac's Relay credential from the Keychain and its workspace binding. Probes keep uploading to the Relay until they are revoked there. Usage already decrypted stays in the local ledger.";
+
+/* Confirmation dialog title */
+"settings.remote.disconnectTitle" = "Disconnect from this workspace?";
+
+/* Button that writes this Mac's public identity to a file */
+"settings.remote.exportIdentity" = "Export Core Identity…";
+
+/* Button that reads a provisioning file */
+"settings.remote.importProvisioning" = "Import Provisioning File…";
+
+/* Button that submits a pairing code */
+"settings.remote.join" = "Join";
+
+/* Explanation above the pairing-code field; device is the Mac's name */
+"settings.remote.joinIntro" = "Create a Core code in the Vibe Bar control center, then paste it here. This Mac joins as “%@”.";
+
+/* Heading over the pairing-code field */
+"settings.remote.joinWithCode" = "Join with a code";
+
+/* Row label for the last sync time */
+"settings.remote.lastSync" = "Last sync";
+
+/* Second line of a remote machine row; platform and version are raw values */
+"settings.remote.machineDetail" = "%1$@ · Probe %2$@";
+
+/* Empty state in the machine list */
+"settings.remote.machinesAppearAfterImport" = "Machines appear here after their first encrypted batch is imported.";
+
+/* Row label for the machine count */
+"settings.remote.machinesSynced" = "Machines synced";
+
+/* Explanation of the manual pairing flow */
+"settings.remote.manualPairingIntro" = "Pairing runs in three steps: export this Mac's Core identity, register it with your Relay to produce a provisioning file, then import that file here. Importing moves the Relay credential into the macOS Keychain — but the provisioning file itself still contains that credential, so delete the file once the import succeeds.";
+
+/* Explanation shown when no workspace is paired */
+"settings.remote.notConnected" = "This Mac is not connected to a workspace. Remote probes collect normalized usage on your other machines, encrypt it to this Mac's Core keys, and drop it at a Relay — no inbound port is ever opened here.";
+
+/* Caption above the manual pairing buttons */
+"settings.remote.orPairManually" = "Or pair manually.";
+
+/* Explanation of a half-finished join */
+"settings.remote.pendingIntro" = "A previous join was accepted by the control center but never finished saving on this Mac. Its pairing code is already spent, so resume the save instead of requesting a new code.";
+
+/* Settings section heading over the pairing controls */
+"settings.remote.provisioning" = "Provisioning";
+
+/* Row label for the probe count */
+"settings.remote.registeredProbes" = "Registered probes";
+
+/* Row label for the relay URL. The term stays as spelled. */
+"settings.remote.relay" = "Relay";
+
+/* Button that finishes a half-completed join */
+"settings.remote.resumeSaving" = "Resume saving";
+
+/* Button that retries a failed save */
+"settings.remote.retrySaving" = "Retry saving";
+
+/* Sync status line: a translated title and the raw status code */
+"settings.remote.statusWithCode" = "%2$@ · %1$@";
+
+/* Button that pulls remote batches immediately */
+"settings.remote.syncNow" = "Sync now";
+
+/* Row label for the workspace id */
+"settings.remote.workspace" = "Workspace";
+
+/* Link label */
+"settings.repository" = "Repository";
+
+/* Button label */
+"settings.rescanCostLogs" = "Rescan cost logs";
+
+/* Placeholder in the settings sidebar's search field */
+"settings.search" = "Search settings";
+
+/* Settings section heading listing bundled components. Distinct from status.card.components, which are a provider's status-page components. */
+"settings.section.components" = "Components";
+
+/* Settings section heading */
+"settings.section.costData" = "Cost Data";
+
+/* Settings section heading for page layout */
+"settings.section.layout" = "Layout";
+
+/* Settings section heading for the status-item watchdog */
+"settings.section.menuBarHealth" = "Menu Bar Health";
+
+/* Settings section heading */
+"settings.section.miniWindows" = "Mini Windows";
+
+/* Settings section heading */
+"settings.section.privacy" = "Privacy";
+
+/* Settings section heading for refresh intervals. Distinct from status.overview.refreshing, which says a fetch is in flight. distinct-from: settings.pricing.refreshing — a Settings section for refresh intervals, a button label while a fetch runs, and a provider's in-flight state are three things. */
+"settings.section.refreshing" = "Refreshing";
+
+/* Settings section heading for login items and the setup assistant. Distinct from settings.language.system, which is a language-picker option meaning 'follow macOS'. */
+"settings.section.system" = "System";
+
+/* Settings section heading for the app updater */
+"settings.section.updates" = "Updates";
+
+/* Button that reopens the first-run assistant */
+"settings.showAssistant" = "Show setup assistant";
+
+/* Caption under the assistant button */
+"settings.showAssistantDetail" = "Walk through subscriptions, browser cookies, API keys, model pricing and login items again. Nothing is reset.";
+
+/* Sidebar group heading over the four core provider pages */
+"settings.sidebar.coreProviders" = "Core Providers";
+
+/* Tooltip on the toggle that turns a misc provider off */
+"settings.sidebar.disableProvider" = "Disable Provider";
+
+/* Tooltip on the toggle that turns a misc provider on */
+"settings.sidebar.enableProvider" = "Enable Provider";
+
+/* Tooltip on the toggle that removes a provider from the Overview */
+"settings.sidebar.hideFromOverview" = "Hide from Overview";
+
+/* Sidebar group heading over the static preference pages */
+"settings.sidebar.settings" = "Settings";
+
+/* Explanation on the SpaceXAI settings page */
+"settings.spaceXAIIntro" = "The SpaceXAI page combines Grok with Cursor. Grok reads `~/.grok/auth.json` or grok.com cookies; Cursor reads Cursor.app first, then cursor.com cookie slots. Grok Bot contributes quota, plus read-only sessions from its local cache — its cloud runs still add no token/cost rows.";
+
+/* Picker label */
+"settings.updateChannel" = "Update channel";
+
+/* Caption under the update controls */
+"settings.updateCheckDetail" = "Checks the selected channel once a day and asks before installing.";
+
+/* Picker label choosing where a provider's quota is read from */
+"settings.usageSource" = "Usage source";
+
+/* Value beside the Gemini source row */
+"settings.webQuota" = "Web quota";
+
+/* Link to a release's notes; version is a tag name */
+"settings.whatChangedIn" = "What changed in %@";
+
+/* Group heading for a provider's status components distinct-from: settings.section.components — the Settings section listing bundled components and a provider status page's components are different lists. */
+"status.card.components" = "Components";
+
+/* Shown when a provider reported nothing */
+"status.card.noIncidents" = "No incidents in the last 90 days";
+
+/* Tooltip on the link to an incident page */
+"status.card.openIncident" = "Open incident";
+
+/* Tooltip on the link to a provider's status page; host is a hostname and is never translated */
+"status.card.openStatusPage" = "Open %@";
+
+/* Tooltip on the service-status refresh button */
+"status.card.refresh" = "Refresh service status";
+
+/* Stand-in for a hostname when the URL carries none */
+"status.card.statusPageFallback" = "status page";
+
+/* Card title for a provider's status page summary */
+"status.card.title" = "Service Status";
+
+/* Freshness caption on the status card */
+"status.card.updatedHoursAgo" = "updated %lldh ago";
+
+/* Freshness caption on the status card */
+"status.card.updatedMinutesAgo" = "updated %lldm ago";
+
+/* Uptime figure; percent arrives already formatted to two decimals with its sign */
+"status.card.uptime" = "%@ uptime";
+
+/* Screen-reader label for the uptime strip */
+"status.card.uptimeStrip" = "Service uptime over the last %lld days";
+
+/* Component status */
+"status.component.degraded" = "Degraded";
+
+/* Component status */
+"status.component.maintenance" = "Maintenance";
+
+/* Component status */
+"status.component.majorOutage" = "Major Outage";
+
+/* Component status */
+"status.component.operational" = "Operational";
+
+/* Group heading for components that match no named group distinct-from: quota.group.other — a status component outside the named groups and a quota group without an L3 name sit on different naming axes (vibe-bar AGENTS.md 7.1). */
+"status.component.other" = "Other";
+
+/* Component status */
+"status.component.partialOutage" = "Partial Outage";
+
+/* Overall status pill: a critical incident */
+"status.indicator.critical" = "Critical";
+
+/* Overall status pill while the page is being fetched */
+"status.indicator.loading" = "Loading";
+
+/* Overall status pill: a major incident */
+"status.indicator.major" = "Major";
+
+/* Overall status pill: a minor incident */
+"status.indicator.minor" = "Minor";
+
+/* Overview status tile state */
+"status.overview.checking" = "Checking";
+
+/* Overview status tile state */
+"status.overview.down" = "Down";
+
+/* Empty state on the Overview status card */
+"status.overview.enableProvider" = "Enable a core provider in Settings to show service status.";
+
+/* Status tile detail after a failed fetch */
+"status.overview.fetchFailed" = "Fetch failed";
+
+/* Overview status tile detail */
+"status.overview.needsAttention" = "Needs attention";
+
+/* Status tile detail while a fetch is in flight distinct-from: settings.pricing.refreshing — a Settings section for refresh intervals, a button label while a fetch runs, and a provider's in-flight state are three things. */
+"status.overview.refreshing" = "Refreshing";
+
+/* Card title on the Overview's service-status tile row distinct-from: settings.mcp.status — the local MCP socket's listening state and a provider's service status are different things. */
+"status.overview.title" = "Status";
+
+/* Caption saying what the mix is weighted by */
+"usage.harnessMix.byRealTokens" = "by real tokens";
+
+/* Empty state inside the harness mix card */
+"usage.harnessMix.empty" = "No harness traffic in this range";
+
+/* All-caps card title. 'Harness' is the usage-axis unit and stays as spelled. */
+"usage.harnessMix.title" = "HARNESS MIX";
+
+/* Caption under the total-cost metric */
+"usage.hero.allRequestsPriced" = "all requests priced";
+
+/* All-caps section label over the cache hit rate */
+"usage.hero.cacheHit" = "CACHE HIT";
+
+/* Caption under the cache hit rate; tokens arrives already formatted, e.g. 12.3M */
+"usage.hero.cacheRead" = "%@ read";
+
+/* Caption under the request-count metric */
+"usage.hero.inSelectedRange" = "in selected range";
+
+/* Caption under the total-cost metric */
+"usage.hero.noPricedRequests" = "no priced requests";
+
+/* Caption under the request-count metric */
+"usage.hero.noTrafficInRange" = "no traffic in range";
+
+/* All-caps section label over the headline token count. English sets it in caps by the copy; Chinese has no case and relies on weight and colour. */
+"usage.hero.realTokens" = "REAL TOKENS · SELECTED RANGE";
+
+/* All-caps metric label on the Workbench usage hero row */
+"usage.hero.requests" = "REQUESTS";
+
+/* Screen-reader label for the stacked token bar */
+"usage.hero.tokenComposition" = "Token composition";
+
+/* Badge counting requests with no usable price */
+"usage.hero.unpricedBadge" = "%lld unpriced";
+
+/* Empty state body; the path is a filesystem path and is never translated */
+"usage.ledgerUnavailable.detail" = "The per-request ledger under ~/.vibebar could not be opened, so only live cost cards are available this session.";
+
+/* Empty state when the local per-request ledger could not be opened */
+"usage.ledgerUnavailable.title" = "Usage ledger unavailable";
+
+/* Empty state body explaining the All chip */
+"usage.noHarnessSelected.detail" = "The All harnesses chip is a switch: click it again to put every harness back in the query.";
+
+/* Empty state when the harness filter excludes everything. 'harness' is the usage-axis unit and stays as spelled. */
+"usage.noHarnessSelected.title" = "No harness selected — pick one above";
+
+/* Footer figure; count arrives already grouped by the number formatter */
+"usage.requestCount" = "%@ requests";
+
+/* Token composition legend: cache read tokens */
+"usage.tokens.cacheRead" = "Cache read";
+
+/* Token composition legend: cache creation tokens */
+"usage.tokens.cacheWrite" = "Cache write";
+
+/* Token composition legend: fresh input tokens */
+"usage.tokens.input" = "In";
+
+/* Token composition legend: output tokens */
+"usage.tokens.output" = "Out";
+
+/* Heatmap title on the Overview, covering every provider at once */
+"usage.whenYouUse.everything" = "When you use everything";
+
+/* Heatmap title on the Google AI page */
+"usage.whenYouUse.googleAI" = "When you use Google AI";
+
+/* Heatmap title on the SpaceXAI page */
+"usage.whenYouUse.spaceXAI" = "When you use SpaceXAI";
+
+/* Placeholder body for a Workbench page with no content yet */
+"workbench.placeholder.resets" = "Cycle, refill and forecast views are on their way.";
+
+/* Placeholder body; Codex and Claude Code are harness names and stay as spelled */
+"workbench.placeholder.sessionManager" = "Browsing and searching local Codex and Claude Code sessions is on its way.";
+
+/* Placeholder body for the Settings page */
+"workbench.placeholder.settings" = "Configure Vibe Bar and its connected providers.";
+
+/* Placeholder body for a Workbench page with no content yet */
+"workbench.placeholder.skillsManager" = "Reviewing and organizing installed agent skills is on its way.";
+
+/* Placeholder body for a Workbench page with no content yet */
+"workbench.placeholder.usageStats" = "Full-window usage and cost analytics are on their way.";

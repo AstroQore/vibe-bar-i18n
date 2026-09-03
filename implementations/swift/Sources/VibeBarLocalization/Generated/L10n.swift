@@ -11,11 +11,59 @@ import Foundation
 /// it resolved the first time anybody touched it.
 public enum L10n {
     public enum Common {
-        /// Button that abandons an action in progress.
+        /// Button that appends an entry to a list
+        ///
+        /// Key: `common.add`
+        /// en: "Add"
+        public static var add: String { L10nSupport.string("common.add") }
+
+        /// Picker option and field placeholder meaning 'let Vibe Bar decide'
+        ///
+        /// Key: `common.auto`
+        /// en: "Auto"
+        public static var auto: String { L10nSupport.string("common.auto") }
+
+        /// Button that abandons an action in progress. Key name matches the shared catalogue's common.cancel.
         ///
         /// Key: `common.cancel`
         /// en: "Cancel"
         public static var cancel: String { L10nSupport.string("common.cancel") }
+
+        /// Confirmation shown in place of the Copy button
+        ///
+        /// Key: `common.copied`
+        /// en: "Copied"
+        public static var copied: String { L10nSupport.string("common.copied") }
+
+        /// Button that copies a value to the clipboard
+        ///
+        /// Key: `common.copy`
+        /// en: "Copy"
+        public static var copy: String { L10nSupport.string("common.copy") }
+
+        /// Destructive button
+        ///
+        /// Key: `common.delete`
+        /// en: "Delete"
+        public static var delete: String { L10nSupport.string("common.delete") }
+
+        /// Button that closes a banner without acting on it
+        ///
+        /// Key: `common.dismiss`
+        /// en: "Dismiss"
+        public static var dismiss: String { L10nSupport.string("common.dismiss") }
+
+        /// Tooltip on a drag handle
+        ///
+        /// Key: `common.dragToReorder`
+        /// en: "Drag to reorder"
+        public static var dragToReorder: String { L10nSupport.string("common.dragToReorder") }
+
+        /// Field label for a user-chosen name
+        ///
+        /// Key: `common.name`
+        /// en: "Name"
+        public static var name: String { L10nSupport.string("common.name") }
 
         /// Empty state where a chart or list has nothing to draw yet.
         ///
@@ -23,26 +71,238 @@ public enum L10n {
         /// en: "No data recorded"
         public static var noData: String { L10nSupport.string("common.noData") }
 
-        /// Button that fetches the current numbers again.
+        /// A toggle's state, read as a value in a summary row
+        ///
+        /// Key: `common.off`
+        /// en: "Off"
+        public static var off: String { L10nSupport.string("common.off") }
+
+        /// A toggle's state, read as a value in a summary row
+        ///
+        /// Key: `common.on`
+        /// en: "On"
+        public static var on: String { L10nSupport.string("common.on") }
+
+        /// Secondary button on an empty state
+        ///
+        /// Key: `common.openSettings`
+        /// en: "Open Settings"
+        public static var openSettings: String { L10nSupport.string("common.openSettings") }
+
+        /// A whole percentage. Both languages use the sign the same way; the key exists so a language that does not can move it.
+        ///
+        /// Key: `common.percent`
+        /// en: "{value}%"
+        public static func percent(value: Int) -> String {
+            L10nSupport.format("common.percent", value)
+        }
+
+        /// Picker label for choosing a provider
+        ///
+        /// Key: `common.provider`
+        /// en: "Provider"
+        public static var provider: String { L10nSupport.string("common.provider") }
+
+        /// Generic refresh button and tooltip
         ///
         /// Key: `common.refresh`
         /// en: "Refresh"
         public static var refresh: String { L10nSupport.string("common.refresh") }
 
-        /// Button that runs the failed action again.
+        /// Tooltip on a per-card refresh button
+        ///
+        /// Key: `common.refreshSection`
+        /// en: "Refresh this section"
+        public static var refreshSection: String { L10nSupport.string("common.refreshSection") }
+
+        /// Button that takes an item out of a list
+        ///
+        /// Key: `common.remove`
+        /// en: "Remove"
+        public static var remove: String { L10nSupport.string("common.remove") }
+
+        /// Button on a failure state
         ///
         /// Key: `common.retry`
         /// en: "Retry"
         public static var retry: String { L10nSupport.string("common.retry") }
+
+        /// Button that retries immediately, skipping a cooldown
+        ///
+        /// Key: `common.retryNow`
+        /// en: "Retry now"
+        public static var retryNow: String { L10nSupport.string("common.retryNow") }
+
+        /// Button that commits an edited value
+        ///
+        /// Key: `common.save`
+        /// en: "Save"
+        public static var save: String { L10nSupport.string("common.save") }
+
+        public enum Duration {
+            /// Compact countdown, whole days only
+            ///
+            /// Key: `common.duration.days`
+            /// en: "{days}d"
+            public static func days(days: Int) -> String {
+                L10nSupport.format("common.duration.days", days)
+            }
+
+            /// Compact countdown, days and hours
+            ///
+            /// Key: `common.duration.daysHours`
+            /// en: "{days}d {hours}h"
+            public static func daysHours(days: Int, hours: Int) -> String {
+                L10nSupport.format("common.duration.daysHours", days, hours)
+            }
+
+            /// Compact countdown, whole hours only
+            ///
+            /// Key: `common.duration.hours`
+            /// en: "{hours}h"
+            public static func hours(hours: Int) -> String {
+                L10nSupport.format("common.duration.hours", hours)
+            }
+
+            /// Compact countdown, hours and minutes
+            ///
+            /// Key: `common.duration.hoursMinutes`
+            /// en: "{hours}h {minutes}m"
+            public static func hoursMinutes(hours: Int, minutes: Int) -> String {
+                L10nSupport.format("common.duration.hoursMinutes", hours, minutes)
+            }
+
+            /// Countdown under one minute
+            ///
+            /// Key: `common.duration.lessThanMinute`
+            /// en: "<1m"
+            public static var lessThanMinute: String { L10nSupport.string("common.duration.lessThanMinute") }
+
+            /// Compact countdown, minutes only
+            ///
+            /// Key: `common.duration.minutes`
+            /// en: "{minutes}m"
+            public static func minutes(minutes: Int) -> String {
+                L10nSupport.format("common.duration.minutes", minutes)
+            }
+
+            /// Countdown that has reached zero
+            ///
+            /// Key: `common.duration.now`
+            /// en: "now"
+            public static var now: String { L10nSupport.string("common.duration.now") }
+        }
+
+        public enum Updated {
+            /// Freshness line, days
+            ///
+            /// Key: `common.updated.daysAgo`
+            /// en: "Updated {days, plural, one {1 day} other {# days}} ago"
+            public static func daysAgo(days: Int) -> String {
+                L10nSupport.localizedFormat("common.updated.daysAgo", days)
+            }
+
+            /// Freshness line, hours
+            ///
+            /// Key: `common.updated.hoursAgo`
+            /// en: "Updated {hours, plural, one {1 hour} other {# hours}} ago"
+            public static func hoursAgo(hours: Int) -> String {
+                L10nSupport.localizedFormat("common.updated.hoursAgo", hours)
+            }
+
+            /// Freshness line under five seconds old
+            ///
+            /// Key: `common.updated.justNow`
+            /// en: "Updated just now"
+            public static var justNow: String { L10nSupport.string("common.updated.justNow") }
+
+            /// Freshness line, minutes
+            ///
+            /// Key: `common.updated.minutesAgo`
+            /// en: "Updated {minutes, plural, one {1 minute} other {# minutes}} ago"
+            public static func minutesAgo(minutes: Int) -> String {
+                L10nSupport.localizedFormat("common.updated.minutesAgo", minutes)
+            }
+
+            /// Freshness line when nothing has been fetched yet
+            ///
+            /// Key: `common.updated.never`
+            /// en: "Never updated"
+            public static var never: String { L10nSupport.string("common.updated.never") }
+
+            /// Freshness line, seconds
+            ///
+            /// Key: `common.updated.secondsAgo`
+            /// en: "Updated {seconds} seconds ago"
+            public static func secondsAgo(seconds: Int) -> String {
+                L10nSupport.format("common.updated.secondsAgo", seconds)
+            }
+        }
     }
 
     public enum Cost {
+        /// Scope name for the combined cost card
+        ///
+        /// Key: `cost.allProviders`
+        /// en: "All providers"
+        public static var allProviders: String { L10nSupport.string("cost.allProviders") }
+
+        /// Title of the expanded cost popover; title is the card's own title
+        ///
+        /// Key: `cost.fullCharts`
+        /// en: "{title} — Full Charts"
+        public static func fullCharts(title: String) -> String {
+            L10nSupport.format("cost.fullCharts", title)
+        }
+
+        /// Subtitle on an empty provider cost card
+        ///
+        /// Key: `cost.noUsageYet`
+        /// en: "No usage yet"
+        public static var noUsageYet: String { L10nSupport.string("cost.noUsageYet") }
+
+        /// Fallback when a provider has no cost history; provider is a SubProvider name and is never translated
+        ///
+        /// Key: `cost.notTracked`
+        /// en: "Cost history isn't tracked for {provider}."
+        public static func notTracked(provider: String) -> String {
+            L10nSupport.format("cost.notTracked", provider)
+        }
+
+        /// Tooltip on the expand button of a cost card
+        ///
+        /// Key: `cost.openFullCharts`
+        /// en: "Open full charts"
+        public static var openFullCharts: String { L10nSupport.string("cost.openFullCharts") }
+
         /// Effective price of a model. {rate} is a raw number the client renders; declared double so the generated API takes a Double rather than a pre-formatted string.
         ///
         /// Key: `cost.perThousandTokens`
         /// en: "{rate} per 1K tokens"
         public static func perThousandTokens(rate: Double) -> String {
             L10nSupport.format("cost.perThousandTokens", rate)
+        }
+
+        /// Title of the expanded cost popover; provider is a company name and is never translated
+        ///
+        /// Key: `cost.providerFullCharts`
+        /// en: "{provider} Cost — Full Charts"
+        public static func providerFullCharts(provider: String) -> String {
+            L10nSupport.format("cost.providerFullCharts", provider)
+        }
+
+        /// Tooltip on the Overview cost card's refresh button
+        ///
+        /// Key: `cost.refreshData`
+        /// en: "Refresh cost data"
+        public static var refreshData: String { L10nSupport.string("cost.refreshData") }
+
+        /// Tooltip on a provider cost card's refresh button; provider is a SubProvider or company name
+        ///
+        /// Key: `cost.refreshProvider`
+        /// en: "Refresh {provider} cost"
+        public static func refreshProvider(provider: String) -> String {
+            L10nSupport.format("cost.refreshProvider", provider)
         }
 
         /// Cost headline. {amount} arrives already formatted as currency by the client — the catalog never formats money, because the symbol, grouping and placement are the platform's job.
@@ -52,16 +312,276 @@ public enum L10n {
         public static func spentToday(amount: String) -> String {
             L10nSupport.format("cost.spentToday", amount)
         }
+
+        /// Card title on a provider page
+        ///
+        /// Key: `cost.title`
+        /// en: "Cost"
+        public static var title: String { L10nSupport.string("cost.title") }
+
+        public enum Empty {
+            /// Empty cost history
+            ///
+            /// Key: `cost.empty.antigravity`
+            /// en: "No Antigravity conversation token metadata found yet."
+            public static var antigravity: String { L10nSupport.string("cost.empty.antigravity") }
+
+            /// Empty cost history
+            ///
+            /// Key: `cost.empty.claude`
+            /// en: "No Claude CLI sessions found yet."
+            public static var claude: String { L10nSupport.string("cost.empty.claude") }
+
+            /// Empty cost history; the harness name is never translated
+            ///
+            /// Key: `cost.empty.codex`
+            /// en: "No Codex CLI sessions found yet."
+            public static var codex: String { L10nSupport.string("cost.empty.codex") }
+
+            /// Empty cost history
+            ///
+            /// Key: `cost.empty.gemini`
+            /// en: "No Gemini CLI or chat-history usage found yet."
+            public static var gemini: String { L10nSupport.string("cost.empty.gemini") }
+
+            /// Empty cost history for a provider with no dedicated line; provider is a SubProvider name
+            ///
+            /// Key: `cost.empty.genericCLI`
+            /// en: "No {provider} CLI sessions found yet."
+            public static func genericCLI(provider: String) -> String {
+                L10nSupport.format("cost.empty.genericCLI", provider)
+            }
+
+            /// Empty cost history
+            ///
+            /// Key: `cost.empty.grok`
+            /// en: "No Grok session usage found yet."
+            public static var grok: String { L10nSupport.string("cost.empty.grok") }
+        }
+
+        public enum Gemini {
+            /// Empty Google AI cost card body
+            ///
+            /// Key: `cost.gemini.emptyDetail`
+            /// en: "Vibe Bar reads live AntiGravity quota from the desktop app when available, then falls back to the installed agy CLI. Cached values are marked stale when neither local source can refresh them."
+            public static var emptyDetail: String { L10nSupport.string("cost.gemini.emptyDetail") }
+
+            /// Empty Google AI cost card headline
+            ///
+            /// Key: `cost.gemini.emptyTitle`
+            /// en: "No Gemini or AntiGravity usage found yet."
+            public static var emptyTitle: String { L10nSupport.string("cost.gemini.emptyTitle") }
+        }
+
+        public enum GoogleAI {
+            /// Empty cost card; the SubProvider and CLI names are never translated
+            ///
+            /// Key: `cost.googleAI.empty`
+            /// en: "No Gemini Web / AntiGravity usage yet — refresh after signing in to AntiGravity or agy."
+            public static var empty: String { L10nSupport.string("cost.googleAI.empty") }
+
+            /// Card title; the company name is never translated
+            ///
+            /// Key: `cost.googleAI.title`
+            /// en: "Google AI Cost"
+            public static var title: String { L10nSupport.string("cost.googleAI.title") }
+        }
+
+        public enum History {
+            /// Card title on the Overview
+            ///
+            /// Key: `cost.history.allProviders`
+            /// en: "All Providers Cost History"
+            public static var allProviders: String { L10nSupport.string("cost.history.allProviders") }
+        }
+
+        public enum Metric {
+            /// All-caps metric label: the most expensive day on record
+            ///
+            /// Key: `cost.metric.peakDay`
+            /// en: "PEAK DAY"
+            public static var peakDay: String { L10nSupport.string("cost.metric.peakDay") }
+
+            /// All-caps metric label
+            ///
+            /// Key: `cost.metric.peakTokenDay`
+            /// en: "PEAK TOK DAY"
+            public static var peakTokenDay: String { L10nSupport.string("cost.metric.peakTokenDay") }
+
+            /// All-caps metric label on the Overview cost card
+            ///
+            /// Key: `cost.metric.sevenDay`
+            /// en: "7-DAY"
+            public static var sevenDay: String { L10nSupport.string("cost.metric.sevenDay") }
+
+            /// All-caps metric label
+            ///
+            /// Key: `cost.metric.sevenDayTokens`
+            /// en: "7-DAY TOK"
+            public static var sevenDayTokens: String { L10nSupport.string("cost.metric.sevenDayTokens") }
+
+            /// All-caps metric label
+            ///
+            /// Key: `cost.metric.thirtyDay`
+            /// en: "30-DAY"
+            public static var thirtyDay: String { L10nSupport.string("cost.metric.thirtyDay") }
+
+            /// All-caps metric label
+            ///
+            /// Key: `cost.metric.thirtyDayTokens`
+            /// en: "30-DAY TOK"
+            public static var thirtyDayTokens: String { L10nSupport.string("cost.metric.thirtyDayTokens") }
+
+            /// All-caps metric label
+            ///
+            /// Key: `cost.metric.todayTokens`
+            /// en: "TODAY TOK"
+            public static var todayTokens: String { L10nSupport.string("cost.metric.todayTokens") }
+
+            /// All-caps metric label on the Overview cost card. English is set in caps by the copy; Chinese has no case.
+            ///
+            /// Key: `cost.metric.totalCost`
+            /// en: "TOTAL COST"
+            public static var totalCost: String { L10nSupport.string("cost.metric.totalCost") }
+
+            /// All-caps metric label; 'tok' is the token unit and stays as spelled
+            ///
+            /// Key: `cost.metric.totalTokens`
+            /// en: "TOTAL TOK"
+            public static var totalTokens: String { L10nSupport.string("cost.metric.totalTokens") }
+
+            /// All-caps metric label
+            ///
+            /// Key: `cost.metric.yesterdayTokens`
+            /// en: "YESTERDAY TOK"
+            public static var yesterdayTokens: String { L10nSupport.string("cost.metric.yesterdayTokens") }
+        }
+
+        public enum ModelRanking {
+            /// Scope subtitle on the Overview's combined Model Ranking card
+            ///
+            /// Key: `cost.modelRanking.allProvidersAllTime`
+            /// en: "All providers · all time"
+            public static var allProvidersAllTime: String { L10nSupport.string("cost.modelRanking.allProvidersAllTime") }
+
+            /// Default scope subtitle next to the Model Ranking title
+            ///
+            /// Key: `cost.modelRanking.allTime`
+            /// en: "All time"
+            public static var allTime: String { L10nSupport.string("cost.modelRanking.allTime") }
+
+            /// Card title: models ordered by spend
+            ///
+            /// Key: `cost.modelRanking.title`
+            /// en: "Model Ranking"
+            public static var title: String { L10nSupport.string("cost.modelRanking.title") }
+        }
+
+        public enum Provider {
+            /// Cost card title on a provider page; provider is a SubProvider name and is never translated
+            ///
+            /// Key: `cost.provider.title`
+            /// en: "{provider} Cost"
+            public static func title(provider: String) -> String {
+                L10nSupport.format("cost.provider.title", provider)
+            }
+        }
+
+        public enum SpaceXAI {
+            /// Empty cost card
+            ///
+            /// Key: `cost.spaceXAI.empty`
+            /// en: "No Grok or Cursor usage found yet."
+            public static var empty: String { L10nSupport.string("cost.spaceXAI.empty") }
+
+            /// Card title; the company name is never translated
+            ///
+            /// Key: `cost.spaceXAI.title`
+            /// en: "SpaceXAI Cost"
+            public static var title: String { L10nSupport.string("cost.spaceXAI.title") }
+        }
+
+        public enum Timeframe {
+            /// Cost timeframe label covering all recorded history
+            ///
+            /// Key: `cost.timeframe.all`
+            /// en: "All"
+            public static var all: String { L10nSupport.string("cost.timeframe.all") }
+
+            /// Cost timeframe label, full form
+            ///
+            /// Key: `cost.timeframe.month`
+            /// en: "30 days"
+            public static var month: String { L10nSupport.string("cost.timeframe.month") }
+
+            /// Cost timeframe label in a five-column summary row
+            ///
+            /// Key: `cost.timeframe.monthShort`
+            /// en: "30d"
+            public static var monthShort: String { L10nSupport.string("cost.timeframe.monthShort") }
+
+            /// Cost timeframe label
+            ///
+            /// Key: `cost.timeframe.today`
+            /// en: "Today"
+            public static var today: String { L10nSupport.string("cost.timeframe.today") }
+
+            /// Cost timeframe label, full form
+            ///
+            /// Key: `cost.timeframe.week`
+            /// en: "7 days"
+            public static var week: String { L10nSupport.string("cost.timeframe.week") }
+
+            /// Cost timeframe label in a five-column summary row where space is tight
+            ///
+            /// Key: `cost.timeframe.weekShort`
+            /// en: "7d"
+            public static var weekShort: String { L10nSupport.string("cost.timeframe.weekShort") }
+
+            /// Cost timeframe label
+            ///
+            /// Key: `cost.timeframe.yesterday`
+            /// en: "Yesterday"
+            public static var yesterday: String { L10nSupport.string("cost.timeframe.yesterday") }
+        }
+
+        public enum TopModel {
+            /// This model's share of the last seven days' spend
+            ///
+            /// Key: `cost.topModel.share`
+            /// en: "{percent}% share"
+            public static func share(percent: Int) -> String {
+                L10nSupport.format("cost.topModel.share", percent)
+            }
+
+            /// All-caps label on the tile showing the most-used model. English is set in caps by the copy itself; Chinese has no case, so the tile relies on weight and colour instead.
+            ///
+            /// Key: `cost.topModel.title`
+            /// en: "TOP MODEL"
+            public static var title: String { L10nSupport.string("cost.topModel.title") }
+        }
     }
 
     public enum Error {
-        /// Provider card state: the browser session expired and the user must sign in again.
+        /// QuotaError: the provider rejected the key we hold
+        ///
+        /// Key: `error.credentialRejected`
+        /// en: "Credential rejected"
+        public static var credentialRejected: String { L10nSupport.string("error.credentialRejected") }
+
+        /// QuotaError: the stored browser session expired
         ///
         /// Key: `error.needsReLogin`
         /// en: "Needs re-login"
         public static var needsReLogin: String { L10nSupport.string("error.needsReLogin") }
 
-        /// Provider card state when the request never reached the provider. {reason} is the system's message, untranslated.
+        /// QuotaError: transport failure, no detail available
+        ///
+        /// Key: `error.network`
+        /// en: "Network error"
+        public static var network: String { L10nSupport.string("error.network") }
+
+        /// QuotaError transport failure; reason is the provider's own message, untranslated
         ///
         /// Key: `error.networkWithReason`
         /// en: "Network error: {reason}"
@@ -69,17 +589,679 @@ public enum L10n {
             L10nSupport.format("error.networkWithReason", reason)
         }
 
-        /// Provider card state: no credential of any kind is configured.
+        /// QuotaError: no credential is stored for this provider
         ///
         /// Key: `error.noAccountFound`
         /// en: "No account found"
         public static var noAccountFound: String { L10nSupport.string("error.noAccountFound") }
 
-        /// Provider card state: the provider refused the request for asking too often.
+        /// QuotaError: this provider has no quota path yet
+        ///
+        /// Key: `error.notImplemented`
+        /// en: "Not yet supported"
+        public static var notImplemented: String { L10nSupport.string("error.notImplemented") }
+
+        /// QuotaError: the payload no longer parses and the adapter had nothing to add
+        ///
+        /// Key: `error.parseFailure`
+        /// en: "Response format changed"
+        public static var parseFailure: String { L10nSupport.string("error.parseFailure") }
+
+        /// QuotaError: the provider is throttling us
         ///
         /// Key: `error.rateLimited`
         /// en: "Rate limited, try later"
         public static var rateLimited: String { L10nSupport.string("error.rateLimited") }
+
+        /// QuotaError: unclassified failure with no detail
+        ///
+        /// Key: `error.unknown`
+        /// en: "Error"
+        public static var unknown: String { L10nSupport.string("error.unknown") }
+
+        /// QuotaError: unclassified failure; reason is the underlying message, untranslated
+        ///
+        /// Key: `error.unknownDetail`
+        /// en: "Error: {reason}"
+        public static func unknownDetail(reason: String) -> String {
+            L10nSupport.format("error.unknownDetail", reason)
+        }
+    }
+
+    public enum Onboarding {
+        /// First-run assistant footer button
+        ///
+        /// Key: `onboarding.back`
+        /// en: "Back"
+        public static var back: String { L10nSupport.string("onboarding.back") }
+
+        /// First-run assistant footer button
+        ///
+        /// Key: `onboarding.continue`
+        /// en: "Continue"
+        public static var `continue`: String { L10nSupport.string("onboarding.continue") }
+
+        /// First-run assistant footer button on the last step
+        ///
+        /// Key: `onboarding.finish`
+        /// en: "Finish"
+        public static var finish: String { L10nSupport.string("onboarding.finish") }
+
+        /// First-run assistant footer button that closes the assistant without finishing
+        ///
+        /// Key: `onboarding.skip`
+        /// en: "Skip for now"
+        public static var skip: String { L10nSupport.string("onboarding.skip") }
+
+        /// Heading over the first-run assistant's step rail
+        ///
+        /// Key: `onboarding.title`
+        /// en: "Setup"
+        public static var title: String { L10nSupport.string("onboarding.title") }
+
+        public enum ApiKeys {
+            /// Button that folds a provider's credential form away
+            ///
+            /// Key: `onboarding.apiKeys.hide`
+            /// en: "Hide"
+            public static var hide: String { L10nSupport.string("onboarding.apiKeys.hide") }
+
+            /// Intro paragraph of the API-key providers step
+            ///
+            /// Key: `onboarding.apiKeys.intro`
+            /// en: "These plans are tracked with an API key or a console cookie rather than a CLI login. Tick the ones you have — a ticked provider gets a card on the Misc page — and unfold a row to enter its credential now. Keys and cookies go to your login Keychain."
+            public static var intro: String { L10nSupport.string("onboarding.apiKeys.intro") }
+
+            /// Button that unfolds a provider's credential form
+            ///
+            /// Key: `onboarding.apiKeys.setUp`
+            /// en: "Set up"
+            public static var setUp: String { L10nSupport.string("onboarding.apiKeys.setUp") }
+
+            /// Tooltip on a provider checkbox; provider is a SubProvider name and is never translated
+            ///
+            /// Key: `onboarding.apiKeys.showOnMiscPage`
+            /// en: "Show {provider} on the Misc page"
+            public static func showOnMiscPage(provider: String) -> String {
+                L10nSupport.format("onboarding.apiKeys.showOnMiscPage", provider)
+            }
+        }
+
+        public enum Cookies {
+            /// Caption under the batch import button
+            ///
+            /// Key: `onboarding.cookies.batchScope`
+            /// en: "This button covers the four plans above. The console-cookie plans on the next step have their own one-click batch import later, under Settings → Browser Cookies."
+            public static var batchScope: String { L10nSupport.string("onboarding.cookies.batchScope") }
+
+            /// Batch import button in the setup assistant
+            ///
+            /// Key: `onboarding.cookies.importAll`
+            /// en: "Import from all browsers now"
+            public static var importAll: String { L10nSupport.string("onboarding.cookies.importAll") }
+
+            /// Button in the setup assistant
+            ///
+            /// Key: `onboarding.cookies.importFromBrowser`
+            /// en: "Import from browser"
+            public static var importFromBrowser: String { L10nSupport.string("onboarding.cookies.importFromBrowser") }
+
+            /// Button in the setup assistant
+            ///
+            /// Key: `onboarding.cookies.importGemini`
+            /// en: "Import Gemini cookies from browser"
+            public static var importGemini: String { L10nSupport.string("onboarding.cookies.importGemini") }
+
+            /// Button in the setup assistant
+            ///
+            /// Key: `onboarding.cookies.importGrok`
+            /// en: "Import Grok cookies from browser"
+            public static var importGrok: String { L10nSupport.string("onboarding.cookies.importGrok") }
+
+            /// Status line while an import runs
+            ///
+            /// Key: `onboarding.cookies.importing`
+            /// en: "Importing…"
+            public static var importing: String { L10nSupport.string("onboarding.cookies.importing") }
+
+            /// Intro paragraph of the browser-cookies step
+            ///
+            /// Key: `onboarding.cookies.intro`
+            /// en: "Web quotas — the ones the provider shows on its own site — come from the session your browser already has. Vibe Bar reads the cookie stores of the browsers on this Mac (Chrome and other Chromium browsers, Safari, Firefox), keeps only the few cookies each provider needs, and stores them in your login Keychain, never in a plaintext file. macOS may ask once for permission to read a browser's cookie key."
+            public static var intro: String { L10nSupport.string("onboarding.cookies.intro") }
+
+            /// Status line before any import
+            ///
+            /// Key: `onboarding.cookies.notImported`
+            /// en: "Not imported yet"
+            public static var notImported: String { L10nSupport.string("onboarding.cookies.notImported") }
+
+            /// Button in the setup assistant
+            ///
+            /// Key: `onboarding.cookies.openWebViewLogin`
+            /// en: "Open WebView login"
+            public static var openWebViewLogin: String { L10nSupport.string("onboarding.cookies.openWebViewLogin") }
+
+            /// Status line after a successful import
+            ///
+            /// Key: `onboarding.cookies.saved`
+            /// en: "Cookies saved."
+            public static var saved: String { L10nSupport.string("onboarding.cookies.saved") }
+
+            /// Caption under the batch import button
+            ///
+            /// Key: `onboarding.cookies.signInFirst`
+            /// en: "Sign in to chatgpt.com, claude.ai, gemini.google.com or grok.com in your browser first — an import can only find a session that exists. Providers you have not signed in to simply report nothing."
+            public static var signInFirst: String { L10nSupport.string("onboarding.cookies.signInFirst") }
+        }
+
+        public enum Done {
+            /// Summary row label
+            ///
+            /// Key: `onboarding.done.apiKeyProviders`
+            /// en: "API-key providers"
+            public static var apiKeyProviders: String { L10nSupport.string("onboarding.done.apiKeyProviders") }
+
+            /// Summary value counting saved cookie sets
+            ///
+            /// Key: `onboarding.done.cookieCount`
+            /// en: "{saved} of {total} providers saved"
+            public static func cookieCount(saved: Int, total: Int) -> String {
+                L10nSupport.format("onboarding.done.cookieCount", saved, total)
+            }
+
+            /// Closing line of the final step
+            ///
+            /// Key: `onboarding.done.footer`
+            /// en: "Every one of these lives in Settings, and the assistant is one click away under Settings → System."
+            public static var footer: String { L10nSupport.string("onboarding.done.footer") }
+
+            /// Intro line of the final step
+            ///
+            /// Key: `onboarding.done.intro`
+            /// en: "That is everything the menu bar needs. Finish opens the popover with whatever quota is already readable; the rest fills in on the first refresh."
+            public static var intro: String { L10nSupport.string("onboarding.done.intro") }
+
+            /// Summary value counting visible misc providers
+            ///
+            /// Key: `onboarding.done.miscCount`
+            /// en: "{count} on the Misc page"
+            public static func miscCount(count: Int) -> String {
+                L10nSupport.format("onboarding.done.miscCount", count)
+            }
+
+            /// Summary value when no core provider is visible
+            ///
+            /// Key: `onboarding.done.noneShown`
+            /// en: "None shown"
+            public static var noneShown: String { L10nSupport.string("onboarding.done.noneShown") }
+
+            /// Summary value before any price fetch
+            ///
+            /// Key: `onboarding.done.pricingBundled`
+            /// en: "Bundled table until the first fetch"
+            public static var pricingBundled: String { L10nSupport.string("onboarding.done.pricingBundled") }
+
+            /// Summary value; when is an already-formatted date
+            ///
+            /// Key: `onboarding.done.pricingMerged`
+            /// en: "Merged {when}"
+            public static func pricingMerged(when: String) -> String {
+                L10nSupport.format("onboarding.done.pricingMerged", when)
+            }
+        }
+
+        public enum Pricing {
+            /// Button label
+            ///
+            /// Key: `onboarding.pricing.fetchNow`
+            /// en: "Fetch prices now"
+            public static var fetchNow: String { L10nSupport.string("onboarding.pricing.fetchNow") }
+
+            /// Button label while a price fetch runs
+            ///
+            /// Key: `onboarding.pricing.fetching`
+            /// en: "Fetching…"
+            public static var fetching: String { L10nSupport.string("onboarding.pricing.fetching") }
+
+            /// Closing line of the pricing step
+            ///
+            /// Key: `onboarding.pricing.footer`
+            /// en: "Prices are USD per one million tokens. Local overrides live under Settings → Model Pricing."
+            public static var footer: String { L10nSupport.string("onboarding.pricing.footer") }
+
+            /// Intro paragraph of the pricing step; interval is a duration phrase
+            ///
+            /// Key: `onboarding.pricing.intro`
+            /// en: "Token cost is computed on this Mac from your agents' session logs, priced with a catalog merged from several public price lists — higher-priority entries win when a model appears in more than one, your own overrides beat them all, and a bundled table is the offline floor. Catalogs refresh in the background every {interval}; fetching now gives the first cost numbers current prices."
+            public static func intro(interval: String) -> String {
+                L10nSupport.format("onboarding.pricing.intro", interval)
+            }
+
+            /// Status line after a successful merge; when is an already-formatted date
+            ///
+            /// Key: `onboarding.pricing.merged`
+            /// en: "Merged {when} · {count} models"
+            public static func merged(count: Int, when: String) -> String {
+                L10nSupport.format("onboarding.pricing.merged", count, when)
+            }
+
+            /// Status line before the first fetch
+            ///
+            /// Key: `onboarding.pricing.notFetched`
+            /// en: "Not fetched yet — the bundled table is in use."
+            public static var notFetched: String { L10nSupport.string("onboarding.pricing.notFetched") }
+
+            public enum Interval {
+                /// Refresh interval of exactly one hour, read inside a sentence
+                ///
+                /// Key: `onboarding.pricing.interval.hour`
+                /// en: "hour"
+                public static var hour: String { L10nSupport.string("onboarding.pricing.interval.hour") }
+
+                /// Refresh interval in hours, read inside a sentence
+                ///
+                /// Key: `onboarding.pricing.interval.hours`
+                /// en: "{hours} hours"
+                public static func hours(hours: Int) -> String {
+                    L10nSupport.format("onboarding.pricing.interval.hours", hours)
+                }
+            }
+
+            public enum Source {
+                /// Per-source status
+                ///
+                /// Key: `onboarding.pricing.source.failed`
+                /// en: "Cached {count} · refresh failed"
+                public static func failed(count: Int) -> String {
+                    L10nSupport.format("onboarding.pricing.source.failed", count)
+                }
+
+                /// Per-source status
+                ///
+                /// Key: `onboarding.pricing.source.models`
+                /// en: "{count} models"
+                public static func models(count: Int) -> String {
+                    L10nSupport.format("onboarding.pricing.source.models", count)
+                }
+
+                /// Per-source status in the pricing step
+                ///
+                /// Key: `onboarding.pricing.source.notRefreshed`
+                /// en: "Not refreshed"
+                public static var notRefreshed: String { L10nSupport.string("onboarding.pricing.source.notRefreshed") }
+
+                /// Per-source status
+                ///
+                /// Key: `onboarding.pricing.source.unchanged`
+                /// en: "{count} models · unchanged"
+                public static func unchanged(count: Int) -> String {
+                    L10nSupport.format("onboarding.pricing.source.unchanged", count)
+                }
+            }
+        }
+
+        public enum Step {
+            public enum ApiKeyProviders {
+                /// Setup assistant step subtitle
+                ///
+                /// Key: `onboarding.step.apiKeyProviders.subtitle`
+                /// en: "Plans tracked with an API key or a console cookie."
+                public static var subtitle: String { L10nSupport.string("onboarding.step.apiKeyProviders.subtitle") }
+
+                /// Setup assistant step name
+                ///
+                /// Key: `onboarding.step.apiKeyProviders.title`
+                /// en: "Other plans"
+                public static var title: String { L10nSupport.string("onboarding.step.apiKeyProviders.title") }
+            }
+
+            public enum BrowserCookies {
+                /// Setup assistant step subtitle
+                ///
+                /// Key: `onboarding.step.browserCookies.subtitle`
+                /// en: "Web quotas come from the session your browser already has."
+                public static var subtitle: String { L10nSupport.string("onboarding.step.browserCookies.subtitle") }
+
+                /// Setup assistant step name
+                ///
+                /// Key: `onboarding.step.browserCookies.title`
+                /// en: "Browser cookies"
+                public static var title: String { L10nSupport.string("onboarding.step.browserCookies.title") }
+            }
+
+            public enum Done {
+                /// Setup assistant step subtitle
+                ///
+                /// Key: `onboarding.step.done.subtitle`
+                /// en: "Everything here lives in Settings too."
+                public static var subtitle: String { L10nSupport.string("onboarding.step.done.subtitle") }
+
+                /// Setup assistant step name
+                ///
+                /// Key: `onboarding.step.done.title`
+                /// en: "All set"
+                public static var title: String { L10nSupport.string("onboarding.step.done.title") }
+            }
+
+            public enum Pricing {
+                /// Setup assistant step subtitle
+                ///
+                /// Key: `onboarding.step.pricing.subtitle`
+                /// en: "Where the token prices behind the cost numbers come from."
+                public static var subtitle: String { L10nSupport.string("onboarding.step.pricing.subtitle") }
+
+                /// Setup assistant step name
+                ///
+                /// Key: `onboarding.step.pricing.title`
+                /// en: "Model pricing"
+                public static var title: String { L10nSupport.string("onboarding.step.pricing.title") }
+            }
+
+            public enum Subscriptions {
+                /// Setup assistant step subtitle
+                ///
+                /// Key: `onboarding.step.subscriptions.subtitle`
+                /// en: "Turn on the plans you pay for."
+                public static var subtitle: String { L10nSupport.string("onboarding.step.subscriptions.subtitle") }
+
+                /// Setup assistant step name
+                ///
+                /// Key: `onboarding.step.subscriptions.title`
+                /// en: "Subscriptions"
+                public static var title: String { L10nSupport.string("onboarding.step.subscriptions.title") }
+            }
+
+            public enum Welcome {
+                /// Setup assistant step subtitle
+                ///
+                /// Key: `onboarding.step.welcome.subtitle`
+                /// en: "What Vibe Bar does, in one paragraph."
+                public static var subtitle: String { L10nSupport.string("onboarding.step.welcome.subtitle") }
+
+                /// Setup assistant step name in the rail
+                ///
+                /// Key: `onboarding.step.welcome.title`
+                /// en: "Welcome"
+                public static var title: String { L10nSupport.string("onboarding.step.welcome.title") }
+            }
+        }
+
+        public enum Subscriptions {
+            /// Intro line of the subscriptions step
+            ///
+            /// Key: `onboarding.subscriptions.intro`
+            /// en: "Turn on the subscriptions you use. A provider that is off stays out of the Overview and the menu bar; turning one off later keeps its credentials and history."
+            public static var intro: String { L10nSupport.string("onboarding.subscriptions.intro") }
+
+            /// Per-provider toggle in the setup assistant
+            ///
+            /// Key: `onboarding.subscriptions.showInOverview`
+            /// en: "Show in Overview"
+            public static var showInOverview: String { L10nSupport.string("onboarding.subscriptions.showInOverview") }
+
+            public enum Claude {
+                /// Credential hint
+                ///
+                /// Key: `onboarding.subscriptions.claude.detected`
+                /// en: "Claude Code login detected — quota will come from it."
+                public static var detected: String { L10nSupport.string("onboarding.subscriptions.claude.detected") }
+
+                /// Credential hint
+                ///
+                /// Key: `onboarding.subscriptions.claude.missing`
+                /// en: "No Claude Code login found. Run `claude login`, or import claude.ai cookies from your browser below."
+                public static var missing: String { L10nSupport.string("onboarding.subscriptions.claude.missing") }
+
+                /// Credential hint
+                ///
+                /// Key: `onboarding.subscriptions.claude.web`
+                /// en: "claude.ai cookies saved — quota will come from them."
+                public static var web: String { L10nSupport.string("onboarding.subscriptions.claude.web") }
+            }
+
+            public enum Codex {
+                /// Credential hint; the harness name is never translated
+                ///
+                /// Key: `onboarding.subscriptions.codex.detected`
+                /// en: "Codex CLI login detected — quota will come from it."
+                public static var detected: String { L10nSupport.string("onboarding.subscriptions.codex.detected") }
+
+                /// Credential hint; the command is never translated
+                ///
+                /// Key: `onboarding.subscriptions.codex.missing`
+                /// en: "No Codex CLI login found. Run `codex login`, or import ChatGPT cookies from your browser below."
+                public static var missing: String { L10nSupport.string("onboarding.subscriptions.codex.missing") }
+
+                /// Credential hint
+                ///
+                /// Key: `onboarding.subscriptions.codex.web`
+                /// en: "ChatGPT web cookies saved — quota will come from them."
+                public static var web: String { L10nSupport.string("onboarding.subscriptions.codex.web") }
+            }
+
+            public enum Gemini {
+                /// Credential hint
+                ///
+                /// Key: `onboarding.subscriptions.gemini.hint`
+                /// en: "Gemini quota is read from gemini.google.com cookies; there is no CLI login or WebView path. AntiGravity is probed locally when it is running."
+                public static var hint: String { L10nSupport.string("onboarding.subscriptions.gemini.hint") }
+            }
+
+            public enum Grok {
+                /// Credential hint; the path is never translated
+                ///
+                /// Key: `onboarding.subscriptions.grok.detected`
+                /// en: "~/.grok/auth.json detected — quota will come from it."
+                public static var detected: String { L10nSupport.string("onboarding.subscriptions.grok.detected") }
+
+                /// Credential hint
+                ///
+                /// Key: `onboarding.subscriptions.grok.missing`
+                /// en: "No ~/.grok/auth.json yet. Run `grok login`, or import grok.com cookies from your browser below."
+                public static var missing: String { L10nSupport.string("onboarding.subscriptions.grok.missing") }
+            }
+
+            public enum ProductLine {
+                /// Where this provider's quota can come from
+                ///
+                /// Key: `onboarding.subscriptions.productLine.claude`
+                /// en: "Claude Code · claude.ai web"
+                public static var claude: String { L10nSupport.string("onboarding.subscriptions.productLine.claude") }
+
+                /// Where this provider's quota can come from; the harness and SubProvider names are never translated
+                ///
+                /// Key: `onboarding.subscriptions.productLine.codex`
+                /// en: "Codex CLI · ChatGPT web"
+                public static var codex: String { L10nSupport.string("onboarding.subscriptions.productLine.codex") }
+
+                /// Where this provider's quota can come from
+                ///
+                /// Key: `onboarding.subscriptions.productLine.gemini`
+                /// en: "Gemini web · AntiGravity"
+                public static var gemini: String { L10nSupport.string("onboarding.subscriptions.productLine.gemini") }
+
+                /// Where this provider's quota can come from
+                ///
+                /// Key: `onboarding.subscriptions.productLine.grok`
+                /// en: "Grok CLI · grok.com · Cursor"
+                public static var grok: String { L10nSupport.string("onboarding.subscriptions.productLine.grok") }
+            }
+        }
+
+        public enum Welcome {
+            /// Closing line of the welcome step
+            ///
+            /// Key: `onboarding.welcome.footer`
+            /// en: "This takes about two minutes. Every choice here can be changed later in Settings, and the assistant is one click away under Settings → System."
+            public static var footer: String { L10nSupport.string("onboarding.welcome.footer") }
+
+            /// Opening paragraph of the setup assistant
+            ///
+            /// Key: `onboarding.welcome.intro`
+            /// en: "Vibe Bar sits in your menu bar and shows, at a glance, how much of each AI subscription you have left, what your coding agents are spending, and which sessions and skills live on this Mac. It reads the credentials the Codex, Claude Code, Gemini and Grok CLIs already keep here, adds web quotas from your browser's cookies when you ask it to, and never sends any of it anywhere but the provider it came from."
+            public static var intro: String { L10nSupport.string("onboarding.welcome.intro") }
+
+            public enum Cost {
+                /// Feature row body
+                ///
+                /// Key: `onboarding.welcome.cost.detail`
+                /// en: "Priced locally from the agents' own session logs against a merged model price catalog."
+                public static var detail: String { L10nSupport.string("onboarding.welcome.cost.detail") }
+
+                /// Feature row title
+                ///
+                /// Key: `onboarding.welcome.cost.title`
+                /// en: "Token cost"
+                public static var title: String { L10nSupport.string("onboarding.welcome.cost.title") }
+            }
+
+            public enum Mcp {
+                /// Feature row body
+                ///
+                /// Key: `onboarding.welcome.mcp.detail`
+                /// en: "Your agents can ask Vibe Bar for quota and cost over a Unix socket in your home directory."
+                public static var detail: String { L10nSupport.string("onboarding.welcome.mcp.detail") }
+
+                /// Feature row title
+                ///
+                /// Key: `onboarding.welcome.mcp.title`
+                /// en: "Local MCP server"
+                public static var title: String { L10nSupport.string("onboarding.welcome.mcp.title") }
+            }
+
+            public enum Quotas {
+                /// Feature row body
+                ///
+                /// Key: `onboarding.welcome.quotas.detail`
+                /// en: "Codex, Claude Code, Gemini, Grok and a shelf of API-key plans, each with its reset countdown."
+                public static var detail: String { L10nSupport.string("onboarding.welcome.quotas.detail") }
+
+                /// Feature row title
+                ///
+                /// Key: `onboarding.welcome.quotas.title`
+                /// en: "Subscription quotas"
+                public static var title: String { L10nSupport.string("onboarding.welcome.quotas.title") }
+            }
+
+            public enum Sessions {
+                /// Feature row body
+                ///
+                /// Key: `onboarding.welcome.sessions.detail`
+                /// en: "Browse, search and tidy agent sessions and shared skills from the Workbench."
+                public static var detail: String { L10nSupport.string("onboarding.welcome.sessions.detail") }
+
+                /// Feature row title
+                ///
+                /// Key: `onboarding.welcome.sessions.title`
+                /// en: "Sessions and skills"
+                public static var title: String { L10nSupport.string("onboarding.welcome.sessions.title") }
+            }
+        }
+    }
+
+    public enum Platform {
+        public enum Macos {
+            public enum LaunchAtLogin {
+                /// Body of the launch-at-login step. macOS-only.
+                ///
+                /// Key: `platform.macos.launchAtLogin.detail`
+                /// en: "Vibe Bar is a menu-bar app with no Dock icon. Starting it at login keeps the quota readout and the local MCP server available from the moment you sign in; macOS may ask you to approve the login item in System Settings the first time."
+                public static var detail: String { L10nSupport.string("platform.macos.launchAtLogin.detail") }
+
+                /// Status line under the launch-at-login toggle. macOS-only.
+                ///
+                /// Key: `platform.macos.launchAtLogin.enabled`
+                /// en: "Enabled in macOS Login Items."
+                public static var enabled: String { L10nSupport.string("platform.macos.launchAtLogin.enabled") }
+
+                /// Setup assistant step subtitle. macOS-only.
+                ///
+                /// Key: `platform.macos.launchAtLogin.subtitle`
+                /// en: "Keep the readout in your menu bar from the moment you sign in."
+                public static var subtitle: String { L10nSupport.string("platform.macos.launchAtLogin.subtitle") }
+
+                /// Setup assistant step name. macOS-only: a login item has no counterpart on other clients.
+                ///
+                /// Key: `platform.macos.launchAtLogin.title`
+                /// en: "Launch at login"
+                public static var title: String { L10nSupport.string("platform.macos.launchAtLogin.title") }
+
+                /// Toggle in the setup assistant. macOS-only.
+                ///
+                /// Key: `platform.macos.launchAtLogin.toggle`
+                /// en: "Launch Vibe Bar at login"
+                public static var toggle: String { L10nSupport.string("platform.macos.launchAtLogin.toggle") }
+            }
+        }
+    }
+
+    public enum Popover {
+        /// Tooltip on the Google AI page's refresh button; the SubProvider names are never translated
+        ///
+        /// Key: `popover.refreshGoogleAI`
+        /// en: "Refresh Gemini Web + AntiGravity"
+        public static var refreshGoogleAI: String { L10nSupport.string("popover.refreshGoogleAI") }
+
+        /// Tooltip on the SpaceXAI page's refresh button
+        ///
+        /// Key: `popover.refreshSpaceXAI`
+        /// en: "Refresh Grok + Cursor"
+        public static var refreshSpaceXAI: String { L10nSupport.string("popover.refreshSpaceXAI") }
+
+        /// Tooltip on a page switcher button; page is the tab's own label
+        ///
+        /// Key: `popover.showPage`
+        /// en: "Show {page}"
+        public static func showPage(page: String) -> String {
+            L10nSupport.format("popover.showPage", page)
+        }
+
+        public enum Header {
+            /// Subtitle under the Machines page header
+            ///
+            /// Key: `popover.header.machinesSubtitle`
+            /// en: "End-to-end encrypted remote usage"
+            public static var machinesSubtitle: String { L10nSupport.string("popover.header.machinesSubtitle") }
+
+            /// Subtitle under the Misc Providers page header
+            ///
+            /// Key: `popover.header.miscSubtitle`
+            /// en: "Usage-only · sign in or paste a key"
+            public static var miscSubtitle: String { L10nSupport.string("popover.header.miscSubtitle") }
+
+            /// Subtitle under the Overview page header
+            ///
+            /// Key: `popover.header.overviewSubtitle`
+            /// en: "All providers · quota & cost"
+            public static var overviewSubtitle: String { L10nSupport.string("popover.header.overviewSubtitle") }
+        }
+
+        public enum Tab {
+            /// Popover tab listing remote machines
+            ///
+            /// Key: `popover.tab.machines`
+            /// en: "Machines"
+            public static var machines: String { L10nSupport.string("popover.tab.machines") }
+
+            /// Popover tab covering the usage-only providers
+            ///
+            /// Key: `popover.tab.misc`
+            /// en: "Misc Providers"
+            public static var misc: String { L10nSupport.string("popover.tab.misc") }
+
+            /// The Misc tab's label in the compact switcher, where the full name does not fit
+            ///
+            /// Key: `popover.tab.miscShort`
+            /// en: "Misc"
+            public static var miscShort: String { L10nSupport.string("popover.tab.miscShort") }
+
+            /// Popover tab. The other tabs are company names (OpenAI, Anthropic, Google AI, SpaceXAI) and are never translated.
+            ///
+            /// Key: `popover.tab.overview`
+            /// en: "Overview"
+            public static var overview: String { L10nSupport.string("popover.tab.overview") }
+        }
     }
 
     public enum Quota {
@@ -103,7 +1285,15 @@ public enum L10n {
             L10nSupport.localizedFormat("quota.cyclesRecorded", count)
         }
 
-        /// How much of a quota window is still available.
+        /// Compact summary shown when per-model limits are collapsed; provider is a SubProvider name
+        ///
+        /// Key: `quota.perModelLimits`
+        /// en: "{count, plural, one {1 per-model limit} other {# per-model limits}} · open {provider} for details"
+        public static func perModelLimits(count: Int, provider: String) -> String {
+            L10nSupport.localizedFormat("quota.perModelLimits", count, provider)
+        }
+
+        /// The forecast figure in Remaining mode, used inside the status line
         ///
         /// Key: `quota.remainingPercent`
         /// en: "{percent}% left"
@@ -127,25 +1317,643 @@ public enum L10n {
             L10nSupport.format("quota.resetsInHours", hours, minutes)
         }
 
-        /// How much of a quota window has been consumed. The caller has already rounded the number.
+        /// The forecast figure in Used mode, used inside the status line
         ///
         /// Key: `quota.usedPercent`
         /// en: "{percent}% used"
         public static func usedPercent(percent: Int) -> String {
             L10nSupport.format("quota.usedPercent", percent)
         }
+
+        public enum Bucket {
+            /// Caption under a quota bar when the provider reported no reset time
+            ///
+            /// Key: `quota.bucket.noResetInfo`
+            /// en: "No reset info"
+            public static var noResetInfo: String { L10nSupport.string("quota.bucket.noResetInfo") }
+        }
+
+        public enum Empty {
+            public enum NeedsLogin {
+                /// Empty state body; command is a CLI name such as codex or claude and is never translated
+                ///
+                /// Key: `quota.empty.needsLogin.detail`
+                /// en: "Run `{command} login` in your terminal, then refresh."
+                public static func detail(command: String) -> String {
+                    L10nSupport.format("quota.empty.needsLogin.detail", command)
+                }
+            }
+
+            public enum Network {
+                /// Empty state body
+                ///
+                /// Key: `quota.empty.network.detail`
+                /// en: "Couldn't reach the official API. Check your internet connection and try again."
+                public static var detail: String { L10nSupport.string("quota.empty.network.detail") }
+            }
+
+            public enum NoAccount {
+                /// Empty state body
+                ///
+                /// Key: `quota.empty.noAccount.detail`
+                /// en: "Log in with the official CLI on this Mac, then refresh."
+                public static var detail: String { L10nSupport.string("quota.empty.noAccount.detail") }
+            }
+
+            public enum ParseChanged {
+                /// Empty state body
+                ///
+                /// Key: `quota.empty.parseChanged.detail`
+                /// en: "The official API returned an unexpected shape. Try refreshing or update Vibe Bar."
+                public static var detail: String { L10nSupport.string("quota.empty.parseChanged.detail") }
+            }
+
+            public enum RateLimited {
+                /// Empty state body
+                ///
+                /// Key: `quota.empty.rateLimited.detail`
+                /// en: "The official API is asking us to wait. Try again in a moment."
+                public static var detail: String { L10nSupport.string("quota.empty.rateLimited.detail") }
+
+                /// Empty state headline
+                ///
+                /// Key: `quota.empty.rateLimited.headline`
+                /// en: "Rate limited"
+                public static var headline: String { L10nSupport.string("quota.empty.rateLimited.headline") }
+            }
+        }
+
+        public enum Forecast {
+            public enum Confidence {
+                /// Forecast confidence level
+                ///
+                /// Key: `quota.forecast.confidence.high`
+                /// en: "High confidence"
+                public static var high: String { L10nSupport.string("quota.forecast.confidence.high") }
+
+                /// Forecast confidence level
+                ///
+                /// Key: `quota.forecast.confidence.learning`
+                /// en: "Learning"
+                public static var learning: String { L10nSupport.string("quota.forecast.confidence.learning") }
+
+                /// Forecast confidence level
+                ///
+                /// Key: `quota.forecast.confidence.medium`
+                /// en: "Medium confidence"
+                public static var medium: String { L10nSupport.string("quota.forecast.confidence.medium") }
+            }
+
+            public enum Guidance {
+                /// What to do about an at-risk forecast
+                ///
+                /// Key: `quota.forecast.guidance.atRisk`
+                /// en: "Slow down or shift work to another quota"
+                public static var atRisk: String { L10nSupport.string("quota.forecast.guidance.atRisk") }
+
+                /// Remaining-mode guidance when there is headroom
+                ///
+                /// Key: `quota.forecast.guidance.available`
+                /// en: "Target {target}% left · about {unused}% available"
+                public static func available(target: Int, unused: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.available", target, unused)
+                }
+
+                /// Remaining-mode guidance for a surplus verdict
+                ///
+                /// Key: `quota.forecast.guidance.surplus`
+                /// en: "About {unused}% likely unused beyond the {target}% safety target"
+                public static func surplus(target: Int, unused: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.surplus", target, unused)
+                }
+
+                /// Used-mode guidance when there is headroom
+                ///
+                /// Key: `quota.forecast.guidance.usedAvailable`
+                /// en: "Target {target}% used · about {unused}% capacity available"
+                public static func usedAvailable(target: Int, unused: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.usedAvailable", target, unused)
+                }
+
+                /// Used-mode guidance for a surplus verdict
+                ///
+                /// Key: `quota.forecast.guidance.usedSurplus`
+                /// en: "About {unused}% capacity may remain beyond the {target}% used target"
+                public static func usedSurplus(target: Int, unused: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.usedSurplus", target, unused)
+                }
+
+                /// Used-mode guidance when nothing needs saying
+                ///
+                /// Key: `quota.forecast.guidance.usedWithinTarget`
+                /// en: "Within the {target}% used target"
+                public static func usedWithinTarget(target: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.usedWithinTarget", target)
+                }
+
+                /// What a watch verdict means
+                ///
+                /// Key: `quota.forecast.guidance.watch`
+                /// en: "Recent usage is above the safe range"
+                public static var watch: String { L10nSupport.string("quota.forecast.guidance.watch") }
+
+                /// Remaining-mode guidance when nothing needs saying
+                ///
+                /// Key: `quota.forecast.guidance.withinTarget`
+                /// en: "Within the {target}% safety target"
+                public static func withinTarget(target: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.withinTarget", target)
+                }
+            }
+
+            public enum Reset {
+                /// One-line forecast summary
+                ///
+                /// Key: `quota.forecast.reset.atRisk`
+                /// en: "Likely to run out before reset"
+                public static var atRisk: String { L10nSupport.string("quota.forecast.reset.atRisk") }
+
+                /// One-line forecast summary
+                ///
+                /// Key: `quota.forecast.reset.enough`
+                /// en: "Forecast {remaining}% left at reset"
+                public static func enough(remaining: Int) -> String {
+                    L10nSupport.format("quota.forecast.reset.enough", remaining)
+                }
+
+                /// One-line forecast summary
+                ///
+                /// Key: `quota.forecast.reset.learning`
+                /// en: "Learning your pattern · about {remaining}% left"
+                public static func learning(remaining: Int) -> String {
+                    L10nSupport.format("quota.forecast.reset.learning", remaining)
+                }
+
+                /// One-line forecast summary
+                ///
+                /// Key: `quota.forecast.reset.surplus`
+                /// en: "Likely surplus · forecast {remaining}% left"
+                public static func surplus(remaining: Int) -> String {
+                    L10nSupport.format("quota.forecast.reset.surplus", remaining)
+                }
+
+                /// One-line forecast summary
+                ///
+                /// Key: `quota.forecast.reset.watch`
+                /// en: "May run short · forecast {remaining}% left"
+                public static func watch(remaining: Int) -> String {
+                    L10nSupport.format("quota.forecast.reset.watch", remaining)
+                }
+            }
+
+            public enum Status {
+                /// Status line under the quota bar
+                ///
+                /// Key: `quota.forecast.status.atRisk`
+                /// en: "At risk · likely to run out before reset"
+                public static var atRisk: String { L10nSupport.string("quota.forecast.status.atRisk") }
+
+                /// Status line under the quota bar; value is the already-formatted forecast figure
+                ///
+                /// Key: `quota.forecast.status.enough`
+                /// en: "Enough · forecast {value} at reset"
+                public static func enough(value: String) -> String {
+                    L10nSupport.format("quota.forecast.status.enough", value)
+                }
+
+                /// Status line under the quota bar
+                ///
+                /// Key: `quota.forecast.status.learning`
+                /// en: "Learning · about {value} at reset"
+                public static func learning(value: String) -> String {
+                    L10nSupport.format("quota.forecast.status.learning", value)
+                }
+
+                /// Status line under the quota bar
+                ///
+                /// Key: `quota.forecast.status.surplus`
+                /// en: "Surplus · forecast {value} at reset"
+                public static func surplus(value: String) -> String {
+                    L10nSupport.format("quota.forecast.status.surplus", value)
+                }
+
+                /// Status line under the quota bar
+                ///
+                /// Key: `quota.forecast.status.watch`
+                /// en: "Watch · forecast {value} at reset"
+                public static func watch(value: String) -> String {
+                    L10nSupport.format("quota.forecast.status.watch", value)
+                }
+            }
+
+            public enum UseUp {
+                /// Use-up line for an at-risk verdict with no ETA
+                ///
+                /// Key: `quota.forecast.useUp.beforeReset`
+                /// en: "Expected to run out before reset"
+                public static var beforeReset: String { L10nSupport.string("quota.forecast.useUp.beforeReset") }
+
+                /// Use-up ETA for a watch verdict, which is possible rather than certain
+                ///
+                /// Key: `quota.forecast.useUp.couldRunOut`
+                /// en: "Could run out in {countdown}"
+                public static func couldRunOut(countdown: String) -> String {
+                    L10nSupport.format("quota.forecast.useUp.couldRunOut", countdown)
+                }
+
+                /// Use-up ETA from the personal forecast
+                ///
+                /// Key: `quota.forecast.useUp.estimated`
+                /// en: "Estimated to run out in {countdown}"
+                public static func estimated(countdown: String) -> String {
+                    L10nSupport.format("quota.forecast.useUp.estimated", countdown)
+                }
+
+                /// Use-up line when the model does not predict exhaustion before the refill
+                ///
+                /// Key: `quota.forecast.useUp.lastsUntilReset`
+                /// en: "Projected to last until reset"
+                public static var lastsUntilReset: String { L10nSupport.string("quota.forecast.useUp.lastsUntilReset") }
+
+                /// Use-up line when no ETA can be derived
+                ///
+                /// Key: `quota.forecast.useUp.uncertain`
+                /// en: "Use-up time uncertain · may run short before reset"
+                public static var uncertain: String { L10nSupport.string("quota.forecast.useUp.uncertain") }
+            }
+
+            public enum Verdict {
+                /// Forecast verdict: likely to run out before the reset
+                ///
+                /// Key: `quota.forecast.verdict.atRisk`
+                /// en: "At risk"
+                public static var atRisk: String { L10nSupport.string("quota.forecast.verdict.atRisk") }
+
+                /// Forecast verdict: the quota is projected to last comfortably
+                ///
+                /// Key: `quota.forecast.verdict.enough`
+                /// en: "Enough"
+                public static var enough: String { L10nSupport.string("quota.forecast.verdict.enough") }
+
+                /// Forecast verdict: not enough evidence yet to commit to one distinct-from: quota.forecast.confidence.learning — a verdict about the quota and a confidence level in the forecast are different judgements.
+                ///
+                /// Key: `quota.forecast.verdict.learning`
+                /// en: "Learning"
+                public static var learning: String { L10nSupport.string("quota.forecast.verdict.learning") }
+
+                /// Forecast verdict: a materially large share is likely to expire unused
+                ///
+                /// Key: `quota.forecast.verdict.surplus`
+                /// en: "Surplus"
+                public static var surplus: String { L10nSupport.string("quota.forecast.verdict.surplus") }
+
+                /// Forecast verdict: recent burn is above the safe range
+                ///
+                /// Key: `quota.forecast.verdict.watch`
+                /// en: "Watch"
+                public static var watch: String { L10nSupport.string("quota.forecast.verdict.watch") }
+            }
+        }
+
+        public enum Freshness {
+            /// Fragment inside the freshness badge saying how old the shown numbers are
+            ///
+            /// Key: `quota.freshness.dataAge`
+            /// en: "data {age} old"
+            public static func dataAge(age: String) -> String {
+                L10nSupport.format("quota.freshness.dataAge", age)
+            }
+
+            /// Tooltip on a stale freshness badge
+            ///
+            /// Key: `quota.freshness.defaultHelp`
+            /// en: "Live quota has not refreshed within the expected interval."
+            public static var defaultHelp: String { L10nSupport.string("quota.freshness.defaultHelp") }
+
+            /// The failed-refresh freshness badge, assembled from the three fragments above
+            ///
+            /// Key: `quota.freshness.line`
+            /// en: "{attempt} · {data} · {reason}"
+            public static func line(attempt: String, data: String, reason: String) -> String {
+                L10nSupport.format("quota.freshness.line", attempt, data, reason)
+            }
+
+            /// Fragment inside the freshness badge when nothing was ever cached
+            ///
+            /// Key: `quota.freshness.noCachedData`
+            /// en: "no cached data"
+            public static var noCachedData: String { L10nSupport.string("quota.freshness.noCachedData") }
+
+            /// Freshness badge when the last attempt failed moments ago
+            ///
+            /// Key: `quota.freshness.refreshFailed`
+            /// en: "Refresh failed"
+            public static var refreshFailed: String { L10nSupport.string("quota.freshness.refreshFailed") }
+
+            /// Freshness badge; age is a very short span
+            ///
+            /// Key: `quota.freshness.refreshFailedAgo`
+            /// en: "Refresh failed {age} ago"
+            public static func refreshFailedAgo(age: String) -> String {
+                L10nSupport.format("quota.freshness.refreshFailedAgo", age)
+            }
+
+            /// Freshness badge when a bucket has never been fetched successfully
+            ///
+            /// Key: `quota.freshness.staleNeverUpdated`
+            /// en: "Stale · never updated"
+            public static var staleNeverUpdated: String { L10nSupport.string("quota.freshness.staleNeverUpdated") }
+
+            /// Freshness badge; age is a very short span like 45s, 2m, 8h, 3d
+            ///
+            /// Key: `quota.freshness.staleUpdatedAgo`
+            /// en: "Stale · updated {age} ago"
+            public static func staleUpdatedAgo(age: String) -> String {
+                L10nSupport.format("quota.freshness.staleUpdatedAgo", age)
+            }
+
+            public enum Age {
+                /// Very short age used inside a freshness badge
+                ///
+                /// Key: `quota.freshness.age.seconds`
+                /// en: "{seconds}s"
+                public static func seconds(seconds: Int) -> String {
+                    L10nSupport.format("quota.freshness.age.seconds", seconds)
+                }
+            }
+        }
+
+        public enum Group {
+            /// Quota group covering every model on a plan
+            ///
+            /// Key: `quota.group.allModels`
+            /// en: "All Models"
+            public static var allModels: String { L10nSupport.string("quota.group.allModels") }
+
+            /// Quota window shown as a group label
+            ///
+            /// Key: `quota.group.daily`
+            /// en: "Daily"
+            public static var daily: String { L10nSupport.string("quota.group.daily") }
+
+            /// Quota window shown as a group label: the rolling five-hour window
+            ///
+            /// Key: `quota.group.fiveHours`
+            /// en: "5 Hours"
+            public static var fiveHours: String { L10nSupport.string("quota.group.fiveHours") }
+
+            /// Quota window shown as a group label
+            ///
+            /// Key: `quota.group.monthly`
+            /// en: "Monthly"
+            public static var monthly: String { L10nSupport.string("quota.group.monthly") }
+
+            /// Empty state inside a quota group card
+            ///
+            /// Key: `quota.group.noUtilization`
+            /// en: "No utilization data — try refreshing."
+            public static var noUtilization: String { L10nSupport.string("quota.group.noUtilization") }
+
+            /// Fallback group heading for a bucket with no group of its own
+            ///
+            /// Key: `quota.group.other`
+            /// en: "Other"
+            public static var other: String { L10nSupport.string("quota.group.other") }
+
+            /// Quota group for models outside the named ones
+            ///
+            /// Key: `quota.group.otherModels`
+            /// en: "Other Models"
+            public static var otherModels: String { L10nSupport.string("quota.group.otherModels") }
+
+            /// Quota window shown as a group label. The wire value stays English (it is a naming-contract value); only the shown label is translated.
+            ///
+            /// Key: `quota.group.weekly`
+            /// en: "Weekly"
+            public static var weekly: String { L10nSupport.string("quota.group.weekly") }
+
+            /// Quota group: a weekly credit balance rather than a percentage
+            ///
+            /// Key: `quota.group.weeklyCredits`
+            /// en: "Weekly Credits"
+            public static var weeklyCredits: String { L10nSupport.string("quota.group.weeklyCredits") }
+        }
+
+        public enum Login {
+            /// What to do when no credential is stored
+            ///
+            /// Key: `quota.login.claude`
+            /// en: "Run claude login, then refresh."
+            public static var claude: String { L10nSupport.string("quota.login.claude") }
+
+            /// What to do when no credential is stored; the command is never translated
+            ///
+            /// Key: `quota.login.codex`
+            /// en: "Run codex login, then refresh."
+            public static var codex: String { L10nSupport.string("quota.login.codex") }
+
+            /// What to do when no credential is stored
+            ///
+            /// Key: `quota.login.cursor`
+            /// en: "Sign in to Cursor.app or import cursor.com cookies, then refresh."
+            public static var cursor: String { L10nSupport.string("quota.login.cursor") }
+
+            /// What to do when no credential is stored
+            ///
+            /// Key: `quota.login.grok`
+            /// en: "Run grok login or import grok.com cookies, then refresh."
+            public static var grok: String { L10nSupport.string("quota.login.grok") }
+
+            /// Fallback for a misc provider; provider is a SubProvider name
+            ///
+            /// Key: `quota.login.misc`
+            /// en: "Configure {provider} in Settings → Misc Providers."
+            public static func misc(provider: String) -> String {
+                L10nSupport.format("quota.login.misc", provider)
+            }
+        }
+
+        public enum Mode {
+            /// Caption saying the bar shows what is left
+            ///
+            /// Key: `quota.mode.remaining`
+            /// en: "remaining"
+            public static var remaining: String { L10nSupport.string("quota.mode.remaining") }
+
+            /// Caption saying the bar shows what has been spent
+            ///
+            /// Key: `quota.mode.used`
+            /// en: "used"
+            public static var used: String { L10nSupport.string("quota.mode.used") }
+        }
+
+        public enum Pace {
+            /// Legacy elapsed-time pace ETA on a Misc provider card
+            ///
+            /// Key: `quota.pace.lastsUntilReset`
+            /// en: "Lasts until reset"
+            public static var lastsUntilReset: String { L10nSupport.string("quota.pace.lastsUntilReset") }
+
+            /// Legacy elapsed-time pace ETA on a Misc provider card
+            ///
+            /// Key: `quota.pace.runsOutIn`
+            /// en: "Runs out in {countdown}"
+            public static func runsOutIn(countdown: String) -> String {
+                L10nSupport.format("quota.pace.runsOutIn", countdown)
+            }
+        }
+
+        public enum Reset {
+            /// Live countdown to a bucket's refill; duration is a compact span, sometimes followed by an absolute time
+            ///
+            /// Key: `quota.reset.in`
+            /// en: "resets in {duration}"
+            public static func `in`(duration: String) -> String {
+                L10nSupport.format("quota.reset.in", duration)
+            }
+
+            /// A bucket whose reset time is behind us and which has not refreshed
+            ///
+            /// Key: `quota.reset.passed`
+            /// en: "reset passed"
+            public static var passed: String { L10nSupport.string("quota.reset.passed") }
+
+            /// Reset passed, with the absolute time it should have happened
+            ///
+            /// Key: `quota.reset.passedAt`
+            /// en: "reset passed · {time}"
+            public static func passedAt(time: String) -> String {
+                L10nSupport.format("quota.reset.passedAt", time)
+            }
+        }
+
+        public enum ResetCredits {
+            /// How many manual resets are left
+            ///
+            /// Key: `quota.resetCredits.available`
+            /// en: "{count, plural, one {1 manual reset available} other {# manual resets available}}"
+            public static func available(count: Int) -> String {
+                L10nSupport.localizedFormat("quota.resetCredits.available", count)
+            }
+
+            /// The count above, plus when the soonest one lapses
+            ///
+            /// Key: `quota.resetCredits.availableWithExpiry`
+            /// en: "{available} · next expires in {countdown}"
+            public static func availableWithExpiry(available: String, countdown: String) -> String {
+                L10nSupport.format("quota.resetCredits.availableWithExpiry", available, countdown)
+            }
+
+            /// Card title for the manual rate-limit resets a Codex plan grants
+            ///
+            /// Key: `quota.resetCredits.title`
+            /// en: "Limit reset credits"
+            public static var title: String { L10nSupport.string("quota.resetCredits.title") }
+        }
+
+        public enum Upcoming {
+            /// Timeline axis tick
+            ///
+            /// Key: `quota.upcoming.axisDays`
+            /// en: "+{days}d"
+            public static func axisDays(days: Int) -> String {
+                L10nSupport.format("quota.upcoming.axisDays", days)
+            }
+
+            /// Timeline axis tick
+            ///
+            /// Key: `quota.upcoming.axisHours`
+            /// en: "+{hours}h"
+            public static func axisHours(hours: Int) -> String {
+                L10nSupport.format("quota.upcoming.axisHours", hours)
+            }
+
+            /// Empty state on the resets timeline
+            ///
+            /// Key: `quota.upcoming.empty`
+            /// en: "Nothing refills in the next seven days."
+            public static var empty: String { L10nSupport.string("quota.upcoming.empty") }
+
+            /// Compact badge for the capacity a refill returns
+            ///
+            /// Key: `quota.upcoming.gain`
+            /// en: "+{gain}%"
+            public static func gain(gain: Int) -> String {
+                L10nSupport.format("quota.upcoming.gain", gain)
+            }
+
+            /// Scope caption next to the Upcoming Resets title
+            ///
+            /// Key: `quota.upcoming.horizon`
+            /// en: "next 7 days"
+            public static var horizon: String { L10nSupport.string("quota.upcoming.horizon") }
+
+            /// Row caption on the resets timeline
+            ///
+            /// Key: `quota.upcoming.leftAndGain`
+            /// en: "{remaining}% left now · +{gain}% comes back"
+            public static func leftAndGain(gain: Int, remaining: Int) -> String {
+                L10nSupport.format("quota.upcoming.leftAndGain", gain, remaining)
+            }
+
+            /// Tooltip on a marker in the resets timeline; label names the bucket and is not translated
+            ///
+            /// Key: `quota.upcoming.markerHelp`
+            /// en: "{label} — {remaining}% now, +{gain}% {countdown}"
+            public static func markerHelp(gain: Int, remaining: Int, countdown: String, label: String) -> String {
+                L10nSupport.format("quota.upcoming.markerHelp", gain, remaining, countdown, label)
+            }
+
+            /// Row caption: how long until a bucket refills and when that is
+            ///
+            /// Key: `quota.upcoming.resetsAt`
+            /// en: "resets {countdown} · {absolute}"
+            public static func resetsAt(absolute: String, countdown: String) -> String {
+                L10nSupport.format("quota.upcoming.resetsAt", absolute, countdown)
+            }
+
+            /// Card title for the resets timeline
+            ///
+            /// Key: `quota.upcoming.title`
+            /// en: "Upcoming Resets"
+            public static var title: String { L10nSupport.string("quota.upcoming.title") }
+        }
+
+        public enum Update {
+            /// Inline error row; reason is a provider message and is not translated
+            ///
+            /// Key: `quota.update.failed`
+            /// en: "Update failed: {reason}"
+            public static func failed(reason: String) -> String {
+                L10nSupport.format("quota.update.failed", reason)
+            }
+        }
     }
 
     public enum ResetHistory {
-        /// Caption under a lane's name. {count} is how many completed cycles the average covers.
+        /// Caption on a completed column: how many cycles back it is. The leading character is a minus sign, not a hyphen.
         ///
-        /// Key: `resetHistory.laneAverage`
-        /// en: "avg wasted {percent}% · last {count} cycles"
-        public static func laneAverage(percent: Int, count: Int) -> String {
-            L10nSupport.format("resetHistory.laneAverage", percent, count)
+        /// Key: `resetHistory.axisCyclesBack`
+        /// en: "−{count}"
+        public static func axisCyclesBack(count: Int) -> String {
+            L10nSupport.format("resetHistory.axisCyclesBack", count)
         }
 
-        /// Caption under a lane that has history recorded but no finished cycle.
+        /// Caption on the live column of the reset-history grid distinct-from: common.duration.now — a cycle grid's live column and a countdown that reached zero are different things.
+        ///
+        /// Key: `resetHistory.axisNow`
+        /// en: "now"
+        public static var axisNow: String { L10nSupport.string("resetHistory.axisNow") }
+
+        /// Line under a lane label; says how many cycles it averages so one cycle cannot read as a settled habit
+        ///
+        /// Key: `resetHistory.laneAverage`
+        /// en: "avg wasted {percent}% · last {count, plural, one {1 cycle} other {# cycles}}"
+        public static func laneAverage(percent: Int, count: Int) -> String {
+            L10nSupport.localizedFormat("resetHistory.laneAverage", percent, count)
+        }
+
+        /// Line under a lane label that has never closed a cycle
         ///
         /// Key: `resetHistory.noCompletedCycles`
         /// en: "No completed cycles yet"
@@ -157,28 +1965,2050 @@ public enum L10n {
         /// en: "Reset History Compare"
         public static var title: String { L10nSupport.string("resetHistory.title") }
 
-        /// Header totals across every lane in the visible window.
+        /// Caveat when the grid draws fewer cycles than the numbers describe
+        ///
+        /// Key: `resetHistory.truncation`
+        /// en: "showing the newest {shown} of {total} cycles"
+        public static func truncation(shown: Int, total: Int) -> String {
+            L10nSupport.format("resetHistory.truncation", shown, total)
+        }
+
+        /// Header arithmetic across every visible lane
         ///
         /// Key: `resetHistory.wastedSummary`
-        /// en: "{used}% used · {wasted}% wasted · {cycles} cycles"
+        /// en: "{used}% used · {wasted}% wasted · {cycles, plural, one {1 cycle} other {# cycles}}"
         public static func wastedSummary(used: Int, wasted: Int, cycles: Int) -> String {
-            L10nSupport.format("resetHistory.wastedSummary", used, wasted, cycles)
+            L10nSupport.localizedFormat("resetHistory.wastedSummary", used, wasted, cycles)
+        }
+
+        public enum A11y {
+            /// Screen-reader summary when there are no lanes
+            ///
+            /// Key: `resetHistory.a11y.empty`
+            /// en: "Reset history comparison. {verdict}"
+            public static func empty(verdict: String) -> String {
+                L10nSupport.format("resetHistory.a11y.empty", verdict)
+            }
+
+            /// Tail of the screen-reader summary when more lanes exist than are spoken. Leading space is intentional.
+            ///
+            /// Key: `resetHistory.a11y.more`
+            /// en: " And {count} more quotas."
+            public static func more(count: Int) -> String {
+                L10nSupport.format("resetHistory.a11y.more", count)
+            }
+
+            /// Whole-module screen-reader text; the lanes are a drawing surface, so this is all VoiceOver gets
+            ///
+            /// Key: `resetHistory.a11y.summary`
+            /// en: "Reset history comparison, {window}, bar height is the quota remaining at reset.{truncation} {headline}. {verdict} {lanes}.{more}"
+            public static func summary(headline: String, lanes: String, more: String, truncation: String, verdict: String, window: String) -> String {
+                L10nSupport.format("resetHistory.a11y.summary", headline, lanes, more, truncation, verdict, window)
+            }
+
+            /// The truncation caveat as it appears inside the screen-reader summary. Leading space is intentional.
+            ///
+            /// Key: `resetHistory.a11y.truncation`
+            /// en: " Grid {note}; the figures cover every one."
+            public static func truncation(note: String) -> String {
+                L10nSupport.format("resetHistory.a11y.truncation", note)
+            }
+        }
+
+        public enum Axis {
+            /// Segmented control: one column per cycle
+            ///
+            /// Key: `resetHistory.axis.cycle`
+            /// en: "Cycles"
+            public static var cycle: String { L10nSupport.string("resetHistory.axis.cycle") }
+
+            /// Tooltip on the Cycles axis option
+            ///
+            /// Key: `resetHistory.axis.cycleHelp`
+            /// en: "One column per cycle, newest aligned across every quota"
+            public static var cycleHelp: String { L10nSupport.string("resetHistory.axis.cycleHelp") }
+
+            /// Segmented control: cycles placed on a shared calendar
+            ///
+            /// Key: `resetHistory.axis.time`
+            /// en: "Time"
+            public static var time: String { L10nSupport.string("resetHistory.axis.time") }
+
+            /// Tooltip on the Time axis option
+            ///
+            /// Key: `resetHistory.axis.timeHelp`
+            /// en: "Each cycle where it actually happened, on a shared calendar"
+            public static var timeHelp: String { L10nSupport.string("resetHistory.axis.timeHelp") }
+        }
+
+        public enum Lane {
+            /// Empty-state copy for a lane
+            ///
+            /// Key: `resetHistory.lane.emptyState`
+            /// en: "No completed cycles yet — a cycle is recorded when the quota refills"
+            public static var emptyState: String { L10nSupport.string("resetHistory.lane.emptyState") }
+
+            /// One lane inside the screen-reader summary; label names the quota and is not translated
+            ///
+            /// Key: `resetHistory.lane.spokenNoCycles`
+            /// en: "{label}: no completed cycles"
+            public static func spokenNoCycles(label: String) -> String {
+                L10nSupport.format("resetHistory.lane.spokenNoCycles", label)
+            }
+
+            /// One lane inside the screen-reader summary
+            ///
+            /// Key: `resetHistory.lane.spokenWaste`
+            /// en: "{label}: {percent}% wasted on average over {count} cycles"
+            public static func spokenWaste(count: Int, label: String, percent: String) -> String {
+                L10nSupport.format("resetHistory.lane.spokenWaste", count, label, percent)
+            }
+        }
+
+        public enum Reset {
+            /// What the provider did to the clock on an early refill. This shape means a whole window lies ahead, so the extra capacity is usable.
+            ///
+            /// Key: `resetHistory.reset.earlyClockRestarted`
+            /// en: "refilled early, next window restarted"
+            public static var earlyClockRestarted: String { L10nSupport.string("resetHistory.reset.earlyClockRestarted") }
+
+            /// The opposite shape: less than a window remains, so the refill is easier to waste than to spend.
+            ///
+            /// Key: `resetHistory.reset.earlyClockUnchanged`
+            /// en: "refilled early, next reset unchanged"
+            public static var earlyClockUnchanged: String { L10nSupport.string("resetHistory.reset.earlyClockUnchanged") }
+
+            /// An early refill that matches neither shape
+            ///
+            /// Key: `resetHistory.reset.earlyUnclear`
+            /// en: "refilled early, onto a different schedule"
+            public static var earlyUnclear: String { L10nSupport.string("resetHistory.reset.earlyUnclear") }
+        }
+
+        public enum Spoken {
+            /// Spoken window name
+            ///
+            /// Key: `resetHistory.spoken.allCycles`
+            /// en: "every recorded cycle"
+            public static var allCycles: String { L10nSupport.string("resetHistory.spoken.allCycles") }
+
+            /// Spoken window name
+            ///
+            /// Key: `resetHistory.spoken.allTime`
+            /// en: "all recorded history"
+            public static var allTime: String { L10nSupport.string("resetHistory.spoken.allTime") }
+
+            /// Spoken window name
+            ///
+            /// Key: `resetHistory.spoken.eightCycles`
+            /// en: "last 8 cycles"
+            public static var eightCycles: String { L10nSupport.string("resetHistory.spoken.eightCycles") }
+
+            /// Spoken window name
+            ///
+            /// Key: `resetHistory.spoken.eightWeeks`
+            /// en: "last 8 weeks"
+            public static var eightWeeks: String { L10nSupport.string("resetHistory.spoken.eightWeeks") }
+
+            /// Spoken window name used in the screen-reader summary
+            ///
+            /// Key: `resetHistory.spoken.fourCycles`
+            /// en: "last 4 cycles"
+            public static var fourCycles: String { L10nSupport.string("resetHistory.spoken.fourCycles") }
+
+            /// Spoken window name
+            ///
+            /// Key: `resetHistory.spoken.fourWeeks`
+            /// en: "last 4 weeks"
+            public static var fourWeeks: String { L10nSupport.string("resetHistory.spoken.fourWeeks") }
+
+            /// Spoken window name
+            ///
+            /// Key: `resetHistory.spoken.twelveCycles`
+            /// en: "last 12 cycles"
+            public static var twelveCycles: String { L10nSupport.string("resetHistory.spoken.twelveCycles") }
+
+            /// Spoken window name
+            ///
+            /// Key: `resetHistory.spoken.twelveWeeks`
+            /// en: "last 12 weeks"
+            public static var twelveWeeks: String { L10nSupport.string("resetHistory.spoken.twelveWeeks") }
+        }
+
+        public enum Totals {
+            /// Header arithmetic when nothing has closed
+            ///
+            /// Key: `resetHistory.totals.none`
+            /// en: "No completed cycles in this window"
+            public static var `none`: String { L10nSupport.string("resetHistory.totals.none") }
+        }
+
+        public enum Verdict {
+            /// Header sentence when everything is being spent
+            ///
+            /// Key: `resetHistory.verdict.clean`
+            /// en: "Nothing is going noticeably to waste — {percent}% of the refilled capacity was spent."
+            public static func clean(percent: String) -> String {
+                L10nSupport.format("resetHistory.verdict.clean", percent)
+            }
+
+            /// Header sentence quoting the leakiest quota's average
+            ///
+            /// Key: `resetHistory.verdict.leaky`
+            /// en: "{label} left {percent}% unused on average across {count, plural, one {1 cycle} other {# cycles}}."
+            public static func leaky(count: Int, label: String, percent: String) -> String {
+                L10nSupport.localizedFormat("resetHistory.verdict.leaky", count, label, percent)
+            }
+
+            /// Header sentence: lanes exist but none has closed
+            ///
+            /// Key: `resetHistory.verdict.noCycles`
+            /// en: "No completed cycles yet — a cycle is recorded when a quota refills."
+            public static var noCycles: String { L10nSupport.string("resetHistory.verdict.noCycles") }
+
+            /// Header sentence: nothing to compare
+            ///
+            /// Key: `resetHistory.verdict.noQuota`
+            /// en: "No weekly or longer quota is being tracked yet."
+            public static var noQuota: String { L10nSupport.string("resetHistory.verdict.noQuota") }
+
+            /// Header sentence naming the leakiest quota; label is a quota name and is not translated
+            ///
+            /// Key: `resetHistory.verdict.wasteful`
+            /// en: "{label} refilled {count, plural, one {once} other {# times}} with more than half unused."
+            public static func wasteful(count: Int, label: String) -> String {
+                L10nSupport.localizedFormat("resetHistory.verdict.wasteful", count, label)
+            }
+        }
+
+        public enum Window {
+            /// Compact window picker label covering every recorded cycle distinct-from: cost.timeframe.all — every recorded cycle and an all-time date range are different spans.
+            ///
+            /// Key: `resetHistory.window.all`
+            /// en: "All"
+            public static var all: String { L10nSupport.string("resetHistory.window.all") }
+
+            /// Compact window picker label on the time axis
+            ///
+            /// Key: `resetHistory.window.eightWeeks`
+            /// en: "8w"
+            public static var eightWeeks: String { L10nSupport.string("resetHistory.window.eightWeeks") }
+
+            /// Compact window picker label on the time axis
+            ///
+            /// Key: `resetHistory.window.fourWeeks`
+            /// en: "4w"
+            public static var fourWeeks: String { L10nSupport.string("resetHistory.window.fourWeeks") }
+
+            /// Compact window picker label on the time axis
+            ///
+            /// Key: `resetHistory.window.twelveWeeks`
+            /// en: "12w"
+            public static var twelveWeeks: String { L10nSupport.string("resetHistory.window.twelveWeeks") }
         }
     }
 
     public enum Settings {
+        /// Hint under the Antigravity source picker
+        ///
+        /// Key: `settings.antigravityCookieEnabled`
+        /// en: "Antigravity cookie import is enabled — sign in at antigravity.google first."
+        public static var antigravityCookieEnabled: String { L10nSupport.string("settings.antigravityCookieEnabled") }
+
+        /// Hint under the Antigravity source picker
+        ///
+        /// Key: `settings.antigravityLocalOnly`
+        /// en: "Antigravity reads the locally running language server. Cookie import is deferred until the Antigravity Cloud endpoint ships."
+        public static var antigravityLocalOnly: String { L10nSupport.string("settings.antigravityLocalOnly") }
+
+        /// Picker label
+        ///
+        /// Key: `settings.antigravitySource`
+        /// en: "Antigravity source"
+        public static var antigravitySource: String { L10nSupport.string("settings.antigravitySource") }
+
+        /// Current version line; version is a raw version string
+        ///
+        /// Key: `settings.appVersion`
+        /// en: "Vibe Bar {version}"
+        public static func appVersion(version: String) -> String {
+            L10nSupport.format("settings.appVersion", version)
+        }
+
+        /// Badge on the version currently compiled in
+        ///
+        /// Key: `settings.bundled`
+        /// en: "bundled"
+        public static var bundled: String { L10nSupport.string("settings.bundled") }
+
+        /// Button that probes a company's credentials; company is an L1 company name and is never translated
+        ///
+        /// Key: `settings.checkConnections`
+        /// en: "Check {company} connections"
+        public static func checkConnections(company: String) -> String {
+            L10nSupport.format("settings.checkConnections", company)
+        }
+
+        /// Button label
+        ///
+        /// Key: `settings.checkForUpdates`
+        /// en: "Check for Updates…"
+        public static var checkForUpdates: String { L10nSupport.string("settings.checkForUpdates") }
+
+        /// Button that queries GitHub for a newer agent-session-kit
+        ///
+        /// Key: `settings.checkKitUpdates`
+        /// en: "Check for kit updates"
+        public static var checkKitUpdates: String { L10nSupport.string("settings.checkKitUpdates") }
+
+        /// Progress line while an update check runs
+        ///
+        /// Key: `settings.checkingGitHub`
+        /// en: "Checking github.com for the newest release…"
+        public static var checkingGitHub: String { L10nSupport.string("settings.checkingGitHub") }
+
+        /// Button label
+        ///
+        /// Key: `settings.clearCostData`
+        /// en: "Clear cost data"
+        public static var clearCostData: String { L10nSupport.string("settings.clearCostData") }
+
+        /// Heading over the per-provider connection rows
+        ///
+        /// Key: `settings.connectionHealth`
+        /// en: "Connection health"
+        public static var connectionHealth: String { L10nSupport.string("settings.connectionHealth") }
+
+        /// Intro under the Cost Data heading
+        ///
+        /// Key: `settings.costDataIntro`
+        /// en: "Cost is computed from local CLI session JSONL logs at ~/.codex/sessions and ~/.claude/projects. Web/desktop usage is not tracked."
+        public static var costDataIntro: String { L10nSupport.string("settings.costDataIntro") }
+
+        /// Error under the delete-cookies button
+        ///
+        /// Key: `settings.couldNotDeleteCookies`
+        /// en: "Could not delete saved cookies."
+        public static var couldNotDeleteCookies: String { L10nSupport.string("settings.couldNotDeleteCookies") }
+
+        /// Error line
+        ///
+        /// Key: `settings.couldNotDeleteGeminiCookies`
+        /// en: "Could not delete saved Gemini cookies."
+        public static var couldNotDeleteGeminiCookies: String { L10nSupport.string("settings.couldNotDeleteGeminiCookies") }
+
+        /// Error line
+        ///
+        /// Key: `settings.couldNotDeleteGrokCookies`
+        /// en: "Could not delete saved Grok cookies."
+        public static var couldNotDeleteGrokCookies: String { L10nSupport.string("settings.couldNotDeleteGrokCookies") }
+
+        /// Credential state line
+        ///
+        /// Key: `settings.cursorNoSession`
+        /// en: "No usable Cursor.app session — import cursor.com cookies below."
+        public static var cursorNoSession: String { L10nSupport.string("settings.cursorNoSession") }
+
+        /// Credential state line
+        ///
+        /// Key: `settings.cursorSessionDetected`
+        /// en: "Cursor.app signed-in session detected"
+        public static var cursorSessionDetected: String { L10nSupport.string("settings.cursorSessionDetected") }
+
+        /// Row label
+        ///
+        /// Key: `settings.cursorSource`
+        /// en: "Cursor source"
+        public static var cursorSource: String { L10nSupport.string("settings.cursorSource") }
+
+        /// Value beside the Cursor source row
+        ///
+        /// Key: `settings.cursorSourceValue`
+        /// en: "Cursor.app → Web"
+        public static var cursorSourceValue: String { L10nSupport.string("settings.cursorSourceValue") }
+
+        /// Button that clears a provider's stored cookies
+        ///
+        /// Key: `settings.deleteCookies`
+        /// en: "Delete cookies"
+        public static var deleteCookies: String { L10nSupport.string("settings.deleteCookies") }
+
+        /// Button label
+        ///
+        /// Key: `settings.deleteGeminiCookies`
+        /// en: "Delete Gemini cookies"
+        public static var deleteGeminiCookies: String { L10nSupport.string("settings.deleteGeminiCookies") }
+
+        /// Button label
+        ///
+        /// Key: `settings.deleteGrokCookies`
+        /// en: "Delete Grok cookies"
+        public static var deleteGrokCookies: String { L10nSupport.string("settings.deleteGrokCookies") }
+
+        /// Confirmation line
+        ///
+        /// Key: `settings.geminiCookiesSaved`
+        /// en: "Gemini cookies saved."
+        public static var geminiCookiesSaved: String { L10nSupport.string("settings.geminiCookiesSaved") }
+
+        /// Explanation on the Google AI settings page
+        ///
+        /// Key: `settings.geminiShared`
+        /// en: "Gemini and Antigravity share the same Google AI subscription quota. Cookie import is the only supported web path — there is no WebView login."
+        public static var geminiShared: String { L10nSupport.string("settings.geminiShared") }
+
+        /// Row label for where Gemini quota is read from
+        ///
+        /// Key: `settings.geminiSource`
+        /// en: "Gemini source"
+        public static var geminiSource: String { L10nSupport.string("settings.geminiSource") }
+
+        /// Credential state line; the path is never translated
+        ///
+        /// Key: `settings.grokAuthDetected`
+        /// en: "~/.grok/auth.json detected"
+        public static var grokAuthDetected: String { L10nSupport.string("settings.grokAuthDetected") }
+
+        /// Confirmation line
+        ///
+        /// Key: `settings.grokCookiesSaved`
+        /// en: "Grok cookies saved."
+        public static var grokCookiesSaved: String { L10nSupport.string("settings.grokCookiesSaved") }
+
+        /// Picker label for the retention window
+        ///
+        /// Key: `settings.keepHistory`
+        /// en: "Keep history"
+        public static var keepHistory: String { L10nSupport.string("settings.keepHistory") }
+
+        /// Caption under the retention picker
+        ///
+        /// Key: `settings.keepHistoryDetail`
+        /// en: "Applies to cost history and subscription fill history."
+        public static var keepHistoryDetail: String { L10nSupport.string("settings.keepHistoryDetail") }
+
+        /// Description of the bundled agent-session-kit component
+        ///
+        /// Key: `settings.kitDetail`
+        /// en: "Session discovery, harness naming, and the MCP transport. A separate repository, pinned to an exact tag and compiled into this build."
+        public static var kitDetail: String { L10nSupport.string("settings.kitDetail") }
+
+        /// Shown when the watchdog is not running
+        ///
+        /// Key: `settings.menuBarHealthUnavailable`
+        /// en: "The menu bar health monitor is not attached in this process."
+        public static var menuBarHealthUnavailable: String { L10nSupport.string("settings.menuBarHealthUnavailable") }
+
+        /// Provider state: credentials are missing
+        ///
+        /// Key: `settings.needsSetup`
+        /// en: "Needs setup"
+        public static var needsSetup: String { L10nSupport.string("settings.needsSetup") }
+
+        /// Connection state before any probe has run
+        ///
+        /// Key: `settings.notChecked`
+        /// en: "Not checked"
+        public static var notChecked: String { L10nSupport.string("settings.notChecked") }
+
+        /// Line under the update-check button
+        ///
+        /// Key: `settings.notCheckedYet`
+        /// en: "Not checked. Nothing is fetched until you ask."
+        public static var notCheckedYet: String { L10nSupport.string("settings.notCheckedYet") }
+
+        /// Picker label
+        ///
+        /// Key: `settings.openRefreshCooldown`
+        /// en: "Minimum open-refresh cooldown"
+        public static var openRefreshCooldown: String { L10nSupport.string("settings.openRefreshCooldown") }
+
+        /// Caption under the cooldown picker
+        ///
+        /// Key: `settings.openRefreshDetail`
+        /// en: "Opening the popover refreshes all visible providers at most once per cooldown period."
+        public static var openRefreshDetail: String { L10nSupport.string("settings.openRefreshDetail") }
+
+        /// Link to a company's public status page
+        ///
+        /// Key: `settings.openStatusPage`
+        /// en: "Open {company} status page"
+        public static func openStatusPage(company: String) -> String {
+            L10nSupport.format("settings.openStatusPage", company)
+        }
+
+        /// Picker label choosing between remaining and used
+        ///
+        /// Key: `settings.percentShows`
+        /// en: "Percent shows"
+        public static var percentShows: String { L10nSupport.string("settings.percentShows") }
+
+        /// Field label for a user-chosen plan label override
+        ///
+        /// Key: `settings.planBadge`
+        /// en: "Plan badge"
+        public static var planBadge: String { L10nSupport.string("settings.planBadge") }
+
+        /// Caption under the plan badge field
+        ///
+        /// Key: `settings.planBadgeDetail`
+        /// en: "Leave blank to use the detected account plan."
+        public static var planBadgeDetail: String { L10nSupport.string("settings.planBadgeDetail") }
+
+        /// Footer showing when the bundled price table was built; date is a raw stamp
+        ///
+        /// Key: `settings.pricingDataDate`
+        /// en: "Pricing data: {date}"
+        public static func pricingDataDate(date: String) -> String {
+            L10nSupport.format("settings.pricingDataDate", date)
+        }
+
+        /// Body of the Privacy section
+        ///
+        /// Key: `settings.privacyDetail`
+        /// en: "Tokens are read from local CLI credentials. Saved OpenAI and Claude Web cookies are stored in macOS Keychain, split by browser and WebView source. Legacy plaintext cookie files under ~/.vibebar/cookies are migrated once and deleted. Settings, quota cache, and cost summaries stay under ~/.vibebar."
+        public static var privacyDetail: String { L10nSupport.string("settings.privacyDetail") }
+
+        /// Toggle label
+        ///
+        /// Key: `settings.privacyMode`
+        /// en: "Privacy mode"
+        public static var privacyMode: String { L10nSupport.string("settings.privacyMode") }
+
+        /// Caption under the privacy toggle
+        ///
+        /// Key: `settings.privacyModeDetail`
+        /// en: "Privacy mode keeps cost data off disk and clears local cost history, snapshots, and scan cache."
+        public static var privacyModeDetail: String { L10nSupport.string("settings.privacyModeDetail") }
+
+        /// Provider state: credentials are usable
+        ///
+        /// Key: `settings.ready`
+        /// en: "Ready"
+        public static var ready: String { L10nSupport.string("settings.ready") }
+
+        /// Picker label for a background refresh interval
+        ///
+        /// Key: `settings.refreshEvery`
+        /// en: "Refresh every"
+        public static var refreshEvery: String { L10nSupport.string("settings.refreshEvery") }
+
+        /// Toggle label
+        ///
+        /// Key: `settings.refreshOnPopoverOpen`
+        /// en: "Refresh when the popover opens"
+        public static var refreshOnPopoverOpen: String { L10nSupport.string("settings.refreshOnPopoverOpen") }
+
+        /// Link label
+        ///
+        /// Key: `settings.releaseNotes`
+        /// en: "Release notes"
+        public static var releaseNotes: String { L10nSupport.string("settings.releaseNotes") }
+
+        /// Link label
+        ///
+        /// Key: `settings.repository`
+        /// en: "Repository"
+        public static var repository: String { L10nSupport.string("settings.repository") }
+
+        /// Button label
+        ///
+        /// Key: `settings.rescanCostLogs`
+        /// en: "Rescan cost logs"
+        public static var rescanCostLogs: String { L10nSupport.string("settings.rescanCostLogs") }
+
+        /// Placeholder in the settings sidebar's search field
+        ///
+        /// Key: `settings.search`
+        /// en: "Search settings"
+        public static var search: String { L10nSupport.string("settings.search") }
+
+        /// Button that reopens the first-run assistant
+        ///
+        /// Key: `settings.showAssistant`
+        /// en: "Show setup assistant"
+        public static var showAssistant: String { L10nSupport.string("settings.showAssistant") }
+
+        /// Caption under the assistant button
+        ///
+        /// Key: `settings.showAssistantDetail`
+        /// en: "Walk through subscriptions, browser cookies, API keys, model pricing and login items again. Nothing is reset."
+        public static var showAssistantDetail: String { L10nSupport.string("settings.showAssistantDetail") }
+
+        /// Explanation on the SpaceXAI settings page
+        ///
+        /// Key: `settings.spaceXAIIntro`
+        /// en: "The SpaceXAI page combines Grok with Cursor. Grok reads `~/.grok/auth.json` or grok.com cookies; Cursor reads Cursor.app first, then cursor.com cookie slots. Grok Bot contributes quota, plus read-only sessions from its local cache — its cloud runs still add no token/cost rows."
+        public static var spaceXAIIntro: String { L10nSupport.string("settings.spaceXAIIntro") }
+
+        /// Picker label
+        ///
+        /// Key: `settings.updateChannel`
+        /// en: "Update channel"
+        public static var updateChannel: String { L10nSupport.string("settings.updateChannel") }
+
+        /// Caption under the update controls
+        ///
+        /// Key: `settings.updateCheckDetail`
+        /// en: "Checks the selected channel once a day and asks before installing."
+        public static var updateCheckDetail: String { L10nSupport.string("settings.updateCheckDetail") }
+
+        /// Picker label choosing where a provider's quota is read from
+        ///
+        /// Key: `settings.usageSource`
+        /// en: "Usage source"
+        public static var usageSource: String { L10nSupport.string("settings.usageSource") }
+
+        /// Value beside the Gemini source row
+        ///
+        /// Key: `settings.webQuota`
+        /// en: "Web quota"
+        public static var webQuota: String { L10nSupport.string("settings.webQuota") }
+
+        /// Link to a release's notes; version is a tag name
+        ///
+        /// Key: `settings.whatChangedIn`
+        /// en: "What changed in {version}"
+        public static func whatChangedIn(version: String) -> String {
+            L10nSupport.format("settings.whatChangedIn", version)
+        }
+
+        public enum ExternalChange {
+            /// Banner shown when a second client overwrote a setting this one had changed
+            ///
+            /// Key: `settings.externalChange.title`
+            /// en: "Another Vibe Bar replaced your change"
+            public static var title: String { L10nSupport.string("settings.externalChange.title") }
+        }
+
         public enum Language {
+            /// Caption under the language picker in Settings
+            ///
+            /// Key: `settings.language.caption`
+            /// en: "Vibe Bar follows the macOS language unless you pick one here. Provider, model and harness names stay as their owners spell them."
+            public static var caption: String { L10nSupport.string("settings.language.caption") }
+
             /// Language option: follow the macOS language setting.
             ///
             /// Key: `settings.language.system`
             /// en: "Match system"
             public static var system: String { L10nSupport.string("settings.language.system") }
 
-            /// Settings row that chooses the interface language.
+            /// Settings row label for the in-app language override
             ///
             /// Key: `settings.language.title`
             /// en: "Language"
             public static var title: String { L10nSupport.string("settings.language.title") }
+        }
+
+        public enum Mcp {
+            /// Toggle label
+            ///
+            /// Key: `settings.mcp.allowRefresh`
+            /// en: "Allow agents to refresh quota"
+            public static var allowRefresh: String { L10nSupport.string("settings.mcp.allowRefresh") }
+
+            /// Caption under the refresh toggle; quota.refresh is an MCP tool name and is never translated
+            ///
+            /// Key: `settings.mcp.allowRefreshDetail`
+            /// en: "With this on, an agent can ask Vibe Bar to re-fetch quota from your providers. Forced refreshes are rate-limited to one every {seconds} seconds. With it off the read-only tools keep working and quota.refresh reports that refreshing is disabled."
+            public static func allowRefreshDetail(seconds: Int) -> String {
+                L10nSupport.format("settings.mcp.allowRefreshDetail", seconds)
+            }
+
+            /// Toggle label
+            ///
+            /// Key: `settings.mcp.allowSkills`
+            /// en: "Allow agents to install skills"
+            public static var allowSkills: String { L10nSupport.string("settings.mcp.allowSkills") }
+
+            /// Caption under the skills toggle; skills.install is an MCP tool name
+            ///
+            /// Key: `settings.mcp.allowSkillsDetail`
+            /// en: "With this on, an agent can call skills.install to add a skill from a GitHub repository or a local folder. It goes through the same Skills manager as Workbench → Skills, so it writes only to ~/.agents/skills and the agent skills directories Vibe Bar manages — never over a folder a different skill already holds. With it off the tool reports that installing is disabled."
+            public static var allowSkillsDetail: String { L10nSupport.string("settings.mcp.allowSkillsDetail") }
+
+            /// Caption on a copyable config snippet; the path is never translated
+            ///
+            /// Key: `settings.mcp.appendCodexConfig`
+            /// en: "Append to ~/.codex/config.toml."
+            public static var appendCodexConfig: String { L10nSupport.string("settings.mcp.appendCodexConfig") }
+
+            /// Sub-heading over the setup instructions
+            ///
+            /// Key: `settings.mcp.connectAgent`
+            /// en: "Connect an agent"
+            public static var connectAgent: String { L10nSupport.string("settings.mcp.connectAgent") }
+
+            /// Row label for the live connection count
+            ///
+            /// Key: `settings.mcp.connectedClients`
+            /// en: "Connected clients"
+            public static var connectedClients: String { L10nSupport.string("settings.mcp.connectedClients") }
+
+            /// Toggle label
+            ///
+            /// Key: `settings.mcp.enable`
+            /// en: "Enable the local MCP server"
+            public static var enable: String { L10nSupport.string("settings.mcp.enable") }
+
+            /// Intro paragraph of the MCP settings section
+            ///
+            /// Key: `settings.mcp.intro`
+            /// en: "Vibe Bar can expose this Mac's quota, usage, cost and local agent sessions to your coding agents over MCP. The server listens on a Unix domain socket in your home directory — no network port is opened, and no token is created: the socket's file permissions are the access control."
+            public static var intro: String { L10nSupport.string("settings.mcp.intro") }
+
+            /// Row label for when a client last spoke to the server
+            ///
+            /// Key: `settings.mcp.lastActivity`
+            /// en: "Last client activity"
+            public static var lastActivity: String { L10nSupport.string("settings.mcp.lastActivity") }
+
+            /// MCP server state: the socket is accepting connections
+            ///
+            /// Key: `settings.mcp.listening`
+            /// en: "Listening"
+            public static var listening: String { L10nSupport.string("settings.mcp.listening") }
+
+            /// Intro to the manual client configuration snippets; flag is a command-line flag and is never translated
+            ///
+            /// Key: `settings.mcp.manualIntro`
+            /// en: "Or configure a client by hand. Every client runs the same command — Vibe Bar's own binary with {flag}, which bridges stdin/stdout to the socket above."
+            public static func manualIntro(flag: String) -> String {
+                L10nSupport.format("settings.mcp.manualIntro", flag)
+            }
+
+            /// Caption on a copyable config snippet
+            ///
+            /// Key: `settings.mcp.mergeCursorConfig`
+            /// en: "Merge into ~/.cursor/mcp.json."
+            public static var mergeCursorConfig: String { L10nSupport.string("settings.mcp.mergeCursorConfig") }
+
+            /// Warning shown when the app runs from a build directory; path is a filesystem path
+            ///
+            /// Key: `settings.mcp.movePrompt`
+            /// en: "Vibe Bar is running from {path}. Move it to /Applications before saving a client config, or the config breaks the next time you rebuild."
+            public static func movePrompt(path: String) -> String {
+                L10nSupport.format("settings.mcp.movePrompt", path)
+            }
+
+            /// MCP server state: the socket is closed
+            ///
+            /// Key: `settings.mcp.notListening`
+            /// en: "Not listening"
+            public static var notListening: String { L10nSupport.string("settings.mcp.notListening") }
+
+            /// Heading for the generic client snippet
+            ///
+            /// Key: `settings.mcp.otherStdioClient`
+            /// en: "Any other stdio client"
+            public static var otherStdioClient: String { L10nSupport.string("settings.mcp.otherStdioClient") }
+
+            /// Caption on the generic client snippet
+            ///
+            /// Key: `settings.mcp.otherStdioDetail`
+            /// en: "One entry for the client's own mcpServers map."
+            public static var otherStdioDetail: String { L10nSupport.string("settings.mcp.otherStdioDetail") }
+
+            /// Caption over the one-line setup prompt
+            ///
+            /// Key: `settings.mcp.quickestPath`
+            /// en: "The quickest path: paste this into any agent and let it configure itself, install the companion skill, and verify the connection."
+            public static var quickestPath: String { L10nSupport.string("settings.mcp.quickestPath") }
+
+            /// Caption closing the MCP permissions section
+            ///
+            /// Key: `settings.mcp.readOnlyDetail`
+            /// en: "Everything else agents can reach is read-only: quota, token usage, cost, provider status, effective model prices, and the local session index (titles, projects, and — when session body indexing is on — message excerpts). Credentials, cookies and organization ids are never exposed, and email addresses are masked."
+            public static var readOnlyDetail: String { L10nSupport.string("settings.mcp.readOnlyDetail") }
+
+            /// Caption on a copyable shell command
+            ///
+            /// Key: `settings.mcp.runInTerminal`
+            /// en: "Run in a terminal."
+            public static var runInTerminal: String { L10nSupport.string("settings.mcp.runInTerminal") }
+
+            /// Label for the copyable one-line prompt
+            ///
+            /// Key: `settings.mcp.setupPrompt`
+            /// en: "Agent setup prompt"
+            public static var setupPrompt: String { L10nSupport.string("settings.mcp.setupPrompt") }
+
+            /// Caption under the setup prompt
+            ///
+            /// Key: `settings.mcp.setupPromptDetail`
+            /// en: "One line, works in any agent that can fetch a URL."
+            public static var setupPromptDetail: String { L10nSupport.string("settings.mcp.setupPromptDetail") }
+
+            /// Row label for the socket path. The term stays as spelled.
+            ///
+            /// Key: `settings.mcp.socket`
+            /// en: "Socket"
+            public static var socket: String { L10nSupport.string("settings.mcp.socket") }
+
+            /// Caption under the MCP status rows. The quoted phrase is the message another tool prints and stays in English.
+            ///
+            /// Key: `settings.mcp.socketLifetime`
+            /// en: "The socket exists only while Vibe Bar is running. Agents configured below report “Vibe Bar is not running” when it is quit, which is the intended behaviour."
+            public static var socketLifetime: String { L10nSupport.string("settings.mcp.socketLifetime") }
+
+            /// Row label for whether the MCP socket is listening. Distinct from status.overview.title, which is a provider's service status.
+            ///
+            /// Key: `settings.mcp.status`
+            /// en: "Status"
+            public static var status: String { L10nSupport.string("settings.mcp.status") }
+
+            /// Settings section heading for the local MCP server
+            ///
+            /// Key: `settings.mcp.title`
+            /// en: "MCP Server"
+            public static var title: String { L10nSupport.string("settings.mcp.title") }
+
+            /// Sub-heading over the permission toggles
+            ///
+            /// Key: `settings.mcp.whatAgentsMayDo`
+            /// en: "What agents may do"
+            public static var whatAgentsMayDo: String { L10nSupport.string("settings.mcp.whatAgentsMayDo") }
+        }
+
+        public enum MiniWindow {
+            /// Button in the mini windows settings section
+            ///
+            /// Key: `settings.miniWindow.add`
+            /// en: "Add a mini window"
+            public static var add: String { L10nSupport.string("settings.miniWindow.add") }
+
+            /// Empty state under the add-bucket list
+            ///
+            /// Key: `settings.miniWindow.allBucketsIncluded`
+            /// en: "Every known bucket is already in this window."
+            public static var allBucketsIncluded: String { L10nSupport.string("settings.miniWindow.allBucketsIncluded") }
+
+            /// Tooltip on the dismiss button of a built-in bucket
+            ///
+            /// Key: `settings.miniWindow.dismissBuiltIn`
+            /// en: "Dismiss this built-in bucket while the provider is not returning it. It comes back the moment the provider does."
+            public static var dismissBuiltIn: String { L10nSupport.string("settings.miniWindow.dismissBuiltIn") }
+
+            /// Tooltip on the dismiss button of a runtime-discovered bucket
+            ///
+            /// Key: `settings.miniWindow.forgetDiscovered`
+            /// en: "Forget this discovered bucket — drops it from the list and from every window that selected it."
+            public static var forgetDiscovered: String { L10nSupport.string("settings.miniWindow.forgetDiscovered") }
+
+            /// Tooltip on a style toggle; mode is a display-mode name
+            ///
+            /// Key: `settings.miniWindow.includeStyle`
+            /// en: "Include {mode} in the double-click cycle"
+            public static func includeStyle(mode: String) -> String {
+                L10nSupport.format("settings.miniWindow.includeStyle", mode)
+            }
+
+            /// Tooltip explaining a disabled remove button
+            ///
+            /// Key: `settings.miniWindow.lastCannotBeRemoved`
+            /// en: "The last mini window cannot be removed."
+            public static var lastCannotBeRemoved: String { L10nSupport.string("settings.miniWindow.lastCannotBeRemoved") }
+
+            /// Segment label: edit the shared names
+            ///
+            /// Key: `settings.miniWindow.namesAllWindows`
+            /// en: "Names: all windows"
+            public static var namesAllWindows: String { L10nSupport.string("settings.miniWindow.namesAllWindows") }
+
+            /// Segment label: edit only this display style's overrides; mode is a display-mode name
+            ///
+            /// Key: `settings.miniWindow.namesThisStyle`
+            /// en: "Only {mode} here"
+            public static func namesThisStyle(mode: String) -> String {
+                L10nSupport.format("settings.miniWindow.namesThisStyle", mode)
+            }
+
+            /// Segment label: edit only this window's name overrides
+            ///
+            /// Key: `settings.miniWindow.namesThisWindow`
+            /// en: "Only “{name}”"
+            public static func namesThisWindow(name: String) -> String {
+                L10nSupport.format("settings.miniWindow.namesThisWindow", name)
+            }
+
+            /// Empty state under the field list
+            ///
+            /// Key: `settings.miniWindow.noFieldsSelected`
+            /// en: "No fields selected — tick some above."
+            public static var noFieldsSelected: String { L10nSupport.string("settings.miniWindow.noFieldsSelected") }
+
+            /// Caption over the list of buckets not yet in this window
+            ///
+            /// Key: `settings.miniWindow.notInWindow`
+            /// en: "Not in “{name}” — tick a bucket to add it. Buckets the adapters discover at runtime appear here automatically; a dimmed row is remembered but not in the account's current response, and ✕ dismisses it until the provider returns it."
+            public static func notInWindow(name: String) -> String {
+                L10nSupport.format("settings.miniWindow.notInWindow", name)
+            }
+
+            /// Badge on a remote machine's row in the mini window preview
+            ///
+            /// Key: `settings.miniWindow.offline`
+            /// en: "offline"
+            public static var offline: String { L10nSupport.string("settings.miniWindow.offline") }
+
+            /// Button that shows or hides a mini window
+            ///
+            /// Key: `settings.miniWindow.openClose`
+            /// en: "Open / Close"
+            public static var openClose: String { L10nSupport.string("settings.miniWindow.openClose") }
+
+            /// Caption over the per-style name fields
+            ///
+            /// Key: `settings.miniWindow.overridesStyle`
+            /// en: "Overrides for the {mode} style of this window only. An empty field inherits the window name, then the shared one — shown as the placeholder."
+            public static func overridesStyle(mode: String) -> String {
+                L10nSupport.format("settings.miniWindow.overridesStyle", mode)
+            }
+
+            /// Caption over the per-window name fields
+            ///
+            /// Key: `settings.miniWindow.overridesWindow`
+            /// en: "Name overrides for this window only. An empty field inherits the shared name — shown as the placeholder."
+            public static var overridesWindow: String { L10nSupport.string("settings.miniWindow.overridesWindow") }
+
+            /// Tooltip on a row's remove control
+            ///
+            /// Key: `settings.miniWindow.removeFromWindow`
+            /// en: "Remove from this window"
+            public static var removeFromWindow: String { L10nSupport.string("settings.miniWindow.removeFromWindow") }
+
+            /// Tooltip on the remove button
+            ///
+            /// Key: `settings.miniWindow.removeHelp`
+            /// en: "Remove this mini window"
+            public static var removeHelp: String { L10nSupport.string("settings.miniWindow.removeHelp") }
+
+            /// Picker label for the mini window's row density
+            ///
+            /// Key: `settings.miniWindow.stripDensity`
+            /// en: "Strip density"
+            public static var stripDensity: String { L10nSupport.string("settings.miniWindow.stripDensity") }
+
+            /// Caption over the style cycle picker
+            ///
+            /// Key: `settings.miniWindow.styleCycle`
+            /// en: "Double-click on the window cycles its style. Tap a style to include it — the badge is its turn in the cycle. Nothing selected means every style, in this order."
+            public static var styleCycle: String { L10nSupport.string("settings.miniWindow.styleCycle") }
+
+            /// Tooltip on the open/close button
+            ///
+            /// Key: `settings.miniWindow.toggleHelp`
+            /// en: "Toggle this mini window on screen"
+            public static var toggleHelp: String { L10nSupport.string("settings.miniWindow.toggleHelp") }
+
+            /// Caption over the mini window field tree
+            ///
+            /// Key: `settings.miniWindow.treeDetail`
+            /// en: "One tree for the window — grouped exactly as it folds them (company → SubProvider → quota group → bucket). Drag a row to reorder, ✕ to remove, and rename any level in place. First field renders leftmost (or topmost)."
+            public static var treeDetail: String { L10nSupport.string("settings.miniWindow.treeDetail") }
+        }
+
+        public enum Misc {
+            /// Field placeholder for the AK half of an AK/SK pair
+            ///
+            /// Key: `settings.misc.accessKeyId`
+            /// en: "Access Key ID (AKLT…)"
+            public static var accessKeyId: String { L10nSupport.string("settings.misc.accessKeyId") }
+
+            /// Confirmation under an AK/SK field
+            ///
+            /// Key: `settings.misc.akSkSaved`
+            /// en: "AK/SK saved in Keychain."
+            public static var akSkSaved: String { L10nSupport.string("settings.misc.akSkSaved") }
+
+            /// Confirmation under a credential field
+            ///
+            /// Key: `settings.misc.apiKeySaved`
+            /// en: "API key saved in Keychain."
+            public static var apiKeySaved: String { L10nSupport.string("settings.misc.apiKeySaved") }
+
+            /// Tooltip on the button that forgets a stored workspace id
+            ///
+            /// Key: `settings.misc.clearWorkspace`
+            /// en: "Clear saved workspace"
+            public static var clearWorkspace: String { L10nSupport.string("settings.misc.clearWorkspace") }
+
+            /// Tooltip on the button that adds a second instance of a provider
+            ///
+            /// Key: `settings.misc.clone`
+            /// en: "Clone {provider}"
+            public static func clone(provider: String) -> String {
+                L10nSupport.format("settings.misc.clone", provider)
+            }
+
+            /// Console link row; title is the provider's own page name
+            ///
+            /// Key: `settings.misc.consoleLink`
+            /// en: "{title} →"
+            public static func consoleLink(title: String) -> String {
+                L10nSupport.format("settings.misc.consoleLink", title)
+            }
+
+            /// Picker label for a provider's edition (Team, Personal, …)
+            ///
+            /// Key: `settings.misc.edition`
+            /// en: "Edition"
+            public static var edition: String { L10nSupport.string("settings.misc.edition") }
+
+            /// Hint under the GitHub sign-in row
+            ///
+            /// Key: `settings.misc.githubSignInHint`
+            /// en: "Sign in with GitHub device flow."
+            public static var githubSignInHint: String { L10nSupport.string("settings.misc.githubSignInHint") }
+
+            /// Confirmation under the GitHub sign-in row
+            ///
+            /// Key: `settings.misc.githubTokenSaved`
+            /// en: "GitHub device token saved in Keychain."
+            public static var githubTokenSaved: String { L10nSupport.string("settings.misc.githubTokenSaved") }
+
+            /// Caption under the cookie import button
+            ///
+            /// Key: `settings.misc.importDetail`
+            /// en: "Adds or refreshes the first signed-in browser profile found; profiles already imported stay stacked, and this provider's quota is the average across every slot listed above. macOS may ask for your login-keychain password once per Chromium-family browser."
+            public static var importDetail: String { L10nSupport.string("settings.misc.importDetail") }
+
+            /// Hint under the Kiro row; the commands are never translated
+            ///
+            /// Key: `settings.misc.kiroHint`
+            /// en: "Run `kiro-cli login`, then Vibe Bar probes `kiro-cli chat --no-interactive /usage`."
+            public static var kiroHint: String { L10nSupport.string("settings.misc.kiroHint") }
+
+            /// Shown when a provider has no cookie import path
+            ///
+            /// Key: `settings.misc.noCookieSpec`
+            /// en: "No cookie spec is registered for {provider}."
+            public static func noCookieSpec(provider: String) -> String {
+                L10nSupport.format("settings.misc.noCookieSpec", provider)
+            }
+
+            /// Empty state in the cookie slot list
+            ///
+            /// Key: `settings.misc.noCookiesYet`
+            /// en: "No cookies imported yet — import from your browser or paste below."
+            public static var noCookiesYet: String { L10nSupport.string("settings.misc.noCookiesYet") }
+
+            /// Button that runs a local CLI probe
+            ///
+            /// Key: `settings.misc.probe`
+            /// en: "Probe"
+            public static var probe: String { L10nSupport.string("settings.misc.probe") }
+
+            /// Picker label for a provider's service region
+            ///
+            /// Key: `settings.misc.region`
+            /// en: "Region"
+            public static var region: String { L10nSupport.string("settings.misc.region") }
+
+            /// Tooltip on the button that clears a stored AK/SK pair
+            ///
+            /// Key: `settings.misc.removeAkSk`
+            /// en: "Remove stored {provider} AK/SK"
+            public static func removeAkSk(provider: String) -> String {
+                L10nSupport.format("settings.misc.removeAkSk", provider)
+            }
+
+            /// Tooltip on the button that clears a stored key
+            ///
+            /// Key: `settings.misc.removeApiKey`
+            /// en: "Remove stored {provider} API key"
+            public static func removeApiKey(provider: String) -> String {
+                L10nSupport.format("settings.misc.removeApiKey", provider)
+            }
+
+            /// Tooltip on a cookie slot's delete button
+            ///
+            /// Key: `settings.misc.removeCookieSlot`
+            /// en: "Remove this cookie slot"
+            public static var removeCookieSlot: String { L10nSupport.string("settings.misc.removeCookieSlot") }
+
+            /// Tooltip on the button that deletes a cloned instance
+            ///
+            /// Key: `settings.misc.removeCopy`
+            /// en: "Remove this {provider} copy"
+            public static func removeCopy(provider: String) -> String {
+                L10nSupport.format("settings.misc.removeCopy", provider)
+            }
+
+            /// Destructive button in the remove-copy dialog
+            ///
+            /// Key: `settings.misc.removeCopyButton`
+            /// en: "Remove Copy"
+            public static var removeCopyButton: String { L10nSupport.string("settings.misc.removeCopyButton") }
+
+            /// Confirmation dialog body
+            ///
+            /// Key: `settings.misc.removeCopyDetail`
+            /// en: "Its saved credentials are deleted from your Keychain — the API key or AK/SK and every imported cookie slot. This cannot be undone."
+            public static var removeCopyDetail: String { L10nSupport.string("settings.misc.removeCopyDetail") }
+
+            /// Confirmation dialog title
+            ///
+            /// Key: `settings.misc.removeCopyTitle`
+            /// en: "Remove this {provider} copy?"
+            public static func removeCopyTitle(provider: String) -> String {
+                L10nSupport.format("settings.misc.removeCopyTitle", provider)
+            }
+
+            /// Tooltip on the button that clears the GitHub token
+            ///
+            /// Key: `settings.misc.removeGithubToken`
+            /// en: "Remove stored GitHub device token"
+            public static var removeGithubToken: String { L10nSupport.string("settings.misc.removeGithubToken") }
+
+            /// Tooltip on the rename button of a cloned instance
+            ///
+            /// Key: `settings.misc.rename`
+            /// en: "Rename this copy"
+            public static var rename: String { L10nSupport.string("settings.misc.rename") }
+
+            /// Field placeholder for the SK half of an AK/SK pair. The term is the provider's own and stays as spelled.
+            ///
+            /// Key: `settings.misc.secretAccessKey`
+            /// en: "Secret Access Key"
+            public static var secretAccessKey: String { L10nSupport.string("settings.misc.secretAccessKey") }
+
+            /// Button that starts a device-flow sign-in
+            ///
+            /// Key: `settings.misc.signIn`
+            /// en: "Sign in"
+            public static var signIn: String { L10nSupport.string("settings.misc.signIn") }
+
+            /// Button that opens a WebView login
+            ///
+            /// Key: `settings.misc.signInViaWeb`
+            /// en: "Sign in via Web"
+            public static var signInViaWeb: String { L10nSupport.string("settings.misc.signInViaWeb") }
+
+            /// Caption under the Tencent token plan row
+            ///
+            /// Key: `settings.misc.tencentTokenPlanNote`
+            /// en: "Personal Token Plan is currently available only in China mainland (cn-beijing). Clone this row to track Team and Personal together."
+            public static var tencentTokenPlanNote: String { L10nSupport.string("settings.misc.tencentTokenPlanNote") }
+
+            /// Picker label for a provider's plan variant
+            ///
+            /// Key: `settings.misc.variant`
+            /// en: "Variant"
+            public static var variant: String { L10nSupport.string("settings.misc.variant") }
+
+            /// Button label while a device-flow sign-in is pending
+            ///
+            /// Key: `settings.misc.waiting`
+            /// en: "Waiting..."
+            public static var waiting: String { L10nSupport.string("settings.misc.waiting") }
+
+            /// Caption under the workspace field
+            ///
+            /// Key: `settings.misc.workspaceNote`
+            /// en: "Only needed when the account owns more than one workspace — otherwise Vibe Bar uses the first one it finds."
+            public static var workspaceNote: String { L10nSupport.string("settings.misc.workspaceNote") }
+
+            public enum Prompt {
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.copilotHost`
+                /// en: "GitHub Enterprise host (optional, e.g. github.example.com)"
+                public static var copilotHost: String { L10nSupport.string("settings.misc.prompt.copilotHost") }
+
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.dashscope`
+                /// en: "Paste DashScope API key (sk-...) — optional"
+                public static var dashscope: String { L10nSupport.string("settings.misc.prompt.dashscope") }
+
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.kilo`
+                /// en: "Paste Kilo API key (optional)"
+                public static var kilo: String { L10nSupport.string("settings.misc.prompt.kilo") }
+
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.minimax`
+                /// en: "Paste MiniMax Token Plan API key (sk-cp-... or MINIMAX_CODING_API_KEY)"
+                public static var minimax: String { L10nSupport.string("settings.misc.prompt.minimax") }
+
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.openRouter`
+                /// en: "Paste OpenRouter API key (sk-or-v1-...)"
+                public static var openRouter: String { L10nSupport.string("settings.misc.prompt.openRouter") }
+
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.openRouterHost`
+                /// en: "OpenRouter API URL (optional, defaults to https://openrouter.ai/api/v1)"
+                public static var openRouterHost: String { L10nSupport.string("settings.misc.prompt.openRouterHost") }
+
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.warp`
+                /// en: "Paste Warp API key (wk-...)"
+                public static var warp: String { L10nSupport.string("settings.misc.prompt.warp") }
+
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.workspace`
+                /// en: "Workspace ID or URL (optional, wrk_... or /workspace/wrk_.../go)"
+                public static var workspace: String { L10nSupport.string("settings.misc.prompt.workspace") }
+
+                /// Field placeholder; the key prefix is a format example
+                ///
+                /// Key: `settings.misc.prompt.zai`
+                /// en: "Paste Z.ai API key (zai-...)"
+                public static var zai: String { L10nSupport.string("settings.misc.prompt.zai") }
+            }
+        }
+
+        public enum Pricing {
+            /// Button that appends a blank rate card
+            ///
+            /// Key: `settings.pricing.addOverride`
+            /// en: "Add model override"
+            public static var addOverride: String { L10nSupport.string("settings.pricing.addOverride") }
+
+            /// Disclosure heading over the threshold rate fields
+            ///
+            /// Key: `settings.pricing.advancedTiers`
+            /// en: "Advanced tiers"
+            public static var advancedTiers: String { L10nSupport.string("settings.pricing.advancedTiers") }
+
+            /// Detail beside the local-overrides source
+            ///
+            /// Key: `settings.pricing.alwaysWins`
+            /// en: "Always wins"
+            public static var alwaysWins: String { L10nSupport.string("settings.pricing.alwaysWins") }
+
+            /// Name of the lowest-priority price source
+            ///
+            /// Key: `settings.pricing.bundledFallback`
+            /// en: "Bundled fallback"
+            public static var bundledFallback: String { L10nSupport.string("settings.pricing.bundledFallback") }
+
+            /// Rate field label
+            ///
+            /// Key: `settings.pricing.cacheReadAbove`
+            /// en: "Cache read above"
+            public static var cacheReadAbove: String { L10nSupport.string("settings.pricing.cacheReadAbove") }
+
+            /// Rate field label
+            ///
+            /// Key: `settings.pricing.cacheWriteAbove`
+            /// en: "Cache write above"
+            public static var cacheWriteAbove: String { L10nSupport.string("settings.pricing.cacheWriteAbove") }
+
+            /// Tooltip on a rate card's delete button
+            ///
+            /// Key: `settings.pricing.deleteOverride`
+            /// en: "Delete override"
+            public static var deleteOverride: String { L10nSupport.string("settings.pricing.deleteOverride") }
+
+            /// Placeholder in the model-name field of a rate card
+            ///
+            /// Key: `settings.pricing.exactModelName`
+            /// en: "Exact model name"
+            public static var exactModelName: String { L10nSupport.string("settings.pricing.exactModelName") }
+
+            /// Rate field label: the multiplier applied to a fast tier
+            ///
+            /// Key: `settings.pricing.fastMultiplier`
+            /// en: "Fast multiplier"
+            public static var fastMultiplier: String { L10nSupport.string("settings.pricing.fastMultiplier") }
+
+            /// Rate field label for input tokens beyond the threshold
+            ///
+            /// Key: `settings.pricing.inputAbove`
+            /// en: "Input above"
+            public static var inputAbove: String { L10nSupport.string("settings.pricing.inputAbove") }
+
+            /// Intro under the Model Pricing heading
+            ///
+            /// Key: `settings.pricing.intro`
+            /// en: "Catalogs refresh in the background. Higher entries win when the same provider and model name appears more than once."
+            public static var intro: String { L10nSupport.string("settings.pricing.intro") }
+
+            /// Settings section heading over the user's own rate cards
+            ///
+            /// Key: `settings.pricing.localOverrides`
+            /// en: "Local overrides"
+            public static var localOverrides: String { L10nSupport.string("settings.pricing.localOverrides") }
+
+            /// Empty state in the overrides list
+            ///
+            /// Key: `settings.pricing.noOverrides`
+            /// en: "No local overrides."
+            public static var noOverrides: String { L10nSupport.string("settings.pricing.noOverrides") }
+
+            /// Detail beside the bundled source
+            ///
+            /// Key: `settings.pricing.offlineFloor`
+            /// en: "Offline floor"
+            public static var offlineFloor: String { L10nSupport.string("settings.pricing.offlineFloor") }
+
+            /// Rate field label for output tokens beyond the threshold
+            ///
+            /// Key: `settings.pricing.outputAbove`
+            /// en: "Output above"
+            public static var outputAbove: String { L10nSupport.string("settings.pricing.outputAbove") }
+
+            /// Intro under the Local overrides heading
+            ///
+            /// Key: `settings.pricing.overridesIntro`
+            /// en: "Prices are USD per one million tokens. Leave cache fields empty when the provider does not publish them."
+            public static var overridesIntro: String { L10nSupport.string("settings.pricing.overridesIntro") }
+
+            /// Settings section heading over the price-source list
+            ///
+            /// Key: `settings.pricing.priorityHealth`
+            /// en: "Priority and source health"
+            public static var priorityHealth: String { L10nSupport.string("settings.pricing.priorityHealth") }
+
+            /// Rate field label: input tokens
+            ///
+            /// Key: `settings.pricing.rateInput`
+            /// en: "Input"
+            public static var rateInput: String { L10nSupport.string("settings.pricing.rateInput") }
+
+            /// Rate field label: output tokens
+            ///
+            /// Key: `settings.pricing.rateOutput`
+            /// en: "Output"
+            public static var rateOutput: String { L10nSupport.string("settings.pricing.rateOutput") }
+
+            /// Button that fetches price catalogs immediately
+            ///
+            /// Key: `settings.pricing.refreshNow`
+            /// en: "Refresh now"
+            public static var refreshNow: String { L10nSupport.string("settings.pricing.refreshNow") }
+
+            /// Button label while a price refresh runs
+            ///
+            /// Key: `settings.pricing.refreshing`
+            /// en: "Refreshing…"
+            public static var refreshing: String { L10nSupport.string("settings.pricing.refreshing") }
+
+            /// Field label: the token count above which the higher rates apply
+            ///
+            /// Key: `settings.pricing.thresholdTokens`
+            /// en: "Threshold tokens"
+            public static var thresholdTokens: String { L10nSupport.string("settings.pricing.thresholdTokens") }
+        }
+
+        public enum Remote {
+            /// Settings section heading. Core is the product term for this Mac's aggregator.
+            ///
+            /// Key: `settings.remote.core`
+            /// en: "Remote Core"
+            public static var core: String { L10nSupport.string("settings.remote.core") }
+
+            /// Settings section heading
+            ///
+            /// Key: `settings.remote.costAggregation`
+            /// en: "Cost aggregation"
+            public static var costAggregation: String { L10nSupport.string("settings.remote.costAggregation") }
+
+            /// Intro under the cost aggregation heading
+            ///
+            /// Key: `settings.remote.costAggregationIntro`
+            /// en: "Choose which remote machines join this Mac's local cost and token totals. Selection and aggregation stay on this Core; the Relay never sees plaintext usage."
+            public static var costAggregationIntro: String { L10nSupport.string("settings.remote.costAggregationIntro") }
+
+            /// Toggle that reveals the control-centre URL field
+            ///
+            /// Key: `settings.remote.differentControlCenter`
+            /// en: "Use a different control center"
+            public static var differentControlCenter: String { L10nSupport.string("settings.remote.differentControlCenter") }
+
+            /// Button that abandons a pending join
+            ///
+            /// Key: `settings.remote.discard`
+            /// en: "Discard"
+            public static var discard: String { L10nSupport.string("settings.remote.discard") }
+
+            /// Confirmation dialog body
+            ///
+            /// Key: `settings.remote.discardPendingDetail`
+            /// en: "Its pairing code is already spent, and the workspace still counts this Mac as its Core. To join again, revoke this Mac in the web control center, then create a fresh code."
+            public static var discardPendingDetail: String { L10nSupport.string("settings.remote.discardPendingDetail") }
+
+            /// Confirmation dialog title
+            ///
+            /// Key: `settings.remote.discardPendingTitle`
+            /// en: "Discard this pending join?"
+            public static var discardPendingTitle: String { L10nSupport.string("settings.remote.discardPendingTitle") }
+
+            /// Settings section heading, and the destructive button in its dialog
+            ///
+            /// Key: `settings.remote.disconnect`
+            /// en: "Disconnect"
+            public static var disconnect: String { L10nSupport.string("settings.remote.disconnect") }
+
+            /// Button that unpairs this Mac
+            ///
+            /// Key: `settings.remote.disconnectButton`
+            /// en: "Disconnect from Workspace…"
+            public static var disconnectButton: String { L10nSupport.string("settings.remote.disconnectButton") }
+
+            /// Confirmation dialog body
+            ///
+            /// Key: `settings.remote.disconnectDetail`
+            /// en: "Reconnecting later requires a new pairing code or provisioning file."
+            public static var disconnectDetail: String { L10nSupport.string("settings.remote.disconnectDetail") }
+
+            /// Explanation under the Disconnect heading
+            ///
+            /// Key: `settings.remote.disconnectIntro`
+            /// en: "Disconnecting removes this Mac's Relay credential from the Keychain and its workspace binding. Probes keep uploading to the Relay until they are revoked there. Usage already decrypted stays in the local ledger."
+            public static var disconnectIntro: String { L10nSupport.string("settings.remote.disconnectIntro") }
+
+            /// Confirmation dialog title
+            ///
+            /// Key: `settings.remote.disconnectTitle`
+            /// en: "Disconnect from this workspace?"
+            public static var disconnectTitle: String { L10nSupport.string("settings.remote.disconnectTitle") }
+
+            /// Button that writes this Mac's public identity to a file
+            ///
+            /// Key: `settings.remote.exportIdentity`
+            /// en: "Export Core Identity…"
+            public static var exportIdentity: String { L10nSupport.string("settings.remote.exportIdentity") }
+
+            /// Button that reads a provisioning file
+            ///
+            /// Key: `settings.remote.importProvisioning`
+            /// en: "Import Provisioning File…"
+            public static var importProvisioning: String { L10nSupport.string("settings.remote.importProvisioning") }
+
+            /// Button that submits a pairing code
+            ///
+            /// Key: `settings.remote.join`
+            /// en: "Join"
+            public static var join: String { L10nSupport.string("settings.remote.join") }
+
+            /// Explanation above the pairing-code field; device is the Mac's name
+            ///
+            /// Key: `settings.remote.joinIntro`
+            /// en: "Create a Core code in the Vibe Bar control center, then paste it here. This Mac joins as “{device}”."
+            public static func joinIntro(device: String) -> String {
+                L10nSupport.format("settings.remote.joinIntro", device)
+            }
+
+            /// Heading over the pairing-code field
+            ///
+            /// Key: `settings.remote.joinWithCode`
+            /// en: "Join with a code"
+            public static var joinWithCode: String { L10nSupport.string("settings.remote.joinWithCode") }
+
+            /// Row label for the last sync time
+            ///
+            /// Key: `settings.remote.lastSync`
+            /// en: "Last sync"
+            public static var lastSync: String { L10nSupport.string("settings.remote.lastSync") }
+
+            /// Second line of a remote machine row; platform and version are raw values
+            ///
+            /// Key: `settings.remote.machineDetail`
+            /// en: "{platform} · Probe {version}"
+            public static func machineDetail(platform: String, version: String) -> String {
+                L10nSupport.format("settings.remote.machineDetail", platform, version)
+            }
+
+            /// Empty state in the machine list
+            ///
+            /// Key: `settings.remote.machinesAppearAfterImport`
+            /// en: "Machines appear here after their first encrypted batch is imported."
+            public static var machinesAppearAfterImport: String { L10nSupport.string("settings.remote.machinesAppearAfterImport") }
+
+            /// Row label for the machine count
+            ///
+            /// Key: `settings.remote.machinesSynced`
+            /// en: "Machines synced"
+            public static var machinesSynced: String { L10nSupport.string("settings.remote.machinesSynced") }
+
+            /// Explanation of the manual pairing flow
+            ///
+            /// Key: `settings.remote.manualPairingIntro`
+            /// en: "Pairing runs in three steps: export this Mac's Core identity, register it with your Relay to produce a provisioning file, then import that file here. Importing moves the Relay credential into the macOS Keychain — but the provisioning file itself still contains that credential, so delete the file once the import succeeds."
+            public static var manualPairingIntro: String { L10nSupport.string("settings.remote.manualPairingIntro") }
+
+            /// Explanation shown when no workspace is paired
+            ///
+            /// Key: `settings.remote.notConnected`
+            /// en: "This Mac is not connected to a workspace. Remote probes collect normalized usage on your other machines, encrypt it to this Mac's Core keys, and drop it at a Relay — no inbound port is ever opened here."
+            public static var notConnected: String { L10nSupport.string("settings.remote.notConnected") }
+
+            /// Caption above the manual pairing buttons
+            ///
+            /// Key: `settings.remote.orPairManually`
+            /// en: "Or pair manually."
+            public static var orPairManually: String { L10nSupport.string("settings.remote.orPairManually") }
+
+            /// Explanation of a half-finished join
+            ///
+            /// Key: `settings.remote.pendingIntro`
+            /// en: "A previous join was accepted by the control center but never finished saving on this Mac. Its pairing code is already spent, so resume the save instead of requesting a new code."
+            public static var pendingIntro: String { L10nSupport.string("settings.remote.pendingIntro") }
+
+            /// Settings section heading over the pairing controls
+            ///
+            /// Key: `settings.remote.provisioning`
+            /// en: "Provisioning"
+            public static var provisioning: String { L10nSupport.string("settings.remote.provisioning") }
+
+            /// Row label for the probe count
+            ///
+            /// Key: `settings.remote.registeredProbes`
+            /// en: "Registered probes"
+            public static var registeredProbes: String { L10nSupport.string("settings.remote.registeredProbes") }
+
+            /// Row label for the relay URL. The term stays as spelled.
+            ///
+            /// Key: `settings.remote.relay`
+            /// en: "Relay"
+            public static var relay: String { L10nSupport.string("settings.remote.relay") }
+
+            /// Button that finishes a half-completed join
+            ///
+            /// Key: `settings.remote.resumeSaving`
+            /// en: "Resume saving"
+            public static var resumeSaving: String { L10nSupport.string("settings.remote.resumeSaving") }
+
+            /// Button that retries a failed save
+            ///
+            /// Key: `settings.remote.retrySaving`
+            /// en: "Retry saving"
+            public static var retrySaving: String { L10nSupport.string("settings.remote.retrySaving") }
+
+            /// Sync status line: a translated title and the raw status code
+            ///
+            /// Key: `settings.remote.statusWithCode`
+            /// en: "{title} · {code}"
+            public static func statusWithCode(code: String, title: String) -> String {
+                L10nSupport.format("settings.remote.statusWithCode", code, title)
+            }
+
+            /// Button that pulls remote batches immediately
+            ///
+            /// Key: `settings.remote.syncNow`
+            /// en: "Sync now"
+            public static var syncNow: String { L10nSupport.string("settings.remote.syncNow") }
+
+            /// Row label for the workspace id
+            ///
+            /// Key: `settings.remote.workspace`
+            /// en: "Workspace"
+            public static var workspace: String { L10nSupport.string("settings.remote.workspace") }
+        }
+
+        public enum Section {
+            /// Settings section heading listing bundled components. Distinct from status.card.components, which are a provider's status-page components.
+            ///
+            /// Key: `settings.section.components`
+            /// en: "Components"
+            public static var components: String { L10nSupport.string("settings.section.components") }
+
+            /// Settings section heading
+            ///
+            /// Key: `settings.section.costData`
+            /// en: "Cost Data"
+            public static var costData: String { L10nSupport.string("settings.section.costData") }
+
+            /// Settings section heading for page layout
+            ///
+            /// Key: `settings.section.layout`
+            /// en: "Layout"
+            public static var layout: String { L10nSupport.string("settings.section.layout") }
+
+            /// Settings section heading for the status-item watchdog
+            ///
+            /// Key: `settings.section.menuBarHealth`
+            /// en: "Menu Bar Health"
+            public static var menuBarHealth: String { L10nSupport.string("settings.section.menuBarHealth") }
+
+            /// Settings section heading
+            ///
+            /// Key: `settings.section.miniWindows`
+            /// en: "Mini Windows"
+            public static var miniWindows: String { L10nSupport.string("settings.section.miniWindows") }
+
+            /// Settings section heading
+            ///
+            /// Key: `settings.section.privacy`
+            /// en: "Privacy"
+            public static var privacy: String { L10nSupport.string("settings.section.privacy") }
+
+            /// Settings section heading for refresh intervals. Distinct from status.overview.refreshing, which says a fetch is in flight. distinct-from: settings.pricing.refreshing — a Settings section for refresh intervals, a button label while a fetch runs, and a provider's in-flight state are three things.
+            ///
+            /// Key: `settings.section.refreshing`
+            /// en: "Refreshing"
+            public static var refreshing: String { L10nSupport.string("settings.section.refreshing") }
+
+            /// Settings section heading for login items and the setup assistant. Distinct from settings.language.system, which is a language-picker option meaning 'follow macOS'.
+            ///
+            /// Key: `settings.section.system`
+            /// en: "System"
+            public static var system: String { L10nSupport.string("settings.section.system") }
+
+            /// Settings section heading for the app updater
+            ///
+            /// Key: `settings.section.updates`
+            /// en: "Updates"
+            public static var updates: String { L10nSupport.string("settings.section.updates") }
+        }
+
+        public enum Sidebar {
+            /// Sidebar group heading over the four core provider pages
+            ///
+            /// Key: `settings.sidebar.coreProviders`
+            /// en: "Core Providers"
+            public static var coreProviders: String { L10nSupport.string("settings.sidebar.coreProviders") }
+
+            /// Tooltip on the toggle that turns a misc provider off
+            ///
+            /// Key: `settings.sidebar.disableProvider`
+            /// en: "Disable Provider"
+            public static var disableProvider: String { L10nSupport.string("settings.sidebar.disableProvider") }
+
+            /// Tooltip on the toggle that turns a misc provider on
+            ///
+            /// Key: `settings.sidebar.enableProvider`
+            /// en: "Enable Provider"
+            public static var enableProvider: String { L10nSupport.string("settings.sidebar.enableProvider") }
+
+            /// Tooltip on the toggle that removes a provider from the Overview
+            ///
+            /// Key: `settings.sidebar.hideFromOverview`
+            /// en: "Hide from Overview"
+            public static var hideFromOverview: String { L10nSupport.string("settings.sidebar.hideFromOverview") }
+
+            /// Sidebar group heading over the static preference pages
+            ///
+            /// Key: `settings.sidebar.settings`
+            /// en: "Settings"
+            public static var settings: String { L10nSupport.string("settings.sidebar.settings") }
+        }
+    }
+
+    public enum Status {
+        public enum Card {
+            /// Count next to a status group heading
+            ///
+            /// Key: `status.card.componentCount`
+            /// en: "{count, plural, one {1 component} other {# components}}"
+            public static func componentCount(count: Int) -> String {
+                L10nSupport.localizedFormat("status.card.componentCount", count)
+            }
+
+            /// Group heading for a provider's status components distinct-from: settings.section.components — the Settings section listing bundled components and a provider status page's components are different lists.
+            ///
+            /// Key: `status.card.components`
+            /// en: "Components"
+            public static var components: String { L10nSupport.string("status.card.components") }
+
+            /// Shown when a provider reported nothing
+            ///
+            /// Key: `status.card.noIncidents`
+            /// en: "No incidents in the last 90 days"
+            public static var noIncidents: String { L10nSupport.string("status.card.noIncidents") }
+
+            /// Tooltip on the link to an incident page
+            ///
+            /// Key: `status.card.openIncident`
+            /// en: "Open incident"
+            public static var openIncident: String { L10nSupport.string("status.card.openIncident") }
+
+            /// Tooltip on the link to a provider's status page; host is a hostname and is never translated
+            ///
+            /// Key: `status.card.openStatusPage`
+            /// en: "Open {host}"
+            public static func openStatusPage(host: String) -> String {
+                L10nSupport.format("status.card.openStatusPage", host)
+            }
+
+            /// Tooltip on the service-status refresh button
+            ///
+            /// Key: `status.card.refresh`
+            /// en: "Refresh service status"
+            public static var refresh: String { L10nSupport.string("status.card.refresh") }
+
+            /// Stand-in for a hostname when the URL carries none
+            ///
+            /// Key: `status.card.statusPageFallback`
+            /// en: "status page"
+            public static var statusPageFallback: String { L10nSupport.string("status.card.statusPageFallback") }
+
+            /// Card title for a provider's status page summary
+            ///
+            /// Key: `status.card.title`
+            /// en: "Service Status"
+            public static var title: String { L10nSupport.string("status.card.title") }
+
+            /// Freshness caption on the status card
+            ///
+            /// Key: `status.card.updatedHoursAgo`
+            /// en: "updated {hours}h ago"
+            public static func updatedHoursAgo(hours: Int) -> String {
+                L10nSupport.format("status.card.updatedHoursAgo", hours)
+            }
+
+            /// Freshness caption on the status card
+            ///
+            /// Key: `status.card.updatedMinutesAgo`
+            /// en: "updated {minutes}m ago"
+            public static func updatedMinutesAgo(minutes: Int) -> String {
+                L10nSupport.format("status.card.updatedMinutesAgo", minutes)
+            }
+
+            /// Uptime figure; percent arrives already formatted to two decimals with its sign
+            ///
+            /// Key: `status.card.uptime`
+            /// en: "{percent} uptime"
+            public static func uptime(percent: String) -> String {
+                L10nSupport.format("status.card.uptime", percent)
+            }
+
+            /// Screen-reader label for the uptime strip
+            ///
+            /// Key: `status.card.uptimeStrip`
+            /// en: "Service uptime over the last {days} days"
+            public static func uptimeStrip(days: Int) -> String {
+                L10nSupport.format("status.card.uptimeStrip", days)
+            }
+        }
+
+        public enum Component {
+            /// Component status
+            ///
+            /// Key: `status.component.degraded`
+            /// en: "Degraded"
+            public static var degraded: String { L10nSupport.string("status.component.degraded") }
+
+            /// Component status
+            ///
+            /// Key: `status.component.maintenance`
+            /// en: "Maintenance"
+            public static var maintenance: String { L10nSupport.string("status.component.maintenance") }
+
+            /// Component status
+            ///
+            /// Key: `status.component.majorOutage`
+            /// en: "Major Outage"
+            public static var majorOutage: String { L10nSupport.string("status.component.majorOutage") }
+
+            /// Component status
+            ///
+            /// Key: `status.component.operational`
+            /// en: "Operational"
+            public static var operational: String { L10nSupport.string("status.component.operational") }
+
+            /// Group heading for components that match no named group distinct-from: quota.group.other — a status component outside the named groups and a quota group without an L3 name sit on different naming axes (vibe-bar AGENTS.md 7.1).
+            ///
+            /// Key: `status.component.other`
+            /// en: "Other"
+            public static var other: String { L10nSupport.string("status.component.other") }
+
+            /// Component status
+            ///
+            /// Key: `status.component.partialOutage`
+            /// en: "Partial Outage"
+            public static var partialOutage: String { L10nSupport.string("status.component.partialOutage") }
+        }
+
+        public enum Indicator {
+            /// Overall status pill: a critical incident
+            ///
+            /// Key: `status.indicator.critical`
+            /// en: "Critical"
+            public static var critical: String { L10nSupport.string("status.indicator.critical") }
+
+            /// Overall status pill while the page is being fetched
+            ///
+            /// Key: `status.indicator.loading`
+            /// en: "Loading"
+            public static var loading: String { L10nSupport.string("status.indicator.loading") }
+
+            /// Overall status pill: a major incident
+            ///
+            /// Key: `status.indicator.major`
+            /// en: "Major"
+            public static var major: String { L10nSupport.string("status.indicator.major") }
+
+            /// Overall status pill: a minor incident
+            ///
+            /// Key: `status.indicator.minor`
+            /// en: "Minor"
+            public static var minor: String { L10nSupport.string("status.indicator.minor") }
+        }
+
+        public enum Overview {
+            /// Overview status tile state
+            ///
+            /// Key: `status.overview.checking`
+            /// en: "Checking"
+            public static var checking: String { L10nSupport.string("status.overview.checking") }
+
+            /// Overview status tile state
+            ///
+            /// Key: `status.overview.down`
+            /// en: "Down"
+            public static var down: String { L10nSupport.string("status.overview.down") }
+
+            /// Empty state on the Overview status card
+            ///
+            /// Key: `status.overview.enableProvider`
+            /// en: "Enable a core provider in Settings to show service status."
+            public static var enableProvider: String { L10nSupport.string("status.overview.enableProvider") }
+
+            /// Status tile detail after a failed fetch
+            ///
+            /// Key: `status.overview.fetchFailed`
+            /// en: "Fetch failed"
+            public static var fetchFailed: String { L10nSupport.string("status.overview.fetchFailed") }
+
+            /// Overview status tile detail
+            ///
+            /// Key: `status.overview.needsAttention`
+            /// en: "Needs attention"
+            public static var needsAttention: String { L10nSupport.string("status.overview.needsAttention") }
+
+            /// Status tile detail while a fetch is in flight distinct-from: settings.pricing.refreshing — a Settings section for refresh intervals, a button label while a fetch runs, and a provider's in-flight state are three things.
+            ///
+            /// Key: `status.overview.refreshing`
+            /// en: "Refreshing"
+            public static var refreshing: String { L10nSupport.string("status.overview.refreshing") }
+
+            /// Card title on the Overview's service-status tile row distinct-from: settings.mcp.status — the local MCP socket's listening state and a provider's service status are different things.
+            ///
+            /// Key: `status.overview.title`
+            /// en: "Status"
+            public static var title: String { L10nSupport.string("status.overview.title") }
+        }
+    }
+
+    public enum Usage {
+        /// Footer figure; count arrives already grouped by the number formatter
+        ///
+        /// Key: `usage.requestCount`
+        /// en: "{count} requests"
+        public static func requestCount(count: String) -> String {
+            L10nSupport.format("usage.requestCount", count)
+        }
+
+        public enum HarnessMix {
+            /// Footer of the harness mix card
+            ///
+            /// Key: `usage.harnessMix.activeCount`
+            /// en: "{count, plural, one {1 harness} other {# harnesses}} active in range"
+            public static func activeCount(count: Int) -> String {
+                L10nSupport.localizedFormat("usage.harnessMix.activeCount", count)
+            }
+
+            /// Caption saying what the mix is weighted by
+            ///
+            /// Key: `usage.harnessMix.byRealTokens`
+            /// en: "by real tokens"
+            public static var byRealTokens: String { L10nSupport.string("usage.harnessMix.byRealTokens") }
+
+            /// Empty state inside the harness mix card
+            ///
+            /// Key: `usage.harnessMix.empty`
+            /// en: "No harness traffic in this range"
+            public static var empty: String { L10nSupport.string("usage.harnessMix.empty") }
+
+            /// All-caps card title. 'Harness' is the usage-axis unit and stays as spelled.
+            ///
+            /// Key: `usage.harnessMix.title`
+            /// en: "HARNESS MIX"
+            public static var title: String { L10nSupport.string("usage.harnessMix.title") }
+        }
+
+        public enum Hero {
+            /// Caption under the total-cost metric
+            ///
+            /// Key: `usage.hero.allRequestsPriced`
+            /// en: "all requests priced"
+            public static var allRequestsPriced: String { L10nSupport.string("usage.hero.allRequestsPriced") }
+
+            /// All-caps section label over the cache hit rate
+            ///
+            /// Key: `usage.hero.cacheHit`
+            /// en: "CACHE HIT"
+            public static var cacheHit: String { L10nSupport.string("usage.hero.cacheHit") }
+
+            /// Caption under the cache hit rate; tokens arrives already formatted, e.g. 12.3M
+            ///
+            /// Key: `usage.hero.cacheRead`
+            /// en: "{tokens} read"
+            public static func cacheRead(tokens: String) -> String {
+                L10nSupport.format("usage.hero.cacheRead", tokens)
+            }
+
+            /// Caption under the request-count metric
+            ///
+            /// Key: `usage.hero.inSelectedRange`
+            /// en: "in selected range"
+            public static var inSelectedRange: String { L10nSupport.string("usage.hero.inSelectedRange") }
+
+            /// Caption under the total-cost metric
+            ///
+            /// Key: `usage.hero.noPricedRequests`
+            /// en: "no priced requests"
+            public static var noPricedRequests: String { L10nSupport.string("usage.hero.noPricedRequests") }
+
+            /// Caption under the request-count metric
+            ///
+            /// Key: `usage.hero.noTrafficInRange`
+            /// en: "no traffic in range"
+            public static var noTrafficInRange: String { L10nSupport.string("usage.hero.noTrafficInRange") }
+
+            /// All-caps section label over the headline token count. English sets it in caps by the copy; Chinese has no case and relies on weight and colour.
+            ///
+            /// Key: `usage.hero.realTokens`
+            /// en: "REAL TOKENS · SELECTED RANGE"
+            public static var realTokens: String { L10nSupport.string("usage.hero.realTokens") }
+
+            /// All-caps metric label on the Workbench usage hero row
+            ///
+            /// Key: `usage.hero.requests`
+            /// en: "REQUESTS"
+            public static var requests: String { L10nSupport.string("usage.hero.requests") }
+
+            /// Screen-reader label for the stacked token bar
+            ///
+            /// Key: `usage.hero.tokenComposition`
+            /// en: "Token composition"
+            public static var tokenComposition: String { L10nSupport.string("usage.hero.tokenComposition") }
+
+            /// Badge counting requests with no usable price
+            ///
+            /// Key: `usage.hero.unpricedBadge`
+            /// en: "{count} unpriced"
+            public static func unpricedBadge(count: Int) -> String {
+                L10nSupport.format("usage.hero.unpricedBadge", count)
+            }
+
+            /// Tooltip on the unpriced badge
+            ///
+            /// Key: `usage.hero.unpricedHelp`
+            /// en: "{count, plural, one {1 request} other {# requests}} had no usable price and contribute $0."
+            public static func unpricedHelp(count: Int) -> String {
+                L10nSupport.localizedFormat("usage.hero.unpricedHelp", count)
+            }
+        }
+
+        public enum LedgerUnavailable {
+            /// Empty state body; the path is a filesystem path and is never translated
+            ///
+            /// Key: `usage.ledgerUnavailable.detail`
+            /// en: "The per-request ledger under ~/.vibebar could not be opened, so only live cost cards are available this session."
+            public static var detail: String { L10nSupport.string("usage.ledgerUnavailable.detail") }
+
+            /// Empty state when the local per-request ledger could not be opened
+            ///
+            /// Key: `usage.ledgerUnavailable.title`
+            /// en: "Usage ledger unavailable"
+            public static var title: String { L10nSupport.string("usage.ledgerUnavailable.title") }
+        }
+
+        public enum NoHarnessSelected {
+            /// Empty state body explaining the All chip
+            ///
+            /// Key: `usage.noHarnessSelected.detail`
+            /// en: "The All harnesses chip is a switch: click it again to put every harness back in the query."
+            public static var detail: String { L10nSupport.string("usage.noHarnessSelected.detail") }
+
+            /// Empty state when the harness filter excludes everything. 'harness' is the usage-axis unit and stays as spelled.
+            ///
+            /// Key: `usage.noHarnessSelected.title`
+            /// en: "No harness selected — pick one above"
+            public static var title: String { L10nSupport.string("usage.noHarnessSelected.title") }
+        }
+
+        public enum Tokens {
+            /// Token composition legend: cache read tokens
+            ///
+            /// Key: `usage.tokens.cacheRead`
+            /// en: "Cache read"
+            public static var cacheRead: String { L10nSupport.string("usage.tokens.cacheRead") }
+
+            /// Token composition legend: cache creation tokens
+            ///
+            /// Key: `usage.tokens.cacheWrite`
+            /// en: "Cache write"
+            public static var cacheWrite: String { L10nSupport.string("usage.tokens.cacheWrite") }
+
+            /// Token composition legend: fresh input tokens
+            ///
+            /// Key: `usage.tokens.input`
+            /// en: "In"
+            public static var input: String { L10nSupport.string("usage.tokens.input") }
+
+            /// Token composition legend: output tokens
+            ///
+            /// Key: `usage.tokens.output`
+            /// en: "Out"
+            public static var output: String { L10nSupport.string("usage.tokens.output") }
+        }
+
+        public enum WhenYouUse {
+            /// Heatmap title on the Overview, covering every provider at once
+            ///
+            /// Key: `usage.whenYouUse.everything`
+            /// en: "When you use everything"
+            public static var everything: String { L10nSupport.string("usage.whenYouUse.everything") }
+
+            /// Heatmap title on the Google AI page
+            ///
+            /// Key: `usage.whenYouUse.googleAI`
+            /// en: "When you use Google AI"
+            public static var googleAI: String { L10nSupport.string("usage.whenYouUse.googleAI") }
+
+            /// Heatmap title on the SpaceXAI page
+            ///
+            /// Key: `usage.whenYouUse.spaceXAI`
+            /// en: "When you use SpaceXAI"
+            public static var spaceXAI: String { L10nSupport.string("usage.whenYouUse.spaceXAI") }
+        }
+    }
+
+    public enum Workbench {
+        public enum Placeholder {
+            /// Placeholder body for a Workbench page with no content yet
+            ///
+            /// Key: `workbench.placeholder.resets`
+            /// en: "Cycle, refill and forecast views are on their way."
+            public static var resets: String { L10nSupport.string("workbench.placeholder.resets") }
+
+            /// Placeholder body; Codex and Claude Code are harness names and stay as spelled
+            ///
+            /// Key: `workbench.placeholder.sessionManager`
+            /// en: "Browsing and searching local Codex and Claude Code sessions is on its way."
+            public static var sessionManager: String { L10nSupport.string("workbench.placeholder.sessionManager") }
+
+            /// Placeholder body for the Settings page
+            ///
+            /// Key: `workbench.placeholder.settings`
+            /// en: "Configure Vibe Bar and its connected providers."
+            public static var settings: String { L10nSupport.string("workbench.placeholder.settings") }
+
+            /// Placeholder body for a Workbench page with no content yet
+            ///
+            /// Key: `workbench.placeholder.skillsManager`
+            /// en: "Reviewing and organizing installed agent skills is on its way."
+            public static var skillsManager: String { L10nSupport.string("workbench.placeholder.skillsManager") }
+
+            /// Placeholder body for a Workbench page with no content yet
+            ///
+            /// Key: `workbench.placeholder.usageStats`
+            /// en: "Full-window usage and cost analytics are on their way."
+            public static var usageStats: String { L10nSupport.string("workbench.placeholder.usageStats") }
         }
     }
 }
@@ -194,58 +4024,1208 @@ enum L10nCatalogFacts {
     ]
 
     static let keys: [String] = [
+        "common.add",
+        "common.auto",
         "common.cancel",
+        "common.copied",
+        "common.copy",
+        "common.delete",
+        "common.dismiss",
+        "common.dragToReorder",
+        "common.duration.days",
+        "common.duration.daysHours",
+        "common.duration.hours",
+        "common.duration.hoursMinutes",
+        "common.duration.lessThanMinute",
+        "common.duration.minutes",
+        "common.duration.now",
+        "common.name",
         "common.noData",
+        "common.off",
+        "common.on",
+        "common.openSettings",
+        "common.percent",
+        "common.provider",
         "common.refresh",
+        "common.refreshSection",
+        "common.remove",
         "common.retry",
+        "common.retryNow",
+        "common.save",
+        "common.updated.daysAgo",
+        "common.updated.hoursAgo",
+        "common.updated.justNow",
+        "common.updated.minutesAgo",
+        "common.updated.never",
+        "common.updated.secondsAgo",
+        "cost.allProviders",
+        "cost.empty.antigravity",
+        "cost.empty.claude",
+        "cost.empty.codex",
+        "cost.empty.gemini",
+        "cost.empty.genericCLI",
+        "cost.empty.grok",
+        "cost.fullCharts",
+        "cost.gemini.emptyDetail",
+        "cost.gemini.emptyTitle",
+        "cost.googleAI.empty",
+        "cost.googleAI.title",
+        "cost.history.allProviders",
+        "cost.metric.peakDay",
+        "cost.metric.peakTokenDay",
+        "cost.metric.sevenDay",
+        "cost.metric.sevenDayTokens",
+        "cost.metric.thirtyDay",
+        "cost.metric.thirtyDayTokens",
+        "cost.metric.todayTokens",
+        "cost.metric.totalCost",
+        "cost.metric.totalTokens",
+        "cost.metric.yesterdayTokens",
+        "cost.modelRanking.allProvidersAllTime",
+        "cost.modelRanking.allTime",
+        "cost.modelRanking.title",
+        "cost.noUsageYet",
+        "cost.notTracked",
+        "cost.openFullCharts",
         "cost.perThousandTokens",
+        "cost.provider.title",
+        "cost.providerFullCharts",
+        "cost.refreshData",
+        "cost.refreshProvider",
+        "cost.spaceXAI.empty",
+        "cost.spaceXAI.title",
         "cost.spentToday",
+        "cost.timeframe.all",
+        "cost.timeframe.month",
+        "cost.timeframe.monthShort",
+        "cost.timeframe.today",
+        "cost.timeframe.week",
+        "cost.timeframe.weekShort",
+        "cost.timeframe.yesterday",
+        "cost.title",
+        "cost.topModel.share",
+        "cost.topModel.title",
+        "error.credentialRejected",
         "error.needsReLogin",
+        "error.network",
         "error.networkWithReason",
         "error.noAccountFound",
+        "error.notImplemented",
+        "error.parseFailure",
         "error.rateLimited",
+        "error.unknown",
+        "error.unknownDetail",
+        "onboarding.apiKeys.hide",
+        "onboarding.apiKeys.intro",
+        "onboarding.apiKeys.setUp",
+        "onboarding.apiKeys.showOnMiscPage",
+        "onboarding.back",
+        "onboarding.continue",
+        "onboarding.cookies.batchScope",
+        "onboarding.cookies.importAll",
+        "onboarding.cookies.importFromBrowser",
+        "onboarding.cookies.importGemini",
+        "onboarding.cookies.importGrok",
+        "onboarding.cookies.importing",
+        "onboarding.cookies.intro",
+        "onboarding.cookies.notImported",
+        "onboarding.cookies.openWebViewLogin",
+        "onboarding.cookies.saved",
+        "onboarding.cookies.signInFirst",
+        "onboarding.done.apiKeyProviders",
+        "onboarding.done.cookieCount",
+        "onboarding.done.footer",
+        "onboarding.done.intro",
+        "onboarding.done.miscCount",
+        "onboarding.done.noneShown",
+        "onboarding.done.pricingBundled",
+        "onboarding.done.pricingMerged",
+        "onboarding.finish",
+        "onboarding.pricing.fetchNow",
+        "onboarding.pricing.fetching",
+        "onboarding.pricing.footer",
+        "onboarding.pricing.interval.hour",
+        "onboarding.pricing.interval.hours",
+        "onboarding.pricing.intro",
+        "onboarding.pricing.merged",
+        "onboarding.pricing.notFetched",
+        "onboarding.pricing.source.failed",
+        "onboarding.pricing.source.models",
+        "onboarding.pricing.source.notRefreshed",
+        "onboarding.pricing.source.unchanged",
+        "onboarding.skip",
+        "onboarding.step.apiKeyProviders.subtitle",
+        "onboarding.step.apiKeyProviders.title",
+        "onboarding.step.browserCookies.subtitle",
+        "onboarding.step.browserCookies.title",
+        "onboarding.step.done.subtitle",
+        "onboarding.step.done.title",
+        "onboarding.step.pricing.subtitle",
+        "onboarding.step.pricing.title",
+        "onboarding.step.subscriptions.subtitle",
+        "onboarding.step.subscriptions.title",
+        "onboarding.step.welcome.subtitle",
+        "onboarding.step.welcome.title",
+        "onboarding.subscriptions.claude.detected",
+        "onboarding.subscriptions.claude.missing",
+        "onboarding.subscriptions.claude.web",
+        "onboarding.subscriptions.codex.detected",
+        "onboarding.subscriptions.codex.missing",
+        "onboarding.subscriptions.codex.web",
+        "onboarding.subscriptions.gemini.hint",
+        "onboarding.subscriptions.grok.detected",
+        "onboarding.subscriptions.grok.missing",
+        "onboarding.subscriptions.intro",
+        "onboarding.subscriptions.productLine.claude",
+        "onboarding.subscriptions.productLine.codex",
+        "onboarding.subscriptions.productLine.gemini",
+        "onboarding.subscriptions.productLine.grok",
+        "onboarding.subscriptions.showInOverview",
+        "onboarding.title",
+        "onboarding.welcome.cost.detail",
+        "onboarding.welcome.cost.title",
+        "onboarding.welcome.footer",
+        "onboarding.welcome.intro",
+        "onboarding.welcome.mcp.detail",
+        "onboarding.welcome.mcp.title",
+        "onboarding.welcome.quotas.detail",
+        "onboarding.welcome.quotas.title",
+        "onboarding.welcome.sessions.detail",
+        "onboarding.welcome.sessions.title",
+        "platform.macos.launchAtLogin.detail",
+        "platform.macos.launchAtLogin.enabled",
+        "platform.macos.launchAtLogin.subtitle",
+        "platform.macos.launchAtLogin.title",
+        "platform.macos.launchAtLogin.toggle",
+        "popover.header.machinesSubtitle",
+        "popover.header.miscSubtitle",
+        "popover.header.overviewSubtitle",
+        "popover.refreshGoogleAI",
+        "popover.refreshSpaceXAI",
+        "popover.showPage",
+        "popover.tab.machines",
+        "popover.tab.misc",
+        "popover.tab.miscShort",
+        "popover.tab.overview",
         "quota.awaitingFirstObservation",
+        "quota.bucket.noResetInfo",
         "quota.cycleRecordedOnRefill",
         "quota.cyclesRecorded",
+        "quota.empty.needsLogin.detail",
+        "quota.empty.network.detail",
+        "quota.empty.noAccount.detail",
+        "quota.empty.parseChanged.detail",
+        "quota.empty.rateLimited.detail",
+        "quota.empty.rateLimited.headline",
+        "quota.forecast.confidence.high",
+        "quota.forecast.confidence.learning",
+        "quota.forecast.confidence.medium",
+        "quota.forecast.guidance.atRisk",
+        "quota.forecast.guidance.available",
+        "quota.forecast.guidance.surplus",
+        "quota.forecast.guidance.usedAvailable",
+        "quota.forecast.guidance.usedSurplus",
+        "quota.forecast.guidance.usedWithinTarget",
+        "quota.forecast.guidance.watch",
+        "quota.forecast.guidance.withinTarget",
+        "quota.forecast.reset.atRisk",
+        "quota.forecast.reset.enough",
+        "quota.forecast.reset.learning",
+        "quota.forecast.reset.surplus",
+        "quota.forecast.reset.watch",
+        "quota.forecast.status.atRisk",
+        "quota.forecast.status.enough",
+        "quota.forecast.status.learning",
+        "quota.forecast.status.surplus",
+        "quota.forecast.status.watch",
+        "quota.forecast.useUp.beforeReset",
+        "quota.forecast.useUp.couldRunOut",
+        "quota.forecast.useUp.estimated",
+        "quota.forecast.useUp.lastsUntilReset",
+        "quota.forecast.useUp.uncertain",
+        "quota.forecast.verdict.atRisk",
+        "quota.forecast.verdict.enough",
+        "quota.forecast.verdict.learning",
+        "quota.forecast.verdict.surplus",
+        "quota.forecast.verdict.watch",
+        "quota.freshness.age.seconds",
+        "quota.freshness.dataAge",
+        "quota.freshness.defaultHelp",
+        "quota.freshness.line",
+        "quota.freshness.noCachedData",
+        "quota.freshness.refreshFailed",
+        "quota.freshness.refreshFailedAgo",
+        "quota.freshness.staleNeverUpdated",
+        "quota.freshness.staleUpdatedAgo",
+        "quota.group.allModels",
+        "quota.group.daily",
+        "quota.group.fiveHours",
+        "quota.group.monthly",
+        "quota.group.noUtilization",
+        "quota.group.other",
+        "quota.group.otherModels",
+        "quota.group.weekly",
+        "quota.group.weeklyCredits",
+        "quota.login.claude",
+        "quota.login.codex",
+        "quota.login.cursor",
+        "quota.login.grok",
+        "quota.login.misc",
+        "quota.mode.remaining",
+        "quota.mode.used",
+        "quota.pace.lastsUntilReset",
+        "quota.pace.runsOutIn",
+        "quota.perModelLimits",
         "quota.remainingPercent",
+        "quota.reset.in",
+        "quota.reset.passed",
+        "quota.reset.passedAt",
+        "quota.resetCredits.available",
+        "quota.resetCredits.availableWithExpiry",
+        "quota.resetCredits.title",
         "quota.resetsIn",
         "quota.resetsInHours",
+        "quota.upcoming.axisDays",
+        "quota.upcoming.axisHours",
+        "quota.upcoming.empty",
+        "quota.upcoming.gain",
+        "quota.upcoming.horizon",
+        "quota.upcoming.leftAndGain",
+        "quota.upcoming.markerHelp",
+        "quota.upcoming.resetsAt",
+        "quota.upcoming.title",
+        "quota.update.failed",
         "quota.usedPercent",
+        "resetHistory.a11y.empty",
+        "resetHistory.a11y.more",
+        "resetHistory.a11y.summary",
+        "resetHistory.a11y.truncation",
+        "resetHistory.axis.cycle",
+        "resetHistory.axis.cycleHelp",
+        "resetHistory.axis.time",
+        "resetHistory.axis.timeHelp",
+        "resetHistory.axisCyclesBack",
+        "resetHistory.axisNow",
+        "resetHistory.lane.emptyState",
+        "resetHistory.lane.spokenNoCycles",
+        "resetHistory.lane.spokenWaste",
         "resetHistory.laneAverage",
         "resetHistory.noCompletedCycles",
+        "resetHistory.reset.earlyClockRestarted",
+        "resetHistory.reset.earlyClockUnchanged",
+        "resetHistory.reset.earlyUnclear",
+        "resetHistory.spoken.allCycles",
+        "resetHistory.spoken.allTime",
+        "resetHistory.spoken.eightCycles",
+        "resetHistory.spoken.eightWeeks",
+        "resetHistory.spoken.fourCycles",
+        "resetHistory.spoken.fourWeeks",
+        "resetHistory.spoken.twelveCycles",
+        "resetHistory.spoken.twelveWeeks",
         "resetHistory.title",
+        "resetHistory.totals.none",
+        "resetHistory.truncation",
+        "resetHistory.verdict.clean",
+        "resetHistory.verdict.leaky",
+        "resetHistory.verdict.noCycles",
+        "resetHistory.verdict.noQuota",
+        "resetHistory.verdict.wasteful",
         "resetHistory.wastedSummary",
+        "resetHistory.window.all",
+        "resetHistory.window.eightWeeks",
+        "resetHistory.window.fourWeeks",
+        "resetHistory.window.twelveWeeks",
+        "settings.antigravityCookieEnabled",
+        "settings.antigravityLocalOnly",
+        "settings.antigravitySource",
+        "settings.appVersion",
+        "settings.bundled",
+        "settings.checkConnections",
+        "settings.checkForUpdates",
+        "settings.checkKitUpdates",
+        "settings.checkingGitHub",
+        "settings.clearCostData",
+        "settings.connectionHealth",
+        "settings.costDataIntro",
+        "settings.couldNotDeleteCookies",
+        "settings.couldNotDeleteGeminiCookies",
+        "settings.couldNotDeleteGrokCookies",
+        "settings.cursorNoSession",
+        "settings.cursorSessionDetected",
+        "settings.cursorSource",
+        "settings.cursorSourceValue",
+        "settings.deleteCookies",
+        "settings.deleteGeminiCookies",
+        "settings.deleteGrokCookies",
+        "settings.externalChange.title",
+        "settings.geminiCookiesSaved",
+        "settings.geminiShared",
+        "settings.geminiSource",
+        "settings.grokAuthDetected",
+        "settings.grokCookiesSaved",
+        "settings.keepHistory",
+        "settings.keepHistoryDetail",
+        "settings.kitDetail",
+        "settings.language.caption",
         "settings.language.system",
         "settings.language.title",
+        "settings.mcp.allowRefresh",
+        "settings.mcp.allowRefreshDetail",
+        "settings.mcp.allowSkills",
+        "settings.mcp.allowSkillsDetail",
+        "settings.mcp.appendCodexConfig",
+        "settings.mcp.connectAgent",
+        "settings.mcp.connectedClients",
+        "settings.mcp.enable",
+        "settings.mcp.intro",
+        "settings.mcp.lastActivity",
+        "settings.mcp.listening",
+        "settings.mcp.manualIntro",
+        "settings.mcp.mergeCursorConfig",
+        "settings.mcp.movePrompt",
+        "settings.mcp.notListening",
+        "settings.mcp.otherStdioClient",
+        "settings.mcp.otherStdioDetail",
+        "settings.mcp.quickestPath",
+        "settings.mcp.readOnlyDetail",
+        "settings.mcp.runInTerminal",
+        "settings.mcp.setupPrompt",
+        "settings.mcp.setupPromptDetail",
+        "settings.mcp.socket",
+        "settings.mcp.socketLifetime",
+        "settings.mcp.status",
+        "settings.mcp.title",
+        "settings.mcp.whatAgentsMayDo",
+        "settings.menuBarHealthUnavailable",
+        "settings.miniWindow.add",
+        "settings.miniWindow.allBucketsIncluded",
+        "settings.miniWindow.dismissBuiltIn",
+        "settings.miniWindow.forgetDiscovered",
+        "settings.miniWindow.includeStyle",
+        "settings.miniWindow.lastCannotBeRemoved",
+        "settings.miniWindow.namesAllWindows",
+        "settings.miniWindow.namesThisStyle",
+        "settings.miniWindow.namesThisWindow",
+        "settings.miniWindow.noFieldsSelected",
+        "settings.miniWindow.notInWindow",
+        "settings.miniWindow.offline",
+        "settings.miniWindow.openClose",
+        "settings.miniWindow.overridesStyle",
+        "settings.miniWindow.overridesWindow",
+        "settings.miniWindow.removeFromWindow",
+        "settings.miniWindow.removeHelp",
+        "settings.miniWindow.stripDensity",
+        "settings.miniWindow.styleCycle",
+        "settings.miniWindow.toggleHelp",
+        "settings.miniWindow.treeDetail",
+        "settings.misc.accessKeyId",
+        "settings.misc.akSkSaved",
+        "settings.misc.apiKeySaved",
+        "settings.misc.clearWorkspace",
+        "settings.misc.clone",
+        "settings.misc.consoleLink",
+        "settings.misc.edition",
+        "settings.misc.githubSignInHint",
+        "settings.misc.githubTokenSaved",
+        "settings.misc.importDetail",
+        "settings.misc.kiroHint",
+        "settings.misc.noCookieSpec",
+        "settings.misc.noCookiesYet",
+        "settings.misc.probe",
+        "settings.misc.prompt.copilotHost",
+        "settings.misc.prompt.dashscope",
+        "settings.misc.prompt.kilo",
+        "settings.misc.prompt.minimax",
+        "settings.misc.prompt.openRouter",
+        "settings.misc.prompt.openRouterHost",
+        "settings.misc.prompt.warp",
+        "settings.misc.prompt.workspace",
+        "settings.misc.prompt.zai",
+        "settings.misc.region",
+        "settings.misc.removeAkSk",
+        "settings.misc.removeApiKey",
+        "settings.misc.removeCookieSlot",
+        "settings.misc.removeCopy",
+        "settings.misc.removeCopyButton",
+        "settings.misc.removeCopyDetail",
+        "settings.misc.removeCopyTitle",
+        "settings.misc.removeGithubToken",
+        "settings.misc.rename",
+        "settings.misc.secretAccessKey",
+        "settings.misc.signIn",
+        "settings.misc.signInViaWeb",
+        "settings.misc.tencentTokenPlanNote",
+        "settings.misc.variant",
+        "settings.misc.waiting",
+        "settings.misc.workspaceNote",
+        "settings.needsSetup",
+        "settings.notChecked",
+        "settings.notCheckedYet",
+        "settings.openRefreshCooldown",
+        "settings.openRefreshDetail",
+        "settings.openStatusPage",
+        "settings.percentShows",
+        "settings.planBadge",
+        "settings.planBadgeDetail",
+        "settings.pricing.addOverride",
+        "settings.pricing.advancedTiers",
+        "settings.pricing.alwaysWins",
+        "settings.pricing.bundledFallback",
+        "settings.pricing.cacheReadAbove",
+        "settings.pricing.cacheWriteAbove",
+        "settings.pricing.deleteOverride",
+        "settings.pricing.exactModelName",
+        "settings.pricing.fastMultiplier",
+        "settings.pricing.inputAbove",
+        "settings.pricing.intro",
+        "settings.pricing.localOverrides",
+        "settings.pricing.noOverrides",
+        "settings.pricing.offlineFloor",
+        "settings.pricing.outputAbove",
+        "settings.pricing.overridesIntro",
+        "settings.pricing.priorityHealth",
+        "settings.pricing.rateInput",
+        "settings.pricing.rateOutput",
+        "settings.pricing.refreshNow",
+        "settings.pricing.refreshing",
+        "settings.pricing.thresholdTokens",
+        "settings.pricingDataDate",
+        "settings.privacyDetail",
+        "settings.privacyMode",
+        "settings.privacyModeDetail",
+        "settings.ready",
+        "settings.refreshEvery",
+        "settings.refreshOnPopoverOpen",
+        "settings.releaseNotes",
+        "settings.remote.core",
+        "settings.remote.costAggregation",
+        "settings.remote.costAggregationIntro",
+        "settings.remote.differentControlCenter",
+        "settings.remote.discard",
+        "settings.remote.discardPendingDetail",
+        "settings.remote.discardPendingTitle",
+        "settings.remote.disconnect",
+        "settings.remote.disconnectButton",
+        "settings.remote.disconnectDetail",
+        "settings.remote.disconnectIntro",
+        "settings.remote.disconnectTitle",
+        "settings.remote.exportIdentity",
+        "settings.remote.importProvisioning",
+        "settings.remote.join",
+        "settings.remote.joinIntro",
+        "settings.remote.joinWithCode",
+        "settings.remote.lastSync",
+        "settings.remote.machineDetail",
+        "settings.remote.machinesAppearAfterImport",
+        "settings.remote.machinesSynced",
+        "settings.remote.manualPairingIntro",
+        "settings.remote.notConnected",
+        "settings.remote.orPairManually",
+        "settings.remote.pendingIntro",
+        "settings.remote.provisioning",
+        "settings.remote.registeredProbes",
+        "settings.remote.relay",
+        "settings.remote.resumeSaving",
+        "settings.remote.retrySaving",
+        "settings.remote.statusWithCode",
+        "settings.remote.syncNow",
+        "settings.remote.workspace",
+        "settings.repository",
+        "settings.rescanCostLogs",
+        "settings.search",
+        "settings.section.components",
+        "settings.section.costData",
+        "settings.section.layout",
+        "settings.section.menuBarHealth",
+        "settings.section.miniWindows",
+        "settings.section.privacy",
+        "settings.section.refreshing",
+        "settings.section.system",
+        "settings.section.updates",
+        "settings.showAssistant",
+        "settings.showAssistantDetail",
+        "settings.sidebar.coreProviders",
+        "settings.sidebar.disableProvider",
+        "settings.sidebar.enableProvider",
+        "settings.sidebar.hideFromOverview",
+        "settings.sidebar.settings",
+        "settings.spaceXAIIntro",
+        "settings.updateChannel",
+        "settings.updateCheckDetail",
+        "settings.usageSource",
+        "settings.webQuota",
+        "settings.whatChangedIn",
+        "status.card.componentCount",
+        "status.card.components",
+        "status.card.noIncidents",
+        "status.card.openIncident",
+        "status.card.openStatusPage",
+        "status.card.refresh",
+        "status.card.statusPageFallback",
+        "status.card.title",
+        "status.card.updatedHoursAgo",
+        "status.card.updatedMinutesAgo",
+        "status.card.uptime",
+        "status.card.uptimeStrip",
+        "status.component.degraded",
+        "status.component.maintenance",
+        "status.component.majorOutage",
+        "status.component.operational",
+        "status.component.other",
+        "status.component.partialOutage",
+        "status.indicator.critical",
+        "status.indicator.loading",
+        "status.indicator.major",
+        "status.indicator.minor",
+        "status.overview.checking",
+        "status.overview.down",
+        "status.overview.enableProvider",
+        "status.overview.fetchFailed",
+        "status.overview.needsAttention",
+        "status.overview.refreshing",
+        "status.overview.title",
+        "usage.harnessMix.activeCount",
+        "usage.harnessMix.byRealTokens",
+        "usage.harnessMix.empty",
+        "usage.harnessMix.title",
+        "usage.hero.allRequestsPriced",
+        "usage.hero.cacheHit",
+        "usage.hero.cacheRead",
+        "usage.hero.inSelectedRange",
+        "usage.hero.noPricedRequests",
+        "usage.hero.noTrafficInRange",
+        "usage.hero.realTokens",
+        "usage.hero.requests",
+        "usage.hero.tokenComposition",
+        "usage.hero.unpricedBadge",
+        "usage.hero.unpricedHelp",
+        "usage.ledgerUnavailable.detail",
+        "usage.ledgerUnavailable.title",
+        "usage.noHarnessSelected.detail",
+        "usage.noHarnessSelected.title",
+        "usage.requestCount",
+        "usage.tokens.cacheRead",
+        "usage.tokens.cacheWrite",
+        "usage.tokens.input",
+        "usage.tokens.output",
+        "usage.whenYouUse.everything",
+        "usage.whenYouUse.googleAI",
+        "usage.whenYouUse.spaceXAI",
+        "workbench.placeholder.resets",
+        "workbench.placeholder.sessionManager",
+        "workbench.placeholder.settings",
+        "workbench.placeholder.skillsManager",
+        "workbench.placeholder.usageStats",
     ]
 
     static let pluralKeys: Set<String> = [
+        "common.updated.daysAgo",
+        "common.updated.hoursAgo",
+        "common.updated.minutesAgo",
         "quota.cyclesRecorded",
+        "quota.perModelLimits",
+        "quota.resetCredits.available",
+        "resetHistory.laneAverage",
+        "resetHistory.verdict.leaky",
+        "resetHistory.verdict.wasteful",
+        "resetHistory.wastedSummary",
+        "status.card.componentCount",
+        "usage.harnessMix.activeCount",
+        "usage.hero.unpricedHelp",
     ]
 
     static let placeholderCounts: [String: Int] = [
+        "common.add": 0,
+        "common.auto": 0,
         "common.cancel": 0,
+        "common.copied": 0,
+        "common.copy": 0,
+        "common.delete": 0,
+        "common.dismiss": 0,
+        "common.dragToReorder": 0,
+        "common.duration.days": 1,
+        "common.duration.daysHours": 2,
+        "common.duration.hours": 1,
+        "common.duration.hoursMinutes": 2,
+        "common.duration.lessThanMinute": 0,
+        "common.duration.minutes": 1,
+        "common.duration.now": 0,
+        "common.name": 0,
         "common.noData": 0,
+        "common.off": 0,
+        "common.on": 0,
+        "common.openSettings": 0,
+        "common.percent": 1,
+        "common.provider": 0,
         "common.refresh": 0,
+        "common.refreshSection": 0,
+        "common.remove": 0,
         "common.retry": 0,
+        "common.retryNow": 0,
+        "common.save": 0,
+        "common.updated.daysAgo": 1,
+        "common.updated.hoursAgo": 1,
+        "common.updated.justNow": 0,
+        "common.updated.minutesAgo": 1,
+        "common.updated.never": 0,
+        "common.updated.secondsAgo": 1,
+        "cost.allProviders": 0,
+        "cost.empty.antigravity": 0,
+        "cost.empty.claude": 0,
+        "cost.empty.codex": 0,
+        "cost.empty.gemini": 0,
+        "cost.empty.genericCLI": 1,
+        "cost.empty.grok": 0,
+        "cost.fullCharts": 1,
+        "cost.gemini.emptyDetail": 0,
+        "cost.gemini.emptyTitle": 0,
+        "cost.googleAI.empty": 0,
+        "cost.googleAI.title": 0,
+        "cost.history.allProviders": 0,
+        "cost.metric.peakDay": 0,
+        "cost.metric.peakTokenDay": 0,
+        "cost.metric.sevenDay": 0,
+        "cost.metric.sevenDayTokens": 0,
+        "cost.metric.thirtyDay": 0,
+        "cost.metric.thirtyDayTokens": 0,
+        "cost.metric.todayTokens": 0,
+        "cost.metric.totalCost": 0,
+        "cost.metric.totalTokens": 0,
+        "cost.metric.yesterdayTokens": 0,
+        "cost.modelRanking.allProvidersAllTime": 0,
+        "cost.modelRanking.allTime": 0,
+        "cost.modelRanking.title": 0,
+        "cost.noUsageYet": 0,
+        "cost.notTracked": 1,
+        "cost.openFullCharts": 0,
         "cost.perThousandTokens": 1,
+        "cost.provider.title": 1,
+        "cost.providerFullCharts": 1,
+        "cost.refreshData": 0,
+        "cost.refreshProvider": 1,
+        "cost.spaceXAI.empty": 0,
+        "cost.spaceXAI.title": 0,
         "cost.spentToday": 1,
+        "cost.timeframe.all": 0,
+        "cost.timeframe.month": 0,
+        "cost.timeframe.monthShort": 0,
+        "cost.timeframe.today": 0,
+        "cost.timeframe.week": 0,
+        "cost.timeframe.weekShort": 0,
+        "cost.timeframe.yesterday": 0,
+        "cost.title": 0,
+        "cost.topModel.share": 1,
+        "cost.topModel.title": 0,
+        "error.credentialRejected": 0,
         "error.needsReLogin": 0,
+        "error.network": 0,
         "error.networkWithReason": 1,
         "error.noAccountFound": 0,
+        "error.notImplemented": 0,
+        "error.parseFailure": 0,
         "error.rateLimited": 0,
+        "error.unknown": 0,
+        "error.unknownDetail": 1,
+        "onboarding.apiKeys.hide": 0,
+        "onboarding.apiKeys.intro": 0,
+        "onboarding.apiKeys.setUp": 0,
+        "onboarding.apiKeys.showOnMiscPage": 1,
+        "onboarding.back": 0,
+        "onboarding.continue": 0,
+        "onboarding.cookies.batchScope": 0,
+        "onboarding.cookies.importAll": 0,
+        "onboarding.cookies.importFromBrowser": 0,
+        "onboarding.cookies.importGemini": 0,
+        "onboarding.cookies.importGrok": 0,
+        "onboarding.cookies.importing": 0,
+        "onboarding.cookies.intro": 0,
+        "onboarding.cookies.notImported": 0,
+        "onboarding.cookies.openWebViewLogin": 0,
+        "onboarding.cookies.saved": 0,
+        "onboarding.cookies.signInFirst": 0,
+        "onboarding.done.apiKeyProviders": 0,
+        "onboarding.done.cookieCount": 2,
+        "onboarding.done.footer": 0,
+        "onboarding.done.intro": 0,
+        "onboarding.done.miscCount": 1,
+        "onboarding.done.noneShown": 0,
+        "onboarding.done.pricingBundled": 0,
+        "onboarding.done.pricingMerged": 1,
+        "onboarding.finish": 0,
+        "onboarding.pricing.fetchNow": 0,
+        "onboarding.pricing.fetching": 0,
+        "onboarding.pricing.footer": 0,
+        "onboarding.pricing.interval.hour": 0,
+        "onboarding.pricing.interval.hours": 1,
+        "onboarding.pricing.intro": 1,
+        "onboarding.pricing.merged": 2,
+        "onboarding.pricing.notFetched": 0,
+        "onboarding.pricing.source.failed": 1,
+        "onboarding.pricing.source.models": 1,
+        "onboarding.pricing.source.notRefreshed": 0,
+        "onboarding.pricing.source.unchanged": 1,
+        "onboarding.skip": 0,
+        "onboarding.step.apiKeyProviders.subtitle": 0,
+        "onboarding.step.apiKeyProviders.title": 0,
+        "onboarding.step.browserCookies.subtitle": 0,
+        "onboarding.step.browserCookies.title": 0,
+        "onboarding.step.done.subtitle": 0,
+        "onboarding.step.done.title": 0,
+        "onboarding.step.pricing.subtitle": 0,
+        "onboarding.step.pricing.title": 0,
+        "onboarding.step.subscriptions.subtitle": 0,
+        "onboarding.step.subscriptions.title": 0,
+        "onboarding.step.welcome.subtitle": 0,
+        "onboarding.step.welcome.title": 0,
+        "onboarding.subscriptions.claude.detected": 0,
+        "onboarding.subscriptions.claude.missing": 0,
+        "onboarding.subscriptions.claude.web": 0,
+        "onboarding.subscriptions.codex.detected": 0,
+        "onboarding.subscriptions.codex.missing": 0,
+        "onboarding.subscriptions.codex.web": 0,
+        "onboarding.subscriptions.gemini.hint": 0,
+        "onboarding.subscriptions.grok.detected": 0,
+        "onboarding.subscriptions.grok.missing": 0,
+        "onboarding.subscriptions.intro": 0,
+        "onboarding.subscriptions.productLine.claude": 0,
+        "onboarding.subscriptions.productLine.codex": 0,
+        "onboarding.subscriptions.productLine.gemini": 0,
+        "onboarding.subscriptions.productLine.grok": 0,
+        "onboarding.subscriptions.showInOverview": 0,
+        "onboarding.title": 0,
+        "onboarding.welcome.cost.detail": 0,
+        "onboarding.welcome.cost.title": 0,
+        "onboarding.welcome.footer": 0,
+        "onboarding.welcome.intro": 0,
+        "onboarding.welcome.mcp.detail": 0,
+        "onboarding.welcome.mcp.title": 0,
+        "onboarding.welcome.quotas.detail": 0,
+        "onboarding.welcome.quotas.title": 0,
+        "onboarding.welcome.sessions.detail": 0,
+        "onboarding.welcome.sessions.title": 0,
+        "platform.macos.launchAtLogin.detail": 0,
+        "platform.macos.launchAtLogin.enabled": 0,
+        "platform.macos.launchAtLogin.subtitle": 0,
+        "platform.macos.launchAtLogin.title": 0,
+        "platform.macos.launchAtLogin.toggle": 0,
+        "popover.header.machinesSubtitle": 0,
+        "popover.header.miscSubtitle": 0,
+        "popover.header.overviewSubtitle": 0,
+        "popover.refreshGoogleAI": 0,
+        "popover.refreshSpaceXAI": 0,
+        "popover.showPage": 1,
+        "popover.tab.machines": 0,
+        "popover.tab.misc": 0,
+        "popover.tab.miscShort": 0,
+        "popover.tab.overview": 0,
         "quota.awaitingFirstObservation": 0,
+        "quota.bucket.noResetInfo": 0,
         "quota.cycleRecordedOnRefill": 0,
         "quota.cyclesRecorded": 1,
+        "quota.empty.needsLogin.detail": 1,
+        "quota.empty.network.detail": 0,
+        "quota.empty.noAccount.detail": 0,
+        "quota.empty.parseChanged.detail": 0,
+        "quota.empty.rateLimited.detail": 0,
+        "quota.empty.rateLimited.headline": 0,
+        "quota.forecast.confidence.high": 0,
+        "quota.forecast.confidence.learning": 0,
+        "quota.forecast.confidence.medium": 0,
+        "quota.forecast.guidance.atRisk": 0,
+        "quota.forecast.guidance.available": 2,
+        "quota.forecast.guidance.surplus": 2,
+        "quota.forecast.guidance.usedAvailable": 2,
+        "quota.forecast.guidance.usedSurplus": 2,
+        "quota.forecast.guidance.usedWithinTarget": 1,
+        "quota.forecast.guidance.watch": 0,
+        "quota.forecast.guidance.withinTarget": 1,
+        "quota.forecast.reset.atRisk": 0,
+        "quota.forecast.reset.enough": 1,
+        "quota.forecast.reset.learning": 1,
+        "quota.forecast.reset.surplus": 1,
+        "quota.forecast.reset.watch": 1,
+        "quota.forecast.status.atRisk": 0,
+        "quota.forecast.status.enough": 1,
+        "quota.forecast.status.learning": 1,
+        "quota.forecast.status.surplus": 1,
+        "quota.forecast.status.watch": 1,
+        "quota.forecast.useUp.beforeReset": 0,
+        "quota.forecast.useUp.couldRunOut": 1,
+        "quota.forecast.useUp.estimated": 1,
+        "quota.forecast.useUp.lastsUntilReset": 0,
+        "quota.forecast.useUp.uncertain": 0,
+        "quota.forecast.verdict.atRisk": 0,
+        "quota.forecast.verdict.enough": 0,
+        "quota.forecast.verdict.learning": 0,
+        "quota.forecast.verdict.surplus": 0,
+        "quota.forecast.verdict.watch": 0,
+        "quota.freshness.age.seconds": 1,
+        "quota.freshness.dataAge": 1,
+        "quota.freshness.defaultHelp": 0,
+        "quota.freshness.line": 3,
+        "quota.freshness.noCachedData": 0,
+        "quota.freshness.refreshFailed": 0,
+        "quota.freshness.refreshFailedAgo": 1,
+        "quota.freshness.staleNeverUpdated": 0,
+        "quota.freshness.staleUpdatedAgo": 1,
+        "quota.group.allModels": 0,
+        "quota.group.daily": 0,
+        "quota.group.fiveHours": 0,
+        "quota.group.monthly": 0,
+        "quota.group.noUtilization": 0,
+        "quota.group.other": 0,
+        "quota.group.otherModels": 0,
+        "quota.group.weekly": 0,
+        "quota.group.weeklyCredits": 0,
+        "quota.login.claude": 0,
+        "quota.login.codex": 0,
+        "quota.login.cursor": 0,
+        "quota.login.grok": 0,
+        "quota.login.misc": 1,
+        "quota.mode.remaining": 0,
+        "quota.mode.used": 0,
+        "quota.pace.lastsUntilReset": 0,
+        "quota.pace.runsOutIn": 1,
+        "quota.perModelLimits": 2,
         "quota.remainingPercent": 1,
+        "quota.reset.in": 1,
+        "quota.reset.passed": 0,
+        "quota.reset.passedAt": 1,
+        "quota.resetCredits.available": 1,
+        "quota.resetCredits.availableWithExpiry": 2,
+        "quota.resetCredits.title": 0,
         "quota.resetsIn": 2,
         "quota.resetsInHours": 2,
+        "quota.upcoming.axisDays": 1,
+        "quota.upcoming.axisHours": 1,
+        "quota.upcoming.empty": 0,
+        "quota.upcoming.gain": 1,
+        "quota.upcoming.horizon": 0,
+        "quota.upcoming.leftAndGain": 2,
+        "quota.upcoming.markerHelp": 4,
+        "quota.upcoming.resetsAt": 2,
+        "quota.upcoming.title": 0,
+        "quota.update.failed": 1,
         "quota.usedPercent": 1,
+        "resetHistory.a11y.empty": 1,
+        "resetHistory.a11y.more": 1,
+        "resetHistory.a11y.summary": 6,
+        "resetHistory.a11y.truncation": 1,
+        "resetHistory.axis.cycle": 0,
+        "resetHistory.axis.cycleHelp": 0,
+        "resetHistory.axis.time": 0,
+        "resetHistory.axis.timeHelp": 0,
+        "resetHistory.axisCyclesBack": 1,
+        "resetHistory.axisNow": 0,
+        "resetHistory.lane.emptyState": 0,
+        "resetHistory.lane.spokenNoCycles": 1,
+        "resetHistory.lane.spokenWaste": 3,
         "resetHistory.laneAverage": 2,
         "resetHistory.noCompletedCycles": 0,
+        "resetHistory.reset.earlyClockRestarted": 0,
+        "resetHistory.reset.earlyClockUnchanged": 0,
+        "resetHistory.reset.earlyUnclear": 0,
+        "resetHistory.spoken.allCycles": 0,
+        "resetHistory.spoken.allTime": 0,
+        "resetHistory.spoken.eightCycles": 0,
+        "resetHistory.spoken.eightWeeks": 0,
+        "resetHistory.spoken.fourCycles": 0,
+        "resetHistory.spoken.fourWeeks": 0,
+        "resetHistory.spoken.twelveCycles": 0,
+        "resetHistory.spoken.twelveWeeks": 0,
         "resetHistory.title": 0,
+        "resetHistory.totals.none": 0,
+        "resetHistory.truncation": 2,
+        "resetHistory.verdict.clean": 1,
+        "resetHistory.verdict.leaky": 3,
+        "resetHistory.verdict.noCycles": 0,
+        "resetHistory.verdict.noQuota": 0,
+        "resetHistory.verdict.wasteful": 2,
         "resetHistory.wastedSummary": 3,
+        "resetHistory.window.all": 0,
+        "resetHistory.window.eightWeeks": 0,
+        "resetHistory.window.fourWeeks": 0,
+        "resetHistory.window.twelveWeeks": 0,
+        "settings.antigravityCookieEnabled": 0,
+        "settings.antigravityLocalOnly": 0,
+        "settings.antigravitySource": 0,
+        "settings.appVersion": 1,
+        "settings.bundled": 0,
+        "settings.checkConnections": 1,
+        "settings.checkForUpdates": 0,
+        "settings.checkKitUpdates": 0,
+        "settings.checkingGitHub": 0,
+        "settings.clearCostData": 0,
+        "settings.connectionHealth": 0,
+        "settings.costDataIntro": 0,
+        "settings.couldNotDeleteCookies": 0,
+        "settings.couldNotDeleteGeminiCookies": 0,
+        "settings.couldNotDeleteGrokCookies": 0,
+        "settings.cursorNoSession": 0,
+        "settings.cursorSessionDetected": 0,
+        "settings.cursorSource": 0,
+        "settings.cursorSourceValue": 0,
+        "settings.deleteCookies": 0,
+        "settings.deleteGeminiCookies": 0,
+        "settings.deleteGrokCookies": 0,
+        "settings.externalChange.title": 0,
+        "settings.geminiCookiesSaved": 0,
+        "settings.geminiShared": 0,
+        "settings.geminiSource": 0,
+        "settings.grokAuthDetected": 0,
+        "settings.grokCookiesSaved": 0,
+        "settings.keepHistory": 0,
+        "settings.keepHistoryDetail": 0,
+        "settings.kitDetail": 0,
+        "settings.language.caption": 0,
         "settings.language.system": 0,
         "settings.language.title": 0,
+        "settings.mcp.allowRefresh": 0,
+        "settings.mcp.allowRefreshDetail": 1,
+        "settings.mcp.allowSkills": 0,
+        "settings.mcp.allowSkillsDetail": 0,
+        "settings.mcp.appendCodexConfig": 0,
+        "settings.mcp.connectAgent": 0,
+        "settings.mcp.connectedClients": 0,
+        "settings.mcp.enable": 0,
+        "settings.mcp.intro": 0,
+        "settings.mcp.lastActivity": 0,
+        "settings.mcp.listening": 0,
+        "settings.mcp.manualIntro": 1,
+        "settings.mcp.mergeCursorConfig": 0,
+        "settings.mcp.movePrompt": 1,
+        "settings.mcp.notListening": 0,
+        "settings.mcp.otherStdioClient": 0,
+        "settings.mcp.otherStdioDetail": 0,
+        "settings.mcp.quickestPath": 0,
+        "settings.mcp.readOnlyDetail": 0,
+        "settings.mcp.runInTerminal": 0,
+        "settings.mcp.setupPrompt": 0,
+        "settings.mcp.setupPromptDetail": 0,
+        "settings.mcp.socket": 0,
+        "settings.mcp.socketLifetime": 0,
+        "settings.mcp.status": 0,
+        "settings.mcp.title": 0,
+        "settings.mcp.whatAgentsMayDo": 0,
+        "settings.menuBarHealthUnavailable": 0,
+        "settings.miniWindow.add": 0,
+        "settings.miniWindow.allBucketsIncluded": 0,
+        "settings.miniWindow.dismissBuiltIn": 0,
+        "settings.miniWindow.forgetDiscovered": 0,
+        "settings.miniWindow.includeStyle": 1,
+        "settings.miniWindow.lastCannotBeRemoved": 0,
+        "settings.miniWindow.namesAllWindows": 0,
+        "settings.miniWindow.namesThisStyle": 1,
+        "settings.miniWindow.namesThisWindow": 1,
+        "settings.miniWindow.noFieldsSelected": 0,
+        "settings.miniWindow.notInWindow": 1,
+        "settings.miniWindow.offline": 0,
+        "settings.miniWindow.openClose": 0,
+        "settings.miniWindow.overridesStyle": 1,
+        "settings.miniWindow.overridesWindow": 0,
+        "settings.miniWindow.removeFromWindow": 0,
+        "settings.miniWindow.removeHelp": 0,
+        "settings.miniWindow.stripDensity": 0,
+        "settings.miniWindow.styleCycle": 0,
+        "settings.miniWindow.toggleHelp": 0,
+        "settings.miniWindow.treeDetail": 0,
+        "settings.misc.accessKeyId": 0,
+        "settings.misc.akSkSaved": 0,
+        "settings.misc.apiKeySaved": 0,
+        "settings.misc.clearWorkspace": 0,
+        "settings.misc.clone": 1,
+        "settings.misc.consoleLink": 1,
+        "settings.misc.edition": 0,
+        "settings.misc.githubSignInHint": 0,
+        "settings.misc.githubTokenSaved": 0,
+        "settings.misc.importDetail": 0,
+        "settings.misc.kiroHint": 0,
+        "settings.misc.noCookieSpec": 1,
+        "settings.misc.noCookiesYet": 0,
+        "settings.misc.probe": 0,
+        "settings.misc.prompt.copilotHost": 0,
+        "settings.misc.prompt.dashscope": 0,
+        "settings.misc.prompt.kilo": 0,
+        "settings.misc.prompt.minimax": 0,
+        "settings.misc.prompt.openRouter": 0,
+        "settings.misc.prompt.openRouterHost": 0,
+        "settings.misc.prompt.warp": 0,
+        "settings.misc.prompt.workspace": 0,
+        "settings.misc.prompt.zai": 0,
+        "settings.misc.region": 0,
+        "settings.misc.removeAkSk": 1,
+        "settings.misc.removeApiKey": 1,
+        "settings.misc.removeCookieSlot": 0,
+        "settings.misc.removeCopy": 1,
+        "settings.misc.removeCopyButton": 0,
+        "settings.misc.removeCopyDetail": 0,
+        "settings.misc.removeCopyTitle": 1,
+        "settings.misc.removeGithubToken": 0,
+        "settings.misc.rename": 0,
+        "settings.misc.secretAccessKey": 0,
+        "settings.misc.signIn": 0,
+        "settings.misc.signInViaWeb": 0,
+        "settings.misc.tencentTokenPlanNote": 0,
+        "settings.misc.variant": 0,
+        "settings.misc.waiting": 0,
+        "settings.misc.workspaceNote": 0,
+        "settings.needsSetup": 0,
+        "settings.notChecked": 0,
+        "settings.notCheckedYet": 0,
+        "settings.openRefreshCooldown": 0,
+        "settings.openRefreshDetail": 0,
+        "settings.openStatusPage": 1,
+        "settings.percentShows": 0,
+        "settings.planBadge": 0,
+        "settings.planBadgeDetail": 0,
+        "settings.pricing.addOverride": 0,
+        "settings.pricing.advancedTiers": 0,
+        "settings.pricing.alwaysWins": 0,
+        "settings.pricing.bundledFallback": 0,
+        "settings.pricing.cacheReadAbove": 0,
+        "settings.pricing.cacheWriteAbove": 0,
+        "settings.pricing.deleteOverride": 0,
+        "settings.pricing.exactModelName": 0,
+        "settings.pricing.fastMultiplier": 0,
+        "settings.pricing.inputAbove": 0,
+        "settings.pricing.intro": 0,
+        "settings.pricing.localOverrides": 0,
+        "settings.pricing.noOverrides": 0,
+        "settings.pricing.offlineFloor": 0,
+        "settings.pricing.outputAbove": 0,
+        "settings.pricing.overridesIntro": 0,
+        "settings.pricing.priorityHealth": 0,
+        "settings.pricing.rateInput": 0,
+        "settings.pricing.rateOutput": 0,
+        "settings.pricing.refreshNow": 0,
+        "settings.pricing.refreshing": 0,
+        "settings.pricing.thresholdTokens": 0,
+        "settings.pricingDataDate": 1,
+        "settings.privacyDetail": 0,
+        "settings.privacyMode": 0,
+        "settings.privacyModeDetail": 0,
+        "settings.ready": 0,
+        "settings.refreshEvery": 0,
+        "settings.refreshOnPopoverOpen": 0,
+        "settings.releaseNotes": 0,
+        "settings.remote.core": 0,
+        "settings.remote.costAggregation": 0,
+        "settings.remote.costAggregationIntro": 0,
+        "settings.remote.differentControlCenter": 0,
+        "settings.remote.discard": 0,
+        "settings.remote.discardPendingDetail": 0,
+        "settings.remote.discardPendingTitle": 0,
+        "settings.remote.disconnect": 0,
+        "settings.remote.disconnectButton": 0,
+        "settings.remote.disconnectDetail": 0,
+        "settings.remote.disconnectIntro": 0,
+        "settings.remote.disconnectTitle": 0,
+        "settings.remote.exportIdentity": 0,
+        "settings.remote.importProvisioning": 0,
+        "settings.remote.join": 0,
+        "settings.remote.joinIntro": 1,
+        "settings.remote.joinWithCode": 0,
+        "settings.remote.lastSync": 0,
+        "settings.remote.machineDetail": 2,
+        "settings.remote.machinesAppearAfterImport": 0,
+        "settings.remote.machinesSynced": 0,
+        "settings.remote.manualPairingIntro": 0,
+        "settings.remote.notConnected": 0,
+        "settings.remote.orPairManually": 0,
+        "settings.remote.pendingIntro": 0,
+        "settings.remote.provisioning": 0,
+        "settings.remote.registeredProbes": 0,
+        "settings.remote.relay": 0,
+        "settings.remote.resumeSaving": 0,
+        "settings.remote.retrySaving": 0,
+        "settings.remote.statusWithCode": 2,
+        "settings.remote.syncNow": 0,
+        "settings.remote.workspace": 0,
+        "settings.repository": 0,
+        "settings.rescanCostLogs": 0,
+        "settings.search": 0,
+        "settings.section.components": 0,
+        "settings.section.costData": 0,
+        "settings.section.layout": 0,
+        "settings.section.menuBarHealth": 0,
+        "settings.section.miniWindows": 0,
+        "settings.section.privacy": 0,
+        "settings.section.refreshing": 0,
+        "settings.section.system": 0,
+        "settings.section.updates": 0,
+        "settings.showAssistant": 0,
+        "settings.showAssistantDetail": 0,
+        "settings.sidebar.coreProviders": 0,
+        "settings.sidebar.disableProvider": 0,
+        "settings.sidebar.enableProvider": 0,
+        "settings.sidebar.hideFromOverview": 0,
+        "settings.sidebar.settings": 0,
+        "settings.spaceXAIIntro": 0,
+        "settings.updateChannel": 0,
+        "settings.updateCheckDetail": 0,
+        "settings.usageSource": 0,
+        "settings.webQuota": 0,
+        "settings.whatChangedIn": 1,
+        "status.card.componentCount": 1,
+        "status.card.components": 0,
+        "status.card.noIncidents": 0,
+        "status.card.openIncident": 0,
+        "status.card.openStatusPage": 1,
+        "status.card.refresh": 0,
+        "status.card.statusPageFallback": 0,
+        "status.card.title": 0,
+        "status.card.updatedHoursAgo": 1,
+        "status.card.updatedMinutesAgo": 1,
+        "status.card.uptime": 1,
+        "status.card.uptimeStrip": 1,
+        "status.component.degraded": 0,
+        "status.component.maintenance": 0,
+        "status.component.majorOutage": 0,
+        "status.component.operational": 0,
+        "status.component.other": 0,
+        "status.component.partialOutage": 0,
+        "status.indicator.critical": 0,
+        "status.indicator.loading": 0,
+        "status.indicator.major": 0,
+        "status.indicator.minor": 0,
+        "status.overview.checking": 0,
+        "status.overview.down": 0,
+        "status.overview.enableProvider": 0,
+        "status.overview.fetchFailed": 0,
+        "status.overview.needsAttention": 0,
+        "status.overview.refreshing": 0,
+        "status.overview.title": 0,
+        "usage.harnessMix.activeCount": 1,
+        "usage.harnessMix.byRealTokens": 0,
+        "usage.harnessMix.empty": 0,
+        "usage.harnessMix.title": 0,
+        "usage.hero.allRequestsPriced": 0,
+        "usage.hero.cacheHit": 0,
+        "usage.hero.cacheRead": 1,
+        "usage.hero.inSelectedRange": 0,
+        "usage.hero.noPricedRequests": 0,
+        "usage.hero.noTrafficInRange": 0,
+        "usage.hero.realTokens": 0,
+        "usage.hero.requests": 0,
+        "usage.hero.tokenComposition": 0,
+        "usage.hero.unpricedBadge": 1,
+        "usage.hero.unpricedHelp": 1,
+        "usage.ledgerUnavailable.detail": 0,
+        "usage.ledgerUnavailable.title": 0,
+        "usage.noHarnessSelected.detail": 0,
+        "usage.noHarnessSelected.title": 0,
+        "usage.requestCount": 1,
+        "usage.tokens.cacheRead": 0,
+        "usage.tokens.cacheWrite": 0,
+        "usage.tokens.input": 0,
+        "usage.tokens.output": 0,
+        "usage.whenYouUse.everything": 0,
+        "usage.whenYouUse.googleAI": 0,
+        "usage.whenYouUse.spaceXAI": 0,
+        "workbench.placeholder.resets": 0,
+        "workbench.placeholder.sessionManager": 0,
+        "workbench.placeholder.settings": 0,
+        "workbench.placeholder.skillsManager": 0,
+        "workbench.placeholder.usageStats": 0,
     ]
 }

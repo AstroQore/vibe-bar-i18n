@@ -4,6 +4,48 @@
      Edit catalog/*.json and re-run `python3 scripts/generate.py`. -->
 <plist version="1.0">
 <dict>
+	<key>common.updated.daysAgo</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@days@前更新</string>
+		<key>days</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 天</string>
+		</dict>
+	</dict>
+	<key>common.updated.hoursAgo</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@hours@前更新</string>
+		<key>hours</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 小时</string>
+		</dict>
+	</dict>
+	<key>common.updated.minutesAgo</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@minutes@前更新</string>
+		<key>minutes</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 分钟</string>
+		</dict>
+	</dict>
 	<key>quota.cyclesRecorded</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -16,6 +58,132 @@
 			<string>lld</string>
 			<key>other</key>
 			<string>%lld 个周期</string>
+		</dict>
+	</dict>
+	<key>quota.perModelLimits</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$#@count@按模型的限额 · 打开 %2$@ 查看详情</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%1$lld 个</string>
+		</dict>
+	</dict>
+	<key>quota.resetCredits.available</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@可用重置券</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 张</string>
+		</dict>
+	</dict>
+	<key>resetHistory.laneAverage</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>平均浪费 %1$lld%% · 最近 %2$#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%2$lld 个周期</string>
+		</dict>
+	</dict>
+	<key>resetHistory.verdict.leaky</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%2$@ 在 %1$#@count@中平均有 %3$@%% 未使用。</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%1$lld 个周期</string>
+		</dict>
+	</dict>
+	<key>resetHistory.verdict.wasteful</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%2$@ 有 %1$#@count@补额后超过一半未使用。</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%1$lld 次</string>
+		</dict>
+	</dict>
+	<key>resetHistory.wastedSummary</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>已用 %1$lld%% · 浪费 %2$lld%% · %3$#@cycles@</string>
+		<key>cycles</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%3$lld 个周期</string>
+		</dict>
+	</dict>
+	<key>status.card.componentCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个组件</string>
+		</dict>
+	</dict>
+	<key>usage.harnessMix.activeCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>所选范围内 %#@count@ harness 活跃</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个</string>
+		</dict>
+	</dict>
+	<key>usage.hero.unpricedHelp</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@无可用价格，计入 $0。</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 条请求</string>
 		</dict>
 	</dict>
 </dict>
