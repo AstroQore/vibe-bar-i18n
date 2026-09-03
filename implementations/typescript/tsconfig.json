@@ -1,0 +1,19 @@
+{
+  "//": "Type-checking only — this package ships its sources and never emits. `npm run typecheck` runs it; CI runs it with a pinned tsc via npx, so nothing has to be installed to build or consume the package.",
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noUnusedLocals": false,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src", "typetests"]
+}

@@ -1,0 +1,191 @@
+{
+  "$schema": "../schema/glossary.schema.json",
+  "neverTranslate": [
+    {
+      "term": "OpenAI",
+      "kind": "company"
+    },
+    {
+      "term": "Anthropic",
+      "kind": "company"
+    },
+    {
+      "term": "Google AI",
+      "kind": "company"
+    },
+    {
+      "term": "SpaceXAI",
+      "kind": "company"
+    },
+    {
+      "term": "ByteDance",
+      "kind": "company"
+    },
+    {
+      "term": "Alibaba",
+      "kind": "company"
+    },
+    {
+      "term": "Tencent",
+      "kind": "company"
+    },
+    {
+      "term": "Baidu",
+      "kind": "company"
+    },
+    {
+      "term": "Moonshot",
+      "kind": "company"
+    },
+    {
+      "term": "Xiaomi",
+      "kind": "company"
+    },
+    {
+      "term": "Zhipu",
+      "kind": "company"
+    },
+    {
+      "term": "iFlytek",
+      "kind": "company"
+    },
+    {
+      "term": "GitHub",
+      "kind": "company"
+    },
+    {
+      "term": "ChatGPT Agentic",
+      "kind": "subProvider",
+      "note": "OpenAI's agentic plan — the L2 name on the quota axis."
+    },
+    {
+      "term": "Claude",
+      "kind": "subProvider"
+    },
+    {
+      "term": "Gemini Web",
+      "kind": "subProvider"
+    },
+    {
+      "term": "AntiGravity",
+      "kind": "subProvider"
+    },
+    {
+      "term": "Grok",
+      "kind": "subProvider"
+    },
+    {
+      "term": "Cursor",
+      "kind": "subProvider"
+    },
+    {
+      "term": "Grok Bot",
+      "kind": "subProvider",
+      "note": "Deliberately listed on both axes: the quota SubProvider under SpaceXAI (Cursor's grok_bot_weekly bucket) and, separately, the harness that spends it."
+    },
+    {
+      "term": "Bailian",
+      "kind": "subProvider"
+    },
+    {
+      "term": "Doubao",
+      "kind": "subProvider"
+    },
+    {
+      "term": "Hunyuan",
+      "kind": "subProvider"
+    },
+    {
+      "term": "Qianfan",
+      "kind": "subProvider"
+    },
+    {
+      "term": "Copilot",
+      "kind": "subProvider"
+    },
+    {
+      "term": "Kimi",
+      "kind": "subProvider"
+    },
+    {
+      "term": "MiMo",
+      "kind": "subProvider"
+    },
+    {
+      "term": "MiniMax",
+      "kind": "subProvider"
+    },
+    {
+      "term": "GLM",
+      "kind": "subProvider"
+    },
+    {
+      "term": "OpenCode Go",
+      "kind": "subProvider"
+    },
+    {
+      "term": "OpenRouter",
+      "kind": "subProvider"
+    },
+    {
+      "term": "Ollama",
+      "kind": "subProvider"
+    },
+    {
+      "term": "Warp",
+      "kind": "subProvider"
+    },
+    {
+      "term": "Kilo",
+      "kind": "subProvider"
+    },
+    {
+      "term": "Kiro",
+      "kind": "subProvider"
+    },
+    {
+      "term": "Vibe Bar",
+      "kind": "product"
+    },
+    {
+      "term": "Sparkle",
+      "kind": "product",
+      "note": "The update framework, named in the updater UI."
+    },
+    {
+      "term": "Keychain",
+      "kind": "product",
+      "note": "macOS Keychain — Apple's own term, kept in English in Chinese UI too."
+    },
+    {
+      "term": "MCP",
+      "kind": "product",
+      "note": "Model Context Protocol, always the acronym."
+    },
+    {
+      "term": "Codex",
+      "kind": "harness"
+    },
+    {
+      "term": "Claude Code",
+      "kind": "harness"
+    },
+    {
+      "term": "Gemini CLI",
+      "kind": "harness"
+    },
+    {
+      "term": "Grok Build",
+      "kind": "harness"
+    },
+    {
+      "term": "Grok Bot",
+      "kind": "harness",
+      "note": "The usage-axis entry. See the subProvider entry of the same name — one product, two axes, per AGENTS.md § 7.1 of the native app."
+    },
+    {
+      "term": "Cursor Agent",
+      "kind": "harness"
+    }
+  ]
+}

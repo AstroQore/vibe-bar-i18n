@@ -1,0 +1,133 @@
+{
+  "$schema": "../schema/catalog.schema.json",
+  "locale": "en",
+  "keys": {
+    "common.retry": {
+      "value": "Retry",
+      "comment": "Button that runs the failed action again."
+    },
+    "common.cancel": {
+      "value": "Cancel",
+      "comment": "Button that abandons an action in progress."
+    },
+    "common.refresh": {
+      "value": "Refresh",
+      "comment": "Button that fetches the current numbers again."
+    },
+    "common.noData": {
+      "value": "No data recorded",
+      "comment": "Empty state where a chart or list has nothing to draw yet."
+    },
+    "quota.resetsIn": {
+      "value": "resets in {days}d {hours}h",
+      "comment": "Countdown beside a quota bar. Both values are whole numbers; the caller drops the day part when it is zero by using quota.resetsInHours instead.",
+      "placeholders": {
+        "days": "int",
+        "hours": "int"
+      }
+    },
+    "quota.resetsInHours": {
+      "value": "resets in {hours}h {minutes}m",
+      "comment": "Countdown beside a quota bar when less than a day remains.",
+      "placeholders": {
+        "hours": "int",
+        "minutes": "int"
+      }
+    },
+    "quota.usedPercent": {
+      "value": "{percent}% used",
+      "comment": "How much of a quota window has been consumed. The caller has already rounded the number.",
+      "placeholders": {
+        "percent": "int"
+      }
+    },
+    "quota.remainingPercent": {
+      "value": "{percent}% left",
+      "comment": "How much of a quota window is still available.",
+      "placeholders": {
+        "percent": "int"
+      }
+    },
+    "quota.cyclesRecorded": {
+      "value": "{count, plural, one {# cycle} other {# cycles}}",
+      "comment": "How many completed reset cycles a quota has on record.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "quota.awaitingFirstObservation": {
+      "value": "Waiting for the first quota observation",
+      "comment": "Empty state on a reset-history strip before any refill has been seen."
+    },
+    "quota.cycleRecordedOnRefill": {
+      "value": "A cycle is recorded when the quota refills",
+      "comment": "Caption under the empty reset-history state, explaining when data starts appearing."
+    },
+    "resetHistory.title": {
+      "value": "Reset History Compare",
+      "comment": "Card title: every weekly-and-longer quota's reset history side by side."
+    },
+    "resetHistory.wastedSummary": {
+      "value": "{used}% used · {wasted}% wasted · {cycles} cycles",
+      "comment": "Header totals across every lane in the visible window.",
+      "placeholders": {
+        "used": "int",
+        "wasted": "int",
+        "cycles": "int"
+      }
+    },
+    "resetHistory.laneAverage": {
+      "value": "avg wasted {percent}% · last {count} cycles",
+      "comment": "Caption under a lane's name. {count} is how many completed cycles the average covers.",
+      "placeholders": {
+        "percent": "int",
+        "count": "int"
+      }
+    },
+    "resetHistory.noCompletedCycles": {
+      "value": "No completed cycles yet",
+      "comment": "Caption under a lane that has history recorded but no finished cycle."
+    },
+    "error.needsReLogin": {
+      "value": "Needs re-login",
+      "comment": "Provider card state: the browser session expired and the user must sign in again."
+    },
+    "error.noAccountFound": {
+      "value": "No account found",
+      "comment": "Provider card state: no credential of any kind is configured."
+    },
+    "error.rateLimited": {
+      "value": "Rate limited, try later",
+      "comment": "Provider card state: the provider refused the request for asking too often."
+    },
+    "error.networkWithReason": {
+      "value": "Network error: {reason}",
+      "comment": "Provider card state when the request never reached the provider. {reason} is the system's message, untranslated.",
+      "placeholders": {
+        "reason": "string"
+      }
+    },
+    "settings.language.title": {
+      "value": "Language",
+      "comment": "Settings row that chooses the interface language."
+    },
+    "settings.language.system": {
+      "value": "Match system",
+      "comment": "Language option: follow the macOS language setting."
+    },
+    "cost.spentToday": {
+      "value": "{amount} spent today",
+      "comment": "Cost headline. {amount} arrives already formatted as currency by the client — the catalog never formats money, because the symbol, grouping and placement are the platform's job.",
+      "placeholders": {
+        "amount": "string"
+      }
+    },
+    "cost.perThousandTokens": {
+      "value": "{rate} per 1K tokens",
+      "comment": "Effective price of a model. {rate} is a raw number the client renders; declared double so the generated API takes a Double rather than a pre-formatted string.",
+      "placeholders": {
+        "rate": "double"
+      }
+    }
+  }
+}

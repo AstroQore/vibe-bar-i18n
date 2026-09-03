@@ -1,0 +1,33 @@
+# Swift lane build output. Note that implementations/swift/Resources and
+# implementations/swift/Sources/VibeBarLocalization/Generated are *not*
+# ignored: generated files are checked in on purpose, so a consumer never
+# needs Python to build (AGENTS.md § 2, rule 6).
+.build/
+.swiftpm/
+DerivedData/
+Package.resolved
+*.xcodeproj/
+
+# TypeScript lane
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Python helper scripts
+__pycache__/
+*.pyc
+
+# Agent worktrees and per-harness scratch
+.agents/worktrees/
+.codex/
+.claude/
+.grok/
+.agy/
+.gemini/
+.cursor/
+
+# macOS
+.DS_Store
+
+# npm pack output
+*.tgz

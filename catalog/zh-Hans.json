@@ -1,0 +1,75 @@
+{
+  "$schema": "../schema/catalog.schema.json",
+  "locale": "zh-Hans",
+  "keys": {
+    "common.retry": {
+      "value": "重试"
+    },
+    "common.cancel": {
+      "value": "取消"
+    },
+    "common.refresh": {
+      "value": "刷新"
+    },
+    "common.noData": {
+      "value": "暂无记录"
+    },
+    "quota.resetsIn": {
+      "value": "{days} 天 {hours} 小时后重置"
+    },
+    "quota.resetsInHours": {
+      "value": "{hours} 小时 {minutes} 分后重置"
+    },
+    "quota.usedPercent": {
+      "value": "已用 {percent}%"
+    },
+    "quota.remainingPercent": {
+      "value": "剩余 {percent}%"
+    },
+    "quota.cyclesRecorded": {
+      "value": "{count, plural, other {# 个周期}}"
+    },
+    "quota.awaitingFirstObservation": {
+      "value": "等待第一次配额观测"
+    },
+    "quota.cycleRecordedOnRefill": {
+      "value": "配额重置时才会记录一个周期"
+    },
+    "resetHistory.title": {
+      "value": "重置周期对比"
+    },
+    "resetHistory.wastedSummary": {
+      "value": "已用 {used}% · 浪费 {wasted}% · {cycles} 个周期"
+    },
+    "resetHistory.laneAverage": {
+      "value": "平均浪费 {percent}% · 近 {count} 个周期"
+    },
+    "resetHistory.noCompletedCycles": {
+      "value": "尚无已完成的周期"
+    },
+    "error.needsReLogin": {
+      "value": "需要重新登录"
+    },
+    "error.noAccountFound": {
+      "value": "未找到账号"
+    },
+    "error.rateLimited": {
+      "value": "触发限流，请稍后再试"
+    },
+    "error.networkWithReason": {
+      "value": "网络错误：{reason}"
+    },
+    "settings.language.title": {
+      "value": "语言"
+    },
+    "settings.language.system": {
+      "value": "跟随系统"
+    },
+    "cost.spentToday": {
+      "value": "今日花费 {amount}"
+    },
+    "cost.perThousandTokens": {
+      "value": "每千 token {rate}"
+    }
+  }
+}

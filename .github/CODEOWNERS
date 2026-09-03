@@ -1,0 +1,4 @@
+# The catalogue is the contract both clients depend on.
+/catalog/    @AstroQore
+/schema/     @AstroQore
+/scripts/    @AstroQore

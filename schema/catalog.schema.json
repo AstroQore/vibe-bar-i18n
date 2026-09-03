@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AstroQore/vibe-bar-i18n/schema/catalog.schema.json",
+  "title": "Vibe Bar localization catalog",
+  "type": "object",
+  "required": ["locale", "keys"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "locale": {
+      "type": "string",
+      "description": "BCP 47 tag. Must match the file name and the .lproj / locale directory it generates.",
+      "pattern": "^[a-z]{2,3}(-[A-Za-z]{2,8})*$"
+    },
+    "keys": {
+      "type": "object",
+      "description": "Key to entry. Keys are stable identifiers, never English sentences.",
+      "propertyNames": {
+        "pattern": "^[a-z][a-zA-Z0-9]*(\\.[a-z][a-zA-Z0-9]*)+$",
+        "description": "Dotted lowerCamelCase segments: <surface>.<area>.<name>."
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": ["value"],
+        "additionalProperties": false,
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "The string. Placeholders are named ({provider}); plurals are ICU ({count, plural, one {#} other {#}})."
+          },
+          "comment": {
+            "type": "string",
+            "description": "For translators: what the string labels and where it appears. Required in the source locale."
+          },
+          "placeholders": {
+            "type": "object",
+            "description": "Declared in the source locale only. Every locale's value must use exactly this set.",
+            "propertyNames": { "pattern": "^[a-z][a-zA-Z0-9]*$" },
+            "additionalProperties": { "enum": ["string", "int", "double"] }
+          }
+        }
+      }
+    }
+  }
+}

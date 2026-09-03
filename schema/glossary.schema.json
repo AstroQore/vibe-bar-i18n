@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AstroQore/vibe-bar-i18n/schema/glossary.schema.json",
+  "title": "Never-translate glossary",
+  "type": "object",
+  "required": ["neverTranslate"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "neverTranslate": {
+      "type": "array",
+      "description": "Proper nouns that must appear verbatim in every locale. A term present in the source value must be present, unchanged, in every translation of that key.",
+      "items": {
+        "type": "object",
+        "required": ["term", "kind"],
+        "additionalProperties": false,
+        "properties": {
+          "term": { "type": "string", "minLength": 1 },
+          "kind": {
+            "enum": ["company", "subProvider", "product", "model", "harness", "brand"],
+            "description": "Which naming axis the term belongs to. company/subProvider are the quota axis; harness is the usage axis."
+          },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

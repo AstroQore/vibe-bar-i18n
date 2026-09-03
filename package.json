@@ -1,0 +1,45 @@
+{
+  "name": "@astroqore/vibe-bar-i18n",
+  "version": "0.1.0",
+  "description": "Vibe Bar's localization catalog: one source of user-facing strings, shared by the macOS and desktop clients.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AstroQore/vibe-bar-i18n.git"
+  },
+  "main": "./implementations/typescript/src/index.ts",
+  "types": "./implementations/typescript/src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./implementations/typescript/src/index.ts",
+      "default": "./implementations/typescript/src/index.ts"
+    },
+    "./catalog": {
+      "types": "./implementations/typescript/src/generated/catalog.ts",
+      "default": "./implementations/typescript/src/generated/catalog.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "implementations/typescript/src",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "validate": "python3 scripts/validate.py",
+    "generate": "python3 scripts/generate.py",
+    "test": "node --import ./implementations/typescript/test/ts-resolve.js --test implementations/typescript/test/*.test.ts",
+    "typecheck": "tsc --noEmit -p implementations/typescript"
+  },
+  "keywords": [
+    "vibe-bar",
+    "i18n",
+    "localization",
+    "icu"
+  ]
+}
