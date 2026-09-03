@@ -279,6 +279,80 @@ def check_glossary(catalogs: Sequence[Catalog], problems: List[str]) -> None:
 
 
 # --------------------------------------------------------------------------
+# 10. Reuse before you add
+# --------------------------------------------------------------------------
+
+
+def _reuse_signature(text: str) -> str:
+    """What two strings must share before they count as the same sentence.
+
+    Case, surrounding whitespace, the trailing full stop and the ellipsis a
+    button adds are all presentation. Placeholder *names* are not compared
+    either: `{provider} is offline` and `{tool} is offline` are one sentence
+    with one translation, and letting the name divide them is how a catalog
+    grows two of everything.
+    """
+    lowered = text.strip().lower().rstrip(".…")
+    out: List[str] = []
+    depth = 0
+    for ch in lowered:
+        if ch == "{":
+            depth += 1
+            out.append("{}")
+            continue
+        if ch == "}":
+            depth = max(0, depth - 1)
+            continue
+        if depth == 0:
+            out.append(ch)
+    return " ".join("".join(out).split())
+
+
+def check_reuse(catalogs: Sequence[Catalog], problems: List[str]) -> None:
+    """Two keys whose English says the same thing are one key with two names.
+
+    Both clients render this catalog, and the moment the same sentence exists
+    twice they drift: one gets retranslated, the other does not, and a
+    reviewer comparing screenshots cannot tell which key a screen used. The
+    rule is reuse, and the check is here rather than in a document because a
+    document does not fail a pull request.
+
+    A genuine collision — two identical English strings that must stay
+    separately translatable, because some language distinguishes them — is
+    declared by giving one of them a `comment` containing `distinct-from:
+    <other.key>`, which is a sentence a reviewer can weigh.
+    """
+    by_locale = {catalog.locale: catalog for catalog in catalogs}
+    source = by_locale.get(SOURCE_LOCALE)
+    if source is None:
+        return
+
+    seen: dict = {}
+    for key in sorted(source.entries):
+        entry = source.entries[key]
+        signature = _reuse_signature(entry.value)
+        if not signature:
+            continue
+        first = seen.get(signature)
+        if first is None:
+            seen[signature] = key
+            continue
+        comments = " ".join(
+            filter(None, [source.entries[first].comment, entry.comment])
+        )
+        if ("distinct-from: %s" % first) in comments or (
+            "distinct-from: %s" % key
+        ) in comments:
+            continue
+        problems.append(
+            "%s: %s repeats the sentence already keyed as %s (%r); reuse that "
+            "key, or declare why it must stay separate with a comment saying "
+            "`distinct-from: %s`"
+            % (_catalog_label(source), key, first, entry.value, first)
+        )
+
+
+# --------------------------------------------------------------------------
 # 10. Generated-file freshness
 # --------------------------------------------------------------------------
 
@@ -379,6 +453,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         catalogs = load_all()
         check_catalogs(catalogs, problems)
         check_glossary(catalogs, problems)
+        check_reuse(catalogs, problems)
         # Freshness last, and only on a catalog that already holds together:
         # regenerating from a broken catalog produces broken output, and
         # "the generated file is stale" is a confusing thing to say to

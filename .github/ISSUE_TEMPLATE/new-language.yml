@@ -14,7 +14,7 @@ body:
     attributes:
       label: Before you start
       options:
-        - label: I have read AGENTS.md § 5 (adding a language) and § 6 (translation style).
+        - label: I have read AGENTS.md § 6 (adding a language) and § 7 (translation style).
           required: true
         - label: I understand every key must be present, and that an untranslated key ships with the English text rather than being omitted.
           required: true
