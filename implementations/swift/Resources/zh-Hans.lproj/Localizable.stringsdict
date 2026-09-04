@@ -4,6 +4,48 @@
      Edit catalog/*.json and re-run `python3 scripts/generate.py`. -->
 <plist version="1.0">
 <dict>
+	<key>common.duration.full.days</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 天</string>
+		</dict>
+	</dict>
+	<key>common.duration.full.hours</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 小时</string>
+		</dict>
+	</dict>
+	<key>common.duration.full.minutes</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 分钟</string>
+		</dict>
+	</dict>
 	<key>common.updated.daysAgo</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -44,6 +86,20 @@
 			<string>lld</string>
 			<key>other</key>
 			<string>%lld 分钟</string>
+		</dict>
+	</dict>
+	<key>menuBar.composer.space.widthValue</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个空格</string>
 		</dict>
 	</dict>
 	<key>quota.cyclesRecorded</key>

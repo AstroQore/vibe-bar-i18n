@@ -61,6 +61,43 @@
         "hours": "int"
       }
     },
+    "common.duration.full.days": {
+      "value": "{count, plural, one {1 day} other {# days}}",
+      "comment": "Spelled-out duration for a full-width sentence line. The compact common.duration.* forms stay for dense rows, tiles and the menu bar.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "common.duration.full.daysHours": {
+      "value": "{days} and {hours}",
+      "comment": "Spelled-out duration for a full-width sentence line. The compact common.duration.* forms stay for dense rows, tiles and the menu bar.",
+      "placeholders": {
+        "days": "string",
+        "hours": "string"
+      }
+    },
+    "common.duration.full.hours": {
+      "value": "{count, plural, one {1 hour} other {# hours}}",
+      "comment": "Spelled-out duration for a full-width sentence line. The compact common.duration.* forms stay for dense rows, tiles and the menu bar.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "common.duration.full.hoursMinutes": {
+      "value": "{hours} and {minutes}",
+      "comment": "Spelled-out duration for a full-width sentence line. The compact common.duration.* forms stay for dense rows, tiles and the menu bar. distinct-from: common.duration.full.daysHours — the same shape with different placeholders: one takes days and hours, the other hours and minutes, so one key could not declare both argument sets.",
+      "placeholders": {
+        "hours": "string",
+        "minutes": "string"
+      }
+    },
+    "common.duration.full.minutes": {
+      "value": "{count, plural, one {1 minute} other {# minutes}}",
+      "comment": "Spelled-out duration for a full-width sentence line. The compact common.duration.* forms stay for dense rows, tiles and the menu bar.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
     "common.duration.hours": {
       "value": "{hours}h",
       "comment": "Compact countdown, whole hours only",
@@ -688,6 +725,14 @@
         "title": "string"
       }
     },
+    "menuBar.composer.field.resetFormat": {
+      "value": "Format",
+      "comment": "Label for the picker that chooses how a Resets at block prints its date and time"
+    },
+    "menuBar.composer.field.resetFormatHelp": {
+      "value": "Automatic prints only the time while the reset is still today.",
+      "comment": "Tooltip on the reset-time format picker, explaining the Automatic option"
+    },
     "menuBar.composer.field.show": {
       "value": "Show",
       "comment": "Picker choosing when a block is on screen."
@@ -707,6 +752,53 @@
     "menuBar.composer.field.weight": {
       "value": "Weight",
       "comment": "Picker choosing a block's type weight."
+    },
+    "menuBar.composer.group.add": {
+      "value": "New group",
+      "comment": "Palette button adding an empty group to the strip."
+    },
+    "menuBar.composer.group.addHelp": {
+      "value": "Each group is one column of the strip. Give a group a second row to stack that column.",
+      "comment": "Tooltip on the New group button."
+    },
+    "menuBar.composer.group.addRow": {
+      "value": "Add a second row",
+      "comment": "Menu item giving a group a second row."
+    },
+    "menuBar.composer.group.empty": {
+      "value": "Empty group — drag a block in.",
+      "comment": "Shown inside a group that has no blocks yet."
+    },
+    "menuBar.composer.group.mergeLeft": {
+      "value": "Merge into the group before it",
+      "comment": "Menu action folding a group into the one before it."
+    },
+    "menuBar.composer.group.moveLeft": {
+      "value": "Move left",
+      "comment": "Menu action moving a group one place earlier."
+    },
+    "menuBar.composer.group.moveRight": {
+      "value": "Move right",
+      "comment": "Menu action moving a group one place later."
+    },
+    "menuBar.composer.group.remove": {
+      "value": "Remove group and its blocks",
+      "comment": "Menu action deleting a group and the blocks in it."
+    },
+    "menuBar.composer.group.removeRow": {
+      "value": "Merge the second row up",
+      "comment": "Menu item closing a group's second row; its blocks join the end of the first."
+    },
+    "menuBar.composer.group.splitHere": {
+      "value": "Start a group here",
+      "comment": "Button starting a new group at the selected block."
+    },
+    "menuBar.composer.group.title": {
+      "value": "Group {index}",
+      "comment": "Header over one group of blocks. Index counts from 1.",
+      "placeholders": {
+        "index": "int"
+      }
     },
     "menuBar.composer.metric.displayPercent": {
       "value": "Percent (follows setting)",
@@ -772,6 +864,26 @@
       "value": "Add a block",
       "comment": "Caption over the list of blocks that can be added."
     },
+    "menuBar.composer.preset.insertHelp": {
+      "value": "Insert this group at the end of the strip.",
+      "comment": "Tooltip on a saved group."
+    },
+    "menuBar.composer.preset.remove": {
+      "value": "Remove preset",
+      "comment": "Menu action deleting a saved group."
+    },
+    "menuBar.composer.preset.save": {
+      "value": "Save as preset…",
+      "comment": "Menu action saving a group to use again."
+    },
+    "menuBar.composer.preset.saveTitle": {
+      "value": "Save this group",
+      "comment": "Title of the dialog naming a saved group."
+    },
+    "menuBar.composer.presets": {
+      "value": "Saved groups",
+      "comment": "Caption over the saved groups that can be inserted."
+    },
     "menuBar.composer.preview": {
       "value": "Preview",
       "comment": "Caption over the live preview of the composed strip."
@@ -800,6 +912,34 @@
       "value": "Drag here to remove",
       "comment": "Drop target that deletes the dragged block."
     },
+    "menuBar.composer.resetFormat.automatic": {
+      "value": "Automatic",
+      "comment": "Reset-time format: the time alone today, the weekday and date after that distinct-from: menuBar.composer.colour.automatic — a colour that follows the strip and a date format that follows the day are different automatics, and their pickers should be free to phrase them apart."
+    },
+    "menuBar.composer.resetFormat.date": {
+      "value": "Date",
+      "comment": "Reset-time format showing only the calendar date, e.g. Sep 7"
+    },
+    "menuBar.composer.resetFormat.dateTime": {
+      "value": "Date and time",
+      "comment": "Reset-time format showing the date and the time, e.g. Sep 7 at 12:01"
+    },
+    "menuBar.composer.resetFormat.time": {
+      "value": "Time",
+      "comment": "Reset-time format showing only the clock time, e.g. 12:01"
+    },
+    "menuBar.composer.resetFormat.weekdayDateTime": {
+      "value": "Weekday, date and time",
+      "comment": "Reset-time format showing the weekday, the date and the time, e.g. Mon, Sep 7 at 12:01"
+    },
+    "menuBar.composer.resetFormat.weekdayTime": {
+      "value": "Weekday and time",
+      "comment": "Reset-time format showing the weekday and the time, e.g. Mon 12:01"
+    },
+    "menuBar.composer.row.empty": {
+      "value": "Empty row — drag a block in.",
+      "comment": "Shown inside a group's second row while it holds no blocks."
+    },
     "menuBar.composer.rule.always": {
       "value": "Always",
       "comment": "Visibility rule: the block is always shown."
@@ -824,6 +964,10 @@
       "value": "Large",
       "comment": "Type size choice."
     },
+    "menuBar.composer.size.mini": {
+      "value": "Mini",
+      "comment": "Smallest of the three block sizes in the menu-bar composer."
+    },
     "menuBar.composer.size.regular": {
       "value": "Regular",
       "comment": "Type size choice."
@@ -835,6 +979,17 @@
     "menuBar.composer.space.detail": {
       "value": "A gap one space wide. Size changes how wide.",
       "comment": "What a space block does."
+    },
+    "menuBar.composer.space.width": {
+      "value": "Width",
+      "comment": "Stepper choosing how wide a space block is."
+    },
+    "menuBar.composer.space.widthValue": {
+      "value": "{count, plural, one {1 space} other {# spaces}}",
+      "comment": "How wide a space block is, in space characters.",
+      "placeholders": {
+        "count": "int"
+      }
     },
     "menuBar.composer.startOver": {
       "value": "Start over from the current strip…",
@@ -1047,6 +1202,13 @@
     "onboarding.cookies.importGrok": {
       "value": "Import Grok cookies from browser",
       "comment": "Button in the setup assistant"
+    },
+    "onboarding.cookies.importProvider": {
+      "value": "Import {provider} cookies from browser",
+      "comment": "Button that imports one provider's cookies from the browser; {provider} is the provider name",
+      "placeholders": {
+        "provider": "string"
+      }
     },
     "onboarding.cookies.importing": {
       "value": "Importing…",
@@ -1439,7 +1601,7 @@
     },
     "popover.header.mini": {
       "value": "Mini",
-      "comment": "Tooltip on the popover header button that opens the floating mini window"
+      "comment": "Tooltip on the popover header button that opens the floating mini window distinct-from: menuBar.composer.size.mini — the smallest block size and the floating window are different words already: zh-Hans says 迷你 for one and 迷你窗口 for the other."
     },
     "popover.header.miscSubtitle": {
       "value": "Usage-only · sign in or paste a key",
@@ -2650,7 +2812,7 @@
     },
     "resetHistory.axis.time": {
       "value": "Time",
-      "comment": "Segmented control: cycles placed on a shared calendar"
+      "comment": "Segmented control: cycles placed on a shared calendar distinct-from: menuBar.composer.resetFormat.time — a reset-time format showing only the clock and a chart axis measured in time are different things."
     },
     "resetHistory.axis.timeHelp": {
       "value": "Each cycle where it actually happened, on a shared calendar",
@@ -3038,6 +3200,13 @@
     "settings.deleteGrokCookies": {
       "value": "Delete Grok cookies",
       "comment": "Button label"
+    },
+    "settings.deleteProviderCookies": {
+      "value": "Delete {provider} cookies",
+      "comment": "Destructive button that removes every saved cookie for one provider; {provider} is the provider name",
+      "placeholders": {
+        "provider": "string"
+      }
     },
     "settings.displayMode.remaining": {
       "value": "Remaining",
@@ -3642,6 +3811,13 @@
     "settings.planBadgeDetail": {
       "value": "Leave blank to use the detected account plan.",
       "comment": "Caption under the plan badge field"
+    },
+    "settings.planFollows": {
+      "value": "Follows {provider}",
+      "comment": "Trailing note on a roster row for a SubProvider that has no plan of its own; {provider} is the account it rides on",
+      "placeholders": {
+        "provider": "string"
+      }
     },
     "settings.popoverDensity.compact": {
       "value": "Compact",
@@ -4973,7 +5149,7 @@
     },
     "usage.table.column.time": {
       "value": "Time",
-      "comment": "Requests table column header; the call site uppercases it. distinct-from: resetHistory.axis.time — a segmented control that places cycles on a shared calendar and a request's timestamp column are different things."
+      "comment": "Requests table column header; the call site uppercases it. distinct-from: menuBar.composer.resetFormat.time — a segmented control that places cycles on a shared calendar and a request's timestamp column are different things."
     },
     "usage.table.column.weekOf": {
       "value": "Week of",
