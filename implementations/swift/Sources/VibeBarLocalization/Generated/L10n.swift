@@ -215,6 +215,48 @@ public enum L10n {
             /// Key: `common.duration.now`
             /// en: "now"
             public static var now: String { L10nSupport.string("common.duration.now") }
+
+            public enum Full {
+                /// Spelled-out duration for a full-width sentence line. The compact common.duration.* forms stay for dense rows, tiles and the menu bar.
+                ///
+                /// Key: `common.duration.full.days`
+                /// en: "{count, plural, one {1 day} other {# days}}"
+                public static func days(count: Int) -> String {
+                    L10nSupport.localizedFormat("common.duration.full.days", count)
+                }
+
+                /// Spelled-out duration for a full-width sentence line. The compact common.duration.* forms stay for dense rows, tiles and the menu bar.
+                ///
+                /// Key: `common.duration.full.daysHours`
+                /// en: "{days} and {hours}"
+                public static func daysHours(days: String, hours: String) -> String {
+                    L10nSupport.format("common.duration.full.daysHours", days, hours)
+                }
+
+                /// Spelled-out duration for a full-width sentence line. The compact common.duration.* forms stay for dense rows, tiles and the menu bar.
+                ///
+                /// Key: `common.duration.full.hours`
+                /// en: "{count, plural, one {1 hour} other {# hours}}"
+                public static func hours(count: Int) -> String {
+                    L10nSupport.localizedFormat("common.duration.full.hours", count)
+                }
+
+                /// Spelled-out duration for a full-width sentence line. The compact common.duration.* forms stay for dense rows, tiles and the menu bar. distinct-from: common.duration.full.daysHours — the same shape with different placeholders: one takes days and hours, the other hours and minutes, so one key could not declare both argument sets.
+                ///
+                /// Key: `common.duration.full.hoursMinutes`
+                /// en: "{hours} and {minutes}"
+                public static func hoursMinutes(hours: String, minutes: String) -> String {
+                    L10nSupport.format("common.duration.full.hoursMinutes", hours, minutes)
+                }
+
+                /// Spelled-out duration for a full-width sentence line. The compact common.duration.* forms stay for dense rows, tiles and the menu bar.
+                ///
+                /// Key: `common.duration.full.minutes`
+                /// en: "{count, plural, one {1 minute} other {# minutes}}"
+                public static func minutes(count: Int) -> String {
+                    L10nSupport.localizedFormat("common.duration.full.minutes", count)
+                }
+            }
         }
 
         public enum Updated {
@@ -842,6 +884,12 @@ public enum L10n {
             /// en: "Add a block"
             public static var palette: String { L10nSupport.string("menuBar.composer.palette") }
 
+            /// Caption over the saved groups that can be inserted.
+            ///
+            /// Key: `menuBar.composer.presets`
+            /// en: "Saved groups"
+            public static var presets: String { L10nSupport.string("menuBar.composer.presets") }
+
             /// Caption over the live preview of the composed strip.
             ///
             /// Key: `menuBar.composer.preview`
@@ -1041,6 +1089,18 @@ public enum L10n {
                     L10nSupport.format("menuBar.composer.field.offlineOption", title)
                 }
 
+                /// Label for the picker that chooses how a Resets at block prints its date and time
+                ///
+                /// Key: `menuBar.composer.field.resetFormat`
+                /// en: "Format"
+                public static var resetFormat: String { L10nSupport.string("menuBar.composer.field.resetFormat") }
+
+                /// Tooltip on the reset-time format picker, explaining the Automatic option
+                ///
+                /// Key: `menuBar.composer.field.resetFormatHelp`
+                /// en: "Automatic prints only the time while the reset is still today."
+                public static var resetFormatHelp: String { L10nSupport.string("menuBar.composer.field.resetFormatHelp") }
+
                 /// Picker choosing when a block is on screen.
                 ///
                 /// Key: `menuBar.composer.field.show`
@@ -1070,6 +1130,76 @@ public enum L10n {
                 /// Key: `menuBar.composer.field.weight`
                 /// en: "Weight"
                 public static var weight: String { L10nSupport.string("menuBar.composer.field.weight") }
+            }
+
+            public enum Group {
+                /// Palette button adding an empty group to the strip.
+                ///
+                /// Key: `menuBar.composer.group.add`
+                /// en: "New group"
+                public static var add: String { L10nSupport.string("menuBar.composer.group.add") }
+
+                /// Tooltip on the New group button.
+                ///
+                /// Key: `menuBar.composer.group.addHelp`
+                /// en: "Each group is one column of the strip. Give a group a second row to stack that column."
+                public static var addHelp: String { L10nSupport.string("menuBar.composer.group.addHelp") }
+
+                /// Menu item giving a group a second row.
+                ///
+                /// Key: `menuBar.composer.group.addRow`
+                /// en: "Add a second row"
+                public static var addRow: String { L10nSupport.string("menuBar.composer.group.addRow") }
+
+                /// Shown inside a group that has no blocks yet.
+                ///
+                /// Key: `menuBar.composer.group.empty`
+                /// en: "Empty group — drag a block in."
+                public static var empty: String { L10nSupport.string("menuBar.composer.group.empty") }
+
+                /// Menu action folding a group into the one before it.
+                ///
+                /// Key: `menuBar.composer.group.mergeLeft`
+                /// en: "Merge into the group before it"
+                public static var mergeLeft: String { L10nSupport.string("menuBar.composer.group.mergeLeft") }
+
+                /// Menu action moving a group one place earlier.
+                ///
+                /// Key: `menuBar.composer.group.moveLeft`
+                /// en: "Move left"
+                public static var moveLeft: String { L10nSupport.string("menuBar.composer.group.moveLeft") }
+
+                /// Menu action moving a group one place later.
+                ///
+                /// Key: `menuBar.composer.group.moveRight`
+                /// en: "Move right"
+                public static var moveRight: String { L10nSupport.string("menuBar.composer.group.moveRight") }
+
+                /// Menu action deleting a group and the blocks in it.
+                ///
+                /// Key: `menuBar.composer.group.remove`
+                /// en: "Remove group and its blocks"
+                public static var remove: String { L10nSupport.string("menuBar.composer.group.remove") }
+
+                /// Menu item closing a group's second row; its blocks join the end of the first.
+                ///
+                /// Key: `menuBar.composer.group.removeRow`
+                /// en: "Merge the second row up"
+                public static var removeRow: String { L10nSupport.string("menuBar.composer.group.removeRow") }
+
+                /// Button starting a new group at the selected block.
+                ///
+                /// Key: `menuBar.composer.group.splitHere`
+                /// en: "Start a group here"
+                public static var splitHere: String { L10nSupport.string("menuBar.composer.group.splitHere") }
+
+                /// Header over one group of blocks. Index counts from 1.
+                ///
+                /// Key: `menuBar.composer.group.title`
+                /// en: "Group {index}"
+                public static func title(index: Int) -> String {
+                    L10nSupport.format("menuBar.composer.group.title", index)
+                }
             }
 
             public enum Metric {
@@ -1168,6 +1298,32 @@ public enum L10n {
                 public static var help: String { L10nSupport.string("menuBar.composer.newRow.help") }
             }
 
+            public enum Preset {
+                /// Tooltip on a saved group.
+                ///
+                /// Key: `menuBar.composer.preset.insertHelp`
+                /// en: "Insert this group at the end of the strip."
+                public static var insertHelp: String { L10nSupport.string("menuBar.composer.preset.insertHelp") }
+
+                /// Menu action deleting a saved group.
+                ///
+                /// Key: `menuBar.composer.preset.remove`
+                /// en: "Remove preset"
+                public static var remove: String { L10nSupport.string("menuBar.composer.preset.remove") }
+
+                /// Menu action saving a group to use again.
+                ///
+                /// Key: `menuBar.composer.preset.save`
+                /// en: "Save as preset…"
+                public static var save: String { L10nSupport.string("menuBar.composer.preset.save") }
+
+                /// Title of the dialog naming a saved group.
+                ///
+                /// Key: `menuBar.composer.preset.saveTitle`
+                /// en: "Save this group"
+                public static var saveTitle: String { L10nSupport.string("menuBar.composer.preset.saveTitle") }
+            }
+
             public enum Preview {
                 /// Accessibility label for the dark-background preview.
                 ///
@@ -1198,6 +1354,52 @@ public enum L10n {
                 /// Key: `menuBar.composer.preview.twoRowScaling`
                 /// en: "Two rows share the menu bar's height, so large sizes are scaled down to fit — the preview scales with them."
                 public static var twoRowScaling: String { L10nSupport.string("menuBar.composer.preview.twoRowScaling") }
+            }
+
+            public enum ResetFormat {
+                /// Reset-time format: the time alone today, the weekday and date after that distinct-from: menuBar.composer.colour.automatic — a colour that follows the strip and a date format that follows the day are different automatics, and their pickers should be free to phrase them apart.
+                ///
+                /// Key: `menuBar.composer.resetFormat.automatic`
+                /// en: "Automatic"
+                public static var automatic: String { L10nSupport.string("menuBar.composer.resetFormat.automatic") }
+
+                /// Reset-time format showing only the calendar date, e.g. Sep 7
+                ///
+                /// Key: `menuBar.composer.resetFormat.date`
+                /// en: "Date"
+                public static var date: String { L10nSupport.string("menuBar.composer.resetFormat.date") }
+
+                /// Reset-time format showing the date and the time, e.g. Sep 7 at 12:01
+                ///
+                /// Key: `menuBar.composer.resetFormat.dateTime`
+                /// en: "Date and time"
+                public static var dateTime: String { L10nSupport.string("menuBar.composer.resetFormat.dateTime") }
+
+                /// Reset-time format showing only the clock time, e.g. 12:01
+                ///
+                /// Key: `menuBar.composer.resetFormat.time`
+                /// en: "Time"
+                public static var time: String { L10nSupport.string("menuBar.composer.resetFormat.time") }
+
+                /// Reset-time format showing the weekday, the date and the time, e.g. Mon, Sep 7 at 12:01
+                ///
+                /// Key: `menuBar.composer.resetFormat.weekdayDateTime`
+                /// en: "Weekday, date and time"
+                public static var weekdayDateTime: String { L10nSupport.string("menuBar.composer.resetFormat.weekdayDateTime") }
+
+                /// Reset-time format showing the weekday and the time, e.g. Mon 12:01
+                ///
+                /// Key: `menuBar.composer.resetFormat.weekdayTime`
+                /// en: "Weekday and time"
+                public static var weekdayTime: String { L10nSupport.string("menuBar.composer.resetFormat.weekdayTime") }
+            }
+
+            public enum Row {
+                /// Shown inside a group's second row while it holds no blocks.
+                ///
+                /// Key: `menuBar.composer.row.empty`
+                /// en: "Empty row — drag a block in."
+                public static var empty: String { L10nSupport.string("menuBar.composer.row.empty") }
             }
 
             public enum Rule {
@@ -1233,6 +1435,12 @@ public enum L10n {
                 /// en: "Large"
                 public static var large: String { L10nSupport.string("menuBar.composer.size.large") }
 
+                /// Smallest of the three block sizes in the menu-bar composer.
+                ///
+                /// Key: `menuBar.composer.size.mini`
+                /// en: "Mini"
+                public static var mini: String { L10nSupport.string("menuBar.composer.size.mini") }
+
                 /// Type size choice.
                 ///
                 /// Key: `menuBar.composer.size.regular`
@@ -1252,6 +1460,20 @@ public enum L10n {
                 /// Key: `menuBar.composer.space.detail`
                 /// en: "A gap one space wide. Size changes how wide."
                 public static var detail: String { L10nSupport.string("menuBar.composer.space.detail") }
+
+                /// Stepper choosing how wide a space block is.
+                ///
+                /// Key: `menuBar.composer.space.width`
+                /// en: "Width"
+                public static var width: String { L10nSupport.string("menuBar.composer.space.width") }
+
+                /// How wide a space block is, in space characters.
+                ///
+                /// Key: `menuBar.composer.space.widthValue`
+                /// en: "{count, plural, one {1 space} other {# spaces}}"
+                public static func widthValue(count: Int) -> String {
+                    L10nSupport.localizedFormat("menuBar.composer.space.widthValue", count)
+                }
             }
 
             public enum StartOver {
@@ -1555,6 +1777,14 @@ public enum L10n {
             /// Key: `onboarding.cookies.importGrok`
             /// en: "Import Grok cookies from browser"
             public static var importGrok: String { L10nSupport.string("onboarding.cookies.importGrok") }
+
+            /// Button that imports one provider's cookies from the browser; {provider} is the provider name
+            ///
+            /// Key: `onboarding.cookies.importProvider`
+            /// en: "Import {provider} cookies from browser"
+            public static func importProvider(provider: String) -> String {
+                L10nSupport.format("onboarding.cookies.importProvider", provider)
+            }
 
             /// Status line while an import runs
             ///
@@ -2178,7 +2408,7 @@ public enum L10n {
             /// en: "End-to-end encrypted remote usage"
             public static var machinesSubtitle: String { L10nSupport.string("popover.header.machinesSubtitle") }
 
-            /// Tooltip on the popover header button that opens the floating mini window
+            /// Tooltip on the popover header button that opens the floating mini window distinct-from: menuBar.composer.size.mini — the smallest block size and the floating window are different words already: zh-Hans says 迷你 for one and 迷你窗口 for the other.
             ///
             /// Key: `popover.header.mini`
             /// en: "Mini"
@@ -3882,7 +4112,7 @@ public enum L10n {
             /// en: "One column per cycle, newest aligned across every quota"
             public static var cycleHelp: String { L10nSupport.string("resetHistory.axis.cycleHelp") }
 
-            /// Segmented control: cycles placed on a shared calendar
+            /// Segmented control: cycles placed on a shared calendar distinct-from: menuBar.composer.resetFormat.time — a reset-time format showing only the clock and a chart axis measured in time are different things.
             ///
             /// Key: `resetHistory.axis.time`
             /// en: "Time"
@@ -4259,6 +4489,14 @@ public enum L10n {
         /// en: "Delete Grok cookies"
         public static var deleteGrokCookies: String { L10nSupport.string("settings.deleteGrokCookies") }
 
+        /// Destructive button that removes every saved cookie for one provider; {provider} is the provider name
+        ///
+        /// Key: `settings.deleteProviderCookies`
+        /// en: "Delete {provider} cookies"
+        public static func deleteProviderCookies(provider: String) -> String {
+            L10nSupport.format("settings.deleteProviderCookies", provider)
+        }
+
         /// Confirmation line
         ///
         /// Key: `settings.geminiCookiesSaved`
@@ -4368,6 +4606,14 @@ public enum L10n {
         /// Key: `settings.planBadgeDetail`
         /// en: "Leave blank to use the detected account plan."
         public static var planBadgeDetail: String { L10nSupport.string("settings.planBadgeDetail") }
+
+        /// Trailing note on a roster row for a SubProvider that has no plan of its own; {provider} is the account it rides on
+        ///
+        /// Key: `settings.planFollows`
+        /// en: "Follows {provider}"
+        public static func planFollows(provider: String) -> String {
+            L10nSupport.format("settings.planFollows", provider)
+        }
 
         /// Footer showing when the bundled price table was built; date is a raw stamp
         ///
@@ -7288,7 +7534,7 @@ public enum L10n {
                 /// en: "Tier"
                 public static var tier: String { L10nSupport.string("usage.table.column.tier") }
 
-                /// Requests table column header; the call site uppercases it. distinct-from: resetHistory.axis.time — a segmented control that places cycles on a shared calendar and a request's timestamp column are different things.
+                /// Requests table column header; the call site uppercases it. distinct-from: menuBar.composer.resetFormat.time — a segmented control that places cycles on a shared calendar and a request's timestamp column are different things.
                 ///
                 /// Key: `usage.table.column.time`
                 /// en: "Time"
@@ -9922,6 +10168,11 @@ enum L10nCatalogFacts {
         "common.dragToReorder",
         "common.duration.days",
         "common.duration.daysHours",
+        "common.duration.full.days",
+        "common.duration.full.daysHours",
+        "common.duration.full.hours",
+        "common.duration.full.hoursMinutes",
+        "common.duration.full.minutes",
         "common.duration.hours",
         "common.duration.hoursMinutes",
         "common.duration.lessThanMinute",
@@ -10057,11 +10308,24 @@ enum L10nCatalogFacts {
         "menuBar.composer.field.monospacedDigits",
         "menuBar.composer.field.monospacedDigitsHelp",
         "menuBar.composer.field.offlineOption",
+        "menuBar.composer.field.resetFormat",
+        "menuBar.composer.field.resetFormatHelp",
         "menuBar.composer.field.show",
         "menuBar.composer.field.shows",
         "menuBar.composer.field.size",
         "menuBar.composer.field.verdicts",
         "menuBar.composer.field.weight",
+        "menuBar.composer.group.add",
+        "menuBar.composer.group.addHelp",
+        "menuBar.composer.group.addRow",
+        "menuBar.composer.group.empty",
+        "menuBar.composer.group.mergeLeft",
+        "menuBar.composer.group.moveLeft",
+        "menuBar.composer.group.moveRight",
+        "menuBar.composer.group.remove",
+        "menuBar.composer.group.removeRow",
+        "menuBar.composer.group.splitHere",
+        "menuBar.composer.group.title",
         "menuBar.composer.metric.displayPercent",
         "menuBar.composer.metric.pace",
         "menuBar.composer.metric.remainingPercent",
@@ -10078,6 +10342,11 @@ enum L10nCatalogFacts {
         "menuBar.composer.newRow.detail",
         "menuBar.composer.newRow.help",
         "menuBar.composer.palette",
+        "menuBar.composer.preset.insertHelp",
+        "menuBar.composer.preset.remove",
+        "menuBar.composer.preset.save",
+        "menuBar.composer.preset.saveTitle",
+        "menuBar.composer.presets",
         "menuBar.composer.preview",
         "menuBar.composer.preview.dark",
         "menuBar.composer.preview.empty",
@@ -10085,15 +10354,25 @@ enum L10nCatalogFacts {
         "menuBar.composer.preview.light",
         "menuBar.composer.preview.twoRowScaling",
         "menuBar.composer.removeTarget",
+        "menuBar.composer.resetFormat.automatic",
+        "menuBar.composer.resetFormat.date",
+        "menuBar.composer.resetFormat.dateTime",
+        "menuBar.composer.resetFormat.time",
+        "menuBar.composer.resetFormat.weekdayDateTime",
+        "menuBar.composer.resetFormat.weekdayTime",
+        "menuBar.composer.row.empty",
         "menuBar.composer.rule.always",
         "menuBar.composer.rule.whenForecast",
         "menuBar.composer.rule.whenRemainingAtMost",
         "menuBar.composer.rule.whenUsedAtLeast",
         "menuBar.composer.selected",
         "menuBar.composer.size.large",
+        "menuBar.composer.size.mini",
         "menuBar.composer.size.regular",
         "menuBar.composer.size.small",
         "menuBar.composer.space.detail",
+        "menuBar.composer.space.width",
+        "menuBar.composer.space.widthValue",
         "menuBar.composer.startOver",
         "menuBar.composer.startOver.confirm",
         "menuBar.composer.startOver.confirmMessage",
@@ -10136,6 +10415,7 @@ enum L10nCatalogFacts {
         "onboarding.cookies.importFromBrowser",
         "onboarding.cookies.importGemini",
         "onboarding.cookies.importGrok",
+        "onboarding.cookies.importProvider",
         "onboarding.cookies.importing",
         "onboarding.cookies.intro",
         "onboarding.cookies.notImported",
@@ -10524,6 +10804,7 @@ enum L10nCatalogFacts {
         "settings.deleteCookies",
         "settings.deleteGeminiCookies",
         "settings.deleteGrokCookies",
+        "settings.deleteProviderCookies",
         "settings.displayMode.remaining",
         "settings.displayMode.used",
         "settings.externalChange.title",
@@ -10663,6 +10944,7 @@ enum L10nCatalogFacts {
         "settings.percentShows",
         "settings.planBadge",
         "settings.planBadgeDetail",
+        "settings.planFollows",
         "settings.popoverDensity.compact",
         "settings.popoverDensity.compactDetail",
         "settings.popoverDensity.regular",
@@ -11368,9 +11650,13 @@ enum L10nCatalogFacts {
     ]
 
     static let pluralKeys: Set<String> = [
+        "common.duration.full.days",
+        "common.duration.full.hours",
+        "common.duration.full.minutes",
         "common.updated.daysAgo",
         "common.updated.hoursAgo",
         "common.updated.minutesAgo",
+        "menuBar.composer.space.widthValue",
         "quota.cyclesRecorded",
         "quota.forecast.metric.comparableCycles",
         "quota.forecast.metric.recentIntervals",
@@ -11430,6 +11716,11 @@ enum L10nCatalogFacts {
         "common.dragToReorder": 0,
         "common.duration.days": 1,
         "common.duration.daysHours": 2,
+        "common.duration.full.days": 1,
+        "common.duration.full.daysHours": 2,
+        "common.duration.full.hours": 1,
+        "common.duration.full.hoursMinutes": 2,
+        "common.duration.full.minutes": 1,
         "common.duration.hours": 1,
         "common.duration.hoursMinutes": 2,
         "common.duration.lessThanMinute": 0,
@@ -11565,11 +11856,24 @@ enum L10nCatalogFacts {
         "menuBar.composer.field.monospacedDigits": 0,
         "menuBar.composer.field.monospacedDigitsHelp": 0,
         "menuBar.composer.field.offlineOption": 1,
+        "menuBar.composer.field.resetFormat": 0,
+        "menuBar.composer.field.resetFormatHelp": 0,
         "menuBar.composer.field.show": 0,
         "menuBar.composer.field.shows": 0,
         "menuBar.composer.field.size": 0,
         "menuBar.composer.field.verdicts": 0,
         "menuBar.composer.field.weight": 0,
+        "menuBar.composer.group.add": 0,
+        "menuBar.composer.group.addHelp": 0,
+        "menuBar.composer.group.addRow": 0,
+        "menuBar.composer.group.empty": 0,
+        "menuBar.composer.group.mergeLeft": 0,
+        "menuBar.composer.group.moveLeft": 0,
+        "menuBar.composer.group.moveRight": 0,
+        "menuBar.composer.group.remove": 0,
+        "menuBar.composer.group.removeRow": 0,
+        "menuBar.composer.group.splitHere": 0,
+        "menuBar.composer.group.title": 1,
         "menuBar.composer.metric.displayPercent": 0,
         "menuBar.composer.metric.pace": 0,
         "menuBar.composer.metric.remainingPercent": 0,
@@ -11586,6 +11890,11 @@ enum L10nCatalogFacts {
         "menuBar.composer.newRow.detail": 0,
         "menuBar.composer.newRow.help": 0,
         "menuBar.composer.palette": 0,
+        "menuBar.composer.preset.insertHelp": 0,
+        "menuBar.composer.preset.remove": 0,
+        "menuBar.composer.preset.save": 0,
+        "menuBar.composer.preset.saveTitle": 0,
+        "menuBar.composer.presets": 0,
         "menuBar.composer.preview": 0,
         "menuBar.composer.preview.dark": 0,
         "menuBar.composer.preview.empty": 0,
@@ -11593,15 +11902,25 @@ enum L10nCatalogFacts {
         "menuBar.composer.preview.light": 0,
         "menuBar.composer.preview.twoRowScaling": 0,
         "menuBar.composer.removeTarget": 0,
+        "menuBar.composer.resetFormat.automatic": 0,
+        "menuBar.composer.resetFormat.date": 0,
+        "menuBar.composer.resetFormat.dateTime": 0,
+        "menuBar.composer.resetFormat.time": 0,
+        "menuBar.composer.resetFormat.weekdayDateTime": 0,
+        "menuBar.composer.resetFormat.weekdayTime": 0,
+        "menuBar.composer.row.empty": 0,
         "menuBar.composer.rule.always": 0,
         "menuBar.composer.rule.whenForecast": 0,
         "menuBar.composer.rule.whenRemainingAtMost": 0,
         "menuBar.composer.rule.whenUsedAtLeast": 0,
         "menuBar.composer.selected": 0,
         "menuBar.composer.size.large": 0,
+        "menuBar.composer.size.mini": 0,
         "menuBar.composer.size.regular": 0,
         "menuBar.composer.size.small": 0,
         "menuBar.composer.space.detail": 0,
+        "menuBar.composer.space.width": 0,
+        "menuBar.composer.space.widthValue": 1,
         "menuBar.composer.startOver": 0,
         "menuBar.composer.startOver.confirm": 0,
         "menuBar.composer.startOver.confirmMessage": 0,
@@ -11644,6 +11963,7 @@ enum L10nCatalogFacts {
         "onboarding.cookies.importFromBrowser": 0,
         "onboarding.cookies.importGemini": 0,
         "onboarding.cookies.importGrok": 0,
+        "onboarding.cookies.importProvider": 1,
         "onboarding.cookies.importing": 0,
         "onboarding.cookies.intro": 0,
         "onboarding.cookies.notImported": 0,
@@ -12032,6 +12352,7 @@ enum L10nCatalogFacts {
         "settings.deleteCookies": 0,
         "settings.deleteGeminiCookies": 0,
         "settings.deleteGrokCookies": 0,
+        "settings.deleteProviderCookies": 1,
         "settings.displayMode.remaining": 0,
         "settings.displayMode.used": 0,
         "settings.externalChange.title": 0,
@@ -12171,6 +12492,7 @@ enum L10nCatalogFacts {
         "settings.percentShows": 0,
         "settings.planBadge": 0,
         "settings.planBadgeDetail": 0,
+        "settings.planFollows": 1,
         "settings.popoverDensity.compact": 0,
         "settings.popoverDensity.compactDetail": 0,
         "settings.popoverDensity.regular": 0,

@@ -12,6 +12,8 @@
     "menuBar.composer.field.provider": "common.provider",
     "menuBar.composer.metric.forecastPercent": "quota.forecast.metric.forecastAtReset",
     "menuBar.composer.metric.label": "common.name",
+    "menuBar.composer.preset.name": "common.name",
+    "menuBar.composer.preset.saveConfirm": "common.save",
     "onboarding.done.browserCookies": "onboarding.step.browserCookies.title",
     "onboarding.done.launchAtLogin": "platform.macos.launchAtLogin.title",
     "onboarding.done.modelPricing": "onboarding.step.pricing.title",

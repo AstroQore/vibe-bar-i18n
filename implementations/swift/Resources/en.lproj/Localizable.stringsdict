@@ -4,6 +4,54 @@
      Edit catalog/*.json and re-run `python3 scripts/generate.py`. -->
 <plist version="1.0">
 <dict>
+	<key>common.duration.full.days</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>1 day</string>
+			<key>other</key>
+			<string>%lld days</string>
+		</dict>
+	</dict>
+	<key>common.duration.full.hours</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>1 hour</string>
+			<key>other</key>
+			<string>%lld hours</string>
+		</dict>
+	</dict>
+	<key>common.duration.full.minutes</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>1 minute</string>
+			<key>other</key>
+			<string>%lld minutes</string>
+		</dict>
+	</dict>
 	<key>common.updated.daysAgo</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -50,6 +98,22 @@
 			<string>1 minute</string>
 			<key>other</key>
 			<string>%lld minutes</string>
+		</dict>
+	</dict>
+	<key>menuBar.composer.space.widthValue</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>1 space</string>
+			<key>other</key>
+			<string>%lld spaces</string>
 		</dict>
 	</dict>
 	<key>quota.cyclesRecorded</key>

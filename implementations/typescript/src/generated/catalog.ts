@@ -27,6 +27,11 @@ export type MessageKey =
   | "common.dragToReorder"
   | "common.duration.days"
   | "common.duration.daysHours"
+  | "common.duration.full.days"
+  | "common.duration.full.daysHours"
+  | "common.duration.full.hours"
+  | "common.duration.full.hoursMinutes"
+  | "common.duration.full.minutes"
   | "common.duration.hours"
   | "common.duration.hoursMinutes"
   | "common.duration.lessThanMinute"
@@ -162,11 +167,24 @@ export type MessageKey =
   | "menuBar.composer.field.monospacedDigits"
   | "menuBar.composer.field.monospacedDigitsHelp"
   | "menuBar.composer.field.offlineOption"
+  | "menuBar.composer.field.resetFormat"
+  | "menuBar.composer.field.resetFormatHelp"
   | "menuBar.composer.field.show"
   | "menuBar.composer.field.shows"
   | "menuBar.composer.field.size"
   | "menuBar.composer.field.verdicts"
   | "menuBar.composer.field.weight"
+  | "menuBar.composer.group.add"
+  | "menuBar.composer.group.addHelp"
+  | "menuBar.composer.group.addRow"
+  | "menuBar.composer.group.empty"
+  | "menuBar.composer.group.mergeLeft"
+  | "menuBar.composer.group.moveLeft"
+  | "menuBar.composer.group.moveRight"
+  | "menuBar.composer.group.remove"
+  | "menuBar.composer.group.removeRow"
+  | "menuBar.composer.group.splitHere"
+  | "menuBar.composer.group.title"
   | "menuBar.composer.metric.displayPercent"
   | "menuBar.composer.metric.pace"
   | "menuBar.composer.metric.remainingPercent"
@@ -183,6 +201,11 @@ export type MessageKey =
   | "menuBar.composer.newRow.detail"
   | "menuBar.composer.newRow.help"
   | "menuBar.composer.palette"
+  | "menuBar.composer.preset.insertHelp"
+  | "menuBar.composer.preset.remove"
+  | "menuBar.composer.preset.save"
+  | "menuBar.composer.preset.saveTitle"
+  | "menuBar.composer.presets"
   | "menuBar.composer.preview"
   | "menuBar.composer.preview.dark"
   | "menuBar.composer.preview.empty"
@@ -190,15 +213,25 @@ export type MessageKey =
   | "menuBar.composer.preview.light"
   | "menuBar.composer.preview.twoRowScaling"
   | "menuBar.composer.removeTarget"
+  | "menuBar.composer.resetFormat.automatic"
+  | "menuBar.composer.resetFormat.date"
+  | "menuBar.composer.resetFormat.dateTime"
+  | "menuBar.composer.resetFormat.time"
+  | "menuBar.composer.resetFormat.weekdayDateTime"
+  | "menuBar.composer.resetFormat.weekdayTime"
+  | "menuBar.composer.row.empty"
   | "menuBar.composer.rule.always"
   | "menuBar.composer.rule.whenForecast"
   | "menuBar.composer.rule.whenRemainingAtMost"
   | "menuBar.composer.rule.whenUsedAtLeast"
   | "menuBar.composer.selected"
   | "menuBar.composer.size.large"
+  | "menuBar.composer.size.mini"
   | "menuBar.composer.size.regular"
   | "menuBar.composer.size.small"
   | "menuBar.composer.space.detail"
+  | "menuBar.composer.space.width"
+  | "menuBar.composer.space.widthValue"
   | "menuBar.composer.startOver"
   | "menuBar.composer.startOver.confirm"
   | "menuBar.composer.startOver.confirmMessage"
@@ -241,6 +274,7 @@ export type MessageKey =
   | "onboarding.cookies.importFromBrowser"
   | "onboarding.cookies.importGemini"
   | "onboarding.cookies.importGrok"
+  | "onboarding.cookies.importProvider"
   | "onboarding.cookies.importing"
   | "onboarding.cookies.intro"
   | "onboarding.cookies.notImported"
@@ -629,6 +663,7 @@ export type MessageKey =
   | "settings.deleteCookies"
   | "settings.deleteGeminiCookies"
   | "settings.deleteGrokCookies"
+  | "settings.deleteProviderCookies"
   | "settings.displayMode.remaining"
   | "settings.displayMode.used"
   | "settings.externalChange.title"
@@ -768,6 +803,7 @@ export type MessageKey =
   | "settings.percentShows"
   | "settings.planBadge"
   | "settings.planBadgeDetail"
+  | "settings.planFollows"
   | "settings.popoverDensity.compact"
   | "settings.popoverDensity.compactDetail"
   | "settings.popoverDensity.regular"
@@ -1489,6 +1525,11 @@ export interface MessageParams {
   "common.dragToReorder": undefined;
   "common.duration.days": { "days": number };
   "common.duration.daysHours": { "days": number; "hours": number };
+  "common.duration.full.days": { "count": number };
+  "common.duration.full.daysHours": { "days": string; "hours": string };
+  "common.duration.full.hours": { "count": number };
+  "common.duration.full.hoursMinutes": { "hours": string; "minutes": string };
+  "common.duration.full.minutes": { "count": number };
   "common.duration.hours": { "hours": number };
   "common.duration.hoursMinutes": { "hours": number; "minutes": number };
   "common.duration.lessThanMinute": undefined;
@@ -1624,11 +1665,24 @@ export interface MessageParams {
   "menuBar.composer.field.monospacedDigits": undefined;
   "menuBar.composer.field.monospacedDigitsHelp": undefined;
   "menuBar.composer.field.offlineOption": { "title": string };
+  "menuBar.composer.field.resetFormat": undefined;
+  "menuBar.composer.field.resetFormatHelp": undefined;
   "menuBar.composer.field.show": undefined;
   "menuBar.composer.field.shows": undefined;
   "menuBar.composer.field.size": undefined;
   "menuBar.composer.field.verdicts": undefined;
   "menuBar.composer.field.weight": undefined;
+  "menuBar.composer.group.add": undefined;
+  "menuBar.composer.group.addHelp": undefined;
+  "menuBar.composer.group.addRow": undefined;
+  "menuBar.composer.group.empty": undefined;
+  "menuBar.composer.group.mergeLeft": undefined;
+  "menuBar.composer.group.moveLeft": undefined;
+  "menuBar.composer.group.moveRight": undefined;
+  "menuBar.composer.group.remove": undefined;
+  "menuBar.composer.group.removeRow": undefined;
+  "menuBar.composer.group.splitHere": undefined;
+  "menuBar.composer.group.title": { "index": number };
   "menuBar.composer.metric.displayPercent": undefined;
   "menuBar.composer.metric.pace": undefined;
   "menuBar.composer.metric.remainingPercent": undefined;
@@ -1645,6 +1699,11 @@ export interface MessageParams {
   "menuBar.composer.newRow.detail": undefined;
   "menuBar.composer.newRow.help": undefined;
   "menuBar.composer.palette": undefined;
+  "menuBar.composer.preset.insertHelp": undefined;
+  "menuBar.composer.preset.remove": undefined;
+  "menuBar.composer.preset.save": undefined;
+  "menuBar.composer.preset.saveTitle": undefined;
+  "menuBar.composer.presets": undefined;
   "menuBar.composer.preview": undefined;
   "menuBar.composer.preview.dark": undefined;
   "menuBar.composer.preview.empty": undefined;
@@ -1652,15 +1711,25 @@ export interface MessageParams {
   "menuBar.composer.preview.light": undefined;
   "menuBar.composer.preview.twoRowScaling": undefined;
   "menuBar.composer.removeTarget": undefined;
+  "menuBar.composer.resetFormat.automatic": undefined;
+  "menuBar.composer.resetFormat.date": undefined;
+  "menuBar.composer.resetFormat.dateTime": undefined;
+  "menuBar.composer.resetFormat.time": undefined;
+  "menuBar.composer.resetFormat.weekdayDateTime": undefined;
+  "menuBar.composer.resetFormat.weekdayTime": undefined;
+  "menuBar.composer.row.empty": undefined;
   "menuBar.composer.rule.always": undefined;
   "menuBar.composer.rule.whenForecast": undefined;
   "menuBar.composer.rule.whenRemainingAtMost": undefined;
   "menuBar.composer.rule.whenUsedAtLeast": undefined;
   "menuBar.composer.selected": undefined;
   "menuBar.composer.size.large": undefined;
+  "menuBar.composer.size.mini": undefined;
   "menuBar.composer.size.regular": undefined;
   "menuBar.composer.size.small": undefined;
   "menuBar.composer.space.detail": undefined;
+  "menuBar.composer.space.width": undefined;
+  "menuBar.composer.space.widthValue": { "count": number };
   "menuBar.composer.startOver": undefined;
   "menuBar.composer.startOver.confirm": undefined;
   "menuBar.composer.startOver.confirmMessage": undefined;
@@ -1703,6 +1772,7 @@ export interface MessageParams {
   "onboarding.cookies.importFromBrowser": undefined;
   "onboarding.cookies.importGemini": undefined;
   "onboarding.cookies.importGrok": undefined;
+  "onboarding.cookies.importProvider": { "provider": string };
   "onboarding.cookies.importing": undefined;
   "onboarding.cookies.intro": undefined;
   "onboarding.cookies.notImported": undefined;
@@ -2091,6 +2161,7 @@ export interface MessageParams {
   "settings.deleteCookies": undefined;
   "settings.deleteGeminiCookies": undefined;
   "settings.deleteGrokCookies": undefined;
+  "settings.deleteProviderCookies": { "provider": string };
   "settings.displayMode.remaining": undefined;
   "settings.displayMode.used": undefined;
   "settings.externalChange.title": undefined;
@@ -2230,6 +2301,7 @@ export interface MessageParams {
   "settings.percentShows": undefined;
   "settings.planBadge": undefined;
   "settings.planBadgeDetail": undefined;
+  "settings.planFollows": { "provider": string };
   "settings.popoverDensity.compact": undefined;
   "settings.popoverDensity.compactDetail": undefined;
   "settings.popoverDensity.regular": undefined;
@@ -2952,6 +3024,11 @@ export const messages: {
     "common.dragToReorder": "Drag to reorder",
     "common.duration.days": "{days}d",
     "common.duration.daysHours": "{days}d {hours}h",
+    "common.duration.full.days": "{count, plural, one {1 day} other {# days}}",
+    "common.duration.full.daysHours": "{days} and {hours}",
+    "common.duration.full.hours": "{count, plural, one {1 hour} other {# hours}}",
+    "common.duration.full.hoursMinutes": "{hours} and {minutes}",
+    "common.duration.full.minutes": "{count, plural, one {1 minute} other {# minutes}}",
     "common.duration.hours": "{hours}h",
     "common.duration.hoursMinutes": "{hours}h {minutes}m",
     "common.duration.lessThanMinute": "<1m",
@@ -3087,11 +3164,24 @@ export const messages: {
     "menuBar.composer.field.monospacedDigits": "Monospaced digits",
     "menuBar.composer.field.monospacedDigitsHelp": "Keeps a changing number from shifting the blocks beside it.",
     "menuBar.composer.field.offlineOption": "{title} (offline)",
+    "menuBar.composer.field.resetFormat": "Format",
+    "menuBar.composer.field.resetFormatHelp": "Automatic prints only the time while the reset is still today.",
     "menuBar.composer.field.show": "Show",
     "menuBar.composer.field.shows": "Shows",
     "menuBar.composer.field.size": "Size",
     "menuBar.composer.field.verdicts": "Verdicts",
     "menuBar.composer.field.weight": "Weight",
+    "menuBar.composer.group.add": "New group",
+    "menuBar.composer.group.addHelp": "Each group is one column of the strip. Give a group a second row to stack that column.",
+    "menuBar.composer.group.addRow": "Add a second row",
+    "menuBar.composer.group.empty": "Empty group — drag a block in.",
+    "menuBar.composer.group.mergeLeft": "Merge into the group before it",
+    "menuBar.composer.group.moveLeft": "Move left",
+    "menuBar.composer.group.moveRight": "Move right",
+    "menuBar.composer.group.remove": "Remove group and its blocks",
+    "menuBar.composer.group.removeRow": "Merge the second row up",
+    "menuBar.composer.group.splitHere": "Start a group here",
+    "menuBar.composer.group.title": "Group {index}",
     "menuBar.composer.metric.displayPercent": "Percent (follows setting)",
     "menuBar.composer.metric.pace": "Pace",
     "menuBar.composer.metric.remainingPercent": "Remaining %",
@@ -3108,6 +3198,11 @@ export const messages: {
     "menuBar.composer.newRow.detail": "Ends the first row and starts the second. Give it a rule below to split only when that quota says so.",
     "menuBar.composer.newRow.help": "Split the strip into a second row.",
     "menuBar.composer.palette": "Add a block",
+    "menuBar.composer.preset.insertHelp": "Insert this group at the end of the strip.",
+    "menuBar.composer.preset.remove": "Remove preset",
+    "menuBar.composer.preset.save": "Save as preset…",
+    "menuBar.composer.preset.saveTitle": "Save this group",
+    "menuBar.composer.presets": "Saved groups",
     "menuBar.composer.preview": "Preview",
     "menuBar.composer.preview.dark": "Dark menu bar preview",
     "menuBar.composer.preview.empty": "Empty strip",
@@ -3115,15 +3210,25 @@ export const messages: {
     "menuBar.composer.preview.light": "Light menu bar preview",
     "menuBar.composer.preview.twoRowScaling": "Two rows share the menu bar's height, so large sizes are scaled down to fit — the preview scales with them.",
     "menuBar.composer.removeTarget": "Drag here to remove",
+    "menuBar.composer.resetFormat.automatic": "Automatic",
+    "menuBar.composer.resetFormat.date": "Date",
+    "menuBar.composer.resetFormat.dateTime": "Date and time",
+    "menuBar.composer.resetFormat.time": "Time",
+    "menuBar.composer.resetFormat.weekdayDateTime": "Weekday, date and time",
+    "menuBar.composer.resetFormat.weekdayTime": "Weekday and time",
+    "menuBar.composer.row.empty": "Empty row — drag a block in.",
     "menuBar.composer.rule.always": "Always",
     "menuBar.composer.rule.whenForecast": "When the forecast says",
     "menuBar.composer.rule.whenRemainingAtMost": "When remaining is at most",
     "menuBar.composer.rule.whenUsedAtLeast": "When used is at least",
     "menuBar.composer.selected": "Selected block",
     "menuBar.composer.size.large": "Large",
+    "menuBar.composer.size.mini": "Mini",
     "menuBar.composer.size.regular": "Regular",
     "menuBar.composer.size.small": "Small",
     "menuBar.composer.space.detail": "A gap one space wide. Size changes how wide.",
+    "menuBar.composer.space.width": "Width",
+    "menuBar.composer.space.widthValue": "{count, plural, one {1 space} other {# spaces}}",
     "menuBar.composer.startOver": "Start over from the current strip…",
     "menuBar.composer.startOver.confirm": "Start over",
     "menuBar.composer.startOver.confirmMessage": "Every block you arranged is discarded and rebuilt from the default strip.",
@@ -3166,6 +3271,7 @@ export const messages: {
     "onboarding.cookies.importFromBrowser": "Import from browser",
     "onboarding.cookies.importGemini": "Import Gemini cookies from browser",
     "onboarding.cookies.importGrok": "Import Grok cookies from browser",
+    "onboarding.cookies.importProvider": "Import {provider} cookies from browser",
     "onboarding.cookies.importing": "Importing…",
     "onboarding.cookies.intro": "Web quotas — the ones the provider shows on its own site — come from the session your browser already has. Vibe Bar reads the cookie stores of the browsers on this Mac (Chrome and other Chromium browsers, Safari, Firefox), keeps only the few cookies each provider needs, and stores them in your login Keychain, never in a plaintext file. macOS may ask once for permission to read a browser's cookie key.",
     "onboarding.cookies.notImported": "Not imported yet",
@@ -3554,6 +3660,7 @@ export const messages: {
     "settings.deleteCookies": "Delete cookies",
     "settings.deleteGeminiCookies": "Delete Gemini cookies",
     "settings.deleteGrokCookies": "Delete Grok cookies",
+    "settings.deleteProviderCookies": "Delete {provider} cookies",
     "settings.displayMode.remaining": "Remaining",
     "settings.displayMode.used": "Used",
     "settings.externalChange.title": "Another Vibe Bar replaced your change",
@@ -3693,6 +3800,7 @@ export const messages: {
     "settings.percentShows": "Percent shows",
     "settings.planBadge": "Plan badge",
     "settings.planBadgeDetail": "Leave blank to use the detected account plan.",
+    "settings.planFollows": "Follows {provider}",
     "settings.popoverDensity.compact": "Compact",
     "settings.popoverDensity.compactDetail": "Tightest spacing, narrowest popover.",
     "settings.popoverDensity.regular": "Regular",
@@ -4410,6 +4518,11 @@ export const messages: {
     "common.dragToReorder": "拖动可重新排序",
     "common.duration.days": "{days} 天",
     "common.duration.daysHours": "{days} 天 {hours} 小时",
+    "common.duration.full.days": "{count, plural, other {# 天}}",
+    "common.duration.full.daysHours": "{days} {hours}",
+    "common.duration.full.hours": "{count, plural, other {# 小时}}",
+    "common.duration.full.hoursMinutes": "{hours} {minutes}",
+    "common.duration.full.minutes": "{count, plural, other {# 分钟}}",
     "common.duration.hours": "{hours} 小时",
     "common.duration.hoursMinutes": "{hours} 小时 {minutes} 分钟",
     "common.duration.lessThanMinute": "<1 分钟",
@@ -4545,11 +4658,24 @@ export const messages: {
     "menuBar.composer.field.monospacedDigits": "等宽数字",
     "menuBar.composer.field.monospacedDigitsHelp": "数字变化时不会挤动相邻积木。",
     "menuBar.composer.field.offlineOption": "{title}（未返回数据）",
+    "menuBar.composer.field.resetFormat": "格式",
+    "menuBar.composer.field.resetFormatHelp": "自动格式在重置仍处于当日时只显示时间。",
     "menuBar.composer.field.show": "显示条件",
     "menuBar.composer.field.shows": "显示内容",
     "menuBar.composer.field.size": "字号",
     "menuBar.composer.field.verdicts": "预测结论",
     "menuBar.composer.field.weight": "字重",
+    "menuBar.composer.group.add": "新建分组",
+    "menuBar.composer.group.addHelp": "每个分组是条带中的一列。为分组添加第二行可让该列上下堆叠。",
+    "menuBar.composer.group.addRow": "添加第二行",
+    "menuBar.composer.group.empty": "空分组，可将积木拖入。",
+    "menuBar.composer.group.mergeLeft": "并入前一个分组",
+    "menuBar.composer.group.moveLeft": "向左移动",
+    "menuBar.composer.group.moveRight": "向右移动",
+    "menuBar.composer.group.remove": "删除分组及其积木",
+    "menuBar.composer.group.removeRow": "将第二行并入第一行",
+    "menuBar.composer.group.splitHere": "从此处开始新分组",
+    "menuBar.composer.group.title": "分组 {index}",
     "menuBar.composer.metric.displayPercent": "百分比（跟随设置）",
     "menuBar.composer.metric.pace": "消耗速度",
     "menuBar.composer.metric.remainingPercent": "剩余百分比",
@@ -4566,6 +4692,11 @@ export const messages: {
     "menuBar.composer.newRow.detail": "结束第一行并开始第二行。可在下方设置条件，仅在该额度满足条件时换行。",
     "menuBar.composer.newRow.help": "将菜单栏内容拆成第二行。",
     "menuBar.composer.palette": "添加积木",
+    "menuBar.composer.preset.insertHelp": "在条带末尾插入该分组。",
+    "menuBar.composer.preset.remove": "删除预设",
+    "menuBar.composer.preset.save": "存为预设…",
+    "menuBar.composer.preset.saveTitle": "保存该分组",
+    "menuBar.composer.presets": "已存分组",
     "menuBar.composer.preview": "预览",
     "menuBar.composer.preview.dark": "深色菜单栏预览",
     "menuBar.composer.preview.empty": "空样式",
@@ -4573,15 +4704,25 @@ export const messages: {
     "menuBar.composer.preview.light": "浅色菜单栏预览",
     "menuBar.composer.preview.twoRowScaling": "两行共用菜单栏高度，较大字号会等比缩小以适应，预览同步缩放。",
     "menuBar.composer.removeTarget": "拖到此处移除",
+    "menuBar.composer.resetFormat.automatic": "自动",
+    "menuBar.composer.resetFormat.date": "日期",
+    "menuBar.composer.resetFormat.dateTime": "日期与时间",
+    "menuBar.composer.resetFormat.time": "时间",
+    "menuBar.composer.resetFormat.weekdayDateTime": "星期、日期与时间",
+    "menuBar.composer.resetFormat.weekdayTime": "星期与时间",
+    "menuBar.composer.row.empty": "空行，可将积木拖入。",
     "menuBar.composer.rule.always": "始终显示",
     "menuBar.composer.rule.whenForecast": "当预测结论为",
     "menuBar.composer.rule.whenRemainingAtMost": "剩余不高于",
     "menuBar.composer.rule.whenUsedAtLeast": "已用不低于",
     "menuBar.composer.selected": "已选积木",
     "menuBar.composer.size.large": "大",
+    "menuBar.composer.size.mini": "迷你",
     "menuBar.composer.size.regular": "标准",
     "menuBar.composer.size.small": "小",
     "menuBar.composer.space.detail": "宽度为一个空格的间隔。字号决定其宽度。",
+    "menuBar.composer.space.width": "宽度",
+    "menuBar.composer.space.widthValue": "{count, plural, other {# 个空格}}",
     "menuBar.composer.startOver": "从当前样式重新开始…",
     "menuBar.composer.startOver.confirm": "重新开始",
     "menuBar.composer.startOver.confirmMessage": "已排列的全部积木将被丢弃，并按默认样式重新生成。",
@@ -4624,6 +4765,7 @@ export const messages: {
     "onboarding.cookies.importFromBrowser": "从浏览器导入",
     "onboarding.cookies.importGemini": "从浏览器导入 Gemini 的 cookies",
     "onboarding.cookies.importGrok": "从浏览器导入 Grok 的 cookies",
+    "onboarding.cookies.importProvider": "从浏览器导入 {provider} cookies",
     "onboarding.cookies.importing": "正在导入…",
     "onboarding.cookies.intro": "网页端额度 — 即厂商在其自有网站上展示的部分 — 来自浏览器中已有的登录会话。Vibe Bar 会读取本机各浏览器（Chrome 及其他 Chromium 浏览器、Safari、Firefox）的 cookie 存储，仅保留各厂商所需的少量 cookie，并存入登录 Keychain，不写入明文文件。首次读取浏览器 cookie 密钥时，macOS 可能要求授权一次。",
     "onboarding.cookies.notImported": "尚未导入",
@@ -5012,6 +5154,7 @@ export const messages: {
     "settings.deleteCookies": "删除 cookies",
     "settings.deleteGeminiCookies": "删除 Gemini 的 cookies",
     "settings.deleteGrokCookies": "删除 Grok 的 cookies",
+    "settings.deleteProviderCookies": "删除 {provider} cookies",
     "settings.displayMode.remaining": "剩余",
     "settings.displayMode.used": "已用",
     "settings.externalChange.title": "另一个 Vibe Bar 覆盖了此处的修改",
@@ -5151,6 +5294,7 @@ export const messages: {
     "settings.percentShows": "百分比显示",
     "settings.planBadge": "套餐标签",
     "settings.planBadgeDetail": "留空则使用自动检测到的账号套餐。",
+    "settings.planFollows": "跟随 {provider}",
     "settings.popoverDensity.compact": "紧凑",
     "settings.popoverDensity.compactDetail": "间距最紧，面板最窄。",
     "settings.popoverDensity.regular": "标准",

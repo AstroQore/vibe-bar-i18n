@@ -177,7 +177,10 @@ COLLAPSE: Dict[str, List[str]] = {
     "common.duration.days": ["quota.freshness.age.days"],
     "common.duration.hours": ["quota.freshness.age.hours"],
     "common.duration.minutes": ["quota.freshness.age.minutes"],
-    "common.name": ["menuBar.composer.metric.label"],
+    "common.name": [
+        "menuBar.composer.metric.label", "menuBar.composer.preset.name",
+    ],
+    "common.save": ["menuBar.composer.preset.saveConfirm"],
     "common.off": ["platform.macos.launchAtLogin.off"],
     "common.provider": [
         "menuBar.composer.field.provider", "usage.table.column.provider",
@@ -297,6 +300,23 @@ COLLAPSE: Dict[str, List[str]] = {
 # keep saying. A group with more than one key and no reason here fails the
 # conversion rather than reaching the validator.
 DISTINCT_REASONS: Dict[str, str] = {
+    # --- third import ---------------------------------------------------
+    "common.duration.full.hoursMinutes":
+        "the same shape with different placeholders: one takes days and "
+        "hours, the other hours and minutes, so one key could not "
+        "declare both argument sets",
+    "menuBar.composer.resetFormat.automatic":
+        "a colour that follows the strip and a date format that follows "
+        "the day are different automatics, and their pickers should be "
+        "free to phrase them apart",
+    "resetHistory.axis.time":
+        "a reset-time format showing only the clock and a chart axis "
+        "measured in time are different things",
+    "popover.header.mini":
+        "the smallest block size and the floating window are different "
+        "words already: zh-Hans says 迷你 for one and 迷你窗口 for the "
+        "other",
+
     # --- carried over from the first import ----------------------------
     "resetHistory.axisNow":
         "a cycle grid's live column and a countdown that reached zero "
