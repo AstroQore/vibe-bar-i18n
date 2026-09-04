@@ -88,6 +88,20 @@
 			<string>%lld 分钟</string>
 		</dict>
 	</dict>
+	<key>menuBar.composer.group.selected</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>已选 %lld 个积木</string>
+		</dict>
+	</dict>
 	<key>menuBar.composer.space.widthValue</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -100,20 +114,6 @@
 			<string>lld</string>
 			<key>other</key>
 			<string>%lld 个空格</string>
-		</dict>
-	</dict>
-	<key>quota.cyclesRecorded</key>
-	<dict>
-		<key>NSStringLocalizedFormatKey</key>
-		<string>%#@count@</string>
-		<key>count</key>
-		<dict>
-			<key>NSStringFormatSpecTypeKey</key>
-			<string>NSStringPluralRuleType</string>
-			<key>NSStringFormatValueTypeKey</key>
-			<string>lld</string>
-			<key>other</key>
-			<string>%lld 个周期</string>
 		</dict>
 	</dict>
 	<key>quota.forecast.metric.comparableCycles</key>

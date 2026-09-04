@@ -1,6 +1,6 @@
 {
   "name": "@astroqore/vibe-bar-i18n",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Vibe Bar's localization catalog: one source of user-facing strings, shared by the macOS and desktop clients.",
   "license": "MIT",
   "type": "module",

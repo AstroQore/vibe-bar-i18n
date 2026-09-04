@@ -173,6 +173,7 @@ COLLAPSE: Dict[str, List[str]] = {
         "cost.granularity.auto", "settings.credentialSource.auto",
         "settings.usageMode.auto", "usage.filters.autoMenu",
         "usage.trend.granularityAuto",
+        "settings.layout.studioModeAuto",
     ],
     "common.duration.days": ["quota.freshness.age.days"],
     "common.duration.hours": ["quota.freshness.age.hours"],
@@ -185,8 +186,20 @@ COLLAPSE: Dict[str, List[str]] = {
     "common.provider": [
         "menuBar.composer.field.provider", "usage.table.column.provider",
     ],
-    "common.remove": ["menuBar.composer.action.remove"],
+    "common.remove": ["menuBar.composer.action.remove",
+        "settings.layout.studioWellRemove",
+    ],
     "common.updated.justNow": ["status.card.updatedJustNow"],
+    # --- fourth import: the Layout Studio, whose chrome reuses words the app
+    # already had. Casing differs on one ("Mini windows" / "Mini Windows"):
+    # the studio's menu section takes the heading's Title Case, which is how
+    # macOS spells a menu section anyway.
+    "menuBar.composer.preview": [
+        "settings.layout.preview", "settings.miniWindow.preview",
+    ],
+    "onboarding.apiKeys.hide": ["settings.layout.studioWellHide"],
+    "settings.section.miniWindows": ["settings.layout.studioSubjectMiniWindows"],
+    "usage.trend.fit": ["settings.layout.studioZoomFit"],
     "cost.timeframe.month": ["workbench.sessions.range.month"],
     "cost.timeframe.today": [
         "cost.metric.today", "workbench.sessions.range.today",
@@ -208,6 +221,7 @@ COLLAPSE: Dict[str, List[str]] = {
     ],
     "menuBar.composer.template.compact": [
         "platform.macos.menuBar.layout.compact",
+        "settings.layout.studioModeCompact",
     ],
     "menuBar.composer.template.twoRows": [
         "platform.macos.menuBar.layout.twoRows",

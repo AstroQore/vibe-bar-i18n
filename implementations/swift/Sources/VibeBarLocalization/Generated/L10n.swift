@@ -341,14 +341,6 @@ public enum L10n {
         /// en: "Open full charts"
         public static var openFullCharts: String { L10nSupport.string("cost.openFullCharts") }
 
-        /// Effective price of a model. {rate} is a raw number the client renders; declared double so the generated API takes a Double rather than a pre-formatted string.
-        ///
-        /// Key: `cost.perThousandTokens`
-        /// en: "{rate} per 1K tokens"
-        public static func perThousandTokens(rate: Double) -> String {
-            L10nSupport.format("cost.perThousandTokens", rate)
-        }
-
         /// Title of the expanded cost popover; provider is a company name and is never translated
         ///
         /// Key: `cost.providerFullCharts`
@@ -369,14 +361,6 @@ public enum L10n {
         /// en: "Refresh {provider} cost"
         public static func refreshProvider(provider: String) -> String {
             L10nSupport.format("cost.refreshProvider", provider)
-        }
-
-        /// Cost headline. {amount} arrives already formatted as currency by the client — the catalog never formats money, because the symbol, grouping and placement are the platform's job.
-        ///
-        /// Key: `cost.spentToday`
-        /// en: "{amount} spent today"
-        public static func spentToday(amount: String) -> String {
-            L10nSupport.format("cost.spentToday", amount)
         }
 
         /// Card title on a provider page
@@ -1133,73 +1117,37 @@ public enum L10n {
             }
 
             public enum Group {
-                /// Palette button adding an empty group to the strip.
+                /// Button that binds the selected blocks into one run
                 ///
-                /// Key: `menuBar.composer.group.add`
-                /// en: "New group"
-                public static var add: String { L10nSupport.string("menuBar.composer.group.add") }
+                /// Key: `menuBar.composer.group.bind`
+                /// en: "Group"
+                public static var bind: String { L10nSupport.string("menuBar.composer.group.bind") }
 
-                /// Tooltip on the New group button.
+                /// Explains how to bind blocks and what binding does
                 ///
-                /// Key: `menuBar.composer.group.addHelp`
-                /// en: "Each group is one column of the strip. Give a group a second row to stack that column."
-                public static var addHelp: String { L10nSupport.string("menuBar.composer.group.addHelp") }
+                /// Key: `menuBar.composer.group.hint`
+                /// en: "Shift-click blocks that sit side by side in one row. A group moves as one — drag any block in it and the whole run goes."
+                public static var hint: String { L10nSupport.string("menuBar.composer.group.hint") }
 
-                /// Menu item giving a group a second row.
+                /// Shown when the selected blocks cannot be bound
                 ///
-                /// Key: `menuBar.composer.group.addRow`
-                /// en: "Add a second row"
-                public static var addRow: String { L10nSupport.string("menuBar.composer.group.addRow") }
+                /// Key: `menuBar.composer.group.notAdjacent`
+                /// en: "Only blocks side by side in one row can be grouped."
+                public static var notAdjacent: String { L10nSupport.string("menuBar.composer.group.notAdjacent") }
 
-                /// Shown inside a group that has no blocks yet.
+                /// Caption above the grouping actions, counting the selected blocks
                 ///
-                /// Key: `menuBar.composer.group.empty`
-                /// en: "Empty group — drag a block in."
-                public static var empty: String { L10nSupport.string("menuBar.composer.group.empty") }
-
-                /// Menu action folding a group into the one before it.
-                ///
-                /// Key: `menuBar.composer.group.mergeLeft`
-                /// en: "Merge into the group before it"
-                public static var mergeLeft: String { L10nSupport.string("menuBar.composer.group.mergeLeft") }
-
-                /// Menu action moving a group one place earlier.
-                ///
-                /// Key: `menuBar.composer.group.moveLeft`
-                /// en: "Move left"
-                public static var moveLeft: String { L10nSupport.string("menuBar.composer.group.moveLeft") }
-
-                /// Menu action moving a group one place later.
-                ///
-                /// Key: `menuBar.composer.group.moveRight`
-                /// en: "Move right"
-                public static var moveRight: String { L10nSupport.string("menuBar.composer.group.moveRight") }
-
-                /// Menu action deleting a group and the blocks in it.
-                ///
-                /// Key: `menuBar.composer.group.remove`
-                /// en: "Remove group and its blocks"
-                public static var remove: String { L10nSupport.string("menuBar.composer.group.remove") }
-
-                /// Menu item closing a group's second row; its blocks join the end of the first.
-                ///
-                /// Key: `menuBar.composer.group.removeRow`
-                /// en: "Merge the second row up"
-                public static var removeRow: String { L10nSupport.string("menuBar.composer.group.removeRow") }
-
-                /// Button starting a new group at the selected block.
-                ///
-                /// Key: `menuBar.composer.group.splitHere`
-                /// en: "Start a group here"
-                public static var splitHere: String { L10nSupport.string("menuBar.composer.group.splitHere") }
-
-                /// Header over one group of blocks. Index counts from 1.
-                ///
-                /// Key: `menuBar.composer.group.title`
-                /// en: "Group {index}"
-                public static func title(index: Int) -> String {
-                    L10nSupport.format("menuBar.composer.group.title", index)
+                /// Key: `menuBar.composer.group.selected`
+                /// en: "{count, plural, one {1 block selected} other {# blocks selected}}"
+                public static func selected(count: Int) -> String {
+                    L10nSupport.localizedFormat("menuBar.composer.group.selected", count)
                 }
+
+                /// Button that unbinds a run of blocks
+                ///
+                /// Key: `menuBar.composer.group.unbind`
+                /// en: "Ungroup"
+                public static var unbind: String { L10nSupport.string("menuBar.composer.group.unbind") }
             }
 
             public enum Metric {
@@ -1428,13 +1376,77 @@ public enum L10n {
                 public static var whenUsedAtLeast: String { L10nSupport.string("menuBar.composer.rule.whenUsedAtLeast") }
             }
 
-            public enum Size {
-                /// Type size choice.
+            public enum Segment {
+                /// Palette button adding an empty group to the strip.
                 ///
-                /// Key: `menuBar.composer.size.large`
-                /// en: "Large"
-                public static var large: String { L10nSupport.string("menuBar.composer.size.large") }
+                /// Key: `menuBar.composer.segment.add`
+                /// en: "New segment"
+                public static var add: String { L10nSupport.string("menuBar.composer.segment.add") }
 
+                /// Tooltip on the New group button.
+                ///
+                /// Key: `menuBar.composer.segment.addHelp`
+                /// en: "Each segment is one column of the strip. Give a segment a second row to stack that column."
+                public static var addHelp: String { L10nSupport.string("menuBar.composer.segment.addHelp") }
+
+                /// Menu item giving a group a second row.
+                ///
+                /// Key: `menuBar.composer.segment.addRow`
+                /// en: "Add a second row"
+                public static var addRow: String { L10nSupport.string("menuBar.composer.segment.addRow") }
+
+                /// Shown inside a group that has no blocks yet.
+                ///
+                /// Key: `menuBar.composer.segment.empty`
+                /// en: "Empty segment — drag a block in."
+                public static var empty: String { L10nSupport.string("menuBar.composer.segment.empty") }
+
+                /// Menu action folding a group into the one before it.
+                ///
+                /// Key: `menuBar.composer.segment.mergeLeft`
+                /// en: "Merge into the segment before it"
+                public static var mergeLeft: String { L10nSupport.string("menuBar.composer.segment.mergeLeft") }
+
+                /// Menu action moving a group one place earlier.
+                ///
+                /// Key: `menuBar.composer.segment.moveLeft`
+                /// en: "Move left"
+                public static var moveLeft: String { L10nSupport.string("menuBar.composer.segment.moveLeft") }
+
+                /// Menu action moving a group one place later.
+                ///
+                /// Key: `menuBar.composer.segment.moveRight`
+                /// en: "Move right"
+                public static var moveRight: String { L10nSupport.string("menuBar.composer.segment.moveRight") }
+
+                /// Menu action deleting a group and the blocks in it.
+                ///
+                /// Key: `menuBar.composer.segment.remove`
+                /// en: "Remove segment and its blocks"
+                public static var remove: String { L10nSupport.string("menuBar.composer.segment.remove") }
+
+                /// Menu item closing a group's second row; its blocks join the end of the first.
+                ///
+                /// Key: `menuBar.composer.segment.removeRow`
+                /// en: "Merge the second row up"
+                public static var removeRow: String { L10nSupport.string("menuBar.composer.segment.removeRow") }
+
+                /// Button starting a new group at the selected block.
+                ///
+                /// Key: `menuBar.composer.segment.splitHere`
+                /// en: "Start a segment here"
+                public static var splitHere: String { L10nSupport.string("menuBar.composer.segment.splitHere") }
+
+                /// Header over one group of blocks. Index counts from 1.
+                ///
+                /// Key: `menuBar.composer.segment.title`
+                /// en: "Segment {index}"
+                public static func title(index: Int) -> String {
+                    L10nSupport.format("menuBar.composer.segment.title", index)
+                }
+            }
+
+            public enum Size {
                 /// Smallest of the three block sizes in the menu-bar composer.
                 ///
                 /// Key: `menuBar.composer.size.mini`
@@ -2305,12 +2317,6 @@ public enum L10n {
                 /// en: "Show in menu bar"
                 public static var showInMenuBar: String { L10nSupport.string("platform.macos.menuBar.showInMenuBar") }
 
-                /// Toggle in the menu-bar item editor. macOS-only.
-                ///
-                /// Key: `platform.macos.menuBar.showTitleText`
-                /// en: "Show title text"
-                public static var showTitleText: String { L10nSupport.string("platform.macos.menuBar.showTitleText") }
-
                 public enum Color {
                     /// Menu-bar colour basis: colour by the displayed percentage. macOS-only.
                     ///
@@ -2589,14 +2595,6 @@ public enum L10n {
         /// en: "A cycle is recorded when the quota refills"
         public static var cycleRecordedOnRefill: String { L10nSupport.string("quota.cycleRecordedOnRefill") }
 
-        /// How many completed reset cycles a quota has on record.
-        ///
-        /// Key: `quota.cyclesRecorded`
-        /// en: "{count, plural, one {# cycle} other {# cycles}}"
-        public static func cyclesRecorded(count: Int) -> String {
-            L10nSupport.localizedFormat("quota.cyclesRecorded", count)
-        }
-
         /// Compact summary shown when per-model limits are collapsed; provider is a SubProvider name
         ///
         /// Key: `quota.perModelLimits`
@@ -2611,22 +2609,6 @@ public enum L10n {
         /// en: "{percent}% left"
         public static func remainingPercent(percent: Int) -> String {
             L10nSupport.format("quota.remainingPercent", percent)
-        }
-
-        /// Countdown beside a quota bar. Both values are whole numbers; the caller drops the day part when it is zero by using quota.resetsInHours instead.
-        ///
-        /// Key: `quota.resetsIn`
-        /// en: "resets in {days}d {hours}h"
-        public static func resetsIn(days: Int, hours: Int) -> String {
-            L10nSupport.format("quota.resetsIn", days, hours)
-        }
-
-        /// Countdown beside a quota bar when less than a day remains.
-        ///
-        /// Key: `quota.resetsInHours`
-        /// en: "resets in {hours}h {minutes}m"
-        public static func resetsInHours(hours: Int, minutes: Int) -> String {
-            L10nSupport.format("quota.resetsInHours", hours, minutes)
         }
 
         /// The forecast figure in Used mode, used inside the status line
@@ -4799,6 +4781,134 @@ public enum L10n {
             /// Key: `settings.language.title`
             /// en: "Language"
             public static var title: String { L10nSupport.string("settings.language.title") }
+        }
+
+        public enum Layout {
+            /// Button that opens the full-size layout studio window
+            ///
+            /// Key: `settings.layout.openStudio`
+            /// en: "Open Studio"
+            public static var openStudio: String { L10nSupport.string("settings.layout.openStudio") }
+
+            /// Tooltip for the studio button
+            ///
+            /// Key: `settings.layout.openStudioHelp`
+            /// en: "Arrange this surface beside a full-size, live preview of it."
+            public static var openStudioHelp: String { L10nSupport.string("settings.layout.openStudioHelp") }
+
+            /// Shown when a layout page has no popover tab to draw
+            ///
+            /// Key: `settings.layout.previewUnavailable`
+            /// en: "This page has no popover tab to preview."
+            public static var previewUnavailable: String { L10nSupport.string("settings.layout.previewUnavailable") }
+
+            /// One-line hint for a mini window style (Focus, Rail) that arranges itself
+            ///
+            /// Key: `settings.layout.studioHintFixedStyle`
+            /// en: "This style arranges itself. Add or remove fields from the tray below, or open the controls."
+            public static var studioHintFixedStyle: String { L10nSupport.string("settings.layout.studioHintFixedStyle") }
+
+            /// One-line hint shown when the studio opens on a mini window whose cells can be dragged
+            ///
+            /// Key: `settings.layout.studioHintMini`
+            /// en: "Drag a gauge to reorder it. Drop it on the well below to take it out of the window."
+            public static var studioHintMini: String { L10nSupport.string("settings.layout.studioHintMini") }
+
+            /// One-line hint shown when the studio opens on a popover page
+            ///
+            /// Key: `settings.layout.studioHintPage`
+            /// en: "Drag a card to move it. Drop it on the well below to hide it."
+            public static var studioHintPage: String { L10nSupport.string("settings.layout.studioHintPage") }
+
+            /// Arranging mode in the studio's mode pill
+            ///
+            /// Key: `settings.layout.studioModeManual`
+            /// en: "Manual"
+            public static var studioModeManual: String { L10nSupport.string("settings.layout.studioModeManual") }
+
+            /// Tooltip for a column-width split
+            ///
+            /// Key: `settings.layout.studioRatioEqual`
+            /// en: "Equal columns"
+            public static var studioRatioEqual: String { L10nSupport.string("settings.layout.studioRatioEqual") }
+
+            /// Tooltip for a column-width split
+            ///
+            /// Key: `settings.layout.studioRatioNarrowWide`
+            /// en: "Narrow left, wide right"
+            public static var studioRatioNarrowWide: String { L10nSupport.string("settings.layout.studioRatioNarrowWide") }
+
+            /// Tooltip for a column-width split
+            ///
+            /// Key: `settings.layout.studioRatioWideNarrow`
+            /// en: "Wide left, narrow right"
+            public static var studioRatioWideNarrow: String { L10nSupport.string("settings.layout.studioRatioWideNarrow") }
+
+            /// Menu section in the studio's subject picker: the popover's pages
+            ///
+            /// Key: `settings.layout.studioSubjectPages`
+            /// en: "Popover pages"
+            public static var studioSubjectPages: String { L10nSupport.string("settings.layout.studioSubjectPages") }
+
+            /// Title of the layout studio window
+            ///
+            /// Key: `settings.layout.studioTitle`
+            /// en: "Layout Studio"
+            public static var studioTitle: String { L10nSupport.string("settings.layout.studioTitle") }
+
+            /// Tooltip for the button that hides the studio's controls
+            ///
+            /// Key: `settings.layout.studioToggleInspector`
+            /// en: "Show or hide the controls"
+            public static var studioToggleInspector: String { L10nSupport.string("settings.layout.studioToggleInspector") }
+
+            /// Tooltip for a not-shown field's chip in the tray
+            ///
+            /// Key: `settings.layout.studioTrayAddHelp`
+            /// en: "Click to add it at the end, or drag it into the window."
+            public static var studioTrayAddHelp: String { L10nSupport.string("settings.layout.studioTrayAddHelp") }
+
+            /// Caption of the tray of hidden cards under a page
+            ///
+            /// Key: `settings.layout.studioTrayHidden`
+            /// en: "Hidden"
+            public static var studioTrayHidden: String { L10nSupport.string("settings.layout.studioTrayHidden") }
+
+            /// Caption of the tray of fields a mini window is not showing
+            ///
+            /// Key: `settings.layout.studioTrayNotShown`
+            /// en: "Not shown"
+            public static var studioTrayNotShown: String { L10nSupport.string("settings.layout.studioTrayNotShown") }
+
+            /// Tooltip for a hidden card's chip in the tray
+            ///
+            /// Key: `settings.layout.studioTrayShowHelp`
+            /// en: "Click to show it where it was, or drag it onto the page."
+            public static var studioTrayShowHelp: String { L10nSupport.string("settings.layout.studioTrayShowHelp") }
+
+            /// Tooltip for the studio's undo button
+            ///
+            /// Key: `settings.layout.studioUndo`
+            /// en: "Undo the last change (⌘Z)"
+            public static var studioUndo: String { L10nSupport.string("settings.layout.studioUndo") }
+
+            /// Tooltip for the zoom readout, which resets the zoom to fit the stage
+            ///
+            /// Key: `settings.layout.studioZoomFitHelp`
+            /// en: "Fit to the window (⌘0)"
+            public static var studioZoomFitHelp: String { L10nSupport.string("settings.layout.studioZoomFitHelp") }
+
+            /// Tooltip for the studio's zoom-in button
+            ///
+            /// Key: `settings.layout.studioZoomIn`
+            /// en: "Zoom in (⌘+)"
+            public static var studioZoomIn: String { L10nSupport.string("settings.layout.studioZoomIn") }
+
+            /// Tooltip for the studio's zoom-out button
+            ///
+            /// Key: `settings.layout.studioZoomOut`
+            /// en: "Zoom out (⌘−)"
+            public static var studioZoomOut: String { L10nSupport.string("settings.layout.studioZoomOut") }
         }
 
         public enum Mcp {
@@ -10253,14 +10363,12 @@ enum L10nCatalogFacts {
         "cost.noUsageYet",
         "cost.notTracked",
         "cost.openFullCharts",
-        "cost.perThousandTokens",
         "cost.provider.title",
         "cost.providerFullCharts",
         "cost.refreshData",
         "cost.refreshProvider",
         "cost.spaceXAI.empty",
         "cost.spaceXAI.title",
-        "cost.spentToday",
         "cost.timeframe.all",
         "cost.timeframe.month",
         "cost.timeframe.monthShort",
@@ -10315,17 +10423,11 @@ enum L10nCatalogFacts {
         "menuBar.composer.field.size",
         "menuBar.composer.field.verdicts",
         "menuBar.composer.field.weight",
-        "menuBar.composer.group.add",
-        "menuBar.composer.group.addHelp",
-        "menuBar.composer.group.addRow",
-        "menuBar.composer.group.empty",
-        "menuBar.composer.group.mergeLeft",
-        "menuBar.composer.group.moveLeft",
-        "menuBar.composer.group.moveRight",
-        "menuBar.composer.group.remove",
-        "menuBar.composer.group.removeRow",
-        "menuBar.composer.group.splitHere",
-        "menuBar.composer.group.title",
+        "menuBar.composer.group.bind",
+        "menuBar.composer.group.hint",
+        "menuBar.composer.group.notAdjacent",
+        "menuBar.composer.group.selected",
+        "menuBar.composer.group.unbind",
         "menuBar.composer.metric.displayPercent",
         "menuBar.composer.metric.pace",
         "menuBar.composer.metric.remainingPercent",
@@ -10365,8 +10467,18 @@ enum L10nCatalogFacts {
         "menuBar.composer.rule.whenForecast",
         "menuBar.composer.rule.whenRemainingAtMost",
         "menuBar.composer.rule.whenUsedAtLeast",
+        "menuBar.composer.segment.add",
+        "menuBar.composer.segment.addHelp",
+        "menuBar.composer.segment.addRow",
+        "menuBar.composer.segment.empty",
+        "menuBar.composer.segment.mergeLeft",
+        "menuBar.composer.segment.moveLeft",
+        "menuBar.composer.segment.moveRight",
+        "menuBar.composer.segment.remove",
+        "menuBar.composer.segment.removeRow",
+        "menuBar.composer.segment.splitHere",
+        "menuBar.composer.segment.title",
         "menuBar.composer.selected",
-        "menuBar.composer.size.large",
         "menuBar.composer.size.mini",
         "menuBar.composer.size.regular",
         "menuBar.composer.size.small",
@@ -10504,7 +10616,6 @@ enum L10nCatalogFacts {
         "platform.macos.menuBar.mergeGroupWindowsDetail",
         "platform.macos.menuBar.percentColor",
         "platform.macos.menuBar.showInMenuBar",
-        "platform.macos.menuBar.showTitleText",
         "popover.header.machinesSubtitle",
         "popover.header.mini",
         "popover.header.miscSubtitle",
@@ -10542,7 +10653,6 @@ enum L10nCatalogFacts {
         "quota.bridge.title",
         "quota.bucket.noResetInfo",
         "quota.cycleRecordedOnRefill",
-        "quota.cyclesRecorded",
         "quota.empty.needsLogin.detail",
         "quota.empty.network.detail",
         "quota.empty.noAccount.detail",
@@ -10704,8 +10814,6 @@ enum L10nCatalogFacts {
         "quota.resetCredits.available",
         "quota.resetCredits.availableWithExpiry",
         "quota.resetCredits.title",
-        "quota.resetsIn",
-        "quota.resetsInHours",
         "quota.upcoming.axisDays",
         "quota.upcoming.axisHours",
         "quota.upcoming.empty",
@@ -10819,6 +10927,27 @@ enum L10nCatalogFacts {
         "settings.language.caption",
         "settings.language.system",
         "settings.language.title",
+        "settings.layout.openStudio",
+        "settings.layout.openStudioHelp",
+        "settings.layout.previewUnavailable",
+        "settings.layout.studioHintFixedStyle",
+        "settings.layout.studioHintMini",
+        "settings.layout.studioHintPage",
+        "settings.layout.studioModeManual",
+        "settings.layout.studioRatioEqual",
+        "settings.layout.studioRatioNarrowWide",
+        "settings.layout.studioRatioWideNarrow",
+        "settings.layout.studioSubjectPages",
+        "settings.layout.studioTitle",
+        "settings.layout.studioToggleInspector",
+        "settings.layout.studioTrayAddHelp",
+        "settings.layout.studioTrayHidden",
+        "settings.layout.studioTrayNotShown",
+        "settings.layout.studioTrayShowHelp",
+        "settings.layout.studioUndo",
+        "settings.layout.studioZoomFitHelp",
+        "settings.layout.studioZoomIn",
+        "settings.layout.studioZoomOut",
         "settings.mcp.allowRefresh",
         "settings.mcp.allowRefreshDetail",
         "settings.mcp.allowSkills",
@@ -11656,8 +11785,8 @@ enum L10nCatalogFacts {
         "common.updated.daysAgo",
         "common.updated.hoursAgo",
         "common.updated.minutesAgo",
+        "menuBar.composer.group.selected",
         "menuBar.composer.space.widthValue",
-        "quota.cyclesRecorded",
         "quota.forecast.metric.comparableCycles",
         "quota.forecast.metric.recentIntervals",
         "quota.history.curveCount",
@@ -11801,14 +11930,12 @@ enum L10nCatalogFacts {
         "cost.noUsageYet": 0,
         "cost.notTracked": 1,
         "cost.openFullCharts": 0,
-        "cost.perThousandTokens": 1,
         "cost.provider.title": 1,
         "cost.providerFullCharts": 1,
         "cost.refreshData": 0,
         "cost.refreshProvider": 1,
         "cost.spaceXAI.empty": 0,
         "cost.spaceXAI.title": 0,
-        "cost.spentToday": 1,
         "cost.timeframe.all": 0,
         "cost.timeframe.month": 0,
         "cost.timeframe.monthShort": 0,
@@ -11863,17 +11990,11 @@ enum L10nCatalogFacts {
         "menuBar.composer.field.size": 0,
         "menuBar.composer.field.verdicts": 0,
         "menuBar.composer.field.weight": 0,
-        "menuBar.composer.group.add": 0,
-        "menuBar.composer.group.addHelp": 0,
-        "menuBar.composer.group.addRow": 0,
-        "menuBar.composer.group.empty": 0,
-        "menuBar.composer.group.mergeLeft": 0,
-        "menuBar.composer.group.moveLeft": 0,
-        "menuBar.composer.group.moveRight": 0,
-        "menuBar.composer.group.remove": 0,
-        "menuBar.composer.group.removeRow": 0,
-        "menuBar.composer.group.splitHere": 0,
-        "menuBar.composer.group.title": 1,
+        "menuBar.composer.group.bind": 0,
+        "menuBar.composer.group.hint": 0,
+        "menuBar.composer.group.notAdjacent": 0,
+        "menuBar.composer.group.selected": 1,
+        "menuBar.composer.group.unbind": 0,
         "menuBar.composer.metric.displayPercent": 0,
         "menuBar.composer.metric.pace": 0,
         "menuBar.composer.metric.remainingPercent": 0,
@@ -11913,8 +12034,18 @@ enum L10nCatalogFacts {
         "menuBar.composer.rule.whenForecast": 0,
         "menuBar.composer.rule.whenRemainingAtMost": 0,
         "menuBar.composer.rule.whenUsedAtLeast": 0,
+        "menuBar.composer.segment.add": 0,
+        "menuBar.composer.segment.addHelp": 0,
+        "menuBar.composer.segment.addRow": 0,
+        "menuBar.composer.segment.empty": 0,
+        "menuBar.composer.segment.mergeLeft": 0,
+        "menuBar.composer.segment.moveLeft": 0,
+        "menuBar.composer.segment.moveRight": 0,
+        "menuBar.composer.segment.remove": 0,
+        "menuBar.composer.segment.removeRow": 0,
+        "menuBar.composer.segment.splitHere": 0,
+        "menuBar.composer.segment.title": 1,
         "menuBar.composer.selected": 0,
-        "menuBar.composer.size.large": 0,
         "menuBar.composer.size.mini": 0,
         "menuBar.composer.size.regular": 0,
         "menuBar.composer.size.small": 0,
@@ -12052,7 +12183,6 @@ enum L10nCatalogFacts {
         "platform.macos.menuBar.mergeGroupWindowsDetail": 0,
         "platform.macos.menuBar.percentColor": 0,
         "platform.macos.menuBar.showInMenuBar": 0,
-        "platform.macos.menuBar.showTitleText": 0,
         "popover.header.machinesSubtitle": 0,
         "popover.header.mini": 0,
         "popover.header.miscSubtitle": 0,
@@ -12090,7 +12220,6 @@ enum L10nCatalogFacts {
         "quota.bridge.title": 0,
         "quota.bucket.noResetInfo": 0,
         "quota.cycleRecordedOnRefill": 0,
-        "quota.cyclesRecorded": 1,
         "quota.empty.needsLogin.detail": 1,
         "quota.empty.network.detail": 0,
         "quota.empty.noAccount.detail": 0,
@@ -12252,8 +12381,6 @@ enum L10nCatalogFacts {
         "quota.resetCredits.available": 1,
         "quota.resetCredits.availableWithExpiry": 2,
         "quota.resetCredits.title": 0,
-        "quota.resetsIn": 2,
-        "quota.resetsInHours": 2,
         "quota.upcoming.axisDays": 1,
         "quota.upcoming.axisHours": 1,
         "quota.upcoming.empty": 0,
@@ -12367,6 +12494,27 @@ enum L10nCatalogFacts {
         "settings.language.caption": 0,
         "settings.language.system": 0,
         "settings.language.title": 0,
+        "settings.layout.openStudio": 0,
+        "settings.layout.openStudioHelp": 0,
+        "settings.layout.previewUnavailable": 0,
+        "settings.layout.studioHintFixedStyle": 0,
+        "settings.layout.studioHintMini": 0,
+        "settings.layout.studioHintPage": 0,
+        "settings.layout.studioModeManual": 0,
+        "settings.layout.studioRatioEqual": 0,
+        "settings.layout.studioRatioNarrowWide": 0,
+        "settings.layout.studioRatioWideNarrow": 0,
+        "settings.layout.studioSubjectPages": 0,
+        "settings.layout.studioTitle": 0,
+        "settings.layout.studioToggleInspector": 0,
+        "settings.layout.studioTrayAddHelp": 0,
+        "settings.layout.studioTrayHidden": 0,
+        "settings.layout.studioTrayNotShown": 0,
+        "settings.layout.studioTrayShowHelp": 0,
+        "settings.layout.studioUndo": 0,
+        "settings.layout.studioZoomFitHelp": 0,
+        "settings.layout.studioZoomIn": 0,
+        "settings.layout.studioZoomOut": 0,
         "settings.mcp.allowRefresh": 0,
         "settings.mcp.allowRefreshDetail": 1,
         "settings.mcp.allowSkills": 0,

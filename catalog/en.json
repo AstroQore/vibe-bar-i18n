@@ -478,13 +478,6 @@
       "value": "Open full charts",
       "comment": "Tooltip on the expand button of a cost card"
     },
-    "cost.perThousandTokens": {
-      "value": "{rate} per 1K tokens",
-      "comment": "Effective price of a model. {rate} is a raw number the client renders; declared double so the generated API takes a Double rather than a pre-formatted string.",
-      "placeholders": {
-        "rate": "double"
-      }
-    },
     "cost.provider.title": {
       "value": "{provider} Cost",
       "comment": "Cost card title on a provider page; provider is a SubProvider name and is never translated",
@@ -517,13 +510,6 @@
     "cost.spaceXAI.title": {
       "value": "SpaceXAI Cost",
       "comment": "Card title; the company name is never translated"
-    },
-    "cost.spentToday": {
-      "value": "{amount} spent today",
-      "comment": "Cost headline. {amount} arrives already formatted as currency by the client — the catalog never formats money, because the symbol, grouping and placement are the platform's job.",
-      "placeholders": {
-        "amount": "string"
-      }
     },
     "cost.timeframe.all": {
       "value": "All",
@@ -753,52 +739,28 @@
       "value": "Weight",
       "comment": "Picker choosing a block's type weight."
     },
-    "menuBar.composer.group.add": {
-      "value": "New group",
-      "comment": "Palette button adding an empty group to the strip."
+    "menuBar.composer.group.bind": {
+      "value": "Group",
+      "comment": "Button that binds the selected blocks into one run"
     },
-    "menuBar.composer.group.addHelp": {
-      "value": "Each group is one column of the strip. Give a group a second row to stack that column.",
-      "comment": "Tooltip on the New group button."
+    "menuBar.composer.group.hint": {
+      "value": "Shift-click blocks that sit side by side in one row. A group moves as one — drag any block in it and the whole run goes.",
+      "comment": "Explains how to bind blocks and what binding does"
     },
-    "menuBar.composer.group.addRow": {
-      "value": "Add a second row",
-      "comment": "Menu item giving a group a second row."
+    "menuBar.composer.group.notAdjacent": {
+      "value": "Only blocks side by side in one row can be grouped.",
+      "comment": "Shown when the selected blocks cannot be bound"
     },
-    "menuBar.composer.group.empty": {
-      "value": "Empty group — drag a block in.",
-      "comment": "Shown inside a group that has no blocks yet."
-    },
-    "menuBar.composer.group.mergeLeft": {
-      "value": "Merge into the group before it",
-      "comment": "Menu action folding a group into the one before it."
-    },
-    "menuBar.composer.group.moveLeft": {
-      "value": "Move left",
-      "comment": "Menu action moving a group one place earlier."
-    },
-    "menuBar.composer.group.moveRight": {
-      "value": "Move right",
-      "comment": "Menu action moving a group one place later."
-    },
-    "menuBar.composer.group.remove": {
-      "value": "Remove group and its blocks",
-      "comment": "Menu action deleting a group and the blocks in it."
-    },
-    "menuBar.composer.group.removeRow": {
-      "value": "Merge the second row up",
-      "comment": "Menu item closing a group's second row; its blocks join the end of the first."
-    },
-    "menuBar.composer.group.splitHere": {
-      "value": "Start a group here",
-      "comment": "Button starting a new group at the selected block."
-    },
-    "menuBar.composer.group.title": {
-      "value": "Group {index}",
-      "comment": "Header over one group of blocks. Index counts from 1.",
+    "menuBar.composer.group.selected": {
+      "value": "{count, plural, one {1 block selected} other {# blocks selected}}",
+      "comment": "Caption above the grouping actions, counting the selected blocks",
       "placeholders": {
-        "index": "int"
+        "count": "int"
       }
+    },
+    "menuBar.composer.group.unbind": {
+      "value": "Ungroup",
+      "comment": "Button that unbinds a run of blocks"
     },
     "menuBar.composer.metric.displayPercent": {
       "value": "Percent (follows setting)",
@@ -956,13 +918,56 @@
       "value": "When used is at least",
       "comment": "Visibility rule: show once a quota's used percentage reaches a threshold."
     },
+    "menuBar.composer.segment.add": {
+      "value": "New segment",
+      "comment": "Palette button adding an empty group to the strip."
+    },
+    "menuBar.composer.segment.addHelp": {
+      "value": "Each segment is one column of the strip. Give a segment a second row to stack that column.",
+      "comment": "Tooltip on the New group button."
+    },
+    "menuBar.composer.segment.addRow": {
+      "value": "Add a second row",
+      "comment": "Menu item giving a group a second row."
+    },
+    "menuBar.composer.segment.empty": {
+      "value": "Empty segment — drag a block in.",
+      "comment": "Shown inside a group that has no blocks yet."
+    },
+    "menuBar.composer.segment.mergeLeft": {
+      "value": "Merge into the segment before it",
+      "comment": "Menu action folding a group into the one before it."
+    },
+    "menuBar.composer.segment.moveLeft": {
+      "value": "Move left",
+      "comment": "Menu action moving a group one place earlier."
+    },
+    "menuBar.composer.segment.moveRight": {
+      "value": "Move right",
+      "comment": "Menu action moving a group one place later."
+    },
+    "menuBar.composer.segment.remove": {
+      "value": "Remove segment and its blocks",
+      "comment": "Menu action deleting a group and the blocks in it."
+    },
+    "menuBar.composer.segment.removeRow": {
+      "value": "Merge the second row up",
+      "comment": "Menu item closing a group's second row; its blocks join the end of the first."
+    },
+    "menuBar.composer.segment.splitHere": {
+      "value": "Start a segment here",
+      "comment": "Button starting a new group at the selected block."
+    },
+    "menuBar.composer.segment.title": {
+      "value": "Segment {index}",
+      "comment": "Header over one group of blocks. Index counts from 1.",
+      "placeholders": {
+        "index": "int"
+      }
+    },
     "menuBar.composer.selected": {
       "value": "Selected block",
       "comment": "Caption over the controls for the selected block."
-    },
-    "menuBar.composer.size.large": {
-      "value": "Large",
-      "comment": "Type size choice."
     },
     "menuBar.composer.size.mini": {
       "value": "Mini",
@@ -1591,10 +1596,6 @@
       "value": "Show in menu bar",
       "comment": "Toggle in the menu-bar item editor. macOS-only: no other client renders a menu-bar extra."
     },
-    "platform.macos.menuBar.showTitleText": {
-      "value": "Show title text",
-      "comment": "Toggle in the menu-bar item editor. macOS-only."
-    },
     "popover.header.machinesSubtitle": {
       "value": "End-to-end encrypted remote usage",
       "comment": "Subtitle under the Machines page header"
@@ -1762,13 +1763,6 @@
     "quota.cycleRecordedOnRefill": {
       "value": "A cycle is recorded when the quota refills",
       "comment": "Caption under an empty reset-history strip explaining when a cycle is recorded"
-    },
-    "quota.cyclesRecorded": {
-      "value": "{count, plural, one {# cycle} other {# cycles}}",
-      "comment": "How many completed reset cycles a quota has on record.",
-      "placeholders": {
-        "count": "int"
-      }
     },
     "quota.empty.needsLogin.detail": {
       "value": "Run `{command} login` in your terminal, then refresh.",
@@ -2655,22 +2649,6 @@
       "value": "Limit reset credits",
       "comment": "Card title for the manual rate-limit resets a Codex plan grants"
     },
-    "quota.resetsIn": {
-      "value": "resets in {days}d {hours}h",
-      "comment": "Countdown beside a quota bar. Both values are whole numbers; the caller drops the day part when it is zero by using quota.resetsInHours instead.",
-      "placeholders": {
-        "days": "int",
-        "hours": "int"
-      }
-    },
-    "quota.resetsInHours": {
-      "value": "resets in {hours}h {minutes}m",
-      "comment": "Countdown beside a quota bar when less than a day remains.",
-      "placeholders": {
-        "hours": "int",
-        "minutes": "int"
-      }
-    },
     "quota.upcoming.axisDays": {
       "value": "+{days}d",
       "comment": "Timeline axis tick",
@@ -3263,6 +3241,90 @@
     "settings.language.title": {
       "value": "Language",
       "comment": "Settings row label for the in-app language override"
+    },
+    "settings.layout.openStudio": {
+      "value": "Open Studio",
+      "comment": "Button that opens the full-size layout studio window"
+    },
+    "settings.layout.openStudioHelp": {
+      "value": "Arrange this surface beside a full-size, live preview of it.",
+      "comment": "Tooltip for the studio button"
+    },
+    "settings.layout.previewUnavailable": {
+      "value": "This page has no popover tab to preview.",
+      "comment": "Shown when a layout page has no popover tab to draw"
+    },
+    "settings.layout.studioHintFixedStyle": {
+      "value": "This style arranges itself. Add or remove fields from the tray below, or open the controls.",
+      "comment": "One-line hint for a mini window style (Focus, Rail) that arranges itself"
+    },
+    "settings.layout.studioHintMini": {
+      "value": "Drag a gauge to reorder it. Drop it on the well below to take it out of the window.",
+      "comment": "One-line hint shown when the studio opens on a mini window whose cells can be dragged"
+    },
+    "settings.layout.studioHintPage": {
+      "value": "Drag a card to move it. Drop it on the well below to hide it.",
+      "comment": "One-line hint shown when the studio opens on a popover page"
+    },
+    "settings.layout.studioModeManual": {
+      "value": "Manual",
+      "comment": "Arranging mode in the studio's mode pill"
+    },
+    "settings.layout.studioRatioEqual": {
+      "value": "Equal columns",
+      "comment": "Tooltip for a column-width split"
+    },
+    "settings.layout.studioRatioNarrowWide": {
+      "value": "Narrow left, wide right",
+      "comment": "Tooltip for a column-width split"
+    },
+    "settings.layout.studioRatioWideNarrow": {
+      "value": "Wide left, narrow right",
+      "comment": "Tooltip for a column-width split"
+    },
+    "settings.layout.studioSubjectPages": {
+      "value": "Popover pages",
+      "comment": "Menu section in the studio's subject picker: the popover's pages"
+    },
+    "settings.layout.studioTitle": {
+      "value": "Layout Studio",
+      "comment": "Title of the layout studio window"
+    },
+    "settings.layout.studioToggleInspector": {
+      "value": "Show or hide the controls",
+      "comment": "Tooltip for the button that hides the studio's controls"
+    },
+    "settings.layout.studioTrayAddHelp": {
+      "value": "Click to add it at the end, or drag it into the window.",
+      "comment": "Tooltip for a not-shown field's chip in the tray"
+    },
+    "settings.layout.studioTrayHidden": {
+      "value": "Hidden",
+      "comment": "Caption of the tray of hidden cards under a page"
+    },
+    "settings.layout.studioTrayNotShown": {
+      "value": "Not shown",
+      "comment": "Caption of the tray of fields a mini window is not showing"
+    },
+    "settings.layout.studioTrayShowHelp": {
+      "value": "Click to show it where it was, or drag it onto the page.",
+      "comment": "Tooltip for a hidden card's chip in the tray"
+    },
+    "settings.layout.studioUndo": {
+      "value": "Undo the last change (⌘Z)",
+      "comment": "Tooltip for the studio's undo button"
+    },
+    "settings.layout.studioZoomFitHelp": {
+      "value": "Fit to the window (⌘0)",
+      "comment": "Tooltip for the zoom readout, which resets the zoom to fit the stage"
+    },
+    "settings.layout.studioZoomIn": {
+      "value": "Zoom in (⌘+)",
+      "comment": "Tooltip for the studio's zoom-in button"
+    },
+    "settings.layout.studioZoomOut": {
+      "value": "Zoom out (⌘−)",
+      "comment": "Tooltip for the studio's zoom-out button"
     },
     "settings.mcp.allowRefresh": {
       "value": "Allow agents to refresh quota",

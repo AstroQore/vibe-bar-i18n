@@ -296,9 +296,6 @@
     "cost.openFullCharts": {
       "value": "打开完整图表"
     },
-    "cost.perThousandTokens": {
-      "value": "每千 token {rate}"
-    },
     "cost.provider.title": {
       "value": "{provider} 花费"
     },
@@ -316,9 +313,6 @@
     },
     "cost.spaceXAI.title": {
       "value": "SpaceXAI 花费"
-    },
-    "cost.spentToday": {
-      "value": "今日花费 {amount}"
     },
     "cost.timeframe.all": {
       "value": "全部"
@@ -482,38 +476,20 @@
     "menuBar.composer.field.weight": {
       "value": "字重"
     },
-    "menuBar.composer.group.add": {
-      "value": "新建分组"
+    "menuBar.composer.group.bind": {
+      "value": "成组"
     },
-    "menuBar.composer.group.addHelp": {
-      "value": "每个分组是条带中的一列。为分组添加第二行可让该列上下堆叠。"
+    "menuBar.composer.group.hint": {
+      "value": "按住 Shift 点选同一行里相邻的积木。成组后它们作为整体移动 —— 拖其中任意一个，整组一起走。"
     },
-    "menuBar.composer.group.addRow": {
-      "value": "添加第二行"
+    "menuBar.composer.group.notAdjacent": {
+      "value": "只有同一行里相邻的积木才能成组。"
     },
-    "menuBar.composer.group.empty": {
-      "value": "空分组，可将积木拖入。"
+    "menuBar.composer.group.selected": {
+      "value": "{count, plural, other {已选 # 个积木}}"
     },
-    "menuBar.composer.group.mergeLeft": {
-      "value": "并入前一个分组"
-    },
-    "menuBar.composer.group.moveLeft": {
-      "value": "向左移动"
-    },
-    "menuBar.composer.group.moveRight": {
-      "value": "向右移动"
-    },
-    "menuBar.composer.group.remove": {
-      "value": "删除分组及其积木"
-    },
-    "menuBar.composer.group.removeRow": {
-      "value": "将第二行并入第一行"
-    },
-    "menuBar.composer.group.splitHere": {
-      "value": "从此处开始新分组"
-    },
-    "menuBar.composer.group.title": {
-      "value": "分组 {index}"
+    "menuBar.composer.group.unbind": {
+      "value": "解组"
     },
     "menuBar.composer.metric.displayPercent": {
       "value": "百分比（跟随设置）"
@@ -632,11 +608,41 @@
     "menuBar.composer.rule.whenUsedAtLeast": {
       "value": "已用不低于"
     },
+    "menuBar.composer.segment.add": {
+      "value": "新建段"
+    },
+    "menuBar.composer.segment.addHelp": {
+      "value": "每个段是条带中的一列。为段添加第二行可让该列上下堆叠。"
+    },
+    "menuBar.composer.segment.addRow": {
+      "value": "添加第二行"
+    },
+    "menuBar.composer.segment.empty": {
+      "value": "空段，可将积木拖入。"
+    },
+    "menuBar.composer.segment.mergeLeft": {
+      "value": "并入前一个段"
+    },
+    "menuBar.composer.segment.moveLeft": {
+      "value": "向左移动"
+    },
+    "menuBar.composer.segment.moveRight": {
+      "value": "向右移动"
+    },
+    "menuBar.composer.segment.remove": {
+      "value": "删除该段及其积木"
+    },
+    "menuBar.composer.segment.removeRow": {
+      "value": "将第二行并入第一行"
+    },
+    "menuBar.composer.segment.splitHere": {
+      "value": "从此处开始新的段"
+    },
+    "menuBar.composer.segment.title": {
+      "value": "段 {index}"
+    },
     "menuBar.composer.selected": {
       "value": "已选积木"
-    },
-    "menuBar.composer.size.large": {
-      "value": "大"
     },
     "menuBar.composer.size.mini": {
       "value": "迷你"
@@ -1049,9 +1055,6 @@
     "platform.macos.menuBar.showInMenuBar": {
       "value": "在菜单栏中显示"
     },
-    "platform.macos.menuBar.showTitleText": {
-      "value": "显示标题文字"
-    },
     "popover.header.machinesSubtitle": {
       "value": "端到端加密的远程用量"
     },
@@ -1162,9 +1165,6 @@
     },
     "quota.cycleRecordedOnRefill": {
       "value": "额度补满时记录一个周期"
-    },
-    "quota.cyclesRecorded": {
-      "value": "{count, plural, other {# 个周期}}"
     },
     "quota.empty.needsLogin.detail": {
       "value": "在终端中运行 `{command} login`，然后刷新。"
@@ -1649,12 +1649,6 @@
     "quota.resetCredits.title": {
       "value": "限额重置券"
     },
-    "quota.resetsIn": {
-      "value": "{days} 天 {hours} 小时后重置"
-    },
-    "quota.resetsInHours": {
-      "value": "{hours} 小时 {minutes} 分后重置"
-    },
     "quota.upcoming.axisDays": {
       "value": "+{days} 天"
     },
@@ -1993,6 +1987,69 @@
     },
     "settings.language.title": {
       "value": "语言"
+    },
+    "settings.layout.openStudio": {
+      "value": "打开工作台"
+    },
+    "settings.layout.openStudioHelp": {
+      "value": "在整尺寸的实时预览旁边排布这个界面。"
+    },
+    "settings.layout.previewUnavailable": {
+      "value": "该页面没有可预览的 popover 标签页。"
+    },
+    "settings.layout.studioHintFixedStyle": {
+      "value": "这个样式会自动排布。可在下方托盘增减字段，或打开控件。"
+    },
+    "settings.layout.studioHintMini": {
+      "value": "拖动指标即可重新排序；拖到下方的槽里即可从窗口移除。"
+    },
+    "settings.layout.studioHintPage": {
+      "value": "拖动卡片即可移动；拖到下方的槽里可以隐藏它。"
+    },
+    "settings.layout.studioModeManual": {
+      "value": "手动"
+    },
+    "settings.layout.studioRatioEqual": {
+      "value": "等宽"
+    },
+    "settings.layout.studioRatioNarrowWide": {
+      "value": "左窄右宽"
+    },
+    "settings.layout.studioRatioWideNarrow": {
+      "value": "左宽右窄"
+    },
+    "settings.layout.studioSubjectPages": {
+      "value": "弹出面板页面"
+    },
+    "settings.layout.studioTitle": {
+      "value": "布局工作台"
+    },
+    "settings.layout.studioToggleInspector": {
+      "value": "显示或隐藏控件"
+    },
+    "settings.layout.studioTrayAddHelp": {
+      "value": "点按即可添加到末尾，或拖进窗口。"
+    },
+    "settings.layout.studioTrayHidden": {
+      "value": "已隐藏"
+    },
+    "settings.layout.studioTrayNotShown": {
+      "value": "未显示"
+    },
+    "settings.layout.studioTrayShowHelp": {
+      "value": "点按即可回到原位显示，或拖到页面上。"
+    },
+    "settings.layout.studioUndo": {
+      "value": "撤销上一步（⌘Z）"
+    },
+    "settings.layout.studioZoomFitHelp": {
+      "value": "适应窗口（⌘0）"
+    },
+    "settings.layout.studioZoomIn": {
+      "value": "放大（⌘+）"
+    },
+    "settings.layout.studioZoomOut": {
+      "value": "缩小（⌘−）"
     },
     "settings.mcp.allowRefresh": {
       "value": "允许 agent 刷新额度"

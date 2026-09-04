@@ -279,9 +279,6 @@
 /* Tooltip on the expand button of a cost card */
 "cost.openFullCharts" = "Open full charts";
 
-/* Effective price of a model. {rate} is a raw number the client renders; declared double so the generated API takes a Double rather than a pre-formatted string. */
-"cost.perThousandTokens" = "%f per 1K tokens";
-
 /* Cost card title on a provider page; provider is a SubProvider name and is never translated */
 "cost.provider.title" = "%@ Cost";
 
@@ -299,9 +296,6 @@
 
 /* Card title; the company name is never translated */
 "cost.spaceXAI.title" = "SpaceXAI Cost";
-
-/* Cost headline. {amount} arrives already formatted as currency by the client — the catalog never formats money, because the symbol, grouping and placement are the platform's job. */
-"cost.spentToday" = "%@ spent today";
 
 /* Cost timeframe label covering all recorded history distinct-from: common.all — a filter chip that selects every item and a timeframe covering all recorded history are different spans. */
 "cost.timeframe.all" = "All";
@@ -465,38 +459,17 @@
 /* Picker choosing a block's type weight. */
 "menuBar.composer.field.weight" = "Weight";
 
-/* Palette button adding an empty group to the strip. */
-"menuBar.composer.group.add" = "New group";
+/* Button that binds the selected blocks into one run */
+"menuBar.composer.group.bind" = "Group";
 
-/* Tooltip on the New group button. */
-"menuBar.composer.group.addHelp" = "Each group is one column of the strip. Give a group a second row to stack that column.";
+/* Explains how to bind blocks and what binding does */
+"menuBar.composer.group.hint" = "Shift-click blocks that sit side by side in one row. A group moves as one — drag any block in it and the whole run goes.";
 
-/* Menu item giving a group a second row. */
-"menuBar.composer.group.addRow" = "Add a second row";
+/* Shown when the selected blocks cannot be bound */
+"menuBar.composer.group.notAdjacent" = "Only blocks side by side in one row can be grouped.";
 
-/* Shown inside a group that has no blocks yet. */
-"menuBar.composer.group.empty" = "Empty group — drag a block in.";
-
-/* Menu action folding a group into the one before it. */
-"menuBar.composer.group.mergeLeft" = "Merge into the group before it";
-
-/* Menu action moving a group one place earlier. */
-"menuBar.composer.group.moveLeft" = "Move left";
-
-/* Menu action moving a group one place later. */
-"menuBar.composer.group.moveRight" = "Move right";
-
-/* Menu action deleting a group and the blocks in it. */
-"menuBar.composer.group.remove" = "Remove group and its blocks";
-
-/* Menu item closing a group's second row; its blocks join the end of the first. */
-"menuBar.composer.group.removeRow" = "Merge the second row up";
-
-/* Button starting a new group at the selected block. */
-"menuBar.composer.group.splitHere" = "Start a group here";
-
-/* Header over one group of blocks. Index counts from 1. */
-"menuBar.composer.group.title" = "Group %lld";
+/* Button that unbinds a run of blocks */
+"menuBar.composer.group.unbind" = "Ungroup";
 
 /* Quota metric: whichever percentage the app-wide Used/Remaining setting selects. */
 "menuBar.composer.metric.displayPercent" = "Percent (follows setting)";
@@ -615,11 +588,41 @@
 /* Visibility rule: show once a quota's used percentage reaches a threshold. */
 "menuBar.composer.rule.whenUsedAtLeast" = "When used is at least";
 
+/* Palette button adding an empty group to the strip. */
+"menuBar.composer.segment.add" = "New segment";
+
+/* Tooltip on the New group button. */
+"menuBar.composer.segment.addHelp" = "Each segment is one column of the strip. Give a segment a second row to stack that column.";
+
+/* Menu item giving a group a second row. */
+"menuBar.composer.segment.addRow" = "Add a second row";
+
+/* Shown inside a group that has no blocks yet. */
+"menuBar.composer.segment.empty" = "Empty segment — drag a block in.";
+
+/* Menu action folding a group into the one before it. */
+"menuBar.composer.segment.mergeLeft" = "Merge into the segment before it";
+
+/* Menu action moving a group one place earlier. */
+"menuBar.composer.segment.moveLeft" = "Move left";
+
+/* Menu action moving a group one place later. */
+"menuBar.composer.segment.moveRight" = "Move right";
+
+/* Menu action deleting a group and the blocks in it. */
+"menuBar.composer.segment.remove" = "Remove segment and its blocks";
+
+/* Menu item closing a group's second row; its blocks join the end of the first. */
+"menuBar.composer.segment.removeRow" = "Merge the second row up";
+
+/* Button starting a new group at the selected block. */
+"menuBar.composer.segment.splitHere" = "Start a segment here";
+
+/* Header over one group of blocks. Index counts from 1. */
+"menuBar.composer.segment.title" = "Segment %lld";
+
 /* Caption over the controls for the selected block. */
 "menuBar.composer.selected" = "Selected block";
-
-/* Type size choice. */
-"menuBar.composer.size.large" = "Large";
 
 /* Smallest of the three block sizes in the menu-bar composer. */
 "menuBar.composer.size.mini" = "Mini";
@@ -1028,9 +1031,6 @@
 
 /* Toggle in the menu-bar item editor. macOS-only: no other client renders a menu-bar extra. */
 "platform.macos.menuBar.showInMenuBar" = "Show in menu bar";
-
-/* Toggle in the menu-bar item editor. macOS-only. */
-"platform.macos.menuBar.showTitleText" = "Show title text";
 
 /* Subtitle under the Machines page header */
 "popover.header.machinesSubtitle" = "End-to-end encrypted remote usage";
@@ -1605,12 +1605,6 @@
 /* Card title for the manual rate-limit resets a Codex plan grants */
 "quota.resetCredits.title" = "Limit reset credits";
 
-/* Countdown beside a quota bar. Both values are whole numbers; the caller drops the day part when it is zero by using quota.resetsInHours instead. */
-"quota.resetsIn" = "resets in %1$lldd %2$lldh";
-
-/* Countdown beside a quota bar when less than a day remains. */
-"quota.resetsInHours" = "resets in %1$lldh %2$lldm";
-
 /* Timeline axis tick */
 "quota.upcoming.axisDays" = "+%lldd";
 
@@ -1934,6 +1928,69 @@
 
 /* Settings row label for the in-app language override */
 "settings.language.title" = "Language";
+
+/* Button that opens the full-size layout studio window */
+"settings.layout.openStudio" = "Open Studio";
+
+/* Tooltip for the studio button */
+"settings.layout.openStudioHelp" = "Arrange this surface beside a full-size, live preview of it.";
+
+/* Shown when a layout page has no popover tab to draw */
+"settings.layout.previewUnavailable" = "This page has no popover tab to preview.";
+
+/* One-line hint for a mini window style (Focus, Rail) that arranges itself */
+"settings.layout.studioHintFixedStyle" = "This style arranges itself. Add or remove fields from the tray below, or open the controls.";
+
+/* One-line hint shown when the studio opens on a mini window whose cells can be dragged */
+"settings.layout.studioHintMini" = "Drag a gauge to reorder it. Drop it on the well below to take it out of the window.";
+
+/* One-line hint shown when the studio opens on a popover page */
+"settings.layout.studioHintPage" = "Drag a card to move it. Drop it on the well below to hide it.";
+
+/* Arranging mode in the studio's mode pill */
+"settings.layout.studioModeManual" = "Manual";
+
+/* Tooltip for a column-width split */
+"settings.layout.studioRatioEqual" = "Equal columns";
+
+/* Tooltip for a column-width split */
+"settings.layout.studioRatioNarrowWide" = "Narrow left, wide right";
+
+/* Tooltip for a column-width split */
+"settings.layout.studioRatioWideNarrow" = "Wide left, narrow right";
+
+/* Menu section in the studio's subject picker: the popover's pages */
+"settings.layout.studioSubjectPages" = "Popover pages";
+
+/* Title of the layout studio window */
+"settings.layout.studioTitle" = "Layout Studio";
+
+/* Tooltip for the button that hides the studio's controls */
+"settings.layout.studioToggleInspector" = "Show or hide the controls";
+
+/* Tooltip for a not-shown field's chip in the tray */
+"settings.layout.studioTrayAddHelp" = "Click to add it at the end, or drag it into the window.";
+
+/* Caption of the tray of hidden cards under a page */
+"settings.layout.studioTrayHidden" = "Hidden";
+
+/* Caption of the tray of fields a mini window is not showing */
+"settings.layout.studioTrayNotShown" = "Not shown";
+
+/* Tooltip for a hidden card's chip in the tray */
+"settings.layout.studioTrayShowHelp" = "Click to show it where it was, or drag it onto the page.";
+
+/* Tooltip for the studio's undo button */
+"settings.layout.studioUndo" = "Undo the last change (⌘Z)";
+
+/* Tooltip for the zoom readout, which resets the zoom to fit the stage */
+"settings.layout.studioZoomFitHelp" = "Fit to the window (⌘0)";
+
+/* Tooltip for the studio's zoom-in button */
+"settings.layout.studioZoomIn" = "Zoom in (⌘+)";
+
+/* Tooltip for the studio's zoom-out button */
+"settings.layout.studioZoomOut" = "Zoom out (⌘−)";
 
 /* Toggle label */
 "settings.mcp.allowRefresh" = "Allow agents to refresh quota";

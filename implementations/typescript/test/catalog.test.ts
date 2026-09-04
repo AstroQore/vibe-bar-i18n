@@ -76,18 +76,21 @@ test("nothing unrendered is left in the output", () => {
 
 test("plurals pick the right branch per locale", () => {
   setLocale("en");
-  assert.equal(t("quota.cyclesRecorded", { count: 1 }), "1 cycle");
-  assert.equal(t("quota.cyclesRecorded", { count: 2 }), "2 cycles");
+  assert.equal(t("common.duration.full.days", { count: 1 }), "1 day");
+  assert.equal(t("common.duration.full.days", { count: 2 }), "2 days");
 
   setLocale("zh-Hans");
   // Simplified Chinese has only `other`; both counts take it.
-  assert.equal(t("quota.cyclesRecorded", { count: 1 }), "1 个周期");
-  assert.equal(t("quota.cyclesRecorded", { count: 2 }), "2 个周期");
+  assert.equal(t("common.duration.full.days", { count: 1 }), "1 天");
+  assert.equal(t("common.duration.full.days", { count: 2 }), "2 天");
 });
 
 test("named parameters survive a reordered translation", () => {
   setLocale("en");
-  assert.equal(t("quota.resetsIn", { days: 3, hours: 18 }), "resets in 3d 18h");
+  assert.equal(
+    t("common.duration.full.daysHours", { days: "3 days", hours: "18 hours" }),
+    "3 days and 18 hours",
+  );
   assert.equal(t("quota.usedPercent", { percent: 42 }), "42% used");
   assert.equal(
     t("resetHistory.wastedSummary", { used: 61, wasted: 39, cycles: 7 }),
@@ -95,7 +98,10 @@ test("named parameters survive a reordered translation", () => {
   );
 
   setLocale("zh-Hans");
-  assert.equal(t("quota.resetsIn", { days: 3, hours: 18 }), "3 天 18 小时后重置");
+  assert.equal(
+    t("common.duration.full.daysHours", { days: "3 天", hours: "18 小时" }),
+    "3 天 18 小时",
+  );
   assert.equal(t("quota.usedPercent", { percent: 42 }), "已用 42%");
   assert.equal(
     t("resetHistory.wastedSummary", { used: 61, wasted: 39, cycles: 7 }),

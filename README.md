@@ -20,17 +20,23 @@ you need on the way in.
 **Swift**
 
 ```swift
-.package(url: "https://github.com/AstroQore/vibe-bar-i18n.git", exact: "0.1.0")
+.package(url: "https://github.com/AstroQore/vibe-bar-i18n.git", exact: "0.2.0")
 ```
 
 ```swift
 Text(L10n.Common.retry)
-Text(L10n.Quota.resetsIn(days: 3, hours: 18))
-Text(L10n.Quota.cyclesRecorded(count: 2))
+Text(L10n.Common.Duration.Full.daysHours(days: days, hours: hours))
+Text(L10n.Common.Duration.Full.days(count: 2))
 ```
 
-Strings resolve through the standard bundle lookup, so the app follows the
-macOS language automatically. To offer an in-app language picker, set the
+Strings resolve through the host's own resources first, then this package's
+resource bundle inside the host's `Contents/Resources`, and only in a source
+build or a test host through `Bundle.module` — so a packaged app finds its
+strings without ever reaching SwiftPM's accessor, which traps once the build
+directory it names is gone. A packaging step therefore copies
+`vibe-bar-i18n_VibeBarLocalization.bundle` (and, for the system's per-app
+language picker, its `.lproj` directories) into `Contents/Resources`. With no
+override the app follows the macOS language automatically. To offer an in-app language picker, set the
 override — it takes effect on the next read, no relaunch:
 
 ```swift
@@ -54,15 +60,15 @@ language picker.
 **TypeScript**
 
 ```jsonc
-"@astroqore/vibe-bar-i18n": "0.1.0"
+"@astroqore/vibe-bar-i18n": "0.2.0"
 ```
 
 ```ts
 import { t, setLocale } from "@astroqore/vibe-bar-i18n";
 
 t("common.retry");
-t("quota.resetsIn", { days: 3, hours: 18 });
-t("quota.cyclesRecorded", { count: 2 });
+t("common.duration.full.daysHours", { days, hours });
+t("common.duration.full.days", { count: 2 });
 
 setLocale("zh-Hans"); // returns false for a locale the catalog does not ship
 ```

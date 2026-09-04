@@ -279,9 +279,6 @@
 /* Tooltip on the expand button of a cost card */
 "cost.openFullCharts" = "打开完整图表";
 
-/* Effective price of a model. {rate} is a raw number the client renders; declared double so the generated API takes a Double rather than a pre-formatted string. */
-"cost.perThousandTokens" = "每千 token %f";
-
 /* Cost card title on a provider page; provider is a SubProvider name and is never translated */
 "cost.provider.title" = "%@ 花费";
 
@@ -299,9 +296,6 @@
 
 /* Card title; the company name is never translated */
 "cost.spaceXAI.title" = "SpaceXAI 花费";
-
-/* Cost headline. {amount} arrives already formatted as currency by the client — the catalog never formats money, because the symbol, grouping and placement are the platform's job. */
-"cost.spentToday" = "今日花费 %@";
 
 /* Cost timeframe label covering all recorded history distinct-from: common.all — a filter chip that selects every item and a timeframe covering all recorded history are different spans. */
 "cost.timeframe.all" = "全部";
@@ -465,38 +459,17 @@
 /* Picker choosing a block's type weight. */
 "menuBar.composer.field.weight" = "字重";
 
-/* Palette button adding an empty group to the strip. */
-"menuBar.composer.group.add" = "新建分组";
+/* Button that binds the selected blocks into one run */
+"menuBar.composer.group.bind" = "成组";
 
-/* Tooltip on the New group button. */
-"menuBar.composer.group.addHelp" = "每个分组是条带中的一列。为分组添加第二行可让该列上下堆叠。";
+/* Explains how to bind blocks and what binding does */
+"menuBar.composer.group.hint" = "按住 Shift 点选同一行里相邻的积木。成组后它们作为整体移动 —— 拖其中任意一个，整组一起走。";
 
-/* Menu item giving a group a second row. */
-"menuBar.composer.group.addRow" = "添加第二行";
+/* Shown when the selected blocks cannot be bound */
+"menuBar.composer.group.notAdjacent" = "只有同一行里相邻的积木才能成组。";
 
-/* Shown inside a group that has no blocks yet. */
-"menuBar.composer.group.empty" = "空分组，可将积木拖入。";
-
-/* Menu action folding a group into the one before it. */
-"menuBar.composer.group.mergeLeft" = "并入前一个分组";
-
-/* Menu action moving a group one place earlier. */
-"menuBar.composer.group.moveLeft" = "向左移动";
-
-/* Menu action moving a group one place later. */
-"menuBar.composer.group.moveRight" = "向右移动";
-
-/* Menu action deleting a group and the blocks in it. */
-"menuBar.composer.group.remove" = "删除分组及其积木";
-
-/* Menu item closing a group's second row; its blocks join the end of the first. */
-"menuBar.composer.group.removeRow" = "将第二行并入第一行";
-
-/* Button starting a new group at the selected block. */
-"menuBar.composer.group.splitHere" = "从此处开始新分组";
-
-/* Header over one group of blocks. Index counts from 1. */
-"menuBar.composer.group.title" = "分组 %lld";
+/* Button that unbinds a run of blocks */
+"menuBar.composer.group.unbind" = "解组";
 
 /* Quota metric: whichever percentage the app-wide Used/Remaining setting selects. */
 "menuBar.composer.metric.displayPercent" = "百分比（跟随设置）";
@@ -615,11 +588,41 @@
 /* Visibility rule: show once a quota's used percentage reaches a threshold. */
 "menuBar.composer.rule.whenUsedAtLeast" = "已用不低于";
 
+/* Palette button adding an empty group to the strip. */
+"menuBar.composer.segment.add" = "新建段";
+
+/* Tooltip on the New group button. */
+"menuBar.composer.segment.addHelp" = "每个段是条带中的一列。为段添加第二行可让该列上下堆叠。";
+
+/* Menu item giving a group a second row. */
+"menuBar.composer.segment.addRow" = "添加第二行";
+
+/* Shown inside a group that has no blocks yet. */
+"menuBar.composer.segment.empty" = "空段，可将积木拖入。";
+
+/* Menu action folding a group into the one before it. */
+"menuBar.composer.segment.mergeLeft" = "并入前一个段";
+
+/* Menu action moving a group one place earlier. */
+"menuBar.composer.segment.moveLeft" = "向左移动";
+
+/* Menu action moving a group one place later. */
+"menuBar.composer.segment.moveRight" = "向右移动";
+
+/* Menu action deleting a group and the blocks in it. */
+"menuBar.composer.segment.remove" = "删除该段及其积木";
+
+/* Menu item closing a group's second row; its blocks join the end of the first. */
+"menuBar.composer.segment.removeRow" = "将第二行并入第一行";
+
+/* Button starting a new group at the selected block. */
+"menuBar.composer.segment.splitHere" = "从此处开始新的段";
+
+/* Header over one group of blocks. Index counts from 1. */
+"menuBar.composer.segment.title" = "段 %lld";
+
 /* Caption over the controls for the selected block. */
 "menuBar.composer.selected" = "已选积木";
-
-/* Type size choice. */
-"menuBar.composer.size.large" = "大";
 
 /* Smallest of the three block sizes in the menu-bar composer. */
 "menuBar.composer.size.mini" = "迷你";
@@ -1028,9 +1031,6 @@
 
 /* Toggle in the menu-bar item editor. macOS-only: no other client renders a menu-bar extra. */
 "platform.macos.menuBar.showInMenuBar" = "在菜单栏中显示";
-
-/* Toggle in the menu-bar item editor. macOS-only. */
-"platform.macos.menuBar.showTitleText" = "显示标题文字";
 
 /* Subtitle under the Machines page header */
 "popover.header.machinesSubtitle" = "端到端加密的远程用量";
@@ -1605,12 +1605,6 @@
 /* Card title for the manual rate-limit resets a Codex plan grants */
 "quota.resetCredits.title" = "限额重置券";
 
-/* Countdown beside a quota bar. Both values are whole numbers; the caller drops the day part when it is zero by using quota.resetsInHours instead. */
-"quota.resetsIn" = "%1$lld 天 %2$lld 小时后重置";
-
-/* Countdown beside a quota bar when less than a day remains. */
-"quota.resetsInHours" = "%1$lld 小时 %2$lld 分后重置";
-
 /* Timeline axis tick */
 "quota.upcoming.axisDays" = "+%lld 天";
 
@@ -1934,6 +1928,69 @@
 
 /* Settings row label for the in-app language override */
 "settings.language.title" = "语言";
+
+/* Button that opens the full-size layout studio window */
+"settings.layout.openStudio" = "打开工作台";
+
+/* Tooltip for the studio button */
+"settings.layout.openStudioHelp" = "在整尺寸的实时预览旁边排布这个界面。";
+
+/* Shown when a layout page has no popover tab to draw */
+"settings.layout.previewUnavailable" = "该页面没有可预览的 popover 标签页。";
+
+/* One-line hint for a mini window style (Focus, Rail) that arranges itself */
+"settings.layout.studioHintFixedStyle" = "这个样式会自动排布。可在下方托盘增减字段，或打开控件。";
+
+/* One-line hint shown when the studio opens on a mini window whose cells can be dragged */
+"settings.layout.studioHintMini" = "拖动指标即可重新排序；拖到下方的槽里即可从窗口移除。";
+
+/* One-line hint shown when the studio opens on a popover page */
+"settings.layout.studioHintPage" = "拖动卡片即可移动；拖到下方的槽里可以隐藏它。";
+
+/* Arranging mode in the studio's mode pill */
+"settings.layout.studioModeManual" = "手动";
+
+/* Tooltip for a column-width split */
+"settings.layout.studioRatioEqual" = "等宽";
+
+/* Tooltip for a column-width split */
+"settings.layout.studioRatioNarrowWide" = "左窄右宽";
+
+/* Tooltip for a column-width split */
+"settings.layout.studioRatioWideNarrow" = "左宽右窄";
+
+/* Menu section in the studio's subject picker: the popover's pages */
+"settings.layout.studioSubjectPages" = "弹出面板页面";
+
+/* Title of the layout studio window */
+"settings.layout.studioTitle" = "布局工作台";
+
+/* Tooltip for the button that hides the studio's controls */
+"settings.layout.studioToggleInspector" = "显示或隐藏控件";
+
+/* Tooltip for a not-shown field's chip in the tray */
+"settings.layout.studioTrayAddHelp" = "点按即可添加到末尾，或拖进窗口。";
+
+/* Caption of the tray of hidden cards under a page */
+"settings.layout.studioTrayHidden" = "已隐藏";
+
+/* Caption of the tray of fields a mini window is not showing */
+"settings.layout.studioTrayNotShown" = "未显示";
+
+/* Tooltip for a hidden card's chip in the tray */
+"settings.layout.studioTrayShowHelp" = "点按即可回到原位显示，或拖到页面上。";
+
+/* Tooltip for the studio's undo button */
+"settings.layout.studioUndo" = "撤销上一步（⌘Z）";
+
+/* Tooltip for the zoom readout, which resets the zoom to fit the stage */
+"settings.layout.studioZoomFitHelp" = "适应窗口（⌘0）";
+
+/* Tooltip for the studio's zoom-in button */
+"settings.layout.studioZoomIn" = "放大（⌘+）";
+
+/* Tooltip for the studio's zoom-out button */
+"settings.layout.studioZoomOut" = "缩小（⌘−）";
 
 /* Toggle label */
 "settings.mcp.allowRefresh" = "允许 agent 刷新额度";
