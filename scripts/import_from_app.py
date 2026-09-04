@@ -566,6 +566,21 @@ COMMENT_OVERRIDE: Dict[str, str] = {
 # Both keep the placeholder *names and types* the other client already
 # passes — that is the API, and improving a sentence is not licence to
 # change it.
+# Keys where this repository's *meaning* is wider than the app's use of it,
+# so the shared comment and the shared translation both stand.
+#
+# The app's comment describes one call site; a shared key's comment describes
+# what every client uses it for, and a translator reading the narrow one
+# translates the narrow thing. This is the same rule as § 7's — the shared
+# name wins — applied to the metadata rather than the sentence, and it is
+# declared here rather than inferred because "the app's is newer" is true of
+# the register pass and false of this.
+KEEP_SHARED_MEANING: Dict[str, str] = {
+    "common.noData": "a generic empty state for any chart or list; the app "
+                     "comments it as one observation tooltip, and 暂无记录 "
+                     "reads for both while 无记录数据 reads for neither",
+}
+
 ADOPT_FROM_APP: Dict[str, Dict[str, object]] = {
     "resetHistory.wastedSummary": {
         "why": "adds the plural English needs; keeps {cycles} and its int type",
@@ -709,6 +724,8 @@ def convert(app_root: str, problems: List[str]) -> Tuple[dict, dict, dict]:
                 was = previous.get(renamed, {}).get("value")
                 if renamed in ADOPT_FROM_APP:
                     was = None  # declared in § 7, and overwritten below
+                if renamed in KEEP_SHARED_MEANING:
+                    was = None  # this repository's value is restored below
                 if was is not None and was != raw[key]["value"]:
                     TRANSLATION_REPLACED.setdefault(locale, []).append(
                         (renamed, was, raw[key]["value"])
@@ -747,6 +764,10 @@ def reconcile_existing(converted: dict, problems: List[str]) -> set:
             converted[key]["placeholders"] = dict(adopt["placeholders"])
             continue
         incoming = converted[key]
+        if key in KEEP_SHARED_MEANING:
+            converted[key] = dict(previous)
+            kept.add(key)
+            continue
         if incoming.get("value") != previous.get("value") or \
                 incoming.get("placeholders", {}) != previous.get("placeholders", {}):
             # Keep this repository's entry, comment and all.
