@@ -694,6 +694,8 @@ export type MessageKey =
   | "settings.layout.studioTrayNotShown"
   | "settings.layout.studioTrayShowHelp"
   | "settings.layout.studioUndo"
+  | "settings.layout.studioWellHide"
+  | "settings.layout.studioZoomFit"
   | "settings.layout.studioZoomFitHelp"
   | "settings.layout.studioZoomIn"
   | "settings.layout.studioZoomOut"
@@ -2211,6 +2213,8 @@ export interface MessageParams {
   "settings.layout.studioTrayNotShown": undefined;
   "settings.layout.studioTrayShowHelp": undefined;
   "settings.layout.studioUndo": undefined;
+  "settings.layout.studioWellHide": undefined;
+  "settings.layout.studioZoomFit": undefined;
   "settings.layout.studioZoomFitHelp": undefined;
   "settings.layout.studioZoomIn": undefined;
   "settings.layout.studioZoomOut": undefined;
@@ -3729,6 +3733,8 @@ export const messages: {
     "settings.layout.studioTrayNotShown": "Not shown",
     "settings.layout.studioTrayShowHelp": "Click to show it where it was, or drag it onto the page.",
     "settings.layout.studioUndo": "Undo the last change (⌘Z)",
+    "settings.layout.studioWellHide": "Hide",
+    "settings.layout.studioZoomFit": "Fit",
     "settings.layout.studioZoomFitHelp": "Fit to the window (⌘0)",
     "settings.layout.studioZoomIn": "Zoom in (⌘+)",
     "settings.layout.studioZoomOut": "Zoom out (⌘−)",
@@ -5226,7 +5232,7 @@ export const messages: {
     "settings.language.title": "语言",
     "settings.layout.openStudio": "打开工作台",
     "settings.layout.openStudioHelp": "在整尺寸的实时预览旁边排布这个界面。",
-    "settings.layout.previewUnavailable": "该页面没有可预览的 popover 标签页。",
+    "settings.layout.previewUnavailable": "该页面没有可预览的弹出面板标签页。",
     "settings.layout.studioHintFixedStyle": "这个样式会自动排布。可在下方托盘增减字段，或打开控件。",
     "settings.layout.studioHintMini": "拖动指标即可重新排序；拖到下方的槽里即可从窗口移除。",
     "settings.layout.studioHintPage": "拖动卡片即可移动；拖到下方的槽里可以隐藏它。",
@@ -5242,6 +5248,8 @@ export const messages: {
     "settings.layout.studioTrayNotShown": "未显示",
     "settings.layout.studioTrayShowHelp": "点按即可回到原位显示，或拖到页面上。",
     "settings.layout.studioUndo": "撤销上一步（⌘Z）",
+    "settings.layout.studioWellHide": "隐藏",
+    "settings.layout.studioZoomFit": "适应",
     "settings.layout.studioZoomFitHelp": "适应窗口（⌘0）",
     "settings.layout.studioZoomIn": "放大（⌘+）",
     "settings.layout.studioZoomOut": "缩小（⌘−）",

@@ -219,7 +219,13 @@ private final class L10nState: @unchecked Sendable {
         for host in resourceHosts {
             for spelling in [tag, tag.lowercased()] {
                 if let path = host.path(forResource: spelling, ofType: "lproj"),
-                   let bundle = Bundle(path: path) {
+                   let bundle = Bundle(path: path),
+                   // A host may carry an `.lproj` of its own for other
+                   // reasons (its Info.plist strings, say) without this
+                   // catalogue in it. Only a directory that holds the table
+                   // answers; otherwise the search goes on to the next host
+                   // rather than serving keys as identifiers.
+                   bundle.path(forResource: "Localizable", ofType: "strings") != nil {
                     return bundle
                 }
             }

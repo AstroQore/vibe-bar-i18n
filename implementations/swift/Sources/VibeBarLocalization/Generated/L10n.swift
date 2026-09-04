@@ -4892,6 +4892,18 @@ public enum L10n {
             /// en: "Undo the last change (⌘Z)"
             public static var studioUndo: String { L10nSupport.string("settings.layout.studioUndo") }
 
+            /// Drop target shown under a page while a card is being dragged distinct-from: onboarding.apiKeys.hide — hiding a card and folding a credential form away are different acts: zh-Hans says 隐藏 for one and 收起 for the other.
+            ///
+            /// Key: `settings.layout.studioWellHide`
+            /// en: "Hide"
+            public static var studioWellHide: String { L10nSupport.string("settings.layout.studioWellHide") }
+
+            /// Zoom control: shrink the surface to fit the stage
+            ///
+            /// Key: `settings.layout.studioZoomFit`
+            /// en: "Fit"
+            public static var studioZoomFit: String { L10nSupport.string("settings.layout.studioZoomFit") }
+
             /// Tooltip for the zoom readout, which resets the zoom to fit the stage
             ///
             /// Key: `settings.layout.studioZoomFitHelp`
@@ -7729,7 +7741,7 @@ public enum L10n {
             /// en: "No usage recorded in this range"
             public static var empty: String { L10nSupport.string("usage.trend.empty") }
 
-            /// Button that widens the chart back to the whole selected window.
+            /// Button that widens the chart back to the whole selected window. distinct-from: settings.layout.studioZoomFit — zooming a stage to fit the window and widening a chart back to its whole range are different acts: zh-Hans says 适应 for one and 全览 for the other.
             ///
             /// Key: `usage.trend.fit`
             /// en: "Fit"
@@ -10945,6 +10957,8 @@ enum L10nCatalogFacts {
         "settings.layout.studioTrayNotShown",
         "settings.layout.studioTrayShowHelp",
         "settings.layout.studioUndo",
+        "settings.layout.studioWellHide",
+        "settings.layout.studioZoomFit",
         "settings.layout.studioZoomFitHelp",
         "settings.layout.studioZoomIn",
         "settings.layout.studioZoomOut",
@@ -12512,6 +12526,8 @@ enum L10nCatalogFacts {
         "settings.layout.studioTrayNotShown": 0,
         "settings.layout.studioTrayShowHelp": 0,
         "settings.layout.studioUndo": 0,
+        "settings.layout.studioWellHide": 0,
+        "settings.layout.studioZoomFit": 0,
         "settings.layout.studioZoomFitHelp": 0,
         "settings.layout.studioZoomIn": 0,
         "settings.layout.studioZoomOut": 0,

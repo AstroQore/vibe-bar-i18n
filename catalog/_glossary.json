@@ -191,6 +191,14 @@
     {
       "term": "Cursor Agent",
       "kind": "harness"
+    },
+    {
+      "term": "Codex CLI",
+      "kind": "harness"
+    },
+    {
+      "term": "agent-session-kit",
+      "kind": "product"
     }
   ]
 }

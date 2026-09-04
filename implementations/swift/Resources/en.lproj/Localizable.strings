@@ -1983,6 +1983,12 @@
 /* Tooltip for the studio's undo button */
 "settings.layout.studioUndo" = "Undo the last change (⌘Z)";
 
+/* Drop target shown under a page while a card is being dragged distinct-from: onboarding.apiKeys.hide — hiding a card and folding a credential form away are different acts: zh-Hans says 隐藏 for one and 收起 for the other. */
+"settings.layout.studioWellHide" = "Hide";
+
+/* Zoom control: shrink the surface to fit the stage */
+"settings.layout.studioZoomFit" = "Fit";
+
 /* Tooltip for the zoom readout, which resets the zoom to fit the stage */
 "settings.layout.studioZoomFitHelp" = "Fit to the window (⌘0)";
 
@@ -3345,7 +3351,7 @@
 /* Empty state in place of the trend chart. */
 "usage.trend.empty" = "No usage recorded in this range";
 
-/* Button that widens the chart back to the whole selected window. */
+/* Button that widens the chart back to the whole selected window. distinct-from: settings.layout.studioZoomFit — zooming a stage to fit the window and widening a chart back to its whole range are different acts: zh-Hans says 适应 for one and 全览 for the other. */
 "usage.trend.fit" = "Fit";
 
 /* Tooltip on the button that widens the chart back to the whole selected window. */

@@ -1995,7 +1995,7 @@
       "value": "在整尺寸的实时预览旁边排布这个界面。"
     },
     "settings.layout.previewUnavailable": {
-      "value": "该页面没有可预览的 popover 标签页。"
+      "value": "该页面没有可预览的弹出面板标签页。"
     },
     "settings.layout.studioHintFixedStyle": {
       "value": "这个样式会自动排布。可在下方托盘增减字段，或打开控件。"
@@ -2041,6 +2041,12 @@
     },
     "settings.layout.studioUndo": {
       "value": "撤销上一步（⌘Z）"
+    },
+    "settings.layout.studioWellHide": {
+      "value": "隐藏"
+    },
+    "settings.layout.studioZoomFit": {
+      "value": "适应"
     },
     "settings.layout.studioZoomFitHelp": {
       "value": "适应窗口（⌘0）"

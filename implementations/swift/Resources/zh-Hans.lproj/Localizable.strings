@@ -1936,7 +1936,7 @@
 "settings.layout.openStudioHelp" = "在整尺寸的实时预览旁边排布这个界面。";
 
 /* Shown when a layout page has no popover tab to draw */
-"settings.layout.previewUnavailable" = "该页面没有可预览的 popover 标签页。";
+"settings.layout.previewUnavailable" = "该页面没有可预览的弹出面板标签页。";
 
 /* One-line hint for a mini window style (Focus, Rail) that arranges itself */
 "settings.layout.studioHintFixedStyle" = "这个样式会自动排布。可在下方托盘增减字段，或打开控件。";
@@ -1982,6 +1982,12 @@
 
 /* Tooltip for the studio's undo button */
 "settings.layout.studioUndo" = "撤销上一步（⌘Z）";
+
+/* Drop target shown under a page while a card is being dragged distinct-from: onboarding.apiKeys.hide — hiding a card and folding a credential form away are different acts: zh-Hans says 隐藏 for one and 收起 for the other. */
+"settings.layout.studioWellHide" = "隐藏";
+
+/* Zoom control: shrink the surface to fit the stage */
+"settings.layout.studioZoomFit" = "适应";
 
 /* Tooltip for the zoom readout, which resets the zoom to fit the stage */
 "settings.layout.studioZoomFitHelp" = "适应窗口（⌘0）";
@@ -3345,7 +3351,7 @@
 /* Empty state in place of the trend chart. */
 "usage.trend.empty" = "所选范围内没有用量记录";
 
-/* Button that widens the chart back to the whole selected window. */
+/* Button that widens the chart back to the whole selected window. distinct-from: settings.layout.studioZoomFit — zooming a stage to fit the window and widening a chart back to its whole range are different acts: zh-Hans says 适应 for one and 全览 for the other. */
 "usage.trend.fit" = "全览";
 
 /* Tooltip on the button that widens the chart back to the whole selected window. */

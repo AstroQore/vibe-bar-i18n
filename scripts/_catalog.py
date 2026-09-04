@@ -459,11 +459,10 @@ def load_catalog(locale, path):
         body = keys[key]
         if not isinstance(body, dict):
             raise CatalogError("%s: key %r must map to an object" % (rel(path), key))
-        value = body.get("value", "")
-        placeholders = ordered_placeholders(body.get("placeholders") or {}, value)
+        placeholders = body.get("placeholders") or {}
         entries[key] = Entry(
             key=key,
-            value=value,
+            value=body.get("value", ""),
             comment=body.get("comment"),
             placeholders=placeholders,
         )
@@ -474,14 +473,16 @@ def ordered_placeholders(declared, value):
     # type: (Dict[str, str], str) -> Dict[str, str]
     """The declared placeholders, in the order the value first names them.
 
-    This order is the one every typed API exposes — the Swift parameter
-    list, the TypeScript object type — and the one the positional format
-    specifiers count in. It follows the *source* value rather than the
-    JSON's key order so that `Resets in {days} {hours}` reads as
-    `(days:hours:)` however a hand or a script happened to sort the
-    declaration, and so that a translation which reorders the sentence
-    changes nothing about the API. Placeholders the value never names (a
-    validation error anyway) keep their declared order at the end.
+    For *writers* — the importer, a script that adds a key — so that a new
+    declaration reads the way its English does: `Resets in {days} {hours}`
+    is declared days, hours, and the typed APIs say `(days:hours:)`.
+
+    Deliberately not applied when a catalogue is *read*. Declaration order
+    is the API order — the Swift parameter list, the TypeScript object type,
+    the positional format indices — and it has to stay put once a key is
+    published: deriving it from the sentence would let a wording edit
+    (`{start} – {end}` becoming `{end} – {start}`) silently reverse a Swift
+    signature every caller has already spelled.
     """
     order = []
     for match in re.finditer(r"\{([A-Za-z0-9_]+)\s*(?:,|\})", value):
