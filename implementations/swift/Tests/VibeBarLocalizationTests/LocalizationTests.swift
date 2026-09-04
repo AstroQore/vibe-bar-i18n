@@ -110,13 +110,13 @@ struct LocalizationTests {
 
     @Test func pluralsFormatForOneAndForMany() {
         withOverride("en") {
-            #expect(L10n.Quota.cyclesRecorded(count: 1) == "1 cycle")
-            #expect(L10n.Quota.cyclesRecorded(count: 2) == "2 cycles")
+            #expect(L10n.Common.Duration.Full.days(count: 1) == "1 day")
+            #expect(L10n.Common.Duration.Full.days(count: 2) == "2 days")
         }
         withOverride("zh-Hans") {
             // Simplified Chinese has only `other`; both counts take it.
-            #expect(L10n.Quota.cyclesRecorded(count: 1) == "1 个周期")
-            #expect(L10n.Quota.cyclesRecorded(count: 2) == "2 个周期")
+            #expect(L10n.Common.Duration.Full.days(count: 1) == "1 天")
+            #expect(L10n.Common.Duration.Full.days(count: 2) == "2 天")
         }
     }
 
@@ -139,11 +139,11 @@ struct LocalizationTests {
     @Test func overrideChangesTheResolvedString() {
         withOverride("en") {
             #expect(L10n.Common.retry == "Retry")
-            #expect(L10n.Quota.resetsIn(days: 3, hours: 18) == "resets in 3d 18h")
+            #expect(L10n.Common.Duration.Full.daysHours(days: "3 days", hours: "18 hours") == "3 days and 18 hours")
         }
         withOverride("zh-Hans") {
             #expect(L10n.Common.retry == "重试")
-            #expect(L10n.Quota.resetsIn(days: 3, hours: 18) == "3 天 18 小时后重置")
+            #expect(L10n.Common.Duration.Full.daysHours(days: "3 天", hours: "18 小时") == "3 天 18 小时")
         }
     }
 
@@ -178,7 +178,7 @@ struct LocalizationTests {
         withOverride("zh-Hans") {
             #expect(L10n.Quota.usedPercent(percent: 42) == "已用 42%")
             #expect(
-                L10n.ResetHistory.wastedSummary(used: 61, wasted: 39, cycles: 7)
+                L10n.ResetHistory.wastedSummary(used: "61", wasted: "39", count: 7)
                     == "已用 61% · 浪费 39% · 7 个周期"
             )
             #expect(

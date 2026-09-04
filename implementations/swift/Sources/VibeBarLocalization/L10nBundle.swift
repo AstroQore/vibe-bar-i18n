@@ -186,7 +186,11 @@ private final class L10nState: @unchecked Sendable {
             if let match = match(preferred) { return match }
         }
         if let fallback = match(L10nCatalogFacts.sourceLocale) { return fallback }
-        return (.module, L10nCatalogFacts.sourceLocale)
+        // Nothing shipped resolved — only possible when the package's
+        // resources are missing altogether. `.main` keeps the lookup from
+        // trapping; the accessors then return their keys, which is at least
+        // visible.
+        return (resourceHosts.first ?? .main, L10nCatalogFacts.sourceLocale)
     }
 
     /// Match an identifier against the shipped locales, longest tag first:
@@ -212,14 +216,59 @@ private final class L10nState: @unchecked Sendable {
     /// volume, and the lowercased one keeps this working on a case-sensitive
     /// one.
     private static func lproj(_ tag: String) -> Bundle? {
-        for spelling in [tag, tag.lowercased()] {
-            if let path = Bundle.module.path(forResource: spelling, ofType: "lproj"),
-               let bundle = Bundle(path: path) {
-                return bundle
+        for host in resourceHosts {
+            for spelling in [tag, tag.lowercased()] {
+                if let path = host.path(forResource: spelling, ofType: "lproj"),
+                   let bundle = Bundle(path: path),
+                   // A host may carry an `.lproj` of its own for other
+                   // reasons (its Info.plist strings, say) without this
+                   // catalogue in it. Only a directory that holds the table
+                   // answers; otherwise the search goes on to the next host
+                   // rather than serving keys as identifiers.
+                   bundle.path(forResource: "Localizable", ofType: "strings") != nil {
+                    return bundle
+                }
             }
         }
         return nil
     }
+
+    /// Where this package's `.lproj` directories may live, in the order
+    /// they are tried.
+    ///
+    /// `Bundle.module` is a trap in a packaged app, not a lookup. SwiftPM's
+    /// generated accessor knows two places — the absolute build directory of
+    /// the machine that compiled the package, and a bundle sitting beside
+    /// `Bundle.main.bundleURL` — and calls `fatalError` when neither
+    /// exists. An installed `.app` is exactly that case: the build
+    /// directory is gone, and the resource bundle sits under
+    /// `Contents/Resources`, because a file outside `Contents` makes
+    /// codesign reject the app. On the machine that built it the second
+    /// path still exists, so the failure only shows up on an installed copy.
+    ///
+    /// So the host's own resources are consulted first: the `.lproj`
+    /// directories an app copies into `Contents/Resources` (which is also
+    /// what makes macOS list the app under Language & Region), then this
+    /// package's resource bundle placed there by the app's packaging step,
+    /// and only for a source build or a test host — where the build
+    /// directory the accessor names really exists — `Bundle.module`.
+    private static let resourceHosts: [Bundle] = {
+        var hosts: [Bundle] = [.main]
+        if let resources = Bundle.main.resourceURL,
+           let embedded = Bundle(url: resources.appendingPathComponent(
+               resourceBundleName, isDirectory: true
+           )) {
+            hosts.append(embedded)
+        }
+        if Bundle.main.bundleURL.pathExtension != "app" {
+            hosts.append(.module)
+        }
+        return hosts
+    }()
+
+    /// The name SwiftPM gives this target's resource bundle:
+    /// `<package>_<target>.bundle`.
+    static let resourceBundleName = "vibe-bar-i18n_VibeBarLocalization.bundle"
 
     private static func candidates(for identifier: String) -> [String] {
         var segments = identifier

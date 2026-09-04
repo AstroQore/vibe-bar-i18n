@@ -112,14 +112,12 @@ export type MessageKey =
   | "cost.noUsageYet"
   | "cost.notTracked"
   | "cost.openFullCharts"
-  | "cost.perThousandTokens"
   | "cost.provider.title"
   | "cost.providerFullCharts"
   | "cost.refreshData"
   | "cost.refreshProvider"
   | "cost.spaceXAI.empty"
   | "cost.spaceXAI.title"
-  | "cost.spentToday"
   | "cost.timeframe.all"
   | "cost.timeframe.month"
   | "cost.timeframe.monthShort"
@@ -174,17 +172,11 @@ export type MessageKey =
   | "menuBar.composer.field.size"
   | "menuBar.composer.field.verdicts"
   | "menuBar.composer.field.weight"
-  | "menuBar.composer.group.add"
-  | "menuBar.composer.group.addHelp"
-  | "menuBar.composer.group.addRow"
-  | "menuBar.composer.group.empty"
-  | "menuBar.composer.group.mergeLeft"
-  | "menuBar.composer.group.moveLeft"
-  | "menuBar.composer.group.moveRight"
-  | "menuBar.composer.group.remove"
-  | "menuBar.composer.group.removeRow"
-  | "menuBar.composer.group.splitHere"
-  | "menuBar.composer.group.title"
+  | "menuBar.composer.group.bind"
+  | "menuBar.composer.group.hint"
+  | "menuBar.composer.group.notAdjacent"
+  | "menuBar.composer.group.selected"
+  | "menuBar.composer.group.unbind"
   | "menuBar.composer.metric.displayPercent"
   | "menuBar.composer.metric.pace"
   | "menuBar.composer.metric.remainingPercent"
@@ -224,8 +216,18 @@ export type MessageKey =
   | "menuBar.composer.rule.whenForecast"
   | "menuBar.composer.rule.whenRemainingAtMost"
   | "menuBar.composer.rule.whenUsedAtLeast"
+  | "menuBar.composer.segment.add"
+  | "menuBar.composer.segment.addHelp"
+  | "menuBar.composer.segment.addRow"
+  | "menuBar.composer.segment.empty"
+  | "menuBar.composer.segment.mergeLeft"
+  | "menuBar.composer.segment.moveLeft"
+  | "menuBar.composer.segment.moveRight"
+  | "menuBar.composer.segment.remove"
+  | "menuBar.composer.segment.removeRow"
+  | "menuBar.composer.segment.splitHere"
+  | "menuBar.composer.segment.title"
   | "menuBar.composer.selected"
-  | "menuBar.composer.size.large"
   | "menuBar.composer.size.mini"
   | "menuBar.composer.size.regular"
   | "menuBar.composer.size.small"
@@ -363,7 +365,6 @@ export type MessageKey =
   | "platform.macos.menuBar.mergeGroupWindowsDetail"
   | "platform.macos.menuBar.percentColor"
   | "platform.macos.menuBar.showInMenuBar"
-  | "platform.macos.menuBar.showTitleText"
   | "popover.header.machinesSubtitle"
   | "popover.header.mini"
   | "popover.header.miscSubtitle"
@@ -401,7 +402,6 @@ export type MessageKey =
   | "quota.bridge.title"
   | "quota.bucket.noResetInfo"
   | "quota.cycleRecordedOnRefill"
-  | "quota.cyclesRecorded"
   | "quota.empty.needsLogin.detail"
   | "quota.empty.network.detail"
   | "quota.empty.noAccount.detail"
@@ -563,8 +563,6 @@ export type MessageKey =
   | "quota.resetCredits.available"
   | "quota.resetCredits.availableWithExpiry"
   | "quota.resetCredits.title"
-  | "quota.resetsIn"
-  | "quota.resetsInHours"
   | "quota.upcoming.axisDays"
   | "quota.upcoming.axisHours"
   | "quota.upcoming.empty"
@@ -678,6 +676,29 @@ export type MessageKey =
   | "settings.language.caption"
   | "settings.language.system"
   | "settings.language.title"
+  | "settings.layout.openStudio"
+  | "settings.layout.openStudioHelp"
+  | "settings.layout.previewUnavailable"
+  | "settings.layout.studioHintFixedStyle"
+  | "settings.layout.studioHintMini"
+  | "settings.layout.studioHintPage"
+  | "settings.layout.studioModeManual"
+  | "settings.layout.studioRatioEqual"
+  | "settings.layout.studioRatioNarrowWide"
+  | "settings.layout.studioRatioWideNarrow"
+  | "settings.layout.studioSubjectPages"
+  | "settings.layout.studioTitle"
+  | "settings.layout.studioToggleInspector"
+  | "settings.layout.studioTrayAddHelp"
+  | "settings.layout.studioTrayHidden"
+  | "settings.layout.studioTrayNotShown"
+  | "settings.layout.studioTrayShowHelp"
+  | "settings.layout.studioUndo"
+  | "settings.layout.studioWellHide"
+  | "settings.layout.studioZoomFit"
+  | "settings.layout.studioZoomFitHelp"
+  | "settings.layout.studioZoomIn"
+  | "settings.layout.studioZoomOut"
   | "settings.mcp.allowRefresh"
   | "settings.mcp.allowRefreshDetail"
   | "settings.mcp.allowSkills"
@@ -1580,7 +1601,7 @@ export interface MessageParams {
   "cost.history.clearModelSelection": undefined;
   "cost.history.emptyCost": undefined;
   "cost.history.emptyTokens": undefined;
-  "cost.history.extentNote": { "end": string; "span": string; "start": string };
+  "cost.history.extentNote": { "span": string; "start": string; "end": string };
   "cost.history.granularityDisabled": { "granularity": string };
   "cost.history.groupBy": { "granularity": string };
   "cost.history.hourlyFallback": undefined;
@@ -1610,14 +1631,12 @@ export interface MessageParams {
   "cost.noUsageYet": undefined;
   "cost.notTracked": { "provider": string };
   "cost.openFullCharts": undefined;
-  "cost.perThousandTokens": { "rate": number };
   "cost.provider.title": { "provider": string };
   "cost.providerFullCharts": { "provider": string };
   "cost.refreshData": undefined;
   "cost.refreshProvider": { "provider": string };
   "cost.spaceXAI.empty": undefined;
   "cost.spaceXAI.title": undefined;
-  "cost.spentToday": { "amount": string };
   "cost.timeframe.all": undefined;
   "cost.timeframe.month": undefined;
   "cost.timeframe.monthShort": undefined;
@@ -1672,17 +1691,11 @@ export interface MessageParams {
   "menuBar.composer.field.size": undefined;
   "menuBar.composer.field.verdicts": undefined;
   "menuBar.composer.field.weight": undefined;
-  "menuBar.composer.group.add": undefined;
-  "menuBar.composer.group.addHelp": undefined;
-  "menuBar.composer.group.addRow": undefined;
-  "menuBar.composer.group.empty": undefined;
-  "menuBar.composer.group.mergeLeft": undefined;
-  "menuBar.composer.group.moveLeft": undefined;
-  "menuBar.composer.group.moveRight": undefined;
-  "menuBar.composer.group.remove": undefined;
-  "menuBar.composer.group.removeRow": undefined;
-  "menuBar.composer.group.splitHere": undefined;
-  "menuBar.composer.group.title": { "index": number };
+  "menuBar.composer.group.bind": undefined;
+  "menuBar.composer.group.hint": undefined;
+  "menuBar.composer.group.notAdjacent": undefined;
+  "menuBar.composer.group.selected": { "count": number };
+  "menuBar.composer.group.unbind": undefined;
   "menuBar.composer.metric.displayPercent": undefined;
   "menuBar.composer.metric.pace": undefined;
   "menuBar.composer.metric.remainingPercent": undefined;
@@ -1722,8 +1735,18 @@ export interface MessageParams {
   "menuBar.composer.rule.whenForecast": undefined;
   "menuBar.composer.rule.whenRemainingAtMost": undefined;
   "menuBar.composer.rule.whenUsedAtLeast": undefined;
+  "menuBar.composer.segment.add": undefined;
+  "menuBar.composer.segment.addHelp": undefined;
+  "menuBar.composer.segment.addRow": undefined;
+  "menuBar.composer.segment.empty": undefined;
+  "menuBar.composer.segment.mergeLeft": undefined;
+  "menuBar.composer.segment.moveLeft": undefined;
+  "menuBar.composer.segment.moveRight": undefined;
+  "menuBar.composer.segment.remove": undefined;
+  "menuBar.composer.segment.removeRow": undefined;
+  "menuBar.composer.segment.splitHere": undefined;
+  "menuBar.composer.segment.title": { "index": number };
   "menuBar.composer.selected": undefined;
-  "menuBar.composer.size.large": undefined;
   "menuBar.composer.size.mini": undefined;
   "menuBar.composer.size.regular": undefined;
   "menuBar.composer.size.small": undefined;
@@ -1759,7 +1782,7 @@ export interface MessageParams {
   "menuBar.spoken.resetsIn": { "label": string; "value": string };
   "menuBar.spoken.runsOutIn": { "label": string; "value": string };
   "menuBar.spoken.title": { "kind": string };
-  "menuBar.spoken.titleBody": { "body": string; "kind": string };
+  "menuBar.spoken.titleBody": { "kind": string; "body": string };
   "menuBar.spoken.used": { "label": string; "value": string };
   "onboarding.apiKeys.hide": undefined;
   "onboarding.apiKeys.intro": undefined;
@@ -1794,7 +1817,7 @@ export interface MessageParams {
   "onboarding.pricing.interval.hour": undefined;
   "onboarding.pricing.interval.hours": { "hours": number };
   "onboarding.pricing.intro": { "interval": string };
-  "onboarding.pricing.merged": { "count": number; "when": string };
+  "onboarding.pricing.merged": { "when": string; "count": number };
   "onboarding.pricing.notFetched": undefined;
   "onboarding.pricing.source.failed": { "count": number };
   "onboarding.pricing.source.models": { "count": number };
@@ -1861,7 +1884,6 @@ export interface MessageParams {
   "platform.macos.menuBar.mergeGroupWindowsDetail": undefined;
   "platform.macos.menuBar.percentColor": undefined;
   "platform.macos.menuBar.showInMenuBar": undefined;
-  "platform.macos.menuBar.showTitleText": undefined;
   "popover.header.machinesSubtitle": undefined;
   "popover.header.mini": undefined;
   "popover.header.miscSubtitle": undefined;
@@ -1899,7 +1921,6 @@ export interface MessageParams {
   "quota.bridge.title": undefined;
   "quota.bucket.noResetInfo": undefined;
   "quota.cycleRecordedOnRefill": undefined;
-  "quota.cyclesRecorded": { "count": number };
   "quota.empty.needsLogin.detail": { "command": string };
   "quota.empty.network.detail": undefined;
   "quota.empty.noAccount.detail": undefined;
@@ -1915,9 +1936,9 @@ export interface MessageParams {
   "quota.forecast.explain.title": undefined;
   "quota.forecast.guidance.atRisk": undefined;
   "quota.forecast.guidance.available": { "target": number; "unused": number };
-  "quota.forecast.guidance.surplus": { "target": number; "unused": number };
+  "quota.forecast.guidance.surplus": { "unused": number; "target": number };
   "quota.forecast.guidance.usedAvailable": { "target": number; "unused": number };
-  "quota.forecast.guidance.usedSurplus": { "target": number; "unused": number };
+  "quota.forecast.guidance.usedSurplus": { "unused": number; "target": number };
   "quota.forecast.guidance.usedWithinTarget": { "target": number };
   "quota.forecast.guidance.watch": undefined;
   "quota.forecast.guidance.withinTarget": { "target": number };
@@ -1931,12 +1952,12 @@ export interface MessageParams {
   "quota.forecast.metric.comparableCycles": { "count": number };
   "quota.forecast.metric.coverage": undefined;
   "quota.forecast.metric.coverageDetail": { "fresh": number; "habits": number };
-  "quota.forecast.metric.coverageValue": { "history": number; "observations": number };
+  "quota.forecast.metric.coverageValue": { "observations": number; "history": number };
   "quota.forecast.metric.cyclesPending": undefined;
   "quota.forecast.metric.elapsed": { "percent": number };
   "quota.forecast.metric.evidence": undefined;
-  "quota.forecast.metric.evidenceDetail": { "score": number; "confidence": string };
-  "quota.forecast.metric.evidenceValue": { "cycles": number; "observations": number };
+  "quota.forecast.metric.evidenceDetail": { "confidence": string; "score": number };
+  "quota.forecast.metric.evidenceValue": { "observations": number; "cycles": number };
   "quota.forecast.metric.expectedLeft": { "percent": number };
   "quota.forecast.metric.expectedUsed": { "percent": number };
   "quota.forecast.metric.forecastAtReset": undefined;
@@ -1962,7 +1983,7 @@ export interface MessageParams {
   "quota.forecast.metric.unavailable": undefined;
   "quota.forecast.metric.uncertaintyInterval": undefined;
   "quota.forecast.reset.atRisk": undefined;
-  "quota.forecast.reset.enough": { "remaining": number };
+  "quota.forecast.reset.enough": { "percent": number };
   "quota.forecast.reset.learning": { "remaining": number };
   "quota.forecast.reset.surplus": { "remaining": number };
   "quota.forecast.reset.watch": { "remaining": number };
@@ -2008,12 +2029,12 @@ export interface MessageParams {
   "quota.history.curvesAll": { "total": number };
   "quota.history.curvesSome": { "shown": number; "total": number };
   "quota.history.forecastLegend": undefined;
-  "quota.history.moreBuckets": { "count": number; "names": string };
+  "quota.history.moreBuckets": { "names": string; "count": number };
   "quota.history.moreReadings": { "count": number };
   "quota.history.navigatorAllProviders": undefined;
   "quota.history.navigatorProvider": undefined;
   "quota.history.providerCount": { "count": number };
-  "quota.history.scopeNote": { "scope": string; "total": string; "visible": string };
+  "quota.history.scopeNote": { "scope": string; "visible": string; "total": string };
   "quota.history.showAllCurves": undefined;
   "quota.history.showBusiest": undefined;
   "quota.history.title": undefined;
@@ -2037,7 +2058,7 @@ export interface MessageParams {
   "quota.mini.railEmpty": undefined;
   "quota.mini.railTitle": { "days": number };
   "quota.mini.resets": { "countdown": string };
-  "quota.mini.rowHelp": { "percent": number; "row": string; "subProvider": string };
+  "quota.mini.rowHelp": { "subProvider": string; "row": string; "percent": number };
   "quota.misc.independentCopies": { "count": number };
   "quota.misc.notConfigured": undefined;
   "quota.misc.refreshCopies": { "provider": string };
@@ -2055,31 +2076,29 @@ export interface MessageParams {
   "quota.pace.runsOutShort": { "countdown": string };
   "quota.perModelLimits": { "count": number; "provider": string };
   "quota.remainingPercent": { "percent": number };
-  "quota.reset.in": { "duration": string };
+  "quota.reset.in": { "when": string };
   "quota.reset.passed": undefined;
   "quota.reset.passedAt": { "time": string };
   "quota.resetCredits.available": { "count": number };
   "quota.resetCredits.availableWithExpiry": { "available": string; "countdown": string };
   "quota.resetCredits.title": undefined;
-  "quota.resetsIn": { "days": number; "hours": number };
-  "quota.resetsInHours": { "hours": number; "minutes": number };
   "quota.upcoming.axisDays": { "days": number };
   "quota.upcoming.axisHours": { "hours": number };
   "quota.upcoming.empty": undefined;
   "quota.upcoming.gain": { "gain": number };
   "quota.upcoming.horizon": undefined;
-  "quota.upcoming.leftAndGain": { "gain": number; "remaining": number };
-  "quota.upcoming.markerHelp": { "gain": number; "remaining": number; "countdown": string; "label": string };
-  "quota.upcoming.resetsAt": { "absolute": string; "countdown": string };
+  "quota.upcoming.leftAndGain": { "remaining": number; "gain": number };
+  "quota.upcoming.markerHelp": { "label": string; "remaining": number; "gain": number; "countdown": string };
+  "quota.upcoming.resetsAt": { "countdown": string; "absolute": string };
   "quota.upcoming.title": undefined;
   "quota.update.failed": { "reason": string };
   "quota.usedPercent": { "percent": number };
   "quota.window.dayOfDays": { "day": number; "total": number; "value": string };
-  "quota.window.elapsedOfWindow": { "elapsed": string; "value": string; "window": string };
+  "quota.window.elapsedOfWindow": { "elapsed": string; "window": string; "value": string };
   "quota.window.resetsSoon": { "value": string };
   "resetHistory.a11y.empty": { "verdict": string };
   "resetHistory.a11y.more": { "count": number };
-  "resetHistory.a11y.summary": { "headline": string; "lanes": string; "more": string; "truncation": string; "verdict": string; "window": string };
+  "resetHistory.a11y.summary": { "window": string; "truncation": string; "headline": string; "verdict": string; "lanes": string; "more": string };
   "resetHistory.a11y.truncation": { "note": string };
   "resetHistory.axis.cycle": undefined;
   "resetHistory.axis.cycleHelp": undefined;
@@ -2092,13 +2111,13 @@ export interface MessageParams {
   "resetHistory.cardTitle": undefined;
   "resetHistory.compareEmpty": undefined;
   "resetHistory.compareWindow": { "window": string };
-  "resetHistory.currentCycleCaption": { "left": number; "used": number };
-  "resetHistory.cycleCaption": { "left": number; "used": number; "time": string };
+  "resetHistory.currentCycleCaption": { "used": number; "left": number };
+  "resetHistory.cycleCaption": { "time": string; "used": number; "left": number };
   "resetHistory.earlyRefillCount": { "count": number };
   "resetHistory.lane.emptyState": undefined;
   "resetHistory.lane.spokenNoCycles": { "label": string };
-  "resetHistory.lane.spokenWaste": { "count": number; "label": string; "percent": string };
-  "resetHistory.laneAverage": { "percent": number; "count": number };
+  "resetHistory.lane.spokenWaste": { "label": string; "percent": string; "count": number };
+  "resetHistory.laneAverage": { "percent": string; "count": number };
   "resetHistory.lastSeenBefore": { "duration": string };
   "resetHistory.legend.barHeight": undefined;
   "resetHistory.legend.byDate": undefined;
@@ -2121,16 +2140,16 @@ export interface MessageParams {
   "resetHistory.title": undefined;
   "resetHistory.tooltip.completed": { "left": number; "used": number };
   "resetHistory.tooltip.current": { "left": number; "used": number };
-  "resetHistory.tooltip.range": { "end": string; "start": string };
-  "resetHistory.tooltip.rangeDue": { "end": string; "start": string };
+  "resetHistory.tooltip.range": { "start": string; "end": string };
+  "resetHistory.tooltip.rangeDue": { "start": string; "end": string };
   "resetHistory.totals.none": undefined;
   "resetHistory.truncation": { "shown": number; "total": number };
   "resetHistory.verdict.clean": { "percent": string };
-  "resetHistory.verdict.leaky": { "count": number; "label": string; "percent": string };
+  "resetHistory.verdict.leaky": { "label": string; "percent": string; "count": number };
   "resetHistory.verdict.noCycles": undefined;
   "resetHistory.verdict.noQuota": undefined;
-  "resetHistory.verdict.wasteful": { "count": number; "label": string };
-  "resetHistory.wastedSummary": { "used": number; "wasted": number; "cycles": number };
+  "resetHistory.verdict.wasteful": { "label": string; "count": number };
+  "resetHistory.wastedSummary": { "used": string; "wasted": string; "count": number };
   "resetHistory.window.all": undefined;
   "resetHistory.window.eightWeeks": undefined;
   "resetHistory.window.fourWeeks": undefined;
@@ -2176,6 +2195,29 @@ export interface MessageParams {
   "settings.language.caption": undefined;
   "settings.language.system": undefined;
   "settings.language.title": undefined;
+  "settings.layout.openStudio": undefined;
+  "settings.layout.openStudioHelp": undefined;
+  "settings.layout.previewUnavailable": undefined;
+  "settings.layout.studioHintFixedStyle": undefined;
+  "settings.layout.studioHintMini": undefined;
+  "settings.layout.studioHintPage": undefined;
+  "settings.layout.studioModeManual": undefined;
+  "settings.layout.studioRatioEqual": undefined;
+  "settings.layout.studioRatioNarrowWide": undefined;
+  "settings.layout.studioRatioWideNarrow": undefined;
+  "settings.layout.studioSubjectPages": undefined;
+  "settings.layout.studioTitle": undefined;
+  "settings.layout.studioToggleInspector": undefined;
+  "settings.layout.studioTrayAddHelp": undefined;
+  "settings.layout.studioTrayHidden": undefined;
+  "settings.layout.studioTrayNotShown": undefined;
+  "settings.layout.studioTrayShowHelp": undefined;
+  "settings.layout.studioUndo": undefined;
+  "settings.layout.studioWellHide": undefined;
+  "settings.layout.studioZoomFit": undefined;
+  "settings.layout.studioZoomFitHelp": undefined;
+  "settings.layout.studioZoomIn": undefined;
+  "settings.layout.studioZoomOut": undefined;
   "settings.mcp.allowRefresh": undefined;
   "settings.mcp.allowRefreshDetail": { "seconds": number };
   "settings.mcp.allowSkills": undefined;
@@ -2370,7 +2412,7 @@ export interface MessageParams {
   "settings.remote.relay": undefined;
   "settings.remote.resumeSaving": undefined;
   "settings.remote.retrySaving": undefined;
-  "settings.remote.statusWithCode": { "code": string; "title": string };
+  "settings.remote.statusWithCode": { "title": string; "code": string };
   "settings.remote.sync.busy": undefined;
   "settings.remote.sync.connectionFailed": undefined;
   "settings.remote.sync.hostLookupFailed": undefined;
@@ -2510,8 +2552,8 @@ export interface MessageParams {
   "usage.activity.a11y": undefined;
   "usage.activity.cellTooltip": { "day": string; "hour": string; "tokens": string };
   "usage.activity.heavy": undefined;
-  "usage.activity.peak": { "day": string; "hour": string };
-  "usage.activity.peakCell": { "cellHour": string; "day": string; "hour": string };
+  "usage.activity.peak": { "hour": string; "day": string };
+  "usage.activity.peakCell": { "hour": string; "day": string; "cellHour": string };
   "usage.activity.quiet": undefined;
   "usage.activity.tokensShort": { "tokens": string };
   "usage.breakdown.models": undefined;
@@ -2520,7 +2562,7 @@ export interface MessageParams {
   "usage.breakdown.providers": undefined;
   "usage.breakdown.requests": undefined;
   "usage.chartNavigator.label": undefined;
-  "usage.chartNavigator.range": { "end": string; "start": string };
+  "usage.chartNavigator.range": { "start": string; "end": string };
   "usage.chartNavigator.showFullRange": undefined;
   "usage.chartNavigator.zoomIn": undefined;
   "usage.chartNavigator.zoomOut": undefined;
@@ -2548,7 +2590,7 @@ export interface MessageParams {
   "usage.filters.range24h": undefined;
   "usage.filters.rangeCustom": undefined;
   "usage.filters.rangeMenu": undefined;
-  "usage.filters.rangeSpan": { "end": string; "start": string };
+  "usage.filters.rangeSpan": { "start": string; "end": string };
   "usage.filters.refreshInterval": { "seconds": number };
   "usage.harnessMix.activeCount": { "count": number };
   "usage.harnessMix.byRealTokens": undefined;
@@ -2620,13 +2662,13 @@ export interface MessageParams {
   "usage.table.loadMore": { "remaining": number };
   "usage.table.loadingMore": undefined;
   "usage.table.modelCount": { "count": number };
-  "usage.table.periodRow": { "cost": string; "period": string; "tokens": string };
+  "usage.table.periodRow": { "period": string; "tokens": string; "cost": string };
   "usage.table.projectCount": { "count": number };
-  "usage.table.requestRow": { "cost": string; "harness": string; "model": string; "time": string; "tokens": string };
+  "usage.table.requestRow": { "time": string; "harness": string; "model": string; "tokens": string; "cost": string };
   "usage.table.requestsLabel": undefined;
   "usage.table.requestsLoaded": { "loaded": number; "total": number };
   "usage.table.showMorePeriods": { "count": number; "total": number };
-  "usage.table.statRow": { "requests": number; "cost": string; "name": string; "tokens": string };
+  "usage.table.statRow": { "name": string; "requests": number; "tokens": string; "cost": string };
   "usage.table.unpriced": undefined;
   "usage.table.unpricedHelp": undefined;
   "usage.tokens.cacheRead": undefined;
@@ -2634,7 +2676,7 @@ export interface MessageParams {
   "usage.tokens.input": undefined;
   "usage.tokens.output": undefined;
   "usage.tokens.title": undefined;
-  "usage.trend.accessibilitySummary": { "count": number; "cost": string; "tokens": string };
+  "usage.trend.accessibilitySummary": { "count": number; "tokens": string; "cost": string };
   "usage.trend.bucketDay": undefined;
   "usage.trend.bucketHour": undefined;
   "usage.trend.bucketWeek": undefined;
@@ -2661,11 +2703,11 @@ export interface MessageParams {
   "usage.whenYouUse.googleAI": undefined;
   "usage.whenYouUse.provider": { "provider": string };
   "usage.whenYouUse.spaceXAI": undefined;
-  "usage.yearHeatmap.a11y": { "count": number; "provider": string };
+  "usage.yearHeatmap.a11y": { "provider": string; "count": number };
   "usage.yearHeatmap.less": undefined;
   "usage.yearHeatmap.more": undefined;
   "usage.yearHeatmap.title": { "provider": string };
-  "usage.yearHeatmap.tooltip": { "amount": string; "date": string };
+  "usage.yearHeatmap.tooltip": { "date": string; "amount": string };
   "usage.yearHeatmap.total": { "amount": string };
   "workbench.appearance.useDark": undefined;
   "workbench.appearance.useLight": undefined;
@@ -2684,10 +2726,10 @@ export interface MessageParams {
   "workbench.placeholder.settings": undefined;
   "workbench.placeholder.skillsManager": undefined;
   "workbench.placeholder.usageStats": undefined;
-  "workbench.resets.calendar.dayEntry": { "percent": number; "lane": string };
-  "workbench.resets.calendar.futureEntry": { "percent": number; "lane": string; "time": string };
+  "workbench.resets.calendar.dayEntry": { "lane": string; "percent": number };
+  "workbench.resets.calendar.futureEntry": { "lane": string; "time": string; "percent": number };
   "workbench.resets.calendar.nextMonth": undefined;
-  "workbench.resets.calendar.pastEntry": { "percent": number; "lane": string; "time": string };
+  "workbench.resets.calendar.pastEntry": { "lane": string; "time": string; "percent": number };
   "workbench.resets.calendar.previousMonth": undefined;
   "workbench.resets.calendar.title": undefined;
   "workbench.resets.calendar.today": undefined;
@@ -2736,7 +2778,7 @@ export interface MessageParams {
   "workbench.sessions.filter.dateRange": undefined;
   "workbench.sessions.filter.folders": undefined;
   "workbench.sessions.filter.foldersFiltered": undefined;
-  "workbench.sessions.filter.harnessCount": { "count": number; "harness": string };
+  "workbench.sessions.filter.harnessCount": { "harness": string; "count": number };
   "workbench.sessions.filter.options": undefined;
   "workbench.sessions.filter.scope": undefined;
   "workbench.sessions.filter.sort": undefined;
@@ -2829,12 +2871,12 @@ export interface MessageParams {
   "workbench.sessions.transcript.placeholderDetail": undefined;
   "workbench.sessions.transcript.placeholderTitle": undefined;
   "workbench.sessions.transcript.readFailed": undefined;
-  "workbench.sessions.transcript.truncatedDetail": { "file": string; "parsed": string };
+  "workbench.sessions.transcript.truncatedDetail": { "parsed": string; "file": string };
   "workbench.sessions.transcript.truncatedTitle": { "count": number };
   "workbench.skills.appCountNativeDisabled": { "count": number };
-  "workbench.skills.appCountViaGeminiRoot": { "coupled": number; "enabled": number };
-  "workbench.skills.appCountViaSharedRoot": { "coupled": number; "enabled": number };
-  "workbench.skills.appSeesCount": { "count": number; "app": string };
+  "workbench.skills.appCountViaGeminiRoot": { "enabled": number; "coupled": number };
+  "workbench.skills.appCountViaSharedRoot": { "enabled": number; "coupled": number };
+  "workbench.skills.appSeesCount": { "app": string; "count": number };
   "workbench.skills.backups": undefined;
   "workbench.skills.backups.deleteAccessibility": undefined;
   "workbench.skills.backups.deleteConfirmMessage": undefined;
@@ -2900,7 +2942,7 @@ export interface MessageParams {
   "workbench.skills.import.notSkillsDetail": undefined;
   "workbench.skills.import.recognizedCount": { "count": number };
   "workbench.skills.import.subtitle": undefined;
-  "workbench.skills.import.summary": { "adopted": number; "conflicts": number; "unmanaged": number };
+  "workbench.skills.import.summary": { "adopted": number; "unmanaged": number; "conflicts": number };
   "workbench.skills.import.title": undefined;
   "workbench.skills.importExisting": undefined;
   "workbench.skills.install": undefined;
@@ -2940,19 +2982,19 @@ export interface MessageParams {
   "workbench.skills.toast.addRepoFirst": undefined;
   "workbench.skills.toast.allUpToDate": undefined;
   "workbench.skills.toast.archiveEmpty": undefined;
-  "workbench.skills.toast.disabledKeptProjection": { "app": string; "skill": string };
+  "workbench.skills.toast.disabledKeptProjection": { "skill": string; "app": string };
   "workbench.skills.toast.enabledForApps": { "apps": string };
   "workbench.skills.toast.importConflicts": { "count": number };
   "workbench.skills.toast.importRecognized": { "count": number };
   "workbench.skills.toast.installedArchive": { "count": number };
-  "workbench.skills.toast.installedForApps": { "apps": string; "skill": string };
+  "workbench.skills.toast.installedForApps": { "skill": string; "apps": string };
   "workbench.skills.toast.installedShared": { "skill": string };
   "workbench.skills.toast.invalidRepoRef": { "input": string };
   "workbench.skills.toast.linkRemovedStillShared": { "app": string; "skill": string };
   "workbench.skills.toast.noSearchMatches": undefined;
   "workbench.skills.toast.noSkillsFound": undefined;
-  "workbench.skills.toast.notFoundInRepo": { "repo": string; "skill": string };
-  "workbench.skills.toast.projectionClearedFolderKept": { "app": string; "skill": string };
+  "workbench.skills.toast.notFoundInRepo": { "skill": string; "repo": string };
+  "workbench.skills.toast.projectionClearedFolderKept": { "skill": string; "app": string };
   "workbench.skills.toast.recorded": { "count": number };
   "workbench.skills.toast.reposUnreadable": { "count": number };
   "workbench.skills.toast.restored": { "skill": string };
@@ -2960,7 +3002,7 @@ export interface MessageParams {
   "workbench.skills.toast.sharedLibraryNote": undefined;
   "workbench.skills.toast.sharedRootNoSwitch": { "app": string; "skill": string };
   "workbench.skills.toast.uninstalledBackedUp": { "skill": string };
-  "workbench.skills.toast.uninstalledLeftInPlace": { "apps": string; "skill": string };
+  "workbench.skills.toast.uninstalledLeftInPlace": { "skill": string; "apps": string };
   "workbench.skills.toast.updated": { "skill": string };
   "workbench.skills.toast.updatesAvailable": { "count": number };
   "workbench.skills.toggleHelp.installInto": { "app": string };
@@ -3109,14 +3151,12 @@ export const messages: {
     "cost.noUsageYet": "No usage yet",
     "cost.notTracked": "Cost history isn't tracked for {provider}.",
     "cost.openFullCharts": "Open full charts",
-    "cost.perThousandTokens": "{rate} per 1K tokens",
     "cost.provider.title": "{provider} Cost",
     "cost.providerFullCharts": "{provider} Cost — Full Charts",
     "cost.refreshData": "Refresh cost data",
     "cost.refreshProvider": "Refresh {provider} cost",
     "cost.spaceXAI.empty": "No Grok or Cursor usage found yet.",
     "cost.spaceXAI.title": "SpaceXAI Cost",
-    "cost.spentToday": "{amount} spent today",
     "cost.timeframe.all": "All",
     "cost.timeframe.month": "30 days",
     "cost.timeframe.monthShort": "30d",
@@ -3171,17 +3211,11 @@ export const messages: {
     "menuBar.composer.field.size": "Size",
     "menuBar.composer.field.verdicts": "Verdicts",
     "menuBar.composer.field.weight": "Weight",
-    "menuBar.composer.group.add": "New group",
-    "menuBar.composer.group.addHelp": "Each group is one column of the strip. Give a group a second row to stack that column.",
-    "menuBar.composer.group.addRow": "Add a second row",
-    "menuBar.composer.group.empty": "Empty group — drag a block in.",
-    "menuBar.composer.group.mergeLeft": "Merge into the group before it",
-    "menuBar.composer.group.moveLeft": "Move left",
-    "menuBar.composer.group.moveRight": "Move right",
-    "menuBar.composer.group.remove": "Remove group and its blocks",
-    "menuBar.composer.group.removeRow": "Merge the second row up",
-    "menuBar.composer.group.splitHere": "Start a group here",
-    "menuBar.composer.group.title": "Group {index}",
+    "menuBar.composer.group.bind": "Group",
+    "menuBar.composer.group.hint": "Shift-click blocks that sit side by side in one row. A group moves as one — drag any block in it and the whole run goes.",
+    "menuBar.composer.group.notAdjacent": "Only blocks side by side in one row can be grouped.",
+    "menuBar.composer.group.selected": "{count, plural, one {1 block selected} other {# blocks selected}}",
+    "menuBar.composer.group.unbind": "Ungroup",
     "menuBar.composer.metric.displayPercent": "Percent (follows setting)",
     "menuBar.composer.metric.pace": "Pace",
     "menuBar.composer.metric.remainingPercent": "Remaining %",
@@ -3221,8 +3255,18 @@ export const messages: {
     "menuBar.composer.rule.whenForecast": "When the forecast says",
     "menuBar.composer.rule.whenRemainingAtMost": "When remaining is at most",
     "menuBar.composer.rule.whenUsedAtLeast": "When used is at least",
+    "menuBar.composer.segment.add": "New segment",
+    "menuBar.composer.segment.addHelp": "Each segment is one column of the strip. Give a segment a second row to stack that column.",
+    "menuBar.composer.segment.addRow": "Add a second row",
+    "menuBar.composer.segment.empty": "Empty segment — drag a block in.",
+    "menuBar.composer.segment.mergeLeft": "Merge into the segment before it",
+    "menuBar.composer.segment.moveLeft": "Move left",
+    "menuBar.composer.segment.moveRight": "Move right",
+    "menuBar.composer.segment.remove": "Remove segment and its blocks",
+    "menuBar.composer.segment.removeRow": "Merge the second row up",
+    "menuBar.composer.segment.splitHere": "Start a segment here",
+    "menuBar.composer.segment.title": "Segment {index}",
     "menuBar.composer.selected": "Selected block",
-    "menuBar.composer.size.large": "Large",
     "menuBar.composer.size.mini": "Mini",
     "menuBar.composer.size.regular": "Regular",
     "menuBar.composer.size.small": "Small",
@@ -3360,7 +3404,6 @@ export const messages: {
     "platform.macos.menuBar.mergeGroupWindowsDetail": "Shows 5 Hours and Weekly as 5%/100% instead of two entries.",
     "platform.macos.menuBar.percentColor": "Percent color",
     "platform.macos.menuBar.showInMenuBar": "Show in menu bar",
-    "platform.macos.menuBar.showTitleText": "Show title text",
     "popover.header.machinesSubtitle": "End-to-end encrypted remote usage",
     "popover.header.mini": "Mini",
     "popover.header.miscSubtitle": "Usage-only · sign in or paste a key",
@@ -3398,7 +3441,6 @@ export const messages: {
     "quota.bridge.title": "CodexBar Bridge",
     "quota.bucket.noResetInfo": "No reset info",
     "quota.cycleRecordedOnRefill": "A cycle is recorded when the quota refills",
-    "quota.cyclesRecorded": "{count, plural, one {# cycle} other {# cycles}}",
     "quota.empty.needsLogin.detail": "Run `{command} login` in your terminal, then refresh.",
     "quota.empty.network.detail": "Couldn't reach the official API. Check your internet connection and try again.",
     "quota.empty.noAccount.detail": "Log in with the official CLI on this Mac, then refresh.",
@@ -3461,7 +3503,7 @@ export const messages: {
     "quota.forecast.metric.unavailable": "Unavailable",
     "quota.forecast.metric.uncertaintyInterval": "uncertainty interval",
     "quota.forecast.reset.atRisk": "Likely to run out before reset",
-    "quota.forecast.reset.enough": "Forecast {remaining}% left at reset",
+    "quota.forecast.reset.enough": "forecast {percent}% left at reset",
     "quota.forecast.reset.learning": "Learning your pattern · about {remaining}% left",
     "quota.forecast.reset.surplus": "Likely surplus · forecast {remaining}% left",
     "quota.forecast.reset.watch": "May run short · forecast {remaining}% left",
@@ -3554,14 +3596,12 @@ export const messages: {
     "quota.pace.runsOutShort": "out {countdown}",
     "quota.perModelLimits": "{count, plural, one {1 per-model limit} other {# per-model limits}} · open {provider} for details",
     "quota.remainingPercent": "{percent}% left",
-    "quota.reset.in": "resets in {duration}",
+    "quota.reset.in": "Resets in {when}",
     "quota.reset.passed": "reset passed",
     "quota.reset.passedAt": "reset passed · {time}",
     "quota.resetCredits.available": "{count, plural, one {1 manual reset available} other {# manual resets available}}",
     "quota.resetCredits.availableWithExpiry": "{available} · next expires in {countdown}",
     "quota.resetCredits.title": "Limit reset credits",
-    "quota.resetsIn": "resets in {days}d {hours}h",
-    "quota.resetsInHours": "resets in {hours}h {minutes}m",
     "quota.upcoming.axisDays": "+{days}d",
     "quota.upcoming.axisHours": "+{hours}h",
     "quota.upcoming.empty": "Nothing refills in the next seven days.",
@@ -3629,7 +3669,7 @@ export const messages: {
     "resetHistory.verdict.noCycles": "No completed cycles yet — a cycle is recorded when a quota refills.",
     "resetHistory.verdict.noQuota": "No weekly or longer quota is being tracked yet.",
     "resetHistory.verdict.wasteful": "{label} refilled {count, plural, one {once} other {# times}} with more than half unused.",
-    "resetHistory.wastedSummary": "{used}% used · {wasted}% wasted · {cycles, plural, one {1 cycle} other {# cycles}}",
+    "resetHistory.wastedSummary": "{used}% used · {wasted}% wasted · {count, plural, one {1 cycle} other {# cycles}}",
     "resetHistory.window.all": "All",
     "resetHistory.window.eightWeeks": "8w",
     "resetHistory.window.fourWeeks": "4w",
@@ -3675,6 +3715,29 @@ export const messages: {
     "settings.language.caption": "Vibe Bar follows the macOS language unless you pick one here. Provider, model and harness names stay as their owners spell them.",
     "settings.language.system": "Match system",
     "settings.language.title": "Language",
+    "settings.layout.openStudio": "Open Studio",
+    "settings.layout.openStudioHelp": "Arrange this surface beside a full-size, live preview of it.",
+    "settings.layout.previewUnavailable": "This page has no popover tab to preview.",
+    "settings.layout.studioHintFixedStyle": "This style arranges itself. Add or remove fields from the tray below, or open the controls.",
+    "settings.layout.studioHintMini": "Drag a gauge to reorder it. Drop it on the well below to take it out of the window.",
+    "settings.layout.studioHintPage": "Drag a card to move it. Drop it on the well below to hide it.",
+    "settings.layout.studioModeManual": "Manual",
+    "settings.layout.studioRatioEqual": "Equal columns",
+    "settings.layout.studioRatioNarrowWide": "Narrow left, wide right",
+    "settings.layout.studioRatioWideNarrow": "Wide left, narrow right",
+    "settings.layout.studioSubjectPages": "Popover pages",
+    "settings.layout.studioTitle": "Layout Studio",
+    "settings.layout.studioToggleInspector": "Show or hide the controls",
+    "settings.layout.studioTrayAddHelp": "Click to add it at the end, or drag it into the window.",
+    "settings.layout.studioTrayHidden": "Hidden",
+    "settings.layout.studioTrayNotShown": "Not shown",
+    "settings.layout.studioTrayShowHelp": "Click to show it where it was, or drag it onto the page.",
+    "settings.layout.studioUndo": "Undo the last change (⌘Z)",
+    "settings.layout.studioWellHide": "Hide",
+    "settings.layout.studioZoomFit": "Fit",
+    "settings.layout.studioZoomFitHelp": "Fit to the window (⌘0)",
+    "settings.layout.studioZoomIn": "Zoom in (⌘+)",
+    "settings.layout.studioZoomOut": "Zoom out (⌘−)",
     "settings.mcp.allowRefresh": "Allow agents to refresh quota",
     "settings.mcp.allowRefreshDetail": "With this on, an agent can ask Vibe Bar to re-fetch quota from your providers. Forced refreshes are rate-limited to one every {seconds} seconds. With it off the read-only tools keep working and quota.refresh reports that refreshing is disabled.",
     "settings.mcp.allowSkills": "Allow agents to install skills",
@@ -4603,14 +4666,12 @@ export const messages: {
     "cost.noUsageYet": "暂无用量",
     "cost.notTracked": "{provider} 不记录花费历史。",
     "cost.openFullCharts": "打开完整图表",
-    "cost.perThousandTokens": "每千 token {rate}",
     "cost.provider.title": "{provider} 花费",
     "cost.providerFullCharts": "{provider} 花费 — 完整图表",
     "cost.refreshData": "刷新花费数据",
     "cost.refreshProvider": "刷新 {provider} 花费",
     "cost.spaceXAI.empty": "暂未发现 Grok 或 Cursor 的用量。",
     "cost.spaceXAI.title": "SpaceXAI 花费",
-    "cost.spentToday": "今日花费 {amount}",
     "cost.timeframe.all": "全部",
     "cost.timeframe.month": "30 天",
     "cost.timeframe.monthShort": "30 天",
@@ -4665,17 +4726,11 @@ export const messages: {
     "menuBar.composer.field.size": "字号",
     "menuBar.composer.field.verdicts": "预测结论",
     "menuBar.composer.field.weight": "字重",
-    "menuBar.composer.group.add": "新建分组",
-    "menuBar.composer.group.addHelp": "每个分组是条带中的一列。为分组添加第二行可让该列上下堆叠。",
-    "menuBar.composer.group.addRow": "添加第二行",
-    "menuBar.composer.group.empty": "空分组，可将积木拖入。",
-    "menuBar.composer.group.mergeLeft": "并入前一个分组",
-    "menuBar.composer.group.moveLeft": "向左移动",
-    "menuBar.composer.group.moveRight": "向右移动",
-    "menuBar.composer.group.remove": "删除分组及其积木",
-    "menuBar.composer.group.removeRow": "将第二行并入第一行",
-    "menuBar.composer.group.splitHere": "从此处开始新分组",
-    "menuBar.composer.group.title": "分组 {index}",
+    "menuBar.composer.group.bind": "成组",
+    "menuBar.composer.group.hint": "按住 Shift 点选同一行里相邻的积木。成组后它们作为整体移动 —— 拖其中任意一个，整组一起走。",
+    "menuBar.composer.group.notAdjacent": "只有同一行里相邻的积木才能成组。",
+    "menuBar.composer.group.selected": "{count, plural, other {已选 # 个积木}}",
+    "menuBar.composer.group.unbind": "解组",
     "menuBar.composer.metric.displayPercent": "百分比（跟随设置）",
     "menuBar.composer.metric.pace": "消耗速度",
     "menuBar.composer.metric.remainingPercent": "剩余百分比",
@@ -4715,8 +4770,18 @@ export const messages: {
     "menuBar.composer.rule.whenForecast": "当预测结论为",
     "menuBar.composer.rule.whenRemainingAtMost": "剩余不高于",
     "menuBar.composer.rule.whenUsedAtLeast": "已用不低于",
+    "menuBar.composer.segment.add": "新建段",
+    "menuBar.composer.segment.addHelp": "每个段是条带中的一列。为段添加第二行可让该列上下堆叠。",
+    "menuBar.composer.segment.addRow": "添加第二行",
+    "menuBar.composer.segment.empty": "空段，可将积木拖入。",
+    "menuBar.composer.segment.mergeLeft": "并入前一个段",
+    "menuBar.composer.segment.moveLeft": "向左移动",
+    "menuBar.composer.segment.moveRight": "向右移动",
+    "menuBar.composer.segment.remove": "删除该段及其积木",
+    "menuBar.composer.segment.removeRow": "将第二行并入第一行",
+    "menuBar.composer.segment.splitHere": "从此处开始新的段",
+    "menuBar.composer.segment.title": "段 {index}",
     "menuBar.composer.selected": "已选积木",
-    "menuBar.composer.size.large": "大",
     "menuBar.composer.size.mini": "迷你",
     "menuBar.composer.size.regular": "标准",
     "menuBar.composer.size.small": "小",
@@ -4854,7 +4919,6 @@ export const messages: {
     "platform.macos.menuBar.mergeGroupWindowsDetail": "把 5 小时与每周显示为 5%/100%，而不是两条独立条目。",
     "platform.macos.menuBar.percentColor": "百分比配色",
     "platform.macos.menuBar.showInMenuBar": "在菜单栏中显示",
-    "platform.macos.menuBar.showTitleText": "显示标题文字",
     "popover.header.machinesSubtitle": "端到端加密的远程用量",
     "popover.header.mini": "迷你窗口",
     "popover.header.miscSubtitle": "仅用量 · 登录或粘贴密钥",
@@ -4892,7 +4956,6 @@ export const messages: {
     "quota.bridge.title": "CodexBar 桥接",
     "quota.bucket.noResetInfo": "无重置信息",
     "quota.cycleRecordedOnRefill": "额度补满时记录一个周期",
-    "quota.cyclesRecorded": "{count, plural, other {# 个周期}}",
     "quota.empty.needsLogin.detail": "在终端中运行 `{command} login`，然后刷新。",
     "quota.empty.network.detail": "无法连接官方 API，请检查网络后重试。",
     "quota.empty.noAccount.detail": "先在这台 Mac 上用官方 CLI 登录，然后刷新。",
@@ -4955,7 +5018,7 @@ export const messages: {
     "quota.forecast.metric.unavailable": "不可用",
     "quota.forecast.metric.uncertaintyInterval": "不确定区间",
     "quota.forecast.reset.atRisk": "很可能在重置前耗尽",
-    "quota.forecast.reset.enough": "预计重置时剩余 {remaining}%",
+    "quota.forecast.reset.enough": "预计重置时剩余 {percent}%",
     "quota.forecast.reset.learning": "正在学习使用规律 · 约剩余 {remaining}%",
     "quota.forecast.reset.surplus": "预计将有盈余 · 重置时剩余 {remaining}%",
     "quota.forecast.reset.watch": "可能不足 · 预计剩余 {remaining}%",
@@ -5048,14 +5111,12 @@ export const messages: {
     "quota.pace.runsOutShort": "{countdown}耗尽",
     "quota.perModelLimits": "{count, plural, other {# 个}}按模型的限额 · 打开 {provider} 查看详情",
     "quota.remainingPercent": "剩余 {percent}%",
-    "quota.reset.in": "距重置 {duration}",
+    "quota.reset.in": "距重置 {when}",
     "quota.reset.passed": "重置时间已过",
     "quota.reset.passedAt": "重置时间已过 · {time}",
     "quota.resetCredits.available": "{count, plural, other {# 张}}可用重置券",
     "quota.resetCredits.availableWithExpiry": "{available} · 最近一张 {countdown}后过期",
     "quota.resetCredits.title": "限额重置券",
-    "quota.resetsIn": "{days} 天 {hours} 小时后重置",
-    "quota.resetsInHours": "{hours} 小时 {minutes} 分后重置",
     "quota.upcoming.axisDays": "+{days} 天",
     "quota.upcoming.axisHours": "+{hours} 小时",
     "quota.upcoming.empty": "未来 7 天内无额度补满。",
@@ -5123,7 +5184,7 @@ export const messages: {
     "resetHistory.verdict.noCycles": "尚无完整周期 — 额度补满时才会记录一个周期。",
     "resetHistory.verdict.noQuota": "尚未跟踪任何按周或更长周期的额度。",
     "resetHistory.verdict.wasteful": "{label} 有 {count, plural, other {# 次}}补额后超过一半未使用。",
-    "resetHistory.wastedSummary": "已用 {used}% · 浪费 {wasted}% · {cycles, plural, other {# 个周期}}",
+    "resetHistory.wastedSummary": "已用 {used}% · 浪费 {wasted}% · {count, plural, other {# 个周期}}",
     "resetHistory.window.all": "全部",
     "resetHistory.window.eightWeeks": "8 周",
     "resetHistory.window.fourWeeks": "4 周",
@@ -5169,6 +5230,29 @@ export const messages: {
     "settings.language.caption": "Vibe Bar 默认跟随 macOS 语言，也可以在此单独指定。厂商、模型与 harness 名称保持原始拼写。",
     "settings.language.system": "跟随系统",
     "settings.language.title": "语言",
+    "settings.layout.openStudio": "打开工作台",
+    "settings.layout.openStudioHelp": "在整尺寸的实时预览旁边排布这个界面。",
+    "settings.layout.previewUnavailable": "该页面没有可预览的弹出面板标签页。",
+    "settings.layout.studioHintFixedStyle": "这个样式会自动排布。可在下方托盘增减字段，或打开控件。",
+    "settings.layout.studioHintMini": "拖动指标即可重新排序；拖到下方的槽里即可从窗口移除。",
+    "settings.layout.studioHintPage": "拖动卡片即可移动；拖到下方的槽里可以隐藏它。",
+    "settings.layout.studioModeManual": "手动",
+    "settings.layout.studioRatioEqual": "等宽",
+    "settings.layout.studioRatioNarrowWide": "左窄右宽",
+    "settings.layout.studioRatioWideNarrow": "左宽右窄",
+    "settings.layout.studioSubjectPages": "弹出面板页面",
+    "settings.layout.studioTitle": "布局工作台",
+    "settings.layout.studioToggleInspector": "显示或隐藏控件",
+    "settings.layout.studioTrayAddHelp": "点按即可添加到末尾，或拖进窗口。",
+    "settings.layout.studioTrayHidden": "已隐藏",
+    "settings.layout.studioTrayNotShown": "未显示",
+    "settings.layout.studioTrayShowHelp": "点按即可回到原位显示，或拖到页面上。",
+    "settings.layout.studioUndo": "撤销上一步（⌘Z）",
+    "settings.layout.studioWellHide": "隐藏",
+    "settings.layout.studioZoomFit": "适应",
+    "settings.layout.studioZoomFitHelp": "适应窗口（⌘0）",
+    "settings.layout.studioZoomIn": "放大（⌘+）",
+    "settings.layout.studioZoomOut": "缩小（⌘−）",
     "settings.mcp.allowRefresh": "允许 agent 刷新额度",
     "settings.mcp.allowRefreshDetail": "开启后，agent 可以让 Vibe Bar 重新向厂商拉取额度。强制刷新限流为每 {seconds} 秒一次。关闭后只读工具照常可用，quota.refresh 会报告刷新已禁用。",
     "settings.mcp.allowSkills": "允许 agent 安装 skills",

@@ -333,9 +333,9 @@
       "value": "{span} · {start} – {end}",
       "comment": "Caption naming the visible span of the cost chart and the dates at its ends",
       "placeholders": {
-        "end": "string",
         "span": "string",
-        "start": "string"
+        "start": "string",
+        "end": "string"
       }
     },
     "cost.history.granularityDisabled": {
@@ -478,13 +478,6 @@
       "value": "Open full charts",
       "comment": "Tooltip on the expand button of a cost card"
     },
-    "cost.perThousandTokens": {
-      "value": "{rate} per 1K tokens",
-      "comment": "Effective price of a model. {rate} is a raw number the client renders; declared double so the generated API takes a Double rather than a pre-formatted string.",
-      "placeholders": {
-        "rate": "double"
-      }
-    },
     "cost.provider.title": {
       "value": "{provider} Cost",
       "comment": "Cost card title on a provider page; provider is a SubProvider name and is never translated",
@@ -517,13 +510,6 @@
     "cost.spaceXAI.title": {
       "value": "SpaceXAI Cost",
       "comment": "Card title; the company name is never translated"
-    },
-    "cost.spentToday": {
-      "value": "{amount} spent today",
-      "comment": "Cost headline. {amount} arrives already formatted as currency by the client — the catalog never formats money, because the symbol, grouping and placement are the platform's job.",
-      "placeholders": {
-        "amount": "string"
-      }
     },
     "cost.timeframe.all": {
       "value": "All",
@@ -753,52 +739,28 @@
       "value": "Weight",
       "comment": "Picker choosing a block's type weight."
     },
-    "menuBar.composer.group.add": {
-      "value": "New group",
-      "comment": "Palette button adding an empty group to the strip."
+    "menuBar.composer.group.bind": {
+      "value": "Group",
+      "comment": "Button that binds the selected blocks into one run"
     },
-    "menuBar.composer.group.addHelp": {
-      "value": "Each group is one column of the strip. Give a group a second row to stack that column.",
-      "comment": "Tooltip on the New group button."
+    "menuBar.composer.group.hint": {
+      "value": "Shift-click blocks that sit side by side in one row. A group moves as one — drag any block in it and the whole run goes.",
+      "comment": "Explains how to bind blocks and what binding does"
     },
-    "menuBar.composer.group.addRow": {
-      "value": "Add a second row",
-      "comment": "Menu item giving a group a second row."
+    "menuBar.composer.group.notAdjacent": {
+      "value": "Only blocks side by side in one row can be grouped.",
+      "comment": "Shown when the selected blocks cannot be bound"
     },
-    "menuBar.composer.group.empty": {
-      "value": "Empty group — drag a block in.",
-      "comment": "Shown inside a group that has no blocks yet."
-    },
-    "menuBar.composer.group.mergeLeft": {
-      "value": "Merge into the group before it",
-      "comment": "Menu action folding a group into the one before it."
-    },
-    "menuBar.composer.group.moveLeft": {
-      "value": "Move left",
-      "comment": "Menu action moving a group one place earlier."
-    },
-    "menuBar.composer.group.moveRight": {
-      "value": "Move right",
-      "comment": "Menu action moving a group one place later."
-    },
-    "menuBar.composer.group.remove": {
-      "value": "Remove group and its blocks",
-      "comment": "Menu action deleting a group and the blocks in it."
-    },
-    "menuBar.composer.group.removeRow": {
-      "value": "Merge the second row up",
-      "comment": "Menu item closing a group's second row; its blocks join the end of the first."
-    },
-    "menuBar.composer.group.splitHere": {
-      "value": "Start a group here",
-      "comment": "Button starting a new group at the selected block."
-    },
-    "menuBar.composer.group.title": {
-      "value": "Group {index}",
-      "comment": "Header over one group of blocks. Index counts from 1.",
+    "menuBar.composer.group.selected": {
+      "value": "{count, plural, one {1 block selected} other {# blocks selected}}",
+      "comment": "Caption above the grouping actions, counting the selected blocks",
       "placeholders": {
-        "index": "int"
+        "count": "int"
       }
+    },
+    "menuBar.composer.group.unbind": {
+      "value": "Ungroup",
+      "comment": "Button that unbinds a run of blocks"
     },
     "menuBar.composer.metric.displayPercent": {
       "value": "Percent (follows setting)",
@@ -956,13 +918,56 @@
       "value": "When used is at least",
       "comment": "Visibility rule: show once a quota's used percentage reaches a threshold."
     },
+    "menuBar.composer.segment.add": {
+      "value": "New segment",
+      "comment": "Palette button adding an empty group to the strip."
+    },
+    "menuBar.composer.segment.addHelp": {
+      "value": "Each segment is one column of the strip. Give a segment a second row to stack that column.",
+      "comment": "Tooltip on the New group button."
+    },
+    "menuBar.composer.segment.addRow": {
+      "value": "Add a second row",
+      "comment": "Menu item giving a group a second row."
+    },
+    "menuBar.composer.segment.empty": {
+      "value": "Empty segment — drag a block in.",
+      "comment": "Shown inside a group that has no blocks yet."
+    },
+    "menuBar.composer.segment.mergeLeft": {
+      "value": "Merge into the segment before it",
+      "comment": "Menu action folding a group into the one before it."
+    },
+    "menuBar.composer.segment.moveLeft": {
+      "value": "Move left",
+      "comment": "Menu action moving a group one place earlier."
+    },
+    "menuBar.composer.segment.moveRight": {
+      "value": "Move right",
+      "comment": "Menu action moving a group one place later."
+    },
+    "menuBar.composer.segment.remove": {
+      "value": "Remove segment and its blocks",
+      "comment": "Menu action deleting a group and the blocks in it."
+    },
+    "menuBar.composer.segment.removeRow": {
+      "value": "Merge the second row up",
+      "comment": "Menu item closing a group's second row; its blocks join the end of the first."
+    },
+    "menuBar.composer.segment.splitHere": {
+      "value": "Start a segment here",
+      "comment": "Button starting a new group at the selected block."
+    },
+    "menuBar.composer.segment.title": {
+      "value": "Segment {index}",
+      "comment": "Header over one group of blocks. Index counts from 1.",
+      "placeholders": {
+        "index": "int"
+      }
+    },
     "menuBar.composer.selected": {
       "value": "Selected block",
       "comment": "Caption over the controls for the selected block."
-    },
-    "menuBar.composer.size.large": {
-      "value": "Large",
-      "comment": "Type size choice."
     },
     "menuBar.composer.size.mini": {
       "value": "Mini",
@@ -1144,8 +1149,8 @@
       "value": "{kind} quota: {body}",
       "comment": "Accessibility label and tooltip for the status item. Body lists each quota in words.",
       "placeholders": {
-        "body": "string",
-        "kind": "string"
+        "kind": "string",
+        "body": "string"
       }
     },
     "menuBar.spoken.used": {
@@ -1314,8 +1319,8 @@
       "value": "Merged {when} · {count} models",
       "comment": "Status line after a successful merge; when is an already-formatted date",
       "placeholders": {
-        "count": "int",
-        "when": "string"
+        "when": "string",
+        "count": "int"
       }
     },
     "onboarding.pricing.notFetched": {
@@ -1591,10 +1596,6 @@
       "value": "Show in menu bar",
       "comment": "Toggle in the menu-bar item editor. macOS-only: no other client renders a menu-bar extra."
     },
-    "platform.macos.menuBar.showTitleText": {
-      "value": "Show title text",
-      "comment": "Toggle in the menu-bar item editor. macOS-only."
-    },
     "popover.header.machinesSubtitle": {
       "value": "End-to-end encrypted remote usage",
       "comment": "Subtitle under the Machines page header"
@@ -1763,13 +1764,6 @@
       "value": "A cycle is recorded when the quota refills",
       "comment": "Caption under an empty reset-history strip explaining when a cycle is recorded"
     },
-    "quota.cyclesRecorded": {
-      "value": "{count, plural, one {# cycle} other {# cycles}}",
-      "comment": "How many completed reset cycles a quota has on record.",
-      "placeholders": {
-        "count": "int"
-      }
-    },
     "quota.empty.needsLogin.detail": {
       "value": "Run `{command} login` in your terminal, then refresh.",
       "comment": "Empty state body; command is a CLI name such as codex or claude and is never translated",
@@ -1841,8 +1835,8 @@
       "value": "About {unused}% likely unused beyond the {target}% safety target",
       "comment": "Remaining-mode guidance for a surplus verdict",
       "placeholders": {
-        "target": "int",
-        "unused": "int"
+        "unused": "int",
+        "target": "int"
       }
     },
     "quota.forecast.guidance.usedAvailable": {
@@ -1857,8 +1851,8 @@
       "value": "About {unused}% capacity may remain beyond the {target}% used target",
       "comment": "Used-mode guidance for a surplus verdict",
       "placeholders": {
-        "target": "int",
-        "unused": "int"
+        "unused": "int",
+        "target": "int"
       }
     },
     "quota.forecast.guidance.usedWithinTarget": {
@@ -1937,8 +1931,8 @@
       "value": "obs {observations}% · history {history}%",
       "comment": "Value of the coverage metric: observation and reset-history coverage",
       "placeholders": {
-        "history": "int",
-        "observations": "int"
+        "observations": "int",
+        "history": "int"
       }
     },
     "quota.forecast.metric.cyclesPending": {
@@ -1960,16 +1954,16 @@
       "value": "{confidence} · score {score}%",
       "comment": "Detail under the evidence metric; confidence is the forecast's own confidence label",
       "placeholders": {
-        "score": "int",
-        "confidence": "string"
+        "confidence": "string",
+        "score": "int"
       }
     },
     "quota.forecast.metric.evidenceValue": {
       "value": "{observations} obs · {cycles} cycles",
       "comment": "Value of the evidence metric: observations in this cycle and completed cycles behind it",
       "placeholders": {
-        "cycles": "int",
-        "observations": "int"
+        "observations": "int",
+        "cycles": "int"
       }
     },
     "quota.forecast.metric.expectedLeft": {
@@ -2099,10 +2093,10 @@
       "comment": "One-line forecast summary"
     },
     "quota.forecast.reset.enough": {
-      "value": "Forecast {remaining}% left at reset",
-      "comment": "One-line forecast summary",
+      "value": "forecast {percent}% left at reset",
+      "comment": "Row caption showing the forecast remaining quota at the refill",
       "placeholders": {
-        "remaining": "int"
+        "percent": "int"
       }
     },
     "quota.forecast.reset.learning": {
@@ -2349,8 +2343,8 @@
       "value": "{names} +{count}",
       "comment": "Scope note when a group holds more quotas than the note can name; names are the ones it did name",
       "placeholders": {
-        "count": "int",
-        "names": "string"
+        "names": "string",
+        "count": "int"
       }
     },
     "quota.history.moreReadings": {
@@ -2380,8 +2374,8 @@
       "comment": "Footer under a quota history chart; scope names what the chart covers, visible and total are compact spans such as 7d",
       "placeholders": {
         "scope": "string",
-        "total": "string",
-        "visible": "string"
+        "visible": "string",
+        "total": "string"
       }
     },
     "quota.history.showAllCurves": {
@@ -2511,9 +2505,9 @@
       "value": "{subProvider} — {row}: {percent}%",
       "comment": "Tooltip on a mini window row; subProvider and row are names, percent the current reading",
       "placeholders": {
-        "percent": "int",
+        "subProvider": "string",
         "row": "string",
-        "subProvider": "string"
+        "percent": "int"
       }
     },
     "quota.misc.independentCopies": {
@@ -2619,10 +2613,10 @@
       }
     },
     "quota.reset.in": {
-      "value": "resets in {duration}",
-      "comment": "Live countdown to a bucket's refill; duration is a compact span, sometimes followed by an absolute time",
+      "value": "Resets in {when}",
+      "comment": "Caption under a quota bar; when is a countdown, sometimes with an absolute time",
       "placeholders": {
-        "duration": "string"
+        "when": "string"
       }
     },
     "quota.reset.passed": {
@@ -2654,22 +2648,6 @@
     "quota.resetCredits.title": {
       "value": "Limit reset credits",
       "comment": "Card title for the manual rate-limit resets a Codex plan grants"
-    },
-    "quota.resetsIn": {
-      "value": "resets in {days}d {hours}h",
-      "comment": "Countdown beside a quota bar. Both values are whole numbers; the caller drops the day part when it is zero by using quota.resetsInHours instead.",
-      "placeholders": {
-        "days": "int",
-        "hours": "int"
-      }
-    },
-    "quota.resetsInHours": {
-      "value": "resets in {hours}h {minutes}m",
-      "comment": "Countdown beside a quota bar when less than a day remains.",
-      "placeholders": {
-        "hours": "int",
-        "minutes": "int"
-      }
     },
     "quota.upcoming.axisDays": {
       "value": "+{days}d",
@@ -2704,26 +2682,26 @@
       "value": "{remaining}% left now · +{gain}% comes back",
       "comment": "Row caption on the resets timeline",
       "placeholders": {
-        "gain": "int",
-        "remaining": "int"
+        "remaining": "int",
+        "gain": "int"
       }
     },
     "quota.upcoming.markerHelp": {
       "value": "{label} — {remaining}% now, +{gain}% {countdown}",
       "comment": "Tooltip on a marker in the resets timeline; label names the bucket and is not translated",
       "placeholders": {
-        "gain": "int",
+        "label": "string",
         "remaining": "int",
-        "countdown": "string",
-        "label": "string"
+        "gain": "int",
+        "countdown": "string"
       }
     },
     "quota.upcoming.resetsAt": {
       "value": "resets {countdown} · {absolute}",
       "comment": "Row caption: how long until a bucket refills and when that is",
       "placeholders": {
-        "absolute": "string",
-        "countdown": "string"
+        "countdown": "string",
+        "absolute": "string"
       }
     },
     "quota.upcoming.title": {
@@ -2758,8 +2736,8 @@
       "comment": "Window progress line for a sub-day window; window is its length, elapsed how much of it is gone",
       "placeholders": {
         "elapsed": "string",
-        "value": "string",
-        "window": "string"
+        "window": "string",
+        "value": "string"
       }
     },
     "quota.window.resetsSoon": {
@@ -2787,12 +2765,12 @@
       "value": "Reset history comparison, {window}, bar height is the quota remaining at reset.{truncation} {headline}. {verdict} {lanes}.{more}",
       "comment": "Whole-module screen-reader text; the lanes are a drawing surface, so this is all VoiceOver gets",
       "placeholders": {
-        "headline": "string",
-        "lanes": "string",
-        "more": "string",
+        "window": "string",
         "truncation": "string",
+        "headline": "string",
         "verdict": "string",
-        "window": "string"
+        "lanes": "string",
+        "more": "string"
       }
     },
     "resetHistory.a11y.truncation": {
@@ -2856,17 +2834,17 @@
       "value": "Current cycle · {used}% used so far · {left}% left",
       "comment": "Caption for the cycle still running in the reset-history strip",
       "placeholders": {
-        "left": "int",
-        "used": "int"
+        "used": "int",
+        "left": "int"
       }
     },
     "resetHistory.cycleCaption": {
       "value": "{time} reset · {used}% used · {left}% left",
       "comment": "Caption for one completed cycle in the reset-history strip; time is the reset moment",
       "placeholders": {
-        "left": "int",
+        "time": "string",
         "used": "int",
-        "time": "string"
+        "left": "int"
       }
     },
     "resetHistory.earlyRefillCount": {
@@ -2891,16 +2869,16 @@
       "value": "{label}: {percent}% wasted on average over {count} cycles",
       "comment": "One lane inside the screen-reader summary",
       "placeholders": {
-        "count": "int",
         "label": "string",
-        "percent": "string"
+        "percent": "string",
+        "count": "int"
       }
     },
     "resetHistory.laneAverage": {
       "value": "avg wasted {percent}% · last {count, plural, one {1 cycle} other {# cycles}}",
       "comment": "Line under a lane label; says how many cycles it averages so one cycle cannot read as a settled habit",
       "placeholders": {
-        "percent": "int",
+        "percent": "string",
         "count": "int"
       }
     },
@@ -3010,16 +2988,16 @@
       "value": "{start} → {end} reset",
       "comment": "Tooltip line naming the span a finished cycle covered",
       "placeholders": {
-        "end": "string",
-        "start": "string"
+        "start": "string",
+        "end": "string"
       }
     },
     "resetHistory.tooltip.rangeDue": {
       "value": "{start} → {end} reset due",
       "comment": "Tooltip line naming the span of the cycle still running and when it is due to reset",
       "placeholders": {
-        "end": "string",
-        "start": "string"
+        "start": "string",
+        "end": "string"
       }
     },
     "resetHistory.totals.none": {
@@ -3045,9 +3023,9 @@
       "value": "{label} left {percent}% unused on average across {count, plural, one {1 cycle} other {# cycles}}.",
       "comment": "Header sentence quoting the leakiest quota's average",
       "placeholders": {
-        "count": "int",
         "label": "string",
-        "percent": "string"
+        "percent": "string",
+        "count": "int"
       }
     },
     "resetHistory.verdict.noCycles": {
@@ -3062,17 +3040,17 @@
       "value": "{label} refilled {count, plural, one {once} other {# times}} with more than half unused.",
       "comment": "Header sentence naming the leakiest quota; label is a quota name and is not translated",
       "placeholders": {
-        "count": "int",
-        "label": "string"
+        "label": "string",
+        "count": "int"
       }
     },
     "resetHistory.wastedSummary": {
-      "value": "{used}% used · {wasted}% wasted · {cycles, plural, one {1 cycle} other {# cycles}}",
+      "value": "{used}% used · {wasted}% wasted · {count, plural, one {1 cycle} other {# cycles}}",
       "comment": "Header arithmetic across every visible lane",
       "placeholders": {
-        "used": "int",
-        "wasted": "int",
-        "cycles": "int"
+        "used": "string",
+        "wasted": "string",
+        "count": "int"
       }
     },
     "resetHistory.window.all": {
@@ -3263,6 +3241,98 @@
     "settings.language.title": {
       "value": "Language",
       "comment": "Settings row label for the in-app language override"
+    },
+    "settings.layout.openStudio": {
+      "value": "Open Studio",
+      "comment": "Button that opens the full-size layout studio window"
+    },
+    "settings.layout.openStudioHelp": {
+      "value": "Arrange this surface beside a full-size, live preview of it.",
+      "comment": "Tooltip for the studio button"
+    },
+    "settings.layout.previewUnavailable": {
+      "value": "This page has no popover tab to preview.",
+      "comment": "Shown when a layout page has no popover tab to draw"
+    },
+    "settings.layout.studioHintFixedStyle": {
+      "value": "This style arranges itself. Add or remove fields from the tray below, or open the controls.",
+      "comment": "One-line hint for a mini window style (Focus, Rail) that arranges itself"
+    },
+    "settings.layout.studioHintMini": {
+      "value": "Drag a gauge to reorder it. Drop it on the well below to take it out of the window.",
+      "comment": "One-line hint shown when the studio opens on a mini window whose cells can be dragged"
+    },
+    "settings.layout.studioHintPage": {
+      "value": "Drag a card to move it. Drop it on the well below to hide it.",
+      "comment": "One-line hint shown when the studio opens on a popover page"
+    },
+    "settings.layout.studioModeManual": {
+      "value": "Manual",
+      "comment": "Arranging mode in the studio's mode pill"
+    },
+    "settings.layout.studioRatioEqual": {
+      "value": "Equal columns",
+      "comment": "Tooltip for a column-width split"
+    },
+    "settings.layout.studioRatioNarrowWide": {
+      "value": "Narrow left, wide right",
+      "comment": "Tooltip for a column-width split"
+    },
+    "settings.layout.studioRatioWideNarrow": {
+      "value": "Wide left, narrow right",
+      "comment": "Tooltip for a column-width split"
+    },
+    "settings.layout.studioSubjectPages": {
+      "value": "Popover pages",
+      "comment": "Menu section in the studio's subject picker: the popover's pages"
+    },
+    "settings.layout.studioTitle": {
+      "value": "Layout Studio",
+      "comment": "Title of the layout studio window"
+    },
+    "settings.layout.studioToggleInspector": {
+      "value": "Show or hide the controls",
+      "comment": "Tooltip for the button that hides the studio's controls"
+    },
+    "settings.layout.studioTrayAddHelp": {
+      "value": "Click to add it at the end, or drag it into the window.",
+      "comment": "Tooltip for a not-shown field's chip in the tray"
+    },
+    "settings.layout.studioTrayHidden": {
+      "value": "Hidden",
+      "comment": "Caption of the tray of hidden cards under a page"
+    },
+    "settings.layout.studioTrayNotShown": {
+      "value": "Not shown",
+      "comment": "Caption of the tray of fields a mini window is not showing"
+    },
+    "settings.layout.studioTrayShowHelp": {
+      "value": "Click to show it where it was, or drag it onto the page.",
+      "comment": "Tooltip for a hidden card's chip in the tray"
+    },
+    "settings.layout.studioUndo": {
+      "value": "Undo the last change (⌘Z)",
+      "comment": "Tooltip for the studio's undo button"
+    },
+    "settings.layout.studioWellHide": {
+      "value": "Hide",
+      "comment": "Drop target shown under a page while a card is being dragged distinct-from: onboarding.apiKeys.hide — hiding a card and folding a credential form away are different acts: zh-Hans says 隐藏 for one and 收起 for the other."
+    },
+    "settings.layout.studioZoomFit": {
+      "value": "Fit",
+      "comment": "Zoom control: shrink the surface to fit the stage"
+    },
+    "settings.layout.studioZoomFitHelp": {
+      "value": "Fit to the window (⌘0)",
+      "comment": "Tooltip for the zoom readout, which resets the zoom to fit the stage"
+    },
+    "settings.layout.studioZoomIn": {
+      "value": "Zoom in (⌘+)",
+      "comment": "Tooltip for the studio's zoom-in button"
+    },
+    "settings.layout.studioZoomOut": {
+      "value": "Zoom out (⌘−)",
+      "comment": "Tooltip for the studio's zoom-out button"
     },
     "settings.mcp.allowRefresh": {
       "value": "Allow agents to refresh quota",
@@ -4105,8 +4175,8 @@
       "value": "{title} · {code}",
       "comment": "Sync status line: a translated title and the raw status code distinct-from: popover.header.updatedLine — the value is two placeholders and a separator, so the placeholder names are the only part of it that carries meaning; one key cannot name both halves of six different pairs.",
       "placeholders": {
-        "code": "string",
-        "title": "string"
+        "title": "string",
+        "code": "string"
       }
     },
     "settings.remote.sync.busy": {
@@ -4695,17 +4765,17 @@
       "value": "Peak {hour} · {day}",
       "comment": "Caption naming the busiest hour of the activity card when the peak hour and peak cell agree",
       "placeholders": {
-        "day": "string",
-        "hour": "string"
+        "hour": "string",
+        "day": "string"
       }
     },
     "usage.activity.peakCell": {
       "value": "Peak {hour} · {day} {cellHour}",
       "comment": "Caption naming the busiest hour overall and the busiest single cell when they differ",
       "placeholders": {
-        "cellHour": "string",
+        "hour": "string",
         "day": "string",
-        "hour": "string"
+        "cellHour": "string"
       }
     },
     "usage.activity.quiet": {
@@ -4747,8 +4817,8 @@
       "value": "{start} to {end}",
       "comment": "Accessibility value of the chart range navigator; both ends are already formatted dates",
       "placeholders": {
-        "end": "string",
-        "start": "string"
+        "start": "string",
+        "end": "string"
       }
     },
     "usage.chartNavigator.showFullRange": {
@@ -4877,8 +4947,8 @@
       "value": "{start} – {end}",
       "comment": "Date-range pill value: two already-formatted dates around an en dash.",
       "placeholders": {
-        "end": "string",
-        "start": "string"
+        "start": "string",
+        "end": "string"
       }
     },
     "usage.filters.refreshInterval": {
@@ -5221,9 +5291,9 @@
       "value": "{period}, {tokens}, {cost}",
       "comment": "Screen-reader label for a Periods row; every argument arrives already formatted.",
       "placeholders": {
-        "cost": "string",
         "period": "string",
-        "tokens": "string"
+        "tokens": "string",
+        "cost": "string"
       }
     },
     "usage.table.projectCount": {
@@ -5237,11 +5307,11 @@
       "value": "{time}, {harness}, {model}, {tokens}, {cost}",
       "comment": "Screen-reader label for a Requests row; time, model, tokens and cost arrive formatted and harness is a name.",
       "placeholders": {
-        "cost": "string",
+        "time": "string",
         "harness": "string",
         "model": "string",
-        "time": "string",
-        "tokens": "string"
+        "tokens": "string",
+        "cost": "string"
       }
     },
     "usage.table.requestsLabel": {
@@ -5268,10 +5338,10 @@
       "value": "{name}, {requests, plural, one {1 request} other {# requests}}, {tokens}, {cost}",
       "comment": "Screen-reader label for a Providers, Projects or Models row; name is a company, project or model name and tokens and cost arrive formatted.",
       "placeholders": {
-        "requests": "int",
-        "cost": "string",
         "name": "string",
-        "tokens": "string"
+        "requests": "int",
+        "tokens": "string",
+        "cost": "string"
       }
     },
     "usage.table.unpriced": {
@@ -5307,8 +5377,8 @@
       "comment": "Screen-reader value of the trend chart; tokens and cost arrive already formatted, e.g. 3.40M and $12.34.",
       "placeholders": {
         "count": "int",
-        "cost": "string",
-        "tokens": "string"
+        "tokens": "string",
+        "cost": "string"
       }
     },
     "usage.trend.bucketDay": {
@@ -5333,7 +5403,7 @@
     },
     "usage.trend.fit": {
       "value": "Fit",
-      "comment": "Button that widens the chart back to the whole selected window."
+      "comment": "Button that widens the chart back to the whole selected window. distinct-from: settings.layout.studioZoomFit — zooming a stage to fit the window and widening a chart back to its whole range are different acts: zh-Hans says 适应 for one and 全览 for the other."
     },
     "usage.trend.fitHelp": {
       "value": "Show the full selected window",
@@ -5428,8 +5498,8 @@
       "value": "{provider} daily spend over the past year, {count, plural, one {1 week} other {# weeks}}",
       "comment": "Accessibility label for the past-year grid; count is how many week columns it draws",
       "placeholders": {
-        "count": "int",
-        "provider": "string"
+        "provider": "string",
+        "count": "int"
       }
     },
     "usage.yearHeatmap.less": {
@@ -5451,8 +5521,8 @@
       "value": "{date} · {amount}",
       "comment": "Tooltip on one day of the past-year grid distinct-from: popover.header.updatedLine — the value is two placeholders and a separator, so the placeholder names are the only part of it that carries meaning; one key cannot name both halves of six different pairs.",
       "placeholders": {
-        "amount": "string",
-        "date": "string"
+        "date": "string",
+        "amount": "string"
       }
     },
     "usage.yearHeatmap.total": {
@@ -5537,17 +5607,17 @@
       "value": "{lane} +{percent}%",
       "comment": "One refill inside a calendar day cell; lane is a SubProvider name",
       "placeholders": {
-        "percent": "int",
-        "lane": "string"
+        "lane": "string",
+        "percent": "int"
       }
     },
     "workbench.resets.calendar.futureEntry": {
       "value": "{lane} — resets {time}, +{percent}% back",
       "comment": "Tooltip for a scheduled reset in the calendar; lane names the quota, time is an absolute date and time",
       "placeholders": {
-        "percent": "int",
         "lane": "string",
-        "time": "string"
+        "time": "string",
+        "percent": "int"
       }
     },
     "workbench.resets.calendar.nextMonth": {
@@ -5558,9 +5628,9 @@
       "value": "{lane} — reset {time} at {percent}% used",
       "comment": "Tooltip for a recorded reset in the calendar; lane names the quota, time is an absolute date and time, percent is how much of the window had been spent when it refilled",
       "placeholders": {
-        "percent": "int",
         "lane": "string",
-        "time": "string"
+        "time": "string",
+        "percent": "int"
       }
     },
     "workbench.resets.calendar.previousMonth": {
@@ -5789,8 +5859,8 @@
       "value": "{harness}  {count}",
       "comment": "One row of the Sessions Harness menu: the harness name and how many sessions it has. The name is never translated. distinct-from: quota.forecast.legend.item — a legend marker's name and the figure it marks, and a harness with its session count, are different pairs; the placeholder names are the sentence.",
       "placeholders": {
-        "count": "int",
-        "harness": "string"
+        "harness": "string",
+        "count": "int"
       }
     },
     "workbench.sessions.filter.options": {
@@ -6210,8 +6280,8 @@
       "value": "{parsed} read of {file}. Reading all of it holds the whole transcript in memory.",
       "comment": "Truncation banner detail. Both sizes arrive already formatted as byte counts.",
       "placeholders": {
-        "file": "string",
-        "parsed": "string"
+        "parsed": "string",
+        "file": "string"
       }
     },
     "workbench.sessions.transcript.truncatedTitle": {
@@ -6232,24 +6302,24 @@
       "value": "{enabled} enabled + {coupled} via the Gemini CLI compatibility root",
       "comment": "Second clause of the per-harness count tooltip, for AntiGravity, which sees skills through the Gemini CLI folder.",
       "placeholders": {
-        "coupled": "int",
-        "enabled": "int"
+        "enabled": "int",
+        "coupled": "int"
       }
     },
     "workbench.skills.appCountViaSharedRoot": {
       "value": "{enabled} enabled + {coupled} via the shared skills root",
       "comment": "Second clause of the per-harness count tooltip, for a harness that scans the shared root itself.",
       "placeholders": {
-        "coupled": "int",
-        "enabled": "int"
+        "enabled": "int",
+        "coupled": "int"
       }
     },
     "workbench.skills.appSeesCount": {
       "value": "{app} sees {count, plural, one {# skill} other {# skills}}",
       "comment": "Skills page per-harness count pill: its tooltip and its accessibility label. {app} is a harness display name and is never translated.",
       "placeholders": {
-        "count": "int",
-        "app": "string"
+        "app": "string",
+        "count": "int"
       }
     },
     "workbench.skills.backups": {
@@ -6566,8 +6636,8 @@
       "comment": "Import sheet footer totals across the scan's four sections.",
       "placeholders": {
         "adopted": "int",
-        "conflicts": "int",
-        "unmanaged": "int"
+        "unmanaged": "int",
+        "conflicts": "int"
       }
     },
     "workbench.skills.import.title": {
@@ -6768,8 +6838,8 @@
       "value": "Disabled {skill} in {app} and kept its projection.",
       "comment": "Toast after flipping a harness's own per-skill switch off.",
       "placeholders": {
-        "app": "string",
-        "skill": "string"
+        "skill": "string",
+        "app": "string"
       }
     },
     "workbench.skills.toast.enabledForApps": {
@@ -6804,8 +6874,8 @@
       "value": "Installed {skill} for {apps}.",
       "comment": "Toast after installing one skill into the selected harnesses. {apps} is a list of harness names.",
       "placeholders": {
-        "apps": "string",
-        "skill": "string"
+        "skill": "string",
+        "apps": "string"
       }
     },
     "workbench.skills.toast.installedShared": {
@@ -6842,16 +6912,16 @@
       "value": "{skill} was not found in {repo}.",
       "comment": "Toast when a skills.sh hit is missing from the repository it named.",
       "placeholders": {
-        "repo": "string",
-        "skill": "string"
+        "skill": "string",
+        "repo": "string"
       }
     },
     "workbench.skills.toast.projectionClearedFolderKept": {
       "value": "{skill}'s Vibe Bar projection was cleared for {app}, but the existing folder was left in place.",
       "comment": "Toast after removing a projection that turned out to be a real folder Vibe Bar did not create.",
       "placeholders": {
-        "app": "string",
-        "skill": "string"
+        "skill": "string",
+        "app": "string"
       }
     },
     "workbench.skills.toast.recorded": {
@@ -6902,8 +6972,8 @@
       "value": "Uninstalled {skill}. Left in place for {apps}.",
       "comment": "Toast after an uninstall that left real folders in some harnesses. {apps} is a list of harness names.",
       "placeholders": {
-        "apps": "string",
-        "skill": "string"
+        "skill": "string",
+        "apps": "string"
       }
     },
     "workbench.skills.toast.updated": {

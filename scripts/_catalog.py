@@ -469,6 +469,32 @@ def load_catalog(locale, path):
     return Catalog(locale=raw.get("locale", locale), path=path, entries=entries)
 
 
+def ordered_placeholders(declared, value):
+    # type: (Dict[str, str], str) -> Dict[str, str]
+    """The declared placeholders, in the order the value first names them.
+
+    For *writers* — the importer, a script that adds a key — so that a new
+    declaration reads the way its English does: `Resets in {days} {hours}`
+    is declared days, hours, and the typed APIs say `(days:hours:)`.
+
+    Deliberately not applied when a catalogue is *read*. Declaration order
+    is the API order — the Swift parameter list, the TypeScript object type,
+    the positional format indices — and it has to stay put once a key is
+    published: deriving it from the sentence would let a wording edit
+    (`{start} – {end}` becoming `{end} – {start}`) silently reverse a Swift
+    signature every caller has already spelled.
+    """
+    order = []
+    for match in re.finditer(r"\{([A-Za-z0-9_]+)\s*(?:,|\})", value):
+        name = match.group(1)
+        if name in declared and name not in order:
+            order.append(name)
+    for name in declared:
+        if name not in order:
+            order.append(name)
+    return dict((name, declared[name]) for name in order)
+
+
 def load_all(catalog_dir=CATALOG_DIR):
     # type: (str) -> List[Catalog]
     return [load_catalog(locale, path) for locale, path in locale_files(catalog_dir)]

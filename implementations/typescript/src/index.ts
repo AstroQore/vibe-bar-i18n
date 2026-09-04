@@ -95,8 +95,8 @@ function detectLocale(): Locale {
  *
  * ```ts
  * t("common.retry");
- * t("quota.resetsIn", { days: 3, hours: 18 });
- * t("quota.cyclesRecorded", { count: 2 });
+ * t("common.duration.full.daysHours", { days: "3 days", hours: "18 hours" });
+ * t("common.duration.full.days", { count: 2 });
  * ```
  *
  * The key is a union type and the parameter object is derived from it, so

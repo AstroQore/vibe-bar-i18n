@@ -67,7 +67,7 @@ sys.path.insert(0, HERE)
 # and the first version of this script proved the point: a regex looking for
 # `{name}` read the plural branch `one {once}` as a placeholder named
 # "once", and declared an argument no caller passes.
-from _catalog import parse_icu, used_placeholders  # noqa: E402
+from _catalog import ordered_placeholders, parse_icu, used_placeholders  # noqa: E402
 from validate import _reuse_signature  # noqa: E402
 
 # ---------------------------------------------------------------------------
@@ -173,6 +173,7 @@ COLLAPSE: Dict[str, List[str]] = {
         "cost.granularity.auto", "settings.credentialSource.auto",
         "settings.usageMode.auto", "usage.filters.autoMenu",
         "usage.trend.granularityAuto",
+        "settings.layout.studioModeAuto",
     ],
     "common.duration.days": ["quota.freshness.age.days"],
     "common.duration.hours": ["quota.freshness.age.hours"],
@@ -185,8 +186,18 @@ COLLAPSE: Dict[str, List[str]] = {
     "common.provider": [
         "menuBar.composer.field.provider", "usage.table.column.provider",
     ],
-    "common.remove": ["menuBar.composer.action.remove"],
+    "common.remove": ["menuBar.composer.action.remove",
+        "settings.layout.studioWellRemove",
+    ],
     "common.updated.justNow": ["status.card.updatedJustNow"],
+    # --- fourth import: the Layout Studio, whose chrome reuses words the app
+    # already had. Casing differs on one ("Mini windows" / "Mini Windows"):
+    # the studio's menu section takes the heading's Title Case, which is how
+    # macOS spells a menu section anyway.
+    "menuBar.composer.preview": [
+        "settings.layout.preview", "settings.miniWindow.preview",
+    ],
+    "settings.section.miniWindows": ["settings.layout.studioSubjectMiniWindows"],
     "cost.timeframe.month": ["workbench.sessions.range.month"],
     "cost.timeframe.today": [
         "cost.metric.today", "workbench.sessions.range.today",
@@ -208,6 +219,7 @@ COLLAPSE: Dict[str, List[str]] = {
     ],
     "menuBar.composer.template.compact": [
         "platform.macos.menuBar.layout.compact",
+        "settings.layout.studioModeCompact",
     ],
     "menuBar.composer.template.twoRows": [
         "platform.macos.menuBar.layout.twoRows",
@@ -300,6 +312,14 @@ COLLAPSE: Dict[str, List[str]] = {
 # keep saying. A group with more than one key and no reason here fails the
 # conversion rather than reaching the validator.
 DISTINCT_REASONS: Dict[str, str] = {
+    # --- fourth import ---------------------------------------------------
+    "settings.layout.studioWellHide":
+        "hiding a card and folding a credential form away are different "
+        "acts: zh-Hans says 隐藏 for one and 收起 for the other",
+    "settings.layout.studioZoomFit":
+        "zooming a stage to fit the window and widening a chart back to "
+        "its whole range are different acts: zh-Hans says 适应 for one and "
+        "全览 for the other",
     # --- third import ---------------------------------------------------
     "common.duration.full.hoursMinutes":
         "the same shape with different placeholders: one takes days and "
@@ -611,21 +631,11 @@ KEEP_SHARED_MEANING: Dict[str, Dict[str, str]] = {
 }
 
 ADOPT_FROM_APP: Dict[str, Dict[str, object]] = {
-    "resetHistory.wastedSummary": {
-        "why": "adds the plural English needs; keeps {cycles} and its int type",
-        "en": "{used}% used · {wasted}% wasted · "
-              "{cycles, plural, one {1 cycle} other {# cycles}}",
-        "zh-Hans": "已用 {used}% · 浪费 {wasted}% · "
-                   "{cycles, plural, other {# 个周期}}",
-        "placeholders": {"used": "int", "wasted": "int", "cycles": "int"},
-    },
-    "resetHistory.laneAverage": {
-        "why": "adds the plural English needs; keeps {percent}/{count} as ints",
-        "en": "avg wasted {percent}% · last "
-              "{count, plural, one {1 cycle} other {# cycles}}",
-        "zh-Hans": "平均浪费 {percent}% · 最近 {count, plural, other {# 个周期}}",
-        "placeholders": {"percent": "int", "count": "int"},
-    },
+    # Empty since the fourth import: the two entries that lived here (the
+    # reset-history summaries) declared `{cycles}` and integer percentages
+    # that the app had since moved away from, so every re-run would have
+    # quietly put the old signatures back. The app's own sentences carry the
+    # plurals now, and the catalogue holds the app's definitions.
 }
 
 KEY_PATTERN = re.compile(r"^[a-z][a-zA-Z0-9]*(\.[a-z][a-zA-Z0-9]*)+$")
@@ -711,7 +721,11 @@ def convert(app_root: str, problems: List[str]) -> Tuple[dict, dict, dict]:
             )
             continue
         if declared:
-            out["placeholders"] = declared
+            # Declared in the order the sentence names them: that order is
+            # the typed API's parameter order from now on (see
+            # `_catalog.ordered_placeholders`), and it should read like the
+            # English does rather than like the alphabet.
+            out["placeholders"] = ordered_placeholders(declared, entry["value"])
         converted[renamed] = out
         mapping[key] = renamed
 

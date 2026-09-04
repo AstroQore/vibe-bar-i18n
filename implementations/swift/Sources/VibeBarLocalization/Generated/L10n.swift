@@ -341,14 +341,6 @@ public enum L10n {
         /// en: "Open full charts"
         public static var openFullCharts: String { L10nSupport.string("cost.openFullCharts") }
 
-        /// Effective price of a model. {rate} is a raw number the client renders; declared double so the generated API takes a Double rather than a pre-formatted string.
-        ///
-        /// Key: `cost.perThousandTokens`
-        /// en: "{rate} per 1K tokens"
-        public static func perThousandTokens(rate: Double) -> String {
-            L10nSupport.format("cost.perThousandTokens", rate)
-        }
-
         /// Title of the expanded cost popover; provider is a company name and is never translated
         ///
         /// Key: `cost.providerFullCharts`
@@ -369,14 +361,6 @@ public enum L10n {
         /// en: "Refresh {provider} cost"
         public static func refreshProvider(provider: String) -> String {
             L10nSupport.format("cost.refreshProvider", provider)
-        }
-
-        /// Cost headline. {amount} arrives already formatted as currency by the client — the catalog never formats money, because the symbol, grouping and placement are the platform's job.
-        ///
-        /// Key: `cost.spentToday`
-        /// en: "{amount} spent today"
-        public static func spentToday(amount: String) -> String {
-            L10nSupport.format("cost.spentToday", amount)
         }
 
         /// Card title on a provider page
@@ -540,8 +524,8 @@ public enum L10n {
             ///
             /// Key: `cost.history.extentNote`
             /// en: "{span} · {start} – {end}"
-            public static func extentNote(end: String, span: String, start: String) -> String {
-                L10nSupport.format("cost.history.extentNote", end, span, start)
+            public static func extentNote(span: String, start: String, end: String) -> String {
+                L10nSupport.format("cost.history.extentNote", span, start, end)
             }
 
             /// Tooltip on a bucket-width button the current zoom level cannot draw
@@ -1133,73 +1117,37 @@ public enum L10n {
             }
 
             public enum Group {
-                /// Palette button adding an empty group to the strip.
+                /// Button that binds the selected blocks into one run
                 ///
-                /// Key: `menuBar.composer.group.add`
-                /// en: "New group"
-                public static var add: String { L10nSupport.string("menuBar.composer.group.add") }
+                /// Key: `menuBar.composer.group.bind`
+                /// en: "Group"
+                public static var bind: String { L10nSupport.string("menuBar.composer.group.bind") }
 
-                /// Tooltip on the New group button.
+                /// Explains how to bind blocks and what binding does
                 ///
-                /// Key: `menuBar.composer.group.addHelp`
-                /// en: "Each group is one column of the strip. Give a group a second row to stack that column."
-                public static var addHelp: String { L10nSupport.string("menuBar.composer.group.addHelp") }
+                /// Key: `menuBar.composer.group.hint`
+                /// en: "Shift-click blocks that sit side by side in one row. A group moves as one — drag any block in it and the whole run goes."
+                public static var hint: String { L10nSupport.string("menuBar.composer.group.hint") }
 
-                /// Menu item giving a group a second row.
+                /// Shown when the selected blocks cannot be bound
                 ///
-                /// Key: `menuBar.composer.group.addRow`
-                /// en: "Add a second row"
-                public static var addRow: String { L10nSupport.string("menuBar.composer.group.addRow") }
+                /// Key: `menuBar.composer.group.notAdjacent`
+                /// en: "Only blocks side by side in one row can be grouped."
+                public static var notAdjacent: String { L10nSupport.string("menuBar.composer.group.notAdjacent") }
 
-                /// Shown inside a group that has no blocks yet.
+                /// Caption above the grouping actions, counting the selected blocks
                 ///
-                /// Key: `menuBar.composer.group.empty`
-                /// en: "Empty group — drag a block in."
-                public static var empty: String { L10nSupport.string("menuBar.composer.group.empty") }
-
-                /// Menu action folding a group into the one before it.
-                ///
-                /// Key: `menuBar.composer.group.mergeLeft`
-                /// en: "Merge into the group before it"
-                public static var mergeLeft: String { L10nSupport.string("menuBar.composer.group.mergeLeft") }
-
-                /// Menu action moving a group one place earlier.
-                ///
-                /// Key: `menuBar.composer.group.moveLeft`
-                /// en: "Move left"
-                public static var moveLeft: String { L10nSupport.string("menuBar.composer.group.moveLeft") }
-
-                /// Menu action moving a group one place later.
-                ///
-                /// Key: `menuBar.composer.group.moveRight`
-                /// en: "Move right"
-                public static var moveRight: String { L10nSupport.string("menuBar.composer.group.moveRight") }
-
-                /// Menu action deleting a group and the blocks in it.
-                ///
-                /// Key: `menuBar.composer.group.remove`
-                /// en: "Remove group and its blocks"
-                public static var remove: String { L10nSupport.string("menuBar.composer.group.remove") }
-
-                /// Menu item closing a group's second row; its blocks join the end of the first.
-                ///
-                /// Key: `menuBar.composer.group.removeRow`
-                /// en: "Merge the second row up"
-                public static var removeRow: String { L10nSupport.string("menuBar.composer.group.removeRow") }
-
-                /// Button starting a new group at the selected block.
-                ///
-                /// Key: `menuBar.composer.group.splitHere`
-                /// en: "Start a group here"
-                public static var splitHere: String { L10nSupport.string("menuBar.composer.group.splitHere") }
-
-                /// Header over one group of blocks. Index counts from 1.
-                ///
-                /// Key: `menuBar.composer.group.title`
-                /// en: "Group {index}"
-                public static func title(index: Int) -> String {
-                    L10nSupport.format("menuBar.composer.group.title", index)
+                /// Key: `menuBar.composer.group.selected`
+                /// en: "{count, plural, one {1 block selected} other {# blocks selected}}"
+                public static func selected(count: Int) -> String {
+                    L10nSupport.localizedFormat("menuBar.composer.group.selected", count)
                 }
+
+                /// Button that unbinds a run of blocks
+                ///
+                /// Key: `menuBar.composer.group.unbind`
+                /// en: "Ungroup"
+                public static var unbind: String { L10nSupport.string("menuBar.composer.group.unbind") }
             }
 
             public enum Metric {
@@ -1428,13 +1376,77 @@ public enum L10n {
                 public static var whenUsedAtLeast: String { L10nSupport.string("menuBar.composer.rule.whenUsedAtLeast") }
             }
 
-            public enum Size {
-                /// Type size choice.
+            public enum Segment {
+                /// Palette button adding an empty group to the strip.
                 ///
-                /// Key: `menuBar.composer.size.large`
-                /// en: "Large"
-                public static var large: String { L10nSupport.string("menuBar.composer.size.large") }
+                /// Key: `menuBar.composer.segment.add`
+                /// en: "New segment"
+                public static var add: String { L10nSupport.string("menuBar.composer.segment.add") }
 
+                /// Tooltip on the New group button.
+                ///
+                /// Key: `menuBar.composer.segment.addHelp`
+                /// en: "Each segment is one column of the strip. Give a segment a second row to stack that column."
+                public static var addHelp: String { L10nSupport.string("menuBar.composer.segment.addHelp") }
+
+                /// Menu item giving a group a second row.
+                ///
+                /// Key: `menuBar.composer.segment.addRow`
+                /// en: "Add a second row"
+                public static var addRow: String { L10nSupport.string("menuBar.composer.segment.addRow") }
+
+                /// Shown inside a group that has no blocks yet.
+                ///
+                /// Key: `menuBar.composer.segment.empty`
+                /// en: "Empty segment — drag a block in."
+                public static var empty: String { L10nSupport.string("menuBar.composer.segment.empty") }
+
+                /// Menu action folding a group into the one before it.
+                ///
+                /// Key: `menuBar.composer.segment.mergeLeft`
+                /// en: "Merge into the segment before it"
+                public static var mergeLeft: String { L10nSupport.string("menuBar.composer.segment.mergeLeft") }
+
+                /// Menu action moving a group one place earlier.
+                ///
+                /// Key: `menuBar.composer.segment.moveLeft`
+                /// en: "Move left"
+                public static var moveLeft: String { L10nSupport.string("menuBar.composer.segment.moveLeft") }
+
+                /// Menu action moving a group one place later.
+                ///
+                /// Key: `menuBar.composer.segment.moveRight`
+                /// en: "Move right"
+                public static var moveRight: String { L10nSupport.string("menuBar.composer.segment.moveRight") }
+
+                /// Menu action deleting a group and the blocks in it.
+                ///
+                /// Key: `menuBar.composer.segment.remove`
+                /// en: "Remove segment and its blocks"
+                public static var remove: String { L10nSupport.string("menuBar.composer.segment.remove") }
+
+                /// Menu item closing a group's second row; its blocks join the end of the first.
+                ///
+                /// Key: `menuBar.composer.segment.removeRow`
+                /// en: "Merge the second row up"
+                public static var removeRow: String { L10nSupport.string("menuBar.composer.segment.removeRow") }
+
+                /// Button starting a new group at the selected block.
+                ///
+                /// Key: `menuBar.composer.segment.splitHere`
+                /// en: "Start a segment here"
+                public static var splitHere: String { L10nSupport.string("menuBar.composer.segment.splitHere") }
+
+                /// Header over one group of blocks. Index counts from 1.
+                ///
+                /// Key: `menuBar.composer.segment.title`
+                /// en: "Segment {index}"
+                public static func title(index: Int) -> String {
+                    L10nSupport.format("menuBar.composer.segment.title", index)
+                }
+            }
+
+            public enum Size {
                 /// Smallest of the three block sizes in the menu-bar composer.
                 ///
                 /// Key: `menuBar.composer.size.mini`
@@ -1674,8 +1686,8 @@ public enum L10n {
             ///
             /// Key: `menuBar.spoken.titleBody`
             /// en: "{kind} quota: {body}"
-            public static func titleBody(body: String, kind: String) -> String {
-                L10nSupport.format("menuBar.spoken.titleBody", body, kind)
+            public static func titleBody(kind: String, body: String) -> String {
+                L10nSupport.format("menuBar.spoken.titleBody", kind, body)
             }
 
             /// One quota spoken aloud. Label is the quota's name, value an already-formatted percentage.
@@ -1910,8 +1922,8 @@ public enum L10n {
             ///
             /// Key: `onboarding.pricing.merged`
             /// en: "Merged {when} · {count} models"
-            public static func merged(count: Int, when: String) -> String {
-                L10nSupport.format("onboarding.pricing.merged", count, when)
+            public static func merged(when: String, count: Int) -> String {
+                L10nSupport.format("onboarding.pricing.merged", when, count)
             }
 
             /// Status line before the first fetch
@@ -2305,12 +2317,6 @@ public enum L10n {
                 /// en: "Show in menu bar"
                 public static var showInMenuBar: String { L10nSupport.string("platform.macos.menuBar.showInMenuBar") }
 
-                /// Toggle in the menu-bar item editor. macOS-only.
-                ///
-                /// Key: `platform.macos.menuBar.showTitleText`
-                /// en: "Show title text"
-                public static var showTitleText: String { L10nSupport.string("platform.macos.menuBar.showTitleText") }
-
                 public enum Color {
                     /// Menu-bar colour basis: colour by the displayed percentage. macOS-only.
                     ///
@@ -2589,14 +2595,6 @@ public enum L10n {
         /// en: "A cycle is recorded when the quota refills"
         public static var cycleRecordedOnRefill: String { L10nSupport.string("quota.cycleRecordedOnRefill") }
 
-        /// How many completed reset cycles a quota has on record.
-        ///
-        /// Key: `quota.cyclesRecorded`
-        /// en: "{count, plural, one {# cycle} other {# cycles}}"
-        public static func cyclesRecorded(count: Int) -> String {
-            L10nSupport.localizedFormat("quota.cyclesRecorded", count)
-        }
-
         /// Compact summary shown when per-model limits are collapsed; provider is a SubProvider name
         ///
         /// Key: `quota.perModelLimits`
@@ -2611,22 +2609,6 @@ public enum L10n {
         /// en: "{percent}% left"
         public static func remainingPercent(percent: Int) -> String {
             L10nSupport.format("quota.remainingPercent", percent)
-        }
-
-        /// Countdown beside a quota bar. Both values are whole numbers; the caller drops the day part when it is zero by using quota.resetsInHours instead.
-        ///
-        /// Key: `quota.resetsIn`
-        /// en: "resets in {days}d {hours}h"
-        public static func resetsIn(days: Int, hours: Int) -> String {
-            L10nSupport.format("quota.resetsIn", days, hours)
-        }
-
-        /// Countdown beside a quota bar when less than a day remains.
-        ///
-        /// Key: `quota.resetsInHours`
-        /// en: "resets in {hours}h {minutes}m"
-        public static func resetsInHours(hours: Int, minutes: Int) -> String {
-            L10nSupport.format("quota.resetsInHours", hours, minutes)
         }
 
         /// The forecast figure in Used mode, used inside the status line
@@ -2795,8 +2777,8 @@ public enum L10n {
                 ///
                 /// Key: `quota.forecast.guidance.surplus`
                 /// en: "About {unused}% likely unused beyond the {target}% safety target"
-                public static func surplus(target: Int, unused: Int) -> String {
-                    L10nSupport.format("quota.forecast.guidance.surplus", target, unused)
+                public static func surplus(unused: Int, target: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.surplus", unused, target)
                 }
 
                 /// Used-mode guidance when there is headroom
@@ -2811,8 +2793,8 @@ public enum L10n {
                 ///
                 /// Key: `quota.forecast.guidance.usedSurplus`
                 /// en: "About {unused}% capacity may remain beyond the {target}% used target"
-                public static func usedSurplus(target: Int, unused: Int) -> String {
-                    L10nSupport.format("quota.forecast.guidance.usedSurplus", target, unused)
+                public static func usedSurplus(unused: Int, target: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.usedSurplus", unused, target)
                 }
 
                 /// Used-mode guidance when nothing needs saying
@@ -2913,8 +2895,8 @@ public enum L10n {
                 ///
                 /// Key: `quota.forecast.metric.coverageValue`
                 /// en: "obs {observations}% · history {history}%"
-                public static func coverageValue(history: Int, observations: Int) -> String {
-                    L10nSupport.format("quota.forecast.metric.coverageValue", history, observations)
+                public static func coverageValue(observations: Int, history: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.coverageValue", observations, history)
                 }
 
                 /// Detail under the reset-history metric before any cycle has completed
@@ -2941,16 +2923,16 @@ public enum L10n {
                 ///
                 /// Key: `quota.forecast.metric.evidenceDetail`
                 /// en: "{confidence} · score {score}%"
-                public static func evidenceDetail(score: Int, confidence: String) -> String {
-                    L10nSupport.format("quota.forecast.metric.evidenceDetail", score, confidence)
+                public static func evidenceDetail(confidence: String, score: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.evidenceDetail", confidence, score)
                 }
 
                 /// Value of the evidence metric: observations in this cycle and completed cycles behind it
                 ///
                 /// Key: `quota.forecast.metric.evidenceValue`
                 /// en: "{observations} obs · {cycles} cycles"
-                public static func evidenceValue(cycles: Int, observations: Int) -> String {
-                    L10nSupport.format("quota.forecast.metric.evidenceValue", cycles, observations)
+                public static func evidenceValue(observations: Int, cycles: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.evidenceValue", observations, cycles)
                 }
 
                 /// Detail under the forecast metric while the card shows used percentages
@@ -3121,12 +3103,12 @@ public enum L10n {
                 /// en: "Likely to run out before reset"
                 public static var atRisk: String { L10nSupport.string("quota.forecast.reset.atRisk") }
 
-                /// One-line forecast summary
+                /// Row caption showing the forecast remaining quota at the refill
                 ///
                 /// Key: `quota.forecast.reset.enough`
-                /// en: "Forecast {remaining}% left at reset"
-                public static func enough(remaining: Int) -> String {
-                    L10nSupport.format("quota.forecast.reset.enough", remaining)
+                /// en: "forecast {percent}% left at reset"
+                public static func enough(percent: Int) -> String {
+                    L10nSupport.format("quota.forecast.reset.enough", percent)
                 }
 
                 /// One-line forecast summary
@@ -3458,8 +3440,8 @@ public enum L10n {
             ///
             /// Key: `quota.history.moreBuckets`
             /// en: "{names} +{count}"
-            public static func moreBuckets(count: Int, names: String) -> String {
-                L10nSupport.format("quota.history.moreBuckets", count, names)
+            public static func moreBuckets(names: String, count: Int) -> String {
+                L10nSupport.format("quota.history.moreBuckets", names, count)
             }
 
             /// Last row of a crowded chart tooltip, standing in for the readings it could not fit
@@ -3494,8 +3476,8 @@ public enum L10n {
             ///
             /// Key: `quota.history.scopeNote`
             /// en: "{scope} · showing {visible} of {total} recorded"
-            public static func scopeNote(scope: String, total: String, visible: String) -> String {
-                L10nSupport.format("quota.history.scopeNote", scope, total, visible)
+            public static func scopeNote(scope: String, visible: String, total: String) -> String {
+                L10nSupport.format("quota.history.scopeNote", scope, visible, total)
             }
 
             /// Menu item that puts every quota curve back on the chart
@@ -3664,8 +3646,8 @@ public enum L10n {
             ///
             /// Key: `quota.mini.rowHelp`
             /// en: "{subProvider} — {row}: {percent}%"
-            public static func rowHelp(percent: Int, row: String, subProvider: String) -> String {
-                L10nSupport.format("quota.mini.rowHelp", percent, row, subProvider)
+            public static func rowHelp(subProvider: String, row: String, percent: Int) -> String {
+                L10nSupport.format("quota.mini.rowHelp", subProvider, row, percent)
             }
         }
 
@@ -3784,12 +3766,12 @@ public enum L10n {
         }
 
         public enum Reset {
-            /// Live countdown to a bucket's refill; duration is a compact span, sometimes followed by an absolute time
+            /// Caption under a quota bar; when is a countdown, sometimes with an absolute time
             ///
             /// Key: `quota.reset.in`
-            /// en: "resets in {duration}"
-            public static func `in`(duration: String) -> String {
-                L10nSupport.format("quota.reset.in", duration)
+            /// en: "Resets in {when}"
+            public static func `in`(when: String) -> String {
+                L10nSupport.format("quota.reset.in", when)
             }
 
             /// A bucket whose reset time is behind us and which has not refreshed
@@ -3872,24 +3854,24 @@ public enum L10n {
             ///
             /// Key: `quota.upcoming.leftAndGain`
             /// en: "{remaining}% left now · +{gain}% comes back"
-            public static func leftAndGain(gain: Int, remaining: Int) -> String {
-                L10nSupport.format("quota.upcoming.leftAndGain", gain, remaining)
+            public static func leftAndGain(remaining: Int, gain: Int) -> String {
+                L10nSupport.format("quota.upcoming.leftAndGain", remaining, gain)
             }
 
             /// Tooltip on a marker in the resets timeline; label names the bucket and is not translated
             ///
             /// Key: `quota.upcoming.markerHelp`
             /// en: "{label} — {remaining}% now, +{gain}% {countdown}"
-            public static func markerHelp(gain: Int, remaining: Int, countdown: String, label: String) -> String {
-                L10nSupport.format("quota.upcoming.markerHelp", gain, remaining, countdown, label)
+            public static func markerHelp(label: String, remaining: Int, gain: Int, countdown: String) -> String {
+                L10nSupport.format("quota.upcoming.markerHelp", label, remaining, gain, countdown)
             }
 
             /// Row caption: how long until a bucket refills and when that is
             ///
             /// Key: `quota.upcoming.resetsAt`
             /// en: "resets {countdown} · {absolute}"
-            public static func resetsAt(absolute: String, countdown: String) -> String {
-                L10nSupport.format("quota.upcoming.resetsAt", absolute, countdown)
+            public static func resetsAt(countdown: String, absolute: String) -> String {
+                L10nSupport.format("quota.upcoming.resetsAt", countdown, absolute)
             }
 
             /// Card title for the resets timeline
@@ -3922,8 +3904,8 @@ public enum L10n {
             ///
             /// Key: `quota.window.elapsedOfWindow`
             /// en: "{elapsed} of {window} · {value}"
-            public static func elapsedOfWindow(elapsed: String, value: String, window: String) -> String {
-                L10nSupport.format("quota.window.elapsedOfWindow", elapsed, value, window)
+            public static func elapsedOfWindow(elapsed: String, window: String, value: String) -> String {
+                L10nSupport.format("quota.window.elapsedOfWindow", elapsed, window, value)
             }
 
             /// Window progress line once the reset time has passed but no refresh has landed; value is the used/left figure
@@ -3987,16 +3969,16 @@ public enum L10n {
         ///
         /// Key: `resetHistory.currentCycleCaption`
         /// en: "Current cycle · {used}% used so far · {left}% left"
-        public static func currentCycleCaption(`left`: Int, used: Int) -> String {
-            L10nSupport.format("resetHistory.currentCycleCaption", `left`, used)
+        public static func currentCycleCaption(used: Int, `left`: Int) -> String {
+            L10nSupport.format("resetHistory.currentCycleCaption", used, `left`)
         }
 
         /// Caption for one completed cycle in the reset-history strip; time is the reset moment
         ///
         /// Key: `resetHistory.cycleCaption`
         /// en: "{time} reset · {used}% used · {left}% left"
-        public static func cycleCaption(`left`: Int, used: Int, time: String) -> String {
-            L10nSupport.format("resetHistory.cycleCaption", `left`, used, time)
+        public static func cycleCaption(time: String, used: Int, `left`: Int) -> String {
+            L10nSupport.format("resetHistory.cycleCaption", time, used, `left`)
         }
 
         /// Note under the reset-history strip: how many cycles refilled before their window ended
@@ -4011,7 +3993,7 @@ public enum L10n {
         ///
         /// Key: `resetHistory.laneAverage`
         /// en: "avg wasted {percent}% · last {count, plural, one {1 cycle} other {# cycles}}"
-        public static func laneAverage(percent: Int, count: Int) -> String {
+        public static func laneAverage(percent: String, count: Int) -> String {
             L10nSupport.localizedFormat("resetHistory.laneAverage", percent, count)
         }
 
@@ -4060,9 +4042,9 @@ public enum L10n {
         /// Header arithmetic across every visible lane
         ///
         /// Key: `resetHistory.wastedSummary`
-        /// en: "{used}% used · {wasted}% wasted · {cycles, plural, one {1 cycle} other {# cycles}}"
-        public static func wastedSummary(used: Int, wasted: Int, cycles: Int) -> String {
-            L10nSupport.localizedFormat("resetHistory.wastedSummary", used, wasted, cycles)
+        /// en: "{used}% used · {wasted}% wasted · {count, plural, one {1 cycle} other {# cycles}}"
+        public static func wastedSummary(used: String, wasted: String, count: Int) -> String {
+            L10nSupport.localizedFormat("resetHistory.wastedSummary", used, wasted, count)
         }
 
         public enum A11y {
@@ -4086,8 +4068,8 @@ public enum L10n {
             ///
             /// Key: `resetHistory.a11y.summary`
             /// en: "Reset history comparison, {window}, bar height is the quota remaining at reset.{truncation} {headline}. {verdict} {lanes}.{more}"
-            public static func summary(headline: String, lanes: String, more: String, truncation: String, verdict: String, window: String) -> String {
-                L10nSupport.format("resetHistory.a11y.summary", headline, lanes, more, truncation, verdict, window)
+            public static func summary(window: String, truncation: String, headline: String, verdict: String, lanes: String, more: String) -> String {
+                L10nSupport.format("resetHistory.a11y.summary", window, truncation, headline, verdict, lanes, more)
             }
 
             /// The truncation caveat as it appears inside the screen-reader summary. Leading space is intentional.
@@ -4144,8 +4126,8 @@ public enum L10n {
             ///
             /// Key: `resetHistory.lane.spokenWaste`
             /// en: "{label}: {percent}% wasted on average over {count} cycles"
-            public static func spokenWaste(count: Int, label: String, percent: String) -> String {
-                L10nSupport.format("resetHistory.lane.spokenWaste", count, label, percent)
+            public static func spokenWaste(label: String, percent: String, count: Int) -> String {
+                L10nSupport.format("resetHistory.lane.spokenWaste", label, percent, count)
             }
         }
 
@@ -4266,16 +4248,16 @@ public enum L10n {
             ///
             /// Key: `resetHistory.tooltip.range`
             /// en: "{start} → {end} reset"
-            public static func range(end: String, start: String) -> String {
-                L10nSupport.format("resetHistory.tooltip.range", end, start)
+            public static func range(start: String, end: String) -> String {
+                L10nSupport.format("resetHistory.tooltip.range", start, end)
             }
 
             /// Tooltip line naming the span of the cycle still running and when it is due to reset
             ///
             /// Key: `resetHistory.tooltip.rangeDue`
             /// en: "{start} → {end} reset due"
-            public static func rangeDue(end: String, start: String) -> String {
-                L10nSupport.format("resetHistory.tooltip.rangeDue", end, start)
+            public static func rangeDue(start: String, end: String) -> String {
+                L10nSupport.format("resetHistory.tooltip.rangeDue", start, end)
             }
         }
 
@@ -4300,8 +4282,8 @@ public enum L10n {
             ///
             /// Key: `resetHistory.verdict.leaky`
             /// en: "{label} left {percent}% unused on average across {count, plural, one {1 cycle} other {# cycles}}."
-            public static func leaky(count: Int, label: String, percent: String) -> String {
-                L10nSupport.localizedFormat("resetHistory.verdict.leaky", count, label, percent)
+            public static func leaky(label: String, percent: String, count: Int) -> String {
+                L10nSupport.localizedFormat("resetHistory.verdict.leaky", label, percent, count)
             }
 
             /// Header sentence: lanes exist but none has closed
@@ -4320,8 +4302,8 @@ public enum L10n {
             ///
             /// Key: `resetHistory.verdict.wasteful`
             /// en: "{label} refilled {count, plural, one {once} other {# times}} with more than half unused."
-            public static func wasteful(count: Int, label: String) -> String {
-                L10nSupport.localizedFormat("resetHistory.verdict.wasteful", count, label)
+            public static func wasteful(label: String, count: Int) -> String {
+                L10nSupport.localizedFormat("resetHistory.verdict.wasteful", label, count)
             }
         }
 
@@ -4799,6 +4781,146 @@ public enum L10n {
             /// Key: `settings.language.title`
             /// en: "Language"
             public static var title: String { L10nSupport.string("settings.language.title") }
+        }
+
+        public enum Layout {
+            /// Button that opens the full-size layout studio window
+            ///
+            /// Key: `settings.layout.openStudio`
+            /// en: "Open Studio"
+            public static var openStudio: String { L10nSupport.string("settings.layout.openStudio") }
+
+            /// Tooltip for the studio button
+            ///
+            /// Key: `settings.layout.openStudioHelp`
+            /// en: "Arrange this surface beside a full-size, live preview of it."
+            public static var openStudioHelp: String { L10nSupport.string("settings.layout.openStudioHelp") }
+
+            /// Shown when a layout page has no popover tab to draw
+            ///
+            /// Key: `settings.layout.previewUnavailable`
+            /// en: "This page has no popover tab to preview."
+            public static var previewUnavailable: String { L10nSupport.string("settings.layout.previewUnavailable") }
+
+            /// One-line hint for a mini window style (Focus, Rail) that arranges itself
+            ///
+            /// Key: `settings.layout.studioHintFixedStyle`
+            /// en: "This style arranges itself. Add or remove fields from the tray below, or open the controls."
+            public static var studioHintFixedStyle: String { L10nSupport.string("settings.layout.studioHintFixedStyle") }
+
+            /// One-line hint shown when the studio opens on a mini window whose cells can be dragged
+            ///
+            /// Key: `settings.layout.studioHintMini`
+            /// en: "Drag a gauge to reorder it. Drop it on the well below to take it out of the window."
+            public static var studioHintMini: String { L10nSupport.string("settings.layout.studioHintMini") }
+
+            /// One-line hint shown when the studio opens on a popover page
+            ///
+            /// Key: `settings.layout.studioHintPage`
+            /// en: "Drag a card to move it. Drop it on the well below to hide it."
+            public static var studioHintPage: String { L10nSupport.string("settings.layout.studioHintPage") }
+
+            /// Arranging mode in the studio's mode pill
+            ///
+            /// Key: `settings.layout.studioModeManual`
+            /// en: "Manual"
+            public static var studioModeManual: String { L10nSupport.string("settings.layout.studioModeManual") }
+
+            /// Tooltip for a column-width split
+            ///
+            /// Key: `settings.layout.studioRatioEqual`
+            /// en: "Equal columns"
+            public static var studioRatioEqual: String { L10nSupport.string("settings.layout.studioRatioEqual") }
+
+            /// Tooltip for a column-width split
+            ///
+            /// Key: `settings.layout.studioRatioNarrowWide`
+            /// en: "Narrow left, wide right"
+            public static var studioRatioNarrowWide: String { L10nSupport.string("settings.layout.studioRatioNarrowWide") }
+
+            /// Tooltip for a column-width split
+            ///
+            /// Key: `settings.layout.studioRatioWideNarrow`
+            /// en: "Wide left, narrow right"
+            public static var studioRatioWideNarrow: String { L10nSupport.string("settings.layout.studioRatioWideNarrow") }
+
+            /// Menu section in the studio's subject picker: the popover's pages
+            ///
+            /// Key: `settings.layout.studioSubjectPages`
+            /// en: "Popover pages"
+            public static var studioSubjectPages: String { L10nSupport.string("settings.layout.studioSubjectPages") }
+
+            /// Title of the layout studio window
+            ///
+            /// Key: `settings.layout.studioTitle`
+            /// en: "Layout Studio"
+            public static var studioTitle: String { L10nSupport.string("settings.layout.studioTitle") }
+
+            /// Tooltip for the button that hides the studio's controls
+            ///
+            /// Key: `settings.layout.studioToggleInspector`
+            /// en: "Show or hide the controls"
+            public static var studioToggleInspector: String { L10nSupport.string("settings.layout.studioToggleInspector") }
+
+            /// Tooltip for a not-shown field's chip in the tray
+            ///
+            /// Key: `settings.layout.studioTrayAddHelp`
+            /// en: "Click to add it at the end, or drag it into the window."
+            public static var studioTrayAddHelp: String { L10nSupport.string("settings.layout.studioTrayAddHelp") }
+
+            /// Caption of the tray of hidden cards under a page
+            ///
+            /// Key: `settings.layout.studioTrayHidden`
+            /// en: "Hidden"
+            public static var studioTrayHidden: String { L10nSupport.string("settings.layout.studioTrayHidden") }
+
+            /// Caption of the tray of fields a mini window is not showing
+            ///
+            /// Key: `settings.layout.studioTrayNotShown`
+            /// en: "Not shown"
+            public static var studioTrayNotShown: String { L10nSupport.string("settings.layout.studioTrayNotShown") }
+
+            /// Tooltip for a hidden card's chip in the tray
+            ///
+            /// Key: `settings.layout.studioTrayShowHelp`
+            /// en: "Click to show it where it was, or drag it onto the page."
+            public static var studioTrayShowHelp: String { L10nSupport.string("settings.layout.studioTrayShowHelp") }
+
+            /// Tooltip for the studio's undo button
+            ///
+            /// Key: `settings.layout.studioUndo`
+            /// en: "Undo the last change (⌘Z)"
+            public static var studioUndo: String { L10nSupport.string("settings.layout.studioUndo") }
+
+            /// Drop target shown under a page while a card is being dragged distinct-from: onboarding.apiKeys.hide — hiding a card and folding a credential form away are different acts: zh-Hans says 隐藏 for one and 收起 for the other.
+            ///
+            /// Key: `settings.layout.studioWellHide`
+            /// en: "Hide"
+            public static var studioWellHide: String { L10nSupport.string("settings.layout.studioWellHide") }
+
+            /// Zoom control: shrink the surface to fit the stage
+            ///
+            /// Key: `settings.layout.studioZoomFit`
+            /// en: "Fit"
+            public static var studioZoomFit: String { L10nSupport.string("settings.layout.studioZoomFit") }
+
+            /// Tooltip for the zoom readout, which resets the zoom to fit the stage
+            ///
+            /// Key: `settings.layout.studioZoomFitHelp`
+            /// en: "Fit to the window (⌘0)"
+            public static var studioZoomFitHelp: String { L10nSupport.string("settings.layout.studioZoomFitHelp") }
+
+            /// Tooltip for the studio's zoom-in button
+            ///
+            /// Key: `settings.layout.studioZoomIn`
+            /// en: "Zoom in (⌘+)"
+            public static var studioZoomIn: String { L10nSupport.string("settings.layout.studioZoomIn") }
+
+            /// Tooltip for the studio's zoom-out button
+            ///
+            /// Key: `settings.layout.studioZoomOut`
+            /// en: "Zoom out (⌘−)"
+            public static var studioZoomOut: String { L10nSupport.string("settings.layout.studioZoomOut") }
         }
 
         public enum Mcp {
@@ -5908,8 +6030,8 @@ public enum L10n {
             ///
             /// Key: `settings.remote.statusWithCode`
             /// en: "{title} · {code}"
-            public static func statusWithCode(code: String, title: String) -> String {
-                L10nSupport.format("settings.remote.statusWithCode", code, title)
+            public static func statusWithCode(title: String, code: String) -> String {
+                L10nSupport.format("settings.remote.statusWithCode", title, code)
             }
 
             /// Button that pulls remote batches immediately
@@ -6746,16 +6868,16 @@ public enum L10n {
             ///
             /// Key: `usage.activity.peak`
             /// en: "Peak {hour} · {day}"
-            public static func peak(day: String, hour: String) -> String {
-                L10nSupport.format("usage.activity.peak", day, hour)
+            public static func peak(hour: String, day: String) -> String {
+                L10nSupport.format("usage.activity.peak", hour, day)
             }
 
             /// Caption naming the busiest hour overall and the busiest single cell when they differ
             ///
             /// Key: `usage.activity.peakCell`
             /// en: "Peak {hour} · {day} {cellHour}"
-            public static func peakCell(cellHour: String, day: String, hour: String) -> String {
-                L10nSupport.format("usage.activity.peakCell", cellHour, day, hour)
+            public static func peakCell(hour: String, day: String, cellHour: String) -> String {
+                L10nSupport.format("usage.activity.peakCell", hour, day, cellHour)
             }
 
             /// Low end of the activity grid's intensity legend
@@ -6816,8 +6938,8 @@ public enum L10n {
             ///
             /// Key: `usage.chartNavigator.range`
             /// en: "{start} to {end}"
-            public static func range(end: String, start: String) -> String {
-                L10nSupport.format("usage.chartNavigator.range", end, start)
+            public static func range(start: String, end: String) -> String {
+                L10nSupport.format("usage.chartNavigator.range", start, end)
             }
 
             /// Accessibility action that returns a chart to its whole domain
@@ -6997,8 +7119,8 @@ public enum L10n {
             ///
             /// Key: `usage.filters.rangeSpan`
             /// en: "{start} – {end}"
-            public static func rangeSpan(end: String, start: String) -> String {
-                L10nSupport.format("usage.filters.rangeSpan", end, start)
+            public static func rangeSpan(start: String, end: String) -> String {
+                L10nSupport.format("usage.filters.rangeSpan", start, end)
             }
 
             /// A polling interval, read both as an option inside the auto-refresh menu and as the value on the pill that opens it. The off state is common.off. distinct-from: quota.freshness.age.seconds — an age — how long ago a reading was taken — and an interval — how often to poll — are different quantities.
@@ -7423,8 +7545,8 @@ public enum L10n {
             ///
             /// Key: `usage.table.periodRow`
             /// en: "{period}, {tokens}, {cost}"
-            public static func periodRow(cost: String, period: String, tokens: String) -> String {
-                L10nSupport.format("usage.table.periodRow", cost, period, tokens)
+            public static func periodRow(period: String, tokens: String, cost: String) -> String {
+                L10nSupport.format("usage.table.periodRow", period, tokens, cost)
             }
 
             /// Row count over the Projects table, with the retention window the attribution covers.
@@ -7439,8 +7561,8 @@ public enum L10n {
             ///
             /// Key: `usage.table.requestRow`
             /// en: "{time}, {harness}, {model}, {tokens}, {cost}"
-            public static func requestRow(cost: String, harness: String, model: String, time: String, tokens: String) -> String {
-                L10nSupport.format("usage.table.requestRow", cost, harness, model, time, tokens)
+            public static func requestRow(time: String, harness: String, model: String, tokens: String, cost: String) -> String {
+                L10nSupport.format("usage.table.requestRow", time, harness, model, tokens, cost)
             }
 
             /// Screen-reader label for the Requests table's scroll area.
@@ -7469,8 +7591,8 @@ public enum L10n {
             ///
             /// Key: `usage.table.statRow`
             /// en: "{name}, {requests, plural, one {1 request} other {# requests}}, {tokens}, {cost}"
-            public static func statRow(requests: Int, cost: String, name: String, tokens: String) -> String {
-                L10nSupport.localizedFormat("usage.table.statRow", requests, cost, name, tokens)
+            public static func statRow(name: String, requests: Int, tokens: String, cost: String) -> String {
+                L10nSupport.localizedFormat("usage.table.statRow", name, requests, tokens, cost)
             }
 
             /// Cost cell of a request no price could be resolved for.
@@ -7585,8 +7707,8 @@ public enum L10n {
             ///
             /// Key: `usage.trend.accessibilitySummary`
             /// en: "{count, plural, one {1 provider} other {# providers}}, {tokens} tokens, {cost}"
-            public static func accessibilitySummary(count: Int, cost: String, tokens: String) -> String {
-                L10nSupport.localizedFormat("usage.trend.accessibilitySummary", count, cost, tokens)
+            public static func accessibilitySummary(count: Int, tokens: String, cost: String) -> String {
+                L10nSupport.localizedFormat("usage.trend.accessibilitySummary", count, tokens, cost)
             }
 
             /// Subtitle under the trend chart title when the series is bucketed by local calendar day.
@@ -7619,7 +7741,7 @@ public enum L10n {
             /// en: "No usage recorded in this range"
             public static var empty: String { L10nSupport.string("usage.trend.empty") }
 
-            /// Button that widens the chart back to the whole selected window.
+            /// Button that widens the chart back to the whole selected window. distinct-from: settings.layout.studioZoomFit — zooming a stage to fit the window and widening a chart back to its whole range are different acts: zh-Hans says 适应 for one and 全览 for the other.
             ///
             /// Key: `usage.trend.fit`
             /// en: "Fit"
@@ -7759,8 +7881,8 @@ public enum L10n {
             ///
             /// Key: `usage.yearHeatmap.a11y`
             /// en: "{provider} daily spend over the past year, {count, plural, one {1 week} other {# weeks}}"
-            public static func a11y(count: Int, provider: String) -> String {
-                L10nSupport.localizedFormat("usage.yearHeatmap.a11y", count, provider)
+            public static func a11y(provider: String, count: Int) -> String {
+                L10nSupport.localizedFormat("usage.yearHeatmap.a11y", provider, count)
             }
 
             /// Low end of the past-year grid's intensity legend
@@ -7787,8 +7909,8 @@ public enum L10n {
             ///
             /// Key: `usage.yearHeatmap.tooltip`
             /// en: "{date} · {amount}"
-            public static func tooltip(amount: String, date: String) -> String {
-                L10nSupport.format("usage.yearHeatmap.tooltip", amount, date)
+            public static func tooltip(date: String, amount: String) -> String {
+                L10nSupport.format("usage.yearHeatmap.tooltip", date, amount)
             }
 
             /// Caption beside the past-year grid's title; amount is already formatted currency
@@ -7930,16 +8052,16 @@ public enum L10n {
                 ///
                 /// Key: `workbench.resets.calendar.dayEntry`
                 /// en: "{lane} +{percent}%"
-                public static func dayEntry(percent: Int, lane: String) -> String {
-                    L10nSupport.format("workbench.resets.calendar.dayEntry", percent, lane)
+                public static func dayEntry(lane: String, percent: Int) -> String {
+                    L10nSupport.format("workbench.resets.calendar.dayEntry", lane, percent)
                 }
 
                 /// Tooltip for a scheduled reset in the calendar; lane names the quota, time is an absolute date and time
                 ///
                 /// Key: `workbench.resets.calendar.futureEntry`
                 /// en: "{lane} — resets {time}, +{percent}% back"
-                public static func futureEntry(percent: Int, lane: String, time: String) -> String {
-                    L10nSupport.format("workbench.resets.calendar.futureEntry", percent, lane, time)
+                public static func futureEntry(lane: String, time: String, percent: Int) -> String {
+                    L10nSupport.format("workbench.resets.calendar.futureEntry", lane, time, percent)
                 }
 
                 /// Tooltip on the reset calendar's forward arrow
@@ -7952,8 +8074,8 @@ public enum L10n {
                 ///
                 /// Key: `workbench.resets.calendar.pastEntry`
                 /// en: "{lane} — reset {time} at {percent}% used"
-                public static func pastEntry(percent: Int, lane: String, time: String) -> String {
-                    L10nSupport.format("workbench.resets.calendar.pastEntry", percent, lane, time)
+                public static func pastEntry(lane: String, time: String, percent: Int) -> String {
+                    L10nSupport.format("workbench.resets.calendar.pastEntry", lane, time, percent)
                 }
 
                 /// Tooltip on the reset calendar's back arrow
@@ -8338,8 +8460,8 @@ public enum L10n {
                 ///
                 /// Key: `workbench.sessions.filter.harnessCount`
                 /// en: "{harness}  {count}"
-                public static func harnessCount(count: Int, harness: String) -> String {
-                    L10nSupport.format("workbench.sessions.filter.harnessCount", count, harness)
+                public static func harnessCount(harness: String, count: Int) -> String {
+                    L10nSupport.format("workbench.sessions.filter.harnessCount", harness, count)
                 }
 
                 /// Sessions filter bar menu holding the terminal and index options
@@ -8914,8 +9036,8 @@ public enum L10n {
                 ///
                 /// Key: `workbench.sessions.transcript.truncatedDetail`
                 /// en: "{parsed} read of {file}. Reading all of it holds the whole transcript in memory."
-                public static func truncatedDetail(file: String, parsed: String) -> String {
-                    L10nSupport.format("workbench.sessions.transcript.truncatedDetail", file, parsed)
+                public static func truncatedDetail(parsed: String, file: String) -> String {
+                    L10nSupport.format("workbench.sessions.transcript.truncatedDetail", parsed, file)
                 }
 
                 /// Truncation banner title when only a head window of a very large session was parsed
@@ -8941,24 +9063,24 @@ public enum L10n {
             ///
             /// Key: `workbench.skills.appCountViaGeminiRoot`
             /// en: "{enabled} enabled + {coupled} via the Gemini CLI compatibility root"
-            public static func appCountViaGeminiRoot(coupled: Int, enabled: Int) -> String {
-                L10nSupport.format("workbench.skills.appCountViaGeminiRoot", coupled, enabled)
+            public static func appCountViaGeminiRoot(enabled: Int, coupled: Int) -> String {
+                L10nSupport.format("workbench.skills.appCountViaGeminiRoot", enabled, coupled)
             }
 
             /// Second clause of the per-harness count tooltip, for a harness that scans the shared root itself.
             ///
             /// Key: `workbench.skills.appCountViaSharedRoot`
             /// en: "{enabled} enabled + {coupled} via the shared skills root"
-            public static func appCountViaSharedRoot(coupled: Int, enabled: Int) -> String {
-                L10nSupport.format("workbench.skills.appCountViaSharedRoot", coupled, enabled)
+            public static func appCountViaSharedRoot(enabled: Int, coupled: Int) -> String {
+                L10nSupport.format("workbench.skills.appCountViaSharedRoot", enabled, coupled)
             }
 
             /// Skills page per-harness count pill: its tooltip and its accessibility label. {app} is a harness display name and is never translated.
             ///
             /// Key: `workbench.skills.appSeesCount`
             /// en: "{app} sees {count, plural, one {# skill} other {# skills}}"
-            public static func appSeesCount(count: Int, app: String) -> String {
-                L10nSupport.localizedFormat("workbench.skills.appSeesCount", count, app)
+            public static func appSeesCount(app: String, count: Int) -> String {
+                L10nSupport.localizedFormat("workbench.skills.appSeesCount", app, count)
             }
 
             /// Skills toolbar button that opens the backups sheet.
@@ -9500,8 +9622,8 @@ public enum L10n {
                 ///
                 /// Key: `workbench.skills.import.summary`
                 /// en: "{adopted} already shared · {unmanaged} need adoption · {conflicts} left unchanged"
-                public static func summary(adopted: Int, conflicts: Int, unmanaged: Int) -> String {
-                    L10nSupport.format("workbench.skills.import.summary", adopted, conflicts, unmanaged)
+                public static func summary(adopted: Int, unmanaged: Int, conflicts: Int) -> String {
+                    L10nSupport.format("workbench.skills.import.summary", adopted, unmanaged, conflicts)
                 }
 
                 /// Title of the import sheet.
@@ -9690,8 +9812,8 @@ public enum L10n {
                 ///
                 /// Key: `workbench.skills.toast.disabledKeptProjection`
                 /// en: "Disabled {skill} in {app} and kept its projection."
-                public static func disabledKeptProjection(app: String, skill: String) -> String {
-                    L10nSupport.format("workbench.skills.toast.disabledKeptProjection", app, skill)
+                public static func disabledKeptProjection(skill: String, app: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.disabledKeptProjection", skill, app)
                 }
 
                 /// Second sentence of the archive-install toast. {apps} is a list of harness names.
@@ -9730,8 +9852,8 @@ public enum L10n {
                 ///
                 /// Key: `workbench.skills.toast.installedForApps`
                 /// en: "Installed {skill} for {apps}."
-                public static func installedForApps(apps: String, skill: String) -> String {
-                    L10nSupport.format("workbench.skills.toast.installedForApps", apps, skill)
+                public static func installedForApps(skill: String, apps: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.installedForApps", skill, apps)
                 }
 
                 /// Toast after installing one skill with no harness selected.
@@ -9774,16 +9896,16 @@ public enum L10n {
                 ///
                 /// Key: `workbench.skills.toast.notFoundInRepo`
                 /// en: "{skill} was not found in {repo}."
-                public static func notFoundInRepo(repo: String, skill: String) -> String {
-                    L10nSupport.format("workbench.skills.toast.notFoundInRepo", repo, skill)
+                public static func notFoundInRepo(skill: String, repo: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.notFoundInRepo", skill, repo)
                 }
 
                 /// Toast after removing a projection that turned out to be a real folder Vibe Bar did not create.
                 ///
                 /// Key: `workbench.skills.toast.projectionClearedFolderKept`
                 /// en: "{skill}'s Vibe Bar projection was cleared for {app}, but the existing folder was left in place."
-                public static func projectionClearedFolderKept(app: String, skill: String) -> String {
-                    L10nSupport.format("workbench.skills.toast.projectionClearedFolderKept", app, skill)
+                public static func projectionClearedFolderKept(skill: String, app: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.projectionClearedFolderKept", skill, app)
                 }
 
                 /// Toast after applying the import sheet.
@@ -9842,8 +9964,8 @@ public enum L10n {
                 ///
                 /// Key: `workbench.skills.toast.uninstalledLeftInPlace`
                 /// en: "Uninstalled {skill}. Left in place for {apps}."
-                public static func uninstalledLeftInPlace(apps: String, skill: String) -> String {
-                    L10nSupport.format("workbench.skills.toast.uninstalledLeftInPlace", apps, skill)
+                public static func uninstalledLeftInPlace(skill: String, apps: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.uninstalledLeftInPlace", skill, apps)
                 }
 
                 /// Toast after re-fetching one skill from its repository.
@@ -10253,14 +10375,12 @@ enum L10nCatalogFacts {
         "cost.noUsageYet",
         "cost.notTracked",
         "cost.openFullCharts",
-        "cost.perThousandTokens",
         "cost.provider.title",
         "cost.providerFullCharts",
         "cost.refreshData",
         "cost.refreshProvider",
         "cost.spaceXAI.empty",
         "cost.spaceXAI.title",
-        "cost.spentToday",
         "cost.timeframe.all",
         "cost.timeframe.month",
         "cost.timeframe.monthShort",
@@ -10315,17 +10435,11 @@ enum L10nCatalogFacts {
         "menuBar.composer.field.size",
         "menuBar.composer.field.verdicts",
         "menuBar.composer.field.weight",
-        "menuBar.composer.group.add",
-        "menuBar.composer.group.addHelp",
-        "menuBar.composer.group.addRow",
-        "menuBar.composer.group.empty",
-        "menuBar.composer.group.mergeLeft",
-        "menuBar.composer.group.moveLeft",
-        "menuBar.composer.group.moveRight",
-        "menuBar.composer.group.remove",
-        "menuBar.composer.group.removeRow",
-        "menuBar.composer.group.splitHere",
-        "menuBar.composer.group.title",
+        "menuBar.composer.group.bind",
+        "menuBar.composer.group.hint",
+        "menuBar.composer.group.notAdjacent",
+        "menuBar.composer.group.selected",
+        "menuBar.composer.group.unbind",
         "menuBar.composer.metric.displayPercent",
         "menuBar.composer.metric.pace",
         "menuBar.composer.metric.remainingPercent",
@@ -10365,8 +10479,18 @@ enum L10nCatalogFacts {
         "menuBar.composer.rule.whenForecast",
         "menuBar.composer.rule.whenRemainingAtMost",
         "menuBar.composer.rule.whenUsedAtLeast",
+        "menuBar.composer.segment.add",
+        "menuBar.composer.segment.addHelp",
+        "menuBar.composer.segment.addRow",
+        "menuBar.composer.segment.empty",
+        "menuBar.composer.segment.mergeLeft",
+        "menuBar.composer.segment.moveLeft",
+        "menuBar.composer.segment.moveRight",
+        "menuBar.composer.segment.remove",
+        "menuBar.composer.segment.removeRow",
+        "menuBar.composer.segment.splitHere",
+        "menuBar.composer.segment.title",
         "menuBar.composer.selected",
-        "menuBar.composer.size.large",
         "menuBar.composer.size.mini",
         "menuBar.composer.size.regular",
         "menuBar.composer.size.small",
@@ -10504,7 +10628,6 @@ enum L10nCatalogFacts {
         "platform.macos.menuBar.mergeGroupWindowsDetail",
         "platform.macos.menuBar.percentColor",
         "platform.macos.menuBar.showInMenuBar",
-        "platform.macos.menuBar.showTitleText",
         "popover.header.machinesSubtitle",
         "popover.header.mini",
         "popover.header.miscSubtitle",
@@ -10542,7 +10665,6 @@ enum L10nCatalogFacts {
         "quota.bridge.title",
         "quota.bucket.noResetInfo",
         "quota.cycleRecordedOnRefill",
-        "quota.cyclesRecorded",
         "quota.empty.needsLogin.detail",
         "quota.empty.network.detail",
         "quota.empty.noAccount.detail",
@@ -10704,8 +10826,6 @@ enum L10nCatalogFacts {
         "quota.resetCredits.available",
         "quota.resetCredits.availableWithExpiry",
         "quota.resetCredits.title",
-        "quota.resetsIn",
-        "quota.resetsInHours",
         "quota.upcoming.axisDays",
         "quota.upcoming.axisHours",
         "quota.upcoming.empty",
@@ -10819,6 +10939,29 @@ enum L10nCatalogFacts {
         "settings.language.caption",
         "settings.language.system",
         "settings.language.title",
+        "settings.layout.openStudio",
+        "settings.layout.openStudioHelp",
+        "settings.layout.previewUnavailable",
+        "settings.layout.studioHintFixedStyle",
+        "settings.layout.studioHintMini",
+        "settings.layout.studioHintPage",
+        "settings.layout.studioModeManual",
+        "settings.layout.studioRatioEqual",
+        "settings.layout.studioRatioNarrowWide",
+        "settings.layout.studioRatioWideNarrow",
+        "settings.layout.studioSubjectPages",
+        "settings.layout.studioTitle",
+        "settings.layout.studioToggleInspector",
+        "settings.layout.studioTrayAddHelp",
+        "settings.layout.studioTrayHidden",
+        "settings.layout.studioTrayNotShown",
+        "settings.layout.studioTrayShowHelp",
+        "settings.layout.studioUndo",
+        "settings.layout.studioWellHide",
+        "settings.layout.studioZoomFit",
+        "settings.layout.studioZoomFitHelp",
+        "settings.layout.studioZoomIn",
+        "settings.layout.studioZoomOut",
         "settings.mcp.allowRefresh",
         "settings.mcp.allowRefreshDetail",
         "settings.mcp.allowSkills",
@@ -11656,8 +11799,8 @@ enum L10nCatalogFacts {
         "common.updated.daysAgo",
         "common.updated.hoursAgo",
         "common.updated.minutesAgo",
+        "menuBar.composer.group.selected",
         "menuBar.composer.space.widthValue",
-        "quota.cyclesRecorded",
         "quota.forecast.metric.comparableCycles",
         "quota.forecast.metric.recentIntervals",
         "quota.history.curveCount",
@@ -11801,14 +11944,12 @@ enum L10nCatalogFacts {
         "cost.noUsageYet": 0,
         "cost.notTracked": 1,
         "cost.openFullCharts": 0,
-        "cost.perThousandTokens": 1,
         "cost.provider.title": 1,
         "cost.providerFullCharts": 1,
         "cost.refreshData": 0,
         "cost.refreshProvider": 1,
         "cost.spaceXAI.empty": 0,
         "cost.spaceXAI.title": 0,
-        "cost.spentToday": 1,
         "cost.timeframe.all": 0,
         "cost.timeframe.month": 0,
         "cost.timeframe.monthShort": 0,
@@ -11863,17 +12004,11 @@ enum L10nCatalogFacts {
         "menuBar.composer.field.size": 0,
         "menuBar.composer.field.verdicts": 0,
         "menuBar.composer.field.weight": 0,
-        "menuBar.composer.group.add": 0,
-        "menuBar.composer.group.addHelp": 0,
-        "menuBar.composer.group.addRow": 0,
-        "menuBar.composer.group.empty": 0,
-        "menuBar.composer.group.mergeLeft": 0,
-        "menuBar.composer.group.moveLeft": 0,
-        "menuBar.composer.group.moveRight": 0,
-        "menuBar.composer.group.remove": 0,
-        "menuBar.composer.group.removeRow": 0,
-        "menuBar.composer.group.splitHere": 0,
-        "menuBar.composer.group.title": 1,
+        "menuBar.composer.group.bind": 0,
+        "menuBar.composer.group.hint": 0,
+        "menuBar.composer.group.notAdjacent": 0,
+        "menuBar.composer.group.selected": 1,
+        "menuBar.composer.group.unbind": 0,
         "menuBar.composer.metric.displayPercent": 0,
         "menuBar.composer.metric.pace": 0,
         "menuBar.composer.metric.remainingPercent": 0,
@@ -11913,8 +12048,18 @@ enum L10nCatalogFacts {
         "menuBar.composer.rule.whenForecast": 0,
         "menuBar.composer.rule.whenRemainingAtMost": 0,
         "menuBar.composer.rule.whenUsedAtLeast": 0,
+        "menuBar.composer.segment.add": 0,
+        "menuBar.composer.segment.addHelp": 0,
+        "menuBar.composer.segment.addRow": 0,
+        "menuBar.composer.segment.empty": 0,
+        "menuBar.composer.segment.mergeLeft": 0,
+        "menuBar.composer.segment.moveLeft": 0,
+        "menuBar.composer.segment.moveRight": 0,
+        "menuBar.composer.segment.remove": 0,
+        "menuBar.composer.segment.removeRow": 0,
+        "menuBar.composer.segment.splitHere": 0,
+        "menuBar.composer.segment.title": 1,
         "menuBar.composer.selected": 0,
-        "menuBar.composer.size.large": 0,
         "menuBar.composer.size.mini": 0,
         "menuBar.composer.size.regular": 0,
         "menuBar.composer.size.small": 0,
@@ -12052,7 +12197,6 @@ enum L10nCatalogFacts {
         "platform.macos.menuBar.mergeGroupWindowsDetail": 0,
         "platform.macos.menuBar.percentColor": 0,
         "platform.macos.menuBar.showInMenuBar": 0,
-        "platform.macos.menuBar.showTitleText": 0,
         "popover.header.machinesSubtitle": 0,
         "popover.header.mini": 0,
         "popover.header.miscSubtitle": 0,
@@ -12090,7 +12234,6 @@ enum L10nCatalogFacts {
         "quota.bridge.title": 0,
         "quota.bucket.noResetInfo": 0,
         "quota.cycleRecordedOnRefill": 0,
-        "quota.cyclesRecorded": 1,
         "quota.empty.needsLogin.detail": 1,
         "quota.empty.network.detail": 0,
         "quota.empty.noAccount.detail": 0,
@@ -12252,8 +12395,6 @@ enum L10nCatalogFacts {
         "quota.resetCredits.available": 1,
         "quota.resetCredits.availableWithExpiry": 2,
         "quota.resetCredits.title": 0,
-        "quota.resetsIn": 2,
-        "quota.resetsInHours": 2,
         "quota.upcoming.axisDays": 1,
         "quota.upcoming.axisHours": 1,
         "quota.upcoming.empty": 0,
@@ -12367,6 +12508,29 @@ enum L10nCatalogFacts {
         "settings.language.caption": 0,
         "settings.language.system": 0,
         "settings.language.title": 0,
+        "settings.layout.openStudio": 0,
+        "settings.layout.openStudioHelp": 0,
+        "settings.layout.previewUnavailable": 0,
+        "settings.layout.studioHintFixedStyle": 0,
+        "settings.layout.studioHintMini": 0,
+        "settings.layout.studioHintPage": 0,
+        "settings.layout.studioModeManual": 0,
+        "settings.layout.studioRatioEqual": 0,
+        "settings.layout.studioRatioNarrowWide": 0,
+        "settings.layout.studioRatioWideNarrow": 0,
+        "settings.layout.studioSubjectPages": 0,
+        "settings.layout.studioTitle": 0,
+        "settings.layout.studioToggleInspector": 0,
+        "settings.layout.studioTrayAddHelp": 0,
+        "settings.layout.studioTrayHidden": 0,
+        "settings.layout.studioTrayNotShown": 0,
+        "settings.layout.studioTrayShowHelp": 0,
+        "settings.layout.studioUndo": 0,
+        "settings.layout.studioWellHide": 0,
+        "settings.layout.studioZoomFit": 0,
+        "settings.layout.studioZoomFitHelp": 0,
+        "settings.layout.studioZoomIn": 0,
+        "settings.layout.studioZoomOut": 0,
         "settings.mcp.allowRefresh": 0,
         "settings.mcp.allowRefreshDetail": 1,
         "settings.mcp.allowSkills": 0,

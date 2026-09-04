@@ -259,27 +259,33 @@ to do it.
 **Swift** (native app):
 
 ```swift
-.package(url: "https://github.com/AstroQore/vibe-bar-i18n.git", exact: "0.1.0")
+.package(url: "https://github.com/AstroQore/vibe-bar-i18n.git", exact: "0.2.0")
 ```
 
 ```swift
 Text(L10n.Common.retry)
-Text(L10n.Quota.resetsIn(days: 3, hours: 18))
+Text(L10n.Common.Duration.Full.daysHours(days: days, hours: hours))
 ```
 
-Strings resolve through the standard bundle lookup, so the app follows the
-macOS language automatically; an in-app override sets the bundle explicitly.
+Strings resolve through the host's own resources first, then this package's
+resource bundle inside the host's `Contents/Resources`, and only in a source
+build or a test host through `Bundle.module` — SwiftPM's accessor traps once
+the build directory it names is gone, which is every installed app. The
+app's packaging step copies `vibe-bar-i18n_VibeBarLocalization.bundle` (and
+its `.lproj` directories, for the system's per-app language picker) into
+`Contents/Resources`. With no override the app follows the macOS language;
+an in-app override sets the locale explicitly.
 
 **TypeScript** (desktop app):
 
 ```jsonc
-"@astroqore/vibe-bar-i18n": "0.1.0"
+"@astroqore/vibe-bar-i18n": "0.2.0"
 ```
 
 ```ts
 import { t } from "@astroqore/vibe-bar-i18n";
 t("common.retry");
-t("quota.resetsIn", { days: 3, hours: 18 });
+t("common.duration.full.daysHours", { days, hours });
 ```
 
 Keys are a union type, so a typo is a compile error and a missing
