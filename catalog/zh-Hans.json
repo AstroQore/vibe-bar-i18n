@@ -1353,7 +1353,7 @@
       "value": "很可能在重置前耗尽"
     },
     "quota.forecast.reset.enough": {
-      "value": "预计重置时剩余 {remaining}%"
+      "value": "预计重置时剩余 {percent}%"
     },
     "quota.forecast.reset.learning": {
       "value": "正在学习使用规律 · 约剩余 {remaining}%"
@@ -1632,7 +1632,7 @@
       "value": "剩余 {percent}%"
     },
     "quota.reset.in": {
-      "value": "距重置 {duration}"
+      "value": "距重置 {when}"
     },
     "quota.reset.passed": {
       "value": "重置时间已过"
@@ -1851,7 +1851,7 @@
       "value": "{label} 有 {count, plural, other {# 次}}补额后超过一半未使用。"
     },
     "resetHistory.wastedSummary": {
-      "value": "已用 {used}% · 浪费 {wasted}% · {cycles, plural, other {# 个周期}}"
+      "value": "已用 {used}% · 浪费 {wasted}% · {count, plural, other {# 个周期}}"
     },
     "resetHistory.window.all": {
       "value": "全部"

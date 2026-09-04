@@ -190,7 +190,7 @@
 "cost.history.emptyTokens" = "No tokens recorded in this range.";
 
 /* Caption naming the visible span of the cost chart and the dates at its ends */
-"cost.history.extentNote" = "%2$@ · %3$@ – %1$@";
+"cost.history.extentNote" = "%1$@ · %2$@ – %3$@";
 
 /* Tooltip on a bucket-width button the current zoom level cannot draw */
 "cost.history.granularityDisabled" = "%@ needs a different zoom level";
@@ -727,7 +727,7 @@
 "menuBar.spoken.title" = "%@ quota";
 
 /* Accessibility label and tooltip for the status item. Body lists each quota in words. */
-"menuBar.spoken.titleBody" = "%2$@ quota: %1$@";
+"menuBar.spoken.titleBody" = "%1$@ quota: %2$@";
 
 /* One quota spoken aloud. Label is the quota's name, value an already-formatted percentage. */
 "menuBar.spoken.used" = "%1$@ %2$@ used";
@@ -832,7 +832,7 @@
 "onboarding.pricing.intro" = "Token cost is computed on this Mac from your agents' session logs, priced with a catalog merged from several public price lists — higher-priority entries win when a model appears in more than one, your own overrides beat them all, and a bundled table is the offline floor. Catalogs refresh in the background every %@; fetching now gives the first cost numbers current prices.";
 
 /* Status line after a successful merge; when is an already-formatted date */
-"onboarding.pricing.merged" = "Merged %2$@ · %1$lld models";
+"onboarding.pricing.merged" = "Merged %1$@ · %2$lld models";
 
 /* Status line before the first fetch */
 "onboarding.pricing.notFetched" = "Not fetched yet — the bundled table is in use.";
@@ -1189,13 +1189,13 @@
 "quota.forecast.guidance.available" = "Target %1$lld%% left · about %2$lld%% available";
 
 /* Remaining-mode guidance for a surplus verdict */
-"quota.forecast.guidance.surplus" = "About %2$lld%% likely unused beyond the %1$lld%% safety target";
+"quota.forecast.guidance.surplus" = "About %1$lld%% likely unused beyond the %2$lld%% safety target";
 
 /* Used-mode guidance when there is headroom */
 "quota.forecast.guidance.usedAvailable" = "Target %1$lld%% used · about %2$lld%% capacity available";
 
 /* Used-mode guidance for a surplus verdict */
-"quota.forecast.guidance.usedSurplus" = "About %2$lld%% capacity may remain beyond the %1$lld%% used target";
+"quota.forecast.guidance.usedSurplus" = "About %1$lld%% capacity may remain beyond the %2$lld%% used target";
 
 /* Used-mode guidance when nothing needs saying */
 "quota.forecast.guidance.usedWithinTarget" = "Within the %lld%% used target";
@@ -1234,7 +1234,7 @@
 "quota.forecast.metric.coverageDetail" = "fresh %1$lld%% · habits %2$lld%%";
 
 /* Value of the coverage metric: observation and reset-history coverage */
-"quota.forecast.metric.coverageValue" = "obs %2$lld%% · history %1$lld%%";
+"quota.forecast.metric.coverageValue" = "obs %1$lld%% · history %2$lld%%";
 
 /* Detail under the reset-history metric before any cycle has completed */
 "quota.forecast.metric.cyclesPending" = "Completed cycles will appear here";
@@ -1246,10 +1246,10 @@
 "quota.forecast.metric.evidence" = "Evidence";
 
 /* Detail under the evidence metric; confidence is the forecast's own confidence label */
-"quota.forecast.metric.evidenceDetail" = "%2$@ · score %1$lld%%";
+"quota.forecast.metric.evidenceDetail" = "%1$@ · score %2$lld%%";
 
 /* Value of the evidence metric: observations in this cycle and completed cycles behind it */
-"quota.forecast.metric.evidenceValue" = "%2$lld obs · %1$lld cycles";
+"quota.forecast.metric.evidenceValue" = "%1$lld obs · %2$lld cycles";
 
 /* Detail under the forecast metric while the card shows used percentages */
 "quota.forecast.metric.expectedLeft" = "%lld%% expected left";
@@ -1323,8 +1323,8 @@
 /* One-line forecast summary */
 "quota.forecast.reset.atRisk" = "Likely to run out before reset";
 
-/* One-line forecast summary */
-"quota.forecast.reset.enough" = "Forecast %lld%% left at reset";
+/* Row caption showing the forecast remaining quota at the refill */
+"quota.forecast.reset.enough" = "forecast %lld%% left at reset";
 
 /* One-line forecast summary */
 "quota.forecast.reset.learning" = "Learning your pattern · about %lld%% left";
@@ -1459,7 +1459,7 @@
 "quota.history.forecastLegend" = "forecast";
 
 /* Scope note when a group holds more quotas than the note can name; names are the ones it did name */
-"quota.history.moreBuckets" = "%2$@ +%1$lld";
+"quota.history.moreBuckets" = "%1$@ +%2$lld";
 
 /* Last row of a crowded chart tooltip, standing in for the readings it could not fit */
 "quota.history.moreReadings" = "+%lld more";
@@ -1471,7 +1471,7 @@
 "quota.history.navigatorProvider" = "Quota history range navigator";
 
 /* Footer under a quota history chart; scope names what the chart covers, visible and total are compact spans such as 7d */
-"quota.history.scopeNote" = "%1$@ · showing %3$@ of %2$@ recorded";
+"quota.history.scopeNote" = "%1$@ · showing %2$@ of %3$@ recorded";
 
 /* Menu item that puts every quota curve back on the chart */
 "quota.history.showAllCurves" = "Show all curves";
@@ -1543,7 +1543,7 @@
 "quota.mini.resets" = "resets %@";
 
 /* Tooltip on a mini window row; subProvider and row are names, percent the current reading */
-"quota.mini.rowHelp" = "%3$@ — %2$@: %1$lld%%";
+"quota.mini.rowHelp" = "%1$@ — %2$@: %3$lld%%";
 
 /* Body of a misc provider card that has no credential yet */
 "quota.misc.notConfigured" = "Not configured.";
@@ -1590,8 +1590,8 @@
 /* The forecast figure in Remaining mode, used inside the status line */
 "quota.remainingPercent" = "%lld%% left";
 
-/* Live countdown to a bucket's refill; duration is a compact span, sometimes followed by an absolute time */
-"quota.reset.in" = "resets in %@";
+/* Caption under a quota bar; when is a countdown, sometimes with an absolute time */
+"quota.reset.in" = "Resets in %@";
 
 /* A bucket whose reset time is behind us and which has not refreshed */
 "quota.reset.passed" = "reset passed";
@@ -1621,13 +1621,13 @@
 "quota.upcoming.horizon" = "next 7 days";
 
 /* Row caption on the resets timeline */
-"quota.upcoming.leftAndGain" = "%2$lld%% left now · +%1$lld%% comes back";
+"quota.upcoming.leftAndGain" = "%1$lld%% left now · +%2$lld%% comes back";
 
 /* Tooltip on a marker in the resets timeline; label names the bucket and is not translated */
-"quota.upcoming.markerHelp" = "%4$@ — %2$lld%% now, +%1$lld%% %3$@";
+"quota.upcoming.markerHelp" = "%1$@ — %2$lld%% now, +%3$lld%% %4$@";
 
 /* Row caption: how long until a bucket refills and when that is */
-"quota.upcoming.resetsAt" = "resets %2$@ · %1$@";
+"quota.upcoming.resetsAt" = "resets %1$@ · %2$@";
 
 /* Card title for the resets timeline */
 "quota.upcoming.title" = "Upcoming Resets";
@@ -1642,7 +1642,7 @@
 "quota.window.dayOfDays" = "Day %1$lld of %2$lld · %3$@";
 
 /* Window progress line for a sub-day window; window is its length, elapsed how much of it is gone */
-"quota.window.elapsedOfWindow" = "%1$@ of %3$@ · %2$@";
+"quota.window.elapsedOfWindow" = "%1$@ of %2$@ · %3$@";
 
 /* Window progress line once the reset time has passed but no refresh has landed; value is the used/left figure */
 "quota.window.resetsSoon" = "Resets soon · %@";
@@ -1654,7 +1654,7 @@
 "resetHistory.a11y.more" = " And %lld more quotas.";
 
 /* Whole-module screen-reader text; the lanes are a drawing surface, so this is all VoiceOver gets */
-"resetHistory.a11y.summary" = "Reset history comparison, %6$@, bar height is the quota remaining at reset.%4$@ %1$@. %5$@ %2$@.%3$@";
+"resetHistory.a11y.summary" = "Reset history comparison, %1$@, bar height is the quota remaining at reset.%2$@ %3$@. %4$@ %5$@.%6$@";
 
 /* The truncation caveat as it appears inside the screen-reader summary. Leading space is intentional. */
 "resetHistory.a11y.truncation" = " Grid %@; the figures cover every one.";
@@ -1693,10 +1693,10 @@
 "resetHistory.compareWindow" = "Compare the %@";
 
 /* Caption for the cycle still running in the reset-history strip */
-"resetHistory.currentCycleCaption" = "Current cycle · %2$lld%% used so far · %1$lld%% left";
+"resetHistory.currentCycleCaption" = "Current cycle · %1$lld%% used so far · %2$lld%% left";
 
 /* Caption for one completed cycle in the reset-history strip; time is the reset moment */
-"resetHistory.cycleCaption" = "%3$@ reset · %2$lld%% used · %1$lld%% left";
+"resetHistory.cycleCaption" = "%1$@ reset · %2$lld%% used · %3$lld%% left";
 
 /* Empty-state copy for a lane */
 "resetHistory.lane.emptyState" = "No completed cycles yet — a cycle is recorded when the quota refills";
@@ -1705,7 +1705,7 @@
 "resetHistory.lane.spokenNoCycles" = "%@: no completed cycles";
 
 /* One lane inside the screen-reader summary */
-"resetHistory.lane.spokenWaste" = "%2$@: %3$@%% wasted on average over %1$lld cycles";
+"resetHistory.lane.spokenWaste" = "%1$@: %2$@%% wasted on average over %3$lld cycles";
 
 /* Note appended to a cycle caption when the last reading predates the reset by a while */
 "resetHistory.lastSeenBefore" = "last seen %@ before reset";
@@ -1774,10 +1774,10 @@
 "resetHistory.tooltip.current" = "Current cycle · %1$lld%% left now · %2$lld%% used so far";
 
 /* Tooltip line naming the span a finished cycle covered */
-"resetHistory.tooltip.range" = "%2$@ → %1$@ reset";
+"resetHistory.tooltip.range" = "%1$@ → %2$@ reset";
 
 /* Tooltip line naming the span of the cycle still running and when it is due to reset */
-"resetHistory.tooltip.rangeDue" = "%2$@ → %1$@ reset due";
+"resetHistory.tooltip.rangeDue" = "%1$@ → %2$@ reset due";
 
 /* Header arithmetic when nothing has closed */
 "resetHistory.totals.none" = "No completed cycles in this window";
@@ -2575,7 +2575,7 @@
 "settings.remote.retrySaving" = "Retry saving";
 
 /* Sync status line: a translated title and the raw status code distinct-from: popover.header.updatedLine — the value is two placeholders and a separator, so the placeholder names are the only part of it that carries meaning; one key cannot name both halves of six different pairs. */
-"settings.remote.statusWithCode" = "%2$@ · %1$@";
+"settings.remote.statusWithCode" = "%1$@ · %2$@";
 
 /* Remote sync status title for HTTP 429/503 */
 "settings.remote.sync.busy" = "Relay is temporarily busy";
@@ -2992,10 +2992,10 @@
 "usage.activity.heavy" = "Heavy";
 
 /* Caption naming the busiest hour of the activity card when the peak hour and peak cell agree */
-"usage.activity.peak" = "Peak %2$@ · %1$@";
+"usage.activity.peak" = "Peak %1$@ · %2$@";
 
 /* Caption naming the busiest hour overall and the busiest single cell when they differ */
-"usage.activity.peakCell" = "Peak %3$@ · %2$@ %1$@";
+"usage.activity.peakCell" = "Peak %1$@ · %2$@ %3$@";
 
 /* Low end of the activity grid's intensity legend */
 "usage.activity.quiet" = "Quiet";
@@ -3022,7 +3022,7 @@
 "usage.chartNavigator.label" = "Chart range navigator";
 
 /* Accessibility value of the chart range navigator; both ends are already formatted dates */
-"usage.chartNavigator.range" = "%2$@ to %1$@";
+"usage.chartNavigator.range" = "%1$@ to %2$@";
 
 /* Accessibility action that returns a chart to its whole domain */
 "usage.chartNavigator.showFullRange" = "Show Full Range";
@@ -3103,7 +3103,7 @@
 "usage.filters.rangeMenu" = "Choose the date range";
 
 /* Date-range pill value: two already-formatted dates around an en dash. */
-"usage.filters.rangeSpan" = "%2$@ – %1$@";
+"usage.filters.rangeSpan" = "%1$@ – %2$@";
 
 /* A polling interval, read both as an option inside the auto-refresh menu and as the value on the pill that opens it. The off state is common.off. distinct-from: quota.freshness.age.seconds — an age — how long ago a reading was taken — and an interval — how often to poll — are different quantities. */
 "usage.filters.refreshInterval" = "%llds";
@@ -3295,10 +3295,10 @@
 "usage.table.loadingMore" = "Loading more requests…";
 
 /* Screen-reader label for a Periods row; every argument arrives already formatted. */
-"usage.table.periodRow" = "%2$@, %3$@, %1$@";
+"usage.table.periodRow" = "%1$@, %2$@, %3$@";
 
 /* Screen-reader label for a Requests row; time, model, tokens and cost arrive formatted and harness is a name. */
-"usage.table.requestRow" = "%4$@, %2$@, %3$@, %5$@, %1$@";
+"usage.table.requestRow" = "%1$@, %2$@, %3$@, %4$@, %5$@";
 
 /* Screen-reader label for the Requests table's scroll area. */
 "usage.table.requestsLabel" = "Request usage table";
@@ -3418,7 +3418,7 @@
 "usage.yearHeatmap.title" = "%@ — Past Year";
 
 /* Tooltip on one day of the past-year grid distinct-from: popover.header.updatedLine — the value is two placeholders and a separator, so the placeholder names are the only part of it that carries meaning; one key cannot name both halves of six different pairs. */
-"usage.yearHeatmap.tooltip" = "%2$@ · %1$@";
+"usage.yearHeatmap.tooltip" = "%1$@ · %2$@";
 
 /* Caption beside the past-year grid's title; amount is already formatted currency */
 "usage.yearHeatmap.total" = "%@ total";
@@ -3475,16 +3475,16 @@
 "workbench.placeholder.usageStats" = "Full-window usage and cost analytics are on their way.";
 
 /* One refill inside a calendar day cell; lane is a SubProvider name */
-"workbench.resets.calendar.dayEntry" = "%2$@ +%1$lld%%";
+"workbench.resets.calendar.dayEntry" = "%1$@ +%2$lld%%";
 
 /* Tooltip for a scheduled reset in the calendar; lane names the quota, time is an absolute date and time */
-"workbench.resets.calendar.futureEntry" = "%2$@ — resets %3$@, +%1$lld%% back";
+"workbench.resets.calendar.futureEntry" = "%1$@ — resets %2$@, +%3$lld%% back";
 
 /* Tooltip on the reset calendar's forward arrow */
 "workbench.resets.calendar.nextMonth" = "Next month";
 
 /* Tooltip for a recorded reset in the calendar; lane names the quota, time is an absolute date and time, percent is how much of the window had been spent when it refilled */
-"workbench.resets.calendar.pastEntry" = "%2$@ — reset %3$@ at %1$lld%% used";
+"workbench.resets.calendar.pastEntry" = "%1$@ — reset %2$@ at %3$lld%% used";
 
 /* Tooltip on the reset calendar's back arrow */
 "workbench.resets.calendar.previousMonth" = "Previous month";
@@ -3625,7 +3625,7 @@
 "workbench.sessions.filter.foldersFiltered" = "Filtered";
 
 /* One row of the Sessions Harness menu: the harness name and how many sessions it has. The name is never translated. distinct-from: quota.forecast.legend.item — a legend marker's name and the figure it marks, and a harness with its session count, are different pairs; the placeholder names are the sentence. */
-"workbench.sessions.filter.harnessCount" = "%2$@  %1$lld";
+"workbench.sessions.filter.harnessCount" = "%1$@  %2$lld";
 
 /* Sessions filter bar menu holding the terminal and index options */
 "workbench.sessions.filter.options" = "Options";
@@ -3895,16 +3895,16 @@
 "workbench.sessions.transcript.readFailed" = "This session's log could not be read.";
 
 /* Truncation banner detail. Both sizes arrive already formatted as byte counts. */
-"workbench.sessions.transcript.truncatedDetail" = "%2$@ read of %1$@. Reading all of it holds the whole transcript in memory.";
+"workbench.sessions.transcript.truncatedDetail" = "%1$@ read of %2$@. Reading all of it holds the whole transcript in memory.";
 
 /* Last clause of the per-harness count tooltip: skills linked into the harness but switched off in its own config. */
 "workbench.skills.appCountNativeDisabled" = "%lld projected but disabled";
 
 /* Second clause of the per-harness count tooltip, for AntiGravity, which sees skills through the Gemini CLI folder. */
-"workbench.skills.appCountViaGeminiRoot" = "%2$lld enabled + %1$lld via the Gemini CLI compatibility root";
+"workbench.skills.appCountViaGeminiRoot" = "%1$lld enabled + %2$lld via the Gemini CLI compatibility root";
 
 /* Second clause of the per-harness count tooltip, for a harness that scans the shared root itself. */
-"workbench.skills.appCountViaSharedRoot" = "%2$lld enabled + %1$lld via the shared skills root";
+"workbench.skills.appCountViaSharedRoot" = "%1$lld enabled + %2$lld via the shared skills root";
 
 /* Skills toolbar button that opens the backups sheet. */
 "workbench.skills.backups" = "Backups";
@@ -4093,7 +4093,7 @@
 "workbench.skills.import.subtitle" = "Vibe Bar already recognizes shared skills. Only selected app-local folders will move.";
 
 /* Import sheet footer totals across the scan's four sections. */
-"workbench.skills.import.summary" = "%1$lld already shared · %3$lld need adoption · %2$lld left unchanged";
+"workbench.skills.import.summary" = "%1$lld already shared · %2$lld need adoption · %3$lld left unchanged";
 
 /* Title of the import sheet. */
 "workbench.skills.import.title" = "Review On-Disk Skills";
@@ -4213,13 +4213,13 @@
 "workbench.skills.toast.archiveEmpty" = "Nothing in that archive could be installed.";
 
 /* Toast after flipping a harness's own per-skill switch off. */
-"workbench.skills.toast.disabledKeptProjection" = "Disabled %2$@ in %1$@ and kept its projection.";
+"workbench.skills.toast.disabledKeptProjection" = "Disabled %1$@ in %2$@ and kept its projection.";
 
 /* Second sentence of the archive-install toast. {apps} is a list of harness names. */
 "workbench.skills.toast.enabledForApps" = "Enabled for %@.";
 
 /* Toast after installing one skill into the selected harnesses. {apps} is a list of harness names. */
-"workbench.skills.toast.installedForApps" = "Installed %2$@ for %1$@.";
+"workbench.skills.toast.installedForApps" = "Installed %1$@ for %2$@.";
 
 /* Toast after installing one skill with no harness selected. */
 "workbench.skills.toast.installedShared" = "Installed %@ in the shared library. Check effective harness state in Skills.";
@@ -4237,10 +4237,10 @@
 "workbench.skills.toast.noSkillsFound" = "No skills were found in the configured repositories.";
 
 /* Toast when a skills.sh hit is missing from the repository it named. */
-"workbench.skills.toast.notFoundInRepo" = "%2$@ was not found in %1$@.";
+"workbench.skills.toast.notFoundInRepo" = "%1$@ was not found in %2$@.";
 
 /* Toast after removing a projection that turned out to be a real folder Vibe Bar did not create. */
-"workbench.skills.toast.projectionClearedFolderKept" = "%2$@'s Vibe Bar projection was cleared for %1$@, but the existing folder was left in place.";
+"workbench.skills.toast.projectionClearedFolderKept" = "%1$@'s Vibe Bar projection was cleared for %2$@, but the existing folder was left in place.";
 
 /* Toast after restoring a backup into the shared directory. */
 "workbench.skills.toast.restored" = "Restored %@. Enable it for the apps you want it in.";
@@ -4258,7 +4258,7 @@
 "workbench.skills.toast.uninstalledBackedUp" = "Uninstalled %@. A backup was saved.";
 
 /* Toast after an uninstall that left real folders in some harnesses. {apps} is a list of harness names. */
-"workbench.skills.toast.uninstalledLeftInPlace" = "Uninstalled %2$@. Left in place for %1$@.";
+"workbench.skills.toast.uninstalledLeftInPlace" = "Uninstalled %1$@. Left in place for %2$@.";
 
 /* Toast after re-fetching one skill from its repository. */
 "workbench.skills.toast.updated" = "Updated %@.";

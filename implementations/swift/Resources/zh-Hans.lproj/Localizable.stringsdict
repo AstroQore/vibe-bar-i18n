@@ -231,7 +231,7 @@
 	<key>resetHistory.laneAverage</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
-		<string>平均浪费 %1$lld%% · 最近 %2$#@count@</string>
+		<string>平均浪费 %1$@%% · 最近 %2$#@count@</string>
 		<key>count</key>
 		<dict>
 			<key>NSStringFormatSpecTypeKey</key>
@@ -245,7 +245,7 @@
 	<key>resetHistory.verdict.leaky</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
-		<string>%2$@ 在 %1$#@count@中平均有 %3$@%% 未使用。</string>
+		<string>%1$@ 在 %3$#@count@中平均有 %2$@%% 未使用。</string>
 		<key>count</key>
 		<dict>
 			<key>NSStringFormatSpecTypeKey</key>
@@ -253,13 +253,13 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>lld</string>
 			<key>other</key>
-			<string>%1$lld 个周期</string>
+			<string>%3$lld 个周期</string>
 		</dict>
 	</dict>
 	<key>resetHistory.verdict.wasteful</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
-		<string>%2$@ 有 %1$#@count@补额后超过一半未使用。</string>
+		<string>%1$@ 有 %2$#@count@补额后超过一半未使用。</string>
 		<key>count</key>
 		<dict>
 			<key>NSStringFormatSpecTypeKey</key>
@@ -267,14 +267,14 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>lld</string>
 			<key>other</key>
-			<string>%1$lld 次</string>
+			<string>%2$lld 次</string>
 		</dict>
 	</dict>
 	<key>resetHistory.wastedSummary</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
-		<string>已用 %1$lld%% · 浪费 %2$lld%% · %3$#@cycles@</string>
-		<key>cycles</key>
+		<string>已用 %1$@%% · 浪费 %2$@%% · %3$#@count@</string>
+		<key>count</key>
 		<dict>
 			<key>NSStringFormatSpecTypeKey</key>
 			<string>NSStringPluralRuleType</string>
@@ -441,7 +441,7 @@
 	<key>usage.table.statRow</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
-		<string>%3$@，%1$#@requests@，%4$@，%2$@</string>
+		<string>%1$@，%2$#@requests@，%3$@，%4$@</string>
 		<key>requests</key>
 		<dict>
 			<key>NSStringFormatSpecTypeKey</key>
@@ -449,13 +449,13 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>lld</string>
 			<key>other</key>
-			<string>%1$lld 条请求</string>
+			<string>%2$lld 条请求</string>
 		</dict>
 	</dict>
 	<key>usage.trend.accessibilitySummary</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
-		<string>%1$#@count@，%3$@ token，%2$@</string>
+		<string>%1$#@count@，%2$@ token，%3$@</string>
 		<key>count</key>
 		<dict>
 			<key>NSStringFormatSpecTypeKey</key>
@@ -469,7 +469,7 @@
 	<key>usage.yearHeatmap.a11y</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
-		<string>%2$@ 过去一年的每日花费，共 %1$#@count@</string>
+		<string>%1$@ 过去一年的每日花费，共 %2$#@count@</string>
 		<key>count</key>
 		<dict>
 			<key>NSStringFormatSpecTypeKey</key>
@@ -477,7 +477,7 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>lld</string>
 			<key>other</key>
-			<string>%1$lld 周</string>
+			<string>%2$lld 周</string>
 		</dict>
 	</dict>
 	<key>workbench.sessions.count.sessions</key>
@@ -567,7 +567,7 @@
 	<key>workbench.skills.appSeesCount</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
-		<string>%2$@ 可见 %1$#@count@</string>
+		<string>%1$@ 可见 %2$#@count@</string>
 		<key>count</key>
 		<dict>
 			<key>NSStringFormatSpecTypeKey</key>
@@ -575,7 +575,7 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>lld</string>
 			<key>other</key>
-			<string>%1$lld 个技能</string>
+			<string>%2$lld 个技能</string>
 		</dict>
 	</dict>
 	<key>workbench.skills.countTotal</key>

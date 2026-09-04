@@ -1599,7 +1599,7 @@ export interface MessageParams {
   "cost.history.clearModelSelection": undefined;
   "cost.history.emptyCost": undefined;
   "cost.history.emptyTokens": undefined;
-  "cost.history.extentNote": { "end": string; "span": string; "start": string };
+  "cost.history.extentNote": { "span": string; "start": string; "end": string };
   "cost.history.granularityDisabled": { "granularity": string };
   "cost.history.groupBy": { "granularity": string };
   "cost.history.hourlyFallback": undefined;
@@ -1780,7 +1780,7 @@ export interface MessageParams {
   "menuBar.spoken.resetsIn": { "label": string; "value": string };
   "menuBar.spoken.runsOutIn": { "label": string; "value": string };
   "menuBar.spoken.title": { "kind": string };
-  "menuBar.spoken.titleBody": { "body": string; "kind": string };
+  "menuBar.spoken.titleBody": { "kind": string; "body": string };
   "menuBar.spoken.used": { "label": string; "value": string };
   "onboarding.apiKeys.hide": undefined;
   "onboarding.apiKeys.intro": undefined;
@@ -1815,7 +1815,7 @@ export interface MessageParams {
   "onboarding.pricing.interval.hour": undefined;
   "onboarding.pricing.interval.hours": { "hours": number };
   "onboarding.pricing.intro": { "interval": string };
-  "onboarding.pricing.merged": { "count": number; "when": string };
+  "onboarding.pricing.merged": { "when": string; "count": number };
   "onboarding.pricing.notFetched": undefined;
   "onboarding.pricing.source.failed": { "count": number };
   "onboarding.pricing.source.models": { "count": number };
@@ -1934,9 +1934,9 @@ export interface MessageParams {
   "quota.forecast.explain.title": undefined;
   "quota.forecast.guidance.atRisk": undefined;
   "quota.forecast.guidance.available": { "target": number; "unused": number };
-  "quota.forecast.guidance.surplus": { "target": number; "unused": number };
+  "quota.forecast.guidance.surplus": { "unused": number; "target": number };
   "quota.forecast.guidance.usedAvailable": { "target": number; "unused": number };
-  "quota.forecast.guidance.usedSurplus": { "target": number; "unused": number };
+  "quota.forecast.guidance.usedSurplus": { "unused": number; "target": number };
   "quota.forecast.guidance.usedWithinTarget": { "target": number };
   "quota.forecast.guidance.watch": undefined;
   "quota.forecast.guidance.withinTarget": { "target": number };
@@ -1950,12 +1950,12 @@ export interface MessageParams {
   "quota.forecast.metric.comparableCycles": { "count": number };
   "quota.forecast.metric.coverage": undefined;
   "quota.forecast.metric.coverageDetail": { "fresh": number; "habits": number };
-  "quota.forecast.metric.coverageValue": { "history": number; "observations": number };
+  "quota.forecast.metric.coverageValue": { "observations": number; "history": number };
   "quota.forecast.metric.cyclesPending": undefined;
   "quota.forecast.metric.elapsed": { "percent": number };
   "quota.forecast.metric.evidence": undefined;
-  "quota.forecast.metric.evidenceDetail": { "score": number; "confidence": string };
-  "quota.forecast.metric.evidenceValue": { "cycles": number; "observations": number };
+  "quota.forecast.metric.evidenceDetail": { "confidence": string; "score": number };
+  "quota.forecast.metric.evidenceValue": { "observations": number; "cycles": number };
   "quota.forecast.metric.expectedLeft": { "percent": number };
   "quota.forecast.metric.expectedUsed": { "percent": number };
   "quota.forecast.metric.forecastAtReset": undefined;
@@ -1981,7 +1981,7 @@ export interface MessageParams {
   "quota.forecast.metric.unavailable": undefined;
   "quota.forecast.metric.uncertaintyInterval": undefined;
   "quota.forecast.reset.atRisk": undefined;
-  "quota.forecast.reset.enough": { "remaining": number };
+  "quota.forecast.reset.enough": { "percent": number };
   "quota.forecast.reset.learning": { "remaining": number };
   "quota.forecast.reset.surplus": { "remaining": number };
   "quota.forecast.reset.watch": { "remaining": number };
@@ -2027,12 +2027,12 @@ export interface MessageParams {
   "quota.history.curvesAll": { "total": number };
   "quota.history.curvesSome": { "shown": number; "total": number };
   "quota.history.forecastLegend": undefined;
-  "quota.history.moreBuckets": { "count": number; "names": string };
+  "quota.history.moreBuckets": { "names": string; "count": number };
   "quota.history.moreReadings": { "count": number };
   "quota.history.navigatorAllProviders": undefined;
   "quota.history.navigatorProvider": undefined;
   "quota.history.providerCount": { "count": number };
-  "quota.history.scopeNote": { "scope": string; "total": string; "visible": string };
+  "quota.history.scopeNote": { "scope": string; "visible": string; "total": string };
   "quota.history.showAllCurves": undefined;
   "quota.history.showBusiest": undefined;
   "quota.history.title": undefined;
@@ -2056,7 +2056,7 @@ export interface MessageParams {
   "quota.mini.railEmpty": undefined;
   "quota.mini.railTitle": { "days": number };
   "quota.mini.resets": { "countdown": string };
-  "quota.mini.rowHelp": { "percent": number; "row": string; "subProvider": string };
+  "quota.mini.rowHelp": { "subProvider": string; "row": string; "percent": number };
   "quota.misc.independentCopies": { "count": number };
   "quota.misc.notConfigured": undefined;
   "quota.misc.refreshCopies": { "provider": string };
@@ -2074,7 +2074,7 @@ export interface MessageParams {
   "quota.pace.runsOutShort": { "countdown": string };
   "quota.perModelLimits": { "count": number; "provider": string };
   "quota.remainingPercent": { "percent": number };
-  "quota.reset.in": { "duration": string };
+  "quota.reset.in": { "when": string };
   "quota.reset.passed": undefined;
   "quota.reset.passedAt": { "time": string };
   "quota.resetCredits.available": { "count": number };
@@ -2085,18 +2085,18 @@ export interface MessageParams {
   "quota.upcoming.empty": undefined;
   "quota.upcoming.gain": { "gain": number };
   "quota.upcoming.horizon": undefined;
-  "quota.upcoming.leftAndGain": { "gain": number; "remaining": number };
-  "quota.upcoming.markerHelp": { "gain": number; "remaining": number; "countdown": string; "label": string };
-  "quota.upcoming.resetsAt": { "absolute": string; "countdown": string };
+  "quota.upcoming.leftAndGain": { "remaining": number; "gain": number };
+  "quota.upcoming.markerHelp": { "label": string; "remaining": number; "gain": number; "countdown": string };
+  "quota.upcoming.resetsAt": { "countdown": string; "absolute": string };
   "quota.upcoming.title": undefined;
   "quota.update.failed": { "reason": string };
   "quota.usedPercent": { "percent": number };
   "quota.window.dayOfDays": { "day": number; "total": number; "value": string };
-  "quota.window.elapsedOfWindow": { "elapsed": string; "value": string; "window": string };
+  "quota.window.elapsedOfWindow": { "elapsed": string; "window": string; "value": string };
   "quota.window.resetsSoon": { "value": string };
   "resetHistory.a11y.empty": { "verdict": string };
   "resetHistory.a11y.more": { "count": number };
-  "resetHistory.a11y.summary": { "headline": string; "lanes": string; "more": string; "truncation": string; "verdict": string; "window": string };
+  "resetHistory.a11y.summary": { "window": string; "truncation": string; "headline": string; "verdict": string; "lanes": string; "more": string };
   "resetHistory.a11y.truncation": { "note": string };
   "resetHistory.axis.cycle": undefined;
   "resetHistory.axis.cycleHelp": undefined;
@@ -2109,13 +2109,13 @@ export interface MessageParams {
   "resetHistory.cardTitle": undefined;
   "resetHistory.compareEmpty": undefined;
   "resetHistory.compareWindow": { "window": string };
-  "resetHistory.currentCycleCaption": { "left": number; "used": number };
-  "resetHistory.cycleCaption": { "left": number; "used": number; "time": string };
+  "resetHistory.currentCycleCaption": { "used": number; "left": number };
+  "resetHistory.cycleCaption": { "time": string; "used": number; "left": number };
   "resetHistory.earlyRefillCount": { "count": number };
   "resetHistory.lane.emptyState": undefined;
   "resetHistory.lane.spokenNoCycles": { "label": string };
-  "resetHistory.lane.spokenWaste": { "count": number; "label": string; "percent": string };
-  "resetHistory.laneAverage": { "percent": number; "count": number };
+  "resetHistory.lane.spokenWaste": { "label": string; "percent": string; "count": number };
+  "resetHistory.laneAverage": { "percent": string; "count": number };
   "resetHistory.lastSeenBefore": { "duration": string };
   "resetHistory.legend.barHeight": undefined;
   "resetHistory.legend.byDate": undefined;
@@ -2138,16 +2138,16 @@ export interface MessageParams {
   "resetHistory.title": undefined;
   "resetHistory.tooltip.completed": { "left": number; "used": number };
   "resetHistory.tooltip.current": { "left": number; "used": number };
-  "resetHistory.tooltip.range": { "end": string; "start": string };
-  "resetHistory.tooltip.rangeDue": { "end": string; "start": string };
+  "resetHistory.tooltip.range": { "start": string; "end": string };
+  "resetHistory.tooltip.rangeDue": { "start": string; "end": string };
   "resetHistory.totals.none": undefined;
   "resetHistory.truncation": { "shown": number; "total": number };
   "resetHistory.verdict.clean": { "percent": string };
-  "resetHistory.verdict.leaky": { "count": number; "label": string; "percent": string };
+  "resetHistory.verdict.leaky": { "label": string; "percent": string; "count": number };
   "resetHistory.verdict.noCycles": undefined;
   "resetHistory.verdict.noQuota": undefined;
-  "resetHistory.verdict.wasteful": { "count": number; "label": string };
-  "resetHistory.wastedSummary": { "used": number; "wasted": number; "cycles": number };
+  "resetHistory.verdict.wasteful": { "label": string; "count": number };
+  "resetHistory.wastedSummary": { "used": string; "wasted": string; "count": number };
   "resetHistory.window.all": undefined;
   "resetHistory.window.eightWeeks": undefined;
   "resetHistory.window.fourWeeks": undefined;
@@ -2408,7 +2408,7 @@ export interface MessageParams {
   "settings.remote.relay": undefined;
   "settings.remote.resumeSaving": undefined;
   "settings.remote.retrySaving": undefined;
-  "settings.remote.statusWithCode": { "code": string; "title": string };
+  "settings.remote.statusWithCode": { "title": string; "code": string };
   "settings.remote.sync.busy": undefined;
   "settings.remote.sync.connectionFailed": undefined;
   "settings.remote.sync.hostLookupFailed": undefined;
@@ -2548,8 +2548,8 @@ export interface MessageParams {
   "usage.activity.a11y": undefined;
   "usage.activity.cellTooltip": { "day": string; "hour": string; "tokens": string };
   "usage.activity.heavy": undefined;
-  "usage.activity.peak": { "day": string; "hour": string };
-  "usage.activity.peakCell": { "cellHour": string; "day": string; "hour": string };
+  "usage.activity.peak": { "hour": string; "day": string };
+  "usage.activity.peakCell": { "hour": string; "day": string; "cellHour": string };
   "usage.activity.quiet": undefined;
   "usage.activity.tokensShort": { "tokens": string };
   "usage.breakdown.models": undefined;
@@ -2558,7 +2558,7 @@ export interface MessageParams {
   "usage.breakdown.providers": undefined;
   "usage.breakdown.requests": undefined;
   "usage.chartNavigator.label": undefined;
-  "usage.chartNavigator.range": { "end": string; "start": string };
+  "usage.chartNavigator.range": { "start": string; "end": string };
   "usage.chartNavigator.showFullRange": undefined;
   "usage.chartNavigator.zoomIn": undefined;
   "usage.chartNavigator.zoomOut": undefined;
@@ -2586,7 +2586,7 @@ export interface MessageParams {
   "usage.filters.range24h": undefined;
   "usage.filters.rangeCustom": undefined;
   "usage.filters.rangeMenu": undefined;
-  "usage.filters.rangeSpan": { "end": string; "start": string };
+  "usage.filters.rangeSpan": { "start": string; "end": string };
   "usage.filters.refreshInterval": { "seconds": number };
   "usage.harnessMix.activeCount": { "count": number };
   "usage.harnessMix.byRealTokens": undefined;
@@ -2658,13 +2658,13 @@ export interface MessageParams {
   "usage.table.loadMore": { "remaining": number };
   "usage.table.loadingMore": undefined;
   "usage.table.modelCount": { "count": number };
-  "usage.table.periodRow": { "cost": string; "period": string; "tokens": string };
+  "usage.table.periodRow": { "period": string; "tokens": string; "cost": string };
   "usage.table.projectCount": { "count": number };
-  "usage.table.requestRow": { "cost": string; "harness": string; "model": string; "time": string; "tokens": string };
+  "usage.table.requestRow": { "time": string; "harness": string; "model": string; "tokens": string; "cost": string };
   "usage.table.requestsLabel": undefined;
   "usage.table.requestsLoaded": { "loaded": number; "total": number };
   "usage.table.showMorePeriods": { "count": number; "total": number };
-  "usage.table.statRow": { "requests": number; "cost": string; "name": string; "tokens": string };
+  "usage.table.statRow": { "name": string; "requests": number; "tokens": string; "cost": string };
   "usage.table.unpriced": undefined;
   "usage.table.unpricedHelp": undefined;
   "usage.tokens.cacheRead": undefined;
@@ -2672,7 +2672,7 @@ export interface MessageParams {
   "usage.tokens.input": undefined;
   "usage.tokens.output": undefined;
   "usage.tokens.title": undefined;
-  "usage.trend.accessibilitySummary": { "count": number; "cost": string; "tokens": string };
+  "usage.trend.accessibilitySummary": { "count": number; "tokens": string; "cost": string };
   "usage.trend.bucketDay": undefined;
   "usage.trend.bucketHour": undefined;
   "usage.trend.bucketWeek": undefined;
@@ -2699,11 +2699,11 @@ export interface MessageParams {
   "usage.whenYouUse.googleAI": undefined;
   "usage.whenYouUse.provider": { "provider": string };
   "usage.whenYouUse.spaceXAI": undefined;
-  "usage.yearHeatmap.a11y": { "count": number; "provider": string };
+  "usage.yearHeatmap.a11y": { "provider": string; "count": number };
   "usage.yearHeatmap.less": undefined;
   "usage.yearHeatmap.more": undefined;
   "usage.yearHeatmap.title": { "provider": string };
-  "usage.yearHeatmap.tooltip": { "amount": string; "date": string };
+  "usage.yearHeatmap.tooltip": { "date": string; "amount": string };
   "usage.yearHeatmap.total": { "amount": string };
   "workbench.appearance.useDark": undefined;
   "workbench.appearance.useLight": undefined;
@@ -2722,10 +2722,10 @@ export interface MessageParams {
   "workbench.placeholder.settings": undefined;
   "workbench.placeholder.skillsManager": undefined;
   "workbench.placeholder.usageStats": undefined;
-  "workbench.resets.calendar.dayEntry": { "percent": number; "lane": string };
-  "workbench.resets.calendar.futureEntry": { "percent": number; "lane": string; "time": string };
+  "workbench.resets.calendar.dayEntry": { "lane": string; "percent": number };
+  "workbench.resets.calendar.futureEntry": { "lane": string; "time": string; "percent": number };
   "workbench.resets.calendar.nextMonth": undefined;
-  "workbench.resets.calendar.pastEntry": { "percent": number; "lane": string; "time": string };
+  "workbench.resets.calendar.pastEntry": { "lane": string; "time": string; "percent": number };
   "workbench.resets.calendar.previousMonth": undefined;
   "workbench.resets.calendar.title": undefined;
   "workbench.resets.calendar.today": undefined;
@@ -2774,7 +2774,7 @@ export interface MessageParams {
   "workbench.sessions.filter.dateRange": undefined;
   "workbench.sessions.filter.folders": undefined;
   "workbench.sessions.filter.foldersFiltered": undefined;
-  "workbench.sessions.filter.harnessCount": { "count": number; "harness": string };
+  "workbench.sessions.filter.harnessCount": { "harness": string; "count": number };
   "workbench.sessions.filter.options": undefined;
   "workbench.sessions.filter.scope": undefined;
   "workbench.sessions.filter.sort": undefined;
@@ -2867,12 +2867,12 @@ export interface MessageParams {
   "workbench.sessions.transcript.placeholderDetail": undefined;
   "workbench.sessions.transcript.placeholderTitle": undefined;
   "workbench.sessions.transcript.readFailed": undefined;
-  "workbench.sessions.transcript.truncatedDetail": { "file": string; "parsed": string };
+  "workbench.sessions.transcript.truncatedDetail": { "parsed": string; "file": string };
   "workbench.sessions.transcript.truncatedTitle": { "count": number };
   "workbench.skills.appCountNativeDisabled": { "count": number };
-  "workbench.skills.appCountViaGeminiRoot": { "coupled": number; "enabled": number };
-  "workbench.skills.appCountViaSharedRoot": { "coupled": number; "enabled": number };
-  "workbench.skills.appSeesCount": { "count": number; "app": string };
+  "workbench.skills.appCountViaGeminiRoot": { "enabled": number; "coupled": number };
+  "workbench.skills.appCountViaSharedRoot": { "enabled": number; "coupled": number };
+  "workbench.skills.appSeesCount": { "app": string; "count": number };
   "workbench.skills.backups": undefined;
   "workbench.skills.backups.deleteAccessibility": undefined;
   "workbench.skills.backups.deleteConfirmMessage": undefined;
@@ -2938,7 +2938,7 @@ export interface MessageParams {
   "workbench.skills.import.notSkillsDetail": undefined;
   "workbench.skills.import.recognizedCount": { "count": number };
   "workbench.skills.import.subtitle": undefined;
-  "workbench.skills.import.summary": { "adopted": number; "conflicts": number; "unmanaged": number };
+  "workbench.skills.import.summary": { "adopted": number; "unmanaged": number; "conflicts": number };
   "workbench.skills.import.title": undefined;
   "workbench.skills.importExisting": undefined;
   "workbench.skills.install": undefined;
@@ -2978,19 +2978,19 @@ export interface MessageParams {
   "workbench.skills.toast.addRepoFirst": undefined;
   "workbench.skills.toast.allUpToDate": undefined;
   "workbench.skills.toast.archiveEmpty": undefined;
-  "workbench.skills.toast.disabledKeptProjection": { "app": string; "skill": string };
+  "workbench.skills.toast.disabledKeptProjection": { "skill": string; "app": string };
   "workbench.skills.toast.enabledForApps": { "apps": string };
   "workbench.skills.toast.importConflicts": { "count": number };
   "workbench.skills.toast.importRecognized": { "count": number };
   "workbench.skills.toast.installedArchive": { "count": number };
-  "workbench.skills.toast.installedForApps": { "apps": string; "skill": string };
+  "workbench.skills.toast.installedForApps": { "skill": string; "apps": string };
   "workbench.skills.toast.installedShared": { "skill": string };
   "workbench.skills.toast.invalidRepoRef": { "input": string };
   "workbench.skills.toast.linkRemovedStillShared": { "app": string; "skill": string };
   "workbench.skills.toast.noSearchMatches": undefined;
   "workbench.skills.toast.noSkillsFound": undefined;
-  "workbench.skills.toast.notFoundInRepo": { "repo": string; "skill": string };
-  "workbench.skills.toast.projectionClearedFolderKept": { "app": string; "skill": string };
+  "workbench.skills.toast.notFoundInRepo": { "skill": string; "repo": string };
+  "workbench.skills.toast.projectionClearedFolderKept": { "skill": string; "app": string };
   "workbench.skills.toast.recorded": { "count": number };
   "workbench.skills.toast.reposUnreadable": { "count": number };
   "workbench.skills.toast.restored": { "skill": string };
@@ -2998,7 +2998,7 @@ export interface MessageParams {
   "workbench.skills.toast.sharedLibraryNote": undefined;
   "workbench.skills.toast.sharedRootNoSwitch": { "app": string; "skill": string };
   "workbench.skills.toast.uninstalledBackedUp": { "skill": string };
-  "workbench.skills.toast.uninstalledLeftInPlace": { "apps": string; "skill": string };
+  "workbench.skills.toast.uninstalledLeftInPlace": { "skill": string; "apps": string };
   "workbench.skills.toast.updated": { "skill": string };
   "workbench.skills.toast.updatesAvailable": { "count": number };
   "workbench.skills.toggleHelp.installInto": { "app": string };
@@ -3499,7 +3499,7 @@ export const messages: {
     "quota.forecast.metric.unavailable": "Unavailable",
     "quota.forecast.metric.uncertaintyInterval": "uncertainty interval",
     "quota.forecast.reset.atRisk": "Likely to run out before reset",
-    "quota.forecast.reset.enough": "Forecast {remaining}% left at reset",
+    "quota.forecast.reset.enough": "forecast {percent}% left at reset",
     "quota.forecast.reset.learning": "Learning your pattern · about {remaining}% left",
     "quota.forecast.reset.surplus": "Likely surplus · forecast {remaining}% left",
     "quota.forecast.reset.watch": "May run short · forecast {remaining}% left",
@@ -3592,7 +3592,7 @@ export const messages: {
     "quota.pace.runsOutShort": "out {countdown}",
     "quota.perModelLimits": "{count, plural, one {1 per-model limit} other {# per-model limits}} · open {provider} for details",
     "quota.remainingPercent": "{percent}% left",
-    "quota.reset.in": "resets in {duration}",
+    "quota.reset.in": "Resets in {when}",
     "quota.reset.passed": "reset passed",
     "quota.reset.passedAt": "reset passed · {time}",
     "quota.resetCredits.available": "{count, plural, one {1 manual reset available} other {# manual resets available}}",
@@ -3665,7 +3665,7 @@ export const messages: {
     "resetHistory.verdict.noCycles": "No completed cycles yet — a cycle is recorded when a quota refills.",
     "resetHistory.verdict.noQuota": "No weekly or longer quota is being tracked yet.",
     "resetHistory.verdict.wasteful": "{label} refilled {count, plural, one {once} other {# times}} with more than half unused.",
-    "resetHistory.wastedSummary": "{used}% used · {wasted}% wasted · {cycles, plural, one {1 cycle} other {# cycles}}",
+    "resetHistory.wastedSummary": "{used}% used · {wasted}% wasted · {count, plural, one {1 cycle} other {# cycles}}",
     "resetHistory.window.all": "All",
     "resetHistory.window.eightWeeks": "8w",
     "resetHistory.window.fourWeeks": "4w",
@@ -5012,7 +5012,7 @@ export const messages: {
     "quota.forecast.metric.unavailable": "不可用",
     "quota.forecast.metric.uncertaintyInterval": "不确定区间",
     "quota.forecast.reset.atRisk": "很可能在重置前耗尽",
-    "quota.forecast.reset.enough": "预计重置时剩余 {remaining}%",
+    "quota.forecast.reset.enough": "预计重置时剩余 {percent}%",
     "quota.forecast.reset.learning": "正在学习使用规律 · 约剩余 {remaining}%",
     "quota.forecast.reset.surplus": "预计将有盈余 · 重置时剩余 {remaining}%",
     "quota.forecast.reset.watch": "可能不足 · 预计剩余 {remaining}%",
@@ -5105,7 +5105,7 @@ export const messages: {
     "quota.pace.runsOutShort": "{countdown}耗尽",
     "quota.perModelLimits": "{count, plural, other {# 个}}按模型的限额 · 打开 {provider} 查看详情",
     "quota.remainingPercent": "剩余 {percent}%",
-    "quota.reset.in": "距重置 {duration}",
+    "quota.reset.in": "距重置 {when}",
     "quota.reset.passed": "重置时间已过",
     "quota.reset.passedAt": "重置时间已过 · {time}",
     "quota.resetCredits.available": "{count, plural, other {# 张}}可用重置券",
@@ -5178,7 +5178,7 @@ export const messages: {
     "resetHistory.verdict.noCycles": "尚无完整周期 — 额度补满时才会记录一个周期。",
     "resetHistory.verdict.noQuota": "尚未跟踪任何按周或更长周期的额度。",
     "resetHistory.verdict.wasteful": "{label} 有 {count, plural, other {# 次}}补额后超过一半未使用。",
-    "resetHistory.wastedSummary": "已用 {used}% · 浪费 {wasted}% · {cycles, plural, other {# 个周期}}",
+    "resetHistory.wastedSummary": "已用 {used}% · 浪费 {wasted}% · {count, plural, other {# 个周期}}",
     "resetHistory.window.all": "全部",
     "resetHistory.window.eightWeeks": "8 周",
     "resetHistory.window.fourWeeks": "4 周",

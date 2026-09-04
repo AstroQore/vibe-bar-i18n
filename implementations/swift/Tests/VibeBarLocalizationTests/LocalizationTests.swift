@@ -178,7 +178,7 @@ struct LocalizationTests {
         withOverride("zh-Hans") {
             #expect(L10n.Quota.usedPercent(percent: 42) == "已用 42%")
             #expect(
-                L10n.ResetHistory.wastedSummary(used: 61, wasted: 39, cycles: 7)
+                L10n.ResetHistory.wastedSummary(used: "61", wasted: "39", count: 7)
                     == "已用 61% · 浪费 39% · 7 个周期"
             )
             #expect(

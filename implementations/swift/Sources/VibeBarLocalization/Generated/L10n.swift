@@ -524,8 +524,8 @@ public enum L10n {
             ///
             /// Key: `cost.history.extentNote`
             /// en: "{span} · {start} – {end}"
-            public static func extentNote(end: String, span: String, start: String) -> String {
-                L10nSupport.format("cost.history.extentNote", end, span, start)
+            public static func extentNote(span: String, start: String, end: String) -> String {
+                L10nSupport.format("cost.history.extentNote", span, start, end)
             }
 
             /// Tooltip on a bucket-width button the current zoom level cannot draw
@@ -1686,8 +1686,8 @@ public enum L10n {
             ///
             /// Key: `menuBar.spoken.titleBody`
             /// en: "{kind} quota: {body}"
-            public static func titleBody(body: String, kind: String) -> String {
-                L10nSupport.format("menuBar.spoken.titleBody", body, kind)
+            public static func titleBody(kind: String, body: String) -> String {
+                L10nSupport.format("menuBar.spoken.titleBody", kind, body)
             }
 
             /// One quota spoken aloud. Label is the quota's name, value an already-formatted percentage.
@@ -1922,8 +1922,8 @@ public enum L10n {
             ///
             /// Key: `onboarding.pricing.merged`
             /// en: "Merged {when} · {count} models"
-            public static func merged(count: Int, when: String) -> String {
-                L10nSupport.format("onboarding.pricing.merged", count, when)
+            public static func merged(when: String, count: Int) -> String {
+                L10nSupport.format("onboarding.pricing.merged", when, count)
             }
 
             /// Status line before the first fetch
@@ -2777,8 +2777,8 @@ public enum L10n {
                 ///
                 /// Key: `quota.forecast.guidance.surplus`
                 /// en: "About {unused}% likely unused beyond the {target}% safety target"
-                public static func surplus(target: Int, unused: Int) -> String {
-                    L10nSupport.format("quota.forecast.guidance.surplus", target, unused)
+                public static func surplus(unused: Int, target: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.surplus", unused, target)
                 }
 
                 /// Used-mode guidance when there is headroom
@@ -2793,8 +2793,8 @@ public enum L10n {
                 ///
                 /// Key: `quota.forecast.guidance.usedSurplus`
                 /// en: "About {unused}% capacity may remain beyond the {target}% used target"
-                public static func usedSurplus(target: Int, unused: Int) -> String {
-                    L10nSupport.format("quota.forecast.guidance.usedSurplus", target, unused)
+                public static func usedSurplus(unused: Int, target: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.usedSurplus", unused, target)
                 }
 
                 /// Used-mode guidance when nothing needs saying
@@ -2895,8 +2895,8 @@ public enum L10n {
                 ///
                 /// Key: `quota.forecast.metric.coverageValue`
                 /// en: "obs {observations}% · history {history}%"
-                public static func coverageValue(history: Int, observations: Int) -> String {
-                    L10nSupport.format("quota.forecast.metric.coverageValue", history, observations)
+                public static func coverageValue(observations: Int, history: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.coverageValue", observations, history)
                 }
 
                 /// Detail under the reset-history metric before any cycle has completed
@@ -2923,16 +2923,16 @@ public enum L10n {
                 ///
                 /// Key: `quota.forecast.metric.evidenceDetail`
                 /// en: "{confidence} · score {score}%"
-                public static func evidenceDetail(score: Int, confidence: String) -> String {
-                    L10nSupport.format("quota.forecast.metric.evidenceDetail", score, confidence)
+                public static func evidenceDetail(confidence: String, score: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.evidenceDetail", confidence, score)
                 }
 
                 /// Value of the evidence metric: observations in this cycle and completed cycles behind it
                 ///
                 /// Key: `quota.forecast.metric.evidenceValue`
                 /// en: "{observations} obs · {cycles} cycles"
-                public static func evidenceValue(cycles: Int, observations: Int) -> String {
-                    L10nSupport.format("quota.forecast.metric.evidenceValue", cycles, observations)
+                public static func evidenceValue(observations: Int, cycles: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.evidenceValue", observations, cycles)
                 }
 
                 /// Detail under the forecast metric while the card shows used percentages
@@ -3103,12 +3103,12 @@ public enum L10n {
                 /// en: "Likely to run out before reset"
                 public static var atRisk: String { L10nSupport.string("quota.forecast.reset.atRisk") }
 
-                /// One-line forecast summary
+                /// Row caption showing the forecast remaining quota at the refill
                 ///
                 /// Key: `quota.forecast.reset.enough`
-                /// en: "Forecast {remaining}% left at reset"
-                public static func enough(remaining: Int) -> String {
-                    L10nSupport.format("quota.forecast.reset.enough", remaining)
+                /// en: "forecast {percent}% left at reset"
+                public static func enough(percent: Int) -> String {
+                    L10nSupport.format("quota.forecast.reset.enough", percent)
                 }
 
                 /// One-line forecast summary
@@ -3440,8 +3440,8 @@ public enum L10n {
             ///
             /// Key: `quota.history.moreBuckets`
             /// en: "{names} +{count}"
-            public static func moreBuckets(count: Int, names: String) -> String {
-                L10nSupport.format("quota.history.moreBuckets", count, names)
+            public static func moreBuckets(names: String, count: Int) -> String {
+                L10nSupport.format("quota.history.moreBuckets", names, count)
             }
 
             /// Last row of a crowded chart tooltip, standing in for the readings it could not fit
@@ -3476,8 +3476,8 @@ public enum L10n {
             ///
             /// Key: `quota.history.scopeNote`
             /// en: "{scope} · showing {visible} of {total} recorded"
-            public static func scopeNote(scope: String, total: String, visible: String) -> String {
-                L10nSupport.format("quota.history.scopeNote", scope, total, visible)
+            public static func scopeNote(scope: String, visible: String, total: String) -> String {
+                L10nSupport.format("quota.history.scopeNote", scope, visible, total)
             }
 
             /// Menu item that puts every quota curve back on the chart
@@ -3646,8 +3646,8 @@ public enum L10n {
             ///
             /// Key: `quota.mini.rowHelp`
             /// en: "{subProvider} — {row}: {percent}%"
-            public static func rowHelp(percent: Int, row: String, subProvider: String) -> String {
-                L10nSupport.format("quota.mini.rowHelp", percent, row, subProvider)
+            public static func rowHelp(subProvider: String, row: String, percent: Int) -> String {
+                L10nSupport.format("quota.mini.rowHelp", subProvider, row, percent)
             }
         }
 
@@ -3766,12 +3766,12 @@ public enum L10n {
         }
 
         public enum Reset {
-            /// Live countdown to a bucket's refill; duration is a compact span, sometimes followed by an absolute time
+            /// Caption under a quota bar; when is a countdown, sometimes with an absolute time
             ///
             /// Key: `quota.reset.in`
-            /// en: "resets in {duration}"
-            public static func `in`(duration: String) -> String {
-                L10nSupport.format("quota.reset.in", duration)
+            /// en: "Resets in {when}"
+            public static func `in`(when: String) -> String {
+                L10nSupport.format("quota.reset.in", when)
             }
 
             /// A bucket whose reset time is behind us and which has not refreshed
@@ -3854,24 +3854,24 @@ public enum L10n {
             ///
             /// Key: `quota.upcoming.leftAndGain`
             /// en: "{remaining}% left now · +{gain}% comes back"
-            public static func leftAndGain(gain: Int, remaining: Int) -> String {
-                L10nSupport.format("quota.upcoming.leftAndGain", gain, remaining)
+            public static func leftAndGain(remaining: Int, gain: Int) -> String {
+                L10nSupport.format("quota.upcoming.leftAndGain", remaining, gain)
             }
 
             /// Tooltip on a marker in the resets timeline; label names the bucket and is not translated
             ///
             /// Key: `quota.upcoming.markerHelp`
             /// en: "{label} — {remaining}% now, +{gain}% {countdown}"
-            public static func markerHelp(gain: Int, remaining: Int, countdown: String, label: String) -> String {
-                L10nSupport.format("quota.upcoming.markerHelp", gain, remaining, countdown, label)
+            public static func markerHelp(label: String, remaining: Int, gain: Int, countdown: String) -> String {
+                L10nSupport.format("quota.upcoming.markerHelp", label, remaining, gain, countdown)
             }
 
             /// Row caption: how long until a bucket refills and when that is
             ///
             /// Key: `quota.upcoming.resetsAt`
             /// en: "resets {countdown} · {absolute}"
-            public static func resetsAt(absolute: String, countdown: String) -> String {
-                L10nSupport.format("quota.upcoming.resetsAt", absolute, countdown)
+            public static func resetsAt(countdown: String, absolute: String) -> String {
+                L10nSupport.format("quota.upcoming.resetsAt", countdown, absolute)
             }
 
             /// Card title for the resets timeline
@@ -3904,8 +3904,8 @@ public enum L10n {
             ///
             /// Key: `quota.window.elapsedOfWindow`
             /// en: "{elapsed} of {window} · {value}"
-            public static func elapsedOfWindow(elapsed: String, value: String, window: String) -> String {
-                L10nSupport.format("quota.window.elapsedOfWindow", elapsed, value, window)
+            public static func elapsedOfWindow(elapsed: String, window: String, value: String) -> String {
+                L10nSupport.format("quota.window.elapsedOfWindow", elapsed, window, value)
             }
 
             /// Window progress line once the reset time has passed but no refresh has landed; value is the used/left figure
@@ -3969,16 +3969,16 @@ public enum L10n {
         ///
         /// Key: `resetHistory.currentCycleCaption`
         /// en: "Current cycle · {used}% used so far · {left}% left"
-        public static func currentCycleCaption(`left`: Int, used: Int) -> String {
-            L10nSupport.format("resetHistory.currentCycleCaption", `left`, used)
+        public static func currentCycleCaption(used: Int, `left`: Int) -> String {
+            L10nSupport.format("resetHistory.currentCycleCaption", used, `left`)
         }
 
         /// Caption for one completed cycle in the reset-history strip; time is the reset moment
         ///
         /// Key: `resetHistory.cycleCaption`
         /// en: "{time} reset · {used}% used · {left}% left"
-        public static func cycleCaption(`left`: Int, used: Int, time: String) -> String {
-            L10nSupport.format("resetHistory.cycleCaption", `left`, used, time)
+        public static func cycleCaption(time: String, used: Int, `left`: Int) -> String {
+            L10nSupport.format("resetHistory.cycleCaption", time, used, `left`)
         }
 
         /// Note under the reset-history strip: how many cycles refilled before their window ended
@@ -3993,7 +3993,7 @@ public enum L10n {
         ///
         /// Key: `resetHistory.laneAverage`
         /// en: "avg wasted {percent}% · last {count, plural, one {1 cycle} other {# cycles}}"
-        public static func laneAverage(percent: Int, count: Int) -> String {
+        public static func laneAverage(percent: String, count: Int) -> String {
             L10nSupport.localizedFormat("resetHistory.laneAverage", percent, count)
         }
 
@@ -4042,9 +4042,9 @@ public enum L10n {
         /// Header arithmetic across every visible lane
         ///
         /// Key: `resetHistory.wastedSummary`
-        /// en: "{used}% used · {wasted}% wasted · {cycles, plural, one {1 cycle} other {# cycles}}"
-        public static func wastedSummary(used: Int, wasted: Int, cycles: Int) -> String {
-            L10nSupport.localizedFormat("resetHistory.wastedSummary", used, wasted, cycles)
+        /// en: "{used}% used · {wasted}% wasted · {count, plural, one {1 cycle} other {# cycles}}"
+        public static func wastedSummary(used: String, wasted: String, count: Int) -> String {
+            L10nSupport.localizedFormat("resetHistory.wastedSummary", used, wasted, count)
         }
 
         public enum A11y {
@@ -4068,8 +4068,8 @@ public enum L10n {
             ///
             /// Key: `resetHistory.a11y.summary`
             /// en: "Reset history comparison, {window}, bar height is the quota remaining at reset.{truncation} {headline}. {verdict} {lanes}.{more}"
-            public static func summary(headline: String, lanes: String, more: String, truncation: String, verdict: String, window: String) -> String {
-                L10nSupport.format("resetHistory.a11y.summary", headline, lanes, more, truncation, verdict, window)
+            public static func summary(window: String, truncation: String, headline: String, verdict: String, lanes: String, more: String) -> String {
+                L10nSupport.format("resetHistory.a11y.summary", window, truncation, headline, verdict, lanes, more)
             }
 
             /// The truncation caveat as it appears inside the screen-reader summary. Leading space is intentional.
@@ -4126,8 +4126,8 @@ public enum L10n {
             ///
             /// Key: `resetHistory.lane.spokenWaste`
             /// en: "{label}: {percent}% wasted on average over {count} cycles"
-            public static func spokenWaste(count: Int, label: String, percent: String) -> String {
-                L10nSupport.format("resetHistory.lane.spokenWaste", count, label, percent)
+            public static func spokenWaste(label: String, percent: String, count: Int) -> String {
+                L10nSupport.format("resetHistory.lane.spokenWaste", label, percent, count)
             }
         }
 
@@ -4248,16 +4248,16 @@ public enum L10n {
             ///
             /// Key: `resetHistory.tooltip.range`
             /// en: "{start} → {end} reset"
-            public static func range(end: String, start: String) -> String {
-                L10nSupport.format("resetHistory.tooltip.range", end, start)
+            public static func range(start: String, end: String) -> String {
+                L10nSupport.format("resetHistory.tooltip.range", start, end)
             }
 
             /// Tooltip line naming the span of the cycle still running and when it is due to reset
             ///
             /// Key: `resetHistory.tooltip.rangeDue`
             /// en: "{start} → {end} reset due"
-            public static func rangeDue(end: String, start: String) -> String {
-                L10nSupport.format("resetHistory.tooltip.rangeDue", end, start)
+            public static func rangeDue(start: String, end: String) -> String {
+                L10nSupport.format("resetHistory.tooltip.rangeDue", start, end)
             }
         }
 
@@ -4282,8 +4282,8 @@ public enum L10n {
             ///
             /// Key: `resetHistory.verdict.leaky`
             /// en: "{label} left {percent}% unused on average across {count, plural, one {1 cycle} other {# cycles}}."
-            public static func leaky(count: Int, label: String, percent: String) -> String {
-                L10nSupport.localizedFormat("resetHistory.verdict.leaky", count, label, percent)
+            public static func leaky(label: String, percent: String, count: Int) -> String {
+                L10nSupport.localizedFormat("resetHistory.verdict.leaky", label, percent, count)
             }
 
             /// Header sentence: lanes exist but none has closed
@@ -4302,8 +4302,8 @@ public enum L10n {
             ///
             /// Key: `resetHistory.verdict.wasteful`
             /// en: "{label} refilled {count, plural, one {once} other {# times}} with more than half unused."
-            public static func wasteful(count: Int, label: String) -> String {
-                L10nSupport.localizedFormat("resetHistory.verdict.wasteful", count, label)
+            public static func wasteful(label: String, count: Int) -> String {
+                L10nSupport.localizedFormat("resetHistory.verdict.wasteful", label, count)
             }
         }
 
@@ -6018,8 +6018,8 @@ public enum L10n {
             ///
             /// Key: `settings.remote.statusWithCode`
             /// en: "{title} · {code}"
-            public static func statusWithCode(code: String, title: String) -> String {
-                L10nSupport.format("settings.remote.statusWithCode", code, title)
+            public static func statusWithCode(title: String, code: String) -> String {
+                L10nSupport.format("settings.remote.statusWithCode", title, code)
             }
 
             /// Button that pulls remote batches immediately
@@ -6856,16 +6856,16 @@ public enum L10n {
             ///
             /// Key: `usage.activity.peak`
             /// en: "Peak {hour} · {day}"
-            public static func peak(day: String, hour: String) -> String {
-                L10nSupport.format("usage.activity.peak", day, hour)
+            public static func peak(hour: String, day: String) -> String {
+                L10nSupport.format("usage.activity.peak", hour, day)
             }
 
             /// Caption naming the busiest hour overall and the busiest single cell when they differ
             ///
             /// Key: `usage.activity.peakCell`
             /// en: "Peak {hour} · {day} {cellHour}"
-            public static func peakCell(cellHour: String, day: String, hour: String) -> String {
-                L10nSupport.format("usage.activity.peakCell", cellHour, day, hour)
+            public static func peakCell(hour: String, day: String, cellHour: String) -> String {
+                L10nSupport.format("usage.activity.peakCell", hour, day, cellHour)
             }
 
             /// Low end of the activity grid's intensity legend
@@ -6926,8 +6926,8 @@ public enum L10n {
             ///
             /// Key: `usage.chartNavigator.range`
             /// en: "{start} to {end}"
-            public static func range(end: String, start: String) -> String {
-                L10nSupport.format("usage.chartNavigator.range", end, start)
+            public static func range(start: String, end: String) -> String {
+                L10nSupport.format("usage.chartNavigator.range", start, end)
             }
 
             /// Accessibility action that returns a chart to its whole domain
@@ -7107,8 +7107,8 @@ public enum L10n {
             ///
             /// Key: `usage.filters.rangeSpan`
             /// en: "{start} – {end}"
-            public static func rangeSpan(end: String, start: String) -> String {
-                L10nSupport.format("usage.filters.rangeSpan", end, start)
+            public static func rangeSpan(start: String, end: String) -> String {
+                L10nSupport.format("usage.filters.rangeSpan", start, end)
             }
 
             /// A polling interval, read both as an option inside the auto-refresh menu and as the value on the pill that opens it. The off state is common.off. distinct-from: quota.freshness.age.seconds — an age — how long ago a reading was taken — and an interval — how often to poll — are different quantities.
@@ -7533,8 +7533,8 @@ public enum L10n {
             ///
             /// Key: `usage.table.periodRow`
             /// en: "{period}, {tokens}, {cost}"
-            public static func periodRow(cost: String, period: String, tokens: String) -> String {
-                L10nSupport.format("usage.table.periodRow", cost, period, tokens)
+            public static func periodRow(period: String, tokens: String, cost: String) -> String {
+                L10nSupport.format("usage.table.periodRow", period, tokens, cost)
             }
 
             /// Row count over the Projects table, with the retention window the attribution covers.
@@ -7549,8 +7549,8 @@ public enum L10n {
             ///
             /// Key: `usage.table.requestRow`
             /// en: "{time}, {harness}, {model}, {tokens}, {cost}"
-            public static func requestRow(cost: String, harness: String, model: String, time: String, tokens: String) -> String {
-                L10nSupport.format("usage.table.requestRow", cost, harness, model, time, tokens)
+            public static func requestRow(time: String, harness: String, model: String, tokens: String, cost: String) -> String {
+                L10nSupport.format("usage.table.requestRow", time, harness, model, tokens, cost)
             }
 
             /// Screen-reader label for the Requests table's scroll area.
@@ -7579,8 +7579,8 @@ public enum L10n {
             ///
             /// Key: `usage.table.statRow`
             /// en: "{name}, {requests, plural, one {1 request} other {# requests}}, {tokens}, {cost}"
-            public static func statRow(requests: Int, cost: String, name: String, tokens: String) -> String {
-                L10nSupport.localizedFormat("usage.table.statRow", requests, cost, name, tokens)
+            public static func statRow(name: String, requests: Int, tokens: String, cost: String) -> String {
+                L10nSupport.localizedFormat("usage.table.statRow", name, requests, tokens, cost)
             }
 
             /// Cost cell of a request no price could be resolved for.
@@ -7695,8 +7695,8 @@ public enum L10n {
             ///
             /// Key: `usage.trend.accessibilitySummary`
             /// en: "{count, plural, one {1 provider} other {# providers}}, {tokens} tokens, {cost}"
-            public static func accessibilitySummary(count: Int, cost: String, tokens: String) -> String {
-                L10nSupport.localizedFormat("usage.trend.accessibilitySummary", count, cost, tokens)
+            public static func accessibilitySummary(count: Int, tokens: String, cost: String) -> String {
+                L10nSupport.localizedFormat("usage.trend.accessibilitySummary", count, tokens, cost)
             }
 
             /// Subtitle under the trend chart title when the series is bucketed by local calendar day.
@@ -7869,8 +7869,8 @@ public enum L10n {
             ///
             /// Key: `usage.yearHeatmap.a11y`
             /// en: "{provider} daily spend over the past year, {count, plural, one {1 week} other {# weeks}}"
-            public static func a11y(count: Int, provider: String) -> String {
-                L10nSupport.localizedFormat("usage.yearHeatmap.a11y", count, provider)
+            public static func a11y(provider: String, count: Int) -> String {
+                L10nSupport.localizedFormat("usage.yearHeatmap.a11y", provider, count)
             }
 
             /// Low end of the past-year grid's intensity legend
@@ -7897,8 +7897,8 @@ public enum L10n {
             ///
             /// Key: `usage.yearHeatmap.tooltip`
             /// en: "{date} · {amount}"
-            public static func tooltip(amount: String, date: String) -> String {
-                L10nSupport.format("usage.yearHeatmap.tooltip", amount, date)
+            public static func tooltip(date: String, amount: String) -> String {
+                L10nSupport.format("usage.yearHeatmap.tooltip", date, amount)
             }
 
             /// Caption beside the past-year grid's title; amount is already formatted currency
@@ -8040,16 +8040,16 @@ public enum L10n {
                 ///
                 /// Key: `workbench.resets.calendar.dayEntry`
                 /// en: "{lane} +{percent}%"
-                public static func dayEntry(percent: Int, lane: String) -> String {
-                    L10nSupport.format("workbench.resets.calendar.dayEntry", percent, lane)
+                public static func dayEntry(lane: String, percent: Int) -> String {
+                    L10nSupport.format("workbench.resets.calendar.dayEntry", lane, percent)
                 }
 
                 /// Tooltip for a scheduled reset in the calendar; lane names the quota, time is an absolute date and time
                 ///
                 /// Key: `workbench.resets.calendar.futureEntry`
                 /// en: "{lane} — resets {time}, +{percent}% back"
-                public static func futureEntry(percent: Int, lane: String, time: String) -> String {
-                    L10nSupport.format("workbench.resets.calendar.futureEntry", percent, lane, time)
+                public static func futureEntry(lane: String, time: String, percent: Int) -> String {
+                    L10nSupport.format("workbench.resets.calendar.futureEntry", lane, time, percent)
                 }
 
                 /// Tooltip on the reset calendar's forward arrow
@@ -8062,8 +8062,8 @@ public enum L10n {
                 ///
                 /// Key: `workbench.resets.calendar.pastEntry`
                 /// en: "{lane} — reset {time} at {percent}% used"
-                public static func pastEntry(percent: Int, lane: String, time: String) -> String {
-                    L10nSupport.format("workbench.resets.calendar.pastEntry", percent, lane, time)
+                public static func pastEntry(lane: String, time: String, percent: Int) -> String {
+                    L10nSupport.format("workbench.resets.calendar.pastEntry", lane, time, percent)
                 }
 
                 /// Tooltip on the reset calendar's back arrow
@@ -8448,8 +8448,8 @@ public enum L10n {
                 ///
                 /// Key: `workbench.sessions.filter.harnessCount`
                 /// en: "{harness}  {count}"
-                public static func harnessCount(count: Int, harness: String) -> String {
-                    L10nSupport.format("workbench.sessions.filter.harnessCount", count, harness)
+                public static func harnessCount(harness: String, count: Int) -> String {
+                    L10nSupport.format("workbench.sessions.filter.harnessCount", harness, count)
                 }
 
                 /// Sessions filter bar menu holding the terminal and index options
@@ -9024,8 +9024,8 @@ public enum L10n {
                 ///
                 /// Key: `workbench.sessions.transcript.truncatedDetail`
                 /// en: "{parsed} read of {file}. Reading all of it holds the whole transcript in memory."
-                public static func truncatedDetail(file: String, parsed: String) -> String {
-                    L10nSupport.format("workbench.sessions.transcript.truncatedDetail", file, parsed)
+                public static func truncatedDetail(parsed: String, file: String) -> String {
+                    L10nSupport.format("workbench.sessions.transcript.truncatedDetail", parsed, file)
                 }
 
                 /// Truncation banner title when only a head window of a very large session was parsed
@@ -9051,24 +9051,24 @@ public enum L10n {
             ///
             /// Key: `workbench.skills.appCountViaGeminiRoot`
             /// en: "{enabled} enabled + {coupled} via the Gemini CLI compatibility root"
-            public static func appCountViaGeminiRoot(coupled: Int, enabled: Int) -> String {
-                L10nSupport.format("workbench.skills.appCountViaGeminiRoot", coupled, enabled)
+            public static func appCountViaGeminiRoot(enabled: Int, coupled: Int) -> String {
+                L10nSupport.format("workbench.skills.appCountViaGeminiRoot", enabled, coupled)
             }
 
             /// Second clause of the per-harness count tooltip, for a harness that scans the shared root itself.
             ///
             /// Key: `workbench.skills.appCountViaSharedRoot`
             /// en: "{enabled} enabled + {coupled} via the shared skills root"
-            public static func appCountViaSharedRoot(coupled: Int, enabled: Int) -> String {
-                L10nSupport.format("workbench.skills.appCountViaSharedRoot", coupled, enabled)
+            public static func appCountViaSharedRoot(enabled: Int, coupled: Int) -> String {
+                L10nSupport.format("workbench.skills.appCountViaSharedRoot", enabled, coupled)
             }
 
             /// Skills page per-harness count pill: its tooltip and its accessibility label. {app} is a harness display name and is never translated.
             ///
             /// Key: `workbench.skills.appSeesCount`
             /// en: "{app} sees {count, plural, one {# skill} other {# skills}}"
-            public static func appSeesCount(count: Int, app: String) -> String {
-                L10nSupport.localizedFormat("workbench.skills.appSeesCount", count, app)
+            public static func appSeesCount(app: String, count: Int) -> String {
+                L10nSupport.localizedFormat("workbench.skills.appSeesCount", app, count)
             }
 
             /// Skills toolbar button that opens the backups sheet.
@@ -9610,8 +9610,8 @@ public enum L10n {
                 ///
                 /// Key: `workbench.skills.import.summary`
                 /// en: "{adopted} already shared · {unmanaged} need adoption · {conflicts} left unchanged"
-                public static func summary(adopted: Int, conflicts: Int, unmanaged: Int) -> String {
-                    L10nSupport.format("workbench.skills.import.summary", adopted, conflicts, unmanaged)
+                public static func summary(adopted: Int, unmanaged: Int, conflicts: Int) -> String {
+                    L10nSupport.format("workbench.skills.import.summary", adopted, unmanaged, conflicts)
                 }
 
                 /// Title of the import sheet.
@@ -9800,8 +9800,8 @@ public enum L10n {
                 ///
                 /// Key: `workbench.skills.toast.disabledKeptProjection`
                 /// en: "Disabled {skill} in {app} and kept its projection."
-                public static func disabledKeptProjection(app: String, skill: String) -> String {
-                    L10nSupport.format("workbench.skills.toast.disabledKeptProjection", app, skill)
+                public static func disabledKeptProjection(skill: String, app: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.disabledKeptProjection", skill, app)
                 }
 
                 /// Second sentence of the archive-install toast. {apps} is a list of harness names.
@@ -9840,8 +9840,8 @@ public enum L10n {
                 ///
                 /// Key: `workbench.skills.toast.installedForApps`
                 /// en: "Installed {skill} for {apps}."
-                public static func installedForApps(apps: String, skill: String) -> String {
-                    L10nSupport.format("workbench.skills.toast.installedForApps", apps, skill)
+                public static func installedForApps(skill: String, apps: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.installedForApps", skill, apps)
                 }
 
                 /// Toast after installing one skill with no harness selected.
@@ -9884,16 +9884,16 @@ public enum L10n {
                 ///
                 /// Key: `workbench.skills.toast.notFoundInRepo`
                 /// en: "{skill} was not found in {repo}."
-                public static func notFoundInRepo(repo: String, skill: String) -> String {
-                    L10nSupport.format("workbench.skills.toast.notFoundInRepo", repo, skill)
+                public static func notFoundInRepo(skill: String, repo: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.notFoundInRepo", skill, repo)
                 }
 
                 /// Toast after removing a projection that turned out to be a real folder Vibe Bar did not create.
                 ///
                 /// Key: `workbench.skills.toast.projectionClearedFolderKept`
                 /// en: "{skill}'s Vibe Bar projection was cleared for {app}, but the existing folder was left in place."
-                public static func projectionClearedFolderKept(app: String, skill: String) -> String {
-                    L10nSupport.format("workbench.skills.toast.projectionClearedFolderKept", app, skill)
+                public static func projectionClearedFolderKept(skill: String, app: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.projectionClearedFolderKept", skill, app)
                 }
 
                 /// Toast after applying the import sheet.
@@ -9952,8 +9952,8 @@ public enum L10n {
                 ///
                 /// Key: `workbench.skills.toast.uninstalledLeftInPlace`
                 /// en: "Uninstalled {skill}. Left in place for {apps}."
-                public static func uninstalledLeftInPlace(apps: String, skill: String) -> String {
-                    L10nSupport.format("workbench.skills.toast.uninstalledLeftInPlace", apps, skill)
+                public static func uninstalledLeftInPlace(skill: String, apps: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.uninstalledLeftInPlace", skill, apps)
                 }
 
                 /// Toast after re-fetching one skill from its repository.

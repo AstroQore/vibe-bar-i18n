@@ -459,14 +459,39 @@ def load_catalog(locale, path):
         body = keys[key]
         if not isinstance(body, dict):
             raise CatalogError("%s: key %r must map to an object" % (rel(path), key))
-        placeholders = body.get("placeholders") or {}
+        value = body.get("value", "")
+        placeholders = ordered_placeholders(body.get("placeholders") or {}, value)
         entries[key] = Entry(
             key=key,
-            value=body.get("value", ""),
+            value=value,
             comment=body.get("comment"),
             placeholders=placeholders,
         )
     return Catalog(locale=raw.get("locale", locale), path=path, entries=entries)
+
+
+def ordered_placeholders(declared, value):
+    # type: (Dict[str, str], str) -> Dict[str, str]
+    """The declared placeholders, in the order the value first names them.
+
+    This order is the one every typed API exposes — the Swift parameter
+    list, the TypeScript object type — and the one the positional format
+    specifiers count in. It follows the *source* value rather than the
+    JSON's key order so that `Resets in {days} {hours}` reads as
+    `(days:hours:)` however a hand or a script happened to sort the
+    declaration, and so that a translation which reorders the sentence
+    changes nothing about the API. Placeholders the value never names (a
+    validation error anyway) keep their declared order at the end.
+    """
+    order = []
+    for match in re.finditer(r"\{([A-Za-z0-9_]+)\s*(?:,|\})", value):
+        name = match.group(1)
+        if name in declared and name not in order:
+            order.append(name)
+    for name in declared:
+        if name not in order:
+            order.append(name)
+    return dict((name, declared[name]) for name in order)
 
 
 def load_all(catalog_dir=CATALOG_DIR):

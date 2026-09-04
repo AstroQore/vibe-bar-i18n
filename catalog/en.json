@@ -2093,10 +2093,10 @@
       "comment": "One-line forecast summary"
     },
     "quota.forecast.reset.enough": {
-      "value": "Forecast {remaining}% left at reset",
-      "comment": "One-line forecast summary",
+      "value": "forecast {percent}% left at reset",
+      "comment": "Row caption showing the forecast remaining quota at the refill",
       "placeholders": {
-        "remaining": "int"
+        "percent": "int"
       }
     },
     "quota.forecast.reset.learning": {
@@ -2613,10 +2613,10 @@
       }
     },
     "quota.reset.in": {
-      "value": "resets in {duration}",
-      "comment": "Live countdown to a bucket's refill; duration is a compact span, sometimes followed by an absolute time",
+      "value": "Resets in {when}",
+      "comment": "Caption under a quota bar; when is a countdown, sometimes with an absolute time",
       "placeholders": {
-        "duration": "string"
+        "when": "string"
       }
     },
     "quota.reset.passed": {
@@ -2878,7 +2878,7 @@
       "value": "avg wasted {percent}% · last {count, plural, one {1 cycle} other {# cycles}}",
       "comment": "Line under a lane label; says how many cycles it averages so one cycle cannot read as a settled habit",
       "placeholders": {
-        "percent": "int",
+        "percent": "string",
         "count": "int"
       }
     },
@@ -3040,17 +3040,17 @@
       "value": "{label} refilled {count, plural, one {once} other {# times}} with more than half unused.",
       "comment": "Header sentence naming the leakiest quota; label is a quota name and is not translated",
       "placeholders": {
-        "count": "int",
-        "label": "string"
+        "label": "string",
+        "count": "int"
       }
     },
     "resetHistory.wastedSummary": {
-      "value": "{used}% used · {wasted}% wasted · {cycles, plural, one {1 cycle} other {# cycles}}",
+      "value": "{used}% used · {wasted}% wasted · {count, plural, one {1 cycle} other {# cycles}}",
       "comment": "Header arithmetic across every visible lane",
       "placeholders": {
-        "used": "int",
-        "wasted": "int",
-        "cycles": "int"
+        "used": "string",
+        "wasted": "string",
+        "count": "int"
       }
     },
     "resetHistory.window.all": {

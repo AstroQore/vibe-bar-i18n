@@ -190,7 +190,7 @@
 "cost.history.emptyTokens" = "所选范围内没有 token 记录。";
 
 /* Caption naming the visible span of the cost chart and the dates at its ends */
-"cost.history.extentNote" = "%2$@ · %3$@ – %1$@";
+"cost.history.extentNote" = "%1$@ · %2$@ – %3$@";
 
 /* Tooltip on a bucket-width button the current zoom level cannot draw */
 "cost.history.granularityDisabled" = "%@需要不同的缩放级别";
@@ -727,7 +727,7 @@
 "menuBar.spoken.title" = "%@ 额度";
 
 /* Accessibility label and tooltip for the status item. Body lists each quota in words. */
-"menuBar.spoken.titleBody" = "%2$@ 额度：%1$@";
+"menuBar.spoken.titleBody" = "%1$@ 额度：%2$@";
 
 /* One quota spoken aloud. Label is the quota's name, value an already-formatted percentage. */
 "menuBar.spoken.used" = "%1$@ 已用 %2$@";
@@ -832,7 +832,7 @@
 "onboarding.pricing.intro" = "Token 花费完全在本机依据 agent 的会话日志计算，价格取自若干公开价目表合并后的目录 — 同一模型出现在多个目录时以优先级高者为准，自定义覆盖值优先于全部，内置表为离线兜底。目录每 %@在后台刷新一次；此刻获取可使首批费用数字采用当前价格。";
 
 /* Status line after a successful merge; when is an already-formatted date */
-"onboarding.pricing.merged" = "%2$@合并 · %1$lld 个模型";
+"onboarding.pricing.merged" = "%1$@合并 · %2$lld 个模型";
 
 /* Status line before the first fetch */
 "onboarding.pricing.notFetched" = "尚未获取 — 正在使用内置价目表。";
@@ -1189,13 +1189,13 @@
 "quota.forecast.guidance.available" = "目标保留 %1$lld%% · 约有 %2$lld%% 可用";
 
 /* Remaining-mode guidance for a surplus verdict */
-"quota.forecast.guidance.surplus" = "预计约 %2$lld%% 将闲置，超出 %1$lld%% 的安全余量";
+"quota.forecast.guidance.surplus" = "预计约 %1$lld%% 将闲置，超出 %2$lld%% 的安全余量";
 
 /* Used-mode guidance when there is headroom */
 "quota.forecast.guidance.usedAvailable" = "目标用到 %1$lld%% · 约有 %2$lld%% 额度可用";
 
 /* Used-mode guidance for a surplus verdict */
-"quota.forecast.guidance.usedSurplus" = "预计约 %2$lld%% 的额度将剩余，超出 %1$lld%% 的使用目标";
+"quota.forecast.guidance.usedSurplus" = "预计约 %1$lld%% 的额度将剩余，超出 %2$lld%% 的使用目标";
 
 /* Used-mode guidance when nothing needs saying */
 "quota.forecast.guidance.usedWithinTarget" = "仍在 %lld%% 的使用目标之内";
@@ -1234,7 +1234,7 @@
 "quota.forecast.metric.coverageDetail" = "新鲜度 %1$lld%% · 习惯 %2$lld%%";
 
 /* Value of the coverage metric: observation and reset-history coverage */
-"quota.forecast.metric.coverageValue" = "观测 %2$lld%% · 历史 %1$lld%%";
+"quota.forecast.metric.coverageValue" = "观测 %1$lld%% · 历史 %2$lld%%";
 
 /* Detail under the reset-history metric before any cycle has completed */
 "quota.forecast.metric.cyclesPending" = "完整周期会显示在这里";
@@ -1246,10 +1246,10 @@
 "quota.forecast.metric.evidence" = "依据";
 
 /* Detail under the evidence metric; confidence is the forecast's own confidence label */
-"quota.forecast.metric.evidenceDetail" = "%2$@ · 评分 %1$lld%%";
+"quota.forecast.metric.evidenceDetail" = "%1$@ · 评分 %2$lld%%";
 
 /* Value of the evidence metric: observations in this cycle and completed cycles behind it */
-"quota.forecast.metric.evidenceValue" = "%2$lld 次观测 · %1$lld 个周期";
+"quota.forecast.metric.evidenceValue" = "%1$lld 次观测 · %2$lld 个周期";
 
 /* Detail under the forecast metric while the card shows used percentages */
 "quota.forecast.metric.expectedLeft" = "预计剩余 %lld%%";
@@ -1323,7 +1323,7 @@
 /* One-line forecast summary */
 "quota.forecast.reset.atRisk" = "很可能在重置前耗尽";
 
-/* One-line forecast summary */
+/* Row caption showing the forecast remaining quota at the refill */
 "quota.forecast.reset.enough" = "预计重置时剩余 %lld%%";
 
 /* One-line forecast summary */
@@ -1459,7 +1459,7 @@
 "quota.history.forecastLegend" = "预测";
 
 /* Scope note when a group holds more quotas than the note can name; names are the ones it did name */
-"quota.history.moreBuckets" = "%2$@ +%1$lld";
+"quota.history.moreBuckets" = "%1$@ +%2$lld";
 
 /* Last row of a crowded chart tooltip, standing in for the readings it could not fit */
 "quota.history.moreReadings" = "另有 %lld 项";
@@ -1471,7 +1471,7 @@
 "quota.history.navigatorProvider" = "额度历史范围导航";
 
 /* Footer under a quota history chart; scope names what the chart covers, visible and total are compact spans such as 7d */
-"quota.history.scopeNote" = "%1$@ · 已记录 %2$@，显示 %3$@";
+"quota.history.scopeNote" = "%1$@ · 已记录 %3$@，显示 %2$@";
 
 /* Menu item that puts every quota curve back on the chart */
 "quota.history.showAllCurves" = "显示全部曲线";
@@ -1543,7 +1543,7 @@
 "quota.mini.resets" = "%@重置";
 
 /* Tooltip on a mini window row; subProvider and row are names, percent the current reading */
-"quota.mini.rowHelp" = "%3$@ — %2$@：%1$lld%%";
+"quota.mini.rowHelp" = "%1$@ — %2$@：%3$lld%%";
 
 /* Body of a misc provider card that has no credential yet */
 "quota.misc.notConfigured" = "尚未配置。";
@@ -1590,7 +1590,7 @@
 /* The forecast figure in Remaining mode, used inside the status line */
 "quota.remainingPercent" = "剩余 %lld%%";
 
-/* Live countdown to a bucket's refill; duration is a compact span, sometimes followed by an absolute time */
+/* Caption under a quota bar; when is a countdown, sometimes with an absolute time */
 "quota.reset.in" = "距重置 %@";
 
 /* A bucket whose reset time is behind us and which has not refreshed */
@@ -1621,13 +1621,13 @@
 "quota.upcoming.horizon" = "未来 7 天";
 
 /* Row caption on the resets timeline */
-"quota.upcoming.leftAndGain" = "当前剩余 %2$lld%% · 将补回 +%1$lld%%";
+"quota.upcoming.leftAndGain" = "当前剩余 %1$lld%% · 将补回 +%2$lld%%";
 
 /* Tooltip on a marker in the resets timeline; label names the bucket and is not translated */
-"quota.upcoming.markerHelp" = "%4$@ — 当前 %2$lld%%，%3$@后补回 +%1$lld%%";
+"quota.upcoming.markerHelp" = "%1$@ — 当前 %2$lld%%，%4$@后补回 +%3$lld%%";
 
 /* Row caption: how long until a bucket refills and when that is */
-"quota.upcoming.resetsAt" = "%2$@后重置 · %1$@";
+"quota.upcoming.resetsAt" = "%1$@后重置 · %2$@";
 
 /* Card title for the resets timeline */
 "quota.upcoming.title" = "即将重置";
@@ -1642,7 +1642,7 @@
 "quota.window.dayOfDays" = "第 %1$lld/%2$lld 天 · %3$@";
 
 /* Window progress line for a sub-day window; window is its length, elapsed how much of it is gone */
-"quota.window.elapsedOfWindow" = "%3$@ 已过 %1$@ · %2$@";
+"quota.window.elapsedOfWindow" = "%2$@ 已过 %1$@ · %3$@";
 
 /* Window progress line once the reset time has passed but no refresh has landed; value is the used/left figure */
 "quota.window.resetsSoon" = "即将重置 · %@";
@@ -1654,7 +1654,7 @@
 "resetHistory.a11y.more" = " 另有 %lld 个额度。";
 
 /* Whole-module screen-reader text; the lanes are a drawing surface, so this is all VoiceOver gets */
-"resetHistory.a11y.summary" = "重置历史对比，%6$@，柱高表示重置时剩余的额度。%4$@ %1$@。%5$@ %2$@。%3$@";
+"resetHistory.a11y.summary" = "重置历史对比，%1$@，柱高表示重置时剩余的额度。%2$@ %3$@。%4$@ %5$@。%6$@";
 
 /* The truncation caveat as it appears inside the screen-reader summary. Leading space is intentional. */
 "resetHistory.a11y.truncation" = " 网格%@；数据仍涵盖全部周期。";
@@ -1693,10 +1693,10 @@
 "resetHistory.compareWindow" = "对比%@";
 
 /* Caption for the cycle still running in the reset-history strip */
-"resetHistory.currentCycleCaption" = "当前周期 · 已用 %2$lld%% · 剩余 %1$lld%%";
+"resetHistory.currentCycleCaption" = "当前周期 · 已用 %1$lld%% · 剩余 %2$lld%%";
 
 /* Caption for one completed cycle in the reset-history strip; time is the reset moment */
-"resetHistory.cycleCaption" = "%3$@ 重置 · 已用 %2$lld%% · 剩余 %1$lld%%";
+"resetHistory.cycleCaption" = "%1$@ 重置 · 已用 %2$lld%% · 剩余 %3$lld%%";
 
 /* Empty-state copy for a lane */
 "resetHistory.lane.emptyState" = "尚无完整周期 — 额度补满时才会记录一个周期";
@@ -1705,7 +1705,7 @@
 "resetHistory.lane.spokenNoCycles" = "%@：尚无完整周期";
 
 /* One lane inside the screen-reader summary */
-"resetHistory.lane.spokenWaste" = "%2$@：%1$lld 个周期平均浪费 %3$@%%";
+"resetHistory.lane.spokenWaste" = "%1$@：%3$lld 个周期平均浪费 %2$@%%";
 
 /* Note appended to a cycle caption when the last reading predates the reset by a while */
 "resetHistory.lastSeenBefore" = "重置前 %@最后一次观测";
@@ -1774,10 +1774,10 @@
 "resetHistory.tooltip.current" = "当前周期 · 当前剩余 %1$lld%% · 已用 %2$lld%%";
 
 /* Tooltip line naming the span a finished cycle covered */
-"resetHistory.tooltip.range" = "%2$@ → %1$@ 重置";
+"resetHistory.tooltip.range" = "%1$@ → %2$@ 重置";
 
 /* Tooltip line naming the span of the cycle still running and when it is due to reset */
-"resetHistory.tooltip.rangeDue" = "%2$@ → %1$@ 预计重置";
+"resetHistory.tooltip.rangeDue" = "%1$@ → %2$@ 预计重置";
 
 /* Header arithmetic when nothing has closed */
 "resetHistory.totals.none" = "该区间内无完整周期";
@@ -2575,7 +2575,7 @@
 "settings.remote.retrySaving" = "重试保存";
 
 /* Sync status line: a translated title and the raw status code distinct-from: popover.header.updatedLine — the value is two placeholders and a separator, so the placeholder names are the only part of it that carries meaning; one key cannot name both halves of six different pairs. */
-"settings.remote.statusWithCode" = "%2$@ · %1$@";
+"settings.remote.statusWithCode" = "%1$@ · %2$@";
 
 /* Remote sync status title for HTTP 429/503 */
 "settings.remote.sync.busy" = "Relay 暂时繁忙";
@@ -2992,10 +2992,10 @@
 "usage.activity.heavy" = "繁忙";
 
 /* Caption naming the busiest hour of the activity card when the peak hour and peak cell agree */
-"usage.activity.peak" = "高峰 %2$@ · %1$@";
+"usage.activity.peak" = "高峰 %1$@ · %2$@";
 
 /* Caption naming the busiest hour overall and the busiest single cell when they differ */
-"usage.activity.peakCell" = "高峰 %3$@ · %2$@ %1$@";
+"usage.activity.peakCell" = "高峰 %1$@ · %2$@ %3$@";
 
 /* Low end of the activity grid's intensity legend */
 "usage.activity.quiet" = "清闲";
@@ -3022,7 +3022,7 @@
 "usage.chartNavigator.label" = "图表范围导航";
 
 /* Accessibility value of the chart range navigator; both ends are already formatted dates */
-"usage.chartNavigator.range" = "%2$@ 至 %1$@";
+"usage.chartNavigator.range" = "%1$@ 至 %2$@";
 
 /* Accessibility action that returns a chart to its whole domain */
 "usage.chartNavigator.showFullRange" = "显示完整范围";
@@ -3103,7 +3103,7 @@
 "usage.filters.rangeMenu" = "选择日期区间";
 
 /* Date-range pill value: two already-formatted dates around an en dash. */
-"usage.filters.rangeSpan" = "%2$@ – %1$@";
+"usage.filters.rangeSpan" = "%1$@ – %2$@";
 
 /* A polling interval, read both as an option inside the auto-refresh menu and as the value on the pill that opens it. The off state is common.off. distinct-from: quota.freshness.age.seconds — an age — how long ago a reading was taken — and an interval — how often to poll — are different quantities. */
 "usage.filters.refreshInterval" = "%lld 秒";
@@ -3295,10 +3295,10 @@
 "usage.table.loadingMore" = "正在加载更多请求…";
 
 /* Screen-reader label for a Periods row; every argument arrives already formatted. */
-"usage.table.periodRow" = "%2$@，%3$@，%1$@";
+"usage.table.periodRow" = "%1$@，%2$@，%3$@";
 
 /* Screen-reader label for a Requests row; time, model, tokens and cost arrive formatted and harness is a name. */
-"usage.table.requestRow" = "%4$@，%2$@，%3$@，%5$@，%1$@";
+"usage.table.requestRow" = "%1$@，%2$@，%3$@，%4$@，%5$@";
 
 /* Screen-reader label for the Requests table's scroll area. */
 "usage.table.requestsLabel" = "请求用量表格";
@@ -3418,7 +3418,7 @@
 "usage.yearHeatmap.title" = "%@ — 过去一年";
 
 /* Tooltip on one day of the past-year grid distinct-from: popover.header.updatedLine — the value is two placeholders and a separator, so the placeholder names are the only part of it that carries meaning; one key cannot name both halves of six different pairs. */
-"usage.yearHeatmap.tooltip" = "%2$@ · %1$@";
+"usage.yearHeatmap.tooltip" = "%1$@ · %2$@";
 
 /* Caption beside the past-year grid's title; amount is already formatted currency */
 "usage.yearHeatmap.total" = "合计 %@";
@@ -3475,16 +3475,16 @@
 "workbench.placeholder.usageStats" = "完整的用量与费用分析即将上线。";
 
 /* One refill inside a calendar day cell; lane is a SubProvider name */
-"workbench.resets.calendar.dayEntry" = "%2$@ +%1$lld%%";
+"workbench.resets.calendar.dayEntry" = "%1$@ +%2$lld%%";
 
 /* Tooltip for a scheduled reset in the calendar; lane names the quota, time is an absolute date and time */
-"workbench.resets.calendar.futureEntry" = "%2$@ — %3$@ 重置，补回 %1$lld%%";
+"workbench.resets.calendar.futureEntry" = "%1$@ — %2$@ 重置，补回 %3$lld%%";
 
 /* Tooltip on the reset calendar's forward arrow */
 "workbench.resets.calendar.nextMonth" = "下一月";
 
 /* Tooltip for a recorded reset in the calendar; lane names the quota, time is an absolute date and time, percent is how much of the window had been spent when it refilled */
-"workbench.resets.calendar.pastEntry" = "%2$@ — %3$@ 重置，用量 %1$lld%%";
+"workbench.resets.calendar.pastEntry" = "%1$@ — %2$@ 重置，用量 %3$lld%%";
 
 /* Tooltip on the reset calendar's back arrow */
 "workbench.resets.calendar.previousMonth" = "上一月";
@@ -3625,7 +3625,7 @@
 "workbench.sessions.filter.foldersFiltered" = "已筛选";
 
 /* One row of the Sessions Harness menu: the harness name and how many sessions it has. The name is never translated. distinct-from: quota.forecast.legend.item — a legend marker's name and the figure it marks, and a harness with its session count, are different pairs; the placeholder names are the sentence. */
-"workbench.sessions.filter.harnessCount" = "%2$@  %1$lld";
+"workbench.sessions.filter.harnessCount" = "%1$@  %2$lld";
 
 /* Sessions filter bar menu holding the terminal and index options */
 "workbench.sessions.filter.options" = "选项";
@@ -3895,16 +3895,16 @@
 "workbench.sessions.transcript.readFailed" = "无法读取该会话的日志。";
 
 /* Truncation banner detail. Both sizes arrive already formatted as byte counts. */
-"workbench.sessions.transcript.truncatedDetail" = "已读取 %1$@ 中的 %2$@。完整读取会把整份对话记录留在内存中。";
+"workbench.sessions.transcript.truncatedDetail" = "已读取 %2$@ 中的 %1$@。完整读取会把整份对话记录留在内存中。";
 
 /* Last clause of the per-harness count tooltip: skills linked into the harness but switched off in its own config. */
 "workbench.skills.appCountNativeDisabled" = "%lld 个已投影但被停用";
 
 /* Second clause of the per-harness count tooltip, for AntiGravity, which sees skills through the Gemini CLI folder. */
-"workbench.skills.appCountViaGeminiRoot" = "%2$lld 个已启用 + %1$lld 个来自 Gemini CLI 兼容根目录";
+"workbench.skills.appCountViaGeminiRoot" = "%1$lld 个已启用 + %2$lld 个来自 Gemini CLI 兼容根目录";
 
 /* Second clause of the per-harness count tooltip, for a harness that scans the shared root itself. */
-"workbench.skills.appCountViaSharedRoot" = "%2$lld 个已启用 + %1$lld 个来自共享技能根目录";
+"workbench.skills.appCountViaSharedRoot" = "%1$lld 个已启用 + %2$lld 个来自共享技能根目录";
 
 /* Skills toolbar button that opens the backups sheet. */
 "workbench.skills.backups" = "备份";
@@ -4093,7 +4093,7 @@
 "workbench.skills.import.subtitle" = "Vibe Bar 已识别共享技能。只有选中的应用本地目录会被移动。";
 
 /* Import sheet footer totals across the scan's four sections. */
-"workbench.skills.import.summary" = "%1$lld 个已共享 · %3$lld 个待接管 · %2$lld 个保持不变";
+"workbench.skills.import.summary" = "%1$lld 个已共享 · %2$lld 个待接管 · %3$lld 个保持不变";
 
 /* Title of the import sheet. */
 "workbench.skills.import.title" = "检查磁盘上的技能";
@@ -4213,13 +4213,13 @@
 "workbench.skills.toast.archiveEmpty" = "该压缩包中没有可安装的内容。";
 
 /* Toast after flipping a harness's own per-skill switch off. */
-"workbench.skills.toast.disabledKeptProjection" = "已在 %1$@ 中停用 %2$@，并保留其投影。";
+"workbench.skills.toast.disabledKeptProjection" = "已在 %2$@ 中停用 %1$@，并保留其投影。";
 
 /* Second sentence of the archive-install toast. {apps} is a list of harness names. */
 "workbench.skills.toast.enabledForApps" = "已为 %@ 启用。";
 
 /* Toast after installing one skill into the selected harnesses. {apps} is a list of harness names. */
-"workbench.skills.toast.installedForApps" = "已为 %1$@ 安装 %2$@。";
+"workbench.skills.toast.installedForApps" = "已为 %2$@ 安装 %1$@。";
 
 /* Toast after installing one skill with no harness selected. */
 "workbench.skills.toast.installedShared" = "已把 %@ 安装到共享库。可在「技能」页查看各 harness 的实际状态。";
@@ -4237,10 +4237,10 @@
 "workbench.skills.toast.noSkillsFound" = "在已配置的仓库中没有找到技能。";
 
 /* Toast when a skills.sh hit is missing from the repository it named. */
-"workbench.skills.toast.notFoundInRepo" = "在 %1$@ 中未找到 %2$@。";
+"workbench.skills.toast.notFoundInRepo" = "在 %2$@ 中未找到 %1$@。";
 
 /* Toast after removing a projection that turned out to be a real folder Vibe Bar did not create. */
-"workbench.skills.toast.projectionClearedFolderKept" = "已清除 %2$@ 在 %1$@ 的 Vibe Bar 投影记录，但原有文件夹保留在原处。";
+"workbench.skills.toast.projectionClearedFolderKept" = "已清除 %1$@ 在 %2$@ 的 Vibe Bar 投影记录，但原有文件夹保留在原处。";
 
 /* Toast after restoring a backup into the shared directory. */
 "workbench.skills.toast.restored" = "已恢复 %@。可按需为相应应用启用。";
@@ -4258,7 +4258,7 @@
 "workbench.skills.toast.uninstalledBackedUp" = "已卸载 %@。备份已保存。";
 
 /* Toast after an uninstall that left real folders in some harnesses. {apps} is a list of harness names. */
-"workbench.skills.toast.uninstalledLeftInPlace" = "已卸载 %2$@。在 %1$@ 中保持原样。";
+"workbench.skills.toast.uninstalledLeftInPlace" = "已卸载 %1$@。在 %2$@ 中保持原样。";
 
 /* Toast after re-fetching one skill from its repository. */
 "workbench.skills.toast.updated" = "已更新 %@。";

@@ -93,7 +93,7 @@ test("named parameters survive a reordered translation", () => {
   );
   assert.equal(t("quota.usedPercent", { percent: 42 }), "42% used");
   assert.equal(
-    t("resetHistory.wastedSummary", { used: 61, wasted: 39, cycles: 7 }),
+    t("resetHistory.wastedSummary", { used: "61", wasted: "39", count: 7 }),
     "61% used · 39% wasted · 7 cycles",
   );
 
@@ -104,7 +104,7 @@ test("named parameters survive a reordered translation", () => {
   );
   assert.equal(t("quota.usedPercent", { percent: 42 }), "已用 42%");
   assert.equal(
-    t("resetHistory.wastedSummary", { used: 61, wasted: 39, cycles: 7 }),
+    t("resetHistory.wastedSummary", { used: "61", wasted: "39", count: 7 }),
     "已用 61% · 浪费 39% · 7 个周期",
   );
   assert.equal(t("error.networkWithReason", { reason: "timed out" }), "网络错误：timed out");

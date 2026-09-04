@@ -9,8 +9,8 @@ import { t, tIn, type Locale, type MessageKey, type MessageParams } from "../src
 // -- The shapes that must compile -----------------------------------------
 
 const plain: string = t("common.retry");
-const placeholder: string = t("quota.resetsIn", { days: 3, hours: 18 });
-const plural: string = t("quota.cyclesRecorded", { count: 2 });
+const placeholder: string = t("common.duration.full.daysHours", { days: "3 days", hours: "18 hours" });
+const plural: string = t("common.duration.full.days", { count: 2 });
 const scoped: string = tIn("zh-Hans", "quota.usedPercent", { percent: 42 });
 const stringArgument: string = t("error.networkWithReason", { reason: "timed out" });
 
@@ -25,16 +25,16 @@ t("Retry");
 // -- Missing, extra and mistyped parameters --------------------------------
 
 // @ts-expect-error `hours` is missing
-t("quota.resetsIn", { days: 3 });
+t("common.duration.full.daysHours", { days: "3 days" });
 
 // @ts-expect-error `minutes` is not a parameter of this key
-t("quota.resetsIn", { days: 3, hours: 18, minutes: 0 });
+t("common.duration.full.daysHours", { days: "3 days", hours: "18 hours", minutes: 0 });
 
-// @ts-expect-error `days` is an int, not a string
-t("quota.resetsIn", { days: "3", hours: 18 });
+// @ts-expect-error `days` is a string, not an int
+t("common.duration.full.daysHours", { days: 3, hours: "18 hours" });
 
 // @ts-expect-error the parameter object is required
-t("quota.resetsIn");
+t("common.duration.full.daysHours");
 
 // @ts-expect-error `reason` is a string, not a number
 t("error.networkWithReason", { reason: 404 });
@@ -56,7 +56,7 @@ tIn("fr", "common.retry");
 
 const key: MessageKey = "settings.language.title";
 const locale: Locale = "zh-Hans";
-const params: MessageParams["quota.resetsIn"] = { days: 1, hours: 2 };
+const params: MessageParams["common.duration.full.daysHours"] = { days: "1 day", hours: "2 hours" };
 
 // @ts-expect-error `MessageParams` for a key with no placeholders is `undefined`
 const none: MessageParams["common.retry"] = {};
