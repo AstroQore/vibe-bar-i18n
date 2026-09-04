@@ -14,58 +14,2924 @@ export type Locale = (typeof locales)[number];
 
 /** Every key in the catalog. A typo is a compile error, not a blank label. */
 export type MessageKey =
+  | "common.add"
+  | "common.all"
+  | "common.auto"
   | "common.cancel"
+  | "common.clear"
+  | "common.copied"
+  | "common.copy"
+  | "common.delete"
+  | "common.dismiss"
+  | "common.done"
+  | "common.dragToReorder"
+  | "common.duration.days"
+  | "common.duration.daysHours"
+  | "common.duration.hours"
+  | "common.duration.hoursMinutes"
+  | "common.duration.lessThanMinute"
+  | "common.duration.minutes"
+  | "common.duration.now"
+  | "common.name"
   | "common.noData"
+  | "common.off"
+  | "common.on"
+  | "common.open"
+  | "common.openSettings"
+  | "common.percent"
+  | "common.provider"
   | "common.refresh"
+  | "common.refreshSection"
+  | "common.remove"
   | "common.retry"
+  | "common.retryNow"
+  | "common.save"
+  | "common.updated.daysAgo"
+  | "common.updated.hoursAgo"
+  | "common.updated.justNow"
+  | "common.updated.minutesAgo"
+  | "common.updated.never"
+  | "common.updated.secondsAgo"
+  | "cost.allProviders"
+  | "cost.chart.metricCostHelp"
+  | "cost.chart.metricTokens"
+  | "cost.chart.metricTokensHelp"
+  | "cost.empty.antigravity"
+  | "cost.empty.claude"
+  | "cost.empty.codex"
+  | "cost.empty.gemini"
+  | "cost.empty.genericCLI"
+  | "cost.empty.grok"
+  | "cost.fullCharts"
+  | "cost.gemini.emptyDetail"
+  | "cost.gemini.emptyTitle"
+  | "cost.googleAI.empty"
+  | "cost.googleAI.title"
+  | "cost.granularity.day"
+  | "cost.granularity.hour"
+  | "cost.granularity.month"
+  | "cost.granularity.week"
+  | "cost.history.allProviders"
+  | "cost.history.building"
+  | "cost.history.buildingDetail"
+  | "cost.history.clearModelSelection"
+  | "cost.history.emptyCost"
+  | "cost.history.emptyTokens"
+  | "cost.history.extentNote"
+  | "cost.history.granularityDisabled"
+  | "cost.history.groupBy"
+  | "cost.history.hourlyFallback"
+  | "cost.history.metricAverage"
+  | "cost.history.metricPeak"
+  | "cost.history.metricTotal"
+  | "cost.history.modelDetailUnavailable"
+  | "cost.history.modelsAt"
+  | "cost.history.moreModels"
+  | "cost.history.navigator"
+  | "cost.history.title"
+  | "cost.history.weekOf"
+  | "cost.history.weekShortOf"
+  | "cost.metric.peakDay"
+  | "cost.metric.peakTokenDay"
+  | "cost.metric.sevenDay"
+  | "cost.metric.sevenDayTokens"
+  | "cost.metric.thirtyDay"
+  | "cost.metric.thirtyDayTokens"
+  | "cost.metric.todayTokens"
+  | "cost.metric.totalCost"
+  | "cost.metric.totalTokens"
+  | "cost.metric.yesterdayTokens"
+  | "cost.modelRanking.allProvidersAllTime"
+  | "cost.modelRanking.allTime"
+  | "cost.modelRanking.title"
+  | "cost.noUsageYet"
+  | "cost.notTracked"
+  | "cost.openFullCharts"
   | "cost.perThousandTokens"
+  | "cost.provider.title"
+  | "cost.providerFullCharts"
+  | "cost.refreshData"
+  | "cost.refreshProvider"
+  | "cost.spaceXAI.empty"
+  | "cost.spaceXAI.title"
   | "cost.spentToday"
+  | "cost.timeframe.all"
+  | "cost.timeframe.month"
+  | "cost.timeframe.monthShort"
+  | "cost.timeframe.today"
+  | "cost.timeframe.week"
+  | "cost.timeframe.weekShort"
+  | "cost.timeframe.yesterday"
+  | "cost.title"
+  | "cost.topModel.share"
+  | "cost.topModel.title"
+  | "error.credentialRejected"
   | "error.needsReLogin"
+  | "error.network"
   | "error.networkWithReason"
   | "error.noAccountFound"
+  | "error.notImplemented"
+  | "error.parseFailure"
   | "error.rateLimited"
+  | "error.unknown"
+  | "error.unknownDetail"
+  | "menuBar.composer.action.duplicate"
+  | "menuBar.composer.appIcon.detail"
+  | "menuBar.composer.block.appIcon"
+  | "menuBar.composer.block.emptyText"
+  | "menuBar.composer.block.gap"
+  | "menuBar.composer.block.logo"
+  | "menuBar.composer.block.newRow"
+  | "menuBar.composer.block.quota"
+  | "menuBar.composer.block.separator"
+  | "menuBar.composer.block.space"
+  | "menuBar.composer.block.structure"
+  | "menuBar.composer.block.text"
+  | "menuBar.composer.block.unsupported"
+  | "menuBar.composer.blocks"
+  | "menuBar.composer.blocks.empty"
+  | "menuBar.composer.colour.automatic"
+  | "menuBar.composer.colour.brand"
+  | "menuBar.composer.colour.fixed"
+  | "menuBar.composer.colour.followsQuota"
+  | "menuBar.composer.colour.forecast"
+  | "menuBar.composer.colour.primary"
+  | "menuBar.composer.colour.secondary"
+  | "menuBar.composer.colour.tertiary"
+  | "menuBar.composer.field.colour"
+  | "menuBar.composer.field.monospacedDigits"
+  | "menuBar.composer.field.monospacedDigitsHelp"
+  | "menuBar.composer.field.offlineOption"
+  | "menuBar.composer.field.show"
+  | "menuBar.composer.field.shows"
+  | "menuBar.composer.field.size"
+  | "menuBar.composer.field.verdicts"
+  | "menuBar.composer.field.weight"
+  | "menuBar.composer.metric.displayPercent"
+  | "menuBar.composer.metric.pace"
+  | "menuBar.composer.metric.remainingPercent"
+  | "menuBar.composer.metric.resetAt"
+  | "menuBar.composer.metric.resetsIn"
+  | "menuBar.composer.metric.runsOutIn"
+  | "menuBar.composer.metric.usedPercent"
+  | "menuBar.composer.mode.custom"
+  | "menuBar.composer.mode.customCaption"
+  | "menuBar.composer.mode.default"
+  | "menuBar.composer.mode.defaultCaption"
+  | "menuBar.composer.mode.label"
+  | "menuBar.composer.newRow.capped"
+  | "menuBar.composer.newRow.detail"
+  | "menuBar.composer.newRow.help"
+  | "menuBar.composer.palette"
+  | "menuBar.composer.preview"
+  | "menuBar.composer.preview.dark"
+  | "menuBar.composer.preview.empty"
+  | "menuBar.composer.preview.grounds"
+  | "menuBar.composer.preview.light"
+  | "menuBar.composer.preview.twoRowScaling"
+  | "menuBar.composer.removeTarget"
+  | "menuBar.composer.rule.always"
+  | "menuBar.composer.rule.whenForecast"
+  | "menuBar.composer.rule.whenRemainingAtMost"
+  | "menuBar.composer.rule.whenUsedAtLeast"
+  | "menuBar.composer.selected"
+  | "menuBar.composer.size.large"
+  | "menuBar.composer.size.regular"
+  | "menuBar.composer.size.small"
+  | "menuBar.composer.space.detail"
+  | "menuBar.composer.startOver"
+  | "menuBar.composer.startOver.confirm"
+  | "menuBar.composer.startOver.confirmMessage"
+  | "menuBar.composer.startOver.confirmTitle"
+  | "menuBar.composer.startOver.detail"
+  | "menuBar.composer.template"
+  | "menuBar.composer.template.compact"
+  | "menuBar.composer.template.compactDetail"
+  | "menuBar.composer.template.roomy"
+  | "menuBar.composer.template.roomyDetail"
+  | "menuBar.composer.template.twoRows"
+  | "menuBar.composer.template.twoRowsDetail"
+  | "menuBar.composer.text.empty"
+  | "menuBar.composer.text.limit"
+  | "menuBar.composer.text.placeholder"
+  | "menuBar.composer.unsupported.detail"
+  | "menuBar.composer.warning.degraded"
+  | "menuBar.composer.warning.missing"
+  | "menuBar.composer.warning.silent"
+  | "menuBar.composer.weight.medium"
+  | "menuBar.composer.weight.regular"
+  | "menuBar.composer.weight.semibold"
+  | "menuBar.spoken.forecast"
+  | "menuBar.spoken.pace"
+  | "menuBar.spoken.remaining"
+  | "menuBar.spoken.resetAt"
+  | "menuBar.spoken.resetsIn"
+  | "menuBar.spoken.runsOutIn"
+  | "menuBar.spoken.title"
+  | "menuBar.spoken.titleBody"
+  | "menuBar.spoken.used"
+  | "onboarding.apiKeys.hide"
+  | "onboarding.apiKeys.intro"
+  | "onboarding.apiKeys.setUp"
+  | "onboarding.apiKeys.showOnMiscPage"
+  | "onboarding.back"
+  | "onboarding.continue"
+  | "onboarding.cookies.batchScope"
+  | "onboarding.cookies.importAll"
+  | "onboarding.cookies.importFromBrowser"
+  | "onboarding.cookies.importGemini"
+  | "onboarding.cookies.importGrok"
+  | "onboarding.cookies.importing"
+  | "onboarding.cookies.intro"
+  | "onboarding.cookies.notImported"
+  | "onboarding.cookies.openWebViewLogin"
+  | "onboarding.cookies.saved"
+  | "onboarding.cookies.signInFirst"
+  | "onboarding.done.apiKeyProviders"
+  | "onboarding.done.cookieCount"
+  | "onboarding.done.footer"
+  | "onboarding.done.intro"
+  | "onboarding.done.miscCount"
+  | "onboarding.done.noneShown"
+  | "onboarding.done.pricingBundled"
+  | "onboarding.done.pricingMerged"
+  | "onboarding.finish"
+  | "onboarding.pricing.fetchNow"
+  | "onboarding.pricing.fetching"
+  | "onboarding.pricing.footer"
+  | "onboarding.pricing.interval.hour"
+  | "onboarding.pricing.interval.hours"
+  | "onboarding.pricing.intro"
+  | "onboarding.pricing.merged"
+  | "onboarding.pricing.notFetched"
+  | "onboarding.pricing.source.failed"
+  | "onboarding.pricing.source.models"
+  | "onboarding.pricing.source.notRefreshed"
+  | "onboarding.pricing.source.unchanged"
+  | "onboarding.skip"
+  | "onboarding.step.apiKeyProviders.subtitle"
+  | "onboarding.step.apiKeyProviders.title"
+  | "onboarding.step.browserCookies.subtitle"
+  | "onboarding.step.browserCookies.title"
+  | "onboarding.step.done.subtitle"
+  | "onboarding.step.done.title"
+  | "onboarding.step.pricing.subtitle"
+  | "onboarding.step.pricing.title"
+  | "onboarding.step.subscriptions.subtitle"
+  | "onboarding.step.subscriptions.title"
+  | "onboarding.step.welcome.subtitle"
+  | "onboarding.step.welcome.title"
+  | "onboarding.subscriptions.claude.detected"
+  | "onboarding.subscriptions.claude.missing"
+  | "onboarding.subscriptions.claude.web"
+  | "onboarding.subscriptions.codex.detected"
+  | "onboarding.subscriptions.codex.missing"
+  | "onboarding.subscriptions.codex.web"
+  | "onboarding.subscriptions.gemini.hint"
+  | "onboarding.subscriptions.grok.detected"
+  | "onboarding.subscriptions.grok.missing"
+  | "onboarding.subscriptions.intro"
+  | "onboarding.subscriptions.productLine.claude"
+  | "onboarding.subscriptions.productLine.codex"
+  | "onboarding.subscriptions.productLine.gemini"
+  | "onboarding.subscriptions.productLine.grok"
+  | "onboarding.subscriptions.showInOverview"
+  | "onboarding.title"
+  | "onboarding.welcome.cost.detail"
+  | "onboarding.welcome.cost.title"
+  | "onboarding.welcome.footer"
+  | "onboarding.welcome.intro"
+  | "onboarding.welcome.mcp.detail"
+  | "onboarding.welcome.mcp.title"
+  | "onboarding.welcome.quotas.detail"
+  | "onboarding.welcome.quotas.title"
+  | "onboarding.welcome.sessions.detail"
+  | "onboarding.welcome.sessions.title"
+  | "platform.macos.launchAtLogin.detail"
+  | "platform.macos.launchAtLogin.enabled"
+  | "platform.macos.launchAtLogin.subtitle"
+  | "platform.macos.launchAtLogin.title"
+  | "platform.macos.launchAtLogin.toggle"
+  | "platform.macos.menuBar.color.actual"
+  | "platform.macos.menuBar.color.actualDetail"
+  | "platform.macos.menuBar.color.forecastDetail"
+  | "platform.macos.menuBar.displayDensity"
+  | "platform.macos.menuBar.fieldStyle.label"
+  | "platform.macos.menuBar.fieldStyle.labelDetail"
+  | "platform.macos.menuBar.fieldStyle.logoAndLabel"
+  | "platform.macos.menuBar.fieldStyle.logoAndLabelDetail"
+  | "platform.macos.menuBar.fieldStyle.logoDetail"
+  | "platform.macos.menuBar.fields"
+  | "platform.macos.menuBar.layout"
+  | "platform.macos.menuBar.layout.iconOnly"
+  | "platform.macos.menuBar.layout.singleLine"
+  | "platform.macos.menuBar.mergeGroupWindows"
+  | "platform.macos.menuBar.mergeGroupWindowsDetail"
+  | "platform.macos.menuBar.percentColor"
+  | "platform.macos.menuBar.showInMenuBar"
+  | "platform.macos.menuBar.showTitleText"
+  | "popover.header.machinesSubtitle"
+  | "popover.header.mini"
+  | "popover.header.miscSubtitle"
+  | "popover.header.openWorkbench"
+  | "popover.header.overviewSubtitle"
+  | "popover.header.refreshing"
+  | "popover.header.settings"
+  | "popover.header.updatedLine"
+  | "popover.machines.checking"
+  | "popover.machines.freshness.delayed"
+  | "popover.machines.freshness.live"
+  | "popover.machines.freshness.stale"
+  | "popover.machines.includeInTotals"
+  | "popover.machines.includeInTotalsHelp"
+  | "popover.machines.labelWithStatus"
+  | "popover.machines.noData"
+  | "popover.machines.noDataDetail"
+  | "popover.machines.notConfigured"
+  | "popover.machines.notConfiguredDetail"
+  | "popover.machines.sequence"
+  | "popover.machines.thirtyDayCost"
+  | "popover.misc.copyFallback"
+  | "popover.refreshGoogleAI"
+  | "popover.refreshSpaceXAI"
+  | "popover.showPage"
+  | "popover.tab.machines"
+  | "popover.tab.misc"
+  | "popover.tab.miscShort"
+  | "popover.tab.overview"
   | "quota.awaitingFirstObservation"
+  | "quota.bridge.empty"
+  | "quota.bridge.refresh"
+  | "quota.bridge.subtitle"
+  | "quota.bridge.subtitleVersion"
+  | "quota.bridge.title"
+  | "quota.bucket.noResetInfo"
   | "quota.cycleRecordedOnRefill"
   | "quota.cyclesRecorded"
+  | "quota.empty.needsLogin.detail"
+  | "quota.empty.network.detail"
+  | "quota.empty.noAccount.detail"
+  | "quota.empty.parseChanged.detail"
+  | "quota.empty.rateLimited.detail"
+  | "quota.empty.rateLimited.headline"
+  | "quota.forecast.confidence.high"
+  | "quota.forecast.confidence.learning"
+  | "quota.forecast.confidence.medium"
+  | "quota.forecast.explain.footer"
+  | "quota.forecast.explain.hide"
+  | "quota.forecast.explain.show"
+  | "quota.forecast.explain.title"
+  | "quota.forecast.guidance.atRisk"
+  | "quota.forecast.guidance.available"
+  | "quota.forecast.guidance.surplus"
+  | "quota.forecast.guidance.usedAvailable"
+  | "quota.forecast.guidance.usedSurplus"
+  | "quota.forecast.guidance.usedWithinTarget"
+  | "quota.forecast.guidance.watch"
+  | "quota.forecast.guidance.withinTarget"
+  | "quota.forecast.legend.item"
+  | "quota.forecast.metric.aboveTarget"
+  | "quota.forecast.metric.activityFallback"
+  | "quota.forecast.metric.activityTiming"
+  | "quota.forecast.metric.activityWeighted"
+  | "quota.forecast.metric.behaviorDetail"
+  | "quota.forecast.metric.behaviorFallback"
+  | "quota.forecast.metric.comparableCycles"
+  | "quota.forecast.metric.coverage"
+  | "quota.forecast.metric.coverageDetail"
+  | "quota.forecast.metric.coverageValue"
+  | "quota.forecast.metric.cyclesPending"
+  | "quota.forecast.metric.elapsed"
+  | "quota.forecast.metric.evidence"
+  | "quota.forecast.metric.evidenceDetail"
+  | "quota.forecast.metric.evidenceValue"
+  | "quota.forecast.metric.expectedLeft"
+  | "quota.forecast.metric.expectedUsed"
+  | "quota.forecast.metric.forecastAtReset"
+  | "quota.forecast.metric.forecastRange"
+  | "quota.forecast.metric.insideTarget"
+  | "quota.forecast.metric.noComparison"
+  | "quota.forecast.metric.plan"
+  | "quota.forecast.metric.planDetail"
+  | "quota.forecast.metric.rangeLeft"
+  | "quota.forecast.metric.rangeUsed"
+  | "quota.forecast.metric.recentBurn"
+  | "quota.forecast.metric.recentIntervals"
+  | "quota.forecast.metric.recentMissing"
+  | "quota.forecast.metric.recentTrend"
+  | "quota.forecast.metric.safetyTarget"
+  | "quota.forecast.metric.timePace"
+  | "quota.forecast.metric.timePaceDetail"
+  | "quota.forecast.metric.timePaceMissing"
+  | "quota.forecast.metric.trendDetail"
+  | "quota.forecast.metric.trendDetailMissing"
+  | "quota.forecast.metric.trendMissing"
+  | "quota.forecast.metric.trendMultiplier"
+  | "quota.forecast.metric.unavailable"
+  | "quota.forecast.metric.uncertaintyInterval"
+  | "quota.forecast.reset.atRisk"
+  | "quota.forecast.reset.enough"
+  | "quota.forecast.reset.learning"
+  | "quota.forecast.reset.surplus"
+  | "quota.forecast.reset.watch"
+  | "quota.forecast.status.atRisk"
+  | "quota.forecast.status.enough"
+  | "quota.forecast.status.learning"
+  | "quota.forecast.status.surplus"
+  | "quota.forecast.status.watch"
+  | "quota.forecast.useUp.beforeReset"
+  | "quota.forecast.useUp.couldRunOut"
+  | "quota.forecast.useUp.estimated"
+  | "quota.forecast.useUp.lastsUntilReset"
+  | "quota.forecast.useUp.uncertain"
+  | "quota.forecast.value.atReset"
+  | "quota.forecast.value.expectedNow"
+  | "quota.forecast.verdict.atRisk"
+  | "quota.forecast.verdict.enough"
+  | "quota.forecast.verdict.learning"
+  | "quota.forecast.verdict.surplus"
+  | "quota.forecast.verdict.watch"
+  | "quota.freshness.age.seconds"
+  | "quota.freshness.dataAge"
+  | "quota.freshness.defaultHelp"
+  | "quota.freshness.line"
+  | "quota.freshness.noCachedData"
+  | "quota.freshness.refreshFailed"
+  | "quota.freshness.refreshFailedAgo"
+  | "quota.freshness.staleNeverUpdated"
+  | "quota.freshness.staleUpdatedAgo"
+  | "quota.group.allModels"
+  | "quota.group.daily"
+  | "quota.group.fiveHours"
+  | "quota.group.monthly"
+  | "quota.group.noUtilization"
+  | "quota.group.other"
+  | "quota.group.otherModels"
+  | "quota.group.weekly"
+  | "quota.group.weeklyCredits"
+  | "quota.history.allCurvesHidden"
+  | "quota.history.buildingUp"
+  | "quota.history.curveCount"
+  | "quota.history.curvePickerA11y"
+  | "quota.history.curvesAll"
+  | "quota.history.curvesSome"
+  | "quota.history.forecastLegend"
+  | "quota.history.moreBuckets"
+  | "quota.history.moreReadings"
+  | "quota.history.navigatorAllProviders"
+  | "quota.history.navigatorProvider"
+  | "quota.history.providerCount"
+  | "quota.history.scopeNote"
+  | "quota.history.showAllCurves"
+  | "quota.history.showBusiest"
+  | "quota.history.title"
+  | "quota.history.tooltipAtReset"
+  | "quota.history.tooltipPace"
+  | "quota.history.tooltipQuotaLeft"
+  | "quota.login.claude"
+  | "quota.login.codex"
+  | "quota.login.cursor"
+  | "quota.login.grok"
+  | "quota.login.misc"
+  | "quota.mini.forecastLearning"
+  | "quota.mini.forecastLearningCompact"
+  | "quota.mini.forecastLeftCompact"
+  | "quota.mini.forecastMayRunOut"
+  | "quota.mini.forecastSurplus"
+  | "quota.mini.forecastSurplusCompact"
+  | "quota.mini.nextProvider"
+  | "quota.mini.noLiveData"
+  | "quota.mini.pageIndicator"
+  | "quota.mini.railEmpty"
+  | "quota.mini.railTitle"
+  | "quota.mini.resets"
+  | "quota.mini.rowHelp"
+  | "quota.misc.independentCopies"
+  | "quota.misc.notConfigured"
+  | "quota.misc.refreshCopies"
+  | "quota.misc.refreshProvider"
+  | "quota.misc.setUpInSettings"
+  | "quota.mode.remaining"
+  | "quota.mode.used"
+  | "quota.pace.deficit"
+  | "quota.pace.deficitShort"
+  | "quota.pace.lastsUntilReset"
+  | "quota.pace.onTrack"
+  | "quota.pace.reserve"
+  | "quota.pace.reserveShort"
+  | "quota.pace.runsOutIn"
+  | "quota.pace.runsOutShort"
+  | "quota.perModelLimits"
   | "quota.remainingPercent"
+  | "quota.reset.in"
+  | "quota.reset.passed"
+  | "quota.reset.passedAt"
+  | "quota.resetCredits.available"
+  | "quota.resetCredits.availableWithExpiry"
+  | "quota.resetCredits.title"
   | "quota.resetsIn"
   | "quota.resetsInHours"
+  | "quota.upcoming.axisDays"
+  | "quota.upcoming.axisHours"
+  | "quota.upcoming.empty"
+  | "quota.upcoming.gain"
+  | "quota.upcoming.horizon"
+  | "quota.upcoming.leftAndGain"
+  | "quota.upcoming.markerHelp"
+  | "quota.upcoming.resetsAt"
+  | "quota.upcoming.title"
+  | "quota.update.failed"
   | "quota.usedPercent"
+  | "quota.window.dayOfDays"
+  | "quota.window.elapsedOfWindow"
+  | "quota.window.resetsSoon"
+  | "resetHistory.a11y.empty"
+  | "resetHistory.a11y.more"
+  | "resetHistory.a11y.summary"
+  | "resetHistory.a11y.truncation"
+  | "resetHistory.axis.cycle"
+  | "resetHistory.axis.cycleHelp"
+  | "resetHistory.axis.time"
+  | "resetHistory.axis.timeHelp"
+  | "resetHistory.axisCurrent"
+  | "resetHistory.axisCyclesBack"
+  | "resetHistory.axisNow"
+  | "resetHistory.barIsOneCycle"
+  | "resetHistory.cardTitle"
+  | "resetHistory.compareEmpty"
+  | "resetHistory.compareWindow"
+  | "resetHistory.currentCycleCaption"
+  | "resetHistory.cycleCaption"
+  | "resetHistory.earlyRefillCount"
+  | "resetHistory.lane.emptyState"
+  | "resetHistory.lane.spokenNoCycles"
+  | "resetHistory.lane.spokenWaste"
   | "resetHistory.laneAverage"
+  | "resetHistory.lastSeenBefore"
+  | "resetHistory.legend.barHeight"
+  | "resetHistory.legend.byDate"
+  | "resetHistory.legend.perCycle"
+  | "resetHistory.legend.refilledEarly"
   | "resetHistory.noCompletedCycles"
+  | "resetHistory.reset.earlyClockRestarted"
+  | "resetHistory.reset.earlyClockUnchanged"
+  | "resetHistory.reset.earlyUnclear"
+  | "resetHistory.retiredAccount"
+  | "resetHistory.retiredAccountNumbered"
+  | "resetHistory.spoken.allCycles"
+  | "resetHistory.spoken.allTime"
+  | "resetHistory.spoken.eightCycles"
+  | "resetHistory.spoken.eightWeeks"
+  | "resetHistory.spoken.fourCycles"
+  | "resetHistory.spoken.fourWeeks"
+  | "resetHistory.spoken.twelveCycles"
+  | "resetHistory.spoken.twelveWeeks"
   | "resetHistory.title"
+  | "resetHistory.tooltip.completed"
+  | "resetHistory.tooltip.current"
+  | "resetHistory.tooltip.range"
+  | "resetHistory.tooltip.rangeDue"
+  | "resetHistory.totals.none"
+  | "resetHistory.truncation"
+  | "resetHistory.verdict.clean"
+  | "resetHistory.verdict.leaky"
+  | "resetHistory.verdict.noCycles"
+  | "resetHistory.verdict.noQuota"
+  | "resetHistory.verdict.wasteful"
   | "resetHistory.wastedSummary"
+  | "resetHistory.window.all"
+  | "resetHistory.window.eightWeeks"
+  | "resetHistory.window.fourWeeks"
+  | "resetHistory.window.twelveWeeks"
+  | "settings.antigravityCookieEnabled"
+  | "settings.antigravityLocalOnly"
+  | "settings.antigravitySource"
+  | "settings.appVersion"
+  | "settings.bundled"
+  | "settings.checkConnections"
+  | "settings.checkForUpdates"
+  | "settings.checkKitUpdates"
+  | "settings.checkingGitHub"
+  | "settings.clearCostData"
+  | "settings.connectionHealth"
+  | "settings.costDataIntro"
+  | "settings.couldNotDeleteCookies"
+  | "settings.couldNotDeleteGeminiCookies"
+  | "settings.couldNotDeleteGrokCookies"
+  | "settings.credentialSource.apiOnly"
+  | "settings.credentialSource.browserOnly"
+  | "settings.credentialSource.manualOnly"
+  | "settings.credentialSource.off"
+  | "settings.cursorNoSession"
+  | "settings.cursorSessionDetected"
+  | "settings.cursorSource"
+  | "settings.cursorSourceValue"
+  | "settings.deleteCookies"
+  | "settings.deleteGeminiCookies"
+  | "settings.deleteGrokCookies"
+  | "settings.displayMode.remaining"
+  | "settings.displayMode.used"
+  | "settings.externalChange.title"
+  | "settings.geminiCookiesSaved"
+  | "settings.geminiShared"
+  | "settings.geminiSource"
+  | "settings.grokAuthDetected"
+  | "settings.grokCookiesSaved"
+  | "settings.keepHistory"
+  | "settings.keepHistoryDetail"
+  | "settings.kitDetail"
+  | "settings.language.caption"
   | "settings.language.system"
-  | "settings.language.title";
+  | "settings.language.title"
+  | "settings.mcp.allowRefresh"
+  | "settings.mcp.allowRefreshDetail"
+  | "settings.mcp.allowSkills"
+  | "settings.mcp.allowSkillsDetail"
+  | "settings.mcp.appendCodexConfig"
+  | "settings.mcp.connectAgent"
+  | "settings.mcp.connectedClients"
+  | "settings.mcp.enable"
+  | "settings.mcp.intro"
+  | "settings.mcp.lastActivity"
+  | "settings.mcp.listening"
+  | "settings.mcp.manualIntro"
+  | "settings.mcp.mergeCursorConfig"
+  | "settings.mcp.movePrompt"
+  | "settings.mcp.notListening"
+  | "settings.mcp.otherStdioClient"
+  | "settings.mcp.otherStdioDetail"
+  | "settings.mcp.quickestPath"
+  | "settings.mcp.readOnlyDetail"
+  | "settings.mcp.runInTerminal"
+  | "settings.mcp.setupPrompt"
+  | "settings.mcp.setupPromptDetail"
+  | "settings.mcp.socket"
+  | "settings.mcp.socketLifetime"
+  | "settings.mcp.status"
+  | "settings.mcp.title"
+  | "settings.mcp.whatAgentsMayDo"
+  | "settings.menuBarHealthUnavailable"
+  | "settings.miniWindow.add"
+  | "settings.miniWindow.allBucketsIncluded"
+  | "settings.miniWindow.density.narrow"
+  | "settings.miniWindow.density.narrowDetail"
+  | "settings.miniWindow.density.roomy"
+  | "settings.miniWindow.density.roomyDetail"
+  | "settings.miniWindow.density.twoLines"
+  | "settings.miniWindow.density.twoLinesDetail"
+  | "settings.miniWindow.dismissBuiltIn"
+  | "settings.miniWindow.forgetDiscovered"
+  | "settings.miniWindow.includeStyle"
+  | "settings.miniWindow.lastCannotBeRemoved"
+  | "settings.miniWindow.mode.compact"
+  | "settings.miniWindow.mode.compactDetail"
+  | "settings.miniWindow.mode.focus"
+  | "settings.miniWindow.mode.focusDetail"
+  | "settings.miniWindow.mode.ledger"
+  | "settings.miniWindow.mode.ledgerDetail"
+  | "settings.miniWindow.mode.rail"
+  | "settings.miniWindow.mode.railDetail"
+  | "settings.miniWindow.mode.regular"
+  | "settings.miniWindow.mode.regularDetail"
+  | "settings.miniWindow.mode.strip"
+  | "settings.miniWindow.mode.stripDetail"
+  | "settings.miniWindow.mode.tiles"
+  | "settings.miniWindow.mode.tilesDetail"
+  | "settings.miniWindow.namesAllWindows"
+  | "settings.miniWindow.namesThisStyle"
+  | "settings.miniWindow.namesThisWindow"
+  | "settings.miniWindow.noFieldsSelected"
+  | "settings.miniWindow.notInWindow"
+  | "settings.miniWindow.offline"
+  | "settings.miniWindow.openClose"
+  | "settings.miniWindow.overridesStyle"
+  | "settings.miniWindow.overridesWindow"
+  | "settings.miniWindow.removeFromWindow"
+  | "settings.miniWindow.removeHelp"
+  | "settings.miniWindow.stripDensity"
+  | "settings.miniWindow.styleCycle"
+  | "settings.miniWindow.toggleHelp"
+  | "settings.miniWindow.treeDetail"
+  | "settings.misc.accessKeyId"
+  | "settings.misc.akSkSaved"
+  | "settings.misc.apiKeySaved"
+  | "settings.misc.clearWorkspace"
+  | "settings.misc.clone"
+  | "settings.misc.consoleLink"
+  | "settings.misc.edition"
+  | "settings.misc.githubSignInHint"
+  | "settings.misc.githubTokenSaved"
+  | "settings.misc.importDetail"
+  | "settings.misc.kiroHint"
+  | "settings.misc.noCookieSpec"
+  | "settings.misc.noCookiesYet"
+  | "settings.misc.probe"
+  | "settings.misc.prompt.copilotHost"
+  | "settings.misc.prompt.dashscope"
+  | "settings.misc.prompt.kilo"
+  | "settings.misc.prompt.minimax"
+  | "settings.misc.prompt.openRouter"
+  | "settings.misc.prompt.openRouterHost"
+  | "settings.misc.prompt.warp"
+  | "settings.misc.prompt.workspace"
+  | "settings.misc.prompt.zai"
+  | "settings.misc.region"
+  | "settings.misc.region.auto"
+  | "settings.misc.region.chinaMainland"
+  | "settings.misc.region.international"
+  | "settings.misc.region.minimaxChina"
+  | "settings.misc.region.minimaxGlobal"
+  | "settings.misc.region.zaiChina"
+  | "settings.misc.region.zaiGlobal"
+  | "settings.misc.removeAkSk"
+  | "settings.misc.removeApiKey"
+  | "settings.misc.removeCookieSlot"
+  | "settings.misc.removeCopy"
+  | "settings.misc.removeCopyButton"
+  | "settings.misc.removeCopyDetail"
+  | "settings.misc.removeCopyTitle"
+  | "settings.misc.removeGithubToken"
+  | "settings.misc.rename"
+  | "settings.misc.secretAccessKey"
+  | "settings.misc.signIn"
+  | "settings.misc.signInViaWeb"
+  | "settings.misc.tencentTokenPlanNote"
+  | "settings.misc.variant"
+  | "settings.misc.waiting"
+  | "settings.misc.workspaceNote"
+  | "settings.needsSetup"
+  | "settings.notChecked"
+  | "settings.notCheckedYet"
+  | "settings.openRefreshCooldown"
+  | "settings.openRefreshDetail"
+  | "settings.openStatusPage"
+  | "settings.percentShows"
+  | "settings.planBadge"
+  | "settings.planBadgeDetail"
+  | "settings.popoverDensity.compact"
+  | "settings.popoverDensity.compactDetail"
+  | "settings.popoverDensity.regular"
+  | "settings.popoverDensity.regularDetail"
+  | "settings.popoverDensity.spacious"
+  | "settings.popoverDensity.spaciousDetail"
+  | "settings.pricing.addOverride"
+  | "settings.pricing.advancedTiers"
+  | "settings.pricing.alwaysWins"
+  | "settings.pricing.bundledFallback"
+  | "settings.pricing.cacheReadAbove"
+  | "settings.pricing.cacheWriteAbove"
+  | "settings.pricing.deleteOverride"
+  | "settings.pricing.exactModelName"
+  | "settings.pricing.fastMultiplier"
+  | "settings.pricing.inputAbove"
+  | "settings.pricing.intro"
+  | "settings.pricing.localOverrides"
+  | "settings.pricing.noOverrides"
+  | "settings.pricing.offlineFloor"
+  | "settings.pricing.outputAbove"
+  | "settings.pricing.overridesIntro"
+  | "settings.pricing.priorityHealth"
+  | "settings.pricing.rateInput"
+  | "settings.pricing.rateOutput"
+  | "settings.pricing.refreshNow"
+  | "settings.pricing.refreshing"
+  | "settings.pricing.thresholdTokens"
+  | "settings.pricingDataDate"
+  | "settings.privacyDetail"
+  | "settings.privacyMode"
+  | "settings.privacyModeDetail"
+  | "settings.ready"
+  | "settings.refreshEvery"
+  | "settings.refreshOnPopoverOpen"
+  | "settings.releaseNotes"
+  | "settings.remote.core"
+  | "settings.remote.costAggregation"
+  | "settings.remote.costAggregationIntro"
+  | "settings.remote.differentControlCenter"
+  | "settings.remote.discard"
+  | "settings.remote.discardPendingDetail"
+  | "settings.remote.discardPendingTitle"
+  | "settings.remote.disconnect"
+  | "settings.remote.disconnectButton"
+  | "settings.remote.disconnectDetail"
+  | "settings.remote.disconnectIntro"
+  | "settings.remote.disconnectTitle"
+  | "settings.remote.experimentalBadge"
+  | "settings.remote.experimentalNote"
+  | "settings.remote.exportIdentity"
+  | "settings.remote.importProvisioning"
+  | "settings.remote.join"
+  | "settings.remote.joinIntro"
+  | "settings.remote.joinWithCode"
+  | "settings.remote.lastSync"
+  | "settings.remote.machineDetail"
+  | "settings.remote.machinesAppearAfterImport"
+  | "settings.remote.machinesSynced"
+  | "settings.remote.manualPairingIntro"
+  | "settings.remote.notConnected"
+  | "settings.remote.orPairManually"
+  | "settings.remote.pendingIntro"
+  | "settings.remote.provisioning"
+  | "settings.remote.registeredProbes"
+  | "settings.remote.relay"
+  | "settings.remote.resumeSaving"
+  | "settings.remote.retrySaving"
+  | "settings.remote.statusWithCode"
+  | "settings.remote.sync.busy"
+  | "settings.remote.sync.connectionFailed"
+  | "settings.remote.sync.hostLookupFailed"
+  | "settings.remote.sync.invalidResponse"
+  | "settings.remote.sync.networkDetail"
+  | "settings.remote.sync.offline"
+  | "settings.remote.sync.rejected"
+  | "settings.remote.sync.rejectedDetail"
+  | "settings.remote.sync.retryDetail"
+  | "settings.remote.sync.secureConnectionFailed"
+  | "settings.remote.sync.sequenceGap"
+  | "settings.remote.sync.sequenceGapDetail"
+  | "settings.remote.sync.timeout"
+  | "settings.remote.sync.transportFailed"
+  | "settings.remote.sync.unknown"
+  | "settings.remote.sync.unknownDetail"
+  | "settings.remote.sync.unverifiedProbe"
+  | "settings.remote.sync.unverifiedProbeDetail"
+  | "settings.remote.syncNow"
+  | "settings.remote.workspace"
+  | "settings.repository"
+  | "settings.rescanCostLogs"
+  | "settings.route.antigravityLocal"
+  | "settings.route.browserCookies"
+  | "settings.route.cli"
+  | "settings.route.grokAuthFile"
+  | "settings.route.oauth"
+  | "settings.route.webViewCookies"
+  | "settings.routeHealth.agyAvailable"
+  | "settings.routeHealth.authFileExpired"
+  | "settings.routeHealth.authFileUnreadable"
+  | "settings.routeHealth.cachedOnly"
+  | "settings.routeHealth.credentialUnreadable"
+  | "settings.routeHealth.credentialsAvailable"
+  | "settings.routeHealth.invalidCookie"
+  | "settings.routeHealth.keychainLocked"
+  | "settings.routeHealth.lspRunning"
+  | "settings.routeHealth.noAntigravityData"
+  | "settings.routeHealth.noAuthFile"
+  | "settings.routeHealth.noCredential"
+  | "settings.routeHealth.noSavedCookie"
+  | "settings.routeHealth.savedInKeychain"
+  | "settings.search"
+  | "settings.section.components"
+  | "settings.section.costData"
+  | "settings.section.layout"
+  | "settings.section.menuBar"
+  | "settings.section.menuBarHealth"
+  | "settings.section.miniWindows"
+  | "settings.section.privacy"
+  | "settings.section.refreshing"
+  | "settings.section.remoteProbes"
+  | "settings.section.system"
+  | "settings.section.updates"
+  | "settings.showAssistant"
+  | "settings.showAssistantDetail"
+  | "settings.sidebar.coreProviders"
+  | "settings.sidebar.disableProvider"
+  | "settings.sidebar.enableProvider"
+  | "settings.sidebar.hideFromOverview"
+  | "settings.spaceXAIIntro"
+  | "settings.terminal.copyOnly"
+  | "settings.updateChannel"
+  | "settings.updateChannel.dev"
+  | "settings.updateChannel.devDetail"
+  | "settings.updateChannel.main"
+  | "settings.updateChannel.mainDetail"
+  | "settings.updateCheckDetail"
+  | "settings.usageMode.antigravity.autoDetail"
+  | "settings.usageMode.antigravity.localFirstDetail"
+  | "settings.usageMode.antigravity.localOnly"
+  | "settings.usageMode.antigravity.localOnlyDetail"
+  | "settings.usageMode.antigravity.localThenWeb"
+  | "settings.usageMode.antigravity.webFirstDetail"
+  | "settings.usageMode.antigravity.webOnly"
+  | "settings.usageMode.antigravity.webOnlyDetail"
+  | "settings.usageMode.antigravity.webThenLocal"
+  | "settings.usageMode.claude.autoDetail"
+  | "settings.usageMode.claude.codeFirstDetail"
+  | "settings.usageMode.claude.codeOnly"
+  | "settings.usageMode.claude.codeOnlyDetail"
+  | "settings.usageMode.claude.codeThenWeb"
+  | "settings.usageMode.claude.oauthCodeWeb"
+  | "settings.usageMode.claude.oauthFirstDetail"
+  | "settings.usageMode.claude.oauthOnlyDetail"
+  | "settings.usageMode.claude.webFirstDetail"
+  | "settings.usageMode.claude.webOnly"
+  | "settings.usageMode.claude.webOnlyDetail"
+  | "settings.usageMode.claude.webThenCode"
+  | "settings.usageMode.codex.autoDetail"
+  | "settings.usageMode.codex.cliOnly"
+  | "settings.usageMode.codex.cliOnlyDetail"
+  | "settings.usageMode.codex.cliThenOauth"
+  | "settings.usageMode.codex.oauthFirstDetail"
+  | "settings.usageMode.codex.oauthOnlyDetail"
+  | "settings.usageMode.codex.oauthThenCli"
+  | "settings.usageMode.gemini.webOnly"
+  | "settings.usageMode.gemini.webOnlyDetail"
+  | "settings.usageMode.oauthOnly"
+  | "settings.usageSource"
+  | "settings.webQuota"
+  | "settings.whatChangedIn"
+  | "status.card.componentCount"
+  | "status.card.components"
+  | "status.card.noIncidents"
+  | "status.card.openIncident"
+  | "status.card.openStatusPage"
+  | "status.card.refresh"
+  | "status.card.statusPageFallback"
+  | "status.card.title"
+  | "status.card.updatedHoursAgo"
+  | "status.card.updatedMinutesAgo"
+  | "status.card.uptime"
+  | "status.card.uptimeStrip"
+  | "status.component.degraded"
+  | "status.component.maintenance"
+  | "status.component.majorOutage"
+  | "status.component.operational"
+  | "status.component.other"
+  | "status.component.partialOutage"
+  | "status.indicator.critical"
+  | "status.indicator.loading"
+  | "status.indicator.major"
+  | "status.indicator.minor"
+  | "status.overview.checking"
+  | "status.overview.down"
+  | "status.overview.enableProvider"
+  | "status.overview.fetchFailed"
+  | "status.overview.needsAttention"
+  | "status.overview.refreshing"
+  | "status.overview.title"
+  | "status.overview.up"
+  | "status.summary.activeIncident"
+  | "status.summary.allOperational"
+  | "status.summary.serviceIssue"
+  | "status.summary.underMaintenance"
+  | "usage.activity.a11y"
+  | "usage.activity.cellTooltip"
+  | "usage.activity.heavy"
+  | "usage.activity.peak"
+  | "usage.activity.peakCell"
+  | "usage.activity.quiet"
+  | "usage.activity.tokensShort"
+  | "usage.breakdown.models"
+  | "usage.breakdown.periods"
+  | "usage.breakdown.projects"
+  | "usage.breakdown.providers"
+  | "usage.breakdown.requests"
+  | "usage.chartNavigator.label"
+  | "usage.chartNavigator.range"
+  | "usage.chartNavigator.showFullRange"
+  | "usage.chartNavigator.zoomIn"
+  | "usage.chartNavigator.zoomOut"
+  | "usage.filters.allHarnesses"
+  | "usage.filters.allHarnessesHelpEvery"
+  | "usage.filters.allHarnessesHelpNone"
+  | "usage.filters.allHarnessesSelectEvery"
+  | "usage.filters.allHarnessesSelectNone"
+  | "usage.filters.allModels"
+  | "usage.filters.autoMenuLabel"
+  | "usage.filters.autoRefresh"
+  | "usage.filters.clearHelp"
+  | "usage.filters.companyHarnesses"
+  | "usage.filters.companyHelp"
+  | "usage.filters.customRangeFrom"
+  | "usage.filters.customRangeHint"
+  | "usage.filters.customRangeTitle"
+  | "usage.filters.customRangeTo"
+  | "usage.filters.editCustomRange"
+  | "usage.filters.harnessHelp"
+  | "usage.filters.modelsMenuLabel"
+  | "usage.filters.modelsSelected"
+  | "usage.filters.noModelsInRange"
+  | "usage.filters.range14d"
+  | "usage.filters.range24h"
+  | "usage.filters.rangeCustom"
+  | "usage.filters.rangeMenu"
+  | "usage.filters.rangeSpan"
+  | "usage.filters.refreshInterval"
+  | "usage.harnessMix.activeCount"
+  | "usage.harnessMix.byRealTokens"
+  | "usage.harnessMix.empty"
+  | "usage.harnessMix.title"
+  | "usage.hero.allRequestsPriced"
+  | "usage.hero.cacheHit"
+  | "usage.hero.cacheRead"
+  | "usage.hero.inSelectedRange"
+  | "usage.hero.noPricedRequests"
+  | "usage.hero.noTrafficInRange"
+  | "usage.hero.realTokens"
+  | "usage.hero.requests"
+  | "usage.hero.tokenComposition"
+  | "usage.hero.unpricedBadge"
+  | "usage.hero.unpricedHelp"
+  | "usage.ledgerUnavailable.detail"
+  | "usage.ledgerUnavailable.title"
+  | "usage.mix.dimension.harnesses"
+  | "usage.mix.donutUnit"
+  | "usage.mix.flow.cache"
+  | "usage.mix.flow.cacheDetail"
+  | "usage.mix.flow.freshInput"
+  | "usage.mix.flow.output"
+  | "usage.mix.harness.subtitle"
+  | "usage.mix.harness.title"
+  | "usage.mix.lastThirtyDays"
+  | "usage.mix.ledgerUnreadable"
+  | "usage.mix.model.empty"
+  | "usage.mix.model.subtitle"
+  | "usage.mix.model.title"
+  | "usage.mix.other"
+  | "usage.mix.otherCount"
+  | "usage.mix.project.empty"
+  | "usage.mix.project.subtitle"
+  | "usage.mix.project.title"
+  | "usage.mix.provider.empty"
+  | "usage.mix.provider.subtitle"
+  | "usage.mix.provider.title"
+  | "usage.mix.title"
+  | "usage.mix.tokenFlow.empty"
+  | "usage.mix.tokenFlow.subtitle"
+  | "usage.mix.tokenFlow.title"
+  | "usage.noHarnessSelected.detail"
+  | "usage.noHarnessSelected.title"
+  | "usage.requestCount"
+  | "usage.table.activeDays"
+  | "usage.table.activeHours"
+  | "usage.table.activeWeeks"
+  | "usage.table.cacheReadWrite"
+  | "usage.table.column.average"
+  | "usage.table.column.day"
+  | "usage.table.column.harness"
+  | "usage.table.column.hour"
+  | "usage.table.column.input"
+  | "usage.table.column.model"
+  | "usage.table.column.requests"
+  | "usage.table.column.tier"
+  | "usage.table.column.time"
+  | "usage.table.column.weekOf"
+  | "usage.table.companyCount"
+  | "usage.table.emptyModels"
+  | "usage.table.emptyPeriods"
+  | "usage.table.emptyProjects"
+  | "usage.table.emptyProviders"
+  | "usage.table.emptyRequests"
+  | "usage.table.harnessHelp"
+  | "usage.table.inputHelp"
+  | "usage.table.loadMore"
+  | "usage.table.loadingMore"
+  | "usage.table.modelCount"
+  | "usage.table.periodRow"
+  | "usage.table.projectCount"
+  | "usage.table.requestRow"
+  | "usage.table.requestsLabel"
+  | "usage.table.requestsLoaded"
+  | "usage.table.showMorePeriods"
+  | "usage.table.statRow"
+  | "usage.table.unpriced"
+  | "usage.table.unpricedHelp"
+  | "usage.tokens.cacheRead"
+  | "usage.tokens.cacheWrite"
+  | "usage.tokens.input"
+  | "usage.tokens.output"
+  | "usage.tokens.title"
+  | "usage.trend.accessibilitySummary"
+  | "usage.trend.bucketDay"
+  | "usage.trend.bucketHour"
+  | "usage.trend.bucketWeek"
+  | "usage.trend.costChartLabel"
+  | "usage.trend.empty"
+  | "usage.trend.fit"
+  | "usage.trend.fitHelp"
+  | "usage.trend.granularity"
+  | "usage.trend.granularityDaily"
+  | "usage.trend.granularityHourly"
+  | "usage.trend.granularityLabel"
+  | "usage.trend.granularityWeekly"
+  | "usage.trend.hideProvider"
+  | "usage.trend.navigatorLabel"
+  | "usage.trend.nextWindow"
+  | "usage.trend.now"
+  | "usage.trend.nowHelp"
+  | "usage.trend.previousWindow"
+  | "usage.trend.scopeHint"
+  | "usage.trend.showProvider"
+  | "usage.trend.title"
+  | "usage.trend.tokensChartLabel"
+  | "usage.whenYouUse.everything"
+  | "usage.whenYouUse.googleAI"
+  | "usage.whenYouUse.provider"
+  | "usage.whenYouUse.spaceXAI"
+  | "usage.yearHeatmap.a11y"
+  | "usage.yearHeatmap.less"
+  | "usage.yearHeatmap.more"
+  | "usage.yearHeatmap.title"
+  | "usage.yearHeatmap.tooltip"
+  | "usage.yearHeatmap.total"
+  | "workbench.appearance.useDark"
+  | "workbench.appearance.useLight"
+  | "workbench.header.refreshPage"
+  | "workbench.page.resets.subtitle"
+  | "workbench.page.resets.title"
+  | "workbench.page.sessions.subtitle"
+  | "workbench.page.sessions.title"
+  | "workbench.page.settings.subtitle"
+  | "workbench.page.skills.subtitle"
+  | "workbench.page.skills.title"
+  | "workbench.page.usageStats.subtitle"
+  | "workbench.page.usageStats.title"
+  | "workbench.placeholder.resets"
+  | "workbench.placeholder.sessionManager"
+  | "workbench.placeholder.settings"
+  | "workbench.placeholder.skillsManager"
+  | "workbench.placeholder.usageStats"
+  | "workbench.resets.calendar.dayEntry"
+  | "workbench.resets.calendar.futureEntry"
+  | "workbench.resets.calendar.nextMonth"
+  | "workbench.resets.calendar.pastEntry"
+  | "workbench.resets.calendar.previousMonth"
+  | "workbench.resets.calendar.title"
+  | "workbench.resets.calendar.today"
+  | "workbench.resets.cycle.curveHelp"
+  | "workbench.resets.cycle.headline"
+  | "workbench.resets.refillHorizon.detail"
+  | "workbench.resets.refillHorizon.title"
+  | "workbench.resets.risk.badge.atRisk"
+  | "workbench.resets.risk.badge.low"
+  | "workbench.resets.risk.badge.out"
+  | "workbench.resets.risk.badge.watch"
+  | "workbench.resets.risk.detail"
+  | "workbench.resets.risk.empty"
+  | "workbench.resets.risk.remaining"
+  | "workbench.resets.risk.title"
+  | "workbench.resets.subDaily.title"
+  | "workbench.sessions.allChip.helpUnselected"
+  | "workbench.sessions.allChip.labelUnselected"
+  | "workbench.sessions.antigravityNotice"
+  | "workbench.sessions.copyResumeCommand"
+  | "workbench.sessions.copySessionID"
+  | "workbench.sessions.copySessionIDLabel"
+  | "workbench.sessions.copySourcePath"
+  | "workbench.sessions.copyWorkingDirectory"
+  | "workbench.sessions.count.sessions"
+  | "workbench.sessions.count.shownOfTotal"
+  | "workbench.sessions.delete.confirm"
+  | "workbench.sessions.delete.countButton"
+  | "workbench.sessions.delete.message"
+  | "workbench.sessions.deleteEllipsis"
+  | "workbench.sessions.details"
+  | "workbench.sessions.details.collapsed"
+  | "workbench.sessions.details.expanded"
+  | "workbench.sessions.empty.indexUnavailableDetail"
+  | "workbench.sessions.empty.indexUnavailableTitle"
+  | "workbench.sessions.empty.noLogsDetail"
+  | "workbench.sessions.empty.noMatchTitle"
+  | "workbench.sessions.empty.scanningDetail"
+  | "workbench.sessions.empty.searchNoMatchDetail"
+  | "workbench.sessions.fact.created"
+  | "workbench.sessions.fact.cwd"
+  | "workbench.sessions.fact.id"
+  | "workbench.sessions.fact.lastActive"
+  | "workbench.sessions.fact.source"
+  | "workbench.sessions.filter.company"
+  | "workbench.sessions.filter.dateRange"
+  | "workbench.sessions.filter.folders"
+  | "workbench.sessions.filter.foldersFiltered"
+  | "workbench.sessions.filter.harnessCount"
+  | "workbench.sessions.filter.options"
+  | "workbench.sessions.filter.scope"
+  | "workbench.sessions.filter.sort"
+  | "workbench.sessions.filter.sortGrouped"
+  | "workbench.sessions.filter.sortHelp"
+  | "workbench.sessions.filter.when"
+  | "workbench.sessions.filter.whenHelp"
+  | "workbench.sessions.find.next"
+  | "workbench.sessions.find.none"
+  | "workbench.sessions.find.placeholder"
+  | "workbench.sessions.find.previous"
+  | "workbench.sessions.folders.exclude"
+  | "workbench.sessions.folders.excludePlaceholder"
+  | "workbench.sessions.folders.include"
+  | "workbench.sessions.folders.includePlaceholder"
+  | "workbench.sessions.folders.separatorHint"
+  | "workbench.sessions.folders.title"
+  | "workbench.sessions.fraction"
+  | "workbench.sessions.groupByProject"
+  | "workbench.sessions.index.scanning"
+  | "workbench.sessions.index.unavailable"
+  | "workbench.sessions.list.capNotice"
+  | "workbench.sessions.message.copy"
+  | "workbench.sessions.message.copyHelp"
+  | "workbench.sessions.message.showLess"
+  | "workbench.sessions.message.showMore"
+  | "workbench.sessions.openInTerminal"
+  | "workbench.sessions.options.help"
+  | "workbench.sessions.options.indexMessageText"
+  | "workbench.sessions.options.openIn"
+  | "workbench.sessions.options.rebuildIndex"
+  | "workbench.sessions.outline.empty"
+  | "workbench.sessions.outline.heading"
+  | "workbench.sessions.outline.help"
+  | "workbench.sessions.outline.label"
+  | "workbench.sessions.page.next"
+  | "workbench.sessions.page.previous"
+  | "workbench.sessions.project.none"
+  | "workbench.sessions.project.projectless"
+  | "workbench.sessions.range.all"
+  | "workbench.sessions.refreshHelp"
+  | "workbench.sessions.resume.heading"
+  | "workbench.sessions.resume.none"
+  | "workbench.sessions.role.assistant"
+  | "workbench.sessions.role.other"
+  | "workbench.sessions.role.system"
+  | "workbench.sessions.role.tool"
+  | "workbench.sessions.role.user"
+  | "workbench.sessions.row.autoReviewsMerged"
+  | "workbench.sessions.row.includeInDeletion"
+  | "workbench.sessions.row.messageCount"
+  | "workbench.sessions.row.select"
+  | "workbench.sessions.row.showTranscript"
+  | "workbench.sessions.row.toggleForDeletion"
+  | "workbench.sessions.runInHelp"
+  | "workbench.sessions.scope.assistant"
+  | "workbench.sessions.scope.system"
+  | "workbench.sessions.scope.title"
+  | "workbench.sessions.scope.tool"
+  | "workbench.sessions.scope.user"
+  | "workbench.sessions.search.bodyIndexed"
+  | "workbench.sessions.search.bodyNotIndexed"
+  | "workbench.sessions.search.clearHelp"
+  | "workbench.sessions.search.placeholder"
+  | "workbench.sessions.selectMode"
+  | "workbench.sessions.selectModeHelp"
+  | "workbench.sessions.sort.byProject"
+  | "workbench.sessions.sort.oldestFirst"
+  | "workbench.sessions.sort.recentFirst"
+  | "workbench.sessions.toast.bodyIndexDropFailed"
+  | "workbench.sessions.toast.bodyIndexDropped"
+  | "workbench.sessions.toast.copied"
+  | "workbench.sessions.toast.copiedWithReason"
+  | "workbench.sessions.toast.cwdCopied"
+  | "workbench.sessions.toast.deleted"
+  | "workbench.sessions.toast.deletedPartial"
+  | "workbench.sessions.toast.indexNotCleared"
+  | "workbench.sessions.toast.messageCopied"
+  | "workbench.sessions.toast.noResumeCommand"
+  | "workbench.sessions.toast.openedIn"
+  | "workbench.sessions.toast.sessionIDCopied"
+  | "workbench.sessions.toast.sourcePathCopied"
+  | "workbench.sessions.transcript.autoReviewDivider"
+  | "workbench.sessions.transcript.cancelled"
+  | "workbench.sessions.transcript.loadAll"
+  | "workbench.sessions.transcript.loading"
+  | "workbench.sessions.transcript.noMessages"
+  | "workbench.sessions.transcript.noReader"
+  | "workbench.sessions.transcript.pageRange"
+  | "workbench.sessions.transcript.placeholderDetail"
+  | "workbench.sessions.transcript.placeholderTitle"
+  | "workbench.sessions.transcript.readFailed"
+  | "workbench.sessions.transcript.truncatedDetail"
+  | "workbench.sessions.transcript.truncatedTitle"
+  | "workbench.skills.appCountNativeDisabled"
+  | "workbench.skills.appCountViaGeminiRoot"
+  | "workbench.skills.appCountViaSharedRoot"
+  | "workbench.skills.appSeesCount"
+  | "workbench.skills.backups"
+  | "workbench.skills.backups.deleteAccessibility"
+  | "workbench.skills.backups.deleteConfirmMessage"
+  | "workbench.skills.backups.deleteConfirmTitle"
+  | "workbench.skills.backups.deleteConfirmTitleGeneric"
+  | "workbench.skills.backups.empty"
+  | "workbench.skills.backups.footer"
+  | "workbench.skills.backups.refreshHelp"
+  | "workbench.skills.backups.restore"
+  | "workbench.skills.backups.restoreHelp"
+  | "workbench.skills.backups.subtitle"
+  | "workbench.skills.backups.title"
+  | "workbench.skills.badge.installed"
+  | "workbench.skills.badge.nativeOff"
+  | "workbench.skills.badge.nativeOffHelp"
+  | "workbench.skills.badge.nativeUnknown"
+  | "workbench.skills.badge.nativeUnknownHelp"
+  | "workbench.skills.badge.update"
+  | "workbench.skills.checkUpdates"
+  | "workbench.skills.checkUpdatesCount"
+  | "workbench.skills.contextDisableKeepProjection"
+  | "workbench.skills.contextEnableIn"
+  | "workbench.skills.contextRemoveProjection"
+  | "workbench.skills.countFiltered"
+  | "workbench.skills.countTotal"
+  | "workbench.skills.discover"
+  | "workbench.skills.discover.availableEmpty"
+  | "workbench.skills.discover.availableTitle"
+  | "workbench.skills.discover.indexTitle"
+  | "workbench.skills.discover.installs"
+  | "workbench.skills.discover.noRepos"
+  | "workbench.skills.discover.removeRepo"
+  | "workbench.skills.discover.repoFieldPlaceholder"
+  | "workbench.skills.discover.repoRules"
+  | "workbench.skills.discover.reposTitle"
+  | "workbench.skills.discover.scanRepos"
+  | "workbench.skills.discover.scanReposHelp"
+  | "workbench.skills.discover.searchHint"
+  | "workbench.skills.discover.searchPlaceholder"
+  | "workbench.skills.discover.selectAll"
+  | "workbench.skills.discover.selectHelp"
+  | "workbench.skills.discover.selectNone"
+  | "workbench.skills.discover.sourceFromSkillsSh"
+  | "workbench.skills.discover.stopScanHelp"
+  | "workbench.skills.discover.stopScanningRepo"
+  | "workbench.skills.discover.title"
+  | "workbench.skills.discoverHelp"
+  | "workbench.skills.empty.body"
+  | "workbench.skills.empty.headline"
+  | "workbench.skills.filterClear"
+  | "workbench.skills.filterPlaceholder"
+  | "workbench.skills.import.alreadyShared"
+  | "workbench.skills.import.alreadySharedDetail"
+  | "workbench.skills.import.apply"
+  | "workbench.skills.import.conflicts"
+  | "workbench.skills.import.conflictsCount"
+  | "workbench.skills.import.conflictsDetail"
+  | "workbench.skills.import.foundIn"
+  | "workbench.skills.import.keepEvidenceFor"
+  | "workbench.skills.import.needsAdoption"
+  | "workbench.skills.import.needsAdoptionDetail"
+  | "workbench.skills.import.notSkills"
+  | "workbench.skills.import.notSkillsDetail"
+  | "workbench.skills.import.recognizedCount"
+  | "workbench.skills.import.subtitle"
+  | "workbench.skills.import.summary"
+  | "workbench.skills.import.title"
+  | "workbench.skills.importExisting"
+  | "workbench.skills.install"
+  | "workbench.skills.installFromZip"
+  | "workbench.skills.menuMoreActions"
+  | "workbench.skills.menuRevealInFinder"
+  | "workbench.skills.menuUninstall"
+  | "workbench.skills.menuUpdateFromRepository"
+  | "workbench.skills.menuWiringDetails"
+  | "workbench.skills.noMatch"
+  | "workbench.skills.phase.downloadedOne"
+  | "workbench.skills.phase.downloadedProgress"
+  | "workbench.skills.phase.downloading"
+  | "workbench.skills.phase.scanning"
+  | "workbench.skills.sourceBranch"
+  | "workbench.skills.sourceInstalledLocally"
+  | "workbench.skills.sourceLocal"
+  | "workbench.skills.state.coupled"
+  | "workbench.skills.state.disabledInHarness"
+  | "workbench.skills.state.enabled"
+  | "workbench.skills.state.notProjected"
+  | "workbench.skills.state.unknown"
+  | "workbench.skills.sync.footer"
+  | "workbench.skills.sync.nativeSwitchesBody"
+  | "workbench.skills.sync.nativeSwitchesLead"
+  | "workbench.skills.sync.noPerSkillSwitch"
+  | "workbench.skills.sync.noSwitchAlsoReads"
+  | "workbench.skills.sync.perSkillSwitch"
+  | "workbench.skills.sync.projectionsBody"
+  | "workbench.skills.sync.projectionsLead"
+  | "workbench.skills.sync.readsOwnFolder"
+  | "workbench.skills.sync.scansSharedRoot"
+  | "workbench.skills.sync.ssotBody"
+  | "workbench.skills.sync.ssotLead"
+  | "workbench.skills.sync.title"
+  | "workbench.skills.syncExplainerHelp"
+  | "workbench.skills.toast.addRepoFirst"
+  | "workbench.skills.toast.allUpToDate"
+  | "workbench.skills.toast.archiveEmpty"
+  | "workbench.skills.toast.disabledKeptProjection"
+  | "workbench.skills.toast.enabledForApps"
+  | "workbench.skills.toast.importConflicts"
+  | "workbench.skills.toast.importRecognized"
+  | "workbench.skills.toast.installedArchive"
+  | "workbench.skills.toast.installedForApps"
+  | "workbench.skills.toast.installedShared"
+  | "workbench.skills.toast.invalidRepoRef"
+  | "workbench.skills.toast.linkRemovedStillShared"
+  | "workbench.skills.toast.noSearchMatches"
+  | "workbench.skills.toast.noSkillsFound"
+  | "workbench.skills.toast.notFoundInRepo"
+  | "workbench.skills.toast.projectionClearedFolderKept"
+  | "workbench.skills.toast.recorded"
+  | "workbench.skills.toast.reposUnreadable"
+  | "workbench.skills.toast.restored"
+  | "workbench.skills.toast.scanStopped"
+  | "workbench.skills.toast.sharedLibraryNote"
+  | "workbench.skills.toast.sharedRootNoSwitch"
+  | "workbench.skills.toast.uninstalledBackedUp"
+  | "workbench.skills.toast.uninstalledLeftInPlace"
+  | "workbench.skills.toast.updated"
+  | "workbench.skills.toast.updatesAvailable"
+  | "workbench.skills.toggleHelp.installInto"
+  | "workbench.skills.toggleHelp.keepLinks"
+  | "workbench.skills.toggleHelp.linkAfterAdopting"
+  | "workbench.skills.toggleState.coupledGemini"
+  | "workbench.skills.toggleState.coupledSharedRoot"
+  | "workbench.skills.toggleState.disabledInHarness"
+  | "workbench.skills.toggleState.enabled"
+  | "workbench.skills.toggleState.enabledNative"
+  | "workbench.skills.toggleState.enabledSharedRoot"
+  | "workbench.skills.toggleState.notProjected"
+  | "workbench.skills.toggleState.unknown"
+  | "workbench.skills.uninstall"
+  | "workbench.skills.uninstallConfirmMessage"
+  | "workbench.skills.uninstallConfirmTitle"
+  | "workbench.skills.wiring.footer"
+  | "workbench.skills.wiring.mechanismGeminiCompat"
+  | "workbench.skills.wiring.mechanismSharedRoot"
+  | "workbench.skills.wiring.nativeSwitch"
+  | "workbench.skills.wiring.noNativeSwitch"
+  | "workbench.skills.wiring.projectionCopy"
+  | "workbench.skills.wiring.projectionCopyAdopted"
+  | "workbench.skills.wiring.projectionMissing"
+  | "workbench.skills.wiring.projectionSymlink"
+  | "workbench.skills.wiring.projectionSymlinkAdopted"
+  | "workbench.skills.wiring.reveal"
+  | "workbench.skills.wiring.revealHelp"
+  | "workbench.skills.wiring.source"
+  | "workbench.skills.wiring.sourceDetail"
+  | "workbench.skills.wiring.stateConfigUnreadable"
+  | "workbench.skills.wiring.stateCoupledGemini"
+  | "workbench.skills.wiring.stateCoupledSharedRoot"
+  | "workbench.skills.wiring.stateNativeOff"
+  | "workbench.skills.wiring.stateNotLinked"
+  | "workbench.status.cachedQuotas"
+  | "workbench.status.indexed"
+  | "workbench.status.installed"
+  | "workbench.status.localIndex"
+  | "workbench.status.localLedger"
+  | "workbench.status.nextRefill"
+  | "workbench.status.sharedLibrary"
+  | "workbench.status.updated";
 
 /**
  * The parameter object each key takes. `undefined` means the key takes
  * no second argument at all — `t` overloads on this.
  */
 export interface MessageParams {
+  "common.add": undefined;
+  "common.all": undefined;
+  "common.auto": undefined;
   "common.cancel": undefined;
+  "common.clear": undefined;
+  "common.copied": undefined;
+  "common.copy": undefined;
+  "common.delete": undefined;
+  "common.dismiss": undefined;
+  "common.done": undefined;
+  "common.dragToReorder": undefined;
+  "common.duration.days": { "days": number };
+  "common.duration.daysHours": { "days": number; "hours": number };
+  "common.duration.hours": { "hours": number };
+  "common.duration.hoursMinutes": { "hours": number; "minutes": number };
+  "common.duration.lessThanMinute": undefined;
+  "common.duration.minutes": { "minutes": number };
+  "common.duration.now": undefined;
+  "common.name": undefined;
   "common.noData": undefined;
+  "common.off": undefined;
+  "common.on": undefined;
+  "common.open": undefined;
+  "common.openSettings": undefined;
+  "common.percent": { "value": number };
+  "common.provider": undefined;
   "common.refresh": undefined;
+  "common.refreshSection": undefined;
+  "common.remove": undefined;
   "common.retry": undefined;
+  "common.retryNow": undefined;
+  "common.save": undefined;
+  "common.updated.daysAgo": { "days": number };
+  "common.updated.hoursAgo": { "hours": number };
+  "common.updated.justNow": undefined;
+  "common.updated.minutesAgo": { "minutes": number };
+  "common.updated.never": undefined;
+  "common.updated.secondsAgo": { "seconds": number };
+  "cost.allProviders": undefined;
+  "cost.chart.metricCostHelp": undefined;
+  "cost.chart.metricTokens": undefined;
+  "cost.chart.metricTokensHelp": undefined;
+  "cost.empty.antigravity": undefined;
+  "cost.empty.claude": undefined;
+  "cost.empty.codex": undefined;
+  "cost.empty.gemini": undefined;
+  "cost.empty.genericCLI": { "provider": string };
+  "cost.empty.grok": undefined;
+  "cost.fullCharts": { "title": string };
+  "cost.gemini.emptyDetail": undefined;
+  "cost.gemini.emptyTitle": undefined;
+  "cost.googleAI.empty": undefined;
+  "cost.googleAI.title": undefined;
+  "cost.granularity.day": undefined;
+  "cost.granularity.hour": undefined;
+  "cost.granularity.month": undefined;
+  "cost.granularity.week": undefined;
+  "cost.history.allProviders": undefined;
+  "cost.history.building": undefined;
+  "cost.history.buildingDetail": undefined;
+  "cost.history.clearModelSelection": undefined;
+  "cost.history.emptyCost": undefined;
+  "cost.history.emptyTokens": undefined;
+  "cost.history.extentNote": { "end": string; "span": string; "start": string };
+  "cost.history.granularityDisabled": { "granularity": string };
+  "cost.history.groupBy": { "granularity": string };
+  "cost.history.hourlyFallback": undefined;
+  "cost.history.metricAverage": { "granularity": string };
+  "cost.history.metricPeak": undefined;
+  "cost.history.metricTotal": undefined;
+  "cost.history.modelDetailUnavailable": undefined;
+  "cost.history.modelsAt": { "when": string };
+  "cost.history.moreModels": { "count": number };
+  "cost.history.navigator": undefined;
+  "cost.history.title": undefined;
+  "cost.history.weekOf": { "date": string };
+  "cost.history.weekShortOf": { "date": string };
+  "cost.metric.peakDay": undefined;
+  "cost.metric.peakTokenDay": undefined;
+  "cost.metric.sevenDay": undefined;
+  "cost.metric.sevenDayTokens": undefined;
+  "cost.metric.thirtyDay": undefined;
+  "cost.metric.thirtyDayTokens": undefined;
+  "cost.metric.todayTokens": undefined;
+  "cost.metric.totalCost": undefined;
+  "cost.metric.totalTokens": undefined;
+  "cost.metric.yesterdayTokens": undefined;
+  "cost.modelRanking.allProvidersAllTime": undefined;
+  "cost.modelRanking.allTime": undefined;
+  "cost.modelRanking.title": undefined;
+  "cost.noUsageYet": undefined;
+  "cost.notTracked": { "provider": string };
+  "cost.openFullCharts": undefined;
   "cost.perThousandTokens": { "rate": number };
+  "cost.provider.title": { "provider": string };
+  "cost.providerFullCharts": { "provider": string };
+  "cost.refreshData": undefined;
+  "cost.refreshProvider": { "provider": string };
+  "cost.spaceXAI.empty": undefined;
+  "cost.spaceXAI.title": undefined;
   "cost.spentToday": { "amount": string };
+  "cost.timeframe.all": undefined;
+  "cost.timeframe.month": undefined;
+  "cost.timeframe.monthShort": undefined;
+  "cost.timeframe.today": undefined;
+  "cost.timeframe.week": undefined;
+  "cost.timeframe.weekShort": undefined;
+  "cost.timeframe.yesterday": undefined;
+  "cost.title": undefined;
+  "cost.topModel.share": { "percent": number };
+  "cost.topModel.title": undefined;
+  "error.credentialRejected": undefined;
   "error.needsReLogin": undefined;
+  "error.network": undefined;
   "error.networkWithReason": { "reason": string };
   "error.noAccountFound": undefined;
+  "error.notImplemented": undefined;
+  "error.parseFailure": undefined;
   "error.rateLimited": undefined;
+  "error.unknown": undefined;
+  "error.unknownDetail": { "reason": string };
+  "menuBar.composer.action.duplicate": undefined;
+  "menuBar.composer.appIcon.detail": undefined;
+  "menuBar.composer.block.appIcon": undefined;
+  "menuBar.composer.block.emptyText": undefined;
+  "menuBar.composer.block.gap": undefined;
+  "menuBar.composer.block.logo": undefined;
+  "menuBar.composer.block.newRow": undefined;
+  "menuBar.composer.block.quota": undefined;
+  "menuBar.composer.block.separator": undefined;
+  "menuBar.composer.block.space": undefined;
+  "menuBar.composer.block.structure": undefined;
+  "menuBar.composer.block.text": undefined;
+  "menuBar.composer.block.unsupported": undefined;
+  "menuBar.composer.blocks": undefined;
+  "menuBar.composer.blocks.empty": undefined;
+  "menuBar.composer.colour.automatic": undefined;
+  "menuBar.composer.colour.brand": undefined;
+  "menuBar.composer.colour.fixed": undefined;
+  "menuBar.composer.colour.followsQuota": undefined;
+  "menuBar.composer.colour.forecast": undefined;
+  "menuBar.composer.colour.primary": undefined;
+  "menuBar.composer.colour.secondary": undefined;
+  "menuBar.composer.colour.tertiary": undefined;
+  "menuBar.composer.field.colour": undefined;
+  "menuBar.composer.field.monospacedDigits": undefined;
+  "menuBar.composer.field.monospacedDigitsHelp": undefined;
+  "menuBar.composer.field.offlineOption": { "title": string };
+  "menuBar.composer.field.show": undefined;
+  "menuBar.composer.field.shows": undefined;
+  "menuBar.composer.field.size": undefined;
+  "menuBar.composer.field.verdicts": undefined;
+  "menuBar.composer.field.weight": undefined;
+  "menuBar.composer.metric.displayPercent": undefined;
+  "menuBar.composer.metric.pace": undefined;
+  "menuBar.composer.metric.remainingPercent": undefined;
+  "menuBar.composer.metric.resetAt": undefined;
+  "menuBar.composer.metric.resetsIn": undefined;
+  "menuBar.composer.metric.runsOutIn": undefined;
+  "menuBar.composer.metric.usedPercent": undefined;
+  "menuBar.composer.mode.custom": undefined;
+  "menuBar.composer.mode.customCaption": undefined;
+  "menuBar.composer.mode.default": undefined;
+  "menuBar.composer.mode.defaultCaption": undefined;
+  "menuBar.composer.mode.label": undefined;
+  "menuBar.composer.newRow.capped": undefined;
+  "menuBar.composer.newRow.detail": undefined;
+  "menuBar.composer.newRow.help": undefined;
+  "menuBar.composer.palette": undefined;
+  "menuBar.composer.preview": undefined;
+  "menuBar.composer.preview.dark": undefined;
+  "menuBar.composer.preview.empty": undefined;
+  "menuBar.composer.preview.grounds": undefined;
+  "menuBar.composer.preview.light": undefined;
+  "menuBar.composer.preview.twoRowScaling": undefined;
+  "menuBar.composer.removeTarget": undefined;
+  "menuBar.composer.rule.always": undefined;
+  "menuBar.composer.rule.whenForecast": undefined;
+  "menuBar.composer.rule.whenRemainingAtMost": undefined;
+  "menuBar.composer.rule.whenUsedAtLeast": undefined;
+  "menuBar.composer.selected": undefined;
+  "menuBar.composer.size.large": undefined;
+  "menuBar.composer.size.regular": undefined;
+  "menuBar.composer.size.small": undefined;
+  "menuBar.composer.space.detail": undefined;
+  "menuBar.composer.startOver": undefined;
+  "menuBar.composer.startOver.confirm": undefined;
+  "menuBar.composer.startOver.confirmMessage": undefined;
+  "menuBar.composer.startOver.confirmTitle": undefined;
+  "menuBar.composer.startOver.detail": undefined;
+  "menuBar.composer.template": undefined;
+  "menuBar.composer.template.compact": undefined;
+  "menuBar.composer.template.compactDetail": undefined;
+  "menuBar.composer.template.roomy": undefined;
+  "menuBar.composer.template.roomyDetail": undefined;
+  "menuBar.composer.template.twoRows": undefined;
+  "menuBar.composer.template.twoRowsDetail": undefined;
+  "menuBar.composer.text.empty": undefined;
+  "menuBar.composer.text.limit": { "count": number };
+  "menuBar.composer.text.placeholder": undefined;
+  "menuBar.composer.unsupported.detail": undefined;
+  "menuBar.composer.warning.degraded": undefined;
+  "menuBar.composer.warning.missing": { "fields": string };
+  "menuBar.composer.warning.silent": undefined;
+  "menuBar.composer.weight.medium": undefined;
+  "menuBar.composer.weight.regular": undefined;
+  "menuBar.composer.weight.semibold": undefined;
+  "menuBar.spoken.forecast": { "label": string; "value": string };
+  "menuBar.spoken.pace": { "label": string; "value": string };
+  "menuBar.spoken.remaining": { "label": string; "value": string };
+  "menuBar.spoken.resetAt": { "label": string; "value": string };
+  "menuBar.spoken.resetsIn": { "label": string; "value": string };
+  "menuBar.spoken.runsOutIn": { "label": string; "value": string };
+  "menuBar.spoken.title": { "kind": string };
+  "menuBar.spoken.titleBody": { "body": string; "kind": string };
+  "menuBar.spoken.used": { "label": string; "value": string };
+  "onboarding.apiKeys.hide": undefined;
+  "onboarding.apiKeys.intro": undefined;
+  "onboarding.apiKeys.setUp": undefined;
+  "onboarding.apiKeys.showOnMiscPage": { "provider": string };
+  "onboarding.back": undefined;
+  "onboarding.continue": undefined;
+  "onboarding.cookies.batchScope": undefined;
+  "onboarding.cookies.importAll": undefined;
+  "onboarding.cookies.importFromBrowser": undefined;
+  "onboarding.cookies.importGemini": undefined;
+  "onboarding.cookies.importGrok": undefined;
+  "onboarding.cookies.importing": undefined;
+  "onboarding.cookies.intro": undefined;
+  "onboarding.cookies.notImported": undefined;
+  "onboarding.cookies.openWebViewLogin": undefined;
+  "onboarding.cookies.saved": undefined;
+  "onboarding.cookies.signInFirst": undefined;
+  "onboarding.done.apiKeyProviders": undefined;
+  "onboarding.done.cookieCount": { "saved": number; "total": number };
+  "onboarding.done.footer": undefined;
+  "onboarding.done.intro": undefined;
+  "onboarding.done.miscCount": { "count": number };
+  "onboarding.done.noneShown": undefined;
+  "onboarding.done.pricingBundled": undefined;
+  "onboarding.done.pricingMerged": { "when": string };
+  "onboarding.finish": undefined;
+  "onboarding.pricing.fetchNow": undefined;
+  "onboarding.pricing.fetching": undefined;
+  "onboarding.pricing.footer": undefined;
+  "onboarding.pricing.interval.hour": undefined;
+  "onboarding.pricing.interval.hours": { "hours": number };
+  "onboarding.pricing.intro": { "interval": string };
+  "onboarding.pricing.merged": { "count": number; "when": string };
+  "onboarding.pricing.notFetched": undefined;
+  "onboarding.pricing.source.failed": { "count": number };
+  "onboarding.pricing.source.models": { "count": number };
+  "onboarding.pricing.source.notRefreshed": undefined;
+  "onboarding.pricing.source.unchanged": { "count": number };
+  "onboarding.skip": undefined;
+  "onboarding.step.apiKeyProviders.subtitle": undefined;
+  "onboarding.step.apiKeyProviders.title": undefined;
+  "onboarding.step.browserCookies.subtitle": undefined;
+  "onboarding.step.browserCookies.title": undefined;
+  "onboarding.step.done.subtitle": undefined;
+  "onboarding.step.done.title": undefined;
+  "onboarding.step.pricing.subtitle": undefined;
+  "onboarding.step.pricing.title": undefined;
+  "onboarding.step.subscriptions.subtitle": undefined;
+  "onboarding.step.subscriptions.title": undefined;
+  "onboarding.step.welcome.subtitle": undefined;
+  "onboarding.step.welcome.title": undefined;
+  "onboarding.subscriptions.claude.detected": undefined;
+  "onboarding.subscriptions.claude.missing": undefined;
+  "onboarding.subscriptions.claude.web": undefined;
+  "onboarding.subscriptions.codex.detected": undefined;
+  "onboarding.subscriptions.codex.missing": undefined;
+  "onboarding.subscriptions.codex.web": undefined;
+  "onboarding.subscriptions.gemini.hint": undefined;
+  "onboarding.subscriptions.grok.detected": undefined;
+  "onboarding.subscriptions.grok.missing": undefined;
+  "onboarding.subscriptions.intro": undefined;
+  "onboarding.subscriptions.productLine.claude": undefined;
+  "onboarding.subscriptions.productLine.codex": undefined;
+  "onboarding.subscriptions.productLine.gemini": undefined;
+  "onboarding.subscriptions.productLine.grok": undefined;
+  "onboarding.subscriptions.showInOverview": undefined;
+  "onboarding.title": undefined;
+  "onboarding.welcome.cost.detail": undefined;
+  "onboarding.welcome.cost.title": undefined;
+  "onboarding.welcome.footer": undefined;
+  "onboarding.welcome.intro": undefined;
+  "onboarding.welcome.mcp.detail": undefined;
+  "onboarding.welcome.mcp.title": undefined;
+  "onboarding.welcome.quotas.detail": undefined;
+  "onboarding.welcome.quotas.title": undefined;
+  "onboarding.welcome.sessions.detail": undefined;
+  "onboarding.welcome.sessions.title": undefined;
+  "platform.macos.launchAtLogin.detail": undefined;
+  "platform.macos.launchAtLogin.enabled": undefined;
+  "platform.macos.launchAtLogin.subtitle": undefined;
+  "platform.macos.launchAtLogin.title": undefined;
+  "platform.macos.launchAtLogin.toggle": undefined;
+  "platform.macos.menuBar.color.actual": undefined;
+  "platform.macos.menuBar.color.actualDetail": undefined;
+  "platform.macos.menuBar.color.forecastDetail": undefined;
+  "platform.macos.menuBar.displayDensity": undefined;
+  "platform.macos.menuBar.fieldStyle.label": undefined;
+  "platform.macos.menuBar.fieldStyle.labelDetail": undefined;
+  "platform.macos.menuBar.fieldStyle.logoAndLabel": undefined;
+  "platform.macos.menuBar.fieldStyle.logoAndLabelDetail": undefined;
+  "platform.macos.menuBar.fieldStyle.logoDetail": undefined;
+  "platform.macos.menuBar.fields": undefined;
+  "platform.macos.menuBar.layout": undefined;
+  "platform.macos.menuBar.layout.iconOnly": undefined;
+  "platform.macos.menuBar.layout.singleLine": undefined;
+  "platform.macos.menuBar.mergeGroupWindows": undefined;
+  "platform.macos.menuBar.mergeGroupWindowsDetail": undefined;
+  "platform.macos.menuBar.percentColor": undefined;
+  "platform.macos.menuBar.showInMenuBar": undefined;
+  "platform.macos.menuBar.showTitleText": undefined;
+  "popover.header.machinesSubtitle": undefined;
+  "popover.header.mini": undefined;
+  "popover.header.miscSubtitle": undefined;
+  "popover.header.openWorkbench": undefined;
+  "popover.header.overviewSubtitle": undefined;
+  "popover.header.refreshing": undefined;
+  "popover.header.settings": undefined;
+  "popover.header.updatedLine": { "subtitle": string; "updated": string };
+  "popover.machines.checking": undefined;
+  "popover.machines.freshness.delayed": undefined;
+  "popover.machines.freshness.live": undefined;
+  "popover.machines.freshness.stale": undefined;
+  "popover.machines.includeInTotals": undefined;
+  "popover.machines.includeInTotalsHelp": undefined;
+  "popover.machines.labelWithStatus": { "label": string; "status": string };
+  "popover.machines.noData": undefined;
+  "popover.machines.noDataDetail": undefined;
+  "popover.machines.notConfigured": undefined;
+  "popover.machines.notConfiguredDetail": undefined;
+  "popover.machines.sequence": { "value": string };
+  "popover.machines.thirtyDayCost": undefined;
+  "popover.misc.copyFallback": { "ordinal": number };
+  "popover.refreshGoogleAI": undefined;
+  "popover.refreshSpaceXAI": undefined;
+  "popover.showPage": { "page": string };
+  "popover.tab.machines": undefined;
+  "popover.tab.misc": undefined;
+  "popover.tab.miscShort": undefined;
+  "popover.tab.overview": undefined;
   "quota.awaitingFirstObservation": undefined;
+  "quota.bridge.empty": undefined;
+  "quota.bridge.refresh": undefined;
+  "quota.bridge.subtitle": undefined;
+  "quota.bridge.subtitleVersion": { "version": string };
+  "quota.bridge.title": undefined;
+  "quota.bucket.noResetInfo": undefined;
   "quota.cycleRecordedOnRefill": undefined;
   "quota.cyclesRecorded": { "count": number };
+  "quota.empty.needsLogin.detail": { "command": string };
+  "quota.empty.network.detail": undefined;
+  "quota.empty.noAccount.detail": undefined;
+  "quota.empty.parseChanged.detail": undefined;
+  "quota.empty.rateLimited.detail": undefined;
+  "quota.empty.rateLimited.headline": undefined;
+  "quota.forecast.confidence.high": undefined;
+  "quota.forecast.confidence.learning": undefined;
+  "quota.forecast.confidence.medium": undefined;
+  "quota.forecast.explain.footer": undefined;
+  "quota.forecast.explain.hide": undefined;
+  "quota.forecast.explain.show": undefined;
+  "quota.forecast.explain.title": undefined;
+  "quota.forecast.guidance.atRisk": undefined;
+  "quota.forecast.guidance.available": { "target": number; "unused": number };
+  "quota.forecast.guidance.surplus": { "target": number; "unused": number };
+  "quota.forecast.guidance.usedAvailable": { "target": number; "unused": number };
+  "quota.forecast.guidance.usedSurplus": { "target": number; "unused": number };
+  "quota.forecast.guidance.usedWithinTarget": { "target": number };
+  "quota.forecast.guidance.watch": undefined;
+  "quota.forecast.guidance.withinTarget": { "target": number };
+  "quota.forecast.legend.item": { "label": string; "value": string };
+  "quota.forecast.metric.aboveTarget": { "percent": number };
+  "quota.forecast.metric.activityFallback": undefined;
+  "quota.forecast.metric.activityTiming": undefined;
+  "quota.forecast.metric.activityWeighted": undefined;
+  "quota.forecast.metric.behaviorDetail": undefined;
+  "quota.forecast.metric.behaviorFallback": undefined;
+  "quota.forecast.metric.comparableCycles": { "count": number };
+  "quota.forecast.metric.coverage": undefined;
+  "quota.forecast.metric.coverageDetail": { "fresh": number; "habits": number };
+  "quota.forecast.metric.coverageValue": { "history": number; "observations": number };
+  "quota.forecast.metric.cyclesPending": undefined;
+  "quota.forecast.metric.elapsed": { "percent": number };
+  "quota.forecast.metric.evidence": undefined;
+  "quota.forecast.metric.evidenceDetail": { "score": number; "confidence": string };
+  "quota.forecast.metric.evidenceValue": { "cycles": number; "observations": number };
+  "quota.forecast.metric.expectedLeft": { "percent": number };
+  "quota.forecast.metric.expectedUsed": { "percent": number };
+  "quota.forecast.metric.forecastAtReset": undefined;
+  "quota.forecast.metric.forecastRange": undefined;
+  "quota.forecast.metric.insideTarget": undefined;
+  "quota.forecast.metric.noComparison": undefined;
+  "quota.forecast.metric.plan": undefined;
+  "quota.forecast.metric.planDetail": { "target": number };
+  "quota.forecast.metric.rangeLeft": { "lower": number; "upper": number };
+  "quota.forecast.metric.rangeUsed": { "lower": number; "upper": number };
+  "quota.forecast.metric.recentBurn": undefined;
+  "quota.forecast.metric.recentIntervals": { "count": number };
+  "quota.forecast.metric.recentMissing": undefined;
+  "quota.forecast.metric.recentTrend": undefined;
+  "quota.forecast.metric.safetyTarget": undefined;
+  "quota.forecast.metric.timePace": undefined;
+  "quota.forecast.metric.timePaceDetail": { "stage": string };
+  "quota.forecast.metric.timePaceMissing": undefined;
+  "quota.forecast.metric.trendDetail": undefined;
+  "quota.forecast.metric.trendDetailMissing": undefined;
+  "quota.forecast.metric.trendMissing": undefined;
+  "quota.forecast.metric.trendMultiplier": { "multiplier": string };
+  "quota.forecast.metric.unavailable": undefined;
+  "quota.forecast.metric.uncertaintyInterval": undefined;
+  "quota.forecast.reset.atRisk": undefined;
+  "quota.forecast.reset.enough": { "remaining": number };
+  "quota.forecast.reset.learning": { "remaining": number };
+  "quota.forecast.reset.surplus": { "remaining": number };
+  "quota.forecast.reset.watch": { "remaining": number };
+  "quota.forecast.status.atRisk": undefined;
+  "quota.forecast.status.enough": { "value": string };
+  "quota.forecast.status.learning": { "value": string };
+  "quota.forecast.status.surplus": { "value": string };
+  "quota.forecast.status.watch": { "value": string };
+  "quota.forecast.useUp.beforeReset": undefined;
+  "quota.forecast.useUp.couldRunOut": { "countdown": string };
+  "quota.forecast.useUp.estimated": { "countdown": string };
+  "quota.forecast.useUp.lastsUntilReset": undefined;
+  "quota.forecast.useUp.uncertain": undefined;
+  "quota.forecast.value.atReset": { "value": string };
+  "quota.forecast.value.expectedNow": { "value": string };
+  "quota.forecast.verdict.atRisk": undefined;
+  "quota.forecast.verdict.enough": undefined;
+  "quota.forecast.verdict.learning": undefined;
+  "quota.forecast.verdict.surplus": undefined;
+  "quota.forecast.verdict.watch": undefined;
+  "quota.freshness.age.seconds": { "seconds": number };
+  "quota.freshness.dataAge": { "age": string };
+  "quota.freshness.defaultHelp": undefined;
+  "quota.freshness.line": { "attempt": string; "data": string; "reason": string };
+  "quota.freshness.noCachedData": undefined;
+  "quota.freshness.refreshFailed": undefined;
+  "quota.freshness.refreshFailedAgo": { "age": string };
+  "quota.freshness.staleNeverUpdated": undefined;
+  "quota.freshness.staleUpdatedAgo": { "age": string };
+  "quota.group.allModels": undefined;
+  "quota.group.daily": undefined;
+  "quota.group.fiveHours": undefined;
+  "quota.group.monthly": undefined;
+  "quota.group.noUtilization": undefined;
+  "quota.group.other": undefined;
+  "quota.group.otherModels": undefined;
+  "quota.group.weekly": undefined;
+  "quota.group.weeklyCredits": undefined;
+  "quota.history.allCurvesHidden": undefined;
+  "quota.history.buildingUp": undefined;
+  "quota.history.curveCount": { "count": number };
+  "quota.history.curvePickerA11y": undefined;
+  "quota.history.curvesAll": { "total": number };
+  "quota.history.curvesSome": { "shown": number; "total": number };
+  "quota.history.forecastLegend": undefined;
+  "quota.history.moreBuckets": { "count": number; "names": string };
+  "quota.history.moreReadings": { "count": number };
+  "quota.history.navigatorAllProviders": undefined;
+  "quota.history.navigatorProvider": undefined;
+  "quota.history.providerCount": { "count": number };
+  "quota.history.scopeNote": { "scope": string; "total": string; "visible": string };
+  "quota.history.showAllCurves": undefined;
+  "quota.history.showBusiest": undefined;
+  "quota.history.title": undefined;
+  "quota.history.tooltipAtReset": undefined;
+  "quota.history.tooltipPace": undefined;
+  "quota.history.tooltipQuotaLeft": undefined;
+  "quota.login.claude": undefined;
+  "quota.login.codex": undefined;
+  "quota.login.cursor": undefined;
+  "quota.login.grok": undefined;
+  "quota.login.misc": { "provider": string };
+  "quota.mini.forecastLearning": { "percent": number };
+  "quota.mini.forecastLearningCompact": { "percent": number };
+  "quota.mini.forecastLeftCompact": { "percent": number };
+  "quota.mini.forecastMayRunOut": { "countdown": string };
+  "quota.mini.forecastSurplus": { "percent": number };
+  "quota.mini.forecastSurplusCompact": { "percent": number };
+  "quota.mini.nextProvider": undefined;
+  "quota.mini.noLiveData": undefined;
+  "quota.mini.pageIndicator": { "index": number; "total": number };
+  "quota.mini.railEmpty": undefined;
+  "quota.mini.railTitle": { "days": number };
+  "quota.mini.resets": { "countdown": string };
+  "quota.mini.rowHelp": { "percent": number; "row": string; "subProvider": string };
+  "quota.misc.independentCopies": { "count": number };
+  "quota.misc.notConfigured": undefined;
+  "quota.misc.refreshCopies": { "provider": string };
+  "quota.misc.refreshProvider": { "provider": string };
+  "quota.misc.setUpInSettings": undefined;
+  "quota.mode.remaining": undefined;
+  "quota.mode.used": undefined;
+  "quota.pace.deficit": { "percent": number };
+  "quota.pace.deficitShort": { "percent": number };
+  "quota.pace.lastsUntilReset": undefined;
+  "quota.pace.onTrack": undefined;
+  "quota.pace.reserve": { "percent": number };
+  "quota.pace.reserveShort": { "percent": number };
+  "quota.pace.runsOutIn": { "countdown": string };
+  "quota.pace.runsOutShort": { "countdown": string };
+  "quota.perModelLimits": { "count": number; "provider": string };
   "quota.remainingPercent": { "percent": number };
+  "quota.reset.in": { "duration": string };
+  "quota.reset.passed": undefined;
+  "quota.reset.passedAt": { "time": string };
+  "quota.resetCredits.available": { "count": number };
+  "quota.resetCredits.availableWithExpiry": { "available": string; "countdown": string };
+  "quota.resetCredits.title": undefined;
   "quota.resetsIn": { "days": number; "hours": number };
   "quota.resetsInHours": { "hours": number; "minutes": number };
+  "quota.upcoming.axisDays": { "days": number };
+  "quota.upcoming.axisHours": { "hours": number };
+  "quota.upcoming.empty": undefined;
+  "quota.upcoming.gain": { "gain": number };
+  "quota.upcoming.horizon": undefined;
+  "quota.upcoming.leftAndGain": { "gain": number; "remaining": number };
+  "quota.upcoming.markerHelp": { "gain": number; "remaining": number; "countdown": string; "label": string };
+  "quota.upcoming.resetsAt": { "absolute": string; "countdown": string };
+  "quota.upcoming.title": undefined;
+  "quota.update.failed": { "reason": string };
   "quota.usedPercent": { "percent": number };
+  "quota.window.dayOfDays": { "day": number; "total": number; "value": string };
+  "quota.window.elapsedOfWindow": { "elapsed": string; "value": string; "window": string };
+  "quota.window.resetsSoon": { "value": string };
+  "resetHistory.a11y.empty": { "verdict": string };
+  "resetHistory.a11y.more": { "count": number };
+  "resetHistory.a11y.summary": { "headline": string; "lanes": string; "more": string; "truncation": string; "verdict": string; "window": string };
+  "resetHistory.a11y.truncation": { "note": string };
+  "resetHistory.axis.cycle": undefined;
+  "resetHistory.axis.cycleHelp": undefined;
+  "resetHistory.axis.time": undefined;
+  "resetHistory.axis.timeHelp": undefined;
+  "resetHistory.axisCurrent": undefined;
+  "resetHistory.axisCyclesBack": { "count": number };
+  "resetHistory.axisNow": undefined;
+  "resetHistory.barIsOneCycle": undefined;
+  "resetHistory.cardTitle": undefined;
+  "resetHistory.compareEmpty": undefined;
+  "resetHistory.compareWindow": { "window": string };
+  "resetHistory.currentCycleCaption": { "left": number; "used": number };
+  "resetHistory.cycleCaption": { "left": number; "used": number; "time": string };
+  "resetHistory.earlyRefillCount": { "count": number };
+  "resetHistory.lane.emptyState": undefined;
+  "resetHistory.lane.spokenNoCycles": { "label": string };
+  "resetHistory.lane.spokenWaste": { "count": number; "label": string; "percent": string };
   "resetHistory.laneAverage": { "percent": number; "count": number };
+  "resetHistory.lastSeenBefore": { "duration": string };
+  "resetHistory.legend.barHeight": undefined;
+  "resetHistory.legend.byDate": undefined;
+  "resetHistory.legend.perCycle": undefined;
+  "resetHistory.legend.refilledEarly": undefined;
   "resetHistory.noCompletedCycles": undefined;
+  "resetHistory.reset.earlyClockRestarted": undefined;
+  "resetHistory.reset.earlyClockUnchanged": undefined;
+  "resetHistory.reset.earlyUnclear": undefined;
+  "resetHistory.retiredAccount": undefined;
+  "resetHistory.retiredAccountNumbered": { "number": number };
+  "resetHistory.spoken.allCycles": undefined;
+  "resetHistory.spoken.allTime": undefined;
+  "resetHistory.spoken.eightCycles": undefined;
+  "resetHistory.spoken.eightWeeks": undefined;
+  "resetHistory.spoken.fourCycles": undefined;
+  "resetHistory.spoken.fourWeeks": undefined;
+  "resetHistory.spoken.twelveCycles": undefined;
+  "resetHistory.spoken.twelveWeeks": undefined;
   "resetHistory.title": undefined;
+  "resetHistory.tooltip.completed": { "left": number; "used": number };
+  "resetHistory.tooltip.current": { "left": number; "used": number };
+  "resetHistory.tooltip.range": { "end": string; "start": string };
+  "resetHistory.tooltip.rangeDue": { "end": string; "start": string };
+  "resetHistory.totals.none": undefined;
+  "resetHistory.truncation": { "shown": number; "total": number };
+  "resetHistory.verdict.clean": { "percent": string };
+  "resetHistory.verdict.leaky": { "count": number; "label": string; "percent": string };
+  "resetHistory.verdict.noCycles": undefined;
+  "resetHistory.verdict.noQuota": undefined;
+  "resetHistory.verdict.wasteful": { "count": number; "label": string };
   "resetHistory.wastedSummary": { "used": number; "wasted": number; "cycles": number };
+  "resetHistory.window.all": undefined;
+  "resetHistory.window.eightWeeks": undefined;
+  "resetHistory.window.fourWeeks": undefined;
+  "resetHistory.window.twelveWeeks": undefined;
+  "settings.antigravityCookieEnabled": undefined;
+  "settings.antigravityLocalOnly": undefined;
+  "settings.antigravitySource": undefined;
+  "settings.appVersion": { "version": string };
+  "settings.bundled": undefined;
+  "settings.checkConnections": { "company": string };
+  "settings.checkForUpdates": undefined;
+  "settings.checkKitUpdates": undefined;
+  "settings.checkingGitHub": undefined;
+  "settings.clearCostData": undefined;
+  "settings.connectionHealth": undefined;
+  "settings.costDataIntro": undefined;
+  "settings.couldNotDeleteCookies": undefined;
+  "settings.couldNotDeleteGeminiCookies": undefined;
+  "settings.couldNotDeleteGrokCookies": undefined;
+  "settings.credentialSource.apiOnly": undefined;
+  "settings.credentialSource.browserOnly": undefined;
+  "settings.credentialSource.manualOnly": undefined;
+  "settings.credentialSource.off": undefined;
+  "settings.cursorNoSession": undefined;
+  "settings.cursorSessionDetected": undefined;
+  "settings.cursorSource": undefined;
+  "settings.cursorSourceValue": undefined;
+  "settings.deleteCookies": undefined;
+  "settings.deleteGeminiCookies": undefined;
+  "settings.deleteGrokCookies": undefined;
+  "settings.displayMode.remaining": undefined;
+  "settings.displayMode.used": undefined;
+  "settings.externalChange.title": undefined;
+  "settings.geminiCookiesSaved": undefined;
+  "settings.geminiShared": undefined;
+  "settings.geminiSource": undefined;
+  "settings.grokAuthDetected": undefined;
+  "settings.grokCookiesSaved": undefined;
+  "settings.keepHistory": undefined;
+  "settings.keepHistoryDetail": undefined;
+  "settings.kitDetail": undefined;
+  "settings.language.caption": undefined;
   "settings.language.system": undefined;
   "settings.language.title": undefined;
+  "settings.mcp.allowRefresh": undefined;
+  "settings.mcp.allowRefreshDetail": { "seconds": number };
+  "settings.mcp.allowSkills": undefined;
+  "settings.mcp.allowSkillsDetail": undefined;
+  "settings.mcp.appendCodexConfig": undefined;
+  "settings.mcp.connectAgent": undefined;
+  "settings.mcp.connectedClients": undefined;
+  "settings.mcp.enable": undefined;
+  "settings.mcp.intro": undefined;
+  "settings.mcp.lastActivity": undefined;
+  "settings.mcp.listening": undefined;
+  "settings.mcp.manualIntro": { "flag": string };
+  "settings.mcp.mergeCursorConfig": undefined;
+  "settings.mcp.movePrompt": { "path": string };
+  "settings.mcp.notListening": undefined;
+  "settings.mcp.otherStdioClient": undefined;
+  "settings.mcp.otherStdioDetail": undefined;
+  "settings.mcp.quickestPath": undefined;
+  "settings.mcp.readOnlyDetail": undefined;
+  "settings.mcp.runInTerminal": undefined;
+  "settings.mcp.setupPrompt": undefined;
+  "settings.mcp.setupPromptDetail": undefined;
+  "settings.mcp.socket": undefined;
+  "settings.mcp.socketLifetime": undefined;
+  "settings.mcp.status": undefined;
+  "settings.mcp.title": undefined;
+  "settings.mcp.whatAgentsMayDo": undefined;
+  "settings.menuBarHealthUnavailable": undefined;
+  "settings.miniWindow.add": undefined;
+  "settings.miniWindow.allBucketsIncluded": undefined;
+  "settings.miniWindow.density.narrow": undefined;
+  "settings.miniWindow.density.narrowDetail": undefined;
+  "settings.miniWindow.density.roomy": undefined;
+  "settings.miniWindow.density.roomyDetail": undefined;
+  "settings.miniWindow.density.twoLines": undefined;
+  "settings.miniWindow.density.twoLinesDetail": undefined;
+  "settings.miniWindow.dismissBuiltIn": undefined;
+  "settings.miniWindow.forgetDiscovered": undefined;
+  "settings.miniWindow.includeStyle": { "mode": string };
+  "settings.miniWindow.lastCannotBeRemoved": undefined;
+  "settings.miniWindow.mode.compact": undefined;
+  "settings.miniWindow.mode.compactDetail": undefined;
+  "settings.miniWindow.mode.focus": undefined;
+  "settings.miniWindow.mode.focusDetail": undefined;
+  "settings.miniWindow.mode.ledger": undefined;
+  "settings.miniWindow.mode.ledgerDetail": undefined;
+  "settings.miniWindow.mode.rail": undefined;
+  "settings.miniWindow.mode.railDetail": undefined;
+  "settings.miniWindow.mode.regular": undefined;
+  "settings.miniWindow.mode.regularDetail": undefined;
+  "settings.miniWindow.mode.strip": undefined;
+  "settings.miniWindow.mode.stripDetail": undefined;
+  "settings.miniWindow.mode.tiles": undefined;
+  "settings.miniWindow.mode.tilesDetail": undefined;
+  "settings.miniWindow.namesAllWindows": undefined;
+  "settings.miniWindow.namesThisStyle": { "mode": string };
+  "settings.miniWindow.namesThisWindow": { "name": string };
+  "settings.miniWindow.noFieldsSelected": undefined;
+  "settings.miniWindow.notInWindow": { "name": string };
+  "settings.miniWindow.offline": undefined;
+  "settings.miniWindow.openClose": undefined;
+  "settings.miniWindow.overridesStyle": { "mode": string };
+  "settings.miniWindow.overridesWindow": undefined;
+  "settings.miniWindow.removeFromWindow": undefined;
+  "settings.miniWindow.removeHelp": undefined;
+  "settings.miniWindow.stripDensity": undefined;
+  "settings.miniWindow.styleCycle": undefined;
+  "settings.miniWindow.toggleHelp": undefined;
+  "settings.miniWindow.treeDetail": undefined;
+  "settings.misc.accessKeyId": undefined;
+  "settings.misc.akSkSaved": undefined;
+  "settings.misc.apiKeySaved": undefined;
+  "settings.misc.clearWorkspace": undefined;
+  "settings.misc.clone": { "provider": string };
+  "settings.misc.consoleLink": { "title": string };
+  "settings.misc.edition": undefined;
+  "settings.misc.githubSignInHint": undefined;
+  "settings.misc.githubTokenSaved": undefined;
+  "settings.misc.importDetail": undefined;
+  "settings.misc.kiroHint": undefined;
+  "settings.misc.noCookieSpec": { "provider": string };
+  "settings.misc.noCookiesYet": undefined;
+  "settings.misc.probe": undefined;
+  "settings.misc.prompt.copilotHost": undefined;
+  "settings.misc.prompt.dashscope": undefined;
+  "settings.misc.prompt.kilo": undefined;
+  "settings.misc.prompt.minimax": undefined;
+  "settings.misc.prompt.openRouter": undefined;
+  "settings.misc.prompt.openRouterHost": undefined;
+  "settings.misc.prompt.warp": undefined;
+  "settings.misc.prompt.workspace": undefined;
+  "settings.misc.prompt.zai": undefined;
+  "settings.misc.region": undefined;
+  "settings.misc.region.auto": undefined;
+  "settings.misc.region.chinaMainland": undefined;
+  "settings.misc.region.international": undefined;
+  "settings.misc.region.minimaxChina": undefined;
+  "settings.misc.region.minimaxGlobal": undefined;
+  "settings.misc.region.zaiChina": undefined;
+  "settings.misc.region.zaiGlobal": undefined;
+  "settings.misc.removeAkSk": { "provider": string };
+  "settings.misc.removeApiKey": { "provider": string };
+  "settings.misc.removeCookieSlot": undefined;
+  "settings.misc.removeCopy": { "provider": string };
+  "settings.misc.removeCopyButton": undefined;
+  "settings.misc.removeCopyDetail": undefined;
+  "settings.misc.removeCopyTitle": { "provider": string };
+  "settings.misc.removeGithubToken": undefined;
+  "settings.misc.rename": undefined;
+  "settings.misc.secretAccessKey": undefined;
+  "settings.misc.signIn": undefined;
+  "settings.misc.signInViaWeb": undefined;
+  "settings.misc.tencentTokenPlanNote": undefined;
+  "settings.misc.variant": undefined;
+  "settings.misc.waiting": undefined;
+  "settings.misc.workspaceNote": undefined;
+  "settings.needsSetup": undefined;
+  "settings.notChecked": undefined;
+  "settings.notCheckedYet": undefined;
+  "settings.openRefreshCooldown": undefined;
+  "settings.openRefreshDetail": undefined;
+  "settings.openStatusPage": { "company": string };
+  "settings.percentShows": undefined;
+  "settings.planBadge": undefined;
+  "settings.planBadgeDetail": undefined;
+  "settings.popoverDensity.compact": undefined;
+  "settings.popoverDensity.compactDetail": undefined;
+  "settings.popoverDensity.regular": undefined;
+  "settings.popoverDensity.regularDetail": undefined;
+  "settings.popoverDensity.spacious": undefined;
+  "settings.popoverDensity.spaciousDetail": undefined;
+  "settings.pricing.addOverride": undefined;
+  "settings.pricing.advancedTiers": undefined;
+  "settings.pricing.alwaysWins": undefined;
+  "settings.pricing.bundledFallback": undefined;
+  "settings.pricing.cacheReadAbove": undefined;
+  "settings.pricing.cacheWriteAbove": undefined;
+  "settings.pricing.deleteOverride": undefined;
+  "settings.pricing.exactModelName": undefined;
+  "settings.pricing.fastMultiplier": undefined;
+  "settings.pricing.inputAbove": undefined;
+  "settings.pricing.intro": undefined;
+  "settings.pricing.localOverrides": undefined;
+  "settings.pricing.noOverrides": undefined;
+  "settings.pricing.offlineFloor": undefined;
+  "settings.pricing.outputAbove": undefined;
+  "settings.pricing.overridesIntro": undefined;
+  "settings.pricing.priorityHealth": undefined;
+  "settings.pricing.rateInput": undefined;
+  "settings.pricing.rateOutput": undefined;
+  "settings.pricing.refreshNow": undefined;
+  "settings.pricing.refreshing": undefined;
+  "settings.pricing.thresholdTokens": undefined;
+  "settings.pricingDataDate": { "date": string };
+  "settings.privacyDetail": undefined;
+  "settings.privacyMode": undefined;
+  "settings.privacyModeDetail": undefined;
+  "settings.ready": undefined;
+  "settings.refreshEvery": undefined;
+  "settings.refreshOnPopoverOpen": undefined;
+  "settings.releaseNotes": undefined;
+  "settings.remote.core": undefined;
+  "settings.remote.costAggregation": undefined;
+  "settings.remote.costAggregationIntro": undefined;
+  "settings.remote.differentControlCenter": undefined;
+  "settings.remote.discard": undefined;
+  "settings.remote.discardPendingDetail": undefined;
+  "settings.remote.discardPendingTitle": undefined;
+  "settings.remote.disconnect": undefined;
+  "settings.remote.disconnectButton": undefined;
+  "settings.remote.disconnectDetail": undefined;
+  "settings.remote.disconnectIntro": undefined;
+  "settings.remote.disconnectTitle": undefined;
+  "settings.remote.experimentalBadge": undefined;
+  "settings.remote.experimentalNote": undefined;
+  "settings.remote.exportIdentity": undefined;
+  "settings.remote.importProvisioning": undefined;
+  "settings.remote.join": undefined;
+  "settings.remote.joinIntro": { "device": string };
+  "settings.remote.joinWithCode": undefined;
+  "settings.remote.lastSync": undefined;
+  "settings.remote.machineDetail": { "platform": string; "version": string };
+  "settings.remote.machinesAppearAfterImport": undefined;
+  "settings.remote.machinesSynced": undefined;
+  "settings.remote.manualPairingIntro": undefined;
+  "settings.remote.notConnected": undefined;
+  "settings.remote.orPairManually": undefined;
+  "settings.remote.pendingIntro": undefined;
+  "settings.remote.provisioning": undefined;
+  "settings.remote.registeredProbes": undefined;
+  "settings.remote.relay": undefined;
+  "settings.remote.resumeSaving": undefined;
+  "settings.remote.retrySaving": undefined;
+  "settings.remote.statusWithCode": { "code": string; "title": string };
+  "settings.remote.sync.busy": undefined;
+  "settings.remote.sync.connectionFailed": undefined;
+  "settings.remote.sync.hostLookupFailed": undefined;
+  "settings.remote.sync.invalidResponse": undefined;
+  "settings.remote.sync.networkDetail": undefined;
+  "settings.remote.sync.offline": undefined;
+  "settings.remote.sync.rejected": undefined;
+  "settings.remote.sync.rejectedDetail": undefined;
+  "settings.remote.sync.retryDetail": undefined;
+  "settings.remote.sync.secureConnectionFailed": undefined;
+  "settings.remote.sync.sequenceGap": undefined;
+  "settings.remote.sync.sequenceGapDetail": undefined;
+  "settings.remote.sync.timeout": undefined;
+  "settings.remote.sync.transportFailed": undefined;
+  "settings.remote.sync.unknown": undefined;
+  "settings.remote.sync.unknownDetail": undefined;
+  "settings.remote.sync.unverifiedProbe": undefined;
+  "settings.remote.sync.unverifiedProbeDetail": undefined;
+  "settings.remote.syncNow": undefined;
+  "settings.remote.workspace": undefined;
+  "settings.repository": undefined;
+  "settings.rescanCostLogs": undefined;
+  "settings.route.antigravityLocal": undefined;
+  "settings.route.browserCookies": undefined;
+  "settings.route.cli": undefined;
+  "settings.route.grokAuthFile": undefined;
+  "settings.route.oauth": undefined;
+  "settings.route.webViewCookies": undefined;
+  "settings.routeHealth.agyAvailable": undefined;
+  "settings.routeHealth.authFileExpired": undefined;
+  "settings.routeHealth.authFileUnreadable": undefined;
+  "settings.routeHealth.cachedOnly": undefined;
+  "settings.routeHealth.credentialUnreadable": undefined;
+  "settings.routeHealth.credentialsAvailable": undefined;
+  "settings.routeHealth.invalidCookie": undefined;
+  "settings.routeHealth.keychainLocked": undefined;
+  "settings.routeHealth.lspRunning": undefined;
+  "settings.routeHealth.noAntigravityData": undefined;
+  "settings.routeHealth.noAuthFile": undefined;
+  "settings.routeHealth.noCredential": undefined;
+  "settings.routeHealth.noSavedCookie": undefined;
+  "settings.routeHealth.savedInKeychain": undefined;
+  "settings.search": undefined;
+  "settings.section.components": undefined;
+  "settings.section.costData": undefined;
+  "settings.section.layout": undefined;
+  "settings.section.menuBar": undefined;
+  "settings.section.menuBarHealth": undefined;
+  "settings.section.miniWindows": undefined;
+  "settings.section.privacy": undefined;
+  "settings.section.refreshing": undefined;
+  "settings.section.remoteProbes": undefined;
+  "settings.section.system": undefined;
+  "settings.section.updates": undefined;
+  "settings.showAssistant": undefined;
+  "settings.showAssistantDetail": undefined;
+  "settings.sidebar.coreProviders": undefined;
+  "settings.sidebar.disableProvider": undefined;
+  "settings.sidebar.enableProvider": undefined;
+  "settings.sidebar.hideFromOverview": undefined;
+  "settings.spaceXAIIntro": undefined;
+  "settings.terminal.copyOnly": undefined;
+  "settings.updateChannel": undefined;
+  "settings.updateChannel.dev": undefined;
+  "settings.updateChannel.devDetail": undefined;
+  "settings.updateChannel.main": undefined;
+  "settings.updateChannel.mainDetail": undefined;
+  "settings.updateCheckDetail": undefined;
+  "settings.usageMode.antigravity.autoDetail": undefined;
+  "settings.usageMode.antigravity.localFirstDetail": undefined;
+  "settings.usageMode.antigravity.localOnly": undefined;
+  "settings.usageMode.antigravity.localOnlyDetail": undefined;
+  "settings.usageMode.antigravity.localThenWeb": undefined;
+  "settings.usageMode.antigravity.webFirstDetail": undefined;
+  "settings.usageMode.antigravity.webOnly": undefined;
+  "settings.usageMode.antigravity.webOnlyDetail": undefined;
+  "settings.usageMode.antigravity.webThenLocal": undefined;
+  "settings.usageMode.claude.autoDetail": undefined;
+  "settings.usageMode.claude.codeFirstDetail": undefined;
+  "settings.usageMode.claude.codeOnly": undefined;
+  "settings.usageMode.claude.codeOnlyDetail": undefined;
+  "settings.usageMode.claude.codeThenWeb": undefined;
+  "settings.usageMode.claude.oauthCodeWeb": undefined;
+  "settings.usageMode.claude.oauthFirstDetail": undefined;
+  "settings.usageMode.claude.oauthOnlyDetail": undefined;
+  "settings.usageMode.claude.webFirstDetail": undefined;
+  "settings.usageMode.claude.webOnly": undefined;
+  "settings.usageMode.claude.webOnlyDetail": undefined;
+  "settings.usageMode.claude.webThenCode": undefined;
+  "settings.usageMode.codex.autoDetail": undefined;
+  "settings.usageMode.codex.cliOnly": undefined;
+  "settings.usageMode.codex.cliOnlyDetail": undefined;
+  "settings.usageMode.codex.cliThenOauth": undefined;
+  "settings.usageMode.codex.oauthFirstDetail": undefined;
+  "settings.usageMode.codex.oauthOnlyDetail": undefined;
+  "settings.usageMode.codex.oauthThenCli": undefined;
+  "settings.usageMode.gemini.webOnly": undefined;
+  "settings.usageMode.gemini.webOnlyDetail": undefined;
+  "settings.usageMode.oauthOnly": undefined;
+  "settings.usageSource": undefined;
+  "settings.webQuota": undefined;
+  "settings.whatChangedIn": { "version": string };
+  "status.card.componentCount": { "count": number };
+  "status.card.components": undefined;
+  "status.card.noIncidents": undefined;
+  "status.card.openIncident": undefined;
+  "status.card.openStatusPage": { "host": string };
+  "status.card.refresh": undefined;
+  "status.card.statusPageFallback": undefined;
+  "status.card.title": undefined;
+  "status.card.updatedHoursAgo": { "hours": number };
+  "status.card.updatedMinutesAgo": { "minutes": number };
+  "status.card.uptime": { "percent": string };
+  "status.card.uptimeStrip": { "days": number };
+  "status.component.degraded": undefined;
+  "status.component.maintenance": undefined;
+  "status.component.majorOutage": undefined;
+  "status.component.operational": undefined;
+  "status.component.other": undefined;
+  "status.component.partialOutage": undefined;
+  "status.indicator.critical": undefined;
+  "status.indicator.loading": undefined;
+  "status.indicator.major": undefined;
+  "status.indicator.minor": undefined;
+  "status.overview.checking": undefined;
+  "status.overview.down": undefined;
+  "status.overview.enableProvider": undefined;
+  "status.overview.fetchFailed": undefined;
+  "status.overview.needsAttention": undefined;
+  "status.overview.refreshing": undefined;
+  "status.overview.title": undefined;
+  "status.overview.up": undefined;
+  "status.summary.activeIncident": undefined;
+  "status.summary.allOperational": undefined;
+  "status.summary.serviceIssue": undefined;
+  "status.summary.underMaintenance": undefined;
+  "usage.activity.a11y": undefined;
+  "usage.activity.cellTooltip": { "day": string; "hour": string; "tokens": string };
+  "usage.activity.heavy": undefined;
+  "usage.activity.peak": { "day": string; "hour": string };
+  "usage.activity.peakCell": { "cellHour": string; "day": string; "hour": string };
+  "usage.activity.quiet": undefined;
+  "usage.activity.tokensShort": { "tokens": string };
+  "usage.breakdown.models": undefined;
+  "usage.breakdown.periods": undefined;
+  "usage.breakdown.projects": undefined;
+  "usage.breakdown.providers": undefined;
+  "usage.breakdown.requests": undefined;
+  "usage.chartNavigator.label": undefined;
+  "usage.chartNavigator.range": { "end": string; "start": string };
+  "usage.chartNavigator.showFullRange": undefined;
+  "usage.chartNavigator.zoomIn": undefined;
+  "usage.chartNavigator.zoomOut": undefined;
+  "usage.filters.allHarnesses": undefined;
+  "usage.filters.allHarnessesHelpEvery": undefined;
+  "usage.filters.allHarnessesHelpNone": undefined;
+  "usage.filters.allHarnessesSelectEvery": undefined;
+  "usage.filters.allHarnessesSelectNone": undefined;
+  "usage.filters.allModels": undefined;
+  "usage.filters.autoMenuLabel": undefined;
+  "usage.filters.autoRefresh": undefined;
+  "usage.filters.clearHelp": undefined;
+  "usage.filters.companyHarnesses": { "company": string };
+  "usage.filters.companyHelp": { "company": string; "harnesses": string };
+  "usage.filters.customRangeFrom": undefined;
+  "usage.filters.customRangeHint": undefined;
+  "usage.filters.customRangeTitle": undefined;
+  "usage.filters.customRangeTo": undefined;
+  "usage.filters.editCustomRange": undefined;
+  "usage.filters.harnessHelp": { "company": string; "harness": string };
+  "usage.filters.modelsMenuLabel": undefined;
+  "usage.filters.modelsSelected": { "count": number };
+  "usage.filters.noModelsInRange": undefined;
+  "usage.filters.range14d": undefined;
+  "usage.filters.range24h": undefined;
+  "usage.filters.rangeCustom": undefined;
+  "usage.filters.rangeMenu": undefined;
+  "usage.filters.rangeSpan": { "end": string; "start": string };
+  "usage.filters.refreshInterval": { "seconds": number };
+  "usage.harnessMix.activeCount": { "count": number };
+  "usage.harnessMix.byRealTokens": undefined;
+  "usage.harnessMix.empty": undefined;
+  "usage.harnessMix.title": undefined;
+  "usage.hero.allRequestsPriced": undefined;
+  "usage.hero.cacheHit": undefined;
+  "usage.hero.cacheRead": { "tokens": string };
+  "usage.hero.inSelectedRange": undefined;
+  "usage.hero.noPricedRequests": undefined;
+  "usage.hero.noTrafficInRange": undefined;
+  "usage.hero.realTokens": undefined;
+  "usage.hero.requests": undefined;
+  "usage.hero.tokenComposition": undefined;
+  "usage.hero.unpricedBadge": { "count": number };
+  "usage.hero.unpricedHelp": { "count": number };
+  "usage.ledgerUnavailable.detail": undefined;
+  "usage.ledgerUnavailable.title": undefined;
+  "usage.mix.dimension.harnesses": undefined;
+  "usage.mix.donutUnit": undefined;
+  "usage.mix.flow.cache": undefined;
+  "usage.mix.flow.cacheDetail": undefined;
+  "usage.mix.flow.freshInput": undefined;
+  "usage.mix.flow.output": undefined;
+  "usage.mix.harness.subtitle": undefined;
+  "usage.mix.harness.title": undefined;
+  "usage.mix.lastThirtyDays": undefined;
+  "usage.mix.ledgerUnreadable": undefined;
+  "usage.mix.model.empty": undefined;
+  "usage.mix.model.subtitle": undefined;
+  "usage.mix.model.title": undefined;
+  "usage.mix.other": undefined;
+  "usage.mix.otherCount": { "count": number };
+  "usage.mix.project.empty": undefined;
+  "usage.mix.project.subtitle": undefined;
+  "usage.mix.project.title": undefined;
+  "usage.mix.provider.empty": undefined;
+  "usage.mix.provider.subtitle": undefined;
+  "usage.mix.provider.title": undefined;
+  "usage.mix.title": undefined;
+  "usage.mix.tokenFlow.empty": undefined;
+  "usage.mix.tokenFlow.subtitle": undefined;
+  "usage.mix.tokenFlow.title": undefined;
+  "usage.noHarnessSelected.detail": undefined;
+  "usage.noHarnessSelected.title": undefined;
+  "usage.requestCount": { "count": string };
+  "usage.table.activeDays": { "count": number };
+  "usage.table.activeHours": { "count": number };
+  "usage.table.activeWeeks": { "count": number };
+  "usage.table.cacheReadWrite": { "read": string; "write": string };
+  "usage.table.column.average": undefined;
+  "usage.table.column.day": undefined;
+  "usage.table.column.harness": undefined;
+  "usage.table.column.hour": undefined;
+  "usage.table.column.input": undefined;
+  "usage.table.column.model": undefined;
+  "usage.table.column.requests": undefined;
+  "usage.table.column.tier": undefined;
+  "usage.table.column.time": undefined;
+  "usage.table.column.weekOf": undefined;
+  "usage.table.companyCount": { "count": number };
+  "usage.table.emptyModels": undefined;
+  "usage.table.emptyPeriods": undefined;
+  "usage.table.emptyProjects": undefined;
+  "usage.table.emptyProviders": undefined;
+  "usage.table.emptyRequests": undefined;
+  "usage.table.harnessHelp": { "company": string; "harness": string };
+  "usage.table.inputHelp": { "input": string; "read": string; "write": string };
+  "usage.table.loadMore": { "remaining": number };
+  "usage.table.loadingMore": undefined;
+  "usage.table.modelCount": { "count": number };
+  "usage.table.periodRow": { "cost": string; "period": string; "tokens": string };
+  "usage.table.projectCount": { "count": number };
+  "usage.table.requestRow": { "cost": string; "harness": string; "model": string; "time": string; "tokens": string };
+  "usage.table.requestsLabel": undefined;
+  "usage.table.requestsLoaded": { "loaded": number; "total": number };
+  "usage.table.showMorePeriods": { "count": number; "total": number };
+  "usage.table.statRow": { "requests": number; "cost": string; "name": string; "tokens": string };
+  "usage.table.unpriced": undefined;
+  "usage.table.unpricedHelp": undefined;
+  "usage.tokens.cacheRead": undefined;
+  "usage.tokens.cacheWrite": undefined;
+  "usage.tokens.input": undefined;
+  "usage.tokens.output": undefined;
+  "usage.tokens.title": undefined;
+  "usage.trend.accessibilitySummary": { "count": number; "cost": string; "tokens": string };
+  "usage.trend.bucketDay": undefined;
+  "usage.trend.bucketHour": undefined;
+  "usage.trend.bucketWeek": undefined;
+  "usage.trend.costChartLabel": undefined;
+  "usage.trend.empty": undefined;
+  "usage.trend.fit": undefined;
+  "usage.trend.fitHelp": undefined;
+  "usage.trend.granularity": undefined;
+  "usage.trend.granularityDaily": undefined;
+  "usage.trend.granularityHourly": undefined;
+  "usage.trend.granularityLabel": undefined;
+  "usage.trend.granularityWeekly": undefined;
+  "usage.trend.hideProvider": { "provider": string };
+  "usage.trend.navigatorLabel": undefined;
+  "usage.trend.nextWindow": undefined;
+  "usage.trend.now": undefined;
+  "usage.trend.nowHelp": undefined;
+  "usage.trend.previousWindow": undefined;
+  "usage.trend.scopeHint": undefined;
+  "usage.trend.showProvider": { "provider": string };
+  "usage.trend.title": undefined;
+  "usage.trend.tokensChartLabel": undefined;
+  "usage.whenYouUse.everything": undefined;
+  "usage.whenYouUse.googleAI": undefined;
+  "usage.whenYouUse.provider": { "provider": string };
+  "usage.whenYouUse.spaceXAI": undefined;
+  "usage.yearHeatmap.a11y": { "count": number; "provider": string };
+  "usage.yearHeatmap.less": undefined;
+  "usage.yearHeatmap.more": undefined;
+  "usage.yearHeatmap.title": { "provider": string };
+  "usage.yearHeatmap.tooltip": { "amount": string; "date": string };
+  "usage.yearHeatmap.total": { "amount": string };
+  "workbench.appearance.useDark": undefined;
+  "workbench.appearance.useLight": undefined;
+  "workbench.header.refreshPage": { "page": string };
+  "workbench.page.resets.subtitle": undefined;
+  "workbench.page.resets.title": undefined;
+  "workbench.page.sessions.subtitle": undefined;
+  "workbench.page.sessions.title": undefined;
+  "workbench.page.settings.subtitle": undefined;
+  "workbench.page.skills.subtitle": undefined;
+  "workbench.page.skills.title": undefined;
+  "workbench.page.usageStats.subtitle": undefined;
+  "workbench.page.usageStats.title": undefined;
+  "workbench.placeholder.resets": undefined;
+  "workbench.placeholder.sessionManager": undefined;
+  "workbench.placeholder.settings": undefined;
+  "workbench.placeholder.skillsManager": undefined;
+  "workbench.placeholder.usageStats": undefined;
+  "workbench.resets.calendar.dayEntry": { "percent": number; "lane": string };
+  "workbench.resets.calendar.futureEntry": { "percent": number; "lane": string; "time": string };
+  "workbench.resets.calendar.nextMonth": undefined;
+  "workbench.resets.calendar.pastEntry": { "percent": number; "lane": string; "time": string };
+  "workbench.resets.calendar.previousMonth": undefined;
+  "workbench.resets.calendar.title": undefined;
+  "workbench.resets.calendar.today": undefined;
+  "workbench.resets.cycle.curveHelp": { "bucket": string };
+  "workbench.resets.cycle.headline": { "bucket": string; "countdown": string };
+  "workbench.resets.refillHorizon.detail": undefined;
+  "workbench.resets.refillHorizon.title": undefined;
+  "workbench.resets.risk.badge.atRisk": undefined;
+  "workbench.resets.risk.badge.low": undefined;
+  "workbench.resets.risk.badge.out": undefined;
+  "workbench.resets.risk.badge.watch": undefined;
+  "workbench.resets.risk.detail": undefined;
+  "workbench.resets.risk.empty": undefined;
+  "workbench.resets.risk.remaining": { "percent": number; "countdown": string };
+  "workbench.resets.risk.title": undefined;
+  "workbench.resets.subDaily.title": undefined;
+  "workbench.sessions.allChip.helpUnselected": undefined;
+  "workbench.sessions.allChip.labelUnselected": undefined;
+  "workbench.sessions.antigravityNotice": undefined;
+  "workbench.sessions.copyResumeCommand": undefined;
+  "workbench.sessions.copySessionID": undefined;
+  "workbench.sessions.copySessionIDLabel": { "id": string };
+  "workbench.sessions.copySourcePath": undefined;
+  "workbench.sessions.copyWorkingDirectory": undefined;
+  "workbench.sessions.count.sessions": { "count": number };
+  "workbench.sessions.count.shownOfTotal": { "shown": number; "total": number };
+  "workbench.sessions.delete.confirm": { "count": number };
+  "workbench.sessions.delete.countButton": { "count": number };
+  "workbench.sessions.delete.message": undefined;
+  "workbench.sessions.deleteEllipsis": undefined;
+  "workbench.sessions.details": undefined;
+  "workbench.sessions.details.collapsed": undefined;
+  "workbench.sessions.details.expanded": undefined;
+  "workbench.sessions.empty.indexUnavailableDetail": undefined;
+  "workbench.sessions.empty.indexUnavailableTitle": undefined;
+  "workbench.sessions.empty.noLogsDetail": { "count": number };
+  "workbench.sessions.empty.noMatchTitle": undefined;
+  "workbench.sessions.empty.scanningDetail": undefined;
+  "workbench.sessions.empty.searchNoMatchDetail": undefined;
+  "workbench.sessions.fact.created": undefined;
+  "workbench.sessions.fact.cwd": undefined;
+  "workbench.sessions.fact.id": undefined;
+  "workbench.sessions.fact.lastActive": undefined;
+  "workbench.sessions.fact.source": undefined;
+  "workbench.sessions.filter.company": undefined;
+  "workbench.sessions.filter.dateRange": undefined;
+  "workbench.sessions.filter.folders": undefined;
+  "workbench.sessions.filter.foldersFiltered": undefined;
+  "workbench.sessions.filter.harnessCount": { "count": number; "harness": string };
+  "workbench.sessions.filter.options": undefined;
+  "workbench.sessions.filter.scope": undefined;
+  "workbench.sessions.filter.sort": undefined;
+  "workbench.sessions.filter.sortGrouped": { "order": string };
+  "workbench.sessions.filter.sortHelp": undefined;
+  "workbench.sessions.filter.when": undefined;
+  "workbench.sessions.filter.whenHelp": undefined;
+  "workbench.sessions.find.next": undefined;
+  "workbench.sessions.find.none": undefined;
+  "workbench.sessions.find.placeholder": undefined;
+  "workbench.sessions.find.previous": undefined;
+  "workbench.sessions.folders.exclude": undefined;
+  "workbench.sessions.folders.excludePlaceholder": undefined;
+  "workbench.sessions.folders.include": undefined;
+  "workbench.sessions.folders.includePlaceholder": undefined;
+  "workbench.sessions.folders.separatorHint": undefined;
+  "workbench.sessions.folders.title": undefined;
+  "workbench.sessions.fraction": { "shown": number; "total": number };
+  "workbench.sessions.groupByProject": undefined;
+  "workbench.sessions.index.scanning": undefined;
+  "workbench.sessions.index.unavailable": undefined;
+  "workbench.sessions.list.capNotice": { "shown": number; "total": number };
+  "workbench.sessions.message.copy": undefined;
+  "workbench.sessions.message.copyHelp": undefined;
+  "workbench.sessions.message.showLess": undefined;
+  "workbench.sessions.message.showMore": { "count": number };
+  "workbench.sessions.openInTerminal": undefined;
+  "workbench.sessions.options.help": undefined;
+  "workbench.sessions.options.indexMessageText": undefined;
+  "workbench.sessions.options.openIn": undefined;
+  "workbench.sessions.options.rebuildIndex": undefined;
+  "workbench.sessions.outline.empty": undefined;
+  "workbench.sessions.outline.heading": undefined;
+  "workbench.sessions.outline.help": undefined;
+  "workbench.sessions.outline.label": undefined;
+  "workbench.sessions.page.next": undefined;
+  "workbench.sessions.page.previous": undefined;
+  "workbench.sessions.project.none": undefined;
+  "workbench.sessions.project.projectless": undefined;
+  "workbench.sessions.range.all": undefined;
+  "workbench.sessions.refreshHelp": undefined;
+  "workbench.sessions.resume.heading": undefined;
+  "workbench.sessions.resume.none": undefined;
+  "workbench.sessions.role.assistant": undefined;
+  "workbench.sessions.role.other": undefined;
+  "workbench.sessions.role.system": undefined;
+  "workbench.sessions.role.tool": undefined;
+  "workbench.sessions.role.user": undefined;
+  "workbench.sessions.row.autoReviewsMerged": { "count": number };
+  "workbench.sessions.row.includeInDeletion": undefined;
+  "workbench.sessions.row.messageCount": { "count": number };
+  "workbench.sessions.row.select": undefined;
+  "workbench.sessions.row.showTranscript": undefined;
+  "workbench.sessions.row.toggleForDeletion": undefined;
+  "workbench.sessions.runInHelp": { "terminal": string };
+  "workbench.sessions.scope.assistant": undefined;
+  "workbench.sessions.scope.system": undefined;
+  "workbench.sessions.scope.title": undefined;
+  "workbench.sessions.scope.tool": undefined;
+  "workbench.sessions.scope.user": undefined;
+  "workbench.sessions.search.bodyIndexed": undefined;
+  "workbench.sessions.search.bodyNotIndexed": undefined;
+  "workbench.sessions.search.clearHelp": undefined;
+  "workbench.sessions.search.placeholder": undefined;
+  "workbench.sessions.selectMode": undefined;
+  "workbench.sessions.selectModeHelp": undefined;
+  "workbench.sessions.sort.byProject": undefined;
+  "workbench.sessions.sort.oldestFirst": undefined;
+  "workbench.sessions.sort.recentFirst": undefined;
+  "workbench.sessions.toast.bodyIndexDropFailed": undefined;
+  "workbench.sessions.toast.bodyIndexDropped": undefined;
+  "workbench.sessions.toast.copied": undefined;
+  "workbench.sessions.toast.copiedWithReason": { "reason": string };
+  "workbench.sessions.toast.cwdCopied": undefined;
+  "workbench.sessions.toast.deleted": { "count": number };
+  "workbench.sessions.toast.deletedPartial": { "deleted": number; "kept": number; "reason": string };
+  "workbench.sessions.toast.indexNotCleared": undefined;
+  "workbench.sessions.toast.messageCopied": undefined;
+  "workbench.sessions.toast.noResumeCommand": undefined;
+  "workbench.sessions.toast.openedIn": { "terminal": string };
+  "workbench.sessions.toast.sessionIDCopied": undefined;
+  "workbench.sessions.toast.sourcePathCopied": undefined;
+  "workbench.sessions.transcript.autoReviewDivider": undefined;
+  "workbench.sessions.transcript.cancelled": undefined;
+  "workbench.sessions.transcript.loadAll": undefined;
+  "workbench.sessions.transcript.loading": undefined;
+  "workbench.sessions.transcript.noMessages": undefined;
+  "workbench.sessions.transcript.noReader": { "provider": string };
+  "workbench.sessions.transcript.pageRange": { "first": number; "last": number; "total": number };
+  "workbench.sessions.transcript.placeholderDetail": undefined;
+  "workbench.sessions.transcript.placeholderTitle": undefined;
+  "workbench.sessions.transcript.readFailed": undefined;
+  "workbench.sessions.transcript.truncatedDetail": { "file": string; "parsed": string };
+  "workbench.sessions.transcript.truncatedTitle": { "count": number };
+  "workbench.skills.appCountNativeDisabled": { "count": number };
+  "workbench.skills.appCountViaGeminiRoot": { "coupled": number; "enabled": number };
+  "workbench.skills.appCountViaSharedRoot": { "coupled": number; "enabled": number };
+  "workbench.skills.appSeesCount": { "count": number; "app": string };
+  "workbench.skills.backups": undefined;
+  "workbench.skills.backups.deleteAccessibility": undefined;
+  "workbench.skills.backups.deleteConfirmMessage": undefined;
+  "workbench.skills.backups.deleteConfirmTitle": { "skill": string };
+  "workbench.skills.backups.deleteConfirmTitleGeneric": undefined;
+  "workbench.skills.backups.empty": undefined;
+  "workbench.skills.backups.footer": undefined;
+  "workbench.skills.backups.refreshHelp": undefined;
+  "workbench.skills.backups.restore": undefined;
+  "workbench.skills.backups.restoreHelp": undefined;
+  "workbench.skills.backups.subtitle": undefined;
+  "workbench.skills.backups.title": undefined;
+  "workbench.skills.badge.installed": undefined;
+  "workbench.skills.badge.nativeOff": { "app": string };
+  "workbench.skills.badge.nativeOffHelp": undefined;
+  "workbench.skills.badge.nativeUnknown": undefined;
+  "workbench.skills.badge.nativeUnknownHelp": undefined;
+  "workbench.skills.badge.update": undefined;
+  "workbench.skills.checkUpdates": undefined;
+  "workbench.skills.checkUpdatesCount": { "count": number };
+  "workbench.skills.contextDisableKeepProjection": { "app": string };
+  "workbench.skills.contextEnableIn": { "app": string };
+  "workbench.skills.contextRemoveProjection": { "app": string };
+  "workbench.skills.countFiltered": { "shown": number; "total": number };
+  "workbench.skills.countTotal": { "count": number };
+  "workbench.skills.discover": undefined;
+  "workbench.skills.discover.availableEmpty": undefined;
+  "workbench.skills.discover.availableTitle": undefined;
+  "workbench.skills.discover.indexTitle": undefined;
+  "workbench.skills.discover.installs": { "count": number };
+  "workbench.skills.discover.noRepos": undefined;
+  "workbench.skills.discover.removeRepo": { "repo": string };
+  "workbench.skills.discover.repoFieldPlaceholder": undefined;
+  "workbench.skills.discover.repoRules": undefined;
+  "workbench.skills.discover.reposTitle": undefined;
+  "workbench.skills.discover.scanRepos": undefined;
+  "workbench.skills.discover.scanReposHelp": undefined;
+  "workbench.skills.discover.searchHint": undefined;
+  "workbench.skills.discover.searchPlaceholder": undefined;
+  "workbench.skills.discover.selectAll": undefined;
+  "workbench.skills.discover.selectHelp": undefined;
+  "workbench.skills.discover.selectNone": undefined;
+  "workbench.skills.discover.sourceFromSkillsSh": { "repo": string };
+  "workbench.skills.discover.stopScanHelp": undefined;
+  "workbench.skills.discover.stopScanningRepo": { "repo": string };
+  "workbench.skills.discover.title": undefined;
+  "workbench.skills.discoverHelp": undefined;
+  "workbench.skills.empty.body": undefined;
+  "workbench.skills.empty.headline": undefined;
+  "workbench.skills.filterClear": undefined;
+  "workbench.skills.filterPlaceholder": undefined;
+  "workbench.skills.import.alreadyShared": undefined;
+  "workbench.skills.import.alreadySharedDetail": undefined;
+  "workbench.skills.import.apply": { "count": number };
+  "workbench.skills.import.conflicts": undefined;
+  "workbench.skills.import.conflictsCount": { "count": number };
+  "workbench.skills.import.conflictsDetail": undefined;
+  "workbench.skills.import.foundIn": { "apps": string };
+  "workbench.skills.import.keepEvidenceFor": undefined;
+  "workbench.skills.import.needsAdoption": undefined;
+  "workbench.skills.import.needsAdoptionDetail": undefined;
+  "workbench.skills.import.notSkills": undefined;
+  "workbench.skills.import.notSkillsDetail": undefined;
+  "workbench.skills.import.recognizedCount": { "count": number };
+  "workbench.skills.import.subtitle": undefined;
+  "workbench.skills.import.summary": { "adopted": number; "conflicts": number; "unmanaged": number };
+  "workbench.skills.import.title": undefined;
+  "workbench.skills.importExisting": undefined;
+  "workbench.skills.install": undefined;
+  "workbench.skills.installFromZip": undefined;
+  "workbench.skills.menuMoreActions": { "skill": string };
+  "workbench.skills.menuRevealInFinder": undefined;
+  "workbench.skills.menuUninstall": undefined;
+  "workbench.skills.menuUpdateFromRepository": undefined;
+  "workbench.skills.menuWiringDetails": undefined;
+  "workbench.skills.noMatch": { "query": string };
+  "workbench.skills.phase.downloadedOne": undefined;
+  "workbench.skills.phase.downloadedProgress": { "completed": number; "total": number };
+  "workbench.skills.phase.downloading": { "repo": string };
+  "workbench.skills.phase.scanning": { "repo": string };
+  "workbench.skills.sourceBranch": { "branch": string };
+  "workbench.skills.sourceInstalledLocally": undefined;
+  "workbench.skills.sourceLocal": undefined;
+  "workbench.skills.state.coupled": undefined;
+  "workbench.skills.state.disabledInHarness": undefined;
+  "workbench.skills.state.enabled": undefined;
+  "workbench.skills.state.notProjected": undefined;
+  "workbench.skills.state.unknown": undefined;
+  "workbench.skills.sync.footer": { "path": string };
+  "workbench.skills.sync.nativeSwitchesBody": undefined;
+  "workbench.skills.sync.nativeSwitchesLead": undefined;
+  "workbench.skills.sync.noPerSkillSwitch": undefined;
+  "workbench.skills.sync.noSwitchAlsoReads": { "path": string };
+  "workbench.skills.sync.perSkillSwitch": { "key": string; "path": string };
+  "workbench.skills.sync.projectionsBody": undefined;
+  "workbench.skills.sync.projectionsLead": undefined;
+  "workbench.skills.sync.readsOwnFolder": { "path": string };
+  "workbench.skills.sync.scansSharedRoot": { "path": string };
+  "workbench.skills.sync.ssotBody": { "path": string };
+  "workbench.skills.sync.ssotLead": undefined;
+  "workbench.skills.sync.title": undefined;
+  "workbench.skills.syncExplainerHelp": undefined;
+  "workbench.skills.toast.addRepoFirst": undefined;
+  "workbench.skills.toast.allUpToDate": undefined;
+  "workbench.skills.toast.archiveEmpty": undefined;
+  "workbench.skills.toast.disabledKeptProjection": { "app": string; "skill": string };
+  "workbench.skills.toast.enabledForApps": { "apps": string };
+  "workbench.skills.toast.importConflicts": { "count": number };
+  "workbench.skills.toast.importRecognized": { "count": number };
+  "workbench.skills.toast.installedArchive": { "count": number };
+  "workbench.skills.toast.installedForApps": { "apps": string; "skill": string };
+  "workbench.skills.toast.installedShared": { "skill": string };
+  "workbench.skills.toast.invalidRepoRef": { "input": string };
+  "workbench.skills.toast.linkRemovedStillShared": { "app": string; "skill": string };
+  "workbench.skills.toast.noSearchMatches": undefined;
+  "workbench.skills.toast.noSkillsFound": undefined;
+  "workbench.skills.toast.notFoundInRepo": { "repo": string; "skill": string };
+  "workbench.skills.toast.projectionClearedFolderKept": { "app": string; "skill": string };
+  "workbench.skills.toast.recorded": { "count": number };
+  "workbench.skills.toast.reposUnreadable": { "count": number };
+  "workbench.skills.toast.restored": { "skill": string };
+  "workbench.skills.toast.scanStopped": undefined;
+  "workbench.skills.toast.sharedLibraryNote": undefined;
+  "workbench.skills.toast.sharedRootNoSwitch": { "app": string; "skill": string };
+  "workbench.skills.toast.uninstalledBackedUp": { "skill": string };
+  "workbench.skills.toast.uninstalledLeftInPlace": { "apps": string; "skill": string };
+  "workbench.skills.toast.updated": { "skill": string };
+  "workbench.skills.toast.updatesAvailable": { "count": number };
+  "workbench.skills.toggleHelp.installInto": { "app": string };
+  "workbench.skills.toggleHelp.keepLinks": { "app": string };
+  "workbench.skills.toggleHelp.linkAfterAdopting": { "app": string };
+  "workbench.skills.toggleState.coupledGemini": { "app": string };
+  "workbench.skills.toggleState.coupledSharedRoot": { "app": string };
+  "workbench.skills.toggleState.disabledInHarness": { "app": string };
+  "workbench.skills.toggleState.enabled": { "app": string };
+  "workbench.skills.toggleState.enabledNative": { "app": string };
+  "workbench.skills.toggleState.enabledSharedRoot": { "app": string };
+  "workbench.skills.toggleState.notProjected": { "app": string };
+  "workbench.skills.toggleState.unknown": { "app": string };
+  "workbench.skills.uninstall": undefined;
+  "workbench.skills.uninstallConfirmMessage": undefined;
+  "workbench.skills.uninstallConfirmTitle": { "skill": string };
+  "workbench.skills.wiring.footer": undefined;
+  "workbench.skills.wiring.mechanismGeminiCompat": undefined;
+  "workbench.skills.wiring.mechanismSharedRoot": undefined;
+  "workbench.skills.wiring.nativeSwitch": { "key": string; "path": string };
+  "workbench.skills.wiring.noNativeSwitch": undefined;
+  "workbench.skills.wiring.projectionCopy": { "path": string };
+  "workbench.skills.wiring.projectionCopyAdopted": { "path": string };
+  "workbench.skills.wiring.projectionMissing": { "path": string };
+  "workbench.skills.wiring.projectionSymlink": { "path": string };
+  "workbench.skills.wiring.projectionSymlinkAdopted": { "path": string };
+  "workbench.skills.wiring.reveal": undefined;
+  "workbench.skills.wiring.revealHelp": undefined;
+  "workbench.skills.wiring.source": undefined;
+  "workbench.skills.wiring.sourceDetail": undefined;
+  "workbench.skills.wiring.stateConfigUnreadable": undefined;
+  "workbench.skills.wiring.stateCoupledGemini": undefined;
+  "workbench.skills.wiring.stateCoupledSharedRoot": undefined;
+  "workbench.skills.wiring.stateNativeOff": undefined;
+  "workbench.skills.wiring.stateNotLinked": undefined;
+  "workbench.status.cachedQuotas": undefined;
+  "workbench.status.indexed": { "count": number };
+  "workbench.status.installed": { "count": number };
+  "workbench.status.localIndex": undefined;
+  "workbench.status.localLedger": undefined;
+  "workbench.status.nextRefill": { "countdown": string };
+  "workbench.status.sharedLibrary": undefined;
+  "workbench.status.updated": { "time": string };
 }
 
 /** Raw ICU messages, per locale. Formatted by `t` — never read directly. */
@@ -73,53 +2939,2919 @@ export const messages: {
   readonly [L in Locale]: { readonly [K in MessageKey]: string };
 } = {
   "en": {
+    "common.add": "Add",
+    "common.all": "All",
+    "common.auto": "Auto",
     "common.cancel": "Cancel",
+    "common.clear": "Clear",
+    "common.copied": "Copied",
+    "common.copy": "Copy",
+    "common.delete": "Delete",
+    "common.dismiss": "Dismiss",
+    "common.done": "Done",
+    "common.dragToReorder": "Drag to reorder",
+    "common.duration.days": "{days}d",
+    "common.duration.daysHours": "{days}d {hours}h",
+    "common.duration.hours": "{hours}h",
+    "common.duration.hoursMinutes": "{hours}h {minutes}m",
+    "common.duration.lessThanMinute": "<1m",
+    "common.duration.minutes": "{minutes}m",
+    "common.duration.now": "now",
+    "common.name": "Name",
     "common.noData": "No data recorded",
+    "common.off": "Off",
+    "common.on": "On",
+    "common.open": "Open",
+    "common.openSettings": "Open Settings",
+    "common.percent": "{value}%",
+    "common.provider": "Provider",
     "common.refresh": "Refresh",
+    "common.refreshSection": "Refresh this section",
+    "common.remove": "Remove",
     "common.retry": "Retry",
+    "common.retryNow": "Retry now",
+    "common.save": "Save",
+    "common.updated.daysAgo": "Updated {days, plural, one {1 day} other {# days}} ago",
+    "common.updated.hoursAgo": "Updated {hours, plural, one {1 hour} other {# hours}} ago",
+    "common.updated.justNow": "Updated just now",
+    "common.updated.minutesAgo": "Updated {minutes, plural, one {1 minute} other {# minutes}} ago",
+    "common.updated.never": "Never updated",
+    "common.updated.secondsAgo": "Updated {seconds} seconds ago",
+    "cost.allProviders": "All providers",
+    "cost.chart.metricCostHelp": "Plot spend in dollars",
+    "cost.chart.metricTokens": "Tok",
+    "cost.chart.metricTokensHelp": "Plot token volume",
+    "cost.empty.antigravity": "No Antigravity conversation token metadata found yet.",
+    "cost.empty.claude": "No Claude CLI sessions found yet.",
+    "cost.empty.codex": "No Codex CLI sessions found yet.",
+    "cost.empty.gemini": "No Gemini CLI or chat-history usage found yet.",
+    "cost.empty.genericCLI": "No {provider} CLI sessions found yet.",
+    "cost.empty.grok": "No Grok session usage found yet.",
+    "cost.fullCharts": "{title} — Full Charts",
+    "cost.gemini.emptyDetail": "Vibe Bar reads live AntiGravity quota from the desktop app when available, then falls back to the installed agy CLI. Cached values are marked stale when neither local source can refresh them.",
+    "cost.gemini.emptyTitle": "No Gemini or AntiGravity usage found yet.",
+    "cost.googleAI.empty": "No Gemini Web / AntiGravity usage yet — refresh after signing in to AntiGravity or agy.",
+    "cost.googleAI.title": "Google AI Cost",
+    "cost.granularity.day": "Day",
+    "cost.granularity.hour": "Hour",
+    "cost.granularity.month": "Month",
+    "cost.granularity.week": "Week",
+    "cost.history.allProviders": "All Providers Cost History",
+    "cost.history.building": "Building history…",
+    "cost.history.buildingDetail": "Cost samples appear after the next local scan.",
+    "cost.history.clearModelSelection": "Clear model selection",
+    "cost.history.emptyCost": "No cost recorded in this range.",
+    "cost.history.emptyTokens": "No tokens recorded in this range.",
+    "cost.history.extentNote": "{span} · {start} – {end}",
+    "cost.history.granularityDisabled": "{granularity} needs a different zoom level",
+    "cost.history.groupBy": "Group cost history by {granularity}",
+    "cost.history.hourlyFallback": "hourly n/a · showing daily",
+    "cost.history.metricAverage": "Avg/{granularity}",
+    "cost.history.metricPeak": "Peak",
+    "cost.history.metricTotal": "Total",
+    "cost.history.modelDetailUnavailable": "Model detail is unavailable for this historical period.",
+    "cost.history.modelsAt": "Models · {when}",
+    "cost.history.moreModels": "+{count} more · click to inspect",
+    "cost.history.navigator": "Cost history range navigator",
+    "cost.history.title": "Cost History",
+    "cost.history.weekOf": "Week of {date}",
+    "cost.history.weekShortOf": "wk {date}",
+    "cost.metric.peakDay": "PEAK DAY",
+    "cost.metric.peakTokenDay": "PEAK TOK DAY",
+    "cost.metric.sevenDay": "7-DAY",
+    "cost.metric.sevenDayTokens": "7-DAY TOK",
+    "cost.metric.thirtyDay": "30-DAY",
+    "cost.metric.thirtyDayTokens": "30-DAY TOK",
+    "cost.metric.todayTokens": "TODAY TOK",
+    "cost.metric.totalCost": "TOTAL COST",
+    "cost.metric.totalTokens": "TOTAL TOK",
+    "cost.metric.yesterdayTokens": "YESTERDAY TOK",
+    "cost.modelRanking.allProvidersAllTime": "All providers · all time",
+    "cost.modelRanking.allTime": "All time",
+    "cost.modelRanking.title": "Model Ranking",
+    "cost.noUsageYet": "No usage yet",
+    "cost.notTracked": "Cost history isn't tracked for {provider}.",
+    "cost.openFullCharts": "Open full charts",
     "cost.perThousandTokens": "{rate} per 1K tokens",
+    "cost.provider.title": "{provider} Cost",
+    "cost.providerFullCharts": "{provider} Cost — Full Charts",
+    "cost.refreshData": "Refresh cost data",
+    "cost.refreshProvider": "Refresh {provider} cost",
+    "cost.spaceXAI.empty": "No Grok or Cursor usage found yet.",
+    "cost.spaceXAI.title": "SpaceXAI Cost",
     "cost.spentToday": "{amount} spent today",
+    "cost.timeframe.all": "All",
+    "cost.timeframe.month": "30 days",
+    "cost.timeframe.monthShort": "30d",
+    "cost.timeframe.today": "Today",
+    "cost.timeframe.week": "7 days",
+    "cost.timeframe.weekShort": "7d",
+    "cost.timeframe.yesterday": "Yesterday",
+    "cost.title": "Cost",
+    "cost.topModel.share": "{percent}% share",
+    "cost.topModel.title": "TOP MODEL",
+    "error.credentialRejected": "Credential rejected",
     "error.needsReLogin": "Needs re-login",
+    "error.network": "Network error",
     "error.networkWithReason": "Network error: {reason}",
     "error.noAccountFound": "No account found",
+    "error.notImplemented": "Not yet supported",
+    "error.parseFailure": "Response format changed",
     "error.rateLimited": "Rate limited, try later",
+    "error.unknown": "Error",
+    "error.unknownDetail": "Error: {reason}",
+    "menuBar.composer.action.duplicate": "Duplicate",
+    "menuBar.composer.appIcon.detail": "Vibe Bar's own icon — what the Icon Only layout shows.",
+    "menuBar.composer.block.appIcon": "Vibe Bar icon",
+    "menuBar.composer.block.emptyText": "Empty text",
+    "menuBar.composer.block.gap": "Gap",
+    "menuBar.composer.block.logo": "Logo",
+    "menuBar.composer.block.newRow": "New row",
+    "menuBar.composer.block.quota": "Quota",
+    "menuBar.composer.block.separator": "Separator",
+    "menuBar.composer.block.space": "Space",
+    "menuBar.composer.block.structure": "Structure",
+    "menuBar.composer.block.text": "Text",
+    "menuBar.composer.block.unsupported": "From a newer version",
+    "menuBar.composer.blocks": "Blocks — drag to reorder",
+    "menuBar.composer.blocks.empty": "No blocks yet. Add one from the palette below.",
+    "menuBar.composer.colour.automatic": "Automatic",
+    "menuBar.composer.colour.brand": "Brand",
+    "menuBar.composer.colour.fixed": "Custom…",
+    "menuBar.composer.colour.followsQuota": "Follow a quota",
+    "menuBar.composer.colour.forecast": "Forecast",
+    "menuBar.composer.colour.primary": "Primary",
+    "menuBar.composer.colour.secondary": "Secondary",
+    "menuBar.composer.colour.tertiary": "Tertiary",
+    "menuBar.composer.field.colour": "Colour",
+    "menuBar.composer.field.monospacedDigits": "Monospaced digits",
+    "menuBar.composer.field.monospacedDigitsHelp": "Keeps a changing number from shifting the blocks beside it.",
+    "menuBar.composer.field.offlineOption": "{title} (offline)",
+    "menuBar.composer.field.show": "Show",
+    "menuBar.composer.field.shows": "Shows",
+    "menuBar.composer.field.size": "Size",
+    "menuBar.composer.field.verdicts": "Verdicts",
+    "menuBar.composer.field.weight": "Weight",
+    "menuBar.composer.metric.displayPercent": "Percent (follows setting)",
+    "menuBar.composer.metric.pace": "Pace",
+    "menuBar.composer.metric.remainingPercent": "Remaining %",
+    "menuBar.composer.metric.resetAt": "Resets at",
+    "menuBar.composer.metric.resetsIn": "Resets in",
+    "menuBar.composer.metric.runsOutIn": "Runs out in",
+    "menuBar.composer.metric.usedPercent": "Used %",
+    "menuBar.composer.mode.custom": "Custom",
+    "menuBar.composer.mode.customCaption": "Switching back to Default keeps every block you built — you can return to Custom and find it exactly as you left it.",
+    "menuBar.composer.mode.default": "Default",
+    "menuBar.composer.mode.defaultCaption": "Default shows the fields you tick below. Custom lets you build the strip out of blocks: logos, words, and any quota.",
+    "menuBar.composer.mode.label": "Strip",
+    "menuBar.composer.newRow.capped": "The menu bar can only draw two rows.",
+    "menuBar.composer.newRow.detail": "Ends the first row and starts the second. Give it a rule below to split only when that quota says so.",
+    "menuBar.composer.newRow.help": "Split the strip into a second row.",
+    "menuBar.composer.palette": "Add a block",
+    "menuBar.composer.preview": "Preview",
+    "menuBar.composer.preview.dark": "Dark menu bar preview",
+    "menuBar.composer.preview.empty": "Empty strip",
+    "menuBar.composer.preview.grounds": "Light and dark menu bars, side by side — a fixed colour that reads well on one can vanish on the other.",
+    "menuBar.composer.preview.light": "Light menu bar preview",
+    "menuBar.composer.preview.twoRowScaling": "Two rows share the menu bar's height, so large sizes are scaled down to fit — the preview scales with them.",
+    "menuBar.composer.removeTarget": "Drag here to remove",
+    "menuBar.composer.rule.always": "Always",
+    "menuBar.composer.rule.whenForecast": "When the forecast says",
+    "menuBar.composer.rule.whenRemainingAtMost": "When remaining is at most",
+    "menuBar.composer.rule.whenUsedAtLeast": "When used is at least",
+    "menuBar.composer.selected": "Selected block",
+    "menuBar.composer.size.large": "Large",
+    "menuBar.composer.size.regular": "Regular",
+    "menuBar.composer.size.small": "Small",
+    "menuBar.composer.space.detail": "A gap one space wide. Size changes how wide.",
+    "menuBar.composer.startOver": "Start over from the current strip…",
+    "menuBar.composer.startOver.confirm": "Start over",
+    "menuBar.composer.startOver.confirmMessage": "Every block you arranged is discarded and rebuilt from the default strip.",
+    "menuBar.composer.startOver.confirmTitle": "Replace your blocks?",
+    "menuBar.composer.startOver.detail": "Starting over replaces every block with a fresh copy of the default strip. There is no undo.",
+    "menuBar.composer.template": "Template",
+    "menuBar.composer.template.compact": "Compact",
+    "menuBar.composer.template.compactDetail": "Tight spacing and a slightly smaller face.",
+    "menuBar.composer.template.roomy": "Roomy",
+    "menuBar.composer.template.roomyDetail": "The menu bar's usual size.",
+    "menuBar.composer.template.twoRows": "Two rows",
+    "menuBar.composer.template.twoRowsDetail": "Two stacked rows in one status item.",
+    "menuBar.composer.text.empty": "An empty text block draws nothing. Type something for it to appear in the menu bar.",
+    "menuBar.composer.text.limit": "Blocks longer than {count} characters are cut short with an ellipsis in the bar.",
+    "menuBar.composer.text.placeholder": "Label",
+    "menuBar.composer.unsupported.detail": "This block was made by a newer version of Vibe Bar. It is kept exactly as it was and will work again after an update; until then it draws nothing.",
+    "menuBar.composer.warning.degraded": "This block still draws, but a colour or a rule on it points at a quota that is not being returned right now.",
+    "menuBar.composer.warning.missing": "Not answering right now: {fields}",
+    "menuBar.composer.warning.silent": "This quota is not being returned right now, so this block draws nothing. It stays here and comes back on its own.",
+    "menuBar.composer.weight.medium": "Medium",
+    "menuBar.composer.weight.regular": "Regular",
+    "menuBar.composer.weight.semibold": "Semibold",
+    "menuBar.spoken.forecast": "{label} forecast {value} left at reset",
+    "menuBar.spoken.pace": "{label} pace {value}",
+    "menuBar.spoken.remaining": "{label} {value} remaining",
+    "menuBar.spoken.resetAt": "{label} resets at {value}",
+    "menuBar.spoken.resetsIn": "{label} resets in {value}",
+    "menuBar.spoken.runsOutIn": "{label} runs out in {value}",
+    "menuBar.spoken.title": "{kind} quota",
+    "menuBar.spoken.titleBody": "{kind} quota: {body}",
+    "menuBar.spoken.used": "{label} {value} used",
+    "onboarding.apiKeys.hide": "Hide",
+    "onboarding.apiKeys.intro": "These plans are tracked with an API key or a console cookie rather than a CLI login. Tick the ones you have — a ticked provider gets a card on the Misc page — and unfold a row to enter its credential now. Keys and cookies go to your login Keychain.",
+    "onboarding.apiKeys.setUp": "Set up",
+    "onboarding.apiKeys.showOnMiscPage": "Show {provider} on the Misc page",
+    "onboarding.back": "Back",
+    "onboarding.continue": "Continue",
+    "onboarding.cookies.batchScope": "This button covers the four plans above. The console-cookie plans on the next step have their own one-click batch import later, under Settings → Browser Cookies.",
+    "onboarding.cookies.importAll": "Import from all browsers now",
+    "onboarding.cookies.importFromBrowser": "Import from browser",
+    "onboarding.cookies.importGemini": "Import Gemini cookies from browser",
+    "onboarding.cookies.importGrok": "Import Grok cookies from browser",
+    "onboarding.cookies.importing": "Importing…",
+    "onboarding.cookies.intro": "Web quotas — the ones the provider shows on its own site — come from the session your browser already has. Vibe Bar reads the cookie stores of the browsers on this Mac (Chrome and other Chromium browsers, Safari, Firefox), keeps only the few cookies each provider needs, and stores them in your login Keychain, never in a plaintext file. macOS may ask once for permission to read a browser's cookie key.",
+    "onboarding.cookies.notImported": "Not imported yet",
+    "onboarding.cookies.openWebViewLogin": "Open WebView login",
+    "onboarding.cookies.saved": "Cookies saved.",
+    "onboarding.cookies.signInFirst": "Sign in to chatgpt.com, claude.ai, gemini.google.com or grok.com in your browser first — an import can only find a session that exists. Providers you have not signed in to simply report nothing.",
+    "onboarding.done.apiKeyProviders": "API-key providers",
+    "onboarding.done.cookieCount": "{saved} of {total} providers saved",
+    "onboarding.done.footer": "Every one of these lives in Settings, and the assistant is one click away under Settings → System.",
+    "onboarding.done.intro": "That is everything the menu bar needs. Finish opens the popover with whatever quota is already readable; the rest fills in on the first refresh.",
+    "onboarding.done.miscCount": "{count} on the Misc page",
+    "onboarding.done.noneShown": "None shown",
+    "onboarding.done.pricingBundled": "Bundled table until the first fetch",
+    "onboarding.done.pricingMerged": "Merged {when}",
+    "onboarding.finish": "Finish",
+    "onboarding.pricing.fetchNow": "Fetch prices now",
+    "onboarding.pricing.fetching": "Fetching…",
+    "onboarding.pricing.footer": "Prices are USD per one million tokens. Local overrides live under Settings → Model Pricing.",
+    "onboarding.pricing.interval.hour": "hour",
+    "onboarding.pricing.interval.hours": "{hours} hours",
+    "onboarding.pricing.intro": "Token cost is computed on this Mac from your agents' session logs, priced with a catalog merged from several public price lists — higher-priority entries win when a model appears in more than one, your own overrides beat them all, and a bundled table is the offline floor. Catalogs refresh in the background every {interval}; fetching now gives the first cost numbers current prices.",
+    "onboarding.pricing.merged": "Merged {when} · {count} models",
+    "onboarding.pricing.notFetched": "Not fetched yet — the bundled table is in use.",
+    "onboarding.pricing.source.failed": "Cached {count} · refresh failed",
+    "onboarding.pricing.source.models": "{count} models",
+    "onboarding.pricing.source.notRefreshed": "Not refreshed",
+    "onboarding.pricing.source.unchanged": "{count} models · unchanged",
+    "onboarding.skip": "Skip for now",
+    "onboarding.step.apiKeyProviders.subtitle": "Plans tracked with an API key or a console cookie.",
+    "onboarding.step.apiKeyProviders.title": "Other plans",
+    "onboarding.step.browserCookies.subtitle": "Web quotas come from the session your browser already has.",
+    "onboarding.step.browserCookies.title": "Browser cookies",
+    "onboarding.step.done.subtitle": "Everything here lives in Settings too.",
+    "onboarding.step.done.title": "All set",
+    "onboarding.step.pricing.subtitle": "Where the token prices behind the cost numbers come from.",
+    "onboarding.step.pricing.title": "Model pricing",
+    "onboarding.step.subscriptions.subtitle": "Turn on the plans you pay for.",
+    "onboarding.step.subscriptions.title": "Subscriptions",
+    "onboarding.step.welcome.subtitle": "What Vibe Bar does, in one paragraph.",
+    "onboarding.step.welcome.title": "Welcome",
+    "onboarding.subscriptions.claude.detected": "Claude Code login detected — quota will come from it.",
+    "onboarding.subscriptions.claude.missing": "No Claude Code login found. Run `claude login`, or import claude.ai cookies from your browser below.",
+    "onboarding.subscriptions.claude.web": "claude.ai cookies saved — quota will come from them.",
+    "onboarding.subscriptions.codex.detected": "Codex CLI login detected — quota will come from it.",
+    "onboarding.subscriptions.codex.missing": "No Codex CLI login found. Run `codex login`, or import ChatGPT cookies from your browser below.",
+    "onboarding.subscriptions.codex.web": "ChatGPT web cookies saved — quota will come from them.",
+    "onboarding.subscriptions.gemini.hint": "Gemini quota is read from gemini.google.com cookies; there is no CLI login or WebView path. AntiGravity is probed locally when it is running.",
+    "onboarding.subscriptions.grok.detected": "~/.grok/auth.json detected — quota will come from it.",
+    "onboarding.subscriptions.grok.missing": "No ~/.grok/auth.json yet. Run `grok login`, or import grok.com cookies from your browser below.",
+    "onboarding.subscriptions.intro": "Turn on the subscriptions you use. A provider that is off stays out of the Overview and the menu bar; turning one off later keeps its credentials and history.",
+    "onboarding.subscriptions.productLine.claude": "Claude Code · claude.ai web",
+    "onboarding.subscriptions.productLine.codex": "Codex CLI · ChatGPT web",
+    "onboarding.subscriptions.productLine.gemini": "Gemini web · AntiGravity",
+    "onboarding.subscriptions.productLine.grok": "Grok CLI · grok.com · Cursor",
+    "onboarding.subscriptions.showInOverview": "Show in Overview",
+    "onboarding.title": "Setup",
+    "onboarding.welcome.cost.detail": "Priced locally from the agents' own session logs against a merged model price catalog.",
+    "onboarding.welcome.cost.title": "Token cost",
+    "onboarding.welcome.footer": "This takes about two minutes. Every choice here can be changed later in Settings, and the assistant is one click away under Settings → System.",
+    "onboarding.welcome.intro": "Vibe Bar sits in your menu bar and shows, at a glance, how much of each AI subscription you have left, what your coding agents are spending, and which sessions and skills live on this Mac. It reads the credentials the Codex, Claude Code, Gemini and Grok CLIs already keep here, adds web quotas from your browser's cookies when you ask it to, and never sends any of it anywhere but the provider it came from.",
+    "onboarding.welcome.mcp.detail": "Your agents can ask Vibe Bar for quota and cost over a Unix socket in your home directory.",
+    "onboarding.welcome.mcp.title": "Local MCP server",
+    "onboarding.welcome.quotas.detail": "Codex, Claude Code, Gemini, Grok and a shelf of API-key plans, each with its reset countdown.",
+    "onboarding.welcome.quotas.title": "Subscription quotas",
+    "onboarding.welcome.sessions.detail": "Browse, search and tidy agent sessions and shared skills from the Workbench.",
+    "onboarding.welcome.sessions.title": "Sessions and skills",
+    "platform.macos.launchAtLogin.detail": "Vibe Bar is a menu-bar app with no Dock icon. Starting it at login keeps the quota readout and the local MCP server available from the moment you sign in; macOS may ask you to approve the login item in System Settings the first time.",
+    "platform.macos.launchAtLogin.enabled": "Enabled in macOS Login Items.",
+    "platform.macos.launchAtLogin.subtitle": "Keep the readout in your menu bar from the moment you sign in.",
+    "platform.macos.launchAtLogin.title": "Launch at login",
+    "platform.macos.launchAtLogin.toggle": "Launch Vibe Bar at login",
+    "platform.macos.menuBar.color.actual": "Actual",
+    "platform.macos.menuBar.color.actualDetail": "Colored by the displayed percentage alone, ignoring the forecast.",
+    "platform.macos.menuBar.color.forecastDetail": "Green projected to last · blue a chunk will likely go unused · orange may run short · red projected to run out. Falls back to the percentage while a quota has too little history to forecast.",
+    "platform.macos.menuBar.displayDensity": "Display density",
+    "platform.macos.menuBar.fieldStyle.label": "Label",
+    "platform.macos.menuBar.fieldStyle.labelDetail": "The field's name beside its percent.",
+    "platform.macos.menuBar.fieldStyle.logoAndLabel": "Logo and label",
+    "platform.macos.menuBar.fieldStyle.logoAndLabelDetail": "Logo, name, and percent.",
+    "platform.macos.menuBar.fieldStyle.logoDetail": "The provider's logo beside the percent — no text.",
+    "platform.macos.menuBar.fields": "Fields",
+    "platform.macos.menuBar.layout": "Layout",
+    "platform.macos.menuBar.layout.iconOnly": "Icon Only",
+    "platform.macos.menuBar.layout.singleLine": "Single line",
+    "platform.macos.menuBar.mergeGroupWindows": "Combine a group's windows",
+    "platform.macos.menuBar.mergeGroupWindowsDetail": "Shows 5 Hours and Weekly as 5%/100% instead of two entries.",
+    "platform.macos.menuBar.percentColor": "Percent color",
+    "platform.macos.menuBar.showInMenuBar": "Show in menu bar",
+    "platform.macos.menuBar.showTitleText": "Show title text",
+    "popover.header.machinesSubtitle": "End-to-end encrypted remote usage",
+    "popover.header.mini": "Mini",
+    "popover.header.miscSubtitle": "Usage-only · sign in or paste a key",
+    "popover.header.openWorkbench": "Open Workbench",
+    "popover.header.overviewSubtitle": "All providers · quota & cost",
+    "popover.header.refreshing": "Refreshing…",
+    "popover.header.settings": "Settings",
+    "popover.header.updatedLine": "{subtitle} · {updated}",
+    "popover.machines.checking": "Checking the Relay…",
+    "popover.machines.freshness.delayed": "Delayed",
+    "popover.machines.freshness.live": "Live",
+    "popover.machines.freshness.stale": "Stale",
+    "popover.machines.includeInTotals": "Include in totals",
+    "popover.machines.includeInTotalsHelp": "Add this machine's decrypted usage to Overview and provider cost pages on this Core",
+    "popover.machines.labelWithStatus": "{label} · {status}",
+    "popover.machines.noData": "No remote machine data yet",
+    "popover.machines.noDataDetail": "The Relay is connected. A Probe will appear after its first encrypted batch is decrypted and imported.",
+    "popover.machines.notConfigured": "Remote Core is not configured",
+    "popover.machines.notConfiguredDetail": "Create a Core descriptor, provision a workspace-scoped Relay credential, then import the signed provisioning file. No inbound port is required on this Mac.",
+    "popover.machines.sequence": "seq {value}",
+    "popover.machines.thirtyDayCost": "30-day cost",
+    "popover.misc.copyFallback": "Copy {ordinal}",
+    "popover.refreshGoogleAI": "Refresh Gemini Web + AntiGravity",
+    "popover.refreshSpaceXAI": "Refresh Grok + Cursor",
+    "popover.showPage": "Show {page}",
+    "popover.tab.machines": "Machines",
+    "popover.tab.misc": "Misc Providers",
+    "popover.tab.miscShort": "Misc",
+    "popover.tab.overview": "Overview",
     "quota.awaitingFirstObservation": "Waiting for the first quota observation",
+    "quota.bridge.empty": "No enabled CodexBar-only provider returned a quota window. Overlapping providers remain on Vibe Bar's native cards.",
+    "quota.bridge.refresh": "Refresh CodexBar providers",
+    "quota.bridge.subtitle": "Additional providers · read-only",
+    "quota.bridge.subtitleVersion": "CodexBar {version} · read-only",
+    "quota.bridge.title": "CodexBar Bridge",
+    "quota.bucket.noResetInfo": "No reset info",
     "quota.cycleRecordedOnRefill": "A cycle is recorded when the quota refills",
     "quota.cyclesRecorded": "{count, plural, one {# cycle} other {# cycles}}",
+    "quota.empty.needsLogin.detail": "Run `{command} login` in your terminal, then refresh.",
+    "quota.empty.network.detail": "Couldn't reach the official API. Check your internet connection and try again.",
+    "quota.empty.noAccount.detail": "Log in with the official CLI on this Mac, then refresh.",
+    "quota.empty.parseChanged.detail": "The official API returned an unexpected shape. Try refreshing or update Vibe Bar.",
+    "quota.empty.rateLimited.detail": "The official API is asking us to wait. Try again in a moment.",
+    "quota.empty.rateLimited.headline": "Rate limited",
+    "quota.forecast.confidence.high": "High confidence",
+    "quota.forecast.confidence.learning": "Learning",
+    "quota.forecast.confidence.medium": "Medium confidence",
+    "quota.forecast.explain.footer": "Quota observations drive consumption. Token history only weights when you tend to work; it is never converted into quota usage.",
+    "quota.forecast.explain.hide": "Hide forecast calculation",
+    "quota.forecast.explain.show": "Show forecast calculation",
+    "quota.forecast.explain.title": "How this forecast was calculated",
+    "quota.forecast.guidance.atRisk": "Slow down or shift work to another quota",
+    "quota.forecast.guidance.available": "Target {target}% left · about {unused}% available",
+    "quota.forecast.guidance.surplus": "About {unused}% likely unused beyond the {target}% safety target",
+    "quota.forecast.guidance.usedAvailable": "Target {target}% used · about {unused}% capacity available",
+    "quota.forecast.guidance.usedSurplus": "About {unused}% capacity may remain beyond the {target}% used target",
+    "quota.forecast.guidance.usedWithinTarget": "Within the {target}% used target",
+    "quota.forecast.guidance.watch": "Recent usage is above the safe range",
+    "quota.forecast.guidance.withinTarget": "Within the {target}% safety target",
+    "quota.forecast.legend.item": "{label} {value}",
+    "quota.forecast.metric.aboveTarget": "{percent}% capacity above target",
+    "quota.forecast.metric.activityFallback": "wall-clock fallback until habits exist",
+    "quota.forecast.metric.activityTiming": "Activity timing",
+    "quota.forecast.metric.activityWeighted": "weekday and hour weighted",
+    "quota.forecast.metric.behaviorDetail": "used when stronger evidence is sparse",
+    "quota.forecast.metric.behaviorFallback": "Behavior fallback",
+    "quota.forecast.metric.comparableCycles": "{count, plural, one {1 comparable reset cycle} other {# comparable reset cycles}}",
+    "quota.forecast.metric.coverage": "Coverage",
+    "quota.forecast.metric.coverageDetail": "fresh {fresh}% · habits {habits}%",
+    "quota.forecast.metric.coverageValue": "obs {observations}% · history {history}%",
+    "quota.forecast.metric.cyclesPending": "Completed cycles will appear here",
+    "quota.forecast.metric.elapsed": "{percent}% elapsed",
+    "quota.forecast.metric.evidence": "Evidence",
+    "quota.forecast.metric.evidenceDetail": "{confidence} · score {score}%",
+    "quota.forecast.metric.evidenceValue": "{observations} obs · {cycles} cycles",
+    "quota.forecast.metric.expectedLeft": "{percent}% expected left",
+    "quota.forecast.metric.expectedUsed": "{percent}% expected used",
+    "quota.forecast.metric.forecastAtReset": "Forecast at reset",
+    "quota.forecast.metric.forecastRange": "Forecast range",
+    "quota.forecast.metric.insideTarget": "inside the target range",
+    "quota.forecast.metric.noComparison": "No comparison yet",
+    "quota.forecast.metric.plan": "Personal plan now",
+    "quota.forecast.metric.planDetail": "activity timing + {target}% safety target",
+    "quota.forecast.metric.rangeLeft": "{lower}–{upper}% left",
+    "quota.forecast.metric.rangeUsed": "{lower}–{upper}% used",
+    "quota.forecast.metric.recentBurn": "Recent burn",
+    "quota.forecast.metric.recentIntervals": "{count, plural, one {1 recent interval} other {# recent intervals}}",
+    "quota.forecast.metric.recentMissing": "Needs at least two useful observations",
+    "quota.forecast.metric.recentTrend": "Recent trend",
+    "quota.forecast.metric.safetyTarget": "Safety target",
+    "quota.forecast.metric.timePace": "Time-only pace",
+    "quota.forecast.metric.timePaceDetail": "{stage} by wall clock",
+    "quota.forecast.metric.timePaceMissing": "Needs reset time and window length",
+    "quota.forecast.metric.trendDetail": "last 7 days versus prior 21 days",
+    "quota.forecast.metric.trendDetailMissing": "needs prior daily activity",
+    "quota.forecast.metric.trendMissing": "No baseline yet",
+    "quota.forecast.metric.trendMultiplier": "{multiplier}× activity",
+    "quota.forecast.metric.unavailable": "Unavailable",
+    "quota.forecast.metric.uncertaintyInterval": "uncertainty interval",
+    "quota.forecast.reset.atRisk": "Likely to run out before reset",
+    "quota.forecast.reset.enough": "Forecast {remaining}% left at reset",
+    "quota.forecast.reset.learning": "Learning your pattern · about {remaining}% left",
+    "quota.forecast.reset.surplus": "Likely surplus · forecast {remaining}% left",
+    "quota.forecast.reset.watch": "May run short · forecast {remaining}% left",
+    "quota.forecast.status.atRisk": "At risk · likely to run out before reset",
+    "quota.forecast.status.enough": "Enough · forecast {value} at reset",
+    "quota.forecast.status.learning": "Learning · about {value} at reset",
+    "quota.forecast.status.surplus": "Surplus · forecast {value} at reset",
+    "quota.forecast.status.watch": "Watch · forecast {value} at reset",
+    "quota.forecast.useUp.beforeReset": "Expected to run out before reset",
+    "quota.forecast.useUp.couldRunOut": "Could run out in {countdown}",
+    "quota.forecast.useUp.estimated": "Estimated to run out in {countdown}",
+    "quota.forecast.useUp.lastsUntilReset": "Projected to last until reset",
+    "quota.forecast.useUp.uncertain": "Use-up time uncertain · may run short before reset",
+    "quota.forecast.value.atReset": "{value} at reset",
+    "quota.forecast.value.expectedNow": "{value} expected now",
+    "quota.forecast.verdict.atRisk": "At risk",
+    "quota.forecast.verdict.enough": "Enough",
+    "quota.forecast.verdict.learning": "Learning",
+    "quota.forecast.verdict.surplus": "Surplus",
+    "quota.forecast.verdict.watch": "Watch",
+    "quota.freshness.age.seconds": "{seconds}s",
+    "quota.freshness.dataAge": "data {age} old",
+    "quota.freshness.defaultHelp": "Live quota has not refreshed within the expected interval.",
+    "quota.freshness.line": "{attempt} · {data} · {reason}",
+    "quota.freshness.noCachedData": "no cached data",
+    "quota.freshness.refreshFailed": "Refresh failed",
+    "quota.freshness.refreshFailedAgo": "Refresh failed {age} ago",
+    "quota.freshness.staleNeverUpdated": "Stale · never updated",
+    "quota.freshness.staleUpdatedAgo": "Stale · updated {age} ago",
+    "quota.group.allModels": "All Models",
+    "quota.group.daily": "Daily",
+    "quota.group.fiveHours": "5 Hours",
+    "quota.group.monthly": "Monthly",
+    "quota.group.noUtilization": "No utilization data — try refreshing.",
+    "quota.group.other": "Other",
+    "quota.group.otherModels": "Other Models",
+    "quota.group.weekly": "Weekly",
+    "quota.group.weeklyCredits": "Weekly Credits",
+    "quota.history.allCurvesHidden": "Every curve is hidden — pick one from the menu above.",
+    "quota.history.buildingUp": "Quota history builds up as refreshes come in.",
+    "quota.history.curveCount": "{count, plural, one {1 curve} other {# curves}}",
+    "quota.history.curvePickerA11y": "Choose which quota curves to show",
+    "quota.history.curvesAll": "All {total}",
+    "quota.history.curvesSome": "{shown} of {total}",
+    "quota.history.forecastLegend": "forecast",
+    "quota.history.moreBuckets": "{names} +{count}",
+    "quota.history.moreReadings": "+{count} more",
+    "quota.history.navigatorAllProviders": "All-providers quota history range navigator",
+    "quota.history.navigatorProvider": "Quota history range navigator",
+    "quota.history.providerCount": "{count, plural, one {1 provider} other {# providers}}",
+    "quota.history.scopeNote": "{scope} · showing {visible} of {total} recorded",
+    "quota.history.showAllCurves": "Show all curves",
+    "quota.history.showBusiest": "Show only the busiest",
+    "quota.history.title": "Quota history",
+    "quota.history.tooltipAtReset": "At reset",
+    "quota.history.tooltipPace": "Pace",
+    "quota.history.tooltipQuotaLeft": "Quota left",
+    "quota.login.claude": "Run claude login, then refresh.",
+    "quota.login.codex": "Run codex login, then refresh.",
+    "quota.login.cursor": "Sign in to Cursor.app or import cursor.com cookies, then refresh.",
+    "quota.login.grok": "Run grok login or import grok.com cookies, then refresh.",
+    "quota.login.misc": "Configure {provider} in Settings → Misc Providers.",
+    "quota.mini.forecastLearning": "learning · {percent}% left",
+    "quota.mini.forecastLearningCompact": "~{percent}% left",
+    "quota.mini.forecastLeftCompact": "left {percent}%",
+    "quota.mini.forecastMayRunOut": "may run out {countdown}",
+    "quota.mini.forecastSurplus": "surplus · {percent}% left",
+    "quota.mini.forecastSurplusCompact": "surplus {percent}%",
+    "quota.mini.nextProvider": "Next provider",
+    "quota.mini.noLiveData": "No selected fields have live data",
+    "quota.mini.pageIndicator": "{index}/{total}",
+    "quota.mini.railEmpty": "Nothing selected refills in the next seven days.",
+    "quota.mini.railTitle": "QUOTA RESETS · NEXT {days} DAYS",
+    "quota.mini.resets": "resets {countdown}",
+    "quota.mini.rowHelp": "{subProvider} — {row}: {percent}%",
+    "quota.misc.independentCopies": "{count, plural, one {1 independent copy} other {# independent copies}}",
+    "quota.misc.notConfigured": "Not configured.",
+    "quota.misc.refreshCopies": "Refresh {provider} copies",
+    "quota.misc.refreshProvider": "Refresh {provider}",
+    "quota.misc.setUpInSettings": "Set up in Settings",
+    "quota.mode.remaining": "remaining",
+    "quota.mode.used": "used",
+    "quota.pace.deficit": "{percent}% in deficit",
+    "quota.pace.deficitShort": "{percent}% deficit",
+    "quota.pace.lastsUntilReset": "Lasts until reset",
+    "quota.pace.onTrack": "On pace",
+    "quota.pace.reserve": "{percent}% in reserve",
+    "quota.pace.reserveShort": "{percent}% reserve",
+    "quota.pace.runsOutIn": "Runs out in {countdown}",
+    "quota.pace.runsOutShort": "out {countdown}",
+    "quota.perModelLimits": "{count, plural, one {1 per-model limit} other {# per-model limits}} · open {provider} for details",
     "quota.remainingPercent": "{percent}% left",
+    "quota.reset.in": "resets in {duration}",
+    "quota.reset.passed": "reset passed",
+    "quota.reset.passedAt": "reset passed · {time}",
+    "quota.resetCredits.available": "{count, plural, one {1 manual reset available} other {# manual resets available}}",
+    "quota.resetCredits.availableWithExpiry": "{available} · next expires in {countdown}",
+    "quota.resetCredits.title": "Limit reset credits",
     "quota.resetsIn": "resets in {days}d {hours}h",
     "quota.resetsInHours": "resets in {hours}h {minutes}m",
+    "quota.upcoming.axisDays": "+{days}d",
+    "quota.upcoming.axisHours": "+{hours}h",
+    "quota.upcoming.empty": "Nothing refills in the next seven days.",
+    "quota.upcoming.gain": "+{gain}%",
+    "quota.upcoming.horizon": "next 7 days",
+    "quota.upcoming.leftAndGain": "{remaining}% left now · +{gain}% comes back",
+    "quota.upcoming.markerHelp": "{label} — {remaining}% now, +{gain}% {countdown}",
+    "quota.upcoming.resetsAt": "resets {countdown} · {absolute}",
+    "quota.upcoming.title": "Upcoming Resets",
+    "quota.update.failed": "Update failed: {reason}",
     "quota.usedPercent": "{percent}% used",
-    "resetHistory.laneAverage": "avg wasted {percent}% · last {count} cycles",
+    "quota.window.dayOfDays": "Day {day} of {total} · {value}",
+    "quota.window.elapsedOfWindow": "{elapsed} of {window} · {value}",
+    "quota.window.resetsSoon": "Resets soon · {value}",
+    "resetHistory.a11y.empty": "Reset history comparison. {verdict}",
+    "resetHistory.a11y.more": " And {count} more quotas.",
+    "resetHistory.a11y.summary": "Reset history comparison, {window}, bar height is the quota remaining at reset.{truncation} {headline}. {verdict} {lanes}.{more}",
+    "resetHistory.a11y.truncation": " Grid {note}; the figures cover every one.",
+    "resetHistory.axis.cycle": "Cycles",
+    "resetHistory.axis.cycleHelp": "One column per cycle, newest aligned across every quota",
+    "resetHistory.axis.time": "Time",
+    "resetHistory.axis.timeHelp": "Each cycle where it actually happened, on a shared calendar",
+    "resetHistory.axisCurrent": "Current",
+    "resetHistory.axisCyclesBack": "−{count}",
+    "resetHistory.axisNow": "now",
+    "resetHistory.barIsOneCycle": "Each bar is one quota cycle",
+    "resetHistory.cardTitle": "Reset History",
+    "resetHistory.compareEmpty": "Nothing to compare yet — weekly and longer quotas appear here once a provider reports one.",
+    "resetHistory.compareWindow": "Compare the {window}",
+    "resetHistory.currentCycleCaption": "Current cycle · {used}% used so far · {left}% left",
+    "resetHistory.cycleCaption": "{time} reset · {used}% used · {left}% left",
+    "resetHistory.earlyRefillCount": "{count, plural, one {1 cycle refilled before the window was up} other {# cycles refilled before the window was up}}",
+    "resetHistory.lane.emptyState": "No completed cycles yet — a cycle is recorded when the quota refills",
+    "resetHistory.lane.spokenNoCycles": "{label}: no completed cycles",
+    "resetHistory.lane.spokenWaste": "{label}: {percent}% wasted on average over {count} cycles",
+    "resetHistory.laneAverage": "avg wasted {percent}% · last {count, plural, one {1 cycle} other {# cycles}}",
+    "resetHistory.lastSeenBefore": "last seen {duration} before reset",
+    "resetHistory.legend.barHeight": "bar height = remaining at reset",
+    "resetHistory.legend.byDate": "placed by date",
+    "resetHistory.legend.perCycle": "one column per cycle",
+    "resetHistory.legend.refilledEarly": "refilled early",
     "resetHistory.noCompletedCycles": "No completed cycles yet",
+    "resetHistory.reset.earlyClockRestarted": "refilled early, next window restarted",
+    "resetHistory.reset.earlyClockUnchanged": "refilled early, next reset unchanged",
+    "resetHistory.reset.earlyUnclear": "refilled early, onto a different schedule",
+    "resetHistory.retiredAccount": "Signed-out account",
+    "resetHistory.retiredAccountNumbered": "Signed-out account {number}",
+    "resetHistory.spoken.allCycles": "every recorded cycle",
+    "resetHistory.spoken.allTime": "all recorded history",
+    "resetHistory.spoken.eightCycles": "last 8 cycles",
+    "resetHistory.spoken.eightWeeks": "last 8 weeks",
+    "resetHistory.spoken.fourCycles": "last 4 cycles",
+    "resetHistory.spoken.fourWeeks": "last 4 weeks",
+    "resetHistory.spoken.twelveCycles": "last 12 cycles",
+    "resetHistory.spoken.twelveWeeks": "last 12 weeks",
     "resetHistory.title": "Reset History Compare",
-    "resetHistory.wastedSummary": "{used}% used · {wasted}% wasted · {cycles} cycles",
+    "resetHistory.tooltip.completed": "{left}% left at reset · {used}% used",
+    "resetHistory.tooltip.current": "Current cycle · {left}% left now · {used}% used so far",
+    "resetHistory.tooltip.range": "{start} → {end} reset",
+    "resetHistory.tooltip.rangeDue": "{start} → {end} reset due",
+    "resetHistory.totals.none": "No completed cycles in this window",
+    "resetHistory.truncation": "showing the newest {shown} of {total} cycles",
+    "resetHistory.verdict.clean": "Nothing is going noticeably to waste — {percent}% of the refilled capacity was spent.",
+    "resetHistory.verdict.leaky": "{label} left {percent}% unused on average across {count, plural, one {1 cycle} other {# cycles}}.",
+    "resetHistory.verdict.noCycles": "No completed cycles yet — a cycle is recorded when a quota refills.",
+    "resetHistory.verdict.noQuota": "No weekly or longer quota is being tracked yet.",
+    "resetHistory.verdict.wasteful": "{label} refilled {count, plural, one {once} other {# times}} with more than half unused.",
+    "resetHistory.wastedSummary": "{used}% used · {wasted}% wasted · {cycles, plural, one {1 cycle} other {# cycles}}",
+    "resetHistory.window.all": "All",
+    "resetHistory.window.eightWeeks": "8w",
+    "resetHistory.window.fourWeeks": "4w",
+    "resetHistory.window.twelveWeeks": "12w",
+    "settings.antigravityCookieEnabled": "Antigravity cookie import is enabled — sign in at antigravity.google first.",
+    "settings.antigravityLocalOnly": "Antigravity reads the locally running language server. Cookie import is deferred until the Antigravity Cloud endpoint ships.",
+    "settings.antigravitySource": "Antigravity source",
+    "settings.appVersion": "Vibe Bar {version}",
+    "settings.bundled": "bundled",
+    "settings.checkConnections": "Check {company} connections",
+    "settings.checkForUpdates": "Check for Updates…",
+    "settings.checkKitUpdates": "Check for kit updates",
+    "settings.checkingGitHub": "Checking github.com for the newest release…",
+    "settings.clearCostData": "Clear cost data",
+    "settings.connectionHealth": "Connection health",
+    "settings.costDataIntro": "Cost is computed from local CLI session JSONL logs at ~/.codex/sessions and ~/.claude/projects. Web/desktop usage is not tracked.",
+    "settings.couldNotDeleteCookies": "Could not delete saved cookies.",
+    "settings.couldNotDeleteGeminiCookies": "Could not delete saved Gemini cookies.",
+    "settings.couldNotDeleteGrokCookies": "Could not delete saved Grok cookies.",
+    "settings.credentialSource.apiOnly": "API / OAuth only",
+    "settings.credentialSource.browserOnly": "Browser only",
+    "settings.credentialSource.manualOnly": "Manual only",
+    "settings.credentialSource.off": "Off",
+    "settings.cursorNoSession": "No usable Cursor.app session — import cursor.com cookies below.",
+    "settings.cursorSessionDetected": "Cursor.app signed-in session detected",
+    "settings.cursorSource": "Cursor source",
+    "settings.cursorSourceValue": "Cursor.app → Web",
+    "settings.deleteCookies": "Delete cookies",
+    "settings.deleteGeminiCookies": "Delete Gemini cookies",
+    "settings.deleteGrokCookies": "Delete Grok cookies",
+    "settings.displayMode.remaining": "Remaining",
+    "settings.displayMode.used": "Used",
+    "settings.externalChange.title": "Another Vibe Bar replaced your change",
+    "settings.geminiCookiesSaved": "Gemini cookies saved.",
+    "settings.geminiShared": "Gemini and Antigravity share the same Google AI subscription quota. Cookie import is the only supported web path — there is no WebView login.",
+    "settings.geminiSource": "Gemini source",
+    "settings.grokAuthDetected": "~/.grok/auth.json detected",
+    "settings.grokCookiesSaved": "Grok cookies saved.",
+    "settings.keepHistory": "Keep history",
+    "settings.keepHistoryDetail": "Applies to cost history and subscription fill history.",
+    "settings.kitDetail": "Session discovery, harness naming, and the MCP transport. A separate repository, pinned to an exact tag and compiled into this build.",
+    "settings.language.caption": "Vibe Bar follows the macOS language unless you pick one here. Provider, model and harness names stay as their owners spell them.",
     "settings.language.system": "Match system",
     "settings.language.title": "Language",
+    "settings.mcp.allowRefresh": "Allow agents to refresh quota",
+    "settings.mcp.allowRefreshDetail": "With this on, an agent can ask Vibe Bar to re-fetch quota from your providers. Forced refreshes are rate-limited to one every {seconds} seconds. With it off the read-only tools keep working and quota.refresh reports that refreshing is disabled.",
+    "settings.mcp.allowSkills": "Allow agents to install skills",
+    "settings.mcp.allowSkillsDetail": "With this on, an agent can call skills.install to add a skill from a GitHub repository or a local folder. It goes through the same Skills manager as Workbench → Skills, so it writes only to ~/.agents/skills and the agent skills directories Vibe Bar manages — never over a folder a different skill already holds. With it off the tool reports that installing is disabled.",
+    "settings.mcp.appendCodexConfig": "Append to ~/.codex/config.toml.",
+    "settings.mcp.connectAgent": "Connect an agent",
+    "settings.mcp.connectedClients": "Connected clients",
+    "settings.mcp.enable": "Enable the local MCP server",
+    "settings.mcp.intro": "Vibe Bar can expose this Mac's quota, usage, cost and local agent sessions to your coding agents over MCP. The server listens on a Unix domain socket in your home directory — no network port is opened, and no token is created: the socket's file permissions are the access control.",
+    "settings.mcp.lastActivity": "Last client activity",
+    "settings.mcp.listening": "Listening",
+    "settings.mcp.manualIntro": "Or configure a client by hand. Every client runs the same command — Vibe Bar's own binary with {flag}, which bridges stdin/stdout to the socket above.",
+    "settings.mcp.mergeCursorConfig": "Merge into ~/.cursor/mcp.json.",
+    "settings.mcp.movePrompt": "Vibe Bar is running from {path}. Move it to /Applications before saving a client config, or the config breaks the next time you rebuild.",
+    "settings.mcp.notListening": "Not listening",
+    "settings.mcp.otherStdioClient": "Any other stdio client",
+    "settings.mcp.otherStdioDetail": "One entry for the client's own mcpServers map.",
+    "settings.mcp.quickestPath": "The quickest path: paste this into any agent and let it configure itself, install the companion skill, and verify the connection.",
+    "settings.mcp.readOnlyDetail": "Everything else agents can reach is read-only: quota, token usage, cost, provider status, effective model prices, and the local session index (titles, projects, and — when session body indexing is on — message excerpts). Credentials, cookies and organization ids are never exposed, and email addresses are masked.",
+    "settings.mcp.runInTerminal": "Run in a terminal.",
+    "settings.mcp.setupPrompt": "Agent setup prompt",
+    "settings.mcp.setupPromptDetail": "One line, works in any agent that can fetch a URL.",
+    "settings.mcp.socket": "Socket",
+    "settings.mcp.socketLifetime": "The socket exists only while Vibe Bar is running. Agents configured below report “Vibe Bar is not running” when it is quit, which is the intended behaviour.",
+    "settings.mcp.status": "Status",
+    "settings.mcp.title": "MCP Server",
+    "settings.mcp.whatAgentsMayDo": "What agents may do",
+    "settings.menuBarHealthUnavailable": "The menu bar health monitor is not attached in this process.",
+    "settings.miniWindow.add": "Add a mini window",
+    "settings.miniWindow.allBucketsIncluded": "Every known bucket is already in this window.",
+    "settings.miniWindow.density.narrow": "Narrow",
+    "settings.miniWindow.density.narrowDetail": "The menu bar's compact style: the same cells at the small size.",
+    "settings.miniWindow.density.roomy": "Roomy",
+    "settings.miniWindow.density.roomyDetail": "The menu bar's single-line style: every bucket, full label beside its number.",
+    "settings.miniWindow.density.twoLines": "Two Lines",
+    "settings.miniWindow.density.twoLinesDetail": "Menu-bar style: buckets pair into stacked columns, label beside each number.",
+    "settings.miniWindow.dismissBuiltIn": "Dismiss this built-in bucket while the provider is not returning it. It comes back the moment the provider does.",
+    "settings.miniWindow.forgetDiscovered": "Forget this discovered bucket — drops it from the list and from every window that selected it.",
+    "settings.miniWindow.includeStyle": "Include {mode} in the double-click cycle",
+    "settings.miniWindow.lastCannotBeRemoved": "The last mini window cannot be removed.",
+    "settings.miniWindow.mode.compact": "Compact",
+    "settings.miniWindow.mode.compactDetail": "The same three tiers as vertical bars, sized for a corner.",
+    "settings.miniWindow.mode.focus": "Focus",
+    "settings.miniWindow.mode.focusDetail": "One selected bucket at a time, large — click to cycle in your order.",
+    "settings.miniWindow.mode.ledger": "Ledger",
+    "settings.miniWindow.mode.ledgerDetail": "One row per quota bucket — fixed width, grows downward.",
+    "settings.miniWindow.mode.rail": "Rail",
+    "settings.miniWindow.mode.railDetail": "The next seven days as a refill lane with the coming resets listed.",
+    "settings.miniWindow.mode.regular": "Regular",
+    "settings.miniWindow.mode.regularDetail": "Ring gauges grouped company → SubProvider → quota group.",
+    "settings.miniWindow.mode.strip": "Strip",
+    "settings.miniWindow.mode.stripDetail": "A slim line mirroring the menu bar's styles — one cell per bucket.",
+    "settings.miniWindow.mode.tiles": "Tiles",
+    "settings.miniWindow.mode.tilesDetail": "A grid of tiles with a big number and a severity stripe.",
+    "settings.miniWindow.namesAllWindows": "Names: all windows",
+    "settings.miniWindow.namesThisStyle": "Only {mode} here",
+    "settings.miniWindow.namesThisWindow": "Only “{name}”",
+    "settings.miniWindow.noFieldsSelected": "No fields selected — tick some above.",
+    "settings.miniWindow.notInWindow": "Not in “{name}” — tick a bucket to add it. Buckets the adapters discover at runtime appear here automatically; a dimmed row is remembered but not in the account's current response, and ✕ dismisses it until the provider returns it.",
+    "settings.miniWindow.offline": "offline",
+    "settings.miniWindow.openClose": "Open / Close",
+    "settings.miniWindow.overridesStyle": "Overrides for the {mode} style of this window only. An empty field inherits the window name, then the shared one — shown as the placeholder.",
+    "settings.miniWindow.overridesWindow": "Name overrides for this window only. An empty field inherits the shared name — shown as the placeholder.",
+    "settings.miniWindow.removeFromWindow": "Remove from this window",
+    "settings.miniWindow.removeHelp": "Remove this mini window",
+    "settings.miniWindow.stripDensity": "Strip density",
+    "settings.miniWindow.styleCycle": "Double-click on the window cycles its style. Tap a style to include it — the badge is its turn in the cycle. Nothing selected means every style, in this order.",
+    "settings.miniWindow.toggleHelp": "Toggle this mini window on screen",
+    "settings.miniWindow.treeDetail": "One tree for the window — grouped exactly as it folds them (company → SubProvider → quota group → bucket). Drag a row to reorder, ✕ to remove, and rename any level in place. First field renders leftmost (or topmost).",
+    "settings.misc.accessKeyId": "Access Key ID (AKLT…)",
+    "settings.misc.akSkSaved": "AK/SK saved in Keychain.",
+    "settings.misc.apiKeySaved": "API key saved in Keychain.",
+    "settings.misc.clearWorkspace": "Clear saved workspace",
+    "settings.misc.clone": "Clone {provider}",
+    "settings.misc.consoleLink": "{title} →",
+    "settings.misc.edition": "Edition",
+    "settings.misc.githubSignInHint": "Sign in with GitHub device flow.",
+    "settings.misc.githubTokenSaved": "GitHub device token saved in Keychain.",
+    "settings.misc.importDetail": "Adds or refreshes the first signed-in browser profile found; profiles already imported stay stacked, and this provider's quota is the average across every slot listed above. macOS may ask for your login-keychain password once per Chromium-family browser.",
+    "settings.misc.kiroHint": "Run `kiro-cli login`, then Vibe Bar probes `kiro-cli chat --no-interactive /usage`.",
+    "settings.misc.noCookieSpec": "No cookie spec is registered for {provider}.",
+    "settings.misc.noCookiesYet": "No cookies imported yet — import from your browser or paste below.",
+    "settings.misc.probe": "Probe",
+    "settings.misc.prompt.copilotHost": "GitHub Enterprise host (optional, e.g. github.example.com)",
+    "settings.misc.prompt.dashscope": "Paste DashScope API key (sk-...) — optional",
+    "settings.misc.prompt.kilo": "Paste Kilo API key (optional)",
+    "settings.misc.prompt.minimax": "Paste MiniMax Token Plan API key (sk-cp-... or MINIMAX_CODING_API_KEY)",
+    "settings.misc.prompt.openRouter": "Paste OpenRouter API key (sk-or-v1-...)",
+    "settings.misc.prompt.openRouterHost": "OpenRouter API URL (optional, defaults to https://openrouter.ai/api/v1)",
+    "settings.misc.prompt.warp": "Paste Warp API key (wk-...)",
+    "settings.misc.prompt.workspace": "Workspace ID or URL (optional, wrk_... or /workspace/wrk_.../go)",
+    "settings.misc.prompt.zai": "Paste Z.ai API key (zai-...)",
+    "settings.misc.region": "Region",
+    "settings.misc.region.auto": "Auto (try both)",
+    "settings.misc.region.chinaMainland": "China mainland (cn-beijing)",
+    "settings.misc.region.international": "International (ap-southeast-1)",
+    "settings.misc.region.minimaxChina": "China mainland (minimaxi.com)",
+    "settings.misc.region.minimaxGlobal": "Global (minimax.io)",
+    "settings.misc.region.zaiChina": "China mainland (open.bigmodel.cn)",
+    "settings.misc.region.zaiGlobal": "Global (api.z.ai)",
+    "settings.misc.removeAkSk": "Remove stored {provider} AK/SK",
+    "settings.misc.removeApiKey": "Remove stored {provider} API key",
+    "settings.misc.removeCookieSlot": "Remove this cookie slot",
+    "settings.misc.removeCopy": "Remove this {provider} copy",
+    "settings.misc.removeCopyButton": "Remove Copy",
+    "settings.misc.removeCopyDetail": "Its saved credentials are deleted from your Keychain — the API key or AK/SK and every imported cookie slot. This cannot be undone.",
+    "settings.misc.removeCopyTitle": "Remove this {provider} copy?",
+    "settings.misc.removeGithubToken": "Remove stored GitHub device token",
+    "settings.misc.rename": "Rename this copy",
+    "settings.misc.secretAccessKey": "Secret Access Key",
+    "settings.misc.signIn": "Sign in",
+    "settings.misc.signInViaWeb": "Sign in via Web",
+    "settings.misc.tencentTokenPlanNote": "Personal Token Plan is currently available only in China mainland (cn-beijing). Clone this row to track Team and Personal together.",
+    "settings.misc.variant": "Variant",
+    "settings.misc.waiting": "Waiting...",
+    "settings.misc.workspaceNote": "Only needed when the account owns more than one workspace — otherwise Vibe Bar uses the first one it finds.",
+    "settings.needsSetup": "Needs setup",
+    "settings.notChecked": "Not checked",
+    "settings.notCheckedYet": "Not checked. Nothing is fetched until you ask.",
+    "settings.openRefreshCooldown": "Minimum open-refresh cooldown",
+    "settings.openRefreshDetail": "Opening the popover refreshes all visible providers at most once per cooldown period.",
+    "settings.openStatusPage": "Open {company} status page",
+    "settings.percentShows": "Percent shows",
+    "settings.planBadge": "Plan badge",
+    "settings.planBadgeDetail": "Leave blank to use the detected account plan.",
+    "settings.popoverDensity.compact": "Compact",
+    "settings.popoverDensity.compactDetail": "Tightest spacing, narrowest popover.",
+    "settings.popoverDensity.regular": "Regular",
+    "settings.popoverDensity.regularDetail": "Balanced spacing — default.",
+    "settings.popoverDensity.spacious": "Spacious",
+    "settings.popoverDensity.spaciousDetail": "Roomy spacing for big displays.",
+    "settings.pricing.addOverride": "Add model override",
+    "settings.pricing.advancedTiers": "Advanced tiers",
+    "settings.pricing.alwaysWins": "Always wins",
+    "settings.pricing.bundledFallback": "Bundled fallback",
+    "settings.pricing.cacheReadAbove": "Cache read above",
+    "settings.pricing.cacheWriteAbove": "Cache write above",
+    "settings.pricing.deleteOverride": "Delete override",
+    "settings.pricing.exactModelName": "Exact model name",
+    "settings.pricing.fastMultiplier": "Fast multiplier",
+    "settings.pricing.inputAbove": "Input above",
+    "settings.pricing.intro": "Catalogs refresh in the background. Higher entries win when the same provider and model name appears more than once.",
+    "settings.pricing.localOverrides": "Local overrides",
+    "settings.pricing.noOverrides": "No local overrides.",
+    "settings.pricing.offlineFloor": "Offline floor",
+    "settings.pricing.outputAbove": "Output above",
+    "settings.pricing.overridesIntro": "Prices are USD per one million tokens. Leave cache fields empty when the provider does not publish them.",
+    "settings.pricing.priorityHealth": "Priority and source health",
+    "settings.pricing.rateInput": "Input",
+    "settings.pricing.rateOutput": "Output",
+    "settings.pricing.refreshNow": "Refresh now",
+    "settings.pricing.refreshing": "Refreshing…",
+    "settings.pricing.thresholdTokens": "Threshold tokens",
+    "settings.pricingDataDate": "Pricing data: {date}",
+    "settings.privacyDetail": "Tokens are read from local CLI credentials. Saved OpenAI and Claude Web cookies are stored in macOS Keychain, split by browser and WebView source. Legacy plaintext cookie files under ~/.vibebar/cookies are migrated once and deleted. Settings, quota cache, and cost summaries stay under ~/.vibebar.",
+    "settings.privacyMode": "Privacy mode",
+    "settings.privacyModeDetail": "Privacy mode keeps cost data off disk and clears local cost history, snapshots, and scan cache.",
+    "settings.ready": "Ready",
+    "settings.refreshEvery": "Refresh every",
+    "settings.refreshOnPopoverOpen": "Refresh when the popover opens",
+    "settings.releaseNotes": "Release notes",
+    "settings.remote.core": "Remote Core",
+    "settings.remote.costAggregation": "Cost aggregation",
+    "settings.remote.costAggregationIntro": "Choose which remote machines join this Mac's local cost and token totals. Selection and aggregation stay on this Core; the Relay never sees plaintext usage.",
+    "settings.remote.differentControlCenter": "Use a different control center",
+    "settings.remote.discard": "Discard",
+    "settings.remote.discardPendingDetail": "Its pairing code is already spent, and the workspace still counts this Mac as its Core. To join again, revoke this Mac in the web control center, then create a fresh code.",
+    "settings.remote.discardPendingTitle": "Discard this pending join?",
+    "settings.remote.disconnect": "Disconnect",
+    "settings.remote.disconnectButton": "Disconnect from Workspace…",
+    "settings.remote.disconnectDetail": "Reconnecting later requires a new pairing code or provisioning file.",
+    "settings.remote.disconnectIntro": "Disconnecting removes this Mac's Relay credential from the Keychain and its workspace binding. Probes keep uploading to the Relay until they are revoked there. Usage already decrypted stays in the local ledger.",
+    "settings.remote.disconnectTitle": "Disconnect from this workspace?",
+    "settings.remote.experimentalBadge": "Experimental",
+    "settings.remote.experimentalNote": "Remote machines are experimental: the protocol and this pane can change between releases, and the popover tab stays hidden until a workspace is connected.",
+    "settings.remote.exportIdentity": "Export Core Identity…",
+    "settings.remote.importProvisioning": "Import Provisioning File…",
+    "settings.remote.join": "Join",
+    "settings.remote.joinIntro": "Create a Core code in the Vibe Bar control center, then paste it here. This Mac joins as “{device}”.",
+    "settings.remote.joinWithCode": "Join with a code",
+    "settings.remote.lastSync": "Last sync",
+    "settings.remote.machineDetail": "{platform} · Probe {version}",
+    "settings.remote.machinesAppearAfterImport": "Machines appear here after their first encrypted batch is imported.",
+    "settings.remote.machinesSynced": "Machines synced",
+    "settings.remote.manualPairingIntro": "Pairing runs in three steps: export this Mac's Core identity, register it with your Relay to produce a provisioning file, then import that file here. Importing moves the Relay credential into the macOS Keychain — but the provisioning file itself still contains that credential, so delete the file once the import succeeds.",
+    "settings.remote.notConnected": "This Mac is not connected to a workspace. Remote probes collect normalized usage on your other machines, encrypt it to this Mac's Core keys, and drop it at a Relay — no inbound port is ever opened here.",
+    "settings.remote.orPairManually": "Or pair manually.",
+    "settings.remote.pendingIntro": "A previous join was accepted by the control center but never finished saving on this Mac. Its pairing code is already spent, so resume the save instead of requesting a new code.",
+    "settings.remote.provisioning": "Provisioning",
+    "settings.remote.registeredProbes": "Registered probes",
+    "settings.remote.relay": "Relay",
+    "settings.remote.resumeSaving": "Resume saving",
+    "settings.remote.retrySaving": "Retry saving",
+    "settings.remote.statusWithCode": "{title} · {code}",
+    "settings.remote.sync.busy": "Relay is temporarily busy",
+    "settings.remote.sync.connectionFailed": "Relay connection was interrupted",
+    "settings.remote.sync.hostLookupFailed": "Relay host could not be resolved",
+    "settings.remote.sync.invalidResponse": "Relay returned an unexpected response",
+    "settings.remote.sync.networkDetail": "Check this Mac's network or proxy path; existing machine data is still available.",
+    "settings.remote.sync.offline": "This Mac is offline",
+    "settings.remote.sync.rejected": "Relay access was rejected",
+    "settings.remote.sync.rejectedDetail": "The workspace credential may have been revoked. Reconnect this Core in Settings.",
+    "settings.remote.sync.retryDetail": "Existing machine data is still available. Vibe Bar will retry automatically.",
+    "settings.remote.sync.secureConnectionFailed": "Secure Relay connection failed",
+    "settings.remote.sync.sequenceGap": "Probe history has a sequence gap",
+    "settings.remote.sync.sequenceGapDetail": "A Probe batch is missing from the Relay stream, so later batches were not imported.",
+    "settings.remote.sync.timeout": "Relay connection timed out",
+    "settings.remote.sync.transportFailed": "Relay transport failed",
+    "settings.remote.sync.unknown": "Remote sync needs attention",
+    "settings.remote.sync.unknownDetail": "No local usage was deleted. Retry now or inspect Remote Core settings for the error code.",
+    "settings.remote.sync.unverifiedProbe": "A Probe could not be verified",
+    "settings.remote.sync.unverifiedProbeDetail": "The current workspace roster does not authorize one of the received batches.",
+    "settings.remote.syncNow": "Sync now",
+    "settings.remote.workspace": "Workspace",
+    "settings.repository": "Repository",
+    "settings.rescanCostLogs": "Rescan cost logs",
+    "settings.route.antigravityLocal": "Local Antigravity / agy",
+    "settings.route.browserCookies": "Chrome/Safari cookies",
+    "settings.route.cli": "CLI",
+    "settings.route.grokAuthFile": "~/.grok/auth.json",
+    "settings.route.oauth": "OAuth",
+    "settings.route.webViewCookies": "WebView cookies",
+    "settings.routeHealth.agyAvailable": "agy CLI available",
+    "settings.routeHealth.authFileExpired": "auth.json expired",
+    "settings.routeHealth.authFileUnreadable": "Could not read auth.json",
+    "settings.routeHealth.cachedOnly": "Cached data only; live quota unavailable",
+    "settings.routeHealth.credentialUnreadable": "Could not read credential",
+    "settings.routeHealth.credentialsAvailable": "Credentials available",
+    "settings.routeHealth.invalidCookie": "Invalid cookie data",
+    "settings.routeHealth.keychainLocked": "Keychain locked",
+    "settings.routeHealth.lspRunning": "Local LSP running",
+    "settings.routeHealth.noAntigravityData": "No local Antigravity data",
+    "settings.routeHealth.noAuthFile": "No auth.json",
+    "settings.routeHealth.noCredential": "No credential found",
+    "settings.routeHealth.noSavedCookie": "No saved cookie",
+    "settings.routeHealth.savedInKeychain": "Saved in Keychain",
+    "settings.search": "Search settings",
+    "settings.section.components": "Components",
+    "settings.section.costData": "Cost Data",
+    "settings.section.layout": "Layout",
+    "settings.section.menuBar": "Menu Bar",
+    "settings.section.menuBarHealth": "Menu Bar Health",
+    "settings.section.miniWindows": "Mini Windows",
+    "settings.section.privacy": "Privacy",
+    "settings.section.refreshing": "Refreshing",
+    "settings.section.remoteProbes": "Remote Probes",
+    "settings.section.system": "System",
+    "settings.section.updates": "Updates",
+    "settings.showAssistant": "Show setup assistant",
+    "settings.showAssistantDetail": "Walk through subscriptions, browser cookies, API keys, model pricing and login items again. Nothing is reset.",
+    "settings.sidebar.coreProviders": "Core Providers",
+    "settings.sidebar.disableProvider": "Disable Provider",
+    "settings.sidebar.enableProvider": "Enable Provider",
+    "settings.sidebar.hideFromOverview": "Hide from Overview",
+    "settings.spaceXAIIntro": "The SpaceXAI page combines Grok with Cursor. Grok reads `~/.grok/auth.json` or grok.com cookies; Cursor reads Cursor.app first, then cursor.com cookie slots. Grok Bot contributes quota, plus read-only sessions from its local cache — its cloud runs still add no token/cost rows.",
+    "settings.terminal.copyOnly": "Copy to clipboard",
+    "settings.updateChannel": "Update channel",
+    "settings.updateChannel.dev": "Dev",
+    "settings.updateChannel.devDetail": "Preview releases plus all Main releases.",
+    "settings.updateChannel.main": "Main",
+    "settings.updateChannel.mainDetail": "Stable releases only.",
+    "settings.updateCheckDetail": "Checks the selected channel once a day and asks before installing.",
+    "settings.usageMode.antigravity.autoDetail": "Use the Antigravity app first, then the installed agy CLI; fall back to imported cookies when the web source is available.",
+    "settings.usageMode.antigravity.localFirstDetail": "Use the Antigravity app or agy CLI first; fall back to imported cookies.",
+    "settings.usageMode.antigravity.localOnly": "Local sources only",
+    "settings.usageMode.antigravity.localOnlyDetail": "Only use the Antigravity app or installed agy CLI.",
+    "settings.usageMode.antigravity.localThenWeb": "Local sources, then Web",
+    "settings.usageMode.antigravity.webFirstDetail": "Use imported cookies first; fall back to the Antigravity app or agy CLI.",
+    "settings.usageMode.antigravity.webOnly": "Web only",
+    "settings.usageMode.antigravity.webOnlyDetail": "Only use imported cookies. Falls back to the local probe until the Antigravity Cloud endpoint ships.",
+    "settings.usageMode.antigravity.webThenLocal": "Web, then Local sources",
+    "settings.usageMode.claude.autoDetail": "Use saved claude.ai cookies first; fall back to Claude OAuth and Claude Code.",
+    "settings.usageMode.claude.codeFirstDetail": "Use Claude Code first; fall back to saved claude.ai cookies.",
+    "settings.usageMode.claude.codeOnly": "Claude Code only",
+    "settings.usageMode.claude.codeOnlyDetail": "Use only local Claude Code OAuth credentials.",
+    "settings.usageMode.claude.codeThenWeb": "Claude Code, then Web",
+    "settings.usageMode.claude.oauthCodeWeb": "OAuth, then Claude Code, then Web",
+    "settings.usageMode.claude.oauthFirstDetail": "Use Claude OAuth first; fall back to Claude Code and saved claude.ai cookies.",
+    "settings.usageMode.claude.oauthOnlyDetail": "Use only Claude OAuth credentials.",
+    "settings.usageMode.claude.webFirstDetail": "Use saved claude.ai cookies first; fall back to Claude Code and OAuth.",
+    "settings.usageMode.claude.webOnly": "Claude Web only",
+    "settings.usageMode.claude.webOnlyDetail": "Use only saved claude.ai cookies.",
+    "settings.usageMode.claude.webThenCode": "Claude Web, then Claude Code",
+    "settings.usageMode.codex.autoDetail": "Use local Codex CLI credentials first; fall back to Codex OAuth and saved OpenAI web cookies.",
+    "settings.usageMode.codex.cliOnly": "CLI only",
+    "settings.usageMode.codex.cliOnlyDetail": "Use only local Codex CLI credentials.",
+    "settings.usageMode.codex.cliThenOauth": "CLI, then OAuth",
+    "settings.usageMode.codex.oauthFirstDetail": "Use Codex OAuth first; fall back to local Codex CLI credentials and saved OpenAI web cookies.",
+    "settings.usageMode.codex.oauthOnlyDetail": "Use only Codex OAuth credentials from auth.json.",
+    "settings.usageMode.codex.oauthThenCli": "OAuth, then CLI",
+    "settings.usageMode.gemini.webOnly": "Gemini Web only",
+    "settings.usageMode.gemini.webOnlyDetail": "Only fetch imported gemini.google.com cookies.",
+    "settings.usageMode.oauthOnly": "OAuth only",
+    "settings.usageSource": "Usage source",
+    "settings.webQuota": "Web quota",
+    "settings.whatChangedIn": "What changed in {version}",
+    "status.card.componentCount": "{count, plural, one {1 component} other {# components}}",
+    "status.card.components": "Components",
+    "status.card.noIncidents": "No incidents in the last 90 days",
+    "status.card.openIncident": "Open incident",
+    "status.card.openStatusPage": "Open {host}",
+    "status.card.refresh": "Refresh service status",
+    "status.card.statusPageFallback": "status page",
+    "status.card.title": "Service Status",
+    "status.card.updatedHoursAgo": "updated {hours}h ago",
+    "status.card.updatedMinutesAgo": "updated {minutes}m ago",
+    "status.card.uptime": "{percent} uptime",
+    "status.card.uptimeStrip": "Service uptime over the last {days} days",
+    "status.component.degraded": "Degraded",
+    "status.component.maintenance": "Maintenance",
+    "status.component.majorOutage": "Major Outage",
+    "status.component.operational": "Operational",
+    "status.component.other": "Other",
+    "status.component.partialOutage": "Partial Outage",
+    "status.indicator.critical": "Critical",
+    "status.indicator.loading": "Loading",
+    "status.indicator.major": "Major",
+    "status.indicator.minor": "Minor",
+    "status.overview.checking": "Checking",
+    "status.overview.down": "Down",
+    "status.overview.enableProvider": "Enable a core provider in Settings to show service status.",
+    "status.overview.fetchFailed": "Fetch failed",
+    "status.overview.needsAttention": "Needs attention",
+    "status.overview.refreshing": "Refreshing",
+    "status.overview.title": "Status",
+    "status.overview.up": "Up",
+    "status.summary.activeIncident": "Active incident",
+    "status.summary.allOperational": "All services operational",
+    "status.summary.serviceIssue": "Service issue",
+    "status.summary.underMaintenance": "Under maintenance",
+    "usage.activity.a11y": "Token usage by weekday and hour, 7 days by 24 hours",
+    "usage.activity.cellTooltip": "{day} {hour} · {tokens}",
+    "usage.activity.heavy": "Heavy",
+    "usage.activity.peak": "Peak {hour} · {day}",
+    "usage.activity.peakCell": "Peak {hour} · {day} {cellHour}",
+    "usage.activity.quiet": "Quiet",
+    "usage.activity.tokensShort": "{tokens} tok",
+    "usage.breakdown.models": "Models",
+    "usage.breakdown.periods": "Periods",
+    "usage.breakdown.projects": "Projects",
+    "usage.breakdown.providers": "Providers",
+    "usage.breakdown.requests": "Requests",
+    "usage.chartNavigator.label": "Chart range navigator",
+    "usage.chartNavigator.range": "{start} to {end}",
+    "usage.chartNavigator.showFullRange": "Show Full Range",
+    "usage.chartNavigator.zoomIn": "Zoom In",
+    "usage.chartNavigator.zoomOut": "Zoom Out",
+    "usage.filters.allHarnesses": "All harnesses",
+    "usage.filters.allHarnessesHelpEvery": "Click to include every harness",
+    "usage.filters.allHarnessesHelpNone": "Click to select no harness",
+    "usage.filters.allHarnessesSelectEvery": "Show every harness",
+    "usage.filters.allHarnessesSelectNone": "Select no harness",
+    "usage.filters.allModels": "All models",
+    "usage.filters.autoMenuLabel": "Choose how often the page re-queries",
+    "usage.filters.autoRefresh": "Auto refresh",
+    "usage.filters.clearHelp": "Clear harness, company, and model filters",
+    "usage.filters.companyHarnesses": "{company}, every harness",
+    "usage.filters.companyHelp": "{company} · {harnesses}",
+    "usage.filters.customRangeFrom": "From",
+    "usage.filters.customRangeHint": "Choose hourly, daily, or weekly buckets from the chart toolbar.",
+    "usage.filters.customRangeTitle": "CUSTOM RANGE",
+    "usage.filters.customRangeTo": "To",
+    "usage.filters.editCustomRange": "Edit custom range…",
+    "usage.filters.harnessHelp": "{company} · {harness}\nClick to toggle · ⌥-click to solo",
+    "usage.filters.modelsMenuLabel": "Choose which models to include",
+    "usage.filters.modelsSelected": "{count, plural, one {1 selected} other {# selected}}",
+    "usage.filters.noModelsInRange": "No models in range",
+    "usage.filters.range14d": "14d",
+    "usage.filters.range24h": "24h",
+    "usage.filters.rangeCustom": "Custom",
+    "usage.filters.rangeMenu": "Choose the date range",
+    "usage.filters.rangeSpan": "{start} – {end}",
+    "usage.filters.refreshInterval": "{seconds}s",
+    "usage.harnessMix.activeCount": "{count, plural, one {1 harness} other {# harnesses}} active in range",
+    "usage.harnessMix.byRealTokens": "by real tokens",
+    "usage.harnessMix.empty": "No harness traffic in this range",
+    "usage.harnessMix.title": "HARNESS MIX",
+    "usage.hero.allRequestsPriced": "all requests priced",
+    "usage.hero.cacheHit": "CACHE HIT",
+    "usage.hero.cacheRead": "{tokens} read",
+    "usage.hero.inSelectedRange": "in selected range",
+    "usage.hero.noPricedRequests": "no priced requests",
+    "usage.hero.noTrafficInRange": "no traffic in range",
+    "usage.hero.realTokens": "REAL TOKENS · SELECTED RANGE",
+    "usage.hero.requests": "REQUESTS",
+    "usage.hero.tokenComposition": "Token composition",
+    "usage.hero.unpricedBadge": "{count} unpriced",
+    "usage.hero.unpricedHelp": "{count, plural, one {1 request} other {# requests}} had no usable price and contribute $0.",
+    "usage.ledgerUnavailable.detail": "The per-request ledger under ~/.vibebar could not be opened, so only live cost cards are available this session.",
+    "usage.ledgerUnavailable.title": "Usage ledger unavailable",
+    "usage.mix.dimension.harnesses": "Harnesses",
+    "usage.mix.donutUnit": "tokens",
+    "usage.mix.flow.cache": "Cache",
+    "usage.mix.flow.cacheDetail": "read + creation",
+    "usage.mix.flow.freshInput": "Fresh input",
+    "usage.mix.flow.output": "Output",
+    "usage.mix.harness.subtitle": "where requests ran",
+    "usage.mix.harness.title": "Harness Mix",
+    "usage.mix.lastThirtyDays": "Last 30 days",
+    "usage.mix.ledgerUnreadable": "Usage ledger could not be read.",
+    "usage.mix.model.empty": "No model traffic in this range",
+    "usage.mix.model.subtitle": "canonical display names",
+    "usage.mix.model.title": "Model Mix",
+    "usage.mix.other": "Other",
+    "usage.mix.otherCount": "{count, plural, one {1 more} other {# more}}",
+    "usage.mix.project.empty": "Project attribution appears after a Codex or Claude rescan",
+    "usage.mix.project.subtitle": "Codex + Claude cwd · up to 30 d detail",
+    "usage.mix.project.title": "Project Mix",
+    "usage.mix.provider.empty": "No provider traffic in this range",
+    "usage.mix.provider.subtitle": "billing companies",
+    "usage.mix.provider.title": "Provider Mix",
+    "usage.mix.title": "Usage Mix",
+    "usage.mix.tokenFlow.empty": "No token traffic in this range",
+    "usage.mix.tokenFlow.subtitle": "input · cache · output",
+    "usage.mix.tokenFlow.title": "Token Flow",
+    "usage.noHarnessSelected.detail": "The All harnesses chip is a switch: click it again to put every harness back in the query.",
+    "usage.noHarnessSelected.title": "No harness selected — pick one above",
+    "usage.requestCount": "{count} requests",
+    "usage.table.activeDays": "{count, plural, one {1 active day} other {# active days}}",
+    "usage.table.activeHours": "{count, plural, one {1 active hour} other {# active hours}}",
+    "usage.table.activeWeeks": "{count, plural, one {1 active week} other {# active weeks}}",
+    "usage.table.cacheReadWrite": "R {read} · W {write}",
+    "usage.table.column.average": "Avg/req",
+    "usage.table.column.day": "Day",
+    "usage.table.column.harness": "Harness",
+    "usage.table.column.hour": "Hour",
+    "usage.table.column.input": "Input",
+    "usage.table.column.model": "Model",
+    "usage.table.column.requests": "Requests",
+    "usage.table.column.tier": "Tier",
+    "usage.table.column.time": "Time",
+    "usage.table.column.weekOf": "Week of",
+    "usage.table.companyCount": "{count, plural, one {1 company} other {# companies}}",
+    "usage.table.emptyModels": "No model totals in this range",
+    "usage.table.emptyPeriods": "No active periods in this range",
+    "usage.table.emptyProjects": "No project-attributed Codex or Claude usage in this range",
+    "usage.table.emptyProviders": "No provider totals in this range",
+    "usage.table.emptyRequests": "No request-level rows in this range",
+    "usage.table.harnessHelp": "{company} · {harness}",
+    "usage.table.inputHelp": "Fresh input: {input}\nCache read: {read}\nCache write: {write}",
+    "usage.table.loadMore": "Load more ({remaining} remaining)",
+    "usage.table.loadingMore": "Loading more requests…",
+    "usage.table.modelCount": "{count, plural, one {1 model} other {# models}}",
+    "usage.table.periodRow": "{period}, {tokens}, {cost}",
+    "usage.table.projectCount": "{count, plural, one {1 project} other {# projects}} · up to 30 d detail",
+    "usage.table.requestRow": "{time}, {harness}, {model}, {tokens}, {cost}",
+    "usage.table.requestsLabel": "Request usage table",
+    "usage.table.requestsLoaded": "{loaded} of {total} requests",
+    "usage.table.showMorePeriods": "Show {count} more of {total} periods",
+    "usage.table.statRow": "{name}, {requests, plural, one {1 request} other {# requests}}, {tokens}, {cost}",
+    "usage.table.unpriced": "unpriced",
+    "usage.table.unpricedHelp": "No price was available for this request",
+    "usage.tokens.cacheRead": "Cache read",
+    "usage.tokens.cacheWrite": "Cache write",
+    "usage.tokens.input": "In",
+    "usage.tokens.output": "Out",
+    "usage.tokens.title": "Tokens",
+    "usage.trend.accessibilitySummary": "{count, plural, one {1 provider} other {# providers}}, {tokens} tokens, {cost}",
+    "usage.trend.bucketDay": "Local calendar days",
+    "usage.trend.bucketHour": "Hourly buckets",
+    "usage.trend.bucketWeek": "Local calendar weeks",
+    "usage.trend.costChartLabel": "Cost over time",
+    "usage.trend.empty": "No usage recorded in this range",
+    "usage.trend.fit": "Fit",
+    "usage.trend.fitHelp": "Show the full selected window",
+    "usage.trend.granularity": "Granularity",
+    "usage.trend.granularityDaily": "Daily",
+    "usage.trend.granularityHourly": "Hourly",
+    "usage.trend.granularityLabel": "Choose chart granularity",
+    "usage.trend.granularityWeekly": "Weekly",
+    "usage.trend.hideProvider": "Hide {provider}",
+    "usage.trend.navigatorLabel": "Usage chart range navigator",
+    "usage.trend.nextWindow": "Next window",
+    "usage.trend.now": "Now",
+    "usage.trend.nowHelp": "Return to current window",
+    "usage.trend.previousWindow": "Previous window",
+    "usage.trend.scopeHint": "Drag the navigator handles to focus this chart; filters and tables keep the full window.",
+    "usage.trend.showProvider": "Show {provider}",
+    "usage.trend.title": "USAGE OVER TIME",
+    "usage.trend.tokensChartLabel": "Token usage over time",
+    "usage.whenYouUse.everything": "When you use everything",
+    "usage.whenYouUse.googleAI": "When you use Google AI",
+    "usage.whenYouUse.provider": "When you use {provider}",
+    "usage.whenYouUse.spaceXAI": "When you use SpaceXAI",
+    "usage.yearHeatmap.a11y": "{provider} daily spend over the past year, {count, plural, one {1 week} other {# weeks}}",
+    "usage.yearHeatmap.less": "Less",
+    "usage.yearHeatmap.more": "More",
+    "usage.yearHeatmap.title": "{provider} — Past Year",
+    "usage.yearHeatmap.tooltip": "{date} · {amount}",
+    "usage.yearHeatmap.total": "{amount} total",
+    "workbench.appearance.useDark": "Use dark appearance",
+    "workbench.appearance.useLight": "Use light appearance",
+    "workbench.header.refreshPage": "Refresh {page}",
+    "workbench.page.resets.subtitle": "Cycles, refills, and run-out forecasts",
+    "workbench.page.resets.title": "Resets",
+    "workbench.page.sessions.subtitle": "Search and resume local agent sessions",
+    "workbench.page.sessions.title": "Sessions",
+    "workbench.page.settings.subtitle": "Appearance, providers, data, privacy, and sync",
+    "workbench.page.skills.subtitle": "One shared skill library · every agent CLI",
+    "workbench.page.skills.title": "Skills",
+    "workbench.page.usageStats.subtitle": "Local per-request ledger · all providers",
+    "workbench.page.usageStats.title": "Usage Stats",
+    "workbench.placeholder.resets": "Cycle, refill and forecast views are on their way.",
+    "workbench.placeholder.sessionManager": "Browsing and searching local Codex and Claude Code sessions is on its way.",
+    "workbench.placeholder.settings": "Configure Vibe Bar and its connected providers.",
+    "workbench.placeholder.skillsManager": "Reviewing and organizing installed agent skills is on its way.",
+    "workbench.placeholder.usageStats": "Full-window usage and cost analytics are on their way.",
+    "workbench.resets.calendar.dayEntry": "{lane} +{percent}%",
+    "workbench.resets.calendar.futureEntry": "{lane} — resets {time}, +{percent}% back",
+    "workbench.resets.calendar.nextMonth": "Next month",
+    "workbench.resets.calendar.pastEntry": "{lane} — reset {time} at {percent}% used",
+    "workbench.resets.calendar.previousMonth": "Previous month",
+    "workbench.resets.calendar.title": "Reset Calendar",
+    "workbench.resets.calendar.today": "Today",
+    "workbench.resets.cycle.curveHelp": "Remaining % across the current {bucket} cycle",
+    "workbench.resets.cycle.headline": "{bucket} · resets {countdown}",
+    "workbench.resets.refillHorizon.detail": "next 7 days · column height = how much comes back",
+    "workbench.resets.refillHorizon.title": "Refill Horizon",
+    "workbench.resets.risk.badge.atRisk": "RISK",
+    "workbench.resets.risk.badge.low": "LOW",
+    "workbench.resets.risk.badge.out": "OUT",
+    "workbench.resets.risk.badge.watch": "WATCH",
+    "workbench.resets.risk.detail": "ranked by the personal forecast",
+    "workbench.resets.risk.empty": "Every bucket is projected to last its cycle.",
+    "workbench.resets.risk.remaining": "{percent}% · refills {countdown}",
+    "workbench.resets.risk.title": "Run-out Risk",
+    "workbench.resets.subDaily.title": "NEXT 24 HOURS · SUB-DAILY QUOTAS",
+    "workbench.sessions.allChip.helpUnselected": "Click to show sessions from every harness",
+    "workbench.sessions.allChip.labelUnselected": "Show every session source",
+    "workbench.sessions.antigravityNotice": "AntiGravity stores its turns as an undocumented binary payload, so this transcript is a partial reconstruction and its sessions cannot be deleted from here — the IDE keeps them open.",
+    "workbench.sessions.copyResumeCommand": "Copy resume command",
+    "workbench.sessions.copySessionID": "Copy session ID",
+    "workbench.sessions.copySessionIDLabel": "Session ID {id}. Copy",
+    "workbench.sessions.copySourcePath": "Copy source path",
+    "workbench.sessions.copyWorkingDirectory": "Copy working directory",
+    "workbench.sessions.count.sessions": "{count, plural, one {1 session} other {# sessions}}",
+    "workbench.sessions.count.shownOfTotal": "{shown} of {total} sessions",
+    "workbench.sessions.delete.confirm": "{count, plural, one {Delete this session?} other {Delete # sessions?}}",
+    "workbench.sessions.delete.countButton": "Delete {count}",
+    "workbench.sessions.delete.message": "The session logs are removed from disk. This cannot be undone.",
+    "workbench.sessions.deleteEllipsis": "Delete…",
+    "workbench.sessions.details": "Details",
+    "workbench.sessions.details.collapsed": "Collapsed",
+    "workbench.sessions.details.expanded": "Expanded",
+    "workbench.sessions.empty.indexUnavailableDetail": "The index under ~/.vibebar could not be opened, so sessions cannot be listed this session.",
+    "workbench.sessions.empty.indexUnavailableTitle": "Session index unavailable",
+    "workbench.sessions.empty.noLogsDetail": "No session logs were found on this Mac for any of the {count} harnesses Vibe Bar scans.",
+    "workbench.sessions.empty.noMatchTitle": "No sessions match",
+    "workbench.sessions.empty.scanningDetail": "Still scanning the session logs on disk.",
+    "workbench.sessions.empty.searchNoMatchDetail": "Nothing in the indexed sessions matches that search.",
+    "workbench.sessions.fact.created": "Created",
+    "workbench.sessions.fact.cwd": "CWD",
+    "workbench.sessions.fact.id": "ID",
+    "workbench.sessions.fact.lastActive": "Last active",
+    "workbench.sessions.fact.source": "Source",
+    "workbench.sessions.filter.company": "Company",
+    "workbench.sessions.filter.dateRange": "Date range",
+    "workbench.sessions.filter.folders": "Folders",
+    "workbench.sessions.filter.foldersFiltered": "Filtered",
+    "workbench.sessions.filter.harnessCount": "{harness}  {count}",
+    "workbench.sessions.filter.options": "Options",
+    "workbench.sessions.filter.scope": "Scope",
+    "workbench.sessions.filter.sort": "Sort",
+    "workbench.sessions.filter.sortGrouped": "{order} · grouped",
+    "workbench.sessions.filter.sortHelp": "Choose how the list is ordered",
+    "workbench.sessions.filter.when": "When",
+    "workbench.sessions.filter.whenHelp": "Choose how far back to list sessions",
+    "workbench.sessions.find.next": "Next match",
+    "workbench.sessions.find.none": "none",
+    "workbench.sessions.find.placeholder": "Find in transcript",
+    "workbench.sessions.find.previous": "Previous match",
+    "workbench.sessions.folders.exclude": "Exclude paths containing",
+    "workbench.sessions.folders.excludePlaceholder": "/archive, /vendor",
+    "workbench.sessions.folders.include": "Include paths containing",
+    "workbench.sessions.folders.includePlaceholder": "/project/a, /project/b",
+    "workbench.sessions.folders.separatorHint": "Separate multiple paths with commas, semicolons, or new lines.",
+    "workbench.sessions.folders.title": "Directory filters",
+    "workbench.sessions.fraction": "{shown}/{total}",
+    "workbench.sessions.groupByProject": "Group by project",
+    "workbench.sessions.index.scanning": "scanning…",
+    "workbench.sessions.index.unavailable": "index unavailable",
+    "workbench.sessions.list.capNotice": "Showing the first {shown} of {total} sessions. Narrow the filters or search to reach the rest.",
+    "workbench.sessions.message.copy": "Copy Message",
+    "workbench.sessions.message.copyHelp": "Copy this message",
+    "workbench.sessions.message.showLess": "Show less",
+    "workbench.sessions.message.showMore": "Show more ({count} chars)",
+    "workbench.sessions.openInTerminal": "Open in Terminal",
+    "workbench.sessions.options.help": "Terminal and index options",
+    "workbench.sessions.options.indexMessageText": "Index message text",
+    "workbench.sessions.options.openIn": "Open in",
+    "workbench.sessions.options.rebuildIndex": "Rebuild index…",
+    "workbench.sessions.outline.empty": "This transcript has no user prompts.",
+    "workbench.sessions.outline.heading": "PROMPTS",
+    "workbench.sessions.outline.help": "Jump to a prompt",
+    "workbench.sessions.outline.label": "Show the transcript outline",
+    "workbench.sessions.page.next": "Next",
+    "workbench.sessions.page.previous": "Previous",
+    "workbench.sessions.project.none": "No project",
+    "workbench.sessions.project.projectless": "Projectless",
+    "workbench.sessions.range.all": "Any time",
+    "workbench.sessions.refreshHelp": "Rescan the session logs on disk",
+    "workbench.sessions.resume.heading": "RESUME",
+    "workbench.sessions.resume.none": "This session has no command-line entry point.",
+    "workbench.sessions.role.assistant": "Assistant",
+    "workbench.sessions.role.other": "Note",
+    "workbench.sessions.role.system": "System",
+    "workbench.sessions.role.tool": "Tool",
+    "workbench.sessions.role.user": "You",
+    "workbench.sessions.row.autoReviewsMerged": "{count, plural, one {1 Auto Review merged} other {# Auto Reviews merged}}",
+    "workbench.sessions.row.includeInDeletion": "Include this session in the deletion",
+    "workbench.sessions.row.messageCount": "{count, plural, one {# message} other {# messages}}",
+    "workbench.sessions.row.select": "Select this session",
+    "workbench.sessions.row.showTranscript": "Show this transcript",
+    "workbench.sessions.row.toggleForDeletion": "Toggle this session for deletion",
+    "workbench.sessions.runInHelp": "Run it in {terminal}",
+    "workbench.sessions.scope.assistant": "Assistant replies",
+    "workbench.sessions.scope.system": "System prompts",
+    "workbench.sessions.scope.title": "Titles and session IDs",
+    "workbench.sessions.scope.tool": "Tool and file operations",
+    "workbench.sessions.scope.user": "User prompts",
+    "workbench.sessions.search.bodyIndexed": "Message text is indexed locally.",
+    "workbench.sessions.search.bodyNotIndexed": "Enable message indexing in Options to search transcript content.",
+    "workbench.sessions.search.clearHelp": "Clear the search",
+    "workbench.sessions.search.placeholder": "Search sessions",
+    "workbench.sessions.selectMode": "Select",
+    "workbench.sessions.selectModeHelp": "Pick sessions to delete",
+    "workbench.sessions.sort.byProject": "By project",
+    "workbench.sessions.sort.oldestFirst": "Oldest first",
+    "workbench.sessions.sort.recentFirst": "Newest first",
+    "workbench.sessions.toast.bodyIndexDropFailed": "Clearing the indexed message text failed.",
+    "workbench.sessions.toast.bodyIndexDropped": "Indexed message text removed.",
+    "workbench.sessions.toast.copied": "Copied to the clipboard.",
+    "workbench.sessions.toast.copiedWithReason": "Copied to the clipboard. {reason}",
+    "workbench.sessions.toast.cwdCopied": "Working directory copied.",
+    "workbench.sessions.toast.deleted": "{count, plural, one {Deleted 1 session.} other {Deleted # sessions.}}",
+    "workbench.sessions.toast.deletedPartial": "Deleted {deleted}, kept {kept}: {reason}",
+    "workbench.sessions.toast.indexNotCleared": "The session index could not be cleared.",
+    "workbench.sessions.toast.messageCopied": "Message copied.",
+    "workbench.sessions.toast.noResumeCommand": "This session has no resume command.",
+    "workbench.sessions.toast.openedIn": "Opened in {terminal}.",
+    "workbench.sessions.toast.sessionIDCopied": "Session ID copied.",
+    "workbench.sessions.toast.sourcePathCopied": "Source path copied.",
+    "workbench.sessions.transcript.autoReviewDivider": "Auto Review",
+    "workbench.sessions.transcript.cancelled": "Reading this session was stopped. Select it again to reopen it.",
+    "workbench.sessions.transcript.loadAll": "Load entire transcript",
+    "workbench.sessions.transcript.loading": "Reading the session log…",
+    "workbench.sessions.transcript.noMessages": "This session's log has no readable messages.",
+    "workbench.sessions.transcript.noReader": "No reader is registered for {provider}.",
+    "workbench.sessions.transcript.pageRange": "Messages {first}–{last} of {total}",
+    "workbench.sessions.transcript.placeholderDetail": "Pick a session on the left to read its transcript, copy its resume command, or hand it back to its CLI.",
+    "workbench.sessions.transcript.placeholderTitle": "No session selected",
+    "workbench.sessions.transcript.readFailed": "This session's log could not be read.",
+    "workbench.sessions.transcript.truncatedDetail": "{parsed} read of {file}. Reading all of it holds the whole transcript in memory.",
+    "workbench.sessions.transcript.truncatedTitle": "Showing the first {count, plural, one {# message} other {# messages}} of a very large log",
+    "workbench.skills.appCountNativeDisabled": "{count} projected but disabled",
+    "workbench.skills.appCountViaGeminiRoot": "{enabled} enabled + {coupled} via the Gemini CLI compatibility root",
+    "workbench.skills.appCountViaSharedRoot": "{enabled} enabled + {coupled} via the shared skills root",
+    "workbench.skills.appSeesCount": "{app} sees {count, plural, one {# skill} other {# skills}}",
+    "workbench.skills.backups": "Backups",
+    "workbench.skills.backups.deleteAccessibility": "Delete this backup",
+    "workbench.skills.backups.deleteConfirmMessage": "The snapshot is removed from ~/.vibebar and cannot be restored afterwards.",
+    "workbench.skills.backups.deleteConfirmTitle": "Delete the backup of {skill}?",
+    "workbench.skills.backups.deleteConfirmTitleGeneric": "Delete this backup?",
+    "workbench.skills.backups.empty": "No backups yet",
+    "workbench.skills.backups.footer": "Restoring recreates the shared directory only — enable the skill for the apps you want it in afterwards.",
+    "workbench.skills.backups.refreshHelp": "Re-read the backup directory",
+    "workbench.skills.backups.restore": "Restore",
+    "workbench.skills.backups.restoreHelp": "Copy the snapshot back into ~/.agents/skills",
+    "workbench.skills.backups.subtitle": "Taken automatically before an uninstall or an update.",
+    "workbench.skills.backups.title": "Skill Backups",
+    "workbench.skills.badge.installed": "INSTALLED",
+    "workbench.skills.badge.nativeOff": "{app} OFF",
+    "workbench.skills.badge.nativeOffHelp": "Projected, but disabled by the harness's own configuration",
+    "workbench.skills.badge.nativeUnknown": "NATIVE STATE ?",
+    "workbench.skills.badge.nativeUnknownHelp": "The harness configuration could not be parsed safely",
+    "workbench.skills.badge.update": "UPDATE",
+    "workbench.skills.checkUpdates": "Check Updates",
+    "workbench.skills.checkUpdatesCount": "Check Updates · {count}",
+    "workbench.skills.contextDisableKeepProjection": "Disable in {app} · Keep Projection",
+    "workbench.skills.contextEnableIn": "Enable in {app}",
+    "workbench.skills.contextRemoveProjection": "Remove {app} Projection",
+    "workbench.skills.countFiltered": "{shown} of {total} skills",
+    "workbench.skills.countTotal": "{count, plural, one {# skill} other {# skills}}",
+    "workbench.skills.discover": "Discover",
+    "workbench.skills.discover.availableEmpty": "Scan the configured repositories, or install a skills.sh result, to list what is available.",
+    "workbench.skills.discover.availableTitle": "Available skills",
+    "workbench.skills.discover.indexTitle": "skills.sh index",
+    "workbench.skills.discover.installs": "{count, plural, one {# install} other {# installs}}",
+    "workbench.skills.discover.noRepos": "No repositories configured. Add one as owner/repo, optionally owner/repo@branch.",
+    "workbench.skills.discover.removeRepo": "Remove {repo}",
+    "workbench.skills.discover.repoFieldPlaceholder": "owner/repo or owner/repo@branch",
+    "workbench.skills.discover.repoRules": "Owners take letters, digits, and hyphens; names and branches also take dots and underscores.",
+    "workbench.skills.discover.reposTitle": "Configured repositories",
+    "workbench.skills.discover.scanRepos": "Scan repos",
+    "workbench.skills.discover.scanReposHelp": "Download every configured repository",
+    "workbench.skills.discover.searchHint": "Results come back with the repository that publishes them; installing one downloads that repository and lists the rest of it below.",
+    "workbench.skills.discover.searchPlaceholder": "Search the community index",
+    "workbench.skills.discover.selectAll": "Select all",
+    "workbench.skills.discover.selectHelp": "Set which agent CLIs every row installs into",
+    "workbench.skills.discover.selectNone": "Select none",
+    "workbench.skills.discover.sourceFromSkillsSh": "{repo} (from skills.sh)",
+    "workbench.skills.discover.stopScanHelp": "Stop the running scan",
+    "workbench.skills.discover.stopScanningRepo": "Stop scanning {repo}",
+    "workbench.skills.discover.title": "Discover Skills",
+    "workbench.skills.discoverHelp": "Browse configured repositories and the skills.sh index",
+    "workbench.skills.empty.body": "Vibe Bar keeps one copy of every skill in ~/.agents/skills and links it into each agent CLI. Import what is already on this Mac, or install something new from a repository.",
+    "workbench.skills.empty.headline": "No skills recorded yet",
+    "workbench.skills.filterClear": "Clear the filter",
+    "workbench.skills.filterPlaceholder": "Filter installed skills",
+    "workbench.skills.import.alreadyShared": "Already shared",
+    "workbench.skills.import.alreadySharedDetail": "These already live in ~/.agents/skills, including layouts created by CC Switch. Vibe Bar records their existing links; it does not import or copy them again.",
+    "workbench.skills.import.apply": "Apply {count, plural, one {# change} other {# changes}}",
+    "workbench.skills.import.conflicts": "Conflicting app copies",
+    "workbench.skills.import.conflictsCount": "{count} unchanged",
+    "workbench.skills.import.conflictsDetail": "A real folder in an app's skills directory has the same name as one in ~/.agents/skills. Vibe Bar will not overwrite it — resolve it by hand, or enable the shared skill for that app once the folder is gone.",
+    "workbench.skills.import.foundIn": "found in {apps}",
+    "workbench.skills.import.keepEvidenceFor": "Keep evidence for",
+    "workbench.skills.import.needsAdoption": "Needs adoption",
+    "workbench.skills.import.needsAdoptionDetail": "These do not exist in the shared directory yet. Selecting one copies it into ~/.agents/skills, then replaces the chosen app copies with managed links.",
+    "workbench.skills.import.notSkills": "Not skills",
+    "workbench.skills.import.notSkillsDetail": "Directories in ~/.agents/skills with no SKILL.md. Left exactly as they are.",
+    "workbench.skills.import.recognizedCount": "{count} recognized",
+    "workbench.skills.import.subtitle": "Vibe Bar already recognizes shared skills. Only selected app-local folders will move.",
+    "workbench.skills.import.summary": "{adopted} already shared · {unmanaged} need adoption · {conflicts} left unchanged",
+    "workbench.skills.import.title": "Review On-Disk Skills",
+    "workbench.skills.importExisting": "Import Existing",
+    "workbench.skills.install": "Install",
+    "workbench.skills.installFromZip": "Install from ZIP",
+    "workbench.skills.menuMoreActions": "More actions for {skill}",
+    "workbench.skills.menuRevealInFinder": "Reveal in Finder",
+    "workbench.skills.menuUninstall": "Uninstall…",
+    "workbench.skills.menuUpdateFromRepository": "Update from repository",
+    "workbench.skills.menuWiringDetails": "Wiring Details…",
+    "workbench.skills.noMatch": "No skill matches “{query}”",
+    "workbench.skills.phase.downloadedOne": "Downloaded 1 repository",
+    "workbench.skills.phase.downloadedProgress": "Downloaded {completed} of {total} repositories",
+    "workbench.skills.phase.downloading": "Downloading {repo}…",
+    "workbench.skills.phase.scanning": "Scanning {repo}…",
+    "workbench.skills.sourceBranch": "Branch {branch}",
+    "workbench.skills.sourceInstalledLocally": "Installed locally",
+    "workbench.skills.sourceLocal": "local",
+    "workbench.skills.state.coupled": "Available through a shared or compatibility root",
+    "workbench.skills.state.disabledInHarness": "Projected, disabled in harness",
+    "workbench.skills.state.enabled": "Enabled",
+    "workbench.skills.state.notProjected": "Not projected",
+    "workbench.skills.state.unknown": "Projected, native state unknown",
+    "workbench.skills.sync.footer": "Vibe Bar writes only inside ~/{path}, the per-harness skills folders, and the config files above.",
+    "workbench.skills.sync.nativeSwitchesBody": "Where a harness has its own per-skill off switch, the circles flip that switch. Cursor has none, so every skill in the shared root is always available to it — that is the “shared root” badge, and there is nothing to toggle.",
+    "workbench.skills.sync.nativeSwitchesLead": "Native switches.",
+    "workbench.skills.sync.noPerSkillSwitch": "no per-skill switch",
+    "workbench.skills.sync.noSwitchAlsoReads": "no per-skill switch; also reads ~/{path}",
+    "workbench.skills.sync.perSkillSwitch": "per-skill switch {key} in ~/{path}",
+    "workbench.skills.sync.projectionsBody": "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, and Cursor scan the shared root themselves — no link needed.",
+    "workbench.skills.sync.projectionsLead": "Projections.",
+    "workbench.skills.sync.readsOwnFolder": "reads only ~/{path}",
+    "workbench.skills.sync.scansSharedRoot": "scans ~/{path} directly",
+    "workbench.skills.sync.ssotBody": "Every skill lives in ~/{path}/<name>. Install, update, and uninstall all happen there and only there.",
+    "workbench.skills.sync.ssotLead": "One source of truth.",
+    "workbench.skills.sync.title": "How skill syncing works",
+    "workbench.skills.syncExplainerHelp": "How skill syncing works — roots, links, and native switches",
+    "workbench.skills.toast.addRepoFirst": "Add a repository first.",
+    "workbench.skills.toast.allUpToDate": "Every repository skill is up to date.",
+    "workbench.skills.toast.archiveEmpty": "Nothing in that archive could be installed.",
+    "workbench.skills.toast.disabledKeptProjection": "Disabled {skill} in {app} and kept its projection.",
+    "workbench.skills.toast.enabledForApps": "Enabled for {apps}.",
+    "workbench.skills.toast.importConflicts": "Left {count, plural, one {# conflicting app copy} other {# conflicting app copies}} unchanged.",
+    "workbench.skills.toast.importRecognized": "Recognized {count, plural, one {# existing skill} other {# existing skills}}.",
+    "workbench.skills.toast.installedArchive": "Installed {count, plural, one {# skill} other {# skills}} from the archive.",
+    "workbench.skills.toast.installedForApps": "Installed {skill} for {apps}.",
+    "workbench.skills.toast.installedShared": "Installed {skill} in the shared library. Check effective harness state in Skills.",
+    "workbench.skills.toast.invalidRepoRef": "“{input}” is not a new owner/repo[@branch] reference.",
+    "workbench.skills.toast.linkRemovedStillShared": "Removed the {app} link. {skill} stays available there through the shared skills root.",
+    "workbench.skills.toast.noSearchMatches": "skills.sh returned no matches.",
+    "workbench.skills.toast.noSkillsFound": "No skills were found in the configured repositories.",
+    "workbench.skills.toast.notFoundInRepo": "{skill} was not found in {repo}.",
+    "workbench.skills.toast.projectionClearedFolderKept": "{skill}'s Vibe Bar projection was cleared for {app}, but the existing folder was left in place.",
+    "workbench.skills.toast.recorded": "Recorded {count, plural, one {# skill} other {# skills}}.",
+    "workbench.skills.toast.reposUnreadable": "{count, plural, one {# repository} other {# repositories}} could not be read.",
+    "workbench.skills.toast.restored": "Restored {skill}. Enable it for the apps you want it in.",
+    "workbench.skills.toast.scanStopped": "Stopped scanning.",
+    "workbench.skills.toast.sharedLibraryNote": "They stay in the shared library. Check effective harness state in Skills.",
+    "workbench.skills.toast.sharedRootNoSwitch": "{app} reads the shared skills root directly — {skill} is always available there and has no per-skill switch.",
+    "workbench.skills.toast.uninstalledBackedUp": "Uninstalled {skill}. A backup was saved.",
+    "workbench.skills.toast.uninstalledLeftInPlace": "Uninstalled {skill}. Left in place for {apps}.",
+    "workbench.skills.toast.updated": "Updated {skill}.",
+    "workbench.skills.toast.updatesAvailable": "{count, plural, one {# skill} other {# skills}} can be updated.",
+    "workbench.skills.toggleHelp.installInto": "Install into {app}",
+    "workbench.skills.toggleHelp.keepLinks": "Keep the {app} links already on disk",
+    "workbench.skills.toggleHelp.linkAfterAdopting": "Link into {app} after adopting",
+    "workbench.skills.toggleState.coupledGemini": "{app} — visible through the Gemini CLI projection it also reads. Click to give it its own projection.",
+    "workbench.skills.toggleState.coupledSharedRoot": "{app} reads the shared skills root directly, so this skill is always available there. There is no per-skill switch to flip.",
+    "workbench.skills.toggleState.disabledInHarness": "{app} — projected, but disabled by its native config. Click to enable.",
+    "workbench.skills.toggleState.enabled": "{app} — enabled by projection. Click to remove it.",
+    "workbench.skills.toggleState.enabledNative": "{app} — projected and enabled. Click to disable in the harness; right-click for projection options.",
+    "workbench.skills.toggleState.enabledSharedRoot": "{app} — has its own link, and also reads the shared skills root directly. There is no per-skill switch; right-click to manage the redundant link.",
+    "workbench.skills.toggleState.notProjected": "{app} — not projected. Click to enable.",
+    "workbench.skills.toggleState.unknown": "{app} — projected, but native config could not be parsed. Click to repair as enabled.",
+    "workbench.skills.uninstall": "Uninstall",
+    "workbench.skills.uninstallConfirmMessage": "The skill is backed up first, and removed from every app that links to it.",
+    "workbench.skills.uninstallConfirmTitle": "Uninstall {skill}?",
+    "workbench.skills.wiring.footer": "Vibe Bar writes only inside the skills folders above and the four listed config files, and backs a skill up before uninstalling it.",
+    "workbench.skills.wiring.mechanismGeminiCompat": "Also reads the Gemini CLI skills folder, which holds this skill's Gemini projection.",
+    "workbench.skills.wiring.mechanismSharedRoot": "Scans the shared root itself — no per-app link needed.",
+    "workbench.skills.wiring.nativeSwitch": "Per-skill switch: {key} in {path}",
+    "workbench.skills.wiring.noNativeSwitch": "No per-skill switch — whatever is discovered is active.",
+    "workbench.skills.wiring.projectionCopy": "Copy at {path}",
+    "workbench.skills.wiring.projectionCopyAdopted": "Copy at {path} · adopted from an existing install",
+    "workbench.skills.wiring.projectionMissing": "No entry at {path} — the harness cannot see this skill.",
+    "workbench.skills.wiring.projectionSymlink": "Symlink at {path}",
+    "workbench.skills.wiring.projectionSymlinkAdopted": "Symlink at {path} · adopted from an existing install",
+    "workbench.skills.wiring.reveal": "Reveal",
+    "workbench.skills.wiring.revealHelp": "Show the skill's source directory in Finder",
+    "workbench.skills.wiring.source": "Source",
+    "workbench.skills.wiring.sourceDetail": "One copy of the skill. Every harness below reads this directory or a link to it.",
+    "workbench.skills.wiring.stateConfigUnreadable": "Config unreadable",
+    "workbench.skills.wiring.stateCoupledGemini": "On · via Gemini",
+    "workbench.skills.wiring.stateCoupledSharedRoot": "On · shared root",
+    "workbench.skills.wiring.stateNativeOff": "Off · native switch",
+    "workbench.skills.wiring.stateNotLinked": "Off · not linked",
+    "workbench.status.cachedQuotas": "cached quotas",
+    "workbench.status.indexed": "{count} indexed",
+    "workbench.status.installed": "{count} installed",
+    "workbench.status.localIndex": "local index",
+    "workbench.status.localLedger": "local ledger",
+    "workbench.status.nextRefill": "next refill {countdown}",
+    "workbench.status.sharedLibrary": "shared library",
+    "workbench.status.updated": "updated {time}",
   },
   "zh-Hans": {
+    "common.add": "添加",
+    "common.all": "全部",
+    "common.auto": "自动",
     "common.cancel": "取消",
+    "common.clear": "清除",
+    "common.copied": "已复制",
+    "common.copy": "复制",
+    "common.delete": "删除",
+    "common.dismiss": "关闭",
+    "common.done": "完成",
+    "common.dragToReorder": "拖动可重新排序",
+    "common.duration.days": "{days} 天",
+    "common.duration.daysHours": "{days} 天 {hours} 小时",
+    "common.duration.hours": "{hours} 小时",
+    "common.duration.hoursMinutes": "{hours} 小时 {minutes} 分钟",
+    "common.duration.lessThanMinute": "<1 分钟",
+    "common.duration.minutes": "{minutes} 分钟",
+    "common.duration.now": "现在",
+    "common.name": "名称",
     "common.noData": "暂无记录",
+    "common.off": "已关闭",
+    "common.on": "已开启",
+    "common.open": "打开",
+    "common.openSettings": "打开设置",
+    "common.percent": "{value}%",
+    "common.provider": "厂商",
     "common.refresh": "刷新",
+    "common.refreshSection": "刷新此区块",
+    "common.remove": "移除",
     "common.retry": "重试",
+    "common.retryNow": "立即重试",
+    "common.save": "保存",
+    "common.updated.daysAgo": "{days, plural, other {# 天}}前更新",
+    "common.updated.hoursAgo": "{hours, plural, other {# 小时}}前更新",
+    "common.updated.justNow": "刚刚更新",
+    "common.updated.minutesAgo": "{minutes, plural, other {# 分钟}}前更新",
+    "common.updated.never": "从未更新",
+    "common.updated.secondsAgo": "{seconds} 秒前更新",
+    "cost.allProviders": "全部厂商",
+    "cost.chart.metricCostHelp": "按美元绘制花费",
+    "cost.chart.metricTokens": "Tok",
+    "cost.chart.metricTokensHelp": "按 token 数量绘制",
+    "cost.empty.antigravity": "暂未发现 Antigravity 会话的 token 元数据。",
+    "cost.empty.claude": "暂未发现 Claude CLI 会话。",
+    "cost.empty.codex": "暂未发现 Codex CLI 会话。",
+    "cost.empty.gemini": "暂未发现 Gemini CLI 或聊天历史的用量。",
+    "cost.empty.genericCLI": "暂未发现 {provider} CLI 会话。",
+    "cost.empty.grok": "暂未发现 Grok 会话的用量。",
+    "cost.fullCharts": "{title} — 完整图表",
+    "cost.gemini.emptyDetail": "Vibe Bar 会优先从 AntiGravity 桌面端读取实时额度，其次回退到本机安装的 agy CLI。两个本地来源均无法刷新时，缓存值将标记为已过期。",
+    "cost.gemini.emptyTitle": "暂未发现 Gemini 或 AntiGravity 的用量。",
+    "cost.googleAI.empty": "暂无 Gemini Web / AntiGravity 用量 — 登录 AntiGravity 或 agy 后刷新。",
+    "cost.googleAI.title": "Google AI 花费",
+    "cost.granularity.day": "天",
+    "cost.granularity.hour": "小时",
+    "cost.granularity.month": "月",
+    "cost.granularity.week": "周",
+    "cost.history.allProviders": "全部厂商花费历史",
+    "cost.history.building": "正在积累历史…",
+    "cost.history.buildingDetail": "下一次本机扫描后会出现花费样本。",
+    "cost.history.clearModelSelection": "清除模型选择",
+    "cost.history.emptyCost": "所选范围内没有花费记录。",
+    "cost.history.emptyTokens": "所选范围内没有 token 记录。",
+    "cost.history.extentNote": "{span} · {start} – {end}",
+    "cost.history.granularityDisabled": "{granularity}需要不同的缩放级别",
+    "cost.history.groupBy": "按{granularity}聚合花费历史",
+    "cost.history.hourlyFallback": "无按小时数据 · 改按天显示",
+    "cost.history.metricAverage": "平均/{granularity}",
+    "cost.history.metricPeak": "峰值",
+    "cost.history.metricTotal": "合计",
+    "cost.history.modelDetailUnavailable": "该历史区间没有保留按模型的明细。",
+    "cost.history.modelsAt": "模型 · {when}",
+    "cost.history.moreModels": "另有 {count} 项 · 点击查看",
+    "cost.history.navigator": "花费历史范围导航",
+    "cost.history.title": "花费历史",
+    "cost.history.weekOf": "{date} 当周",
+    "cost.history.weekShortOf": "{date} 当周",
+    "cost.metric.peakDay": "单日最高",
+    "cost.metric.peakTokenDay": "单日最多 token",
+    "cost.metric.sevenDay": "近 7 天",
+    "cost.metric.sevenDayTokens": "近 7 天 token",
+    "cost.metric.thirtyDay": "近 30 天",
+    "cost.metric.thirtyDayTokens": "近 30 天 token",
+    "cost.metric.todayTokens": "今日 token",
+    "cost.metric.totalCost": "总花费",
+    "cost.metric.totalTokens": "总 token",
+    "cost.metric.yesterdayTokens": "昨日 token",
+    "cost.modelRanking.allProvidersAllTime": "全部厂商 · 全部时间",
+    "cost.modelRanking.allTime": "全部时间",
+    "cost.modelRanking.title": "模型排行",
+    "cost.noUsageYet": "暂无用量",
+    "cost.notTracked": "{provider} 不记录花费历史。",
+    "cost.openFullCharts": "打开完整图表",
     "cost.perThousandTokens": "每千 token {rate}",
+    "cost.provider.title": "{provider} 花费",
+    "cost.providerFullCharts": "{provider} 花费 — 完整图表",
+    "cost.refreshData": "刷新花费数据",
+    "cost.refreshProvider": "刷新 {provider} 花费",
+    "cost.spaceXAI.empty": "暂未发现 Grok 或 Cursor 的用量。",
+    "cost.spaceXAI.title": "SpaceXAI 花费",
     "cost.spentToday": "今日花费 {amount}",
-    "error.needsReLogin": "需要重新登录",
+    "cost.timeframe.all": "全部",
+    "cost.timeframe.month": "30 天",
+    "cost.timeframe.monthShort": "30 天",
+    "cost.timeframe.today": "今日",
+    "cost.timeframe.week": "7 天",
+    "cost.timeframe.weekShort": "7 天",
+    "cost.timeframe.yesterday": "昨日",
+    "cost.title": "花费",
+    "cost.topModel.share": "占比 {percent}%",
+    "cost.topModel.title": "最常用模型",
+    "error.credentialRejected": "凭据被拒绝",
+    "error.needsReLogin": "需重新登录",
+    "error.network": "网络错误",
     "error.networkWithReason": "网络错误：{reason}",
     "error.noAccountFound": "未找到账号",
-    "error.rateLimited": "触发限流，请稍后再试",
-    "quota.awaitingFirstObservation": "等待第一次配额观测",
-    "quota.cycleRecordedOnRefill": "配额重置时才会记录一个周期",
+    "error.notImplemented": "暂不支持",
+    "error.parseFailure": "响应格式已变化",
+    "error.rateLimited": "请求过于频繁，请稍后重试",
+    "error.unknown": "错误",
+    "error.unknownDetail": "错误：{reason}",
+    "menuBar.composer.action.duplicate": "复制",
+    "menuBar.composer.appIcon.detail": "Vibe Bar 自身图标，即「仅图标」布局所显示的内容。",
+    "menuBar.composer.block.appIcon": "Vibe Bar 图标",
+    "menuBar.composer.block.emptyText": "空文字",
+    "menuBar.composer.block.gap": "间隔",
+    "menuBar.composer.block.logo": "图标",
+    "menuBar.composer.block.newRow": "换行",
+    "menuBar.composer.block.quota": "额度",
+    "menuBar.composer.block.separator": "分隔符",
+    "menuBar.composer.block.space": "空格",
+    "menuBar.composer.block.structure": "结构",
+    "menuBar.composer.block.text": "文字",
+    "menuBar.composer.block.unsupported": "来自更新版本",
+    "menuBar.composer.blocks": "积木 · 拖动可重新排序",
+    "menuBar.composer.blocks.empty": "尚无积木。可从下方面板添加。",
+    "menuBar.composer.colour.automatic": "自动",
+    "menuBar.composer.colour.brand": "品牌色",
+    "menuBar.composer.colour.fixed": "自定义…",
+    "menuBar.composer.colour.followsQuota": "跟随某个额度",
+    "menuBar.composer.colour.forecast": "预测",
+    "menuBar.composer.colour.primary": "主要",
+    "menuBar.composer.colour.secondary": "次要",
+    "menuBar.composer.colour.tertiary": "第三级",
+    "menuBar.composer.field.colour": "颜色",
+    "menuBar.composer.field.monospacedDigits": "等宽数字",
+    "menuBar.composer.field.monospacedDigitsHelp": "数字变化时不会挤动相邻积木。",
+    "menuBar.composer.field.offlineOption": "{title}（未返回数据）",
+    "menuBar.composer.field.show": "显示条件",
+    "menuBar.composer.field.shows": "显示内容",
+    "menuBar.composer.field.size": "字号",
+    "menuBar.composer.field.verdicts": "预测结论",
+    "menuBar.composer.field.weight": "字重",
+    "menuBar.composer.metric.displayPercent": "百分比（跟随设置）",
+    "menuBar.composer.metric.pace": "消耗速度",
+    "menuBar.composer.metric.remainingPercent": "剩余百分比",
+    "menuBar.composer.metric.resetAt": "重置时刻",
+    "menuBar.composer.metric.resetsIn": "重置倒计时",
+    "menuBar.composer.metric.runsOutIn": "耗尽倒计时",
+    "menuBar.composer.metric.usedPercent": "已用百分比",
+    "menuBar.composer.mode.custom": "自定义",
+    "menuBar.composer.mode.customCaption": "切回默认样式会保留已拼装的全部积木，再次切换到自定义时可原样恢复。",
+    "menuBar.composer.mode.default": "默认",
+    "menuBar.composer.mode.defaultCaption": "默认样式显示下方勾选的字段。自定义样式可用积木自行拼装：logo、文字与任意额度。",
+    "menuBar.composer.mode.label": "样式",
+    "menuBar.composer.newRow.capped": "菜单栏最多显示两行。",
+    "menuBar.composer.newRow.detail": "结束第一行并开始第二行。可在下方设置条件，仅在该额度满足条件时换行。",
+    "menuBar.composer.newRow.help": "将菜单栏内容拆成第二行。",
+    "menuBar.composer.palette": "添加积木",
+    "menuBar.composer.preview": "预览",
+    "menuBar.composer.preview.dark": "深色菜单栏预览",
+    "menuBar.composer.preview.empty": "空样式",
+    "menuBar.composer.preview.grounds": "并排显示浅色与深色菜单栏：固定颜色在一种底色下清晰，在另一种下可能不可见。",
+    "menuBar.composer.preview.light": "浅色菜单栏预览",
+    "menuBar.composer.preview.twoRowScaling": "两行共用菜单栏高度，较大字号会等比缩小以适应，预览同步缩放。",
+    "menuBar.composer.removeTarget": "拖到此处移除",
+    "menuBar.composer.rule.always": "始终显示",
+    "menuBar.composer.rule.whenForecast": "当预测结论为",
+    "menuBar.composer.rule.whenRemainingAtMost": "剩余不高于",
+    "menuBar.composer.rule.whenUsedAtLeast": "已用不低于",
+    "menuBar.composer.selected": "已选积木",
+    "menuBar.composer.size.large": "大",
+    "menuBar.composer.size.regular": "标准",
+    "menuBar.composer.size.small": "小",
+    "menuBar.composer.space.detail": "宽度为一个空格的间隔。字号决定其宽度。",
+    "menuBar.composer.startOver": "从当前样式重新开始…",
+    "menuBar.composer.startOver.confirm": "重新开始",
+    "menuBar.composer.startOver.confirmMessage": "已排列的全部积木将被丢弃，并按默认样式重新生成。",
+    "menuBar.composer.startOver.confirmTitle": "替换已有积木？",
+    "menuBar.composer.startOver.detail": "重新开始会用默认样式重新生成全部积木，且无法撤销。",
+    "menuBar.composer.template": "模板",
+    "menuBar.composer.template.compact": "紧凑",
+    "menuBar.composer.template.compactDetail": "间距更紧，字号略小。",
+    "menuBar.composer.template.roomy": "宽松",
+    "menuBar.composer.template.roomyDetail": "菜单栏的常规字号。",
+    "menuBar.composer.template.twoRows": "两行",
+    "menuBar.composer.template.twoRowsDetail": "在一个状态项中上下显示两行。",
+    "menuBar.composer.text.empty": "空的文字积木不显示任何内容。输入文字后才会出现在菜单栏。",
+    "menuBar.composer.text.limit": "超过 {count} 个字符的文字积木在菜单栏中会截断并以省略号结尾。",
+    "menuBar.composer.text.placeholder": "标签",
+    "menuBar.composer.unsupported.detail": "此积木由更新版本的 Vibe Bar 创建，将原样保留，更新后可恢复显示；在此之前不显示任何内容。",
+    "menuBar.composer.warning.degraded": "此积木仍会显示，但其颜色或显示条件指向的额度当前未返回数据。",
+    "menuBar.composer.warning.missing": "当前未返回数据：{fields}",
+    "menuBar.composer.warning.silent": "该额度当前未返回数据，此积木暂不显示内容。积木会保留，数据恢复后自动显示。",
+    "menuBar.composer.weight.medium": "中等",
+    "menuBar.composer.weight.regular": "常规",
+    "menuBar.composer.weight.semibold": "半粗",
+    "menuBar.spoken.forecast": "{label} 预测重置时剩余 {value}",
+    "menuBar.spoken.pace": "{label} 消耗速度 {value}",
+    "menuBar.spoken.remaining": "{label} 剩余 {value}",
+    "menuBar.spoken.resetAt": "{label} 于 {value} 重置",
+    "menuBar.spoken.resetsIn": "{label} 距重置 {value}",
+    "menuBar.spoken.runsOutIn": "{label} 距耗尽 {value}",
+    "menuBar.spoken.title": "{kind} 额度",
+    "menuBar.spoken.titleBody": "{kind} 额度：{body}",
+    "menuBar.spoken.used": "{label} 已用 {value}",
+    "onboarding.apiKeys.hide": "收起",
+    "onboarding.apiKeys.intro": "这些套餐通过 API key 或控制台 cookie 跟踪，而非 CLI 登录。勾选已持有的项 — 勾选后将在「其他厂商」页生成一张卡片 — 展开对应行即可填写凭据。密钥与 cookies 均存入登录 Keychain。",
+    "onboarding.apiKeys.setUp": "设置",
+    "onboarding.apiKeys.showOnMiscPage": "在「其他厂商」页显示 {provider}",
+    "onboarding.back": "上一步",
+    "onboarding.continue": "下一步",
+    "onboarding.cookies.batchScope": "此按钮仅覆盖上述四个套餐。下一步的控制台 cookie 套餐另有一键批量导入，位于「设置 → 浏览器 Cookies」。",
+    "onboarding.cookies.importAll": "立即从所有浏览器导入",
+    "onboarding.cookies.importFromBrowser": "从浏览器导入",
+    "onboarding.cookies.importGemini": "从浏览器导入 Gemini 的 cookies",
+    "onboarding.cookies.importGrok": "从浏览器导入 Grok 的 cookies",
+    "onboarding.cookies.importing": "正在导入…",
+    "onboarding.cookies.intro": "网页端额度 — 即厂商在其自有网站上展示的部分 — 来自浏览器中已有的登录会话。Vibe Bar 会读取本机各浏览器（Chrome 及其他 Chromium 浏览器、Safari、Firefox）的 cookie 存储，仅保留各厂商所需的少量 cookie，并存入登录 Keychain，不写入明文文件。首次读取浏览器 cookie 密钥时，macOS 可能要求授权一次。",
+    "onboarding.cookies.notImported": "尚未导入",
+    "onboarding.cookies.openWebViewLogin": "打开内置登录窗口",
+    "onboarding.cookies.saved": "cookies 已保存。",
+    "onboarding.cookies.signInFirst": "请先在浏览器中登录 chatgpt.com、claude.ai、gemini.google.com 或 grok.com — 导入只能找到已存在的会话；未登录的厂商不会返回任何结果。",
+    "onboarding.done.apiKeyProviders": "API key 厂商",
+    "onboarding.done.cookieCount": "已保存 {saved}/{total} 个厂商",
+    "onboarding.done.footer": "此处各项均可在设置中修改，向导亦可在「设置 → 系统」中一键打开。",
+    "onboarding.done.intro": "菜单栏所需配置已齐备。点击「完成」将打开面板并显示当前可读取的额度，其余部分在首次刷新时补全。",
+    "onboarding.done.miscCount": "「其他厂商」页 {count} 个",
+    "onboarding.done.noneShown": "未显示任何厂商",
+    "onboarding.done.pricingBundled": "首次获取前使用内置价目表",
+    "onboarding.done.pricingMerged": "{when}合并",
+    "onboarding.finish": "完成",
+    "onboarding.pricing.fetchNow": "立即获取价格",
+    "onboarding.pricing.fetching": "正在获取…",
+    "onboarding.pricing.footer": "价格单位为每百万 token 的美元数。本地覆盖值位于「设置 → 模型价格」。",
+    "onboarding.pricing.interval.hour": "小时",
+    "onboarding.pricing.interval.hours": "{hours} 小时",
+    "onboarding.pricing.intro": "Token 花费完全在本机依据 agent 的会话日志计算，价格取自若干公开价目表合并后的目录 — 同一模型出现在多个目录时以优先级高者为准，自定义覆盖值优先于全部，内置表为离线兜底。目录每 {interval}在后台刷新一次；此刻获取可使首批费用数字采用当前价格。",
+    "onboarding.pricing.merged": "{when}合并 · {count} 个模型",
+    "onboarding.pricing.notFetched": "尚未获取 — 正在使用内置价目表。",
+    "onboarding.pricing.source.failed": "缓存 {count} 个 · 刷新失败",
+    "onboarding.pricing.source.models": "{count} 个模型",
+    "onboarding.pricing.source.notRefreshed": "未刷新",
+    "onboarding.pricing.source.unchanged": "{count} 个模型 · 无变化",
+    "onboarding.skip": "暂时跳过",
+    "onboarding.step.apiKeyProviders.subtitle": "用 API key 或控制台 cookie 跟踪的套餐。",
+    "onboarding.step.apiKeyProviders.title": "其他套餐",
+    "onboarding.step.browserCookies.subtitle": "网页端额度来自浏览器里已有的登录会话。",
+    "onboarding.step.browserCookies.title": "浏览器 cookies",
+    "onboarding.step.done.subtitle": "此处各项均可在设置中修改。",
+    "onboarding.step.done.title": "完成",
+    "onboarding.step.pricing.subtitle": "费用数字背后的 token 单价来源。",
+    "onboarding.step.pricing.title": "模型价格",
+    "onboarding.step.subscriptions.subtitle": "启用已订阅的套餐。",
+    "onboarding.step.subscriptions.title": "订阅",
+    "onboarding.step.welcome.subtitle": "用一段话说明 Vibe Bar 的功能。",
+    "onboarding.step.welcome.title": "欢迎",
+    "onboarding.subscriptions.claude.detected": "已检测到 Claude Code 登录 — 额度将从这里读取。",
+    "onboarding.subscriptions.claude.missing": "未找到 Claude Code 登录。运行 `claude login`，或在下方从浏览器导入 claude.ai 的 cookies。",
+    "onboarding.subscriptions.claude.web": "已保存 claude.ai 的 cookies — 额度将从这里读取。",
+    "onboarding.subscriptions.codex.detected": "已检测到 Codex CLI 登录 — 额度将从这里读取。",
+    "onboarding.subscriptions.codex.missing": "未找到 Codex CLI 登录。运行 `codex login`，或在下方从浏览器导入 ChatGPT 的 cookies。",
+    "onboarding.subscriptions.codex.web": "已保存 ChatGPT 网页 cookies — 额度将从这里读取。",
+    "onboarding.subscriptions.gemini.hint": "Gemini 的额度只能从 gemini.google.com 的 cookies 读取，无 CLI 登录或 WebView 途径。AntiGravity 在运行时会被本地探测。",
+    "onboarding.subscriptions.grok.detected": "已检测到 ~/.grok/auth.json — 额度将从这里读取。",
+    "onboarding.subscriptions.grok.missing": "尚未找到 ~/.grok/auth.json。运行 `grok login`，或在下方从浏览器导入 grok.com 的 cookies。",
+    "onboarding.subscriptions.intro": "启用正在使用的订阅。已关闭的厂商不会出现在总览与菜单栏；之后关闭亦不会删除其凭据与历史。",
+    "onboarding.subscriptions.productLine.claude": "Claude Code · claude.ai 网页",
+    "onboarding.subscriptions.productLine.codex": "Codex CLI · ChatGPT 网页",
+    "onboarding.subscriptions.productLine.gemini": "Gemini 网页 · AntiGravity",
+    "onboarding.subscriptions.productLine.grok": "Grok CLI · grok.com · Cursor",
+    "onboarding.subscriptions.showInOverview": "在总览中显示",
+    "onboarding.title": "设置向导",
+    "onboarding.welcome.cost.detail": "完全在本机按 agent 自己的会话日志计价，对照合并后的模型价目表。",
+    "onboarding.welcome.cost.title": "Token 花费",
+    "onboarding.welcome.footer": "全程约两分钟。此处的每项选择均可稍后在设置中修改，向导亦可在「设置 → 系统」中一键打开。",
+    "onboarding.welcome.intro": "Vibe Bar 常驻菜单栏，可一览各 AI 订阅的剩余量、编码 agent 的支出，以及本机存有哪些会话与 skills。它读取 Codex、Claude Code、Gemini、Grok 等 CLI 已保存在本机的凭据，并在获得授权后从浏览器 cookies 补充网页端额度；所有数据仅发送至其来源厂商。",
+    "onboarding.welcome.mcp.detail": "agent 可通过 home 目录下的 Unix socket 向 Vibe Bar 查询额度与花费。",
+    "onboarding.welcome.mcp.title": "本地 MCP 服务",
+    "onboarding.welcome.quotas.detail": "Codex、Claude Code、Gemini、Grok，以及一系列 API key 套餐，均附带重置倒计时。",
+    "onboarding.welcome.quotas.title": "订阅额度",
+    "onboarding.welcome.sessions.detail": "在 Workbench 中浏览、搜索并整理 agent 会话与共享 skills。",
+    "onboarding.welcome.sessions.title": "会话与 skills",
+    "platform.macos.launchAtLogin.detail": "Vibe Bar 是无 Dock 图标的菜单栏应用。开机启动可使额度读数与本地 MCP 服务在登录后即刻可用；首次启用时 macOS 可能要求在「系统设置」中批准该登录项。",
+    "platform.macos.launchAtLogin.enabled": "已在 macOS 登录项中启用。",
+    "platform.macos.launchAtLogin.subtitle": "登录 Mac 后菜单栏即刻显示读数。",
+    "platform.macos.launchAtLogin.title": "开机启动",
+    "platform.macos.launchAtLogin.toggle": "登录时启动 Vibe Bar",
+    "platform.macos.menuBar.color.actual": "实际",
+    "platform.macos.menuBar.color.actualDetail": "仅按显示的百分比着色，忽略预测。",
+    "platform.macos.menuBar.color.forecastDetail": "绿色表示预计够用 · 蓝色表示预计会有较多闲置 · 橙色表示可能不足 · 红色表示预计会用尽。当某项额度历史过少、无法预测时，回退为按百分比着色。",
+    "platform.macos.menuBar.displayDensity": "显示密度",
+    "platform.macos.menuBar.fieldStyle.label": "名称",
+    "platform.macos.menuBar.fieldStyle.labelDetail": "名称与百分比并列。",
+    "platform.macos.menuBar.fieldStyle.logoAndLabel": "图标与名称",
+    "platform.macos.menuBar.fieldStyle.logoAndLabelDetail": "图标、名称与百分比。",
+    "platform.macos.menuBar.fieldStyle.logoDetail": "厂商图标与百分比并列 — 不显示文字。",
+    "platform.macos.menuBar.fields": "字段",
+    "platform.macos.menuBar.layout": "排布",
+    "platform.macos.menuBar.layout.iconOnly": "仅图标",
+    "platform.macos.menuBar.layout.singleLine": "单行",
+    "platform.macos.menuBar.mergeGroupWindows": "合并同组的窗口",
+    "platform.macos.menuBar.mergeGroupWindowsDetail": "把 5 小时与每周显示为 5%/100%，而不是两条独立条目。",
+    "platform.macos.menuBar.percentColor": "百分比配色",
+    "platform.macos.menuBar.showInMenuBar": "在菜单栏中显示",
+    "platform.macos.menuBar.showTitleText": "显示标题文字",
+    "popover.header.machinesSubtitle": "端到端加密的远程用量",
+    "popover.header.mini": "迷你窗口",
+    "popover.header.miscSubtitle": "仅用量 · 登录或粘贴密钥",
+    "popover.header.openWorkbench": "打开 Workbench",
+    "popover.header.overviewSubtitle": "全部厂商 · 额度与花费",
+    "popover.header.refreshing": "正在刷新…",
+    "popover.header.settings": "设置",
+    "popover.header.updatedLine": "{subtitle} · {updated}",
+    "popover.machines.checking": "正在检查 Relay…",
+    "popover.machines.freshness.delayed": "延迟",
+    "popover.machines.freshness.live": "实时",
+    "popover.machines.freshness.stale": "已过期",
+    "popover.machines.includeInTotals": "计入总计",
+    "popover.machines.includeInTotalsHelp": "把这台机器解密后的用量计入本 Core 的总览与厂商花费页",
+    "popover.machines.labelWithStatus": "{label} · {status}",
+    "popover.machines.noData": "暂无远程机器数据",
+    "popover.machines.noDataDetail": "Relay 已连接。探针会在其首个加密批次被解密并导入后出现。",
+    "popover.machines.notConfigured": "尚未配置远程 Core",
+    "popover.machines.notConfiguredDetail": "先创建 Core 描述文件，再签发工作区范围的 Relay 凭据，然后导入已签名的配置文件。本机无需开放任何入站端口。",
+    "popover.machines.sequence": "序号 {value}",
+    "popover.machines.thirtyDayCost": "近 30 天花费",
+    "popover.misc.copyFallback": "副本 {ordinal}",
+    "popover.refreshGoogleAI": "刷新 Gemini Web + AntiGravity",
+    "popover.refreshSpaceXAI": "刷新 Grok + Cursor",
+    "popover.showPage": "显示{page}",
+    "popover.tab.machines": "机器",
+    "popover.tab.misc": "其他厂商",
+    "popover.tab.miscShort": "其他",
+    "popover.tab.overview": "总览",
+    "quota.awaitingFirstObservation": "等待首次额度观测",
+    "quota.bridge.empty": "没有仅存在于 CodexBar 的厂商返回额度窗口。重叠的厂商仍显示在 Vibe Bar 自己的卡片上。",
+    "quota.bridge.refresh": "刷新 CodexBar 厂商",
+    "quota.bridge.subtitle": "额外厂商 · 只读",
+    "quota.bridge.subtitleVersion": "CodexBar {version} · 只读",
+    "quota.bridge.title": "CodexBar 桥接",
+    "quota.bucket.noResetInfo": "无重置信息",
+    "quota.cycleRecordedOnRefill": "额度补满时记录一个周期",
     "quota.cyclesRecorded": "{count, plural, other {# 个周期}}",
+    "quota.empty.needsLogin.detail": "在终端中运行 `{command} login`，然后刷新。",
+    "quota.empty.network.detail": "无法连接官方 API，请检查网络后重试。",
+    "quota.empty.noAccount.detail": "先在这台 Mac 上用官方 CLI 登录，然后刷新。",
+    "quota.empty.parseChanged.detail": "官方 API 返回了预期之外的结构，请刷新或升级 Vibe Bar。",
+    "quota.empty.rateLimited.detail": "官方 API 要求稍候，请稍后重试。",
+    "quota.empty.rateLimited.headline": "请求过于频繁",
+    "quota.forecast.confidence.high": "高置信度",
+    "quota.forecast.confidence.learning": "学习中",
+    "quota.forecast.confidence.medium": "中等置信度",
+    "quota.forecast.explain.footer": "消耗量来自额度观测值。Token 历史只用于推断惯常工作时段的权重，不会换算成额度用量。",
+    "quota.forecast.explain.hide": "隐藏预测计算过程",
+    "quota.forecast.explain.show": "显示预测计算过程",
+    "quota.forecast.explain.title": "该预测的计算方式",
+    "quota.forecast.guidance.atRisk": "降低使用速度，或将任务转移至其他额度",
+    "quota.forecast.guidance.available": "目标保留 {target}% · 约有 {unused}% 可用",
+    "quota.forecast.guidance.surplus": "预计约 {unused}% 将闲置，超出 {target}% 的安全余量",
+    "quota.forecast.guidance.usedAvailable": "目标用到 {target}% · 约有 {unused}% 额度可用",
+    "quota.forecast.guidance.usedSurplus": "预计约 {unused}% 的额度将剩余，超出 {target}% 的使用目标",
+    "quota.forecast.guidance.usedWithinTarget": "仍在 {target}% 的使用目标之内",
+    "quota.forecast.guidance.watch": "近期用量高于安全区间",
+    "quota.forecast.guidance.withinTarget": "仍在 {target}% 的安全余量之内",
+    "quota.forecast.legend.item": "{label} {value}",
+    "quota.forecast.metric.aboveTarget": "高于目标 {percent}% 的额度",
+    "quota.forecast.metric.activityFallback": "形成习惯数据前按自然时间兜底",
+    "quota.forecast.metric.activityTiming": "活跃时段",
+    "quota.forecast.metric.activityWeighted": "按星期与小时加权",
+    "quota.forecast.metric.behaviorDetail": "在更强证据不足时使用",
+    "quota.forecast.metric.behaviorFallback": "行为兜底",
+    "quota.forecast.metric.comparableCycles": "{count, plural, other {# 个}}可比重置周期",
+    "quota.forecast.metric.coverage": "覆盖度",
+    "quota.forecast.metric.coverageDetail": "新鲜度 {fresh}% · 习惯 {habits}%",
+    "quota.forecast.metric.coverageValue": "观测 {observations}% · 历史 {history}%",
+    "quota.forecast.metric.cyclesPending": "完整周期会显示在这里",
+    "quota.forecast.metric.elapsed": "已过 {percent}%",
+    "quota.forecast.metric.evidence": "依据",
+    "quota.forecast.metric.evidenceDetail": "{confidence} · 评分 {score}%",
+    "quota.forecast.metric.evidenceValue": "{observations} 次观测 · {cycles} 个周期",
+    "quota.forecast.metric.expectedLeft": "预计剩余 {percent}%",
+    "quota.forecast.metric.expectedUsed": "预计已用 {percent}%",
+    "quota.forecast.metric.forecastAtReset": "重置时预测",
+    "quota.forecast.metric.forecastRange": "预测区间",
+    "quota.forecast.metric.insideTarget": "在目标区间内",
+    "quota.forecast.metric.noComparison": "尚无可比数据",
+    "quota.forecast.metric.plan": "当前个人计划",
+    "quota.forecast.metric.planDetail": "活跃时段 + {target}% 安全余量目标",
+    "quota.forecast.metric.rangeLeft": "剩余 {lower}–{upper}%",
+    "quota.forecast.metric.rangeUsed": "已用 {lower}–{upper}%",
+    "quota.forecast.metric.recentBurn": "近期消耗",
+    "quota.forecast.metric.recentIntervals": "{count, plural, other {# 段}}近期区间",
+    "quota.forecast.metric.recentMissing": "至少需要两次有效观测",
+    "quota.forecast.metric.recentTrend": "近期趋势",
+    "quota.forecast.metric.safetyTarget": "安全余量目标",
+    "quota.forecast.metric.timePace": "纯时间进度",
+    "quota.forecast.metric.timePaceDetail": "按自然时间：{stage}",
+    "quota.forecast.metric.timePaceMissing": "需要重置时间与窗口长度",
+    "quota.forecast.metric.trendDetail": "最近 7 天对比之前 21 天",
+    "quota.forecast.metric.trendDetailMissing": "需要更早的每日活跃数据",
+    "quota.forecast.metric.trendMissing": "尚无基线",
+    "quota.forecast.metric.trendMultiplier": "活跃度 {multiplier}×",
+    "quota.forecast.metric.unavailable": "不可用",
+    "quota.forecast.metric.uncertaintyInterval": "不确定区间",
+    "quota.forecast.reset.atRisk": "很可能在重置前耗尽",
+    "quota.forecast.reset.enough": "预计重置时剩余 {remaining}%",
+    "quota.forecast.reset.learning": "正在学习使用规律 · 约剩余 {remaining}%",
+    "quota.forecast.reset.surplus": "预计将有盈余 · 重置时剩余 {remaining}%",
+    "quota.forecast.reset.watch": "可能不足 · 预计剩余 {remaining}%",
+    "quota.forecast.status.atRisk": "有风险 · 很可能在重置前耗尽",
+    "quota.forecast.status.enough": "充足 · 预计重置时{value}",
+    "quota.forecast.status.learning": "学习中 · 重置时约{value}",
+    "quota.forecast.status.surplus": "盈余 · 预计重置时{value}",
+    "quota.forecast.status.watch": "需关注 · 预计重置时{value}",
+    "quota.forecast.useUp.beforeReset": "预计将在重置前耗尽",
+    "quota.forecast.useUp.couldRunOut": "可能在 {countdown}后耗尽",
+    "quota.forecast.useUp.estimated": "预计 {countdown}后耗尽",
+    "quota.forecast.useUp.lastsUntilReset": "预计可用到重置",
+    "quota.forecast.useUp.uncertain": "耗尽时间不确定 · 可能在重置前不足",
+    "quota.forecast.value.atReset": "重置时{value}",
+    "quota.forecast.value.expectedNow": "当前预期{value}",
+    "quota.forecast.verdict.atRisk": "有风险",
+    "quota.forecast.verdict.enough": "充足",
+    "quota.forecast.verdict.learning": "学习中",
+    "quota.forecast.verdict.surplus": "盈余",
+    "quota.forecast.verdict.watch": "需关注",
+    "quota.freshness.age.seconds": "{seconds} 秒",
+    "quota.freshness.dataAge": "数据已有 {age}",
+    "quota.freshness.defaultHelp": "实时额度未在预期间隔内刷新。",
+    "quota.freshness.line": "{attempt} · {data} · {reason}",
+    "quota.freshness.noCachedData": "无缓存数据",
+    "quota.freshness.refreshFailed": "刷新失败",
+    "quota.freshness.refreshFailedAgo": "{age}前刷新失败",
+    "quota.freshness.staleNeverUpdated": "已过期 · 从未更新",
+    "quota.freshness.staleUpdatedAgo": "已过期 · {age}前更新",
+    "quota.group.allModels": "全部模型",
+    "quota.group.daily": "每日",
+    "quota.group.fiveHours": "5 小时",
+    "quota.group.monthly": "每月",
+    "quota.group.noUtilization": "暂无使用数据 — 可尝试刷新",
+    "quota.group.other": "其他",
+    "quota.group.otherModels": "其他模型",
+    "quota.group.weekly": "每周",
+    "quota.group.weeklyCredits": "每周额度",
+    "quota.history.allCurvesHidden": "所有曲线均已隐藏 — 请从上方菜单中选择。",
+    "quota.history.buildingUp": "额度历史会随刷新逐步积累。",
+    "quota.history.curveCount": "{count, plural, other {# 条}}曲线",
+    "quota.history.curvePickerA11y": "选择要显示的额度曲线",
+    "quota.history.curvesAll": "全部 {total}",
+    "quota.history.curvesSome": "{total} 中的 {shown}",
+    "quota.history.forecastLegend": "预测",
+    "quota.history.moreBuckets": "{names} +{count}",
+    "quota.history.moreReadings": "另有 {count} 项",
+    "quota.history.navigatorAllProviders": "全部厂商额度历史范围导航",
+    "quota.history.navigatorProvider": "额度历史范围导航",
+    "quota.history.providerCount": "{count, plural, other {# 家}}厂商",
+    "quota.history.scopeNote": "{scope} · 已记录 {total}，显示 {visible}",
+    "quota.history.showAllCurves": "显示全部曲线",
+    "quota.history.showBusiest": "仅显示最活跃的",
+    "quota.history.title": "额度历史",
+    "quota.history.tooltipAtReset": "重置时",
+    "quota.history.tooltipPace": "进度",
+    "quota.history.tooltipQuotaLeft": "剩余额度",
+    "quota.login.claude": "运行 claude login，然后刷新。",
+    "quota.login.codex": "运行 codex login，然后刷新。",
+    "quota.login.cursor": "登录 Cursor.app，或导入 cursor.com 的 cookies，然后刷新。",
+    "quota.login.grok": "运行 grok login，或导入 grok.com 的 cookies，然后刷新。",
+    "quota.login.misc": "在「设置 → 其他厂商」中配置 {provider}。",
+    "quota.mini.forecastLearning": "学习中 · 剩余 {percent}%",
+    "quota.mini.forecastLearningCompact": "约剩余 {percent}%",
+    "quota.mini.forecastLeftCompact": "剩余 {percent}%",
+    "quota.mini.forecastMayRunOut": "可能 {countdown}耗尽",
+    "quota.mini.forecastSurplus": "盈余 · 剩余 {percent}%",
+    "quota.mini.forecastSurplusCompact": "盈余 {percent}%",
+    "quota.mini.nextProvider": "下一个厂商",
+    "quota.mini.noLiveData": "所选字段暂无实时数据",
+    "quota.mini.pageIndicator": "{index}/{total}",
+    "quota.mini.railEmpty": "所选项目在未来 7 天内没有补额。",
+    "quota.mini.railTitle": "额度重置 · 未来 {days} 天",
+    "quota.mini.resets": "{countdown}重置",
+    "quota.mini.rowHelp": "{subProvider} — {row}：{percent}%",
+    "quota.misc.independentCopies": "{count, plural, other {# 份}}独立配置",
+    "quota.misc.notConfigured": "尚未配置。",
+    "quota.misc.refreshCopies": "刷新 {provider} 的全部副本",
+    "quota.misc.refreshProvider": "刷新 {provider}",
+    "quota.misc.setUpInSettings": "在设置中配置",
+    "quota.mode.remaining": "剩余",
+    "quota.mode.used": "已用",
+    "quota.pace.deficit": "超支 {percent}%",
+    "quota.pace.deficitShort": "超支 {percent}%",
+    "quota.pace.lastsUntilReset": "可用到重置",
+    "quota.pace.onTrack": "进度正常",
+    "quota.pace.reserve": "结余 {percent}%",
+    "quota.pace.reserveShort": "结余 {percent}%",
+    "quota.pace.runsOutIn": "{countdown}后耗尽",
+    "quota.pace.runsOutShort": "{countdown}耗尽",
+    "quota.perModelLimits": "{count, plural, other {# 个}}按模型的限额 · 打开 {provider} 查看详情",
     "quota.remainingPercent": "剩余 {percent}%",
+    "quota.reset.in": "距重置 {duration}",
+    "quota.reset.passed": "重置时间已过",
+    "quota.reset.passedAt": "重置时间已过 · {time}",
+    "quota.resetCredits.available": "{count, plural, other {# 张}}可用重置券",
+    "quota.resetCredits.availableWithExpiry": "{available} · 最近一张 {countdown}后过期",
+    "quota.resetCredits.title": "限额重置券",
     "quota.resetsIn": "{days} 天 {hours} 小时后重置",
     "quota.resetsInHours": "{hours} 小时 {minutes} 分后重置",
+    "quota.upcoming.axisDays": "+{days} 天",
+    "quota.upcoming.axisHours": "+{hours} 小时",
+    "quota.upcoming.empty": "未来 7 天内无额度补满。",
+    "quota.upcoming.gain": "+{gain}%",
+    "quota.upcoming.horizon": "未来 7 天",
+    "quota.upcoming.leftAndGain": "当前剩余 {remaining}% · 将补回 +{gain}%",
+    "quota.upcoming.markerHelp": "{label} — 当前 {remaining}%，{countdown}后补回 +{gain}%",
+    "quota.upcoming.resetsAt": "{countdown}后重置 · {absolute}",
+    "quota.upcoming.title": "即将重置",
+    "quota.update.failed": "更新失败：{reason}",
     "quota.usedPercent": "已用 {percent}%",
-    "resetHistory.laneAverage": "平均浪费 {percent}% · 近 {count} 个周期",
-    "resetHistory.noCompletedCycles": "尚无已完成的周期",
-    "resetHistory.title": "重置周期对比",
-    "resetHistory.wastedSummary": "已用 {used}% · 浪费 {wasted}% · {cycles} 个周期",
+    "quota.window.dayOfDays": "第 {day}/{total} 天 · {value}",
+    "quota.window.elapsedOfWindow": "{window} 已过 {elapsed} · {value}",
+    "quota.window.resetsSoon": "即将重置 · {value}",
+    "resetHistory.a11y.empty": "重置历史对比。{verdict}",
+    "resetHistory.a11y.more": " 另有 {count} 个额度。",
+    "resetHistory.a11y.summary": "重置历史对比，{window}，柱高表示重置时剩余的额度。{truncation} {headline}。{verdict} {lanes}。{more}",
+    "resetHistory.a11y.truncation": " 网格{note}；数据仍涵盖全部周期。",
+    "resetHistory.axis.cycle": "周期",
+    "resetHistory.axis.cycleHelp": "每个周期一列，各额度的最新周期对齐",
+    "resetHistory.axis.time": "时间",
+    "resetHistory.axis.timeHelp": "按实际发生时间排布在同一条日历上",
+    "resetHistory.axisCurrent": "当前",
+    "resetHistory.axisCyclesBack": "−{count}",
+    "resetHistory.axisNow": "现在",
+    "resetHistory.barIsOneCycle": "每根柱条代表一个额度周期",
+    "resetHistory.cardTitle": "重置历史",
+    "resetHistory.compareEmpty": "暂无可对比的数据 — 厂商上报按周或更长周期的额度后会显示在此。",
+    "resetHistory.compareWindow": "对比{window}",
+    "resetHistory.currentCycleCaption": "当前周期 · 已用 {used}% · 剩余 {left}%",
+    "resetHistory.cycleCaption": "{time} 重置 · 已用 {used}% · 剩余 {left}%",
+    "resetHistory.earlyRefillCount": "{count, plural, other {# 个周期}}在窗口结束前补额",
+    "resetHistory.lane.emptyState": "尚无完整周期 — 额度补满时才会记录一个周期",
+    "resetHistory.lane.spokenNoCycles": "{label}：尚无完整周期",
+    "resetHistory.lane.spokenWaste": "{label}：{count} 个周期平均浪费 {percent}%",
+    "resetHistory.laneAverage": "平均浪费 {percent}% · 最近 {count, plural, other {# 个周期}}",
+    "resetHistory.lastSeenBefore": "重置前 {duration}最后一次观测",
+    "resetHistory.legend.barHeight": "柱高 = 重置时剩余",
+    "resetHistory.legend.byDate": "按日期排布",
+    "resetHistory.legend.perCycle": "每个周期一列",
+    "resetHistory.legend.refilledEarly": "提前补额",
+    "resetHistory.noCompletedCycles": "尚无完整周期",
+    "resetHistory.reset.earlyClockRestarted": "提前补额，下一周期重新计时",
+    "resetHistory.reset.earlyClockUnchanged": "提前补额，下次重置时间不变",
+    "resetHistory.reset.earlyUnclear": "提前补额，重置节奏已改变",
+    "resetHistory.retiredAccount": "已登出的账号",
+    "resetHistory.retiredAccountNumbered": "已登出的账号 {number}",
+    "resetHistory.spoken.allCycles": "全部已记录周期",
+    "resetHistory.spoken.allTime": "全部历史记录",
+    "resetHistory.spoken.eightCycles": "最近 8 个周期",
+    "resetHistory.spoken.eightWeeks": "最近 8 周",
+    "resetHistory.spoken.fourCycles": "最近 4 个周期",
+    "resetHistory.spoken.fourWeeks": "最近 4 周",
+    "resetHistory.spoken.twelveCycles": "最近 12 个周期",
+    "resetHistory.spoken.twelveWeeks": "最近 12 周",
+    "resetHistory.title": "重置历史对比",
+    "resetHistory.tooltip.completed": "重置时剩余 {left}% · 已用 {used}%",
+    "resetHistory.tooltip.current": "当前周期 · 当前剩余 {left}% · 已用 {used}%",
+    "resetHistory.tooltip.range": "{start} → {end} 重置",
+    "resetHistory.tooltip.rangeDue": "{start} → {end} 预计重置",
+    "resetHistory.totals.none": "该区间内无完整周期",
+    "resetHistory.truncation": "仅显示最近 {shown} 个周期，共 {total} 个",
+    "resetHistory.verdict.clean": "无明显浪费 — 补回的额度已使用 {percent}%。",
+    "resetHistory.verdict.leaky": "{label} 在 {count, plural, other {# 个周期}}中平均有 {percent}% 未使用。",
+    "resetHistory.verdict.noCycles": "尚无完整周期 — 额度补满时才会记录一个周期。",
+    "resetHistory.verdict.noQuota": "尚未跟踪任何按周或更长周期的额度。",
+    "resetHistory.verdict.wasteful": "{label} 有 {count, plural, other {# 次}}补额后超过一半未使用。",
+    "resetHistory.wastedSummary": "已用 {used}% · 浪费 {wasted}% · {cycles, plural, other {# 个周期}}",
+    "resetHistory.window.all": "全部",
+    "resetHistory.window.eightWeeks": "8 周",
+    "resetHistory.window.fourWeeks": "4 周",
+    "resetHistory.window.twelveWeeks": "12 周",
+    "settings.antigravityCookieEnabled": "Antigravity 的 cookie 导入已启用 — 请先在 antigravity.google 登录。",
+    "settings.antigravityLocalOnly": "Antigravity 读取本机运行的语言服务。cookie 导入将等到 Antigravity Cloud 端点上线后再启用。",
+    "settings.antigravitySource": "Antigravity 来源",
+    "settings.appVersion": "Vibe Bar {version}",
+    "settings.bundled": "内置",
+    "settings.checkConnections": "检查 {company} 连接",
+    "settings.checkForUpdates": "检查更新…",
+    "settings.checkKitUpdates": "检查组件更新",
+    "settings.checkingGitHub": "正在向 github.com 查询最新版本…",
+    "settings.clearCostData": "清除花费数据",
+    "settings.connectionHealth": "连接状态",
+    "settings.costDataIntro": "花费根据 ~/.codex/sessions 与 ~/.claude/projects 下的本地 CLI 会话 JSONL 日志计算。网页端与桌面端用量不计入。",
+    "settings.couldNotDeleteCookies": "无法删除已保存的 cookies。",
+    "settings.couldNotDeleteGeminiCookies": "无法删除已保存的 Gemini cookies。",
+    "settings.couldNotDeleteGrokCookies": "无法删除已保存的 Grok cookies。",
+    "settings.credentialSource.apiOnly": "仅 API / OAuth",
+    "settings.credentialSource.browserOnly": "仅浏览器",
+    "settings.credentialSource.manualOnly": "仅手动",
+    "settings.credentialSource.off": "关闭",
+    "settings.cursorNoSession": "没有可用的 Cursor.app 会话 — 请在下方导入 cursor.com 的 cookies。",
+    "settings.cursorSessionDetected": "已检测到 Cursor.app 的登录会话",
+    "settings.cursorSource": "Cursor 来源",
+    "settings.cursorSourceValue": "Cursor.app → 网页",
+    "settings.deleteCookies": "删除 cookies",
+    "settings.deleteGeminiCookies": "删除 Gemini 的 cookies",
+    "settings.deleteGrokCookies": "删除 Grok 的 cookies",
+    "settings.displayMode.remaining": "剩余",
+    "settings.displayMode.used": "已用",
+    "settings.externalChange.title": "另一个 Vibe Bar 覆盖了此处的修改",
+    "settings.geminiCookiesSaved": "Gemini 的 cookies 已保存。",
+    "settings.geminiShared": "Gemini 与 Antigravity 共用同一份 Google AI 订阅额度。网页端仅支持 cookie 导入，没有 WebView 登录途径。",
+    "settings.geminiSource": "Gemini 来源",
+    "settings.grokAuthDetected": "已检测到 ~/.grok/auth.json",
+    "settings.grokCookiesSaved": "Grok 的 cookies 已保存。",
+    "settings.keepHistory": "保留历史",
+    "settings.keepHistoryDetail": "适用于花费历史与订阅填充历史。",
+    "settings.kitDetail": "会话发现、harness 命名与 MCP 传输。独立仓库，固定到确切 tag 并编译进本次构建。",
+    "settings.language.caption": "Vibe Bar 默认跟随 macOS 语言，也可以在此单独指定。厂商、模型与 harness 名称保持原始拼写。",
     "settings.language.system": "跟随系统",
     "settings.language.title": "语言",
+    "settings.mcp.allowRefresh": "允许 agent 刷新额度",
+    "settings.mcp.allowRefreshDetail": "开启后，agent 可以让 Vibe Bar 重新向厂商拉取额度。强制刷新限流为每 {seconds} 秒一次。关闭后只读工具照常可用，quota.refresh 会报告刷新已禁用。",
+    "settings.mcp.allowSkills": "允许 agent 安装 skills",
+    "settings.mcp.allowSkillsDetail": "开启后，agent 可以调用 skills.install，从 GitHub 仓库或本地文件夹添加 skill。它走的是与 Workbench → Skills 相同的管理流程，因此只写入 ~/.agents/skills 以及 Vibe Bar 管理的 agent skills 目录 — 绝不覆盖已被其他 skill 占用的文件夹。关闭后该工具会报告安装已禁用。",
+    "settings.mcp.appendCodexConfig": "追加到 ~/.codex/config.toml。",
+    "settings.mcp.connectAgent": "接入一个 agent",
+    "settings.mcp.connectedClients": "已连接客户端",
+    "settings.mcp.enable": "启用本地 MCP 服务",
+    "settings.mcp.intro": "Vibe Bar 可通过 MCP 向编码 agent 提供本机的额度、用量、花费与本地会话。服务监听 home 目录下的 Unix domain socket — 不开放网络端口，也不创建 token：socket 的文件权限即访问控制。",
+    "settings.mcp.lastActivity": "最近一次客户端活动",
+    "settings.mcp.listening": "监听中",
+    "settings.mcp.manualIntro": "也可手动配置客户端。所有客户端运行同一条命令 — Vibe Bar 自身的可执行文件加 {flag}，它把 stdin/stdout 桥接到上面的 socket。",
+    "settings.mcp.mergeCursorConfig": "合并到 ~/.cursor/mcp.json。",
+    "settings.mcp.movePrompt": "Vibe Bar 正从 {path} 运行。保存客户端配置前请先移动到 /Applications，否则下次重新构建后配置会失效。",
+    "settings.mcp.notListening": "未监听",
+    "settings.mcp.otherStdioClient": "其他 stdio 客户端",
+    "settings.mcp.otherStdioDetail": "给客户端自己的 mcpServers 映射加一条。",
+    "settings.mcp.quickestPath": "最快的方式：把这段粘贴给任意 agent，让它自行完成配置、安装配套 skill 并验证连接。",
+    "settings.mcp.readOnlyDetail": "agent 能访问的其余内容均为只读：额度、token 用量、花费、厂商状态、生效模型价格，以及本地会话索引（标题、项目，以及在开启会话正文索引时的消息摘录）。凭据、cookies 与组织 id 从不暴露，邮箱地址会被掩码。",
+    "settings.mcp.runInTerminal": "在终端中运行。",
+    "settings.mcp.setupPrompt": "Agent 配置提示词",
+    "settings.mcp.setupPromptDetail": "一行内容，适用于任何能抓取 URL 的 agent。",
+    "settings.mcp.socket": "Socket",
+    "settings.mcp.socketLifetime": "socket 仅在 Vibe Bar 运行时存在。退出后，下方配置的 agent 会报告 “Vibe Bar is not running”，这是预期行为。",
+    "settings.mcp.status": "状态",
+    "settings.mcp.title": "MCP 服务",
+    "settings.mcp.whatAgentsMayDo": "agent 的权限范围",
+    "settings.menuBarHealthUnavailable": "本进程未接入菜单栏健康监控。",
+    "settings.miniWindow.add": "添加迷你窗口",
+    "settings.miniWindow.allBucketsIncluded": "已知的 bucket 都已在此窗口中。",
+    "settings.miniWindow.density.narrow": "紧凑",
+    "settings.miniWindow.density.narrowDetail": "菜单栏的紧凑样式：同样的单元，尺寸更小。",
+    "settings.miniWindow.density.roomy": "宽松",
+    "settings.miniWindow.density.roomyDetail": "菜单栏的单行样式：显示全部 bucket，名称与数字并列。",
+    "settings.miniWindow.density.twoLines": "双行",
+    "settings.miniWindow.density.twoLinesDetail": "菜单栏样式：bucket 两两成列堆叠，每个数字旁附名称。",
+    "settings.miniWindow.dismissBuiltIn": "在厂商未返回该内置 bucket 期间将其隐藏。厂商一旦恢复返回，它便会重新出现。",
+    "settings.miniWindow.forgetDiscovered": "忘记这个已发现的 bucket — 将其从列表以及所有选中它的窗口中移除。",
+    "settings.miniWindow.includeStyle": "将{mode}纳入双击循环",
+    "settings.miniWindow.lastCannotBeRemoved": "最后一个迷你窗口无法移除。",
+    "settings.miniWindow.mode.compact": "紧凑",
+    "settings.miniWindow.mode.compactDetail": "同样的三层结构，改为竖条，适合放在屏幕角落。",
+    "settings.miniWindow.mode.focus": "聚焦",
+    "settings.miniWindow.mode.focusDetail": "一次只显示一个选定 bucket，尺寸更大 — 点击按设定顺序切换。",
+    "settings.miniWindow.mode.ledger": "清单",
+    "settings.miniWindow.mode.ledgerDetail": "每个额度 bucket 一行 — 宽度固定，向下延伸。",
+    "settings.miniWindow.mode.rail": "时间轴",
+    "settings.miniWindow.mode.railDetail": "把未来 7 天画成一条补额轴，并列出即将到来的重置。",
+    "settings.miniWindow.mode.regular": "标准",
+    "settings.miniWindow.mode.regularDetail": "环形仪表，按 company → SubProvider → 额度组分组。",
+    "settings.miniWindow.mode.strip": "条带",
+    "settings.miniWindow.mode.stripDetail": "与菜单栏样式一致的细长条 — 每个 bucket 一格。",
+    "settings.miniWindow.mode.tiles": "磁贴",
+    "settings.miniWindow.mode.tilesDetail": "磁贴网格，含大号数字与状态色条。",
+    "settings.miniWindow.namesAllWindows": "名称：全部窗口",
+    "settings.miniWindow.namesThisStyle": "仅此处的{mode}",
+    "settings.miniWindow.namesThisWindow": "仅“{name}”",
+    "settings.miniWindow.noFieldsSelected": "未选择任何字段 — 请在上方勾选。",
+    "settings.miniWindow.notInWindow": "不在“{name}”中 — 勾选 bucket 即可加入。适配器在运行时发现的 bucket 会自动出现在这里；灰显的行表示已记录但不在账号当前响应中，✕ 可将其忽略，直到厂商重新返回。",
+    "settings.miniWindow.offline": "离线",
+    "settings.miniWindow.openClose": "打开 / 关闭",
+    "settings.miniWindow.overridesStyle": "仅对此窗口的{mode}样式生效的覆盖。留空则先继承窗口名称，再继承共享名称 — 以占位文本显示。",
+    "settings.miniWindow.overridesWindow": "仅对此窗口生效的名称覆盖。留空则继承共享名称 — 以占位文本显示。",
+    "settings.miniWindow.removeFromWindow": "从此窗口移除",
+    "settings.miniWindow.removeHelp": "移除此迷你窗口",
+    "settings.miniWindow.stripDensity": "条带密度",
+    "settings.miniWindow.styleCycle": "双击窗口可循环切换样式。点选某个样式即将其纳入循环 — 徽标表示它在循环中的次序。未选任何样式即表示按此顺序使用全部样式。",
+    "settings.miniWindow.toggleHelp": "在屏幕上显示或隐藏此迷你窗口",
+    "settings.miniWindow.treeDetail": "窗口的一棵树 — 按其折叠方式分组（company → SubProvider → 额度组 → bucket）。拖动行可重新排序，✕ 可移除，任一层级均可就地重命名。第一个字段渲染在最左（或最上）。",
+    "settings.misc.accessKeyId": "Access Key ID（AKLT…）",
+    "settings.misc.akSkSaved": "AK/SK 已保存到 Keychain。",
+    "settings.misc.apiKeySaved": "API key 已保存到 Keychain。",
+    "settings.misc.clearWorkspace": "清除已保存的工作区",
+    "settings.misc.clone": "复制 {provider}",
+    "settings.misc.consoleLink": "{title} →",
+    "settings.misc.edition": "版本",
+    "settings.misc.githubSignInHint": "通过 GitHub 设备流程登录。",
+    "settings.misc.githubTokenSaved": "GitHub 设备令牌已保存到 Keychain。",
+    "settings.misc.importDetail": "添加或刷新找到的第一个已登录浏览器配置；已导入的配置会保留叠加，该厂商的额度取上方所有槽位的平均值。每个 Chromium 系浏览器，macOS 可能会要求输入一次登录钥匙串密码。",
+    "settings.misc.kiroHint": "运行 `kiro-cli login`，之后 Vibe Bar 会探测 `kiro-cli chat --no-interactive /usage`。",
+    "settings.misc.noCookieSpec": "{provider} 未注册 cookie 规格。",
+    "settings.misc.noCookiesYet": "尚未导入 cookies — 可从浏览器导入或在下方粘贴。",
+    "settings.misc.probe": "探测",
+    "settings.misc.prompt.copilotHost": "GitHub Enterprise 主机（可选，例如 github.example.com）",
+    "settings.misc.prompt.dashscope": "粘贴 DashScope API key（sk-...）— 可选",
+    "settings.misc.prompt.kilo": "粘贴 Kilo API key（可选）",
+    "settings.misc.prompt.minimax": "粘贴 MiniMax Token Plan API key（sk-cp-... 或 MINIMAX_CODING_API_KEY）",
+    "settings.misc.prompt.openRouter": "粘贴 OpenRouter API key（sk-or-v1-...）",
+    "settings.misc.prompt.openRouterHost": "OpenRouter API URL（可选，默认为 https://openrouter.ai/api/v1）",
+    "settings.misc.prompt.warp": "粘贴 Warp API key（wk-...）",
+    "settings.misc.prompt.workspace": "工作区 ID 或 URL（可选，wrk_... 或 /workspace/wrk_.../go）",
+    "settings.misc.prompt.zai": "粘贴 Z.ai API key（zai-...）",
+    "settings.misc.region": "区域",
+    "settings.misc.region.auto": "自动（两者都试）",
+    "settings.misc.region.chinaMainland": "中国大陆（cn-beijing）",
+    "settings.misc.region.international": "国际站（ap-southeast-1）",
+    "settings.misc.region.minimaxChina": "中国大陆（minimaxi.com）",
+    "settings.misc.region.minimaxGlobal": "全球站（minimax.io）",
+    "settings.misc.region.zaiChina": "中国大陆（open.bigmodel.cn）",
+    "settings.misc.region.zaiGlobal": "全球站（api.z.ai）",
+    "settings.misc.removeAkSk": "移除已保存的 {provider} AK/SK",
+    "settings.misc.removeApiKey": "移除已保存的 {provider} API key",
+    "settings.misc.removeCookieSlot": "移除此 cookie 槽位",
+    "settings.misc.removeCopy": "移除此 {provider} 副本",
+    "settings.misc.removeCopyButton": "移除副本",
+    "settings.misc.removeCopyDetail": "其保存的凭据会从 Keychain 中删除 — 包括 API key 或 AK/SK 以及全部已导入的 cookie 槽位。此操作不可撤销。",
+    "settings.misc.removeCopyTitle": "是否移除此 {provider} 副本？",
+    "settings.misc.removeGithubToken": "移除已保存的 GitHub 设备令牌",
+    "settings.misc.rename": "重命名此副本",
+    "settings.misc.secretAccessKey": "Secret Access Key",
+    "settings.misc.signIn": "登录",
+    "settings.misc.signInViaWeb": "通过网页登录",
+    "settings.misc.tencentTokenPlanNote": "个人版 Token Plan 目前仅在中国大陆（cn-beijing）提供。复制此行即可同时跟踪团队版与个人版。",
+    "settings.misc.variant": "变体",
+    "settings.misc.waiting": "等待中…",
+    "settings.misc.workspaceNote": "仅当账号拥有多个工作区时才需要填写 — 否则 Vibe Bar 使用找到的第一个。",
+    "settings.needsSetup": "需配置",
+    "settings.notChecked": "未检查",
+    "settings.notCheckedYet": "尚未检查。在主动发起前不会请求任何内容。",
+    "settings.openRefreshCooldown": "打开刷新的最小间隔",
+    "settings.openRefreshDetail": "每个间隔周期内，打开面板最多刷新一次全部可见厂商。",
+    "settings.openStatusPage": "打开 {company} 状态页",
+    "settings.percentShows": "百分比显示",
+    "settings.planBadge": "套餐标签",
+    "settings.planBadgeDetail": "留空则使用自动检测到的账号套餐。",
+    "settings.popoverDensity.compact": "紧凑",
+    "settings.popoverDensity.compactDetail": "间距最紧，面板最窄。",
+    "settings.popoverDensity.regular": "标准",
+    "settings.popoverDensity.regularDetail": "间距均衡 — 默认。",
+    "settings.popoverDensity.spacious": "宽松",
+    "settings.popoverDensity.spaciousDetail": "间距宽裕，适合大屏。",
+    "settings.pricing.addOverride": "添加模型覆盖值",
+    "settings.pricing.advancedTiers": "高级分档",
+    "settings.pricing.alwaysWins": "始终优先",
+    "settings.pricing.bundledFallback": "内置兜底",
+    "settings.pricing.cacheReadAbove": "阈值以上缓存读取",
+    "settings.pricing.cacheWriteAbove": "阈值以上缓存写入",
+    "settings.pricing.deleteOverride": "删除覆盖值",
+    "settings.pricing.exactModelName": "模型名称（精确匹配）",
+    "settings.pricing.fastMultiplier": "快速档倍率",
+    "settings.pricing.inputAbove": "阈值以上输入",
+    "settings.pricing.intro": "目录在后台刷新。同一厂商与模型名出现多次时，靠前的条目优先。",
+    "settings.pricing.localOverrides": "本地覆盖值",
+    "settings.pricing.noOverrides": "暂无本地覆盖值。",
+    "settings.pricing.offlineFloor": "离线下限",
+    "settings.pricing.outputAbove": "阈值以上输出",
+    "settings.pricing.overridesIntro": "价格单位为每百万 token 的美元数。厂商未公布缓存价格时，相应字段留空。",
+    "settings.pricing.priorityHealth": "优先级与来源状态",
+    "settings.pricing.rateInput": "输入",
+    "settings.pricing.rateOutput": "输出",
+    "settings.pricing.refreshNow": "立即刷新",
+    "settings.pricing.refreshing": "正在刷新…",
+    "settings.pricing.thresholdTokens": "分档阈值 token 数",
+    "settings.pricingDataDate": "价格数据：{date}",
+    "settings.privacyDetail": "token 从本地 CLI 凭据读取。已保存的 OpenAI 与 Claude 网页 cookies 存放在 macOS Keychain 中，按浏览器与 WebView 来源分开。~/.vibebar/cookies 下的旧版明文 cookie 文件会迁移一次并删除。设置、额度缓存与花费汇总保留在 ~/.vibebar 下。",
+    "settings.privacyMode": "隐私模式",
+    "settings.privacyModeDetail": "隐私模式不将花费数据写入磁盘，并清除本地花费历史、快照与扫描缓存。",
+    "settings.ready": "就绪",
+    "settings.refreshEvery": "刷新间隔",
+    "settings.refreshOnPopoverOpen": "打开面板时刷新",
+    "settings.releaseNotes": "发行说明",
+    "settings.remote.core": "远程 Core",
+    "settings.remote.costAggregation": "花费汇总",
+    "settings.remote.costAggregationIntro": "选择哪些远程机器计入本机的花费与 token 总计。选择与汇总均在本 Core 完成；Relay 不会看到明文用量。",
+    "settings.remote.differentControlCenter": "使用其他控制台",
+    "settings.remote.discard": "丢弃",
+    "settings.remote.discardPendingDetail": "该配对码已失效，且工作区仍将本机视为其 Core。如需重新加入，请先在网页控制台吊销本机，再创建新的配对码。",
+    "settings.remote.discardPendingTitle": "是否丢弃这次待完成的加入？",
+    "settings.remote.disconnect": "断开连接",
+    "settings.remote.disconnectButton": "断开与工作区的连接…",
+    "settings.remote.disconnectDetail": "日后重新连接需要新的配对码或配置文件。",
+    "settings.remote.disconnectIntro": "断开会从 Keychain 移除本机的 Relay 凭据及其工作区绑定。在 Relay 端吊销之前，探针仍会继续上传。已解密的用量保留在本地账本中。",
+    "settings.remote.disconnectTitle": "是否断开与该工作区的连接？",
+    "settings.remote.experimentalBadge": "实验性",
+    "settings.remote.experimentalNote": "远端机器为实验性功能：协议与此设置页可能在版本之间变化；未连接工作区时，面板不显示该标签页。",
+    "settings.remote.exportIdentity": "导出 Core 身份…",
+    "settings.remote.importProvisioning": "导入配置文件…",
+    "settings.remote.join": "加入",
+    "settings.remote.joinIntro": "在 Vibe Bar 控制台创建 Core 配对码，然后粘贴到此处。本机将以“{device}”的名义加入。",
+    "settings.remote.joinWithCode": "用配对码加入",
+    "settings.remote.lastSync": "最近同步",
+    "settings.remote.machineDetail": "{platform} · 探针 {version}",
+    "settings.remote.machinesAppearAfterImport": "机器在首批加密数据导入后出现在此。",
+    "settings.remote.machinesSynced": "已同步机器",
+    "settings.remote.manualPairingIntro": "配对分三步：导出本机 Core 身份，在 Relay 注册以生成配置文件，然后在此导入该文件。导入会把 Relay 凭据移入 macOS Keychain — 但配置文件本身仍包含该凭据，导入成功后请删除该文件。",
+    "settings.remote.notConnected": "本机尚未连接到工作区。远程探针在其他机器上采集归一化用量，用本机 Core 的密钥加密后投递到 Relay — 本机不会开放任何入站端口。",
+    "settings.remote.orPairManually": "也可手动配对。",
+    "settings.remote.pendingIntro": "上一次加入已被控制台接受，但在本机未完成保存。该配对码已失效，请继续保存，而不是重新申请配对码。",
+    "settings.remote.provisioning": "配置接入",
+    "settings.remote.registeredProbes": "已注册探针",
+    "settings.remote.relay": "Relay",
+    "settings.remote.resumeSaving": "继续保存",
+    "settings.remote.retrySaving": "重试保存",
+    "settings.remote.statusWithCode": "{title} · {code}",
+    "settings.remote.sync.busy": "Relay 暂时繁忙",
+    "settings.remote.sync.connectionFailed": "Relay 连接中断",
+    "settings.remote.sync.hostLookupFailed": "无法解析 Relay 主机",
+    "settings.remote.sync.invalidResponse": "Relay 返回了预期之外的响应",
+    "settings.remote.sync.networkDetail": "请检查本机的网络或代理设置；已有的机器数据仍然可用。",
+    "settings.remote.sync.offline": "本机当前离线",
+    "settings.remote.sync.rejected": "Relay 拒绝了访问",
+    "settings.remote.sync.rejectedDetail": "工作区凭据可能已被吊销，请在设置中重新连接本 Core。",
+    "settings.remote.sync.retryDetail": "已有的机器数据仍然可用，Vibe Bar 会自动重试。",
+    "settings.remote.sync.secureConnectionFailed": "Relay 安全连接失败",
+    "settings.remote.sync.sequenceGap": "探针历史存在序号缺口",
+    "settings.remote.sync.sequenceGapDetail": "Relay 流中缺少一个探针批次，因此后续批次未被导入。",
+    "settings.remote.sync.timeout": "Relay 连接超时",
+    "settings.remote.sync.transportFailed": "Relay 传输失败",
+    "settings.remote.sync.unknown": "远程同步需要处理",
+    "settings.remote.sync.unknownDetail": "本地用量未被删除。可立即重试，或在「远程 Core」设置中查看错误码。",
+    "settings.remote.sync.unverifiedProbe": "有探针无法通过校验",
+    "settings.remote.sync.unverifiedProbeDetail": "当前工作区名单未授权收到的某个批次。",
+    "settings.remote.syncNow": "立即同步",
+    "settings.remote.workspace": "工作区",
+    "settings.repository": "仓库",
+    "settings.rescanCostLogs": "重新扫描花费日志",
+    "settings.route.antigravityLocal": "本地 Antigravity / agy",
+    "settings.route.browserCookies": "Chrome/Safari cookies",
+    "settings.route.cli": "CLI",
+    "settings.route.grokAuthFile": "~/.grok/auth.json",
+    "settings.route.oauth": "OAuth",
+    "settings.route.webViewCookies": "WebView cookies",
+    "settings.routeHealth.agyAvailable": "agy CLI 可用",
+    "settings.routeHealth.authFileExpired": "auth.json 已过期",
+    "settings.routeHealth.authFileUnreadable": "无法读取 auth.json",
+    "settings.routeHealth.cachedOnly": "仅有缓存数据；无法获取实时额度",
+    "settings.routeHealth.credentialUnreadable": "无法读取凭据",
+    "settings.routeHealth.credentialsAvailable": "凭据可用",
+    "settings.routeHealth.invalidCookie": "cookie 数据无效",
+    "settings.routeHealth.keychainLocked": "Keychain 已锁定",
+    "settings.routeHealth.lspRunning": "本地 LSP 正在运行",
+    "settings.routeHealth.noAntigravityData": "没有本地 Antigravity 数据",
+    "settings.routeHealth.noAuthFile": "没有 auth.json",
+    "settings.routeHealth.noCredential": "未找到凭据",
+    "settings.routeHealth.noSavedCookie": "没有已保存的 cookie",
+    "settings.routeHealth.savedInKeychain": "已保存到 Keychain",
+    "settings.search": "搜索设置",
+    "settings.section.components": "组件",
+    "settings.section.costData": "花费数据",
+    "settings.section.layout": "布局",
+    "settings.section.menuBar": "菜单栏",
+    "settings.section.menuBarHealth": "菜单栏健康",
+    "settings.section.miniWindows": "迷你窗口",
+    "settings.section.privacy": "隐私",
+    "settings.section.refreshing": "刷新",
+    "settings.section.remoteProbes": "远程探针",
+    "settings.section.system": "系统",
+    "settings.section.updates": "更新",
+    "settings.showAssistant": "打开设置向导",
+    "settings.showAssistantDetail": "重新走一遍订阅、浏览器 cookies、API key、模型价格与登录项。不会重置任何设置。",
+    "settings.sidebar.coreProviders": "核心厂商",
+    "settings.sidebar.disableProvider": "停用厂商",
+    "settings.sidebar.enableProvider": "启用厂商",
+    "settings.sidebar.hideFromOverview": "从总览中隐藏",
+    "settings.spaceXAIIntro": "SpaceXAI 页面同时包含 Grok 与 Cursor。Grok 读取 `~/.grok/auth.json` 或 grok.com 的 cookies；Cursor 先读 Cursor.app，再读 cursor.com 的 cookie 槽位。Grok Bot 提供额度，以及来自本地缓存的只读会话 — 其云端运行仍不产生 token 或花费记录。",
+    "settings.terminal.copyOnly": "复制到剪贴板",
+    "settings.updateChannel": "更新通道",
+    "settings.updateChannel.dev": "预览版",
+    "settings.updateChannel.devDetail": "预览版本，以及全部正式版本。",
+    "settings.updateChannel.main": "正式版",
+    "settings.updateChannel.mainDetail": "仅稳定版本。",
+    "settings.updateCheckDetail": "每天检查一次所选通道，安装前会先询问。",
+    "settings.usageMode.antigravity.autoDetail": "优先使用 Antigravity 应用，其次是本机安装的 agy CLI；在网页来源可用时回退到已导入的 cookies。",
+    "settings.usageMode.antigravity.localFirstDetail": "优先使用 Antigravity 应用或 agy CLI；其次回退到已导入的 cookies。",
+    "settings.usageMode.antigravity.localOnly": "仅本地来源",
+    "settings.usageMode.antigravity.localOnlyDetail": "仅使用 Antigravity 应用或本机安装的 agy CLI。",
+    "settings.usageMode.antigravity.localThenWeb": "先本地来源，后网页",
+    "settings.usageMode.antigravity.webFirstDetail": "优先使用已导入的 cookies；其次回退到 Antigravity 应用或 agy CLI。",
+    "settings.usageMode.antigravity.webOnly": "仅网页",
+    "settings.usageMode.antigravity.webOnlyDetail": "仅使用已导入的 cookies。在 Antigravity Cloud 端点上线前会回退到本地探测。",
+    "settings.usageMode.antigravity.webThenLocal": "先网页，后本地来源",
+    "settings.usageMode.claude.autoDetail": "优先使用已保存的 claude.ai cookies；其次回退到 Claude OAuth 与 Claude Code。",
+    "settings.usageMode.claude.codeFirstDetail": "优先使用 Claude Code；其次回退到已保存的 claude.ai cookies。",
+    "settings.usageMode.claude.codeOnly": "仅 Claude Code",
+    "settings.usageMode.claude.codeOnlyDetail": "仅使用本地 Claude Code 的 OAuth 凭据。",
+    "settings.usageMode.claude.codeThenWeb": "先 Claude Code，后网页",
+    "settings.usageMode.claude.oauthCodeWeb": "依次使用 OAuth、Claude Code、网页",
+    "settings.usageMode.claude.oauthFirstDetail": "优先使用 Claude OAuth；其次回退到 Claude Code 与已保存的 claude.ai cookies。",
+    "settings.usageMode.claude.oauthOnlyDetail": "仅使用 Claude OAuth 凭据。",
+    "settings.usageMode.claude.webFirstDetail": "优先使用已保存的 claude.ai cookies；其次回退到 Claude Code 与 OAuth。",
+    "settings.usageMode.claude.webOnly": "仅 Claude 网页",
+    "settings.usageMode.claude.webOnlyDetail": "仅使用已保存的 claude.ai cookies。",
+    "settings.usageMode.claude.webThenCode": "先 Claude 网页，后 Claude Code",
+    "settings.usageMode.codex.autoDetail": "优先使用本地 Codex CLI 凭据；其次回退到 Codex OAuth 与已保存的 OpenAI 网页 cookies。",
+    "settings.usageMode.codex.cliOnly": "仅 CLI",
+    "settings.usageMode.codex.cliOnlyDetail": "仅使用本地 Codex CLI 凭据。",
+    "settings.usageMode.codex.cliThenOauth": "先 CLI，后 OAuth",
+    "settings.usageMode.codex.oauthFirstDetail": "优先使用 Codex OAuth；其次回退到本地 Codex CLI 凭据与已保存的 OpenAI 网页 cookies。",
+    "settings.usageMode.codex.oauthOnlyDetail": "仅使用 auth.json 中的 Codex OAuth 凭据。",
+    "settings.usageMode.codex.oauthThenCli": "先 OAuth，后 CLI",
+    "settings.usageMode.gemini.webOnly": "仅 Gemini Web",
+    "settings.usageMode.gemini.webOnlyDetail": "仅读取已导入的 gemini.google.com cookies。",
+    "settings.usageMode.oauthOnly": "仅 OAuth",
+    "settings.usageSource": "用量来源",
+    "settings.webQuota": "网页端额度",
+    "settings.whatChangedIn": "{version} 的更新内容",
+    "status.card.componentCount": "{count, plural, other {# 个组件}}",
+    "status.card.components": "组件",
+    "status.card.noIncidents": "最近 90 天无故障",
+    "status.card.openIncident": "打开故障详情",
+    "status.card.openStatusPage": "打开 {host}",
+    "status.card.refresh": "刷新服务状态",
+    "status.card.statusPageFallback": "状态页",
+    "status.card.title": "服务状态",
+    "status.card.updatedHoursAgo": "{hours} 小时前更新",
+    "status.card.updatedMinutesAgo": "{minutes} 分钟前更新",
+    "status.card.uptime": "可用率 {percent}",
+    "status.card.uptimeStrip": "最近 {days} 天的服务可用率",
+    "status.component.degraded": "性能下降",
+    "status.component.maintenance": "维护中",
+    "status.component.majorOutage": "严重故障",
+    "status.component.operational": "正常",
+    "status.component.other": "其他",
+    "status.component.partialOutage": "部分故障",
+    "status.indicator.critical": "紧急",
+    "status.indicator.loading": "加载中",
+    "status.indicator.major": "严重",
+    "status.indicator.minor": "轻微",
+    "status.overview.checking": "检查中",
+    "status.overview.down": "不可用",
+    "status.overview.enableProvider": "在设置中启用一个核心厂商后即可显示服务状态。",
+    "status.overview.fetchFailed": "获取失败",
+    "status.overview.needsAttention": "需处理",
+    "status.overview.refreshing": "刷新中",
+    "status.overview.title": "状态",
+    "status.overview.up": "可用",
+    "status.summary.activeIncident": "故障处理中",
+    "status.summary.allOperational": "全部服务正常",
+    "status.summary.serviceIssue": "服务异常",
+    "status.summary.underMaintenance": "维护中",
+    "usage.activity.a11y": "按星期与小时划分的 token 用量，7 天 × 24 小时",
+    "usage.activity.cellTooltip": "{day} {hour} · {tokens}",
+    "usage.activity.heavy": "繁忙",
+    "usage.activity.peak": "高峰 {hour} · {day}",
+    "usage.activity.peakCell": "高峰 {hour} · {day} {cellHour}",
+    "usage.activity.quiet": "清闲",
+    "usage.activity.tokensShort": "{tokens} tok",
+    "usage.breakdown.models": "模型",
+    "usage.breakdown.periods": "周期",
+    "usage.breakdown.projects": "项目",
+    "usage.breakdown.providers": "厂商",
+    "usage.breakdown.requests": "请求",
+    "usage.chartNavigator.label": "图表范围导航",
+    "usage.chartNavigator.range": "{start} 至 {end}",
+    "usage.chartNavigator.showFullRange": "显示完整范围",
+    "usage.chartNavigator.zoomIn": "放大",
+    "usage.chartNavigator.zoomOut": "缩小",
+    "usage.filters.allHarnesses": "全部 harness",
+    "usage.filters.allHarnessesHelpEvery": "点按可选中全部 harness",
+    "usage.filters.allHarnessesHelpNone": "点按可清空 harness 选择",
+    "usage.filters.allHarnessesSelectEvery": "显示全部 harness",
+    "usage.filters.allHarnessesSelectNone": "不选择任何 harness",
+    "usage.filters.allModels": "全部模型",
+    "usage.filters.autoMenuLabel": "选择页面重新查询的频率",
+    "usage.filters.autoRefresh": "自动刷新",
+    "usage.filters.clearHelp": "清除 harness、厂商与模型筛选",
+    "usage.filters.companyHarnesses": "{company}，全部 harness",
+    "usage.filters.companyHelp": "{company} · {harnesses}",
+    "usage.filters.customRangeFrom": "开始",
+    "usage.filters.customRangeHint": "小时、日或周的分桶粒度在图表工具栏中选择。",
+    "usage.filters.customRangeTitle": "自定义区间",
+    "usage.filters.customRangeTo": "结束",
+    "usage.filters.editCustomRange": "编辑自定义区间…",
+    "usage.filters.harnessHelp": "{company} · {harness}\n点按切换 · ⌥ 点按单独查看",
+    "usage.filters.modelsMenuLabel": "选择要纳入的模型",
+    "usage.filters.modelsSelected": "已选 {count, plural, other {# 个}}",
+    "usage.filters.noModelsInRange": "所选范围内没有模型",
+    "usage.filters.range14d": "14 天",
+    "usage.filters.range24h": "24 小时",
+    "usage.filters.rangeCustom": "自定义",
+    "usage.filters.rangeMenu": "选择日期区间",
+    "usage.filters.rangeSpan": "{start} – {end}",
+    "usage.filters.refreshInterval": "{seconds} 秒",
+    "usage.harnessMix.activeCount": "所选范围内 {count, plural, other {# 个}} harness 活跃",
+    "usage.harnessMix.byRealTokens": "按实际 token 计",
+    "usage.harnessMix.empty": "所选范围内无 harness 流量",
+    "usage.harnessMix.title": "Harness 分布",
+    "usage.hero.allRequestsPriced": "全部请求已计价",
+    "usage.hero.cacheHit": "缓存命中率",
+    "usage.hero.cacheRead": "读取 {tokens}",
+    "usage.hero.inSelectedRange": "所选范围内",
+    "usage.hero.noPricedRequests": "无可计价请求",
+    "usage.hero.noTrafficInRange": "所选范围内无流量",
+    "usage.hero.realTokens": "实际 token · 所选范围",
+    "usage.hero.requests": "请求数",
+    "usage.hero.tokenComposition": "Token 构成",
+    "usage.hero.unpricedBadge": "{count} 条未计价",
+    "usage.hero.unpricedHelp": "{count, plural, other {# 条请求}}无可用价格，计入 $0。",
+    "usage.ledgerUnavailable.detail": "无法打开 ~/.vibebar 下的逐请求账本，本次会话只能显示实时费用卡片。",
+    "usage.ledgerUnavailable.title": "用量账本不可用",
+    "usage.mix.dimension.harnesses": "Harness",
+    "usage.mix.donutUnit": "token",
+    "usage.mix.flow.cache": "缓存",
+    "usage.mix.flow.cacheDetail": "读取 + 写入",
+    "usage.mix.flow.freshInput": "新增输入",
+    "usage.mix.flow.output": "输出",
+    "usage.mix.harness.subtitle": "请求的运行位置",
+    "usage.mix.harness.title": "Harness 分布",
+    "usage.mix.lastThirtyDays": "最近 30 天",
+    "usage.mix.ledgerUnreadable": "无法读取用量账本。",
+    "usage.mix.model.empty": "所选范围内没有模型流量",
+    "usage.mix.model.subtitle": "规范显示名",
+    "usage.mix.model.title": "模型分布",
+    "usage.mix.other": "其他",
+    "usage.mix.otherCount": "另有 {count, plural, other {# 项}}",
+    "usage.mix.project.empty": "重新扫描 Codex 或 Claude 后才会显示项目归属",
+    "usage.mix.project.subtitle": "Codex + Claude 工作目录 · 最多 30 天明细",
+    "usage.mix.project.title": "项目分布",
+    "usage.mix.provider.empty": "所选范围内没有厂商流量",
+    "usage.mix.provider.subtitle": "计费公司",
+    "usage.mix.provider.title": "厂商分布",
+    "usage.mix.title": "用量构成",
+    "usage.mix.tokenFlow.empty": "所选范围内没有 token 流量",
+    "usage.mix.tokenFlow.subtitle": "输入 · 缓存 · 输出",
+    "usage.mix.tokenFlow.title": "Token 流向",
+    "usage.noHarnessSelected.detail": "「全部 harness」是一个开关：再次点击即可将全部 harness 重新纳入查询。",
+    "usage.noHarnessSelected.title": "未选择任何 harness — 请在上方选择",
+    "usage.requestCount": "{count} 条请求",
+    "usage.table.activeDays": "{count, plural, other {# 个活跃日}}",
+    "usage.table.activeHours": "{count, plural, other {# 个活跃小时}}",
+    "usage.table.activeWeeks": "{count, plural, other {# 个活跃周}}",
+    "usage.table.cacheReadWrite": "读 {read} · 写 {write}",
+    "usage.table.column.average": "每请求均价",
+    "usage.table.column.day": "日",
+    "usage.table.column.harness": "Harness",
+    "usage.table.column.hour": "小时",
+    "usage.table.column.input": "输入",
+    "usage.table.column.model": "模型",
+    "usage.table.column.requests": "请求数",
+    "usage.table.column.tier": "档位",
+    "usage.table.column.time": "时间",
+    "usage.table.column.weekOf": "周起始",
+    "usage.table.companyCount": "{count, plural, other {# 家厂商}}",
+    "usage.table.emptyModels": "所选范围内没有模型合计",
+    "usage.table.emptyPeriods": "所选范围内没有活跃周期",
+    "usage.table.emptyProjects": "所选范围内没有归属到项目的 Codex 或 Claude 用量",
+    "usage.table.emptyProviders": "所选范围内没有厂商合计",
+    "usage.table.emptyRequests": "所选范围内没有请求级记录",
+    "usage.table.harnessHelp": "{company} · {harness}",
+    "usage.table.inputHelp": "新增输入：{input}\n缓存读取：{read}\n缓存写入：{write}",
+    "usage.table.loadMore": "加载更多（剩余 {remaining} 条）",
+    "usage.table.loadingMore": "正在加载更多请求…",
+    "usage.table.modelCount": "{count, plural, other {# 个模型}}",
+    "usage.table.periodRow": "{period}，{tokens}，{cost}",
+    "usage.table.projectCount": "{count, plural, other {# 个项目}} · 最多 30 天明细",
+    "usage.table.requestRow": "{time}，{harness}，{model}，{tokens}，{cost}",
+    "usage.table.requestsLabel": "请求用量表格",
+    "usage.table.requestsLoaded": "已加载 {loaded} / {total} 条请求",
+    "usage.table.showMorePeriods": "再显示 {count} 个，共 {total} 个周期",
+    "usage.table.statRow": "{name}，{requests, plural, other {# 条请求}}，{tokens}，{cost}",
+    "usage.table.unpriced": "未计价",
+    "usage.table.unpricedHelp": "该请求没有可用价格",
+    "usage.tokens.cacheRead": "缓存读取",
+    "usage.tokens.cacheWrite": "缓存写入",
+    "usage.tokens.input": "输入",
+    "usage.tokens.output": "输出",
+    "usage.tokens.title": "Token",
+    "usage.trend.accessibilitySummary": "{count, plural, other {# 家厂商}}，{tokens} token，{cost}",
+    "usage.trend.bucketDay": "按本地日历日",
+    "usage.trend.bucketHour": "按小时分桶",
+    "usage.trend.bucketWeek": "按本地日历周",
+    "usage.trend.costChartLabel": "花费随时间变化",
+    "usage.trend.empty": "所选范围内没有用量记录",
+    "usage.trend.fit": "全览",
+    "usage.trend.fitHelp": "显示完整的所选区间",
+    "usage.trend.granularity": "粒度",
+    "usage.trend.granularityDaily": "按日",
+    "usage.trend.granularityHourly": "按小时",
+    "usage.trend.granularityLabel": "选择图表粒度",
+    "usage.trend.granularityWeekly": "按周",
+    "usage.trend.hideProvider": "隐藏 {provider}",
+    "usage.trend.navigatorLabel": "用量图表区间导航条",
+    "usage.trend.nextWindow": "下一区间",
+    "usage.trend.now": "现在",
+    "usage.trend.nowHelp": "回到当前区间",
+    "usage.trend.previousWindow": "上一区间",
+    "usage.trend.scopeHint": "拖动导航条手柄可聚焦此图表；筛选与表格仍按完整区间统计。",
+    "usage.trend.showProvider": "显示 {provider}",
+    "usage.trend.title": "用量趋势",
+    "usage.trend.tokensChartLabel": "Token 用量随时间变化",
+    "usage.whenYouUse.everything": "整体使用时段",
+    "usage.whenYouUse.googleAI": "Google AI 使用时段",
+    "usage.whenYouUse.provider": "{provider} 使用时段",
+    "usage.whenYouUse.spaceXAI": "SpaceXAI 使用时段",
+    "usage.yearHeatmap.a11y": "{provider} 过去一年的每日花费，共 {count, plural, other {# 周}}",
+    "usage.yearHeatmap.less": "较少",
+    "usage.yearHeatmap.more": "较多",
+    "usage.yearHeatmap.title": "{provider} — 过去一年",
+    "usage.yearHeatmap.tooltip": "{date} · {amount}",
+    "usage.yearHeatmap.total": "合计 {amount}",
+    "workbench.appearance.useDark": "使用深色外观",
+    "workbench.appearance.useLight": "使用浅色外观",
+    "workbench.header.refreshPage": "刷新{page}",
+    "workbench.page.resets.subtitle": "周期、补额与耗尽预测",
+    "workbench.page.resets.title": "重置",
+    "workbench.page.sessions.subtitle": "搜索并恢复本机 agent 会话",
+    "workbench.page.sessions.title": "会话",
+    "workbench.page.settings.subtitle": "外观、厂商、数据、隐私与同步",
+    "workbench.page.skills.subtitle": "一个共享技能库 · 覆盖全部 agent CLI",
+    "workbench.page.skills.title": "技能",
+    "workbench.page.usageStats.subtitle": "本地逐请求账本 · 全部厂商",
+    "workbench.page.usageStats.title": "用量统计",
+    "workbench.placeholder.resets": "周期、补额与预测视图即将上线。",
+    "workbench.placeholder.sessionManager": "本地 Codex 与 Claude Code 会话的浏览和搜索即将上线。",
+    "workbench.placeholder.settings": "配置 Vibe Bar 及已连接的厂商。",
+    "workbench.placeholder.skillsManager": "已安装 agent skills 的查看与整理即将上线。",
+    "workbench.placeholder.usageStats": "完整的用量与费用分析即将上线。",
+    "workbench.resets.calendar.dayEntry": "{lane} +{percent}%",
+    "workbench.resets.calendar.futureEntry": "{lane} — {time} 重置，补回 {percent}%",
+    "workbench.resets.calendar.nextMonth": "下一月",
+    "workbench.resets.calendar.pastEntry": "{lane} — {time} 重置，用量 {percent}%",
+    "workbench.resets.calendar.previousMonth": "上一月",
+    "workbench.resets.calendar.title": "重置日历",
+    "workbench.resets.calendar.today": "今日",
+    "workbench.resets.cycle.curveHelp": "当前 {bucket} 周期内的剩余百分比",
+    "workbench.resets.cycle.headline": "{bucket} · 距重置 {countdown}",
+    "workbench.resets.refillHorizon.detail": "未来 7 天 · 柱高即补回的额度",
+    "workbench.resets.refillHorizon.title": "补额展望",
+    "workbench.resets.risk.badge.atRisk": "有风险",
+    "workbench.resets.risk.badge.low": "偏低",
+    "workbench.resets.risk.badge.out": "耗尽",
+    "workbench.resets.risk.badge.watch": "需关注",
+    "workbench.resets.risk.detail": "按个人预测排序",
+    "workbench.resets.risk.empty": "所有额度均预计可支撑到本周期结束。",
+    "workbench.resets.risk.remaining": "{percent}% · 距补额 {countdown}",
+    "workbench.resets.risk.title": "耗尽风险",
+    "workbench.resets.subDaily.title": "未来 24 小时 · 日内配额",
+    "workbench.sessions.allChip.helpUnselected": "点击后显示全部 harness 的会话",
+    "workbench.sessions.allChip.labelUnselected": "显示全部会话来源",
+    "workbench.sessions.antigravityNotice": "AntiGravity 以未公开的二进制格式保存对话轮次，因此这份对话记录是部分重建的结果，其会话也无法在此删除 — IDE 会一直占用它们。",
+    "workbench.sessions.copyResumeCommand": "复制恢复命令",
+    "workbench.sessions.copySessionID": "复制会话 ID",
+    "workbench.sessions.copySessionIDLabel": "会话 ID {id}。复制",
+    "workbench.sessions.copySourcePath": "复制源文件路径",
+    "workbench.sessions.copyWorkingDirectory": "复制工作目录",
+    "workbench.sessions.count.sessions": "{count, plural, other {# 个会话}}",
+    "workbench.sessions.count.shownOfTotal": "{total} 个会话中的 {shown} 个",
+    "workbench.sessions.delete.confirm": "{count, plural, other {删除 # 个会话？}}",
+    "workbench.sessions.delete.countButton": "删除 {count} 个",
+    "workbench.sessions.delete.message": "会话日志将从磁盘上删除，此操作无法撤销。",
+    "workbench.sessions.deleteEllipsis": "删除…",
+    "workbench.sessions.details": "详情",
+    "workbench.sessions.details.collapsed": "已收起",
+    "workbench.sessions.details.expanded": "已展开",
+    "workbench.sessions.empty.indexUnavailableDetail": "无法打开 ~/.vibebar 下的会话索引，本次运行期间无法列出会话。",
+    "workbench.sessions.empty.indexUnavailableTitle": "会话索引不可用",
+    "workbench.sessions.empty.noLogsDetail": "这台 Mac 上没有找到 Vibe Bar 扫描的 {count} 个 harness 的任何会话日志。",
+    "workbench.sessions.empty.noMatchTitle": "没有匹配的会话",
+    "workbench.sessions.empty.scanningDetail": "仍在扫描磁盘上的会话日志。",
+    "workbench.sessions.empty.searchNoMatchDetail": "已索引的会话中没有匹配该搜索的内容。",
+    "workbench.sessions.fact.created": "创建时间",
+    "workbench.sessions.fact.cwd": "工作目录",
+    "workbench.sessions.fact.id": "ID",
+    "workbench.sessions.fact.lastActive": "最后活动",
+    "workbench.sessions.fact.source": "来源文件",
+    "workbench.sessions.filter.company": "厂商",
+    "workbench.sessions.filter.dateRange": "时间范围",
+    "workbench.sessions.filter.folders": "目录",
+    "workbench.sessions.filter.foldersFiltered": "已筛选",
+    "workbench.sessions.filter.harnessCount": "{harness}  {count}",
+    "workbench.sessions.filter.options": "选项",
+    "workbench.sessions.filter.scope": "范围",
+    "workbench.sessions.filter.sort": "排序",
+    "workbench.sessions.filter.sortGrouped": "{order} · 已分组",
+    "workbench.sessions.filter.sortHelp": "选择列表的排序方式",
+    "workbench.sessions.filter.when": "时间",
+    "workbench.sessions.filter.whenHelp": "选择列出多久以前的会话",
+    "workbench.sessions.find.next": "下一处匹配",
+    "workbench.sessions.find.none": "无",
+    "workbench.sessions.find.placeholder": "在对话记录中查找",
+    "workbench.sessions.find.previous": "上一处匹配",
+    "workbench.sessions.folders.exclude": "排除包含以下片段的路径",
+    "workbench.sessions.folders.excludePlaceholder": "/archive, /vendor",
+    "workbench.sessions.folders.include": "仅包含以下片段的路径",
+    "workbench.sessions.folders.includePlaceholder": "/project/a, /project/b",
+    "workbench.sessions.folders.separatorHint": "多个路径用逗号、分号或换行分隔。",
+    "workbench.sessions.folders.title": "目录筛选",
+    "workbench.sessions.fraction": "{shown}/{total}",
+    "workbench.sessions.groupByProject": "按项目分组",
+    "workbench.sessions.index.scanning": "扫描中…",
+    "workbench.sessions.index.unavailable": "索引不可用",
+    "workbench.sessions.list.capNotice": "当前只显示 {total} 个会话中的前 {shown} 个。缩小筛选范围或使用搜索以查看其余会话。",
+    "workbench.sessions.message.copy": "复制消息",
+    "workbench.sessions.message.copyHelp": "复制这条消息",
+    "workbench.sessions.message.showLess": "收起",
+    "workbench.sessions.message.showMore": "展开全部（{count} 字符）",
+    "workbench.sessions.openInTerminal": "在 Terminal 中打开",
+    "workbench.sessions.options.help": "终端与索引选项",
+    "workbench.sessions.options.indexMessageText": "索引消息正文",
+    "workbench.sessions.options.openIn": "打开方式",
+    "workbench.sessions.options.rebuildIndex": "重建索引…",
+    "workbench.sessions.outline.empty": "该对话记录中没有用户提示词。",
+    "workbench.sessions.outline.heading": "提示词",
+    "workbench.sessions.outline.help": "跳转到某条提示词",
+    "workbench.sessions.outline.label": "显示对话记录大纲",
+    "workbench.sessions.page.next": "下一页",
+    "workbench.sessions.page.previous": "上一页",
+    "workbench.sessions.project.none": "无项目",
+    "workbench.sessions.project.projectless": "未指定项目",
+    "workbench.sessions.range.all": "全部时间",
+    "workbench.sessions.refreshHelp": "重新扫描磁盘上的会话日志",
+    "workbench.sessions.resume.heading": "恢复命令",
+    "workbench.sessions.resume.none": "该会话没有命令行入口。",
+    "workbench.sessions.role.assistant": "助手",
+    "workbench.sessions.role.other": "备注",
+    "workbench.sessions.role.system": "系统",
+    "workbench.sessions.role.tool": "工具",
+    "workbench.sessions.role.user": "用户",
+    "workbench.sessions.row.autoReviewsMerged": "已合并 {count, plural, other {# 条}} Auto Review",
+    "workbench.sessions.row.includeInDeletion": "将该会话纳入本次删除",
+    "workbench.sessions.row.messageCount": "{count, plural, other {# 条消息}}",
+    "workbench.sessions.row.select": "选择该会话",
+    "workbench.sessions.row.showTranscript": "显示该会话的对话记录",
+    "workbench.sessions.row.toggleForDeletion": "切换是否删除该会话",
+    "workbench.sessions.runInHelp": "在 {terminal} 中运行",
+    "workbench.sessions.scope.assistant": "助手回复",
+    "workbench.sessions.scope.system": "系统提示词",
+    "workbench.sessions.scope.title": "标题与会话 ID",
+    "workbench.sessions.scope.tool": "工具与文件操作",
+    "workbench.sessions.scope.user": "用户提示词",
+    "workbench.sessions.search.bodyIndexed": "消息正文已在本地建立索引。",
+    "workbench.sessions.search.bodyNotIndexed": "在「选项」中开启消息索引后即可搜索对话记录内容。",
+    "workbench.sessions.search.clearHelp": "清除搜索内容",
+    "workbench.sessions.search.placeholder": "搜索会话",
+    "workbench.sessions.selectMode": "选择",
+    "workbench.sessions.selectModeHelp": "选择要删除的会话",
+    "workbench.sessions.sort.byProject": "按项目",
+    "workbench.sessions.sort.oldestFirst": "最早优先",
+    "workbench.sessions.sort.recentFirst": "最新优先",
+    "workbench.sessions.toast.bodyIndexDropFailed": "清除已索引的消息正文失败。",
+    "workbench.sessions.toast.bodyIndexDropped": "已删除已索引的消息正文。",
+    "workbench.sessions.toast.copied": "已复制到剪贴板。",
+    "workbench.sessions.toast.copiedWithReason": "已复制到剪贴板。{reason}",
+    "workbench.sessions.toast.cwdCopied": "工作目录已复制。",
+    "workbench.sessions.toast.deleted": "{count, plural, other {已删除 # 个会话。}}",
+    "workbench.sessions.toast.deletedPartial": "已删除 {deleted} 个，保留 {kept} 个：{reason}",
+    "workbench.sessions.toast.indexNotCleared": "无法清空会话索引。",
+    "workbench.sessions.toast.messageCopied": "消息已复制。",
+    "workbench.sessions.toast.noResumeCommand": "该会话没有恢复命令。",
+    "workbench.sessions.toast.openedIn": "已在 {terminal} 中打开。",
+    "workbench.sessions.toast.sessionIDCopied": "会话 ID 已复制。",
+    "workbench.sessions.toast.sourcePathCopied": "源文件路径已复制。",
+    "workbench.sessions.transcript.autoReviewDivider": "Auto Review",
+    "workbench.sessions.transcript.cancelled": "已停止读取该会话。再次选中它即可重新打开。",
+    "workbench.sessions.transcript.loadAll": "加载完整对话记录",
+    "workbench.sessions.transcript.loading": "正在读取会话日志…",
+    "workbench.sessions.transcript.noMessages": "该会话的日志中没有可读消息。",
+    "workbench.sessions.transcript.noReader": "没有为 {provider} 注册读取器。",
+    "workbench.sessions.transcript.pageRange": "第 {first}–{last} 条消息，共 {total} 条",
+    "workbench.sessions.transcript.placeholderDetail": "在左侧选择一个会话，即可阅读其对话记录、复制恢复命令，或把它交回对应的 CLI。",
+    "workbench.sessions.transcript.placeholderTitle": "未选择会话",
+    "workbench.sessions.transcript.readFailed": "无法读取该会话的日志。",
+    "workbench.sessions.transcript.truncatedDetail": "已读取 {file} 中的 {parsed}。完整读取会把整份对话记录留在内存中。",
+    "workbench.sessions.transcript.truncatedTitle": "已显示这份超大日志中的前 {count, plural, other {# 条消息}}",
+    "workbench.skills.appCountNativeDisabled": "{count} 个已投影但被停用",
+    "workbench.skills.appCountViaGeminiRoot": "{enabled} 个已启用 + {coupled} 个来自 Gemini CLI 兼容根目录",
+    "workbench.skills.appCountViaSharedRoot": "{enabled} 个已启用 + {coupled} 个来自共享技能根目录",
+    "workbench.skills.appSeesCount": "{app} 可见 {count, plural, other {# 个技能}}",
+    "workbench.skills.backups": "备份",
+    "workbench.skills.backups.deleteAccessibility": "删除此备份",
+    "workbench.skills.backups.deleteConfirmMessage": "快照将从 ~/.vibebar 中删除，之后无法恢复。",
+    "workbench.skills.backups.deleteConfirmTitle": "删除 {skill} 的备份？",
+    "workbench.skills.backups.deleteConfirmTitleGeneric": "删除此备份？",
+    "workbench.skills.backups.empty": "暂无备份",
+    "workbench.skills.backups.footer": "恢复只会重建共享目录 — 之后需要再为相应应用启用该技能。",
+    "workbench.skills.backups.refreshHelp": "重新读取备份目录",
+    "workbench.skills.backups.restore": "恢复",
+    "workbench.skills.backups.restoreHelp": "把快照复制回 ~/.agents/skills",
+    "workbench.skills.backups.subtitle": "在卸载或更新前自动创建。",
+    "workbench.skills.backups.title": "技能备份",
+    "workbench.skills.badge.installed": "已安装",
+    "workbench.skills.badge.nativeOff": "{app} 已关闭",
+    "workbench.skills.badge.nativeOffHelp": "已投影，但被 harness 自身的配置停用",
+    "workbench.skills.badge.nativeUnknown": "原生状态未知",
+    "workbench.skills.badge.nativeUnknownHelp": "无法安全解析 harness 的配置",
+    "workbench.skills.badge.update": "可更新",
+    "workbench.skills.checkUpdates": "检查更新",
+    "workbench.skills.checkUpdatesCount": "检查更新 · {count}",
+    "workbench.skills.contextDisableKeepProjection": "在 {app} 中停用 · 保留投影",
+    "workbench.skills.contextEnableIn": "在 {app} 中启用",
+    "workbench.skills.contextRemoveProjection": "移除 {app} 投影",
+    "workbench.skills.countFiltered": "{total} 个技能中的 {shown} 个",
+    "workbench.skills.countTotal": "{count, plural, other {# 个技能}}",
+    "workbench.skills.discover": "发现",
+    "workbench.skills.discover.availableEmpty": "扫描已配置的仓库，或安装一条 skills.sh 结果，即可列出可用技能。",
+    "workbench.skills.discover.availableTitle": "可用技能",
+    "workbench.skills.discover.indexTitle": "skills.sh 索引",
+    "workbench.skills.discover.installs": "{count, plural, other {# 次安装}}",
+    "workbench.skills.discover.noRepos": "尚未配置仓库。可按 owner/repo 添加，也可用 owner/repo@branch。",
+    "workbench.skills.discover.removeRepo": "移除 {repo}",
+    "workbench.skills.discover.repoFieldPlaceholder": "owner/repo 或 owner/repo@branch",
+    "workbench.skills.discover.repoRules": "owner 只接受字母、数字和连字符；仓库名和分支名还可以包含点和下划线。",
+    "workbench.skills.discover.reposTitle": "已配置的仓库",
+    "workbench.skills.discover.scanRepos": "扫描仓库",
+    "workbench.skills.discover.scanReposHelp": "下载全部已配置的仓库",
+    "workbench.skills.discover.searchHint": "搜索结果会带上发布它的仓库；安装其中一个会下载该仓库，并在下方列出其余技能。",
+    "workbench.skills.discover.searchPlaceholder": "搜索社区索引",
+    "workbench.skills.discover.selectAll": "全选",
+    "workbench.skills.discover.selectHelp": "设置每一行默认安装到哪些 agent CLI",
+    "workbench.skills.discover.selectNone": "全不选",
+    "workbench.skills.discover.sourceFromSkillsSh": "{repo}（来自 skills.sh）",
+    "workbench.skills.discover.stopScanHelp": "停止正在进行的扫描",
+    "workbench.skills.discover.stopScanningRepo": "不再扫描 {repo}",
+    "workbench.skills.discover.title": "发现技能",
+    "workbench.skills.discoverHelp": "浏览已配置的仓库和 skills.sh 索引",
+    "workbench.skills.empty.body": "Vibe Bar 在 ~/.agents/skills 中保存每个技能的唯一副本，并将其链接到各个 agent CLI。可以导入这台 Mac 上已有的技能，也可以从仓库安装新的。",
+    "workbench.skills.empty.headline": "尚未记录任何技能",
+    "workbench.skills.filterClear": "清除筛选",
+    "workbench.skills.filterPlaceholder": "筛选已安装的技能",
+    "workbench.skills.import.alreadyShared": "已共享",
+    "workbench.skills.import.alreadySharedDetail": "这些技能已经位于 ~/.agents/skills，包括 CC Switch 建立的目录结构。Vibe Bar 只记录它们已有的链接，不会再次导入或复制。",
+    "workbench.skills.import.apply": "应用 {count, plural, other {# 项更改}}",
+    "workbench.skills.import.conflicts": "冲突的应用副本",
+    "workbench.skills.import.conflictsCount": "{count} 个保持不变",
+    "workbench.skills.import.conflictsDetail": "某个应用技能目录中的真实文件夹与 ~/.agents/skills 中的同名。Vibe Bar 不会覆盖它 — 需手动处理，或在该文件夹删除后再为该应用启用共享技能。",
+    "workbench.skills.import.foundIn": "发现于 {apps}",
+    "workbench.skills.import.keepEvidenceFor": "为以下应用保留记录",
+    "workbench.skills.import.needsAdoption": "待接管",
+    "workbench.skills.import.needsAdoptionDetail": "这些技能还不在共享目录中。选中后会把它复制到 ~/.agents/skills，再把所选应用中的副本替换为受管链接。",
+    "workbench.skills.import.notSkills": "非技能目录",
+    "workbench.skills.import.notSkillsDetail": "~/.agents/skills 中没有 SKILL.md 的目录。将保持原样。",
+    "workbench.skills.import.recognizedCount": "已识别 {count} 个",
+    "workbench.skills.import.subtitle": "Vibe Bar 已识别共享技能。只有选中的应用本地目录会被移动。",
+    "workbench.skills.import.summary": "{adopted} 个已共享 · {unmanaged} 个待接管 · {conflicts} 个保持不变",
+    "workbench.skills.import.title": "检查磁盘上的技能",
+    "workbench.skills.importExisting": "导入已有技能",
+    "workbench.skills.install": "安装",
+    "workbench.skills.installFromZip": "从 ZIP 安装",
+    "workbench.skills.menuMoreActions": "{skill} 的更多操作",
+    "workbench.skills.menuRevealInFinder": "在 Finder 中显示",
+    "workbench.skills.menuUninstall": "卸载…",
+    "workbench.skills.menuUpdateFromRepository": "从仓库更新",
+    "workbench.skills.menuWiringDetails": "连接详情…",
+    "workbench.skills.noMatch": "没有技能匹配「{query}」",
+    "workbench.skills.phase.downloadedOne": "已下载 1 个仓库",
+    "workbench.skills.phase.downloadedProgress": "已下载 {total} 个仓库中的 {completed} 个",
+    "workbench.skills.phase.downloading": "正在下载 {repo}…",
+    "workbench.skills.phase.scanning": "正在扫描 {repo}…",
+    "workbench.skills.sourceBranch": "分支 {branch}",
+    "workbench.skills.sourceInstalledLocally": "本地安装",
+    "workbench.skills.sourceLocal": "本地",
+    "workbench.skills.state.coupled": "通过共享根目录或兼容根目录可用",
+    "workbench.skills.state.disabledInHarness": "已投影，在 harness 中停用",
+    "workbench.skills.state.enabled": "已启用",
+    "workbench.skills.state.notProjected": "未投影",
+    "workbench.skills.state.unknown": "已投影，原生状态未知",
+    "workbench.skills.sync.footer": "Vibe Bar 只写入 ~/{path}、各 harness 的技能目录以及上面列出的配置文件。",
+    "workbench.skills.sync.nativeSwitchesBody": "如果某个 harness 有自己的按技能开关，圆形按钮切换的就是那个开关。Cursor 没有，因此共享根目录里的每个技能对它都始终可用 — 这就是「共享根目录」标记的含义，没有可切换的开关。",
+    "workbench.skills.sync.nativeSwitchesLead": "原生开关。",
+    "workbench.skills.sync.noPerSkillSwitch": "无按技能开关",
+    "workbench.skills.sync.noSwitchAlsoReads": "无按技能开关；同时读取 ~/{path}",
+    "workbench.skills.sync.perSkillSwitch": "按技能开关 {key} 位于 ~/{path}",
+    "workbench.skills.sync.projectionsBody": "Claude Code 和 AntiGravity 只读取各自的技能目录，因此 Vibe Bar 会把技能链接（或复制）进去。Codex、Gemini CLI、Grok Build 和 Cursor 会自行扫描共享根目录，无需链接。",
+    "workbench.skills.sync.projectionsLead": "投影。",
+    "workbench.skills.sync.readsOwnFolder": "只读取 ~/{path}",
+    "workbench.skills.sync.scansSharedRoot": "直接扫描 ~/{path}",
+    "workbench.skills.sync.ssotBody": "每个技能都存放在 ~/{path}/<name>。安装、更新和卸载都只在那里发生。",
+    "workbench.skills.sync.ssotLead": "唯一真相源。",
+    "workbench.skills.sync.title": "技能同步的原理",
+    "workbench.skills.syncExplainerHelp": "技能同步的原理 — 根目录、链接与原生开关",
+    "workbench.skills.toast.addRepoFirst": "请先添加一个仓库。",
+    "workbench.skills.toast.allUpToDate": "所有来自仓库的技能都是最新的。",
+    "workbench.skills.toast.archiveEmpty": "该压缩包中没有可安装的内容。",
+    "workbench.skills.toast.disabledKeptProjection": "已在 {app} 中停用 {skill}，并保留其投影。",
+    "workbench.skills.toast.enabledForApps": "已为 {apps} 启用。",
+    "workbench.skills.toast.importConflicts": "有 {count, plural, other {# 个冲突的应用副本}}保持不变。",
+    "workbench.skills.toast.importRecognized": "已识别 {count, plural, other {# 个已有技能}}。",
+    "workbench.skills.toast.installedArchive": "已从压缩包安装 {count, plural, other {# 个技能}}。",
+    "workbench.skills.toast.installedForApps": "已为 {apps} 安装 {skill}。",
+    "workbench.skills.toast.installedShared": "已把 {skill} 安装到共享库。可在「技能」页查看各 harness 的实际状态。",
+    "workbench.skills.toast.invalidRepoRef": "「{input}」不是一条新的 owner/repo[@branch] 引用。",
+    "workbench.skills.toast.linkRemovedStillShared": "已移除 {app} 的链接。{skill} 仍可通过共享技能根目录在其中使用。",
+    "workbench.skills.toast.noSearchMatches": "skills.sh 没有返回匹配结果。",
+    "workbench.skills.toast.noSkillsFound": "在已配置的仓库中没有找到技能。",
+    "workbench.skills.toast.notFoundInRepo": "在 {repo} 中未找到 {skill}。",
+    "workbench.skills.toast.projectionClearedFolderKept": "已清除 {skill} 在 {app} 的 Vibe Bar 投影记录，但原有文件夹保留在原处。",
+    "workbench.skills.toast.recorded": "已记录 {count, plural, other {# 个技能}}。",
+    "workbench.skills.toast.reposUnreadable": "有 {count, plural, other {# 个仓库}}无法读取。",
+    "workbench.skills.toast.restored": "已恢复 {skill}。可按需为相应应用启用。",
+    "workbench.skills.toast.scanStopped": "已停止扫描。",
+    "workbench.skills.toast.sharedLibraryNote": "它们保留在共享库中。可在「技能」页查看各 harness 的实际状态。",
+    "workbench.skills.toast.sharedRootNoSwitch": "{app} 直接读取共享技能根目录 — {skill} 在其中始终可用，且没有按技能的开关。",
+    "workbench.skills.toast.uninstalledBackedUp": "已卸载 {skill}。备份已保存。",
+    "workbench.skills.toast.uninstalledLeftInPlace": "已卸载 {skill}。在 {apps} 中保持原样。",
+    "workbench.skills.toast.updated": "已更新 {skill}。",
+    "workbench.skills.toast.updatesAvailable": "有 {count, plural, other {# 个技能}}可以更新。",
+    "workbench.skills.toggleHelp.installInto": "安装到 {app}",
+    "workbench.skills.toggleHelp.keepLinks": "保留磁盘上已有的 {app} 链接",
+    "workbench.skills.toggleHelp.linkAfterAdopting": "接管后链接到 {app}",
+    "workbench.skills.toggleState.coupledGemini": "{app} — 通过它同样读取的 Gemini CLI 投影可见。点按可为其建立独立投影。",
+    "workbench.skills.toggleState.coupledSharedRoot": "{app} 直接读取共享技能根目录，该技能在其中始终可用。没有按技能的开关可切换。",
+    "workbench.skills.toggleState.disabledInHarness": "{app} — 已投影，但被其原生配置停用。点按即可启用。",
+    "workbench.skills.toggleState.enabled": "{app} — 通过投影启用。点按即可移除。",
+    "workbench.skills.toggleState.enabledNative": "{app} — 已投影并启用。点按可在该 harness 中停用；右键可管理投影选项。",
+    "workbench.skills.toggleState.enabledSharedRoot": "{app} — 既有自己的链接，也会直接读取共享技能根目录。没有按技能的开关；右键可管理这条多余的链接。",
+    "workbench.skills.toggleState.notProjected": "{app} — 未投影。点按即可启用。",
+    "workbench.skills.toggleState.unknown": "{app} — 已投影，但原生配置无法解析。点按可按启用状态修复。",
+    "workbench.skills.uninstall": "卸载",
+    "workbench.skills.uninstallConfirmMessage": "会先备份该技能，再从所有链接到它的应用中移除。",
+    "workbench.skills.uninstallConfirmTitle": "卸载 {skill}？",
+    "workbench.skills.wiring.footer": "Vibe Bar 只写入上面的技能目录和列出的四个配置文件，并在卸载前先备份技能。",
+    "workbench.skills.wiring.mechanismGeminiCompat": "同时读取 Gemini CLI 的技能目录，该技能的 Gemini 投影就在其中。",
+    "workbench.skills.wiring.mechanismSharedRoot": "自行扫描共享根目录 — 无需为其单独建立链接。",
+    "workbench.skills.wiring.nativeSwitch": "按技能开关：{path} 中的 {key}",
+    "workbench.skills.wiring.noNativeSwitch": "没有按技能开关 — 凡是被发现的都处于生效状态。",
+    "workbench.skills.wiring.projectionCopy": "副本位于 {path}",
+    "workbench.skills.wiring.projectionCopyAdopted": "副本位于 {path} · 接管自已有安装",
+    "workbench.skills.wiring.projectionMissing": "{path} 下没有条目 — 该 harness 看不到这个技能。",
+    "workbench.skills.wiring.projectionSymlink": "符号链接位于 {path}",
+    "workbench.skills.wiring.projectionSymlinkAdopted": "符号链接位于 {path} · 接管自已有安装",
+    "workbench.skills.wiring.reveal": "显示",
+    "workbench.skills.wiring.revealHelp": "在 Finder 中显示该技能的源目录",
+    "workbench.skills.wiring.source": "源目录",
+    "workbench.skills.wiring.sourceDetail": "技能的唯一副本。下方每个 harness 读取的都是这个目录或指向它的链接。",
+    "workbench.skills.wiring.stateConfigUnreadable": "配置无法读取",
+    "workbench.skills.wiring.stateCoupledGemini": "已开启 · 经由 Gemini",
+    "workbench.skills.wiring.stateCoupledSharedRoot": "已开启 · 共享根目录",
+    "workbench.skills.wiring.stateNativeOff": "已关闭 · 原生开关",
+    "workbench.skills.wiring.stateNotLinked": "已关闭 · 未链接",
+    "workbench.status.cachedQuotas": "缓存额度",
+    "workbench.status.indexed": "已索引 {count}",
+    "workbench.status.installed": "已安装 {count}",
+    "workbench.status.localIndex": "本地索引",
+    "workbench.status.localLedger": "本地账本",
+    "workbench.status.nextRefill": "下次补额 {countdown}",
+    "workbench.status.sharedLibrary": "共享库",
+    "workbench.status.updated": "更新于 {time}",
   },
 };

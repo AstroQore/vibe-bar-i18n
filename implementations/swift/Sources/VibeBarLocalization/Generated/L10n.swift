@@ -11,11 +11,77 @@ import Foundation
 /// it resolved the first time anybody touched it.
 public enum L10n {
     public enum Common {
+        /// Button that appends an entry to a list
+        ///
+        /// Key: `common.add`
+        /// en: "Add"
+        public static var add: String { L10nSupport.string("common.add") }
+
+        /// Filter chip or menu entry that selects every item.
+        ///
+        /// Key: `common.all`
+        /// en: "All"
+        public static var all: String { L10nSupport.string("common.all") }
+
+        /// Picker option and field placeholder meaning 'let Vibe Bar decide'
+        ///
+        /// Key: `common.auto`
+        /// en: "Auto"
+        public static var auto: String { L10nSupport.string("common.auto") }
+
         /// Button that abandons an action in progress.
         ///
         /// Key: `common.cancel`
         /// en: "Cancel"
         public static var cancel: String { L10nSupport.string("common.cancel") }
+
+        /// Button that empties a search field or resets a filter.
+        ///
+        /// Key: `common.clear`
+        /// en: "Clear"
+        public static var clear: String { L10nSupport.string("common.clear") }
+
+        /// Confirmation shown in place of the Copy button
+        ///
+        /// Key: `common.copied`
+        /// en: "Copied"
+        public static var copied: String { L10nSupport.string("common.copied") }
+
+        /// Button that copies the adjacent value to the clipboard.
+        ///
+        /// Key: `common.copy`
+        /// en: "Copy"
+        public static var copy: String { L10nSupport.string("common.copy") }
+
+        /// Button that performs a deletion the user has already confirmed.
+        ///
+        /// Key: `common.delete`
+        /// en: "Delete"
+        public static var delete: String { L10nSupport.string("common.delete") }
+
+        /// Button that closes a banner without acting on it.
+        ///
+        /// Key: `common.dismiss`
+        /// en: "Dismiss"
+        public static var dismiss: String { L10nSupport.string("common.dismiss") }
+
+        /// Button that closes a sheet or leaves an editing mode.
+        ///
+        /// Key: `common.done`
+        /// en: "Done"
+        public static var done: String { L10nSupport.string("common.done") }
+
+        /// Tooltip on a drag handle
+        ///
+        /// Key: `common.dragToReorder`
+        /// en: "Drag to reorder"
+        public static var dragToReorder: String { L10nSupport.string("common.dragToReorder") }
+
+        /// Field label for a user-chosen name
+        ///
+        /// Key: `common.name`
+        /// en: "Name"
+        public static var name: String { L10nSupport.string("common.name") }
 
         /// Empty state where a chart or list has nothing to draw yet.
         ///
@@ -23,26 +89,244 @@ public enum L10n {
         /// en: "No data recorded"
         public static var noData: String { L10nSupport.string("common.noData") }
 
-        /// Button that fetches the current numbers again.
+        /// A toggle's state, read as a value in a summary row
+        ///
+        /// Key: `common.off`
+        /// en: "Off"
+        public static var off: String { L10nSupport.string("common.off") }
+
+        /// A toggle's state, read as a value in a summary row
+        ///
+        /// Key: `common.on`
+        /// en: "On"
+        public static var on: String { L10nSupport.string("common.on") }
+
+        /// Button that opens the selected item in the app that owns it.
+        ///
+        /// Key: `common.open`
+        /// en: "Open"
+        public static var `open`: String { L10nSupport.string("common.open") }
+
+        /// Secondary button on an empty state
+        ///
+        /// Key: `common.openSettings`
+        /// en: "Open Settings"
+        public static var openSettings: String { L10nSupport.string("common.openSettings") }
+
+        /// A whole percentage. Both languages use the sign the same way; the key exists so a language that does not can move it.
+        ///
+        /// Key: `common.percent`
+        /// en: "{value}%"
+        public static func percent(value: Int) -> String {
+            L10nSupport.format("common.percent", value)
+        }
+
+        /// Picker label for choosing a provider
+        ///
+        /// Key: `common.provider`
+        /// en: "Provider"
+        public static var provider: String { L10nSupport.string("common.provider") }
+
+        /// Generic refresh button and tooltip
         ///
         /// Key: `common.refresh`
         /// en: "Refresh"
         public static var refresh: String { L10nSupport.string("common.refresh") }
 
-        /// Button that runs the failed action again.
+        /// Tooltip on a per-card refresh button
+        ///
+        /// Key: `common.refreshSection`
+        /// en: "Refresh this section"
+        public static var refreshSection: String { L10nSupport.string("common.refreshSection") }
+
+        /// Button that takes an item out of a list
+        ///
+        /// Key: `common.remove`
+        /// en: "Remove"
+        public static var remove: String { L10nSupport.string("common.remove") }
+
+        /// Button on a failure state
         ///
         /// Key: `common.retry`
         /// en: "Retry"
         public static var retry: String { L10nSupport.string("common.retry") }
+
+        /// Button that retries immediately, skipping a cooldown
+        ///
+        /// Key: `common.retryNow`
+        /// en: "Retry now"
+        public static var retryNow: String { L10nSupport.string("common.retryNow") }
+
+        /// Button that commits an edited value
+        ///
+        /// Key: `common.save`
+        /// en: "Save"
+        public static var save: String { L10nSupport.string("common.save") }
+
+        public enum Duration {
+            /// Compact countdown, whole days only
+            ///
+            /// Key: `common.duration.days`
+            /// en: "{days}d"
+            public static func days(days: Int) -> String {
+                L10nSupport.format("common.duration.days", days)
+            }
+
+            /// Compact countdown, days and hours
+            ///
+            /// Key: `common.duration.daysHours`
+            /// en: "{days}d {hours}h"
+            public static func daysHours(days: Int, hours: Int) -> String {
+                L10nSupport.format("common.duration.daysHours", days, hours)
+            }
+
+            /// Compact countdown, whole hours only
+            ///
+            /// Key: `common.duration.hours`
+            /// en: "{hours}h"
+            public static func hours(hours: Int) -> String {
+                L10nSupport.format("common.duration.hours", hours)
+            }
+
+            /// Compact countdown, hours and minutes
+            ///
+            /// Key: `common.duration.hoursMinutes`
+            /// en: "{hours}h {minutes}m"
+            public static func hoursMinutes(hours: Int, minutes: Int) -> String {
+                L10nSupport.format("common.duration.hoursMinutes", hours, minutes)
+            }
+
+            /// Countdown under one minute
+            ///
+            /// Key: `common.duration.lessThanMinute`
+            /// en: "<1m"
+            public static var lessThanMinute: String { L10nSupport.string("common.duration.lessThanMinute") }
+
+            /// Compact countdown, minutes only
+            ///
+            /// Key: `common.duration.minutes`
+            /// en: "{minutes}m"
+            public static func minutes(minutes: Int) -> String {
+                L10nSupport.format("common.duration.minutes", minutes)
+            }
+
+            /// Countdown that has reached zero
+            ///
+            /// Key: `common.duration.now`
+            /// en: "now"
+            public static var now: String { L10nSupport.string("common.duration.now") }
+        }
+
+        public enum Updated {
+            /// Freshness line, days
+            ///
+            /// Key: `common.updated.daysAgo`
+            /// en: "Updated {days, plural, one {1 day} other {# days}} ago"
+            public static func daysAgo(days: Int) -> String {
+                L10nSupport.localizedFormat("common.updated.daysAgo", days)
+            }
+
+            /// Freshness line, hours
+            ///
+            /// Key: `common.updated.hoursAgo`
+            /// en: "Updated {hours, plural, one {1 hour} other {# hours}} ago"
+            public static func hoursAgo(hours: Int) -> String {
+                L10nSupport.localizedFormat("common.updated.hoursAgo", hours)
+            }
+
+            /// Freshness line under five seconds old
+            ///
+            /// Key: `common.updated.justNow`
+            /// en: "Updated just now"
+            public static var justNow: String { L10nSupport.string("common.updated.justNow") }
+
+            /// Freshness line, minutes
+            ///
+            /// Key: `common.updated.minutesAgo`
+            /// en: "Updated {minutes, plural, one {1 minute} other {# minutes}} ago"
+            public static func minutesAgo(minutes: Int) -> String {
+                L10nSupport.localizedFormat("common.updated.minutesAgo", minutes)
+            }
+
+            /// Freshness line when nothing has been fetched yet
+            ///
+            /// Key: `common.updated.never`
+            /// en: "Never updated"
+            public static var never: String { L10nSupport.string("common.updated.never") }
+
+            /// Freshness line, seconds
+            ///
+            /// Key: `common.updated.secondsAgo`
+            /// en: "Updated {seconds} seconds ago"
+            public static func secondsAgo(seconds: Int) -> String {
+                L10nSupport.format("common.updated.secondsAgo", seconds)
+            }
+        }
     }
 
     public enum Cost {
+        /// Scope name for the combined cost card
+        ///
+        /// Key: `cost.allProviders`
+        /// en: "All providers"
+        public static var allProviders: String { L10nSupport.string("cost.allProviders") }
+
+        /// Title of the expanded cost popover; title is the card's own title
+        ///
+        /// Key: `cost.fullCharts`
+        /// en: "{title} — Full Charts"
+        public static func fullCharts(title: String) -> String {
+            L10nSupport.format("cost.fullCharts", title)
+        }
+
+        /// Subtitle on an empty provider cost card
+        ///
+        /// Key: `cost.noUsageYet`
+        /// en: "No usage yet"
+        public static var noUsageYet: String { L10nSupport.string("cost.noUsageYet") }
+
+        /// Fallback when a provider has no cost history; provider is a SubProvider name and is never translated
+        ///
+        /// Key: `cost.notTracked`
+        /// en: "Cost history isn't tracked for {provider}."
+        public static func notTracked(provider: String) -> String {
+            L10nSupport.format("cost.notTracked", provider)
+        }
+
+        /// Tooltip on the expand button of a cost card
+        ///
+        /// Key: `cost.openFullCharts`
+        /// en: "Open full charts"
+        public static var openFullCharts: String { L10nSupport.string("cost.openFullCharts") }
+
         /// Effective price of a model. {rate} is a raw number the client renders; declared double so the generated API takes a Double rather than a pre-formatted string.
         ///
         /// Key: `cost.perThousandTokens`
         /// en: "{rate} per 1K tokens"
         public static func perThousandTokens(rate: Double) -> String {
             L10nSupport.format("cost.perThousandTokens", rate)
+        }
+
+        /// Title of the expanded cost popover; provider is a company name and is never translated
+        ///
+        /// Key: `cost.providerFullCharts`
+        /// en: "{provider} Cost — Full Charts"
+        public static func providerFullCharts(provider: String) -> String {
+            L10nSupport.format("cost.providerFullCharts", provider)
+        }
+
+        /// Tooltip on the Overview cost card's refresh button
+        ///
+        /// Key: `cost.refreshData`
+        /// en: "Refresh cost data"
+        public static var refreshData: String { L10nSupport.string("cost.refreshData") }
+
+        /// Tooltip on a provider cost card's refresh button; provider is a SubProvider or company name
+        ///
+        /// Key: `cost.refreshProvider`
+        /// en: "Refresh {provider} cost"
+        public static func refreshProvider(provider: String) -> String {
+            L10nSupport.format("cost.refreshProvider", provider)
         }
 
         /// Cost headline. {amount} arrives already formatted as currency by the client — the catalog never formats money, because the symbol, grouping and placement are the platform's job.
@@ -52,16 +336,452 @@ public enum L10n {
         public static func spentToday(amount: String) -> String {
             L10nSupport.format("cost.spentToday", amount)
         }
+
+        /// Card title on a provider page
+        ///
+        /// Key: `cost.title`
+        /// en: "Cost"
+        public static var title: String { L10nSupport.string("cost.title") }
+
+        public enum Chart {
+            /// Tooltip on the cost chart's dollar option
+            ///
+            /// Key: `cost.chart.metricCostHelp`
+            /// en: "Plot spend in dollars"
+            public static var metricCostHelp: String { L10nSupport.string("cost.chart.metricCostHelp") }
+
+            /// Segmented-control label that plots token volume instead of spend; the dollar option is the '$' sign and needs no key
+            ///
+            /// Key: `cost.chart.metricTokens`
+            /// en: "Tok"
+            public static var metricTokens: String { L10nSupport.string("cost.chart.metricTokens") }
+
+            /// Tooltip on the cost chart's token option
+            ///
+            /// Key: `cost.chart.metricTokensHelp`
+            /// en: "Plot token volume"
+            public static var metricTokensHelp: String { L10nSupport.string("cost.chart.metricTokensHelp") }
+        }
+
+        public enum Empty {
+            /// Empty cost history
+            ///
+            /// Key: `cost.empty.antigravity`
+            /// en: "No Antigravity conversation token metadata found yet."
+            public static var antigravity: String { L10nSupport.string("cost.empty.antigravity") }
+
+            /// Empty cost history
+            ///
+            /// Key: `cost.empty.claude`
+            /// en: "No Claude CLI sessions found yet."
+            public static var claude: String { L10nSupport.string("cost.empty.claude") }
+
+            /// Empty cost history; the harness name is never translated
+            ///
+            /// Key: `cost.empty.codex`
+            /// en: "No Codex CLI sessions found yet."
+            public static var codex: String { L10nSupport.string("cost.empty.codex") }
+
+            /// Empty cost history
+            ///
+            /// Key: `cost.empty.gemini`
+            /// en: "No Gemini CLI or chat-history usage found yet."
+            public static var gemini: String { L10nSupport.string("cost.empty.gemini") }
+
+            /// Empty cost history for a provider with no dedicated line; provider is a SubProvider name
+            ///
+            /// Key: `cost.empty.genericCLI`
+            /// en: "No {provider} CLI sessions found yet."
+            public static func genericCLI(provider: String) -> String {
+                L10nSupport.format("cost.empty.genericCLI", provider)
+            }
+
+            /// Empty cost history
+            ///
+            /// Key: `cost.empty.grok`
+            /// en: "No Grok session usage found yet."
+            public static var grok: String { L10nSupport.string("cost.empty.grok") }
+        }
+
+        public enum Gemini {
+            /// Empty Google AI cost card body
+            ///
+            /// Key: `cost.gemini.emptyDetail`
+            /// en: "Vibe Bar reads live AntiGravity quota from the desktop app when available, then falls back to the installed agy CLI. Cached values are marked stale when neither local source can refresh them."
+            public static var emptyDetail: String { L10nSupport.string("cost.gemini.emptyDetail") }
+
+            /// Empty Google AI cost card headline
+            ///
+            /// Key: `cost.gemini.emptyTitle`
+            /// en: "No Gemini or AntiGravity usage found yet."
+            public static var emptyTitle: String { L10nSupport.string("cost.gemini.emptyTitle") }
+        }
+
+        public enum GoogleAI {
+            /// Empty cost card; the SubProvider and CLI names are never translated
+            ///
+            /// Key: `cost.googleAI.empty`
+            /// en: "No Gemini Web / AntiGravity usage yet — refresh after signing in to AntiGravity or agy."
+            public static var empty: String { L10nSupport.string("cost.googleAI.empty") }
+
+            /// Card title; the company name is never translated
+            ///
+            /// Key: `cost.googleAI.title`
+            /// en: "Google AI Cost"
+            public static var title: String { L10nSupport.string("cost.googleAI.title") }
+        }
+
+        public enum Granularity {
+            /// Cost chart bucket width: one bar per day
+            ///
+            /// Key: `cost.granularity.day`
+            /// en: "Day"
+            public static var day: String { L10nSupport.string("cost.granularity.day") }
+
+            /// Cost chart bucket width: one bar per hour
+            ///
+            /// Key: `cost.granularity.hour`
+            /// en: "Hour"
+            public static var hour: String { L10nSupport.string("cost.granularity.hour") }
+
+            /// Cost chart bucket width: one bar per calendar month
+            ///
+            /// Key: `cost.granularity.month`
+            /// en: "Month"
+            public static var month: String { L10nSupport.string("cost.granularity.month") }
+
+            /// Cost chart bucket width: one bar per week
+            ///
+            /// Key: `cost.granularity.week`
+            /// en: "Week"
+            public static var week: String { L10nSupport.string("cost.granularity.week") }
+        }
+
+        public enum History {
+            /// Card title on the Overview
+            ///
+            /// Key: `cost.history.allProviders`
+            /// en: "All Providers Cost History"
+            public static var allProviders: String { L10nSupport.string("cost.history.allProviders") }
+
+            /// Empty state of the cost history chart before the first samples exist
+            ///
+            /// Key: `cost.history.building`
+            /// en: "Building history…"
+            public static var building: String { L10nSupport.string("cost.history.building") }
+
+            /// Second line of the cost history chart's empty state
+            ///
+            /// Key: `cost.history.buildingDetail`
+            /// en: "Cost samples appear after the next local scan."
+            public static var buildingDetail: String { L10nSupport.string("cost.history.buildingDetail") }
+
+            /// Tooltip on the button that closes the model breakdown panel
+            ///
+            /// Key: `cost.history.clearModelSelection`
+            /// en: "Clear model selection"
+            public static var clearModelSelection: String { L10nSupport.string("cost.history.clearModelSelection") }
+
+            /// Overlay on the cost chart when the visible range holds no spend
+            ///
+            /// Key: `cost.history.emptyCost`
+            /// en: "No cost recorded in this range."
+            public static var emptyCost: String { L10nSupport.string("cost.history.emptyCost") }
+
+            /// Overlay on the cost chart when the visible range holds no tokens
+            ///
+            /// Key: `cost.history.emptyTokens`
+            /// en: "No tokens recorded in this range."
+            public static var emptyTokens: String { L10nSupport.string("cost.history.emptyTokens") }
+
+            /// Caption naming the visible span of the cost chart and the dates at its ends
+            ///
+            /// Key: `cost.history.extentNote`
+            /// en: "{span} · {start} – {end}"
+            public static func extentNote(end: String, span: String, start: String) -> String {
+                L10nSupport.format("cost.history.extentNote", end, span, start)
+            }
+
+            /// Tooltip on a bucket-width button the current zoom level cannot draw
+            ///
+            /// Key: `cost.history.granularityDisabled`
+            /// en: "{granularity} needs a different zoom level"
+            public static func granularityDisabled(granularity: String) -> String {
+                L10nSupport.format("cost.history.granularityDisabled", granularity)
+            }
+
+            /// Tooltip on a bucket-width button in the cost chart
+            ///
+            /// Key: `cost.history.groupBy`
+            /// en: "Group cost history by {granularity}"
+            public static func groupBy(granularity: String) -> String {
+                L10nSupport.format("cost.history.groupBy", granularity)
+            }
+
+            /// Note under the cost chart when hourly buckets were asked for but only daily ones exist that far back
+            ///
+            /// Key: `cost.history.hourlyFallback`
+            /// en: "hourly n/a · showing daily"
+            public static var hourlyFallback: String { L10nSupport.string("cost.history.hourlyFallback") }
+
+            /// Summary figure under the cost chart: the per-bucket average; granularity is the bucket width
+            ///
+            /// Key: `cost.history.metricAverage`
+            /// en: "Avg/{granularity}"
+            public static func metricAverage(granularity: String) -> String {
+                L10nSupport.format("cost.history.metricAverage", granularity)
+            }
+
+            /// Summary figure under the cost chart: the largest single bucket
+            ///
+            /// Key: `cost.history.metricPeak`
+            /// en: "Peak"
+            public static var metricPeak: String { L10nSupport.string("cost.history.metricPeak") }
+
+            /// Summary figure under the cost chart: the visible range's total
+            ///
+            /// Key: `cost.history.metricTotal`
+            /// en: "Total"
+            public static var metricTotal: String { L10nSupport.string("cost.history.metricTotal") }
+
+            /// Shown in the model breakdown panel for a bucket old enough that per-model rows were not kept
+            ///
+            /// Key: `cost.history.modelDetailUnavailable`
+            /// en: "Model detail is unavailable for this historical period."
+            public static var modelDetailUnavailable: String { L10nSupport.string("cost.history.modelDetailUnavailable") }
+
+            /// Heading of the model breakdown panel; when is the bucket the user clicked
+            ///
+            /// Key: `cost.history.modelsAt`
+            /// en: "Models · {when}"
+            public static func modelsAt(when: String) -> String {
+                L10nSupport.format("cost.history.modelsAt", when)
+            }
+
+            /// Last row of a cost-chart tooltip, standing in for the models it could not fit
+            ///
+            /// Key: `cost.history.moreModels`
+            /// en: "+{count} more · click to inspect"
+            public static func moreModels(count: Int) -> String {
+                L10nSupport.format("cost.history.moreModels", count)
+            }
+
+            /// Accessibility label for the range navigator under the cost history chart
+            ///
+            /// Key: `cost.history.navigator`
+            /// en: "Cost history range navigator"
+            public static var navigator: String { L10nSupport.string("cost.history.navigator") }
+
+            /// Title of the navigable cost history chart
+            ///
+            /// Key: `cost.history.title`
+            /// en: "Cost History"
+            public static var title: String { L10nSupport.string("cost.history.title") }
+
+            /// Cost chart tooltip heading for a weekly bucket; date is the week's first day
+            ///
+            /// Key: `cost.history.weekOf`
+            /// en: "Week of {date}"
+            public static func weekOf(date: String) -> String {
+                L10nSupport.format("cost.history.weekOf", date)
+            }
+
+            /// Compact form of the weekly bucket label, used under the peak figure
+            ///
+            /// Key: `cost.history.weekShortOf`
+            /// en: "wk {date}"
+            public static func weekShortOf(date: String) -> String {
+                L10nSupport.format("cost.history.weekShortOf", date)
+            }
+        }
+
+        public enum Metric {
+            /// All-caps metric label: the most expensive day on record
+            ///
+            /// Key: `cost.metric.peakDay`
+            /// en: "PEAK DAY"
+            public static var peakDay: String { L10nSupport.string("cost.metric.peakDay") }
+
+            /// All-caps metric label
+            ///
+            /// Key: `cost.metric.peakTokenDay`
+            /// en: "PEAK TOK DAY"
+            public static var peakTokenDay: String { L10nSupport.string("cost.metric.peakTokenDay") }
+
+            /// All-caps metric label on the Overview cost card
+            ///
+            /// Key: `cost.metric.sevenDay`
+            /// en: "7-DAY"
+            public static var sevenDay: String { L10nSupport.string("cost.metric.sevenDay") }
+
+            /// All-caps metric label
+            ///
+            /// Key: `cost.metric.sevenDayTokens`
+            /// en: "7-DAY TOK"
+            public static var sevenDayTokens: String { L10nSupport.string("cost.metric.sevenDayTokens") }
+
+            /// All-caps metric label
+            ///
+            /// Key: `cost.metric.thirtyDay`
+            /// en: "30-DAY"
+            public static var thirtyDay: String { L10nSupport.string("cost.metric.thirtyDay") }
+
+            /// All-caps metric label
+            ///
+            /// Key: `cost.metric.thirtyDayTokens`
+            /// en: "30-DAY TOK"
+            public static var thirtyDayTokens: String { L10nSupport.string("cost.metric.thirtyDayTokens") }
+
+            /// All-caps metric label
+            ///
+            /// Key: `cost.metric.todayTokens`
+            /// en: "TODAY TOK"
+            public static var todayTokens: String { L10nSupport.string("cost.metric.todayTokens") }
+
+            /// All-caps metric label on the Overview cost card. English is set in caps by the copy; Chinese has no case.
+            ///
+            /// Key: `cost.metric.totalCost`
+            /// en: "TOTAL COST"
+            public static var totalCost: String { L10nSupport.string("cost.metric.totalCost") }
+
+            /// All-caps metric label; 'tok' is the token unit and stays as spelled
+            ///
+            /// Key: `cost.metric.totalTokens`
+            /// en: "TOTAL TOK"
+            public static var totalTokens: String { L10nSupport.string("cost.metric.totalTokens") }
+
+            /// All-caps metric label
+            ///
+            /// Key: `cost.metric.yesterdayTokens`
+            /// en: "YESTERDAY TOK"
+            public static var yesterdayTokens: String { L10nSupport.string("cost.metric.yesterdayTokens") }
+        }
+
+        public enum ModelRanking {
+            /// Scope subtitle on the Overview's combined Model Ranking card
+            ///
+            /// Key: `cost.modelRanking.allProvidersAllTime`
+            /// en: "All providers · all time"
+            public static var allProvidersAllTime: String { L10nSupport.string("cost.modelRanking.allProvidersAllTime") }
+
+            /// Default scope subtitle next to the Model Ranking title
+            ///
+            /// Key: `cost.modelRanking.allTime`
+            /// en: "All time"
+            public static var allTime: String { L10nSupport.string("cost.modelRanking.allTime") }
+
+            /// Card title: models ordered by spend
+            ///
+            /// Key: `cost.modelRanking.title`
+            /// en: "Model Ranking"
+            public static var title: String { L10nSupport.string("cost.modelRanking.title") }
+        }
+
+        public enum Provider {
+            /// Cost card title on a provider page; provider is a SubProvider name and is never translated
+            ///
+            /// Key: `cost.provider.title`
+            /// en: "{provider} Cost"
+            public static func title(provider: String) -> String {
+                L10nSupport.format("cost.provider.title", provider)
+            }
+        }
+
+        public enum SpaceXAI {
+            /// Empty cost card
+            ///
+            /// Key: `cost.spaceXAI.empty`
+            /// en: "No Grok or Cursor usage found yet."
+            public static var empty: String { L10nSupport.string("cost.spaceXAI.empty") }
+
+            /// Card title; the company name is never translated
+            ///
+            /// Key: `cost.spaceXAI.title`
+            /// en: "SpaceXAI Cost"
+            public static var title: String { L10nSupport.string("cost.spaceXAI.title") }
+        }
+
+        public enum Timeframe {
+            /// Cost timeframe label covering all recorded history distinct-from: common.all — a filter chip that selects every item and a timeframe covering all recorded history are different spans.
+            ///
+            /// Key: `cost.timeframe.all`
+            /// en: "All"
+            public static var all: String { L10nSupport.string("cost.timeframe.all") }
+
+            /// Cost timeframe label, full form
+            ///
+            /// Key: `cost.timeframe.month`
+            /// en: "30 days"
+            public static var month: String { L10nSupport.string("cost.timeframe.month") }
+
+            /// Cost timeframe label in a five-column summary row
+            ///
+            /// Key: `cost.timeframe.monthShort`
+            /// en: "30d"
+            public static var monthShort: String { L10nSupport.string("cost.timeframe.monthShort") }
+
+            /// Cost timeframe label
+            ///
+            /// Key: `cost.timeframe.today`
+            /// en: "Today"
+            public static var today: String { L10nSupport.string("cost.timeframe.today") }
+
+            /// Cost timeframe label, full form
+            ///
+            /// Key: `cost.timeframe.week`
+            /// en: "7 days"
+            public static var week: String { L10nSupport.string("cost.timeframe.week") }
+
+            /// Cost timeframe label in a five-column summary row where space is tight
+            ///
+            /// Key: `cost.timeframe.weekShort`
+            /// en: "7d"
+            public static var weekShort: String { L10nSupport.string("cost.timeframe.weekShort") }
+
+            /// Cost timeframe label
+            ///
+            /// Key: `cost.timeframe.yesterday`
+            /// en: "Yesterday"
+            public static var yesterday: String { L10nSupport.string("cost.timeframe.yesterday") }
+        }
+
+        public enum TopModel {
+            /// This model's share of the last seven days' spend
+            ///
+            /// Key: `cost.topModel.share`
+            /// en: "{percent}% share"
+            public static func share(percent: Int) -> String {
+                L10nSupport.format("cost.topModel.share", percent)
+            }
+
+            /// All-caps label on the tile showing the most-used model. English is set in caps by the copy itself; Chinese has no case, so the tile relies on weight and colour instead.
+            ///
+            /// Key: `cost.topModel.title`
+            /// en: "TOP MODEL"
+            public static var title: String { L10nSupport.string("cost.topModel.title") }
+        }
     }
 
     public enum Error {
-        /// Provider card state: the browser session expired and the user must sign in again.
+        /// QuotaError: the provider rejected the key we hold
+        ///
+        /// Key: `error.credentialRejected`
+        /// en: "Credential rejected"
+        public static var credentialRejected: String { L10nSupport.string("error.credentialRejected") }
+
+        /// QuotaError: the stored browser session expired
         ///
         /// Key: `error.needsReLogin`
         /// en: "Needs re-login"
         public static var needsReLogin: String { L10nSupport.string("error.needsReLogin") }
 
-        /// Provider card state when the request never reached the provider. {reason} is the system's message, untranslated.
+        /// QuotaError: transport failure, no detail available
+        ///
+        /// Key: `error.network`
+        /// en: "Network error"
+        public static var network: String { L10nSupport.string("error.network") }
+
+        /// QuotaError transport failure; reason is the provider's own message, untranslated
         ///
         /// Key: `error.networkWithReason`
         /// en: "Network error: {reason}"
@@ -69,27 +789,1571 @@ public enum L10n {
             L10nSupport.format("error.networkWithReason", reason)
         }
 
-        /// Provider card state: no credential of any kind is configured.
+        /// QuotaError: no credential is stored for this provider
         ///
         /// Key: `error.noAccountFound`
         /// en: "No account found"
         public static var noAccountFound: String { L10nSupport.string("error.noAccountFound") }
 
-        /// Provider card state: the provider refused the request for asking too often.
+        /// QuotaError: this provider has no quota path yet
+        ///
+        /// Key: `error.notImplemented`
+        /// en: "Not yet supported"
+        public static var notImplemented: String { L10nSupport.string("error.notImplemented") }
+
+        /// QuotaError: the payload no longer parses and the adapter had nothing to add
+        ///
+        /// Key: `error.parseFailure`
+        /// en: "Response format changed"
+        public static var parseFailure: String { L10nSupport.string("error.parseFailure") }
+
+        /// QuotaError: the provider is throttling us
         ///
         /// Key: `error.rateLimited`
         /// en: "Rate limited, try later"
         public static var rateLimited: String { L10nSupport.string("error.rateLimited") }
+
+        /// QuotaError: unclassified failure with no detail
+        ///
+        /// Key: `error.unknown`
+        /// en: "Error"
+        public static var unknown: String { L10nSupport.string("error.unknown") }
+
+        /// QuotaError: unclassified failure; reason is the underlying message, untranslated
+        ///
+        /// Key: `error.unknownDetail`
+        /// en: "Error: {reason}"
+        public static func unknownDetail(reason: String) -> String {
+            L10nSupport.format("error.unknownDetail", reason)
+        }
+    }
+
+    public enum MenuBar {
+        public enum Composer {
+            /// Caption over the reorderable list of blocks.
+            ///
+            /// Key: `menuBar.composer.blocks`
+            /// en: "Blocks — drag to reorder"
+            public static var blocks: String { L10nSupport.string("menuBar.composer.blocks") }
+
+            /// Caption over the list of blocks that can be added.
+            ///
+            /// Key: `menuBar.composer.palette`
+            /// en: "Add a block"
+            public static var palette: String { L10nSupport.string("menuBar.composer.palette") }
+
+            /// Caption over the live preview of the composed strip.
+            ///
+            /// Key: `menuBar.composer.preview`
+            /// en: "Preview"
+            public static var preview: String { L10nSupport.string("menuBar.composer.preview") }
+
+            /// Drop target that deletes the dragged block.
+            ///
+            /// Key: `menuBar.composer.removeTarget`
+            /// en: "Drag here to remove"
+            public static var removeTarget: String { L10nSupport.string("menuBar.composer.removeTarget") }
+
+            /// Caption over the controls for the selected block.
+            ///
+            /// Key: `menuBar.composer.selected`
+            /// en: "Selected block"
+            public static var selected: String { L10nSupport.string("menuBar.composer.selected") }
+
+            /// Button rebuilding every block from the default strip.
+            ///
+            /// Key: `menuBar.composer.startOver`
+            /// en: "Start over from the current strip…"
+            public static var startOver: String { L10nSupport.string("menuBar.composer.startOver") }
+
+            /// Picker choosing a starting set of spacing and type sizes.
+            ///
+            /// Key: `menuBar.composer.template`
+            /// en: "Template"
+            public static var template: String { L10nSupport.string("menuBar.composer.template") }
+
+            public enum Action {
+                /// Button copying the selected block.
+                ///
+                /// Key: `menuBar.composer.action.duplicate`
+                /// en: "Duplicate"
+                public static var duplicate: String { L10nSupport.string("menuBar.composer.action.duplicate") }
+            }
+
+            public enum AppIcon {
+                /// What the app-icon block shows.
+                ///
+                /// Key: `menuBar.composer.appIcon.detail`
+                /// en: "Vibe Bar's own icon — what the Icon Only layout shows."
+                public static var detail: String { L10nSupport.string("menuBar.composer.appIcon.detail") }
+            }
+
+            public enum Block {
+                /// A block showing the app's own icon.
+                ///
+                /// Key: `menuBar.composer.block.appIcon`
+                /// en: "Vibe Bar icon"
+                public static var appIcon: String { L10nSupport.string("menuBar.composer.block.appIcon") }
+
+                /// Chip label for a text block with nothing typed in it.
+                ///
+                /// Key: `menuBar.composer.block.emptyText`
+                /// en: "Empty text"
+                public static var emptyText: String { L10nSupport.string("menuBar.composer.block.emptyText") }
+
+                /// Chip label for a separator block with nothing typed in it.
+                ///
+                /// Key: `menuBar.composer.block.gap`
+                /// en: "Gap"
+                public static var gap: String { L10nSupport.string("menuBar.composer.block.gap") }
+
+                /// A block showing a provider's brand mark.
+                ///
+                /// Key: `menuBar.composer.block.logo`
+                /// en: "Logo"
+                public static var logo: String { L10nSupport.string("menuBar.composer.block.logo") }
+
+                /// A block that ends one row and starts the next.
+                ///
+                /// Key: `menuBar.composer.block.newRow`
+                /// en: "New row"
+                public static var newRow: String { L10nSupport.string("menuBar.composer.block.newRow") }
+
+                /// A block showing a number read from a quota.
+                ///
+                /// Key: `menuBar.composer.block.quota`
+                /// en: "Quota"
+                public static var quota: String { L10nSupport.string("menuBar.composer.block.quota") }
+
+                /// A block that draws a divider the user chose.
+                ///
+                /// Key: `menuBar.composer.block.separator`
+                /// en: "Separator"
+                public static var separator: String { L10nSupport.string("menuBar.composer.block.separator") }
+
+                /// A block that draws blank space.
+                ///
+                /// Key: `menuBar.composer.block.space`
+                /// en: "Space"
+                public static var space: String { L10nSupport.string("menuBar.composer.block.space") }
+
+                /// Palette group holding spacing and row blocks.
+                ///
+                /// Key: `menuBar.composer.block.structure`
+                /// en: "Structure"
+                public static var structure: String { L10nSupport.string("menuBar.composer.block.structure") }
+
+                /// A block showing words the user typed.
+                ///
+                /// Key: `menuBar.composer.block.text`
+                /// en: "Text"
+                public static var text: String { L10nSupport.string("menuBar.composer.block.text") }
+
+                /// Chip label for a block written by a newer version of the app that this one cannot draw.
+                ///
+                /// Key: `menuBar.composer.block.unsupported`
+                /// en: "From a newer version"
+                public static var unsupported: String { L10nSupport.string("menuBar.composer.block.unsupported") }
+            }
+
+            public enum Blocks {
+                /// Shown when the strip has no blocks.
+                ///
+                /// Key: `menuBar.composer.blocks.empty`
+                /// en: "No blocks yet. Add one from the palette below."
+                public static var empty: String { L10nSupport.string("menuBar.composer.blocks.empty") }
+            }
+
+            public enum Colour {
+                /// Colour choice: whatever the strip would use on its own.
+                ///
+                /// Key: `menuBar.composer.colour.automatic`
+                /// en: "Automatic"
+                public static var automatic: String { L10nSupport.string("menuBar.composer.colour.automatic") }
+
+                /// Colour choice: a provider's brand colour.
+                ///
+                /// Key: `menuBar.composer.colour.brand`
+                /// en: "Brand"
+                public static var brand: String { L10nSupport.string("menuBar.composer.colour.brand") }
+
+                /// Colour choice: a colour the user picks. Opens a colour well.
+                ///
+                /// Key: `menuBar.composer.colour.fixed`
+                /// en: "Custom…"
+                public static var fixed: String { L10nSupport.string("menuBar.composer.colour.fixed") }
+
+                /// Colour choice: track another quota's colour.
+                ///
+                /// Key: `menuBar.composer.colour.followsQuota`
+                /// en: "Follow a quota"
+                public static var followsQuota: String { L10nSupport.string("menuBar.composer.colour.followsQuota") }
+
+                /// Colour choice: the quota's forecast verdict colour.
+                ///
+                /// Key: `menuBar.composer.colour.forecast`
+                /// en: "Forecast"
+                public static var forecast: String { L10nSupport.string("menuBar.composer.colour.forecast") }
+
+                /// Colour choice: the menu bar's ordinary text colour.
+                ///
+                /// Key: `menuBar.composer.colour.primary`
+                /// en: "Primary"
+                public static var primary: String { L10nSupport.string("menuBar.composer.colour.primary") }
+
+                /// Colour choice: a quieter text colour.
+                ///
+                /// Key: `menuBar.composer.colour.secondary`
+                /// en: "Secondary"
+                public static var secondary: String { L10nSupport.string("menuBar.composer.colour.secondary") }
+
+                /// Colour choice: the quietest text colour.
+                ///
+                /// Key: `menuBar.composer.colour.tertiary`
+                /// en: "Tertiary"
+                public static var tertiary: String { L10nSupport.string("menuBar.composer.colour.tertiary") }
+            }
+
+            public enum Field {
+                /// Picker choosing a block's colour.
+                ///
+                /// Key: `menuBar.composer.field.colour`
+                /// en: "Colour"
+                public static var colour: String { L10nSupport.string("menuBar.composer.field.colour") }
+
+                /// Toggle keeping digits the same width.
+                ///
+                /// Key: `menuBar.composer.field.monospacedDigits`
+                /// en: "Monospaced digits"
+                public static var monospacedDigits: String { L10nSupport.string("menuBar.composer.field.monospacedDigits") }
+
+                /// Why monospaced digits matter.
+                ///
+                /// Key: `menuBar.composer.field.monospacedDigitsHelp`
+                /// en: "Keeps a changing number from shifting the blocks beside it."
+                public static var monospacedDigitsHelp: String { L10nSupport.string("menuBar.composer.field.monospacedDigitsHelp") }
+
+                /// A quota in a picker that is not currently being returned. Title is the quota's name.
+                ///
+                /// Key: `menuBar.composer.field.offlineOption`
+                /// en: "{title} (offline)"
+                public static func offlineOption(title: String) -> String {
+                    L10nSupport.format("menuBar.composer.field.offlineOption", title)
+                }
+
+                /// Picker choosing when a block is on screen.
+                ///
+                /// Key: `menuBar.composer.field.show`
+                /// en: "Show"
+                public static var show: String { L10nSupport.string("menuBar.composer.field.show") }
+
+                /// Picker choosing which number a quota block prints.
+                ///
+                /// Key: `menuBar.composer.field.shows`
+                /// en: "Shows"
+                public static var shows: String { L10nSupport.string("menuBar.composer.field.shows") }
+
+                /// Picker choosing a block's type size.
+                ///
+                /// Key: `menuBar.composer.field.size`
+                /// en: "Size"
+                public static var size: String { L10nSupport.string("menuBar.composer.field.size") }
+
+                /// Checkboxes choosing which forecast verdicts show a block.
+                ///
+                /// Key: `menuBar.composer.field.verdicts`
+                /// en: "Verdicts"
+                public static var verdicts: String { L10nSupport.string("menuBar.composer.field.verdicts") }
+
+                /// Picker choosing a block's type weight.
+                ///
+                /// Key: `menuBar.composer.field.weight`
+                /// en: "Weight"
+                public static var weight: String { L10nSupport.string("menuBar.composer.field.weight") }
+            }
+
+            public enum Metric {
+                /// Quota metric: whichever percentage the app-wide Used/Remaining setting selects.
+                ///
+                /// Key: `menuBar.composer.metric.displayPercent`
+                /// en: "Percent (follows setting)"
+                public static var displayPercent: String { L10nSupport.string("menuBar.composer.metric.displayPercent") }
+
+                /// Quota metric: distance from the linear expectation.
+                ///
+                /// Key: `menuBar.composer.metric.pace`
+                /// en: "Pace"
+                public static var pace: String { L10nSupport.string("menuBar.composer.metric.pace") }
+
+                /// Quota metric: the remaining percentage.
+                ///
+                /// Key: `menuBar.composer.metric.remainingPercent`
+                /// en: "Remaining %"
+                public static var remainingPercent: String { L10nSupport.string("menuBar.composer.metric.remainingPercent") }
+
+                /// Quota metric: the wall-clock time of the refill.
+                ///
+                /// Key: `menuBar.composer.metric.resetAt`
+                /// en: "Resets at"
+                public static var resetAt: String { L10nSupport.string("menuBar.composer.metric.resetAt") }
+
+                /// Quota metric: countdown to the refill.
+                ///
+                /// Key: `menuBar.composer.metric.resetsIn`
+                /// en: "Resets in"
+                public static var resetsIn: String { L10nSupport.string("menuBar.composer.metric.resetsIn") }
+
+                /// Quota metric: countdown to projected exhaustion.
+                ///
+                /// Key: `menuBar.composer.metric.runsOutIn`
+                /// en: "Runs out in"
+                public static var runsOutIn: String { L10nSupport.string("menuBar.composer.metric.runsOutIn") }
+
+                /// Quota metric: the used percentage.
+                ///
+                /// Key: `menuBar.composer.metric.usedPercent`
+                /// en: "Used %"
+                public static var usedPercent: String { L10nSupport.string("menuBar.composer.metric.usedPercent") }
+            }
+
+            public enum Mode {
+                /// Segment: the strip the user assembles out of blocks. distinct-from: menuBar.composer.colour.fixed — a colour the user picks, whose ellipsis promises the well that opens, and the strip the user assembles are different things.
+                ///
+                /// Key: `menuBar.composer.mode.custom`
+                /// en: "Custom"
+                public static var custom: String { L10nSupport.string("menuBar.composer.mode.custom") }
+
+                /// Caption under the mode picker while Custom is selected; reassures that switching back is not destructive.
+                ///
+                /// Key: `menuBar.composer.mode.customCaption`
+                /// en: "Switching back to Default keeps every block you built — you can return to Custom and find it exactly as you left it."
+                public static var customCaption: String { L10nSupport.string("menuBar.composer.mode.customCaption") }
+
+                /// Segment: the field-list strip the app has always drawn.
+                ///
+                /// Key: `menuBar.composer.mode.default`
+                /// en: "Default"
+                public static var `default`: String { L10nSupport.string("menuBar.composer.mode.default") }
+
+                /// Caption under the mode picker while Default is selected.
+                ///
+                /// Key: `menuBar.composer.mode.defaultCaption`
+                /// en: "Default shows the fields you tick below. Custom lets you build the strip out of blocks: logos, words, and any quota."
+                public static var defaultCaption: String { L10nSupport.string("menuBar.composer.mode.defaultCaption") }
+
+                /// Segmented control choosing how the menu-bar strip is built.
+                ///
+                /// Key: `menuBar.composer.mode.label`
+                /// en: "Strip"
+                public static var label: String { L10nSupport.string("menuBar.composer.mode.label") }
+            }
+
+            public enum NewRow {
+                /// Tooltip on the New row palette button once both rows are used.
+                ///
+                /// Key: `menuBar.composer.newRow.capped`
+                /// en: "The menu bar can only draw two rows."
+                public static var capped: String { L10nSupport.string("menuBar.composer.newRow.capped") }
+
+                /// What a new-row block does, and that it accepts a rule.
+                ///
+                /// Key: `menuBar.composer.newRow.detail`
+                /// en: "Ends the first row and starts the second. Give it a rule below to split only when that quota says so."
+                public static var detail: String { L10nSupport.string("menuBar.composer.newRow.detail") }
+
+                /// Tooltip on the New row palette button when a second row is still available.
+                ///
+                /// Key: `menuBar.composer.newRow.help`
+                /// en: "Split the strip into a second row."
+                public static var help: String { L10nSupport.string("menuBar.composer.newRow.help") }
+            }
+
+            public enum Preview {
+                /// Accessibility label for the dark-background preview.
+                ///
+                /// Key: `menuBar.composer.preview.dark`
+                /// en: "Dark menu bar preview"
+                public static var dark: String { L10nSupport.string("menuBar.composer.preview.dark") }
+
+                /// Accessibility label for a preview with nothing to draw.
+                ///
+                /// Key: `menuBar.composer.preview.empty`
+                /// en: "Empty strip"
+                public static var empty: String { L10nSupport.string("menuBar.composer.preview.empty") }
+
+                /// Explains why the preview is shown twice.
+                ///
+                /// Key: `menuBar.composer.preview.grounds`
+                /// en: "Light and dark menu bars, side by side — a fixed colour that reads well on one can vanish on the other."
+                public static var grounds: String { L10nSupport.string("menuBar.composer.preview.grounds") }
+
+                /// Accessibility label for the light-background preview.
+                ///
+                /// Key: `menuBar.composer.preview.light`
+                /// en: "Light menu bar preview"
+                public static var light: String { L10nSupport.string("menuBar.composer.preview.light") }
+
+                /// Explains that a two-row strip is scaled to fit the menu bar's height.
+                ///
+                /// Key: `menuBar.composer.preview.twoRowScaling`
+                /// en: "Two rows share the menu bar's height, so large sizes are scaled down to fit — the preview scales with them."
+                public static var twoRowScaling: String { L10nSupport.string("menuBar.composer.preview.twoRowScaling") }
+            }
+
+            public enum Rule {
+                /// Visibility rule: the block is always shown.
+                ///
+                /// Key: `menuBar.composer.rule.always`
+                /// en: "Always"
+                public static var always: String { L10nSupport.string("menuBar.composer.rule.always") }
+
+                /// Visibility rule: show only for chosen forecast verdicts.
+                ///
+                /// Key: `menuBar.composer.rule.whenForecast`
+                /// en: "When the forecast says"
+                public static var whenForecast: String { L10nSupport.string("menuBar.composer.rule.whenForecast") }
+
+                /// Visibility rule: show once a quota's remaining percentage falls to a threshold.
+                ///
+                /// Key: `menuBar.composer.rule.whenRemainingAtMost`
+                /// en: "When remaining is at most"
+                public static var whenRemainingAtMost: String { L10nSupport.string("menuBar.composer.rule.whenRemainingAtMost") }
+
+                /// Visibility rule: show once a quota's used percentage reaches a threshold.
+                ///
+                /// Key: `menuBar.composer.rule.whenUsedAtLeast`
+                /// en: "When used is at least"
+                public static var whenUsedAtLeast: String { L10nSupport.string("menuBar.composer.rule.whenUsedAtLeast") }
+            }
+
+            public enum Size {
+                /// Type size choice.
+                ///
+                /// Key: `menuBar.composer.size.large`
+                /// en: "Large"
+                public static var large: String { L10nSupport.string("menuBar.composer.size.large") }
+
+                /// Type size choice.
+                ///
+                /// Key: `menuBar.composer.size.regular`
+                /// en: "Regular"
+                public static var regular: String { L10nSupport.string("menuBar.composer.size.regular") }
+
+                /// Type size choice.
+                ///
+                /// Key: `menuBar.composer.size.small`
+                /// en: "Small"
+                public static var small: String { L10nSupport.string("menuBar.composer.size.small") }
+            }
+
+            public enum Space {
+                /// What a space block does.
+                ///
+                /// Key: `menuBar.composer.space.detail`
+                /// en: "A gap one space wide. Size changes how wide."
+                public static var detail: String { L10nSupport.string("menuBar.composer.space.detail") }
+            }
+
+            public enum StartOver {
+                /// Destructive button in the confirmation dialog.
+                ///
+                /// Key: `menuBar.composer.startOver.confirm`
+                /// en: "Start over"
+                public static var confirm: String { L10nSupport.string("menuBar.composer.startOver.confirm") }
+
+                /// Body of the confirmation dialog.
+                ///
+                /// Key: `menuBar.composer.startOver.confirmMessage`
+                /// en: "Every block you arranged is discarded and rebuilt from the default strip."
+                public static var confirmMessage: String { L10nSupport.string("menuBar.composer.startOver.confirmMessage") }
+
+                /// Title of the confirmation dialog.
+                ///
+                /// Key: `menuBar.composer.startOver.confirmTitle`
+                /// en: "Replace your blocks?"
+                public static var confirmTitle: String { L10nSupport.string("menuBar.composer.startOver.confirmTitle") }
+
+                /// Warns that starting over cannot be undone.
+                ///
+                /// Key: `menuBar.composer.startOver.detail`
+                /// en: "Starting over replaces every block with a fresh copy of the default strip. There is no undo."
+                public static var detail: String { L10nSupport.string("menuBar.composer.startOver.detail") }
+            }
+
+            public enum Template {
+                /// Template name.
+                ///
+                /// Key: `menuBar.composer.template.compact`
+                /// en: "Compact"
+                public static var compact: String { L10nSupport.string("menuBar.composer.template.compact") }
+
+                /// What the Compact template does.
+                ///
+                /// Key: `menuBar.composer.template.compactDetail`
+                /// en: "Tight spacing and a slightly smaller face."
+                public static var compactDetail: String { L10nSupport.string("menuBar.composer.template.compactDetail") }
+
+                /// Template name.
+                ///
+                /// Key: `menuBar.composer.template.roomy`
+                /// en: "Roomy"
+                public static var roomy: String { L10nSupport.string("menuBar.composer.template.roomy") }
+
+                /// What the Roomy template does.
+                ///
+                /// Key: `menuBar.composer.template.roomyDetail`
+                /// en: "The menu bar's usual size."
+                public static var roomyDetail: String { L10nSupport.string("menuBar.composer.template.roomyDetail") }
+
+                /// Template name: two stacked rows.
+                ///
+                /// Key: `menuBar.composer.template.twoRows`
+                /// en: "Two rows"
+                public static var twoRows: String { L10nSupport.string("menuBar.composer.template.twoRows") }
+
+                /// What the Two rows template does.
+                ///
+                /// Key: `menuBar.composer.template.twoRowsDetail`
+                /// en: "Two stacked rows in one status item."
+                public static var twoRowsDetail: String { L10nSupport.string("menuBar.composer.template.twoRowsDetail") }
+            }
+
+            public enum Text {
+                /// Shown under the text field when the selected text block has nothing in it.
+                ///
+                /// Key: `menuBar.composer.text.empty`
+                /// en: "An empty text block draws nothing. Type something for it to appear in the menu bar."
+                public static var empty: String { L10nSupport.string("menuBar.composer.text.empty") }
+
+                /// Explains that long text is cut short in the bar. Count is the character ceiling.
+                ///
+                /// Key: `menuBar.composer.text.limit`
+                /// en: "Blocks longer than {count} characters are cut short with an ellipsis in the bar."
+                public static func limit(count: Int) -> String {
+                    L10nSupport.format("menuBar.composer.text.limit", count)
+                }
+
+                /// Starting content of a newly added text block, before the user types over it.
+                ///
+                /// Key: `menuBar.composer.text.placeholder`
+                /// en: "Label"
+                public static var placeholder: String { L10nSupport.string("menuBar.composer.text.placeholder") }
+            }
+
+            public enum Unsupported {
+                /// Explains an unsupported block: it is kept so an upgrade restores it, and only removal applies.
+                ///
+                /// Key: `menuBar.composer.unsupported.detail`
+                /// en: "This block was made by a newer version of Vibe Bar. It is kept exactly as it was and will work again after an update; until then it draws nothing."
+                public static var detail: String { L10nSupport.string("menuBar.composer.unsupported.detail") }
+            }
+
+            public enum Warning {
+                /// Shown on a block whose colour or rule points at a quota that is not being returned.
+                ///
+                /// Key: `menuBar.composer.warning.degraded`
+                /// en: "This block still draws, but a colour or a rule on it points at a quota that is not being returned right now."
+                public static var degraded: String { L10nSupport.string("menuBar.composer.warning.degraded") }
+
+                /// Lists the quotas that are not answering. Fields is a comma-separated list of quota names.
+                ///
+                /// Key: `menuBar.composer.warning.missing`
+                /// en: "Not answering right now: {fields}"
+                public static func missing(fields: String) -> String {
+                    L10nSupport.format("menuBar.composer.warning.missing", fields)
+                }
+
+                /// Shown on a block whose quota is not being returned.
+                ///
+                /// Key: `menuBar.composer.warning.silent`
+                /// en: "This quota is not being returned right now, so this block draws nothing. It stays here and comes back on its own."
+                public static var silent: String { L10nSupport.string("menuBar.composer.warning.silent") }
+            }
+
+            public enum Weight {
+                /// Type weight choice.
+                ///
+                /// Key: `menuBar.composer.weight.medium`
+                /// en: "Medium"
+                public static var medium: String { L10nSupport.string("menuBar.composer.weight.medium") }
+
+                /// Type weight choice. distinct-from: menuBar.composer.size.regular — Regular names a type weight in one list and a type size in the other, which are options on different axes; the adjective agrees with a different noun in every language that inflects one.
+                ///
+                /// Key: `menuBar.composer.weight.regular`
+                /// en: "Regular"
+                public static var regular: String { L10nSupport.string("menuBar.composer.weight.regular") }
+
+                /// Type weight choice.
+                ///
+                /// Key: `menuBar.composer.weight.semibold`
+                /// en: "Semibold"
+                public static var semibold: String { L10nSupport.string("menuBar.composer.weight.semibold") }
+            }
+        }
+
+        public enum Spoken {
+            /// One quota's projection spoken aloud.
+            ///
+            /// Key: `menuBar.spoken.forecast`
+            /// en: "{label} forecast {value} left at reset"
+            public static func forecast(label: String, value: String) -> String {
+                L10nSupport.format("menuBar.spoken.forecast", label, value)
+            }
+
+            /// One quota's pace spoken aloud; value is a signed percentage.
+            ///
+            /// Key: `menuBar.spoken.pace`
+            /// en: "{label} pace {value}"
+            public static func pace(label: String, value: String) -> String {
+                L10nSupport.format("menuBar.spoken.pace", label, value)
+            }
+
+            /// One quota spoken aloud, remaining rather than used.
+            ///
+            /// Key: `menuBar.spoken.remaining`
+            /// en: "{label} {value} remaining"
+            public static func remaining(label: String, value: String) -> String {
+                L10nSupport.format("menuBar.spoken.remaining", label, value)
+            }
+
+            /// One quota's refill time spoken aloud.
+            ///
+            /// Key: `menuBar.spoken.resetAt`
+            /// en: "{label} resets at {value}"
+            public static func resetAt(label: String, value: String) -> String {
+                L10nSupport.format("menuBar.spoken.resetAt", label, value)
+            }
+
+            /// One quota's refill countdown spoken aloud.
+            ///
+            /// Key: `menuBar.spoken.resetsIn`
+            /// en: "{label} resets in {value}"
+            public static func resetsIn(label: String, value: String) -> String {
+                L10nSupport.format("menuBar.spoken.resetsIn", label, value)
+            }
+
+            /// One quota's exhaustion countdown spoken aloud.
+            ///
+            /// Key: `menuBar.spoken.runsOutIn`
+            /// en: "{label} runs out in {value}"
+            public static func runsOutIn(label: String, value: String) -> String {
+                L10nSupport.format("menuBar.spoken.runsOutIn", label, value)
+            }
+
+            /// Accessibility label for the status item when nothing is being shown. Kind names the item.
+            ///
+            /// Key: `menuBar.spoken.title`
+            /// en: "{kind} quota"
+            public static func title(kind: String) -> String {
+                L10nSupport.format("menuBar.spoken.title", kind)
+            }
+
+            /// Accessibility label and tooltip for the status item. Body lists each quota in words.
+            ///
+            /// Key: `menuBar.spoken.titleBody`
+            /// en: "{kind} quota: {body}"
+            public static func titleBody(body: String, kind: String) -> String {
+                L10nSupport.format("menuBar.spoken.titleBody", body, kind)
+            }
+
+            /// One quota spoken aloud. Label is the quota's name, value an already-formatted percentage.
+            ///
+            /// Key: `menuBar.spoken.used`
+            /// en: "{label} {value} used"
+            public static func used(label: String, value: String) -> String {
+                L10nSupport.format("menuBar.spoken.used", label, value)
+            }
+        }
+    }
+
+    public enum Onboarding {
+        /// First-run assistant footer button
+        ///
+        /// Key: `onboarding.back`
+        /// en: "Back"
+        public static var back: String { L10nSupport.string("onboarding.back") }
+
+        /// First-run assistant footer button
+        ///
+        /// Key: `onboarding.continue`
+        /// en: "Continue"
+        public static var `continue`: String { L10nSupport.string("onboarding.continue") }
+
+        /// First-run assistant footer button on the last step
+        ///
+        /// Key: `onboarding.finish`
+        /// en: "Finish"
+        public static var finish: String { L10nSupport.string("onboarding.finish") }
+
+        /// First-run assistant footer button that closes the assistant without finishing
+        ///
+        /// Key: `onboarding.skip`
+        /// en: "Skip for now"
+        public static var skip: String { L10nSupport.string("onboarding.skip") }
+
+        /// Heading over the first-run assistant's step rail
+        ///
+        /// Key: `onboarding.title`
+        /// en: "Setup"
+        public static var title: String { L10nSupport.string("onboarding.title") }
+
+        public enum ApiKeys {
+            /// Button that folds a provider's credential form away
+            ///
+            /// Key: `onboarding.apiKeys.hide`
+            /// en: "Hide"
+            public static var hide: String { L10nSupport.string("onboarding.apiKeys.hide") }
+
+            /// Intro paragraph of the API-key providers step
+            ///
+            /// Key: `onboarding.apiKeys.intro`
+            /// en: "These plans are tracked with an API key or a console cookie rather than a CLI login. Tick the ones you have — a ticked provider gets a card on the Misc page — and unfold a row to enter its credential now. Keys and cookies go to your login Keychain."
+            public static var intro: String { L10nSupport.string("onboarding.apiKeys.intro") }
+
+            /// Button that unfolds a provider's credential form
+            ///
+            /// Key: `onboarding.apiKeys.setUp`
+            /// en: "Set up"
+            public static var setUp: String { L10nSupport.string("onboarding.apiKeys.setUp") }
+
+            /// Tooltip on a provider checkbox; provider is a SubProvider name and is never translated
+            ///
+            /// Key: `onboarding.apiKeys.showOnMiscPage`
+            /// en: "Show {provider} on the Misc page"
+            public static func showOnMiscPage(provider: String) -> String {
+                L10nSupport.format("onboarding.apiKeys.showOnMiscPage", provider)
+            }
+        }
+
+        public enum Cookies {
+            /// Caption under the batch import button
+            ///
+            /// Key: `onboarding.cookies.batchScope`
+            /// en: "This button covers the four plans above. The console-cookie plans on the next step have their own one-click batch import later, under Settings → Browser Cookies."
+            public static var batchScope: String { L10nSupport.string("onboarding.cookies.batchScope") }
+
+            /// Batch import button in the setup assistant
+            ///
+            /// Key: `onboarding.cookies.importAll`
+            /// en: "Import from all browsers now"
+            public static var importAll: String { L10nSupport.string("onboarding.cookies.importAll") }
+
+            /// Button in the setup assistant
+            ///
+            /// Key: `onboarding.cookies.importFromBrowser`
+            /// en: "Import from browser"
+            public static var importFromBrowser: String { L10nSupport.string("onboarding.cookies.importFromBrowser") }
+
+            /// Button in the setup assistant
+            ///
+            /// Key: `onboarding.cookies.importGemini`
+            /// en: "Import Gemini cookies from browser"
+            public static var importGemini: String { L10nSupport.string("onboarding.cookies.importGemini") }
+
+            /// Button in the setup assistant
+            ///
+            /// Key: `onboarding.cookies.importGrok`
+            /// en: "Import Grok cookies from browser"
+            public static var importGrok: String { L10nSupport.string("onboarding.cookies.importGrok") }
+
+            /// Status line while an import runs
+            ///
+            /// Key: `onboarding.cookies.importing`
+            /// en: "Importing…"
+            public static var importing: String { L10nSupport.string("onboarding.cookies.importing") }
+
+            /// Intro paragraph of the browser-cookies step
+            ///
+            /// Key: `onboarding.cookies.intro`
+            /// en: "Web quotas — the ones the provider shows on its own site — come from the session your browser already has. Vibe Bar reads the cookie stores of the browsers on this Mac (Chrome and other Chromium browsers, Safari, Firefox), keeps only the few cookies each provider needs, and stores them in your login Keychain, never in a plaintext file. macOS may ask once for permission to read a browser's cookie key."
+            public static var intro: String { L10nSupport.string("onboarding.cookies.intro") }
+
+            /// Status line before any import
+            ///
+            /// Key: `onboarding.cookies.notImported`
+            /// en: "Not imported yet"
+            public static var notImported: String { L10nSupport.string("onboarding.cookies.notImported") }
+
+            /// Button in the setup assistant
+            ///
+            /// Key: `onboarding.cookies.openWebViewLogin`
+            /// en: "Open WebView login"
+            public static var openWebViewLogin: String { L10nSupport.string("onboarding.cookies.openWebViewLogin") }
+
+            /// Status line after a successful import
+            ///
+            /// Key: `onboarding.cookies.saved`
+            /// en: "Cookies saved."
+            public static var saved: String { L10nSupport.string("onboarding.cookies.saved") }
+
+            /// Caption under the batch import button
+            ///
+            /// Key: `onboarding.cookies.signInFirst`
+            /// en: "Sign in to chatgpt.com, claude.ai, gemini.google.com or grok.com in your browser first — an import can only find a session that exists. Providers you have not signed in to simply report nothing."
+            public static var signInFirst: String { L10nSupport.string("onboarding.cookies.signInFirst") }
+        }
+
+        public enum Done {
+            /// Summary row label
+            ///
+            /// Key: `onboarding.done.apiKeyProviders`
+            /// en: "API-key providers"
+            public static var apiKeyProviders: String { L10nSupport.string("onboarding.done.apiKeyProviders") }
+
+            /// Summary value counting saved cookie sets
+            ///
+            /// Key: `onboarding.done.cookieCount`
+            /// en: "{saved} of {total} providers saved"
+            public static func cookieCount(saved: Int, total: Int) -> String {
+                L10nSupport.format("onboarding.done.cookieCount", saved, total)
+            }
+
+            /// Closing line of the final step
+            ///
+            /// Key: `onboarding.done.footer`
+            /// en: "Every one of these lives in Settings, and the assistant is one click away under Settings → System."
+            public static var footer: String { L10nSupport.string("onboarding.done.footer") }
+
+            /// Intro line of the final step
+            ///
+            /// Key: `onboarding.done.intro`
+            /// en: "That is everything the menu bar needs. Finish opens the popover with whatever quota is already readable; the rest fills in on the first refresh."
+            public static var intro: String { L10nSupport.string("onboarding.done.intro") }
+
+            /// Summary value counting visible misc providers
+            ///
+            /// Key: `onboarding.done.miscCount`
+            /// en: "{count} on the Misc page"
+            public static func miscCount(count: Int) -> String {
+                L10nSupport.format("onboarding.done.miscCount", count)
+            }
+
+            /// Summary value when no core provider is visible
+            ///
+            /// Key: `onboarding.done.noneShown`
+            /// en: "None shown"
+            public static var noneShown: String { L10nSupport.string("onboarding.done.noneShown") }
+
+            /// Summary value before any price fetch
+            ///
+            /// Key: `onboarding.done.pricingBundled`
+            /// en: "Bundled table until the first fetch"
+            public static var pricingBundled: String { L10nSupport.string("onboarding.done.pricingBundled") }
+
+            /// Summary value; when is an already-formatted date
+            ///
+            /// Key: `onboarding.done.pricingMerged`
+            /// en: "Merged {when}"
+            public static func pricingMerged(when: String) -> String {
+                L10nSupport.format("onboarding.done.pricingMerged", when)
+            }
+        }
+
+        public enum Pricing {
+            /// Button label
+            ///
+            /// Key: `onboarding.pricing.fetchNow`
+            /// en: "Fetch prices now"
+            public static var fetchNow: String { L10nSupport.string("onboarding.pricing.fetchNow") }
+
+            /// Button label while a price fetch runs
+            ///
+            /// Key: `onboarding.pricing.fetching`
+            /// en: "Fetching…"
+            public static var fetching: String { L10nSupport.string("onboarding.pricing.fetching") }
+
+            /// Closing line of the pricing step
+            ///
+            /// Key: `onboarding.pricing.footer`
+            /// en: "Prices are USD per one million tokens. Local overrides live under Settings → Model Pricing."
+            public static var footer: String { L10nSupport.string("onboarding.pricing.footer") }
+
+            /// Intro paragraph of the pricing step; interval is a duration phrase
+            ///
+            /// Key: `onboarding.pricing.intro`
+            /// en: "Token cost is computed on this Mac from your agents' session logs, priced with a catalog merged from several public price lists — higher-priority entries win when a model appears in more than one, your own overrides beat them all, and a bundled table is the offline floor. Catalogs refresh in the background every {interval}; fetching now gives the first cost numbers current prices."
+            public static func intro(interval: String) -> String {
+                L10nSupport.format("onboarding.pricing.intro", interval)
+            }
+
+            /// Status line after a successful merge; when is an already-formatted date
+            ///
+            /// Key: `onboarding.pricing.merged`
+            /// en: "Merged {when} · {count} models"
+            public static func merged(count: Int, when: String) -> String {
+                L10nSupport.format("onboarding.pricing.merged", count, when)
+            }
+
+            /// Status line before the first fetch
+            ///
+            /// Key: `onboarding.pricing.notFetched`
+            /// en: "Not fetched yet — the bundled table is in use."
+            public static var notFetched: String { L10nSupport.string("onboarding.pricing.notFetched") }
+
+            public enum Interval {
+                /// Refresh interval of exactly one hour, read inside a sentence distinct-from: cost.granularity.hour — a chart's bucket width is a picker option; a refresh interval of one hour is read inside a sentence.
+                ///
+                /// Key: `onboarding.pricing.interval.hour`
+                /// en: "hour"
+                public static var hour: String { L10nSupport.string("onboarding.pricing.interval.hour") }
+
+                /// Refresh interval in hours, read inside a sentence
+                ///
+                /// Key: `onboarding.pricing.interval.hours`
+                /// en: "{hours} hours"
+                public static func hours(hours: Int) -> String {
+                    L10nSupport.format("onboarding.pricing.interval.hours", hours)
+                }
+            }
+
+            public enum Source {
+                /// Per-source status
+                ///
+                /// Key: `onboarding.pricing.source.failed`
+                /// en: "Cached {count} · refresh failed"
+                public static func failed(count: Int) -> String {
+                    L10nSupport.format("onboarding.pricing.source.failed", count)
+                }
+
+                /// Per-source status
+                ///
+                /// Key: `onboarding.pricing.source.models`
+                /// en: "{count} models"
+                public static func models(count: Int) -> String {
+                    L10nSupport.format("onboarding.pricing.source.models", count)
+                }
+
+                /// Per-source status in the pricing step
+                ///
+                /// Key: `onboarding.pricing.source.notRefreshed`
+                /// en: "Not refreshed"
+                public static var notRefreshed: String { L10nSupport.string("onboarding.pricing.source.notRefreshed") }
+
+                /// Per-source status
+                ///
+                /// Key: `onboarding.pricing.source.unchanged`
+                /// en: "{count} models · unchanged"
+                public static func unchanged(count: Int) -> String {
+                    L10nSupport.format("onboarding.pricing.source.unchanged", count)
+                }
+            }
+        }
+
+        public enum Step {
+            public enum ApiKeyProviders {
+                /// Setup assistant step subtitle
+                ///
+                /// Key: `onboarding.step.apiKeyProviders.subtitle`
+                /// en: "Plans tracked with an API key or a console cookie."
+                public static var subtitle: String { L10nSupport.string("onboarding.step.apiKeyProviders.subtitle") }
+
+                /// Setup assistant step name
+                ///
+                /// Key: `onboarding.step.apiKeyProviders.title`
+                /// en: "Other plans"
+                public static var title: String { L10nSupport.string("onboarding.step.apiKeyProviders.title") }
+            }
+
+            public enum BrowserCookies {
+                /// Setup assistant step subtitle
+                ///
+                /// Key: `onboarding.step.browserCookies.subtitle`
+                /// en: "Web quotas come from the session your browser already has."
+                public static var subtitle: String { L10nSupport.string("onboarding.step.browserCookies.subtitle") }
+
+                /// Setup assistant step name
+                ///
+                /// Key: `onboarding.step.browserCookies.title`
+                /// en: "Browser cookies"
+                public static var title: String { L10nSupport.string("onboarding.step.browserCookies.title") }
+            }
+
+            public enum Done {
+                /// Setup assistant step subtitle
+                ///
+                /// Key: `onboarding.step.done.subtitle`
+                /// en: "Everything here lives in Settings too."
+                public static var subtitle: String { L10nSupport.string("onboarding.step.done.subtitle") }
+
+                /// Setup assistant step name
+                ///
+                /// Key: `onboarding.step.done.title`
+                /// en: "All set"
+                public static var title: String { L10nSupport.string("onboarding.step.done.title") }
+            }
+
+            public enum Pricing {
+                /// Setup assistant step subtitle
+                ///
+                /// Key: `onboarding.step.pricing.subtitle`
+                /// en: "Where the token prices behind the cost numbers come from."
+                public static var subtitle: String { L10nSupport.string("onboarding.step.pricing.subtitle") }
+
+                /// Setup assistant step name
+                ///
+                /// Key: `onboarding.step.pricing.title`
+                /// en: "Model pricing"
+                public static var title: String { L10nSupport.string("onboarding.step.pricing.title") }
+            }
+
+            public enum Subscriptions {
+                /// Setup assistant step subtitle
+                ///
+                /// Key: `onboarding.step.subscriptions.subtitle`
+                /// en: "Turn on the plans you pay for."
+                public static var subtitle: String { L10nSupport.string("onboarding.step.subscriptions.subtitle") }
+
+                /// Setup assistant step name
+                ///
+                /// Key: `onboarding.step.subscriptions.title`
+                /// en: "Subscriptions"
+                public static var title: String { L10nSupport.string("onboarding.step.subscriptions.title") }
+            }
+
+            public enum Welcome {
+                /// Setup assistant step subtitle
+                ///
+                /// Key: `onboarding.step.welcome.subtitle`
+                /// en: "What Vibe Bar does, in one paragraph."
+                public static var subtitle: String { L10nSupport.string("onboarding.step.welcome.subtitle") }
+
+                /// Setup assistant step name in the rail
+                ///
+                /// Key: `onboarding.step.welcome.title`
+                /// en: "Welcome"
+                public static var title: String { L10nSupport.string("onboarding.step.welcome.title") }
+            }
+        }
+
+        public enum Subscriptions {
+            /// Intro line of the subscriptions step
+            ///
+            /// Key: `onboarding.subscriptions.intro`
+            /// en: "Turn on the subscriptions you use. A provider that is off stays out of the Overview and the menu bar; turning one off later keeps its credentials and history."
+            public static var intro: String { L10nSupport.string("onboarding.subscriptions.intro") }
+
+            /// Per-provider toggle in the setup assistant
+            ///
+            /// Key: `onboarding.subscriptions.showInOverview`
+            /// en: "Show in Overview"
+            public static var showInOverview: String { L10nSupport.string("onboarding.subscriptions.showInOverview") }
+
+            public enum Claude {
+                /// Credential hint
+                ///
+                /// Key: `onboarding.subscriptions.claude.detected`
+                /// en: "Claude Code login detected — quota will come from it."
+                public static var detected: String { L10nSupport.string("onboarding.subscriptions.claude.detected") }
+
+                /// Credential hint
+                ///
+                /// Key: `onboarding.subscriptions.claude.missing`
+                /// en: "No Claude Code login found. Run `claude login`, or import claude.ai cookies from your browser below."
+                public static var missing: String { L10nSupport.string("onboarding.subscriptions.claude.missing") }
+
+                /// Credential hint
+                ///
+                /// Key: `onboarding.subscriptions.claude.web`
+                /// en: "claude.ai cookies saved — quota will come from them."
+                public static var web: String { L10nSupport.string("onboarding.subscriptions.claude.web") }
+            }
+
+            public enum Codex {
+                /// Credential hint; the harness name is never translated
+                ///
+                /// Key: `onboarding.subscriptions.codex.detected`
+                /// en: "Codex CLI login detected — quota will come from it."
+                public static var detected: String { L10nSupport.string("onboarding.subscriptions.codex.detected") }
+
+                /// Credential hint; the command is never translated
+                ///
+                /// Key: `onboarding.subscriptions.codex.missing`
+                /// en: "No Codex CLI login found. Run `codex login`, or import ChatGPT cookies from your browser below."
+                public static var missing: String { L10nSupport.string("onboarding.subscriptions.codex.missing") }
+
+                /// Credential hint
+                ///
+                /// Key: `onboarding.subscriptions.codex.web`
+                /// en: "ChatGPT web cookies saved — quota will come from them."
+                public static var web: String { L10nSupport.string("onboarding.subscriptions.codex.web") }
+            }
+
+            public enum Gemini {
+                /// Credential hint
+                ///
+                /// Key: `onboarding.subscriptions.gemini.hint`
+                /// en: "Gemini quota is read from gemini.google.com cookies; there is no CLI login or WebView path. AntiGravity is probed locally when it is running."
+                public static var hint: String { L10nSupport.string("onboarding.subscriptions.gemini.hint") }
+            }
+
+            public enum Grok {
+                /// Credential hint; the path is never translated
+                ///
+                /// Key: `onboarding.subscriptions.grok.detected`
+                /// en: "~/.grok/auth.json detected — quota will come from it."
+                public static var detected: String { L10nSupport.string("onboarding.subscriptions.grok.detected") }
+
+                /// Credential hint
+                ///
+                /// Key: `onboarding.subscriptions.grok.missing`
+                /// en: "No ~/.grok/auth.json yet. Run `grok login`, or import grok.com cookies from your browser below."
+                public static var missing: String { L10nSupport.string("onboarding.subscriptions.grok.missing") }
+            }
+
+            public enum ProductLine {
+                /// Where this provider's quota can come from
+                ///
+                /// Key: `onboarding.subscriptions.productLine.claude`
+                /// en: "Claude Code · claude.ai web"
+                public static var claude: String { L10nSupport.string("onboarding.subscriptions.productLine.claude") }
+
+                /// Where this provider's quota can come from; the harness and SubProvider names are never translated
+                ///
+                /// Key: `onboarding.subscriptions.productLine.codex`
+                /// en: "Codex CLI · ChatGPT web"
+                public static var codex: String { L10nSupport.string("onboarding.subscriptions.productLine.codex") }
+
+                /// Where this provider's quota can come from
+                ///
+                /// Key: `onboarding.subscriptions.productLine.gemini`
+                /// en: "Gemini web · AntiGravity"
+                public static var gemini: String { L10nSupport.string("onboarding.subscriptions.productLine.gemini") }
+
+                /// Where this provider's quota can come from
+                ///
+                /// Key: `onboarding.subscriptions.productLine.grok`
+                /// en: "Grok CLI · grok.com · Cursor"
+                public static var grok: String { L10nSupport.string("onboarding.subscriptions.productLine.grok") }
+            }
+        }
+
+        public enum Welcome {
+            /// Closing line of the welcome step
+            ///
+            /// Key: `onboarding.welcome.footer`
+            /// en: "This takes about two minutes. Every choice here can be changed later in Settings, and the assistant is one click away under Settings → System."
+            public static var footer: String { L10nSupport.string("onboarding.welcome.footer") }
+
+            /// Opening paragraph of the setup assistant
+            ///
+            /// Key: `onboarding.welcome.intro`
+            /// en: "Vibe Bar sits in your menu bar and shows, at a glance, how much of each AI subscription you have left, what your coding agents are spending, and which sessions and skills live on this Mac. It reads the credentials the Codex, Claude Code, Gemini and Grok CLIs already keep here, adds web quotas from your browser's cookies when you ask it to, and never sends any of it anywhere but the provider it came from."
+            public static var intro: String { L10nSupport.string("onboarding.welcome.intro") }
+
+            public enum Cost {
+                /// Feature row body
+                ///
+                /// Key: `onboarding.welcome.cost.detail`
+                /// en: "Priced locally from the agents' own session logs against a merged model price catalog."
+                public static var detail: String { L10nSupport.string("onboarding.welcome.cost.detail") }
+
+                /// Feature row title
+                ///
+                /// Key: `onboarding.welcome.cost.title`
+                /// en: "Token cost"
+                public static var title: String { L10nSupport.string("onboarding.welcome.cost.title") }
+            }
+
+            public enum Mcp {
+                /// Feature row body
+                ///
+                /// Key: `onboarding.welcome.mcp.detail`
+                /// en: "Your agents can ask Vibe Bar for quota and cost over a Unix socket in your home directory."
+                public static var detail: String { L10nSupport.string("onboarding.welcome.mcp.detail") }
+
+                /// Feature row title
+                ///
+                /// Key: `onboarding.welcome.mcp.title`
+                /// en: "Local MCP server"
+                public static var title: String { L10nSupport.string("onboarding.welcome.mcp.title") }
+            }
+
+            public enum Quotas {
+                /// Feature row body
+                ///
+                /// Key: `onboarding.welcome.quotas.detail`
+                /// en: "Codex, Claude Code, Gemini, Grok and a shelf of API-key plans, each with its reset countdown."
+                public static var detail: String { L10nSupport.string("onboarding.welcome.quotas.detail") }
+
+                /// Feature row title
+                ///
+                /// Key: `onboarding.welcome.quotas.title`
+                /// en: "Subscription quotas"
+                public static var title: String { L10nSupport.string("onboarding.welcome.quotas.title") }
+            }
+
+            public enum Sessions {
+                /// Feature row body
+                ///
+                /// Key: `onboarding.welcome.sessions.detail`
+                /// en: "Browse, search and tidy agent sessions and shared skills from the Workbench."
+                public static var detail: String { L10nSupport.string("onboarding.welcome.sessions.detail") }
+
+                /// Feature row title
+                ///
+                /// Key: `onboarding.welcome.sessions.title`
+                /// en: "Sessions and skills"
+                public static var title: String { L10nSupport.string("onboarding.welcome.sessions.title") }
+            }
+        }
+    }
+
+    public enum Platform {
+        public enum Macos {
+            public enum LaunchAtLogin {
+                /// Body of the launch-at-login step. macOS-only.
+                ///
+                /// Key: `platform.macos.launchAtLogin.detail`
+                /// en: "Vibe Bar is a menu-bar app with no Dock icon. Starting it at login keeps the quota readout and the local MCP server available from the moment you sign in; macOS may ask you to approve the login item in System Settings the first time."
+                public static var detail: String { L10nSupport.string("platform.macos.launchAtLogin.detail") }
+
+                /// Status line under the launch-at-login toggle. macOS-only.
+                ///
+                /// Key: `platform.macos.launchAtLogin.enabled`
+                /// en: "Enabled in macOS Login Items."
+                public static var enabled: String { L10nSupport.string("platform.macos.launchAtLogin.enabled") }
+
+                /// Setup assistant step subtitle. macOS-only.
+                ///
+                /// Key: `platform.macos.launchAtLogin.subtitle`
+                /// en: "Keep the readout in your menu bar from the moment you sign in."
+                public static var subtitle: String { L10nSupport.string("platform.macos.launchAtLogin.subtitle") }
+
+                /// Setup assistant step name. macOS-only: a login item has no counterpart on other clients.
+                ///
+                /// Key: `platform.macos.launchAtLogin.title`
+                /// en: "Launch at login"
+                public static var title: String { L10nSupport.string("platform.macos.launchAtLogin.title") }
+
+                /// Toggle in the setup assistant. macOS-only.
+                ///
+                /// Key: `platform.macos.launchAtLogin.toggle`
+                /// en: "Launch Vibe Bar at login"
+                public static var toggle: String { L10nSupport.string("platform.macos.launchAtLogin.toggle") }
+            }
+
+            public enum MenuBar {
+                /// Picker choosing the popover density from the menu-bar editor. macOS-only.
+                ///
+                /// Key: `platform.macos.menuBar.displayDensity`
+                /// en: "Display density"
+                public static var displayDensity: String { L10nSupport.string("platform.macos.menuBar.displayDensity") }
+
+                /// Heading over the menu-bar field checklist. macOS-only.
+                ///
+                /// Key: `platform.macos.menuBar.fields`
+                /// en: "Fields"
+                public static var fields: String { L10nSupport.string("platform.macos.menuBar.fields") }
+
+                /// Picker choosing how the menu-bar item is laid out. macOS-only. Distinct from the Layout settings section, which is about page layout.
+                ///
+                /// Key: `platform.macos.menuBar.layout`
+                /// en: "Layout"
+                public static var layout: String { L10nSupport.string("platform.macos.menuBar.layout") }
+
+                /// Toggle that folds a quota group's windows into one entry. macOS-only.
+                ///
+                /// Key: `platform.macos.menuBar.mergeGroupWindows`
+                /// en: "Combine a group's windows"
+                public static var mergeGroupWindows: String { L10nSupport.string("platform.macos.menuBar.mergeGroupWindows") }
+
+                /// Caption under the combine toggle. macOS-only.
+                ///
+                /// Key: `platform.macos.menuBar.mergeGroupWindowsDetail`
+                /// en: "Shows 5 Hours and Weekly as 5%/100% instead of two entries."
+                public static var mergeGroupWindowsDetail: String { L10nSupport.string("platform.macos.menuBar.mergeGroupWindowsDetail") }
+
+                /// Picker choosing what colours the menu-bar percentage. macOS-only.
+                ///
+                /// Key: `platform.macos.menuBar.percentColor`
+                /// en: "Percent color"
+                public static var percentColor: String { L10nSupport.string("platform.macos.menuBar.percentColor") }
+
+                /// Toggle in the menu-bar item editor. macOS-only: no other client renders a menu-bar extra.
+                ///
+                /// Key: `platform.macos.menuBar.showInMenuBar`
+                /// en: "Show in menu bar"
+                public static var showInMenuBar: String { L10nSupport.string("platform.macos.menuBar.showInMenuBar") }
+
+                /// Toggle in the menu-bar item editor. macOS-only.
+                ///
+                /// Key: `platform.macos.menuBar.showTitleText`
+                /// en: "Show title text"
+                public static var showTitleText: String { L10nSupport.string("platform.macos.menuBar.showTitleText") }
+
+                public enum Color {
+                    /// Menu-bar colour basis: colour by the displayed percentage. macOS-only.
+                    ///
+                    /// Key: `platform.macos.menuBar.color.actual`
+                    /// en: "Actual"
+                    public static var actual: String { L10nSupport.string("platform.macos.menuBar.color.actual") }
+
+                    /// Caption under the Actual colour basis. macOS-only.
+                    ///
+                    /// Key: `platform.macos.menuBar.color.actualDetail`
+                    /// en: "Colored by the displayed percentage alone, ignoring the forecast."
+                    public static var actualDetail: String { L10nSupport.string("platform.macos.menuBar.color.actualDetail") }
+
+                    /// Caption under the Forecast colour basis. macOS-only.
+                    ///
+                    /// Key: `platform.macos.menuBar.color.forecastDetail`
+                    /// en: "Green projected to last · blue a chunk will likely go unused · orange may run short · red projected to run out. Falls back to the percentage while a quota has too little history to forecast."
+                    public static var forecastDetail: String { L10nSupport.string("platform.macos.menuBar.color.forecastDetail") }
+                }
+
+                public enum FieldStyle {
+                    /// Menu-bar field style: show the field's name. macOS-only. distinct-from: menuBar.composer.text.placeholder — the starting text of a new block, which the user types over, and a field style that shows the field's name are different things — Simplified Chinese already writes 标签 and 名称.
+                    ///
+                    /// Key: `platform.macos.menuBar.fieldStyle.label`
+                    /// en: "Label"
+                    public static var label: String { L10nSupport.string("platform.macos.menuBar.fieldStyle.label") }
+
+                    /// Caption under the Label field style. macOS-only.
+                    ///
+                    /// Key: `platform.macos.menuBar.fieldStyle.labelDetail`
+                    /// en: "The field's name beside its percent."
+                    public static var labelDetail: String { L10nSupport.string("platform.macos.menuBar.fieldStyle.labelDetail") }
+
+                    /// Menu-bar field style. macOS-only.
+                    ///
+                    /// Key: `platform.macos.menuBar.fieldStyle.logoAndLabel`
+                    /// en: "Logo and label"
+                    public static var logoAndLabel: String { L10nSupport.string("platform.macos.menuBar.fieldStyle.logoAndLabel") }
+
+                    /// Caption under the Logo and label field style. macOS-only.
+                    ///
+                    /// Key: `platform.macos.menuBar.fieldStyle.logoAndLabelDetail`
+                    /// en: "Logo, name, and percent."
+                    public static var logoAndLabelDetail: String { L10nSupport.string("platform.macos.menuBar.fieldStyle.logoAndLabelDetail") }
+
+                    /// Caption under the Logo field style. macOS-only.
+                    ///
+                    /// Key: `platform.macos.menuBar.fieldStyle.logoDetail`
+                    /// en: "The provider's logo beside the percent — no text."
+                    public static var logoDetail: String { L10nSupport.string("platform.macos.menuBar.fieldStyle.logoDetail") }
+                }
+
+                public enum Layout {
+                    /// Menu-bar layout option. macOS-only.
+                    ///
+                    /// Key: `platform.macos.menuBar.layout.iconOnly`
+                    /// en: "Icon Only"
+                    public static var iconOnly: String { L10nSupport.string("platform.macos.menuBar.layout.iconOnly") }
+
+                    /// Menu-bar layout option. macOS-only.
+                    ///
+                    /// Key: `platform.macos.menuBar.layout.singleLine`
+                    /// en: "Single line"
+                    public static var singleLine: String { L10nSupport.string("platform.macos.menuBar.layout.singleLine") }
+                }
+            }
+        }
+    }
+
+    public enum Popover {
+        /// Tooltip on the Google AI page's refresh button; the SubProvider names are never translated
+        ///
+        /// Key: `popover.refreshGoogleAI`
+        /// en: "Refresh Gemini Web + AntiGravity"
+        public static var refreshGoogleAI: String { L10nSupport.string("popover.refreshGoogleAI") }
+
+        /// Tooltip on the SpaceXAI page's refresh button
+        ///
+        /// Key: `popover.refreshSpaceXAI`
+        /// en: "Refresh Grok + Cursor"
+        public static var refreshSpaceXAI: String { L10nSupport.string("popover.refreshSpaceXAI") }
+
+        /// Tooltip on a page switcher button; page is the tab's own label
+        ///
+        /// Key: `popover.showPage`
+        /// en: "Show {page}"
+        public static func showPage(page: String) -> String {
+            L10nSupport.format("popover.showPage", page)
+        }
+
+        public enum Header {
+            /// Subtitle under the Machines page header
+            ///
+            /// Key: `popover.header.machinesSubtitle`
+            /// en: "End-to-end encrypted remote usage"
+            public static var machinesSubtitle: String { L10nSupport.string("popover.header.machinesSubtitle") }
+
+            /// Tooltip on the popover header button that opens the floating mini window
+            ///
+            /// Key: `popover.header.mini`
+            /// en: "Mini"
+            public static var mini: String { L10nSupport.string("popover.header.mini") }
+
+            /// Subtitle under the Misc Providers page header
+            ///
+            /// Key: `popover.header.miscSubtitle`
+            /// en: "Usage-only · sign in or paste a key"
+            public static var miscSubtitle: String { L10nSupport.string("popover.header.miscSubtitle") }
+
+            /// Tooltip on the popover header button that opens the Workbench window
+            ///
+            /// Key: `popover.header.openWorkbench`
+            /// en: "Open Workbench"
+            public static var openWorkbench: String { L10nSupport.string("popover.header.openWorkbench") }
+
+            /// Subtitle under the Overview page header
+            ///
+            /// Key: `popover.header.overviewSubtitle`
+            /// en: "All providers · quota & cost"
+            public static var overviewSubtitle: String { L10nSupport.string("popover.header.overviewSubtitle") }
+
+            /// Popover header caption while a refresh is in flight
+            ///
+            /// Key: `popover.header.refreshing`
+            /// en: "Refreshing…"
+            public static var refreshing: String { L10nSupport.string("popover.header.refreshing") }
+
+            /// Tooltip on the popover header's gear button
+            ///
+            /// Key: `popover.header.settings`
+            /// en: "Settings"
+            public static var settings: String { L10nSupport.string("popover.header.settings") }
+
+            /// Popover header caption: the page's own subtitle followed by how long ago the data was updated
+            ///
+            /// Key: `popover.header.updatedLine`
+            /// en: "{subtitle} · {updated}"
+            public static func updatedLine(subtitle: String, updated: String) -> String {
+                L10nSupport.format("popover.header.updatedLine", subtitle, updated)
+            }
+        }
+
+        public enum Machines {
+            /// Empty-state title while a sync is in flight
+            ///
+            /// Key: `popover.machines.checking`
+            /// en: "Checking the Relay…"
+            public static var checking: String { L10nSupport.string("popover.machines.checking") }
+
+            /// Toggle on a remote machine card
+            ///
+            /// Key: `popover.machines.includeInTotals`
+            /// en: "Include in totals"
+            public static var includeInTotals: String { L10nSupport.string("popover.machines.includeInTotals") }
+
+            /// Tooltip on the include-in-totals toggle
+            ///
+            /// Key: `popover.machines.includeInTotalsHelp`
+            /// en: "Add this machine's decrypted usage to Overview and provider cost pages on this Core"
+            public static var includeInTotalsHelp: String { L10nSupport.string("popover.machines.includeInTotalsHelp") }
+
+            /// A source label followed by its status; both halves arrive already localized distinct-from: popover.header.updatedLine — the value is two placeholders and a separator, so the placeholder names are the only part of it that carries meaning; one key cannot name both halves of six different pairs.
+            ///
+            /// Key: `popover.machines.labelWithStatus`
+            /// en: "{label} · {status}"
+            public static func labelWithStatus(label: String, status: String) -> String {
+                L10nSupport.format("popover.machines.labelWithStatus", label, status)
+            }
+
+            /// Empty-state title when the Relay is connected but nothing has arrived
+            ///
+            /// Key: `popover.machines.noData`
+            /// en: "No remote machine data yet"
+            public static var noData: String { L10nSupport.string("popover.machines.noData") }
+
+            /// Empty-state body on the Machines page
+            ///
+            /// Key: `popover.machines.noDataDetail`
+            /// en: "The Relay is connected. A Probe will appear after its first encrypted batch is decrypted and imported."
+            public static var noDataDetail: String { L10nSupport.string("popover.machines.noDataDetail") }
+
+            /// Empty-state title on the Machines page
+            ///
+            /// Key: `popover.machines.notConfigured`
+            /// en: "Remote Core is not configured"
+            public static var notConfigured: String { L10nSupport.string("popover.machines.notConfigured") }
+
+            /// Empty-state body on the Machines page
+            ///
+            /// Key: `popover.machines.notConfiguredDetail`
+            /// en: "Create a Core descriptor, provision a workspace-scoped Relay credential, then import the signed provisioning file. No inbound port is required on this Mac."
+            public static var notConfiguredDetail: String { L10nSupport.string("popover.machines.notConfiguredDetail") }
+
+            /// The last imported batch's sequence number on a machine card; the number is raw
+            ///
+            /// Key: `popover.machines.sequence`
+            /// en: "seq {value}"
+            public static func sequence(value: String) -> String {
+                L10nSupport.format("popover.machines.sequence", value)
+            }
+
+            /// Metric label on a remote machine card
+            ///
+            /// Key: `popover.machines.thirtyDayCost`
+            /// en: "30-day cost"
+            public static var thirtyDayCost: String { L10nSupport.string("popover.machines.thirtyDayCost") }
+
+            public enum Freshness {
+                /// Badge on a remote machine whose last report is later than expected
+                ///
+                /// Key: `popover.machines.freshness.delayed`
+                /// en: "Delayed"
+                public static var delayed: String { L10nSupport.string("popover.machines.freshness.delayed") }
+
+                /// Badge on a remote machine reporting on schedule
+                ///
+                /// Key: `popover.machines.freshness.live`
+                /// en: "Live"
+                public static var live: String { L10nSupport.string("popover.machines.freshness.live") }
+
+                /// Badge on a remote machine that has not reported for a long time
+                ///
+                /// Key: `popover.machines.freshness.stale`
+                /// en: "Stale"
+                public static var stale: String { L10nSupport.string("popover.machines.freshness.stale") }
+            }
+        }
+
+        public enum Misc {
+            /// Fallback name for a duplicated misc-provider card when the user has not named it. {ordinal} is the copy's number.
+            ///
+            /// Key: `popover.misc.copyFallback`
+            /// en: "Copy {ordinal}"
+            public static func copyFallback(ordinal: Int) -> String {
+                L10nSupport.format("popover.misc.copyFallback", ordinal)
+            }
+        }
+
+        public enum Tab {
+            /// Popover tab listing remote machines
+            ///
+            /// Key: `popover.tab.machines`
+            /// en: "Machines"
+            public static var machines: String { L10nSupport.string("popover.tab.machines") }
+
+            /// Popover tab covering the usage-only providers
+            ///
+            /// Key: `popover.tab.misc`
+            /// en: "Misc Providers"
+            public static var misc: String { L10nSupport.string("popover.tab.misc") }
+
+            /// The Misc tab's label in the compact switcher, where the full name does not fit
+            ///
+            /// Key: `popover.tab.miscShort`
+            /// en: "Misc"
+            public static var miscShort: String { L10nSupport.string("popover.tab.miscShort") }
+
+            /// Popover tab. The other tabs are company names (OpenAI, Anthropic, Google AI, SpaceXAI) and are never translated.
+            ///
+            /// Key: `popover.tab.overview`
+            /// en: "Overview"
+            public static var overview: String { L10nSupport.string("popover.tab.overview") }
+        }
     }
 
     public enum Quota {
-        /// Empty state on a reset-history strip before any refill has been seen.
+        /// Placeholder inside an empty reset-history strip, before any quota reading has landed
         ///
         /// Key: `quota.awaitingFirstObservation`
         /// en: "Waiting for the first quota observation"
         public static var awaitingFirstObservation: String { L10nSupport.string("quota.awaitingFirstObservation") }
 
-        /// Caption under the empty reset-history state, explaining when data starts appearing.
+        /// Caption under an empty reset-history strip explaining when a cycle is recorded
         ///
         /// Key: `quota.cycleRecordedOnRefill`
         /// en: "A cycle is recorded when the quota refills"
@@ -103,7 +2367,15 @@ public enum L10n {
             L10nSupport.localizedFormat("quota.cyclesRecorded", count)
         }
 
-        /// How much of a quota window is still available.
+        /// Compact summary shown when per-model limits are collapsed; provider is a SubProvider name
+        ///
+        /// Key: `quota.perModelLimits`
+        /// en: "{count, plural, one {1 per-model limit} other {# per-model limits}} · open {provider} for details"
+        public static func perModelLimits(count: Int, provider: String) -> String {
+            L10nSupport.localizedFormat("quota.perModelLimits", count, provider)
+        }
+
+        /// The forecast figure in Remaining mode, used inside the status line
         ///
         /// Key: `quota.remainingPercent`
         /// en: "{percent}% left"
@@ -127,58 +2399,7501 @@ public enum L10n {
             L10nSupport.format("quota.resetsInHours", hours, minutes)
         }
 
-        /// How much of a quota window has been consumed. The caller has already rounded the number.
+        /// The forecast figure in Used mode, used inside the status line
         ///
         /// Key: `quota.usedPercent`
         /// en: "{percent}% used"
         public static func usedPercent(percent: Int) -> String {
             L10nSupport.format("quota.usedPercent", percent)
         }
+
+        public enum Bridge {
+            /// Empty state of the CodexBar bridge card when every bridged provider is one Vibe Bar already reads natively
+            ///
+            /// Key: `quota.bridge.empty`
+            /// en: "No enabled CodexBar-only provider returned a quota window. Overlapping providers remain on Vibe Bar's native cards."
+            public static var empty: String { L10nSupport.string("quota.bridge.empty") }
+
+            /// Tooltip on the CodexBar bridge card's refresh button
+            ///
+            /// Key: `quota.bridge.refresh`
+            /// en: "Refresh CodexBar providers"
+            public static var refresh: String { L10nSupport.string("quota.bridge.refresh") }
+
+            /// Subtitle of the CodexBar bridge card before its version is known
+            ///
+            /// Key: `quota.bridge.subtitle`
+            /// en: "Additional providers · read-only"
+            public static var subtitle: String { L10nSupport.string("quota.bridge.subtitle") }
+
+            /// Subtitle of the CodexBar bridge card once the installed version is known
+            ///
+            /// Key: `quota.bridge.subtitleVersion`
+            /// en: "CodexBar {version} · read-only"
+            public static func subtitleVersion(version: String) -> String {
+                L10nSupport.format("quota.bridge.subtitleVersion", version)
+            }
+
+            /// Title of the card listing quota read from a CodexBar install; CodexBar is a product name
+            ///
+            /// Key: `quota.bridge.title`
+            /// en: "CodexBar Bridge"
+            public static var title: String { L10nSupport.string("quota.bridge.title") }
+        }
+
+        public enum Bucket {
+            /// Caption under a quota bar when the provider reported no reset time
+            ///
+            /// Key: `quota.bucket.noResetInfo`
+            /// en: "No reset info"
+            public static var noResetInfo: String { L10nSupport.string("quota.bucket.noResetInfo") }
+        }
+
+        public enum Empty {
+            public enum NeedsLogin {
+                /// Empty state body; command is a CLI name such as codex or claude and is never translated
+                ///
+                /// Key: `quota.empty.needsLogin.detail`
+                /// en: "Run `{command} login` in your terminal, then refresh."
+                public static func detail(command: String) -> String {
+                    L10nSupport.format("quota.empty.needsLogin.detail", command)
+                }
+            }
+
+            public enum Network {
+                /// Empty state body
+                ///
+                /// Key: `quota.empty.network.detail`
+                /// en: "Couldn't reach the official API. Check your internet connection and try again."
+                public static var detail: String { L10nSupport.string("quota.empty.network.detail") }
+            }
+
+            public enum NoAccount {
+                /// Empty state body
+                ///
+                /// Key: `quota.empty.noAccount.detail`
+                /// en: "Log in with the official CLI on this Mac, then refresh."
+                public static var detail: String { L10nSupport.string("quota.empty.noAccount.detail") }
+            }
+
+            public enum ParseChanged {
+                /// Empty state body
+                ///
+                /// Key: `quota.empty.parseChanged.detail`
+                /// en: "The official API returned an unexpected shape. Try refreshing or update Vibe Bar."
+                public static var detail: String { L10nSupport.string("quota.empty.parseChanged.detail") }
+            }
+
+            public enum RateLimited {
+                /// Empty state body
+                ///
+                /// Key: `quota.empty.rateLimited.detail`
+                /// en: "The official API is asking us to wait. Try again in a moment."
+                public static var detail: String { L10nSupport.string("quota.empty.rateLimited.detail") }
+
+                /// Empty state headline
+                ///
+                /// Key: `quota.empty.rateLimited.headline`
+                /// en: "Rate limited"
+                public static var headline: String { L10nSupport.string("quota.empty.rateLimited.headline") }
+            }
+        }
+
+        public enum Forecast {
+            public enum Confidence {
+                /// Forecast confidence level
+                ///
+                /// Key: `quota.forecast.confidence.high`
+                /// en: "High confidence"
+                public static var high: String { L10nSupport.string("quota.forecast.confidence.high") }
+
+                /// Forecast confidence level
+                ///
+                /// Key: `quota.forecast.confidence.learning`
+                /// en: "Learning"
+                public static var learning: String { L10nSupport.string("quota.forecast.confidence.learning") }
+
+                /// Forecast confidence level
+                ///
+                /// Key: `quota.forecast.confidence.medium`
+                /// en: "Medium confidence"
+                public static var medium: String { L10nSupport.string("quota.forecast.confidence.medium") }
+            }
+
+            public enum Explain {
+                /// Footnote under the forecast metric grid explaining what token history is and is not used for
+                ///
+                /// Key: `quota.forecast.explain.footer`
+                /// en: "Quota observations drive consumption. Token history only weights when you tend to work; it is never converted into quota usage."
+                public static var footer: String { L10nSupport.string("quota.forecast.explain.footer") }
+
+                /// Accessibility label on the disclosure button while the grid is open
+                ///
+                /// Key: `quota.forecast.explain.hide`
+                /// en: "Hide forecast calculation"
+                public static var hide: String { L10nSupport.string("quota.forecast.explain.hide") }
+
+                /// Accessibility label on the disclosure button while the grid is closed
+                ///
+                /// Key: `quota.forecast.explain.show`
+                /// en: "Show forecast calculation"
+                public static var show: String { L10nSupport.string("quota.forecast.explain.show") }
+
+                /// Disclosure button that opens the forecast's metric grid
+                ///
+                /// Key: `quota.forecast.explain.title`
+                /// en: "How this forecast was calculated"
+                public static var title: String { L10nSupport.string("quota.forecast.explain.title") }
+            }
+
+            public enum Guidance {
+                /// What to do about an at-risk forecast
+                ///
+                /// Key: `quota.forecast.guidance.atRisk`
+                /// en: "Slow down or shift work to another quota"
+                public static var atRisk: String { L10nSupport.string("quota.forecast.guidance.atRisk") }
+
+                /// Remaining-mode guidance when there is headroom
+                ///
+                /// Key: `quota.forecast.guidance.available`
+                /// en: "Target {target}% left · about {unused}% available"
+                public static func available(target: Int, unused: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.available", target, unused)
+                }
+
+                /// Remaining-mode guidance for a surplus verdict
+                ///
+                /// Key: `quota.forecast.guidance.surplus`
+                /// en: "About {unused}% likely unused beyond the {target}% safety target"
+                public static func surplus(target: Int, unused: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.surplus", target, unused)
+                }
+
+                /// Used-mode guidance when there is headroom
+                ///
+                /// Key: `quota.forecast.guidance.usedAvailable`
+                /// en: "Target {target}% used · about {unused}% capacity available"
+                public static func usedAvailable(target: Int, unused: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.usedAvailable", target, unused)
+                }
+
+                /// Used-mode guidance for a surplus verdict
+                ///
+                /// Key: `quota.forecast.guidance.usedSurplus`
+                /// en: "About {unused}% capacity may remain beyond the {target}% used target"
+                public static func usedSurplus(target: Int, unused: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.usedSurplus", target, unused)
+                }
+
+                /// Used-mode guidance when nothing needs saying
+                ///
+                /// Key: `quota.forecast.guidance.usedWithinTarget`
+                /// en: "Within the {target}% used target"
+                public static func usedWithinTarget(target: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.usedWithinTarget", target)
+                }
+
+                /// What a watch verdict means
+                ///
+                /// Key: `quota.forecast.guidance.watch`
+                /// en: "Recent usage is above the safe range"
+                public static var watch: String { L10nSupport.string("quota.forecast.guidance.watch") }
+
+                /// Remaining-mode guidance when nothing needs saying
+                ///
+                /// Key: `quota.forecast.guidance.withinTarget`
+                /// en: "Within the {target}% safety target"
+                public static func withinTarget(target: Int) -> String {
+                    L10nSupport.format("quota.forecast.guidance.withinTarget", target)
+                }
+            }
+
+            public enum Legend {
+                /// One reference marker in the quota bar legend: its name followed by the figure it marks
+                ///
+                /// Key: `quota.forecast.legend.item`
+                /// en: "{label} {value}"
+                public static func item(label: String, value: String) -> String {
+                    L10nSupport.format("quota.forecast.legend.item", label, value)
+                }
+            }
+
+            public enum Metric {
+                /// Detail under the safety target metric when the forecast leaves capacity above it
+                ///
+                /// Key: `quota.forecast.metric.aboveTarget`
+                /// en: "{percent}% capacity above target"
+                public static func aboveTarget(percent: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.aboveTarget", percent)
+                }
+
+                /// Detail under the activity timing metric before any habits exist
+                ///
+                /// Key: `quota.forecast.metric.activityFallback`
+                /// en: "wall-clock fallback until habits exist"
+                public static var activityFallback: String { L10nSupport.string("quota.forecast.metric.activityFallback") }
+
+                /// Forecast metric: how far through the window the user's own working rhythm says we are
+                ///
+                /// Key: `quota.forecast.metric.activityTiming`
+                /// en: "Activity timing"
+                public static var activityTiming: String { L10nSupport.string("quota.forecast.metric.activityTiming") }
+
+                /// Detail under the activity timing metric when weekday and hour habits are known
+                ///
+                /// Key: `quota.forecast.metric.activityWeighted`
+                /// en: "weekday and hour weighted"
+                public static var activityWeighted: String { L10nSupport.string("quota.forecast.metric.activityWeighted") }
+
+                /// Detail under the behavior fallback metric
+                ///
+                /// Key: `quota.forecast.metric.behaviorDetail`
+                /// en: "used when stronger evidence is sparse"
+                public static var behaviorDetail: String { L10nSupport.string("quota.forecast.metric.behaviorDetail") }
+
+                /// Forecast metric: the projection used when stronger inputs are missing
+                ///
+                /// Key: `quota.forecast.metric.behaviorFallback`
+                /// en: "Behavior fallback"
+                public static var behaviorFallback: String { L10nSupport.string("quota.forecast.metric.behaviorFallback") }
+
+                /// Detail under the reset-history metric: how many past cycles were comparable
+                ///
+                /// Key: `quota.forecast.metric.comparableCycles`
+                /// en: "{count, plural, one {1 comparable reset cycle} other {# comparable reset cycles}}"
+                public static func comparableCycles(count: Int) -> String {
+                    L10nSupport.localizedFormat("quota.forecast.metric.comparableCycles", count)
+                }
+
+                /// Forecast metric: how completely each input covers the window
+                ///
+                /// Key: `quota.forecast.metric.coverage`
+                /// en: "Coverage"
+                public static var coverage: String { L10nSupport.string("quota.forecast.metric.coverage") }
+
+                /// Detail under the coverage metric: freshness of the data and how well habits are known
+                ///
+                /// Key: `quota.forecast.metric.coverageDetail`
+                /// en: "fresh {fresh}% · habits {habits}%"
+                public static func coverageDetail(fresh: Int, habits: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.coverageDetail", fresh, habits)
+                }
+
+                /// Value of the coverage metric: observation and reset-history coverage
+                ///
+                /// Key: `quota.forecast.metric.coverageValue`
+                /// en: "obs {observations}% · history {history}%"
+                public static func coverageValue(history: Int, observations: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.coverageValue", history, observations)
+                }
+
+                /// Detail under the reset-history metric before any cycle has completed
+                ///
+                /// Key: `quota.forecast.metric.cyclesPending`
+                /// en: "Completed cycles will appear here"
+                public static var cyclesPending: String { L10nSupport.string("quota.forecast.metric.cyclesPending") }
+
+                /// Value of the activity timing metric: share of the window already behind us
+                ///
+                /// Key: `quota.forecast.metric.elapsed`
+                /// en: "{percent}% elapsed"
+                public static func elapsed(percent: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.elapsed", percent)
+                }
+
+                /// Forecast metric: how much data the projection stands on
+                ///
+                /// Key: `quota.forecast.metric.evidence`
+                /// en: "Evidence"
+                public static var evidence: String { L10nSupport.string("quota.forecast.metric.evidence") }
+
+                /// Detail under the evidence metric; confidence is the forecast's own confidence label
+                ///
+                /// Key: `quota.forecast.metric.evidenceDetail`
+                /// en: "{confidence} · score {score}%"
+                public static func evidenceDetail(score: Int, confidence: String) -> String {
+                    L10nSupport.format("quota.forecast.metric.evidenceDetail", score, confidence)
+                }
+
+                /// Value of the evidence metric: observations in this cycle and completed cycles behind it
+                ///
+                /// Key: `quota.forecast.metric.evidenceValue`
+                /// en: "{observations} obs · {cycles} cycles"
+                public static func evidenceValue(cycles: Int, observations: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.evidenceValue", cycles, observations)
+                }
+
+                /// Detail under the forecast metric while the card shows used percentages
+                ///
+                /// Key: `quota.forecast.metric.expectedLeft`
+                /// en: "{percent}% expected left"
+                public static func expectedLeft(percent: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.expectedLeft", percent)
+                }
+
+                /// Detail under the forecast metric while the card shows remaining percentages
+                ///
+                /// Key: `quota.forecast.metric.expectedUsed`
+                /// en: "{percent}% expected used"
+                public static func expectedUsed(percent: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.expectedUsed", percent)
+                }
+
+                /// Forecast metric and bar legend entry: the projected figure at the next reset
+                ///
+                /// Key: `quota.forecast.metric.forecastAtReset`
+                /// en: "Forecast at reset"
+                public static var forecastAtReset: String { L10nSupport.string("quota.forecast.metric.forecastAtReset") }
+
+                /// Forecast metric: the spread the projection considers plausible
+                ///
+                /// Key: `quota.forecast.metric.forecastRange`
+                /// en: "Forecast range"
+                public static var forecastRange: String { L10nSupport.string("quota.forecast.metric.forecastRange") }
+
+                /// Detail under the safety target metric when the forecast sits inside it
+                ///
+                /// Key: `quota.forecast.metric.insideTarget`
+                /// en: "inside the target range"
+                public static var insideTarget: String { L10nSupport.string("quota.forecast.metric.insideTarget") }
+
+                /// Value of the reset-history metric before any cycle can be compared
+                ///
+                /// Key: `quota.forecast.metric.noComparison`
+                /// en: "No comparison yet"
+                public static var noComparison: String { L10nSupport.string("quota.forecast.metric.noComparison") }
+
+                /// Forecast metric: where the personal plan says usage should be right now
+                ///
+                /// Key: `quota.forecast.metric.plan`
+                /// en: "Personal plan now"
+                public static var plan: String { L10nSupport.string("quota.forecast.metric.plan") }
+
+                /// Detail under the personal plan metric: what the plan is built from
+                ///
+                /// Key: `quota.forecast.metric.planDetail`
+                /// en: "activity timing + {target}% safety target"
+                public static func planDetail(target: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.planDetail", target)
+                }
+
+                /// Value of the forecast range metric in Remaining mode
+                ///
+                /// Key: `quota.forecast.metric.rangeLeft`
+                /// en: "{lower}–{upper}% left"
+                public static func rangeLeft(lower: Int, upper: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.rangeLeft", lower, upper)
+                }
+
+                /// Value of the forecast range metric in Used mode
+                ///
+                /// Key: `quota.forecast.metric.rangeUsed`
+                /// en: "{lower}–{upper}% used"
+                public static func rangeUsed(lower: Int, upper: Int) -> String {
+                    L10nSupport.format("quota.forecast.metric.rangeUsed", lower, upper)
+                }
+
+                /// Forecast metric: the projection from the most recent intervals alone
+                ///
+                /// Key: `quota.forecast.metric.recentBurn`
+                /// en: "Recent burn"
+                public static var recentBurn: String { L10nSupport.string("quota.forecast.metric.recentBurn") }
+
+                /// Detail under the recent burn metric: how many recent observation intervals fed it
+                ///
+                /// Key: `quota.forecast.metric.recentIntervals`
+                /// en: "{count, plural, one {1 recent interval} other {# recent intervals}}"
+                public static func recentIntervals(count: Int) -> String {
+                    L10nSupport.localizedFormat("quota.forecast.metric.recentIntervals", count)
+                }
+
+                /// Detail under the recent burn metric when there is not enough recent data
+                ///
+                /// Key: `quota.forecast.metric.recentMissing`
+                /// en: "Needs at least two useful observations"
+                public static var recentMissing: String { L10nSupport.string("quota.forecast.metric.recentMissing") }
+
+                /// Forecast metric: whether recent activity is above or below the earlier baseline
+                ///
+                /// Key: `quota.forecast.metric.recentTrend`
+                /// en: "Recent trend"
+                public static var recentTrend: String { L10nSupport.string("quota.forecast.metric.recentTrend") }
+
+                /// Forecast metric: the share of the quota the user wants to still hold at reset
+                ///
+                /// Key: `quota.forecast.metric.safetyTarget`
+                /// en: "Safety target"
+                public static var safetyTarget: String { L10nSupport.string("quota.forecast.metric.safetyTarget") }
+
+                /// Forecast metric: the projection that only knows how much of the window has elapsed
+                ///
+                /// Key: `quota.forecast.metric.timePace`
+                /// en: "Time-only pace"
+                public static var timePace: String { L10nSupport.string("quota.forecast.metric.timePace") }
+
+                /// Detail under the time-only pace metric; stage is the pace summary such as '5% in deficit'
+                ///
+                /// Key: `quota.forecast.metric.timePaceDetail`
+                /// en: "{stage} by wall clock"
+                public static func timePaceDetail(stage: String) -> String {
+                    L10nSupport.format("quota.forecast.metric.timePaceDetail", stage)
+                }
+
+                /// Detail under the time-only pace metric when the bucket reports no window
+                ///
+                /// Key: `quota.forecast.metric.timePaceMissing`
+                /// en: "Needs reset time and window length"
+                public static var timePaceMissing: String { L10nSupport.string("quota.forecast.metric.timePaceMissing") }
+
+                /// Detail under the recent trend metric: the two spans being compared
+                ///
+                /// Key: `quota.forecast.metric.trendDetail`
+                /// en: "last 7 days versus prior 21 days"
+                public static var trendDetail: String { L10nSupport.string("quota.forecast.metric.trendDetail") }
+
+                /// Detail under the recent trend metric when the earlier span has no activity
+                ///
+                /// Key: `quota.forecast.metric.trendDetailMissing`
+                /// en: "needs prior daily activity"
+                public static var trendDetailMissing: String { L10nSupport.string("quota.forecast.metric.trendDetailMissing") }
+
+                /// Value of the recent trend metric before a baseline exists
+                ///
+                /// Key: `quota.forecast.metric.trendMissing`
+                /// en: "No baseline yet"
+                public static var trendMissing: String { L10nSupport.string("quota.forecast.metric.trendMissing") }
+
+                /// Value of the recent trend metric; multiplier is a decimal already formatted at the call site
+                ///
+                /// Key: `quota.forecast.metric.trendMultiplier`
+                /// en: "{multiplier}× activity"
+                public static func trendMultiplier(multiplier: String) -> String {
+                    L10nSupport.format("quota.forecast.metric.trendMultiplier", multiplier)
+                }
+
+                /// Value of a forecast metric whose inputs the bucket does not report
+                ///
+                /// Key: `quota.forecast.metric.unavailable`
+                /// en: "Unavailable"
+                public static var unavailable: String { L10nSupport.string("quota.forecast.metric.unavailable") }
+
+                /// Detail under the forecast range metric
+                ///
+                /// Key: `quota.forecast.metric.uncertaintyInterval`
+                /// en: "uncertainty interval"
+                public static var uncertaintyInterval: String { L10nSupport.string("quota.forecast.metric.uncertaintyInterval") }
+            }
+
+            public enum Reset {
+                /// One-line forecast summary
+                ///
+                /// Key: `quota.forecast.reset.atRisk`
+                /// en: "Likely to run out before reset"
+                public static var atRisk: String { L10nSupport.string("quota.forecast.reset.atRisk") }
+
+                /// One-line forecast summary
+                ///
+                /// Key: `quota.forecast.reset.enough`
+                /// en: "Forecast {remaining}% left at reset"
+                public static func enough(remaining: Int) -> String {
+                    L10nSupport.format("quota.forecast.reset.enough", remaining)
+                }
+
+                /// One-line forecast summary
+                ///
+                /// Key: `quota.forecast.reset.learning`
+                /// en: "Learning your pattern · about {remaining}% left"
+                public static func learning(remaining: Int) -> String {
+                    L10nSupport.format("quota.forecast.reset.learning", remaining)
+                }
+
+                /// One-line forecast summary
+                ///
+                /// Key: `quota.forecast.reset.surplus`
+                /// en: "Likely surplus · forecast {remaining}% left"
+                public static func surplus(remaining: Int) -> String {
+                    L10nSupport.format("quota.forecast.reset.surplus", remaining)
+                }
+
+                /// One-line forecast summary
+                ///
+                /// Key: `quota.forecast.reset.watch`
+                /// en: "May run short · forecast {remaining}% left"
+                public static func watch(remaining: Int) -> String {
+                    L10nSupport.format("quota.forecast.reset.watch", remaining)
+                }
+            }
+
+            public enum Status {
+                /// Status line under the quota bar
+                ///
+                /// Key: `quota.forecast.status.atRisk`
+                /// en: "At risk · likely to run out before reset"
+                public static var atRisk: String { L10nSupport.string("quota.forecast.status.atRisk") }
+
+                /// Status line under the quota bar; value is the already-formatted forecast figure
+                ///
+                /// Key: `quota.forecast.status.enough`
+                /// en: "Enough · forecast {value} at reset"
+                public static func enough(value: String) -> String {
+                    L10nSupport.format("quota.forecast.status.enough", value)
+                }
+
+                /// Status line under the quota bar
+                ///
+                /// Key: `quota.forecast.status.learning`
+                /// en: "Learning · about {value} at reset"
+                public static func learning(value: String) -> String {
+                    L10nSupport.format("quota.forecast.status.learning", value)
+                }
+
+                /// Status line under the quota bar
+                ///
+                /// Key: `quota.forecast.status.surplus`
+                /// en: "Surplus · forecast {value} at reset"
+                public static func surplus(value: String) -> String {
+                    L10nSupport.format("quota.forecast.status.surplus", value)
+                }
+
+                /// Status line under the quota bar
+                ///
+                /// Key: `quota.forecast.status.watch`
+                /// en: "Watch · forecast {value} at reset"
+                public static func watch(value: String) -> String {
+                    L10nSupport.format("quota.forecast.status.watch", value)
+                }
+            }
+
+            public enum UseUp {
+                /// Use-up line for an at-risk verdict with no ETA
+                ///
+                /// Key: `quota.forecast.useUp.beforeReset`
+                /// en: "Expected to run out before reset"
+                public static var beforeReset: String { L10nSupport.string("quota.forecast.useUp.beforeReset") }
+
+                /// Use-up ETA for a watch verdict, which is possible rather than certain
+                ///
+                /// Key: `quota.forecast.useUp.couldRunOut`
+                /// en: "Could run out in {countdown}"
+                public static func couldRunOut(countdown: String) -> String {
+                    L10nSupport.format("quota.forecast.useUp.couldRunOut", countdown)
+                }
+
+                /// Use-up ETA from the personal forecast
+                ///
+                /// Key: `quota.forecast.useUp.estimated`
+                /// en: "Estimated to run out in {countdown}"
+                public static func estimated(countdown: String) -> String {
+                    L10nSupport.format("quota.forecast.useUp.estimated", countdown)
+                }
+
+                /// Use-up line when the model does not predict exhaustion before the refill
+                ///
+                /// Key: `quota.forecast.useUp.lastsUntilReset`
+                /// en: "Projected to last until reset"
+                public static var lastsUntilReset: String { L10nSupport.string("quota.forecast.useUp.lastsUntilReset") }
+
+                /// Use-up line when no ETA can be derived
+                ///
+                /// Key: `quota.forecast.useUp.uncertain`
+                /// en: "Use-up time uncertain · may run short before reset"
+                public static var uncertain: String { L10nSupport.string("quota.forecast.useUp.uncertain") }
+            }
+
+            public enum Value {
+                /// A quota figure qualified as the projection for the next reset; value is one of the used/left figures
+                ///
+                /// Key: `quota.forecast.value.atReset`
+                /// en: "{value} at reset"
+                public static func atReset(value: String) -> String {
+                    L10nSupport.format("quota.forecast.value.atReset", value)
+                }
+
+                /// A quota figure qualified as where usage should stand at this moment
+                ///
+                /// Key: `quota.forecast.value.expectedNow`
+                /// en: "{value} expected now"
+                public static func expectedNow(value: String) -> String {
+                    L10nSupport.format("quota.forecast.value.expectedNow", value)
+                }
+            }
+
+            public enum Verdict {
+                /// Forecast verdict: likely to run out before the reset
+                ///
+                /// Key: `quota.forecast.verdict.atRisk`
+                /// en: "At risk"
+                public static var atRisk: String { L10nSupport.string("quota.forecast.verdict.atRisk") }
+
+                /// Forecast verdict: the quota is projected to last comfortably
+                ///
+                /// Key: `quota.forecast.verdict.enough`
+                /// en: "Enough"
+                public static var enough: String { L10nSupport.string("quota.forecast.verdict.enough") }
+
+                /// Forecast verdict: not enough evidence yet to commit to one distinct-from: quota.forecast.confidence.learning — a verdict about the quota and a confidence level in the forecast are different judgements.
+                ///
+                /// Key: `quota.forecast.verdict.learning`
+                /// en: "Learning"
+                public static var learning: String { L10nSupport.string("quota.forecast.verdict.learning") }
+
+                /// Forecast verdict: a materially large share is likely to expire unused
+                ///
+                /// Key: `quota.forecast.verdict.surplus`
+                /// en: "Surplus"
+                public static var surplus: String { L10nSupport.string("quota.forecast.verdict.surplus") }
+
+                /// Forecast verdict: recent burn is above the safe range
+                ///
+                /// Key: `quota.forecast.verdict.watch`
+                /// en: "Watch"
+                public static var watch: String { L10nSupport.string("quota.forecast.verdict.watch") }
+            }
+        }
+
+        public enum Freshness {
+            /// Fragment inside the freshness badge saying how old the shown numbers are
+            ///
+            /// Key: `quota.freshness.dataAge`
+            /// en: "data {age} old"
+            public static func dataAge(age: String) -> String {
+                L10nSupport.format("quota.freshness.dataAge", age)
+            }
+
+            /// Tooltip on a stale freshness badge
+            ///
+            /// Key: `quota.freshness.defaultHelp`
+            /// en: "Live quota has not refreshed within the expected interval."
+            public static var defaultHelp: String { L10nSupport.string("quota.freshness.defaultHelp") }
+
+            /// The failed-refresh freshness badge, assembled from the three fragments above
+            ///
+            /// Key: `quota.freshness.line`
+            /// en: "{attempt} · {data} · {reason}"
+            public static func line(attempt: String, data: String, reason: String) -> String {
+                L10nSupport.format("quota.freshness.line", attempt, data, reason)
+            }
+
+            /// Fragment inside the freshness badge when nothing was ever cached
+            ///
+            /// Key: `quota.freshness.noCachedData`
+            /// en: "no cached data"
+            public static var noCachedData: String { L10nSupport.string("quota.freshness.noCachedData") }
+
+            /// Freshness badge when the last attempt failed moments ago
+            ///
+            /// Key: `quota.freshness.refreshFailed`
+            /// en: "Refresh failed"
+            public static var refreshFailed: String { L10nSupport.string("quota.freshness.refreshFailed") }
+
+            /// Freshness badge; age is a very short span
+            ///
+            /// Key: `quota.freshness.refreshFailedAgo`
+            /// en: "Refresh failed {age} ago"
+            public static func refreshFailedAgo(age: String) -> String {
+                L10nSupport.format("quota.freshness.refreshFailedAgo", age)
+            }
+
+            /// Freshness badge when a bucket has never been fetched successfully
+            ///
+            /// Key: `quota.freshness.staleNeverUpdated`
+            /// en: "Stale · never updated"
+            public static var staleNeverUpdated: String { L10nSupport.string("quota.freshness.staleNeverUpdated") }
+
+            /// Freshness badge; age is a very short span like 45s, 2m, 8h, 3d
+            ///
+            /// Key: `quota.freshness.staleUpdatedAgo`
+            /// en: "Stale · updated {age} ago"
+            public static func staleUpdatedAgo(age: String) -> String {
+                L10nSupport.format("quota.freshness.staleUpdatedAgo", age)
+            }
+
+            public enum Age {
+                /// Very short age used inside a freshness badge
+                ///
+                /// Key: `quota.freshness.age.seconds`
+                /// en: "{seconds}s"
+                public static func seconds(seconds: Int) -> String {
+                    L10nSupport.format("quota.freshness.age.seconds", seconds)
+                }
+            }
+        }
+
+        public enum Group {
+            /// Quota group covering every model on a plan
+            ///
+            /// Key: `quota.group.allModels`
+            /// en: "All Models"
+            public static var allModels: String { L10nSupport.string("quota.group.allModels") }
+
+            /// Quota window shown as a group label
+            ///
+            /// Key: `quota.group.daily`
+            /// en: "Daily"
+            public static var daily: String { L10nSupport.string("quota.group.daily") }
+
+            /// Quota window shown as a group label: the rolling five-hour window
+            ///
+            /// Key: `quota.group.fiveHours`
+            /// en: "5 Hours"
+            public static var fiveHours: String { L10nSupport.string("quota.group.fiveHours") }
+
+            /// Quota window shown as a group label
+            ///
+            /// Key: `quota.group.monthly`
+            /// en: "Monthly"
+            public static var monthly: String { L10nSupport.string("quota.group.monthly") }
+
+            /// Empty state inside a quota group card
+            ///
+            /// Key: `quota.group.noUtilization`
+            /// en: "No utilization data — try refreshing."
+            public static var noUtilization: String { L10nSupport.string("quota.group.noUtilization") }
+
+            /// Fallback group heading for a bucket with no group of its own
+            ///
+            /// Key: `quota.group.other`
+            /// en: "Other"
+            public static var other: String { L10nSupport.string("quota.group.other") }
+
+            /// Quota group for models outside the named ones
+            ///
+            /// Key: `quota.group.otherModels`
+            /// en: "Other Models"
+            public static var otherModels: String { L10nSupport.string("quota.group.otherModels") }
+
+            /// Quota window shown as a group label. The wire value stays English (it is a naming-contract value); only the shown label is translated.
+            ///
+            /// Key: `quota.group.weekly`
+            /// en: "Weekly"
+            public static var weekly: String { L10nSupport.string("quota.group.weekly") }
+
+            /// Quota group: a weekly credit balance rather than a percentage
+            ///
+            /// Key: `quota.group.weeklyCredits`
+            /// en: "Weekly Credits"
+            public static var weeklyCredits: String { L10nSupport.string("quota.group.weeklyCredits") }
+        }
+
+        public enum History {
+            /// Empty state of the all-providers quota history chart when every curve has been switched off
+            ///
+            /// Key: `quota.history.allCurvesHidden`
+            /// en: "Every curve is hidden — pick one from the menu above."
+            public static var allCurvesHidden: String { L10nSupport.string("quota.history.allCurvesHidden") }
+
+            /// Empty state of the quota history chart before enough refreshes have landed
+            ///
+            /// Key: `quota.history.buildingUp`
+            /// en: "Quota history builds up as refreshes come in."
+            public static var buildingUp: String { L10nSupport.string("quota.history.buildingUp") }
+
+            /// How many quota curves the all-providers chart holds; used inside the footer note
+            ///
+            /// Key: `quota.history.curveCount`
+            /// en: "{count, plural, one {1 curve} other {# curves}}"
+            public static func curveCount(count: Int) -> String {
+                L10nSupport.localizedFormat("quota.history.curveCount", count)
+            }
+
+            /// Accessibility label for the quota history curve picker
+            ///
+            /// Key: `quota.history.curvePickerA11y`
+            /// en: "Choose which quota curves to show"
+            public static var curvePickerA11y: String { L10nSupport.string("quota.history.curvePickerA11y") }
+
+            /// Curve picker summary when nothing is hidden
+            ///
+            /// Key: `quota.history.curvesAll`
+            /// en: "All {total}"
+            public static func curvesAll(total: Int) -> String {
+                L10nSupport.format("quota.history.curvesAll", total)
+            }
+
+            /// Curve picker summary when some curves are hidden
+            ///
+            /// Key: `quota.history.curvesSome`
+            /// en: "{shown} of {total}"
+            public static func curvesSome(shown: Int, total: Int) -> String {
+                L10nSupport.format("quota.history.curvesSome", shown, total)
+            }
+
+            /// Legend entry marking the dotted projection line on the quota history chart distinct-from: menuBar.composer.colour.forecast — a colour-basis option naming what the colour follows and a chart legend naming the projection line are different things.
+            ///
+            /// Key: `quota.history.forecastLegend`
+            /// en: "forecast"
+            public static var forecastLegend: String { L10nSupport.string("quota.history.forecastLegend") }
+
+            /// Scope note when a group holds more quotas than the note can name; names are the ones it did name
+            ///
+            /// Key: `quota.history.moreBuckets`
+            /// en: "{names} +{count}"
+            public static func moreBuckets(count: Int, names: String) -> String {
+                L10nSupport.format("quota.history.moreBuckets", count, names)
+            }
+
+            /// Last row of a crowded chart tooltip, standing in for the readings it could not fit
+            ///
+            /// Key: `quota.history.moreReadings`
+            /// en: "+{count} more"
+            public static func moreReadings(count: Int) -> String {
+                L10nSupport.format("quota.history.moreReadings", count)
+            }
+
+            /// Accessibility label for the range navigator under the all-providers quota chart
+            ///
+            /// Key: `quota.history.navigatorAllProviders`
+            /// en: "All-providers quota history range navigator"
+            public static var navigatorAllProviders: String { L10nSupport.string("quota.history.navigatorAllProviders") }
+
+            /// Accessibility label for the range navigator under a single provider's quota chart
+            ///
+            /// Key: `quota.history.navigatorProvider`
+            /// en: "Quota history range navigator"
+            public static var navigatorProvider: String { L10nSupport.string("quota.history.navigatorProvider") }
+
+            /// How many providers the all-providers chart covers; used inside the footer note
+            ///
+            /// Key: `quota.history.providerCount`
+            /// en: "{count, plural, one {1 provider} other {# providers}}"
+            public static func providerCount(count: Int) -> String {
+                L10nSupport.localizedFormat("quota.history.providerCount", count)
+            }
+
+            /// Footer under a quota history chart; scope names what the chart covers, visible and total are compact spans such as 7d
+            ///
+            /// Key: `quota.history.scopeNote`
+            /// en: "{scope} · showing {visible} of {total} recorded"
+            public static func scopeNote(scope: String, total: String, visible: String) -> String {
+                L10nSupport.format("quota.history.scopeNote", scope, total, visible)
+            }
+
+            /// Menu item that puts every quota curve back on the chart
+            ///
+            /// Key: `quota.history.showAllCurves`
+            /// en: "Show all curves"
+            public static var showAllCurves: String { L10nSupport.string("quota.history.showAllCurves") }
+
+            /// Menu item that leaves only the most-used quota curves on the chart
+            ///
+            /// Key: `quota.history.showBusiest`
+            /// en: "Show only the busiest"
+            public static var showBusiest: String { L10nSupport.string("quota.history.showBusiest") }
+
+            /// Title of the quota history chart card
+            ///
+            /// Key: `quota.history.title`
+            /// en: "Quota history"
+            public static var title: String { L10nSupport.string("quota.history.title") }
+
+            /// Tooltip row on the quota history chart: the projection for the next reset
+            ///
+            /// Key: `quota.history.tooltipAtReset`
+            /// en: "At reset"
+            public static var tooltipAtReset: String { L10nSupport.string("quota.history.tooltipAtReset") }
+
+            /// Tooltip row on the quota history chart: where the wall clock said usage should be distinct-from: menuBar.composer.metric.pace — the metric is how far usage has drifted from the linear expectation; the tooltip row is that expectation itself — Simplified Chinese already writes 消耗速度 and 进度.
+            ///
+            /// Key: `quota.history.tooltipPace`
+            /// en: "Pace"
+            public static var tooltipPace: String { L10nSupport.string("quota.history.tooltipPace") }
+
+            /// Tooltip row on the quota history chart: the recorded remaining quota
+            ///
+            /// Key: `quota.history.tooltipQuotaLeft`
+            /// en: "Quota left"
+            public static var tooltipQuotaLeft: String { L10nSupport.string("quota.history.tooltipQuotaLeft") }
+        }
+
+        public enum Login {
+            /// What to do when no credential is stored
+            ///
+            /// Key: `quota.login.claude`
+            /// en: "Run claude login, then refresh."
+            public static var claude: String { L10nSupport.string("quota.login.claude") }
+
+            /// What to do when no credential is stored; the command is never translated
+            ///
+            /// Key: `quota.login.codex`
+            /// en: "Run codex login, then refresh."
+            public static var codex: String { L10nSupport.string("quota.login.codex") }
+
+            /// What to do when no credential is stored
+            ///
+            /// Key: `quota.login.cursor`
+            /// en: "Sign in to Cursor.app or import cursor.com cookies, then refresh."
+            public static var cursor: String { L10nSupport.string("quota.login.cursor") }
+
+            /// What to do when no credential is stored
+            ///
+            /// Key: `quota.login.grok`
+            /// en: "Run grok login or import grok.com cookies, then refresh."
+            public static var grok: String { L10nSupport.string("quota.login.grok") }
+
+            /// Fallback for a misc provider; provider is a SubProvider name
+            ///
+            /// Key: `quota.login.misc`
+            /// en: "Configure {provider} in Settings → Misc Providers."
+            public static func misc(provider: String) -> String {
+                L10nSupport.format("quota.login.misc", provider)
+            }
+        }
+
+        public enum Mini {
+            /// Mini window forecast line while the forecast is still learning the usage pattern
+            ///
+            /// Key: `quota.mini.forecastLearning`
+            /// en: "learning · {percent}% left"
+            public static func forecastLearning(percent: Int) -> String {
+                L10nSupport.format("quota.mini.forecastLearning", percent)
+            }
+
+            /// Narrow form of the mini window learning forecast line
+            ///
+            /// Key: `quota.mini.forecastLearningCompact`
+            /// en: "~{percent}% left"
+            public static func forecastLearningCompact(percent: Int) -> String {
+                L10nSupport.format("quota.mini.forecastLearningCompact", percent)
+            }
+
+            /// Narrow form of the mini window forecast line for a quota that is comfortably ahead
+            ///
+            /// Key: `quota.mini.forecastLeftCompact`
+            /// en: "left {percent}%"
+            public static func forecastLeftCompact(percent: Int) -> String {
+                L10nSupport.format("quota.mini.forecastLeftCompact", percent)
+            }
+
+            /// Mini window forecast line for a quota that may, rather than will, be exhausted before reset
+            ///
+            /// Key: `quota.mini.forecastMayRunOut`
+            /// en: "may run out {countdown}"
+            public static func forecastMayRunOut(countdown: String) -> String {
+                L10nSupport.format("quota.mini.forecastMayRunOut", countdown)
+            }
+
+            /// Mini window forecast line for a quota expected to finish its window well under target
+            ///
+            /// Key: `quota.mini.forecastSurplus`
+            /// en: "surplus · {percent}% left"
+            public static func forecastSurplus(percent: Int) -> String {
+                L10nSupport.format("quota.mini.forecastSurplus", percent)
+            }
+
+            /// Narrow form of the mini window surplus forecast line
+            ///
+            /// Key: `quota.mini.forecastSurplusCompact`
+            /// en: "surplus {percent}%"
+            public static func forecastSurplusCompact(percent: Int) -> String {
+                L10nSupport.format("quota.mini.forecastSurplusCompact", percent)
+            }
+
+            /// Tooltip on the mini focus layout's button that pages to the next provider
+            ///
+            /// Key: `quota.mini.nextProvider`
+            /// en: "Next provider"
+            public static var nextProvider: String { L10nSupport.string("quota.mini.nextProvider") }
+
+            /// Mini window placeholder when none of the selected fields has a live reading yet
+            ///
+            /// Key: `quota.mini.noLiveData`
+            /// en: "No selected fields have live data"
+            public static var noLiveData: String { L10nSupport.string("quota.mini.noLiveData") }
+
+            /// Mini focus layout's page counter when there are too many providers for dots
+            ///
+            /// Key: `quota.mini.pageIndicator`
+            /// en: "{index}/{total}"
+            public static func pageIndicator(index: Int, total: Int) -> String {
+                L10nSupport.format("quota.mini.pageIndicator", index, total)
+            }
+
+            /// Empty state of the mini window's refill rail; only the user's selected fields are considered
+            ///
+            /// Key: `quota.mini.railEmpty`
+            /// en: "Nothing selected refills in the next seven days."
+            public static var railEmpty: String { L10nSupport.string("quota.mini.railEmpty") }
+
+            /// Heading of the mini window's refill rail, naming how far ahead it looks
+            ///
+            /// Key: `quota.mini.railTitle`
+            /// en: "QUOTA RESETS · NEXT {days} DAYS"
+            public static func railTitle(days: Int) -> String {
+                L10nSupport.format("quota.mini.railTitle", days)
+            }
+
+            /// Mini window caption for when a bucket refills; countdown is a compact span
+            ///
+            /// Key: `quota.mini.resets`
+            /// en: "resets {countdown}"
+            public static func resets(countdown: String) -> String {
+                L10nSupport.format("quota.mini.resets", countdown)
+            }
+
+            /// Tooltip on a mini window row; subProvider and row are names, percent the current reading
+            ///
+            /// Key: `quota.mini.rowHelp`
+            /// en: "{subProvider} — {row}: {percent}%"
+            public static func rowHelp(percent: Int, row: String, subProvider: String) -> String {
+                L10nSupport.format("quota.mini.rowHelp", percent, row, subProvider)
+            }
+        }
+
+        public enum Misc {
+            /// Caption under a misc provider that holds more than one independently configured account
+            ///
+            /// Key: `quota.misc.independentCopies`
+            /// en: "{count, plural, one {1 independent copy} other {# independent copies}}"
+            public static func independentCopies(count: Int) -> String {
+                L10nSupport.localizedFormat("quota.misc.independentCopies", count)
+            }
+
+            /// Body of a misc provider card that has no credential yet
+            ///
+            /// Key: `quota.misc.notConfigured`
+            /// en: "Not configured."
+            public static var notConfigured: String { L10nSupport.string("quota.misc.notConfigured") }
+
+            /// Tooltip on the refresh button of a misc provider that has several configured copies
+            ///
+            /// Key: `quota.misc.refreshCopies`
+            /// en: "Refresh {provider} copies"
+            public static func refreshCopies(provider: String) -> String {
+                L10nSupport.format("quota.misc.refreshCopies", provider)
+            }
+
+            /// Tooltip on the refresh button of a misc provider's card
+            ///
+            /// Key: `quota.misc.refreshProvider`
+            /// en: "Refresh {provider}"
+            public static func refreshProvider(provider: String) -> String {
+                L10nSupport.format("quota.misc.refreshProvider", provider)
+            }
+
+            /// Button on an unconfigured misc provider card that opens its settings
+            ///
+            /// Key: `quota.misc.setUpInSettings`
+            /// en: "Set up in Settings"
+            public static var setUpInSettings: String { L10nSupport.string("quota.misc.setUpInSettings") }
+        }
+
+        public enum Mode {
+            /// Caption saying the bar shows what is left
+            ///
+            /// Key: `quota.mode.remaining`
+            /// en: "remaining"
+            public static var remaining: String { L10nSupport.string("quota.mode.remaining") }
+
+            /// Caption saying the bar shows what has been spent
+            ///
+            /// Key: `quota.mode.used`
+            /// en: "used"
+            public static var used: String { L10nSupport.string("quota.mode.used") }
+        }
+
+        public enum Pace {
+            /// Pace summary when usage is running ahead of the linear expectation
+            ///
+            /// Key: `quota.pace.deficit`
+            /// en: "{percent}% in deficit"
+            public static func deficit(percent: Int) -> String {
+                L10nSupport.format("quota.pace.deficit", percent)
+            }
+
+            /// Compact form of the pace summary for the mini window when usage runs ahead of the linear expectation
+            ///
+            /// Key: `quota.pace.deficitShort`
+            /// en: "{percent}% deficit"
+            public static func deficitShort(percent: Int) -> String {
+                L10nSupport.format("quota.pace.deficitShort", percent)
+            }
+
+            /// Legacy elapsed-time pace ETA on a Misc provider card
+            ///
+            /// Key: `quota.pace.lastsUntilReset`
+            /// en: "Lasts until reset"
+            public static var lastsUntilReset: String { L10nSupport.string("quota.pace.lastsUntilReset") }
+
+            /// Pace summary when usage matches the linear expectation
+            ///
+            /// Key: `quota.pace.onTrack`
+            /// en: "On pace"
+            public static var onTrack: String { L10nSupport.string("quota.pace.onTrack") }
+
+            /// Pace summary when usage is running behind the linear expectation
+            ///
+            /// Key: `quota.pace.reserve`
+            /// en: "{percent}% in reserve"
+            public static func reserve(percent: Int) -> String {
+                L10nSupport.format("quota.pace.reserve", percent)
+            }
+
+            /// Compact form of the pace summary for the mini window when usage runs behind the linear expectation
+            ///
+            /// Key: `quota.pace.reserveShort`
+            /// en: "{percent}% reserve"
+            public static func reserveShort(percent: Int) -> String {
+                L10nSupport.format("quota.pace.reserveShort", percent)
+            }
+
+            /// Legacy elapsed-time pace ETA on a Misc provider card
+            ///
+            /// Key: `quota.pace.runsOutIn`
+            /// en: "Runs out in {countdown}"
+            public static func runsOutIn(countdown: String) -> String {
+                L10nSupport.format("quota.pace.runsOutIn", countdown)
+            }
+
+            /// Compact projection in the mini window: when the quota is estimated to be exhausted
+            ///
+            /// Key: `quota.pace.runsOutShort`
+            /// en: "out {countdown}"
+            public static func runsOutShort(countdown: String) -> String {
+                L10nSupport.format("quota.pace.runsOutShort", countdown)
+            }
+        }
+
+        public enum Reset {
+            /// Live countdown to a bucket's refill; duration is a compact span, sometimes followed by an absolute time
+            ///
+            /// Key: `quota.reset.in`
+            /// en: "resets in {duration}"
+            public static func `in`(duration: String) -> String {
+                L10nSupport.format("quota.reset.in", duration)
+            }
+
+            /// A bucket whose reset time is behind us and which has not refreshed
+            ///
+            /// Key: `quota.reset.passed`
+            /// en: "reset passed"
+            public static var passed: String { L10nSupport.string("quota.reset.passed") }
+
+            /// Reset passed, with the absolute time it should have happened
+            ///
+            /// Key: `quota.reset.passedAt`
+            /// en: "reset passed · {time}"
+            public static func passedAt(time: String) -> String {
+                L10nSupport.format("quota.reset.passedAt", time)
+            }
+        }
+
+        public enum ResetCredits {
+            /// How many manual resets are left
+            ///
+            /// Key: `quota.resetCredits.available`
+            /// en: "{count, plural, one {1 manual reset available} other {# manual resets available}}"
+            public static func available(count: Int) -> String {
+                L10nSupport.localizedFormat("quota.resetCredits.available", count)
+            }
+
+            /// The count above, plus when the soonest one lapses
+            ///
+            /// Key: `quota.resetCredits.availableWithExpiry`
+            /// en: "{available} · next expires in {countdown}"
+            public static func availableWithExpiry(available: String, countdown: String) -> String {
+                L10nSupport.format("quota.resetCredits.availableWithExpiry", available, countdown)
+            }
+
+            /// Card title for the manual rate-limit resets a Codex plan grants
+            ///
+            /// Key: `quota.resetCredits.title`
+            /// en: "Limit reset credits"
+            public static var title: String { L10nSupport.string("quota.resetCredits.title") }
+        }
+
+        public enum Upcoming {
+            /// Timeline axis tick
+            ///
+            /// Key: `quota.upcoming.axisDays`
+            /// en: "+{days}d"
+            public static func axisDays(days: Int) -> String {
+                L10nSupport.format("quota.upcoming.axisDays", days)
+            }
+
+            /// Timeline axis tick
+            ///
+            /// Key: `quota.upcoming.axisHours`
+            /// en: "+{hours}h"
+            public static func axisHours(hours: Int) -> String {
+                L10nSupport.format("quota.upcoming.axisHours", hours)
+            }
+
+            /// Empty state on the resets timeline
+            ///
+            /// Key: `quota.upcoming.empty`
+            /// en: "Nothing refills in the next seven days."
+            public static var empty: String { L10nSupport.string("quota.upcoming.empty") }
+
+            /// Compact badge for the capacity a refill returns
+            ///
+            /// Key: `quota.upcoming.gain`
+            /// en: "+{gain}%"
+            public static func gain(gain: Int) -> String {
+                L10nSupport.format("quota.upcoming.gain", gain)
+            }
+
+            /// Scope caption next to the Upcoming Resets title
+            ///
+            /// Key: `quota.upcoming.horizon`
+            /// en: "next 7 days"
+            public static var horizon: String { L10nSupport.string("quota.upcoming.horizon") }
+
+            /// Row caption on the resets timeline
+            ///
+            /// Key: `quota.upcoming.leftAndGain`
+            /// en: "{remaining}% left now · +{gain}% comes back"
+            public static func leftAndGain(gain: Int, remaining: Int) -> String {
+                L10nSupport.format("quota.upcoming.leftAndGain", gain, remaining)
+            }
+
+            /// Tooltip on a marker in the resets timeline; label names the bucket and is not translated
+            ///
+            /// Key: `quota.upcoming.markerHelp`
+            /// en: "{label} — {remaining}% now, +{gain}% {countdown}"
+            public static func markerHelp(gain: Int, remaining: Int, countdown: String, label: String) -> String {
+                L10nSupport.format("quota.upcoming.markerHelp", gain, remaining, countdown, label)
+            }
+
+            /// Row caption: how long until a bucket refills and when that is
+            ///
+            /// Key: `quota.upcoming.resetsAt`
+            /// en: "resets {countdown} · {absolute}"
+            public static func resetsAt(absolute: String, countdown: String) -> String {
+                L10nSupport.format("quota.upcoming.resetsAt", absolute, countdown)
+            }
+
+            /// Card title for the resets timeline
+            ///
+            /// Key: `quota.upcoming.title`
+            /// en: "Upcoming Resets"
+            public static var title: String { L10nSupport.string("quota.upcoming.title") }
+        }
+
+        public enum Update {
+            /// Inline error row; reason is a provider message and is not translated
+            ///
+            /// Key: `quota.update.failed`
+            /// en: "Update failed: {reason}"
+            public static func failed(reason: String) -> String {
+                L10nSupport.format("quota.update.failed", reason)
+            }
+        }
+
+        public enum Window {
+            /// Window progress line for a window measured in whole days
+            ///
+            /// Key: `quota.window.dayOfDays`
+            /// en: "Day {day} of {total} · {value}"
+            public static func dayOfDays(day: Int, total: Int, value: String) -> String {
+                L10nSupport.format("quota.window.dayOfDays", day, total, value)
+            }
+
+            /// Window progress line for a sub-day window; window is its length, elapsed how much of it is gone
+            ///
+            /// Key: `quota.window.elapsedOfWindow`
+            /// en: "{elapsed} of {window} · {value}"
+            public static func elapsedOfWindow(elapsed: String, value: String, window: String) -> String {
+                L10nSupport.format("quota.window.elapsedOfWindow", elapsed, value, window)
+            }
+
+            /// Window progress line once the reset time has passed but no refresh has landed; value is the used/left figure
+            ///
+            /// Key: `quota.window.resetsSoon`
+            /// en: "Resets soon · {value}"
+            public static func resetsSoon(value: String) -> String {
+                L10nSupport.format("quota.window.resetsSoon", value)
+            }
+        }
     }
 
     public enum ResetHistory {
-        /// Caption under a lane's name. {count} is how many completed cycles the average covers.
+        /// Axis label for the cycle that has not reset yet
         ///
-        /// Key: `resetHistory.laneAverage`
-        /// en: "avg wasted {percent}% · last {count} cycles"
-        public static func laneAverage(percent: Int, count: Int) -> String {
-            L10nSupport.format("resetHistory.laneAverage", percent, count)
+        /// Key: `resetHistory.axisCurrent`
+        /// en: "Current"
+        public static var axisCurrent: String { L10nSupport.string("resetHistory.axisCurrent") }
+
+        /// Caption on a completed column: how many cycles back it is. The leading character is a minus sign, not a hyphen.
+        ///
+        /// Key: `resetHistory.axisCyclesBack`
+        /// en: "−{count}"
+        public static func axisCyclesBack(count: Int) -> String {
+            L10nSupport.format("resetHistory.axisCyclesBack", count)
         }
 
-        /// Caption under a lane that has history recorded but no finished cycle.
+        /// Caption on the live column of the reset-history grid distinct-from: common.duration.now — a cycle grid's live column and a countdown that reached zero are different things.
+        ///
+        /// Key: `resetHistory.axisNow`
+        /// en: "now"
+        public static var axisNow: String { L10nSupport.string("resetHistory.axisNow") }
+
+        /// Caption beside the reset-history strip's title
+        ///
+        /// Key: `resetHistory.barIsOneCycle`
+        /// en: "Each bar is one quota cycle"
+        public static var barIsOneCycle: String { L10nSupport.string("resetHistory.barIsOneCycle") }
+
+        /// Card title on a provider detail page
+        ///
+        /// Key: `resetHistory.cardTitle`
+        /// en: "Reset History"
+        public static var cardTitle: String { L10nSupport.string("resetHistory.cardTitle") }
+
+        /// Empty state of the reset history comparison before any weekly or longer quota is known
+        ///
+        /// Key: `resetHistory.compareEmpty`
+        /// en: "Nothing to compare yet — weekly and longer quotas appear here once a provider reports one."
+        public static var compareEmpty: String { L10nSupport.string("resetHistory.compareEmpty") }
+
+        /// Tooltip on a window button in the reset history comparison; window is the spoken span such as 'last 8 weeks'
+        ///
+        /// Key: `resetHistory.compareWindow`
+        /// en: "Compare the {window}"
+        public static func compareWindow(window: String) -> String {
+            L10nSupport.format("resetHistory.compareWindow", window)
+        }
+
+        /// Caption for the cycle still running in the reset-history strip
+        ///
+        /// Key: `resetHistory.currentCycleCaption`
+        /// en: "Current cycle · {used}% used so far · {left}% left"
+        public static func currentCycleCaption(`left`: Int, used: Int) -> String {
+            L10nSupport.format("resetHistory.currentCycleCaption", `left`, used)
+        }
+
+        /// Caption for one completed cycle in the reset-history strip; time is the reset moment
+        ///
+        /// Key: `resetHistory.cycleCaption`
+        /// en: "{time} reset · {used}% used · {left}% left"
+        public static func cycleCaption(`left`: Int, used: Int, time: String) -> String {
+            L10nSupport.format("resetHistory.cycleCaption", `left`, used, time)
+        }
+
+        /// Note under the reset-history strip: how many cycles refilled before their window ended
+        ///
+        /// Key: `resetHistory.earlyRefillCount`
+        /// en: "{count, plural, one {1 cycle refilled before the window was up} other {# cycles refilled before the window was up}}"
+        public static func earlyRefillCount(count: Int) -> String {
+            L10nSupport.localizedFormat("resetHistory.earlyRefillCount", count)
+        }
+
+        /// Line under a lane label; says how many cycles it averages so one cycle cannot read as a settled habit
+        ///
+        /// Key: `resetHistory.laneAverage`
+        /// en: "avg wasted {percent}% · last {count, plural, one {1 cycle} other {# cycles}}"
+        public static func laneAverage(percent: Int, count: Int) -> String {
+            L10nSupport.localizedFormat("resetHistory.laneAverage", percent, count)
+        }
+
+        /// Note appended to a cycle caption when the last reading predates the reset by a while
+        ///
+        /// Key: `resetHistory.lastSeenBefore`
+        /// en: "last seen {duration} before reset"
+        public static func lastSeenBefore(duration: String) -> String {
+            L10nSupport.format("resetHistory.lastSeenBefore", duration)
+        }
+
+        /// Line under a lane label that has never closed a cycle
         ///
         /// Key: `resetHistory.noCompletedCycles`
         /// en: "No completed cycles yet"
         public static var noCompletedCycles: String { L10nSupport.string("resetHistory.noCompletedCycles") }
 
-        /// Card title: every weekly-and-longer quota's reset history side by side.
+        /// Lane label for history kept from an account that is no longer signed in
+        ///
+        /// Key: `resetHistory.retiredAccount`
+        /// en: "Signed-out account"
+        public static var retiredAccount: String { L10nSupport.string("resetHistory.retiredAccount") }
+
+        /// Lane label for one of several signed-out accounts on the same provider
+        ///
+        /// Key: `resetHistory.retiredAccountNumbered`
+        /// en: "Signed-out account {number}"
+        public static func retiredAccountNumbered(number: Int) -> String {
+            L10nSupport.format("resetHistory.retiredAccountNumbered", number)
+        }
+
+        /// Title of the card that puts every weekly-and-longer quota's reset history side by side
         ///
         /// Key: `resetHistory.title`
         /// en: "Reset History Compare"
         public static var title: String { L10nSupport.string("resetHistory.title") }
 
-        /// Header totals across every lane in the visible window.
+        /// Caveat when the grid draws fewer cycles than the numbers describe
+        ///
+        /// Key: `resetHistory.truncation`
+        /// en: "showing the newest {shown} of {total} cycles"
+        public static func truncation(shown: Int, total: Int) -> String {
+            L10nSupport.format("resetHistory.truncation", shown, total)
+        }
+
+        /// Header arithmetic across every visible lane
         ///
         /// Key: `resetHistory.wastedSummary`
-        /// en: "{used}% used · {wasted}% wasted · {cycles} cycles"
+        /// en: "{used}% used · {wasted}% wasted · {cycles, plural, one {1 cycle} other {# cycles}}"
         public static func wastedSummary(used: Int, wasted: Int, cycles: Int) -> String {
-            L10nSupport.format("resetHistory.wastedSummary", used, wasted, cycles)
+            L10nSupport.localizedFormat("resetHistory.wastedSummary", used, wasted, cycles)
+        }
+
+        public enum A11y {
+            /// Screen-reader summary when there are no lanes
+            ///
+            /// Key: `resetHistory.a11y.empty`
+            /// en: "Reset history comparison. {verdict}"
+            public static func empty(verdict: String) -> String {
+                L10nSupport.format("resetHistory.a11y.empty", verdict)
+            }
+
+            /// Tail of the screen-reader summary when more lanes exist than are spoken. Leading space is intentional.
+            ///
+            /// Key: `resetHistory.a11y.more`
+            /// en: " And {count} more quotas."
+            public static func more(count: Int) -> String {
+                L10nSupport.format("resetHistory.a11y.more", count)
+            }
+
+            /// Whole-module screen-reader text; the lanes are a drawing surface, so this is all VoiceOver gets
+            ///
+            /// Key: `resetHistory.a11y.summary`
+            /// en: "Reset history comparison, {window}, bar height is the quota remaining at reset.{truncation} {headline}. {verdict} {lanes}.{more}"
+            public static func summary(headline: String, lanes: String, more: String, truncation: String, verdict: String, window: String) -> String {
+                L10nSupport.format("resetHistory.a11y.summary", headline, lanes, more, truncation, verdict, window)
+            }
+
+            /// The truncation caveat as it appears inside the screen-reader summary. Leading space is intentional.
+            ///
+            /// Key: `resetHistory.a11y.truncation`
+            /// en: " Grid {note}; the figures cover every one."
+            public static func truncation(note: String) -> String {
+                L10nSupport.format("resetHistory.a11y.truncation", note)
+            }
+        }
+
+        public enum Axis {
+            /// Segmented control: one column per cycle
+            ///
+            /// Key: `resetHistory.axis.cycle`
+            /// en: "Cycles"
+            public static var cycle: String { L10nSupport.string("resetHistory.axis.cycle") }
+
+            /// Tooltip on the Cycles axis option
+            ///
+            /// Key: `resetHistory.axis.cycleHelp`
+            /// en: "One column per cycle, newest aligned across every quota"
+            public static var cycleHelp: String { L10nSupport.string("resetHistory.axis.cycleHelp") }
+
+            /// Segmented control: cycles placed on a shared calendar
+            ///
+            /// Key: `resetHistory.axis.time`
+            /// en: "Time"
+            public static var time: String { L10nSupport.string("resetHistory.axis.time") }
+
+            /// Tooltip on the Time axis option
+            ///
+            /// Key: `resetHistory.axis.timeHelp`
+            /// en: "Each cycle where it actually happened, on a shared calendar"
+            public static var timeHelp: String { L10nSupport.string("resetHistory.axis.timeHelp") }
+        }
+
+        public enum Lane {
+            /// Empty-state copy for a lane
+            ///
+            /// Key: `resetHistory.lane.emptyState`
+            /// en: "No completed cycles yet — a cycle is recorded when the quota refills"
+            public static var emptyState: String { L10nSupport.string("resetHistory.lane.emptyState") }
+
+            /// One lane inside the screen-reader summary; label names the quota and is not translated
+            ///
+            /// Key: `resetHistory.lane.spokenNoCycles`
+            /// en: "{label}: no completed cycles"
+            public static func spokenNoCycles(label: String) -> String {
+                L10nSupport.format("resetHistory.lane.spokenNoCycles", label)
+            }
+
+            /// One lane inside the screen-reader summary
+            ///
+            /// Key: `resetHistory.lane.spokenWaste`
+            /// en: "{label}: {percent}% wasted on average over {count} cycles"
+            public static func spokenWaste(count: Int, label: String, percent: String) -> String {
+                L10nSupport.format("resetHistory.lane.spokenWaste", count, label, percent)
+            }
+        }
+
+        public enum Legend {
+            /// Legend entry explaining what a bar's height means in the reset history comparison
+            ///
+            /// Key: `resetHistory.legend.barHeight`
+            /// en: "bar height = remaining at reset"
+            public static var barHeight: String { L10nSupport.string("resetHistory.legend.barHeight") }
+
+            /// Legend entry for the time axis: bars sit where they happened on a calendar
+            ///
+            /// Key: `resetHistory.legend.byDate`
+            /// en: "placed by date"
+            public static var byDate: String { L10nSupport.string("resetHistory.legend.byDate") }
+
+            /// Legend entry for the cycle axis: columns are cycles, not dates
+            ///
+            /// Key: `resetHistory.legend.perCycle`
+            /// en: "one column per cycle"
+            public static var perCycle: String { L10nSupport.string("resetHistory.legend.perCycle") }
+
+            /// Legend entry for the dot marking a cycle that refilled before its window was up
+            ///
+            /// Key: `resetHistory.legend.refilledEarly`
+            /// en: "refilled early"
+            public static var refilledEarly: String { L10nSupport.string("resetHistory.legend.refilledEarly") }
+        }
+
+        public enum Reset {
+            /// What the provider did to the clock on an early refill. This shape means a whole window lies ahead, so the extra capacity is usable.
+            ///
+            /// Key: `resetHistory.reset.earlyClockRestarted`
+            /// en: "refilled early, next window restarted"
+            public static var earlyClockRestarted: String { L10nSupport.string("resetHistory.reset.earlyClockRestarted") }
+
+            /// The opposite shape: less than a window remains, so the refill is easier to waste than to spend.
+            ///
+            /// Key: `resetHistory.reset.earlyClockUnchanged`
+            /// en: "refilled early, next reset unchanged"
+            public static var earlyClockUnchanged: String { L10nSupport.string("resetHistory.reset.earlyClockUnchanged") }
+
+            /// An early refill that matches neither shape
+            ///
+            /// Key: `resetHistory.reset.earlyUnclear`
+            /// en: "refilled early, onto a different schedule"
+            public static var earlyUnclear: String { L10nSupport.string("resetHistory.reset.earlyUnclear") }
+        }
+
+        public enum Spoken {
+            /// Spoken window name
+            ///
+            /// Key: `resetHistory.spoken.allCycles`
+            /// en: "every recorded cycle"
+            public static var allCycles: String { L10nSupport.string("resetHistory.spoken.allCycles") }
+
+            /// Spoken window name
+            ///
+            /// Key: `resetHistory.spoken.allTime`
+            /// en: "all recorded history"
+            public static var allTime: String { L10nSupport.string("resetHistory.spoken.allTime") }
+
+            /// Spoken window name
+            ///
+            /// Key: `resetHistory.spoken.eightCycles`
+            /// en: "last 8 cycles"
+            public static var eightCycles: String { L10nSupport.string("resetHistory.spoken.eightCycles") }
+
+            /// Spoken window name
+            ///
+            /// Key: `resetHistory.spoken.eightWeeks`
+            /// en: "last 8 weeks"
+            public static var eightWeeks: String { L10nSupport.string("resetHistory.spoken.eightWeeks") }
+
+            /// Spoken window name used in the screen-reader summary
+            ///
+            /// Key: `resetHistory.spoken.fourCycles`
+            /// en: "last 4 cycles"
+            public static var fourCycles: String { L10nSupport.string("resetHistory.spoken.fourCycles") }
+
+            /// Spoken window name
+            ///
+            /// Key: `resetHistory.spoken.fourWeeks`
+            /// en: "last 4 weeks"
+            public static var fourWeeks: String { L10nSupport.string("resetHistory.spoken.fourWeeks") }
+
+            /// Spoken window name
+            ///
+            /// Key: `resetHistory.spoken.twelveCycles`
+            /// en: "last 12 cycles"
+            public static var twelveCycles: String { L10nSupport.string("resetHistory.spoken.twelveCycles") }
+
+            /// Spoken window name
+            ///
+            /// Key: `resetHistory.spoken.twelveWeeks`
+            /// en: "last 12 weeks"
+            public static var twelveWeeks: String { L10nSupport.string("resetHistory.spoken.twelveWeeks") }
+        }
+
+        public enum Tooltip {
+            /// Tooltip figures for a finished cycle in the reset history comparison
+            ///
+            /// Key: `resetHistory.tooltip.completed`
+            /// en: "{left}% left at reset · {used}% used"
+            public static func completed(`left`: Int, used: Int) -> String {
+                L10nSupport.format("resetHistory.tooltip.completed", `left`, used)
+            }
+
+            /// Tooltip figures for the cycle still running
+            ///
+            /// Key: `resetHistory.tooltip.current`
+            /// en: "Current cycle · {left}% left now · {used}% used so far"
+            public static func current(`left`: Int, used: Int) -> String {
+                L10nSupport.format("resetHistory.tooltip.current", `left`, used)
+            }
+
+            /// Tooltip line naming the span a finished cycle covered
+            ///
+            /// Key: `resetHistory.tooltip.range`
+            /// en: "{start} → {end} reset"
+            public static func range(end: String, start: String) -> String {
+                L10nSupport.format("resetHistory.tooltip.range", end, start)
+            }
+
+            /// Tooltip line naming the span of the cycle still running and when it is due to reset
+            ///
+            /// Key: `resetHistory.tooltip.rangeDue`
+            /// en: "{start} → {end} reset due"
+            public static func rangeDue(end: String, start: String) -> String {
+                L10nSupport.format("resetHistory.tooltip.rangeDue", end, start)
+            }
+        }
+
+        public enum Totals {
+            /// Header arithmetic when nothing has closed
+            ///
+            /// Key: `resetHistory.totals.none`
+            /// en: "No completed cycles in this window"
+            public static var `none`: String { L10nSupport.string("resetHistory.totals.none") }
+        }
+
+        public enum Verdict {
+            /// Header sentence when everything is being spent
+            ///
+            /// Key: `resetHistory.verdict.clean`
+            /// en: "Nothing is going noticeably to waste — {percent}% of the refilled capacity was spent."
+            public static func clean(percent: String) -> String {
+                L10nSupport.format("resetHistory.verdict.clean", percent)
+            }
+
+            /// Header sentence quoting the leakiest quota's average
+            ///
+            /// Key: `resetHistory.verdict.leaky`
+            /// en: "{label} left {percent}% unused on average across {count, plural, one {1 cycle} other {# cycles}}."
+            public static func leaky(count: Int, label: String, percent: String) -> String {
+                L10nSupport.localizedFormat("resetHistory.verdict.leaky", count, label, percent)
+            }
+
+            /// Header sentence: lanes exist but none has closed
+            ///
+            /// Key: `resetHistory.verdict.noCycles`
+            /// en: "No completed cycles yet — a cycle is recorded when a quota refills."
+            public static var noCycles: String { L10nSupport.string("resetHistory.verdict.noCycles") }
+
+            /// Header sentence: nothing to compare
+            ///
+            /// Key: `resetHistory.verdict.noQuota`
+            /// en: "No weekly or longer quota is being tracked yet."
+            public static var noQuota: String { L10nSupport.string("resetHistory.verdict.noQuota") }
+
+            /// Header sentence naming the leakiest quota; label is a quota name and is not translated
+            ///
+            /// Key: `resetHistory.verdict.wasteful`
+            /// en: "{label} refilled {count, plural, one {once} other {# times}} with more than half unused."
+            public static func wasteful(count: Int, label: String) -> String {
+                L10nSupport.localizedFormat("resetHistory.verdict.wasteful", count, label)
+            }
+        }
+
+        public enum Window {
+            /// Compact window picker label covering every recorded cycle distinct-from: common.all — every recorded cycle and an all-time date range are different spans.
+            ///
+            /// Key: `resetHistory.window.all`
+            /// en: "All"
+            public static var all: String { L10nSupport.string("resetHistory.window.all") }
+
+            /// Compact window picker label on the time axis
+            ///
+            /// Key: `resetHistory.window.eightWeeks`
+            /// en: "8w"
+            public static var eightWeeks: String { L10nSupport.string("resetHistory.window.eightWeeks") }
+
+            /// Compact window picker label on the time axis
+            ///
+            /// Key: `resetHistory.window.fourWeeks`
+            /// en: "4w"
+            public static var fourWeeks: String { L10nSupport.string("resetHistory.window.fourWeeks") }
+
+            /// Compact window picker label on the time axis
+            ///
+            /// Key: `resetHistory.window.twelveWeeks`
+            /// en: "12w"
+            public static var twelveWeeks: String { L10nSupport.string("resetHistory.window.twelveWeeks") }
         }
     }
 
     public enum Settings {
+        /// Hint under the Antigravity source picker
+        ///
+        /// Key: `settings.antigravityCookieEnabled`
+        /// en: "Antigravity cookie import is enabled — sign in at antigravity.google first."
+        public static var antigravityCookieEnabled: String { L10nSupport.string("settings.antigravityCookieEnabled") }
+
+        /// Hint under the Antigravity source picker
+        ///
+        /// Key: `settings.antigravityLocalOnly`
+        /// en: "Antigravity reads the locally running language server. Cookie import is deferred until the Antigravity Cloud endpoint ships."
+        public static var antigravityLocalOnly: String { L10nSupport.string("settings.antigravityLocalOnly") }
+
+        /// Picker label
+        ///
+        /// Key: `settings.antigravitySource`
+        /// en: "Antigravity source"
+        public static var antigravitySource: String { L10nSupport.string("settings.antigravitySource") }
+
+        /// Current version line; version is a raw version string
+        ///
+        /// Key: `settings.appVersion`
+        /// en: "Vibe Bar {version}"
+        public static func appVersion(version: String) -> String {
+            L10nSupport.format("settings.appVersion", version)
+        }
+
+        /// Badge on the version currently compiled in
+        ///
+        /// Key: `settings.bundled`
+        /// en: "bundled"
+        public static var bundled: String { L10nSupport.string("settings.bundled") }
+
+        /// Button that probes a company's credentials; company is an L1 company name and is never translated
+        ///
+        /// Key: `settings.checkConnections`
+        /// en: "Check {company} connections"
+        public static func checkConnections(company: String) -> String {
+            L10nSupport.format("settings.checkConnections", company)
+        }
+
+        /// Button label
+        ///
+        /// Key: `settings.checkForUpdates`
+        /// en: "Check for Updates…"
+        public static var checkForUpdates: String { L10nSupport.string("settings.checkForUpdates") }
+
+        /// Button that queries GitHub for a newer agent-session-kit
+        ///
+        /// Key: `settings.checkKitUpdates`
+        /// en: "Check for kit updates"
+        public static var checkKitUpdates: String { L10nSupport.string("settings.checkKitUpdates") }
+
+        /// Progress line while an update check runs
+        ///
+        /// Key: `settings.checkingGitHub`
+        /// en: "Checking github.com for the newest release…"
+        public static var checkingGitHub: String { L10nSupport.string("settings.checkingGitHub") }
+
+        /// Button label
+        ///
+        /// Key: `settings.clearCostData`
+        /// en: "Clear cost data"
+        public static var clearCostData: String { L10nSupport.string("settings.clearCostData") }
+
+        /// Heading over the per-provider connection rows
+        ///
+        /// Key: `settings.connectionHealth`
+        /// en: "Connection health"
+        public static var connectionHealth: String { L10nSupport.string("settings.connectionHealth") }
+
+        /// Intro under the Cost Data heading
+        ///
+        /// Key: `settings.costDataIntro`
+        /// en: "Cost is computed from local CLI session JSONL logs at ~/.codex/sessions and ~/.claude/projects. Web/desktop usage is not tracked."
+        public static var costDataIntro: String { L10nSupport.string("settings.costDataIntro") }
+
+        /// Error under the delete-cookies button
+        ///
+        /// Key: `settings.couldNotDeleteCookies`
+        /// en: "Could not delete saved cookies."
+        public static var couldNotDeleteCookies: String { L10nSupport.string("settings.couldNotDeleteCookies") }
+
+        /// Error line
+        ///
+        /// Key: `settings.couldNotDeleteGeminiCookies`
+        /// en: "Could not delete saved Gemini cookies."
+        public static var couldNotDeleteGeminiCookies: String { L10nSupport.string("settings.couldNotDeleteGeminiCookies") }
+
+        /// Error line
+        ///
+        /// Key: `settings.couldNotDeleteGrokCookies`
+        /// en: "Could not delete saved Grok cookies."
+        public static var couldNotDeleteGrokCookies: String { L10nSupport.string("settings.couldNotDeleteGrokCookies") }
+
+        /// Credential state line
+        ///
+        /// Key: `settings.cursorNoSession`
+        /// en: "No usable Cursor.app session — import cursor.com cookies below."
+        public static var cursorNoSession: String { L10nSupport.string("settings.cursorNoSession") }
+
+        /// Credential state line
+        ///
+        /// Key: `settings.cursorSessionDetected`
+        /// en: "Cursor.app signed-in session detected"
+        public static var cursorSessionDetected: String { L10nSupport.string("settings.cursorSessionDetected") }
+
+        /// Row label
+        ///
+        /// Key: `settings.cursorSource`
+        /// en: "Cursor source"
+        public static var cursorSource: String { L10nSupport.string("settings.cursorSource") }
+
+        /// Value beside the Cursor source row
+        ///
+        /// Key: `settings.cursorSourceValue`
+        /// en: "Cursor.app → Web"
+        public static var cursorSourceValue: String { L10nSupport.string("settings.cursorSourceValue") }
+
+        /// Button that clears a provider's stored cookies
+        ///
+        /// Key: `settings.deleteCookies`
+        /// en: "Delete cookies"
+        public static var deleteCookies: String { L10nSupport.string("settings.deleteCookies") }
+
+        /// Button label
+        ///
+        /// Key: `settings.deleteGeminiCookies`
+        /// en: "Delete Gemini cookies"
+        public static var deleteGeminiCookies: String { L10nSupport.string("settings.deleteGeminiCookies") }
+
+        /// Button label
+        ///
+        /// Key: `settings.deleteGrokCookies`
+        /// en: "Delete Grok cookies"
+        public static var deleteGrokCookies: String { L10nSupport.string("settings.deleteGrokCookies") }
+
+        /// Confirmation line
+        ///
+        /// Key: `settings.geminiCookiesSaved`
+        /// en: "Gemini cookies saved."
+        public static var geminiCookiesSaved: String { L10nSupport.string("settings.geminiCookiesSaved") }
+
+        /// Explanation on the Google AI settings page
+        ///
+        /// Key: `settings.geminiShared`
+        /// en: "Gemini and Antigravity share the same Google AI subscription quota. Cookie import is the only supported web path — there is no WebView login."
+        public static var geminiShared: String { L10nSupport.string("settings.geminiShared") }
+
+        /// Row label for where Gemini quota is read from
+        ///
+        /// Key: `settings.geminiSource`
+        /// en: "Gemini source"
+        public static var geminiSource: String { L10nSupport.string("settings.geminiSource") }
+
+        /// Credential state line; the path is never translated
+        ///
+        /// Key: `settings.grokAuthDetected`
+        /// en: "~/.grok/auth.json detected"
+        public static var grokAuthDetected: String { L10nSupport.string("settings.grokAuthDetected") }
+
+        /// Confirmation line
+        ///
+        /// Key: `settings.grokCookiesSaved`
+        /// en: "Grok cookies saved."
+        public static var grokCookiesSaved: String { L10nSupport.string("settings.grokCookiesSaved") }
+
+        /// Picker label for the retention window
+        ///
+        /// Key: `settings.keepHistory`
+        /// en: "Keep history"
+        public static var keepHistory: String { L10nSupport.string("settings.keepHistory") }
+
+        /// Caption under the retention picker
+        ///
+        /// Key: `settings.keepHistoryDetail`
+        /// en: "Applies to cost history and subscription fill history."
+        public static var keepHistoryDetail: String { L10nSupport.string("settings.keepHistoryDetail") }
+
+        /// Description of the bundled agent-session-kit component
+        ///
+        /// Key: `settings.kitDetail`
+        /// en: "Session discovery, harness naming, and the MCP transport. A separate repository, pinned to an exact tag and compiled into this build."
+        public static var kitDetail: String { L10nSupport.string("settings.kitDetail") }
+
+        /// Shown when the watchdog is not running
+        ///
+        /// Key: `settings.menuBarHealthUnavailable`
+        /// en: "The menu bar health monitor is not attached in this process."
+        public static var menuBarHealthUnavailable: String { L10nSupport.string("settings.menuBarHealthUnavailable") }
+
+        /// Provider state: credentials are missing
+        ///
+        /// Key: `settings.needsSetup`
+        /// en: "Needs setup"
+        public static var needsSetup: String { L10nSupport.string("settings.needsSetup") }
+
+        /// Connection state before any probe has run
+        ///
+        /// Key: `settings.notChecked`
+        /// en: "Not checked"
+        public static var notChecked: String { L10nSupport.string("settings.notChecked") }
+
+        /// Line under the update-check button
+        ///
+        /// Key: `settings.notCheckedYet`
+        /// en: "Not checked. Nothing is fetched until you ask."
+        public static var notCheckedYet: String { L10nSupport.string("settings.notCheckedYet") }
+
+        /// Picker label
+        ///
+        /// Key: `settings.openRefreshCooldown`
+        /// en: "Minimum open-refresh cooldown"
+        public static var openRefreshCooldown: String { L10nSupport.string("settings.openRefreshCooldown") }
+
+        /// Caption under the cooldown picker
+        ///
+        /// Key: `settings.openRefreshDetail`
+        /// en: "Opening the popover refreshes all visible providers at most once per cooldown period."
+        public static var openRefreshDetail: String { L10nSupport.string("settings.openRefreshDetail") }
+
+        /// Link to a company's public status page
+        ///
+        /// Key: `settings.openStatusPage`
+        /// en: "Open {company} status page"
+        public static func openStatusPage(company: String) -> String {
+            L10nSupport.format("settings.openStatusPage", company)
+        }
+
+        /// Picker label choosing between remaining and used
+        ///
+        /// Key: `settings.percentShows`
+        /// en: "Percent shows"
+        public static var percentShows: String { L10nSupport.string("settings.percentShows") }
+
+        /// Field label for a user-chosen plan label override
+        ///
+        /// Key: `settings.planBadge`
+        /// en: "Plan badge"
+        public static var planBadge: String { L10nSupport.string("settings.planBadge") }
+
+        /// Caption under the plan badge field
+        ///
+        /// Key: `settings.planBadgeDetail`
+        /// en: "Leave blank to use the detected account plan."
+        public static var planBadgeDetail: String { L10nSupport.string("settings.planBadgeDetail") }
+
+        /// Footer showing when the bundled price table was built; date is a raw stamp
+        ///
+        /// Key: `settings.pricingDataDate`
+        /// en: "Pricing data: {date}"
+        public static func pricingDataDate(date: String) -> String {
+            L10nSupport.format("settings.pricingDataDate", date)
+        }
+
+        /// Body of the Privacy section
+        ///
+        /// Key: `settings.privacyDetail`
+        /// en: "Tokens are read from local CLI credentials. Saved OpenAI and Claude Web cookies are stored in macOS Keychain, split by browser and WebView source. Legacy plaintext cookie files under ~/.vibebar/cookies are migrated once and deleted. Settings, quota cache, and cost summaries stay under ~/.vibebar."
+        public static var privacyDetail: String { L10nSupport.string("settings.privacyDetail") }
+
+        /// Toggle label
+        ///
+        /// Key: `settings.privacyMode`
+        /// en: "Privacy mode"
+        public static var privacyMode: String { L10nSupport.string("settings.privacyMode") }
+
+        /// Caption under the privacy toggle
+        ///
+        /// Key: `settings.privacyModeDetail`
+        /// en: "Privacy mode keeps cost data off disk and clears local cost history, snapshots, and scan cache."
+        public static var privacyModeDetail: String { L10nSupport.string("settings.privacyModeDetail") }
+
+        /// Provider state: credentials are usable
+        ///
+        /// Key: `settings.ready`
+        /// en: "Ready"
+        public static var ready: String { L10nSupport.string("settings.ready") }
+
+        /// Picker label for a background refresh interval
+        ///
+        /// Key: `settings.refreshEvery`
+        /// en: "Refresh every"
+        public static var refreshEvery: String { L10nSupport.string("settings.refreshEvery") }
+
+        /// Toggle label
+        ///
+        /// Key: `settings.refreshOnPopoverOpen`
+        /// en: "Refresh when the popover opens"
+        public static var refreshOnPopoverOpen: String { L10nSupport.string("settings.refreshOnPopoverOpen") }
+
+        /// Link label
+        ///
+        /// Key: `settings.releaseNotes`
+        /// en: "Release notes"
+        public static var releaseNotes: String { L10nSupport.string("settings.releaseNotes") }
+
+        /// Link label
+        ///
+        /// Key: `settings.repository`
+        /// en: "Repository"
+        public static var repository: String { L10nSupport.string("settings.repository") }
+
+        /// Button label
+        ///
+        /// Key: `settings.rescanCostLogs`
+        /// en: "Rescan cost logs"
+        public static var rescanCostLogs: String { L10nSupport.string("settings.rescanCostLogs") }
+
+        /// Placeholder in the settings sidebar's search field
+        ///
+        /// Key: `settings.search`
+        /// en: "Search settings"
+        public static var search: String { L10nSupport.string("settings.search") }
+
+        /// Button that reopens the first-run assistant
+        ///
+        /// Key: `settings.showAssistant`
+        /// en: "Show setup assistant"
+        public static var showAssistant: String { L10nSupport.string("settings.showAssistant") }
+
+        /// Caption under the assistant button
+        ///
+        /// Key: `settings.showAssistantDetail`
+        /// en: "Walk through subscriptions, browser cookies, API keys, model pricing and login items again. Nothing is reset."
+        public static var showAssistantDetail: String { L10nSupport.string("settings.showAssistantDetail") }
+
+        /// Explanation on the SpaceXAI settings page
+        ///
+        /// Key: `settings.spaceXAIIntro`
+        /// en: "The SpaceXAI page combines Grok with Cursor. Grok reads `~/.grok/auth.json` or grok.com cookies; Cursor reads Cursor.app first, then cursor.com cookie slots. Grok Bot contributes quota, plus read-only sessions from its local cache — its cloud runs still add no token/cost rows."
+        public static var spaceXAIIntro: String { L10nSupport.string("settings.spaceXAIIntro") }
+
+        /// Picker label
+        ///
+        /// Key: `settings.updateChannel`
+        /// en: "Update channel"
+        public static var updateChannel: String { L10nSupport.string("settings.updateChannel") }
+
+        /// Caption under the update controls
+        ///
+        /// Key: `settings.updateCheckDetail`
+        /// en: "Checks the selected channel once a day and asks before installing."
+        public static var updateCheckDetail: String { L10nSupport.string("settings.updateCheckDetail") }
+
+        /// Picker label choosing where a provider's quota is read from
+        ///
+        /// Key: `settings.usageSource`
+        /// en: "Usage source"
+        public static var usageSource: String { L10nSupport.string("settings.usageSource") }
+
+        /// Value beside the Gemini source row
+        ///
+        /// Key: `settings.webQuota`
+        /// en: "Web quota"
+        public static var webQuota: String { L10nSupport.string("settings.webQuota") }
+
+        /// Link to a release's notes; version is a tag name
+        ///
+        /// Key: `settings.whatChangedIn`
+        /// en: "What changed in {version}"
+        public static func whatChangedIn(version: String) -> String {
+            L10nSupport.format("settings.whatChangedIn", version)
+        }
+
+        public enum CredentialSource {
+            /// Misc-provider credential source option
+            ///
+            /// Key: `settings.credentialSource.apiOnly`
+            /// en: "API / OAuth only"
+            public static var apiOnly: String { L10nSupport.string("settings.credentialSource.apiOnly") }
+
+            /// Misc-provider credential source option
+            ///
+            /// Key: `settings.credentialSource.browserOnly`
+            /// en: "Browser only"
+            public static var browserOnly: String { L10nSupport.string("settings.credentialSource.browserOnly") }
+
+            /// Misc-provider credential source option
+            ///
+            /// Key: `settings.credentialSource.manualOnly`
+            /// en: "Manual only"
+            public static var manualOnly: String { L10nSupport.string("settings.credentialSource.manualOnly") }
+
+            /// Misc-provider credential source option: do not fetch at all distinct-from: common.off — a toggle's state read back in a summary row and a picker option meaning 'do not fetch at all' are different things — Simplified Chinese already writes 已关闭 and 关闭.
+            ///
+            /// Key: `settings.credentialSource.off`
+            /// en: "Off"
+            public static var off: String { L10nSupport.string("settings.credentialSource.off") }
+        }
+
+        public enum DisplayMode {
+            /// Segmented option: the percentage shows what is left. Title case because it is a picker option; quota.mode.remaining is the lowercase caption under a bar. distinct-from: quota.mode.remaining — the lowercase caption under a bar and the title-case picker option are two renderings the app sets deliberately; collapsing them would move the casing into a call site, which is a code change rather than a rename.
+            ///
+            /// Key: `settings.displayMode.remaining`
+            /// en: "Remaining"
+            public static var remaining: String { L10nSupport.string("settings.displayMode.remaining") }
+
+            /// Segmented option: the percentage shows what has been spent distinct-from: quota.mode.used — the lowercase caption under a bar and the title-case picker option are two renderings the app sets deliberately; collapsing them would move the casing into a call site, which is a code change rather than a rename.
+            ///
+            /// Key: `settings.displayMode.used`
+            /// en: "Used"
+            public static var used: String { L10nSupport.string("settings.displayMode.used") }
+        }
+
+        public enum ExternalChange {
+            /// Banner shown when a second client overwrote a setting this one had changed
+            ///
+            /// Key: `settings.externalChange.title`
+            /// en: "Another Vibe Bar replaced your change"
+            public static var title: String { L10nSupport.string("settings.externalChange.title") }
+        }
+
         public enum Language {
+            /// Caption under the language picker in Settings
+            ///
+            /// Key: `settings.language.caption`
+            /// en: "Vibe Bar follows the macOS language unless you pick one here. Provider, model and harness names stay as their owners spell them."
+            public static var caption: String { L10nSupport.string("settings.language.caption") }
+
             /// Language option: follow the macOS language setting.
             ///
             /// Key: `settings.language.system`
             /// en: "Match system"
             public static var system: String { L10nSupport.string("settings.language.system") }
 
-            /// Settings row that chooses the interface language.
+            /// Settings row label for the in-app language override
             ///
             /// Key: `settings.language.title`
             /// en: "Language"
             public static var title: String { L10nSupport.string("settings.language.title") }
+        }
+
+        public enum Mcp {
+            /// Toggle label
+            ///
+            /// Key: `settings.mcp.allowRefresh`
+            /// en: "Allow agents to refresh quota"
+            public static var allowRefresh: String { L10nSupport.string("settings.mcp.allowRefresh") }
+
+            /// Caption under the refresh toggle; quota.refresh is an MCP tool name and is never translated
+            ///
+            /// Key: `settings.mcp.allowRefreshDetail`
+            /// en: "With this on, an agent can ask Vibe Bar to re-fetch quota from your providers. Forced refreshes are rate-limited to one every {seconds} seconds. With it off the read-only tools keep working and quota.refresh reports that refreshing is disabled."
+            public static func allowRefreshDetail(seconds: Int) -> String {
+                L10nSupport.format("settings.mcp.allowRefreshDetail", seconds)
+            }
+
+            /// Toggle label
+            ///
+            /// Key: `settings.mcp.allowSkills`
+            /// en: "Allow agents to install skills"
+            public static var allowSkills: String { L10nSupport.string("settings.mcp.allowSkills") }
+
+            /// Caption under the skills toggle; skills.install is an MCP tool name
+            ///
+            /// Key: `settings.mcp.allowSkillsDetail`
+            /// en: "With this on, an agent can call skills.install to add a skill from a GitHub repository or a local folder. It goes through the same Skills manager as Workbench → Skills, so it writes only to ~/.agents/skills and the agent skills directories Vibe Bar manages — never over a folder a different skill already holds. With it off the tool reports that installing is disabled."
+            public static var allowSkillsDetail: String { L10nSupport.string("settings.mcp.allowSkillsDetail") }
+
+            /// Caption on a copyable config snippet; the path is never translated
+            ///
+            /// Key: `settings.mcp.appendCodexConfig`
+            /// en: "Append to ~/.codex/config.toml."
+            public static var appendCodexConfig: String { L10nSupport.string("settings.mcp.appendCodexConfig") }
+
+            /// Sub-heading over the setup instructions
+            ///
+            /// Key: `settings.mcp.connectAgent`
+            /// en: "Connect an agent"
+            public static var connectAgent: String { L10nSupport.string("settings.mcp.connectAgent") }
+
+            /// Row label for the live connection count
+            ///
+            /// Key: `settings.mcp.connectedClients`
+            /// en: "Connected clients"
+            public static var connectedClients: String { L10nSupport.string("settings.mcp.connectedClients") }
+
+            /// Toggle label
+            ///
+            /// Key: `settings.mcp.enable`
+            /// en: "Enable the local MCP server"
+            public static var enable: String { L10nSupport.string("settings.mcp.enable") }
+
+            /// Intro paragraph of the MCP settings section
+            ///
+            /// Key: `settings.mcp.intro`
+            /// en: "Vibe Bar can expose this Mac's quota, usage, cost and local agent sessions to your coding agents over MCP. The server listens on a Unix domain socket in your home directory — no network port is opened, and no token is created: the socket's file permissions are the access control."
+            public static var intro: String { L10nSupport.string("settings.mcp.intro") }
+
+            /// Row label for when a client last spoke to the server
+            ///
+            /// Key: `settings.mcp.lastActivity`
+            /// en: "Last client activity"
+            public static var lastActivity: String { L10nSupport.string("settings.mcp.lastActivity") }
+
+            /// MCP server state: the socket is accepting connections
+            ///
+            /// Key: `settings.mcp.listening`
+            /// en: "Listening"
+            public static var listening: String { L10nSupport.string("settings.mcp.listening") }
+
+            /// Intro to the manual client configuration snippets; flag is a command-line flag and is never translated
+            ///
+            /// Key: `settings.mcp.manualIntro`
+            /// en: "Or configure a client by hand. Every client runs the same command — Vibe Bar's own binary with {flag}, which bridges stdin/stdout to the socket above."
+            public static func manualIntro(flag: String) -> String {
+                L10nSupport.format("settings.mcp.manualIntro", flag)
+            }
+
+            /// Caption on a copyable config snippet
+            ///
+            /// Key: `settings.mcp.mergeCursorConfig`
+            /// en: "Merge into ~/.cursor/mcp.json."
+            public static var mergeCursorConfig: String { L10nSupport.string("settings.mcp.mergeCursorConfig") }
+
+            /// Warning shown when the app runs from a build directory; path is a filesystem path
+            ///
+            /// Key: `settings.mcp.movePrompt`
+            /// en: "Vibe Bar is running from {path}. Move it to /Applications before saving a client config, or the config breaks the next time you rebuild."
+            public static func movePrompt(path: String) -> String {
+                L10nSupport.format("settings.mcp.movePrompt", path)
+            }
+
+            /// MCP server state: the socket is closed
+            ///
+            /// Key: `settings.mcp.notListening`
+            /// en: "Not listening"
+            public static var notListening: String { L10nSupport.string("settings.mcp.notListening") }
+
+            /// Heading for the generic client snippet
+            ///
+            /// Key: `settings.mcp.otherStdioClient`
+            /// en: "Any other stdio client"
+            public static var otherStdioClient: String { L10nSupport.string("settings.mcp.otherStdioClient") }
+
+            /// Caption on the generic client snippet
+            ///
+            /// Key: `settings.mcp.otherStdioDetail`
+            /// en: "One entry for the client's own mcpServers map."
+            public static var otherStdioDetail: String { L10nSupport.string("settings.mcp.otherStdioDetail") }
+
+            /// Caption over the one-line setup prompt
+            ///
+            /// Key: `settings.mcp.quickestPath`
+            /// en: "The quickest path: paste this into any agent and let it configure itself, install the companion skill, and verify the connection."
+            public static var quickestPath: String { L10nSupport.string("settings.mcp.quickestPath") }
+
+            /// Caption closing the MCP permissions section
+            ///
+            /// Key: `settings.mcp.readOnlyDetail`
+            /// en: "Everything else agents can reach is read-only: quota, token usage, cost, provider status, effective model prices, and the local session index (titles, projects, and — when session body indexing is on — message excerpts). Credentials, cookies and organization ids are never exposed, and email addresses are masked."
+            public static var readOnlyDetail: String { L10nSupport.string("settings.mcp.readOnlyDetail") }
+
+            /// Caption on a copyable shell command
+            ///
+            /// Key: `settings.mcp.runInTerminal`
+            /// en: "Run in a terminal."
+            public static var runInTerminal: String { L10nSupport.string("settings.mcp.runInTerminal") }
+
+            /// Label for the copyable one-line prompt
+            ///
+            /// Key: `settings.mcp.setupPrompt`
+            /// en: "Agent setup prompt"
+            public static var setupPrompt: String { L10nSupport.string("settings.mcp.setupPrompt") }
+
+            /// Caption under the setup prompt
+            ///
+            /// Key: `settings.mcp.setupPromptDetail`
+            /// en: "One line, works in any agent that can fetch a URL."
+            public static var setupPromptDetail: String { L10nSupport.string("settings.mcp.setupPromptDetail") }
+
+            /// Row label for the socket path. The term stays as spelled.
+            ///
+            /// Key: `settings.mcp.socket`
+            /// en: "Socket"
+            public static var socket: String { L10nSupport.string("settings.mcp.socket") }
+
+            /// Caption under the MCP status rows. The quoted phrase is the message another tool prints and stays in English.
+            ///
+            /// Key: `settings.mcp.socketLifetime`
+            /// en: "The socket exists only while Vibe Bar is running. Agents configured below report “Vibe Bar is not running” when it is quit, which is the intended behaviour."
+            public static var socketLifetime: String { L10nSupport.string("settings.mcp.socketLifetime") }
+
+            /// Row label for whether the MCP socket is listening. Distinct from status.overview.title, which is a provider's service status.
+            ///
+            /// Key: `settings.mcp.status`
+            /// en: "Status"
+            public static var status: String { L10nSupport.string("settings.mcp.status") }
+
+            /// Settings section heading for the local MCP server
+            ///
+            /// Key: `settings.mcp.title`
+            /// en: "MCP Server"
+            public static var title: String { L10nSupport.string("settings.mcp.title") }
+
+            /// Sub-heading over the permission toggles
+            ///
+            /// Key: `settings.mcp.whatAgentsMayDo`
+            /// en: "What agents may do"
+            public static var whatAgentsMayDo: String { L10nSupport.string("settings.mcp.whatAgentsMayDo") }
+        }
+
+        public enum MiniWindow {
+            /// Button in the mini windows settings section
+            ///
+            /// Key: `settings.miniWindow.add`
+            /// en: "Add a mini window"
+            public static var add: String { L10nSupport.string("settings.miniWindow.add") }
+
+            /// Empty state under the add-bucket list
+            ///
+            /// Key: `settings.miniWindow.allBucketsIncluded`
+            /// en: "Every known bucket is already in this window."
+            public static var allBucketsIncluded: String { L10nSupport.string("settings.miniWindow.allBucketsIncluded") }
+
+            /// Tooltip on the dismiss button of a built-in bucket
+            ///
+            /// Key: `settings.miniWindow.dismissBuiltIn`
+            /// en: "Dismiss this built-in bucket while the provider is not returning it. It comes back the moment the provider does."
+            public static var dismissBuiltIn: String { L10nSupport.string("settings.miniWindow.dismissBuiltIn") }
+
+            /// Tooltip on the dismiss button of a runtime-discovered bucket
+            ///
+            /// Key: `settings.miniWindow.forgetDiscovered`
+            /// en: "Forget this discovered bucket — drops it from the list and from every window that selected it."
+            public static var forgetDiscovered: String { L10nSupport.string("settings.miniWindow.forgetDiscovered") }
+
+            /// Tooltip on a style toggle; mode is a display-mode name
+            ///
+            /// Key: `settings.miniWindow.includeStyle`
+            /// en: "Include {mode} in the double-click cycle"
+            public static func includeStyle(mode: String) -> String {
+                L10nSupport.format("settings.miniWindow.includeStyle", mode)
+            }
+
+            /// Tooltip explaining a disabled remove button
+            ///
+            /// Key: `settings.miniWindow.lastCannotBeRemoved`
+            /// en: "The last mini window cannot be removed."
+            public static var lastCannotBeRemoved: String { L10nSupport.string("settings.miniWindow.lastCannotBeRemoved") }
+
+            /// Segment label: edit the shared names
+            ///
+            /// Key: `settings.miniWindow.namesAllWindows`
+            /// en: "Names: all windows"
+            public static var namesAllWindows: String { L10nSupport.string("settings.miniWindow.namesAllWindows") }
+
+            /// Segment label: edit only this display style's overrides; mode is a display-mode name
+            ///
+            /// Key: `settings.miniWindow.namesThisStyle`
+            /// en: "Only {mode} here"
+            public static func namesThisStyle(mode: String) -> String {
+                L10nSupport.format("settings.miniWindow.namesThisStyle", mode)
+            }
+
+            /// Segment label: edit only this window's name overrides
+            ///
+            /// Key: `settings.miniWindow.namesThisWindow`
+            /// en: "Only “{name}”"
+            public static func namesThisWindow(name: String) -> String {
+                L10nSupport.format("settings.miniWindow.namesThisWindow", name)
+            }
+
+            /// Empty state under the field list
+            ///
+            /// Key: `settings.miniWindow.noFieldsSelected`
+            /// en: "No fields selected — tick some above."
+            public static var noFieldsSelected: String { L10nSupport.string("settings.miniWindow.noFieldsSelected") }
+
+            /// Caption over the list of buckets not yet in this window
+            ///
+            /// Key: `settings.miniWindow.notInWindow`
+            /// en: "Not in “{name}” — tick a bucket to add it. Buckets the adapters discover at runtime appear here automatically; a dimmed row is remembered but not in the account's current response, and ✕ dismisses it until the provider returns it."
+            public static func notInWindow(name: String) -> String {
+                L10nSupport.format("settings.miniWindow.notInWindow", name)
+            }
+
+            /// Badge on a remote machine's row in the mini window preview
+            ///
+            /// Key: `settings.miniWindow.offline`
+            /// en: "offline"
+            public static var offline: String { L10nSupport.string("settings.miniWindow.offline") }
+
+            /// Button that shows or hides a mini window
+            ///
+            /// Key: `settings.miniWindow.openClose`
+            /// en: "Open / Close"
+            public static var openClose: String { L10nSupport.string("settings.miniWindow.openClose") }
+
+            /// Caption over the per-style name fields
+            ///
+            /// Key: `settings.miniWindow.overridesStyle`
+            /// en: "Overrides for the {mode} style of this window only. An empty field inherits the window name, then the shared one — shown as the placeholder."
+            public static func overridesStyle(mode: String) -> String {
+                L10nSupport.format("settings.miniWindow.overridesStyle", mode)
+            }
+
+            /// Caption over the per-window name fields
+            ///
+            /// Key: `settings.miniWindow.overridesWindow`
+            /// en: "Name overrides for this window only. An empty field inherits the shared name — shown as the placeholder."
+            public static var overridesWindow: String { L10nSupport.string("settings.miniWindow.overridesWindow") }
+
+            /// Tooltip on a row's remove control
+            ///
+            /// Key: `settings.miniWindow.removeFromWindow`
+            /// en: "Remove from this window"
+            public static var removeFromWindow: String { L10nSupport.string("settings.miniWindow.removeFromWindow") }
+
+            /// Tooltip on the remove button
+            ///
+            /// Key: `settings.miniWindow.removeHelp`
+            /// en: "Remove this mini window"
+            public static var removeHelp: String { L10nSupport.string("settings.miniWindow.removeHelp") }
+
+            /// Picker label for the mini window's row density
+            ///
+            /// Key: `settings.miniWindow.stripDensity`
+            /// en: "Strip density"
+            public static var stripDensity: String { L10nSupport.string("settings.miniWindow.stripDensity") }
+
+            /// Caption over the style cycle picker
+            ///
+            /// Key: `settings.miniWindow.styleCycle`
+            /// en: "Double-click on the window cycles its style. Tap a style to include it — the badge is its turn in the cycle. Nothing selected means every style, in this order."
+            public static var styleCycle: String { L10nSupport.string("settings.miniWindow.styleCycle") }
+
+            /// Tooltip on the open/close button
+            ///
+            /// Key: `settings.miniWindow.toggleHelp`
+            /// en: "Toggle this mini window on screen"
+            public static var toggleHelp: String { L10nSupport.string("settings.miniWindow.toggleHelp") }
+
+            /// Caption over the mini window field tree
+            ///
+            /// Key: `settings.miniWindow.treeDetail`
+            /// en: "One tree for the window — grouped exactly as it folds them (company → SubProvider → quota group → bucket). Drag a row to reorder, ✕ to remove, and rename any level in place. First field renders leftmost (or topmost)."
+            public static var treeDetail: String { L10nSupport.string("settings.miniWindow.treeDetail") }
+
+            public enum Density {
+                /// Mini-window strip density
+                ///
+                /// Key: `settings.miniWindow.density.narrow`
+                /// en: "Narrow"
+                public static var narrow: String { L10nSupport.string("settings.miniWindow.density.narrow") }
+
+                /// Caption under the Narrow strip density
+                ///
+                /// Key: `settings.miniWindow.density.narrowDetail`
+                /// en: "The menu bar's compact style: the same cells at the small size."
+                public static var narrowDetail: String { L10nSupport.string("settings.miniWindow.density.narrowDetail") }
+
+                /// Mini-window strip density distinct-from: menuBar.composer.template.roomy — a menu-bar template and a mini-window strip density are options on different axes; the adjective agrees with a different noun in every language that inflects one.
+                ///
+                /// Key: `settings.miniWindow.density.roomy`
+                /// en: "Roomy"
+                public static var roomy: String { L10nSupport.string("settings.miniWindow.density.roomy") }
+
+                /// Caption under the Roomy strip density
+                ///
+                /// Key: `settings.miniWindow.density.roomyDetail`
+                /// en: "The menu bar's single-line style: every bucket, full label beside its number."
+                public static var roomyDetail: String { L10nSupport.string("settings.miniWindow.density.roomyDetail") }
+
+                /// Mini-window strip density
+                ///
+                /// Key: `settings.miniWindow.density.twoLines`
+                /// en: "Two Lines"
+                public static var twoLines: String { L10nSupport.string("settings.miniWindow.density.twoLines") }
+
+                /// Caption under the Two Lines strip density
+                ///
+                /// Key: `settings.miniWindow.density.twoLinesDetail`
+                /// en: "Menu-bar style: buckets pair into stacked columns, label beside each number."
+                public static var twoLinesDetail: String { L10nSupport.string("settings.miniWindow.density.twoLinesDetail") }
+            }
+
+            public enum Mode {
+                /// Mini-window display style distinct-from: menuBar.composer.template.compact — a menu-bar template and a mini-window layout are options on different axes; the adjective agrees with a different noun in every language that inflects one.
+                ///
+                /// Key: `settings.miniWindow.mode.compact`
+                /// en: "Compact"
+                public static var compact: String { L10nSupport.string("settings.miniWindow.mode.compact") }
+
+                /// Caption under the Compact mini-window style
+                ///
+                /// Key: `settings.miniWindow.mode.compactDetail`
+                /// en: "The same three tiers as vertical bars, sized for a corner."
+                public static var compactDetail: String { L10nSupport.string("settings.miniWindow.mode.compactDetail") }
+
+                /// Mini-window display style
+                ///
+                /// Key: `settings.miniWindow.mode.focus`
+                /// en: "Focus"
+                public static var focus: String { L10nSupport.string("settings.miniWindow.mode.focus") }
+
+                /// Caption under the Focus mini-window style
+                ///
+                /// Key: `settings.miniWindow.mode.focusDetail`
+                /// en: "One selected bucket at a time, large — click to cycle in your order."
+                public static var focusDetail: String { L10nSupport.string("settings.miniWindow.mode.focusDetail") }
+
+                /// Mini-window display style
+                ///
+                /// Key: `settings.miniWindow.mode.ledger`
+                /// en: "Ledger"
+                public static var ledger: String { L10nSupport.string("settings.miniWindow.mode.ledger") }
+
+                /// Caption under the Ledger mini-window style
+                ///
+                /// Key: `settings.miniWindow.mode.ledgerDetail`
+                /// en: "One row per quota bucket — fixed width, grows downward."
+                public static var ledgerDetail: String { L10nSupport.string("settings.miniWindow.mode.ledgerDetail") }
+
+                /// Mini-window display style
+                ///
+                /// Key: `settings.miniWindow.mode.rail`
+                /// en: "Rail"
+                public static var rail: String { L10nSupport.string("settings.miniWindow.mode.rail") }
+
+                /// Caption under the Rail mini-window style
+                ///
+                /// Key: `settings.miniWindow.mode.railDetail`
+                /// en: "The next seven days as a refill lane with the coming resets listed."
+                public static var railDetail: String { L10nSupport.string("settings.miniWindow.mode.railDetail") }
+
+                /// Mini-window display style distinct-from: menuBar.composer.size.regular — a type size and a mini-window layout are options on different axes; the adjective agrees with a different noun in every language that inflects one.
+                ///
+                /// Key: `settings.miniWindow.mode.regular`
+                /// en: "Regular"
+                public static var regular: String { L10nSupport.string("settings.miniWindow.mode.regular") }
+
+                /// Caption under the Regular mini-window style
+                ///
+                /// Key: `settings.miniWindow.mode.regularDetail`
+                /// en: "Ring gauges grouped company → SubProvider → quota group."
+                public static var regularDetail: String { L10nSupport.string("settings.miniWindow.mode.regularDetail") }
+
+                /// Mini-window display style distinct-from: menuBar.composer.mode.label — the label over the menu-bar mode control and a mini-window layout named Strip are different things.
+                ///
+                /// Key: `settings.miniWindow.mode.strip`
+                /// en: "Strip"
+                public static var strip: String { L10nSupport.string("settings.miniWindow.mode.strip") }
+
+                /// Caption under the Strip mini-window style
+                ///
+                /// Key: `settings.miniWindow.mode.stripDetail`
+                /// en: "A slim line mirroring the menu bar's styles — one cell per bucket."
+                public static var stripDetail: String { L10nSupport.string("settings.miniWindow.mode.stripDetail") }
+
+                /// Mini-window display style
+                ///
+                /// Key: `settings.miniWindow.mode.tiles`
+                /// en: "Tiles"
+                public static var tiles: String { L10nSupport.string("settings.miniWindow.mode.tiles") }
+
+                /// Caption under the Tiles mini-window style
+                ///
+                /// Key: `settings.miniWindow.mode.tilesDetail`
+                /// en: "A grid of tiles with a big number and a severity stripe."
+                public static var tilesDetail: String { L10nSupport.string("settings.miniWindow.mode.tilesDetail") }
+            }
+        }
+
+        public enum Misc {
+            /// Field placeholder for the AK half of an AK/SK pair
+            ///
+            /// Key: `settings.misc.accessKeyId`
+            /// en: "Access Key ID (AKLT…)"
+            public static var accessKeyId: String { L10nSupport.string("settings.misc.accessKeyId") }
+
+            /// Confirmation under an AK/SK field
+            ///
+            /// Key: `settings.misc.akSkSaved`
+            /// en: "AK/SK saved in Keychain."
+            public static var akSkSaved: String { L10nSupport.string("settings.misc.akSkSaved") }
+
+            /// Confirmation under a credential field
+            ///
+            /// Key: `settings.misc.apiKeySaved`
+            /// en: "API key saved in Keychain."
+            public static var apiKeySaved: String { L10nSupport.string("settings.misc.apiKeySaved") }
+
+            /// Tooltip on the button that forgets a stored workspace id
+            ///
+            /// Key: `settings.misc.clearWorkspace`
+            /// en: "Clear saved workspace"
+            public static var clearWorkspace: String { L10nSupport.string("settings.misc.clearWorkspace") }
+
+            /// Tooltip on the button that adds a second instance of a provider
+            ///
+            /// Key: `settings.misc.clone`
+            /// en: "Clone {provider}"
+            public static func clone(provider: String) -> String {
+                L10nSupport.format("settings.misc.clone", provider)
+            }
+
+            /// Console link row; title is the provider's own page name
+            ///
+            /// Key: `settings.misc.consoleLink`
+            /// en: "{title} →"
+            public static func consoleLink(title: String) -> String {
+                L10nSupport.format("settings.misc.consoleLink", title)
+            }
+
+            /// Picker label for a provider's edition (Team, Personal, …)
+            ///
+            /// Key: `settings.misc.edition`
+            /// en: "Edition"
+            public static var edition: String { L10nSupport.string("settings.misc.edition") }
+
+            /// Hint under the GitHub sign-in row
+            ///
+            /// Key: `settings.misc.githubSignInHint`
+            /// en: "Sign in with GitHub device flow."
+            public static var githubSignInHint: String { L10nSupport.string("settings.misc.githubSignInHint") }
+
+            /// Confirmation under the GitHub sign-in row
+            ///
+            /// Key: `settings.misc.githubTokenSaved`
+            /// en: "GitHub device token saved in Keychain."
+            public static var githubTokenSaved: String { L10nSupport.string("settings.misc.githubTokenSaved") }
+
+            /// Caption under the cookie import button
+            ///
+            /// Key: `settings.misc.importDetail`
+            /// en: "Adds or refreshes the first signed-in browser profile found; profiles already imported stay stacked, and this provider's quota is the average across every slot listed above. macOS may ask for your login-keychain password once per Chromium-family browser."
+            public static var importDetail: String { L10nSupport.string("settings.misc.importDetail") }
+
+            /// Hint under the Kiro row; the commands are never translated
+            ///
+            /// Key: `settings.misc.kiroHint`
+            /// en: "Run `kiro-cli login`, then Vibe Bar probes `kiro-cli chat --no-interactive /usage`."
+            public static var kiroHint: String { L10nSupport.string("settings.misc.kiroHint") }
+
+            /// Shown when a provider has no cookie import path
+            ///
+            /// Key: `settings.misc.noCookieSpec`
+            /// en: "No cookie spec is registered for {provider}."
+            public static func noCookieSpec(provider: String) -> String {
+                L10nSupport.format("settings.misc.noCookieSpec", provider)
+            }
+
+            /// Empty state in the cookie slot list
+            ///
+            /// Key: `settings.misc.noCookiesYet`
+            /// en: "No cookies imported yet — import from your browser or paste below."
+            public static var noCookiesYet: String { L10nSupport.string("settings.misc.noCookiesYet") }
+
+            /// Button that runs a local CLI probe
+            ///
+            /// Key: `settings.misc.probe`
+            /// en: "Probe"
+            public static var probe: String { L10nSupport.string("settings.misc.probe") }
+
+            /// Picker label for a provider's service region
+            ///
+            /// Key: `settings.misc.region`
+            /// en: "Region"
+            public static var region: String { L10nSupport.string("settings.misc.region") }
+
+            /// Tooltip on the button that clears a stored AK/SK pair
+            ///
+            /// Key: `settings.misc.removeAkSk`
+            /// en: "Remove stored {provider} AK/SK"
+            public static func removeAkSk(provider: String) -> String {
+                L10nSupport.format("settings.misc.removeAkSk", provider)
+            }
+
+            /// Tooltip on the button that clears a stored key
+            ///
+            /// Key: `settings.misc.removeApiKey`
+            /// en: "Remove stored {provider} API key"
+            public static func removeApiKey(provider: String) -> String {
+                L10nSupport.format("settings.misc.removeApiKey", provider)
+            }
+
+            /// Tooltip on a cookie slot's delete button
+            ///
+            /// Key: `settings.misc.removeCookieSlot`
+            /// en: "Remove this cookie slot"
+            public static var removeCookieSlot: String { L10nSupport.string("settings.misc.removeCookieSlot") }
+
+            /// Tooltip on the button that deletes a cloned instance
+            ///
+            /// Key: `settings.misc.removeCopy`
+            /// en: "Remove this {provider} copy"
+            public static func removeCopy(provider: String) -> String {
+                L10nSupport.format("settings.misc.removeCopy", provider)
+            }
+
+            /// Destructive button in the remove-copy dialog
+            ///
+            /// Key: `settings.misc.removeCopyButton`
+            /// en: "Remove Copy"
+            public static var removeCopyButton: String { L10nSupport.string("settings.misc.removeCopyButton") }
+
+            /// Confirmation dialog body
+            ///
+            /// Key: `settings.misc.removeCopyDetail`
+            /// en: "Its saved credentials are deleted from your Keychain — the API key or AK/SK and every imported cookie slot. This cannot be undone."
+            public static var removeCopyDetail: String { L10nSupport.string("settings.misc.removeCopyDetail") }
+
+            /// Confirmation dialog title
+            ///
+            /// Key: `settings.misc.removeCopyTitle`
+            /// en: "Remove this {provider} copy?"
+            public static func removeCopyTitle(provider: String) -> String {
+                L10nSupport.format("settings.misc.removeCopyTitle", provider)
+            }
+
+            /// Tooltip on the button that clears the GitHub token
+            ///
+            /// Key: `settings.misc.removeGithubToken`
+            /// en: "Remove stored GitHub device token"
+            public static var removeGithubToken: String { L10nSupport.string("settings.misc.removeGithubToken") }
+
+            /// Tooltip on the rename button of a cloned instance
+            ///
+            /// Key: `settings.misc.rename`
+            /// en: "Rename this copy"
+            public static var rename: String { L10nSupport.string("settings.misc.rename") }
+
+            /// Field placeholder for the SK half of an AK/SK pair. The term is the provider's own and stays as spelled.
+            ///
+            /// Key: `settings.misc.secretAccessKey`
+            /// en: "Secret Access Key"
+            public static var secretAccessKey: String { L10nSupport.string("settings.misc.secretAccessKey") }
+
+            /// Button that starts a device-flow sign-in
+            ///
+            /// Key: `settings.misc.signIn`
+            /// en: "Sign in"
+            public static var signIn: String { L10nSupport.string("settings.misc.signIn") }
+
+            /// Button that opens a WebView login
+            ///
+            /// Key: `settings.misc.signInViaWeb`
+            /// en: "Sign in via Web"
+            public static var signInViaWeb: String { L10nSupport.string("settings.misc.signInViaWeb") }
+
+            /// Caption under the Tencent token plan row
+            ///
+            /// Key: `settings.misc.tencentTokenPlanNote`
+            /// en: "Personal Token Plan is currently available only in China mainland (cn-beijing). Clone this row to track Team and Personal together."
+            public static var tencentTokenPlanNote: String { L10nSupport.string("settings.misc.tencentTokenPlanNote") }
+
+            /// Picker label for a provider's plan variant
+            ///
+            /// Key: `settings.misc.variant`
+            /// en: "Variant"
+            public static var variant: String { L10nSupport.string("settings.misc.variant") }
+
+            /// Button label while a device-flow sign-in is pending
+            ///
+            /// Key: `settings.misc.waiting`
+            /// en: "Waiting..."
+            public static var waiting: String { L10nSupport.string("settings.misc.waiting") }
+
+            /// Caption under the workspace field
+            ///
+            /// Key: `settings.misc.workspaceNote`
+            /// en: "Only needed when the account owns more than one workspace — otherwise Vibe Bar uses the first one it finds."
+            public static var workspaceNote: String { L10nSupport.string("settings.misc.workspaceNote") }
+
+            public enum Prompt {
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.copilotHost`
+                /// en: "GitHub Enterprise host (optional, e.g. github.example.com)"
+                public static var copilotHost: String { L10nSupport.string("settings.misc.prompt.copilotHost") }
+
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.dashscope`
+                /// en: "Paste DashScope API key (sk-...) — optional"
+                public static var dashscope: String { L10nSupport.string("settings.misc.prompt.dashscope") }
+
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.kilo`
+                /// en: "Paste Kilo API key (optional)"
+                public static var kilo: String { L10nSupport.string("settings.misc.prompt.kilo") }
+
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.minimax`
+                /// en: "Paste MiniMax Token Plan API key (sk-cp-... or MINIMAX_CODING_API_KEY)"
+                public static var minimax: String { L10nSupport.string("settings.misc.prompt.minimax") }
+
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.openRouter`
+                /// en: "Paste OpenRouter API key (sk-or-v1-...)"
+                public static var openRouter: String { L10nSupport.string("settings.misc.prompt.openRouter") }
+
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.openRouterHost`
+                /// en: "OpenRouter API URL (optional, defaults to https://openrouter.ai/api/v1)"
+                public static var openRouterHost: String { L10nSupport.string("settings.misc.prompt.openRouterHost") }
+
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.warp`
+                /// en: "Paste Warp API key (wk-...)"
+                public static var warp: String { L10nSupport.string("settings.misc.prompt.warp") }
+
+                /// Field placeholder
+                ///
+                /// Key: `settings.misc.prompt.workspace`
+                /// en: "Workspace ID or URL (optional, wrk_... or /workspace/wrk_.../go)"
+                public static var workspace: String { L10nSupport.string("settings.misc.prompt.workspace") }
+
+                /// Field placeholder; the key prefix is a format example
+                ///
+                /// Key: `settings.misc.prompt.zai`
+                /// en: "Paste Z.ai API key (zai-...)"
+                public static var zai: String { L10nSupport.string("settings.misc.prompt.zai") }
+            }
+
+            public enum Region {
+                /// Misc-provider region option
+                ///
+                /// Key: `settings.misc.region.auto`
+                /// en: "Auto (try both)"
+                public static var auto: String { L10nSupport.string("settings.misc.region.auto") }
+
+                /// Alibaba region option
+                ///
+                /// Key: `settings.misc.region.chinaMainland`
+                /// en: "China mainland (cn-beijing)"
+                public static var chinaMainland: String { L10nSupport.string("settings.misc.region.chinaMainland") }
+
+                /// Alibaba region option; the region id is never translated
+                ///
+                /// Key: `settings.misc.region.international`
+                /// en: "International (ap-southeast-1)"
+                public static var international: String { L10nSupport.string("settings.misc.region.international") }
+
+                /// MiniMax region option
+                ///
+                /// Key: `settings.misc.region.minimaxChina`
+                /// en: "China mainland (minimaxi.com)"
+                public static var minimaxChina: String { L10nSupport.string("settings.misc.region.minimaxChina") }
+
+                /// MiniMax region option
+                ///
+                /// Key: `settings.misc.region.minimaxGlobal`
+                /// en: "Global (minimax.io)"
+                public static var minimaxGlobal: String { L10nSupport.string("settings.misc.region.minimaxGlobal") }
+
+                /// Z.ai region option
+                ///
+                /// Key: `settings.misc.region.zaiChina`
+                /// en: "China mainland (open.bigmodel.cn)"
+                public static var zaiChina: String { L10nSupport.string("settings.misc.region.zaiChina") }
+
+                /// Z.ai region option; the host is never translated
+                ///
+                /// Key: `settings.misc.region.zaiGlobal`
+                /// en: "Global (api.z.ai)"
+                public static var zaiGlobal: String { L10nSupport.string("settings.misc.region.zaiGlobal") }
+            }
+        }
+
+        public enum PopoverDensity {
+            /// Popover density option distinct-from: menuBar.composer.template.compact — a menu-bar template and a popover density are options on different axes; the adjective agrees with a different noun in every language that inflects one.
+            ///
+            /// Key: `settings.popoverDensity.compact`
+            /// en: "Compact"
+            public static var compact: String { L10nSupport.string("settings.popoverDensity.compact") }
+
+            /// Caption under the Compact density
+            ///
+            /// Key: `settings.popoverDensity.compactDetail`
+            /// en: "Tightest spacing, narrowest popover."
+            public static var compactDetail: String { L10nSupport.string("settings.popoverDensity.compactDetail") }
+
+            /// Popover density option distinct-from: menuBar.composer.size.regular — a type size and a popover density are options on different axes; the adjective agrees with a different noun in every language that inflects one.
+            ///
+            /// Key: `settings.popoverDensity.regular`
+            /// en: "Regular"
+            public static var regular: String { L10nSupport.string("settings.popoverDensity.regular") }
+
+            /// Caption under the Regular density
+            ///
+            /// Key: `settings.popoverDensity.regularDetail`
+            /// en: "Balanced spacing — default."
+            public static var regularDetail: String { L10nSupport.string("settings.popoverDensity.regularDetail") }
+
+            /// Popover density option
+            ///
+            /// Key: `settings.popoverDensity.spacious`
+            /// en: "Spacious"
+            public static var spacious: String { L10nSupport.string("settings.popoverDensity.spacious") }
+
+            /// Caption under the Spacious density
+            ///
+            /// Key: `settings.popoverDensity.spaciousDetail`
+            /// en: "Roomy spacing for big displays."
+            public static var spaciousDetail: String { L10nSupport.string("settings.popoverDensity.spaciousDetail") }
+        }
+
+        public enum Pricing {
+            /// Button that appends a blank rate card
+            ///
+            /// Key: `settings.pricing.addOverride`
+            /// en: "Add model override"
+            public static var addOverride: String { L10nSupport.string("settings.pricing.addOverride") }
+
+            /// Disclosure heading over the threshold rate fields
+            ///
+            /// Key: `settings.pricing.advancedTiers`
+            /// en: "Advanced tiers"
+            public static var advancedTiers: String { L10nSupport.string("settings.pricing.advancedTiers") }
+
+            /// Detail beside the local-overrides source
+            ///
+            /// Key: `settings.pricing.alwaysWins`
+            /// en: "Always wins"
+            public static var alwaysWins: String { L10nSupport.string("settings.pricing.alwaysWins") }
+
+            /// Name of the lowest-priority price source
+            ///
+            /// Key: `settings.pricing.bundledFallback`
+            /// en: "Bundled fallback"
+            public static var bundledFallback: String { L10nSupport.string("settings.pricing.bundledFallback") }
+
+            /// Rate field label
+            ///
+            /// Key: `settings.pricing.cacheReadAbove`
+            /// en: "Cache read above"
+            public static var cacheReadAbove: String { L10nSupport.string("settings.pricing.cacheReadAbove") }
+
+            /// Rate field label
+            ///
+            /// Key: `settings.pricing.cacheWriteAbove`
+            /// en: "Cache write above"
+            public static var cacheWriteAbove: String { L10nSupport.string("settings.pricing.cacheWriteAbove") }
+
+            /// Tooltip on a rate card's delete button
+            ///
+            /// Key: `settings.pricing.deleteOverride`
+            /// en: "Delete override"
+            public static var deleteOverride: String { L10nSupport.string("settings.pricing.deleteOverride") }
+
+            /// Placeholder in the model-name field of a rate card
+            ///
+            /// Key: `settings.pricing.exactModelName`
+            /// en: "Exact model name"
+            public static var exactModelName: String { L10nSupport.string("settings.pricing.exactModelName") }
+
+            /// Rate field label: the multiplier applied to a fast tier
+            ///
+            /// Key: `settings.pricing.fastMultiplier`
+            /// en: "Fast multiplier"
+            public static var fastMultiplier: String { L10nSupport.string("settings.pricing.fastMultiplier") }
+
+            /// Rate field label for input tokens beyond the threshold
+            ///
+            /// Key: `settings.pricing.inputAbove`
+            /// en: "Input above"
+            public static var inputAbove: String { L10nSupport.string("settings.pricing.inputAbove") }
+
+            /// Intro under the Model Pricing heading
+            ///
+            /// Key: `settings.pricing.intro`
+            /// en: "Catalogs refresh in the background. Higher entries win when the same provider and model name appears more than once."
+            public static var intro: String { L10nSupport.string("settings.pricing.intro") }
+
+            /// Settings section heading over the user's own rate cards
+            ///
+            /// Key: `settings.pricing.localOverrides`
+            /// en: "Local overrides"
+            public static var localOverrides: String { L10nSupport.string("settings.pricing.localOverrides") }
+
+            /// Empty state in the overrides list
+            ///
+            /// Key: `settings.pricing.noOverrides`
+            /// en: "No local overrides."
+            public static var noOverrides: String { L10nSupport.string("settings.pricing.noOverrides") }
+
+            /// Detail beside the bundled source
+            ///
+            /// Key: `settings.pricing.offlineFloor`
+            /// en: "Offline floor"
+            public static var offlineFloor: String { L10nSupport.string("settings.pricing.offlineFloor") }
+
+            /// Rate field label for output tokens beyond the threshold
+            ///
+            /// Key: `settings.pricing.outputAbove`
+            /// en: "Output above"
+            public static var outputAbove: String { L10nSupport.string("settings.pricing.outputAbove") }
+
+            /// Intro under the Local overrides heading
+            ///
+            /// Key: `settings.pricing.overridesIntro`
+            /// en: "Prices are USD per one million tokens. Leave cache fields empty when the provider does not publish them."
+            public static var overridesIntro: String { L10nSupport.string("settings.pricing.overridesIntro") }
+
+            /// Settings section heading over the price-source list
+            ///
+            /// Key: `settings.pricing.priorityHealth`
+            /// en: "Priority and source health"
+            public static var priorityHealth: String { L10nSupport.string("settings.pricing.priorityHealth") }
+
+            /// Rate field label: input tokens
+            ///
+            /// Key: `settings.pricing.rateInput`
+            /// en: "Input"
+            public static var rateInput: String { L10nSupport.string("settings.pricing.rateInput") }
+
+            /// Rate field label: output tokens
+            ///
+            /// Key: `settings.pricing.rateOutput`
+            /// en: "Output"
+            public static var rateOutput: String { L10nSupport.string("settings.pricing.rateOutput") }
+
+            /// Button that fetches price catalogs immediately
+            ///
+            /// Key: `settings.pricing.refreshNow`
+            /// en: "Refresh now"
+            public static var refreshNow: String { L10nSupport.string("settings.pricing.refreshNow") }
+
+            /// Button label while a price refresh runs distinct-from: popover.header.refreshing — a Settings section for refresh intervals, a button label while a fetch runs, and a provider's in-flight state are three things.
+            ///
+            /// Key: `settings.pricing.refreshing`
+            /// en: "Refreshing…"
+            public static var refreshing: String { L10nSupport.string("settings.pricing.refreshing") }
+
+            /// Field label: the token count above which the higher rates apply
+            ///
+            /// Key: `settings.pricing.thresholdTokens`
+            /// en: "Threshold tokens"
+            public static var thresholdTokens: String { L10nSupport.string("settings.pricing.thresholdTokens") }
+        }
+
+        public enum Remote {
+            /// Settings section heading. Core is the product term for this Mac's aggregator.
+            ///
+            /// Key: `settings.remote.core`
+            /// en: "Remote Core"
+            public static var core: String { L10nSupport.string("settings.remote.core") }
+
+            /// Settings section heading
+            ///
+            /// Key: `settings.remote.costAggregation`
+            /// en: "Cost aggregation"
+            public static var costAggregation: String { L10nSupport.string("settings.remote.costAggregation") }
+
+            /// Intro under the cost aggregation heading
+            ///
+            /// Key: `settings.remote.costAggregationIntro`
+            /// en: "Choose which remote machines join this Mac's local cost and token totals. Selection and aggregation stay on this Core; the Relay never sees plaintext usage."
+            public static var costAggregationIntro: String { L10nSupport.string("settings.remote.costAggregationIntro") }
+
+            /// Toggle that reveals the control-centre URL field
+            ///
+            /// Key: `settings.remote.differentControlCenter`
+            /// en: "Use a different control center"
+            public static var differentControlCenter: String { L10nSupport.string("settings.remote.differentControlCenter") }
+
+            /// Button that abandons a pending join
+            ///
+            /// Key: `settings.remote.discard`
+            /// en: "Discard"
+            public static var discard: String { L10nSupport.string("settings.remote.discard") }
+
+            /// Confirmation dialog body
+            ///
+            /// Key: `settings.remote.discardPendingDetail`
+            /// en: "Its pairing code is already spent, and the workspace still counts this Mac as its Core. To join again, revoke this Mac in the web control center, then create a fresh code."
+            public static var discardPendingDetail: String { L10nSupport.string("settings.remote.discardPendingDetail") }
+
+            /// Confirmation dialog title
+            ///
+            /// Key: `settings.remote.discardPendingTitle`
+            /// en: "Discard this pending join?"
+            public static var discardPendingTitle: String { L10nSupport.string("settings.remote.discardPendingTitle") }
+
+            /// Settings section heading, and the destructive button in its dialog
+            ///
+            /// Key: `settings.remote.disconnect`
+            /// en: "Disconnect"
+            public static var disconnect: String { L10nSupport.string("settings.remote.disconnect") }
+
+            /// Button that unpairs this Mac
+            ///
+            /// Key: `settings.remote.disconnectButton`
+            /// en: "Disconnect from Workspace…"
+            public static var disconnectButton: String { L10nSupport.string("settings.remote.disconnectButton") }
+
+            /// Confirmation dialog body
+            ///
+            /// Key: `settings.remote.disconnectDetail`
+            /// en: "Reconnecting later requires a new pairing code or provisioning file."
+            public static var disconnectDetail: String { L10nSupport.string("settings.remote.disconnectDetail") }
+
+            /// Explanation under the Disconnect heading
+            ///
+            /// Key: `settings.remote.disconnectIntro`
+            /// en: "Disconnecting removes this Mac's Relay credential from the Keychain and its workspace binding. Probes keep uploading to the Relay until they are revoked there. Usage already decrypted stays in the local ledger."
+            public static var disconnectIntro: String { L10nSupport.string("settings.remote.disconnectIntro") }
+
+            /// Confirmation dialog title
+            ///
+            /// Key: `settings.remote.disconnectTitle`
+            /// en: "Disconnect from this workspace?"
+            public static var disconnectTitle: String { L10nSupport.string("settings.remote.disconnectTitle") }
+
+            /// Badge beside the Remote Core section title marking the feature as experimental.
+            ///
+            /// Key: `settings.remote.experimentalBadge`
+            /// en: "Experimental"
+            public static var experimentalBadge: String { L10nSupport.string("settings.remote.experimentalBadge") }
+
+            /// One-line explanation under the Remote Core section title, shown whether or not a workspace is connected.
+            ///
+            /// Key: `settings.remote.experimentalNote`
+            /// en: "Remote machines are experimental: the protocol and this pane can change between releases, and the popover tab stays hidden until a workspace is connected."
+            public static var experimentalNote: String { L10nSupport.string("settings.remote.experimentalNote") }
+
+            /// Button that writes this Mac's public identity to a file
+            ///
+            /// Key: `settings.remote.exportIdentity`
+            /// en: "Export Core Identity…"
+            public static var exportIdentity: String { L10nSupport.string("settings.remote.exportIdentity") }
+
+            /// Button that reads a provisioning file
+            ///
+            /// Key: `settings.remote.importProvisioning`
+            /// en: "Import Provisioning File…"
+            public static var importProvisioning: String { L10nSupport.string("settings.remote.importProvisioning") }
+
+            /// Button that submits a pairing code
+            ///
+            /// Key: `settings.remote.join`
+            /// en: "Join"
+            public static var join: String { L10nSupport.string("settings.remote.join") }
+
+            /// Explanation above the pairing-code field; device is the Mac's name
+            ///
+            /// Key: `settings.remote.joinIntro`
+            /// en: "Create a Core code in the Vibe Bar control center, then paste it here. This Mac joins as “{device}”."
+            public static func joinIntro(device: String) -> String {
+                L10nSupport.format("settings.remote.joinIntro", device)
+            }
+
+            /// Heading over the pairing-code field
+            ///
+            /// Key: `settings.remote.joinWithCode`
+            /// en: "Join with a code"
+            public static var joinWithCode: String { L10nSupport.string("settings.remote.joinWithCode") }
+
+            /// Row label for the last sync time
+            ///
+            /// Key: `settings.remote.lastSync`
+            /// en: "Last sync"
+            public static var lastSync: String { L10nSupport.string("settings.remote.lastSync") }
+
+            /// Second line of a remote machine row; platform and version are raw values
+            ///
+            /// Key: `settings.remote.machineDetail`
+            /// en: "{platform} · Probe {version}"
+            public static func machineDetail(platform: String, version: String) -> String {
+                L10nSupport.format("settings.remote.machineDetail", platform, version)
+            }
+
+            /// Empty state in the machine list
+            ///
+            /// Key: `settings.remote.machinesAppearAfterImport`
+            /// en: "Machines appear here after their first encrypted batch is imported."
+            public static var machinesAppearAfterImport: String { L10nSupport.string("settings.remote.machinesAppearAfterImport") }
+
+            /// Row label for the machine count
+            ///
+            /// Key: `settings.remote.machinesSynced`
+            /// en: "Machines synced"
+            public static var machinesSynced: String { L10nSupport.string("settings.remote.machinesSynced") }
+
+            /// Explanation of the manual pairing flow
+            ///
+            /// Key: `settings.remote.manualPairingIntro`
+            /// en: "Pairing runs in three steps: export this Mac's Core identity, register it with your Relay to produce a provisioning file, then import that file here. Importing moves the Relay credential into the macOS Keychain — but the provisioning file itself still contains that credential, so delete the file once the import succeeds."
+            public static var manualPairingIntro: String { L10nSupport.string("settings.remote.manualPairingIntro") }
+
+            /// Explanation shown when no workspace is paired
+            ///
+            /// Key: `settings.remote.notConnected`
+            /// en: "This Mac is not connected to a workspace. Remote probes collect normalized usage on your other machines, encrypt it to this Mac's Core keys, and drop it at a Relay — no inbound port is ever opened here."
+            public static var notConnected: String { L10nSupport.string("settings.remote.notConnected") }
+
+            /// Caption above the manual pairing buttons
+            ///
+            /// Key: `settings.remote.orPairManually`
+            /// en: "Or pair manually."
+            public static var orPairManually: String { L10nSupport.string("settings.remote.orPairManually") }
+
+            /// Explanation of a half-finished join
+            ///
+            /// Key: `settings.remote.pendingIntro`
+            /// en: "A previous join was accepted by the control center but never finished saving on this Mac. Its pairing code is already spent, so resume the save instead of requesting a new code."
+            public static var pendingIntro: String { L10nSupport.string("settings.remote.pendingIntro") }
+
+            /// Settings section heading over the pairing controls
+            ///
+            /// Key: `settings.remote.provisioning`
+            /// en: "Provisioning"
+            public static var provisioning: String { L10nSupport.string("settings.remote.provisioning") }
+
+            /// Row label for the probe count
+            ///
+            /// Key: `settings.remote.registeredProbes`
+            /// en: "Registered probes"
+            public static var registeredProbes: String { L10nSupport.string("settings.remote.registeredProbes") }
+
+            /// Row label for the relay URL. The term stays as spelled.
+            ///
+            /// Key: `settings.remote.relay`
+            /// en: "Relay"
+            public static var relay: String { L10nSupport.string("settings.remote.relay") }
+
+            /// Button that finishes a half-completed join
+            ///
+            /// Key: `settings.remote.resumeSaving`
+            /// en: "Resume saving"
+            public static var resumeSaving: String { L10nSupport.string("settings.remote.resumeSaving") }
+
+            /// Button that retries a failed save
+            ///
+            /// Key: `settings.remote.retrySaving`
+            /// en: "Retry saving"
+            public static var retrySaving: String { L10nSupport.string("settings.remote.retrySaving") }
+
+            /// Sync status line: a translated title and the raw status code distinct-from: popover.header.updatedLine — the value is two placeholders and a separator, so the placeholder names are the only part of it that carries meaning; one key cannot name both halves of six different pairs.
+            ///
+            /// Key: `settings.remote.statusWithCode`
+            /// en: "{title} · {code}"
+            public static func statusWithCode(code: String, title: String) -> String {
+                L10nSupport.format("settings.remote.statusWithCode", code, title)
+            }
+
+            /// Button that pulls remote batches immediately
+            ///
+            /// Key: `settings.remote.syncNow`
+            /// en: "Sync now"
+            public static var syncNow: String { L10nSupport.string("settings.remote.syncNow") }
+
+            /// Row label for the workspace id
+            ///
+            /// Key: `settings.remote.workspace`
+            /// en: "Workspace"
+            public static var workspace: String { L10nSupport.string("settings.remote.workspace") }
+
+            public enum Sync {
+                /// Remote sync status title for HTTP 429/503
+                ///
+                /// Key: `settings.remote.sync.busy`
+                /// en: "Relay is temporarily busy"
+                public static var busy: String { L10nSupport.string("settings.remote.sync.busy") }
+
+                /// Remote sync status title
+                ///
+                /// Key: `settings.remote.sync.connectionFailed`
+                /// en: "Relay connection was interrupted"
+                public static var connectionFailed: String { L10nSupport.string("settings.remote.sync.connectionFailed") }
+
+                /// Remote sync status title
+                ///
+                /// Key: `settings.remote.sync.hostLookupFailed`
+                /// en: "Relay host could not be resolved"
+                public static var hostLookupFailed: String { L10nSupport.string("settings.remote.sync.hostLookupFailed") }
+
+                /// Remote sync status title
+                ///
+                /// Key: `settings.remote.sync.invalidResponse`
+                /// en: "Relay returned an unexpected response"
+                public static var invalidResponse: String { L10nSupport.string("settings.remote.sync.invalidResponse") }
+
+                /// Remote sync status detail for an offline or DNS failure
+                ///
+                /// Key: `settings.remote.sync.networkDetail`
+                /// en: "Check this Mac's network or proxy path; existing machine data is still available."
+                public static var networkDetail: String { L10nSupport.string("settings.remote.sync.networkDetail") }
+
+                /// Remote sync status title. The error code beside it is a machine-readable identifier and stays English.
+                ///
+                /// Key: `settings.remote.sync.offline`
+                /// en: "This Mac is offline"
+                public static var offline: String { L10nSupport.string("settings.remote.sync.offline") }
+
+                /// Remote sync status title for HTTP 401/403
+                ///
+                /// Key: `settings.remote.sync.rejected`
+                /// en: "Relay access was rejected"
+                public static var rejected: String { L10nSupport.string("settings.remote.sync.rejected") }
+
+                /// Remote sync status detail for HTTP 401/403
+                ///
+                /// Key: `settings.remote.sync.rejectedDetail`
+                /// en: "The workspace credential may have been revoked. Reconnect this Core in Settings."
+                public static var rejectedDetail: String { L10nSupport.string("settings.remote.sync.rejectedDetail") }
+
+                /// Remote sync status detail for a transient transport failure
+                ///
+                /// Key: `settings.remote.sync.retryDetail`
+                /// en: "Existing machine data is still available. Vibe Bar will retry automatically."
+                public static var retryDetail: String { L10nSupport.string("settings.remote.sync.retryDetail") }
+
+                /// Remote sync status title
+                ///
+                /// Key: `settings.remote.sync.secureConnectionFailed`
+                /// en: "Secure Relay connection failed"
+                public static var secureConnectionFailed: String { L10nSupport.string("settings.remote.sync.secureConnectionFailed") }
+
+                /// Remote sync status title
+                ///
+                /// Key: `settings.remote.sync.sequenceGap`
+                /// en: "Probe history has a sequence gap"
+                public static var sequenceGap: String { L10nSupport.string("settings.remote.sync.sequenceGap") }
+
+                /// Remote sync status detail
+                ///
+                /// Key: `settings.remote.sync.sequenceGapDetail`
+                /// en: "A Probe batch is missing from the Relay stream, so later batches were not imported."
+                public static var sequenceGapDetail: String { L10nSupport.string("settings.remote.sync.sequenceGapDetail") }
+
+                /// Remote sync status title
+                ///
+                /// Key: `settings.remote.sync.timeout`
+                /// en: "Relay connection timed out"
+                public static var timeout: String { L10nSupport.string("settings.remote.sync.timeout") }
+
+                /// Remote sync status title
+                ///
+                /// Key: `settings.remote.sync.transportFailed`
+                /// en: "Relay transport failed"
+                public static var transportFailed: String { L10nSupport.string("settings.remote.sync.transportFailed") }
+
+                /// Remote sync status title for a code this build does not recognize. A new Relay error code must still render a sentence.
+                ///
+                /// Key: `settings.remote.sync.unknown`
+                /// en: "Remote sync needs attention"
+                public static var unknown: String { L10nSupport.string("settings.remote.sync.unknown") }
+
+                /// Remote sync status detail for an unrecognized code
+                ///
+                /// Key: `settings.remote.sync.unknownDetail`
+                /// en: "No local usage was deleted. Retry now or inspect Remote Core settings for the error code."
+                public static var unknownDetail: String { L10nSupport.string("settings.remote.sync.unknownDetail") }
+
+                /// Remote sync status title for an invalid signature or unauthorized producer
+                ///
+                /// Key: `settings.remote.sync.unverifiedProbe`
+                /// en: "A Probe could not be verified"
+                public static var unverifiedProbe: String { L10nSupport.string("settings.remote.sync.unverifiedProbe") }
+
+                /// Remote sync status detail
+                ///
+                /// Key: `settings.remote.sync.unverifiedProbeDetail`
+                /// en: "The current workspace roster does not authorize one of the received batches."
+                public static var unverifiedProbeDetail: String { L10nSupport.string("settings.remote.sync.unverifiedProbeDetail") }
+            }
+        }
+
+        public enum Route {
+            /// Connection-health row: the local AntiGravity probe or agy CLI
+            ///
+            /// Key: `settings.route.antigravityLocal`
+            /// en: "Local Antigravity / agy"
+            public static var antigravityLocal: String { L10nSupport.string("settings.route.antigravityLocal") }
+
+            /// Connection-health row: cookies imported from a browser
+            ///
+            /// Key: `settings.route.browserCookies`
+            /// en: "Chrome/Safari cookies"
+            public static var browserCookies: String { L10nSupport.string("settings.route.browserCookies") }
+
+            /// Connection-health row: the local CLI credential path
+            ///
+            /// Key: `settings.route.cli`
+            /// en: "CLI"
+            public static var cli: String { L10nSupport.string("settings.route.cli") }
+
+            /// Connection-health row: the Grok CLI's credential file. A path, never translated.
+            ///
+            /// Key: `settings.route.grokAuthFile`
+            /// en: "~/.grok/auth.json"
+            public static var grokAuthFile: String { L10nSupport.string("settings.route.grokAuthFile") }
+
+            /// Connection-health row: the OAuth credential path
+            ///
+            /// Key: `settings.route.oauth`
+            /// en: "OAuth"
+            public static var oauth: String { L10nSupport.string("settings.route.oauth") }
+
+            /// Connection-health row: cookies from the in-app login window
+            ///
+            /// Key: `settings.route.webViewCookies`
+            /// en: "WebView cookies"
+            public static var webViewCookies: String { L10nSupport.string("settings.route.webViewCookies") }
+        }
+
+        public enum RouteHealth {
+            /// Connection-health detail: the agy CLI is installed
+            ///
+            /// Key: `settings.routeHealth.agyAvailable`
+            /// en: "agy CLI available"
+            public static var agyAvailable: String { L10nSupport.string("settings.routeHealth.agyAvailable") }
+
+            /// Connection-health detail; the filename is never translated
+            ///
+            /// Key: `settings.routeHealth.authFileExpired`
+            /// en: "auth.json expired"
+            public static var authFileExpired: String { L10nSupport.string("settings.routeHealth.authFileExpired") }
+
+            /// Connection-health detail
+            ///
+            /// Key: `settings.routeHealth.authFileUnreadable`
+            /// en: "Could not read auth.json"
+            public static var authFileUnreadable: String { L10nSupport.string("settings.routeHealth.authFileUnreadable") }
+
+            /// Connection-health detail
+            ///
+            /// Key: `settings.routeHealth.cachedOnly`
+            /// en: "Cached data only; live quota unavailable"
+            public static var cachedOnly: String { L10nSupport.string("settings.routeHealth.cachedOnly") }
+
+            /// Connection-health detail
+            ///
+            /// Key: `settings.routeHealth.credentialUnreadable`
+            /// en: "Could not read credential"
+            public static var credentialUnreadable: String { L10nSupport.string("settings.routeHealth.credentialUnreadable") }
+
+            /// Connection-health detail: a usable credential was found
+            ///
+            /// Key: `settings.routeHealth.credentialsAvailable`
+            /// en: "Credentials available"
+            public static var credentialsAvailable: String { L10nSupport.string("settings.routeHealth.credentialsAvailable") }
+
+            /// Connection-health detail
+            ///
+            /// Key: `settings.routeHealth.invalidCookie`
+            /// en: "Invalid cookie data"
+            public static var invalidCookie: String { L10nSupport.string("settings.routeHealth.invalidCookie") }
+
+            /// Connection-health detail
+            ///
+            /// Key: `settings.routeHealth.keychainLocked`
+            /// en: "Keychain locked"
+            public static var keychainLocked: String { L10nSupport.string("settings.routeHealth.keychainLocked") }
+
+            /// Connection-health detail: the AntiGravity language server is up
+            ///
+            /// Key: `settings.routeHealth.lspRunning`
+            /// en: "Local LSP running"
+            public static var lspRunning: String { L10nSupport.string("settings.routeHealth.lspRunning") }
+
+            /// Connection-health detail
+            ///
+            /// Key: `settings.routeHealth.noAntigravityData`
+            /// en: "No local Antigravity data"
+            public static var noAntigravityData: String { L10nSupport.string("settings.routeHealth.noAntigravityData") }
+
+            /// Connection-health detail
+            ///
+            /// Key: `settings.routeHealth.noAuthFile`
+            /// en: "No auth.json"
+            public static var noAuthFile: String { L10nSupport.string("settings.routeHealth.noAuthFile") }
+
+            /// Connection-health detail
+            ///
+            /// Key: `settings.routeHealth.noCredential`
+            /// en: "No credential found"
+            public static var noCredential: String { L10nSupport.string("settings.routeHealth.noCredential") }
+
+            /// Connection-health detail
+            ///
+            /// Key: `settings.routeHealth.noSavedCookie`
+            /// en: "No saved cookie"
+            public static var noSavedCookie: String { L10nSupport.string("settings.routeHealth.noSavedCookie") }
+
+            /// Connection-health detail: a cookie is stored
+            ///
+            /// Key: `settings.routeHealth.savedInKeychain`
+            /// en: "Saved in Keychain"
+            public static var savedInKeychain: String { L10nSupport.string("settings.routeHealth.savedInKeychain") }
+        }
+
+        public enum Section {
+            /// Settings section heading listing bundled components. Distinct from status.card.components, which are a provider's status-page components.
+            ///
+            /// Key: `settings.section.components`
+            /// en: "Components"
+            public static var components: String { L10nSupport.string("settings.section.components") }
+
+            /// Settings section heading
+            ///
+            /// Key: `settings.section.costData`
+            /// en: "Cost Data"
+            public static var costData: String { L10nSupport.string("settings.section.costData") }
+
+            /// Settings section heading for page layout distinct-from: platform.macos.menuBar.layout — the menu-bar item's own arrangement and the Settings section about page layout are different things — Simplified Chinese already writes 排布 and 布局.
+            ///
+            /// Key: `settings.section.layout`
+            /// en: "Layout"
+            public static var layout: String { L10nSupport.string("settings.section.layout") }
+
+            /// Settings sidebar destination and section heading
+            ///
+            /// Key: `settings.section.menuBar`
+            /// en: "Menu Bar"
+            public static var menuBar: String { L10nSupport.string("settings.section.menuBar") }
+
+            /// Settings section heading for the status-item watchdog
+            ///
+            /// Key: `settings.section.menuBarHealth`
+            /// en: "Menu Bar Health"
+            public static var menuBarHealth: String { L10nSupport.string("settings.section.menuBarHealth") }
+
+            /// Settings section heading
+            ///
+            /// Key: `settings.section.miniWindows`
+            /// en: "Mini Windows"
+            public static var miniWindows: String { L10nSupport.string("settings.section.miniWindows") }
+
+            /// Settings section heading
+            ///
+            /// Key: `settings.section.privacy`
+            /// en: "Privacy"
+            public static var privacy: String { L10nSupport.string("settings.section.privacy") }
+
+            /// Settings section heading for refresh intervals. Distinct from status.overview.refreshing, which says a fetch is in flight. distinct-from: popover.header.refreshing — a Settings section for refresh intervals, a button label while a fetch runs, and a provider's in-flight state are three things.
+            ///
+            /// Key: `settings.section.refreshing`
+            /// en: "Refreshing"
+            public static var refreshing: String { L10nSupport.string("settings.section.refreshing") }
+
+            /// Settings sidebar destination for remote machine sync
+            ///
+            /// Key: `settings.section.remoteProbes`
+            /// en: "Remote Probes"
+            public static var remoteProbes: String { L10nSupport.string("settings.section.remoteProbes") }
+
+            /// Settings section heading for login items and the setup assistant. Distinct from settings.language.system, which is a language-picker option meaning 'follow macOS'.
+            ///
+            /// Key: `settings.section.system`
+            /// en: "System"
+            public static var system: String { L10nSupport.string("settings.section.system") }
+
+            /// Settings section heading for the app updater
+            ///
+            /// Key: `settings.section.updates`
+            /// en: "Updates"
+            public static var updates: String { L10nSupport.string("settings.section.updates") }
+        }
+
+        public enum Sidebar {
+            /// Sidebar group heading over the four core provider pages
+            ///
+            /// Key: `settings.sidebar.coreProviders`
+            /// en: "Core Providers"
+            public static var coreProviders: String { L10nSupport.string("settings.sidebar.coreProviders") }
+
+            /// Tooltip on the toggle that turns a misc provider off
+            ///
+            /// Key: `settings.sidebar.disableProvider`
+            /// en: "Disable Provider"
+            public static var disableProvider: String { L10nSupport.string("settings.sidebar.disableProvider") }
+
+            /// Tooltip on the toggle that turns a misc provider on
+            ///
+            /// Key: `settings.sidebar.enableProvider`
+            /// en: "Enable Provider"
+            public static var enableProvider: String { L10nSupport.string("settings.sidebar.enableProvider") }
+
+            /// Tooltip on the toggle that removes a provider from the Overview
+            ///
+            /// Key: `settings.sidebar.hideFromOverview`
+            /// en: "Hide from Overview"
+            public static var hideFromOverview: String { L10nSupport.string("settings.sidebar.hideFromOverview") }
+        }
+
+        public enum Terminal {
+            /// Terminal preference: copy the resume command instead of running it. Terminal and iTerm2 are product names and stay as spelled.
+            ///
+            /// Key: `settings.terminal.copyOnly`
+            /// en: "Copy to clipboard"
+            public static var copyOnly: String { L10nSupport.string("settings.terminal.copyOnly") }
+        }
+
+        public enum UpdateChannel {
+            /// Update channel option
+            ///
+            /// Key: `settings.updateChannel.dev`
+            /// en: "Dev"
+            public static var dev: String { L10nSupport.string("settings.updateChannel.dev") }
+
+            /// Caption under the Dev channel option
+            ///
+            /// Key: `settings.updateChannel.devDetail`
+            /// en: "Preview releases plus all Main releases."
+            public static var devDetail: String { L10nSupport.string("settings.updateChannel.devDetail") }
+
+            /// Update channel option
+            ///
+            /// Key: `settings.updateChannel.main`
+            /// en: "Main"
+            public static var main: String { L10nSupport.string("settings.updateChannel.main") }
+
+            /// Caption under the Main channel option
+            ///
+            /// Key: `settings.updateChannel.mainDetail`
+            /// en: "Stable releases only."
+            public static var mainDetail: String { L10nSupport.string("settings.updateChannel.mainDetail") }
+        }
+
+        public enum UsageMode {
+            /// Usage-source option offered for both Claude and Codex: read usage over OAuth only. The app keyed it twice, once per picker.
+            ///
+            /// Key: `settings.usageMode.oauthOnly`
+            /// en: "OAuth only"
+            public static var oauthOnly: String { L10nSupport.string("settings.usageMode.oauthOnly") }
+
+            public enum Antigravity {
+                /// Caption under an AntiGravity usage-source option
+                ///
+                /// Key: `settings.usageMode.antigravity.autoDetail`
+                /// en: "Use the Antigravity app first, then the installed agy CLI; fall back to imported cookies when the web source is available."
+                public static var autoDetail: String { L10nSupport.string("settings.usageMode.antigravity.autoDetail") }
+
+                /// Caption under an AntiGravity usage-source option
+                ///
+                /// Key: `settings.usageMode.antigravity.localFirstDetail`
+                /// en: "Use the Antigravity app or agy CLI first; fall back to imported cookies."
+                public static var localFirstDetail: String { L10nSupport.string("settings.usageMode.antigravity.localFirstDetail") }
+
+                /// AntiGravity usage-source option
+                ///
+                /// Key: `settings.usageMode.antigravity.localOnly`
+                /// en: "Local sources only"
+                public static var localOnly: String { L10nSupport.string("settings.usageMode.antigravity.localOnly") }
+
+                /// Caption under an AntiGravity usage-source option
+                ///
+                /// Key: `settings.usageMode.antigravity.localOnlyDetail`
+                /// en: "Only use the Antigravity app or installed agy CLI."
+                public static var localOnlyDetail: String { L10nSupport.string("settings.usageMode.antigravity.localOnlyDetail") }
+
+                /// AntiGravity usage-source option
+                ///
+                /// Key: `settings.usageMode.antigravity.localThenWeb`
+                /// en: "Local sources, then Web"
+                public static var localThenWeb: String { L10nSupport.string("settings.usageMode.antigravity.localThenWeb") }
+
+                /// Caption under an AntiGravity usage-source option
+                ///
+                /// Key: `settings.usageMode.antigravity.webFirstDetail`
+                /// en: "Use imported cookies first; fall back to the Antigravity app or agy CLI."
+                public static var webFirstDetail: String { L10nSupport.string("settings.usageMode.antigravity.webFirstDetail") }
+
+                /// AntiGravity usage-source option
+                ///
+                /// Key: `settings.usageMode.antigravity.webOnly`
+                /// en: "Web only"
+                public static var webOnly: String { L10nSupport.string("settings.usageMode.antigravity.webOnly") }
+
+                /// Caption under an AntiGravity usage-source option
+                ///
+                /// Key: `settings.usageMode.antigravity.webOnlyDetail`
+                /// en: "Only use imported cookies. Falls back to the local probe until the Antigravity Cloud endpoint ships."
+                public static var webOnlyDetail: String { L10nSupport.string("settings.usageMode.antigravity.webOnlyDetail") }
+
+                /// AntiGravity usage-source option
+                ///
+                /// Key: `settings.usageMode.antigravity.webThenLocal`
+                /// en: "Web, then Local sources"
+                public static var webThenLocal: String { L10nSupport.string("settings.usageMode.antigravity.webThenLocal") }
+            }
+
+            public enum Claude {
+                /// Caption under a Claude usage-source option
+                ///
+                /// Key: `settings.usageMode.claude.autoDetail`
+                /// en: "Use saved claude.ai cookies first; fall back to Claude OAuth and Claude Code."
+                public static var autoDetail: String { L10nSupport.string("settings.usageMode.claude.autoDetail") }
+
+                /// Caption under a Claude usage-source option
+                ///
+                /// Key: `settings.usageMode.claude.codeFirstDetail`
+                /// en: "Use Claude Code first; fall back to saved claude.ai cookies."
+                public static var codeFirstDetail: String { L10nSupport.string("settings.usageMode.claude.codeFirstDetail") }
+
+                /// Claude usage-source option
+                ///
+                /// Key: `settings.usageMode.claude.codeOnly`
+                /// en: "Claude Code only"
+                public static var codeOnly: String { L10nSupport.string("settings.usageMode.claude.codeOnly") }
+
+                /// Caption under a Claude usage-source option
+                ///
+                /// Key: `settings.usageMode.claude.codeOnlyDetail`
+                /// en: "Use only local Claude Code OAuth credentials."
+                public static var codeOnlyDetail: String { L10nSupport.string("settings.usageMode.claude.codeOnlyDetail") }
+
+                /// Claude usage-source option
+                ///
+                /// Key: `settings.usageMode.claude.codeThenWeb`
+                /// en: "Claude Code, then Web"
+                public static var codeThenWeb: String { L10nSupport.string("settings.usageMode.claude.codeThenWeb") }
+
+                /// Claude usage-source option
+                ///
+                /// Key: `settings.usageMode.claude.oauthCodeWeb`
+                /// en: "OAuth, then Claude Code, then Web"
+                public static var oauthCodeWeb: String { L10nSupport.string("settings.usageMode.claude.oauthCodeWeb") }
+
+                /// Caption under a Claude usage-source option
+                ///
+                /// Key: `settings.usageMode.claude.oauthFirstDetail`
+                /// en: "Use Claude OAuth first; fall back to Claude Code and saved claude.ai cookies."
+                public static var oauthFirstDetail: String { L10nSupport.string("settings.usageMode.claude.oauthFirstDetail") }
+
+                /// Caption under a Claude usage-source option
+                ///
+                /// Key: `settings.usageMode.claude.oauthOnlyDetail`
+                /// en: "Use only Claude OAuth credentials."
+                public static var oauthOnlyDetail: String { L10nSupport.string("settings.usageMode.claude.oauthOnlyDetail") }
+
+                /// Caption under a Claude usage-source option
+                ///
+                /// Key: `settings.usageMode.claude.webFirstDetail`
+                /// en: "Use saved claude.ai cookies first; fall back to Claude Code and OAuth."
+                public static var webFirstDetail: String { L10nSupport.string("settings.usageMode.claude.webFirstDetail") }
+
+                /// Claude usage-source option
+                ///
+                /// Key: `settings.usageMode.claude.webOnly`
+                /// en: "Claude Web only"
+                public static var webOnly: String { L10nSupport.string("settings.usageMode.claude.webOnly") }
+
+                /// Caption under a Claude usage-source option
+                ///
+                /// Key: `settings.usageMode.claude.webOnlyDetail`
+                /// en: "Use only saved claude.ai cookies."
+                public static var webOnlyDetail: String { L10nSupport.string("settings.usageMode.claude.webOnlyDetail") }
+
+                /// Claude usage-source option
+                ///
+                /// Key: `settings.usageMode.claude.webThenCode`
+                /// en: "Claude Web, then Claude Code"
+                public static var webThenCode: String { L10nSupport.string("settings.usageMode.claude.webThenCode") }
+            }
+
+            public enum Codex {
+                /// Caption under a Codex usage-source option
+                ///
+                /// Key: `settings.usageMode.codex.autoDetail`
+                /// en: "Use local Codex CLI credentials first; fall back to Codex OAuth and saved OpenAI web cookies."
+                public static var autoDetail: String { L10nSupport.string("settings.usageMode.codex.autoDetail") }
+
+                /// Codex usage-source option
+                ///
+                /// Key: `settings.usageMode.codex.cliOnly`
+                /// en: "CLI only"
+                public static var cliOnly: String { L10nSupport.string("settings.usageMode.codex.cliOnly") }
+
+                /// Caption under a Codex usage-source option
+                ///
+                /// Key: `settings.usageMode.codex.cliOnlyDetail`
+                /// en: "Use only local Codex CLI credentials."
+                public static var cliOnlyDetail: String { L10nSupport.string("settings.usageMode.codex.cliOnlyDetail") }
+
+                /// Codex usage-source option
+                ///
+                /// Key: `settings.usageMode.codex.cliThenOauth`
+                /// en: "CLI, then OAuth"
+                public static var cliThenOauth: String { L10nSupport.string("settings.usageMode.codex.cliThenOauth") }
+
+                /// Caption under a Codex usage-source option
+                ///
+                /// Key: `settings.usageMode.codex.oauthFirstDetail`
+                /// en: "Use Codex OAuth first; fall back to local Codex CLI credentials and saved OpenAI web cookies."
+                public static var oauthFirstDetail: String { L10nSupport.string("settings.usageMode.codex.oauthFirstDetail") }
+
+                /// Caption under a Codex usage-source option
+                ///
+                /// Key: `settings.usageMode.codex.oauthOnlyDetail`
+                /// en: "Use only Codex OAuth credentials from auth.json."
+                public static var oauthOnlyDetail: String { L10nSupport.string("settings.usageMode.codex.oauthOnlyDetail") }
+
+                /// Codex usage-source option
+                ///
+                /// Key: `settings.usageMode.codex.oauthThenCli`
+                /// en: "OAuth, then CLI"
+                public static var oauthThenCli: String { L10nSupport.string("settings.usageMode.codex.oauthThenCli") }
+            }
+
+            public enum Gemini {
+                /// Gemini usage-source option
+                ///
+                /// Key: `settings.usageMode.gemini.webOnly`
+                /// en: "Gemini Web only"
+                public static var webOnly: String { L10nSupport.string("settings.usageMode.gemini.webOnly") }
+
+                /// Caption under the Gemini usage-source option
+                ///
+                /// Key: `settings.usageMode.gemini.webOnlyDetail`
+                /// en: "Only fetch imported gemini.google.com cookies."
+                public static var webOnlyDetail: String { L10nSupport.string("settings.usageMode.gemini.webOnlyDetail") }
+            }
+        }
+    }
+
+    public enum Status {
+        public enum Card {
+            /// Count next to a status group heading
+            ///
+            /// Key: `status.card.componentCount`
+            /// en: "{count, plural, one {1 component} other {# components}}"
+            public static func componentCount(count: Int) -> String {
+                L10nSupport.localizedFormat("status.card.componentCount", count)
+            }
+
+            /// Group heading for a provider's status components distinct-from: settings.section.components — the Settings section listing bundled components and a provider status page's components are different lists.
+            ///
+            /// Key: `status.card.components`
+            /// en: "Components"
+            public static var components: String { L10nSupport.string("status.card.components") }
+
+            /// Shown when a provider reported nothing
+            ///
+            /// Key: `status.card.noIncidents`
+            /// en: "No incidents in the last 90 days"
+            public static var noIncidents: String { L10nSupport.string("status.card.noIncidents") }
+
+            /// Tooltip on the link to an incident page
+            ///
+            /// Key: `status.card.openIncident`
+            /// en: "Open incident"
+            public static var openIncident: String { L10nSupport.string("status.card.openIncident") }
+
+            /// Tooltip on the link to a provider's status page; host is a hostname and is never translated
+            ///
+            /// Key: `status.card.openStatusPage`
+            /// en: "Open {host}"
+            public static func openStatusPage(host: String) -> String {
+                L10nSupport.format("status.card.openStatusPage", host)
+            }
+
+            /// Tooltip on the service-status refresh button
+            ///
+            /// Key: `status.card.refresh`
+            /// en: "Refresh service status"
+            public static var refresh: String { L10nSupport.string("status.card.refresh") }
+
+            /// Stand-in for a hostname when the URL carries none
+            ///
+            /// Key: `status.card.statusPageFallback`
+            /// en: "status page"
+            public static var statusPageFallback: String { L10nSupport.string("status.card.statusPageFallback") }
+
+            /// Card title for a provider's status page summary
+            ///
+            /// Key: `status.card.title`
+            /// en: "Service Status"
+            public static var title: String { L10nSupport.string("status.card.title") }
+
+            /// Freshness caption on the status card
+            ///
+            /// Key: `status.card.updatedHoursAgo`
+            /// en: "updated {hours}h ago"
+            public static func updatedHoursAgo(hours: Int) -> String {
+                L10nSupport.format("status.card.updatedHoursAgo", hours)
+            }
+
+            /// Freshness caption on the status card
+            ///
+            /// Key: `status.card.updatedMinutesAgo`
+            /// en: "updated {minutes}m ago"
+            public static func updatedMinutesAgo(minutes: Int) -> String {
+                L10nSupport.format("status.card.updatedMinutesAgo", minutes)
+            }
+
+            /// Uptime figure; percent arrives already formatted to two decimals with its sign
+            ///
+            /// Key: `status.card.uptime`
+            /// en: "{percent} uptime"
+            public static func uptime(percent: String) -> String {
+                L10nSupport.format("status.card.uptime", percent)
+            }
+
+            /// Screen-reader label for the uptime strip
+            ///
+            /// Key: `status.card.uptimeStrip`
+            /// en: "Service uptime over the last {days} days"
+            public static func uptimeStrip(days: Int) -> String {
+                L10nSupport.format("status.card.uptimeStrip", days)
+            }
+        }
+
+        public enum Component {
+            /// Component status
+            ///
+            /// Key: `status.component.degraded`
+            /// en: "Degraded"
+            public static var degraded: String { L10nSupport.string("status.component.degraded") }
+
+            /// Component status
+            ///
+            /// Key: `status.component.maintenance`
+            /// en: "Maintenance"
+            public static var maintenance: String { L10nSupport.string("status.component.maintenance") }
+
+            /// Component status
+            ///
+            /// Key: `status.component.majorOutage`
+            /// en: "Major Outage"
+            public static var majorOutage: String { L10nSupport.string("status.component.majorOutage") }
+
+            /// Component status
+            ///
+            /// Key: `status.component.operational`
+            /// en: "Operational"
+            public static var operational: String { L10nSupport.string("status.component.operational") }
+
+            /// Group heading for components that match no named group distinct-from: quota.group.other — a status component outside the named groups and a quota group without an L3 name sit on different naming axes (vibe-bar AGENTS.md 7.1).
+            ///
+            /// Key: `status.component.other`
+            /// en: "Other"
+            public static var other: String { L10nSupport.string("status.component.other") }
+
+            /// Component status
+            ///
+            /// Key: `status.component.partialOutage`
+            /// en: "Partial Outage"
+            public static var partialOutage: String { L10nSupport.string("status.component.partialOutage") }
+        }
+
+        public enum Indicator {
+            /// Overall status pill: a critical incident
+            ///
+            /// Key: `status.indicator.critical`
+            /// en: "Critical"
+            public static var critical: String { L10nSupport.string("status.indicator.critical") }
+
+            /// Overall status pill while the page is being fetched
+            ///
+            /// Key: `status.indicator.loading`
+            /// en: "Loading"
+            public static var loading: String { L10nSupport.string("status.indicator.loading") }
+
+            /// Overall status pill: a major incident
+            ///
+            /// Key: `status.indicator.major`
+            /// en: "Major"
+            public static var major: String { L10nSupport.string("status.indicator.major") }
+
+            /// Overall status pill: a minor incident
+            ///
+            /// Key: `status.indicator.minor`
+            /// en: "Minor"
+            public static var minor: String { L10nSupport.string("status.indicator.minor") }
+        }
+
+        public enum Overview {
+            /// Overview status tile state
+            ///
+            /// Key: `status.overview.checking`
+            /// en: "Checking"
+            public static var checking: String { L10nSupport.string("status.overview.checking") }
+
+            /// Overview status tile state
+            ///
+            /// Key: `status.overview.down`
+            /// en: "Down"
+            public static var down: String { L10nSupport.string("status.overview.down") }
+
+            /// Empty state on the Overview status card
+            ///
+            /// Key: `status.overview.enableProvider`
+            /// en: "Enable a core provider in Settings to show service status."
+            public static var enableProvider: String { L10nSupport.string("status.overview.enableProvider") }
+
+            /// Status tile detail after a failed fetch
+            ///
+            /// Key: `status.overview.fetchFailed`
+            /// en: "Fetch failed"
+            public static var fetchFailed: String { L10nSupport.string("status.overview.fetchFailed") }
+
+            /// Overview status tile detail
+            ///
+            /// Key: `status.overview.needsAttention`
+            /// en: "Needs attention"
+            public static var needsAttention: String { L10nSupport.string("status.overview.needsAttention") }
+
+            /// Status tile detail while a fetch is in flight distinct-from: popover.header.refreshing — a Settings section for refresh intervals, a button label while a fetch runs, and a provider's in-flight state are three things.
+            ///
+            /// Key: `status.overview.refreshing`
+            /// en: "Refreshing"
+            public static var refreshing: String { L10nSupport.string("status.overview.refreshing") }
+
+            /// Card title on the Overview's service-status tile row distinct-from: settings.mcp.status — the local MCP socket's listening state and a provider's service status are different things.
+            ///
+            /// Key: `status.overview.title`
+            /// en: "Status"
+            public static var title: String { L10nSupport.string("status.overview.title") }
+
+            /// Overview status tile state
+            ///
+            /// Key: `status.overview.up`
+            /// en: "Up"
+            public static var up: String { L10nSupport.string("status.overview.up") }
+        }
+
+        public enum Summary {
+            /// Badge text when the provider's page still claims a milder state than its own open incident
+            ///
+            /// Key: `status.summary.activeIncident`
+            /// en: "Active incident"
+            public static var activeIncident: String { L10nSupport.string("status.summary.activeIncident") }
+
+            /// Our own badge text for a provider's overall state, used when its status feed publishes an indicator but no wording of its own
+            ///
+            /// Key: `status.summary.allOperational`
+            /// en: "All services operational"
+            public static var allOperational: String { L10nSupport.string("status.summary.allOperational") }
+
+            /// Our own badge text for a provider's overall state, used when its status feed publishes an indicator but no wording of its own
+            ///
+            /// Key: `status.summary.serviceIssue`
+            /// en: "Service issue"
+            public static var serviceIssue: String { L10nSupport.string("status.summary.serviceIssue") }
+
+            /// Our own badge text for a provider's overall state, used when its status feed publishes an indicator but no wording of its own
+            ///
+            /// Key: `status.summary.underMaintenance`
+            /// en: "Under maintenance"
+            public static var underMaintenance: String { L10nSupport.string("status.summary.underMaintenance") }
+        }
+    }
+
+    public enum Usage {
+        /// Footer figure; count arrives already grouped by the number formatter
+        ///
+        /// Key: `usage.requestCount`
+        /// en: "{count} requests"
+        public static func requestCount(count: String) -> String {
+            L10nSupport.format("usage.requestCount", count)
+        }
+
+        public enum Activity {
+            /// Accessibility label for the 7 by 24 activity grid
+            ///
+            /// Key: `usage.activity.a11y`
+            /// en: "Token usage by weekday and hour, 7 days by 24 hours"
+            public static var a11y: String { L10nSupport.string("usage.activity.a11y") }
+
+            /// Tooltip on one cell of the activity grid
+            ///
+            /// Key: `usage.activity.cellTooltip`
+            /// en: "{day} {hour} · {tokens}"
+            public static func cellTooltip(day: String, hour: String, tokens: String) -> String {
+                L10nSupport.format("usage.activity.cellTooltip", day, hour, tokens)
+            }
+
+            /// High end of the activity grid's intensity legend
+            ///
+            /// Key: `usage.activity.heavy`
+            /// en: "Heavy"
+            public static var heavy: String { L10nSupport.string("usage.activity.heavy") }
+
+            /// Caption naming the busiest hour of the activity card when the peak hour and peak cell agree
+            ///
+            /// Key: `usage.activity.peak`
+            /// en: "Peak {hour} · {day}"
+            public static func peak(day: String, hour: String) -> String {
+                L10nSupport.format("usage.activity.peak", day, hour)
+            }
+
+            /// Caption naming the busiest hour overall and the busiest single cell when they differ
+            ///
+            /// Key: `usage.activity.peakCell`
+            /// en: "Peak {hour} · {day} {cellHour}"
+            public static func peakCell(cellHour: String, day: String, hour: String) -> String {
+                L10nSupport.format("usage.activity.peakCell", cellHour, day, hour)
+            }
+
+            /// Low end of the activity grid's intensity legend
+            ///
+            /// Key: `usage.activity.quiet`
+            /// en: "Quiet"
+            public static var quiet: String { L10nSupport.string("usage.activity.quiet") }
+
+            /// A token count in the activity grid's tooltip; the number is already abbreviated at the call site
+            ///
+            /// Key: `usage.activity.tokensShort`
+            /// en: "{tokens} tok"
+            public static func tokensShort(tokens: String) -> String {
+                L10nSupport.format("usage.activity.tokensShort", tokens)
+            }
+        }
+
+        public enum Breakdown {
+            /// Tab over the Usage Stats breakdown table: one row per model.
+            ///
+            /// Key: `usage.breakdown.models`
+            /// en: "Models"
+            public static var models: String { L10nSupport.string("usage.breakdown.models") }
+
+            /// Tab over the Usage Stats breakdown table: one row per time bucket.
+            ///
+            /// Key: `usage.breakdown.periods`
+            /// en: "Periods"
+            public static var periods: String { L10nSupport.string("usage.breakdown.periods") }
+
+            /// Tab over the Usage Stats breakdown table: one row per project directory.
+            ///
+            /// Key: `usage.breakdown.projects`
+            /// en: "Projects"
+            public static var projects: String { L10nSupport.string("usage.breakdown.projects") }
+
+            /// Tab over the Usage Stats breakdown table: one row per L1 company.
+            ///
+            /// Key: `usage.breakdown.providers`
+            /// en: "Providers"
+            public static var providers: String { L10nSupport.string("usage.breakdown.providers") }
+
+            /// Tab over the Usage Stats breakdown table: one row per request. The all-caps hero metric of the same word is usage.hero.requests.
+            ///
+            /// Key: `usage.breakdown.requests`
+            /// en: "Requests"
+            public static var requests: String { L10nSupport.string("usage.breakdown.requests") }
+        }
+
+        public enum ChartNavigator {
+            /// Accessibility label for the brush strip under a pannable chart
+            ///
+            /// Key: `usage.chartNavigator.label`
+            /// en: "Chart range navigator"
+            public static var label: String { L10nSupport.string("usage.chartNavigator.label") }
+
+            /// Accessibility value of the chart range navigator; both ends are already formatted dates
+            ///
+            /// Key: `usage.chartNavigator.range`
+            /// en: "{start} to {end}"
+            public static func range(end: String, start: String) -> String {
+                L10nSupport.format("usage.chartNavigator.range", end, start)
+            }
+
+            /// Accessibility action that returns a chart to its whole domain
+            ///
+            /// Key: `usage.chartNavigator.showFullRange`
+            /// en: "Show Full Range"
+            public static var showFullRange: String { L10nSupport.string("usage.chartNavigator.showFullRange") }
+
+            /// Accessibility action on the chart range navigator
+            ///
+            /// Key: `usage.chartNavigator.zoomIn`
+            /// en: "Zoom In"
+            public static var zoomIn: String { L10nSupport.string("usage.chartNavigator.zoomIn") }
+
+            /// Accessibility action on the chart range navigator
+            ///
+            /// Key: `usage.chartNavigator.zoomOut`
+            /// en: "Zoom Out"
+            public static var zoomOut: String { L10nSupport.string("usage.chartNavigator.zoomOut") }
+        }
+
+        public enum Filters {
+            /// Chip that puts every harness into the Usage Stats query; 'harness' is the usage-axis unit and stays as spelled.
+            ///
+            /// Key: `usage.filters.allHarnesses`
+            /// en: "All harnesses"
+            public static var allHarnesses: String { L10nSupport.string("usage.filters.allHarnesses") }
+
+            /// Tooltip on the All harnesses chip while the selection is partial or empty — clicking it selects everything.
+            ///
+            /// Key: `usage.filters.allHarnessesHelpEvery`
+            /// en: "Click to include every harness"
+            public static var allHarnessesHelpEvery: String { L10nSupport.string("usage.filters.allHarnessesHelpEvery") }
+
+            /// Tooltip on the All harnesses chip while every harness is in the query — clicking it empties the selection.
+            ///
+            /// Key: `usage.filters.allHarnessesHelpNone`
+            /// en: "Click to select no harness"
+            public static var allHarnessesHelpNone: String { L10nSupport.string("usage.filters.allHarnessesHelpNone") }
+
+            /// Screen-reader label for the All harnesses chip while the selection is partial or empty.
+            ///
+            /// Key: `usage.filters.allHarnessesSelectEvery`
+            /// en: "Show every harness"
+            public static var allHarnessesSelectEvery: String { L10nSupport.string("usage.filters.allHarnessesSelectEvery") }
+
+            /// Screen-reader label for the All harnesses chip while every harness is in the query.
+            ///
+            /// Key: `usage.filters.allHarnessesSelectNone`
+            /// en: "Select no harness"
+            public static var allHarnessesSelectNone: String { L10nSupport.string("usage.filters.allHarnessesSelectNone") }
+
+            /// Menu item that clears the model filter on the Usage Stats page. Unrelated to the quota group of the same name, which is quota.group.allModels. distinct-from: quota.group.allModels — a quota group covering every model on a plan and a menu item that clears the model filter are different things.
+            ///
+            /// Key: `usage.filters.allModels`
+            /// en: "All models"
+            public static var allModels: String { L10nSupport.string("usage.filters.allModels") }
+
+            /// Screen-reader label for the auto-refresh menu button.
+            ///
+            /// Key: `usage.filters.autoMenuLabel`
+            /// en: "Choose how often the page re-queries"
+            public static var autoMenuLabel: String { L10nSupport.string("usage.filters.autoMenuLabel") }
+
+            /// Picker label inside the auto-refresh menu.
+            ///
+            /// Key: `usage.filters.autoRefresh`
+            /// en: "Auto refresh"
+            public static var autoRefresh: String { L10nSupport.string("usage.filters.autoRefresh") }
+
+            /// Tooltip on the Clear button in the Usage Stats filter bar.
+            ///
+            /// Key: `usage.filters.clearHelp`
+            /// en: "Clear harness, company, and model filters"
+            public static var clearHelp: String { L10nSupport.string("usage.filters.clearHelp") }
+
+            /// Screen-reader label for a company section chip; company is an L1 company name and is never translated.
+            ///
+            /// Key: `usage.filters.companyHarnesses`
+            /// en: "{company}, every harness"
+            public static func companyHarnesses(company: String) -> String {
+                L10nSupport.format("usage.filters.companyHarnesses", company)
+            }
+
+            /// Tooltip on a company section chip, listing the harnesses it toggles. Both arguments are names and stay as spelled. distinct-from: popover.header.updatedLine — the value is two placeholders and a separator, so the placeholder names are the only part of it that carries meaning; one key cannot name both halves of six different pairs.
+            ///
+            /// Key: `usage.filters.companyHelp`
+            /// en: "{company} · {harnesses}"
+            public static func companyHelp(company: String, harnesses: String) -> String {
+                L10nSupport.format("usage.filters.companyHelp", company, harnesses)
+            }
+
+            /// Date picker label for the start of a custom range.
+            ///
+            /// Key: `usage.filters.customRangeFrom`
+            /// en: "From"
+            public static var customRangeFrom: String { L10nSupport.string("usage.filters.customRangeFrom") }
+
+            /// Footnote in the custom date-range popover.
+            ///
+            /// Key: `usage.filters.customRangeHint`
+            /// en: "Choose hourly, daily, or weekly buckets from the chart toolbar."
+            public static var customRangeHint: String { L10nSupport.string("usage.filters.customRangeHint") }
+
+            /// All-caps heading of the custom date-range popover. English sets it in caps by the copy; Chinese has no case and relies on weight and colour.
+            ///
+            /// Key: `usage.filters.customRangeTitle`
+            /// en: "CUSTOM RANGE"
+            public static var customRangeTitle: String { L10nSupport.string("usage.filters.customRangeTitle") }
+
+            /// Date picker label for the end of a custom range.
+            ///
+            /// Key: `usage.filters.customRangeTo`
+            /// en: "To"
+            public static var customRangeTo: String { L10nSupport.string("usage.filters.customRangeTo") }
+
+            /// Menu item that opens the custom date-range editor.
+            ///
+            /// Key: `usage.filters.editCustomRange`
+            /// en: "Edit custom range…"
+            public static var editCustomRange: String { L10nSupport.string("usage.filters.editCustomRange") }
+
+            /// Tooltip on a harness chip. First line names the chip (company and harness names are never translated), second line explains the click and the ⌥-click.
+            ///
+            /// Key: `usage.filters.harnessHelp`
+            /// en: "{company} · {harness}
+            /// Click to toggle · ⌥-click to solo"
+            public static func harnessHelp(company: String, harness: String) -> String {
+                L10nSupport.format("usage.filters.harnessHelp", company, harness)
+            }
+
+            /// Screen-reader label for the model filter menu button.
+            ///
+            /// Key: `usage.filters.modelsMenuLabel`
+            /// en: "Choose which models to include"
+            public static var modelsMenuLabel: String { L10nSupport.string("usage.filters.modelsMenuLabel") }
+
+            /// Model filter pill value when several models are selected.
+            ///
+            /// Key: `usage.filters.modelsSelected`
+            /// en: "{count, plural, one {1 selected} other {# selected}}"
+            public static func modelsSelected(count: Int) -> String {
+                L10nSupport.localizedFormat("usage.filters.modelsSelected", count)
+            }
+
+            /// Placeholder inside the model filter menu when the selected range recorded no model.
+            ///
+            /// Key: `usage.filters.noModelsInRange`
+            /// en: "No models in range"
+            public static var noModelsInRange: String { L10nSupport.string("usage.filters.noModelsInRange") }
+
+            /// Date-range preset: the last 14 local calendar days. The 7- and 30-day presets reuse cost.timeframe.weekShort / monthShort.
+            ///
+            /// Key: `usage.filters.range14d`
+            /// en: "14d"
+            public static var range14d: String { L10nSupport.string("usage.filters.range14d") }
+
+            /// Date-range preset: a rolling 24-hour window ending now.
+            ///
+            /// Key: `usage.filters.range24h`
+            /// en: "24h"
+            public static var range24h: String { L10nSupport.string("usage.filters.range24h") }
+
+            /// Date-range preset: the hand-picked start and end. distinct-from: menuBar.composer.colour.fixed — a colour the user picks and a date range the user picked are options on different axes; the adjective agrees with a different noun in every language that inflects one.
+            ///
+            /// Key: `usage.filters.rangeCustom`
+            /// en: "Custom"
+            public static var rangeCustom: String { L10nSupport.string("usage.filters.rangeCustom") }
+
+            /// Screen-reader label for the date-range menu button.
+            ///
+            /// Key: `usage.filters.rangeMenu`
+            /// en: "Choose the date range"
+            public static var rangeMenu: String { L10nSupport.string("usage.filters.rangeMenu") }
+
+            /// Date-range pill value: two already-formatted dates around an en dash.
+            ///
+            /// Key: `usage.filters.rangeSpan`
+            /// en: "{start} – {end}"
+            public static func rangeSpan(end: String, start: String) -> String {
+                L10nSupport.format("usage.filters.rangeSpan", end, start)
+            }
+
+            /// A polling interval, read both as an option inside the auto-refresh menu and as the value on the pill that opens it. The off state is common.off. distinct-from: quota.freshness.age.seconds — an age — how long ago a reading was taken — and an interval — how often to poll — are different quantities.
+            ///
+            /// Key: `usage.filters.refreshInterval`
+            /// en: "{seconds}s"
+            public static func refreshInterval(seconds: Int) -> String {
+                L10nSupport.format("usage.filters.refreshInterval", seconds)
+            }
+        }
+
+        public enum HarnessMix {
+            /// Footer of the harness mix card
+            ///
+            /// Key: `usage.harnessMix.activeCount`
+            /// en: "{count, plural, one {1 harness} other {# harnesses}} active in range"
+            public static func activeCount(count: Int) -> String {
+                L10nSupport.localizedFormat("usage.harnessMix.activeCount", count)
+            }
+
+            /// Caption saying what the mix is weighted by
+            ///
+            /// Key: `usage.harnessMix.byRealTokens`
+            /// en: "by real tokens"
+            public static var byRealTokens: String { L10nSupport.string("usage.harnessMix.byRealTokens") }
+
+            /// Empty state inside the harness mix card
+            ///
+            /// Key: `usage.harnessMix.empty`
+            /// en: "No harness traffic in this range"
+            public static var empty: String { L10nSupport.string("usage.harnessMix.empty") }
+
+            /// All-caps card title. 'Harness' is the usage-axis unit and stays as spelled.
+            ///
+            /// Key: `usage.harnessMix.title`
+            /// en: "HARNESS MIX"
+            public static var title: String { L10nSupport.string("usage.harnessMix.title") }
+        }
+
+        public enum Hero {
+            /// Caption under the total-cost metric
+            ///
+            /// Key: `usage.hero.allRequestsPriced`
+            /// en: "all requests priced"
+            public static var allRequestsPriced: String { L10nSupport.string("usage.hero.allRequestsPriced") }
+
+            /// All-caps section label over the cache hit rate
+            ///
+            /// Key: `usage.hero.cacheHit`
+            /// en: "CACHE HIT"
+            public static var cacheHit: String { L10nSupport.string("usage.hero.cacheHit") }
+
+            /// Caption under the cache hit rate; tokens arrives already formatted, e.g. 12.3M
+            ///
+            /// Key: `usage.hero.cacheRead`
+            /// en: "{tokens} read"
+            public static func cacheRead(tokens: String) -> String {
+                L10nSupport.format("usage.hero.cacheRead", tokens)
+            }
+
+            /// Caption under the request-count metric
+            ///
+            /// Key: `usage.hero.inSelectedRange`
+            /// en: "in selected range"
+            public static var inSelectedRange: String { L10nSupport.string("usage.hero.inSelectedRange") }
+
+            /// Caption under the total-cost metric
+            ///
+            /// Key: `usage.hero.noPricedRequests`
+            /// en: "no priced requests"
+            public static var noPricedRequests: String { L10nSupport.string("usage.hero.noPricedRequests") }
+
+            /// Caption under the request-count metric
+            ///
+            /// Key: `usage.hero.noTrafficInRange`
+            /// en: "no traffic in range"
+            public static var noTrafficInRange: String { L10nSupport.string("usage.hero.noTrafficInRange") }
+
+            /// All-caps section label over the headline token count. English sets it in caps by the copy; Chinese has no case and relies on weight and colour.
+            ///
+            /// Key: `usage.hero.realTokens`
+            /// en: "REAL TOKENS · SELECTED RANGE"
+            public static var realTokens: String { L10nSupport.string("usage.hero.realTokens") }
+
+            /// All-caps metric label on the Workbench usage hero row distinct-from: usage.breakdown.requests — the breakdown tab lists one row per request; the hero metric counts them in all caps, and the two spellings are two renderings the app sets deliberately; collapsing them would move the casing into a call site, which is a code change rather than a rename.
+            ///
+            /// Key: `usage.hero.requests`
+            /// en: "REQUESTS"
+            public static var requests: String { L10nSupport.string("usage.hero.requests") }
+
+            /// Screen-reader label for the stacked token bar
+            ///
+            /// Key: `usage.hero.tokenComposition`
+            /// en: "Token composition"
+            public static var tokenComposition: String { L10nSupport.string("usage.hero.tokenComposition") }
+
+            /// Badge counting requests with no usable price
+            ///
+            /// Key: `usage.hero.unpricedBadge`
+            /// en: "{count} unpriced"
+            public static func unpricedBadge(count: Int) -> String {
+                L10nSupport.format("usage.hero.unpricedBadge", count)
+            }
+
+            /// Tooltip on the unpriced badge
+            ///
+            /// Key: `usage.hero.unpricedHelp`
+            /// en: "{count, plural, one {1 request} other {# requests}} had no usable price and contribute $0."
+            public static func unpricedHelp(count: Int) -> String {
+                L10nSupport.localizedFormat("usage.hero.unpricedHelp", count)
+            }
+        }
+
+        public enum LedgerUnavailable {
+            /// Empty state body; the path is a filesystem path and is never translated
+            ///
+            /// Key: `usage.ledgerUnavailable.detail`
+            /// en: "The per-request ledger under ~/.vibebar could not be opened, so only live cost cards are available this session."
+            public static var detail: String { L10nSupport.string("usage.ledgerUnavailable.detail") }
+
+            /// Empty state when the local per-request ledger could not be opened
+            ///
+            /// Key: `usage.ledgerUnavailable.title`
+            /// en: "Usage ledger unavailable"
+            public static var title: String { L10nSupport.string("usage.ledgerUnavailable.title") }
+        }
+
+        public enum Mix {
+            /// Unit under the total in the middle of a donut card.
+            ///
+            /// Key: `usage.mix.donutUnit`
+            /// en: "tokens"
+            public static var donutUnit: String { L10nSupport.string("usage.mix.donutUnit") }
+
+            /// Scope caption beside the Usage Mix title
+            ///
+            /// Key: `usage.mix.lastThirtyDays`
+            /// en: "Last 30 days"
+            public static var lastThirtyDays: String { L10nSupport.string("usage.mix.lastThirtyDays") }
+
+            /// Usage Mix empty state when the per-request ledger could not be opened
+            ///
+            /// Key: `usage.mix.ledgerUnreadable`
+            /// en: "Usage ledger could not be read."
+            public static var ledgerUnreadable: String { L10nSupport.string("usage.mix.ledgerUnreadable") }
+
+            /// Donut slice that collapses everything below the top five. distinct-from: quota.group.other — a quota bucket with no group of its own and a donut slice that collapses everything below the top five are different remainders.
+            ///
+            /// Key: `usage.mix.other`
+            /// en: "Other"
+            public static var other: String { L10nSupport.string("usage.mix.other") }
+
+            /// Caption under the collapsed donut slice, counting what it folded in.
+            ///
+            /// Key: `usage.mix.otherCount`
+            /// en: "{count, plural, one {1 more} other {# more}}"
+            public static func otherCount(count: Int) -> String {
+                L10nSupport.localizedFormat("usage.mix.otherCount", count)
+            }
+
+            /// Title of the Overview card that splits recent tokens by project, harness, model or token kind
+            ///
+            /// Key: `usage.mix.title`
+            /// en: "Usage Mix"
+            public static var title: String { L10nSupport.string("usage.mix.title") }
+
+            public enum Dimension {
+                /// Usage Mix dimension: which local CLI or app produced the tokens; the harness names themselves are not translated
+                ///
+                /// Key: `usage.mix.dimension.harnesses`
+                /// en: "Harnesses"
+                public static var harnesses: String { L10nSupport.string("usage.mix.dimension.harnesses") }
+            }
+
+            public enum Flow {
+                /// Token Flow slice: cached tokens
+                ///
+                /// Key: `usage.mix.flow.cache`
+                /// en: "Cache"
+                public static var cache: String { L10nSupport.string("usage.mix.flow.cache") }
+
+                /// Detail under the cache slice, naming the two cache token kinds it sums
+                ///
+                /// Key: `usage.mix.flow.cacheDetail`
+                /// en: "read + creation"
+                public static var cacheDetail: String { L10nSupport.string("usage.mix.flow.cacheDetail") }
+
+                /// Token Flow slice: input tokens that were not served from cache
+                ///
+                /// Key: `usage.mix.flow.freshInput`
+                /// en: "Fresh input"
+                public static var freshInput: String { L10nSupport.string("usage.mix.flow.freshInput") }
+
+                /// Token Flow slice: tokens the model produced distinct-from: settings.pricing.rateOutput — a price per million output tokens and a count of output tokens are different quantities.
+                ///
+                /// Key: `usage.mix.flow.output`
+                /// en: "Output"
+                public static var output: String { L10nSupport.string("usage.mix.flow.output") }
+            }
+
+            public enum Harness {
+                /// Caption under the Harness Mix donut title.
+                ///
+                /// Key: `usage.mix.harness.subtitle`
+                /// en: "where requests ran"
+                public static var subtitle: String { L10nSupport.string("usage.mix.harness.subtitle") }
+
+                /// Donut card on the Usage Stats distribution wall: tokens by harness. Title-case variant of the all-caps section label usage.harnessMix.title. distinct-from: usage.harnessMix.title — the all-caps section label and the title-case donut card title are two renderings the app sets deliberately; collapsing them would move the casing into a call site, which is a code change rather than a rename.
+                ///
+                /// Key: `usage.mix.harness.title`
+                /// en: "Harness Mix"
+                public static var title: String { L10nSupport.string("usage.mix.harness.title") }
+            }
+
+            public enum Model {
+                /// Empty state inside the Model Mix donut card.
+                ///
+                /// Key: `usage.mix.model.empty`
+                /// en: "No model traffic in this range"
+                public static var empty: String { L10nSupport.string("usage.mix.model.empty") }
+
+                /// Caption under the Model Mix donut title.
+                ///
+                /// Key: `usage.mix.model.subtitle`
+                /// en: "canonical display names"
+                public static var subtitle: String { L10nSupport.string("usage.mix.model.subtitle") }
+
+                /// Donut card on the Usage Stats distribution wall: tokens by model.
+                ///
+                /// Key: `usage.mix.model.title`
+                /// en: "Model Mix"
+                public static var title: String { L10nSupport.string("usage.mix.model.title") }
+            }
+
+            public enum Project {
+                /// Empty state inside the Project Mix donut card; Codex and Claude are harness names and stay as spelled.
+                ///
+                /// Key: `usage.mix.project.empty`
+                /// en: "Project attribution appears after a Codex or Claude rescan"
+                public static var empty: String { L10nSupport.string("usage.mix.project.empty") }
+
+                /// Caption under the Project Mix donut title; Codex and Claude are harness names and stay as spelled.
+                ///
+                /// Key: `usage.mix.project.subtitle`
+                /// en: "Codex + Claude cwd · up to 30 d detail"
+                public static var subtitle: String { L10nSupport.string("usage.mix.project.subtitle") }
+
+                /// Donut card on the Usage Stats distribution wall: tokens by project directory.
+                ///
+                /// Key: `usage.mix.project.title`
+                /// en: "Project Mix"
+                public static var title: String { L10nSupport.string("usage.mix.project.title") }
+            }
+
+            public enum Provider {
+                /// Empty state inside the Provider Mix donut card.
+                ///
+                /// Key: `usage.mix.provider.empty`
+                /// en: "No provider traffic in this range"
+                public static var empty: String { L10nSupport.string("usage.mix.provider.empty") }
+
+                /// Caption under the Provider Mix donut title.
+                ///
+                /// Key: `usage.mix.provider.subtitle`
+                /// en: "billing companies"
+                public static var subtitle: String { L10nSupport.string("usage.mix.provider.subtitle") }
+
+                /// Donut card on the Usage Stats distribution wall: tokens by L1 company.
+                ///
+                /// Key: `usage.mix.provider.title`
+                /// en: "Provider Mix"
+                public static var title: String { L10nSupport.string("usage.mix.provider.title") }
+            }
+
+            public enum TokenFlow {
+                /// Empty state inside the Token Flow donut card.
+                ///
+                /// Key: `usage.mix.tokenFlow.empty`
+                /// en: "No token traffic in this range"
+                public static var empty: String { L10nSupport.string("usage.mix.tokenFlow.empty") }
+
+                /// Caption under the Token Flow donut title.
+                ///
+                /// Key: `usage.mix.tokenFlow.subtitle`
+                /// en: "input · cache · output"
+                public static var subtitle: String { L10nSupport.string("usage.mix.tokenFlow.subtitle") }
+
+                /// Donut card on the Usage Stats distribution wall: tokens by kind.
+                ///
+                /// Key: `usage.mix.tokenFlow.title`
+                /// en: "Token Flow"
+                public static var title: String { L10nSupport.string("usage.mix.tokenFlow.title") }
+            }
+        }
+
+        public enum NoHarnessSelected {
+            /// Empty state body explaining the All chip
+            ///
+            /// Key: `usage.noHarnessSelected.detail`
+            /// en: "The All harnesses chip is a switch: click it again to put every harness back in the query."
+            public static var detail: String { L10nSupport.string("usage.noHarnessSelected.detail") }
+
+            /// Empty state when the harness filter excludes everything. 'harness' is the usage-axis unit and stays as spelled.
+            ///
+            /// Key: `usage.noHarnessSelected.title`
+            /// en: "No harness selected — pick one above"
+            public static var title: String { L10nSupport.string("usage.noHarnessSelected.title") }
+        }
+
+        public enum Table {
+            /// Row count over the Periods table when the series is bucketed by day.
+            ///
+            /// Key: `usage.table.activeDays`
+            /// en: "{count, plural, one {1 active day} other {# active days}}"
+            public static func activeDays(count: Int) -> String {
+                L10nSupport.localizedFormat("usage.table.activeDays", count)
+            }
+
+            /// Row count over the Periods table when the series is bucketed by hour.
+            ///
+            /// Key: `usage.table.activeHours`
+            /// en: "{count, plural, one {1 active hour} other {# active hours}}"
+            public static func activeHours(count: Int) -> String {
+                L10nSupport.localizedFormat("usage.table.activeHours", count)
+            }
+
+            /// Row count over the Periods table when the series is bucketed by week.
+            ///
+            /// Key: `usage.table.activeWeeks`
+            /// en: "{count, plural, one {1 active week} other {# active weeks}}"
+            public static func activeWeeks(count: Int) -> String {
+                L10nSupport.localizedFormat("usage.table.activeWeeks", count)
+            }
+
+            /// Second line of a request row's input cell: cache read and cache write, both already formatted, e.g. 12.3k.
+            ///
+            /// Key: `usage.table.cacheReadWrite`
+            /// en: "R {read} · W {write}"
+            public static func cacheReadWrite(read: String, write: String) -> String {
+                L10nSupport.format("usage.table.cacheReadWrite", read, write)
+            }
+
+            /// Row count over the Providers table; the rows are L1 companies.
+            ///
+            /// Key: `usage.table.companyCount`
+            /// en: "{count, plural, one {1 company} other {# companies}}"
+            public static func companyCount(count: Int) -> String {
+                L10nSupport.localizedFormat("usage.table.companyCount", count)
+            }
+
+            /// Empty state in place of the Models table.
+            ///
+            /// Key: `usage.table.emptyModels`
+            /// en: "No model totals in this range"
+            public static var emptyModels: String { L10nSupport.string("usage.table.emptyModels") }
+
+            /// Empty state in place of the Periods table.
+            ///
+            /// Key: `usage.table.emptyPeriods`
+            /// en: "No active periods in this range"
+            public static var emptyPeriods: String { L10nSupport.string("usage.table.emptyPeriods") }
+
+            /// Empty state in place of the Projects table; Codex and Claude are harness names and stay as spelled.
+            ///
+            /// Key: `usage.table.emptyProjects`
+            /// en: "No project-attributed Codex or Claude usage in this range"
+            public static var emptyProjects: String { L10nSupport.string("usage.table.emptyProjects") }
+
+            /// Empty state in place of the Providers table.
+            ///
+            /// Key: `usage.table.emptyProviders`
+            /// en: "No provider totals in this range"
+            public static var emptyProviders: String { L10nSupport.string("usage.table.emptyProviders") }
+
+            /// Empty state in place of the Requests table.
+            ///
+            /// Key: `usage.table.emptyRequests`
+            /// en: "No request-level rows in this range"
+            public static var emptyRequests: String { L10nSupport.string("usage.table.emptyRequests") }
+
+            /// Tooltip on a request row's harness cell; both arguments are names and are never translated. distinct-from: popover.header.updatedLine — the value is two placeholders and a separator, so the placeholder names are the only part of it that carries meaning; one key cannot name both halves of six different pairs.
+            ///
+            /// Key: `usage.table.harnessHelp`
+            /// en: "{company} · {harness}"
+            public static func harnessHelp(company: String, harness: String) -> String {
+                L10nSupport.format("usage.table.harnessHelp", company, harness)
+            }
+
+            /// Tooltip on a request row's input cell. One key rather than three: the three lines are one block and a translation may need to reorder them. All three counts arrive formatted.
+            ///
+            /// Key: `usage.table.inputHelp`
+            /// en: "Fresh input: {input}
+            /// Cache read: {read}
+            /// Cache write: {write}"
+            public static func inputHelp(input: String, read: String, write: String) -> String {
+                L10nSupport.format("usage.table.inputHelp", input, read, write)
+            }
+
+            /// Button that loads the next page of request rows.
+            ///
+            /// Key: `usage.table.loadMore`
+            /// en: "Load more ({remaining} remaining)"
+            public static func loadMore(remaining: Int) -> String {
+                L10nSupport.format("usage.table.loadMore", remaining)
+            }
+
+            /// Button label and spinner label while another page of request rows is loading.
+            ///
+            /// Key: `usage.table.loadingMore`
+            /// en: "Loading more requests…"
+            public static var loadingMore: String { L10nSupport.string("usage.table.loadingMore") }
+
+            /// Row count over the Models table.
+            ///
+            /// Key: `usage.table.modelCount`
+            /// en: "{count, plural, one {1 model} other {# models}}"
+            public static func modelCount(count: Int) -> String {
+                L10nSupport.localizedFormat("usage.table.modelCount", count)
+            }
+
+            /// Screen-reader label for a Periods row; every argument arrives already formatted.
+            ///
+            /// Key: `usage.table.periodRow`
+            /// en: "{period}, {tokens}, {cost}"
+            public static func periodRow(cost: String, period: String, tokens: String) -> String {
+                L10nSupport.format("usage.table.periodRow", cost, period, tokens)
+            }
+
+            /// Row count over the Projects table, with the retention window the attribution covers.
+            ///
+            /// Key: `usage.table.projectCount`
+            /// en: "{count, plural, one {1 project} other {# projects}} · up to 30 d detail"
+            public static func projectCount(count: Int) -> String {
+                L10nSupport.localizedFormat("usage.table.projectCount", count)
+            }
+
+            /// Screen-reader label for a Requests row; time, model, tokens and cost arrive formatted and harness is a name.
+            ///
+            /// Key: `usage.table.requestRow`
+            /// en: "{time}, {harness}, {model}, {tokens}, {cost}"
+            public static func requestRow(cost: String, harness: String, model: String, time: String, tokens: String) -> String {
+                L10nSupport.format("usage.table.requestRow", cost, harness, model, time, tokens)
+            }
+
+            /// Screen-reader label for the Requests table's scroll area.
+            ///
+            /// Key: `usage.table.requestsLabel`
+            /// en: "Request usage table"
+            public static var requestsLabel: String { L10nSupport.string("usage.table.requestsLabel") }
+
+            /// Row count over the Requests table while more pages remain.
+            ///
+            /// Key: `usage.table.requestsLoaded`
+            /// en: "{loaded} of {total} requests"
+            public static func requestsLoaded(loaded: Int, total: Int) -> String {
+                L10nSupport.format("usage.table.requestsLoaded", loaded, total)
+            }
+
+            /// Button under a clamped Periods table that reveals the next page of rows.
+            ///
+            /// Key: `usage.table.showMorePeriods`
+            /// en: "Show {count} more of {total} periods"
+            public static func showMorePeriods(count: Int, total: Int) -> String {
+                L10nSupport.format("usage.table.showMorePeriods", count, total)
+            }
+
+            /// Screen-reader label for a Providers, Projects or Models row; name is a company, project or model name and tokens and cost arrive formatted.
+            ///
+            /// Key: `usage.table.statRow`
+            /// en: "{name}, {requests, plural, one {1 request} other {# requests}}, {tokens}, {cost}"
+            public static func statRow(requests: Int, cost: String, name: String, tokens: String) -> String {
+                L10nSupport.localizedFormat("usage.table.statRow", requests, cost, name, tokens)
+            }
+
+            /// Cost cell of a request no price could be resolved for.
+            ///
+            /// Key: `usage.table.unpriced`
+            /// en: "unpriced"
+            public static var unpriced: String { L10nSupport.string("usage.table.unpriced") }
+
+            /// Tooltip on the cost cell of a request no price could be resolved for.
+            ///
+            /// Key: `usage.table.unpricedHelp`
+            /// en: "No price was available for this request"
+            public static var unpricedHelp: String { L10nSupport.string("usage.table.unpricedHelp") }
+
+            public enum Column {
+                /// Models table column header, average cost per request; the call site uppercases it.
+                ///
+                /// Key: `usage.table.column.average`
+                /// en: "Avg/req"
+                public static var average: String { L10nSupport.string("usage.table.column.average") }
+
+                /// Periods table leading column header when the series is bucketed by day; the call site uppercases it. distinct-from: cost.granularity.day — a chart bucket one day wide is a duration; a period column's header names the date its row covers — Simplified Chinese already writes 天 and 日.
+                ///
+                /// Key: `usage.table.column.day`
+                /// en: "Day"
+                public static var day: String { L10nSupport.string("usage.table.column.day") }
+
+                /// Column header on the Requests table, where the call site uppercases it, and the Sessions filter menu that ticks individual harnesses, where it is read as written. 'Harness' is the usage-axis unit and stays as spelled.
+                ///
+                /// Key: `usage.table.column.harness`
+                /// en: "Harness"
+                public static var harness: String { L10nSupport.string("usage.table.column.harness") }
+
+                /// Periods table leading column header when the series is bucketed by hour; the call site uppercases it. distinct-from: cost.granularity.hour — a chart bucket one hour wide is a duration; a period column's header names the hour its row covers, which is the same split Simplified Chinese already spells out for Day.
+                ///
+                /// Key: `usage.table.column.hour`
+                /// en: "Hour"
+                public static var hour: String { L10nSupport.string("usage.table.column.hour") }
+
+                /// Periods and Requests table column header; the call site uppercases it. The narrow legend form is usage.tokens.input. distinct-from: settings.pricing.rateInput — a price per million input tokens and a count of input tokens are different quantities.
+                ///
+                /// Key: `usage.table.column.input`
+                /// en: "Input"
+                public static var input: String { L10nSupport.string("usage.table.column.input") }
+
+                /// Requests and Models table column header; the call site uppercases it.
+                ///
+                /// Key: `usage.table.column.model`
+                /// en: "Model"
+                public static var model: String { L10nSupport.string("usage.table.column.model") }
+
+                /// Providers, Projects and Models table column header; the call site uppercases it. distinct-from: usage.breakdown.requests — the breakdown tab lists one row per request; the table column counts them — Simplified Chinese already writes 请求 and 请求数.
+                ///
+                /// Key: `usage.table.column.requests`
+                /// en: "Requests"
+                public static var requests: String { L10nSupport.string("usage.table.column.requests") }
+
+                /// Requests table column header, the service tier a request was billed at; the call site uppercases it.
+                ///
+                /// Key: `usage.table.column.tier`
+                /// en: "Tier"
+                public static var tier: String { L10nSupport.string("usage.table.column.tier") }
+
+                /// Requests table column header; the call site uppercases it. distinct-from: resetHistory.axis.time — a segmented control that places cycles on a shared calendar and a request's timestamp column are different things.
+                ///
+                /// Key: `usage.table.column.time`
+                /// en: "Time"
+                public static var time: String { L10nSupport.string("usage.table.column.time") }
+
+                /// Periods table leading column header when the series is bucketed by week; the cell holds the week's first day.
+                ///
+                /// Key: `usage.table.column.weekOf`
+                /// en: "Week of"
+                public static var weekOf: String { L10nSupport.string("usage.table.column.weekOf") }
+            }
+        }
+
+        public enum Tokens {
+            /// Token composition legend: cache read tokens
+            ///
+            /// Key: `usage.tokens.cacheRead`
+            /// en: "Cache read"
+            public static var cacheRead: String { L10nSupport.string("usage.tokens.cacheRead") }
+
+            /// Token composition legend: cache creation tokens
+            ///
+            /// Key: `usage.tokens.cacheWrite`
+            /// en: "Cache write"
+            public static var cacheWrite: String { L10nSupport.string("usage.tokens.cacheWrite") }
+
+            /// Token composition legend: fresh input tokens
+            ///
+            /// Key: `usage.tokens.input`
+            /// en: "In"
+            public static var input: String { L10nSupport.string("usage.tokens.input") }
+
+            /// Token composition legend: output tokens
+            ///
+            /// Key: `usage.tokens.output`
+            /// en: "Out"
+            public static var output: String { L10nSupport.string("usage.tokens.output") }
+
+            /// The token metric itself: the chart's Tokens toggle and the TOKENS table column. distinct-from: usage.mix.donutUnit — the lowercase unit under a donut's total and the name of the token metric are different words in the sentences they sit in.
+            ///
+            /// Key: `usage.tokens.title`
+            /// en: "Tokens"
+            public static var title: String { L10nSupport.string("usage.tokens.title") }
+        }
+
+        public enum Trend {
+            /// Screen-reader value of the trend chart; tokens and cost arrive already formatted, e.g. 3.40M and $12.34.
+            ///
+            /// Key: `usage.trend.accessibilitySummary`
+            /// en: "{count, plural, one {1 provider} other {# providers}}, {tokens} tokens, {cost}"
+            public static func accessibilitySummary(count: Int, cost: String, tokens: String) -> String {
+                L10nSupport.localizedFormat("usage.trend.accessibilitySummary", count, cost, tokens)
+            }
+
+            /// Subtitle under the trend chart title when the series is bucketed by local calendar day.
+            ///
+            /// Key: `usage.trend.bucketDay`
+            /// en: "Local calendar days"
+            public static var bucketDay: String { L10nSupport.string("usage.trend.bucketDay") }
+
+            /// Subtitle under the trend chart title when the series is bucketed by hour.
+            ///
+            /// Key: `usage.trend.bucketHour`
+            /// en: "Hourly buckets"
+            public static var bucketHour: String { L10nSupport.string("usage.trend.bucketHour") }
+
+            /// Subtitle under the trend chart title when the series is bucketed by local calendar week.
+            ///
+            /// Key: `usage.trend.bucketWeek`
+            /// en: "Local calendar weeks"
+            public static var bucketWeek: String { L10nSupport.string("usage.trend.bucketWeek") }
+
+            /// Screen-reader label for the trend chart in cost mode.
+            ///
+            /// Key: `usage.trend.costChartLabel`
+            /// en: "Cost over time"
+            public static var costChartLabel: String { L10nSupport.string("usage.trend.costChartLabel") }
+
+            /// Empty state in place of the trend chart.
+            ///
+            /// Key: `usage.trend.empty`
+            /// en: "No usage recorded in this range"
+            public static var empty: String { L10nSupport.string("usage.trend.empty") }
+
+            /// Button that widens the chart back to the whole selected window.
+            ///
+            /// Key: `usage.trend.fit`
+            /// en: "Fit"
+            public static var fit: String { L10nSupport.string("usage.trend.fit") }
+
+            /// Tooltip on the button that widens the chart back to the whole selected window.
+            ///
+            /// Key: `usage.trend.fitHelp`
+            /// en: "Show the full selected window"
+            public static var fitHelp: String { L10nSupport.string("usage.trend.fitHelp") }
+
+            /// Picker label inside the chart granularity menu.
+            ///
+            /// Key: `usage.trend.granularity`
+            /// en: "Granularity"
+            public static var granularity: String { L10nSupport.string("usage.trend.granularity") }
+
+            /// Chart granularity option: one bucket per day. Unrelated to the quota window label quota.group.daily. distinct-from: quota.group.daily — a quota window's group label and a chart's bucket width are different things.
+            ///
+            /// Key: `usage.trend.granularityDaily`
+            /// en: "Daily"
+            public static var granularityDaily: String { L10nSupport.string("usage.trend.granularityDaily") }
+
+            /// Chart granularity option: one bucket per hour.
+            ///
+            /// Key: `usage.trend.granularityHourly`
+            /// en: "Hourly"
+            public static var granularityHourly: String { L10nSupport.string("usage.trend.granularityHourly") }
+
+            /// Screen-reader label for the chart granularity menu button.
+            ///
+            /// Key: `usage.trend.granularityLabel`
+            /// en: "Choose chart granularity"
+            public static var granularityLabel: String { L10nSupport.string("usage.trend.granularityLabel") }
+
+            /// Chart granularity option: one bucket per week. Unrelated to the quota window label quota.group.weekly. distinct-from: quota.group.weekly — a quota window's group label and a chart's bucket width are different things.
+            ///
+            /// Key: `usage.trend.granularityWeekly`
+            /// en: "Weekly"
+            public static var granularityWeekly: String { L10nSupport.string("usage.trend.granularityWeekly") }
+
+            /// Tooltip on a lit provider legend chip; provider is an L1 company name and is never translated.
+            ///
+            /// Key: `usage.trend.hideProvider`
+            /// en: "Hide {provider}"
+            public static func hideProvider(provider: String) -> String {
+                L10nSupport.format("usage.trend.hideProvider", provider)
+            }
+
+            /// Screen-reader description of the brush navigator under the trend chart.
+            ///
+            /// Key: `usage.trend.navigatorLabel`
+            /// en: "Usage chart range navigator"
+            public static var navigatorLabel: String { L10nSupport.string("usage.trend.navigatorLabel") }
+
+            /// Tooltip on the chart's step-forward button.
+            ///
+            /// Key: `usage.trend.nextWindow`
+            /// en: "Next window"
+            public static var nextWindow: String { L10nSupport.string("usage.trend.nextWindow") }
+
+            /// Button that returns the chart to the window ending now. distinct-from: common.duration.now — a countdown that has reached zero is a value; the chart's Now button is a command that jumps the window back to the present.
+            ///
+            /// Key: `usage.trend.now`
+            /// en: "Now"
+            public static var now: String { L10nSupport.string("usage.trend.now") }
+
+            /// Tooltip on the button that returns the chart to the window ending now.
+            ///
+            /// Key: `usage.trend.nowHelp`
+            /// en: "Return to current window"
+            public static var nowHelp: String { L10nSupport.string("usage.trend.nowHelp") }
+
+            /// Tooltip on the chart's step-backward button.
+            ///
+            /// Key: `usage.trend.previousWindow`
+            /// en: "Previous window"
+            public static var previousWindow: String { L10nSupport.string("usage.trend.previousWindow") }
+
+            /// Footnote under the trend chart's brush navigator.
+            ///
+            /// Key: `usage.trend.scopeHint`
+            /// en: "Drag the navigator handles to focus this chart; filters and tables keep the full window."
+            public static var scopeHint: String { L10nSupport.string("usage.trend.scopeHint") }
+
+            /// Tooltip on an unlit provider legend chip; provider is an L1 company name and is never translated. distinct-from: popover.showPage — a page label is translated and sits tight against 显示; a provider name stays Latin and takes a space around it — Simplified Chinese already writes the two differently.
+            ///
+            /// Key: `usage.trend.showProvider`
+            /// en: "Show {provider}"
+            public static func showProvider(provider: String) -> String {
+                L10nSupport.format("usage.trend.showProvider", provider)
+            }
+
+            /// All-caps card title over the Usage Stats trend chart. English sets it in caps by the copy; Chinese has no case and relies on weight and colour.
+            ///
+            /// Key: `usage.trend.title`
+            /// en: "USAGE OVER TIME"
+            public static var title: String { L10nSupport.string("usage.trend.title") }
+
+            /// Screen-reader label for the trend chart in token mode.
+            ///
+            /// Key: `usage.trend.tokensChartLabel`
+            /// en: "Token usage over time"
+            public static var tokensChartLabel: String { L10nSupport.string("usage.trend.tokensChartLabel") }
+        }
+
+        public enum WhenYouUse {
+            /// Heatmap title on the Overview, covering every provider at once
+            ///
+            /// Key: `usage.whenYouUse.everything`
+            /// en: "When you use everything"
+            public static var everything: String { L10nSupport.string("usage.whenYouUse.everything") }
+
+            /// Heatmap title on the Google AI page
+            ///
+            /// Key: `usage.whenYouUse.googleAI`
+            /// en: "When you use Google AI"
+            public static var googleAI: String { L10nSupport.string("usage.whenYouUse.googleAI") }
+
+            /// Title of the weekday-by-hour activity card for one provider
+            ///
+            /// Key: `usage.whenYouUse.provider`
+            /// en: "When you use {provider}"
+            public static func provider(provider: String) -> String {
+                L10nSupport.format("usage.whenYouUse.provider", provider)
+            }
+
+            /// Heatmap title on the SpaceXAI page
+            ///
+            /// Key: `usage.whenYouUse.spaceXAI`
+            /// en: "When you use SpaceXAI"
+            public static var spaceXAI: String { L10nSupport.string("usage.whenYouUse.spaceXAI") }
+        }
+
+        public enum YearHeatmap {
+            /// Accessibility label for the past-year grid; count is how many week columns it draws
+            ///
+            /// Key: `usage.yearHeatmap.a11y`
+            /// en: "{provider} daily spend over the past year, {count, plural, one {1 week} other {# weeks}}"
+            public static func a11y(count: Int, provider: String) -> String {
+                L10nSupport.localizedFormat("usage.yearHeatmap.a11y", count, provider)
+            }
+
+            /// Low end of the past-year grid's intensity legend
+            ///
+            /// Key: `usage.yearHeatmap.less`
+            /// en: "Less"
+            public static var less: String { L10nSupport.string("usage.yearHeatmap.less") }
+
+            /// High end of the past-year grid's intensity legend
+            ///
+            /// Key: `usage.yearHeatmap.more`
+            /// en: "More"
+            public static var more: String { L10nSupport.string("usage.yearHeatmap.more") }
+
+            /// Title of the past-year contribution grid; provider is a name and is not translated
+            ///
+            /// Key: `usage.yearHeatmap.title`
+            /// en: "{provider} — Past Year"
+            public static func title(provider: String) -> String {
+                L10nSupport.format("usage.yearHeatmap.title", provider)
+            }
+
+            /// Tooltip on one day of the past-year grid distinct-from: popover.header.updatedLine — the value is two placeholders and a separator, so the placeholder names are the only part of it that carries meaning; one key cannot name both halves of six different pairs.
+            ///
+            /// Key: `usage.yearHeatmap.tooltip`
+            /// en: "{date} · {amount}"
+            public static func tooltip(amount: String, date: String) -> String {
+                L10nSupport.format("usage.yearHeatmap.tooltip", amount, date)
+            }
+
+            /// Caption beside the past-year grid's title; amount is already formatted currency
+            ///
+            /// Key: `usage.yearHeatmap.total`
+            /// en: "{amount} total"
+            public static func total(amount: String) -> String {
+                L10nSupport.format("usage.yearHeatmap.total", amount)
+            }
+        }
+    }
+
+    public enum Workbench {
+        public enum Appearance {
+            /// Tooltip on the Workbench header button that switches the window to dark
+            ///
+            /// Key: `workbench.appearance.useDark`
+            /// en: "Use dark appearance"
+            public static var useDark: String { L10nSupport.string("workbench.appearance.useDark") }
+
+            /// Tooltip on the Workbench header button that switches the window to light
+            ///
+            /// Key: `workbench.appearance.useLight`
+            /// en: "Use light appearance"
+            public static var useLight: String { L10nSupport.string("workbench.appearance.useLight") }
+        }
+
+        public enum Header {
+            /// Tooltip on the Workbench header refresh button; page is the current page's title distinct-from: quota.misc.refreshProvider — a provider name stays Latin and takes a space in Simplified Chinese; a page title is translated and does not.
+            ///
+            /// Key: `workbench.header.refreshPage`
+            /// en: "Refresh {page}"
+            public static func refreshPage(page: String) -> String {
+                L10nSupport.format("workbench.header.refreshPage", page)
+            }
+        }
+
+        public enum Page {
+            public enum Resets {
+                /// Subtitle under the Resets page title
+                ///
+                /// Key: `workbench.page.resets.subtitle`
+                /// en: "Cycles, refills, and run-out forecasts"
+                public static var subtitle: String { L10nSupport.string("workbench.page.resets.subtitle") }
+
+                /// Workbench sidebar entry and page title for the resets page
+                ///
+                /// Key: `workbench.page.resets.title`
+                /// en: "Resets"
+                public static var title: String { L10nSupport.string("workbench.page.resets.title") }
+            }
+
+            public enum Sessions {
+                /// Subtitle under the Sessions page title
+                ///
+                /// Key: `workbench.page.sessions.subtitle`
+                /// en: "Search and resume local agent sessions"
+                public static var subtitle: String { L10nSupport.string("workbench.page.sessions.subtitle") }
+
+                /// Workbench sidebar entry and page title for the session manager
+                ///
+                /// Key: `workbench.page.sessions.title`
+                /// en: "Sessions"
+                public static var title: String { L10nSupport.string("workbench.page.sessions.title") }
+            }
+
+            public enum Settings {
+                /// Subtitle under the Settings page title inside the Workbench window
+                ///
+                /// Key: `workbench.page.settings.subtitle`
+                /// en: "Appearance, providers, data, privacy, and sync"
+                public static var subtitle: String { L10nSupport.string("workbench.page.settings.subtitle") }
+            }
+
+            public enum Skills {
+                /// Subtitle under the Skills page title
+                ///
+                /// Key: `workbench.page.skills.subtitle`
+                /// en: "One shared skill library · every agent CLI"
+                public static var subtitle: String { L10nSupport.string("workbench.page.skills.subtitle") }
+
+                /// Workbench sidebar entry and page title for the skills manager
+                ///
+                /// Key: `workbench.page.skills.title`
+                /// en: "Skills"
+                public static var title: String { L10nSupport.string("workbench.page.skills.title") }
+            }
+
+            public enum UsageStats {
+                /// Subtitle under the Usage Stats page title
+                ///
+                /// Key: `workbench.page.usageStats.subtitle`
+                /// en: "Local per-request ledger · all providers"
+                public static var subtitle: String { L10nSupport.string("workbench.page.usageStats.subtitle") }
+
+                /// Workbench sidebar entry and page title for the usage statistics page
+                ///
+                /// Key: `workbench.page.usageStats.title`
+                /// en: "Usage Stats"
+                public static var title: String { L10nSupport.string("workbench.page.usageStats.title") }
+            }
+        }
+
+        public enum Placeholder {
+            /// Placeholder body for a Workbench page with no content yet
+            ///
+            /// Key: `workbench.placeholder.resets`
+            /// en: "Cycle, refill and forecast views are on their way."
+            public static var resets: String { L10nSupport.string("workbench.placeholder.resets") }
+
+            /// Placeholder body; Codex and Claude Code are harness names and stay as spelled
+            ///
+            /// Key: `workbench.placeholder.sessionManager`
+            /// en: "Browsing and searching local Codex and Claude Code sessions is on its way."
+            public static var sessionManager: String { L10nSupport.string("workbench.placeholder.sessionManager") }
+
+            /// Placeholder body for the Settings page
+            ///
+            /// Key: `workbench.placeholder.settings`
+            /// en: "Configure Vibe Bar and its connected providers."
+            public static var settings: String { L10nSupport.string("workbench.placeholder.settings") }
+
+            /// Placeholder body for a Workbench page with no content yet
+            ///
+            /// Key: `workbench.placeholder.skillsManager`
+            /// en: "Reviewing and organizing installed agent skills is on its way."
+            public static var skillsManager: String { L10nSupport.string("workbench.placeholder.skillsManager") }
+
+            /// Placeholder body for a Workbench page with no content yet
+            ///
+            /// Key: `workbench.placeholder.usageStats`
+            /// en: "Full-window usage and cost analytics are on their way."
+            public static var usageStats: String { L10nSupport.string("workbench.placeholder.usageStats") }
+        }
+
+        public enum Resets {
+            public enum Calendar {
+                /// One refill inside a calendar day cell; lane is a SubProvider name
+                ///
+                /// Key: `workbench.resets.calendar.dayEntry`
+                /// en: "{lane} +{percent}%"
+                public static func dayEntry(percent: Int, lane: String) -> String {
+                    L10nSupport.format("workbench.resets.calendar.dayEntry", percent, lane)
+                }
+
+                /// Tooltip for a scheduled reset in the calendar; lane names the quota, time is an absolute date and time
+                ///
+                /// Key: `workbench.resets.calendar.futureEntry`
+                /// en: "{lane} — resets {time}, +{percent}% back"
+                public static func futureEntry(percent: Int, lane: String, time: String) -> String {
+                    L10nSupport.format("workbench.resets.calendar.futureEntry", percent, lane, time)
+                }
+
+                /// Tooltip on the reset calendar's forward arrow
+                ///
+                /// Key: `workbench.resets.calendar.nextMonth`
+                /// en: "Next month"
+                public static var nextMonth: String { L10nSupport.string("workbench.resets.calendar.nextMonth") }
+
+                /// Tooltip for a recorded reset in the calendar; lane names the quota, time is an absolute date and time, percent is how much of the window had been spent when it refilled
+                ///
+                /// Key: `workbench.resets.calendar.pastEntry`
+                /// en: "{lane} — reset {time} at {percent}% used"
+                public static func pastEntry(percent: Int, lane: String, time: String) -> String {
+                    L10nSupport.format("workbench.resets.calendar.pastEntry", percent, lane, time)
+                }
+
+                /// Tooltip on the reset calendar's back arrow
+                ///
+                /// Key: `workbench.resets.calendar.previousMonth`
+                /// en: "Previous month"
+                public static var previousMonth: String { L10nSupport.string("workbench.resets.calendar.previousMonth") }
+
+                /// Card title over the month grid of recorded and scheduled resets
+                ///
+                /// Key: `workbench.resets.calendar.title`
+                /// en: "Reset Calendar"
+                public static var title: String { L10nSupport.string("workbench.resets.calendar.title") }
+
+                /// Button that returns the reset calendar to the current month distinct-from: cost.timeframe.today — a timeframe covering today is a value; the calendar's Today button is a command that returns the grid to the current month.
+                ///
+                /// Key: `workbench.resets.calendar.today`
+                /// en: "Today"
+                public static var today: String { L10nSupport.string("workbench.resets.calendar.today") }
+            }
+
+            public enum Cycle {
+                /// Tooltip on a cycle card's fill curve; bucket is the quota window's label
+                ///
+                /// Key: `workbench.resets.cycle.curveHelp`
+                /// en: "Remaining % across the current {bucket} cycle"
+                public static func curveHelp(bucket: String) -> String {
+                    L10nSupport.format("workbench.resets.cycle.curveHelp", bucket)
+                }
+
+                /// Caption beside a cycle card's remaining percentage; bucket is the quota window's label, countdown a compact span
+                ///
+                /// Key: `workbench.resets.cycle.headline`
+                /// en: "{bucket} · resets {countdown}"
+                public static func headline(bucket: String, countdown: String) -> String {
+                    L10nSupport.format("workbench.resets.cycle.headline", bucket, countdown)
+                }
+            }
+
+            public enum RefillHorizon {
+                /// Caption beside the Refill Horizon card title
+                ///
+                /// Key: `workbench.resets.refillHorizon.detail`
+                /// en: "next 7 days · column height = how much comes back"
+                public static var detail: String { L10nSupport.string("workbench.resets.refillHorizon.detail") }
+
+                /// Card title over the seven-day refill lane
+                ///
+                /// Key: `workbench.resets.refillHorizon.title`
+                /// en: "Refill Horizon"
+                public static var title: String { L10nSupport.string("workbench.resets.refillHorizon.title") }
+            }
+
+            public enum Risk {
+                /// Caption beside the Run-out Risk card title
+                ///
+                /// Key: `workbench.resets.risk.detail`
+                /// en: "ranked by the personal forecast"
+                public static var detail: String { L10nSupport.string("workbench.resets.risk.detail") }
+
+                /// Empty state of the Run-out Risk list when no quota looks uneasy
+                ///
+                /// Key: `workbench.resets.risk.empty`
+                /// en: "Every bucket is projected to last its cycle."
+                public static var empty: String { L10nSupport.string("workbench.resets.risk.empty") }
+
+                /// Trailing figure on a run-out risk row; countdown is a compact span to the refill
+                ///
+                /// Key: `workbench.resets.risk.remaining`
+                /// en: "{percent}% · refills {countdown}"
+                public static func remaining(percent: Int, countdown: String) -> String {
+                    L10nSupport.format("workbench.resets.risk.remaining", percent, countdown)
+                }
+
+                /// Card title over the list of quotas the forecast is uneasy about
+                ///
+                /// Key: `workbench.resets.risk.title`
+                /// en: "Run-out Risk"
+                public static var title: String { L10nSupport.string("workbench.resets.risk.title") }
+
+                public enum Badge {
+                    /// Compact badge on a run-out risk row when the forecast expects the quota to run out before its reset
+                    ///
+                    /// Key: `workbench.resets.risk.badge.atRisk`
+                    /// en: "RISK"
+                    public static var atRisk: String { L10nSupport.string("workbench.resets.risk.badge.atRisk") }
+
+                    /// Compact badge on a run-out risk row that is simply low, with a calm forecast
+                    ///
+                    /// Key: `workbench.resets.risk.badge.low`
+                    /// en: "LOW"
+                    public static var low: String { L10nSupport.string("workbench.resets.risk.badge.low") }
+
+                    /// Compact badge on a run-out risk row whose quota is already spent distinct-from: usage.tokens.output — 'Out' is the output-token legend there and 'has run out' here — Simplified Chinese already writes 输出 and 耗尽.
+                    ///
+                    /// Key: `workbench.resets.risk.badge.out`
+                    /// en: "OUT"
+                    public static var out: String { L10nSupport.string("workbench.resets.risk.badge.out") }
+
+                    /// Compact badge on a run-out risk row whose recent burn is above the safe range distinct-from: quota.forecast.verdict.watch — the forecast verdict is read as a sentence and the risk badge is all caps, and the two spellings are two renderings the app sets deliberately; collapsing them would move the casing into a call site, which is a code change rather than a rename.
+                    ///
+                    /// Key: `workbench.resets.risk.badge.watch`
+                    /// en: "WATCH"
+                    public static var watch: String { L10nSupport.string("workbench.resets.risk.badge.watch") }
+                }
+            }
+
+            public enum SubDaily {
+                /// Caption over the twenty-four-hour lane for quotas that refill more than once a day
+                ///
+                /// Key: `workbench.resets.subDaily.title`
+                /// en: "NEXT 24 HOURS · SUB-DAILY QUOTAS"
+                public static var title: String { L10nSupport.string("workbench.resets.subDaily.title") }
+            }
+        }
+
+        public enum Sessions {
+            /// Notice under the transcript Details for an AntiGravity session, explaining why the transcript is partial and cannot be deleted
+            ///
+            /// Key: `workbench.sessions.antigravityNotice`
+            /// en: "AntiGravity stores its turns as an undocumented binary payload, so this transcript is a partial reconstruction and its sessions cannot be deleted from here — the IDE keeps them open."
+            public static var antigravityNotice: String { L10nSupport.string("workbench.sessions.antigravityNotice") }
+
+            /// Sessions row context menu and transcript header: copy the shell line that reopens this session
+            ///
+            /// Key: `workbench.sessions.copyResumeCommand`
+            /// en: "Copy resume command"
+            public static var copyResumeCommand: String { L10nSupport.string("workbench.sessions.copyResumeCommand") }
+
+            /// Tooltip on the session id line in the transcript header, and on the ID row in Details
+            ///
+            /// Key: `workbench.sessions.copySessionID`
+            /// en: "Copy session ID"
+            public static var copySessionID: String { L10nSupport.string("workbench.sessions.copySessionID") }
+
+            /// Accessibility label of the session id copy button. {id} is the identifier itself and is never translated.
+            ///
+            /// Key: `workbench.sessions.copySessionIDLabel`
+            /// en: "Session ID {id}. Copy"
+            public static func copySessionIDLabel(id: String) -> String {
+                L10nSupport.format("workbench.sessions.copySessionIDLabel", id)
+            }
+
+            /// Tooltip on the copy button beside the session log's path in Details
+            ///
+            /// Key: `workbench.sessions.copySourcePath`
+            /// en: "Copy source path"
+            public static var copySourcePath: String { L10nSupport.string("workbench.sessions.copySourcePath") }
+
+            /// Tooltip on the copy button beside the CWD row in Details
+            ///
+            /// Key: `workbench.sessions.copyWorkingDirectory`
+            /// en: "Copy working directory"
+            public static var copyWorkingDirectory: String { L10nSupport.string("workbench.sessions.copyWorkingDirectory") }
+
+            /// Destructive item in the Sessions row context menu; the ellipsis says a confirmation follows distinct-from: common.delete — the ellipsis promises a confirmation; the plain button is the confirmed action itself.
+            ///
+            /// Key: `workbench.sessions.deleteEllipsis`
+            /// en: "Delete…"
+            public static var deleteEllipsis: String { L10nSupport.string("workbench.sessions.deleteEllipsis") }
+
+            /// Button that unfolds the session's facts under the transcript header
+            ///
+            /// Key: `workbench.sessions.details`
+            /// en: "Details"
+            public static var details: String { L10nSupport.string("workbench.sessions.details") }
+
+            /// Compact counter used across the Sessions page: index scan progress, how many companies or harnesses are ticked, and which find match is in view distinct-from: quota.mini.pageIndicator — a page counter and the Sessions page's general-purpose counter count different things; the placeholder names are the sentence.
+            ///
+            /// Key: `workbench.sessions.fraction`
+            /// en: "{shown}/{total}"
+            public static func fraction(shown: Int, total: Int) -> String {
+                L10nSupport.format("workbench.sessions.fraction", shown, total)
+            }
+
+            /// Toggle in the Sessions Sort menu
+            ///
+            /// Key: `workbench.sessions.groupByProject`
+            /// en: "Group by project"
+            public static var groupByProject: String { L10nSupport.string("workbench.sessions.groupByProject") }
+
+            /// Sessions row context menu and transcript resume row: run the resume command in a terminal
+            ///
+            /// Key: `workbench.sessions.openInTerminal`
+            /// en: "Open in Terminal"
+            public static var openInTerminal: String { L10nSupport.string("workbench.sessions.openInTerminal") }
+
+            /// Tooltip on the Sessions refresh button
+            ///
+            /// Key: `workbench.sessions.refreshHelp`
+            /// en: "Rescan the session logs on disk"
+            public static var refreshHelp: String { L10nSupport.string("workbench.sessions.refreshHelp") }
+
+            /// Tooltip on the buttons that hand a resume command to a terminal. {terminal} is the app's own name.
+            ///
+            /// Key: `workbench.sessions.runInHelp`
+            /// en: "Run it in {terminal}"
+            public static func runInHelp(terminal: String) -> String {
+                L10nSupport.format("workbench.sessions.runInHelp", terminal)
+            }
+
+            /// Button that turns on the Sessions page's delete-selection mode
+            ///
+            /// Key: `workbench.sessions.selectMode`
+            /// en: "Select"
+            public static var selectMode: String { L10nSupport.string("workbench.sessions.selectMode") }
+
+            /// Tooltip on the Sessions select-mode button
+            ///
+            /// Key: `workbench.sessions.selectModeHelp`
+            /// en: "Pick sessions to delete"
+            public static var selectModeHelp: String { L10nSupport.string("workbench.sessions.selectModeHelp") }
+
+            public enum AllChip {
+                /// Tooltip on the unlit All chip in the Sessions filter bar
+                ///
+                /// Key: `workbench.sessions.allChip.helpUnselected`
+                /// en: "Click to show sessions from every harness"
+                public static var helpUnselected: String { L10nSupport.string("workbench.sessions.allChip.helpUnselected") }
+
+                /// Accessibility label on the unlit All chip in the Sessions filter bar
+                ///
+                /// Key: `workbench.sessions.allChip.labelUnselected`
+                /// en: "Show every session source"
+                public static var labelUnselected: String { L10nSupport.string("workbench.sessions.allChip.labelUnselected") }
+            }
+
+            public enum Count {
+                /// Sessions filter bar counter when the whole filtered list is on screen
+                ///
+                /// Key: `workbench.sessions.count.sessions`
+                /// en: "{count, plural, one {1 session} other {# sessions}}"
+                public static func sessions(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.count.sessions", count)
+                }
+
+                /// Sessions filter bar counter when the list is shorter than the index
+                ///
+                /// Key: `workbench.sessions.count.shownOfTotal`
+                /// en: "{shown} of {total} sessions"
+                public static func shownOfTotal(shown: Int, total: Int) -> String {
+                    L10nSupport.format("workbench.sessions.count.shownOfTotal", shown, total)
+                }
+            }
+
+            public enum Delete {
+                /// Title of the delete confirmation dialog on the Sessions page
+                ///
+                /// Key: `workbench.sessions.delete.confirm`
+                /// en: "{count, plural, one {Delete this session?} other {Delete # sessions?}}"
+                public static func confirm(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.delete.confirm", count)
+                }
+
+                /// Destructive button in the Sessions filter bar while sessions are ticked
+                ///
+                /// Key: `workbench.sessions.delete.countButton`
+                /// en: "Delete {count}"
+                public static func countButton(count: Int) -> String {
+                    L10nSupport.format("workbench.sessions.delete.countButton", count)
+                }
+
+                /// Body of the delete confirmation dialog on the Sessions page
+                ///
+                /// Key: `workbench.sessions.delete.message`
+                /// en: "The session logs are removed from disk. This cannot be undone."
+                public static var message: String { L10nSupport.string("workbench.sessions.delete.message") }
+            }
+
+            public enum Details {
+                /// Accessibility value of the Details button while the facts are hidden
+                ///
+                /// Key: `workbench.sessions.details.collapsed`
+                /// en: "Collapsed"
+                public static var collapsed: String { L10nSupport.string("workbench.sessions.details.collapsed") }
+
+                /// Accessibility value of the Details button while the facts are shown
+                ///
+                /// Key: `workbench.sessions.details.expanded`
+                /// en: "Expanded"
+                public static var expanded: String { L10nSupport.string("workbench.sessions.details.expanded") }
+            }
+
+            public enum Empty {
+                /// Sessions list empty state when the SQLite index would not open
+                ///
+                /// Key: `workbench.sessions.empty.indexUnavailableDetail`
+                /// en: "The index under ~/.vibebar could not be opened, so sessions cannot be listed this session."
+                public static var indexUnavailableDetail: String { L10nSupport.string("workbench.sessions.empty.indexUnavailableDetail") }
+
+                /// Sessions list empty state title when the SQLite index would not open
+                ///
+                /// Key: `workbench.sessions.empty.indexUnavailableTitle`
+                /// en: "Session index unavailable"
+                public static var indexUnavailableTitle: String { L10nSupport.string("workbench.sessions.empty.indexUnavailableTitle") }
+
+                /// Sessions list empty state when the index is fine but nothing was ever scanned
+                ///
+                /// Key: `workbench.sessions.empty.noLogsDetail`
+                /// en: "No session logs were found on this Mac for any of the {count} harnesses Vibe Bar scans."
+                public static func noLogsDetail(count: Int) -> String {
+                    L10nSupport.format("workbench.sessions.empty.noLogsDetail", count)
+                }
+
+                /// Sessions list empty state title when filters or search exclude everything
+                ///
+                /// Key: `workbench.sessions.empty.noMatchTitle`
+                /// en: "No sessions match"
+                public static var noMatchTitle: String { L10nSupport.string("workbench.sessions.empty.noMatchTitle") }
+
+                /// Sessions list empty state while the index scan is still running
+                ///
+                /// Key: `workbench.sessions.empty.scanningDetail`
+                /// en: "Still scanning the session logs on disk."
+                public static var scanningDetail: String { L10nSupport.string("workbench.sessions.empty.scanningDetail") }
+
+                /// Sessions list empty state when the search matched nothing
+                ///
+                /// Key: `workbench.sessions.empty.searchNoMatchDetail`
+                /// en: "Nothing in the indexed sessions matches that search."
+                public static var searchNoMatchDetail: String { L10nSupport.string("workbench.sessions.empty.searchNoMatchDetail") }
+            }
+
+            public enum Fact {
+                /// Details row label: when the session was created
+                ///
+                /// Key: `workbench.sessions.fact.created`
+                /// en: "Created"
+                public static var created: String { L10nSupport.string("workbench.sessions.fact.created") }
+
+                /// Details row label: the session's working directory
+                ///
+                /// Key: `workbench.sessions.fact.cwd`
+                /// en: "CWD"
+                public static var cwd: String { L10nSupport.string("workbench.sessions.fact.cwd") }
+
+                /// Details row label: the session identifier
+                ///
+                /// Key: `workbench.sessions.fact.id`
+                /// en: "ID"
+                public static var id: String { L10nSupport.string("workbench.sessions.fact.id") }
+
+                /// Details row label: when the session was last written to
+                ///
+                /// Key: `workbench.sessions.fact.lastActive`
+                /// en: "Last active"
+                public static var lastActive: String { L10nSupport.string("workbench.sessions.fact.lastActive") }
+
+                /// Details row label: the session log's path on disk
+                ///
+                /// Key: `workbench.sessions.fact.source`
+                /// en: "Source"
+                public static var source: String { L10nSupport.string("workbench.sessions.fact.source") }
+            }
+
+            public enum Filter {
+                /// Sessions filter bar menu that ticks whole companies at once
+                ///
+                /// Key: `workbench.sessions.filter.company`
+                /// en: "Company"
+                public static var company: String { L10nSupport.string("workbench.sessions.filter.company") }
+
+                /// Picker inside the Sessions When menu
+                ///
+                /// Key: `workbench.sessions.filter.dateRange`
+                /// en: "Date range"
+                public static var dateRange: String { L10nSupport.string("workbench.sessions.filter.dateRange") }
+
+                /// Sessions filter bar button that opens the project-directory filters
+                ///
+                /// Key: `workbench.sessions.filter.folders`
+                /// en: "Folders"
+                public static var folders: String { L10nSupport.string("workbench.sessions.filter.folders") }
+
+                /// Value on the Sessions Folders button while a directory filter is set
+                ///
+                /// Key: `workbench.sessions.filter.foldersFiltered`
+                /// en: "Filtered"
+                public static var foldersFiltered: String { L10nSupport.string("workbench.sessions.filter.foldersFiltered") }
+
+                /// One row of the Sessions Harness menu: the harness name and how many sessions it has. The name is never translated. distinct-from: quota.forecast.legend.item — a legend marker's name and the figure it marks, and a harness with its session count, are different pairs; the placeholder names are the sentence.
+                ///
+                /// Key: `workbench.sessions.filter.harnessCount`
+                /// en: "{harness}  {count}"
+                public static func harnessCount(count: Int, harness: String) -> String {
+                    L10nSupport.format("workbench.sessions.filter.harnessCount", count, harness)
+                }
+
+                /// Sessions filter bar menu holding the terminal and index options
+                ///
+                /// Key: `workbench.sessions.filter.options`
+                /// en: "Options"
+                public static var options: String { L10nSupport.string("workbench.sessions.filter.options") }
+
+                /// Sessions filter bar menu that picks which parts of a session the search covers
+                ///
+                /// Key: `workbench.sessions.filter.scope`
+                /// en: "Scope"
+                public static var scope: String { L10nSupport.string("workbench.sessions.filter.scope") }
+
+                /// Sessions filter bar menu that picks the list order
+                ///
+                /// Key: `workbench.sessions.filter.sort`
+                /// en: "Sort"
+                public static var sort: String { L10nSupport.string("workbench.sessions.filter.sort") }
+
+                /// Value on the Sessions Sort menu while Group by project is on. {order} is the chosen order's own label.
+                ///
+                /// Key: `workbench.sessions.filter.sortGrouped`
+                /// en: "{order} · grouped"
+                public static func sortGrouped(order: String) -> String {
+                    L10nSupport.format("workbench.sessions.filter.sortGrouped", order)
+                }
+
+                /// Accessibility label of the Sessions Sort menu
+                ///
+                /// Key: `workbench.sessions.filter.sortHelp`
+                /// en: "Choose how the list is ordered"
+                public static var sortHelp: String { L10nSupport.string("workbench.sessions.filter.sortHelp") }
+
+                /// Sessions filter bar menu that picks how far back to list
+                ///
+                /// Key: `workbench.sessions.filter.when`
+                /// en: "When"
+                public static var when: String { L10nSupport.string("workbench.sessions.filter.when") }
+
+                /// Accessibility label of the Sessions When menu
+                ///
+                /// Key: `workbench.sessions.filter.whenHelp`
+                /// en: "Choose how far back to list sessions"
+                public static var whenHelp: String { L10nSupport.string("workbench.sessions.filter.whenHelp") }
+            }
+
+            public enum Find {
+                /// Tooltip on the next-match button in the transcript find bar
+                ///
+                /// Key: `workbench.sessions.find.next`
+                /// en: "Next match"
+                public static var next: String { L10nSupport.string("workbench.sessions.find.next") }
+
+                /// Counter in the transcript find bar when nothing matched
+                ///
+                /// Key: `workbench.sessions.find.none`
+                /// en: "none"
+                public static var `none`: String { L10nSupport.string("workbench.sessions.find.none") }
+
+                /// Placeholder and accessibility label of the transcript find field
+                ///
+                /// Key: `workbench.sessions.find.placeholder`
+                /// en: "Find in transcript"
+                public static var placeholder: String { L10nSupport.string("workbench.sessions.find.placeholder") }
+
+                /// Tooltip on the previous-match button in the transcript find bar
+                ///
+                /// Key: `workbench.sessions.find.previous`
+                /// en: "Previous match"
+                public static var previous: String { L10nSupport.string("workbench.sessions.find.previous") }
+            }
+
+            public enum Folders {
+                /// Field label in the Sessions directory-filter popover
+                ///
+                /// Key: `workbench.sessions.folders.exclude`
+                /// en: "Exclude paths containing"
+                public static var exclude: String { L10nSupport.string("workbench.sessions.folders.exclude") }
+
+                /// Example value in the exclude field of the Sessions directory-filter popover
+                ///
+                /// Key: `workbench.sessions.folders.excludePlaceholder`
+                /// en: "/archive, /vendor"
+                public static var excludePlaceholder: String { L10nSupport.string("workbench.sessions.folders.excludePlaceholder") }
+
+                /// Field label in the Sessions directory-filter popover
+                ///
+                /// Key: `workbench.sessions.folders.include`
+                /// en: "Include paths containing"
+                public static var include: String { L10nSupport.string("workbench.sessions.folders.include") }
+
+                /// Example value in the include field of the Sessions directory-filter popover
+                ///
+                /// Key: `workbench.sessions.folders.includePlaceholder`
+                /// en: "/project/a, /project/b"
+                public static var includePlaceholder: String { L10nSupport.string("workbench.sessions.folders.includePlaceholder") }
+
+                /// Caption under the Sessions directory-filter fields
+                ///
+                /// Key: `workbench.sessions.folders.separatorHint`
+                /// en: "Separate multiple paths with commas, semicolons, or new lines."
+                public static var separatorHint: String { L10nSupport.string("workbench.sessions.folders.separatorHint") }
+
+                /// Title of the Sessions directory-filter popover
+                ///
+                /// Key: `workbench.sessions.folders.title`
+                /// en: "Directory filters"
+                public static var title: String { L10nSupport.string("workbench.sessions.folders.title") }
+            }
+
+            public enum Index {
+                /// Sessions filter bar status while a scan is running and its total is not known yet
+                ///
+                /// Key: `workbench.sessions.index.scanning`
+                /// en: "scanning…"
+                public static var scanning: String { L10nSupport.string("workbench.sessions.index.scanning") }
+
+                /// Sessions filter bar status when the SQLite index would not open
+                ///
+                /// Key: `workbench.sessions.index.unavailable`
+                /// en: "index unavailable"
+                public static var unavailable: String { L10nSupport.string("workbench.sessions.index.unavailable") }
+            }
+
+            public enum List {
+                /// Notice at the foot of the Sessions list when it stops at the loaded-summary ceiling
+                ///
+                /// Key: `workbench.sessions.list.capNotice`
+                /// en: "Showing the first {shown} of {total} sessions. Narrow the filters or search to reach the rest."
+                public static func capNotice(shown: Int, total: Int) -> String {
+                    L10nSupport.format("workbench.sessions.list.capNotice", shown, total)
+                }
+            }
+
+            public enum Message {
+                /// Context menu item on a transcript message card
+                ///
+                /// Key: `workbench.sessions.message.copy`
+                /// en: "Copy Message"
+                public static var copy: String { L10nSupport.string("workbench.sessions.message.copy") }
+
+                /// Tooltip and accessibility label of the copy button on a transcript message card
+                ///
+                /// Key: `workbench.sessions.message.copyHelp`
+                /// en: "Copy this message"
+                public static var copyHelp: String { L10nSupport.string("workbench.sessions.message.copyHelp") }
+
+                /// Button that folds a long transcript message back up
+                ///
+                /// Key: `workbench.sessions.message.showLess`
+                /// en: "Show less"
+                public static var showLess: String { L10nSupport.string("workbench.sessions.message.showLess") }
+
+                /// Button that unfolds a long transcript message; {count} is the message's length in characters
+                ///
+                /// Key: `workbench.sessions.message.showMore`
+                /// en: "Show more ({count} chars)"
+                public static func showMore(count: Int) -> String {
+                    L10nSupport.format("workbench.sessions.message.showMore", count)
+                }
+            }
+
+            public enum Options {
+                /// Accessibility label of the Sessions Options menu
+                ///
+                /// Key: `workbench.sessions.options.help`
+                /// en: "Terminal and index options"
+                public static var help: String { L10nSupport.string("workbench.sessions.options.help") }
+
+                /// Toggle in the Sessions Options menu that stores message excerpts in the index
+                ///
+                /// Key: `workbench.sessions.options.indexMessageText`
+                /// en: "Index message text"
+                public static var indexMessageText: String { L10nSupport.string("workbench.sessions.options.indexMessageText") }
+
+                /// Picker in the Sessions Options menu that chooses where a resume command is sent
+                ///
+                /// Key: `workbench.sessions.options.openIn`
+                /// en: "Open in"
+                public static var openIn: String { L10nSupport.string("workbench.sessions.options.openIn") }
+
+                /// Button in the Sessions Options menu that erases and rescans the index
+                ///
+                /// Key: `workbench.sessions.options.rebuildIndex`
+                /// en: "Rebuild index…"
+                public static var rebuildIndex: String { L10nSupport.string("workbench.sessions.options.rebuildIndex") }
+            }
+
+            public enum Outline {
+                /// Empty state of the transcript outline popover
+                ///
+                /// Key: `workbench.sessions.outline.empty`
+                /// en: "This transcript has no user prompts."
+                public static var empty: String { L10nSupport.string("workbench.sessions.outline.empty") }
+
+                /// Heading of the transcript outline popover
+                ///
+                /// Key: `workbench.sessions.outline.heading`
+                /// en: "PROMPTS"
+                public static var heading: String { L10nSupport.string("workbench.sessions.outline.heading") }
+
+                /// Tooltip on the transcript outline button
+                ///
+                /// Key: `workbench.sessions.outline.help`
+                /// en: "Jump to a prompt"
+                public static var help: String { L10nSupport.string("workbench.sessions.outline.help") }
+
+                /// Accessibility label of the transcript outline button
+                ///
+                /// Key: `workbench.sessions.outline.label`
+                /// en: "Show the transcript outline"
+                public static var label: String { L10nSupport.string("workbench.sessions.outline.label") }
+            }
+
+            public enum Page {
+                /// Button that moves the transcript to the next page of messages
+                ///
+                /// Key: `workbench.sessions.page.next`
+                /// en: "Next"
+                public static var next: String { L10nSupport.string("workbench.sessions.page.next") }
+
+                /// Button that moves the transcript to the previous page of messages
+                ///
+                /// Key: `workbench.sessions.page.previous`
+                /// en: "Previous"
+                public static var previous: String { L10nSupport.string("workbench.sessions.page.previous") }
+            }
+
+            public enum Project {
+                /// Sessions group heading and footer label for a session with no working directory
+                ///
+                /// Key: `workbench.sessions.project.none`
+                /// en: "No project"
+                public static var `none`: String { L10nSupport.string("workbench.sessions.project.none") }
+
+                /// Sessions group heading, footer label and Details value for a Codex task started without a project
+                ///
+                /// Key: `workbench.sessions.project.projectless`
+                /// en: "Projectless"
+                public static var projectless: String { L10nSupport.string("workbench.sessions.project.projectless") }
+            }
+
+            public enum Range {
+                /// Sessions When menu option: no lower bound
+                ///
+                /// Key: `workbench.sessions.range.all`
+                /// en: "Any time"
+                public static var all: String { L10nSupport.string("workbench.sessions.range.all") }
+            }
+
+            public enum Resume {
+                /// Heading above the shell line that reopens a session, in the transcript Details
+                ///
+                /// Key: `workbench.sessions.resume.heading`
+                /// en: "RESUME"
+                public static var heading: String { L10nSupport.string("workbench.sessions.resume.heading") }
+
+                /// Shown in the transcript Details when the provider offers no resume command
+                ///
+                /// Key: `workbench.sessions.resume.none`
+                /// en: "This session has no command-line entry point."
+                public static var `none`: String { L10nSupport.string("workbench.sessions.resume.none") }
+            }
+
+            public enum Role {
+                /// Role label on a transcript message card
+                ///
+                /// Key: `workbench.sessions.role.assistant`
+                /// en: "Assistant"
+                public static var assistant: String { L10nSupport.string("workbench.sessions.role.assistant") }
+
+                /// Role label on a transcript message card that is none of the known roles
+                ///
+                /// Key: `workbench.sessions.role.other`
+                /// en: "Note"
+                public static var other: String { L10nSupport.string("workbench.sessions.role.other") }
+
+                /// Role label on a transcript message card distinct-from: settings.section.system — the Settings section for login items and the language option meaning 'follow the OS language' are different things.
+                ///
+                /// Key: `workbench.sessions.role.system`
+                /// en: "System"
+                public static var system: String { L10nSupport.string("workbench.sessions.role.system") }
+
+                /// Role label on a transcript message card
+                ///
+                /// Key: `workbench.sessions.role.tool`
+                /// en: "Tool"
+                public static var tool: String { L10nSupport.string("workbench.sessions.role.tool") }
+
+                /// Role label on a transcript message card written by the person
+                ///
+                /// Key: `workbench.sessions.role.user`
+                /// en: "You"
+                public static var user: String { L10nSupport.string("workbench.sessions.role.user") }
+            }
+
+            public enum Row {
+                /// Tooltip on the review badge of a Sessions row. Auto Review is Codex's own feature name and stays in English.
+                ///
+                /// Key: `workbench.sessions.row.autoReviewsMerged`
+                /// en: "{count, plural, one {1 Auto Review merged} other {# Auto Reviews merged}}"
+                public static func autoReviewsMerged(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.row.autoReviewsMerged", count)
+                }
+
+                /// Tooltip on a Sessions row checkbox while delete mode is on
+                ///
+                /// Key: `workbench.sessions.row.includeInDeletion`
+                /// en: "Include this session in the deletion"
+                public static var includeInDeletion: String { L10nSupport.string("workbench.sessions.row.includeInDeletion") }
+
+                /// How many messages a session holds: the tooltip on the Sessions row badge, and the transcript header line
+                ///
+                /// Key: `workbench.sessions.row.messageCount`
+                /// en: "{count, plural, one {# message} other {# messages}}"
+                public static func messageCount(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.row.messageCount", count)
+                }
+
+                /// Accessibility label of a Sessions row checkbox
+                ///
+                /// Key: `workbench.sessions.row.select`
+                /// en: "Select this session"
+                public static var select: String { L10nSupport.string("workbench.sessions.row.select") }
+
+                /// Accessibility hint on a Sessions row outside delete mode
+                ///
+                /// Key: `workbench.sessions.row.showTranscript`
+                /// en: "Show this transcript"
+                public static var showTranscript: String { L10nSupport.string("workbench.sessions.row.showTranscript") }
+
+                /// Accessibility hint on a Sessions row while delete mode is on
+                ///
+                /// Key: `workbench.sessions.row.toggleForDeletion`
+                /// en: "Toggle this session for deletion"
+                public static var toggleForDeletion: String { L10nSupport.string("workbench.sessions.row.toggleForDeletion") }
+            }
+
+            public enum Scope {
+                /// Sessions search scope
+                ///
+                /// Key: `workbench.sessions.scope.assistant`
+                /// en: "Assistant replies"
+                public static var assistant: String { L10nSupport.string("workbench.sessions.scope.assistant") }
+
+                /// Sessions search scope
+                ///
+                /// Key: `workbench.sessions.scope.system`
+                /// en: "System prompts"
+                public static var system: String { L10nSupport.string("workbench.sessions.scope.system") }
+
+                /// Sessions search scope
+                ///
+                /// Key: `workbench.sessions.scope.title`
+                /// en: "Titles and session IDs"
+                public static var title: String { L10nSupport.string("workbench.sessions.scope.title") }
+
+                /// Sessions search scope
+                ///
+                /// Key: `workbench.sessions.scope.tool`
+                /// en: "Tool and file operations"
+                public static var tool: String { L10nSupport.string("workbench.sessions.scope.tool") }
+
+                /// Sessions search scope
+                ///
+                /// Key: `workbench.sessions.scope.user`
+                /// en: "User prompts"
+                public static var user: String { L10nSupport.string("workbench.sessions.scope.user") }
+            }
+
+            public enum Search {
+                /// Footer of the Sessions Scope menu while message indexing is on
+                ///
+                /// Key: `workbench.sessions.search.bodyIndexed`
+                /// en: "Message text is indexed locally."
+                public static var bodyIndexed: String { L10nSupport.string("workbench.sessions.search.bodyIndexed") }
+
+                /// Footer of the Sessions Scope menu while message indexing is off
+                ///
+                /// Key: `workbench.sessions.search.bodyNotIndexed`
+                /// en: "Enable message indexing in Options to search transcript content."
+                public static var bodyNotIndexed: String { L10nSupport.string("workbench.sessions.search.bodyNotIndexed") }
+
+                /// Tooltip on the clear button inside the Sessions search field
+                ///
+                /// Key: `workbench.sessions.search.clearHelp`
+                /// en: "Clear the search"
+                public static var clearHelp: String { L10nSupport.string("workbench.sessions.search.clearHelp") }
+
+                /// Placeholder of the Sessions search field
+                ///
+                /// Key: `workbench.sessions.search.placeholder`
+                /// en: "Search sessions"
+                public static var placeholder: String { L10nSupport.string("workbench.sessions.search.placeholder") }
+            }
+
+            public enum Sort {
+                /// Sessions Sort menu option
+                ///
+                /// Key: `workbench.sessions.sort.byProject`
+                /// en: "By project"
+                public static var byProject: String { L10nSupport.string("workbench.sessions.sort.byProject") }
+
+                /// Sessions Sort menu option
+                ///
+                /// Key: `workbench.sessions.sort.oldestFirst`
+                /// en: "Oldest first"
+                public static var oldestFirst: String { L10nSupport.string("workbench.sessions.sort.oldestFirst") }
+
+                /// Sessions Sort menu option
+                ///
+                /// Key: `workbench.sessions.sort.recentFirst`
+                /// en: "Newest first"
+                public static var recentFirst: String { L10nSupport.string("workbench.sessions.sort.recentFirst") }
+            }
+
+            public enum Toast {
+                /// Sessions toast after turning message indexing off and the stored excerpts could not be dropped
+                ///
+                /// Key: `workbench.sessions.toast.bodyIndexDropFailed`
+                /// en: "Clearing the indexed message text failed."
+                public static var bodyIndexDropFailed: String { L10nSupport.string("workbench.sessions.toast.bodyIndexDropFailed") }
+
+                /// Sessions toast after turning message indexing off
+                ///
+                /// Key: `workbench.sessions.toast.bodyIndexDropped`
+                /// en: "Indexed message text removed."
+                public static var bodyIndexDropped: String { L10nSupport.string("workbench.sessions.toast.bodyIndexDropped") }
+
+                /// Sessions toast after a command was put on the pasteboard
+                ///
+                /// Key: `workbench.sessions.toast.copied`
+                /// en: "Copied to the clipboard."
+                public static var copied: String { L10nSupport.string("workbench.sessions.toast.copied") }
+
+                /// Sessions toast after a terminal could not be driven and the command went to the pasteboard instead. {reason} is the launcher's own explanation.
+                ///
+                /// Key: `workbench.sessions.toast.copiedWithReason`
+                /// en: "Copied to the clipboard. {reason}"
+                public static func copiedWithReason(reason: String) -> String {
+                    L10nSupport.format("workbench.sessions.toast.copiedWithReason", reason)
+                }
+
+                /// Sessions toast after copying a session's working directory
+                ///
+                /// Key: `workbench.sessions.toast.cwdCopied`
+                /// en: "Working directory copied."
+                public static var cwdCopied: String { L10nSupport.string("workbench.sessions.toast.cwdCopied") }
+
+                /// Sessions toast after every selected session was deleted
+                ///
+                /// Key: `workbench.sessions.toast.deleted`
+                /// en: "{count, plural, one {Deleted 1 session.} other {Deleted # sessions.}}"
+                public static func deleted(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.toast.deleted", count)
+                }
+
+                /// Sessions toast after a partial delete. {reason} is the first failure's own message.
+                ///
+                /// Key: `workbench.sessions.toast.deletedPartial`
+                /// en: "Deleted {deleted}, kept {kept}: {reason}"
+                public static func deletedPartial(deleted: Int, kept: Int, reason: String) -> String {
+                    L10nSupport.format("workbench.sessions.toast.deletedPartial", deleted, kept, reason)
+                }
+
+                /// Sessions toast when a rebuild could not erase the index first
+                ///
+                /// Key: `workbench.sessions.toast.indexNotCleared`
+                /// en: "The session index could not be cleared."
+                public static var indexNotCleared: String { L10nSupport.string("workbench.sessions.toast.indexNotCleared") }
+
+                /// Sessions toast after copying one transcript message
+                ///
+                /// Key: `workbench.sessions.toast.messageCopied`
+                /// en: "Message copied."
+                public static var messageCopied: String { L10nSupport.string("workbench.sessions.toast.messageCopied") }
+
+                /// Sessions toast when a session cannot be handed back to a CLI
+                ///
+                /// Key: `workbench.sessions.toast.noResumeCommand`
+                /// en: "This session has no resume command."
+                public static var noResumeCommand: String { L10nSupport.string("workbench.sessions.toast.noResumeCommand") }
+
+                /// Sessions toast after a resume command was handed to a terminal. {terminal} is the app's own name.
+                ///
+                /// Key: `workbench.sessions.toast.openedIn`
+                /// en: "Opened in {terminal}."
+                public static func openedIn(terminal: String) -> String {
+                    L10nSupport.format("workbench.sessions.toast.openedIn", terminal)
+                }
+
+                /// Sessions toast after copying a session identifier
+                ///
+                /// Key: `workbench.sessions.toast.sessionIDCopied`
+                /// en: "Session ID copied."
+                public static var sessionIDCopied: String { L10nSupport.string("workbench.sessions.toast.sessionIDCopied") }
+
+                /// Sessions toast after copying a session log's path
+                ///
+                /// Key: `workbench.sessions.toast.sourcePathCopied`
+                /// en: "Source path copied."
+                public static var sourcePathCopied: String { L10nSupport.string("workbench.sessions.toast.sourcePathCopied") }
+            }
+
+            public enum Transcript {
+                /// Separator inserted in a transcript where a Codex Auto Review child session is merged in. Auto Review is Codex's own feature name and stays in English.
+                ///
+                /// Key: `workbench.sessions.transcript.autoReviewDivider`
+                /// en: "Auto Review"
+                public static var autoReviewDivider: String { L10nSupport.string("workbench.sessions.transcript.autoReviewDivider") }
+
+                /// Shown in the transcript pane after the reader was cancelled
+                ///
+                /// Key: `workbench.sessions.transcript.cancelled`
+                /// en: "Reading this session was stopped. Select it again to reopen it."
+                public static var cancelled: String { L10nSupport.string("workbench.sessions.transcript.cancelled") }
+
+                /// Button on the truncation banner that re-reads a very large session with no byte bound
+                ///
+                /// Key: `workbench.sessions.transcript.loadAll`
+                /// en: "Load entire transcript"
+                public static var loadAll: String { L10nSupport.string("workbench.sessions.transcript.loadAll") }
+
+                /// Shown in the transcript pane while a session file is being parsed
+                ///
+                /// Key: `workbench.sessions.transcript.loading`
+                /// en: "Reading the session log…"
+                public static var loading: String { L10nSupport.string("workbench.sessions.transcript.loading") }
+
+                /// Shown in the transcript pane when the log parsed to nothing
+                ///
+                /// Key: `workbench.sessions.transcript.noMessages`
+                /// en: "This session's log has no readable messages."
+                public static var noMessages: String { L10nSupport.string("workbench.sessions.transcript.noMessages") }
+
+                /// Transcript error when no adapter can open this provider's sessions. {provider} is the provider's own name.
+                ///
+                /// Key: `workbench.sessions.transcript.noReader`
+                /// en: "No reader is registered for {provider}."
+                public static func noReader(provider: String) -> String {
+                    L10nSupport.format("workbench.sessions.transcript.noReader", provider)
+                }
+
+                /// Header of the transcript pager
+                ///
+                /// Key: `workbench.sessions.transcript.pageRange`
+                /// en: "Messages {first}–{last} of {total}"
+                public static func pageRange(first: Int, last: Int, total: Int) -> String {
+                    L10nSupport.format("workbench.sessions.transcript.pageRange", first, last, total)
+                }
+
+                /// Transcript pane placeholder while no session is selected
+                ///
+                /// Key: `workbench.sessions.transcript.placeholderDetail`
+                /// en: "Pick a session on the left to read its transcript, copy its resume command, or hand it back to its CLI."
+                public static var placeholderDetail: String { L10nSupport.string("workbench.sessions.transcript.placeholderDetail") }
+
+                /// Transcript pane placeholder title while no session is selected
+                ///
+                /// Key: `workbench.sessions.transcript.placeholderTitle`
+                /// en: "No session selected"
+                public static var placeholderTitle: String { L10nSupport.string("workbench.sessions.transcript.placeholderTitle") }
+
+                /// Transcript error when the adapter threw and offered no message of its own
+                ///
+                /// Key: `workbench.sessions.transcript.readFailed`
+                /// en: "This session's log could not be read."
+                public static var readFailed: String { L10nSupport.string("workbench.sessions.transcript.readFailed") }
+
+                /// Truncation banner detail. Both sizes arrive already formatted as byte counts.
+                ///
+                /// Key: `workbench.sessions.transcript.truncatedDetail`
+                /// en: "{parsed} read of {file}. Reading all of it holds the whole transcript in memory."
+                public static func truncatedDetail(file: String, parsed: String) -> String {
+                    L10nSupport.format("workbench.sessions.transcript.truncatedDetail", file, parsed)
+                }
+
+                /// Truncation banner title when only a head window of a very large session was parsed
+                ///
+                /// Key: `workbench.sessions.transcript.truncatedTitle`
+                /// en: "Showing the first {count, plural, one {# message} other {# messages}} of a very large log"
+                public static func truncatedTitle(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.transcript.truncatedTitle", count)
+                }
+            }
+        }
+
+        public enum Skills {
+            /// Last clause of the per-harness count tooltip: skills linked into the harness but switched off in its own config.
+            ///
+            /// Key: `workbench.skills.appCountNativeDisabled`
+            /// en: "{count} projected but disabled"
+            public static func appCountNativeDisabled(count: Int) -> String {
+                L10nSupport.format("workbench.skills.appCountNativeDisabled", count)
+            }
+
+            /// Second clause of the per-harness count tooltip, for AntiGravity, which sees skills through the Gemini CLI folder.
+            ///
+            /// Key: `workbench.skills.appCountViaGeminiRoot`
+            /// en: "{enabled} enabled + {coupled} via the Gemini CLI compatibility root"
+            public static func appCountViaGeminiRoot(coupled: Int, enabled: Int) -> String {
+                L10nSupport.format("workbench.skills.appCountViaGeminiRoot", coupled, enabled)
+            }
+
+            /// Second clause of the per-harness count tooltip, for a harness that scans the shared root itself.
+            ///
+            /// Key: `workbench.skills.appCountViaSharedRoot`
+            /// en: "{enabled} enabled + {coupled} via the shared skills root"
+            public static func appCountViaSharedRoot(coupled: Int, enabled: Int) -> String {
+                L10nSupport.format("workbench.skills.appCountViaSharedRoot", coupled, enabled)
+            }
+
+            /// Skills page per-harness count pill: its tooltip and its accessibility label. {app} is a harness display name and is never translated.
+            ///
+            /// Key: `workbench.skills.appSeesCount`
+            /// en: "{app} sees {count, plural, one {# skill} other {# skills}}"
+            public static func appSeesCount(count: Int, app: String) -> String {
+                L10nSupport.localizedFormat("workbench.skills.appSeesCount", count, app)
+            }
+
+            /// Skills toolbar button that opens the backups sheet.
+            ///
+            /// Key: `workbench.skills.backups`
+            /// en: "Backups"
+            public static var backups: String { L10nSupport.string("workbench.skills.backups") }
+
+            /// Skills toolbar button that asks every repository-backed skill whether it has a newer commit.
+            ///
+            /// Key: `workbench.skills.checkUpdates`
+            /// en: "Check Updates"
+            public static var checkUpdates: String { L10nSupport.string("workbench.skills.checkUpdates") }
+
+            /// Same Skills toolbar button once updates are known. {count} is how many skills can be updated.
+            ///
+            /// Key: `workbench.skills.checkUpdatesCount`
+            /// en: "Check Updates · {count}"
+            public static func checkUpdatesCount(count: Int) -> String {
+                L10nSupport.format("workbench.skills.checkUpdatesCount", count)
+            }
+
+            /// Context-menu item: flip the harness's own per-skill switch off but leave the link on disk.
+            ///
+            /// Key: `workbench.skills.contextDisableKeepProjection`
+            /// en: "Disable in {app} · Keep Projection"
+            public static func contextDisableKeepProjection(app: String) -> String {
+                L10nSupport.format("workbench.skills.contextDisableKeepProjection", app)
+            }
+
+            /// Context-menu item on a skill's harness circle.
+            ///
+            /// Key: `workbench.skills.contextEnableIn`
+            /// en: "Enable in {app}"
+            public static func contextEnableIn(app: String) -> String {
+                L10nSupport.format("workbench.skills.contextEnableIn", app)
+            }
+
+            /// Context-menu item: delete the link or copy Vibe Bar made inside that harness's skills folder.
+            ///
+            /// Key: `workbench.skills.contextRemoveProjection`
+            /// en: "Remove {app} Projection"
+            public static func contextRemoveProjection(app: String) -> String {
+                L10nSupport.format("workbench.skills.contextRemoveProjection", app)
+            }
+
+            /// Skills page count caption while the search field filters the list.
+            ///
+            /// Key: `workbench.skills.countFiltered`
+            /// en: "{shown} of {total} skills"
+            public static func countFiltered(shown: Int, total: Int) -> String {
+                L10nSupport.format("workbench.skills.countFiltered", shown, total)
+            }
+
+            /// Skills page count caption when no filter is applied.
+            ///
+            /// Key: `workbench.skills.countTotal`
+            /// en: "{count, plural, one {# skill} other {# skills}}"
+            public static func countTotal(count: Int) -> String {
+                L10nSupport.localizedFormat("workbench.skills.countTotal", count)
+            }
+
+            /// Skills toolbar and empty-state button that opens the discover sheet.
+            ///
+            /// Key: `workbench.skills.discover`
+            /// en: "Discover"
+            public static var discover: String { L10nSupport.string("workbench.skills.discover") }
+
+            /// Tooltip on the Skills page Discover button.
+            ///
+            /// Key: `workbench.skills.discoverHelp`
+            /// en: "Browse configured repositories and the skills.sh index"
+            public static var discoverHelp: String { L10nSupport.string("workbench.skills.discoverHelp") }
+
+            /// Accessibility label on the button that empties the Skills search field.
+            ///
+            /// Key: `workbench.skills.filterClear`
+            /// en: "Clear the filter"
+            public static var filterClear: String { L10nSupport.string("workbench.skills.filterClear") }
+
+            /// Placeholder in the Skills page search field.
+            ///
+            /// Key: `workbench.skills.filterPlaceholder`
+            /// en: "Filter installed skills"
+            public static var filterPlaceholder: String { L10nSupport.string("workbench.skills.filterPlaceholder") }
+
+            /// Skills toolbar and empty-state button that scans the Mac for skills already on disk.
+            ///
+            /// Key: `workbench.skills.importExisting`
+            /// en: "Import Existing"
+            public static var importExisting: String { L10nSupport.string("workbench.skills.importExisting") }
+
+            /// Button on a discover-sheet row that installs that skill.
+            ///
+            /// Key: `workbench.skills.install`
+            /// en: "Install"
+            public static var install: String { L10nSupport.string("workbench.skills.install") }
+
+            /// Skills toolbar button that opens a file picker for a skill archive.
+            ///
+            /// Key: `workbench.skills.installFromZip`
+            /// en: "Install from ZIP"
+            public static var installFromZip: String { L10nSupport.string("workbench.skills.installFromZip") }
+
+            /// Accessibility label on a skill row's overflow menu button.
+            ///
+            /// Key: `workbench.skills.menuMoreActions`
+            /// en: "More actions for {skill}"
+            public static func menuMoreActions(skill: String) -> String {
+                L10nSupport.format("workbench.skills.menuMoreActions", skill)
+            }
+
+            /// Overflow-menu item that selects the skill's directory in Finder.
+            ///
+            /// Key: `workbench.skills.menuRevealInFinder`
+            /// en: "Reveal in Finder"
+            public static var menuRevealInFinder: String { L10nSupport.string("workbench.skills.menuRevealInFinder") }
+
+            /// Overflow-menu item that asks to uninstall the skill.
+            ///
+            /// Key: `workbench.skills.menuUninstall`
+            /// en: "Uninstall…"
+            public static var menuUninstall: String { L10nSupport.string("workbench.skills.menuUninstall") }
+
+            /// Overflow-menu item that re-fetches the skill from its repository.
+            ///
+            /// Key: `workbench.skills.menuUpdateFromRepository`
+            /// en: "Update from repository"
+            public static var menuUpdateFromRepository: String { L10nSupport.string("workbench.skills.menuUpdateFromRepository") }
+
+            /// Overflow-menu item that opens the per-skill wiring popover.
+            ///
+            /// Key: `workbench.skills.menuWiringDetails`
+            /// en: "Wiring Details…"
+            public static var menuWiringDetails: String { L10nSupport.string("workbench.skills.menuWiringDetails") }
+
+            /// Card shown when the Skills search field matches nothing. {query} is what the user typed.
+            ///
+            /// Key: `workbench.skills.noMatch`
+            /// en: "No skill matches “{query}”"
+            public static func noMatch(query: String) -> String {
+                L10nSupport.format("workbench.skills.noMatch", query)
+            }
+
+            /// Tooltip on the source badge naming the git branch the skill was fetched from.
+            ///
+            /// Key: `workbench.skills.sourceBranch`
+            /// en: "Branch {branch}"
+            public static func sourceBranch(branch: String) -> String {
+                L10nSupport.format("workbench.skills.sourceBranch", branch)
+            }
+
+            /// Tooltip on the source badge when the skill has no repository.
+            ///
+            /// Key: `workbench.skills.sourceInstalledLocally`
+            /// en: "Installed locally"
+            public static var sourceInstalledLocally: String { L10nSupport.string("workbench.skills.sourceInstalledLocally") }
+
+            /// Source badge and result-group heading for a skill with no repository behind it.
+            ///
+            /// Key: `workbench.skills.sourceLocal`
+            /// en: "local"
+            public static var sourceLocal: String { L10nSupport.string("workbench.skills.sourceLocal") }
+
+            /// Tooltip on the question-mark button that opens the sync explainer popover.
+            ///
+            /// Key: `workbench.skills.syncExplainerHelp`
+            /// en: "How skill syncing works — roots, links, and native switches"
+            public static var syncExplainerHelp: String { L10nSupport.string("workbench.skills.syncExplainerHelp") }
+
+            /// Destructive button in the uninstall confirmation dialog. distinct-from: workbench.skills.menuUninstall — the menu item's ellipsis promises the confirmation dialog; this is the destructive button inside it.
+            ///
+            /// Key: `workbench.skills.uninstall`
+            /// en: "Uninstall"
+            public static var uninstall: String { L10nSupport.string("workbench.skills.uninstall") }
+
+            /// Message under the uninstall confirmation title.
+            ///
+            /// Key: `workbench.skills.uninstallConfirmMessage`
+            /// en: "The skill is backed up first, and removed from every app that links to it."
+            public static var uninstallConfirmMessage: String { L10nSupport.string("workbench.skills.uninstallConfirmMessage") }
+
+            /// Title of the confirmation dialog for uninstalling a skill.
+            ///
+            /// Key: `workbench.skills.uninstallConfirmTitle`
+            /// en: "Uninstall {skill}?"
+            public static func uninstallConfirmTitle(skill: String) -> String {
+                L10nSupport.format("workbench.skills.uninstallConfirmTitle", skill)
+            }
+
+            public enum Backups {
+                /// Accessibility label on the trash button in a backup row.
+                ///
+                /// Key: `workbench.skills.backups.deleteAccessibility`
+                /// en: "Delete this backup"
+                public static var deleteAccessibility: String { L10nSupport.string("workbench.skills.backups.deleteAccessibility") }
+
+                /// Message under the delete-backup confirmation title. The path is an identifier.
+                ///
+                /// Key: `workbench.skills.backups.deleteConfirmMessage`
+                /// en: "The snapshot is removed from ~/.vibebar and cannot be restored afterwards."
+                public static var deleteConfirmMessage: String { L10nSupport.string("workbench.skills.backups.deleteConfirmMessage") }
+
+                /// Title of the delete-backup confirmation dialog when the snapshot names its skill.
+                ///
+                /// Key: `workbench.skills.backups.deleteConfirmTitle`
+                /// en: "Delete the backup of {skill}?"
+                public static func deleteConfirmTitle(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.backups.deleteConfirmTitle", skill)
+                }
+
+                /// Title of the delete-backup confirmation dialog when the snapshot has no readable skill name.
+                ///
+                /// Key: `workbench.skills.backups.deleteConfirmTitleGeneric`
+                /// en: "Delete this backup?"
+                public static var deleteConfirmTitleGeneric: String { L10nSupport.string("workbench.skills.backups.deleteConfirmTitleGeneric") }
+
+                /// Empty state of the backups sheet.
+                ///
+                /// Key: `workbench.skills.backups.empty`
+                /// en: "No backups yet"
+                public static var empty: String { L10nSupport.string("workbench.skills.backups.empty") }
+
+                /// Footer of the backups sheet: what a restore does and does not do.
+                ///
+                /// Key: `workbench.skills.backups.footer`
+                /// en: "Restoring recreates the shared directory only — enable the skill for the apps you want it in afterwards."
+                public static var footer: String { L10nSupport.string("workbench.skills.backups.footer") }
+
+                /// Tooltip on the backups sheet refresh button.
+                ///
+                /// Key: `workbench.skills.backups.refreshHelp`
+                /// en: "Re-read the backup directory"
+                public static var refreshHelp: String { L10nSupport.string("workbench.skills.backups.refreshHelp") }
+
+                /// Button that copies a backup back into the shared skills directory.
+                ///
+                /// Key: `workbench.skills.backups.restore`
+                /// en: "Restore"
+                public static var restore: String { L10nSupport.string("workbench.skills.backups.restore") }
+
+                /// Tooltip on the Restore button. The path is an identifier.
+                ///
+                /// Key: `workbench.skills.backups.restoreHelp`
+                /// en: "Copy the snapshot back into ~/.agents/skills"
+                public static var restoreHelp: String { L10nSupport.string("workbench.skills.backups.restoreHelp") }
+
+                /// Subtitle of the backups sheet.
+                ///
+                /// Key: `workbench.skills.backups.subtitle`
+                /// en: "Taken automatically before an uninstall or an update."
+                public static var subtitle: String { L10nSupport.string("workbench.skills.backups.subtitle") }
+
+                /// Title of the backups sheet.
+                ///
+                /// Key: `workbench.skills.backups.title`
+                /// en: "Skill Backups"
+                public static var title: String { L10nSupport.string("workbench.skills.backups.title") }
+            }
+
+            public enum Badge {
+                /// Badge on a discover-sheet row for a skill already installed on this Mac.
+                ///
+                /// Key: `workbench.skills.badge.installed`
+                /// en: "INSTALLED"
+                public static var installed: String { L10nSupport.string("workbench.skills.badge.installed") }
+
+                /// Row badge: the skill is linked into {app} but that harness's own config switches it off.
+                ///
+                /// Key: `workbench.skills.badge.nativeOff`
+                /// en: "{app} OFF"
+                public static func nativeOff(app: String) -> String {
+                    L10nSupport.format("workbench.skills.badge.nativeOff", app)
+                }
+
+                /// Tooltip on the row badge that names a harness whose native switch is off.
+                ///
+                /// Key: `workbench.skills.badge.nativeOffHelp`
+                /// en: "Projected, but disabled by the harness's own configuration"
+                public static var nativeOffHelp: String { L10nSupport.string("workbench.skills.badge.nativeOffHelp") }
+
+                /// Row badge: a harness config file could not be parsed, so its per-skill switch is unknown.
+                ///
+                /// Key: `workbench.skills.badge.nativeUnknown`
+                /// en: "NATIVE STATE ?"
+                public static var nativeUnknown: String { L10nSupport.string("workbench.skills.badge.nativeUnknown") }
+
+                /// Tooltip on the unknown-native-state row badge.
+                ///
+                /// Key: `workbench.skills.badge.nativeUnknownHelp`
+                /// en: "The harness configuration could not be parsed safely"
+                public static var nativeUnknownHelp: String { L10nSupport.string("workbench.skills.badge.nativeUnknownHelp") }
+
+                /// Row badge: the repository this skill came from has a newer version.
+                ///
+                /// Key: `workbench.skills.badge.update`
+                /// en: "UPDATE"
+                public static var update: String { L10nSupport.string("workbench.skills.badge.update") }
+            }
+
+            public enum Discover {
+                /// Empty state of the discover sheet's available-skills section.
+                ///
+                /// Key: `workbench.skills.discover.availableEmpty`
+                /// en: "Scan the configured repositories, or install a skills.sh result, to list what is available."
+                public static var availableEmpty: String { L10nSupport.string("workbench.skills.discover.availableEmpty") }
+
+                /// Discover sheet section title for what the last scan or download turned up.
+                ///
+                /// Key: `workbench.skills.discover.availableTitle`
+                /// en: "Available skills"
+                public static var availableTitle: String { L10nSupport.string("workbench.skills.discover.availableTitle") }
+
+                /// Discover sheet section title for the community index.
+                ///
+                /// Key: `workbench.skills.discover.indexTitle`
+                /// en: "skills.sh index"
+                public static var indexTitle: String { L10nSupport.string("workbench.skills.discover.indexTitle") }
+
+                /// How many times a skills.sh result has been installed, beside its repository.
+                ///
+                /// Key: `workbench.skills.discover.installs`
+                /// en: "{count, plural, one {# install} other {# installs}}"
+                public static func installs(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.discover.installs", count)
+                }
+
+                /// Empty state of the discover sheet's repository list. The reference syntax is an identifier.
+                ///
+                /// Key: `workbench.skills.discover.noRepos`
+                /// en: "No repositories configured. Add one as owner/repo, optionally owner/repo@branch."
+                public static var noRepos: String { L10nSupport.string("workbench.skills.discover.noRepos") }
+
+                /// Accessibility label on the button that removes a repository from the scan list.
+                ///
+                /// Key: `workbench.skills.discover.removeRepo`
+                /// en: "Remove {repo}"
+                public static func removeRepo(repo: String) -> String {
+                    L10nSupport.format("workbench.skills.discover.removeRepo", repo)
+                }
+
+                /// Placeholder in the add-repository field. The two forms are syntax and stay as spelled.
+                ///
+                /// Key: `workbench.skills.discover.repoFieldPlaceholder`
+                /// en: "owner/repo or owner/repo@branch"
+                public static var repoFieldPlaceholder: String { L10nSupport.string("workbench.skills.discover.repoFieldPlaceholder") }
+
+                /// Hint under the add-repository field while what was typed is not a valid reference.
+                ///
+                /// Key: `workbench.skills.discover.repoRules`
+                /// en: "Owners take letters, digits, and hyphens; names and branches also take dots and underscores."
+                public static var repoRules: String { L10nSupport.string("workbench.skills.discover.repoRules") }
+
+                /// Discover sheet section title, and the source caption once a scan of those repositories finishes.
+                ///
+                /// Key: `workbench.skills.discover.reposTitle`
+                /// en: "Configured repositories"
+                public static var reposTitle: String { L10nSupport.string("workbench.skills.discover.reposTitle") }
+
+                /// Discover sheet button that downloads every configured repository.
+                ///
+                /// Key: `workbench.skills.discover.scanRepos`
+                /// en: "Scan repos"
+                public static var scanRepos: String { L10nSupport.string("workbench.skills.discover.scanRepos") }
+
+                /// Tooltip on the scan button.
+                ///
+                /// Key: `workbench.skills.discover.scanReposHelp`
+                /// en: "Download every configured repository"
+                public static var scanReposHelp: String { L10nSupport.string("workbench.skills.discover.scanReposHelp") }
+
+                /// Caption in the skills.sh section before any search has run.
+                ///
+                /// Key: `workbench.skills.discover.searchHint`
+                /// en: "Results come back with the repository that publishes them; installing one downloads that repository and lists the rest of it below."
+                public static var searchHint: String { L10nSupport.string("workbench.skills.discover.searchHint") }
+
+                /// Placeholder in the skills.sh search field.
+                ///
+                /// Key: `workbench.skills.discover.searchPlaceholder`
+                /// en: "Search the community index"
+                public static var searchPlaceholder: String { L10nSupport.string("workbench.skills.discover.searchPlaceholder") }
+
+                /// Discover sheet button that pre-selects every harness for new installs.
+                ///
+                /// Key: `workbench.skills.discover.selectAll`
+                /// en: "Select all"
+                public static var selectAll: String { L10nSupport.string("workbench.skills.discover.selectAll") }
+
+                /// Tooltip on the discover sheet's select-all button.
+                ///
+                /// Key: `workbench.skills.discover.selectHelp`
+                /// en: "Set which agent CLIs every row installs into"
+                public static var selectHelp: String { L10nSupport.string("workbench.skills.discover.selectHelp") }
+
+                /// Discover sheet button that clears the harness pre-selection.
+                ///
+                /// Key: `workbench.skills.discover.selectNone`
+                /// en: "Select none"
+                public static var selectNone: String { L10nSupport.string("workbench.skills.discover.selectNone") }
+
+                /// Source caption once installing a skills.sh hit has replaced the results with that repository.
+                ///
+                /// Key: `workbench.skills.discover.sourceFromSkillsSh`
+                /// en: "{repo} (from skills.sh)"
+                public static func sourceFromSkillsSh(repo: String) -> String {
+                    L10nSupport.format("workbench.skills.discover.sourceFromSkillsSh", repo)
+                }
+
+                /// Tooltip on the scan button while a scan is running and the button cancels it.
+                ///
+                /// Key: `workbench.skills.discover.stopScanHelp`
+                /// en: "Stop the running scan"
+                public static var stopScanHelp: String { L10nSupport.string("workbench.skills.discover.stopScanHelp") }
+
+                /// Tooltip on the button that removes a repository from the scan list.
+                ///
+                /// Key: `workbench.skills.discover.stopScanningRepo`
+                /// en: "Stop scanning {repo}"
+                public static func stopScanningRepo(repo: String) -> String {
+                    L10nSupport.format("workbench.skills.discover.stopScanningRepo", repo)
+                }
+
+                /// Title of the discover sheet.
+                ///
+                /// Key: `workbench.skills.discover.title`
+                /// en: "Discover Skills"
+                public static var title: String { L10nSupport.string("workbench.skills.discover.title") }
+            }
+
+            public enum Empty {
+                /// Body of the Skills page empty state. The path is an identifier and stays as spelled.
+                ///
+                /// Key: `workbench.skills.empty.body`
+                /// en: "Vibe Bar keeps one copy of every skill in ~/.agents/skills and links it into each agent CLI. Import what is already on this Mac, or install something new from a repository."
+                public static var body: String { L10nSupport.string("workbench.skills.empty.body") }
+
+                /// Headline of the Skills page empty state.
+                ///
+                /// Key: `workbench.skills.empty.headline`
+                /// en: "No skills recorded yet"
+                public static var headline: String { L10nSupport.string("workbench.skills.empty.headline") }
+            }
+
+            public enum Import {
+                /// Import sheet section header for skills that already live in the shared directory.
+                ///
+                /// Key: `workbench.skills.import.alreadyShared`
+                /// en: "Already shared"
+                public static var alreadyShared: String { L10nSupport.string("workbench.skills.import.alreadyShared") }
+
+                /// Caption of the already-shared section. The path and CC Switch are identifiers.
+                ///
+                /// Key: `workbench.skills.import.alreadySharedDetail`
+                /// en: "These already live in ~/.agents/skills, including layouts created by CC Switch. Vibe Bar records their existing links; it does not import or copy them again."
+                public static var alreadySharedDetail: String { L10nSupport.string("workbench.skills.import.alreadySharedDetail") }
+
+                /// Confirm button of the import sheet.
+                ///
+                /// Key: `workbench.skills.import.apply`
+                /// en: "Apply {count, plural, one {# change} other {# changes}}"
+                public static func apply(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.import.apply", count)
+                }
+
+                /// Import sheet section header for app folders whose name collides with a shared skill.
+                ///
+                /// Key: `workbench.skills.import.conflicts`
+                /// en: "Conflicting app copies"
+                public static var conflicts: String { L10nSupport.string("workbench.skills.import.conflicts") }
+
+                /// Count beside the conflicts section header.
+                ///
+                /// Key: `workbench.skills.import.conflictsCount`
+                /// en: "{count} unchanged"
+                public static func conflictsCount(count: Int) -> String {
+                    L10nSupport.format("workbench.skills.import.conflictsCount", count)
+                }
+
+                /// Caption of the conflicts section: why nothing was changed and what the user can do.
+                ///
+                /// Key: `workbench.skills.import.conflictsDetail`
+                /// en: "A real folder in an app's skills directory has the same name as one in ~/.agents/skills. Vibe Bar will not overwrite it — resolve it by hand, or enable the shared skill for that app once the folder is gone."
+                public static var conflictsDetail: String { L10nSupport.string("workbench.skills.import.conflictsDetail") }
+
+                /// Caption under an unmanaged directory naming the harnesses whose folders hold it. {apps} is a comma-separated list of harness names.
+                ///
+                /// Key: `workbench.skills.import.foundIn`
+                /// en: "found in {apps}"
+                public static func foundIn(apps: String) -> String {
+                    L10nSupport.format("workbench.skills.import.foundIn", apps)
+                }
+
+                /// Label before the harness circles that choose which existing links the import records.
+                ///
+                /// Key: `workbench.skills.import.keepEvidenceFor`
+                /// en: "Keep evidence for"
+                public static var keepEvidenceFor: String { L10nSupport.string("workbench.skills.import.keepEvidenceFor") }
+
+                /// Import sheet section header for app-local directories that are not in the shared directory yet.
+                ///
+                /// Key: `workbench.skills.import.needsAdoption`
+                /// en: "Needs adoption"
+                public static var needsAdoption: String { L10nSupport.string("workbench.skills.import.needsAdoption") }
+
+                /// Caption of the needs-adoption section: exactly what applying it writes.
+                ///
+                /// Key: `workbench.skills.import.needsAdoptionDetail`
+                /// en: "These do not exist in the shared directory yet. Selecting one copies it into ~/.agents/skills, then replaces the chosen app copies with managed links."
+                public static var needsAdoptionDetail: String { L10nSupport.string("workbench.skills.import.needsAdoptionDetail") }
+
+                /// Import sheet section header for directories that hold no SKILL.md.
+                ///
+                /// Key: `workbench.skills.import.notSkills`
+                /// en: "Not skills"
+                public static var notSkills: String { L10nSupport.string("workbench.skills.import.notSkills") }
+
+                /// Caption of the not-skills section. The path and the filename are identifiers.
+                ///
+                /// Key: `workbench.skills.import.notSkillsDetail`
+                /// en: "Directories in ~/.agents/skills with no SKILL.md. Left exactly as they are."
+                public static var notSkillsDetail: String { L10nSupport.string("workbench.skills.import.notSkillsDetail") }
+
+                /// Count beside the already-shared section header.
+                ///
+                /// Key: `workbench.skills.import.recognizedCount`
+                /// en: "{count} recognized"
+                public static func recognizedCount(count: Int) -> String {
+                    L10nSupport.format("workbench.skills.import.recognizedCount", count)
+                }
+
+                /// Subtitle of the import sheet: what applying it will and will not touch.
+                ///
+                /// Key: `workbench.skills.import.subtitle`
+                /// en: "Vibe Bar already recognizes shared skills. Only selected app-local folders will move."
+                public static var subtitle: String { L10nSupport.string("workbench.skills.import.subtitle") }
+
+                /// Import sheet footer totals across the scan's four sections.
+                ///
+                /// Key: `workbench.skills.import.summary`
+                /// en: "{adopted} already shared · {unmanaged} need adoption · {conflicts} left unchanged"
+                public static func summary(adopted: Int, conflicts: Int, unmanaged: Int) -> String {
+                    L10nSupport.format("workbench.skills.import.summary", adopted, conflicts, unmanaged)
+                }
+
+                /// Title of the import sheet.
+                ///
+                /// Key: `workbench.skills.import.title`
+                /// en: "Review On-Disk Skills"
+                public static var title: String { L10nSupport.string("workbench.skills.import.title") }
+            }
+
+            public enum Phase {
+                /// Progress line when the scan covered exactly one repository.
+                ///
+                /// Key: `workbench.skills.phase.downloadedOne`
+                /// en: "Downloaded 1 repository"
+                public static var downloadedOne: String { L10nSupport.string("workbench.skills.phase.downloadedOne") }
+
+                /// Progress line while a multi-repository scan runs.
+                ///
+                /// Key: `workbench.skills.phase.downloadedProgress`
+                /// en: "Downloaded {completed} of {total} repositories"
+                public static func downloadedProgress(completed: Int, total: Int) -> String {
+                    L10nSupport.format("workbench.skills.phase.downloadedProgress", completed, total)
+                }
+
+                /// Progress line while a repository is being fetched.
+                ///
+                /// Key: `workbench.skills.phase.downloading`
+                /// en: "Downloading {repo}…"
+                public static func downloading(repo: String) -> String {
+                    L10nSupport.format("workbench.skills.phase.downloading", repo)
+                }
+
+                /// Progress line while a downloaded repository is being read.
+                ///
+                /// Key: `workbench.skills.phase.scanning`
+                /// en: "Scanning {repo}…"
+                public static func scanning(repo: String) -> String {
+                    L10nSupport.format("workbench.skills.phase.scanning", repo)
+                }
+            }
+
+            public enum State {
+                /// Accessibility value of a harness circle: the harness finds the skill without a link of its own.
+                ///
+                /// Key: `workbench.skills.state.coupled`
+                /// en: "Available through a shared or compatibility root"
+                public static var coupled: String { L10nSupport.string("workbench.skills.state.coupled") }
+
+                /// Accessibility value of a harness circle: linked, but the harness's own switch is off.
+                ///
+                /// Key: `workbench.skills.state.disabledInHarness`
+                /// en: "Projected, disabled in harness"
+                public static var disabledInHarness: String { L10nSupport.string("workbench.skills.state.disabledInHarness") }
+
+                /// Accessibility value of a harness circle: the skill is linked and switched on.
+                ///
+                /// Key: `workbench.skills.state.enabled`
+                /// en: "Enabled"
+                public static var enabled: String { L10nSupport.string("workbench.skills.state.enabled") }
+
+                /// Accessibility value of a harness circle: nothing links the skill into that harness.
+                ///
+                /// Key: `workbench.skills.state.notProjected`
+                /// en: "Not projected"
+                public static var notProjected: String { L10nSupport.string("workbench.skills.state.notProjected") }
+
+                /// Accessibility value of a harness circle: linked, but the harness config could not be read.
+                ///
+                /// Key: `workbench.skills.state.unknown`
+                /// en: "Projected, native state unknown"
+                public static var unknown: String { L10nSupport.string("workbench.skills.state.unknown") }
+            }
+
+            public enum Sync {
+                /// Footer of the sync explainer popover. {path} is the shared skills directory.
+                ///
+                /// Key: `workbench.skills.sync.footer`
+                /// en: "Vibe Bar writes only inside ~/{path}, the per-harness skills folders, and the config files above."
+                public static func footer(path: String) -> String {
+                    L10nSupport.format("workbench.skills.sync.footer", path)
+                }
+
+                /// Sync explainer's third paragraph.
+                ///
+                /// Key: `workbench.skills.sync.nativeSwitchesBody`
+                /// en: "Where a harness has its own per-skill off switch, the circles flip that switch. Cursor has none, so every skill in the shared root is always available to it — that is the “shared root” badge, and there is nothing to toggle."
+                public static var nativeSwitchesBody: String { L10nSupport.string("workbench.skills.sync.nativeSwitchesBody") }
+
+                /// Run-in heading of the sync explainer's third paragraph.
+                ///
+                /// Key: `workbench.skills.sync.nativeSwitchesLead`
+                /// en: "Native switches."
+                public static var nativeSwitchesLead: String { L10nSupport.string("workbench.skills.sync.nativeSwitchesLead") }
+
+                /// Clause in a harness's one-line sync summary when it has no switch of its own.
+                ///
+                /// Key: `workbench.skills.sync.noPerSkillSwitch`
+                /// en: "no per-skill switch"
+                public static var noPerSkillSwitch: String { L10nSupport.string("workbench.skills.sync.noPerSkillSwitch") }
+
+                /// Clause in AntiGravity's one-line sync summary. {path} is the Gemini CLI skills directory.
+                ///
+                /// Key: `workbench.skills.sync.noSwitchAlsoReads`
+                /// en: "no per-skill switch; also reads ~/{path}"
+                public static func noSwitchAlsoReads(path: String) -> String {
+                    L10nSupport.format("workbench.skills.sync.noSwitchAlsoReads", path)
+                }
+
+                /// Clause in a harness's one-line sync summary naming its config key and file.
+                ///
+                /// Key: `workbench.skills.sync.perSkillSwitch`
+                /// en: "per-skill switch {key} in ~/{path}"
+                public static func perSkillSwitch(key: String, path: String) -> String {
+                    L10nSupport.format("workbench.skills.sync.perSkillSwitch", key, path)
+                }
+
+                /// Sync explainer's second paragraph. The harness names are identifiers and stay as spelled.
+                ///
+                /// Key: `workbench.skills.sync.projectionsBody`
+                /// en: "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, and Cursor scan the shared root themselves — no link needed."
+                public static var projectionsBody: String { L10nSupport.string("workbench.skills.sync.projectionsBody") }
+
+                /// Run-in heading of the sync explainer's second paragraph.
+                ///
+                /// Key: `workbench.skills.sync.projectionsLead`
+                /// en: "Projections."
+                public static var projectionsLead: String { L10nSupport.string("workbench.skills.sync.projectionsLead") }
+
+                /// Clause in a harness's one-line sync summary. {path} is that harness's own skills directory.
+                ///
+                /// Key: `workbench.skills.sync.readsOwnFolder`
+                /// en: "reads only ~/{path}"
+                public static func readsOwnFolder(path: String) -> String {
+                    L10nSupport.format("workbench.skills.sync.readsOwnFolder", path)
+                }
+
+                /// Clause in a harness's one-line sync summary. {path} is the shared skills directory.
+                ///
+                /// Key: `workbench.skills.sync.scansSharedRoot`
+                /// en: "scans ~/{path} directly"
+                public static func scansSharedRoot(path: String) -> String {
+                    L10nSupport.format("workbench.skills.sync.scansSharedRoot", path)
+                }
+
+                /// Sync explainer's first paragraph. {path} is the shared skills directory and stays as spelled.
+                ///
+                /// Key: `workbench.skills.sync.ssotBody`
+                /// en: "Every skill lives in ~/{path}/<name>. Install, update, and uninstall all happen there and only there."
+                public static func ssotBody(path: String) -> String {
+                    L10nSupport.format("workbench.skills.sync.ssotBody", path)
+                }
+
+                /// Run-in heading of the sync explainer's first paragraph.
+                ///
+                /// Key: `workbench.skills.sync.ssotLead`
+                /// en: "One source of truth."
+                public static var ssotLead: String { L10nSupport.string("workbench.skills.sync.ssotLead") }
+
+                /// Title of the page-level sync explainer popover.
+                ///
+                /// Key: `workbench.skills.sync.title`
+                /// en: "How skill syncing works"
+                public static var title: String { L10nSupport.string("workbench.skills.sync.title") }
+            }
+
+            public enum Toast {
+                /// Toast when a scan is asked for with no repositories configured.
+                ///
+                /// Key: `workbench.skills.toast.addRepoFirst`
+                /// en: "Add a repository first."
+                public static var addRepoFirst: String { L10nSupport.string("workbench.skills.toast.addRepoFirst") }
+
+                /// Toast after an update check that found nothing to do.
+                ///
+                /// Key: `workbench.skills.toast.allUpToDate`
+                /// en: "Every repository skill is up to date."
+                public static var allUpToDate: String { L10nSupport.string("workbench.skills.toast.allUpToDate") }
+
+                /// Toast after a ZIP import that produced no skill.
+                ///
+                /// Key: `workbench.skills.toast.archiveEmpty`
+                /// en: "Nothing in that archive could be installed."
+                public static var archiveEmpty: String { L10nSupport.string("workbench.skills.toast.archiveEmpty") }
+
+                /// Toast after flipping a harness's own per-skill switch off.
+                ///
+                /// Key: `workbench.skills.toast.disabledKeptProjection`
+                /// en: "Disabled {skill} in {app} and kept its projection."
+                public static func disabledKeptProjection(app: String, skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.disabledKeptProjection", app, skill)
+                }
+
+                /// Second sentence of the archive-install toast. {apps} is a list of harness names.
+                ///
+                /// Key: `workbench.skills.toast.enabledForApps`
+                /// en: "Enabled for {apps}."
+                public static func enabledForApps(apps: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.enabledForApps", apps)
+                }
+
+                /// Second sentence of the toast after a silent first-run import.
+                ///
+                /// Key: `workbench.skills.toast.importConflicts`
+                /// en: "Left {count, plural, one {# conflicting app copy} other {# conflicting app copies}} unchanged."
+                public static func importConflicts(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.toast.importConflicts", count)
+                }
+
+                /// First sentence of the toast after a silent first-run import.
+                ///
+                /// Key: `workbench.skills.toast.importRecognized`
+                /// en: "Recognized {count, plural, one {# existing skill} other {# existing skills}}."
+                public static func importRecognized(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.toast.importRecognized", count)
+                }
+
+                /// First sentence of the toast after installing a ZIP that held one or more skills.
+                ///
+                /// Key: `workbench.skills.toast.installedArchive`
+                /// en: "Installed {count, plural, one {# skill} other {# skills}} from the archive."
+                public static func installedArchive(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.toast.installedArchive", count)
+                }
+
+                /// Toast after installing one skill into the selected harnesses. {apps} is a list of harness names.
+                ///
+                /// Key: `workbench.skills.toast.installedForApps`
+                /// en: "Installed {skill} for {apps}."
+                public static func installedForApps(apps: String, skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.installedForApps", apps, skill)
+                }
+
+                /// Toast after installing one skill with no harness selected.
+                ///
+                /// Key: `workbench.skills.toast.installedShared`
+                /// en: "Installed {skill} in the shared library. Check effective harness state in Skills."
+                public static func installedShared(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.installedShared", skill)
+                }
+
+                /// Toast when the add-repository field holds something unusable or already listed.
+                ///
+                /// Key: `workbench.skills.toast.invalidRepoRef`
+                /// en: "“{input}” is not a new owner/repo[@branch] reference."
+                public static func invalidRepoRef(input: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.invalidRepoRef", input)
+                }
+
+                /// Toast after removing a redundant link from a harness that scans the shared root anyway.
+                ///
+                /// Key: `workbench.skills.toast.linkRemovedStillShared`
+                /// en: "Removed the {app} link. {skill} stays available there through the shared skills root."
+                public static func linkRemovedStillShared(app: String, skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.linkRemovedStillShared", app, skill)
+                }
+
+                /// Toast after a community-index search with no hits.
+                ///
+                /// Key: `workbench.skills.toast.noSearchMatches`
+                /// en: "skills.sh returned no matches."
+                public static var noSearchMatches: String { L10nSupport.string("workbench.skills.toast.noSearchMatches") }
+
+                /// Toast after a scan that read every repository and found nothing.
+                ///
+                /// Key: `workbench.skills.toast.noSkillsFound`
+                /// en: "No skills were found in the configured repositories."
+                public static var noSkillsFound: String { L10nSupport.string("workbench.skills.toast.noSkillsFound") }
+
+                /// Toast when a skills.sh hit is missing from the repository it named.
+                ///
+                /// Key: `workbench.skills.toast.notFoundInRepo`
+                /// en: "{skill} was not found in {repo}."
+                public static func notFoundInRepo(repo: String, skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.notFoundInRepo", repo, skill)
+                }
+
+                /// Toast after removing a projection that turned out to be a real folder Vibe Bar did not create.
+                ///
+                /// Key: `workbench.skills.toast.projectionClearedFolderKept`
+                /// en: "{skill}'s Vibe Bar projection was cleared for {app}, but the existing folder was left in place."
+                public static func projectionClearedFolderKept(app: String, skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.projectionClearedFolderKept", app, skill)
+                }
+
+                /// Toast after applying the import sheet.
+                ///
+                /// Key: `workbench.skills.toast.recorded`
+                /// en: "Recorded {count, plural, one {# skill} other {# skills}}."
+                public static func recorded(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.toast.recorded", count)
+                }
+
+                /// Toast after a scan in which more than one repository failed.
+                ///
+                /// Key: `workbench.skills.toast.reposUnreadable`
+                /// en: "{count, plural, one {# repository} other {# repositories}} could not be read."
+                public static func reposUnreadable(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.toast.reposUnreadable", count)
+                }
+
+                /// Toast after restoring a backup into the shared directory.
+                ///
+                /// Key: `workbench.skills.toast.restored`
+                /// en: "Restored {skill}. Enable it for the apps you want it in."
+                public static func restored(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.restored", skill)
+                }
+
+                /// Toast after cancelling a repository scan.
+                ///
+                /// Key: `workbench.skills.toast.scanStopped`
+                /// en: "Stopped scanning."
+                public static var scanStopped: String { L10nSupport.string("workbench.skills.toast.scanStopped") }
+
+                /// Second sentence of the archive-install toast when no harness was selected.
+                ///
+                /// Key: `workbench.skills.toast.sharedLibraryNote`
+                /// en: "They stay in the shared library. Check effective harness state in Skills."
+                public static var sharedLibraryNote: String { L10nSupport.string("workbench.skills.toast.sharedLibraryNote") }
+
+                /// Toast after clicking a circle that cannot change anything.
+                ///
+                /// Key: `workbench.skills.toast.sharedRootNoSwitch`
+                /// en: "{app} reads the shared skills root directly — {skill} is always available there and has no per-skill switch."
+                public static func sharedRootNoSwitch(app: String, skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.sharedRootNoSwitch", app, skill)
+                }
+
+                /// Toast after uninstalling a skill that was linked nowhere else.
+                ///
+                /// Key: `workbench.skills.toast.uninstalledBackedUp`
+                /// en: "Uninstalled {skill}. A backup was saved."
+                public static func uninstalledBackedUp(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.uninstalledBackedUp", skill)
+                }
+
+                /// Toast after an uninstall that left real folders in some harnesses. {apps} is a list of harness names.
+                ///
+                /// Key: `workbench.skills.toast.uninstalledLeftInPlace`
+                /// en: "Uninstalled {skill}. Left in place for {apps}."
+                public static func uninstalledLeftInPlace(apps: String, skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.uninstalledLeftInPlace", apps, skill)
+                }
+
+                /// Toast after re-fetching one skill from its repository.
+                ///
+                /// Key: `workbench.skills.toast.updated`
+                /// en: "Updated {skill}."
+                public static func updated(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.updated", skill)
+                }
+
+                /// Toast after an update check that found newer commits.
+                ///
+                /// Key: `workbench.skills.toast.updatesAvailable`
+                /// en: "{count, plural, one {# skill} other {# skills}} can be updated."
+                public static func updatesAvailable(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.toast.updatesAvailable", count)
+                }
+            }
+
+            public enum ToggleHelp {
+                /// Tooltip on a harness circle in the discover sheet, where the circles pick install targets.
+                ///
+                /// Key: `workbench.skills.toggleHelp.installInto`
+                /// en: "Install into {app}"
+                public static func installInto(app: String) -> String {
+                    L10nSupport.format("workbench.skills.toggleHelp.installInto", app)
+                }
+
+                /// Tooltip on a harness circle in the import sheet's already-shared section.
+                ///
+                /// Key: `workbench.skills.toggleHelp.keepLinks`
+                /// en: "Keep the {app} links already on disk"
+                public static func keepLinks(app: String) -> String {
+                    L10nSupport.format("workbench.skills.toggleHelp.keepLinks", app)
+                }
+
+                /// Tooltip on a harness circle beside an unmanaged directory in the import sheet.
+                ///
+                /// Key: `workbench.skills.toggleHelp.linkAfterAdopting`
+                /// en: "Link into {app} after adopting"
+                public static func linkAfterAdopting(app: String) -> String {
+                    L10nSupport.format("workbench.skills.toggleHelp.linkAfterAdopting", app)
+                }
+            }
+
+            public enum ToggleState {
+                /// Tooltip on AntiGravity's circle when the skill reaches it through the Gemini CLI folder.
+                ///
+                /// Key: `workbench.skills.toggleState.coupledGemini`
+                /// en: "{app} — visible through the Gemini CLI projection it also reads. Click to give it its own projection."
+                public static func coupledGemini(app: String) -> String {
+                    L10nSupport.format("workbench.skills.toggleState.coupledGemini", app)
+                }
+
+                /// Tooltip on a harness circle for a harness that scans the shared root and has no switch.
+                ///
+                /// Key: `workbench.skills.toggleState.coupledSharedRoot`
+                /// en: "{app} reads the shared skills root directly, so this skill is always available there. There is no per-skill switch to flip."
+                public static func coupledSharedRoot(app: String) -> String {
+                    L10nSupport.format("workbench.skills.toggleState.coupledSharedRoot", app)
+                }
+
+                /// Tooltip on a harness circle whose harness switched the skill off in its own config.
+                ///
+                /// Key: `workbench.skills.toggleState.disabledInHarness`
+                /// en: "{app} — projected, but disabled by its native config. Click to enable."
+                public static func disabledInHarness(app: String) -> String {
+                    L10nSupport.format("workbench.skills.toggleState.disabledInHarness", app)
+                }
+
+                /// Tooltip on a harness circle that is on purely because Vibe Bar linked the skill there.
+                ///
+                /// Key: `workbench.skills.toggleState.enabled`
+                /// en: "{app} — enabled by projection. Click to remove it."
+                public static func enabled(app: String) -> String {
+                    L10nSupport.format("workbench.skills.toggleState.enabled", app)
+                }
+
+                /// Tooltip on a harness circle that is on and whose harness has its own per-skill switch.
+                ///
+                /// Key: `workbench.skills.toggleState.enabledNative`
+                /// en: "{app} — projected and enabled. Click to disable in the harness; right-click for projection options."
+                public static func enabledNative(app: String) -> String {
+                    L10nSupport.format("workbench.skills.toggleState.enabledNative", app)
+                }
+
+                /// Tooltip on a harness circle that is on for a harness that would find the skill anyway.
+                ///
+                /// Key: `workbench.skills.toggleState.enabledSharedRoot`
+                /// en: "{app} — has its own link, and also reads the shared skills root directly. There is no per-skill switch; right-click to manage the redundant link."
+                public static func enabledSharedRoot(app: String) -> String {
+                    L10nSupport.format("workbench.skills.toggleState.enabledSharedRoot", app)
+                }
+
+                /// Tooltip on an installed skill's harness circle when nothing links the skill there.
+                ///
+                /// Key: `workbench.skills.toggleState.notProjected`
+                /// en: "{app} — not projected. Click to enable."
+                public static func notProjected(app: String) -> String {
+                    L10nSupport.format("workbench.skills.toggleState.notProjected", app)
+                }
+
+                /// Tooltip on a harness circle whose harness config could not be read.
+                ///
+                /// Key: `workbench.skills.toggleState.unknown`
+                /// en: "{app} — projected, but native config could not be parsed. Click to repair as enabled."
+                public static func unknown(app: String) -> String {
+                    L10nSupport.format("workbench.skills.toggleState.unknown", app)
+                }
+            }
+
+            public enum Wiring {
+                /// Footer of the per-skill wiring popover: the write scope, in one sentence.
+                ///
+                /// Key: `workbench.skills.wiring.footer`
+                /// en: "Vibe Bar writes only inside the skills folders above and the four listed config files, and backs a skill up before uninstalling it."
+                public static var footer: String { L10nSupport.string("workbench.skills.wiring.footer") }
+
+                /// Wiring popover mechanism line for AntiGravity.
+                ///
+                /// Key: `workbench.skills.wiring.mechanismGeminiCompat`
+                /// en: "Also reads the Gemini CLI skills folder, which holds this skill's Gemini projection."
+                public static var mechanismGeminiCompat: String { L10nSupport.string("workbench.skills.wiring.mechanismGeminiCompat") }
+
+                /// Wiring popover mechanism line for a harness that finds the shared root on its own.
+                ///
+                /// Key: `workbench.skills.wiring.mechanismSharedRoot`
+                /// en: "Scans the shared root itself — no per-app link needed."
+                public static var mechanismSharedRoot: String { L10nSupport.string("workbench.skills.wiring.mechanismSharedRoot") }
+
+                /// Wiring popover mechanism line naming the harness config entry that switches this skill on or off.
+                ///
+                /// Key: `workbench.skills.wiring.nativeSwitch`
+                /// en: "Per-skill switch: {key} in {path}"
+                public static func nativeSwitch(key: String, path: String) -> String {
+                    L10nSupport.format("workbench.skills.wiring.nativeSwitch", key, path)
+                }
+
+                /// Wiring popover mechanism line for a harness with no per-skill switch of its own.
+                ///
+                /// Key: `workbench.skills.wiring.noNativeSwitch`
+                /// en: "No per-skill switch — whatever is discovered is active."
+                public static var noNativeSwitch: String { L10nSupport.string("workbench.skills.wiring.noNativeSwitch") }
+
+                /// Wiring popover mechanism line: Vibe Bar copied the skill into the harness. {path} is a file path.
+                ///
+                /// Key: `workbench.skills.wiring.projectionCopy`
+                /// en: "Copy at {path}"
+                public static func projectionCopy(path: String) -> String {
+                    L10nSupport.format("workbench.skills.wiring.projectionCopy", path)
+                }
+
+                /// Wiring popover mechanism line for a copy that was already on disk before Vibe Bar recorded it.
+                ///
+                /// Key: `workbench.skills.wiring.projectionCopyAdopted`
+                /// en: "Copy at {path} · adopted from an existing install"
+                public static func projectionCopyAdopted(path: String) -> String {
+                    L10nSupport.format("workbench.skills.wiring.projectionCopyAdopted", path)
+                }
+
+                /// Wiring popover mechanism line when nothing links the skill into a harness that needs a link.
+                ///
+                /// Key: `workbench.skills.wiring.projectionMissing`
+                /// en: "No entry at {path} — the harness cannot see this skill."
+                public static func projectionMissing(path: String) -> String {
+                    L10nSupport.format("workbench.skills.wiring.projectionMissing", path)
+                }
+
+                /// Wiring popover mechanism line: Vibe Bar linked the skill into the harness. {path} is a file path.
+                ///
+                /// Key: `workbench.skills.wiring.projectionSymlink`
+                /// en: "Symlink at {path}"
+                public static func projectionSymlink(path: String) -> String {
+                    L10nSupport.format("workbench.skills.wiring.projectionSymlink", path)
+                }
+
+                /// Wiring popover mechanism line for a symlink that was already on disk before Vibe Bar recorded it.
+                ///
+                /// Key: `workbench.skills.wiring.projectionSymlinkAdopted`
+                /// en: "Symlink at {path} · adopted from an existing install"
+                public static func projectionSymlinkAdopted(path: String) -> String {
+                    L10nSupport.format("workbench.skills.wiring.projectionSymlinkAdopted", path)
+                }
+
+                /// Button in the per-skill wiring popover that opens the skill's directory in Finder.
+                ///
+                /// Key: `workbench.skills.wiring.reveal`
+                /// en: "Reveal"
+                public static var reveal: String { L10nSupport.string("workbench.skills.wiring.reveal") }
+
+                /// Tooltip on the wiring popover's Reveal button.
+                ///
+                /// Key: `workbench.skills.wiring.revealHelp`
+                /// en: "Show the skill's source directory in Finder"
+                public static var revealHelp: String { L10nSupport.string("workbench.skills.wiring.revealHelp") }
+
+                /// Wiring popover row title for the one real copy of the skill. distinct-from: workbench.sessions.fact.source — a session log's path on disk and a skill's one real copy are different sources — Simplified Chinese already writes 来源文件 and 源目录.
+                ///
+                /// Key: `workbench.skills.wiring.source`
+                /// en: "Source"
+                public static var source: String { L10nSupport.string("workbench.skills.wiring.source") }
+
+                /// Caption under the wiring popover's Source row.
+                ///
+                /// Key: `workbench.skills.wiring.sourceDetail`
+                /// en: "One copy of the skill. Every harness below reads this directory or a link to it."
+                public static var sourceDetail: String { L10nSupport.string("workbench.skills.wiring.sourceDetail") }
+
+                /// Wiring popover state label: the harness config could not be parsed.
+                ///
+                /// Key: `workbench.skills.wiring.stateConfigUnreadable`
+                /// en: "Config unreadable"
+                public static var stateConfigUnreadable: String { L10nSupport.string("workbench.skills.wiring.stateConfigUnreadable") }
+
+                /// Wiring popover state label: the harness sees the skill through the Gemini CLI folder.
+                ///
+                /// Key: `workbench.skills.wiring.stateCoupledGemini`
+                /// en: "On · via Gemini"
+                public static var stateCoupledGemini: String { L10nSupport.string("workbench.skills.wiring.stateCoupledGemini") }
+
+                /// Wiring popover state label: the harness scans the shared skills root itself.
+                ///
+                /// Key: `workbench.skills.wiring.stateCoupledSharedRoot`
+                /// en: "On · shared root"
+                public static var stateCoupledSharedRoot: String { L10nSupport.string("workbench.skills.wiring.stateCoupledSharedRoot") }
+
+                /// Wiring popover state label: linked, but the harness's own config switches the skill off.
+                ///
+                /// Key: `workbench.skills.wiring.stateNativeOff`
+                /// en: "Off · native switch"
+                public static var stateNativeOff: String { L10nSupport.string("workbench.skills.wiring.stateNativeOff") }
+
+                /// Wiring popover state label: nothing links the skill into that harness.
+                ///
+                /// Key: `workbench.skills.wiring.stateNotLinked`
+                /// en: "Off · not linked"
+                public static var stateNotLinked: String { L10nSupport.string("workbench.skills.wiring.stateNotLinked") }
+            }
+        }
+
+        public enum Status {
+            /// Workbench header status for the Resets page when no refill is scheduled
+            ///
+            /// Key: `workbench.status.cachedQuotas`
+            /// en: "cached quotas"
+            public static var cachedQuotas: String { L10nSupport.string("workbench.status.cachedQuotas") }
+
+            /// Workbench header status for the Sessions page: how many sessions the local index holds
+            ///
+            /// Key: `workbench.status.indexed`
+            /// en: "{count} indexed"
+            public static func indexed(count: Int) -> String {
+                L10nSupport.format("workbench.status.indexed", count)
+            }
+
+            /// Workbench header status for the Skills page: how many skills are installed
+            ///
+            /// Key: `workbench.status.installed`
+            /// en: "{count} installed"
+            public static func installed(count: Int) -> String {
+                L10nSupport.format("workbench.status.installed", count)
+            }
+
+            /// Workbench header status for the Sessions page before anything is indexed
+            ///
+            /// Key: `workbench.status.localIndex`
+            /// en: "local index"
+            public static var localIndex: String { L10nSupport.string("workbench.status.localIndex") }
+
+            /// Workbench header status for the Usage Stats page before the first query
+            ///
+            /// Key: `workbench.status.localLedger`
+            /// en: "local ledger"
+            public static var localLedger: String { L10nSupport.string("workbench.status.localLedger") }
+
+            /// Workbench header status for the Resets page; countdown is a compact span
+            ///
+            /// Key: `workbench.status.nextRefill`
+            /// en: "next refill {countdown}"
+            public static func nextRefill(countdown: String) -> String {
+                L10nSupport.format("workbench.status.nextRefill", countdown)
+            }
+
+            /// Workbench header status for the Skills page before anything is installed
+            ///
+            /// Key: `workbench.status.sharedLibrary`
+            /// en: "shared library"
+            public static var sharedLibrary: String { L10nSupport.string("workbench.status.sharedLibrary") }
+
+            /// Workbench header status for the Usage Stats page; time is a clock time distinct-from: workbench.skills.toast.updated — a toast naming the skill it re-fetched and a header line naming the time it refreshed are different sentences.
+            ///
+            /// Key: `workbench.status.updated`
+            /// en: "updated {time}"
+            public static func updated(time: String) -> String {
+                L10nSupport.format("workbench.status.updated", time)
+            }
         }
     }
 }
@@ -194,58 +9909,2969 @@ enum L10nCatalogFacts {
     ]
 
     static let keys: [String] = [
+        "common.add",
+        "common.all",
+        "common.auto",
         "common.cancel",
+        "common.clear",
+        "common.copied",
+        "common.copy",
+        "common.delete",
+        "common.dismiss",
+        "common.done",
+        "common.dragToReorder",
+        "common.duration.days",
+        "common.duration.daysHours",
+        "common.duration.hours",
+        "common.duration.hoursMinutes",
+        "common.duration.lessThanMinute",
+        "common.duration.minutes",
+        "common.duration.now",
+        "common.name",
         "common.noData",
+        "common.off",
+        "common.on",
+        "common.open",
+        "common.openSettings",
+        "common.percent",
+        "common.provider",
         "common.refresh",
+        "common.refreshSection",
+        "common.remove",
         "common.retry",
+        "common.retryNow",
+        "common.save",
+        "common.updated.daysAgo",
+        "common.updated.hoursAgo",
+        "common.updated.justNow",
+        "common.updated.minutesAgo",
+        "common.updated.never",
+        "common.updated.secondsAgo",
+        "cost.allProviders",
+        "cost.chart.metricCostHelp",
+        "cost.chart.metricTokens",
+        "cost.chart.metricTokensHelp",
+        "cost.empty.antigravity",
+        "cost.empty.claude",
+        "cost.empty.codex",
+        "cost.empty.gemini",
+        "cost.empty.genericCLI",
+        "cost.empty.grok",
+        "cost.fullCharts",
+        "cost.gemini.emptyDetail",
+        "cost.gemini.emptyTitle",
+        "cost.googleAI.empty",
+        "cost.googleAI.title",
+        "cost.granularity.day",
+        "cost.granularity.hour",
+        "cost.granularity.month",
+        "cost.granularity.week",
+        "cost.history.allProviders",
+        "cost.history.building",
+        "cost.history.buildingDetail",
+        "cost.history.clearModelSelection",
+        "cost.history.emptyCost",
+        "cost.history.emptyTokens",
+        "cost.history.extentNote",
+        "cost.history.granularityDisabled",
+        "cost.history.groupBy",
+        "cost.history.hourlyFallback",
+        "cost.history.metricAverage",
+        "cost.history.metricPeak",
+        "cost.history.metricTotal",
+        "cost.history.modelDetailUnavailable",
+        "cost.history.modelsAt",
+        "cost.history.moreModels",
+        "cost.history.navigator",
+        "cost.history.title",
+        "cost.history.weekOf",
+        "cost.history.weekShortOf",
+        "cost.metric.peakDay",
+        "cost.metric.peakTokenDay",
+        "cost.metric.sevenDay",
+        "cost.metric.sevenDayTokens",
+        "cost.metric.thirtyDay",
+        "cost.metric.thirtyDayTokens",
+        "cost.metric.todayTokens",
+        "cost.metric.totalCost",
+        "cost.metric.totalTokens",
+        "cost.metric.yesterdayTokens",
+        "cost.modelRanking.allProvidersAllTime",
+        "cost.modelRanking.allTime",
+        "cost.modelRanking.title",
+        "cost.noUsageYet",
+        "cost.notTracked",
+        "cost.openFullCharts",
         "cost.perThousandTokens",
+        "cost.provider.title",
+        "cost.providerFullCharts",
+        "cost.refreshData",
+        "cost.refreshProvider",
+        "cost.spaceXAI.empty",
+        "cost.spaceXAI.title",
         "cost.spentToday",
+        "cost.timeframe.all",
+        "cost.timeframe.month",
+        "cost.timeframe.monthShort",
+        "cost.timeframe.today",
+        "cost.timeframe.week",
+        "cost.timeframe.weekShort",
+        "cost.timeframe.yesterday",
+        "cost.title",
+        "cost.topModel.share",
+        "cost.topModel.title",
+        "error.credentialRejected",
         "error.needsReLogin",
+        "error.network",
         "error.networkWithReason",
         "error.noAccountFound",
+        "error.notImplemented",
+        "error.parseFailure",
         "error.rateLimited",
+        "error.unknown",
+        "error.unknownDetail",
+        "menuBar.composer.action.duplicate",
+        "menuBar.composer.appIcon.detail",
+        "menuBar.composer.block.appIcon",
+        "menuBar.composer.block.emptyText",
+        "menuBar.composer.block.gap",
+        "menuBar.composer.block.logo",
+        "menuBar.composer.block.newRow",
+        "menuBar.composer.block.quota",
+        "menuBar.composer.block.separator",
+        "menuBar.composer.block.space",
+        "menuBar.composer.block.structure",
+        "menuBar.composer.block.text",
+        "menuBar.composer.block.unsupported",
+        "menuBar.composer.blocks",
+        "menuBar.composer.blocks.empty",
+        "menuBar.composer.colour.automatic",
+        "menuBar.composer.colour.brand",
+        "menuBar.composer.colour.fixed",
+        "menuBar.composer.colour.followsQuota",
+        "menuBar.composer.colour.forecast",
+        "menuBar.composer.colour.primary",
+        "menuBar.composer.colour.secondary",
+        "menuBar.composer.colour.tertiary",
+        "menuBar.composer.field.colour",
+        "menuBar.composer.field.monospacedDigits",
+        "menuBar.composer.field.monospacedDigitsHelp",
+        "menuBar.composer.field.offlineOption",
+        "menuBar.composer.field.show",
+        "menuBar.composer.field.shows",
+        "menuBar.composer.field.size",
+        "menuBar.composer.field.verdicts",
+        "menuBar.composer.field.weight",
+        "menuBar.composer.metric.displayPercent",
+        "menuBar.composer.metric.pace",
+        "menuBar.composer.metric.remainingPercent",
+        "menuBar.composer.metric.resetAt",
+        "menuBar.composer.metric.resetsIn",
+        "menuBar.composer.metric.runsOutIn",
+        "menuBar.composer.metric.usedPercent",
+        "menuBar.composer.mode.custom",
+        "menuBar.composer.mode.customCaption",
+        "menuBar.composer.mode.default",
+        "menuBar.composer.mode.defaultCaption",
+        "menuBar.composer.mode.label",
+        "menuBar.composer.newRow.capped",
+        "menuBar.composer.newRow.detail",
+        "menuBar.composer.newRow.help",
+        "menuBar.composer.palette",
+        "menuBar.composer.preview",
+        "menuBar.composer.preview.dark",
+        "menuBar.composer.preview.empty",
+        "menuBar.composer.preview.grounds",
+        "menuBar.composer.preview.light",
+        "menuBar.composer.preview.twoRowScaling",
+        "menuBar.composer.removeTarget",
+        "menuBar.composer.rule.always",
+        "menuBar.composer.rule.whenForecast",
+        "menuBar.composer.rule.whenRemainingAtMost",
+        "menuBar.composer.rule.whenUsedAtLeast",
+        "menuBar.composer.selected",
+        "menuBar.composer.size.large",
+        "menuBar.composer.size.regular",
+        "menuBar.composer.size.small",
+        "menuBar.composer.space.detail",
+        "menuBar.composer.startOver",
+        "menuBar.composer.startOver.confirm",
+        "menuBar.composer.startOver.confirmMessage",
+        "menuBar.composer.startOver.confirmTitle",
+        "menuBar.composer.startOver.detail",
+        "menuBar.composer.template",
+        "menuBar.composer.template.compact",
+        "menuBar.composer.template.compactDetail",
+        "menuBar.composer.template.roomy",
+        "menuBar.composer.template.roomyDetail",
+        "menuBar.composer.template.twoRows",
+        "menuBar.composer.template.twoRowsDetail",
+        "menuBar.composer.text.empty",
+        "menuBar.composer.text.limit",
+        "menuBar.composer.text.placeholder",
+        "menuBar.composer.unsupported.detail",
+        "menuBar.composer.warning.degraded",
+        "menuBar.composer.warning.missing",
+        "menuBar.composer.warning.silent",
+        "menuBar.composer.weight.medium",
+        "menuBar.composer.weight.regular",
+        "menuBar.composer.weight.semibold",
+        "menuBar.spoken.forecast",
+        "menuBar.spoken.pace",
+        "menuBar.spoken.remaining",
+        "menuBar.spoken.resetAt",
+        "menuBar.spoken.resetsIn",
+        "menuBar.spoken.runsOutIn",
+        "menuBar.spoken.title",
+        "menuBar.spoken.titleBody",
+        "menuBar.spoken.used",
+        "onboarding.apiKeys.hide",
+        "onboarding.apiKeys.intro",
+        "onboarding.apiKeys.setUp",
+        "onboarding.apiKeys.showOnMiscPage",
+        "onboarding.back",
+        "onboarding.continue",
+        "onboarding.cookies.batchScope",
+        "onboarding.cookies.importAll",
+        "onboarding.cookies.importFromBrowser",
+        "onboarding.cookies.importGemini",
+        "onboarding.cookies.importGrok",
+        "onboarding.cookies.importing",
+        "onboarding.cookies.intro",
+        "onboarding.cookies.notImported",
+        "onboarding.cookies.openWebViewLogin",
+        "onboarding.cookies.saved",
+        "onboarding.cookies.signInFirst",
+        "onboarding.done.apiKeyProviders",
+        "onboarding.done.cookieCount",
+        "onboarding.done.footer",
+        "onboarding.done.intro",
+        "onboarding.done.miscCount",
+        "onboarding.done.noneShown",
+        "onboarding.done.pricingBundled",
+        "onboarding.done.pricingMerged",
+        "onboarding.finish",
+        "onboarding.pricing.fetchNow",
+        "onboarding.pricing.fetching",
+        "onboarding.pricing.footer",
+        "onboarding.pricing.interval.hour",
+        "onboarding.pricing.interval.hours",
+        "onboarding.pricing.intro",
+        "onboarding.pricing.merged",
+        "onboarding.pricing.notFetched",
+        "onboarding.pricing.source.failed",
+        "onboarding.pricing.source.models",
+        "onboarding.pricing.source.notRefreshed",
+        "onboarding.pricing.source.unchanged",
+        "onboarding.skip",
+        "onboarding.step.apiKeyProviders.subtitle",
+        "onboarding.step.apiKeyProviders.title",
+        "onboarding.step.browserCookies.subtitle",
+        "onboarding.step.browserCookies.title",
+        "onboarding.step.done.subtitle",
+        "onboarding.step.done.title",
+        "onboarding.step.pricing.subtitle",
+        "onboarding.step.pricing.title",
+        "onboarding.step.subscriptions.subtitle",
+        "onboarding.step.subscriptions.title",
+        "onboarding.step.welcome.subtitle",
+        "onboarding.step.welcome.title",
+        "onboarding.subscriptions.claude.detected",
+        "onboarding.subscriptions.claude.missing",
+        "onboarding.subscriptions.claude.web",
+        "onboarding.subscriptions.codex.detected",
+        "onboarding.subscriptions.codex.missing",
+        "onboarding.subscriptions.codex.web",
+        "onboarding.subscriptions.gemini.hint",
+        "onboarding.subscriptions.grok.detected",
+        "onboarding.subscriptions.grok.missing",
+        "onboarding.subscriptions.intro",
+        "onboarding.subscriptions.productLine.claude",
+        "onboarding.subscriptions.productLine.codex",
+        "onboarding.subscriptions.productLine.gemini",
+        "onboarding.subscriptions.productLine.grok",
+        "onboarding.subscriptions.showInOverview",
+        "onboarding.title",
+        "onboarding.welcome.cost.detail",
+        "onboarding.welcome.cost.title",
+        "onboarding.welcome.footer",
+        "onboarding.welcome.intro",
+        "onboarding.welcome.mcp.detail",
+        "onboarding.welcome.mcp.title",
+        "onboarding.welcome.quotas.detail",
+        "onboarding.welcome.quotas.title",
+        "onboarding.welcome.sessions.detail",
+        "onboarding.welcome.sessions.title",
+        "platform.macos.launchAtLogin.detail",
+        "platform.macos.launchAtLogin.enabled",
+        "platform.macos.launchAtLogin.subtitle",
+        "platform.macos.launchAtLogin.title",
+        "platform.macos.launchAtLogin.toggle",
+        "platform.macos.menuBar.color.actual",
+        "platform.macos.menuBar.color.actualDetail",
+        "platform.macos.menuBar.color.forecastDetail",
+        "platform.macos.menuBar.displayDensity",
+        "platform.macos.menuBar.fieldStyle.label",
+        "platform.macos.menuBar.fieldStyle.labelDetail",
+        "platform.macos.menuBar.fieldStyle.logoAndLabel",
+        "platform.macos.menuBar.fieldStyle.logoAndLabelDetail",
+        "platform.macos.menuBar.fieldStyle.logoDetail",
+        "platform.macos.menuBar.fields",
+        "platform.macos.menuBar.layout",
+        "platform.macos.menuBar.layout.iconOnly",
+        "platform.macos.menuBar.layout.singleLine",
+        "platform.macos.menuBar.mergeGroupWindows",
+        "platform.macos.menuBar.mergeGroupWindowsDetail",
+        "platform.macos.menuBar.percentColor",
+        "platform.macos.menuBar.showInMenuBar",
+        "platform.macos.menuBar.showTitleText",
+        "popover.header.machinesSubtitle",
+        "popover.header.mini",
+        "popover.header.miscSubtitle",
+        "popover.header.openWorkbench",
+        "popover.header.overviewSubtitle",
+        "popover.header.refreshing",
+        "popover.header.settings",
+        "popover.header.updatedLine",
+        "popover.machines.checking",
+        "popover.machines.freshness.delayed",
+        "popover.machines.freshness.live",
+        "popover.machines.freshness.stale",
+        "popover.machines.includeInTotals",
+        "popover.machines.includeInTotalsHelp",
+        "popover.machines.labelWithStatus",
+        "popover.machines.noData",
+        "popover.machines.noDataDetail",
+        "popover.machines.notConfigured",
+        "popover.machines.notConfiguredDetail",
+        "popover.machines.sequence",
+        "popover.machines.thirtyDayCost",
+        "popover.misc.copyFallback",
+        "popover.refreshGoogleAI",
+        "popover.refreshSpaceXAI",
+        "popover.showPage",
+        "popover.tab.machines",
+        "popover.tab.misc",
+        "popover.tab.miscShort",
+        "popover.tab.overview",
         "quota.awaitingFirstObservation",
+        "quota.bridge.empty",
+        "quota.bridge.refresh",
+        "quota.bridge.subtitle",
+        "quota.bridge.subtitleVersion",
+        "quota.bridge.title",
+        "quota.bucket.noResetInfo",
         "quota.cycleRecordedOnRefill",
         "quota.cyclesRecorded",
+        "quota.empty.needsLogin.detail",
+        "quota.empty.network.detail",
+        "quota.empty.noAccount.detail",
+        "quota.empty.parseChanged.detail",
+        "quota.empty.rateLimited.detail",
+        "quota.empty.rateLimited.headline",
+        "quota.forecast.confidence.high",
+        "quota.forecast.confidence.learning",
+        "quota.forecast.confidence.medium",
+        "quota.forecast.explain.footer",
+        "quota.forecast.explain.hide",
+        "quota.forecast.explain.show",
+        "quota.forecast.explain.title",
+        "quota.forecast.guidance.atRisk",
+        "quota.forecast.guidance.available",
+        "quota.forecast.guidance.surplus",
+        "quota.forecast.guidance.usedAvailable",
+        "quota.forecast.guidance.usedSurplus",
+        "quota.forecast.guidance.usedWithinTarget",
+        "quota.forecast.guidance.watch",
+        "quota.forecast.guidance.withinTarget",
+        "quota.forecast.legend.item",
+        "quota.forecast.metric.aboveTarget",
+        "quota.forecast.metric.activityFallback",
+        "quota.forecast.metric.activityTiming",
+        "quota.forecast.metric.activityWeighted",
+        "quota.forecast.metric.behaviorDetail",
+        "quota.forecast.metric.behaviorFallback",
+        "quota.forecast.metric.comparableCycles",
+        "quota.forecast.metric.coverage",
+        "quota.forecast.metric.coverageDetail",
+        "quota.forecast.metric.coverageValue",
+        "quota.forecast.metric.cyclesPending",
+        "quota.forecast.metric.elapsed",
+        "quota.forecast.metric.evidence",
+        "quota.forecast.metric.evidenceDetail",
+        "quota.forecast.metric.evidenceValue",
+        "quota.forecast.metric.expectedLeft",
+        "quota.forecast.metric.expectedUsed",
+        "quota.forecast.metric.forecastAtReset",
+        "quota.forecast.metric.forecastRange",
+        "quota.forecast.metric.insideTarget",
+        "quota.forecast.metric.noComparison",
+        "quota.forecast.metric.plan",
+        "quota.forecast.metric.planDetail",
+        "quota.forecast.metric.rangeLeft",
+        "quota.forecast.metric.rangeUsed",
+        "quota.forecast.metric.recentBurn",
+        "quota.forecast.metric.recentIntervals",
+        "quota.forecast.metric.recentMissing",
+        "quota.forecast.metric.recentTrend",
+        "quota.forecast.metric.safetyTarget",
+        "quota.forecast.metric.timePace",
+        "quota.forecast.metric.timePaceDetail",
+        "quota.forecast.metric.timePaceMissing",
+        "quota.forecast.metric.trendDetail",
+        "quota.forecast.metric.trendDetailMissing",
+        "quota.forecast.metric.trendMissing",
+        "quota.forecast.metric.trendMultiplier",
+        "quota.forecast.metric.unavailable",
+        "quota.forecast.metric.uncertaintyInterval",
+        "quota.forecast.reset.atRisk",
+        "quota.forecast.reset.enough",
+        "quota.forecast.reset.learning",
+        "quota.forecast.reset.surplus",
+        "quota.forecast.reset.watch",
+        "quota.forecast.status.atRisk",
+        "quota.forecast.status.enough",
+        "quota.forecast.status.learning",
+        "quota.forecast.status.surplus",
+        "quota.forecast.status.watch",
+        "quota.forecast.useUp.beforeReset",
+        "quota.forecast.useUp.couldRunOut",
+        "quota.forecast.useUp.estimated",
+        "quota.forecast.useUp.lastsUntilReset",
+        "quota.forecast.useUp.uncertain",
+        "quota.forecast.value.atReset",
+        "quota.forecast.value.expectedNow",
+        "quota.forecast.verdict.atRisk",
+        "quota.forecast.verdict.enough",
+        "quota.forecast.verdict.learning",
+        "quota.forecast.verdict.surplus",
+        "quota.forecast.verdict.watch",
+        "quota.freshness.age.seconds",
+        "quota.freshness.dataAge",
+        "quota.freshness.defaultHelp",
+        "quota.freshness.line",
+        "quota.freshness.noCachedData",
+        "quota.freshness.refreshFailed",
+        "quota.freshness.refreshFailedAgo",
+        "quota.freshness.staleNeverUpdated",
+        "quota.freshness.staleUpdatedAgo",
+        "quota.group.allModels",
+        "quota.group.daily",
+        "quota.group.fiveHours",
+        "quota.group.monthly",
+        "quota.group.noUtilization",
+        "quota.group.other",
+        "quota.group.otherModels",
+        "quota.group.weekly",
+        "quota.group.weeklyCredits",
+        "quota.history.allCurvesHidden",
+        "quota.history.buildingUp",
+        "quota.history.curveCount",
+        "quota.history.curvePickerA11y",
+        "quota.history.curvesAll",
+        "quota.history.curvesSome",
+        "quota.history.forecastLegend",
+        "quota.history.moreBuckets",
+        "quota.history.moreReadings",
+        "quota.history.navigatorAllProviders",
+        "quota.history.navigatorProvider",
+        "quota.history.providerCount",
+        "quota.history.scopeNote",
+        "quota.history.showAllCurves",
+        "quota.history.showBusiest",
+        "quota.history.title",
+        "quota.history.tooltipAtReset",
+        "quota.history.tooltipPace",
+        "quota.history.tooltipQuotaLeft",
+        "quota.login.claude",
+        "quota.login.codex",
+        "quota.login.cursor",
+        "quota.login.grok",
+        "quota.login.misc",
+        "quota.mini.forecastLearning",
+        "quota.mini.forecastLearningCompact",
+        "quota.mini.forecastLeftCompact",
+        "quota.mini.forecastMayRunOut",
+        "quota.mini.forecastSurplus",
+        "quota.mini.forecastSurplusCompact",
+        "quota.mini.nextProvider",
+        "quota.mini.noLiveData",
+        "quota.mini.pageIndicator",
+        "quota.mini.railEmpty",
+        "quota.mini.railTitle",
+        "quota.mini.resets",
+        "quota.mini.rowHelp",
+        "quota.misc.independentCopies",
+        "quota.misc.notConfigured",
+        "quota.misc.refreshCopies",
+        "quota.misc.refreshProvider",
+        "quota.misc.setUpInSettings",
+        "quota.mode.remaining",
+        "quota.mode.used",
+        "quota.pace.deficit",
+        "quota.pace.deficitShort",
+        "quota.pace.lastsUntilReset",
+        "quota.pace.onTrack",
+        "quota.pace.reserve",
+        "quota.pace.reserveShort",
+        "quota.pace.runsOutIn",
+        "quota.pace.runsOutShort",
+        "quota.perModelLimits",
         "quota.remainingPercent",
+        "quota.reset.in",
+        "quota.reset.passed",
+        "quota.reset.passedAt",
+        "quota.resetCredits.available",
+        "quota.resetCredits.availableWithExpiry",
+        "quota.resetCredits.title",
         "quota.resetsIn",
         "quota.resetsInHours",
+        "quota.upcoming.axisDays",
+        "quota.upcoming.axisHours",
+        "quota.upcoming.empty",
+        "quota.upcoming.gain",
+        "quota.upcoming.horizon",
+        "quota.upcoming.leftAndGain",
+        "quota.upcoming.markerHelp",
+        "quota.upcoming.resetsAt",
+        "quota.upcoming.title",
+        "quota.update.failed",
         "quota.usedPercent",
+        "quota.window.dayOfDays",
+        "quota.window.elapsedOfWindow",
+        "quota.window.resetsSoon",
+        "resetHistory.a11y.empty",
+        "resetHistory.a11y.more",
+        "resetHistory.a11y.summary",
+        "resetHistory.a11y.truncation",
+        "resetHistory.axis.cycle",
+        "resetHistory.axis.cycleHelp",
+        "resetHistory.axis.time",
+        "resetHistory.axis.timeHelp",
+        "resetHistory.axisCurrent",
+        "resetHistory.axisCyclesBack",
+        "resetHistory.axisNow",
+        "resetHistory.barIsOneCycle",
+        "resetHistory.cardTitle",
+        "resetHistory.compareEmpty",
+        "resetHistory.compareWindow",
+        "resetHistory.currentCycleCaption",
+        "resetHistory.cycleCaption",
+        "resetHistory.earlyRefillCount",
+        "resetHistory.lane.emptyState",
+        "resetHistory.lane.spokenNoCycles",
+        "resetHistory.lane.spokenWaste",
         "resetHistory.laneAverage",
+        "resetHistory.lastSeenBefore",
+        "resetHistory.legend.barHeight",
+        "resetHistory.legend.byDate",
+        "resetHistory.legend.perCycle",
+        "resetHistory.legend.refilledEarly",
         "resetHistory.noCompletedCycles",
+        "resetHistory.reset.earlyClockRestarted",
+        "resetHistory.reset.earlyClockUnchanged",
+        "resetHistory.reset.earlyUnclear",
+        "resetHistory.retiredAccount",
+        "resetHistory.retiredAccountNumbered",
+        "resetHistory.spoken.allCycles",
+        "resetHistory.spoken.allTime",
+        "resetHistory.spoken.eightCycles",
+        "resetHistory.spoken.eightWeeks",
+        "resetHistory.spoken.fourCycles",
+        "resetHistory.spoken.fourWeeks",
+        "resetHistory.spoken.twelveCycles",
+        "resetHistory.spoken.twelveWeeks",
         "resetHistory.title",
+        "resetHistory.tooltip.completed",
+        "resetHistory.tooltip.current",
+        "resetHistory.tooltip.range",
+        "resetHistory.tooltip.rangeDue",
+        "resetHistory.totals.none",
+        "resetHistory.truncation",
+        "resetHistory.verdict.clean",
+        "resetHistory.verdict.leaky",
+        "resetHistory.verdict.noCycles",
+        "resetHistory.verdict.noQuota",
+        "resetHistory.verdict.wasteful",
         "resetHistory.wastedSummary",
+        "resetHistory.window.all",
+        "resetHistory.window.eightWeeks",
+        "resetHistory.window.fourWeeks",
+        "resetHistory.window.twelveWeeks",
+        "settings.antigravityCookieEnabled",
+        "settings.antigravityLocalOnly",
+        "settings.antigravitySource",
+        "settings.appVersion",
+        "settings.bundled",
+        "settings.checkConnections",
+        "settings.checkForUpdates",
+        "settings.checkKitUpdates",
+        "settings.checkingGitHub",
+        "settings.clearCostData",
+        "settings.connectionHealth",
+        "settings.costDataIntro",
+        "settings.couldNotDeleteCookies",
+        "settings.couldNotDeleteGeminiCookies",
+        "settings.couldNotDeleteGrokCookies",
+        "settings.credentialSource.apiOnly",
+        "settings.credentialSource.browserOnly",
+        "settings.credentialSource.manualOnly",
+        "settings.credentialSource.off",
+        "settings.cursorNoSession",
+        "settings.cursorSessionDetected",
+        "settings.cursorSource",
+        "settings.cursorSourceValue",
+        "settings.deleteCookies",
+        "settings.deleteGeminiCookies",
+        "settings.deleteGrokCookies",
+        "settings.displayMode.remaining",
+        "settings.displayMode.used",
+        "settings.externalChange.title",
+        "settings.geminiCookiesSaved",
+        "settings.geminiShared",
+        "settings.geminiSource",
+        "settings.grokAuthDetected",
+        "settings.grokCookiesSaved",
+        "settings.keepHistory",
+        "settings.keepHistoryDetail",
+        "settings.kitDetail",
+        "settings.language.caption",
         "settings.language.system",
         "settings.language.title",
+        "settings.mcp.allowRefresh",
+        "settings.mcp.allowRefreshDetail",
+        "settings.mcp.allowSkills",
+        "settings.mcp.allowSkillsDetail",
+        "settings.mcp.appendCodexConfig",
+        "settings.mcp.connectAgent",
+        "settings.mcp.connectedClients",
+        "settings.mcp.enable",
+        "settings.mcp.intro",
+        "settings.mcp.lastActivity",
+        "settings.mcp.listening",
+        "settings.mcp.manualIntro",
+        "settings.mcp.mergeCursorConfig",
+        "settings.mcp.movePrompt",
+        "settings.mcp.notListening",
+        "settings.mcp.otherStdioClient",
+        "settings.mcp.otherStdioDetail",
+        "settings.mcp.quickestPath",
+        "settings.mcp.readOnlyDetail",
+        "settings.mcp.runInTerminal",
+        "settings.mcp.setupPrompt",
+        "settings.mcp.setupPromptDetail",
+        "settings.mcp.socket",
+        "settings.mcp.socketLifetime",
+        "settings.mcp.status",
+        "settings.mcp.title",
+        "settings.mcp.whatAgentsMayDo",
+        "settings.menuBarHealthUnavailable",
+        "settings.miniWindow.add",
+        "settings.miniWindow.allBucketsIncluded",
+        "settings.miniWindow.density.narrow",
+        "settings.miniWindow.density.narrowDetail",
+        "settings.miniWindow.density.roomy",
+        "settings.miniWindow.density.roomyDetail",
+        "settings.miniWindow.density.twoLines",
+        "settings.miniWindow.density.twoLinesDetail",
+        "settings.miniWindow.dismissBuiltIn",
+        "settings.miniWindow.forgetDiscovered",
+        "settings.miniWindow.includeStyle",
+        "settings.miniWindow.lastCannotBeRemoved",
+        "settings.miniWindow.mode.compact",
+        "settings.miniWindow.mode.compactDetail",
+        "settings.miniWindow.mode.focus",
+        "settings.miniWindow.mode.focusDetail",
+        "settings.miniWindow.mode.ledger",
+        "settings.miniWindow.mode.ledgerDetail",
+        "settings.miniWindow.mode.rail",
+        "settings.miniWindow.mode.railDetail",
+        "settings.miniWindow.mode.regular",
+        "settings.miniWindow.mode.regularDetail",
+        "settings.miniWindow.mode.strip",
+        "settings.miniWindow.mode.stripDetail",
+        "settings.miniWindow.mode.tiles",
+        "settings.miniWindow.mode.tilesDetail",
+        "settings.miniWindow.namesAllWindows",
+        "settings.miniWindow.namesThisStyle",
+        "settings.miniWindow.namesThisWindow",
+        "settings.miniWindow.noFieldsSelected",
+        "settings.miniWindow.notInWindow",
+        "settings.miniWindow.offline",
+        "settings.miniWindow.openClose",
+        "settings.miniWindow.overridesStyle",
+        "settings.miniWindow.overridesWindow",
+        "settings.miniWindow.removeFromWindow",
+        "settings.miniWindow.removeHelp",
+        "settings.miniWindow.stripDensity",
+        "settings.miniWindow.styleCycle",
+        "settings.miniWindow.toggleHelp",
+        "settings.miniWindow.treeDetail",
+        "settings.misc.accessKeyId",
+        "settings.misc.akSkSaved",
+        "settings.misc.apiKeySaved",
+        "settings.misc.clearWorkspace",
+        "settings.misc.clone",
+        "settings.misc.consoleLink",
+        "settings.misc.edition",
+        "settings.misc.githubSignInHint",
+        "settings.misc.githubTokenSaved",
+        "settings.misc.importDetail",
+        "settings.misc.kiroHint",
+        "settings.misc.noCookieSpec",
+        "settings.misc.noCookiesYet",
+        "settings.misc.probe",
+        "settings.misc.prompt.copilotHost",
+        "settings.misc.prompt.dashscope",
+        "settings.misc.prompt.kilo",
+        "settings.misc.prompt.minimax",
+        "settings.misc.prompt.openRouter",
+        "settings.misc.prompt.openRouterHost",
+        "settings.misc.prompt.warp",
+        "settings.misc.prompt.workspace",
+        "settings.misc.prompt.zai",
+        "settings.misc.region",
+        "settings.misc.region.auto",
+        "settings.misc.region.chinaMainland",
+        "settings.misc.region.international",
+        "settings.misc.region.minimaxChina",
+        "settings.misc.region.minimaxGlobal",
+        "settings.misc.region.zaiChina",
+        "settings.misc.region.zaiGlobal",
+        "settings.misc.removeAkSk",
+        "settings.misc.removeApiKey",
+        "settings.misc.removeCookieSlot",
+        "settings.misc.removeCopy",
+        "settings.misc.removeCopyButton",
+        "settings.misc.removeCopyDetail",
+        "settings.misc.removeCopyTitle",
+        "settings.misc.removeGithubToken",
+        "settings.misc.rename",
+        "settings.misc.secretAccessKey",
+        "settings.misc.signIn",
+        "settings.misc.signInViaWeb",
+        "settings.misc.tencentTokenPlanNote",
+        "settings.misc.variant",
+        "settings.misc.waiting",
+        "settings.misc.workspaceNote",
+        "settings.needsSetup",
+        "settings.notChecked",
+        "settings.notCheckedYet",
+        "settings.openRefreshCooldown",
+        "settings.openRefreshDetail",
+        "settings.openStatusPage",
+        "settings.percentShows",
+        "settings.planBadge",
+        "settings.planBadgeDetail",
+        "settings.popoverDensity.compact",
+        "settings.popoverDensity.compactDetail",
+        "settings.popoverDensity.regular",
+        "settings.popoverDensity.regularDetail",
+        "settings.popoverDensity.spacious",
+        "settings.popoverDensity.spaciousDetail",
+        "settings.pricing.addOverride",
+        "settings.pricing.advancedTiers",
+        "settings.pricing.alwaysWins",
+        "settings.pricing.bundledFallback",
+        "settings.pricing.cacheReadAbove",
+        "settings.pricing.cacheWriteAbove",
+        "settings.pricing.deleteOverride",
+        "settings.pricing.exactModelName",
+        "settings.pricing.fastMultiplier",
+        "settings.pricing.inputAbove",
+        "settings.pricing.intro",
+        "settings.pricing.localOverrides",
+        "settings.pricing.noOverrides",
+        "settings.pricing.offlineFloor",
+        "settings.pricing.outputAbove",
+        "settings.pricing.overridesIntro",
+        "settings.pricing.priorityHealth",
+        "settings.pricing.rateInput",
+        "settings.pricing.rateOutput",
+        "settings.pricing.refreshNow",
+        "settings.pricing.refreshing",
+        "settings.pricing.thresholdTokens",
+        "settings.pricingDataDate",
+        "settings.privacyDetail",
+        "settings.privacyMode",
+        "settings.privacyModeDetail",
+        "settings.ready",
+        "settings.refreshEvery",
+        "settings.refreshOnPopoverOpen",
+        "settings.releaseNotes",
+        "settings.remote.core",
+        "settings.remote.costAggregation",
+        "settings.remote.costAggregationIntro",
+        "settings.remote.differentControlCenter",
+        "settings.remote.discard",
+        "settings.remote.discardPendingDetail",
+        "settings.remote.discardPendingTitle",
+        "settings.remote.disconnect",
+        "settings.remote.disconnectButton",
+        "settings.remote.disconnectDetail",
+        "settings.remote.disconnectIntro",
+        "settings.remote.disconnectTitle",
+        "settings.remote.experimentalBadge",
+        "settings.remote.experimentalNote",
+        "settings.remote.exportIdentity",
+        "settings.remote.importProvisioning",
+        "settings.remote.join",
+        "settings.remote.joinIntro",
+        "settings.remote.joinWithCode",
+        "settings.remote.lastSync",
+        "settings.remote.machineDetail",
+        "settings.remote.machinesAppearAfterImport",
+        "settings.remote.machinesSynced",
+        "settings.remote.manualPairingIntro",
+        "settings.remote.notConnected",
+        "settings.remote.orPairManually",
+        "settings.remote.pendingIntro",
+        "settings.remote.provisioning",
+        "settings.remote.registeredProbes",
+        "settings.remote.relay",
+        "settings.remote.resumeSaving",
+        "settings.remote.retrySaving",
+        "settings.remote.statusWithCode",
+        "settings.remote.sync.busy",
+        "settings.remote.sync.connectionFailed",
+        "settings.remote.sync.hostLookupFailed",
+        "settings.remote.sync.invalidResponse",
+        "settings.remote.sync.networkDetail",
+        "settings.remote.sync.offline",
+        "settings.remote.sync.rejected",
+        "settings.remote.sync.rejectedDetail",
+        "settings.remote.sync.retryDetail",
+        "settings.remote.sync.secureConnectionFailed",
+        "settings.remote.sync.sequenceGap",
+        "settings.remote.sync.sequenceGapDetail",
+        "settings.remote.sync.timeout",
+        "settings.remote.sync.transportFailed",
+        "settings.remote.sync.unknown",
+        "settings.remote.sync.unknownDetail",
+        "settings.remote.sync.unverifiedProbe",
+        "settings.remote.sync.unverifiedProbeDetail",
+        "settings.remote.syncNow",
+        "settings.remote.workspace",
+        "settings.repository",
+        "settings.rescanCostLogs",
+        "settings.route.antigravityLocal",
+        "settings.route.browserCookies",
+        "settings.route.cli",
+        "settings.route.grokAuthFile",
+        "settings.route.oauth",
+        "settings.route.webViewCookies",
+        "settings.routeHealth.agyAvailable",
+        "settings.routeHealth.authFileExpired",
+        "settings.routeHealth.authFileUnreadable",
+        "settings.routeHealth.cachedOnly",
+        "settings.routeHealth.credentialUnreadable",
+        "settings.routeHealth.credentialsAvailable",
+        "settings.routeHealth.invalidCookie",
+        "settings.routeHealth.keychainLocked",
+        "settings.routeHealth.lspRunning",
+        "settings.routeHealth.noAntigravityData",
+        "settings.routeHealth.noAuthFile",
+        "settings.routeHealth.noCredential",
+        "settings.routeHealth.noSavedCookie",
+        "settings.routeHealth.savedInKeychain",
+        "settings.search",
+        "settings.section.components",
+        "settings.section.costData",
+        "settings.section.layout",
+        "settings.section.menuBar",
+        "settings.section.menuBarHealth",
+        "settings.section.miniWindows",
+        "settings.section.privacy",
+        "settings.section.refreshing",
+        "settings.section.remoteProbes",
+        "settings.section.system",
+        "settings.section.updates",
+        "settings.showAssistant",
+        "settings.showAssistantDetail",
+        "settings.sidebar.coreProviders",
+        "settings.sidebar.disableProvider",
+        "settings.sidebar.enableProvider",
+        "settings.sidebar.hideFromOverview",
+        "settings.spaceXAIIntro",
+        "settings.terminal.copyOnly",
+        "settings.updateChannel",
+        "settings.updateChannel.dev",
+        "settings.updateChannel.devDetail",
+        "settings.updateChannel.main",
+        "settings.updateChannel.mainDetail",
+        "settings.updateCheckDetail",
+        "settings.usageMode.antigravity.autoDetail",
+        "settings.usageMode.antigravity.localFirstDetail",
+        "settings.usageMode.antigravity.localOnly",
+        "settings.usageMode.antigravity.localOnlyDetail",
+        "settings.usageMode.antigravity.localThenWeb",
+        "settings.usageMode.antigravity.webFirstDetail",
+        "settings.usageMode.antigravity.webOnly",
+        "settings.usageMode.antigravity.webOnlyDetail",
+        "settings.usageMode.antigravity.webThenLocal",
+        "settings.usageMode.claude.autoDetail",
+        "settings.usageMode.claude.codeFirstDetail",
+        "settings.usageMode.claude.codeOnly",
+        "settings.usageMode.claude.codeOnlyDetail",
+        "settings.usageMode.claude.codeThenWeb",
+        "settings.usageMode.claude.oauthCodeWeb",
+        "settings.usageMode.claude.oauthFirstDetail",
+        "settings.usageMode.claude.oauthOnlyDetail",
+        "settings.usageMode.claude.webFirstDetail",
+        "settings.usageMode.claude.webOnly",
+        "settings.usageMode.claude.webOnlyDetail",
+        "settings.usageMode.claude.webThenCode",
+        "settings.usageMode.codex.autoDetail",
+        "settings.usageMode.codex.cliOnly",
+        "settings.usageMode.codex.cliOnlyDetail",
+        "settings.usageMode.codex.cliThenOauth",
+        "settings.usageMode.codex.oauthFirstDetail",
+        "settings.usageMode.codex.oauthOnlyDetail",
+        "settings.usageMode.codex.oauthThenCli",
+        "settings.usageMode.gemini.webOnly",
+        "settings.usageMode.gemini.webOnlyDetail",
+        "settings.usageMode.oauthOnly",
+        "settings.usageSource",
+        "settings.webQuota",
+        "settings.whatChangedIn",
+        "status.card.componentCount",
+        "status.card.components",
+        "status.card.noIncidents",
+        "status.card.openIncident",
+        "status.card.openStatusPage",
+        "status.card.refresh",
+        "status.card.statusPageFallback",
+        "status.card.title",
+        "status.card.updatedHoursAgo",
+        "status.card.updatedMinutesAgo",
+        "status.card.uptime",
+        "status.card.uptimeStrip",
+        "status.component.degraded",
+        "status.component.maintenance",
+        "status.component.majorOutage",
+        "status.component.operational",
+        "status.component.other",
+        "status.component.partialOutage",
+        "status.indicator.critical",
+        "status.indicator.loading",
+        "status.indicator.major",
+        "status.indicator.minor",
+        "status.overview.checking",
+        "status.overview.down",
+        "status.overview.enableProvider",
+        "status.overview.fetchFailed",
+        "status.overview.needsAttention",
+        "status.overview.refreshing",
+        "status.overview.title",
+        "status.overview.up",
+        "status.summary.activeIncident",
+        "status.summary.allOperational",
+        "status.summary.serviceIssue",
+        "status.summary.underMaintenance",
+        "usage.activity.a11y",
+        "usage.activity.cellTooltip",
+        "usage.activity.heavy",
+        "usage.activity.peak",
+        "usage.activity.peakCell",
+        "usage.activity.quiet",
+        "usage.activity.tokensShort",
+        "usage.breakdown.models",
+        "usage.breakdown.periods",
+        "usage.breakdown.projects",
+        "usage.breakdown.providers",
+        "usage.breakdown.requests",
+        "usage.chartNavigator.label",
+        "usage.chartNavigator.range",
+        "usage.chartNavigator.showFullRange",
+        "usage.chartNavigator.zoomIn",
+        "usage.chartNavigator.zoomOut",
+        "usage.filters.allHarnesses",
+        "usage.filters.allHarnessesHelpEvery",
+        "usage.filters.allHarnessesHelpNone",
+        "usage.filters.allHarnessesSelectEvery",
+        "usage.filters.allHarnessesSelectNone",
+        "usage.filters.allModels",
+        "usage.filters.autoMenuLabel",
+        "usage.filters.autoRefresh",
+        "usage.filters.clearHelp",
+        "usage.filters.companyHarnesses",
+        "usage.filters.companyHelp",
+        "usage.filters.customRangeFrom",
+        "usage.filters.customRangeHint",
+        "usage.filters.customRangeTitle",
+        "usage.filters.customRangeTo",
+        "usage.filters.editCustomRange",
+        "usage.filters.harnessHelp",
+        "usage.filters.modelsMenuLabel",
+        "usage.filters.modelsSelected",
+        "usage.filters.noModelsInRange",
+        "usage.filters.range14d",
+        "usage.filters.range24h",
+        "usage.filters.rangeCustom",
+        "usage.filters.rangeMenu",
+        "usage.filters.rangeSpan",
+        "usage.filters.refreshInterval",
+        "usage.harnessMix.activeCount",
+        "usage.harnessMix.byRealTokens",
+        "usage.harnessMix.empty",
+        "usage.harnessMix.title",
+        "usage.hero.allRequestsPriced",
+        "usage.hero.cacheHit",
+        "usage.hero.cacheRead",
+        "usage.hero.inSelectedRange",
+        "usage.hero.noPricedRequests",
+        "usage.hero.noTrafficInRange",
+        "usage.hero.realTokens",
+        "usage.hero.requests",
+        "usage.hero.tokenComposition",
+        "usage.hero.unpricedBadge",
+        "usage.hero.unpricedHelp",
+        "usage.ledgerUnavailable.detail",
+        "usage.ledgerUnavailable.title",
+        "usage.mix.dimension.harnesses",
+        "usage.mix.donutUnit",
+        "usage.mix.flow.cache",
+        "usage.mix.flow.cacheDetail",
+        "usage.mix.flow.freshInput",
+        "usage.mix.flow.output",
+        "usage.mix.harness.subtitle",
+        "usage.mix.harness.title",
+        "usage.mix.lastThirtyDays",
+        "usage.mix.ledgerUnreadable",
+        "usage.mix.model.empty",
+        "usage.mix.model.subtitle",
+        "usage.mix.model.title",
+        "usage.mix.other",
+        "usage.mix.otherCount",
+        "usage.mix.project.empty",
+        "usage.mix.project.subtitle",
+        "usage.mix.project.title",
+        "usage.mix.provider.empty",
+        "usage.mix.provider.subtitle",
+        "usage.mix.provider.title",
+        "usage.mix.title",
+        "usage.mix.tokenFlow.empty",
+        "usage.mix.tokenFlow.subtitle",
+        "usage.mix.tokenFlow.title",
+        "usage.noHarnessSelected.detail",
+        "usage.noHarnessSelected.title",
+        "usage.requestCount",
+        "usage.table.activeDays",
+        "usage.table.activeHours",
+        "usage.table.activeWeeks",
+        "usage.table.cacheReadWrite",
+        "usage.table.column.average",
+        "usage.table.column.day",
+        "usage.table.column.harness",
+        "usage.table.column.hour",
+        "usage.table.column.input",
+        "usage.table.column.model",
+        "usage.table.column.requests",
+        "usage.table.column.tier",
+        "usage.table.column.time",
+        "usage.table.column.weekOf",
+        "usage.table.companyCount",
+        "usage.table.emptyModels",
+        "usage.table.emptyPeriods",
+        "usage.table.emptyProjects",
+        "usage.table.emptyProviders",
+        "usage.table.emptyRequests",
+        "usage.table.harnessHelp",
+        "usage.table.inputHelp",
+        "usage.table.loadMore",
+        "usage.table.loadingMore",
+        "usage.table.modelCount",
+        "usage.table.periodRow",
+        "usage.table.projectCount",
+        "usage.table.requestRow",
+        "usage.table.requestsLabel",
+        "usage.table.requestsLoaded",
+        "usage.table.showMorePeriods",
+        "usage.table.statRow",
+        "usage.table.unpriced",
+        "usage.table.unpricedHelp",
+        "usage.tokens.cacheRead",
+        "usage.tokens.cacheWrite",
+        "usage.tokens.input",
+        "usage.tokens.output",
+        "usage.tokens.title",
+        "usage.trend.accessibilitySummary",
+        "usage.trend.bucketDay",
+        "usage.trend.bucketHour",
+        "usage.trend.bucketWeek",
+        "usage.trend.costChartLabel",
+        "usage.trend.empty",
+        "usage.trend.fit",
+        "usage.trend.fitHelp",
+        "usage.trend.granularity",
+        "usage.trend.granularityDaily",
+        "usage.trend.granularityHourly",
+        "usage.trend.granularityLabel",
+        "usage.trend.granularityWeekly",
+        "usage.trend.hideProvider",
+        "usage.trend.navigatorLabel",
+        "usage.trend.nextWindow",
+        "usage.trend.now",
+        "usage.trend.nowHelp",
+        "usage.trend.previousWindow",
+        "usage.trend.scopeHint",
+        "usage.trend.showProvider",
+        "usage.trend.title",
+        "usage.trend.tokensChartLabel",
+        "usage.whenYouUse.everything",
+        "usage.whenYouUse.googleAI",
+        "usage.whenYouUse.provider",
+        "usage.whenYouUse.spaceXAI",
+        "usage.yearHeatmap.a11y",
+        "usage.yearHeatmap.less",
+        "usage.yearHeatmap.more",
+        "usage.yearHeatmap.title",
+        "usage.yearHeatmap.tooltip",
+        "usage.yearHeatmap.total",
+        "workbench.appearance.useDark",
+        "workbench.appearance.useLight",
+        "workbench.header.refreshPage",
+        "workbench.page.resets.subtitle",
+        "workbench.page.resets.title",
+        "workbench.page.sessions.subtitle",
+        "workbench.page.sessions.title",
+        "workbench.page.settings.subtitle",
+        "workbench.page.skills.subtitle",
+        "workbench.page.skills.title",
+        "workbench.page.usageStats.subtitle",
+        "workbench.page.usageStats.title",
+        "workbench.placeholder.resets",
+        "workbench.placeholder.sessionManager",
+        "workbench.placeholder.settings",
+        "workbench.placeholder.skillsManager",
+        "workbench.placeholder.usageStats",
+        "workbench.resets.calendar.dayEntry",
+        "workbench.resets.calendar.futureEntry",
+        "workbench.resets.calendar.nextMonth",
+        "workbench.resets.calendar.pastEntry",
+        "workbench.resets.calendar.previousMonth",
+        "workbench.resets.calendar.title",
+        "workbench.resets.calendar.today",
+        "workbench.resets.cycle.curveHelp",
+        "workbench.resets.cycle.headline",
+        "workbench.resets.refillHorizon.detail",
+        "workbench.resets.refillHorizon.title",
+        "workbench.resets.risk.badge.atRisk",
+        "workbench.resets.risk.badge.low",
+        "workbench.resets.risk.badge.out",
+        "workbench.resets.risk.badge.watch",
+        "workbench.resets.risk.detail",
+        "workbench.resets.risk.empty",
+        "workbench.resets.risk.remaining",
+        "workbench.resets.risk.title",
+        "workbench.resets.subDaily.title",
+        "workbench.sessions.allChip.helpUnselected",
+        "workbench.sessions.allChip.labelUnselected",
+        "workbench.sessions.antigravityNotice",
+        "workbench.sessions.copyResumeCommand",
+        "workbench.sessions.copySessionID",
+        "workbench.sessions.copySessionIDLabel",
+        "workbench.sessions.copySourcePath",
+        "workbench.sessions.copyWorkingDirectory",
+        "workbench.sessions.count.sessions",
+        "workbench.sessions.count.shownOfTotal",
+        "workbench.sessions.delete.confirm",
+        "workbench.sessions.delete.countButton",
+        "workbench.sessions.delete.message",
+        "workbench.sessions.deleteEllipsis",
+        "workbench.sessions.details",
+        "workbench.sessions.details.collapsed",
+        "workbench.sessions.details.expanded",
+        "workbench.sessions.empty.indexUnavailableDetail",
+        "workbench.sessions.empty.indexUnavailableTitle",
+        "workbench.sessions.empty.noLogsDetail",
+        "workbench.sessions.empty.noMatchTitle",
+        "workbench.sessions.empty.scanningDetail",
+        "workbench.sessions.empty.searchNoMatchDetail",
+        "workbench.sessions.fact.created",
+        "workbench.sessions.fact.cwd",
+        "workbench.sessions.fact.id",
+        "workbench.sessions.fact.lastActive",
+        "workbench.sessions.fact.source",
+        "workbench.sessions.filter.company",
+        "workbench.sessions.filter.dateRange",
+        "workbench.sessions.filter.folders",
+        "workbench.sessions.filter.foldersFiltered",
+        "workbench.sessions.filter.harnessCount",
+        "workbench.sessions.filter.options",
+        "workbench.sessions.filter.scope",
+        "workbench.sessions.filter.sort",
+        "workbench.sessions.filter.sortGrouped",
+        "workbench.sessions.filter.sortHelp",
+        "workbench.sessions.filter.when",
+        "workbench.sessions.filter.whenHelp",
+        "workbench.sessions.find.next",
+        "workbench.sessions.find.none",
+        "workbench.sessions.find.placeholder",
+        "workbench.sessions.find.previous",
+        "workbench.sessions.folders.exclude",
+        "workbench.sessions.folders.excludePlaceholder",
+        "workbench.sessions.folders.include",
+        "workbench.sessions.folders.includePlaceholder",
+        "workbench.sessions.folders.separatorHint",
+        "workbench.sessions.folders.title",
+        "workbench.sessions.fraction",
+        "workbench.sessions.groupByProject",
+        "workbench.sessions.index.scanning",
+        "workbench.sessions.index.unavailable",
+        "workbench.sessions.list.capNotice",
+        "workbench.sessions.message.copy",
+        "workbench.sessions.message.copyHelp",
+        "workbench.sessions.message.showLess",
+        "workbench.sessions.message.showMore",
+        "workbench.sessions.openInTerminal",
+        "workbench.sessions.options.help",
+        "workbench.sessions.options.indexMessageText",
+        "workbench.sessions.options.openIn",
+        "workbench.sessions.options.rebuildIndex",
+        "workbench.sessions.outline.empty",
+        "workbench.sessions.outline.heading",
+        "workbench.sessions.outline.help",
+        "workbench.sessions.outline.label",
+        "workbench.sessions.page.next",
+        "workbench.sessions.page.previous",
+        "workbench.sessions.project.none",
+        "workbench.sessions.project.projectless",
+        "workbench.sessions.range.all",
+        "workbench.sessions.refreshHelp",
+        "workbench.sessions.resume.heading",
+        "workbench.sessions.resume.none",
+        "workbench.sessions.role.assistant",
+        "workbench.sessions.role.other",
+        "workbench.sessions.role.system",
+        "workbench.sessions.role.tool",
+        "workbench.sessions.role.user",
+        "workbench.sessions.row.autoReviewsMerged",
+        "workbench.sessions.row.includeInDeletion",
+        "workbench.sessions.row.messageCount",
+        "workbench.sessions.row.select",
+        "workbench.sessions.row.showTranscript",
+        "workbench.sessions.row.toggleForDeletion",
+        "workbench.sessions.runInHelp",
+        "workbench.sessions.scope.assistant",
+        "workbench.sessions.scope.system",
+        "workbench.sessions.scope.title",
+        "workbench.sessions.scope.tool",
+        "workbench.sessions.scope.user",
+        "workbench.sessions.search.bodyIndexed",
+        "workbench.sessions.search.bodyNotIndexed",
+        "workbench.sessions.search.clearHelp",
+        "workbench.sessions.search.placeholder",
+        "workbench.sessions.selectMode",
+        "workbench.sessions.selectModeHelp",
+        "workbench.sessions.sort.byProject",
+        "workbench.sessions.sort.oldestFirst",
+        "workbench.sessions.sort.recentFirst",
+        "workbench.sessions.toast.bodyIndexDropFailed",
+        "workbench.sessions.toast.bodyIndexDropped",
+        "workbench.sessions.toast.copied",
+        "workbench.sessions.toast.copiedWithReason",
+        "workbench.sessions.toast.cwdCopied",
+        "workbench.sessions.toast.deleted",
+        "workbench.sessions.toast.deletedPartial",
+        "workbench.sessions.toast.indexNotCleared",
+        "workbench.sessions.toast.messageCopied",
+        "workbench.sessions.toast.noResumeCommand",
+        "workbench.sessions.toast.openedIn",
+        "workbench.sessions.toast.sessionIDCopied",
+        "workbench.sessions.toast.sourcePathCopied",
+        "workbench.sessions.transcript.autoReviewDivider",
+        "workbench.sessions.transcript.cancelled",
+        "workbench.sessions.transcript.loadAll",
+        "workbench.sessions.transcript.loading",
+        "workbench.sessions.transcript.noMessages",
+        "workbench.sessions.transcript.noReader",
+        "workbench.sessions.transcript.pageRange",
+        "workbench.sessions.transcript.placeholderDetail",
+        "workbench.sessions.transcript.placeholderTitle",
+        "workbench.sessions.transcript.readFailed",
+        "workbench.sessions.transcript.truncatedDetail",
+        "workbench.sessions.transcript.truncatedTitle",
+        "workbench.skills.appCountNativeDisabled",
+        "workbench.skills.appCountViaGeminiRoot",
+        "workbench.skills.appCountViaSharedRoot",
+        "workbench.skills.appSeesCount",
+        "workbench.skills.backups",
+        "workbench.skills.backups.deleteAccessibility",
+        "workbench.skills.backups.deleteConfirmMessage",
+        "workbench.skills.backups.deleteConfirmTitle",
+        "workbench.skills.backups.deleteConfirmTitleGeneric",
+        "workbench.skills.backups.empty",
+        "workbench.skills.backups.footer",
+        "workbench.skills.backups.refreshHelp",
+        "workbench.skills.backups.restore",
+        "workbench.skills.backups.restoreHelp",
+        "workbench.skills.backups.subtitle",
+        "workbench.skills.backups.title",
+        "workbench.skills.badge.installed",
+        "workbench.skills.badge.nativeOff",
+        "workbench.skills.badge.nativeOffHelp",
+        "workbench.skills.badge.nativeUnknown",
+        "workbench.skills.badge.nativeUnknownHelp",
+        "workbench.skills.badge.update",
+        "workbench.skills.checkUpdates",
+        "workbench.skills.checkUpdatesCount",
+        "workbench.skills.contextDisableKeepProjection",
+        "workbench.skills.contextEnableIn",
+        "workbench.skills.contextRemoveProjection",
+        "workbench.skills.countFiltered",
+        "workbench.skills.countTotal",
+        "workbench.skills.discover",
+        "workbench.skills.discover.availableEmpty",
+        "workbench.skills.discover.availableTitle",
+        "workbench.skills.discover.indexTitle",
+        "workbench.skills.discover.installs",
+        "workbench.skills.discover.noRepos",
+        "workbench.skills.discover.removeRepo",
+        "workbench.skills.discover.repoFieldPlaceholder",
+        "workbench.skills.discover.repoRules",
+        "workbench.skills.discover.reposTitle",
+        "workbench.skills.discover.scanRepos",
+        "workbench.skills.discover.scanReposHelp",
+        "workbench.skills.discover.searchHint",
+        "workbench.skills.discover.searchPlaceholder",
+        "workbench.skills.discover.selectAll",
+        "workbench.skills.discover.selectHelp",
+        "workbench.skills.discover.selectNone",
+        "workbench.skills.discover.sourceFromSkillsSh",
+        "workbench.skills.discover.stopScanHelp",
+        "workbench.skills.discover.stopScanningRepo",
+        "workbench.skills.discover.title",
+        "workbench.skills.discoverHelp",
+        "workbench.skills.empty.body",
+        "workbench.skills.empty.headline",
+        "workbench.skills.filterClear",
+        "workbench.skills.filterPlaceholder",
+        "workbench.skills.import.alreadyShared",
+        "workbench.skills.import.alreadySharedDetail",
+        "workbench.skills.import.apply",
+        "workbench.skills.import.conflicts",
+        "workbench.skills.import.conflictsCount",
+        "workbench.skills.import.conflictsDetail",
+        "workbench.skills.import.foundIn",
+        "workbench.skills.import.keepEvidenceFor",
+        "workbench.skills.import.needsAdoption",
+        "workbench.skills.import.needsAdoptionDetail",
+        "workbench.skills.import.notSkills",
+        "workbench.skills.import.notSkillsDetail",
+        "workbench.skills.import.recognizedCount",
+        "workbench.skills.import.subtitle",
+        "workbench.skills.import.summary",
+        "workbench.skills.import.title",
+        "workbench.skills.importExisting",
+        "workbench.skills.install",
+        "workbench.skills.installFromZip",
+        "workbench.skills.menuMoreActions",
+        "workbench.skills.menuRevealInFinder",
+        "workbench.skills.menuUninstall",
+        "workbench.skills.menuUpdateFromRepository",
+        "workbench.skills.menuWiringDetails",
+        "workbench.skills.noMatch",
+        "workbench.skills.phase.downloadedOne",
+        "workbench.skills.phase.downloadedProgress",
+        "workbench.skills.phase.downloading",
+        "workbench.skills.phase.scanning",
+        "workbench.skills.sourceBranch",
+        "workbench.skills.sourceInstalledLocally",
+        "workbench.skills.sourceLocal",
+        "workbench.skills.state.coupled",
+        "workbench.skills.state.disabledInHarness",
+        "workbench.skills.state.enabled",
+        "workbench.skills.state.notProjected",
+        "workbench.skills.state.unknown",
+        "workbench.skills.sync.footer",
+        "workbench.skills.sync.nativeSwitchesBody",
+        "workbench.skills.sync.nativeSwitchesLead",
+        "workbench.skills.sync.noPerSkillSwitch",
+        "workbench.skills.sync.noSwitchAlsoReads",
+        "workbench.skills.sync.perSkillSwitch",
+        "workbench.skills.sync.projectionsBody",
+        "workbench.skills.sync.projectionsLead",
+        "workbench.skills.sync.readsOwnFolder",
+        "workbench.skills.sync.scansSharedRoot",
+        "workbench.skills.sync.ssotBody",
+        "workbench.skills.sync.ssotLead",
+        "workbench.skills.sync.title",
+        "workbench.skills.syncExplainerHelp",
+        "workbench.skills.toast.addRepoFirst",
+        "workbench.skills.toast.allUpToDate",
+        "workbench.skills.toast.archiveEmpty",
+        "workbench.skills.toast.disabledKeptProjection",
+        "workbench.skills.toast.enabledForApps",
+        "workbench.skills.toast.importConflicts",
+        "workbench.skills.toast.importRecognized",
+        "workbench.skills.toast.installedArchive",
+        "workbench.skills.toast.installedForApps",
+        "workbench.skills.toast.installedShared",
+        "workbench.skills.toast.invalidRepoRef",
+        "workbench.skills.toast.linkRemovedStillShared",
+        "workbench.skills.toast.noSearchMatches",
+        "workbench.skills.toast.noSkillsFound",
+        "workbench.skills.toast.notFoundInRepo",
+        "workbench.skills.toast.projectionClearedFolderKept",
+        "workbench.skills.toast.recorded",
+        "workbench.skills.toast.reposUnreadable",
+        "workbench.skills.toast.restored",
+        "workbench.skills.toast.scanStopped",
+        "workbench.skills.toast.sharedLibraryNote",
+        "workbench.skills.toast.sharedRootNoSwitch",
+        "workbench.skills.toast.uninstalledBackedUp",
+        "workbench.skills.toast.uninstalledLeftInPlace",
+        "workbench.skills.toast.updated",
+        "workbench.skills.toast.updatesAvailable",
+        "workbench.skills.toggleHelp.installInto",
+        "workbench.skills.toggleHelp.keepLinks",
+        "workbench.skills.toggleHelp.linkAfterAdopting",
+        "workbench.skills.toggleState.coupledGemini",
+        "workbench.skills.toggleState.coupledSharedRoot",
+        "workbench.skills.toggleState.disabledInHarness",
+        "workbench.skills.toggleState.enabled",
+        "workbench.skills.toggleState.enabledNative",
+        "workbench.skills.toggleState.enabledSharedRoot",
+        "workbench.skills.toggleState.notProjected",
+        "workbench.skills.toggleState.unknown",
+        "workbench.skills.uninstall",
+        "workbench.skills.uninstallConfirmMessage",
+        "workbench.skills.uninstallConfirmTitle",
+        "workbench.skills.wiring.footer",
+        "workbench.skills.wiring.mechanismGeminiCompat",
+        "workbench.skills.wiring.mechanismSharedRoot",
+        "workbench.skills.wiring.nativeSwitch",
+        "workbench.skills.wiring.noNativeSwitch",
+        "workbench.skills.wiring.projectionCopy",
+        "workbench.skills.wiring.projectionCopyAdopted",
+        "workbench.skills.wiring.projectionMissing",
+        "workbench.skills.wiring.projectionSymlink",
+        "workbench.skills.wiring.projectionSymlinkAdopted",
+        "workbench.skills.wiring.reveal",
+        "workbench.skills.wiring.revealHelp",
+        "workbench.skills.wiring.source",
+        "workbench.skills.wiring.sourceDetail",
+        "workbench.skills.wiring.stateConfigUnreadable",
+        "workbench.skills.wiring.stateCoupledGemini",
+        "workbench.skills.wiring.stateCoupledSharedRoot",
+        "workbench.skills.wiring.stateNativeOff",
+        "workbench.skills.wiring.stateNotLinked",
+        "workbench.status.cachedQuotas",
+        "workbench.status.indexed",
+        "workbench.status.installed",
+        "workbench.status.localIndex",
+        "workbench.status.localLedger",
+        "workbench.status.nextRefill",
+        "workbench.status.sharedLibrary",
+        "workbench.status.updated",
     ]
 
     static let pluralKeys: Set<String> = [
+        "common.updated.daysAgo",
+        "common.updated.hoursAgo",
+        "common.updated.minutesAgo",
         "quota.cyclesRecorded",
+        "quota.forecast.metric.comparableCycles",
+        "quota.forecast.metric.recentIntervals",
+        "quota.history.curveCount",
+        "quota.history.providerCount",
+        "quota.misc.independentCopies",
+        "quota.perModelLimits",
+        "quota.resetCredits.available",
+        "resetHistory.earlyRefillCount",
+        "resetHistory.laneAverage",
+        "resetHistory.verdict.leaky",
+        "resetHistory.verdict.wasteful",
+        "resetHistory.wastedSummary",
+        "status.card.componentCount",
+        "usage.filters.modelsSelected",
+        "usage.harnessMix.activeCount",
+        "usage.hero.unpricedHelp",
+        "usage.mix.otherCount",
+        "usage.table.activeDays",
+        "usage.table.activeHours",
+        "usage.table.activeWeeks",
+        "usage.table.companyCount",
+        "usage.table.modelCount",
+        "usage.table.projectCount",
+        "usage.table.statRow",
+        "usage.trend.accessibilitySummary",
+        "usage.yearHeatmap.a11y",
+        "workbench.sessions.count.sessions",
+        "workbench.sessions.delete.confirm",
+        "workbench.sessions.row.autoReviewsMerged",
+        "workbench.sessions.row.messageCount",
+        "workbench.sessions.toast.deleted",
+        "workbench.sessions.transcript.truncatedTitle",
+        "workbench.skills.appSeesCount",
+        "workbench.skills.countTotal",
+        "workbench.skills.discover.installs",
+        "workbench.skills.import.apply",
+        "workbench.skills.toast.importConflicts",
+        "workbench.skills.toast.importRecognized",
+        "workbench.skills.toast.installedArchive",
+        "workbench.skills.toast.recorded",
+        "workbench.skills.toast.reposUnreadable",
+        "workbench.skills.toast.updatesAvailable",
     ]
 
     static let placeholderCounts: [String: Int] = [
+        "common.add": 0,
+        "common.all": 0,
+        "common.auto": 0,
         "common.cancel": 0,
+        "common.clear": 0,
+        "common.copied": 0,
+        "common.copy": 0,
+        "common.delete": 0,
+        "common.dismiss": 0,
+        "common.done": 0,
+        "common.dragToReorder": 0,
+        "common.duration.days": 1,
+        "common.duration.daysHours": 2,
+        "common.duration.hours": 1,
+        "common.duration.hoursMinutes": 2,
+        "common.duration.lessThanMinute": 0,
+        "common.duration.minutes": 1,
+        "common.duration.now": 0,
+        "common.name": 0,
         "common.noData": 0,
+        "common.off": 0,
+        "common.on": 0,
+        "common.open": 0,
+        "common.openSettings": 0,
+        "common.percent": 1,
+        "common.provider": 0,
         "common.refresh": 0,
+        "common.refreshSection": 0,
+        "common.remove": 0,
         "common.retry": 0,
+        "common.retryNow": 0,
+        "common.save": 0,
+        "common.updated.daysAgo": 1,
+        "common.updated.hoursAgo": 1,
+        "common.updated.justNow": 0,
+        "common.updated.minutesAgo": 1,
+        "common.updated.never": 0,
+        "common.updated.secondsAgo": 1,
+        "cost.allProviders": 0,
+        "cost.chart.metricCostHelp": 0,
+        "cost.chart.metricTokens": 0,
+        "cost.chart.metricTokensHelp": 0,
+        "cost.empty.antigravity": 0,
+        "cost.empty.claude": 0,
+        "cost.empty.codex": 0,
+        "cost.empty.gemini": 0,
+        "cost.empty.genericCLI": 1,
+        "cost.empty.grok": 0,
+        "cost.fullCharts": 1,
+        "cost.gemini.emptyDetail": 0,
+        "cost.gemini.emptyTitle": 0,
+        "cost.googleAI.empty": 0,
+        "cost.googleAI.title": 0,
+        "cost.granularity.day": 0,
+        "cost.granularity.hour": 0,
+        "cost.granularity.month": 0,
+        "cost.granularity.week": 0,
+        "cost.history.allProviders": 0,
+        "cost.history.building": 0,
+        "cost.history.buildingDetail": 0,
+        "cost.history.clearModelSelection": 0,
+        "cost.history.emptyCost": 0,
+        "cost.history.emptyTokens": 0,
+        "cost.history.extentNote": 3,
+        "cost.history.granularityDisabled": 1,
+        "cost.history.groupBy": 1,
+        "cost.history.hourlyFallback": 0,
+        "cost.history.metricAverage": 1,
+        "cost.history.metricPeak": 0,
+        "cost.history.metricTotal": 0,
+        "cost.history.modelDetailUnavailable": 0,
+        "cost.history.modelsAt": 1,
+        "cost.history.moreModels": 1,
+        "cost.history.navigator": 0,
+        "cost.history.title": 0,
+        "cost.history.weekOf": 1,
+        "cost.history.weekShortOf": 1,
+        "cost.metric.peakDay": 0,
+        "cost.metric.peakTokenDay": 0,
+        "cost.metric.sevenDay": 0,
+        "cost.metric.sevenDayTokens": 0,
+        "cost.metric.thirtyDay": 0,
+        "cost.metric.thirtyDayTokens": 0,
+        "cost.metric.todayTokens": 0,
+        "cost.metric.totalCost": 0,
+        "cost.metric.totalTokens": 0,
+        "cost.metric.yesterdayTokens": 0,
+        "cost.modelRanking.allProvidersAllTime": 0,
+        "cost.modelRanking.allTime": 0,
+        "cost.modelRanking.title": 0,
+        "cost.noUsageYet": 0,
+        "cost.notTracked": 1,
+        "cost.openFullCharts": 0,
         "cost.perThousandTokens": 1,
+        "cost.provider.title": 1,
+        "cost.providerFullCharts": 1,
+        "cost.refreshData": 0,
+        "cost.refreshProvider": 1,
+        "cost.spaceXAI.empty": 0,
+        "cost.spaceXAI.title": 0,
         "cost.spentToday": 1,
+        "cost.timeframe.all": 0,
+        "cost.timeframe.month": 0,
+        "cost.timeframe.monthShort": 0,
+        "cost.timeframe.today": 0,
+        "cost.timeframe.week": 0,
+        "cost.timeframe.weekShort": 0,
+        "cost.timeframe.yesterday": 0,
+        "cost.title": 0,
+        "cost.topModel.share": 1,
+        "cost.topModel.title": 0,
+        "error.credentialRejected": 0,
         "error.needsReLogin": 0,
+        "error.network": 0,
         "error.networkWithReason": 1,
         "error.noAccountFound": 0,
+        "error.notImplemented": 0,
+        "error.parseFailure": 0,
         "error.rateLimited": 0,
+        "error.unknown": 0,
+        "error.unknownDetail": 1,
+        "menuBar.composer.action.duplicate": 0,
+        "menuBar.composer.appIcon.detail": 0,
+        "menuBar.composer.block.appIcon": 0,
+        "menuBar.composer.block.emptyText": 0,
+        "menuBar.composer.block.gap": 0,
+        "menuBar.composer.block.logo": 0,
+        "menuBar.composer.block.newRow": 0,
+        "menuBar.composer.block.quota": 0,
+        "menuBar.composer.block.separator": 0,
+        "menuBar.composer.block.space": 0,
+        "menuBar.composer.block.structure": 0,
+        "menuBar.composer.block.text": 0,
+        "menuBar.composer.block.unsupported": 0,
+        "menuBar.composer.blocks": 0,
+        "menuBar.composer.blocks.empty": 0,
+        "menuBar.composer.colour.automatic": 0,
+        "menuBar.composer.colour.brand": 0,
+        "menuBar.composer.colour.fixed": 0,
+        "menuBar.composer.colour.followsQuota": 0,
+        "menuBar.composer.colour.forecast": 0,
+        "menuBar.composer.colour.primary": 0,
+        "menuBar.composer.colour.secondary": 0,
+        "menuBar.composer.colour.tertiary": 0,
+        "menuBar.composer.field.colour": 0,
+        "menuBar.composer.field.monospacedDigits": 0,
+        "menuBar.composer.field.monospacedDigitsHelp": 0,
+        "menuBar.composer.field.offlineOption": 1,
+        "menuBar.composer.field.show": 0,
+        "menuBar.composer.field.shows": 0,
+        "menuBar.composer.field.size": 0,
+        "menuBar.composer.field.verdicts": 0,
+        "menuBar.composer.field.weight": 0,
+        "menuBar.composer.metric.displayPercent": 0,
+        "menuBar.composer.metric.pace": 0,
+        "menuBar.composer.metric.remainingPercent": 0,
+        "menuBar.composer.metric.resetAt": 0,
+        "menuBar.composer.metric.resetsIn": 0,
+        "menuBar.composer.metric.runsOutIn": 0,
+        "menuBar.composer.metric.usedPercent": 0,
+        "menuBar.composer.mode.custom": 0,
+        "menuBar.composer.mode.customCaption": 0,
+        "menuBar.composer.mode.default": 0,
+        "menuBar.composer.mode.defaultCaption": 0,
+        "menuBar.composer.mode.label": 0,
+        "menuBar.composer.newRow.capped": 0,
+        "menuBar.composer.newRow.detail": 0,
+        "menuBar.composer.newRow.help": 0,
+        "menuBar.composer.palette": 0,
+        "menuBar.composer.preview": 0,
+        "menuBar.composer.preview.dark": 0,
+        "menuBar.composer.preview.empty": 0,
+        "menuBar.composer.preview.grounds": 0,
+        "menuBar.composer.preview.light": 0,
+        "menuBar.composer.preview.twoRowScaling": 0,
+        "menuBar.composer.removeTarget": 0,
+        "menuBar.composer.rule.always": 0,
+        "menuBar.composer.rule.whenForecast": 0,
+        "menuBar.composer.rule.whenRemainingAtMost": 0,
+        "menuBar.composer.rule.whenUsedAtLeast": 0,
+        "menuBar.composer.selected": 0,
+        "menuBar.composer.size.large": 0,
+        "menuBar.composer.size.regular": 0,
+        "menuBar.composer.size.small": 0,
+        "menuBar.composer.space.detail": 0,
+        "menuBar.composer.startOver": 0,
+        "menuBar.composer.startOver.confirm": 0,
+        "menuBar.composer.startOver.confirmMessage": 0,
+        "menuBar.composer.startOver.confirmTitle": 0,
+        "menuBar.composer.startOver.detail": 0,
+        "menuBar.composer.template": 0,
+        "menuBar.composer.template.compact": 0,
+        "menuBar.composer.template.compactDetail": 0,
+        "menuBar.composer.template.roomy": 0,
+        "menuBar.composer.template.roomyDetail": 0,
+        "menuBar.composer.template.twoRows": 0,
+        "menuBar.composer.template.twoRowsDetail": 0,
+        "menuBar.composer.text.empty": 0,
+        "menuBar.composer.text.limit": 1,
+        "menuBar.composer.text.placeholder": 0,
+        "menuBar.composer.unsupported.detail": 0,
+        "menuBar.composer.warning.degraded": 0,
+        "menuBar.composer.warning.missing": 1,
+        "menuBar.composer.warning.silent": 0,
+        "menuBar.composer.weight.medium": 0,
+        "menuBar.composer.weight.regular": 0,
+        "menuBar.composer.weight.semibold": 0,
+        "menuBar.spoken.forecast": 2,
+        "menuBar.spoken.pace": 2,
+        "menuBar.spoken.remaining": 2,
+        "menuBar.spoken.resetAt": 2,
+        "menuBar.spoken.resetsIn": 2,
+        "menuBar.spoken.runsOutIn": 2,
+        "menuBar.spoken.title": 1,
+        "menuBar.spoken.titleBody": 2,
+        "menuBar.spoken.used": 2,
+        "onboarding.apiKeys.hide": 0,
+        "onboarding.apiKeys.intro": 0,
+        "onboarding.apiKeys.setUp": 0,
+        "onboarding.apiKeys.showOnMiscPage": 1,
+        "onboarding.back": 0,
+        "onboarding.continue": 0,
+        "onboarding.cookies.batchScope": 0,
+        "onboarding.cookies.importAll": 0,
+        "onboarding.cookies.importFromBrowser": 0,
+        "onboarding.cookies.importGemini": 0,
+        "onboarding.cookies.importGrok": 0,
+        "onboarding.cookies.importing": 0,
+        "onboarding.cookies.intro": 0,
+        "onboarding.cookies.notImported": 0,
+        "onboarding.cookies.openWebViewLogin": 0,
+        "onboarding.cookies.saved": 0,
+        "onboarding.cookies.signInFirst": 0,
+        "onboarding.done.apiKeyProviders": 0,
+        "onboarding.done.cookieCount": 2,
+        "onboarding.done.footer": 0,
+        "onboarding.done.intro": 0,
+        "onboarding.done.miscCount": 1,
+        "onboarding.done.noneShown": 0,
+        "onboarding.done.pricingBundled": 0,
+        "onboarding.done.pricingMerged": 1,
+        "onboarding.finish": 0,
+        "onboarding.pricing.fetchNow": 0,
+        "onboarding.pricing.fetching": 0,
+        "onboarding.pricing.footer": 0,
+        "onboarding.pricing.interval.hour": 0,
+        "onboarding.pricing.interval.hours": 1,
+        "onboarding.pricing.intro": 1,
+        "onboarding.pricing.merged": 2,
+        "onboarding.pricing.notFetched": 0,
+        "onboarding.pricing.source.failed": 1,
+        "onboarding.pricing.source.models": 1,
+        "onboarding.pricing.source.notRefreshed": 0,
+        "onboarding.pricing.source.unchanged": 1,
+        "onboarding.skip": 0,
+        "onboarding.step.apiKeyProviders.subtitle": 0,
+        "onboarding.step.apiKeyProviders.title": 0,
+        "onboarding.step.browserCookies.subtitle": 0,
+        "onboarding.step.browserCookies.title": 0,
+        "onboarding.step.done.subtitle": 0,
+        "onboarding.step.done.title": 0,
+        "onboarding.step.pricing.subtitle": 0,
+        "onboarding.step.pricing.title": 0,
+        "onboarding.step.subscriptions.subtitle": 0,
+        "onboarding.step.subscriptions.title": 0,
+        "onboarding.step.welcome.subtitle": 0,
+        "onboarding.step.welcome.title": 0,
+        "onboarding.subscriptions.claude.detected": 0,
+        "onboarding.subscriptions.claude.missing": 0,
+        "onboarding.subscriptions.claude.web": 0,
+        "onboarding.subscriptions.codex.detected": 0,
+        "onboarding.subscriptions.codex.missing": 0,
+        "onboarding.subscriptions.codex.web": 0,
+        "onboarding.subscriptions.gemini.hint": 0,
+        "onboarding.subscriptions.grok.detected": 0,
+        "onboarding.subscriptions.grok.missing": 0,
+        "onboarding.subscriptions.intro": 0,
+        "onboarding.subscriptions.productLine.claude": 0,
+        "onboarding.subscriptions.productLine.codex": 0,
+        "onboarding.subscriptions.productLine.gemini": 0,
+        "onboarding.subscriptions.productLine.grok": 0,
+        "onboarding.subscriptions.showInOverview": 0,
+        "onboarding.title": 0,
+        "onboarding.welcome.cost.detail": 0,
+        "onboarding.welcome.cost.title": 0,
+        "onboarding.welcome.footer": 0,
+        "onboarding.welcome.intro": 0,
+        "onboarding.welcome.mcp.detail": 0,
+        "onboarding.welcome.mcp.title": 0,
+        "onboarding.welcome.quotas.detail": 0,
+        "onboarding.welcome.quotas.title": 0,
+        "onboarding.welcome.sessions.detail": 0,
+        "onboarding.welcome.sessions.title": 0,
+        "platform.macos.launchAtLogin.detail": 0,
+        "platform.macos.launchAtLogin.enabled": 0,
+        "platform.macos.launchAtLogin.subtitle": 0,
+        "platform.macos.launchAtLogin.title": 0,
+        "platform.macos.launchAtLogin.toggle": 0,
+        "platform.macos.menuBar.color.actual": 0,
+        "platform.macos.menuBar.color.actualDetail": 0,
+        "platform.macos.menuBar.color.forecastDetail": 0,
+        "platform.macos.menuBar.displayDensity": 0,
+        "platform.macos.menuBar.fieldStyle.label": 0,
+        "platform.macos.menuBar.fieldStyle.labelDetail": 0,
+        "platform.macos.menuBar.fieldStyle.logoAndLabel": 0,
+        "platform.macos.menuBar.fieldStyle.logoAndLabelDetail": 0,
+        "platform.macos.menuBar.fieldStyle.logoDetail": 0,
+        "platform.macos.menuBar.fields": 0,
+        "platform.macos.menuBar.layout": 0,
+        "platform.macos.menuBar.layout.iconOnly": 0,
+        "platform.macos.menuBar.layout.singleLine": 0,
+        "platform.macos.menuBar.mergeGroupWindows": 0,
+        "platform.macos.menuBar.mergeGroupWindowsDetail": 0,
+        "platform.macos.menuBar.percentColor": 0,
+        "platform.macos.menuBar.showInMenuBar": 0,
+        "platform.macos.menuBar.showTitleText": 0,
+        "popover.header.machinesSubtitle": 0,
+        "popover.header.mini": 0,
+        "popover.header.miscSubtitle": 0,
+        "popover.header.openWorkbench": 0,
+        "popover.header.overviewSubtitle": 0,
+        "popover.header.refreshing": 0,
+        "popover.header.settings": 0,
+        "popover.header.updatedLine": 2,
+        "popover.machines.checking": 0,
+        "popover.machines.freshness.delayed": 0,
+        "popover.machines.freshness.live": 0,
+        "popover.machines.freshness.stale": 0,
+        "popover.machines.includeInTotals": 0,
+        "popover.machines.includeInTotalsHelp": 0,
+        "popover.machines.labelWithStatus": 2,
+        "popover.machines.noData": 0,
+        "popover.machines.noDataDetail": 0,
+        "popover.machines.notConfigured": 0,
+        "popover.machines.notConfiguredDetail": 0,
+        "popover.machines.sequence": 1,
+        "popover.machines.thirtyDayCost": 0,
+        "popover.misc.copyFallback": 1,
+        "popover.refreshGoogleAI": 0,
+        "popover.refreshSpaceXAI": 0,
+        "popover.showPage": 1,
+        "popover.tab.machines": 0,
+        "popover.tab.misc": 0,
+        "popover.tab.miscShort": 0,
+        "popover.tab.overview": 0,
         "quota.awaitingFirstObservation": 0,
+        "quota.bridge.empty": 0,
+        "quota.bridge.refresh": 0,
+        "quota.bridge.subtitle": 0,
+        "quota.bridge.subtitleVersion": 1,
+        "quota.bridge.title": 0,
+        "quota.bucket.noResetInfo": 0,
         "quota.cycleRecordedOnRefill": 0,
         "quota.cyclesRecorded": 1,
+        "quota.empty.needsLogin.detail": 1,
+        "quota.empty.network.detail": 0,
+        "quota.empty.noAccount.detail": 0,
+        "quota.empty.parseChanged.detail": 0,
+        "quota.empty.rateLimited.detail": 0,
+        "quota.empty.rateLimited.headline": 0,
+        "quota.forecast.confidence.high": 0,
+        "quota.forecast.confidence.learning": 0,
+        "quota.forecast.confidence.medium": 0,
+        "quota.forecast.explain.footer": 0,
+        "quota.forecast.explain.hide": 0,
+        "quota.forecast.explain.show": 0,
+        "quota.forecast.explain.title": 0,
+        "quota.forecast.guidance.atRisk": 0,
+        "quota.forecast.guidance.available": 2,
+        "quota.forecast.guidance.surplus": 2,
+        "quota.forecast.guidance.usedAvailable": 2,
+        "quota.forecast.guidance.usedSurplus": 2,
+        "quota.forecast.guidance.usedWithinTarget": 1,
+        "quota.forecast.guidance.watch": 0,
+        "quota.forecast.guidance.withinTarget": 1,
+        "quota.forecast.legend.item": 2,
+        "quota.forecast.metric.aboveTarget": 1,
+        "quota.forecast.metric.activityFallback": 0,
+        "quota.forecast.metric.activityTiming": 0,
+        "quota.forecast.metric.activityWeighted": 0,
+        "quota.forecast.metric.behaviorDetail": 0,
+        "quota.forecast.metric.behaviorFallback": 0,
+        "quota.forecast.metric.comparableCycles": 1,
+        "quota.forecast.metric.coverage": 0,
+        "quota.forecast.metric.coverageDetail": 2,
+        "quota.forecast.metric.coverageValue": 2,
+        "quota.forecast.metric.cyclesPending": 0,
+        "quota.forecast.metric.elapsed": 1,
+        "quota.forecast.metric.evidence": 0,
+        "quota.forecast.metric.evidenceDetail": 2,
+        "quota.forecast.metric.evidenceValue": 2,
+        "quota.forecast.metric.expectedLeft": 1,
+        "quota.forecast.metric.expectedUsed": 1,
+        "quota.forecast.metric.forecastAtReset": 0,
+        "quota.forecast.metric.forecastRange": 0,
+        "quota.forecast.metric.insideTarget": 0,
+        "quota.forecast.metric.noComparison": 0,
+        "quota.forecast.metric.plan": 0,
+        "quota.forecast.metric.planDetail": 1,
+        "quota.forecast.metric.rangeLeft": 2,
+        "quota.forecast.metric.rangeUsed": 2,
+        "quota.forecast.metric.recentBurn": 0,
+        "quota.forecast.metric.recentIntervals": 1,
+        "quota.forecast.metric.recentMissing": 0,
+        "quota.forecast.metric.recentTrend": 0,
+        "quota.forecast.metric.safetyTarget": 0,
+        "quota.forecast.metric.timePace": 0,
+        "quota.forecast.metric.timePaceDetail": 1,
+        "quota.forecast.metric.timePaceMissing": 0,
+        "quota.forecast.metric.trendDetail": 0,
+        "quota.forecast.metric.trendDetailMissing": 0,
+        "quota.forecast.metric.trendMissing": 0,
+        "quota.forecast.metric.trendMultiplier": 1,
+        "quota.forecast.metric.unavailable": 0,
+        "quota.forecast.metric.uncertaintyInterval": 0,
+        "quota.forecast.reset.atRisk": 0,
+        "quota.forecast.reset.enough": 1,
+        "quota.forecast.reset.learning": 1,
+        "quota.forecast.reset.surplus": 1,
+        "quota.forecast.reset.watch": 1,
+        "quota.forecast.status.atRisk": 0,
+        "quota.forecast.status.enough": 1,
+        "quota.forecast.status.learning": 1,
+        "quota.forecast.status.surplus": 1,
+        "quota.forecast.status.watch": 1,
+        "quota.forecast.useUp.beforeReset": 0,
+        "quota.forecast.useUp.couldRunOut": 1,
+        "quota.forecast.useUp.estimated": 1,
+        "quota.forecast.useUp.lastsUntilReset": 0,
+        "quota.forecast.useUp.uncertain": 0,
+        "quota.forecast.value.atReset": 1,
+        "quota.forecast.value.expectedNow": 1,
+        "quota.forecast.verdict.atRisk": 0,
+        "quota.forecast.verdict.enough": 0,
+        "quota.forecast.verdict.learning": 0,
+        "quota.forecast.verdict.surplus": 0,
+        "quota.forecast.verdict.watch": 0,
+        "quota.freshness.age.seconds": 1,
+        "quota.freshness.dataAge": 1,
+        "quota.freshness.defaultHelp": 0,
+        "quota.freshness.line": 3,
+        "quota.freshness.noCachedData": 0,
+        "quota.freshness.refreshFailed": 0,
+        "quota.freshness.refreshFailedAgo": 1,
+        "quota.freshness.staleNeverUpdated": 0,
+        "quota.freshness.staleUpdatedAgo": 1,
+        "quota.group.allModels": 0,
+        "quota.group.daily": 0,
+        "quota.group.fiveHours": 0,
+        "quota.group.monthly": 0,
+        "quota.group.noUtilization": 0,
+        "quota.group.other": 0,
+        "quota.group.otherModels": 0,
+        "quota.group.weekly": 0,
+        "quota.group.weeklyCredits": 0,
+        "quota.history.allCurvesHidden": 0,
+        "quota.history.buildingUp": 0,
+        "quota.history.curveCount": 1,
+        "quota.history.curvePickerA11y": 0,
+        "quota.history.curvesAll": 1,
+        "quota.history.curvesSome": 2,
+        "quota.history.forecastLegend": 0,
+        "quota.history.moreBuckets": 2,
+        "quota.history.moreReadings": 1,
+        "quota.history.navigatorAllProviders": 0,
+        "quota.history.navigatorProvider": 0,
+        "quota.history.providerCount": 1,
+        "quota.history.scopeNote": 3,
+        "quota.history.showAllCurves": 0,
+        "quota.history.showBusiest": 0,
+        "quota.history.title": 0,
+        "quota.history.tooltipAtReset": 0,
+        "quota.history.tooltipPace": 0,
+        "quota.history.tooltipQuotaLeft": 0,
+        "quota.login.claude": 0,
+        "quota.login.codex": 0,
+        "quota.login.cursor": 0,
+        "quota.login.grok": 0,
+        "quota.login.misc": 1,
+        "quota.mini.forecastLearning": 1,
+        "quota.mini.forecastLearningCompact": 1,
+        "quota.mini.forecastLeftCompact": 1,
+        "quota.mini.forecastMayRunOut": 1,
+        "quota.mini.forecastSurplus": 1,
+        "quota.mini.forecastSurplusCompact": 1,
+        "quota.mini.nextProvider": 0,
+        "quota.mini.noLiveData": 0,
+        "quota.mini.pageIndicator": 2,
+        "quota.mini.railEmpty": 0,
+        "quota.mini.railTitle": 1,
+        "quota.mini.resets": 1,
+        "quota.mini.rowHelp": 3,
+        "quota.misc.independentCopies": 1,
+        "quota.misc.notConfigured": 0,
+        "quota.misc.refreshCopies": 1,
+        "quota.misc.refreshProvider": 1,
+        "quota.misc.setUpInSettings": 0,
+        "quota.mode.remaining": 0,
+        "quota.mode.used": 0,
+        "quota.pace.deficit": 1,
+        "quota.pace.deficitShort": 1,
+        "quota.pace.lastsUntilReset": 0,
+        "quota.pace.onTrack": 0,
+        "quota.pace.reserve": 1,
+        "quota.pace.reserveShort": 1,
+        "quota.pace.runsOutIn": 1,
+        "quota.pace.runsOutShort": 1,
+        "quota.perModelLimits": 2,
         "quota.remainingPercent": 1,
+        "quota.reset.in": 1,
+        "quota.reset.passed": 0,
+        "quota.reset.passedAt": 1,
+        "quota.resetCredits.available": 1,
+        "quota.resetCredits.availableWithExpiry": 2,
+        "quota.resetCredits.title": 0,
         "quota.resetsIn": 2,
         "quota.resetsInHours": 2,
+        "quota.upcoming.axisDays": 1,
+        "quota.upcoming.axisHours": 1,
+        "quota.upcoming.empty": 0,
+        "quota.upcoming.gain": 1,
+        "quota.upcoming.horizon": 0,
+        "quota.upcoming.leftAndGain": 2,
+        "quota.upcoming.markerHelp": 4,
+        "quota.upcoming.resetsAt": 2,
+        "quota.upcoming.title": 0,
+        "quota.update.failed": 1,
         "quota.usedPercent": 1,
+        "quota.window.dayOfDays": 3,
+        "quota.window.elapsedOfWindow": 3,
+        "quota.window.resetsSoon": 1,
+        "resetHistory.a11y.empty": 1,
+        "resetHistory.a11y.more": 1,
+        "resetHistory.a11y.summary": 6,
+        "resetHistory.a11y.truncation": 1,
+        "resetHistory.axis.cycle": 0,
+        "resetHistory.axis.cycleHelp": 0,
+        "resetHistory.axis.time": 0,
+        "resetHistory.axis.timeHelp": 0,
+        "resetHistory.axisCurrent": 0,
+        "resetHistory.axisCyclesBack": 1,
+        "resetHistory.axisNow": 0,
+        "resetHistory.barIsOneCycle": 0,
+        "resetHistory.cardTitle": 0,
+        "resetHistory.compareEmpty": 0,
+        "resetHistory.compareWindow": 1,
+        "resetHistory.currentCycleCaption": 2,
+        "resetHistory.cycleCaption": 3,
+        "resetHistory.earlyRefillCount": 1,
+        "resetHistory.lane.emptyState": 0,
+        "resetHistory.lane.spokenNoCycles": 1,
+        "resetHistory.lane.spokenWaste": 3,
         "resetHistory.laneAverage": 2,
+        "resetHistory.lastSeenBefore": 1,
+        "resetHistory.legend.barHeight": 0,
+        "resetHistory.legend.byDate": 0,
+        "resetHistory.legend.perCycle": 0,
+        "resetHistory.legend.refilledEarly": 0,
         "resetHistory.noCompletedCycles": 0,
+        "resetHistory.reset.earlyClockRestarted": 0,
+        "resetHistory.reset.earlyClockUnchanged": 0,
+        "resetHistory.reset.earlyUnclear": 0,
+        "resetHistory.retiredAccount": 0,
+        "resetHistory.retiredAccountNumbered": 1,
+        "resetHistory.spoken.allCycles": 0,
+        "resetHistory.spoken.allTime": 0,
+        "resetHistory.spoken.eightCycles": 0,
+        "resetHistory.spoken.eightWeeks": 0,
+        "resetHistory.spoken.fourCycles": 0,
+        "resetHistory.spoken.fourWeeks": 0,
+        "resetHistory.spoken.twelveCycles": 0,
+        "resetHistory.spoken.twelveWeeks": 0,
         "resetHistory.title": 0,
+        "resetHistory.tooltip.completed": 2,
+        "resetHistory.tooltip.current": 2,
+        "resetHistory.tooltip.range": 2,
+        "resetHistory.tooltip.rangeDue": 2,
+        "resetHistory.totals.none": 0,
+        "resetHistory.truncation": 2,
+        "resetHistory.verdict.clean": 1,
+        "resetHistory.verdict.leaky": 3,
+        "resetHistory.verdict.noCycles": 0,
+        "resetHistory.verdict.noQuota": 0,
+        "resetHistory.verdict.wasteful": 2,
         "resetHistory.wastedSummary": 3,
+        "resetHistory.window.all": 0,
+        "resetHistory.window.eightWeeks": 0,
+        "resetHistory.window.fourWeeks": 0,
+        "resetHistory.window.twelveWeeks": 0,
+        "settings.antigravityCookieEnabled": 0,
+        "settings.antigravityLocalOnly": 0,
+        "settings.antigravitySource": 0,
+        "settings.appVersion": 1,
+        "settings.bundled": 0,
+        "settings.checkConnections": 1,
+        "settings.checkForUpdates": 0,
+        "settings.checkKitUpdates": 0,
+        "settings.checkingGitHub": 0,
+        "settings.clearCostData": 0,
+        "settings.connectionHealth": 0,
+        "settings.costDataIntro": 0,
+        "settings.couldNotDeleteCookies": 0,
+        "settings.couldNotDeleteGeminiCookies": 0,
+        "settings.couldNotDeleteGrokCookies": 0,
+        "settings.credentialSource.apiOnly": 0,
+        "settings.credentialSource.browserOnly": 0,
+        "settings.credentialSource.manualOnly": 0,
+        "settings.credentialSource.off": 0,
+        "settings.cursorNoSession": 0,
+        "settings.cursorSessionDetected": 0,
+        "settings.cursorSource": 0,
+        "settings.cursorSourceValue": 0,
+        "settings.deleteCookies": 0,
+        "settings.deleteGeminiCookies": 0,
+        "settings.deleteGrokCookies": 0,
+        "settings.displayMode.remaining": 0,
+        "settings.displayMode.used": 0,
+        "settings.externalChange.title": 0,
+        "settings.geminiCookiesSaved": 0,
+        "settings.geminiShared": 0,
+        "settings.geminiSource": 0,
+        "settings.grokAuthDetected": 0,
+        "settings.grokCookiesSaved": 0,
+        "settings.keepHistory": 0,
+        "settings.keepHistoryDetail": 0,
+        "settings.kitDetail": 0,
+        "settings.language.caption": 0,
         "settings.language.system": 0,
         "settings.language.title": 0,
+        "settings.mcp.allowRefresh": 0,
+        "settings.mcp.allowRefreshDetail": 1,
+        "settings.mcp.allowSkills": 0,
+        "settings.mcp.allowSkillsDetail": 0,
+        "settings.mcp.appendCodexConfig": 0,
+        "settings.mcp.connectAgent": 0,
+        "settings.mcp.connectedClients": 0,
+        "settings.mcp.enable": 0,
+        "settings.mcp.intro": 0,
+        "settings.mcp.lastActivity": 0,
+        "settings.mcp.listening": 0,
+        "settings.mcp.manualIntro": 1,
+        "settings.mcp.mergeCursorConfig": 0,
+        "settings.mcp.movePrompt": 1,
+        "settings.mcp.notListening": 0,
+        "settings.mcp.otherStdioClient": 0,
+        "settings.mcp.otherStdioDetail": 0,
+        "settings.mcp.quickestPath": 0,
+        "settings.mcp.readOnlyDetail": 0,
+        "settings.mcp.runInTerminal": 0,
+        "settings.mcp.setupPrompt": 0,
+        "settings.mcp.setupPromptDetail": 0,
+        "settings.mcp.socket": 0,
+        "settings.mcp.socketLifetime": 0,
+        "settings.mcp.status": 0,
+        "settings.mcp.title": 0,
+        "settings.mcp.whatAgentsMayDo": 0,
+        "settings.menuBarHealthUnavailable": 0,
+        "settings.miniWindow.add": 0,
+        "settings.miniWindow.allBucketsIncluded": 0,
+        "settings.miniWindow.density.narrow": 0,
+        "settings.miniWindow.density.narrowDetail": 0,
+        "settings.miniWindow.density.roomy": 0,
+        "settings.miniWindow.density.roomyDetail": 0,
+        "settings.miniWindow.density.twoLines": 0,
+        "settings.miniWindow.density.twoLinesDetail": 0,
+        "settings.miniWindow.dismissBuiltIn": 0,
+        "settings.miniWindow.forgetDiscovered": 0,
+        "settings.miniWindow.includeStyle": 1,
+        "settings.miniWindow.lastCannotBeRemoved": 0,
+        "settings.miniWindow.mode.compact": 0,
+        "settings.miniWindow.mode.compactDetail": 0,
+        "settings.miniWindow.mode.focus": 0,
+        "settings.miniWindow.mode.focusDetail": 0,
+        "settings.miniWindow.mode.ledger": 0,
+        "settings.miniWindow.mode.ledgerDetail": 0,
+        "settings.miniWindow.mode.rail": 0,
+        "settings.miniWindow.mode.railDetail": 0,
+        "settings.miniWindow.mode.regular": 0,
+        "settings.miniWindow.mode.regularDetail": 0,
+        "settings.miniWindow.mode.strip": 0,
+        "settings.miniWindow.mode.stripDetail": 0,
+        "settings.miniWindow.mode.tiles": 0,
+        "settings.miniWindow.mode.tilesDetail": 0,
+        "settings.miniWindow.namesAllWindows": 0,
+        "settings.miniWindow.namesThisStyle": 1,
+        "settings.miniWindow.namesThisWindow": 1,
+        "settings.miniWindow.noFieldsSelected": 0,
+        "settings.miniWindow.notInWindow": 1,
+        "settings.miniWindow.offline": 0,
+        "settings.miniWindow.openClose": 0,
+        "settings.miniWindow.overridesStyle": 1,
+        "settings.miniWindow.overridesWindow": 0,
+        "settings.miniWindow.removeFromWindow": 0,
+        "settings.miniWindow.removeHelp": 0,
+        "settings.miniWindow.stripDensity": 0,
+        "settings.miniWindow.styleCycle": 0,
+        "settings.miniWindow.toggleHelp": 0,
+        "settings.miniWindow.treeDetail": 0,
+        "settings.misc.accessKeyId": 0,
+        "settings.misc.akSkSaved": 0,
+        "settings.misc.apiKeySaved": 0,
+        "settings.misc.clearWorkspace": 0,
+        "settings.misc.clone": 1,
+        "settings.misc.consoleLink": 1,
+        "settings.misc.edition": 0,
+        "settings.misc.githubSignInHint": 0,
+        "settings.misc.githubTokenSaved": 0,
+        "settings.misc.importDetail": 0,
+        "settings.misc.kiroHint": 0,
+        "settings.misc.noCookieSpec": 1,
+        "settings.misc.noCookiesYet": 0,
+        "settings.misc.probe": 0,
+        "settings.misc.prompt.copilotHost": 0,
+        "settings.misc.prompt.dashscope": 0,
+        "settings.misc.prompt.kilo": 0,
+        "settings.misc.prompt.minimax": 0,
+        "settings.misc.prompt.openRouter": 0,
+        "settings.misc.prompt.openRouterHost": 0,
+        "settings.misc.prompt.warp": 0,
+        "settings.misc.prompt.workspace": 0,
+        "settings.misc.prompt.zai": 0,
+        "settings.misc.region": 0,
+        "settings.misc.region.auto": 0,
+        "settings.misc.region.chinaMainland": 0,
+        "settings.misc.region.international": 0,
+        "settings.misc.region.minimaxChina": 0,
+        "settings.misc.region.minimaxGlobal": 0,
+        "settings.misc.region.zaiChina": 0,
+        "settings.misc.region.zaiGlobal": 0,
+        "settings.misc.removeAkSk": 1,
+        "settings.misc.removeApiKey": 1,
+        "settings.misc.removeCookieSlot": 0,
+        "settings.misc.removeCopy": 1,
+        "settings.misc.removeCopyButton": 0,
+        "settings.misc.removeCopyDetail": 0,
+        "settings.misc.removeCopyTitle": 1,
+        "settings.misc.removeGithubToken": 0,
+        "settings.misc.rename": 0,
+        "settings.misc.secretAccessKey": 0,
+        "settings.misc.signIn": 0,
+        "settings.misc.signInViaWeb": 0,
+        "settings.misc.tencentTokenPlanNote": 0,
+        "settings.misc.variant": 0,
+        "settings.misc.waiting": 0,
+        "settings.misc.workspaceNote": 0,
+        "settings.needsSetup": 0,
+        "settings.notChecked": 0,
+        "settings.notCheckedYet": 0,
+        "settings.openRefreshCooldown": 0,
+        "settings.openRefreshDetail": 0,
+        "settings.openStatusPage": 1,
+        "settings.percentShows": 0,
+        "settings.planBadge": 0,
+        "settings.planBadgeDetail": 0,
+        "settings.popoverDensity.compact": 0,
+        "settings.popoverDensity.compactDetail": 0,
+        "settings.popoverDensity.regular": 0,
+        "settings.popoverDensity.regularDetail": 0,
+        "settings.popoverDensity.spacious": 0,
+        "settings.popoverDensity.spaciousDetail": 0,
+        "settings.pricing.addOverride": 0,
+        "settings.pricing.advancedTiers": 0,
+        "settings.pricing.alwaysWins": 0,
+        "settings.pricing.bundledFallback": 0,
+        "settings.pricing.cacheReadAbove": 0,
+        "settings.pricing.cacheWriteAbove": 0,
+        "settings.pricing.deleteOverride": 0,
+        "settings.pricing.exactModelName": 0,
+        "settings.pricing.fastMultiplier": 0,
+        "settings.pricing.inputAbove": 0,
+        "settings.pricing.intro": 0,
+        "settings.pricing.localOverrides": 0,
+        "settings.pricing.noOverrides": 0,
+        "settings.pricing.offlineFloor": 0,
+        "settings.pricing.outputAbove": 0,
+        "settings.pricing.overridesIntro": 0,
+        "settings.pricing.priorityHealth": 0,
+        "settings.pricing.rateInput": 0,
+        "settings.pricing.rateOutput": 0,
+        "settings.pricing.refreshNow": 0,
+        "settings.pricing.refreshing": 0,
+        "settings.pricing.thresholdTokens": 0,
+        "settings.pricingDataDate": 1,
+        "settings.privacyDetail": 0,
+        "settings.privacyMode": 0,
+        "settings.privacyModeDetail": 0,
+        "settings.ready": 0,
+        "settings.refreshEvery": 0,
+        "settings.refreshOnPopoverOpen": 0,
+        "settings.releaseNotes": 0,
+        "settings.remote.core": 0,
+        "settings.remote.costAggregation": 0,
+        "settings.remote.costAggregationIntro": 0,
+        "settings.remote.differentControlCenter": 0,
+        "settings.remote.discard": 0,
+        "settings.remote.discardPendingDetail": 0,
+        "settings.remote.discardPendingTitle": 0,
+        "settings.remote.disconnect": 0,
+        "settings.remote.disconnectButton": 0,
+        "settings.remote.disconnectDetail": 0,
+        "settings.remote.disconnectIntro": 0,
+        "settings.remote.disconnectTitle": 0,
+        "settings.remote.experimentalBadge": 0,
+        "settings.remote.experimentalNote": 0,
+        "settings.remote.exportIdentity": 0,
+        "settings.remote.importProvisioning": 0,
+        "settings.remote.join": 0,
+        "settings.remote.joinIntro": 1,
+        "settings.remote.joinWithCode": 0,
+        "settings.remote.lastSync": 0,
+        "settings.remote.machineDetail": 2,
+        "settings.remote.machinesAppearAfterImport": 0,
+        "settings.remote.machinesSynced": 0,
+        "settings.remote.manualPairingIntro": 0,
+        "settings.remote.notConnected": 0,
+        "settings.remote.orPairManually": 0,
+        "settings.remote.pendingIntro": 0,
+        "settings.remote.provisioning": 0,
+        "settings.remote.registeredProbes": 0,
+        "settings.remote.relay": 0,
+        "settings.remote.resumeSaving": 0,
+        "settings.remote.retrySaving": 0,
+        "settings.remote.statusWithCode": 2,
+        "settings.remote.sync.busy": 0,
+        "settings.remote.sync.connectionFailed": 0,
+        "settings.remote.sync.hostLookupFailed": 0,
+        "settings.remote.sync.invalidResponse": 0,
+        "settings.remote.sync.networkDetail": 0,
+        "settings.remote.sync.offline": 0,
+        "settings.remote.sync.rejected": 0,
+        "settings.remote.sync.rejectedDetail": 0,
+        "settings.remote.sync.retryDetail": 0,
+        "settings.remote.sync.secureConnectionFailed": 0,
+        "settings.remote.sync.sequenceGap": 0,
+        "settings.remote.sync.sequenceGapDetail": 0,
+        "settings.remote.sync.timeout": 0,
+        "settings.remote.sync.transportFailed": 0,
+        "settings.remote.sync.unknown": 0,
+        "settings.remote.sync.unknownDetail": 0,
+        "settings.remote.sync.unverifiedProbe": 0,
+        "settings.remote.sync.unverifiedProbeDetail": 0,
+        "settings.remote.syncNow": 0,
+        "settings.remote.workspace": 0,
+        "settings.repository": 0,
+        "settings.rescanCostLogs": 0,
+        "settings.route.antigravityLocal": 0,
+        "settings.route.browserCookies": 0,
+        "settings.route.cli": 0,
+        "settings.route.grokAuthFile": 0,
+        "settings.route.oauth": 0,
+        "settings.route.webViewCookies": 0,
+        "settings.routeHealth.agyAvailable": 0,
+        "settings.routeHealth.authFileExpired": 0,
+        "settings.routeHealth.authFileUnreadable": 0,
+        "settings.routeHealth.cachedOnly": 0,
+        "settings.routeHealth.credentialUnreadable": 0,
+        "settings.routeHealth.credentialsAvailable": 0,
+        "settings.routeHealth.invalidCookie": 0,
+        "settings.routeHealth.keychainLocked": 0,
+        "settings.routeHealth.lspRunning": 0,
+        "settings.routeHealth.noAntigravityData": 0,
+        "settings.routeHealth.noAuthFile": 0,
+        "settings.routeHealth.noCredential": 0,
+        "settings.routeHealth.noSavedCookie": 0,
+        "settings.routeHealth.savedInKeychain": 0,
+        "settings.search": 0,
+        "settings.section.components": 0,
+        "settings.section.costData": 0,
+        "settings.section.layout": 0,
+        "settings.section.menuBar": 0,
+        "settings.section.menuBarHealth": 0,
+        "settings.section.miniWindows": 0,
+        "settings.section.privacy": 0,
+        "settings.section.refreshing": 0,
+        "settings.section.remoteProbes": 0,
+        "settings.section.system": 0,
+        "settings.section.updates": 0,
+        "settings.showAssistant": 0,
+        "settings.showAssistantDetail": 0,
+        "settings.sidebar.coreProviders": 0,
+        "settings.sidebar.disableProvider": 0,
+        "settings.sidebar.enableProvider": 0,
+        "settings.sidebar.hideFromOverview": 0,
+        "settings.spaceXAIIntro": 0,
+        "settings.terminal.copyOnly": 0,
+        "settings.updateChannel": 0,
+        "settings.updateChannel.dev": 0,
+        "settings.updateChannel.devDetail": 0,
+        "settings.updateChannel.main": 0,
+        "settings.updateChannel.mainDetail": 0,
+        "settings.updateCheckDetail": 0,
+        "settings.usageMode.antigravity.autoDetail": 0,
+        "settings.usageMode.antigravity.localFirstDetail": 0,
+        "settings.usageMode.antigravity.localOnly": 0,
+        "settings.usageMode.antigravity.localOnlyDetail": 0,
+        "settings.usageMode.antigravity.localThenWeb": 0,
+        "settings.usageMode.antigravity.webFirstDetail": 0,
+        "settings.usageMode.antigravity.webOnly": 0,
+        "settings.usageMode.antigravity.webOnlyDetail": 0,
+        "settings.usageMode.antigravity.webThenLocal": 0,
+        "settings.usageMode.claude.autoDetail": 0,
+        "settings.usageMode.claude.codeFirstDetail": 0,
+        "settings.usageMode.claude.codeOnly": 0,
+        "settings.usageMode.claude.codeOnlyDetail": 0,
+        "settings.usageMode.claude.codeThenWeb": 0,
+        "settings.usageMode.claude.oauthCodeWeb": 0,
+        "settings.usageMode.claude.oauthFirstDetail": 0,
+        "settings.usageMode.claude.oauthOnlyDetail": 0,
+        "settings.usageMode.claude.webFirstDetail": 0,
+        "settings.usageMode.claude.webOnly": 0,
+        "settings.usageMode.claude.webOnlyDetail": 0,
+        "settings.usageMode.claude.webThenCode": 0,
+        "settings.usageMode.codex.autoDetail": 0,
+        "settings.usageMode.codex.cliOnly": 0,
+        "settings.usageMode.codex.cliOnlyDetail": 0,
+        "settings.usageMode.codex.cliThenOauth": 0,
+        "settings.usageMode.codex.oauthFirstDetail": 0,
+        "settings.usageMode.codex.oauthOnlyDetail": 0,
+        "settings.usageMode.codex.oauthThenCli": 0,
+        "settings.usageMode.gemini.webOnly": 0,
+        "settings.usageMode.gemini.webOnlyDetail": 0,
+        "settings.usageMode.oauthOnly": 0,
+        "settings.usageSource": 0,
+        "settings.webQuota": 0,
+        "settings.whatChangedIn": 1,
+        "status.card.componentCount": 1,
+        "status.card.components": 0,
+        "status.card.noIncidents": 0,
+        "status.card.openIncident": 0,
+        "status.card.openStatusPage": 1,
+        "status.card.refresh": 0,
+        "status.card.statusPageFallback": 0,
+        "status.card.title": 0,
+        "status.card.updatedHoursAgo": 1,
+        "status.card.updatedMinutesAgo": 1,
+        "status.card.uptime": 1,
+        "status.card.uptimeStrip": 1,
+        "status.component.degraded": 0,
+        "status.component.maintenance": 0,
+        "status.component.majorOutage": 0,
+        "status.component.operational": 0,
+        "status.component.other": 0,
+        "status.component.partialOutage": 0,
+        "status.indicator.critical": 0,
+        "status.indicator.loading": 0,
+        "status.indicator.major": 0,
+        "status.indicator.minor": 0,
+        "status.overview.checking": 0,
+        "status.overview.down": 0,
+        "status.overview.enableProvider": 0,
+        "status.overview.fetchFailed": 0,
+        "status.overview.needsAttention": 0,
+        "status.overview.refreshing": 0,
+        "status.overview.title": 0,
+        "status.overview.up": 0,
+        "status.summary.activeIncident": 0,
+        "status.summary.allOperational": 0,
+        "status.summary.serviceIssue": 0,
+        "status.summary.underMaintenance": 0,
+        "usage.activity.a11y": 0,
+        "usage.activity.cellTooltip": 3,
+        "usage.activity.heavy": 0,
+        "usage.activity.peak": 2,
+        "usage.activity.peakCell": 3,
+        "usage.activity.quiet": 0,
+        "usage.activity.tokensShort": 1,
+        "usage.breakdown.models": 0,
+        "usage.breakdown.periods": 0,
+        "usage.breakdown.projects": 0,
+        "usage.breakdown.providers": 0,
+        "usage.breakdown.requests": 0,
+        "usage.chartNavigator.label": 0,
+        "usage.chartNavigator.range": 2,
+        "usage.chartNavigator.showFullRange": 0,
+        "usage.chartNavigator.zoomIn": 0,
+        "usage.chartNavigator.zoomOut": 0,
+        "usage.filters.allHarnesses": 0,
+        "usage.filters.allHarnessesHelpEvery": 0,
+        "usage.filters.allHarnessesHelpNone": 0,
+        "usage.filters.allHarnessesSelectEvery": 0,
+        "usage.filters.allHarnessesSelectNone": 0,
+        "usage.filters.allModels": 0,
+        "usage.filters.autoMenuLabel": 0,
+        "usage.filters.autoRefresh": 0,
+        "usage.filters.clearHelp": 0,
+        "usage.filters.companyHarnesses": 1,
+        "usage.filters.companyHelp": 2,
+        "usage.filters.customRangeFrom": 0,
+        "usage.filters.customRangeHint": 0,
+        "usage.filters.customRangeTitle": 0,
+        "usage.filters.customRangeTo": 0,
+        "usage.filters.editCustomRange": 0,
+        "usage.filters.harnessHelp": 2,
+        "usage.filters.modelsMenuLabel": 0,
+        "usage.filters.modelsSelected": 1,
+        "usage.filters.noModelsInRange": 0,
+        "usage.filters.range14d": 0,
+        "usage.filters.range24h": 0,
+        "usage.filters.rangeCustom": 0,
+        "usage.filters.rangeMenu": 0,
+        "usage.filters.rangeSpan": 2,
+        "usage.filters.refreshInterval": 1,
+        "usage.harnessMix.activeCount": 1,
+        "usage.harnessMix.byRealTokens": 0,
+        "usage.harnessMix.empty": 0,
+        "usage.harnessMix.title": 0,
+        "usage.hero.allRequestsPriced": 0,
+        "usage.hero.cacheHit": 0,
+        "usage.hero.cacheRead": 1,
+        "usage.hero.inSelectedRange": 0,
+        "usage.hero.noPricedRequests": 0,
+        "usage.hero.noTrafficInRange": 0,
+        "usage.hero.realTokens": 0,
+        "usage.hero.requests": 0,
+        "usage.hero.tokenComposition": 0,
+        "usage.hero.unpricedBadge": 1,
+        "usage.hero.unpricedHelp": 1,
+        "usage.ledgerUnavailable.detail": 0,
+        "usage.ledgerUnavailable.title": 0,
+        "usage.mix.dimension.harnesses": 0,
+        "usage.mix.donutUnit": 0,
+        "usage.mix.flow.cache": 0,
+        "usage.mix.flow.cacheDetail": 0,
+        "usage.mix.flow.freshInput": 0,
+        "usage.mix.flow.output": 0,
+        "usage.mix.harness.subtitle": 0,
+        "usage.mix.harness.title": 0,
+        "usage.mix.lastThirtyDays": 0,
+        "usage.mix.ledgerUnreadable": 0,
+        "usage.mix.model.empty": 0,
+        "usage.mix.model.subtitle": 0,
+        "usage.mix.model.title": 0,
+        "usage.mix.other": 0,
+        "usage.mix.otherCount": 1,
+        "usage.mix.project.empty": 0,
+        "usage.mix.project.subtitle": 0,
+        "usage.mix.project.title": 0,
+        "usage.mix.provider.empty": 0,
+        "usage.mix.provider.subtitle": 0,
+        "usage.mix.provider.title": 0,
+        "usage.mix.title": 0,
+        "usage.mix.tokenFlow.empty": 0,
+        "usage.mix.tokenFlow.subtitle": 0,
+        "usage.mix.tokenFlow.title": 0,
+        "usage.noHarnessSelected.detail": 0,
+        "usage.noHarnessSelected.title": 0,
+        "usage.requestCount": 1,
+        "usage.table.activeDays": 1,
+        "usage.table.activeHours": 1,
+        "usage.table.activeWeeks": 1,
+        "usage.table.cacheReadWrite": 2,
+        "usage.table.column.average": 0,
+        "usage.table.column.day": 0,
+        "usage.table.column.harness": 0,
+        "usage.table.column.hour": 0,
+        "usage.table.column.input": 0,
+        "usage.table.column.model": 0,
+        "usage.table.column.requests": 0,
+        "usage.table.column.tier": 0,
+        "usage.table.column.time": 0,
+        "usage.table.column.weekOf": 0,
+        "usage.table.companyCount": 1,
+        "usage.table.emptyModels": 0,
+        "usage.table.emptyPeriods": 0,
+        "usage.table.emptyProjects": 0,
+        "usage.table.emptyProviders": 0,
+        "usage.table.emptyRequests": 0,
+        "usage.table.harnessHelp": 2,
+        "usage.table.inputHelp": 3,
+        "usage.table.loadMore": 1,
+        "usage.table.loadingMore": 0,
+        "usage.table.modelCount": 1,
+        "usage.table.periodRow": 3,
+        "usage.table.projectCount": 1,
+        "usage.table.requestRow": 5,
+        "usage.table.requestsLabel": 0,
+        "usage.table.requestsLoaded": 2,
+        "usage.table.showMorePeriods": 2,
+        "usage.table.statRow": 4,
+        "usage.table.unpriced": 0,
+        "usage.table.unpricedHelp": 0,
+        "usage.tokens.cacheRead": 0,
+        "usage.tokens.cacheWrite": 0,
+        "usage.tokens.input": 0,
+        "usage.tokens.output": 0,
+        "usage.tokens.title": 0,
+        "usage.trend.accessibilitySummary": 3,
+        "usage.trend.bucketDay": 0,
+        "usage.trend.bucketHour": 0,
+        "usage.trend.bucketWeek": 0,
+        "usage.trend.costChartLabel": 0,
+        "usage.trend.empty": 0,
+        "usage.trend.fit": 0,
+        "usage.trend.fitHelp": 0,
+        "usage.trend.granularity": 0,
+        "usage.trend.granularityDaily": 0,
+        "usage.trend.granularityHourly": 0,
+        "usage.trend.granularityLabel": 0,
+        "usage.trend.granularityWeekly": 0,
+        "usage.trend.hideProvider": 1,
+        "usage.trend.navigatorLabel": 0,
+        "usage.trend.nextWindow": 0,
+        "usage.trend.now": 0,
+        "usage.trend.nowHelp": 0,
+        "usage.trend.previousWindow": 0,
+        "usage.trend.scopeHint": 0,
+        "usage.trend.showProvider": 1,
+        "usage.trend.title": 0,
+        "usage.trend.tokensChartLabel": 0,
+        "usage.whenYouUse.everything": 0,
+        "usage.whenYouUse.googleAI": 0,
+        "usage.whenYouUse.provider": 1,
+        "usage.whenYouUse.spaceXAI": 0,
+        "usage.yearHeatmap.a11y": 2,
+        "usage.yearHeatmap.less": 0,
+        "usage.yearHeatmap.more": 0,
+        "usage.yearHeatmap.title": 1,
+        "usage.yearHeatmap.tooltip": 2,
+        "usage.yearHeatmap.total": 1,
+        "workbench.appearance.useDark": 0,
+        "workbench.appearance.useLight": 0,
+        "workbench.header.refreshPage": 1,
+        "workbench.page.resets.subtitle": 0,
+        "workbench.page.resets.title": 0,
+        "workbench.page.sessions.subtitle": 0,
+        "workbench.page.sessions.title": 0,
+        "workbench.page.settings.subtitle": 0,
+        "workbench.page.skills.subtitle": 0,
+        "workbench.page.skills.title": 0,
+        "workbench.page.usageStats.subtitle": 0,
+        "workbench.page.usageStats.title": 0,
+        "workbench.placeholder.resets": 0,
+        "workbench.placeholder.sessionManager": 0,
+        "workbench.placeholder.settings": 0,
+        "workbench.placeholder.skillsManager": 0,
+        "workbench.placeholder.usageStats": 0,
+        "workbench.resets.calendar.dayEntry": 2,
+        "workbench.resets.calendar.futureEntry": 3,
+        "workbench.resets.calendar.nextMonth": 0,
+        "workbench.resets.calendar.pastEntry": 3,
+        "workbench.resets.calendar.previousMonth": 0,
+        "workbench.resets.calendar.title": 0,
+        "workbench.resets.calendar.today": 0,
+        "workbench.resets.cycle.curveHelp": 1,
+        "workbench.resets.cycle.headline": 2,
+        "workbench.resets.refillHorizon.detail": 0,
+        "workbench.resets.refillHorizon.title": 0,
+        "workbench.resets.risk.badge.atRisk": 0,
+        "workbench.resets.risk.badge.low": 0,
+        "workbench.resets.risk.badge.out": 0,
+        "workbench.resets.risk.badge.watch": 0,
+        "workbench.resets.risk.detail": 0,
+        "workbench.resets.risk.empty": 0,
+        "workbench.resets.risk.remaining": 2,
+        "workbench.resets.risk.title": 0,
+        "workbench.resets.subDaily.title": 0,
+        "workbench.sessions.allChip.helpUnselected": 0,
+        "workbench.sessions.allChip.labelUnselected": 0,
+        "workbench.sessions.antigravityNotice": 0,
+        "workbench.sessions.copyResumeCommand": 0,
+        "workbench.sessions.copySessionID": 0,
+        "workbench.sessions.copySessionIDLabel": 1,
+        "workbench.sessions.copySourcePath": 0,
+        "workbench.sessions.copyWorkingDirectory": 0,
+        "workbench.sessions.count.sessions": 1,
+        "workbench.sessions.count.shownOfTotal": 2,
+        "workbench.sessions.delete.confirm": 1,
+        "workbench.sessions.delete.countButton": 1,
+        "workbench.sessions.delete.message": 0,
+        "workbench.sessions.deleteEllipsis": 0,
+        "workbench.sessions.details": 0,
+        "workbench.sessions.details.collapsed": 0,
+        "workbench.sessions.details.expanded": 0,
+        "workbench.sessions.empty.indexUnavailableDetail": 0,
+        "workbench.sessions.empty.indexUnavailableTitle": 0,
+        "workbench.sessions.empty.noLogsDetail": 1,
+        "workbench.sessions.empty.noMatchTitle": 0,
+        "workbench.sessions.empty.scanningDetail": 0,
+        "workbench.sessions.empty.searchNoMatchDetail": 0,
+        "workbench.sessions.fact.created": 0,
+        "workbench.sessions.fact.cwd": 0,
+        "workbench.sessions.fact.id": 0,
+        "workbench.sessions.fact.lastActive": 0,
+        "workbench.sessions.fact.source": 0,
+        "workbench.sessions.filter.company": 0,
+        "workbench.sessions.filter.dateRange": 0,
+        "workbench.sessions.filter.folders": 0,
+        "workbench.sessions.filter.foldersFiltered": 0,
+        "workbench.sessions.filter.harnessCount": 2,
+        "workbench.sessions.filter.options": 0,
+        "workbench.sessions.filter.scope": 0,
+        "workbench.sessions.filter.sort": 0,
+        "workbench.sessions.filter.sortGrouped": 1,
+        "workbench.sessions.filter.sortHelp": 0,
+        "workbench.sessions.filter.when": 0,
+        "workbench.sessions.filter.whenHelp": 0,
+        "workbench.sessions.find.next": 0,
+        "workbench.sessions.find.none": 0,
+        "workbench.sessions.find.placeholder": 0,
+        "workbench.sessions.find.previous": 0,
+        "workbench.sessions.folders.exclude": 0,
+        "workbench.sessions.folders.excludePlaceholder": 0,
+        "workbench.sessions.folders.include": 0,
+        "workbench.sessions.folders.includePlaceholder": 0,
+        "workbench.sessions.folders.separatorHint": 0,
+        "workbench.sessions.folders.title": 0,
+        "workbench.sessions.fraction": 2,
+        "workbench.sessions.groupByProject": 0,
+        "workbench.sessions.index.scanning": 0,
+        "workbench.sessions.index.unavailable": 0,
+        "workbench.sessions.list.capNotice": 2,
+        "workbench.sessions.message.copy": 0,
+        "workbench.sessions.message.copyHelp": 0,
+        "workbench.sessions.message.showLess": 0,
+        "workbench.sessions.message.showMore": 1,
+        "workbench.sessions.openInTerminal": 0,
+        "workbench.sessions.options.help": 0,
+        "workbench.sessions.options.indexMessageText": 0,
+        "workbench.sessions.options.openIn": 0,
+        "workbench.sessions.options.rebuildIndex": 0,
+        "workbench.sessions.outline.empty": 0,
+        "workbench.sessions.outline.heading": 0,
+        "workbench.sessions.outline.help": 0,
+        "workbench.sessions.outline.label": 0,
+        "workbench.sessions.page.next": 0,
+        "workbench.sessions.page.previous": 0,
+        "workbench.sessions.project.none": 0,
+        "workbench.sessions.project.projectless": 0,
+        "workbench.sessions.range.all": 0,
+        "workbench.sessions.refreshHelp": 0,
+        "workbench.sessions.resume.heading": 0,
+        "workbench.sessions.resume.none": 0,
+        "workbench.sessions.role.assistant": 0,
+        "workbench.sessions.role.other": 0,
+        "workbench.sessions.role.system": 0,
+        "workbench.sessions.role.tool": 0,
+        "workbench.sessions.role.user": 0,
+        "workbench.sessions.row.autoReviewsMerged": 1,
+        "workbench.sessions.row.includeInDeletion": 0,
+        "workbench.sessions.row.messageCount": 1,
+        "workbench.sessions.row.select": 0,
+        "workbench.sessions.row.showTranscript": 0,
+        "workbench.sessions.row.toggleForDeletion": 0,
+        "workbench.sessions.runInHelp": 1,
+        "workbench.sessions.scope.assistant": 0,
+        "workbench.sessions.scope.system": 0,
+        "workbench.sessions.scope.title": 0,
+        "workbench.sessions.scope.tool": 0,
+        "workbench.sessions.scope.user": 0,
+        "workbench.sessions.search.bodyIndexed": 0,
+        "workbench.sessions.search.bodyNotIndexed": 0,
+        "workbench.sessions.search.clearHelp": 0,
+        "workbench.sessions.search.placeholder": 0,
+        "workbench.sessions.selectMode": 0,
+        "workbench.sessions.selectModeHelp": 0,
+        "workbench.sessions.sort.byProject": 0,
+        "workbench.sessions.sort.oldestFirst": 0,
+        "workbench.sessions.sort.recentFirst": 0,
+        "workbench.sessions.toast.bodyIndexDropFailed": 0,
+        "workbench.sessions.toast.bodyIndexDropped": 0,
+        "workbench.sessions.toast.copied": 0,
+        "workbench.sessions.toast.copiedWithReason": 1,
+        "workbench.sessions.toast.cwdCopied": 0,
+        "workbench.sessions.toast.deleted": 1,
+        "workbench.sessions.toast.deletedPartial": 3,
+        "workbench.sessions.toast.indexNotCleared": 0,
+        "workbench.sessions.toast.messageCopied": 0,
+        "workbench.sessions.toast.noResumeCommand": 0,
+        "workbench.sessions.toast.openedIn": 1,
+        "workbench.sessions.toast.sessionIDCopied": 0,
+        "workbench.sessions.toast.sourcePathCopied": 0,
+        "workbench.sessions.transcript.autoReviewDivider": 0,
+        "workbench.sessions.transcript.cancelled": 0,
+        "workbench.sessions.transcript.loadAll": 0,
+        "workbench.sessions.transcript.loading": 0,
+        "workbench.sessions.transcript.noMessages": 0,
+        "workbench.sessions.transcript.noReader": 1,
+        "workbench.sessions.transcript.pageRange": 3,
+        "workbench.sessions.transcript.placeholderDetail": 0,
+        "workbench.sessions.transcript.placeholderTitle": 0,
+        "workbench.sessions.transcript.readFailed": 0,
+        "workbench.sessions.transcript.truncatedDetail": 2,
+        "workbench.sessions.transcript.truncatedTitle": 1,
+        "workbench.skills.appCountNativeDisabled": 1,
+        "workbench.skills.appCountViaGeminiRoot": 2,
+        "workbench.skills.appCountViaSharedRoot": 2,
+        "workbench.skills.appSeesCount": 2,
+        "workbench.skills.backups": 0,
+        "workbench.skills.backups.deleteAccessibility": 0,
+        "workbench.skills.backups.deleteConfirmMessage": 0,
+        "workbench.skills.backups.deleteConfirmTitle": 1,
+        "workbench.skills.backups.deleteConfirmTitleGeneric": 0,
+        "workbench.skills.backups.empty": 0,
+        "workbench.skills.backups.footer": 0,
+        "workbench.skills.backups.refreshHelp": 0,
+        "workbench.skills.backups.restore": 0,
+        "workbench.skills.backups.restoreHelp": 0,
+        "workbench.skills.backups.subtitle": 0,
+        "workbench.skills.backups.title": 0,
+        "workbench.skills.badge.installed": 0,
+        "workbench.skills.badge.nativeOff": 1,
+        "workbench.skills.badge.nativeOffHelp": 0,
+        "workbench.skills.badge.nativeUnknown": 0,
+        "workbench.skills.badge.nativeUnknownHelp": 0,
+        "workbench.skills.badge.update": 0,
+        "workbench.skills.checkUpdates": 0,
+        "workbench.skills.checkUpdatesCount": 1,
+        "workbench.skills.contextDisableKeepProjection": 1,
+        "workbench.skills.contextEnableIn": 1,
+        "workbench.skills.contextRemoveProjection": 1,
+        "workbench.skills.countFiltered": 2,
+        "workbench.skills.countTotal": 1,
+        "workbench.skills.discover": 0,
+        "workbench.skills.discover.availableEmpty": 0,
+        "workbench.skills.discover.availableTitle": 0,
+        "workbench.skills.discover.indexTitle": 0,
+        "workbench.skills.discover.installs": 1,
+        "workbench.skills.discover.noRepos": 0,
+        "workbench.skills.discover.removeRepo": 1,
+        "workbench.skills.discover.repoFieldPlaceholder": 0,
+        "workbench.skills.discover.repoRules": 0,
+        "workbench.skills.discover.reposTitle": 0,
+        "workbench.skills.discover.scanRepos": 0,
+        "workbench.skills.discover.scanReposHelp": 0,
+        "workbench.skills.discover.searchHint": 0,
+        "workbench.skills.discover.searchPlaceholder": 0,
+        "workbench.skills.discover.selectAll": 0,
+        "workbench.skills.discover.selectHelp": 0,
+        "workbench.skills.discover.selectNone": 0,
+        "workbench.skills.discover.sourceFromSkillsSh": 1,
+        "workbench.skills.discover.stopScanHelp": 0,
+        "workbench.skills.discover.stopScanningRepo": 1,
+        "workbench.skills.discover.title": 0,
+        "workbench.skills.discoverHelp": 0,
+        "workbench.skills.empty.body": 0,
+        "workbench.skills.empty.headline": 0,
+        "workbench.skills.filterClear": 0,
+        "workbench.skills.filterPlaceholder": 0,
+        "workbench.skills.import.alreadyShared": 0,
+        "workbench.skills.import.alreadySharedDetail": 0,
+        "workbench.skills.import.apply": 1,
+        "workbench.skills.import.conflicts": 0,
+        "workbench.skills.import.conflictsCount": 1,
+        "workbench.skills.import.conflictsDetail": 0,
+        "workbench.skills.import.foundIn": 1,
+        "workbench.skills.import.keepEvidenceFor": 0,
+        "workbench.skills.import.needsAdoption": 0,
+        "workbench.skills.import.needsAdoptionDetail": 0,
+        "workbench.skills.import.notSkills": 0,
+        "workbench.skills.import.notSkillsDetail": 0,
+        "workbench.skills.import.recognizedCount": 1,
+        "workbench.skills.import.subtitle": 0,
+        "workbench.skills.import.summary": 3,
+        "workbench.skills.import.title": 0,
+        "workbench.skills.importExisting": 0,
+        "workbench.skills.install": 0,
+        "workbench.skills.installFromZip": 0,
+        "workbench.skills.menuMoreActions": 1,
+        "workbench.skills.menuRevealInFinder": 0,
+        "workbench.skills.menuUninstall": 0,
+        "workbench.skills.menuUpdateFromRepository": 0,
+        "workbench.skills.menuWiringDetails": 0,
+        "workbench.skills.noMatch": 1,
+        "workbench.skills.phase.downloadedOne": 0,
+        "workbench.skills.phase.downloadedProgress": 2,
+        "workbench.skills.phase.downloading": 1,
+        "workbench.skills.phase.scanning": 1,
+        "workbench.skills.sourceBranch": 1,
+        "workbench.skills.sourceInstalledLocally": 0,
+        "workbench.skills.sourceLocal": 0,
+        "workbench.skills.state.coupled": 0,
+        "workbench.skills.state.disabledInHarness": 0,
+        "workbench.skills.state.enabled": 0,
+        "workbench.skills.state.notProjected": 0,
+        "workbench.skills.state.unknown": 0,
+        "workbench.skills.sync.footer": 1,
+        "workbench.skills.sync.nativeSwitchesBody": 0,
+        "workbench.skills.sync.nativeSwitchesLead": 0,
+        "workbench.skills.sync.noPerSkillSwitch": 0,
+        "workbench.skills.sync.noSwitchAlsoReads": 1,
+        "workbench.skills.sync.perSkillSwitch": 2,
+        "workbench.skills.sync.projectionsBody": 0,
+        "workbench.skills.sync.projectionsLead": 0,
+        "workbench.skills.sync.readsOwnFolder": 1,
+        "workbench.skills.sync.scansSharedRoot": 1,
+        "workbench.skills.sync.ssotBody": 1,
+        "workbench.skills.sync.ssotLead": 0,
+        "workbench.skills.sync.title": 0,
+        "workbench.skills.syncExplainerHelp": 0,
+        "workbench.skills.toast.addRepoFirst": 0,
+        "workbench.skills.toast.allUpToDate": 0,
+        "workbench.skills.toast.archiveEmpty": 0,
+        "workbench.skills.toast.disabledKeptProjection": 2,
+        "workbench.skills.toast.enabledForApps": 1,
+        "workbench.skills.toast.importConflicts": 1,
+        "workbench.skills.toast.importRecognized": 1,
+        "workbench.skills.toast.installedArchive": 1,
+        "workbench.skills.toast.installedForApps": 2,
+        "workbench.skills.toast.installedShared": 1,
+        "workbench.skills.toast.invalidRepoRef": 1,
+        "workbench.skills.toast.linkRemovedStillShared": 2,
+        "workbench.skills.toast.noSearchMatches": 0,
+        "workbench.skills.toast.noSkillsFound": 0,
+        "workbench.skills.toast.notFoundInRepo": 2,
+        "workbench.skills.toast.projectionClearedFolderKept": 2,
+        "workbench.skills.toast.recorded": 1,
+        "workbench.skills.toast.reposUnreadable": 1,
+        "workbench.skills.toast.restored": 1,
+        "workbench.skills.toast.scanStopped": 0,
+        "workbench.skills.toast.sharedLibraryNote": 0,
+        "workbench.skills.toast.sharedRootNoSwitch": 2,
+        "workbench.skills.toast.uninstalledBackedUp": 1,
+        "workbench.skills.toast.uninstalledLeftInPlace": 2,
+        "workbench.skills.toast.updated": 1,
+        "workbench.skills.toast.updatesAvailable": 1,
+        "workbench.skills.toggleHelp.installInto": 1,
+        "workbench.skills.toggleHelp.keepLinks": 1,
+        "workbench.skills.toggleHelp.linkAfterAdopting": 1,
+        "workbench.skills.toggleState.coupledGemini": 1,
+        "workbench.skills.toggleState.coupledSharedRoot": 1,
+        "workbench.skills.toggleState.disabledInHarness": 1,
+        "workbench.skills.toggleState.enabled": 1,
+        "workbench.skills.toggleState.enabledNative": 1,
+        "workbench.skills.toggleState.enabledSharedRoot": 1,
+        "workbench.skills.toggleState.notProjected": 1,
+        "workbench.skills.toggleState.unknown": 1,
+        "workbench.skills.uninstall": 0,
+        "workbench.skills.uninstallConfirmMessage": 0,
+        "workbench.skills.uninstallConfirmTitle": 1,
+        "workbench.skills.wiring.footer": 0,
+        "workbench.skills.wiring.mechanismGeminiCompat": 0,
+        "workbench.skills.wiring.mechanismSharedRoot": 0,
+        "workbench.skills.wiring.nativeSwitch": 2,
+        "workbench.skills.wiring.noNativeSwitch": 0,
+        "workbench.skills.wiring.projectionCopy": 1,
+        "workbench.skills.wiring.projectionCopyAdopted": 1,
+        "workbench.skills.wiring.projectionMissing": 1,
+        "workbench.skills.wiring.projectionSymlink": 1,
+        "workbench.skills.wiring.projectionSymlinkAdopted": 1,
+        "workbench.skills.wiring.reveal": 0,
+        "workbench.skills.wiring.revealHelp": 0,
+        "workbench.skills.wiring.source": 0,
+        "workbench.skills.wiring.sourceDetail": 0,
+        "workbench.skills.wiring.stateConfigUnreadable": 0,
+        "workbench.skills.wiring.stateCoupledGemini": 0,
+        "workbench.skills.wiring.stateCoupledSharedRoot": 0,
+        "workbench.skills.wiring.stateNativeOff": 0,
+        "workbench.skills.wiring.stateNotLinked": 0,
+        "workbench.status.cachedQuotas": 0,
+        "workbench.status.indexed": 1,
+        "workbench.status.installed": 1,
+        "workbench.status.localIndex": 0,
+        "workbench.status.localLedger": 0,
+        "workbench.status.nextRefill": 1,
+        "workbench.status.sharedLibrary": 0,
+        "workbench.status.updated": 1,
     ]
 }
