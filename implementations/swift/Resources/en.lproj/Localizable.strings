@@ -1140,6 +1140,81 @@
 /* Caption under a quota bar when the provider reported no reset time */
 "quota.bucket.noResetInfo" = "No reset info";
 
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.astraLimit" = "GPT-6 Pro weekly limit";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.astraReset" = "Set GPT-6 Pro reset time";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.complete" = "Saved cloud history is synced. Temporary chats, deleted chats and retries may differ.";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.connectionHelp" = "Import browser cookies or sign in in the built-in window. Work stays in ChatGPT Agentic.";
+
+/* Menu bar metric for absolute ChatGPT Chat allowance counts, not percentages. */
+"quota.chat.countMetric" = "Used / remaining count";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.dailyReset" = "Set daily Pro reset time";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.enable" = "Track ChatGPT Chat";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.estimated" = "History estimate";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.excluded" = "%1$lld Work conversations excluded · %2$lld unclassified turns";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.historyToggle" = "Sync saved Chat history across devices";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.limitsHelp" = "Enter the limits shown for your plan. A Pro subscription alone does not identify its allowance tier.";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.manualLimits" = "Manual Chat limits (0 means unknown)";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.noExtension" = "Uses cookies and the built-in browser; no extension to install.";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.observed" = "%lld observed";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.partial" = "History sync is incomplete. Remaining messages are unavailable until coverage is complete.";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.period" = "Past %lld days";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.privacy" = "Only model, time and deduplication metadata are saved locally. Conversation text is not retained.";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.refresh" = "Refresh Chat allowances";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.remaining" = "%lld left";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.reported" = "Provider-reported allowance units";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.rolling" = "Estimated from recent history; reset boundaries may differ from your account.";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.sharedLimit" = "Shared Pro daily limit";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.solLimit" = "GPT-5.6 Sol Pro daily limit";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.unknown" = "Allowance unknown";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.used" = "%lld used";
+
 /* Caption under an empty reset-history strip explaining when a cycle is recorded */
 "quota.cycleRecordedOnRefill" = "A cycle is recorded when the quota refills";
 
