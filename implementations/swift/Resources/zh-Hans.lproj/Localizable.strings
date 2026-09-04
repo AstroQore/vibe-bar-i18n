@@ -3435,6 +3435,21 @@
 /* Tooltip on the Workbench header button that switches the window to light */
 "workbench.appearance.useLight" = "使用浅色外观";
 
+/* Shown inside a filter picker when the typed text matches no entry */
+"workbench.filter.noMatches" = "没有匹配项";
+
+/* Button in a filter picker that deselects every entry. distinct-from: workbench.sessions.find.none — a counter that says nothing matched is not a button that empties a selection; zh-Hans says 无 for one and 全不选 for the other. */
+"workbench.filter.none" = "全不选";
+
+/* Placeholder of the type-to-filter field at the top of the harness picker popover; 'harness' is the usage-axis unit and stays as spelled */
+"workbench.filter.searchHarnesses" = "查找 harness";
+
+/* Placeholder of the type-to-filter field at the top of the model picker popover */
+"workbench.filter.searchModels" = "查找模型";
+
+/* Footer hint of a filter picker: ⌥-clicking a row keeps only that row selected */
+"workbench.filter.soloHint" = "⌥ 点按只保留这一个";
+
 /* Tooltip on the Workbench header refresh button; page is the current page's title distinct-from: quota.misc.refreshProvider — a provider name stays Latin and takes a space in Simplified Chinese; a page title is translated and does not. */
 "workbench.header.refreshPage" = "刷新%@";
 
@@ -3815,6 +3830,12 @@
 
 /* Tooltip on the clear button inside the Sessions search field */
 "workbench.sessions.search.clearHelp" = "清除搜索内容";
+
+/* Heading above the message-role toggles in the Sessions search-scope menu */
+"workbench.sessions.search.messagesHeading" = "同时搜索这些消息";
+
+/* First line of the Sessions search-scope menu: what the search always covers, before the message-role toggles */
+"workbench.sessions.search.metadataAlways" = "标题、项目文件夹和 harness 名称始终参与搜索。";
 
 /* Placeholder of the Sessions search field */
 "workbench.sessions.search.placeholder" = "搜索会话";

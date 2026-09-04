@@ -5540,6 +5540,26 @@
       "value": "Use light appearance",
       "comment": "Tooltip on the Workbench header button that switches the window to light"
     },
+    "workbench.filter.noMatches": {
+      "value": "Nothing matches",
+      "comment": "Shown inside a filter picker when the typed text matches no entry"
+    },
+    "workbench.filter.none": {
+      "value": "None",
+      "comment": "Button in a filter picker that deselects every entry. distinct-from: workbench.sessions.find.none — a counter that says nothing matched is not a button that empties a selection; zh-Hans says 无 for one and 全不选 for the other."
+    },
+    "workbench.filter.searchHarnesses": {
+      "value": "Find a harness",
+      "comment": "Placeholder of the type-to-filter field at the top of the harness picker popover; 'harness' is the usage-axis unit and stays as spelled"
+    },
+    "workbench.filter.searchModels": {
+      "value": "Find a model",
+      "comment": "Placeholder of the type-to-filter field at the top of the model picker popover"
+    },
+    "workbench.filter.soloHint": {
+      "value": "⌥-click keeps only that one",
+      "comment": "Footer hint of a filter picker: ⌥-clicking a row keeps only that row selected"
+    },
     "workbench.header.refreshPage": {
       "value": "Refresh {page}",
       "comment": "Tooltip on the Workbench header refresh button; page is the current page's title distinct-from: quota.misc.refreshProvider — a provider name stays Latin and takes a space in Simplified Chinese; a page title is translated and does not.",
@@ -6137,6 +6157,14 @@
     "workbench.sessions.search.clearHelp": {
       "value": "Clear the search",
       "comment": "Tooltip on the clear button inside the Sessions search field"
+    },
+    "workbench.sessions.search.messagesHeading": {
+      "value": "Also search messages by",
+      "comment": "Heading above the message-role toggles in the Sessions search-scope menu"
+    },
+    "workbench.sessions.search.metadataAlways": {
+      "value": "Titles, project folders and harness names are always searched.",
+      "comment": "First line of the Sessions search-scope menu: what the search always covers, before the message-role toggles"
     },
     "workbench.sessions.search.placeholder": {
       "value": "Search sessions",

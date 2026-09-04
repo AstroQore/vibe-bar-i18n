@@ -3536,6 +3536,21 @@
     "workbench.appearance.useLight": {
       "value": "使用浅色外观"
     },
+    "workbench.filter.noMatches": {
+      "value": "没有匹配项"
+    },
+    "workbench.filter.none": {
+      "value": "全不选"
+    },
+    "workbench.filter.searchHarnesses": {
+      "value": "查找 harness"
+    },
+    "workbench.filter.searchModels": {
+      "value": "查找模型"
+    },
+    "workbench.filter.soloHint": {
+      "value": "⌥ 点按只保留这一个"
+    },
     "workbench.header.refreshPage": {
       "value": "刷新{page}"
     },
@@ -3928,6 +3943,12 @@
     },
     "workbench.sessions.search.clearHelp": {
       "value": "清除搜索内容"
+    },
+    "workbench.sessions.search.messagesHeading": {
+      "value": "同时搜索这些消息"
+    },
+    "workbench.sessions.search.metadataAlways": {
+      "value": "标题、项目文件夹和 harness 名称始终参与搜索。"
     },
     "workbench.sessions.search.placeholder": {
       "value": "搜索会话"

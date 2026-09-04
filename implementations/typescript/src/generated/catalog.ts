@@ -1192,6 +1192,11 @@ export type MessageKey =
   | "usage.yearHeatmap.total"
   | "workbench.appearance.useDark"
   | "workbench.appearance.useLight"
+  | "workbench.filter.noMatches"
+  | "workbench.filter.none"
+  | "workbench.filter.searchHarnesses"
+  | "workbench.filter.searchModels"
+  | "workbench.filter.soloHint"
   | "workbench.header.refreshPage"
   | "workbench.page.resets.subtitle"
   | "workbench.page.resets.title"
@@ -1323,6 +1328,8 @@ export type MessageKey =
   | "workbench.sessions.search.bodyIndexed"
   | "workbench.sessions.search.bodyNotIndexed"
   | "workbench.sessions.search.clearHelp"
+  | "workbench.sessions.search.messagesHeading"
+  | "workbench.sessions.search.metadataAlways"
   | "workbench.sessions.search.placeholder"
   | "workbench.sessions.selectMode"
   | "workbench.sessions.selectModeHelp"
@@ -2711,6 +2718,11 @@ export interface MessageParams {
   "usage.yearHeatmap.total": { "amount": string };
   "workbench.appearance.useDark": undefined;
   "workbench.appearance.useLight": undefined;
+  "workbench.filter.noMatches": undefined;
+  "workbench.filter.none": undefined;
+  "workbench.filter.searchHarnesses": undefined;
+  "workbench.filter.searchModels": undefined;
+  "workbench.filter.soloHint": undefined;
   "workbench.header.refreshPage": { "page": string };
   "workbench.page.resets.subtitle": undefined;
   "workbench.page.resets.title": undefined;
@@ -2842,6 +2854,8 @@ export interface MessageParams {
   "workbench.sessions.search.bodyIndexed": undefined;
   "workbench.sessions.search.bodyNotIndexed": undefined;
   "workbench.sessions.search.clearHelp": undefined;
+  "workbench.sessions.search.messagesHeading": undefined;
+  "workbench.sessions.search.metadataAlways": undefined;
   "workbench.sessions.search.placeholder": undefined;
   "workbench.sessions.selectMode": undefined;
   "workbench.sessions.selectModeHelp": undefined;
@@ -4231,6 +4245,11 @@ export const messages: {
     "usage.yearHeatmap.total": "{amount} total",
     "workbench.appearance.useDark": "Use dark appearance",
     "workbench.appearance.useLight": "Use light appearance",
+    "workbench.filter.noMatches": "Nothing matches",
+    "workbench.filter.none": "None",
+    "workbench.filter.searchHarnesses": "Find a harness",
+    "workbench.filter.searchModels": "Find a model",
+    "workbench.filter.soloHint": "⌥-click keeps only that one",
     "workbench.header.refreshPage": "Refresh {page}",
     "workbench.page.resets.subtitle": "Cycles, refills, and run-out forecasts",
     "workbench.page.resets.title": "Resets",
@@ -4362,6 +4381,8 @@ export const messages: {
     "workbench.sessions.search.bodyIndexed": "Message text is indexed locally.",
     "workbench.sessions.search.bodyNotIndexed": "Enable message indexing in Options to search transcript content.",
     "workbench.sessions.search.clearHelp": "Clear the search",
+    "workbench.sessions.search.messagesHeading": "Also search messages by",
+    "workbench.sessions.search.metadataAlways": "Titles, project folders and harness names are always searched.",
     "workbench.sessions.search.placeholder": "Search sessions",
     "workbench.sessions.selectMode": "Select",
     "workbench.sessions.selectModeHelp": "Pick sessions to delete",
@@ -5746,6 +5767,11 @@ export const messages: {
     "usage.yearHeatmap.total": "合计 {amount}",
     "workbench.appearance.useDark": "使用深色外观",
     "workbench.appearance.useLight": "使用浅色外观",
+    "workbench.filter.noMatches": "没有匹配项",
+    "workbench.filter.none": "全不选",
+    "workbench.filter.searchHarnesses": "查找 harness",
+    "workbench.filter.searchModels": "查找模型",
+    "workbench.filter.soloHint": "⌥ 点按只保留这一个",
     "workbench.header.refreshPage": "刷新{page}",
     "workbench.page.resets.subtitle": "周期、补额与耗尽预测",
     "workbench.page.resets.title": "重置",
@@ -5877,6 +5903,8 @@ export const messages: {
     "workbench.sessions.search.bodyIndexed": "消息正文已在本地建立索引。",
     "workbench.sessions.search.bodyNotIndexed": "在「选项」中开启消息索引后即可搜索对话记录内容。",
     "workbench.sessions.search.clearHelp": "清除搜索内容",
+    "workbench.sessions.search.messagesHeading": "同时搜索这些消息",
+    "workbench.sessions.search.metadataAlways": "标题、项目文件夹和 harness 名称始终参与搜索。",
     "workbench.sessions.search.placeholder": "搜索会话",
     "workbench.sessions.selectMode": "选择",
     "workbench.sessions.selectModeHelp": "选择要删除的会话",
