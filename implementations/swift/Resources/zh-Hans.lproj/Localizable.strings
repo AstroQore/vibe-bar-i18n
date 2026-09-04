@@ -1140,6 +1140,81 @@
 /* Caption under a quota bar when the provider reported no reset time */
 "quota.bucket.noResetInfo" = "无重置信息";
 
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.astraLimit" = "GPT-6 Pro 每周上限";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.astraReset" = "设置 GPT-6 Pro 重置时间";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.complete" = "已同步保存的云端历史。临时聊天、已删除聊天及重试可能存在偏差。";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.connectionHelp" = "导入浏览器 Cookie 或在内置窗口登录。Work 仍归入 ChatGPT Agentic。";
+
+/* Menu bar metric for absolute ChatGPT Chat allowance counts, not percentages. */
+"quota.chat.countMetric" = "已用 / 剩余次数";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.dailyReset" = "设置每日 Pro 重置时间";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.enable" = "统计 ChatGPT Chat";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.estimated" = "历史估算";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.excluded" = "已排除 %1$lld 个 Work 会话 · %2$lld 轮待分类";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.historyToggle" = "同步跨设备保存的 Chat 历史";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.limitsHelp" = "填写你的套餐实际显示的上限，仅凭 Pro 订阅名称无法确定额度档位。";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.manualLimits" = "手动 Chat 上限（0 表示未知）";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.noExtension" = "使用 Cookie 和内置浏览器，无需安装扩展。";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.observed" = "已观察到 %lld";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.partial" = "历史同步尚未完成，覆盖完整前不显示消息剩余额度。";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.period" = "最近 %lld 天";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.privacy" = "仅在本地保存模型、时间与去重元数据，不保留对话正文。";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.refresh" = "刷新 Chat 额度";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.remaining" = "剩余 %lld";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.reported" = "服务端返回的额度单位";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.rolling" = "根据近期历史估算，统计边界可能与账号实际重置周期不同。";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.sharedLimit" = "Pro 每日共享上限";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.solLimit" = "GPT-5.6 Sol Pro 每日上限";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.unknown" = "额度未知";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.used" = "已用 %lld";
+
 /* Caption under an empty reset-history strip explaining when a cycle is recorded */
 "quota.cycleRecordedOnRefill" = "额度补满时记录一个周期";
 

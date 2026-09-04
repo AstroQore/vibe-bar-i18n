@@ -2661,6 +2661,168 @@ public enum L10n {
             public static var noResetInfo: String { L10nSupport.string("quota.bucket.noResetInfo") }
         }
 
+        public enum Chat {
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.astraLimit`
+            /// en: "GPT-6 Pro weekly limit"
+            public static var astraLimit: String { L10nSupport.string("quota.chat.astraLimit") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.astraReset`
+            /// en: "Set GPT-6 Pro reset time"
+            public static var astraReset: String { L10nSupport.string("quota.chat.astraReset") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.complete`
+            /// en: "Saved cloud history is synced. Temporary chats, deleted chats and retries may differ."
+            public static var complete: String { L10nSupport.string("quota.chat.complete") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.connectionHelp`
+            /// en: "Import browser cookies or sign in in the built-in window. Work stays in ChatGPT Agentic."
+            public static var connectionHelp: String { L10nSupport.string("quota.chat.connectionHelp") }
+
+            /// Menu bar metric for absolute ChatGPT Chat allowance counts, not percentages.
+            ///
+            /// Key: `quota.chat.countMetric`
+            /// en: "Used / remaining count"
+            public static var countMetric: String { L10nSupport.string("quota.chat.countMetric") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.dailyReset`
+            /// en: "Set daily Pro reset time"
+            public static var dailyReset: String { L10nSupport.string("quota.chat.dailyReset") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.enable`
+            /// en: "Track ChatGPT Chat"
+            public static var enable: String { L10nSupport.string("quota.chat.enable") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.estimated`
+            /// en: "History estimate"
+            public static var estimated: String { L10nSupport.string("quota.chat.estimated") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.excluded`
+            /// en: "{work} Work conversations excluded · {unknown} unclassified turns"
+            public static func excluded(work: Int, unknown: Int) -> String {
+                L10nSupport.format("quota.chat.excluded", work, unknown)
+            }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.historyToggle`
+            /// en: "Sync saved Chat history across devices"
+            public static var historyToggle: String { L10nSupport.string("quota.chat.historyToggle") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.limitsHelp`
+            /// en: "Enter the limits shown for your plan. A Pro subscription alone does not identify its allowance tier."
+            public static var limitsHelp: String { L10nSupport.string("quota.chat.limitsHelp") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.manualLimits`
+            /// en: "Manual Chat limits (0 means unknown)"
+            public static var manualLimits: String { L10nSupport.string("quota.chat.manualLimits") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.noExtension`
+            /// en: "Uses cookies and the built-in browser; no extension to install."
+            public static var noExtension: String { L10nSupport.string("quota.chat.noExtension") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.observed`
+            /// en: "{count} observed"
+            public static func observed(count: Int) -> String {
+                L10nSupport.format("quota.chat.observed", count)
+            }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.partial`
+            /// en: "History sync is incomplete. Remaining messages are unavailable until coverage is complete."
+            public static var partial: String { L10nSupport.string("quota.chat.partial") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.period`
+            /// en: "Past {days} days"
+            public static func period(days: Int) -> String {
+                L10nSupport.format("quota.chat.period", days)
+            }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.privacy`
+            /// en: "Only model, time and deduplication metadata are saved locally. Conversation text is not retained."
+            public static var privacy: String { L10nSupport.string("quota.chat.privacy") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.refresh`
+            /// en: "Refresh Chat allowances"
+            public static var refresh: String { L10nSupport.string("quota.chat.refresh") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.remaining`
+            /// en: "{count} left"
+            public static func remaining(count: Int) -> String {
+                L10nSupport.format("quota.chat.remaining", count)
+            }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.reported`
+            /// en: "Provider-reported allowance units"
+            public static var reported: String { L10nSupport.string("quota.chat.reported") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.rolling`
+            /// en: "Estimated from recent history; reset boundaries may differ from your account."
+            public static var rolling: String { L10nSupport.string("quota.chat.rolling") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.sharedLimit`
+            /// en: "Shared Pro daily limit"
+            public static var sharedLimit: String { L10nSupport.string("quota.chat.sharedLimit") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.solLimit`
+            /// en: "GPT-5.6 Sol Pro daily limit"
+            public static var solLimit: String { L10nSupport.string("quota.chat.solLimit") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.unknown`
+            /// en: "Allowance unknown"
+            public static var unknown: String { L10nSupport.string("quota.chat.unknown") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.used`
+            /// en: "{count} used"
+            public static func used(count: Int) -> String {
+                L10nSupport.format("quota.chat.used", count)
+            }
+        }
+
         public enum Empty {
             public enum NeedsLogin {
                 /// Empty state body; command is a CLI name such as codex or claude and is never translated
@@ -10708,6 +10870,31 @@ enum L10nCatalogFacts {
         "quota.bridge.subtitleVersion",
         "quota.bridge.title",
         "quota.bucket.noResetInfo",
+        "quota.chat.astraLimit",
+        "quota.chat.astraReset",
+        "quota.chat.complete",
+        "quota.chat.connectionHelp",
+        "quota.chat.countMetric",
+        "quota.chat.dailyReset",
+        "quota.chat.enable",
+        "quota.chat.estimated",
+        "quota.chat.excluded",
+        "quota.chat.historyToggle",
+        "quota.chat.limitsHelp",
+        "quota.chat.manualLimits",
+        "quota.chat.noExtension",
+        "quota.chat.observed",
+        "quota.chat.partial",
+        "quota.chat.period",
+        "quota.chat.privacy",
+        "quota.chat.refresh",
+        "quota.chat.remaining",
+        "quota.chat.reported",
+        "quota.chat.rolling",
+        "quota.chat.sharedLimit",
+        "quota.chat.solLimit",
+        "quota.chat.unknown",
+        "quota.chat.used",
         "quota.cycleRecordedOnRefill",
         "quota.empty.needsLogin.detail",
         "quota.empty.network.detail",
@@ -12284,6 +12471,31 @@ enum L10nCatalogFacts {
         "quota.bridge.subtitleVersion": 1,
         "quota.bridge.title": 0,
         "quota.bucket.noResetInfo": 0,
+        "quota.chat.astraLimit": 0,
+        "quota.chat.astraReset": 0,
+        "quota.chat.complete": 0,
+        "quota.chat.connectionHelp": 0,
+        "quota.chat.countMetric": 0,
+        "quota.chat.dailyReset": 0,
+        "quota.chat.enable": 0,
+        "quota.chat.estimated": 0,
+        "quota.chat.excluded": 2,
+        "quota.chat.historyToggle": 0,
+        "quota.chat.limitsHelp": 0,
+        "quota.chat.manualLimits": 0,
+        "quota.chat.noExtension": 0,
+        "quota.chat.observed": 1,
+        "quota.chat.partial": 0,
+        "quota.chat.period": 1,
+        "quota.chat.privacy": 0,
+        "quota.chat.refresh": 0,
+        "quota.chat.remaining": 1,
+        "quota.chat.reported": 0,
+        "quota.chat.rolling": 0,
+        "quota.chat.sharedLimit": 0,
+        "quota.chat.solLimit": 0,
+        "quota.chat.unknown": 0,
+        "quota.chat.used": 1,
         "quota.cycleRecordedOnRefill": 0,
         "quota.empty.needsLogin.detail": 1,
         "quota.empty.network.detail": 0,

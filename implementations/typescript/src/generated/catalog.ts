@@ -401,6 +401,31 @@ export type MessageKey =
   | "quota.bridge.subtitleVersion"
   | "quota.bridge.title"
   | "quota.bucket.noResetInfo"
+  | "quota.chat.astraLimit"
+  | "quota.chat.astraReset"
+  | "quota.chat.complete"
+  | "quota.chat.connectionHelp"
+  | "quota.chat.countMetric"
+  | "quota.chat.dailyReset"
+  | "quota.chat.enable"
+  | "quota.chat.estimated"
+  | "quota.chat.excluded"
+  | "quota.chat.historyToggle"
+  | "quota.chat.limitsHelp"
+  | "quota.chat.manualLimits"
+  | "quota.chat.noExtension"
+  | "quota.chat.observed"
+  | "quota.chat.partial"
+  | "quota.chat.period"
+  | "quota.chat.privacy"
+  | "quota.chat.refresh"
+  | "quota.chat.remaining"
+  | "quota.chat.reported"
+  | "quota.chat.rolling"
+  | "quota.chat.sharedLimit"
+  | "quota.chat.solLimit"
+  | "quota.chat.unknown"
+  | "quota.chat.used"
   | "quota.cycleRecordedOnRefill"
   | "quota.empty.needsLogin.detail"
   | "quota.empty.network.detail"
@@ -1927,6 +1952,31 @@ export interface MessageParams {
   "quota.bridge.subtitleVersion": { "version": string };
   "quota.bridge.title": undefined;
   "quota.bucket.noResetInfo": undefined;
+  "quota.chat.astraLimit": undefined;
+  "quota.chat.astraReset": undefined;
+  "quota.chat.complete": undefined;
+  "quota.chat.connectionHelp": undefined;
+  "quota.chat.countMetric": undefined;
+  "quota.chat.dailyReset": undefined;
+  "quota.chat.enable": undefined;
+  "quota.chat.estimated": undefined;
+  "quota.chat.excluded": { "work": number; "unknown": number };
+  "quota.chat.historyToggle": undefined;
+  "quota.chat.limitsHelp": undefined;
+  "quota.chat.manualLimits": undefined;
+  "quota.chat.noExtension": undefined;
+  "quota.chat.observed": { "count": number };
+  "quota.chat.partial": undefined;
+  "quota.chat.period": { "days": number };
+  "quota.chat.privacy": undefined;
+  "quota.chat.refresh": undefined;
+  "quota.chat.remaining": { "count": number };
+  "quota.chat.reported": undefined;
+  "quota.chat.rolling": undefined;
+  "quota.chat.sharedLimit": undefined;
+  "quota.chat.solLimit": undefined;
+  "quota.chat.unknown": undefined;
+  "quota.chat.used": { "count": number };
   "quota.cycleRecordedOnRefill": undefined;
   "quota.empty.needsLogin.detail": { "command": string };
   "quota.empty.network.detail": undefined;
@@ -3454,6 +3504,31 @@ export const messages: {
     "quota.bridge.subtitleVersion": "CodexBar {version} · read-only",
     "quota.bridge.title": "CodexBar Bridge",
     "quota.bucket.noResetInfo": "No reset info",
+    "quota.chat.astraLimit": "GPT-6 Pro weekly limit",
+    "quota.chat.astraReset": "Set GPT-6 Pro reset time",
+    "quota.chat.complete": "Saved cloud history is synced. Temporary chats, deleted chats and retries may differ.",
+    "quota.chat.connectionHelp": "Import browser cookies or sign in in the built-in window. Work stays in ChatGPT Agentic.",
+    "quota.chat.countMetric": "Used / remaining count",
+    "quota.chat.dailyReset": "Set daily Pro reset time",
+    "quota.chat.enable": "Track ChatGPT Chat",
+    "quota.chat.estimated": "History estimate",
+    "quota.chat.excluded": "{work} Work conversations excluded · {unknown} unclassified turns",
+    "quota.chat.historyToggle": "Sync saved Chat history across devices",
+    "quota.chat.limitsHelp": "Enter the limits shown for your plan. A Pro subscription alone does not identify its allowance tier.",
+    "quota.chat.manualLimits": "Manual Chat limits (0 means unknown)",
+    "quota.chat.noExtension": "Uses cookies and the built-in browser; no extension to install.",
+    "quota.chat.observed": "{count} observed",
+    "quota.chat.partial": "History sync is incomplete. Remaining messages are unavailable until coverage is complete.",
+    "quota.chat.period": "Past {days} days",
+    "quota.chat.privacy": "Only model, time and deduplication metadata are saved locally. Conversation text is not retained.",
+    "quota.chat.refresh": "Refresh Chat allowances",
+    "quota.chat.remaining": "{count} left",
+    "quota.chat.reported": "Provider-reported allowance units",
+    "quota.chat.rolling": "Estimated from recent history; reset boundaries may differ from your account.",
+    "quota.chat.sharedLimit": "Shared Pro daily limit",
+    "quota.chat.solLimit": "GPT-5.6 Sol Pro daily limit",
+    "quota.chat.unknown": "Allowance unknown",
+    "quota.chat.used": "{count} used",
     "quota.cycleRecordedOnRefill": "A cycle is recorded when the quota refills",
     "quota.empty.needsLogin.detail": "Run `{command} login` in your terminal, then refresh.",
     "quota.empty.network.detail": "Couldn't reach the official API. Check your internet connection and try again.",
@@ -4976,6 +5051,31 @@ export const messages: {
     "quota.bridge.subtitleVersion": "CodexBar {version} · 只读",
     "quota.bridge.title": "CodexBar 桥接",
     "quota.bucket.noResetInfo": "无重置信息",
+    "quota.chat.astraLimit": "GPT-6 Pro 每周上限",
+    "quota.chat.astraReset": "设置 GPT-6 Pro 重置时间",
+    "quota.chat.complete": "已同步保存的云端历史。临时聊天、已删除聊天及重试可能存在偏差。",
+    "quota.chat.connectionHelp": "导入浏览器 Cookie 或在内置窗口登录。Work 仍归入 ChatGPT Agentic。",
+    "quota.chat.countMetric": "已用 / 剩余次数",
+    "quota.chat.dailyReset": "设置每日 Pro 重置时间",
+    "quota.chat.enable": "统计 ChatGPT Chat",
+    "quota.chat.estimated": "历史估算",
+    "quota.chat.excluded": "已排除 {work} 个 Work 会话 · {unknown} 轮待分类",
+    "quota.chat.historyToggle": "同步跨设备保存的 Chat 历史",
+    "quota.chat.limitsHelp": "填写你的套餐实际显示的上限，仅凭 Pro 订阅名称无法确定额度档位。",
+    "quota.chat.manualLimits": "手动 Chat 上限（0 表示未知）",
+    "quota.chat.noExtension": "使用 Cookie 和内置浏览器，无需安装扩展。",
+    "quota.chat.observed": "已观察到 {count}",
+    "quota.chat.partial": "历史同步尚未完成，覆盖完整前不显示消息剩余额度。",
+    "quota.chat.period": "最近 {days} 天",
+    "quota.chat.privacy": "仅在本地保存模型、时间与去重元数据，不保留对话正文。",
+    "quota.chat.refresh": "刷新 Chat 额度",
+    "quota.chat.remaining": "剩余 {count}",
+    "quota.chat.reported": "服务端返回的额度单位",
+    "quota.chat.rolling": "根据近期历史估算，统计边界可能与账号实际重置周期不同。",
+    "quota.chat.sharedLimit": "Pro 每日共享上限",
+    "quota.chat.solLimit": "GPT-5.6 Sol Pro 每日上限",
+    "quota.chat.unknown": "额度未知",
+    "quota.chat.used": "已用 {count}",
     "quota.cycleRecordedOnRefill": "额度补满时记录一个周期",
     "quota.empty.needsLogin.detail": "在终端中运行 `{command} login`，然后刷新。",
     "quota.empty.network.detail": "无法连接官方 API，请检查网络后重试。",

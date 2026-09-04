@@ -4561,6 +4561,81 @@
     },
     "workbench.status.updated": {
       "value": "更新于 {time}"
+    },
+    "quota.chat.enable": {
+      "value": "统计 ChatGPT Chat"
+    },
+    "quota.chat.historyToggle": {
+      "value": "同步跨设备保存的 Chat 历史"
+    },
+    "quota.chat.connectionHelp": {
+      "value": "导入浏览器 Cookie 或在内置窗口登录。Work 仍归入 ChatGPT Agentic。"
+    },
+    "quota.chat.privacy": {
+      "value": "仅在本地保存模型、时间与去重元数据，不保留对话正文。"
+    },
+    "quota.chat.remaining": {
+      "value": "剩余 {count}"
+    },
+    "quota.chat.used": {
+      "value": "已用 {count}"
+    },
+    "quota.chat.observed": {
+      "value": "已观察到 {count}"
+    },
+    "quota.chat.unknown": {
+      "value": "额度未知"
+    },
+    "quota.chat.estimated": {
+      "value": "历史估算"
+    },
+    "quota.chat.reported": {
+      "value": "服务端返回的额度单位"
+    },
+    "quota.chat.partial": {
+      "value": "历史同步尚未完成，覆盖完整前不显示消息剩余额度。"
+    },
+    "quota.chat.complete": {
+      "value": "已同步保存的云端历史。临时聊天、已删除聊天及重试可能存在偏差。"
+    },
+    "quota.chat.rolling": {
+      "value": "根据近期历史估算，统计边界可能与账号实际重置周期不同。"
+    },
+    "quota.chat.period": {
+      "value": "最近 {days} 天"
+    },
+    "quota.chat.excluded": {
+      "value": "已排除 {work} 个 Work 会话 · {unknown} 轮待分类"
+    },
+    "quota.chat.manualLimits": {
+      "value": "手动 Chat 上限（0 表示未知）"
+    },
+    "quota.chat.limitsHelp": {
+      "value": "填写你的套餐实际显示的上限，仅凭 Pro 订阅名称无法确定额度档位。"
+    },
+    "quota.chat.astraLimit": {
+      "value": "GPT-6 Pro 每周上限"
+    },
+    "quota.chat.solLimit": {
+      "value": "GPT-5.6 Sol Pro 每日上限"
+    },
+    "quota.chat.sharedLimit": {
+      "value": "Pro 每日共享上限"
+    },
+    "quota.chat.astraReset": {
+      "value": "设置 GPT-6 Pro 重置时间"
+    },
+    "quota.chat.dailyReset": {
+      "value": "设置每日 Pro 重置时间"
+    },
+    "quota.chat.refresh": {
+      "value": "刷新 Chat 额度"
+    },
+    "quota.chat.noExtension": {
+      "value": "使用 Cookie 和内置浏览器，无需安装扩展。"
+    },
+    "quota.chat.countMetric": {
+      "value": "已用 / 剩余次数"
     }
   }
 }
