@@ -7938,6 +7938,38 @@ public enum L10n {
             public static var useLight: String { L10nSupport.string("workbench.appearance.useLight") }
         }
 
+        public enum Filter {
+            /// Shown inside a filter picker when the typed text matches no entry
+            ///
+            /// Key: `workbench.filter.noMatches`
+            /// en: "Nothing matches"
+            public static var noMatches: String { L10nSupport.string("workbench.filter.noMatches") }
+
+            /// Button in a filter picker that deselects every entry. distinct-from: workbench.sessions.find.none — a counter that says nothing matched is not a button that empties a selection; zh-Hans says 无 for one and 全不选 for the other.
+            ///
+            /// Key: `workbench.filter.none`
+            /// en: "None"
+            public static var `none`: String { L10nSupport.string("workbench.filter.none") }
+
+            /// Placeholder of the type-to-filter field at the top of the harness picker popover; 'harness' is the usage-axis unit and stays as spelled
+            ///
+            /// Key: `workbench.filter.searchHarnesses`
+            /// en: "Find a harness"
+            public static var searchHarnesses: String { L10nSupport.string("workbench.filter.searchHarnesses") }
+
+            /// Placeholder of the type-to-filter field at the top of the model picker popover
+            ///
+            /// Key: `workbench.filter.searchModels`
+            /// en: "Find a model"
+            public static var searchModels: String { L10nSupport.string("workbench.filter.searchModels") }
+
+            /// Footer hint of a filter picker: ⌥-clicking a row keeps only that row selected
+            ///
+            /// Key: `workbench.filter.soloHint`
+            /// en: "⌥-click keeps only that one"
+            public static var soloHint: String { L10nSupport.string("workbench.filter.soloHint") }
+        }
+
         public enum Header {
             /// Tooltip on the Workbench header refresh button; page is the current page's title distinct-from: quota.misc.refreshProvider — a provider name stays Latin and takes a space in Simplified Chinese; a page title is translated and does not.
             ///
@@ -8851,6 +8883,18 @@ public enum L10n {
                 /// Key: `workbench.sessions.search.clearHelp`
                 /// en: "Clear the search"
                 public static var clearHelp: String { L10nSupport.string("workbench.sessions.search.clearHelp") }
+
+                /// Heading above the message-role toggles in the Sessions search-scope menu
+                ///
+                /// Key: `workbench.sessions.search.messagesHeading`
+                /// en: "Also search messages by"
+                public static var messagesHeading: String { L10nSupport.string("workbench.sessions.search.messagesHeading") }
+
+                /// First line of the Sessions search-scope menu: what the search always covers, before the message-role toggles
+                ///
+                /// Key: `workbench.sessions.search.metadataAlways`
+                /// en: "Titles, project folders and harness names are always searched."
+                public static var metadataAlways: String { L10nSupport.string("workbench.sessions.search.metadataAlways") }
 
                 /// Placeholder of the Sessions search field
                 ///
@@ -11455,6 +11499,11 @@ enum L10nCatalogFacts {
         "usage.yearHeatmap.total",
         "workbench.appearance.useDark",
         "workbench.appearance.useLight",
+        "workbench.filter.noMatches",
+        "workbench.filter.none",
+        "workbench.filter.searchHarnesses",
+        "workbench.filter.searchModels",
+        "workbench.filter.soloHint",
         "workbench.header.refreshPage",
         "workbench.page.resets.subtitle",
         "workbench.page.resets.title",
@@ -11586,6 +11635,8 @@ enum L10nCatalogFacts {
         "workbench.sessions.search.bodyIndexed",
         "workbench.sessions.search.bodyNotIndexed",
         "workbench.sessions.search.clearHelp",
+        "workbench.sessions.search.messagesHeading",
+        "workbench.sessions.search.metadataAlways",
         "workbench.sessions.search.placeholder",
         "workbench.sessions.selectMode",
         "workbench.sessions.selectModeHelp",
@@ -13024,6 +13075,11 @@ enum L10nCatalogFacts {
         "usage.yearHeatmap.total": 1,
         "workbench.appearance.useDark": 0,
         "workbench.appearance.useLight": 0,
+        "workbench.filter.noMatches": 0,
+        "workbench.filter.none": 0,
+        "workbench.filter.searchHarnesses": 0,
+        "workbench.filter.searchModels": 0,
+        "workbench.filter.soloHint": 0,
         "workbench.header.refreshPage": 1,
         "workbench.page.resets.subtitle": 0,
         "workbench.page.resets.title": 0,
@@ -13155,6 +13211,8 @@ enum L10nCatalogFacts {
         "workbench.sessions.search.bodyIndexed": 0,
         "workbench.sessions.search.bodyNotIndexed": 0,
         "workbench.sessions.search.clearHelp": 0,
+        "workbench.sessions.search.messagesHeading": 0,
+        "workbench.sessions.search.metadataAlways": 0,
         "workbench.sessions.search.placeholder": 0,
         "workbench.sessions.selectMode": 0,
         "workbench.sessions.selectModeHelp": 0,
