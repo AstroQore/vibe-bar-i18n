@@ -15,6 +15,14 @@ from the strings themselves.
     python3 scripts/import_from_app.py --app-root ../vibe-bar
     python3 scripts/import_from_app.py --app-root ../vibe-bar --report
 
+A real run writes two things: `catalog/*.json`, and
+`migration/rename-from-app.json` — every app key whose name does not
+survive, and the name that replaced it. The app cannot move 177 call sites
+off a decision spread over five tables, and a rename it has to infer from a
+diff is a rename it will get wrong once. Dropped keys are listed separately
+because they have no successor: those call sites format a value instead of
+looking a sentence up, which is a code change rather than a rename.
+
 Two schema differences had to resolve somewhere:
 
 *   **`args` (app) versus `placeholders` (here).** This repository wins. It
@@ -47,6 +55,8 @@ from typing import Dict, List, Optional, Tuple
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 CATALOG_DIR = os.path.join(ROOT, "catalog")
+MIGRATION_DIR = os.path.join(ROOT, "migration")
+RENAME_MAP_PATH = os.path.join(MIGRATION_DIR, "rename-from-app.json")
 SOURCE_LOCALE = "en"
 LOCALES = ["en", "zh-Hans"]
 
@@ -113,6 +123,20 @@ RENAME: Dict[str, str] = {
     "quota.resetHistory.lane.noCycles": "resetHistory.noCompletedCycles",
     "quota.resetHistory.totals.headline": "resetHistory.wastedSummary",
     "quota.resetHistory.lane.wasteSummary": "resetHistory.laneAverage",
+    # `resetHistory.title` here has always meant the side-by-side comparison
+    # card — its comment on `main` says so — and the app has now grown the key
+    # that actually matches it. So the comparison title maps onto the shared
+    # name, and the app's own `quota.resetHistory.title`, which titles a single
+    # provider's card, gets a name of its own instead of being flattened onto
+    # a key that means something else. This is what the previous import's
+    # refusal was standing in for; the shared wording still wins, and the app
+    # no longer loses a second card's title to it.
+    "quota.resetHistory.compareTitle": "resetHistory.title",
+    "quota.resetHistory.title": "resetHistory.cardTitle",
+    # One option, keyed twice because the app built two pickers. Collapsing it
+    # onto either provider's name would put "Claude" in the key the Codex
+    # picker calls, so the survivor is renamed to the name the concept has.
+    "settings.usageMode.claude.oauthOnly": "settings.usageMode.oauthOnly",
 }
 
 # `resetHistory.*` is a top-level namespace here (AGENTS.md § 3) and was
@@ -130,13 +154,41 @@ NAMESPACE_MOVES: List[Tuple[str, str]] = [
 # right is dropped and its call sites move at extraction time. Chosen for
 # the more general home: a string used on three surfaces belongs in
 # `common.*`, not in whichever surface happened to key it first.
+#
+# Where neither name is more general — two surfaces, one sentence, no
+# `common.*` for it — the survivor is the key the signature group already
+# names first, so a collapse and a `distinct-from:` note anchor on the same
+# key rather than on two different ones. Two exceptions, both spelled out
+# where they sit: a name that is already on `main` cannot move, because the
+# other client calls it; and a name that would be actively wrong for the
+# surviving concept is renamed in § 2 first and collapsed onto the new name
+# here.
+#
+# The test each entry has to pass: a translator holding both keys' comments
+# and nothing else writes the same string for both. When the honest answer
+# is "which one?", the pair belongs in § 4 instead.
 COLLAPSE: Dict[str, List[str]] = {
+    "common.add": ["workbench.skills.discover.addRepo"],
+    "common.auto": [
+        "cost.granularity.auto", "settings.credentialSource.auto",
+        "settings.usageMode.auto", "usage.filters.autoMenu",
+        "usage.trend.granularityAuto",
+    ],
     "common.duration.days": ["quota.freshness.age.days"],
     "common.duration.hours": ["quota.freshness.age.hours"],
     "common.duration.minutes": ["quota.freshness.age.minutes"],
+    "common.name": ["menuBar.composer.metric.label"],
     "common.off": ["platform.macos.launchAtLogin.off"],
+    "common.provider": [
+        "menuBar.composer.field.provider", "usage.table.column.provider",
+    ],
+    "common.remove": ["menuBar.composer.action.remove"],
     "common.updated.justNow": ["status.card.updatedJustNow"],
-    "cost.timeframe.today": ["cost.metric.today"],
+    "cost.timeframe.month": ["workbench.sessions.range.month"],
+    "cost.timeframe.today": [
+        "cost.metric.today", "workbench.sessions.range.today",
+    ],
+    "cost.timeframe.week": ["workbench.sessions.range.week"],
     "cost.timeframe.yesterday": ["cost.metric.yesterday"],
     "cost.timeframe.weekShort": ["cost.topModel.window"],
     "cost.metric.totalCost": ["usage.hero.totalCost"],
@@ -144,20 +196,71 @@ COLLAPSE: Dict[str, List[str]] = {
     "error.network": ["quota.empty.network.headline"],
     "error.noAccountFound": ["quota.empty.noAccount.headline"],
     "error.parseFailure": ["quota.empty.parseChanged.headline"],
+    # The menu bar is macOS-only, but `menuBar.*` is the home the app itself
+    # chose for the composer, and § 4 is explicit that `platform.*` is for what
+    # one client *cannot* show rather than for what one client keyed first.
+    "menuBar.composer.block.logo": ["platform.macos.menuBar.fieldStyle.logo"],
+    "menuBar.composer.colour.forecast": [
+        "platform.macos.menuBar.color.forecast",
+    ],
+    "menuBar.composer.template.compact": [
+        "platform.macos.menuBar.layout.compact",
+    ],
+    "menuBar.composer.template.twoRows": [
+        "platform.macos.menuBar.layout.twoRows",
+    ],
     "onboarding.step.browserCookies.title": ["onboarding.done.browserCookies"],
     "onboarding.step.pricing.title": ["onboarding.done.modelPricing"],
     "onboarding.step.subscriptions.title": ["onboarding.done.subscriptions"],
     "platform.macos.launchAtLogin.title": ["onboarding.done.launchAtLogin"],
-    "popover.tab.overview": ["settings.section.overview"],
+    "popover.header.settings": [
+        "settings.sidebar.settings", "workbench.page.settings.title",
+    ],
+    "popover.tab.overview": [
+        "platform.macos.menuBar.overview", "settings.section.overview",
+    ],
     "quota.reset.in": ["quota.bucket.resetsIn"],
     "quota.forecast.reset.enough": ["quota.upcoming.forecastAtReset"],
+    "quota.forecast.metric.forecastAtReset": [
+        "menuBar.composer.metric.forecastPercent",
+    ],
+    "quota.history.moreReadings": [
+        "workbench.resets.calendar.moreEntries",
+    ],
+    # `quota.remainingPercent` is one of the 23 keys that were here before the
+    # app's catalogue arrived, so it is the name that cannot move.
+    "quota.remainingPercent": ["quota.mini.forecastLeft"],
     "settings.pricing.localOverrides": ["settings.pricing.localOverridesName"],
+    "settings.usageMode.oauthOnly": ["settings.usageMode.codex.oauthOnly"],
     "status.component.degraded": ["status.overview.degraded"],
     "status.component.maintenance": [
         "status.indicator.maintenance", "status.overview.maintenance",
     ],
+    # `status.summary.*` spells the same two states in sentence case. That is
+    # the same incidental drift `status.overview.partialOutage` already had,
+    # and the same resolution: one vocabulary, title case, dropped in verbatim
+    # at the call site. Nothing has to learn to change case.
+    "status.component.majorOutage": ["status.summary.majorOutage"],
     "status.component.operational": ["status.overview.operational"],
-    "status.component.partialOutage": ["status.overview.partialOutage"],
+    "status.component.partialOutage": [
+        "status.overview.partialOutage", "status.summary.partialOutage",
+    ],
+    "usage.breakdown.models": [
+        "usage.filters.modelsMenu", "usage.mix.dimension.models",
+    ],
+    "usage.breakdown.projects": ["usage.mix.dimension.projects"],
+    "usage.filters.allHarnessesHelpNone": [
+        "workbench.sessions.allChip.helpSelected",
+    ],
+    "usage.filters.allHarnessesSelectNone": [
+        "workbench.sessions.allChip.labelSelected",
+    ],
+    # A donut slice's comment says what the number *is*; a column header's says
+    # where it sits. A translator needs the first, so the slice is the survivor
+    # even though the column is the older key.
+    "usage.mix.flow.cache": ["usage.table.column.cache"],
+    "usage.mix.flow.output": ["usage.table.column.output"],
+    "usage.table.column.harness": ["workbench.sessions.filter.harness"],
 }
 
 # ---------------------------------------------------------------------------
@@ -167,21 +270,43 @@ COLLAPSE: Dict[str, List[str]] = {
 # § 4's escape hatch. Each of these is a word English happens to spell once
 # and another language may not — the note goes into the surviving key's
 # comment so a reviewer sees the claim rather than a silent pass.
+#
+# Five kinds of pair end up here, and each reason says which:
+#
+# *   The referent differs. A bucket one day wide is a duration; a period
+#     column's header names a date. Simplified Chinese already writes 天 and
+#     日 for that pair, which is what a second language quietly disagreeing
+#     with a collapse looks like before anyone notices.
+# *   One is a value and the other a command. A countdown reading "now" and
+#     a button that jumps the chart back to now are two words English
+#     spells alike, not one word doing two jobs.
+# *   The same adjective on two different axes. "Compact" agrees with a
+#     different noun in every language that inflects one, so a menu-bar
+#     template and a popover density cannot share a key.
+# *   One spelling is a rendering the app sets on purpose — an all-caps hero
+#     metric, a lowercase caption under a bar. Collapsing those moves the
+#     casing into a call site, which is a code change and not a rename, and
+#     casing is not something a catalogue can do on a client's behalf
+#     anyway: Turkish is the standing reminder.
+# *   The value is a joiner: two placeholders and a separator. Its
+#     placeholder names are the only part carrying meaning, so one key
+#     cannot serve six different pairs of values.
 # Keyed by the *surviving* key; the partner it is distinct from is worked
 # out from the signature groups, because the validator names the first key
 # in the group and that is not something a hand-written table can promise to
 # keep saying. A group with more than one key and no reason here fails the
 # conversion rather than reaching the validator.
 DISTINCT_REASONS: Dict[str, str] = {
+    # --- carried over from the first import ----------------------------
     "resetHistory.axisNow":
-        "a cycle grid's live column and a countdown that reached zero are "
-        "different things",
+        "a cycle grid's live column and a countdown that reached zero "
+        "are different things",
     "resetHistory.window.all":
         "every recorded cycle and an all-time date range are different "
         "spans",
     "quota.forecast.verdict.learning":
-        "a verdict about the quota and a confidence level in the forecast "
-        "are different judgements",
+        "a verdict about the quota and a confidence level in the "
+        "forecast are different judgements",
     "status.component.other":
         "a status component outside the named groups and a quota group "
         "without an L3 name sit on different naming axes (vibe-bar "
@@ -190,14 +315,17 @@ DISTINCT_REASONS: Dict[str, str] = {
         "the Settings section for login items and the language option "
         "meaning 'follow the OS language' are different things",
     "settings.section.refreshing":
-        "a Settings section for refresh intervals, a button label while a "
-        "fetch runs, and a provider's in-flight state are three things",
+        "a Settings section for refresh intervals, a button label while "
+        "a fetch runs, and a provider's in-flight state are three "
+        "things",
     "settings.pricing.refreshing":
-        "a Settings section for refresh intervals, a button label while a "
-        "fetch runs, and a provider's in-flight state are three things",
+        "a Settings section for refresh intervals, a button label while "
+        "a fetch runs, and a provider's in-flight state are three "
+        "things",
     "status.overview.refreshing":
-        "a Settings section for refresh intervals, a button label while a "
-        "fetch runs, and a provider's in-flight state are three things",
+        "a Settings section for refresh intervals, a button label while "
+        "a fetch runs, and a provider's in-flight state are three "
+        "things",
     "settings.section.components":
         "the Settings section listing bundled components and a provider "
         "status page's components are different lists",
@@ -205,15 +333,227 @@ DISTINCT_REASONS: Dict[str, str] = {
         "the Settings section listing bundled components and a provider "
         "status page's components are different lists",
     "settings.mcp.status":
-        "the local MCP socket's listening state and a provider's service "
-        "status are different things",
+        "the local MCP socket's listening state and a provider's "
+        "service status are different things",
     "status.overview.title":
-        "the local MCP socket's listening state and a provider's service "
-        "status are different things",
+        "the local MCP socket's listening state and a provider's "
+        "service status are different things",
+    # --- a value on one screen, a command on another --------------------
+    "usage.trend.now":
+        "a countdown that has reached zero is a value; the chart's Now "
+        "button is a command that jumps the window back to the present",
+    "workbench.resets.calendar.today":
+        "a timeframe covering today is a value; the calendar's Today "
+        "button is a command that returns the grid to the current month",
+    # --- the same word, a different referent ----------------------------
+    "cost.timeframe.all":
+        "a filter chip that selects every item and a timeframe covering "
+        "all recorded history are different spans",
+    "settings.credentialSource.off":
+        "a toggle's state read back in a summary row and a picker "
+        "option meaning 'do not fetch at all' are different things — "
+        "Simplified Chinese already writes 已关闭 and 关闭",
+    "usage.table.column.day":
+        "a chart bucket one day wide is a duration; a period column's "
+        "header names the date its row covers — Simplified Chinese "
+        "already writes 天 and 日",
+    "usage.table.column.hour":
+        "a chart bucket one hour wide is a duration; a period column's "
+        "header names the hour its row covers, which is the same split "
+        "Simplified Chinese already spells out for Day",
+    "onboarding.pricing.interval.hour":
+        "a chart's bucket width is a picker option; a refresh interval "
+        "of one hour is read inside a sentence",
+    "quota.history.forecastLegend":
+        "a colour-basis option naming what the colour follows and a "
+        "chart legend naming the projection line are different things",
+    "quota.history.tooltipPace":
+        "the metric is how far usage has drifted from the linear "
+        "expectation; the tooltip row is that expectation itself — "
+        "Simplified Chinese already writes 消耗速度 and 进度",
+    "settings.miniWindow.mode.strip":
+        "the label over the menu-bar mode control and a mini-window "
+        "layout named Strip are different things",
+    "platform.macos.menuBar.fieldStyle.label":
+        "the starting text of a new block, which the user types over, "
+        "and a field style that shows the field's name are different "
+        "things — Simplified Chinese already writes 标签 and 名称",
+    "settings.section.layout":
+        "the menu-bar item's own arrangement and the Settings section "
+        "about page layout are different things — Simplified Chinese "
+        "already writes 排布 and 布局",
+    "usage.filters.refreshInterval":
+        "an age — how long ago a reading was taken — and an interval — "
+        "how often to poll — are different quantities",
+    "usage.filters.allModels":
+        "a quota group covering every model on a plan and a menu item "
+        "that clears the model filter are different things",
+    "usage.trend.granularityDaily":
+        "a quota window's group label and a chart's bucket width are "
+        "different things",
+    "usage.trend.granularityWeekly":
+        "a quota window's group label and a chart's bucket width are "
+        "different things",
+    "usage.mix.other":
+        "a quota bucket with no group of its own and a donut slice that "
+        "collapses everything below the top five are different "
+        "remainders",
+    "usage.table.column.time":
+        "a segmented control that places cycles on a shared calendar "
+        "and a request's timestamp column are different things",
+    "usage.table.column.input":
+        "a price per million input tokens and a count of input tokens "
+        "are different quantities",
+    "usage.mix.flow.output":
+        "a price per million output tokens and a count of output tokens "
+        "are different quantities",
+    "usage.table.column.requests":
+        "the breakdown tab lists one row per request; the table column "
+        "counts them — Simplified Chinese already writes 请求 and 请求数",
+    "usage.tokens.title":
+        "the lowercase unit under a donut's total and the name of the "
+        "token metric are different words in the sentences they sit in",
+    "workbench.resets.risk.badge.out":
+        "'Out' is the output-token legend there and 'has run out' here "
+        "— Simplified Chinese already writes 输出 and 耗尽",
+    "workbench.skills.wiring.source":
+        "a session log's path on disk and a skill's one real copy are "
+        "different sources — Simplified Chinese already writes 来源文件 and "
+        "源目录",
+    "workbench.status.updated":
+        "a toast naming the skill it re-fetched and a header line "
+        "naming the time it refreshed are different sentences",
+    # --- an ellipsis is the promise that a confirmation follows ---------
+    "workbench.sessions.deleteEllipsis":
+        "the ellipsis promises a confirmation; the plain button is the "
+        "confirmed action itself",
+    "workbench.skills.uninstall":
+        "the menu item's ellipsis promises the confirmation dialog; "
+        "this is the destructive button inside it",
+    "menuBar.composer.mode.custom":
+        "a colour the user picks, whose ellipsis promises the well that "
+        "opens, and the strip the user assembles are different things",
+    # --- the same adjective on two different axes -----------------------
+    "usage.filters.rangeCustom":
+        "a colour the user picks and a date range the user picked are "
+        "options on different axes; the adjective agrees with a "
+        "different noun in every language that inflects one",
+    "menuBar.composer.weight.regular":
+        "Regular names a type weight in one list and a type size in the "
+        "other, which are options on different axes; the adjective "
+        "agrees with a different noun in every language that inflects "
+        "one",
+    "settings.miniWindow.mode.regular":
+        "a type size and a mini-window layout are options on different "
+        "axes; the adjective agrees with a different noun in every "
+        "language that inflects one",
+    "settings.popoverDensity.regular":
+        "a type size and a popover density are options on different "
+        "axes; the adjective agrees with a different noun in every "
+        "language that inflects one",
+    "settings.miniWindow.mode.compact":
+        "a menu-bar template and a mini-window layout are options on "
+        "different axes; the adjective agrees with a different noun in "
+        "every language that inflects one",
+    "settings.popoverDensity.compact":
+        "a menu-bar template and a popover density are options on "
+        "different axes; the adjective agrees with a different noun in "
+        "every language that inflects one",
+    "settings.miniWindow.density.roomy":
+        "a menu-bar template and a mini-window strip density are "
+        "options on different axes; the adjective agrees with a "
+        "different noun in every language that inflects one",
+    # --- one spelling is a rendering the app sets on purpose ------------
+    "settings.displayMode.remaining":
+        "the lowercase caption under a bar and the title-case picker "
+        "option are two renderings the app sets deliberately; "
+        "collapsing them would move the casing into a call site, which "
+        "is a code change rather than a rename",
+    "settings.displayMode.used":
+        "the lowercase caption under a bar and the title-case picker "
+        "option are two renderings the app sets deliberately; "
+        "collapsing them would move the casing into a call site, which "
+        "is a code change rather than a rename",
+    "usage.hero.requests":
+        "the breakdown tab lists one row per request; the hero metric "
+        "counts them in all caps, and the two spellings are two "
+        "renderings the app sets deliberately; collapsing them would "
+        "move the casing into a call site, which is a code change "
+        "rather than a rename",
+    "usage.mix.harness.title":
+        "the all-caps section label and the title-case donut card title "
+        "are two renderings the app sets deliberately; collapsing them "
+        "would move the casing into a call site, which is a code change "
+        "rather than a rename",
+    "workbench.resets.risk.badge.watch":
+        "the forecast verdict is read as a sentence and the risk badge "
+        "is all caps, and the two spellings are two renderings the app "
+        "sets deliberately; collapsing them would move the casing into "
+        "a call site, which is a code change rather than a rename",
+    # --- a joiner whose only words are its placeholder names ------------
+    "popover.machines.labelWithStatus":
+        "the value is two placeholders and a separator, so the "
+        "placeholder names are the only part of it that carries "
+        "meaning; one key cannot name both halves of six different "
+        "pairs",
+    "settings.remote.statusWithCode":
+        "the value is two placeholders and a separator, so the "
+        "placeholder names are the only part of it that carries "
+        "meaning; one key cannot name both halves of six different "
+        "pairs",
+    "usage.filters.companyHelp":
+        "the value is two placeholders and a separator, so the "
+        "placeholder names are the only part of it that carries "
+        "meaning; one key cannot name both halves of six different "
+        "pairs",
+    "usage.table.harnessHelp":
+        "the value is two placeholders and a separator, so the "
+        "placeholder names are the only part of it that carries "
+        "meaning; one key cannot name both halves of six different "
+        "pairs",
+    "usage.yearHeatmap.tooltip":
+        "the value is two placeholders and a separator, so the "
+        "placeholder names are the only part of it that carries "
+        "meaning; one key cannot name both halves of six different "
+        "pairs",
+    "workbench.sessions.filter.harnessCount":
+        "a legend marker's name and the figure it marks, and a harness "
+        "with its session count, are different pairs; the placeholder "
+        "names are the sentence",
+    "workbench.sessions.fraction":
+        "a page counter and the Sessions page's general-purpose counter "
+        "count different things; the placeholder names are the sentence",
+    "usage.trend.showProvider":
+        "a page label is translated and sits tight against 显示; a "
+        "provider name stays Latin and takes a space around it — "
+        "Simplified Chinese already writes the two differently",
+    "workbench.header.refreshPage":
+        "a provider name stays Latin and takes a space in Simplified "
+        "Chinese; a page title is translated and does not",
 }
 
 # ---------------------------------------------------------------------------
-# 5. Keys this repository already had
+# 5. Comments a collapse made untrue
+# ---------------------------------------------------------------------------
+
+# A survivor keeps the app's comment, and for almost every collapse that is
+# fine: the comment says what the string *means*, which is what a translator
+# needs, and naming one of the surfaces it appears on costs nothing. These two
+# are the exceptions — each would make a translator believe something about the
+# string that stopped being true when the other key folded into it.
+COMMENT_OVERRIDE: Dict[str, str] = {
+    "settings.usageMode.oauthOnly":
+        "Usage-source option offered for both Claude and Codex: read usage "
+        "over OAuth only. The app keyed it twice, once per picker.",
+    "usage.table.column.harness":
+        "Column header on the Requests table, where the call site uppercases "
+        "it, and the Sessions filter menu that ticks individual harnesses, "
+        "where it is read as written. 'Harness' is the usage-axis unit and "
+        "stays as spelled.",
+}
+
+# ---------------------------------------------------------------------------
+# 6. Keys this repository already had
 # ---------------------------------------------------------------------------
 
 # The default is that the app does not get to change them. A key here is
@@ -268,6 +608,15 @@ def target_key(key: str) -> Optional[str]:
 # one this repository already had. Reported rather than left silent — each
 # one is a sentence that changes on the native app's screen at extraction.
 REFUSED: Dict[str, Tuple[str, str]] = {}
+
+# The other direction, and the quieter one. `reconcile_existing` compares
+# source values, so a key whose English both catalogues agree on takes the
+# app's *translation* without anyone being asked. That is usually right —
+# the app has 67 Chinese strings saying 额度 and this repository had two
+# older ones saying 配额, and freezing the two would leave the odd pair out.
+# It is not right often enough to be silent about, so it is reported too:
+# locale, key, what this repository said, what the app says.
+TRANSLATION_REPLACED: Dict[str, List[Tuple[str, str, str]]] = {}
 
 
 def convert(app_root: str, problems: List[str]) -> Tuple[dict, dict, dict]:
@@ -333,6 +682,14 @@ def convert(app_root: str, problems: List[str]) -> Tuple[dict, dict, dict]:
     # key the app also had; the translation has to follow whichever source
     # value survived, so it runs before the translations are built.
     kept = reconcile_existing(converted, problems)
+    for key, comment in COMMENT_OVERRIDE.items():
+        if key not in converted:
+            problems.append(
+                "COMMENT_OVERRIDE: %r is not a key the conversion produced"
+                % key
+            )
+            continue
+        converted[key]["comment"] = comment
     annotate_homonyms(converted, problems)
 
     translations: Dict[str, Dict[str, dict]] = {}
@@ -349,6 +706,13 @@ def convert(app_root: str, problems: List[str]) -> Tuple[dict, dict, dict]:
         for key, renamed in mapping.items():
             if key in raw:
                 out[renamed] = {"value": raw[key]["value"]}
+                was = previous.get(renamed, {}).get("value")
+                if renamed in ADOPT_FROM_APP:
+                    was = None  # declared in § 7, and overwritten below
+                if was is not None and was != raw[key]["value"]:
+                    TRANSLATION_REPLACED.setdefault(locale, []).append(
+                        (renamed, was, raw[key]["value"])
+                    )
         for key in kept:
             if key in previous:
                 out[key] = dict(previous[key])
@@ -448,6 +812,58 @@ def merge_existing(converted: dict, translations: dict, problems: List[str]) -> 
     return kept
 
 
+def rename_map(app_root: str) -> Tuple[Dict[str, str], Dict[str, str]]:
+    """Every app key whose name does not survive, and what replaced it.
+
+    The app has to move its call sites when the catalogue leaves it, and a
+    list of decisions spread across four tables is not something a call site
+    can be moved by. So the tables are collapsed into one map the app can
+    apply mechanically: old key on the left, the name that survives on the
+    right. Drops are reported separately because they have no survivor — a
+    dropped key is a call site that has to start formatting instead of
+    looking a sentence up, which is a code change and not a rename.
+    """
+    source = load(
+        os.path.join(app_root, "Resources", "i18n", "%s.json" % SOURCE_LOCALE)
+    )
+    alias_of: Dict[str, str] = {}
+    for survivor, aliases in COLLAPSE.items():
+        for alias in aliases:
+            alias_of[alias] = survivor
+    renames: Dict[str, str] = {}
+    dropped: Dict[str, str] = {}
+    for key in sorted(source):
+        if key in DROP:
+            dropped[key] = DROP[key]
+            continue
+        if key in alias_of:
+            survivor = alias_of[key]
+            renames[key] = target_key(survivor) or survivor
+            continue
+        renamed = target_key(key)
+        if renamed and renamed != key:
+            renames[key] = renamed
+    return renames, dropped
+
+
+def write_rename_map(renames: Dict[str, str], dropped: Dict[str, str]) -> None:
+    document = {
+        "$comment": (
+            "Produced by scripts/import_from_app.py. Left: a key "
+            "AstroQore/vibe-bar's own Resources/i18n used. Right: the name "
+            "it has in this catalogue. `dropped` has no right-hand side: "
+            "those keys are formatting rather than copy (AGENTS.md 3), and "
+            "each call site formats the value instead of looking it up."
+        ),
+        "renames": renames,
+        "dropped": dropped,
+    }
+    os.makedirs(MIGRATION_DIR, exist_ok=True)
+    with open(RENAME_MAP_PATH, "w", encoding="utf-8") as handle:
+        json.dump(document, handle, ensure_ascii=False, indent=2, sort_keys=False)
+        handle.write("\n")
+
+
 def write(converted: dict, translations: dict) -> None:
     for locale in LOCALES:
         keys = converted if locale == SOURCE_LOCALE else translations[locale]
@@ -494,16 +910,28 @@ def main(argv: Optional[List[str]] = None) -> int:
         print("kept from this repository: %s"
               % ", ".join("%s %d" % (loc, len(ks)) for loc, ks in sorted(kept.items())))
         print("keys written:              %d" % len(converted))
+        renames, drops = rename_map(args.app_root)
+        print("rename map:                %d renames, %d drops"
+              % (len(renames), len(drops)))
         if refused:
             print("\nkept this repository's wording over the app's — each one "
                   "changes what the native app renders, at extraction time:")
             for key, (app_value, ours) in sorted(refused.items()):
                 print("  %s\n      app:    %r\n      shared: %r" % (key, app_value, ours))
+        for locale in sorted(TRANSLATION_REPLACED):
+            print("\ntook the app's %s over this repository's, on keys whose "
+                  "English both agree on:" % locale)
+            for key, was, now in sorted(TRANSLATION_REPLACED[locale]):
+                print("  %s\n      shared: %r\n      app:    %r" % (key, was, now))
         return 0
 
     write(converted, translations)
+    renames, drops = rename_map(args.app_root)
+    write_rename_map(renames, drops)
     print("import: %d keys x %d locales written to catalog/"
           % (len(converted), len(LOCALES)))
+    print("import: %d renames and %d drops written to %s"
+          % (len(renames), len(drops), os.path.relpath(RENAME_MAP_PATH, ROOT)))
     return 0
 
 

@@ -60,6 +60,76 @@
 			<string>%lld 个周期</string>
 		</dict>
 	</dict>
+	<key>quota.forecast.metric.comparableCycles</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@可比重置周期</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个</string>
+		</dict>
+	</dict>
+	<key>quota.forecast.metric.recentIntervals</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@近期区间</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 段</string>
+		</dict>
+	</dict>
+	<key>quota.history.curveCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@曲线</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 条</string>
+		</dict>
+	</dict>
+	<key>quota.history.providerCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@厂商</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 家</string>
+		</dict>
+	</dict>
+	<key>quota.misc.independentCopies</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@独立配置</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 份</string>
+		</dict>
+	</dict>
 	<key>quota.perModelLimits</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -86,6 +156,20 @@
 			<string>lld</string>
 			<key>other</key>
 			<string>%lld 张</string>
+		</dict>
+	</dict>
+	<key>resetHistory.earlyRefillCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@在窗口结束前补额</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个周期</string>
 		</dict>
 	</dict>
 	<key>resetHistory.laneAverage</key>
@@ -158,6 +242,20 @@
 			<string>%lld 个组件</string>
 		</dict>
 	</dict>
+	<key>usage.filters.modelsSelected</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>已选 %#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个</string>
+		</dict>
+	</dict>
 	<key>usage.harnessMix.activeCount</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -184,6 +282,370 @@
 			<string>lld</string>
 			<key>other</key>
 			<string>%lld 条请求</string>
+		</dict>
+	</dict>
+	<key>usage.mix.otherCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>另有 %#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 项</string>
+		</dict>
+	</dict>
+	<key>usage.table.activeDays</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个活跃日</string>
+		</dict>
+	</dict>
+	<key>usage.table.activeHours</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个活跃小时</string>
+		</dict>
+	</dict>
+	<key>usage.table.activeWeeks</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个活跃周</string>
+		</dict>
+	</dict>
+	<key>usage.table.companyCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 家厂商</string>
+		</dict>
+	</dict>
+	<key>usage.table.modelCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个模型</string>
+		</dict>
+	</dict>
+	<key>usage.table.projectCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@ · 最多 30 天明细</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个项目</string>
+		</dict>
+	</dict>
+	<key>usage.table.statRow</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%3$@，%1$#@requests@，%4$@，%2$@</string>
+		<key>requests</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%1$lld 条请求</string>
+		</dict>
+	</dict>
+	<key>usage.trend.accessibilitySummary</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$#@count@，%3$@ token，%2$@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%1$lld 家厂商</string>
+		</dict>
+	</dict>
+	<key>usage.yearHeatmap.a11y</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%2$@ 过去一年的每日花费，共 %1$#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%1$lld 周</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.count.sessions</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个会话</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.delete.confirm</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>删除 %lld 个会话？</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.row.autoReviewsMerged</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>已合并 %#@count@ Auto Review</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 条</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.row.messageCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 条消息</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.toast.deleted</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>已删除 %lld 个会话。</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.transcript.truncatedTitle</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>已显示这份超大日志中的前 %#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 条消息</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.appSeesCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%2$@ 可见 %1$#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%1$lld 个技能</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.countTotal</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个技能</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.discover.installs</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 次安装</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.import.apply</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>应用 %#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 项更改</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.toast.importConflicts</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>有 %#@count@保持不变。</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个冲突的应用副本</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.toast.importRecognized</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>已识别 %#@count@。</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个已有技能</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.toast.installedArchive</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>已从压缩包安装 %#@count@。</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个技能</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.toast.recorded</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>已记录 %#@count@。</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个技能</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.toast.reposUnreadable</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>有 %#@count@无法读取。</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个仓库</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.toast.updatesAvailable</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>有 %#@count@可以更新。</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个技能</string>
 		</dict>
 	</dict>
 </dict>

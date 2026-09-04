@@ -33,6 +33,8 @@ scripts/             # validate + generate, pure functions of catalog/
 implementations/
   swift/             # generated .strings/.stringsdict + typed Swift API
   typescript/        # generated key union + ICU runtime
+migration/
+  rename-from-app.json  # old native-app key → the name it has here
 Package.swift        # root manifest, points into implementations/swift
 package.json         # root manifest, points into implementations/typescript
 ```
@@ -165,6 +167,14 @@ Before adding a key:
    duplicate this rule exists to prevent — `platform.*` is for what only one
    client *can* show, never for what one client happened to build first.
 3. Only then add a key.
+
+`scripts/import_from_app.py` is where that judgement was recorded for the
+native app's catalogue, and `migration/rename-from-app.json` is what it
+leaves behind: every key the import retired and the name that replaced it,
+so the app moves its call sites from a table rather than from a diff. It is
+a migration artefact, not part of the catalogue — nothing generated reads
+it, and it stops being regenerated the day the app has no catalogue of its
+own left to import.
 
 `scripts/validate.py` enforces the mechanical half: two source values that
 say the same thing — ignoring case, trailing punctuation and placeholder
