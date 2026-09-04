@@ -4416,7 +4416,7 @@ export const messages: {
     "common.duration.minutes": "{minutes} 分钟",
     "common.duration.now": "现在",
     "common.name": "名称",
-    "common.noData": "无记录数据",
+    "common.noData": "暂无记录",
     "common.off": "已关闭",
     "common.on": "已开启",
     "common.open": "打开",

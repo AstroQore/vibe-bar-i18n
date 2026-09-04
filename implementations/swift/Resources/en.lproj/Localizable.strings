@@ -60,7 +60,7 @@
 /* Field label for a user-chosen name */
 "common.name" = "Name";
 
-/* A chart tooltip row for a moment nothing was recorded — the app was not watching, rather than the value being zero */
+/* Empty state where a chart or list has nothing to draw yet. */
 "common.noData" = "No data recorded";
 
 /* A toggle's state, read as a value in a summary row */

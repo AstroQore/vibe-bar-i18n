@@ -575,10 +575,19 @@ COMMENT_OVERRIDE: Dict[str, str] = {
 # name wins — applied to the metadata rather than the sentence, and it is
 # declared here rather than inferred because "the app's is newer" is true of
 # the register pass and false of this.
-KEEP_SHARED_MEANING: Dict[str, str] = {
-    "common.noData": "a generic empty state for any chart or list; the app "
-                     "comments it as one observation tooltip, and 暂无记录 "
-                     "reads for both while 无记录数据 reads for neither",
+# Spelled out rather than read off disk: an earlier import already rewrote
+# `catalog/` in place, so the working tree is no longer the baseline it looks
+# like. A declaration that depends on the state it is meant to restore is not
+# a declaration.
+KEEP_SHARED_MEANING: Dict[str, Dict[str, str]] = {
+    "common.noData": {
+        "why": "a generic empty state for any chart or list; the app comments "
+               "it as one observation tooltip, and 暂无记录 reads for both "
+               "uses where 无记录数据 reads for neither",
+        "comment": 'Empty state where a chart or list has nothing to draw yet.',
+        "en": 'No data recorded',
+        "zh-Hans": '暂无记录',
+    },
 }
 
 ADOPT_FROM_APP: Dict[str, Dict[str, object]] = {
@@ -731,7 +740,10 @@ def convert(app_root: str, problems: List[str]) -> Tuple[dict, dict, dict]:
                         (renamed, was, raw[key]["value"])
                     )
         for key in kept:
-            if key in previous:
+            if (shared := KEEP_SHARED_MEANING.get(key)) is not None:
+                if locale in shared:
+                    out[key] = {"value": shared[locale]}
+            elif key in previous:
                 out[key] = dict(previous[key])
         for key, adopt in ADOPT_FROM_APP.items():
             if key in converted and locale in adopt:
@@ -764,8 +776,9 @@ def reconcile_existing(converted: dict, problems: List[str]) -> set:
             converted[key]["placeholders"] = dict(adopt["placeholders"])
             continue
         incoming = converted[key]
-        if key in KEEP_SHARED_MEANING:
-            converted[key] = dict(previous)
+        if (shared := KEEP_SHARED_MEANING.get(key)) is not None:
+            converted[key]["value"] = shared["en"]
+            converted[key]["comment"] = shared["comment"]
             kept.add(key)
             continue
         if incoming.get("value") != previous.get("value") or \

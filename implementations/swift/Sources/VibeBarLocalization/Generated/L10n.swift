@@ -83,7 +83,7 @@ public enum L10n {
         /// en: "Name"
         public static var name: String { L10nSupport.string("common.name") }
 
-        /// A chart tooltip row for a moment nothing was recorded — the app was not watching, rather than the value being zero
+        /// Empty state where a chart or list has nothing to draw yet.
         ///
         /// Key: `common.noData`
         /// en: "No data recorded"

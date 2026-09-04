@@ -60,8 +60,8 @@
 /* Field label for a user-chosen name */
 "common.name" = "名称";
 
-/* A chart tooltip row for a moment nothing was recorded — the app was not watching, rather than the value being zero */
-"common.noData" = "无记录数据";
+/* Empty state where a chart or list has nothing to draw yet. */
+"common.noData" = "暂无记录";
 
 /* A toggle's state, read as a value in a summary row */
 "common.off" = "已关闭";

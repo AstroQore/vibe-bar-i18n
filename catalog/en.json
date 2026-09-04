@@ -97,7 +97,7 @@
     },
     "common.noData": {
       "value": "No data recorded",
-      "comment": "A chart tooltip row for a moment nothing was recorded — the app was not watching, rather than the value being zero"
+      "comment": "Empty state where a chart or list has nothing to draw yet."
     },
     "common.off": {
       "value": "Off",
