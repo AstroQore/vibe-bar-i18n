@@ -1324,7 +1324,7 @@
 "quota.forecast.reset.atRisk" = "Likely to run out before reset";
 
 /* Row caption showing the forecast remaining quota at the refill */
-"quota.forecast.reset.enough" = "Forecast %lld%% left at reset";
+"quota.forecast.reset.enough" = "forecast %lld%% left at reset";
 
 /* One-line forecast summary */
 "quota.forecast.reset.learning" = "Learning your pattern · about %lld%% left";
@@ -1591,7 +1591,7 @@
 "quota.remainingPercent" = "%lld%% left";
 
 /* Caption under a quota bar; when is a countdown, sometimes with an absolute time */
-"quota.reset.in" = "resets in %@";
+"quota.reset.in" = "Resets in %@";
 
 /* A bucket whose reset time is behind us and which has not refreshed */
 "quota.reset.passed" = "reset passed";

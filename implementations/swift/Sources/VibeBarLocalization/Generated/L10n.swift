@@ -3106,9 +3106,9 @@ public enum L10n {
                 /// Row caption showing the forecast remaining quota at the refill
                 ///
                 /// Key: `quota.forecast.reset.enough`
-                /// en: "Forecast {remaining}% left at reset"
-                public static func enough(remaining: Int) -> String {
-                    L10nSupport.format("quota.forecast.reset.enough", remaining)
+                /// en: "forecast {percent}% left at reset"
+                public static func enough(percent: Int) -> String {
+                    L10nSupport.format("quota.forecast.reset.enough", percent)
                 }
 
                 /// One-line forecast summary
@@ -3769,9 +3769,9 @@ public enum L10n {
             /// Caption under a quota bar; when is a countdown, sometimes with an absolute time
             ///
             /// Key: `quota.reset.in`
-            /// en: "resets in {duration}"
-            public static func `in`(duration: String) -> String {
-                L10nSupport.format("quota.reset.in", duration)
+            /// en: "Resets in {when}"
+            public static func `in`(when: String) -> String {
+                L10nSupport.format("quota.reset.in", when)
             }
 
             /// A bucket whose reset time is behind us and which has not refreshed
@@ -4302,8 +4302,8 @@ public enum L10n {
             ///
             /// Key: `resetHistory.verdict.wasteful`
             /// en: "{label} refilled {count, plural, one {once} other {# times}} with more than half unused."
-            public static func wasteful(label: String, count: Int, once: String) -> String {
-                L10nSupport.localizedFormat("resetHistory.verdict.wasteful", label, count, once)
+            public static func wasteful(label: String, count: Int) -> String {
+                L10nSupport.localizedFormat("resetHistory.verdict.wasteful", label, count)
             }
         }
 
@@ -12447,7 +12447,7 @@ enum L10nCatalogFacts {
         "resetHistory.verdict.leaky": 3,
         "resetHistory.verdict.noCycles": 0,
         "resetHistory.verdict.noQuota": 0,
-        "resetHistory.verdict.wasteful": 3,
+        "resetHistory.verdict.wasteful": 2,
         "resetHistory.wastedSummary": 3,
         "resetHistory.window.all": 0,
         "resetHistory.window.eightWeeks": 0,
