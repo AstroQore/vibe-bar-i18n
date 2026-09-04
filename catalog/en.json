@@ -2093,10 +2093,10 @@
       "comment": "One-line forecast summary"
     },
     "quota.forecast.reset.enough": {
-      "value": "forecast {percent}% left at reset",
+      "value": "Forecast {remaining}% left at reset",
       "comment": "Row caption showing the forecast remaining quota at the refill",
       "placeholders": {
-        "percent": "int"
+        "remaining": "int"
       }
     },
     "quota.forecast.reset.learning": {
@@ -2613,10 +2613,10 @@
       }
     },
     "quota.reset.in": {
-      "value": "Resets in {when}",
+      "value": "resets in {duration}",
       "comment": "Caption under a quota bar; when is a countdown, sometimes with an absolute time",
       "placeholders": {
-        "when": "string"
+        "duration": "string"
       }
     },
     "quota.reset.passed": {
@@ -3041,7 +3041,8 @@
       "comment": "Header sentence naming the leakiest quota; label is a quota name and is not translated",
       "placeholders": {
         "label": "string",
-        "count": "int"
+        "count": "int",
+        "once": "string"
       }
     },
     "resetHistory.wastedSummary": {

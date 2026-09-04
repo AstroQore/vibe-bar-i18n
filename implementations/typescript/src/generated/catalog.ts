@@ -1981,7 +1981,7 @@ export interface MessageParams {
   "quota.forecast.metric.unavailable": undefined;
   "quota.forecast.metric.uncertaintyInterval": undefined;
   "quota.forecast.reset.atRisk": undefined;
-  "quota.forecast.reset.enough": { "percent": number };
+  "quota.forecast.reset.enough": { "remaining": number };
   "quota.forecast.reset.learning": { "remaining": number };
   "quota.forecast.reset.surplus": { "remaining": number };
   "quota.forecast.reset.watch": { "remaining": number };
@@ -2074,7 +2074,7 @@ export interface MessageParams {
   "quota.pace.runsOutShort": { "countdown": string };
   "quota.perModelLimits": { "count": number; "provider": string };
   "quota.remainingPercent": { "percent": number };
-  "quota.reset.in": { "when": string };
+  "quota.reset.in": { "duration": string };
   "quota.reset.passed": undefined;
   "quota.reset.passedAt": { "time": string };
   "quota.resetCredits.available": { "count": number };
@@ -2146,7 +2146,7 @@ export interface MessageParams {
   "resetHistory.verdict.leaky": { "label": string; "percent": string; "count": number };
   "resetHistory.verdict.noCycles": undefined;
   "resetHistory.verdict.noQuota": undefined;
-  "resetHistory.verdict.wasteful": { "label": string; "count": number };
+  "resetHistory.verdict.wasteful": { "label": string; "count": number; "once": string };
   "resetHistory.wastedSummary": { "used": string; "wasted": string; "count": number };
   "resetHistory.window.all": undefined;
   "resetHistory.window.eightWeeks": undefined;
@@ -3499,7 +3499,7 @@ export const messages: {
     "quota.forecast.metric.unavailable": "Unavailable",
     "quota.forecast.metric.uncertaintyInterval": "uncertainty interval",
     "quota.forecast.reset.atRisk": "Likely to run out before reset",
-    "quota.forecast.reset.enough": "forecast {percent}% left at reset",
+    "quota.forecast.reset.enough": "Forecast {remaining}% left at reset",
     "quota.forecast.reset.learning": "Learning your pattern · about {remaining}% left",
     "quota.forecast.reset.surplus": "Likely surplus · forecast {remaining}% left",
     "quota.forecast.reset.watch": "May run short · forecast {remaining}% left",
@@ -3592,7 +3592,7 @@ export const messages: {
     "quota.pace.runsOutShort": "out {countdown}",
     "quota.perModelLimits": "{count, plural, one {1 per-model limit} other {# per-model limits}} · open {provider} for details",
     "quota.remainingPercent": "{percent}% left",
-    "quota.reset.in": "Resets in {when}",
+    "quota.reset.in": "resets in {duration}",
     "quota.reset.passed": "reset passed",
     "quota.reset.passedAt": "reset passed · {time}",
     "quota.resetCredits.available": "{count, plural, one {1 manual reset available} other {# manual resets available}}",
@@ -5012,7 +5012,7 @@ export const messages: {
     "quota.forecast.metric.unavailable": "不可用",
     "quota.forecast.metric.uncertaintyInterval": "不确定区间",
     "quota.forecast.reset.atRisk": "很可能在重置前耗尽",
-    "quota.forecast.reset.enough": "预计重置时剩余 {percent}%",
+    "quota.forecast.reset.enough": "预计重置时剩余 {remaining}%",
     "quota.forecast.reset.learning": "正在学习使用规律 · 约剩余 {remaining}%",
     "quota.forecast.reset.surplus": "预计将有盈余 · 重置时剩余 {remaining}%",
     "quota.forecast.reset.watch": "可能不足 · 预计剩余 {remaining}%",
@@ -5105,7 +5105,7 @@ export const messages: {
     "quota.pace.runsOutShort": "{countdown}耗尽",
     "quota.perModelLimits": "{count, plural, other {# 个}}按模型的限额 · 打开 {provider} 查看详情",
     "quota.remainingPercent": "剩余 {percent}%",
-    "quota.reset.in": "距重置 {when}",
+    "quota.reset.in": "距重置 {duration}",
     "quota.reset.passed": "重置时间已过",
     "quota.reset.passedAt": "重置时间已过 · {time}",
     "quota.resetCredits.available": "{count, plural, other {# 张}}可用重置券",
