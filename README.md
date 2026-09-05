@@ -20,7 +20,7 @@ you need on the way in.
 **Swift**
 
 ```swift
-.package(url: "https://github.com/AstroQore/vibe-bar-i18n.git", exact: "0.4.0")
+.package(url: "https://github.com/AstroQore/vibe-bar-i18n.git", exact: "0.5.0")
 ```
 
 ```swift
@@ -60,7 +60,7 @@ language picker.
 **TypeScript**
 
 ```jsonc
-"@astroqore/vibe-bar-i18n": "0.4.0"
+"@astroqore/vibe-bar-i18n": "0.5.0"
 ```
 
 ```ts

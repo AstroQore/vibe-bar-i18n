@@ -2319,6 +2319,12 @@ public enum L10n {
                 /// en: "⌘G groups, ⇧⌘G ungroups"
                 public static var composerGroupKeyHint: String { L10nSupport.string("platform.macos.menuBar.composerGroupKeyHint") }
 
+                /// macOS only — the Layout Studio's stage when the menu bar strip is not a composed one.
+                ///
+                /// Key: `platform.macos.menuBar.composerStudioDefault`
+                /// en: "This strip is the Default one. Switch it to Custom in the inspector to arrange its blocks here."
+                public static var composerStudioDefault: String { L10nSupport.string("platform.macos.menuBar.composerStudioDefault") }
+
                 /// Picker choosing the popover density from the menu-bar editor. macOS-only.
                 ///
                 /// Key: `platform.macos.menuBar.displayDensity`
@@ -4887,6 +4893,12 @@ public enum L10n {
             /// Key: `settings.layout.studioRatioWideNarrow`
             /// en: "Wide left, narrow right"
             public static var studioRatioWideNarrow: String { L10nSupport.string("settings.layout.studioRatioWideNarrow") }
+
+            /// Section title in the Layout Studio's subject menu for the menu bar strip.
+            ///
+            /// Key: `settings.layout.studioSubjectMenuBar`
+            /// en: "Menu bar"
+            public static var studioSubjectMenuBar: String { L10nSupport.string("settings.layout.studioSubjectMenuBar") }
 
             /// Menu section in the studio's subject picker: the popover's pages
             ///
@@ -10709,6 +10721,7 @@ enum L10nCatalogFacts {
         "platform.macos.menuBar.color.forecastDetail",
         "platform.macos.menuBar.composerCanvasHint",
         "platform.macos.menuBar.composerGroupKeyHint",
+        "platform.macos.menuBar.composerStudioDefault",
         "platform.macos.menuBar.displayDensity",
         "platform.macos.menuBar.fieldStyle.label",
         "platform.macos.menuBar.fieldStyle.labelDetail",
@@ -11044,6 +11057,7 @@ enum L10nCatalogFacts {
         "settings.layout.studioRatioEqual",
         "settings.layout.studioRatioNarrowWide",
         "settings.layout.studioRatioWideNarrow",
+        "settings.layout.studioSubjectMenuBar",
         "settings.layout.studioSubjectPages",
         "settings.layout.studioTitle",
         "settings.layout.studioToggleInspector",
@@ -12292,6 +12306,7 @@ enum L10nCatalogFacts {
         "platform.macos.menuBar.color.forecastDetail": 0,
         "platform.macos.menuBar.composerCanvasHint": 0,
         "platform.macos.menuBar.composerGroupKeyHint": 0,
+        "platform.macos.menuBar.composerStudioDefault": 0,
         "platform.macos.menuBar.displayDensity": 0,
         "platform.macos.menuBar.fieldStyle.label": 0,
         "platform.macos.menuBar.fieldStyle.labelDetail": 0,
@@ -12627,6 +12642,7 @@ enum L10nCatalogFacts {
         "settings.layout.studioRatioEqual": 0,
         "settings.layout.studioRatioNarrowWide": 0,
         "settings.layout.studioRatioWideNarrow": 0,
+        "settings.layout.studioSubjectMenuBar": 0,
         "settings.layout.studioSubjectPages": 0,
         "settings.layout.studioTitle": 0,
         "settings.layout.studioToggleInspector": 0,

@@ -1011,6 +1011,9 @@
 /* macOS only — names the Command key. Short keyboard hint beside the composer's Group button. */
 "platform.macos.menuBar.composerGroupKeyHint" = "⌘G groups, ⇧⌘G ungroups";
 
+/* macOS only — the Layout Studio's stage when the menu bar strip is not a composed one. */
+"platform.macos.menuBar.composerStudioDefault" = "This strip is the Default one. Switch it to Custom in the inspector to arrange its blocks here.";
+
 /* Picker choosing the popover density from the menu-bar editor. macOS-only. */
 "platform.macos.menuBar.displayDensity" = "Display density";
 
@@ -1979,6 +1982,9 @@
 
 /* Tooltip for a column-width split */
 "settings.layout.studioRatioWideNarrow" = "Wide left, narrow right";
+
+/* Section title in the Layout Studio's subject menu for the menu bar strip. */
+"settings.layout.studioSubjectMenuBar" = "Menu bar";
 
 /* Menu section in the studio's subject picker: the popover's pages */
 "settings.layout.studioSubjectPages" = "Popover pages";
