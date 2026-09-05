@@ -358,6 +358,7 @@ export type MessageKey =
   | "platform.macos.menuBar.color.forecastDetail"
   | "platform.macos.menuBar.composerCanvasHint"
   | "platform.macos.menuBar.composerGroupKeyHint"
+  | "platform.macos.menuBar.composerStudioDefault"
   | "platform.macos.menuBar.displayDensity"
   | "platform.macos.menuBar.fieldStyle.label"
   | "platform.macos.menuBar.fieldStyle.labelDetail"
@@ -1891,6 +1892,7 @@ export interface MessageParams {
   "platform.macos.menuBar.color.forecastDetail": undefined;
   "platform.macos.menuBar.composerCanvasHint": undefined;
   "platform.macos.menuBar.composerGroupKeyHint": undefined;
+  "platform.macos.menuBar.composerStudioDefault": undefined;
   "platform.macos.menuBar.displayDensity": undefined;
   "platform.macos.menuBar.fieldStyle.label": undefined;
   "platform.macos.menuBar.fieldStyle.labelDetail": undefined;
@@ -3425,6 +3427,7 @@ export const messages: {
     "platform.macos.menuBar.color.forecastDetail": "Green projected to last · blue a chunk will likely go unused · orange may run short · red projected to run out. Falls back to the percentage while a quota has too little history to forecast.",
     "platform.macos.menuBar.composerCanvasHint": "Drag a block to move it; a group moves as one. Shift-click to select more, then ⌘G to group them. Drop a block below the strip to remove it.",
     "platform.macos.menuBar.composerGroupKeyHint": "⌘G groups, ⇧⌘G ungroups",
+    "platform.macos.menuBar.composerStudioDefault": "This strip is the Default one. Switch it to Custom in the inspector to arrange its blocks here.",
     "platform.macos.menuBar.displayDensity": "Display density",
     "platform.macos.menuBar.fieldStyle.label": "Label",
     "platform.macos.menuBar.fieldStyle.labelDetail": "The field's name beside its percent.",
@@ -4954,6 +4957,7 @@ export const messages: {
     "platform.macos.menuBar.color.forecastDetail": "绿色表示预计够用 · 蓝色表示预计会有较多闲置 · 橙色表示可能不足 · 红色表示预计会用尽。当某项额度历史过少、无法预测时，回退为按百分比着色。",
     "platform.macos.menuBar.composerCanvasHint": "拖动积木即可移动，成组的积木整组一起走。按住 Shift 点选可多选，再按 ⌘G 成组。把积木拖到条带下方即可移除。",
     "platform.macos.menuBar.composerGroupKeyHint": "⌘G 成组，⇧⌘G 解组",
+    "platform.macos.menuBar.composerStudioDefault": "这条状态栏条带目前是「默认」样式。在右侧检查器里切换到「自定义」后，即可在这里排列它的积木。",
     "platform.macos.menuBar.displayDensity": "显示密度",
     "platform.macos.menuBar.fieldStyle.label": "名称",
     "platform.macos.menuBar.fieldStyle.labelDetail": "名称与百分比并列。",

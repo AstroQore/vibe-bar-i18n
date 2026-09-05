@@ -2319,6 +2319,12 @@ public enum L10n {
                 /// en: "⌘G groups, ⇧⌘G ungroups"
                 public static var composerGroupKeyHint: String { L10nSupport.string("platform.macos.menuBar.composerGroupKeyHint") }
 
+                /// macOS only — the Layout Studio's stage when the menu bar strip is not a composed one.
+                ///
+                /// Key: `platform.macos.menuBar.composerStudioDefault`
+                /// en: "This strip is the Default one. Switch it to Custom in the inspector to arrange its blocks here."
+                public static var composerStudioDefault: String { L10nSupport.string("platform.macos.menuBar.composerStudioDefault") }
+
                 /// Picker choosing the popover density from the menu-bar editor. macOS-only.
                 ///
                 /// Key: `platform.macos.menuBar.displayDensity`
@@ -10709,6 +10715,7 @@ enum L10nCatalogFacts {
         "platform.macos.menuBar.color.forecastDetail",
         "platform.macos.menuBar.composerCanvasHint",
         "platform.macos.menuBar.composerGroupKeyHint",
+        "platform.macos.menuBar.composerStudioDefault",
         "platform.macos.menuBar.displayDensity",
         "platform.macos.menuBar.fieldStyle.label",
         "platform.macos.menuBar.fieldStyle.labelDetail",
@@ -12292,6 +12299,7 @@ enum L10nCatalogFacts {
         "platform.macos.menuBar.color.forecastDetail": 0,
         "platform.macos.menuBar.composerCanvasHint": 0,
         "platform.macos.menuBar.composerGroupKeyHint": 0,
+        "platform.macos.menuBar.composerStudioDefault": 0,
         "platform.macos.menuBar.displayDensity": 0,
         "platform.macos.menuBar.fieldStyle.label": 0,
         "platform.macos.menuBar.fieldStyle.labelDetail": 0,

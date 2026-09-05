@@ -1034,6 +1034,9 @@
     "platform.macos.menuBar.composerGroupKeyHint": {
       "value": "⌘G 成组，⇧⌘G 解组"
     },
+    "platform.macos.menuBar.composerStudioDefault": {
+      "value": "这条状态栏条带目前是「默认」样式。在右侧检查器里切换到「自定义」后，即可在这里排列它的积木。"
+    },
     "platform.macos.menuBar.displayDensity": {
       "value": "显示密度"
     },
