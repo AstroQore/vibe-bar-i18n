@@ -4894,12 +4894,6 @@ public enum L10n {
             /// en: "Wide left, narrow right"
             public static var studioRatioWideNarrow: String { L10nSupport.string("settings.layout.studioRatioWideNarrow") }
 
-            /// Section title in the Layout Studio's subject menu for the menu bar strip.
-            ///
-            /// Key: `settings.layout.studioSubjectMenuBar`
-            /// en: "Menu bar"
-            public static var studioSubjectMenuBar: String { L10nSupport.string("settings.layout.studioSubjectMenuBar") }
-
             /// Menu section in the studio's subject picker: the popover's pages
             ///
             /// Key: `settings.layout.studioSubjectPages`
@@ -11057,7 +11051,6 @@ enum L10nCatalogFacts {
         "settings.layout.studioRatioEqual",
         "settings.layout.studioRatioNarrowWide",
         "settings.layout.studioRatioWideNarrow",
-        "settings.layout.studioSubjectMenuBar",
         "settings.layout.studioSubjectPages",
         "settings.layout.studioTitle",
         "settings.layout.studioToggleInspector",
@@ -12642,7 +12635,6 @@ enum L10nCatalogFacts {
         "settings.layout.studioRatioEqual": 0,
         "settings.layout.studioRatioNarrowWide": 0,
         "settings.layout.studioRatioWideNarrow": 0,
-        "settings.layout.studioSubjectMenuBar": 0,
         "settings.layout.studioSubjectPages": 0,
         "settings.layout.studioTitle": 0,
         "settings.layout.studioToggleInspector": 0,

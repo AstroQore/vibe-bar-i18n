@@ -694,7 +694,6 @@ export type MessageKey =
   | "settings.layout.studioRatioEqual"
   | "settings.layout.studioRatioNarrowWide"
   | "settings.layout.studioRatioWideNarrow"
-  | "settings.layout.studioSubjectMenuBar"
   | "settings.layout.studioSubjectPages"
   | "settings.layout.studioTitle"
   | "settings.layout.studioToggleInspector"
@@ -2229,7 +2228,6 @@ export interface MessageParams {
   "settings.layout.studioRatioEqual": undefined;
   "settings.layout.studioRatioNarrowWide": undefined;
   "settings.layout.studioRatioWideNarrow": undefined;
-  "settings.layout.studioSubjectMenuBar": undefined;
   "settings.layout.studioSubjectPages": undefined;
   "settings.layout.studioTitle": undefined;
   "settings.layout.studioToggleInspector": undefined;
@@ -3765,7 +3763,6 @@ export const messages: {
     "settings.layout.studioRatioEqual": "Equal columns",
     "settings.layout.studioRatioNarrowWide": "Narrow left, wide right",
     "settings.layout.studioRatioWideNarrow": "Wide left, narrow right",
-    "settings.layout.studioSubjectMenuBar": "Menu bar",
     "settings.layout.studioSubjectPages": "Popover pages",
     "settings.layout.studioTitle": "Layout Studio",
     "settings.layout.studioToggleInspector": "Show or hide the controls",
@@ -5296,7 +5293,6 @@ export const messages: {
     "settings.layout.studioRatioEqual": "等宽",
     "settings.layout.studioRatioNarrowWide": "左窄右宽",
     "settings.layout.studioRatioWideNarrow": "左宽右窄",
-    "settings.layout.studioSubjectMenuBar": "菜单栏",
     "settings.layout.studioSubjectPages": "弹出面板页面",
     "settings.layout.studioTitle": "布局工作台",
     "settings.layout.studioToggleInspector": "显示或隐藏控件",

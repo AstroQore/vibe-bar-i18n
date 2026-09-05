@@ -1983,9 +1983,6 @@
 /* Tooltip for a column-width split */
 "settings.layout.studioRatioWideNarrow" = "Wide left, narrow right";
 
-/* Section title in the Layout Studio's subject menu for the menu bar strip. */
-"settings.layout.studioSubjectMenuBar" = "Menu bar";
-
 /* Menu section in the studio's subject picker: the popover's pages */
 "settings.layout.studioSubjectPages" = "Popover pages";
 

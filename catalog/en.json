@@ -3314,10 +3314,6 @@
       "value": "Wide left, narrow right",
       "comment": "Tooltip for a column-width split"
     },
-    "settings.layout.studioSubjectMenuBar": {
-      "value": "Menu bar",
-      "comment": "Section title in the Layout Studio's subject menu for the menu bar strip."
-    },
     "settings.layout.studioSubjectPages": {
       "value": "Popover pages",
       "comment": "Menu section in the studio's subject picker: the popover's pages"
