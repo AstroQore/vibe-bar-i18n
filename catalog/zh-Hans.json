@@ -4636,6 +4636,84 @@
     },
     "quota.chat.countMetric": {
       "value": "已用 / 剩余次数"
+    },
+    "quota.chat.learningRemaining": {
+      "value": "学习中 · 预计剩余 {count}"
+    },
+    "quota.chat.learnedRemaining": {
+      "value": "剩余 {remaining} / {total}"
+    },
+    "quota.chat.allowanceLearningHelp": {
+      "value": "额度会在重置后自动学习，套餐变更后重新学习。"
+    },
+    "quota.chat.featuresHelp": {
+      "value": "跟踪 ChatGPT 账号的图片生成和深度研究额度。"
+    },
+    "quota.resetCredits.item": {
+      "value": "重置券 {number}"
+    },
+    "quota.resetCredits.expiresAt": {
+      "value": "到期 {when}"
+    },
+    "quota.resetCredits.missingExpiries": {
+      "value": "另有 {count} 张 · 到期时间待更新"
+    },
+    "resetJournal.title": {
+      "value": "重置记录"
+    },
+    "resetJournal.open": {
+      "value": "记录"
+    },
+    "resetJournal.normal": {
+      "value": "正常到期重置"
+    },
+    "resetJournal.earlyRestarted": {
+      "value": "提前重置 · 到期时间重设"
+    },
+    "resetJournal.earlyUnchanged": {
+      "value": "提前补额 · 到期时间不变"
+    },
+    "resetJournal.credit": {
+      "value": "使用重置券"
+    },
+    "resetJournal.unknown": {
+      "value": "重置 · 类型待确认"
+    },
+    "resetJournal.sourceUnknown": {
+      "value": "额外重置 · 来源待确认"
+    },
+    "resetJournal.creditConfirmed": {
+      "value": "已确认重置券兑换记录"
+    },
+    "resetJournal.beforeReset": {
+      "value": "原到期时间"
+    },
+    "resetJournal.afterReset": {
+      "value": "新到期时间"
+    },
+    "resetJournal.remainingChange": {
+      "value": "重置前后剩余"
+    },
+    "resetJournal.observationRange": {
+      "value": "发生于观测区间"
+    },
+    "resetJournal.redeemedAt": {
+      "value": "兑换时间"
+    },
+    "resetJournal.missingDetails": {
+      "value": "早期记录 · 未保留完整前后读数"
+    },
+    "resetJournal.explanation": {
+      "value": "重置时间按相邻刷新确定；没有兑换记录时，不能认定是厂商赠送。"
+    },
+    "resetJournal.empty": {
+      "value": "观察到重置后，会在这里保留记录。"
+    },
+    "resetJournal.more": {
+      "value": "查看更多历史记录"
+    },
+    "resetJournal.creditOnly": {
+      "value": "已记录兑换 · 未观察到对应额度变化"
     }
   }
 }

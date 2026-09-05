@@ -7364,6 +7364,126 @@
     "quota.chat.countMetric": {
       "value": "Used / remaining count",
       "comment": "Menu bar metric for absolute ChatGPT Chat allowance counts, not percentages."
+    },
+    "quota.chat.learningRemaining": {
+      "value": "Learning · about {count} left",
+      "comment": "ChatGPT Chat learned feature allowance display and settings.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "quota.chat.learnedRemaining": {
+      "value": "{remaining} of {total} left",
+      "comment": "ChatGPT Chat learned feature allowance display and settings.",
+      "placeholders": {
+        "remaining": "int",
+        "total": "int"
+      }
+    },
+    "quota.chat.allowanceLearningHelp": {
+      "value": "Allowances are learned after resets. Changing your plan starts learning again.",
+      "comment": "ChatGPT Chat learned feature allowance display and settings."
+    },
+    "quota.chat.featuresHelp": {
+      "value": "Track image creation and deep research with your ChatGPT account.",
+      "comment": "ChatGPT Chat learned feature allowance display and settings."
+    },
+    "quota.resetCredits.item": {
+      "value": "Reset {number}",
+      "comment": "Individual available usage-reset credit shown with its absolute expiry.",
+      "placeholders": {
+        "number": "int"
+      }
+    },
+    "quota.resetCredits.expiresAt": {
+      "value": "Expires {when}",
+      "comment": "Individual available usage-reset credit shown with its absolute expiry.",
+      "placeholders": {
+        "when": "string"
+      }
+    },
+    "quota.resetCredits.missingExpiries": {
+      "value": "{count} more · expiry pending",
+      "comment": "Individual available usage-reset credit shown with its absolute expiry.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "resetJournal.title": {
+      "value": "Reset records",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.open": {
+      "value": "Records",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.normal": {
+      "value": "Scheduled reset",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.earlyRestarted": {
+      "value": "Early reset · new deadline",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.earlyUnchanged": {
+      "value": "Early refill · same deadline",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.credit": {
+      "value": "Reset credit used",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.unknown": {
+      "value": "Reset · type uncertain",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.sourceUnknown": {
+      "value": "Extra reset · source unconfirmed",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.creditConfirmed": {
+      "value": "Confirmed by a redemption receipt",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.beforeReset": {
+      "value": "Previous deadline",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.afterReset": {
+      "value": "New deadline",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.remainingChange": {
+      "value": "Remaining before → after",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.observationRange": {
+      "value": "Observed between",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.redeemedAt": {
+      "value": "Redeemed at",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.missingDetails": {
+      "value": "Earlier record · before/after details were not retained",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.explanation": {
+      "value": "Reset times are observed between refreshes. A missing receipt does not prove a provider-granted reset.",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.empty": {
+      "value": "Resets will appear here when observed.",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.more": {
+      "value": "Show earlier records",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "resetJournal.creditOnly": {
+      "value": "Redemption recorded · quota change not observed",
+      "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
     }
   }
 }

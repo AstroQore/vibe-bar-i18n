@@ -401,6 +401,7 @@ export type MessageKey =
   | "quota.bridge.subtitleVersion"
   | "quota.bridge.title"
   | "quota.bucket.noResetInfo"
+  | "quota.chat.allowanceLearningHelp"
   | "quota.chat.astraLimit"
   | "quota.chat.astraReset"
   | "quota.chat.complete"
@@ -410,7 +411,10 @@ export type MessageKey =
   | "quota.chat.enable"
   | "quota.chat.estimated"
   | "quota.chat.excluded"
+  | "quota.chat.featuresHelp"
   | "quota.chat.historyToggle"
+  | "quota.chat.learnedRemaining"
+  | "quota.chat.learningRemaining"
   | "quota.chat.limitsHelp"
   | "quota.chat.manualLimits"
   | "quota.chat.noExtension"
@@ -587,6 +591,9 @@ export type MessageKey =
   | "quota.reset.passedAt"
   | "quota.resetCredits.available"
   | "quota.resetCredits.availableWithExpiry"
+  | "quota.resetCredits.expiresAt"
+  | "quota.resetCredits.item"
+  | "quota.resetCredits.missingExpiries"
   | "quota.resetCredits.title"
   | "quota.upcoming.axisDays"
   | "quota.upcoming.axisHours"
@@ -660,6 +667,25 @@ export type MessageKey =
   | "resetHistory.window.eightWeeks"
   | "resetHistory.window.fourWeeks"
   | "resetHistory.window.twelveWeeks"
+  | "resetJournal.afterReset"
+  | "resetJournal.beforeReset"
+  | "resetJournal.credit"
+  | "resetJournal.creditConfirmed"
+  | "resetJournal.creditOnly"
+  | "resetJournal.earlyRestarted"
+  | "resetJournal.earlyUnchanged"
+  | "resetJournal.empty"
+  | "resetJournal.explanation"
+  | "resetJournal.missingDetails"
+  | "resetJournal.more"
+  | "resetJournal.normal"
+  | "resetJournal.observationRange"
+  | "resetJournal.open"
+  | "resetJournal.redeemedAt"
+  | "resetJournal.remainingChange"
+  | "resetJournal.sourceUnknown"
+  | "resetJournal.title"
+  | "resetJournal.unknown"
   | "settings.antigravityCookieEnabled"
   | "settings.antigravityLocalOnly"
   | "settings.antigravitySource"
@@ -1952,6 +1978,7 @@ export interface MessageParams {
   "quota.bridge.subtitleVersion": { "version": string };
   "quota.bridge.title": undefined;
   "quota.bucket.noResetInfo": undefined;
+  "quota.chat.allowanceLearningHelp": undefined;
   "quota.chat.astraLimit": undefined;
   "quota.chat.astraReset": undefined;
   "quota.chat.complete": undefined;
@@ -1961,7 +1988,10 @@ export interface MessageParams {
   "quota.chat.enable": undefined;
   "quota.chat.estimated": undefined;
   "quota.chat.excluded": { "work": number; "unknown": number };
+  "quota.chat.featuresHelp": undefined;
   "quota.chat.historyToggle": undefined;
+  "quota.chat.learnedRemaining": { "remaining": number; "total": number };
+  "quota.chat.learningRemaining": { "count": number };
   "quota.chat.limitsHelp": undefined;
   "quota.chat.manualLimits": undefined;
   "quota.chat.noExtension": undefined;
@@ -2138,6 +2168,9 @@ export interface MessageParams {
   "quota.reset.passedAt": { "time": string };
   "quota.resetCredits.available": { "count": number };
   "quota.resetCredits.availableWithExpiry": { "available": string; "countdown": string };
+  "quota.resetCredits.expiresAt": { "when": string };
+  "quota.resetCredits.item": { "number": number };
+  "quota.resetCredits.missingExpiries": { "count": number };
   "quota.resetCredits.title": undefined;
   "quota.upcoming.axisDays": { "days": number };
   "quota.upcoming.axisHours": { "hours": number };
@@ -2211,6 +2244,25 @@ export interface MessageParams {
   "resetHistory.window.eightWeeks": undefined;
   "resetHistory.window.fourWeeks": undefined;
   "resetHistory.window.twelveWeeks": undefined;
+  "resetJournal.afterReset": undefined;
+  "resetJournal.beforeReset": undefined;
+  "resetJournal.credit": undefined;
+  "resetJournal.creditConfirmed": undefined;
+  "resetJournal.creditOnly": undefined;
+  "resetJournal.earlyRestarted": undefined;
+  "resetJournal.earlyUnchanged": undefined;
+  "resetJournal.empty": undefined;
+  "resetJournal.explanation": undefined;
+  "resetJournal.missingDetails": undefined;
+  "resetJournal.more": undefined;
+  "resetJournal.normal": undefined;
+  "resetJournal.observationRange": undefined;
+  "resetJournal.open": undefined;
+  "resetJournal.redeemedAt": undefined;
+  "resetJournal.remainingChange": undefined;
+  "resetJournal.sourceUnknown": undefined;
+  "resetJournal.title": undefined;
+  "resetJournal.unknown": undefined;
   "settings.antigravityCookieEnabled": undefined;
   "settings.antigravityLocalOnly": undefined;
   "settings.antigravitySource": undefined;
@@ -3504,6 +3556,7 @@ export const messages: {
     "quota.bridge.subtitleVersion": "CodexBar {version} · read-only",
     "quota.bridge.title": "CodexBar Bridge",
     "quota.bucket.noResetInfo": "No reset info",
+    "quota.chat.allowanceLearningHelp": "Allowances are learned after resets. Changing your plan starts learning again.",
     "quota.chat.astraLimit": "GPT-6 Pro weekly limit",
     "quota.chat.astraReset": "Set GPT-6 Pro reset time",
     "quota.chat.complete": "Saved cloud history is synced. Temporary chats, deleted chats and retries may differ.",
@@ -3513,7 +3566,10 @@ export const messages: {
     "quota.chat.enable": "Track ChatGPT Chat",
     "quota.chat.estimated": "History estimate",
     "quota.chat.excluded": "{work} Work conversations excluded · {unknown} unclassified turns",
+    "quota.chat.featuresHelp": "Track image creation and deep research with your ChatGPT account.",
     "quota.chat.historyToggle": "Sync saved Chat history across devices",
+    "quota.chat.learnedRemaining": "{remaining} of {total} left",
+    "quota.chat.learningRemaining": "Learning · about {count} left",
     "quota.chat.limitsHelp": "Enter the limits shown for your plan. A Pro subscription alone does not identify its allowance tier.",
     "quota.chat.manualLimits": "Manual Chat limits (0 means unknown)",
     "quota.chat.noExtension": "Uses cookies and the built-in browser; no extension to install.",
@@ -3690,6 +3746,9 @@ export const messages: {
     "quota.reset.passedAt": "reset passed · {time}",
     "quota.resetCredits.available": "{count, plural, one {1 manual reset available} other {# manual resets available}}",
     "quota.resetCredits.availableWithExpiry": "{available} · next expires in {countdown}",
+    "quota.resetCredits.expiresAt": "Expires {when}",
+    "quota.resetCredits.item": "Reset {number}",
+    "quota.resetCredits.missingExpiries": "{count} more · expiry pending",
     "quota.resetCredits.title": "Limit reset credits",
     "quota.upcoming.axisDays": "+{days}d",
     "quota.upcoming.axisHours": "+{hours}h",
@@ -3763,6 +3822,25 @@ export const messages: {
     "resetHistory.window.eightWeeks": "8w",
     "resetHistory.window.fourWeeks": "4w",
     "resetHistory.window.twelveWeeks": "12w",
+    "resetJournal.afterReset": "New deadline",
+    "resetJournal.beforeReset": "Previous deadline",
+    "resetJournal.credit": "Reset credit used",
+    "resetJournal.creditConfirmed": "Confirmed by a redemption receipt",
+    "resetJournal.creditOnly": "Redemption recorded · quota change not observed",
+    "resetJournal.earlyRestarted": "Early reset · new deadline",
+    "resetJournal.earlyUnchanged": "Early refill · same deadline",
+    "resetJournal.empty": "Resets will appear here when observed.",
+    "resetJournal.explanation": "Reset times are observed between refreshes. A missing receipt does not prove a provider-granted reset.",
+    "resetJournal.missingDetails": "Earlier record · before/after details were not retained",
+    "resetJournal.more": "Show earlier records",
+    "resetJournal.normal": "Scheduled reset",
+    "resetJournal.observationRange": "Observed between",
+    "resetJournal.open": "Records",
+    "resetJournal.redeemedAt": "Redeemed at",
+    "resetJournal.remainingChange": "Remaining before → after",
+    "resetJournal.sourceUnknown": "Extra reset · source unconfirmed",
+    "resetJournal.title": "Reset records",
+    "resetJournal.unknown": "Reset · type uncertain",
     "settings.antigravityCookieEnabled": "Antigravity cookie import is enabled — sign in at antigravity.google first.",
     "settings.antigravityLocalOnly": "Antigravity reads the locally running language server. Cookie import is deferred until the Antigravity Cloud endpoint ships.",
     "settings.antigravitySource": "Antigravity source",
@@ -5051,6 +5129,7 @@ export const messages: {
     "quota.bridge.subtitleVersion": "CodexBar {version} · 只读",
     "quota.bridge.title": "CodexBar 桥接",
     "quota.bucket.noResetInfo": "无重置信息",
+    "quota.chat.allowanceLearningHelp": "额度会在重置后自动学习，套餐变更后重新学习。",
     "quota.chat.astraLimit": "GPT-6 Pro 每周上限",
     "quota.chat.astraReset": "设置 GPT-6 Pro 重置时间",
     "quota.chat.complete": "已同步保存的云端历史。临时聊天、已删除聊天及重试可能存在偏差。",
@@ -5060,7 +5139,10 @@ export const messages: {
     "quota.chat.enable": "统计 ChatGPT Chat",
     "quota.chat.estimated": "历史估算",
     "quota.chat.excluded": "已排除 {work} 个 Work 会话 · {unknown} 轮待分类",
+    "quota.chat.featuresHelp": "跟踪 ChatGPT 账号的图片生成和深度研究额度。",
     "quota.chat.historyToggle": "同步跨设备保存的 Chat 历史",
+    "quota.chat.learnedRemaining": "剩余 {remaining} / {total}",
+    "quota.chat.learningRemaining": "学习中 · 预计剩余 {count}",
     "quota.chat.limitsHelp": "填写你的套餐实际显示的上限，仅凭 Pro 订阅名称无法确定额度档位。",
     "quota.chat.manualLimits": "手动 Chat 上限（0 表示未知）",
     "quota.chat.noExtension": "使用 Cookie 和内置浏览器，无需安装扩展。",
@@ -5237,6 +5319,9 @@ export const messages: {
     "quota.reset.passedAt": "重置时间已过 · {time}",
     "quota.resetCredits.available": "{count, plural, other {# 张}}可用重置券",
     "quota.resetCredits.availableWithExpiry": "{available} · 最近一张 {countdown}后过期",
+    "quota.resetCredits.expiresAt": "到期 {when}",
+    "quota.resetCredits.item": "重置券 {number}",
+    "quota.resetCredits.missingExpiries": "另有 {count} 张 · 到期时间待更新",
     "quota.resetCredits.title": "限额重置券",
     "quota.upcoming.axisDays": "+{days} 天",
     "quota.upcoming.axisHours": "+{hours} 小时",
@@ -5310,6 +5395,25 @@ export const messages: {
     "resetHistory.window.eightWeeks": "8 周",
     "resetHistory.window.fourWeeks": "4 周",
     "resetHistory.window.twelveWeeks": "12 周",
+    "resetJournal.afterReset": "新到期时间",
+    "resetJournal.beforeReset": "原到期时间",
+    "resetJournal.credit": "使用重置券",
+    "resetJournal.creditConfirmed": "已确认重置券兑换记录",
+    "resetJournal.creditOnly": "已记录兑换 · 未观察到对应额度变化",
+    "resetJournal.earlyRestarted": "提前重置 · 到期时间重设",
+    "resetJournal.earlyUnchanged": "提前补额 · 到期时间不变",
+    "resetJournal.empty": "观察到重置后，会在这里保留记录。",
+    "resetJournal.explanation": "重置时间按相邻刷新确定；没有兑换记录时，不能认定是厂商赠送。",
+    "resetJournal.missingDetails": "早期记录 · 未保留完整前后读数",
+    "resetJournal.more": "查看更多历史记录",
+    "resetJournal.normal": "正常到期重置",
+    "resetJournal.observationRange": "发生于观测区间",
+    "resetJournal.open": "记录",
+    "resetJournal.redeemedAt": "兑换时间",
+    "resetJournal.remainingChange": "重置前后剩余",
+    "resetJournal.sourceUnknown": "额外重置 · 来源待确认",
+    "resetJournal.title": "重置记录",
+    "resetJournal.unknown": "重置 · 类型待确认",
     "settings.antigravityCookieEnabled": "Antigravity 的 cookie 导入已启用 — 请先在 antigravity.google 登录。",
     "settings.antigravityLocalOnly": "Antigravity 读取本机运行的语言服务。cookie 导入将等到 Antigravity Cloud 端点上线后再启用。",
     "settings.antigravitySource": "Antigravity 来源",

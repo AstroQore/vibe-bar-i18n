@@ -2662,6 +2662,12 @@ public enum L10n {
         }
 
         public enum Chat {
+            /// ChatGPT Chat learned feature allowance display and settings.
+            ///
+            /// Key: `quota.chat.allowanceLearningHelp`
+            /// en: "Allowances are learned after resets. Changing your plan starts learning again."
+            public static var allowanceLearningHelp: String { L10nSupport.string("quota.chat.allowanceLearningHelp") }
+
             /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
             ///
             /// Key: `quota.chat.astraLimit`
@@ -2718,11 +2724,33 @@ public enum L10n {
                 L10nSupport.format("quota.chat.excluded", work, unknown)
             }
 
+            /// ChatGPT Chat learned feature allowance display and settings.
+            ///
+            /// Key: `quota.chat.featuresHelp`
+            /// en: "Track image creation and deep research with your ChatGPT account."
+            public static var featuresHelp: String { L10nSupport.string("quota.chat.featuresHelp") }
+
             /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
             ///
             /// Key: `quota.chat.historyToggle`
             /// en: "Sync saved Chat history across devices"
             public static var historyToggle: String { L10nSupport.string("quota.chat.historyToggle") }
+
+            /// ChatGPT Chat learned feature allowance display and settings.
+            ///
+            /// Key: `quota.chat.learnedRemaining`
+            /// en: "{remaining} of {total} left"
+            public static func learnedRemaining(remaining: Int, total: Int) -> String {
+                L10nSupport.format("quota.chat.learnedRemaining", remaining, total)
+            }
+
+            /// ChatGPT Chat learned feature allowance display and settings.
+            ///
+            /// Key: `quota.chat.learningRemaining`
+            /// en: "Learning · about {count} left"
+            public static func learningRemaining(count: Int) -> String {
+                L10nSupport.format("quota.chat.learningRemaining", count)
+            }
 
             /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
             ///
@@ -3968,6 +3996,30 @@ public enum L10n {
                 L10nSupport.format("quota.resetCredits.availableWithExpiry", available, countdown)
             }
 
+            /// Individual available usage-reset credit shown with its absolute expiry.
+            ///
+            /// Key: `quota.resetCredits.expiresAt`
+            /// en: "Expires {when}"
+            public static func expiresAt(when: String) -> String {
+                L10nSupport.format("quota.resetCredits.expiresAt", when)
+            }
+
+            /// Individual available usage-reset credit shown with its absolute expiry.
+            ///
+            /// Key: `quota.resetCredits.item`
+            /// en: "Reset {number}"
+            public static func item(number: Int) -> String {
+                L10nSupport.format("quota.resetCredits.item", number)
+            }
+
+            /// Individual available usage-reset credit shown with its absolute expiry.
+            ///
+            /// Key: `quota.resetCredits.missingExpiries`
+            /// en: "{count} more · expiry pending"
+            public static func missingExpiries(count: Int) -> String {
+                L10nSupport.format("quota.resetCredits.missingExpiries", count)
+            }
+
             /// Card title for the manual rate-limit resets a Codex plan grants
             ///
             /// Key: `quota.resetCredits.title`
@@ -4494,6 +4546,122 @@ public enum L10n {
             /// en: "12w"
             public static var twelveWeeks: String { L10nSupport.string("resetHistory.window.twelveWeeks") }
         }
+    }
+
+    public enum ResetJournal {
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.afterReset`
+        /// en: "New deadline"
+        public static var afterReset: String { L10nSupport.string("resetJournal.afterReset") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.beforeReset`
+        /// en: "Previous deadline"
+        public static var beforeReset: String { L10nSupport.string("resetJournal.beforeReset") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.credit`
+        /// en: "Reset credit used"
+        public static var credit: String { L10nSupport.string("resetJournal.credit") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.creditConfirmed`
+        /// en: "Confirmed by a redemption receipt"
+        public static var creditConfirmed: String { L10nSupport.string("resetJournal.creditConfirmed") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.creditOnly`
+        /// en: "Redemption recorded · quota change not observed"
+        public static var creditOnly: String { L10nSupport.string("resetJournal.creditOnly") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.earlyRestarted`
+        /// en: "Early reset · new deadline"
+        public static var earlyRestarted: String { L10nSupport.string("resetJournal.earlyRestarted") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.earlyUnchanged`
+        /// en: "Early refill · same deadline"
+        public static var earlyUnchanged: String { L10nSupport.string("resetJournal.earlyUnchanged") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.empty`
+        /// en: "Resets will appear here when observed."
+        public static var empty: String { L10nSupport.string("resetJournal.empty") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.explanation`
+        /// en: "Reset times are observed between refreshes. A missing receipt does not prove a provider-granted reset."
+        public static var explanation: String { L10nSupport.string("resetJournal.explanation") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.missingDetails`
+        /// en: "Earlier record · before/after details were not retained"
+        public static var missingDetails: String { L10nSupport.string("resetJournal.missingDetails") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.more`
+        /// en: "Show earlier records"
+        public static var more: String { L10nSupport.string("resetJournal.more") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.normal`
+        /// en: "Scheduled reset"
+        public static var normal: String { L10nSupport.string("resetJournal.normal") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.observationRange`
+        /// en: "Observed between"
+        public static var observationRange: String { L10nSupport.string("resetJournal.observationRange") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.open`
+        /// en: "Records"
+        public static var `open`: String { L10nSupport.string("resetJournal.open") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.redeemedAt`
+        /// en: "Redeemed at"
+        public static var redeemedAt: String { L10nSupport.string("resetJournal.redeemedAt") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.remainingChange`
+        /// en: "Remaining before → after"
+        public static var remainingChange: String { L10nSupport.string("resetJournal.remainingChange") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.sourceUnknown`
+        /// en: "Extra reset · source unconfirmed"
+        public static var sourceUnknown: String { L10nSupport.string("resetJournal.sourceUnknown") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.title`
+        /// en: "Reset records"
+        public static var title: String { L10nSupport.string("resetJournal.title") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.unknown`
+        /// en: "Reset · type uncertain"
+        public static var unknown: String { L10nSupport.string("resetJournal.unknown") }
     }
 
     public enum Settings {
@@ -10870,6 +11038,7 @@ enum L10nCatalogFacts {
         "quota.bridge.subtitleVersion",
         "quota.bridge.title",
         "quota.bucket.noResetInfo",
+        "quota.chat.allowanceLearningHelp",
         "quota.chat.astraLimit",
         "quota.chat.astraReset",
         "quota.chat.complete",
@@ -10879,7 +11048,10 @@ enum L10nCatalogFacts {
         "quota.chat.enable",
         "quota.chat.estimated",
         "quota.chat.excluded",
+        "quota.chat.featuresHelp",
         "quota.chat.historyToggle",
+        "quota.chat.learnedRemaining",
+        "quota.chat.learningRemaining",
         "quota.chat.limitsHelp",
         "quota.chat.manualLimits",
         "quota.chat.noExtension",
@@ -11056,6 +11228,9 @@ enum L10nCatalogFacts {
         "quota.reset.passedAt",
         "quota.resetCredits.available",
         "quota.resetCredits.availableWithExpiry",
+        "quota.resetCredits.expiresAt",
+        "quota.resetCredits.item",
+        "quota.resetCredits.missingExpiries",
         "quota.resetCredits.title",
         "quota.upcoming.axisDays",
         "quota.upcoming.axisHours",
@@ -11129,6 +11304,25 @@ enum L10nCatalogFacts {
         "resetHistory.window.eightWeeks",
         "resetHistory.window.fourWeeks",
         "resetHistory.window.twelveWeeks",
+        "resetJournal.afterReset",
+        "resetJournal.beforeReset",
+        "resetJournal.credit",
+        "resetJournal.creditConfirmed",
+        "resetJournal.creditOnly",
+        "resetJournal.earlyRestarted",
+        "resetJournal.earlyUnchanged",
+        "resetJournal.empty",
+        "resetJournal.explanation",
+        "resetJournal.missingDetails",
+        "resetJournal.more",
+        "resetJournal.normal",
+        "resetJournal.observationRange",
+        "resetJournal.open",
+        "resetJournal.redeemedAt",
+        "resetJournal.remainingChange",
+        "resetJournal.sourceUnknown",
+        "resetJournal.title",
+        "resetJournal.unknown",
         "settings.antigravityCookieEnabled",
         "settings.antigravityLocalOnly",
         "settings.antigravitySource",
@@ -12471,6 +12665,7 @@ enum L10nCatalogFacts {
         "quota.bridge.subtitleVersion": 1,
         "quota.bridge.title": 0,
         "quota.bucket.noResetInfo": 0,
+        "quota.chat.allowanceLearningHelp": 0,
         "quota.chat.astraLimit": 0,
         "quota.chat.astraReset": 0,
         "quota.chat.complete": 0,
@@ -12480,7 +12675,10 @@ enum L10nCatalogFacts {
         "quota.chat.enable": 0,
         "quota.chat.estimated": 0,
         "quota.chat.excluded": 2,
+        "quota.chat.featuresHelp": 0,
         "quota.chat.historyToggle": 0,
+        "quota.chat.learnedRemaining": 2,
+        "quota.chat.learningRemaining": 1,
         "quota.chat.limitsHelp": 0,
         "quota.chat.manualLimits": 0,
         "quota.chat.noExtension": 0,
@@ -12657,6 +12855,9 @@ enum L10nCatalogFacts {
         "quota.reset.passedAt": 1,
         "quota.resetCredits.available": 1,
         "quota.resetCredits.availableWithExpiry": 2,
+        "quota.resetCredits.expiresAt": 1,
+        "quota.resetCredits.item": 1,
+        "quota.resetCredits.missingExpiries": 1,
         "quota.resetCredits.title": 0,
         "quota.upcoming.axisDays": 1,
         "quota.upcoming.axisHours": 1,
@@ -12730,6 +12931,25 @@ enum L10nCatalogFacts {
         "resetHistory.window.eightWeeks": 0,
         "resetHistory.window.fourWeeks": 0,
         "resetHistory.window.twelveWeeks": 0,
+        "resetJournal.afterReset": 0,
+        "resetJournal.beforeReset": 0,
+        "resetJournal.credit": 0,
+        "resetJournal.creditConfirmed": 0,
+        "resetJournal.creditOnly": 0,
+        "resetJournal.earlyRestarted": 0,
+        "resetJournal.earlyUnchanged": 0,
+        "resetJournal.empty": 0,
+        "resetJournal.explanation": 0,
+        "resetJournal.missingDetails": 0,
+        "resetJournal.more": 0,
+        "resetJournal.normal": 0,
+        "resetJournal.observationRange": 0,
+        "resetJournal.open": 0,
+        "resetJournal.redeemedAt": 0,
+        "resetJournal.remainingChange": 0,
+        "resetJournal.sourceUnknown": 0,
+        "resetJournal.title": 0,
+        "resetJournal.unknown": 0,
         "settings.antigravityCookieEnabled": 0,
         "settings.antigravityLocalOnly": 0,
         "settings.antigravitySource": 0,

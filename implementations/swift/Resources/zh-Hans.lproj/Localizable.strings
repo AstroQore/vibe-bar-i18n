@@ -1140,6 +1140,9 @@
 /* Caption under a quota bar when the provider reported no reset time */
 "quota.bucket.noResetInfo" = "无重置信息";
 
+/* ChatGPT Chat learned feature allowance display and settings. */
+"quota.chat.allowanceLearningHelp" = "额度会在重置后自动学习，套餐变更后重新学习。";
+
 /* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
 "quota.chat.astraLimit" = "GPT-6 Pro 每周上限";
 
@@ -1167,8 +1170,17 @@
 /* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
 "quota.chat.excluded" = "已排除 %1$lld 个 Work 会话 · %2$lld 轮待分类";
 
+/* ChatGPT Chat learned feature allowance display and settings. */
+"quota.chat.featuresHelp" = "跟踪 ChatGPT 账号的图片生成和深度研究额度。";
+
 /* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
 "quota.chat.historyToggle" = "同步跨设备保存的 Chat 历史";
+
+/* ChatGPT Chat learned feature allowance display and settings. */
+"quota.chat.learnedRemaining" = "剩余 %1$lld / %2$lld";
+
+/* ChatGPT Chat learned feature allowance display and settings. */
+"quota.chat.learningRemaining" = "学习中 · 预计剩余 %lld";
 
 /* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
 "quota.chat.limitsHelp" = "填写你的套餐实际显示的上限，仅凭 Pro 订阅名称无法确定额度档位。";
@@ -1677,6 +1689,15 @@
 /* The count above, plus when the soonest one lapses */
 "quota.resetCredits.availableWithExpiry" = "%1$@ · 最近一张 %2$@后过期";
 
+/* Individual available usage-reset credit shown with its absolute expiry. */
+"quota.resetCredits.expiresAt" = "到期 %@";
+
+/* Individual available usage-reset credit shown with its absolute expiry. */
+"quota.resetCredits.item" = "重置券 %lld";
+
+/* Individual available usage-reset credit shown with its absolute expiry. */
+"quota.resetCredits.missingExpiries" = "另有 %lld 张 · 到期时间待更新";
+
 /* Card title for the manual rate-limit resets a Codex plan grants */
 "quota.resetCredits.title" = "限额重置券";
 
@@ -1880,6 +1901,63 @@
 
 /* Compact window picker label on the time axis */
 "resetHistory.window.twelveWeeks" = "12 周";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.afterReset" = "新到期时间";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.beforeReset" = "原到期时间";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.credit" = "使用重置券";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.creditConfirmed" = "已确认重置券兑换记录";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.creditOnly" = "已记录兑换 · 未观察到对应额度变化";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.earlyRestarted" = "提前重置 · 到期时间重设";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.earlyUnchanged" = "提前补额 · 到期时间不变";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.empty" = "观察到重置后，会在这里保留记录。";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.explanation" = "重置时间按相邻刷新确定；没有兑换记录时，不能认定是厂商赠送。";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.missingDetails" = "早期记录 · 未保留完整前后读数";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.more" = "查看更多历史记录";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.normal" = "正常到期重置";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.observationRange" = "发生于观测区间";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.open" = "记录";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.redeemedAt" = "兑换时间";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.remainingChange" = "重置前后剩余";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.sourceUnknown" = "额外重置 · 来源待确认";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.title" = "重置记录";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.unknown" = "重置 · 类型待确认";
 
 /* Hint under the Antigravity source picker */
 "settings.antigravityCookieEnabled" = "Antigravity 的 cookie 导入已启用 — 请先在 antigravity.google 登录。";

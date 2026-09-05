@@ -1140,6 +1140,9 @@
 /* Caption under a quota bar when the provider reported no reset time */
 "quota.bucket.noResetInfo" = "No reset info";
 
+/* ChatGPT Chat learned feature allowance display and settings. */
+"quota.chat.allowanceLearningHelp" = "Allowances are learned after resets. Changing your plan starts learning again.";
+
 /* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
 "quota.chat.astraLimit" = "GPT-6 Pro weekly limit";
 
@@ -1167,8 +1170,17 @@
 /* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
 "quota.chat.excluded" = "%1$lld Work conversations excluded · %2$lld unclassified turns";
 
+/* ChatGPT Chat learned feature allowance display and settings. */
+"quota.chat.featuresHelp" = "Track image creation and deep research with your ChatGPT account.";
+
 /* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
 "quota.chat.historyToggle" = "Sync saved Chat history across devices";
+
+/* ChatGPT Chat learned feature allowance display and settings. */
+"quota.chat.learnedRemaining" = "%1$lld of %2$lld left";
+
+/* ChatGPT Chat learned feature allowance display and settings. */
+"quota.chat.learningRemaining" = "Learning · about %lld left";
 
 /* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
 "quota.chat.limitsHelp" = "Enter the limits shown for your plan. A Pro subscription alone does not identify its allowance tier.";
@@ -1677,6 +1689,15 @@
 /* The count above, plus when the soonest one lapses */
 "quota.resetCredits.availableWithExpiry" = "%1$@ · next expires in %2$@";
 
+/* Individual available usage-reset credit shown with its absolute expiry. */
+"quota.resetCredits.expiresAt" = "Expires %@";
+
+/* Individual available usage-reset credit shown with its absolute expiry. */
+"quota.resetCredits.item" = "Reset %lld";
+
+/* Individual available usage-reset credit shown with its absolute expiry. */
+"quota.resetCredits.missingExpiries" = "%lld more · expiry pending";
+
 /* Card title for the manual rate-limit resets a Codex plan grants */
 "quota.resetCredits.title" = "Limit reset credits";
 
@@ -1880,6 +1901,63 @@
 
 /* Compact window picker label on the time axis */
 "resetHistory.window.twelveWeeks" = "12w";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.afterReset" = "New deadline";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.beforeReset" = "Previous deadline";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.credit" = "Reset credit used";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.creditConfirmed" = "Confirmed by a redemption receipt";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.creditOnly" = "Redemption recorded · quota change not observed";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.earlyRestarted" = "Early reset · new deadline";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.earlyUnchanged" = "Early refill · same deadline";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.empty" = "Resets will appear here when observed.";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.explanation" = "Reset times are observed between refreshes. A missing receipt does not prove a provider-granted reset.";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.missingDetails" = "Earlier record · before/after details were not retained";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.more" = "Show earlier records";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.normal" = "Scheduled reset";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.observationRange" = "Observed between";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.open" = "Records";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.redeemedAt" = "Redeemed at";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.remainingChange" = "Remaining before → after";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.sourceUnknown" = "Extra reset · source unconfirmed";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.title" = "Reset records";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.unknown" = "Reset · type uncertain";
 
 /* Hint under the Antigravity source picker */
 "settings.antigravityCookieEnabled" = "Antigravity cookie import is enabled — sign in at antigravity.google first.";
