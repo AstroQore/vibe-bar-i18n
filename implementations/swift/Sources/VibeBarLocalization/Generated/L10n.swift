@@ -1021,12 +1021,6 @@ public enum L10n {
                 /// en: "Hidden by its rule right now. It keeps its place and moves with the strip."
                 public static var hiddenByRule: String { L10nSupport.string("menuBar.composer.canvas.hiddenByRule") }
 
-                /// How to use the live strip: move, multi-select, group, remove.
-                ///
-                /// Key: `menuBar.composer.canvas.hint`
-                /// en: "Drag a block to move it; a group moves as one. Shift-click to select more, then ⌘G to group them. Drop a block below the strip to remove it."
-                public static var hint: String { L10nSupport.string("menuBar.composer.canvas.hint") }
-
                 /// Segment showing the strip on a light menu bar.
                 ///
                 /// Key: `menuBar.composer.canvas.light`
@@ -1166,12 +1160,6 @@ public enum L10n {
                 /// Key: `menuBar.composer.group.hint`
                 /// en: "Shift-click blocks that sit side by side in one row, then Group. A group moves as one — drag any block in it and the whole run goes."
                 public static var hint: String { L10nSupport.string("menuBar.composer.group.hint") }
-
-                /// Short keyboard hint beside the Group button.
-                ///
-                /// Key: `menuBar.composer.group.keyHint`
-                /// en: "⌘G groups, ⇧⌘G ungroups"
-                public static var keyHint: String { L10nSupport.string("menuBar.composer.group.keyHint") }
 
                 /// Shown when the selected blocks cannot be bound
                 ///
@@ -2319,6 +2307,18 @@ public enum L10n {
             }
 
             public enum MenuBar {
+                /// macOS only — names the Command key. How to use the composer's live strip: move, multi-select, group, remove.
+                ///
+                /// Key: `platform.macos.menuBar.composerCanvasHint`
+                /// en: "Drag a block to move it; a group moves as one. Shift-click to select more, then ⌘G to group them. Drop a block below the strip to remove it."
+                public static var composerCanvasHint: String { L10nSupport.string("platform.macos.menuBar.composerCanvasHint") }
+
+                /// macOS only — names the Command key. Short keyboard hint beside the composer's Group button.
+                ///
+                /// Key: `platform.macos.menuBar.composerGroupKeyHint`
+                /// en: "⌘G groups, ⇧⌘G ungroups"
+                public static var composerGroupKeyHint: String { L10nSupport.string("platform.macos.menuBar.composerGroupKeyHint") }
+
                 /// Picker choosing the popover density from the menu-bar editor. macOS-only.
                 ///
                 /// Key: `platform.macos.menuBar.displayDensity`
@@ -10508,7 +10508,6 @@ enum L10nCatalogFacts {
         "menuBar.composer.canvas.appearance",
         "menuBar.composer.canvas.dark",
         "menuBar.composer.canvas.hiddenByRule",
-        "menuBar.composer.canvas.hint",
         "menuBar.composer.canvas.light",
         "menuBar.composer.colour.automatic",
         "menuBar.composer.colour.brand",
@@ -10531,7 +10530,6 @@ enum L10nCatalogFacts {
         "menuBar.composer.field.weight",
         "menuBar.composer.group.bind",
         "menuBar.composer.group.hint",
-        "menuBar.composer.group.keyHint",
         "menuBar.composer.group.notAdjacent",
         "menuBar.composer.group.selected",
         "menuBar.composer.group.unbind",
@@ -10709,6 +10707,8 @@ enum L10nCatalogFacts {
         "platform.macos.menuBar.color.actual",
         "platform.macos.menuBar.color.actualDetail",
         "platform.macos.menuBar.color.forecastDetail",
+        "platform.macos.menuBar.composerCanvasHint",
+        "platform.macos.menuBar.composerGroupKeyHint",
         "platform.macos.menuBar.displayDensity",
         "platform.macos.menuBar.fieldStyle.label",
         "platform.macos.menuBar.fieldStyle.labelDetail",
@@ -12091,7 +12091,6 @@ enum L10nCatalogFacts {
         "menuBar.composer.canvas.appearance": 0,
         "menuBar.composer.canvas.dark": 0,
         "menuBar.composer.canvas.hiddenByRule": 0,
-        "menuBar.composer.canvas.hint": 0,
         "menuBar.composer.canvas.light": 0,
         "menuBar.composer.colour.automatic": 0,
         "menuBar.composer.colour.brand": 0,
@@ -12114,7 +12113,6 @@ enum L10nCatalogFacts {
         "menuBar.composer.field.weight": 0,
         "menuBar.composer.group.bind": 0,
         "menuBar.composer.group.hint": 0,
-        "menuBar.composer.group.keyHint": 0,
         "menuBar.composer.group.notAdjacent": 0,
         "menuBar.composer.group.selected": 1,
         "menuBar.composer.group.unbind": 0,
@@ -12292,6 +12290,8 @@ enum L10nCatalogFacts {
         "platform.macos.menuBar.color.actual": 0,
         "platform.macos.menuBar.color.actualDetail": 0,
         "platform.macos.menuBar.color.forecastDetail": 0,
+        "platform.macos.menuBar.composerCanvasHint": 0,
+        "platform.macos.menuBar.composerGroupKeyHint": 0,
         "platform.macos.menuBar.displayDensity": 0,
         "platform.macos.menuBar.fieldStyle.label": 0,
         "platform.macos.menuBar.fieldStyle.labelDetail": 0,

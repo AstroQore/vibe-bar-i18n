@@ -676,10 +676,6 @@
       "value": "Hidden by its rule right now. It keeps its place and moves with the strip.",
       "comment": "Tooltip on a block the strip is not drawing because its visibility rule is not met."
     },
-    "menuBar.composer.canvas.hint": {
-      "value": "Drag a block to move it; a group moves as one. Shift-click to select more, then ⌘G to group them. Drop a block below the strip to remove it.",
-      "comment": "How to use the live strip: move, multi-select, group, remove."
-    },
     "menuBar.composer.canvas.light": {
       "value": "Light",
       "comment": "Segment showing the strip on a light menu bar."
@@ -770,10 +766,6 @@
     "menuBar.composer.group.hint": {
       "value": "Shift-click blocks that sit side by side in one row, then Group. A group moves as one — drag any block in it and the whole run goes.",
       "comment": "Explains how to bind blocks and what binding does"
-    },
-    "menuBar.composer.group.keyHint": {
-      "value": "⌘G groups, ⇧⌘G ungroups",
-      "comment": "Short keyboard hint beside the Group button."
     },
     "menuBar.composer.group.notAdjacent": {
       "value": "Only blocks side by side in one row can be grouped.",
@@ -1567,6 +1559,14 @@
     "platform.macos.menuBar.color.forecastDetail": {
       "value": "Green projected to last · blue a chunk will likely go unused · orange may run short · red projected to run out. Falls back to the percentage while a quota has too little history to forecast.",
       "comment": "Caption under the Forecast colour basis. macOS-only."
+    },
+    "platform.macos.menuBar.composerCanvasHint": {
+      "value": "Drag a block to move it; a group moves as one. Shift-click to select more, then ⌘G to group them. Drop a block below the strip to remove it.",
+      "comment": "macOS only — names the Command key. How to use the composer's live strip: move, multi-select, group, remove."
+    },
+    "platform.macos.menuBar.composerGroupKeyHint": {
+      "value": "⌘G groups, ⇧⌘G ungroups",
+      "comment": "macOS only — names the Command key. Short keyboard hint beside the composer's Group button."
     },
     "platform.macos.menuBar.displayDensity": {
       "value": "Display density",

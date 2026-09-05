@@ -431,9 +431,6 @@
     "menuBar.composer.canvas.hiddenByRule": {
       "value": "当前被它的规则隐藏。位置保留，随条带一起移动。"
     },
-    "menuBar.composer.canvas.hint": {
-      "value": "拖动积木即可移动，成组的积木整组一起走。按住 Shift 点选可多选，再按 ⌘G 成组。把积木拖到条带下方即可移除。"
-    },
     "menuBar.composer.canvas.light": {
       "value": "浅色"
     },
@@ -499,9 +496,6 @@
     },
     "menuBar.composer.group.hint": {
       "value": "按住 Shift 点选同一行里相邻的积木，再按「成组」。成组后它们作为整体移动 —— 拖其中任意一个，整组一起走。"
-    },
-    "menuBar.composer.group.keyHint": {
-      "value": "⌘G 成组，⇧⌘G 解组"
     },
     "menuBar.composer.group.notAdjacent": {
       "value": "只有同一行里相邻的积木才能成组。"
@@ -1033,6 +1027,12 @@
     },
     "platform.macos.menuBar.color.forecastDetail": {
       "value": "绿色表示预计够用 · 蓝色表示预计会有较多闲置 · 橙色表示可能不足 · 红色表示预计会用尽。当某项额度历史过少、无法预测时，回退为按百分比着色。"
+    },
+    "platform.macos.menuBar.composerCanvasHint": {
+      "value": "拖动积木即可移动，成组的积木整组一起走。按住 Shift 点选可多选，再按 ⌘G 成组。把积木拖到条带下方即可移除。"
+    },
+    "platform.macos.menuBar.composerGroupKeyHint": {
+      "value": "⌘G 成组，⇧⌘G 解组"
     },
     "platform.macos.menuBar.displayDensity": {
       "value": "显示密度"

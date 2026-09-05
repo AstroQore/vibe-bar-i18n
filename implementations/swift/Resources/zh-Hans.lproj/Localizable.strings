@@ -414,9 +414,6 @@
 /* Tooltip on a block the strip is not drawing because its visibility rule is not met. */
 "menuBar.composer.canvas.hiddenByRule" = "当前被它的规则隐藏。位置保留，随条带一起移动。";
 
-/* How to use the live strip: move, multi-select, group, remove. */
-"menuBar.composer.canvas.hint" = "拖动积木即可移动，成组的积木整组一起走。按住 Shift 点选可多选，再按 ⌘G 成组。把积木拖到条带下方即可移除。";
-
 /* Segment showing the strip on a light menu bar. */
 "menuBar.composer.canvas.light" = "浅色";
 
@@ -482,9 +479,6 @@
 
 /* Explains how to bind blocks and what binding does */
 "menuBar.composer.group.hint" = "按住 Shift 点选同一行里相邻的积木，再按「成组」。成组后它们作为整体移动 —— 拖其中任意一个，整组一起走。";
-
-/* Short keyboard hint beside the Group button. */
-"menuBar.composer.group.keyHint" = "⌘G 成组，⇧⌘G 解组";
 
 /* Shown when the selected blocks cannot be bound */
 "menuBar.composer.group.notAdjacent" = "只有同一行里相邻的积木才能成组。";
@@ -1010,6 +1004,12 @@
 
 /* Caption under the Forecast colour basis. macOS-only. */
 "platform.macos.menuBar.color.forecastDetail" = "绿色表示预计够用 · 蓝色表示预计会有较多闲置 · 橙色表示可能不足 · 红色表示预计会用尽。当某项额度历史过少、无法预测时，回退为按百分比着色。";
+
+/* macOS only — names the Command key. How to use the composer's live strip: move, multi-select, group, remove. */
+"platform.macos.menuBar.composerCanvasHint" = "拖动积木即可移动，成组的积木整组一起走。按住 Shift 点选可多选，再按 ⌘G 成组。把积木拖到条带下方即可移除。";
+
+/* macOS only — names the Command key. Short keyboard hint beside the composer's Group button. */
+"platform.macos.menuBar.composerGroupKeyHint" = "⌘G 成组，⇧⌘G 解组";
 
 /* Picker choosing the popover density from the menu-bar editor. macOS-only. */
 "platform.macos.menuBar.displayDensity" = "显示密度";
