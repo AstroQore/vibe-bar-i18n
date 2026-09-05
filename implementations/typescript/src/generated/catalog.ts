@@ -153,6 +153,11 @@ export type MessageKey =
   | "menuBar.composer.block.unsupported"
   | "menuBar.composer.blocks"
   | "menuBar.composer.blocks.empty"
+  | "menuBar.composer.canvas"
+  | "menuBar.composer.canvas.appearance"
+  | "menuBar.composer.canvas.dark"
+  | "menuBar.composer.canvas.hiddenByRule"
+  | "menuBar.composer.canvas.light"
   | "menuBar.composer.colour.automatic"
   | "menuBar.composer.colour.brand"
   | "menuBar.composer.colour.fixed"
@@ -351,6 +356,8 @@ export type MessageKey =
   | "platform.macos.menuBar.color.actual"
   | "platform.macos.menuBar.color.actualDetail"
   | "platform.macos.menuBar.color.forecastDetail"
+  | "platform.macos.menuBar.composerCanvasHint"
+  | "platform.macos.menuBar.composerGroupKeyHint"
   | "platform.macos.menuBar.displayDensity"
   | "platform.macos.menuBar.fieldStyle.label"
   | "platform.macos.menuBar.fieldStyle.labelDetail"
@@ -1679,6 +1686,11 @@ export interface MessageParams {
   "menuBar.composer.block.unsupported": undefined;
   "menuBar.composer.blocks": undefined;
   "menuBar.composer.blocks.empty": undefined;
+  "menuBar.composer.canvas": undefined;
+  "menuBar.composer.canvas.appearance": undefined;
+  "menuBar.composer.canvas.dark": undefined;
+  "menuBar.composer.canvas.hiddenByRule": undefined;
+  "menuBar.composer.canvas.light": undefined;
   "menuBar.composer.colour.automatic": undefined;
   "menuBar.composer.colour.brand": undefined;
   "menuBar.composer.colour.fixed": undefined;
@@ -1877,6 +1889,8 @@ export interface MessageParams {
   "platform.macos.menuBar.color.actual": undefined;
   "platform.macos.menuBar.color.actualDetail": undefined;
   "platform.macos.menuBar.color.forecastDetail": undefined;
+  "platform.macos.menuBar.composerCanvasHint": undefined;
+  "platform.macos.menuBar.composerGroupKeyHint": undefined;
   "platform.macos.menuBar.displayDensity": undefined;
   "platform.macos.menuBar.fieldStyle.label": undefined;
   "platform.macos.menuBar.fieldStyle.labelDetail": undefined;
@@ -3206,6 +3220,11 @@ export const messages: {
     "menuBar.composer.block.unsupported": "From a newer version",
     "menuBar.composer.blocks": "Blocks — drag to reorder",
     "menuBar.composer.blocks.empty": "No blocks yet. Add one from the palette below.",
+    "menuBar.composer.canvas": "Strip — drag to arrange",
+    "menuBar.composer.canvas.appearance": "Menu bar appearance",
+    "menuBar.composer.canvas.dark": "Dark",
+    "menuBar.composer.canvas.hiddenByRule": "Hidden by its rule right now. It keeps its place and moves with the strip.",
+    "menuBar.composer.canvas.light": "Light",
     "menuBar.composer.colour.automatic": "Automatic",
     "menuBar.composer.colour.brand": "Brand",
     "menuBar.composer.colour.fixed": "Custom…",
@@ -3226,7 +3245,7 @@ export const messages: {
     "menuBar.composer.field.verdicts": "Verdicts",
     "menuBar.composer.field.weight": "Weight",
     "menuBar.composer.group.bind": "Group",
-    "menuBar.composer.group.hint": "Shift-click blocks that sit side by side in one row. A group moves as one — drag any block in it and the whole run goes.",
+    "menuBar.composer.group.hint": "Shift-click blocks that sit side by side in one row, then Group. A group moves as one — drag any block in it and the whole run goes.",
     "menuBar.composer.group.notAdjacent": "Only blocks side by side in one row can be grouped.",
     "menuBar.composer.group.selected": "{count, plural, one {1 block selected} other {# blocks selected}}",
     "menuBar.composer.group.unbind": "Ungroup",
@@ -3246,11 +3265,11 @@ export const messages: {
     "menuBar.composer.newRow.detail": "Ends the first row and starts the second. Give it a rule below to split only when that quota says so.",
     "menuBar.composer.newRow.help": "Split the strip into a second row.",
     "menuBar.composer.palette": "Add a block",
-    "menuBar.composer.preset.insertHelp": "Insert this group at the end of the strip.",
+    "menuBar.composer.preset.insertHelp": "Insert this segment at the end of the strip.",
     "menuBar.composer.preset.remove": "Remove preset",
-    "menuBar.composer.preset.save": "Save as preset…",
-    "menuBar.composer.preset.saveTitle": "Save this group",
-    "menuBar.composer.presets": "Saved groups",
+    "menuBar.composer.preset.save": "Save segment as preset…",
+    "menuBar.composer.preset.saveTitle": "Save this segment",
+    "menuBar.composer.presets": "Saved segments",
     "menuBar.composer.preview": "Preview",
     "menuBar.composer.preview.dark": "Dark menu bar preview",
     "menuBar.composer.preview.empty": "Empty strip",
@@ -3404,6 +3423,8 @@ export const messages: {
     "platform.macos.menuBar.color.actual": "Actual",
     "platform.macos.menuBar.color.actualDetail": "Colored by the displayed percentage alone, ignoring the forecast.",
     "platform.macos.menuBar.color.forecastDetail": "Green projected to last · blue a chunk will likely go unused · orange may run short · red projected to run out. Falls back to the percentage while a quota has too little history to forecast.",
+    "platform.macos.menuBar.composerCanvasHint": "Drag a block to move it; a group moves as one. Shift-click to select more, then ⌘G to group them. Drop a block below the strip to remove it.",
+    "platform.macos.menuBar.composerGroupKeyHint": "⌘G groups, ⇧⌘G ungroups",
     "platform.macos.menuBar.displayDensity": "Display density",
     "platform.macos.menuBar.fieldStyle.label": "Label",
     "platform.macos.menuBar.fieldStyle.labelDetail": "The field's name beside its percent.",
@@ -4728,6 +4749,11 @@ export const messages: {
     "menuBar.composer.block.unsupported": "来自更新版本",
     "menuBar.composer.blocks": "积木 · 拖动可重新排序",
     "menuBar.composer.blocks.empty": "尚无积木。可从下方面板添加。",
+    "menuBar.composer.canvas": "条带 · 直接拖动排列",
+    "menuBar.composer.canvas.appearance": "菜单栏外观",
+    "menuBar.composer.canvas.dark": "深色",
+    "menuBar.composer.canvas.hiddenByRule": "当前被它的规则隐藏。位置保留，随条带一起移动。",
+    "menuBar.composer.canvas.light": "浅色",
     "menuBar.composer.colour.automatic": "自动",
     "menuBar.composer.colour.brand": "品牌色",
     "menuBar.composer.colour.fixed": "自定义…",
@@ -4748,7 +4774,7 @@ export const messages: {
     "menuBar.composer.field.verdicts": "预测结论",
     "menuBar.composer.field.weight": "字重",
     "menuBar.composer.group.bind": "成组",
-    "menuBar.composer.group.hint": "按住 Shift 点选同一行里相邻的积木。成组后它们作为整体移动 —— 拖其中任意一个，整组一起走。",
+    "menuBar.composer.group.hint": "按住 Shift 点选同一行里相邻的积木，再按「成组」。成组后它们作为整体移动 —— 拖其中任意一个，整组一起走。",
     "menuBar.composer.group.notAdjacent": "只有同一行里相邻的积木才能成组。",
     "menuBar.composer.group.selected": "{count, plural, other {已选 # 个积木}}",
     "menuBar.composer.group.unbind": "解组",
@@ -4768,11 +4794,11 @@ export const messages: {
     "menuBar.composer.newRow.detail": "结束第一行并开始第二行。可在下方设置条件，仅在该额度满足条件时换行。",
     "menuBar.composer.newRow.help": "将菜单栏内容拆成第二行。",
     "menuBar.composer.palette": "添加积木",
-    "menuBar.composer.preset.insertHelp": "在条带末尾插入该分组。",
+    "menuBar.composer.preset.insertHelp": "在条带末尾插入该段。",
     "menuBar.composer.preset.remove": "删除预设",
-    "menuBar.composer.preset.save": "存为预设…",
-    "menuBar.composer.preset.saveTitle": "保存该分组",
-    "menuBar.composer.presets": "已存分组",
+    "menuBar.composer.preset.save": "将段存为预设…",
+    "menuBar.composer.preset.saveTitle": "保存该段",
+    "menuBar.composer.presets": "已存的段",
     "menuBar.composer.preview": "预览",
     "menuBar.composer.preview.dark": "深色菜单栏预览",
     "menuBar.composer.preview.empty": "空样式",
@@ -4926,6 +4952,8 @@ export const messages: {
     "platform.macos.menuBar.color.actual": "实际",
     "platform.macos.menuBar.color.actualDetail": "仅按显示的百分比着色，忽略预测。",
     "platform.macos.menuBar.color.forecastDetail": "绿色表示预计够用 · 蓝色表示预计会有较多闲置 · 橙色表示可能不足 · 红色表示预计会用尽。当某项额度历史过少、无法预测时，回退为按百分比着色。",
+    "platform.macos.menuBar.composerCanvasHint": "拖动积木即可移动，成组的积木整组一起走。按住 Shift 点选可多选，再按 ⌘G 成组。把积木拖到条带下方即可移除。",
+    "platform.macos.menuBar.composerGroupKeyHint": "⌘G 成组，⇧⌘G 解组",
     "platform.macos.menuBar.displayDensity": "显示密度",
     "platform.macos.menuBar.fieldStyle.label": "名称",
     "platform.macos.menuBar.fieldStyle.labelDetail": "名称与百分比并列。",

@@ -660,6 +660,26 @@
       "value": "No blocks yet. Add one from the palette below.",
       "comment": "Shown when the strip has no blocks."
     },
+    "menuBar.composer.canvas": {
+      "value": "Strip — drag to arrange",
+      "comment": "Caption over the live strip the user arranges directly."
+    },
+    "menuBar.composer.canvas.appearance": {
+      "value": "Menu bar appearance",
+      "comment": "Accessibility label of the light/dark toggle over the live strip."
+    },
+    "menuBar.composer.canvas.dark": {
+      "value": "Dark",
+      "comment": "Segment showing the strip on a dark menu bar."
+    },
+    "menuBar.composer.canvas.hiddenByRule": {
+      "value": "Hidden by its rule right now. It keeps its place and moves with the strip.",
+      "comment": "Tooltip on a block the strip is not drawing because its visibility rule is not met."
+    },
+    "menuBar.composer.canvas.light": {
+      "value": "Light",
+      "comment": "Segment showing the strip on a light menu bar."
+    },
     "menuBar.composer.colour.automatic": {
       "value": "Automatic",
       "comment": "Colour choice: whatever the strip would use on its own."
@@ -744,7 +764,7 @@
       "comment": "Button that binds the selected blocks into one run"
     },
     "menuBar.composer.group.hint": {
-      "value": "Shift-click blocks that sit side by side in one row. A group moves as one — drag any block in it and the whole run goes.",
+      "value": "Shift-click blocks that sit side by side in one row, then Group. A group moves as one — drag any block in it and the whole run goes.",
       "comment": "Explains how to bind blocks and what binding does"
     },
     "menuBar.composer.group.notAdjacent": {
@@ -827,24 +847,24 @@
       "comment": "Caption over the list of blocks that can be added."
     },
     "menuBar.composer.preset.insertHelp": {
-      "value": "Insert this group at the end of the strip.",
-      "comment": "Tooltip on a saved group."
+      "value": "Insert this segment at the end of the strip.",
+      "comment": "Tooltip on a saved segment."
     },
     "menuBar.composer.preset.remove": {
       "value": "Remove preset",
       "comment": "Menu action deleting a saved group."
     },
     "menuBar.composer.preset.save": {
-      "value": "Save as preset…",
-      "comment": "Menu action saving a group to use again."
+      "value": "Save segment as preset…",
+      "comment": "Menu action saving a segment to insert again later."
     },
     "menuBar.composer.preset.saveTitle": {
-      "value": "Save this group",
-      "comment": "Title of the dialog naming a saved group."
+      "value": "Save this segment",
+      "comment": "Title of the dialog naming a saved segment."
     },
     "menuBar.composer.presets": {
-      "value": "Saved groups",
-      "comment": "Caption over the saved groups that can be inserted."
+      "value": "Saved segments",
+      "comment": "Caption over the saved segments that can be inserted."
     },
     "menuBar.composer.preview": {
       "value": "Preview",
@@ -1539,6 +1559,14 @@
     "platform.macos.menuBar.color.forecastDetail": {
       "value": "Green projected to last · blue a chunk will likely go unused · orange may run short · red projected to run out. Falls back to the percentage while a quota has too little history to forecast.",
       "comment": "Caption under the Forecast colour basis. macOS-only."
+    },
+    "platform.macos.menuBar.composerCanvasHint": {
+      "value": "Drag a block to move it; a group moves as one. Shift-click to select more, then ⌘G to group them. Drop a block below the strip to remove it.",
+      "comment": "macOS only — names the Command key. How to use the composer's live strip: move, multi-select, group, remove."
+    },
+    "platform.macos.menuBar.composerGroupKeyHint": {
+      "value": "⌘G groups, ⇧⌘G ungroups",
+      "comment": "macOS only — names the Command key. Short keyboard hint beside the composer's Group button."
     },
     "platform.macos.menuBar.displayDensity": {
       "value": "Display density",

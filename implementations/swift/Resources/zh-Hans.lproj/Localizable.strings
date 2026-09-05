@@ -402,6 +402,21 @@
 /* Shown when the strip has no blocks. */
 "menuBar.composer.blocks.empty" = "尚无积木。可从下方面板添加。";
 
+/* Caption over the live strip the user arranges directly. */
+"menuBar.composer.canvas" = "条带 · 直接拖动排列";
+
+/* Accessibility label of the light/dark toggle over the live strip. */
+"menuBar.composer.canvas.appearance" = "菜单栏外观";
+
+/* Segment showing the strip on a dark menu bar. */
+"menuBar.composer.canvas.dark" = "深色";
+
+/* Tooltip on a block the strip is not drawing because its visibility rule is not met. */
+"menuBar.composer.canvas.hiddenByRule" = "当前被它的规则隐藏。位置保留，随条带一起移动。";
+
+/* Segment showing the strip on a light menu bar. */
+"menuBar.composer.canvas.light" = "浅色";
+
 /* Colour choice: whatever the strip would use on its own. */
 "menuBar.composer.colour.automatic" = "自动";
 
@@ -463,7 +478,7 @@
 "menuBar.composer.group.bind" = "成组";
 
 /* Explains how to bind blocks and what binding does */
-"menuBar.composer.group.hint" = "按住 Shift 点选同一行里相邻的积木。成组后它们作为整体移动 —— 拖其中任意一个，整组一起走。";
+"menuBar.composer.group.hint" = "按住 Shift 点选同一行里相邻的积木，再按「成组」。成组后它们作为整体移动 —— 拖其中任意一个，整组一起走。";
 
 /* Shown when the selected blocks cannot be bound */
 "menuBar.composer.group.notAdjacent" = "只有同一行里相邻的积木才能成组。";
@@ -519,20 +534,20 @@
 /* Caption over the list of blocks that can be added. */
 "menuBar.composer.palette" = "添加积木";
 
-/* Tooltip on a saved group. */
-"menuBar.composer.preset.insertHelp" = "在条带末尾插入该分组。";
+/* Tooltip on a saved segment. */
+"menuBar.composer.preset.insertHelp" = "在条带末尾插入该段。";
 
 /* Menu action deleting a saved group. */
 "menuBar.composer.preset.remove" = "删除预设";
 
-/* Menu action saving a group to use again. */
-"menuBar.composer.preset.save" = "存为预设…";
+/* Menu action saving a segment to insert again later. */
+"menuBar.composer.preset.save" = "将段存为预设…";
 
-/* Title of the dialog naming a saved group. */
-"menuBar.composer.preset.saveTitle" = "保存该分组";
+/* Title of the dialog naming a saved segment. */
+"menuBar.composer.preset.saveTitle" = "保存该段";
 
-/* Caption over the saved groups that can be inserted. */
-"menuBar.composer.presets" = "已存分组";
+/* Caption over the saved segments that can be inserted. */
+"menuBar.composer.presets" = "已存的段";
 
 /* Caption over the live preview of the composed strip. */
 "menuBar.composer.preview" = "预览";
@@ -989,6 +1004,12 @@
 
 /* Caption under the Forecast colour basis. macOS-only. */
 "platform.macos.menuBar.color.forecastDetail" = "绿色表示预计够用 · 蓝色表示预计会有较多闲置 · 橙色表示可能不足 · 红色表示预计会用尽。当某项额度历史过少、无法预测时，回退为按百分比着色。";
+
+/* macOS only — names the Command key. How to use the composer's live strip: move, multi-select, group, remove. */
+"platform.macos.menuBar.composerCanvasHint" = "拖动积木即可移动，成组的积木整组一起走。按住 Shift 点选可多选，再按 ⌘G 成组。把积木拖到条带下方即可移除。";
+
+/* macOS only — names the Command key. Short keyboard hint beside the composer's Group button. */
+"platform.macos.menuBar.composerGroupKeyHint" = "⌘G 成组，⇧⌘G 解组";
 
 /* Picker choosing the popover density from the menu-bar editor. macOS-only. */
 "platform.macos.menuBar.displayDensity" = "显示密度";

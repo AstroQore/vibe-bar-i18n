@@ -259,7 +259,7 @@ to do it.
 **Swift** (native app):
 
 ```swift
-.package(url: "https://github.com/AstroQore/vibe-bar-i18n.git", exact: "0.3.0")
+.package(url: "https://github.com/AstroQore/vibe-bar-i18n.git", exact: "0.4.0")
 ```
 
 ```swift
@@ -279,7 +279,7 @@ an in-app override sets the locale explicitly.
 **TypeScript** (desktop app):
 
 ```jsonc
-"@astroqore/vibe-bar-i18n": "0.3.0"
+"@astroqore/vibe-bar-i18n": "0.4.0"
 ```
 
 ```ts
