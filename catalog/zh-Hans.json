@@ -419,6 +419,24 @@
     "menuBar.composer.blocks.empty": {
       "value": "尚无积木。可从下方面板添加。"
     },
+    "menuBar.composer.canvas": {
+      "value": "条带 · 直接拖动排列"
+    },
+    "menuBar.composer.canvas.appearance": {
+      "value": "菜单栏外观"
+    },
+    "menuBar.composer.canvas.dark": {
+      "value": "深色"
+    },
+    "menuBar.composer.canvas.hiddenByRule": {
+      "value": "当前被它的规则隐藏。位置保留，随条带一起移动。"
+    },
+    "menuBar.composer.canvas.hint": {
+      "value": "拖动积木即可移动，成组的积木整组一起走。按住 Shift 点选可多选，再按 ⌘G 成组。把积木拖到条带下方即可移除。"
+    },
+    "menuBar.composer.canvas.light": {
+      "value": "浅色"
+    },
     "menuBar.composer.colour.automatic": {
       "value": "自动"
     },
@@ -480,7 +498,10 @@
       "value": "成组"
     },
     "menuBar.composer.group.hint": {
-      "value": "按住 Shift 点选同一行里相邻的积木。成组后它们作为整体移动 —— 拖其中任意一个，整组一起走。"
+      "value": "按住 Shift 点选同一行里相邻的积木，再按「成组」。成组后它们作为整体移动 —— 拖其中任意一个，整组一起走。"
+    },
+    "menuBar.composer.group.keyHint": {
+      "value": "⌘G 成组，⇧⌘G 解组"
     },
     "menuBar.composer.group.notAdjacent": {
       "value": "只有同一行里相邻的积木才能成组。"
@@ -540,19 +561,19 @@
       "value": "添加积木"
     },
     "menuBar.composer.preset.insertHelp": {
-      "value": "在条带末尾插入该分组。"
+      "value": "在条带末尾插入该段。"
     },
     "menuBar.composer.preset.remove": {
       "value": "删除预设"
     },
     "menuBar.composer.preset.save": {
-      "value": "存为预设…"
+      "value": "将段存为预设…"
     },
     "menuBar.composer.preset.saveTitle": {
-      "value": "保存该分组"
+      "value": "保存该段"
     },
     "menuBar.composer.presets": {
-      "value": "已存分组"
+      "value": "已存的段"
     },
     "menuBar.composer.preview": {
       "value": "预览"

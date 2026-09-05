@@ -862,16 +862,22 @@ public enum L10n {
             /// en: "Blocks — drag to reorder"
             public static var blocks: String { L10nSupport.string("menuBar.composer.blocks") }
 
+            /// Caption over the live strip the user arranges directly.
+            ///
+            /// Key: `menuBar.composer.canvas`
+            /// en: "Strip — drag to arrange"
+            public static var canvas: String { L10nSupport.string("menuBar.composer.canvas") }
+
             /// Caption over the list of blocks that can be added.
             ///
             /// Key: `menuBar.composer.palette`
             /// en: "Add a block"
             public static var palette: String { L10nSupport.string("menuBar.composer.palette") }
 
-            /// Caption over the saved groups that can be inserted.
+            /// Caption over the saved segments that can be inserted.
             ///
             /// Key: `menuBar.composer.presets`
-            /// en: "Saved groups"
+            /// en: "Saved segments"
             public static var presets: String { L10nSupport.string("menuBar.composer.presets") }
 
             /// Caption over the live preview of the composed strip.
@@ -994,6 +1000,38 @@ public enum L10n {
                 /// Key: `menuBar.composer.blocks.empty`
                 /// en: "No blocks yet. Add one from the palette below."
                 public static var empty: String { L10nSupport.string("menuBar.composer.blocks.empty") }
+            }
+
+            public enum Canvas {
+                /// Accessibility label of the light/dark toggle over the live strip.
+                ///
+                /// Key: `menuBar.composer.canvas.appearance`
+                /// en: "Menu bar appearance"
+                public static var appearance: String { L10nSupport.string("menuBar.composer.canvas.appearance") }
+
+                /// Segment showing the strip on a dark menu bar.
+                ///
+                /// Key: `menuBar.composer.canvas.dark`
+                /// en: "Dark"
+                public static var dark: String { L10nSupport.string("menuBar.composer.canvas.dark") }
+
+                /// Tooltip on a block the strip is not drawing because its visibility rule is not met.
+                ///
+                /// Key: `menuBar.composer.canvas.hiddenByRule`
+                /// en: "Hidden by its rule right now. It keeps its place and moves with the strip."
+                public static var hiddenByRule: String { L10nSupport.string("menuBar.composer.canvas.hiddenByRule") }
+
+                /// How to use the live strip: move, multi-select, group, remove.
+                ///
+                /// Key: `menuBar.composer.canvas.hint`
+                /// en: "Drag a block to move it; a group moves as one. Shift-click to select more, then ⌘G to group them. Drop a block below the strip to remove it."
+                public static var hint: String { L10nSupport.string("menuBar.composer.canvas.hint") }
+
+                /// Segment showing the strip on a light menu bar.
+                ///
+                /// Key: `menuBar.composer.canvas.light`
+                /// en: "Light"
+                public static var light: String { L10nSupport.string("menuBar.composer.canvas.light") }
             }
 
             public enum Colour {
@@ -1126,8 +1164,14 @@ public enum L10n {
                 /// Explains how to bind blocks and what binding does
                 ///
                 /// Key: `menuBar.composer.group.hint`
-                /// en: "Shift-click blocks that sit side by side in one row. A group moves as one — drag any block in it and the whole run goes."
+                /// en: "Shift-click blocks that sit side by side in one row, then Group. A group moves as one — drag any block in it and the whole run goes."
                 public static var hint: String { L10nSupport.string("menuBar.composer.group.hint") }
+
+                /// Short keyboard hint beside the Group button.
+                ///
+                /// Key: `menuBar.composer.group.keyHint`
+                /// en: "⌘G groups, ⇧⌘G ungroups"
+                public static var keyHint: String { L10nSupport.string("menuBar.composer.group.keyHint") }
 
                 /// Shown when the selected blocks cannot be bound
                 ///
@@ -1247,10 +1291,10 @@ public enum L10n {
             }
 
             public enum Preset {
-                /// Tooltip on a saved group.
+                /// Tooltip on a saved segment.
                 ///
                 /// Key: `menuBar.composer.preset.insertHelp`
-                /// en: "Insert this group at the end of the strip."
+                /// en: "Insert this segment at the end of the strip."
                 public static var insertHelp: String { L10nSupport.string("menuBar.composer.preset.insertHelp") }
 
                 /// Menu action deleting a saved group.
@@ -1259,16 +1303,16 @@ public enum L10n {
                 /// en: "Remove preset"
                 public static var remove: String { L10nSupport.string("menuBar.composer.preset.remove") }
 
-                /// Menu action saving a group to use again.
+                /// Menu action saving a segment to insert again later.
                 ///
                 /// Key: `menuBar.composer.preset.save`
-                /// en: "Save as preset…"
+                /// en: "Save segment as preset…"
                 public static var save: String { L10nSupport.string("menuBar.composer.preset.save") }
 
-                /// Title of the dialog naming a saved group.
+                /// Title of the dialog naming a saved segment.
                 ///
                 /// Key: `menuBar.composer.preset.saveTitle`
-                /// en: "Save this group"
+                /// en: "Save this segment"
                 public static var saveTitle: String { L10nSupport.string("menuBar.composer.preset.saveTitle") }
             }
 
@@ -10460,6 +10504,12 @@ enum L10nCatalogFacts {
         "menuBar.composer.block.unsupported",
         "menuBar.composer.blocks",
         "menuBar.composer.blocks.empty",
+        "menuBar.composer.canvas",
+        "menuBar.composer.canvas.appearance",
+        "menuBar.composer.canvas.dark",
+        "menuBar.composer.canvas.hiddenByRule",
+        "menuBar.composer.canvas.hint",
+        "menuBar.composer.canvas.light",
         "menuBar.composer.colour.automatic",
         "menuBar.composer.colour.brand",
         "menuBar.composer.colour.fixed",
@@ -10481,6 +10531,7 @@ enum L10nCatalogFacts {
         "menuBar.composer.field.weight",
         "menuBar.composer.group.bind",
         "menuBar.composer.group.hint",
+        "menuBar.composer.group.keyHint",
         "menuBar.composer.group.notAdjacent",
         "menuBar.composer.group.selected",
         "menuBar.composer.group.unbind",
@@ -12036,6 +12087,12 @@ enum L10nCatalogFacts {
         "menuBar.composer.block.unsupported": 0,
         "menuBar.composer.blocks": 0,
         "menuBar.composer.blocks.empty": 0,
+        "menuBar.composer.canvas": 0,
+        "menuBar.composer.canvas.appearance": 0,
+        "menuBar.composer.canvas.dark": 0,
+        "menuBar.composer.canvas.hiddenByRule": 0,
+        "menuBar.composer.canvas.hint": 0,
+        "menuBar.composer.canvas.light": 0,
         "menuBar.composer.colour.automatic": 0,
         "menuBar.composer.colour.brand": 0,
         "menuBar.composer.colour.fixed": 0,
@@ -12057,6 +12114,7 @@ enum L10nCatalogFacts {
         "menuBar.composer.field.weight": 0,
         "menuBar.composer.group.bind": 0,
         "menuBar.composer.group.hint": 0,
+        "menuBar.composer.group.keyHint": 0,
         "menuBar.composer.group.notAdjacent": 0,
         "menuBar.composer.group.selected": 1,
         "menuBar.composer.group.unbind": 0,
