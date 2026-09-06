@@ -1995,6 +1995,18 @@
 /* Current version line; version is a raw version string */
 "settings.appVersion" = "Vibe Bar %@";
 
+/* Caption under the browser list in Settings and the setup assistant. */
+"settings.browsers.help" = "Only the browsers ticked here are read, in this order. A browser that is not installed is never read.";
+
+/* Shown in place of the browser list when detection finds no installed browser with cookie data. */
+"settings.browsers.none" = "No browser with a cookie store was found on this Mac.";
+
+/* Button that clears the browser selection so every installed browser is read again. */
+"settings.browsers.readAll" = "Read every installed browser";
+
+/* Heading of the list of installed browsers whose cookie stores Vibe Bar may read. Shown in Settings > Misc Providers and in the setup assistant's browser-cookies step. */
+"settings.browsers.title" = "Browsers to read";
+
 /* Badge on the version currently compiled in */
 "settings.bundled" = "bundled";
 

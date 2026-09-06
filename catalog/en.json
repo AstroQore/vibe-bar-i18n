@@ -3356,6 +3356,22 @@
         "version": "string"
       }
     },
+    "settings.browsers.help": {
+      "value": "Only the browsers ticked here are read, in this order. A browser that is not installed is never read.",
+      "comment": "Caption under the browser list in Settings and the setup assistant."
+    },
+    "settings.browsers.none": {
+      "value": "No browser with a cookie store was found on this Mac.",
+      "comment": "Shown in place of the browser list when detection finds no installed browser with cookie data."
+    },
+    "settings.browsers.readAll": {
+      "value": "Read every installed browser",
+      "comment": "Button that clears the browser selection so every installed browser is read again."
+    },
+    "settings.browsers.title": {
+      "value": "Browsers to read",
+      "comment": "Heading of the list of installed browsers whose cookie stores Vibe Bar may read. Shown in Settings > Misc Providers and in the setup assistant's browser-cookies step."
+    },
     "settings.bundled": {
       "value": "bundled",
       "comment": "Badge on the version currently compiled in"

@@ -698,6 +698,10 @@ export type MessageKey =
   | "settings.antigravityLocalOnly"
   | "settings.antigravitySource"
   | "settings.appVersion"
+  | "settings.browsers.help"
+  | "settings.browsers.none"
+  | "settings.browsers.readAll"
+  | "settings.browsers.title"
   | "settings.bundled"
   | "settings.checkConnections"
   | "settings.checkForUpdates"
@@ -2287,6 +2291,10 @@ export interface MessageParams {
   "settings.antigravityLocalOnly": undefined;
   "settings.antigravitySource": undefined;
   "settings.appVersion": { "version": string };
+  "settings.browsers.help": undefined;
+  "settings.browsers.none": undefined;
+  "settings.browsers.readAll": undefined;
+  "settings.browsers.title": undefined;
   "settings.bundled": undefined;
   "settings.checkConnections": { "company": string };
   "settings.checkForUpdates": undefined;
@@ -3877,6 +3885,10 @@ export const messages: {
     "settings.antigravityLocalOnly": "Antigravity reads the locally running language server. Cookie import is deferred until the Antigravity Cloud endpoint ships.",
     "settings.antigravitySource": "Antigravity source",
     "settings.appVersion": "Vibe Bar {version}",
+    "settings.browsers.help": "Only the browsers ticked here are read, in this order. A browser that is not installed is never read.",
+    "settings.browsers.none": "No browser with a cookie store was found on this Mac.",
+    "settings.browsers.readAll": "Read every installed browser",
+    "settings.browsers.title": "Browsers to read",
     "settings.bundled": "bundled",
     "settings.checkConnections": "Check {company} connections",
     "settings.checkForUpdates": "Check for Updates…",
@@ -5462,6 +5474,10 @@ export const messages: {
     "settings.antigravityLocalOnly": "Antigravity 读取本机运行的语言服务。cookie 导入将等到 Antigravity Cloud 端点上线后再启用。",
     "settings.antigravitySource": "Antigravity 来源",
     "settings.appVersion": "Vibe Bar {version}",
+    "settings.browsers.help": "只读取此处勾选的浏览器，按此顺序。未安装的浏览器不会被读取。",
+    "settings.browsers.none": "本机没有找到带 Cookie 存储的浏览器。",
+    "settings.browsers.readAll": "读取所有已安装的浏览器",
+    "settings.browsers.title": "读取的浏览器",
     "settings.bundled": "内置",
     "settings.checkConnections": "检查 {company} 连接",
     "settings.checkForUpdates": "检查更新…",

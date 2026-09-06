@@ -2054,6 +2054,18 @@
     "settings.appVersion": {
       "value": "Vibe Bar {version}"
     },
+    "settings.browsers.help": {
+      "value": "只读取此处勾选的浏览器，按此顺序。未安装的浏览器不会被读取。"
+    },
+    "settings.browsers.none": {
+      "value": "本机没有找到带 Cookie 存储的浏览器。"
+    },
+    "settings.browsers.readAll": {
+      "value": "读取所有已安装的浏览器"
+    },
+    "settings.browsers.title": {
+      "value": "读取的浏览器"
+    },
     "settings.bundled": {
       "value": "内置"
     },
