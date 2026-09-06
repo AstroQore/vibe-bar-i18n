@@ -5063,6 +5063,18 @@ public enum L10n {
         /// en: "The SpaceXAI page combines Grok with Cursor. Grok reads `~/.grok/auth.json` or grok.com cookies; Cursor reads Cursor.app first, then cursor.com cookie slots. Grok Bot contributes quota, plus read-only sessions from its local cache — its cloud runs still add no token/cost rows."
         public static var spaceXAIIntro: String { L10nSupport.string("settings.spaceXAIIntro") }
 
+        /// Global format for subscription plan labels; options show ChatGPT Pro examples.
+        ///
+        /// Key: `settings.subscriptionNameFormat`
+        /// en: "Subscription name format"
+        public static var subscriptionNameFormat: String { L10nSupport.string("settings.subscriptionNameFormat") }
+
+        /// Explains multiplier-only fallback and existing custom label precedence.
+        ///
+        /// Key: `settings.subscriptionNameFormatDetail`
+        /// en: "Applies to all subscription labels. Plans without a multiplier keep their name; custom labels stay unchanged."
+        public static var subscriptionNameFormatDetail: String { L10nSupport.string("settings.subscriptionNameFormatDetail") }
+
         /// Picker label
         ///
         /// Key: `settings.updateChannel`
@@ -11701,6 +11713,8 @@ enum L10nCatalogFacts {
         "settings.sidebar.enableProvider",
         "settings.sidebar.hideFromOverview",
         "settings.spaceXAIIntro",
+        "settings.subscriptionNameFormat",
+        "settings.subscriptionNameFormatDetail",
         "settings.terminal.copyOnly",
         "settings.updateChannel",
         "settings.updateChannel.dev",
@@ -13336,6 +13350,8 @@ enum L10nCatalogFacts {
         "settings.sidebar.enableProvider": 0,
         "settings.sidebar.hideFromOverview": 0,
         "settings.spaceXAIIntro": 0,
+        "settings.subscriptionNameFormat": 0,
+        "settings.subscriptionNameFormatDetail": 0,
         "settings.terminal.copyOnly": 0,
         "settings.updateChannel": 0,
         "settings.updateChannel.dev": 0,

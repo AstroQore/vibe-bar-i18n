@@ -2943,6 +2943,12 @@
 /* Explanation on the SpaceXAI settings page */
 "settings.spaceXAIIntro" = "The SpaceXAI page combines Grok with Cursor. Grok reads `~/.grok/auth.json` or grok.com cookies; Cursor reads Cursor.app first, then cursor.com cookie slots. Grok Bot contributes quota, plus read-only sessions from its local cache — its cloud runs still add no token/cost rows.";
 
+/* Global format for subscription plan labels; options show ChatGPT Pro examples. */
+"settings.subscriptionNameFormat" = "Subscription name format";
+
+/* Explains multiplier-only fallback and existing custom label precedence. */
+"settings.subscriptionNameFormatDetail" = "Applies to all subscription labels. Plans without a multiplier keep their name; custom labels stay unchanged.";
+
 /* Terminal preference: copy the resume command instead of running it. Terminal and iTerm2 are product names and stay as spelled. */
 "settings.terminal.copyOnly" = "Copy to clipboard";
 

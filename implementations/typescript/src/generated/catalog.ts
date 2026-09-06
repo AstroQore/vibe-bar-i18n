@@ -1014,6 +1014,8 @@ export type MessageKey =
   | "settings.sidebar.enableProvider"
   | "settings.sidebar.hideFromOverview"
   | "settings.spaceXAIIntro"
+  | "settings.subscriptionNameFormat"
+  | "settings.subscriptionNameFormatDetail"
   | "settings.terminal.copyOnly"
   | "settings.updateChannel"
   | "settings.updateChannel.dev"
@@ -2599,6 +2601,8 @@ export interface MessageParams {
   "settings.sidebar.enableProvider": undefined;
   "settings.sidebar.hideFromOverview": undefined;
   "settings.spaceXAIIntro": undefined;
+  "settings.subscriptionNameFormat": undefined;
+  "settings.subscriptionNameFormatDetail": undefined;
   "settings.terminal.copyOnly": undefined;
   "settings.updateChannel": undefined;
   "settings.updateChannel.dev": undefined;
@@ -4185,6 +4189,8 @@ export const messages: {
     "settings.sidebar.enableProvider": "Enable Provider",
     "settings.sidebar.hideFromOverview": "Hide from Overview",
     "settings.spaceXAIIntro": "The SpaceXAI page combines Grok with Cursor. Grok reads `~/.grok/auth.json` or grok.com cookies; Cursor reads Cursor.app first, then cursor.com cookie slots. Grok Bot contributes quota, plus read-only sessions from its local cache — its cloud runs still add no token/cost rows.",
+    "settings.subscriptionNameFormat": "Subscription name format",
+    "settings.subscriptionNameFormatDetail": "Applies to all subscription labels. Plans without a multiplier keep their name; custom labels stay unchanged.",
     "settings.terminal.copyOnly": "Copy to clipboard",
     "settings.updateChannel": "Update channel",
     "settings.updateChannel.dev": "Dev",
@@ -5766,6 +5772,8 @@ export const messages: {
     "settings.sidebar.enableProvider": "启用厂商",
     "settings.sidebar.hideFromOverview": "从总览中隐藏",
     "settings.spaceXAIIntro": "SpaceXAI 页面同时包含 Grok 与 Cursor。Grok 读取 `~/.grok/auth.json` 或 grok.com 的 cookies；Cursor 先读 Cursor.app，再读 cursor.com 的 cookie 槽位。Grok Bot 提供额度，以及来自本地缓存的只读会话 — 其云端运行仍不产生 token 或花费记录。",
+    "settings.subscriptionNameFormat": "订阅名称格式",
+    "settings.subscriptionNameFormatDetail": "应用于所有订阅标签。没有倍率的套餐保留名称；自定义标签保持原样。",
     "settings.terminal.copyOnly": "复制到剪贴板",
     "settings.updateChannel": "更新通道",
     "settings.updateChannel.dev": "预览版",

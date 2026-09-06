@@ -2943,6 +2943,12 @@
 /* Explanation on the SpaceXAI settings page */
 "settings.spaceXAIIntro" = "SpaceXAI 页面同时包含 Grok 与 Cursor。Grok 读取 `~/.grok/auth.json` 或 grok.com 的 cookies；Cursor 先读 Cursor.app，再读 cursor.com 的 cookie 槽位。Grok Bot 提供额度，以及来自本地缓存的只读会话 — 其云端运行仍不产生 token 或花费记录。";
 
+/* Global format for subscription plan labels; options show ChatGPT Pro examples. */
+"settings.subscriptionNameFormat" = "订阅名称格式";
+
+/* Explains multiplier-only fallback and existing custom label precedence. */
+"settings.subscriptionNameFormatDetail" = "应用于所有订阅标签。没有倍率的套餐保留名称；自定义标签保持原样。";
+
 /* Terminal preference: copy the resume command instead of running it. Terminal and iTerm2 are product names and stay as spelled. */
 "settings.terminal.copyOnly" = "复制到剪贴板";
 

@@ -7516,6 +7516,14 @@
     "resetJournal.creditOnly": {
       "value": "Redemption recorded · quota change not observed",
       "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
+    },
+    "settings.subscriptionNameFormat": {
+      "value": "Subscription name format",
+      "comment": "Global format for subscription plan labels; options show ChatGPT Pro examples."
+    },
+    "settings.subscriptionNameFormatDetail": {
+      "value": "Applies to all subscription labels. Plans without a multiplier keep their name; custom labels stay unchanged.",
+      "comment": "Explains multiplier-only fallback and existing custom label precedence."
     }
   }
 }

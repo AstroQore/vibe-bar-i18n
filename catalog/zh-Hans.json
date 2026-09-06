@@ -4738,6 +4738,12 @@
     },
     "resetJournal.creditOnly": {
       "value": "已记录兑换 · 未观察到对应额度变化"
+    },
+    "settings.subscriptionNameFormat": {
+      "value": "订阅名称格式"
+    },
+    "settings.subscriptionNameFormatDetail": {
+      "value": "应用于所有订阅标签。没有倍率的套餐保留名称；自定义标签保持原样。"
     }
   }
 }
