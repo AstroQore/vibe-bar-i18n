@@ -1164,6 +1164,93 @@
 /* Caption under a quota bar when the provider reported no reset time */
 "quota.bucket.noResetInfo" = "No reset info";
 
+/* ChatGPT Chat learned feature allowance display and settings. */
+"quota.chat.allowanceLearningHelp" = "Allowances are learned after resets. Changing your plan starts learning again.";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.astraLimit" = "GPT-6 Pro weekly limit";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.astraReset" = "Set GPT-6 Pro reset time";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.complete" = "Saved cloud history is synced. Temporary chats, deleted chats and retries may differ.";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.connectionHelp" = "Import browser cookies or sign in in the built-in window. Work stays in ChatGPT Agentic.";
+
+/* Menu bar metric for absolute ChatGPT Chat allowance counts, not percentages. */
+"quota.chat.countMetric" = "Used / remaining count";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.dailyReset" = "Set daily Pro reset time";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.enable" = "Track ChatGPT Chat";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.estimated" = "History estimate";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.excluded" = "%1$lld Work conversations excluded · %2$lld unclassified turns";
+
+/* ChatGPT Chat learned feature allowance display and settings. */
+"quota.chat.featuresHelp" = "Track image creation and deep research with your ChatGPT account.";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.historyToggle" = "Sync saved Chat history across devices";
+
+/* ChatGPT Chat learned feature allowance display and settings. */
+"quota.chat.learnedRemaining" = "%1$lld of %2$lld left";
+
+/* ChatGPT Chat learned feature allowance display and settings. */
+"quota.chat.learningRemaining" = "Learning · about %lld left";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.limitsHelp" = "Enter the limits shown for your plan. A Pro subscription alone does not identify its allowance tier.";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.manualLimits" = "Manual Chat limits (0 means unknown)";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.noExtension" = "Uses cookies and the built-in browser; no extension to install.";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.observed" = "%lld observed";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.partial" = "History sync is incomplete. Remaining messages are unavailable until coverage is complete.";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.period" = "Past %lld days";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.privacy" = "Only model, time and deduplication metadata are saved locally. Conversation text is not retained.";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.refresh" = "Refresh Chat allowances";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.remaining" = "%lld left";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.reported" = "Provider-reported allowance units";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.rolling" = "Estimated from recent history; reset boundaries may differ from your account.";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.sharedLimit" = "Shared Pro daily limit";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.solLimit" = "GPT-5.6 Sol Pro daily limit";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.unknown" = "Allowance unknown";
+
+/* ChatGPT Chat quota setup or quantity display; separate from Agentic quotas. */
+"quota.chat.used" = "%lld used";
+
 /* Caption under an empty reset-history strip explaining when a cycle is recorded */
 "quota.cycleRecordedOnRefill" = "A cycle is recorded when the quota refills";
 
@@ -1626,6 +1713,15 @@
 /* The count above, plus when the soonest one lapses */
 "quota.resetCredits.availableWithExpiry" = "%1$@ · next expires in %2$@";
 
+/* Individual available usage-reset credit shown with its absolute expiry. */
+"quota.resetCredits.expiresAt" = "Expires %@";
+
+/* Individual available usage-reset credit shown with its absolute expiry. */
+"quota.resetCredits.item" = "Reset %lld";
+
+/* Individual available usage-reset credit shown with its absolute expiry. */
+"quota.resetCredits.missingExpiries" = "%lld more · expiry pending";
+
 /* Card title for the manual rate-limit resets a Codex plan grants */
 "quota.resetCredits.title" = "Limit reset credits";
 
@@ -1829,6 +1925,63 @@
 
 /* Compact window picker label on the time axis */
 "resetHistory.window.twelveWeeks" = "12w";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.afterReset" = "New deadline";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.beforeReset" = "Previous deadline";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.credit" = "Reset credit used";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.creditConfirmed" = "Confirmed by a redemption receipt";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.creditOnly" = "Redemption recorded · quota change not observed";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.earlyRestarted" = "Early reset · new deadline";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.earlyUnchanged" = "Early refill · same deadline";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.empty" = "Resets will appear here when observed.";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.explanation" = "Reset times are observed between refreshes. A missing receipt does not prove a provider-granted reset.";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.missingDetails" = "Earlier record · before/after details were not retained";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.more" = "Show earlier records";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.normal" = "Scheduled reset";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.observationRange" = "Observed between";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.open" = "Records";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.redeemedAt" = "Redeemed at";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.remainingChange" = "Remaining before → after";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.sourceUnknown" = "Extra reset · source unconfirmed";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.title" = "Reset records";
+
+/* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
+"resetJournal.unknown" = "Reset · type uncertain";
 
 /* Hint under the Antigravity source picker */
 "settings.antigravityCookieEnabled" = "Antigravity cookie import is enabled — sign in at antigravity.google first.";
@@ -2789,6 +2942,12 @@
 
 /* Explanation on the SpaceXAI settings page */
 "settings.spaceXAIIntro" = "The SpaceXAI page combines Grok with Cursor. Grok reads `~/.grok/auth.json` or grok.com cookies; Cursor reads Cursor.app first, then cursor.com cookie slots. Grok Bot contributes quota, plus read-only sessions from its local cache — its cloud runs still add no token/cost rows.";
+
+/* Global format for subscription plan labels; options show ChatGPT Pro examples. */
+"settings.subscriptionNameFormat" = "Subscription name format";
+
+/* Explains multiplier-only fallback and existing custom label precedence. */
+"settings.subscriptionNameFormatDetail" = "Applies to all subscription labels. Plans without a multiplier keep their name; custom labels stay unchanged.";
 
 /* Terminal preference: copy the resume command instead of running it. Terminal and iTerm2 are product names and stay as spelled. */
 "settings.terminal.copyOnly" = "Copy to clipboard";

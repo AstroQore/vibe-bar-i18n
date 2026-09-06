@@ -199,6 +199,11 @@
     {
       "term": "agent-session-kit",
       "kind": "product"
+    },
+    {
+      "term": "ChatGPT Chat",
+      "kind": "subProvider",
+      "note": "OpenAI Chat message and feature allowances, separate from ChatGPT Agentic."
     }
   ]
 }

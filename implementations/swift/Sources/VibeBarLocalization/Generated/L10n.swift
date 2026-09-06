@@ -2711,6 +2711,196 @@ public enum L10n {
             public static var noResetInfo: String { L10nSupport.string("quota.bucket.noResetInfo") }
         }
 
+        public enum Chat {
+            /// ChatGPT Chat learned feature allowance display and settings.
+            ///
+            /// Key: `quota.chat.allowanceLearningHelp`
+            /// en: "Allowances are learned after resets. Changing your plan starts learning again."
+            public static var allowanceLearningHelp: String { L10nSupport.string("quota.chat.allowanceLearningHelp") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.astraLimit`
+            /// en: "GPT-6 Pro weekly limit"
+            public static var astraLimit: String { L10nSupport.string("quota.chat.astraLimit") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.astraReset`
+            /// en: "Set GPT-6 Pro reset time"
+            public static var astraReset: String { L10nSupport.string("quota.chat.astraReset") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.complete`
+            /// en: "Saved cloud history is synced. Temporary chats, deleted chats and retries may differ."
+            public static var complete: String { L10nSupport.string("quota.chat.complete") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.connectionHelp`
+            /// en: "Import browser cookies or sign in in the built-in window. Work stays in ChatGPT Agentic."
+            public static var connectionHelp: String { L10nSupport.string("quota.chat.connectionHelp") }
+
+            /// Menu bar metric for absolute ChatGPT Chat allowance counts, not percentages.
+            ///
+            /// Key: `quota.chat.countMetric`
+            /// en: "Used / remaining count"
+            public static var countMetric: String { L10nSupport.string("quota.chat.countMetric") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.dailyReset`
+            /// en: "Set daily Pro reset time"
+            public static var dailyReset: String { L10nSupport.string("quota.chat.dailyReset") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.enable`
+            /// en: "Track ChatGPT Chat"
+            public static var enable: String { L10nSupport.string("quota.chat.enable") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.estimated`
+            /// en: "History estimate"
+            public static var estimated: String { L10nSupport.string("quota.chat.estimated") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.excluded`
+            /// en: "{work} Work conversations excluded · {unknown} unclassified turns"
+            public static func excluded(work: Int, unknown: Int) -> String {
+                L10nSupport.format("quota.chat.excluded", work, unknown)
+            }
+
+            /// ChatGPT Chat learned feature allowance display and settings.
+            ///
+            /// Key: `quota.chat.featuresHelp`
+            /// en: "Track image creation and deep research with your ChatGPT account."
+            public static var featuresHelp: String { L10nSupport.string("quota.chat.featuresHelp") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.historyToggle`
+            /// en: "Sync saved Chat history across devices"
+            public static var historyToggle: String { L10nSupport.string("quota.chat.historyToggle") }
+
+            /// ChatGPT Chat learned feature allowance display and settings.
+            ///
+            /// Key: `quota.chat.learnedRemaining`
+            /// en: "{remaining} of {total} left"
+            public static func learnedRemaining(remaining: Int, total: Int) -> String {
+                L10nSupport.format("quota.chat.learnedRemaining", remaining, total)
+            }
+
+            /// ChatGPT Chat learned feature allowance display and settings.
+            ///
+            /// Key: `quota.chat.learningRemaining`
+            /// en: "Learning · about {count} left"
+            public static func learningRemaining(count: Int) -> String {
+                L10nSupport.format("quota.chat.learningRemaining", count)
+            }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.limitsHelp`
+            /// en: "Enter the limits shown for your plan. A Pro subscription alone does not identify its allowance tier."
+            public static var limitsHelp: String { L10nSupport.string("quota.chat.limitsHelp") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.manualLimits`
+            /// en: "Manual Chat limits (0 means unknown)"
+            public static var manualLimits: String { L10nSupport.string("quota.chat.manualLimits") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.noExtension`
+            /// en: "Uses cookies and the built-in browser; no extension to install."
+            public static var noExtension: String { L10nSupport.string("quota.chat.noExtension") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.observed`
+            /// en: "{count} observed"
+            public static func observed(count: Int) -> String {
+                L10nSupport.format("quota.chat.observed", count)
+            }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.partial`
+            /// en: "History sync is incomplete. Remaining messages are unavailable until coverage is complete."
+            public static var partial: String { L10nSupport.string("quota.chat.partial") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.period`
+            /// en: "Past {days} days"
+            public static func period(days: Int) -> String {
+                L10nSupport.format("quota.chat.period", days)
+            }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.privacy`
+            /// en: "Only model, time and deduplication metadata are saved locally. Conversation text is not retained."
+            public static var privacy: String { L10nSupport.string("quota.chat.privacy") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.refresh`
+            /// en: "Refresh Chat allowances"
+            public static var refresh: String { L10nSupport.string("quota.chat.refresh") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.remaining`
+            /// en: "{count} left"
+            public static func remaining(count: Int) -> String {
+                L10nSupport.format("quota.chat.remaining", count)
+            }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.reported`
+            /// en: "Provider-reported allowance units"
+            public static var reported: String { L10nSupport.string("quota.chat.reported") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.rolling`
+            /// en: "Estimated from recent history; reset boundaries may differ from your account."
+            public static var rolling: String { L10nSupport.string("quota.chat.rolling") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.sharedLimit`
+            /// en: "Shared Pro daily limit"
+            public static var sharedLimit: String { L10nSupport.string("quota.chat.sharedLimit") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.solLimit`
+            /// en: "GPT-5.6 Sol Pro daily limit"
+            public static var solLimit: String { L10nSupport.string("quota.chat.solLimit") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.unknown`
+            /// en: "Allowance unknown"
+            public static var unknown: String { L10nSupport.string("quota.chat.unknown") }
+
+            /// ChatGPT Chat quota setup or quantity display; separate from Agentic quotas.
+            ///
+            /// Key: `quota.chat.used`
+            /// en: "{count} used"
+            public static func used(count: Int) -> String {
+                L10nSupport.format("quota.chat.used", count)
+            }
+        }
+
         public enum Empty {
             public enum NeedsLogin {
                 /// Empty state body; command is a CLI name such as codex or claude and is never translated
@@ -3856,6 +4046,30 @@ public enum L10n {
                 L10nSupport.format("quota.resetCredits.availableWithExpiry", available, countdown)
             }
 
+            /// Individual available usage-reset credit shown with its absolute expiry.
+            ///
+            /// Key: `quota.resetCredits.expiresAt`
+            /// en: "Expires {when}"
+            public static func expiresAt(when: String) -> String {
+                L10nSupport.format("quota.resetCredits.expiresAt", when)
+            }
+
+            /// Individual available usage-reset credit shown with its absolute expiry.
+            ///
+            /// Key: `quota.resetCredits.item`
+            /// en: "Reset {number}"
+            public static func item(number: Int) -> String {
+                L10nSupport.format("quota.resetCredits.item", number)
+            }
+
+            /// Individual available usage-reset credit shown with its absolute expiry.
+            ///
+            /// Key: `quota.resetCredits.missingExpiries`
+            /// en: "{count} more · expiry pending"
+            public static func missingExpiries(count: Int) -> String {
+                L10nSupport.format("quota.resetCredits.missingExpiries", count)
+            }
+
             /// Card title for the manual rate-limit resets a Codex plan grants
             ///
             /// Key: `quota.resetCredits.title`
@@ -4384,6 +4598,122 @@ public enum L10n {
         }
     }
 
+    public enum ResetJournal {
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.afterReset`
+        /// en: "New deadline"
+        public static var afterReset: String { L10nSupport.string("resetJournal.afterReset") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.beforeReset`
+        /// en: "Previous deadline"
+        public static var beforeReset: String { L10nSupport.string("resetJournal.beforeReset") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.credit`
+        /// en: "Reset credit used"
+        public static var credit: String { L10nSupport.string("resetJournal.credit") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.creditConfirmed`
+        /// en: "Confirmed by a redemption receipt"
+        public static var creditConfirmed: String { L10nSupport.string("resetJournal.creditConfirmed") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.creditOnly`
+        /// en: "Redemption recorded · quota change not observed"
+        public static var creditOnly: String { L10nSupport.string("resetJournal.creditOnly") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.earlyRestarted`
+        /// en: "Early reset · new deadline"
+        public static var earlyRestarted: String { L10nSupport.string("resetJournal.earlyRestarted") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.earlyUnchanged`
+        /// en: "Early refill · same deadline"
+        public static var earlyUnchanged: String { L10nSupport.string("resetJournal.earlyUnchanged") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.empty`
+        /// en: "Resets will appear here when observed."
+        public static var empty: String { L10nSupport.string("resetJournal.empty") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.explanation`
+        /// en: "Reset times are observed between refreshes. A missing receipt does not prove a provider-granted reset."
+        public static var explanation: String { L10nSupport.string("resetJournal.explanation") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.missingDetails`
+        /// en: "Earlier record · before/after details were not retained"
+        public static var missingDetails: String { L10nSupport.string("resetJournal.missingDetails") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.more`
+        /// en: "Show earlier records"
+        public static var more: String { L10nSupport.string("resetJournal.more") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.normal`
+        /// en: "Scheduled reset"
+        public static var normal: String { L10nSupport.string("resetJournal.normal") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.observationRange`
+        /// en: "Observed between"
+        public static var observationRange: String { L10nSupport.string("resetJournal.observationRange") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.open`
+        /// en: "Records"
+        public static var `open`: String { L10nSupport.string("resetJournal.open") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.redeemedAt`
+        /// en: "Redeemed at"
+        public static var redeemedAt: String { L10nSupport.string("resetJournal.redeemedAt") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.remainingChange`
+        /// en: "Remaining before → after"
+        public static var remainingChange: String { L10nSupport.string("resetJournal.remainingChange") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.sourceUnknown`
+        /// en: "Extra reset · source unconfirmed"
+        public static var sourceUnknown: String { L10nSupport.string("resetJournal.sourceUnknown") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.title`
+        /// en: "Reset records"
+        public static var title: String { L10nSupport.string("resetJournal.title") }
+
+        /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
+        ///
+        /// Key: `resetJournal.unknown`
+        /// en: "Reset · type uncertain"
+        public static var unknown: String { L10nSupport.string("resetJournal.unknown") }
+    }
+
     public enum Settings {
         /// Hint under the Antigravity source picker
         ///
@@ -4732,6 +5062,18 @@ public enum L10n {
         /// Key: `settings.spaceXAIIntro`
         /// en: "The SpaceXAI page combines Grok with Cursor. Grok reads `~/.grok/auth.json` or grok.com cookies; Cursor reads Cursor.app first, then cursor.com cookie slots. Grok Bot contributes quota, plus read-only sessions from its local cache — its cloud runs still add no token/cost rows."
         public static var spaceXAIIntro: String { L10nSupport.string("settings.spaceXAIIntro") }
+
+        /// Global format for subscription plan labels; options show ChatGPT Pro examples.
+        ///
+        /// Key: `settings.subscriptionNameFormat`
+        /// en: "Subscription name format"
+        public static var subscriptionNameFormat: String { L10nSupport.string("settings.subscriptionNameFormat") }
+
+        /// Explains multiplier-only fallback and existing custom label precedence.
+        ///
+        /// Key: `settings.subscriptionNameFormatDetail`
+        /// en: "Applies to all subscription labels. Plans without a multiplier keep their name; custom labels stay unchanged."
+        public static var subscriptionNameFormatDetail: String { L10nSupport.string("settings.subscriptionNameFormatDetail") }
 
         /// Picker label
         ///
@@ -10766,6 +11108,35 @@ enum L10nCatalogFacts {
         "quota.bridge.subtitleVersion",
         "quota.bridge.title",
         "quota.bucket.noResetInfo",
+        "quota.chat.allowanceLearningHelp",
+        "quota.chat.astraLimit",
+        "quota.chat.astraReset",
+        "quota.chat.complete",
+        "quota.chat.connectionHelp",
+        "quota.chat.countMetric",
+        "quota.chat.dailyReset",
+        "quota.chat.enable",
+        "quota.chat.estimated",
+        "quota.chat.excluded",
+        "quota.chat.featuresHelp",
+        "quota.chat.historyToggle",
+        "quota.chat.learnedRemaining",
+        "quota.chat.learningRemaining",
+        "quota.chat.limitsHelp",
+        "quota.chat.manualLimits",
+        "quota.chat.noExtension",
+        "quota.chat.observed",
+        "quota.chat.partial",
+        "quota.chat.period",
+        "quota.chat.privacy",
+        "quota.chat.refresh",
+        "quota.chat.remaining",
+        "quota.chat.reported",
+        "quota.chat.rolling",
+        "quota.chat.sharedLimit",
+        "quota.chat.solLimit",
+        "quota.chat.unknown",
+        "quota.chat.used",
         "quota.cycleRecordedOnRefill",
         "quota.empty.needsLogin.detail",
         "quota.empty.network.detail",
@@ -10927,6 +11298,9 @@ enum L10nCatalogFacts {
         "quota.reset.passedAt",
         "quota.resetCredits.available",
         "quota.resetCredits.availableWithExpiry",
+        "quota.resetCredits.expiresAt",
+        "quota.resetCredits.item",
+        "quota.resetCredits.missingExpiries",
         "quota.resetCredits.title",
         "quota.upcoming.axisDays",
         "quota.upcoming.axisHours",
@@ -11000,6 +11374,25 @@ enum L10nCatalogFacts {
         "resetHistory.window.eightWeeks",
         "resetHistory.window.fourWeeks",
         "resetHistory.window.twelveWeeks",
+        "resetJournal.afterReset",
+        "resetJournal.beforeReset",
+        "resetJournal.credit",
+        "resetJournal.creditConfirmed",
+        "resetJournal.creditOnly",
+        "resetJournal.earlyRestarted",
+        "resetJournal.earlyUnchanged",
+        "resetJournal.empty",
+        "resetJournal.explanation",
+        "resetJournal.missingDetails",
+        "resetJournal.more",
+        "resetJournal.normal",
+        "resetJournal.observationRange",
+        "resetJournal.open",
+        "resetJournal.redeemedAt",
+        "resetJournal.remainingChange",
+        "resetJournal.sourceUnknown",
+        "resetJournal.title",
+        "resetJournal.unknown",
         "settings.antigravityCookieEnabled",
         "settings.antigravityLocalOnly",
         "settings.antigravitySource",
@@ -11320,6 +11713,8 @@ enum L10nCatalogFacts {
         "settings.sidebar.enableProvider",
         "settings.sidebar.hideFromOverview",
         "settings.spaceXAIIntro",
+        "settings.subscriptionNameFormat",
+        "settings.subscriptionNameFormatDetail",
         "settings.terminal.copyOnly",
         "settings.updateChannel",
         "settings.updateChannel.dev",
@@ -12350,6 +12745,35 @@ enum L10nCatalogFacts {
         "quota.bridge.subtitleVersion": 1,
         "quota.bridge.title": 0,
         "quota.bucket.noResetInfo": 0,
+        "quota.chat.allowanceLearningHelp": 0,
+        "quota.chat.astraLimit": 0,
+        "quota.chat.astraReset": 0,
+        "quota.chat.complete": 0,
+        "quota.chat.connectionHelp": 0,
+        "quota.chat.countMetric": 0,
+        "quota.chat.dailyReset": 0,
+        "quota.chat.enable": 0,
+        "quota.chat.estimated": 0,
+        "quota.chat.excluded": 2,
+        "quota.chat.featuresHelp": 0,
+        "quota.chat.historyToggle": 0,
+        "quota.chat.learnedRemaining": 2,
+        "quota.chat.learningRemaining": 1,
+        "quota.chat.limitsHelp": 0,
+        "quota.chat.manualLimits": 0,
+        "quota.chat.noExtension": 0,
+        "quota.chat.observed": 1,
+        "quota.chat.partial": 0,
+        "quota.chat.period": 1,
+        "quota.chat.privacy": 0,
+        "quota.chat.refresh": 0,
+        "quota.chat.remaining": 1,
+        "quota.chat.reported": 0,
+        "quota.chat.rolling": 0,
+        "quota.chat.sharedLimit": 0,
+        "quota.chat.solLimit": 0,
+        "quota.chat.unknown": 0,
+        "quota.chat.used": 1,
         "quota.cycleRecordedOnRefill": 0,
         "quota.empty.needsLogin.detail": 1,
         "quota.empty.network.detail": 0,
@@ -12511,6 +12935,9 @@ enum L10nCatalogFacts {
         "quota.reset.passedAt": 1,
         "quota.resetCredits.available": 1,
         "quota.resetCredits.availableWithExpiry": 2,
+        "quota.resetCredits.expiresAt": 1,
+        "quota.resetCredits.item": 1,
+        "quota.resetCredits.missingExpiries": 1,
         "quota.resetCredits.title": 0,
         "quota.upcoming.axisDays": 1,
         "quota.upcoming.axisHours": 1,
@@ -12584,6 +13011,25 @@ enum L10nCatalogFacts {
         "resetHistory.window.eightWeeks": 0,
         "resetHistory.window.fourWeeks": 0,
         "resetHistory.window.twelveWeeks": 0,
+        "resetJournal.afterReset": 0,
+        "resetJournal.beforeReset": 0,
+        "resetJournal.credit": 0,
+        "resetJournal.creditConfirmed": 0,
+        "resetJournal.creditOnly": 0,
+        "resetJournal.earlyRestarted": 0,
+        "resetJournal.earlyUnchanged": 0,
+        "resetJournal.empty": 0,
+        "resetJournal.explanation": 0,
+        "resetJournal.missingDetails": 0,
+        "resetJournal.more": 0,
+        "resetJournal.normal": 0,
+        "resetJournal.observationRange": 0,
+        "resetJournal.open": 0,
+        "resetJournal.redeemedAt": 0,
+        "resetJournal.remainingChange": 0,
+        "resetJournal.sourceUnknown": 0,
+        "resetJournal.title": 0,
+        "resetJournal.unknown": 0,
         "settings.antigravityCookieEnabled": 0,
         "settings.antigravityLocalOnly": 0,
         "settings.antigravitySource": 0,
@@ -12904,6 +13350,8 @@ enum L10nCatalogFacts {
         "settings.sidebar.enableProvider": 0,
         "settings.sidebar.hideFromOverview": 0,
         "settings.spaceXAIIntro": 0,
+        "settings.subscriptionNameFormat": 0,
+        "settings.subscriptionNameFormatDetail": 0,
         "settings.terminal.copyOnly": 0,
         "settings.updateChannel": 0,
         "settings.updateChannel.dev": 0,
