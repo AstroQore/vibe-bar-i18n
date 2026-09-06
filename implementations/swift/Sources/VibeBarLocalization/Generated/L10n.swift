@@ -5107,6 +5107,32 @@ public enum L10n {
             L10nSupport.format("settings.whatChangedIn", version)
         }
 
+        public enum Browsers {
+            /// Caption under the browser list in Settings and the setup assistant.
+            ///
+            /// Key: `settings.browsers.help`
+            /// en: "Only the browsers ticked here are read, in this order. A browser that is not installed is never read."
+            public static var help: String { L10nSupport.string("settings.browsers.help") }
+
+            /// Shown in place of the browser list when detection finds no installed browser with cookie data.
+            ///
+            /// Key: `settings.browsers.none`
+            /// en: "No browser with a cookie store was found on this Mac."
+            public static var `none`: String { L10nSupport.string("settings.browsers.none") }
+
+            /// Button that clears the browser selection so every installed browser is read again.
+            ///
+            /// Key: `settings.browsers.readAll`
+            /// en: "Read every installed browser"
+            public static var readAll: String { L10nSupport.string("settings.browsers.readAll") }
+
+            /// Heading of the list of installed browsers whose cookie stores Vibe Bar may read. Shown in Settings > Misc Providers and in the setup assistant's browser-cookies step.
+            ///
+            /// Key: `settings.browsers.title`
+            /// en: "Browsers to read"
+            public static var title: String { L10nSupport.string("settings.browsers.title") }
+        }
+
         public enum CredentialSource {
             /// Misc-provider credential source option
             ///
@@ -11409,6 +11435,10 @@ enum L10nCatalogFacts {
         "settings.antigravityLocalOnly",
         "settings.antigravitySource",
         "settings.appVersion",
+        "settings.browsers.help",
+        "settings.browsers.none",
+        "settings.browsers.readAll",
+        "settings.browsers.title",
         "settings.bundled",
         "settings.checkConnections",
         "settings.checkForUpdates",
@@ -13048,6 +13078,10 @@ enum L10nCatalogFacts {
         "settings.antigravityLocalOnly": 0,
         "settings.antigravitySource": 0,
         "settings.appVersion": 1,
+        "settings.browsers.help": 0,
+        "settings.browsers.none": 0,
+        "settings.browsers.readAll": 0,
+        "settings.browsers.title": 0,
         "settings.bundled": 0,
         "settings.checkConnections": 1,
         "settings.checkForUpdates": 0,

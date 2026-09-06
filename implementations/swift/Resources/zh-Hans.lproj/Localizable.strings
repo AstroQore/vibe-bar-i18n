@@ -1995,6 +1995,18 @@
 /* Current version line; version is a raw version string */
 "settings.appVersion" = "Vibe Bar %@";
 
+/* Caption under the browser list in Settings and the setup assistant. */
+"settings.browsers.help" = "只读取此处勾选的浏览器，按此顺序。未安装的浏览器不会被读取。";
+
+/* Shown in place of the browser list when detection finds no installed browser with cookie data. */
+"settings.browsers.none" = "本机没有找到带 Cookie 存储的浏览器。";
+
+/* Button that clears the browser selection so every installed browser is read again. */
+"settings.browsers.readAll" = "读取所有已安装的浏览器";
+
+/* Heading of the list of installed browsers whose cookie stores Vibe Bar may read. Shown in Settings > Misc Providers and in the setup assistant's browser-cookies step. */
+"settings.browsers.title" = "读取的浏览器";
+
 /* Badge on the version currently compiled in */
 "settings.bundled" = "内置";
 
