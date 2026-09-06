@@ -8115,6 +8115,12 @@ public enum L10n {
             /// en: "Hourly buckets"
             public static var bucketHour: String { L10nSupport.string("usage.trend.bucketHour") }
 
+            /// Subtitle of the usage chart when each bar covers six hours.
+            ///
+            /// Key: `usage.trend.bucketSixHours`
+            /// en: "Six-hour buckets"
+            public static var bucketSixHours: String { L10nSupport.string("usage.trend.bucketSixHours") }
+
             /// Subtitle under the trend chart title when the series is bucketed by local calendar week.
             ///
             /// Key: `usage.trend.bucketWeek`
@@ -8168,6 +8174,12 @@ public enum L10n {
             /// Key: `usage.trend.granularityLabel`
             /// en: "Choose chart granularity"
             public static var granularityLabel: String { L10nSupport.string("usage.trend.granularityLabel") }
+
+            /// Granularity picker entry: one bar per six hours.
+            ///
+            /// Key: `usage.trend.granularitySixHourly`
+            /// en: "6-hourly"
+            public static var granularitySixHourly: String { L10nSupport.string("usage.trend.granularitySixHourly") }
 
             /// Chart granularity option: one bucket per week. Unrelated to the quota window label quota.group.weekly. distinct-from: quota.group.weekly — a quota window's group label and a chart's bucket width are different things.
             ///
@@ -11920,6 +11932,7 @@ enum L10nCatalogFacts {
         "usage.trend.accessibilitySummary",
         "usage.trend.bucketDay",
         "usage.trend.bucketHour",
+        "usage.trend.bucketSixHours",
         "usage.trend.bucketWeek",
         "usage.trend.costChartLabel",
         "usage.trend.empty",
@@ -11929,6 +11942,7 @@ enum L10nCatalogFacts {
         "usage.trend.granularityDaily",
         "usage.trend.granularityHourly",
         "usage.trend.granularityLabel",
+        "usage.trend.granularitySixHourly",
         "usage.trend.granularityWeekly",
         "usage.trend.hideProvider",
         "usage.trend.navigatorLabel",
@@ -13557,6 +13571,7 @@ enum L10nCatalogFacts {
         "usage.trend.accessibilitySummary": 3,
         "usage.trend.bucketDay": 0,
         "usage.trend.bucketHour": 0,
+        "usage.trend.bucketSixHours": 0,
         "usage.trend.bucketWeek": 0,
         "usage.trend.costChartLabel": 0,
         "usage.trend.empty": 0,
@@ -13566,6 +13581,7 @@ enum L10nCatalogFacts {
         "usage.trend.granularityDaily": 0,
         "usage.trend.granularityHourly": 0,
         "usage.trend.granularityLabel": 0,
+        "usage.trend.granularitySixHourly": 0,
         "usage.trend.granularityWeekly": 0,
         "usage.trend.hideProvider": 1,
         "usage.trend.navigatorLabel": 0,

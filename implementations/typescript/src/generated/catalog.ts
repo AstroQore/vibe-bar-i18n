@@ -1221,6 +1221,7 @@ export type MessageKey =
   | "usage.trend.accessibilitySummary"
   | "usage.trend.bucketDay"
   | "usage.trend.bucketHour"
+  | "usage.trend.bucketSixHours"
   | "usage.trend.bucketWeek"
   | "usage.trend.costChartLabel"
   | "usage.trend.empty"
@@ -1230,6 +1231,7 @@ export type MessageKey =
   | "usage.trend.granularityDaily"
   | "usage.trend.granularityHourly"
   | "usage.trend.granularityLabel"
+  | "usage.trend.granularitySixHourly"
   | "usage.trend.granularityWeekly"
   | "usage.trend.hideProvider"
   | "usage.trend.navigatorLabel"
@@ -2808,6 +2810,7 @@ export interface MessageParams {
   "usage.trend.accessibilitySummary": { "count": number; "tokens": string; "cost": string };
   "usage.trend.bucketDay": undefined;
   "usage.trend.bucketHour": undefined;
+  "usage.trend.bucketSixHours": undefined;
   "usage.trend.bucketWeek": undefined;
   "usage.trend.costChartLabel": undefined;
   "usage.trend.empty": undefined;
@@ -2817,6 +2820,7 @@ export interface MessageParams {
   "usage.trend.granularityDaily": undefined;
   "usage.trend.granularityHourly": undefined;
   "usage.trend.granularityLabel": undefined;
+  "usage.trend.granularitySixHourly": undefined;
   "usage.trend.granularityWeekly": undefined;
   "usage.trend.hideProvider": { "provider": string };
   "usage.trend.navigatorLabel": undefined;
@@ -4396,6 +4400,7 @@ export const messages: {
     "usage.trend.accessibilitySummary": "{count, plural, one {1 provider} other {# providers}}, {tokens} tokens, {cost}",
     "usage.trend.bucketDay": "Local calendar days",
     "usage.trend.bucketHour": "Hourly buckets",
+    "usage.trend.bucketSixHours": "Six-hour buckets",
     "usage.trend.bucketWeek": "Local calendar weeks",
     "usage.trend.costChartLabel": "Cost over time",
     "usage.trend.empty": "No usage recorded in this range",
@@ -4405,6 +4410,7 @@ export const messages: {
     "usage.trend.granularityDaily": "Daily",
     "usage.trend.granularityHourly": "Hourly",
     "usage.trend.granularityLabel": "Choose chart granularity",
+    "usage.trend.granularitySixHourly": "6-hourly",
     "usage.trend.granularityWeekly": "Weekly",
     "usage.trend.hideProvider": "Hide {provider}",
     "usage.trend.navigatorLabel": "Usage chart range navigator",
@@ -5979,6 +5985,7 @@ export const messages: {
     "usage.trend.accessibilitySummary": "{count, plural, other {# 家厂商}}，{tokens} token，{cost}",
     "usage.trend.bucketDay": "按本地日历日",
     "usage.trend.bucketHour": "按小时分桶",
+    "usage.trend.bucketSixHours": "每 6 小时一柱",
     "usage.trend.bucketWeek": "按本地日历周",
     "usage.trend.costChartLabel": "花费随时间变化",
     "usage.trend.empty": "所选范围内没有用量记录",
@@ -5988,6 +5995,7 @@ export const messages: {
     "usage.trend.granularityDaily": "按日",
     "usage.trend.granularityHourly": "按小时",
     "usage.trend.granularityLabel": "选择图表粒度",
+    "usage.trend.granularitySixHourly": "每 6 小时",
     "usage.trend.granularityWeekly": "按周",
     "usage.trend.hideProvider": "隐藏 {provider}",
     "usage.trend.navigatorLabel": "用量图表区间导航条",

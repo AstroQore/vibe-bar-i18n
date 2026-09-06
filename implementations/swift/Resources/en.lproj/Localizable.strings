@@ -3525,6 +3525,9 @@
 /* Subtitle under the trend chart title when the series is bucketed by hour. */
 "usage.trend.bucketHour" = "Hourly buckets";
 
+/* Subtitle of the usage chart when each bar covers six hours. */
+"usage.trend.bucketSixHours" = "Six-hour buckets";
+
 /* Subtitle under the trend chart title when the series is bucketed by local calendar week. */
 "usage.trend.bucketWeek" = "Local calendar weeks";
 
@@ -3551,6 +3554,9 @@
 
 /* Screen-reader label for the chart granularity menu button. */
 "usage.trend.granularityLabel" = "Choose chart granularity";
+
+/* Granularity picker entry: one bar per six hours. */
+"usage.trend.granularitySixHourly" = "6-hourly";
 
 /* Chart granularity option: one bucket per week. Unrelated to the quota window label quota.group.weekly. distinct-from: quota.group.weekly — a quota window's group label and a chart's bucket width are different things. */
 "usage.trend.granularityWeekly" = "Weekly";
