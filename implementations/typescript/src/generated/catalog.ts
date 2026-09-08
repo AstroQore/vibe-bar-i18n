@@ -374,6 +374,34 @@ export type MessageKey =
   | "platform.macos.menuBar.percentColor"
   | "platform.macos.menuBar.showInMenuBar"
   | "platform.macos.miniCanvas.hint"
+  | "platform.macos.permissions.allowed"
+  | "platform.macos.permissions.automation"
+  | "platform.macos.permissions.automationHelp"
+  | "platform.macos.permissions.automationSettings"
+  | "platform.macos.permissions.confirmInSettings"
+  | "platform.macos.permissions.denied"
+  | "platform.macos.permissions.enabled"
+  | "platform.macos.permissions.fullDisk"
+  | "platform.macos.permissions.fullDiskHelp"
+  | "platform.macos.permissions.help"
+  | "platform.macos.permissions.itemMissing"
+  | "platform.macos.permissions.itemVisible"
+  | "platform.macos.permissions.keychain"
+  | "platform.macos.permissions.keychainDisabled"
+  | "platform.macos.permissions.keychainHelp"
+  | "platform.macos.permissions.loginItems"
+  | "platform.macos.permissions.loginItemsHelp"
+  | "platform.macos.permissions.loginItemsSettings"
+  | "platform.macos.permissions.needsApproval"
+  | "platform.macos.permissions.notRegistered"
+  | "platform.macos.permissions.notRequired"
+  | "platform.macos.permissions.openKeychain"
+  | "platform.macos.permissions.systemSettings"
+  | "platform.macos.permissions.targetNotRunning"
+  | "platform.macos.permissions.title"
+  | "platform.macos.permissions.unknown"
+  | "platform.macos.permissions.unused"
+  | "platform.macos.permissions.vault"
   | "popover.header.machinesSubtitle"
   | "popover.header.mini"
   | "popover.header.miscSubtitle"
@@ -726,6 +754,8 @@ export type MessageKey =
   | "settings.checkingGitHub"
   | "settings.clearCostData"
   | "settings.connectionHealth"
+  | "settings.cookies.retryHelp"
+  | "settings.cookies.retryToggle"
   | "settings.costDataIntro"
   | "settings.couldNotDeleteCookies"
   | "settings.couldNotDeleteGeminiCookies"
@@ -756,6 +786,7 @@ export type MessageKey =
   | "settings.language.caption"
   | "settings.language.system"
   | "settings.language.title"
+  | "settings.layout.inlineEditHint"
   | "settings.layout.openStudio"
   | "settings.layout.openStudioHelp"
   | "settings.layout.previewUnavailable"
@@ -822,6 +853,8 @@ export type MessageKey =
   | "settings.miniCanvas.height"
   | "settings.miniCanvas.horizontalBar"
   | "settings.miniCanvas.layers"
+  | "settings.miniCanvas.presetWidgets"
+  | "settings.miniCanvas.primitives"
   | "settings.miniCanvas.providerColor"
   | "settings.miniCanvas.quotaColor"
   | "settings.miniCanvas.ring"
@@ -929,6 +962,11 @@ export type MessageKey =
   | "settings.openRefreshCooldown"
   | "settings.openRefreshDetail"
   | "settings.openStatusPage"
+  | "settings.overviewGranularity.company"
+  | "settings.overviewGranularity.help"
+  | "settings.overviewGranularity.model"
+  | "settings.overviewGranularity.subProvider"
+  | "settings.overviewGranularity.title"
   | "settings.percentShows"
   | "settings.planBadge"
   | "settings.planBadgeDetail"
@@ -2012,6 +2050,34 @@ export interface MessageParams {
   "platform.macos.menuBar.percentColor": undefined;
   "platform.macos.menuBar.showInMenuBar": undefined;
   "platform.macos.miniCanvas.hint": undefined;
+  "platform.macos.permissions.allowed": undefined;
+  "platform.macos.permissions.automation": undefined;
+  "platform.macos.permissions.automationHelp": undefined;
+  "platform.macos.permissions.automationSettings": undefined;
+  "platform.macos.permissions.confirmInSettings": undefined;
+  "platform.macos.permissions.denied": undefined;
+  "platform.macos.permissions.enabled": undefined;
+  "platform.macos.permissions.fullDisk": undefined;
+  "platform.macos.permissions.fullDiskHelp": undefined;
+  "platform.macos.permissions.help": undefined;
+  "platform.macos.permissions.itemMissing": undefined;
+  "platform.macos.permissions.itemVisible": undefined;
+  "platform.macos.permissions.keychain": undefined;
+  "platform.macos.permissions.keychainDisabled": undefined;
+  "platform.macos.permissions.keychainHelp": undefined;
+  "platform.macos.permissions.loginItems": undefined;
+  "platform.macos.permissions.loginItemsHelp": undefined;
+  "platform.macos.permissions.loginItemsSettings": undefined;
+  "platform.macos.permissions.needsApproval": undefined;
+  "platform.macos.permissions.notRegistered": undefined;
+  "platform.macos.permissions.notRequired": undefined;
+  "platform.macos.permissions.openKeychain": undefined;
+  "platform.macos.permissions.systemSettings": undefined;
+  "platform.macos.permissions.targetNotRunning": undefined;
+  "platform.macos.permissions.title": undefined;
+  "platform.macos.permissions.unknown": undefined;
+  "platform.macos.permissions.unused": undefined;
+  "platform.macos.permissions.vault": undefined;
   "popover.header.machinesSubtitle": undefined;
   "popover.header.mini": undefined;
   "popover.header.miscSubtitle": undefined;
@@ -2364,6 +2430,8 @@ export interface MessageParams {
   "settings.checkingGitHub": undefined;
   "settings.clearCostData": undefined;
   "settings.connectionHealth": undefined;
+  "settings.cookies.retryHelp": undefined;
+  "settings.cookies.retryToggle": undefined;
   "settings.costDataIntro": undefined;
   "settings.couldNotDeleteCookies": undefined;
   "settings.couldNotDeleteGeminiCookies": undefined;
@@ -2394,6 +2462,7 @@ export interface MessageParams {
   "settings.language.caption": undefined;
   "settings.language.system": undefined;
   "settings.language.title": undefined;
+  "settings.layout.inlineEditHint": undefined;
   "settings.layout.openStudio": undefined;
   "settings.layout.openStudioHelp": undefined;
   "settings.layout.previewUnavailable": undefined;
@@ -2460,6 +2529,8 @@ export interface MessageParams {
   "settings.miniCanvas.height": undefined;
   "settings.miniCanvas.horizontalBar": undefined;
   "settings.miniCanvas.layers": undefined;
+  "settings.miniCanvas.presetWidgets": undefined;
+  "settings.miniCanvas.primitives": undefined;
   "settings.miniCanvas.providerColor": undefined;
   "settings.miniCanvas.quotaColor": undefined;
   "settings.miniCanvas.ring": undefined;
@@ -2567,6 +2638,11 @@ export interface MessageParams {
   "settings.openRefreshCooldown": undefined;
   "settings.openRefreshDetail": undefined;
   "settings.openStatusPage": { "company": string };
+  "settings.overviewGranularity.company": undefined;
+  "settings.overviewGranularity.help": undefined;
+  "settings.overviewGranularity.model": undefined;
+  "settings.overviewGranularity.subProvider": undefined;
+  "settings.overviewGranularity.title": undefined;
   "settings.percentShows": undefined;
   "settings.planBadge": undefined;
   "settings.planBadgeDetail": undefined;
@@ -3651,6 +3727,34 @@ export const messages: {
     "platform.macos.menuBar.percentColor": "Percent color",
     "platform.macos.menuBar.showInMenuBar": "Show in menu bar",
     "platform.macos.miniCanvas.hint": "Drag to move, drag a corner to resize. Shift-click to select more; ⌘G groups, ⌘D duplicates, Delete removes.",
+    "platform.macos.permissions.allowed": "Authorized by macOS",
+    "platform.macos.permissions.automation": "Terminal automation",
+    "platform.macos.permissions.automationHelp": "Used to resume sessions in Terminal or iTerm. Checks do not send commands or request authorization. Open the terminal app before checking.",
+    "platform.macos.permissions.automationSettings": "Open Automation settings",
+    "platform.macos.permissions.confirmInSettings": "Confirm in System Settings",
+    "platform.macos.permissions.denied": "Denied by macOS",
+    "platform.macos.permissions.enabled": "Enabled by macOS",
+    "platform.macos.permissions.fullDisk": "Full Disk Access",
+    "platform.macos.permissions.fullDiskHelp": "macOS provides no public API to query this switch directly. Browser file checks below verify only those files, and do not prove Full Disk Access.",
+    "platform.macos.permissions.help": "Review the access Vibe Bar uses. System permission status and checks of individual files or Keychain items are shown separately.",
+    "platform.macos.permissions.itemMissing": "Item not found",
+    "platform.macos.permissions.itemVisible": "Item metadata accessible",
+    "platform.macos.permissions.keychain": "Keychain items",
+    "platform.macos.permissions.keychainDisabled": "Keychain access disabled in app",
+    "platform.macos.permissions.keychainHelp": "Checks item metadata without reading passwords or showing a prompt. A visible item does not guarantee permission to decrypt cookies. Use browser import to request any required Keychain approval.",
+    "platform.macos.permissions.loginItems": "Login & background items",
+    "platform.macos.permissions.loginItemsHelp": "Controls whether Vibe Bar starts at login. Managed by macOS Login Items.",
+    "platform.macos.permissions.loginItemsSettings": "Open Login Items",
+    "platform.macos.permissions.needsApproval": "Approval needed",
+    "platform.macos.permissions.notRegistered": "Not registered",
+    "platform.macos.permissions.notRequired": "Not required by current features",
+    "platform.macos.permissions.openKeychain": "Open Keychain Access",
+    "platform.macos.permissions.systemSettings": "Open Privacy & Security",
+    "platform.macos.permissions.targetNotRunning": "Target app is not running",
+    "platform.macos.permissions.title": "Permissions overview",
+    "platform.macos.permissions.unknown": "Status unavailable",
+    "platform.macos.permissions.unused": "Camera, microphone, screen recording & accessibility",
+    "platform.macos.permissions.vault": "Saved provider credentials",
     "popover.header.machinesSubtitle": "End-to-end encrypted remote usage",
     "popover.header.mini": "Mini",
     "popover.header.miscSubtitle": "Usage-only · sign in or paste a key",
@@ -4003,6 +4107,8 @@ export const messages: {
     "settings.checkingGitHub": "Checking github.com for the newest release…",
     "settings.clearCostData": "Clear cost data",
     "settings.connectionHealth": "Connection health",
+    "settings.cookies.retryHelp": "When enabled, each failed cookie-based refresh gets one silent browser re-read, including when no saved cookie is available. Changed cookies are retried once. Manual cookies and Keychain denials are respected.",
+    "settings.cookies.retryToggle": "Re-read browser cookies after each failed refresh",
     "settings.costDataIntro": "Cost is computed from local CLI session JSONL logs at ~/.codex/sessions and ~/.claude/projects. Web/desktop usage is not tracked.",
     "settings.couldNotDeleteCookies": "Could not delete saved cookies.",
     "settings.couldNotDeleteGeminiCookies": "Could not delete saved Gemini cookies.",
@@ -4033,6 +4139,7 @@ export const messages: {
     "settings.language.caption": "Vibe Bar follows the macOS language unless you pick one here. Provider, model and harness names stay as their owners spell them.",
     "settings.language.system": "Match system",
     "settings.language.title": "Language",
+    "settings.layout.inlineEditHint": "Double-click a label to edit it here. Return saves; Escape cancels.",
     "settings.layout.openStudio": "Open Studio",
     "settings.layout.openStudioHelp": "Arrange this surface beside a full-size, live preview of it.",
     "settings.layout.previewUnavailable": "This page has no popover tab to preview.",
@@ -4099,6 +4206,8 @@ export const messages: {
     "settings.miniCanvas.height": "Height",
     "settings.miniCanvas.horizontalBar": "Horizontal bar",
     "settings.miniCanvas.layers": "Elements · front to back",
+    "settings.miniCanvas.presetWidgets": "Mini preset components",
+    "settings.miniCanvas.primitives": "Basic elements",
     "settings.miniCanvas.providerColor": "Provider colour",
     "settings.miniCanvas.quotaColor": "Quota state colour",
     "settings.miniCanvas.ring": "Ring gauge",
@@ -4206,6 +4315,11 @@ export const messages: {
     "settings.openRefreshCooldown": "Minimum open-refresh cooldown",
     "settings.openRefreshDetail": "Opening the popover refreshes all visible providers at most once per cooldown period.",
     "settings.openStatusPage": "Open {company} status page",
+    "settings.overviewGranularity.company": "Company (default)",
+    "settings.overviewGranularity.help": "Split quota cards by company, SubProvider or model group. Keep all quota windows, forecasts and reset information.",
+    "settings.overviewGranularity.model": "Model group",
+    "settings.overviewGranularity.subProvider": "SubProvider",
+    "settings.overviewGranularity.title": "Overview card granularity",
     "settings.percentShows": "Percent shows",
     "settings.planBadge": "Plan badge",
     "settings.planBadgeDetail": "Leave blank to use the detected account plan.",
@@ -5285,6 +5399,34 @@ export const messages: {
     "platform.macos.menuBar.percentColor": "百分比配色",
     "platform.macos.menuBar.showInMenuBar": "在菜单栏中显示",
     "platform.macos.miniCanvas.hint": "拖动元素移动，拖动角点缩放。Shift 点选多个；⌘G 分组，⌘D 复制，Delete 删除。",
+    "platform.macos.permissions.allowed": "macOS 已授权",
+    "platform.macos.permissions.automation": "终端自动化",
+    "platform.macos.permissions.automationHelp": "用于在 Terminal 或 iTerm 中恢复会话。检查不会发送命令或申请授权；请先打开对应终端 App。",
+    "platform.macos.permissions.automationSettings": "打开自动化权限",
+    "platform.macos.permissions.confirmInSettings": "请在系统设置确认",
+    "platform.macos.permissions.denied": "macOS 已拒绝",
+    "platform.macos.permissions.enabled": "macOS 已启用",
+    "platform.macos.permissions.fullDisk": "完全磁盘访问",
+    "platform.macos.permissions.fullDiskHelp": "macOS 未提供直接查询此开关的公共 API。下方浏览器文件检查仅验证相应文件，不能证明已开启完全磁盘访问。",
+    "platform.macos.permissions.help": "查看 Vibe Bar 使用的访问权限。系统授权状态与单个文件或 Keychain 条目的检查结果分别显示。",
+    "platform.macos.permissions.itemMissing": "未找到条目",
+    "platform.macos.permissions.itemVisible": "条目元数据可访问",
+    "platform.macos.permissions.keychain": "Keychain 条目",
+    "platform.macos.permissions.keychainDisabled": "App 已停用 Keychain 访问",
+    "platform.macos.permissions.keychainHelp": "仅检查条目元数据，不读取密码或弹出提示。能查询到条目不代表可解密 Cookie。需要 Keychain 授权时，请使用浏览器导入。",
+    "platform.macos.permissions.loginItems": "登录与后台项目",
+    "platform.macos.permissions.loginItemsHelp": "控制 Vibe Bar 是否登录时启动，由 macOS 登录项管理。",
+    "platform.macos.permissions.loginItemsSettings": "打开登录项",
+    "platform.macos.permissions.needsApproval": "需要授权",
+    "platform.macos.permissions.notRegistered": "未注册",
+    "platform.macos.permissions.notRequired": "当前功能无需这些权限",
+    "platform.macos.permissions.openKeychain": "打开 Keychain 访问",
+    "platform.macos.permissions.systemSettings": "打开隐私与安全性",
+    "platform.macos.permissions.targetNotRunning": "目标 App 未运行",
+    "platform.macos.permissions.title": "权限总览",
+    "platform.macos.permissions.unknown": "状态不可用",
+    "platform.macos.permissions.unused": "摄像头、麦克风、屏幕录制与辅助功能",
+    "platform.macos.permissions.vault": "已保存的提供商凭据",
     "popover.header.machinesSubtitle": "端到端加密的远程用量",
     "popover.header.mini": "迷你窗口",
     "popover.header.miscSubtitle": "仅用量 · 登录或粘贴密钥",
@@ -5637,6 +5779,8 @@ export const messages: {
     "settings.checkingGitHub": "正在向 github.com 查询最新版本…",
     "settings.clearCostData": "清除花费数据",
     "settings.connectionHealth": "连接状态",
+    "settings.cookies.retryHelp": "开启后，每次 Cookie 方式刷新失败都会静默重读一次浏览器，包括没有已保存 Cookie 的情况。Cookie 更新后仅重试一次，并遵循手动 Cookie 设置和 Keychain 拒绝状态。",
+    "settings.cookies.retryToggle": "每次刷新失败后重新读取浏览器 Cookie",
     "settings.costDataIntro": "花费根据 ~/.codex/sessions 与 ~/.claude/projects 下的本地 CLI 会话 JSONL 日志计算。网页端与桌面端用量不计入。",
     "settings.couldNotDeleteCookies": "无法删除已保存的 cookies。",
     "settings.couldNotDeleteGeminiCookies": "无法删除已保存的 Gemini cookies。",
@@ -5667,6 +5811,7 @@ export const messages: {
     "settings.language.caption": "Vibe Bar 默认跟随 macOS 语言，也可以在此单独指定。厂商、模型与 harness 名称保持原始拼写。",
     "settings.language.system": "跟随系统",
     "settings.language.title": "语言",
+    "settings.layout.inlineEditHint": "双击文字即可原位编辑，回车保存，Esc 取消。",
     "settings.layout.openStudio": "打开工作台",
     "settings.layout.openStudioHelp": "在整尺寸的实时预览旁边排布这个界面。",
     "settings.layout.previewUnavailable": "该页面没有可预览的弹出面板标签页。",
@@ -5733,6 +5878,8 @@ export const messages: {
     "settings.miniCanvas.height": "高度",
     "settings.miniCanvas.horizontalBar": "横向条形",
     "settings.miniCanvas.layers": "元素 · 从前到后",
+    "settings.miniCanvas.presetWidgets": "迷你预设组件",
+    "settings.miniCanvas.primitives": "基础元素",
     "settings.miniCanvas.providerColor": "供应商颜色",
     "settings.miniCanvas.quotaColor": "额度状态颜色",
     "settings.miniCanvas.ring": "环形仪表",
@@ -5840,6 +5987,11 @@ export const messages: {
     "settings.openRefreshCooldown": "打开刷新的最小间隔",
     "settings.openRefreshDetail": "每个间隔周期内，打开面板最多刷新一次全部可见厂商。",
     "settings.openStatusPage": "打开 {company} 状态页",
+    "settings.overviewGranularity.company": "厂商（默认）",
+    "settings.overviewGranularity.help": "按厂商、SubProvider 或模型组拆分额度卡片，保留全部额度窗口、预测和重置信息。",
+    "settings.overviewGranularity.model": "模型组",
+    "settings.overviewGranularity.subProvider": "SubProvider",
+    "settings.overviewGranularity.title": "总览分块粒度",
     "settings.percentShows": "百分比显示",
     "settings.planBadge": "套餐标签",
     "settings.planBadgeDetail": "留空则使用自动检测到的账号套餐。",

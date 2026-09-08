@@ -1059,6 +1059,90 @@
 /* Mini window free-canvas editor: hint. */
 "platform.macos.miniCanvas.hint" = "Drag to move, drag a corner to resize. Shift-click to select more; ⌘G groups, ⌘D duplicates, Delete removes.";
 
+/* Status badge for terminal Automation already authorized by macOS. */
+"platform.macos.permissions.allowed" = "Authorized by macOS";
+
+/* Section heading above per-terminal Automation authorization statuses. */
+"platform.macos.permissions.automation" = "Terminal automation";
+
+/* Help text explaining terminal Automation checks in the permissions overview. */
+"platform.macos.permissions.automationHelp" = "Used to resume sessions in Terminal or iTerm. Checks do not send commands or request authorization. Open the terminal app before checking.";
+
+/* Button beside terminal authorization statuses that opens macOS Automation settings. */
+"platform.macos.permissions.automationSettings" = "Open Automation settings";
+
+/* Full Disk Access status directing the user to inspect its switch in System Settings. */
+"platform.macos.permissions.confirmInSettings" = "Confirm in System Settings";
+
+/* Status badge for terminal Automation explicitly denied by macOS. */
+"platform.macos.permissions.denied" = "Denied by macOS";
+
+/* Login item status indicating that macOS has enabled the app registration. */
+"platform.macos.permissions.enabled" = "Enabled by macOS";
+
+/* Row heading for macOS Full Disk Access in the permissions overview. */
+"platform.macos.permissions.fullDisk" = "Full Disk Access";
+
+/* Help text explaining the limits of Full Disk Access detection and individual browser file checks. */
+"platform.macos.permissions.fullDiskHelp" = "macOS provides no public API to query this switch directly. Browser file checks below verify only those files, and do not prove Full Disk Access.";
+
+/* Introductory explanation at the top of the macOS permissions overview. */
+"platform.macos.permissions.help" = "Review the access Vibe Bar uses. System permission status and checks of individual files or Keychain items are shown separately.";
+
+/* Keychain item status when no matching item was found. */
+"platform.macos.permissions.itemMissing" = "Item not found";
+
+/* Keychain item status indicating that metadata was accessible without reading its secret. */
+"platform.macos.permissions.itemVisible" = "Item metadata accessible";
+
+/* Section heading above saved credential and browser Keychain item checks. */
+"platform.macos.permissions.keychain" = "Keychain items";
+
+/* Keychain status when access is disabled by the app privacy setting. */
+"platform.macos.permissions.keychainDisabled" = "Keychain access disabled in app";
+
+/* Help text explaining that Keychain checks inspect metadata without reading passwords. */
+"platform.macos.permissions.keychainHelp" = "Checks item metadata without reading passwords or showing a prompt. A visible item does not guarantee permission to decrypt cookies. Use browser import to request any required Keychain approval.";
+
+/* Section heading for the app login and background registration status. */
+"platform.macos.permissions.loginItems" = "Login & background items";
+
+/* Help text explaining the login item registration status. */
+"platform.macos.permissions.loginItemsHelp" = "Controls whether Vibe Bar starts at login. Managed by macOS Login Items.";
+
+/* Button that opens macOS Login Items from the permissions overview. */
+"platform.macos.permissions.loginItemsSettings" = "Open Login Items";
+
+/* Status badge when Automation or a login item awaits macOS approval. */
+"platform.macos.permissions.needsApproval" = "Approval needed";
+
+/* Login item status indicating that the app is not registered to start at login. */
+"platform.macos.permissions.notRegistered" = "Not registered";
+
+/* Status beside the list of unused camera, microphone, screen recording and accessibility permissions. */
+"platform.macos.permissions.notRequired" = "Not required by current features";
+
+/* Button in the Keychain section that opens the macOS Keychain Access app. */
+"platform.macos.permissions.openKeychain" = "Open Keychain Access";
+
+/* Button in the permissions overview that opens macOS Privacy & Security. */
+"platform.macos.permissions.systemSettings" = "Open Privacy & Security";
+
+/* Automation status shown when the terminal app must be opened before checking. */
+"platform.macos.permissions.targetNotRunning" = "Target app is not running";
+
+/* Heading and sidebar label for the macOS permissions overview in Settings. */
+"platform.macos.permissions.title" = "Permissions overview";
+
+/* Fallback status badge when a permission or item check cannot determine its state. */
+"platform.macos.permissions.unknown" = "Status unavailable";
+
+/* Row listing system permissions that current app features do not require. */
+"platform.macos.permissions.unused" = "Camera, microphone, screen recording & accessibility";
+
+/* Row label for the Vibe Bar credential vault in the Keychain checks section. */
+"platform.macos.permissions.vault" = "Saved provider credentials";
+
 /* Subtitle under the Machines page header */
 "popover.header.machinesSubtitle" = "End-to-end encrypted remote usage";
 
@@ -2079,6 +2163,12 @@
 /* Heading over the per-provider connection rows */
 "settings.connectionHealth" = "Connection health";
 
+/* Help below the browser-cookie recovery toggle explaining retry limits and manual-cookie and Keychain boundaries. */
+"settings.cookies.retryHelp" = "When enabled, each failed cookie-based refresh gets one silent browser re-read, including when no saved cookie is available. Changed cookies are retried once. Manual cookies and Keychain denials are respected.";
+
+/* Toggle in browser-cookie settings enabling one silent cookie re-read after a failed quota refresh. */
+"settings.cookies.retryToggle" = "Re-read browser cookies after each failed refresh";
+
 /* Intro under the Cost Data heading */
 "settings.costDataIntro" = "Cost is computed from local CLI session JSONL logs at ~/.codex/sessions and ~/.claude/projects. Web/desktop usage is not tracked.";
 
@@ -2168,6 +2258,9 @@
 
 /* Settings row label for the in-app language override */
 "settings.language.title" = "Language";
+
+/* Studio direct text editing and free mini canvas component palette. */
+"settings.layout.inlineEditHint" = "Double-click a label to edit it here. Return saves; Escape cancels.";
 
 /* Button that opens the full-size layout studio window */
 "settings.layout.openStudio" = "Open Studio";
@@ -2366,6 +2459,12 @@
 
 /* Mini window free-canvas editor: layers. */
 "settings.miniCanvas.layers" = "Elements · front to back";
+
+/* Studio direct text editing and free mini canvas component palette. */
+"settings.miniCanvas.presetWidgets" = "Mini preset components";
+
+/* Studio direct text editing and free mini canvas component palette. */
+"settings.miniCanvas.primitives" = "Basic elements";
 
 /* Mini window free-canvas editor: providerColor. */
 "settings.miniCanvas.providerColor" = "Provider colour";
@@ -2687,6 +2786,21 @@
 
 /* Link to a company's public status page */
 "settings.openStatusPage" = "Open %@ status page";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.company" = "Company (default)";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.help" = "Split quota cards by company, SubProvider or model group. Keep all quota windows, forecasts and reset information.";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.model" = "Model group";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.subProvider" = "SubProvider";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.title" = "Overview card granularity";
 
 /* Picker label choosing between remaining and used */
 "settings.percentShows" = "Percent shows";

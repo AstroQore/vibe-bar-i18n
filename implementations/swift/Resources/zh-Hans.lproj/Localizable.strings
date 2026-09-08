@@ -1059,6 +1059,90 @@
 /* Mini window free-canvas editor: hint. */
 "platform.macos.miniCanvas.hint" = "拖动元素移动，拖动角点缩放。Shift 点选多个；⌘G 分组，⌘D 复制，Delete 删除。";
 
+/* Status badge for terminal Automation already authorized by macOS. */
+"platform.macos.permissions.allowed" = "macOS 已授权";
+
+/* Section heading above per-terminal Automation authorization statuses. */
+"platform.macos.permissions.automation" = "终端自动化";
+
+/* Help text explaining terminal Automation checks in the permissions overview. */
+"platform.macos.permissions.automationHelp" = "用于在 Terminal 或 iTerm 中恢复会话。检查不会发送命令或申请授权；请先打开对应终端 App。";
+
+/* Button beside terminal authorization statuses that opens macOS Automation settings. */
+"platform.macos.permissions.automationSettings" = "打开自动化权限";
+
+/* Full Disk Access status directing the user to inspect its switch in System Settings. */
+"platform.macos.permissions.confirmInSettings" = "请在系统设置确认";
+
+/* Status badge for terminal Automation explicitly denied by macOS. */
+"platform.macos.permissions.denied" = "macOS 已拒绝";
+
+/* Login item status indicating that macOS has enabled the app registration. */
+"platform.macos.permissions.enabled" = "macOS 已启用";
+
+/* Row heading for macOS Full Disk Access in the permissions overview. */
+"platform.macos.permissions.fullDisk" = "完全磁盘访问";
+
+/* Help text explaining the limits of Full Disk Access detection and individual browser file checks. */
+"platform.macos.permissions.fullDiskHelp" = "macOS 未提供直接查询此开关的公共 API。下方浏览器文件检查仅验证相应文件，不能证明已开启完全磁盘访问。";
+
+/* Introductory explanation at the top of the macOS permissions overview. */
+"platform.macos.permissions.help" = "查看 Vibe Bar 使用的访问权限。系统授权状态与单个文件或 Keychain 条目的检查结果分别显示。";
+
+/* Keychain item status when no matching item was found. */
+"platform.macos.permissions.itemMissing" = "未找到条目";
+
+/* Keychain item status indicating that metadata was accessible without reading its secret. */
+"platform.macos.permissions.itemVisible" = "条目元数据可访问";
+
+/* Section heading above saved credential and browser Keychain item checks. */
+"platform.macos.permissions.keychain" = "Keychain 条目";
+
+/* Keychain status when access is disabled by the app privacy setting. */
+"platform.macos.permissions.keychainDisabled" = "App 已停用 Keychain 访问";
+
+/* Help text explaining that Keychain checks inspect metadata without reading passwords. */
+"platform.macos.permissions.keychainHelp" = "仅检查条目元数据，不读取密码或弹出提示。能查询到条目不代表可解密 Cookie。需要 Keychain 授权时，请使用浏览器导入。";
+
+/* Section heading for the app login and background registration status. */
+"platform.macos.permissions.loginItems" = "登录与后台项目";
+
+/* Help text explaining the login item registration status. */
+"platform.macos.permissions.loginItemsHelp" = "控制 Vibe Bar 是否登录时启动，由 macOS 登录项管理。";
+
+/* Button that opens macOS Login Items from the permissions overview. */
+"platform.macos.permissions.loginItemsSettings" = "打开登录项";
+
+/* Status badge when Automation or a login item awaits macOS approval. */
+"platform.macos.permissions.needsApproval" = "需要授权";
+
+/* Login item status indicating that the app is not registered to start at login. */
+"platform.macos.permissions.notRegistered" = "未注册";
+
+/* Status beside the list of unused camera, microphone, screen recording and accessibility permissions. */
+"platform.macos.permissions.notRequired" = "当前功能无需这些权限";
+
+/* Button in the Keychain section that opens the macOS Keychain Access app. */
+"platform.macos.permissions.openKeychain" = "打开 Keychain 访问";
+
+/* Button in the permissions overview that opens macOS Privacy & Security. */
+"platform.macos.permissions.systemSettings" = "打开隐私与安全性";
+
+/* Automation status shown when the terminal app must be opened before checking. */
+"platform.macos.permissions.targetNotRunning" = "目标 App 未运行";
+
+/* Heading and sidebar label for the macOS permissions overview in Settings. */
+"platform.macos.permissions.title" = "权限总览";
+
+/* Fallback status badge when a permission or item check cannot determine its state. */
+"platform.macos.permissions.unknown" = "状态不可用";
+
+/* Row listing system permissions that current app features do not require. */
+"platform.macos.permissions.unused" = "摄像头、麦克风、屏幕录制与辅助功能";
+
+/* Row label for the Vibe Bar credential vault in the Keychain checks section. */
+"platform.macos.permissions.vault" = "已保存的提供商凭据";
+
 /* Subtitle under the Machines page header */
 "popover.header.machinesSubtitle" = "端到端加密的远程用量";
 
@@ -2079,6 +2163,12 @@
 /* Heading over the per-provider connection rows */
 "settings.connectionHealth" = "连接状态";
 
+/* Help below the browser-cookie recovery toggle explaining retry limits and manual-cookie and Keychain boundaries. */
+"settings.cookies.retryHelp" = "开启后，每次 Cookie 方式刷新失败都会静默重读一次浏览器，包括没有已保存 Cookie 的情况。Cookie 更新后仅重试一次，并遵循手动 Cookie 设置和 Keychain 拒绝状态。";
+
+/* Toggle in browser-cookie settings enabling one silent cookie re-read after a failed quota refresh. */
+"settings.cookies.retryToggle" = "每次刷新失败后重新读取浏览器 Cookie";
+
 /* Intro under the Cost Data heading */
 "settings.costDataIntro" = "花费根据 ~/.codex/sessions 与 ~/.claude/projects 下的本地 CLI 会话 JSONL 日志计算。网页端与桌面端用量不计入。";
 
@@ -2168,6 +2258,9 @@
 
 /* Settings row label for the in-app language override */
 "settings.language.title" = "语言";
+
+/* Studio direct text editing and free mini canvas component palette. */
+"settings.layout.inlineEditHint" = "双击文字即可原位编辑，回车保存，Esc 取消。";
 
 /* Button that opens the full-size layout studio window */
 "settings.layout.openStudio" = "打开工作台";
@@ -2366,6 +2459,12 @@
 
 /* Mini window free-canvas editor: layers. */
 "settings.miniCanvas.layers" = "元素 · 从前到后";
+
+/* Studio direct text editing and free mini canvas component palette. */
+"settings.miniCanvas.presetWidgets" = "迷你预设组件";
+
+/* Studio direct text editing and free mini canvas component palette. */
+"settings.miniCanvas.primitives" = "基础元素";
 
 /* Mini window free-canvas editor: providerColor. */
 "settings.miniCanvas.providerColor" = "供应商颜色";
@@ -2687,6 +2786,21 @@
 
 /* Link to a company's public status page */
 "settings.openStatusPage" = "打开 %@ 状态页";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.company" = "厂商（默认）";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.help" = "按厂商、SubProvider 或模型组拆分额度卡片，保留全部额度窗口、预测和重置信息。";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.model" = "模型组";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.subProvider" = "SubProvider";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.title" = "总览分块粒度";
 
 /* Picker label choosing between remaining and used */
 "settings.percentShows" = "百分比显示";

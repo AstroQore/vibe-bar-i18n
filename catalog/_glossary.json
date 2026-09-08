@@ -204,6 +204,10 @@
       "term": "ChatGPT Chat",
       "kind": "subProvider",
       "note": "OpenAI Chat message and feature allowances, separate from ChatGPT Agentic."
+    },
+    {
+      "term": "iTerm",
+      "kind": "product"
     }
   ]
 }
