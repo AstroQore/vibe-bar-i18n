@@ -699,10 +699,25 @@ export type MessageKey =
   | "settings.antigravityLocalOnly"
   | "settings.antigravitySource"
   | "settings.appVersion"
+  | "settings.browsers.appleNotes"
+  | "settings.browsers.checkAccess"
+  | "settings.browsers.checkHelp"
   | "settings.browsers.cookieStoreUnavailable"
+  | "settings.browsers.denied"
+  | "settings.browsers.failed"
+  | "settings.browsers.fullDiskHelp"
   | "settings.browsers.help"
+  | "settings.browsers.missing"
   | "settings.browsers.none"
+  | "settings.browsers.openFullDisk"
+  | "settings.browsers.openPermissions"
+  | "settings.browsers.partial"
+  | "settings.browsers.permissionGuide"
+  | "settings.browsers.permissionsTitle"
   | "settings.browsers.readAll"
+  | "settings.browsers.readable"
+  | "settings.browsers.runningApp"
+  | "settings.browsers.signatureWarning"
   | "settings.browsers.title"
   | "settings.bundled"
   | "settings.checkConnections"
@@ -2322,10 +2337,25 @@ export interface MessageParams {
   "settings.antigravityLocalOnly": undefined;
   "settings.antigravitySource": undefined;
   "settings.appVersion": { "version": string };
+  "settings.browsers.appleNotes": undefined;
+  "settings.browsers.checkAccess": undefined;
+  "settings.browsers.checkHelp": undefined;
   "settings.browsers.cookieStoreUnavailable": undefined;
+  "settings.browsers.denied": undefined;
+  "settings.browsers.failed": undefined;
+  "settings.browsers.fullDiskHelp": undefined;
   "settings.browsers.help": undefined;
+  "settings.browsers.missing": undefined;
   "settings.browsers.none": undefined;
+  "settings.browsers.openFullDisk": undefined;
+  "settings.browsers.openPermissions": undefined;
+  "settings.browsers.partial": undefined;
+  "settings.browsers.permissionGuide": undefined;
+  "settings.browsers.permissionsTitle": undefined;
   "settings.browsers.readAll": undefined;
+  "settings.browsers.readable": undefined;
+  "settings.browsers.runningApp": { "path": string };
+  "settings.browsers.signatureWarning": undefined;
   "settings.browsers.title": undefined;
   "settings.bundled": undefined;
   "settings.checkConnections": { "company": string };
@@ -3946,10 +3976,25 @@ export const messages: {
     "settings.antigravityLocalOnly": "Antigravity reads the locally running language server. Cookie import is deferred until the Antigravity Cloud endpoint ships.",
     "settings.antigravitySource": "Antigravity source",
     "settings.appVersion": "Vibe Bar {version}",
+    "settings.browsers.appleNotes": "Apple privacy release notes",
+    "settings.browsers.checkAccess": "Check access",
+    "settings.browsers.checkHelp": "Checks cookie files from this app without decrypting or importing cookies. macOS may ask for access. Readable files do not confirm a signed-in session or Keychain access.",
     "settings.browsers.cookieStoreUnavailable": "Cookie data is unavailable. Open the browser and check its access permissions before importing.",
+    "settings.browsers.denied": "File access denied",
+    "settings.browsers.failed": "Could not check access",
+    "settings.browsers.fullDiskHelp": "If access still fails, Full Disk Access is a broader fallback: enable it only if you accept access to other protected files, then quit and reopen Vibe Bar. You can turn it off afterward.",
     "settings.browsers.help": "Only the browsers ticked here are read, in this order. A browser that is not installed is never read.",
+    "settings.browsers.missing": "No cookie file found",
     "settings.browsers.none": "No browser with a cookie store was found on this Mac.",
+    "settings.browsers.openFullDisk": "Open Full Disk Access",
+    "settings.browsers.openPermissions": "Open Files & Folders",
+    "settings.browsers.partial": "Some profiles are inaccessible",
+    "settings.browsers.permissionGuide": "Open System Settings → Privacy & Security → Files & Folders → Vibe Bar, then enable the browser. Return here and check again before importing. On macOS 27, protected app data can be denied without a prompt.",
+    "settings.browsers.permissionsTitle": "Browser data access",
     "settings.browsers.readAll": "Read every installed browser",
+    "settings.browsers.readable": "Cookie file readable",
+    "settings.browsers.runningApp": "Running app: {path}",
+    "settings.browsers.signatureWarning": "This build uses ad-hoc signing. Rebuilding or updating it can invalidate macOS permissions. Quit other copies, launch the copy you intend to use, grant access, and check again. A build signed with a stable certificate is needed for permissions to persist across updates.",
     "settings.browsers.title": "Browsers to read",
     "settings.bundled": "bundled",
     "settings.checkConnections": "Check {company} connections",
@@ -5565,10 +5610,25 @@ export const messages: {
     "settings.antigravityLocalOnly": "Antigravity 读取本机运行的语言服务。cookie 导入将等到 Antigravity Cloud 端点上线后再启用。",
     "settings.antigravitySource": "Antigravity 来源",
     "settings.appVersion": "Vibe Bar {version}",
+    "settings.browsers.appleNotes": "Apple 隐私变更说明",
+    "settings.browsers.checkAccess": "检查访问权限",
+    "settings.browsers.checkHelp": "由此 App 检查 Cookie 文件，不解密或导入 Cookie。macOS 可能询问是否允许访问。文件可读不代表已登录，也不代表已获Keychain访问权限。",
     "settings.browsers.cookieStoreUnavailable": "暂时无法访问 Cookie 数据。请先打开浏览器，并检查系统访问权限后再导入。",
+    "settings.browsers.denied": "文件访问被拒绝",
+    "settings.browsers.failed": "无法检查访问权限",
+    "settings.browsers.fullDiskHelp": "如果仍无法访问，可考虑完全磁盘访问权限；它也允许读取其他受保护文件。接受此范围后再开启，并退出重开 Vibe Bar；之后可关闭。",
     "settings.browsers.help": "只读取此处勾选的浏览器，按此顺序。未安装的浏览器不会被读取。",
+    "settings.browsers.missing": "未找到 Cookie 文件",
     "settings.browsers.none": "本机没有找到带 Cookie 存储的浏览器。",
+    "settings.browsers.openFullDisk": "打开完全磁盘访问权限",
+    "settings.browsers.openPermissions": "打开文件与文件夹权限",
+    "settings.browsers.partial": "部分配置文件无法访问",
+    "settings.browsers.permissionGuide": "打开系统设置 → 隐私与安全性 → 文件与文件夹 → Vibe Bar，开启对应浏览器。返回此处重新检查后再导入。macOS 27 可能直接拒绝受保护的 App 数据访问，不弹出授权框。",
+    "settings.browsers.permissionsTitle": "浏览器数据访问",
     "settings.browsers.readAll": "读取所有已安装的浏览器",
+    "settings.browsers.readable": "Cookie 文件可读",
+    "settings.browsers.runningApp": "当前运行的 App：{path}",
+    "settings.browsers.signatureWarning": "此构建使用 ad-hoc 签名，重新构建或更新可能使 macOS 权限失效。退出其他副本，启动要使用的副本，授权后重新检查。要让权限跨更新保留，需要使用稳定证书签名的构建。",
     "settings.browsers.title": "读取的浏览器",
     "settings.bundled": "内置",
     "settings.checkConnections": "检查 {company} 连接",

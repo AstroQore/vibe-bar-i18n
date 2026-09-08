@@ -5116,11 +5116,47 @@ public enum L10n {
         }
 
         public enum Browsers {
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.appleNotes`
+            /// en: "Apple privacy release notes"
+            public static var appleNotes: String { L10nSupport.string("settings.browsers.appleNotes") }
+
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.checkAccess`
+            /// en: "Check access"
+            public static var checkAccess: String { L10nSupport.string("settings.browsers.checkAccess") }
+
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.checkHelp`
+            /// en: "Checks cookie files from this app without decrypting or importing cookies. macOS may ask for access. Readable files do not confirm a signed-in session or Keychain access."
+            public static var checkHelp: String { L10nSupport.string("settings.browsers.checkHelp") }
+
             /// Browser picker: app installed, but the profile or cookie-store probe failed.
             ///
             /// Key: `settings.browsers.cookieStoreUnavailable`
             /// en: "Cookie data is unavailable. Open the browser and check its access permissions before importing."
             public static var cookieStoreUnavailable: String { L10nSupport.string("settings.browsers.cookieStoreUnavailable") }
+
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.denied`
+            /// en: "File access denied"
+            public static var denied: String { L10nSupport.string("settings.browsers.denied") }
+
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.failed`
+            /// en: "Could not check access"
+            public static var failed: String { L10nSupport.string("settings.browsers.failed") }
+
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.fullDiskHelp`
+            /// en: "If access still fails, Full Disk Access is a broader fallback: enable it only if you accept access to other protected files, then quit and reopen Vibe Bar. You can turn it off afterward."
+            public static var fullDiskHelp: String { L10nSupport.string("settings.browsers.fullDiskHelp") }
 
             /// Caption under the browser list in Settings and the setup assistant.
             ///
@@ -5128,17 +5164,73 @@ public enum L10n {
             /// en: "Only the browsers ticked here are read, in this order. A browser that is not installed is never read."
             public static var help: String { L10nSupport.string("settings.browsers.help") }
 
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.missing`
+            /// en: "No cookie file found"
+            public static var missing: String { L10nSupport.string("settings.browsers.missing") }
+
             /// Shown in place of the browser list when detection finds no installed browser with cookie data.
             ///
             /// Key: `settings.browsers.none`
             /// en: "No browser with a cookie store was found on this Mac."
             public static var `none`: String { L10nSupport.string("settings.browsers.none") }
 
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.openFullDisk`
+            /// en: "Open Full Disk Access"
+            public static var openFullDisk: String { L10nSupport.string("settings.browsers.openFullDisk") }
+
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.openPermissions`
+            /// en: "Open Files & Folders"
+            public static var openPermissions: String { L10nSupport.string("settings.browsers.openPermissions") }
+
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.partial`
+            /// en: "Some profiles are inaccessible"
+            public static var partial: String { L10nSupport.string("settings.browsers.partial") }
+
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.permissionGuide`
+            /// en: "Open System Settings → Privacy & Security → Files & Folders → Vibe Bar, then enable the browser. Return here and check again before importing. On macOS 27, protected app data can be denied without a prompt."
+            public static var permissionGuide: String { L10nSupport.string("settings.browsers.permissionGuide") }
+
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.permissionsTitle`
+            /// en: "Browser data access"
+            public static var permissionsTitle: String { L10nSupport.string("settings.browsers.permissionsTitle") }
+
             /// Button that clears the browser selection so every installed browser is read again.
             ///
             /// Key: `settings.browsers.readAll`
             /// en: "Read every installed browser"
             public static var readAll: String { L10nSupport.string("settings.browsers.readAll") }
+
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.readable`
+            /// en: "Cookie file readable"
+            public static var readable: String { L10nSupport.string("settings.browsers.readable") }
+
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.runningApp`
+            /// en: "Running app: {path}"
+            public static func runningApp(path: String) -> String {
+                L10nSupport.format("settings.browsers.runningApp", path)
+            }
+
+            /// Browser data access diagnostics in macOS Settings and setup assistant.
+            ///
+            /// Key: `settings.browsers.signatureWarning`
+            /// en: "This build uses ad-hoc signing. Rebuilding or updating it can invalidate macOS permissions. Quit other copies, launch the copy you intend to use, grant access, and check again. A build signed with a stable certificate is needed for permissions to persist across updates."
+            public static var signatureWarning: String { L10nSupport.string("settings.browsers.signatureWarning") }
 
             /// Heading of the list of installed browsers whose cookie stores Vibe Bar may read. Shown in Settings > Misc Providers and in the setup assistant's browser-cookies step.
             ///
@@ -11620,10 +11712,25 @@ enum L10nCatalogFacts {
         "settings.antigravityLocalOnly",
         "settings.antigravitySource",
         "settings.appVersion",
+        "settings.browsers.appleNotes",
+        "settings.browsers.checkAccess",
+        "settings.browsers.checkHelp",
         "settings.browsers.cookieStoreUnavailable",
+        "settings.browsers.denied",
+        "settings.browsers.failed",
+        "settings.browsers.fullDiskHelp",
         "settings.browsers.help",
+        "settings.browsers.missing",
         "settings.browsers.none",
+        "settings.browsers.openFullDisk",
+        "settings.browsers.openPermissions",
+        "settings.browsers.partial",
+        "settings.browsers.permissionGuide",
+        "settings.browsers.permissionsTitle",
         "settings.browsers.readAll",
+        "settings.browsers.readable",
+        "settings.browsers.runningApp",
+        "settings.browsers.signatureWarning",
         "settings.browsers.title",
         "settings.bundled",
         "settings.checkConnections",
@@ -13293,10 +13400,25 @@ enum L10nCatalogFacts {
         "settings.antigravityLocalOnly": 0,
         "settings.antigravitySource": 0,
         "settings.appVersion": 1,
+        "settings.browsers.appleNotes": 0,
+        "settings.browsers.checkAccess": 0,
+        "settings.browsers.checkHelp": 0,
         "settings.browsers.cookieStoreUnavailable": 0,
+        "settings.browsers.denied": 0,
+        "settings.browsers.failed": 0,
+        "settings.browsers.fullDiskHelp": 0,
         "settings.browsers.help": 0,
+        "settings.browsers.missing": 0,
         "settings.browsers.none": 0,
+        "settings.browsers.openFullDisk": 0,
+        "settings.browsers.openPermissions": 0,
+        "settings.browsers.partial": 0,
+        "settings.browsers.permissionGuide": 0,
+        "settings.browsers.permissionsTitle": 0,
         "settings.browsers.readAll": 0,
+        "settings.browsers.readable": 0,
+        "settings.browsers.runningApp": 1,
+        "settings.browsers.signatureWarning": 0,
         "settings.browsers.title": 0,
         "settings.bundled": 0,
         "settings.checkConnections": 1,

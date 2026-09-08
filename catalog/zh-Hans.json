@@ -4852,6 +4852,51 @@
     },
     "platform.macos.miniCanvas.hint": {
       "value": "拖动元素移动，拖动角点缩放。Shift 点选多个；⌘G 分组，⌘D 复制，Delete 删除。"
+    },
+    "settings.browsers.permissionsTitle": {
+      "value": "浏览器数据访问"
+    },
+    "settings.browsers.checkAccess": {
+      "value": "检查访问权限"
+    },
+    "settings.browsers.readable": {
+      "value": "Cookie 文件可读"
+    },
+    "settings.browsers.denied": {
+      "value": "文件访问被拒绝"
+    },
+    "settings.browsers.missing": {
+      "value": "未找到 Cookie 文件"
+    },
+    "settings.browsers.failed": {
+      "value": "无法检查访问权限"
+    },
+    "settings.browsers.partial": {
+      "value": "部分配置文件无法访问"
+    },
+    "settings.browsers.checkHelp": {
+      "value": "由此 App 检查 Cookie 文件，不解密或导入 Cookie。macOS 可能询问是否允许访问。文件可读不代表已登录，也不代表已获Keychain访问权限。"
+    },
+    "settings.browsers.permissionGuide": {
+      "value": "打开系统设置 → 隐私与安全性 → 文件与文件夹 → Vibe Bar，开启对应浏览器。返回此处重新检查后再导入。macOS 27 可能直接拒绝受保护的 App 数据访问，不弹出授权框。"
+    },
+    "settings.browsers.openPermissions": {
+      "value": "打开文件与文件夹权限"
+    },
+    "settings.browsers.signatureWarning": {
+      "value": "此构建使用 ad-hoc 签名，重新构建或更新可能使 macOS 权限失效。退出其他副本，启动要使用的副本，授权后重新检查。要让权限跨更新保留，需要使用稳定证书签名的构建。"
+    },
+    "settings.browsers.runningApp": {
+      "value": "当前运行的 App：{path}"
+    },
+    "settings.browsers.fullDiskHelp": {
+      "value": "如果仍无法访问，可考虑完全磁盘访问权限；它也允许读取其他受保护文件。接受此范围后再开启，并退出重开 Vibe Bar；之后可关闭。"
+    },
+    "settings.browsers.openFullDisk": {
+      "value": "打开完全磁盘访问权限"
+    },
+    "settings.browsers.appleNotes": {
+      "value": "Apple 隐私变更说明"
     }
   }
 }

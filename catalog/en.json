@@ -7668,6 +7668,69 @@
     "platform.macos.miniCanvas.hint": {
       "value": "Drag to move, drag a corner to resize. Shift-click to select more; ⌘G groups, ⌘D duplicates, Delete removes.",
       "comment": "Mini window free-canvas editor: hint."
+    },
+    "settings.browsers.permissionsTitle": {
+      "value": "Browser data access",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
+    },
+    "settings.browsers.checkAccess": {
+      "value": "Check access",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
+    },
+    "settings.browsers.readable": {
+      "value": "Cookie file readable",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
+    },
+    "settings.browsers.denied": {
+      "value": "File access denied",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
+    },
+    "settings.browsers.missing": {
+      "value": "No cookie file found",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
+    },
+    "settings.browsers.failed": {
+      "value": "Could not check access",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
+    },
+    "settings.browsers.partial": {
+      "value": "Some profiles are inaccessible",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
+    },
+    "settings.browsers.checkHelp": {
+      "value": "Checks cookie files from this app without decrypting or importing cookies. macOS may ask for access. Readable files do not confirm a signed-in session or Keychain access.",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
+    },
+    "settings.browsers.permissionGuide": {
+      "value": "Open System Settings → Privacy & Security → Files & Folders → Vibe Bar, then enable the browser. Return here and check again before importing. On macOS 27, protected app data can be denied without a prompt.",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
+    },
+    "settings.browsers.openPermissions": {
+      "value": "Open Files & Folders",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
+    },
+    "settings.browsers.signatureWarning": {
+      "value": "This build uses ad-hoc signing. Rebuilding or updating it can invalidate macOS permissions. Quit other copies, launch the copy you intend to use, grant access, and check again. A build signed with a stable certificate is needed for permissions to persist across updates.",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
+    },
+    "settings.browsers.runningApp": {
+      "value": "Running app: {path}",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant.",
+      "placeholders": {
+        "path": "string"
+      }
+    },
+    "settings.browsers.fullDiskHelp": {
+      "value": "If access still fails, Full Disk Access is a broader fallback: enable it only if you accept access to other protected files, then quit and reopen Vibe Bar. You can turn it off afterward.",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
+    },
+    "settings.browsers.openFullDisk": {
+      "value": "Open Full Disk Access",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
+    },
+    "settings.browsers.appleNotes": {
+      "value": "Apple privacy release notes",
+      "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
     }
   }
 }
