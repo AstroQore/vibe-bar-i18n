@@ -1056,6 +1056,9 @@
 /* Toggle in the menu-bar item editor. macOS-only: no other client renders a menu-bar extra. */
 "platform.macos.menuBar.showInMenuBar" = "在菜单栏中显示";
 
+/* Mini window free-canvas editor: hint. */
+"platform.macos.miniCanvas.hint" = "拖动元素移动，拖动角点缩放。Shift 点选多个；⌘G 分组，⌘D 复制，Delete 删除。";
+
 /* Subtitle under the Machines page header */
 "popover.header.machinesSubtitle" = "端到端加密的远程用量";
 
@@ -1996,7 +1999,7 @@
 "settings.appVersion" = "Vibe Bar %@";
 
 /* Browser picker: app installed, but the profile or cookie-store probe failed. */
-"settings.browsers.cookieStoreUnavailable" = "暂时无法访问 Cookie 数据。请先打开浏览器，并检查 macOS 访问权限后再导入。";
+"settings.browsers.cookieStoreUnavailable" = "暂时无法访问 Cookie 数据。请先打开浏览器，并检查系统访问权限后再导入。";
 
 /* Caption under the browser list in Settings and the setup assistant. */
 "settings.browsers.help" = "只读取此处勾选的浏览器，按此顺序。未安装的浏览器不会被读取。";
@@ -2290,7 +2293,7 @@
 "settings.miniCanvas.content" = "文字内容";
 
 /* Mini window free-canvas editor: detail. */
-"settings.miniCanvas.detail" = "自由组合仪表、条形和文字，在 Studio 中编辑。";
+"settings.miniCanvas.detail" = "自由组合仪表、条形和文字，在布局工作台中编辑。";
 
 /* Mini window free-canvas editor: element. */
 "settings.miniCanvas.element" = "元素";
@@ -2312,9 +2315,6 @@
 
 /* Mini window free-canvas editor: height. */
 "settings.miniCanvas.height" = "高度";
-
-/* Mini window free-canvas editor: hint. */
-"settings.miniCanvas.hint" = "拖动元素移动，拖动角点缩放。Shift 点选多个；⌘G 分组，⌘D 复制，Delete 删除。";
 
 /* Mini window free-canvas editor: horizontalBar. */
 "settings.miniCanvas.horizontalBar" = "横向条形";

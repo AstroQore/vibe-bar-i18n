@@ -2433,6 +2433,14 @@ public enum L10n {
                     public static var singleLine: String { L10nSupport.string("platform.macos.menuBar.layout.singleLine") }
                 }
             }
+
+            public enum MiniCanvas {
+                /// Mini window free-canvas editor: hint.
+                ///
+                /// Key: `platform.macos.miniCanvas.hint`
+                /// en: "Drag to move, drag a corner to resize. Shift-click to select more; ⌘G groups, ⌘D duplicates, Delete removes."
+                public static var hint: String { L10nSupport.string("platform.macos.miniCanvas.hint") }
+            }
         }
     }
 
@@ -5111,7 +5119,7 @@ public enum L10n {
             /// Browser picker: app installed, but the profile or cookie-store probe failed.
             ///
             /// Key: `settings.browsers.cookieStoreUnavailable`
-            /// en: "Cookie data is unavailable. Open the browser and check its macOS access permissions before importing."
+            /// en: "Cookie data is unavailable. Open the browser and check its access permissions before importing."
             public static var cookieStoreUnavailable: String { L10nSupport.string("settings.browsers.cookieStoreUnavailable") }
 
             /// Caption under the browser list in Settings and the setup assistant.
@@ -5595,12 +5603,6 @@ public enum L10n {
             /// Key: `settings.miniCanvas.height`
             /// en: "Height"
             public static var height: String { L10nSupport.string("settings.miniCanvas.height") }
-
-            /// Mini window free-canvas editor: hint.
-            ///
-            /// Key: `settings.miniCanvas.hint`
-            /// en: "Drag to move, drag a corner to resize. Shift-click to select more; ⌘G groups, ⌘D duplicates, Delete removes."
-            public static var hint: String { L10nSupport.string("settings.miniCanvas.hint") }
 
             /// Mini window free-canvas editor: horizontalBar.
             ///
@@ -11292,6 +11294,7 @@ enum L10nCatalogFacts {
         "platform.macos.menuBar.mergeGroupWindowsDetail",
         "platform.macos.menuBar.percentColor",
         "platform.macos.menuBar.showInMenuBar",
+        "platform.macos.miniCanvas.hint",
         "popover.header.machinesSubtitle",
         "popover.header.mini",
         "popover.header.miscSubtitle",
@@ -11723,7 +11726,6 @@ enum L10nCatalogFacts {
         "settings.miniCanvas.front",
         "settings.miniCanvas.grid",
         "settings.miniCanvas.height",
-        "settings.miniCanvas.hint",
         "settings.miniCanvas.horizontalBar",
         "settings.miniCanvas.layers",
         "settings.miniCanvas.providerColor",
@@ -12965,6 +12967,7 @@ enum L10nCatalogFacts {
         "platform.macos.menuBar.mergeGroupWindowsDetail": 0,
         "platform.macos.menuBar.percentColor": 0,
         "platform.macos.menuBar.showInMenuBar": 0,
+        "platform.macos.miniCanvas.hint": 0,
         "popover.header.machinesSubtitle": 0,
         "popover.header.mini": 0,
         "popover.header.miscSubtitle": 0,
@@ -13396,7 +13399,6 @@ enum L10nCatalogFacts {
         "settings.miniCanvas.front": 0,
         "settings.miniCanvas.grid": 0,
         "settings.miniCanvas.height": 0,
-        "settings.miniCanvas.hint": 0,
         "settings.miniCanvas.horizontalBar": 0,
         "settings.miniCanvas.layers": 0,
         "settings.miniCanvas.providerColor": 0,

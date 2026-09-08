@@ -4764,7 +4764,7 @@
       "value": "更新于 {time}"
     },
     "settings.miniCanvas.detail": {
-      "value": "自由组合仪表、条形和文字，在 Studio 中编辑。"
+      "value": "自由组合仪表、条形和文字，在布局工作台中编辑。"
     },
     "settings.miniCanvas.ring": {
       "value": "环形仪表"
@@ -4802,9 +4802,6 @@
     "settings.miniCanvas.content": {
       "value": "文字内容"
     },
-    "settings.miniCanvas.hint": {
-      "value": "拖动元素移动，拖动角点缩放。Shift 点选多个；⌘G 分组，⌘D 复制，Delete 删除。"
-    },
     "settings.miniCanvas.empty": {
       "value": "从检查器添加仪表、条形或文字。"
     },
@@ -4827,7 +4824,7 @@
       "value": "暂无额度数据"
     },
     "settings.browsers.cookieStoreUnavailable": {
-      "value": "暂时无法访问 Cookie 数据。请先打开浏览器，并检查 macOS 访问权限后再导入。"
+      "value": "暂时无法访问 Cookie 数据。请先打开浏览器，并检查系统访问权限后再导入。"
     },
     "settings.miniCanvas.styleCycle": {
       "value": "双击按顺序切换所选样式。未选择时只轮换内置样式；自定义样式需手动加入。"
@@ -4852,6 +4849,9 @@
     },
     "settings.miniCanvas.span": {
       "value": "占格尺寸"
+    },
+    "platform.macos.miniCanvas.hint": {
+      "value": "拖动元素移动，拖动角点缩放。Shift 点选多个；⌘G 分组，⌘D 复制，Delete 删除。"
     }
   }
 }

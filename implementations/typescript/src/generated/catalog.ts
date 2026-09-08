@@ -373,6 +373,7 @@ export type MessageKey =
   | "platform.macos.menuBar.mergeGroupWindowsDetail"
   | "platform.macos.menuBar.percentColor"
   | "platform.macos.menuBar.showInMenuBar"
+  | "platform.macos.miniCanvas.hint"
   | "popover.header.machinesSubtitle"
   | "popover.header.mini"
   | "popover.header.miscSubtitle"
@@ -804,7 +805,6 @@ export type MessageKey =
   | "settings.miniCanvas.front"
   | "settings.miniCanvas.grid"
   | "settings.miniCanvas.height"
-  | "settings.miniCanvas.hint"
   | "settings.miniCanvas.horizontalBar"
   | "settings.miniCanvas.layers"
   | "settings.miniCanvas.providerColor"
@@ -1996,6 +1996,7 @@ export interface MessageParams {
   "platform.macos.menuBar.mergeGroupWindowsDetail": undefined;
   "platform.macos.menuBar.percentColor": undefined;
   "platform.macos.menuBar.showInMenuBar": undefined;
+  "platform.macos.miniCanvas.hint": undefined;
   "popover.header.machinesSubtitle": undefined;
   "popover.header.mini": undefined;
   "popover.header.miscSubtitle": undefined;
@@ -2427,7 +2428,6 @@ export interface MessageParams {
   "settings.miniCanvas.front": undefined;
   "settings.miniCanvas.grid": undefined;
   "settings.miniCanvas.height": undefined;
-  "settings.miniCanvas.hint": undefined;
   "settings.miniCanvas.horizontalBar": undefined;
   "settings.miniCanvas.layers": undefined;
   "settings.miniCanvas.providerColor": undefined;
@@ -3620,6 +3620,7 @@ export const messages: {
     "platform.macos.menuBar.mergeGroupWindowsDetail": "Shows 5 Hours and Weekly as 5%/100% instead of two entries.",
     "platform.macos.menuBar.percentColor": "Percent color",
     "platform.macos.menuBar.showInMenuBar": "Show in menu bar",
+    "platform.macos.miniCanvas.hint": "Drag to move, drag a corner to resize. Shift-click to select more; ⌘G groups, ⌘D duplicates, Delete removes.",
     "popover.header.machinesSubtitle": "End-to-end encrypted remote usage",
     "popover.header.mini": "Mini",
     "popover.header.miscSubtitle": "Usage-only · sign in or paste a key",
@@ -3945,7 +3946,7 @@ export const messages: {
     "settings.antigravityLocalOnly": "Antigravity reads the locally running language server. Cookie import is deferred until the Antigravity Cloud endpoint ships.",
     "settings.antigravitySource": "Antigravity source",
     "settings.appVersion": "Vibe Bar {version}",
-    "settings.browsers.cookieStoreUnavailable": "Cookie data is unavailable. Open the browser and check its macOS access permissions before importing.",
+    "settings.browsers.cookieStoreUnavailable": "Cookie data is unavailable. Open the browser and check its access permissions before importing.",
     "settings.browsers.help": "Only the browsers ticked here are read, in this order. A browser that is not installed is never read.",
     "settings.browsers.none": "No browser with a cookie store was found on this Mac.",
     "settings.browsers.readAll": "Read every installed browser",
@@ -4051,7 +4052,6 @@ export const messages: {
     "settings.miniCanvas.front": "Bring forward",
     "settings.miniCanvas.grid": "Snap to grid",
     "settings.miniCanvas.height": "Height",
-    "settings.miniCanvas.hint": "Drag to move, drag a corner to resize. Shift-click to select more; ⌘G groups, ⌘D duplicates, Delete removes.",
     "settings.miniCanvas.horizontalBar": "Horizontal bar",
     "settings.miniCanvas.layers": "Elements · front to back",
     "settings.miniCanvas.providerColor": "Provider colour",
@@ -5239,6 +5239,7 @@ export const messages: {
     "platform.macos.menuBar.mergeGroupWindowsDetail": "把 5 小时与每周显示为 5%/100%，而不是两条独立条目。",
     "platform.macos.menuBar.percentColor": "百分比配色",
     "platform.macos.menuBar.showInMenuBar": "在菜单栏中显示",
+    "platform.macos.miniCanvas.hint": "拖动元素移动，拖动角点缩放。Shift 点选多个；⌘G 分组，⌘D 复制，Delete 删除。",
     "popover.header.machinesSubtitle": "端到端加密的远程用量",
     "popover.header.mini": "迷你窗口",
     "popover.header.miscSubtitle": "仅用量 · 登录或粘贴密钥",
@@ -5564,7 +5565,7 @@ export const messages: {
     "settings.antigravityLocalOnly": "Antigravity 读取本机运行的语言服务。cookie 导入将等到 Antigravity Cloud 端点上线后再启用。",
     "settings.antigravitySource": "Antigravity 来源",
     "settings.appVersion": "Vibe Bar {version}",
-    "settings.browsers.cookieStoreUnavailable": "暂时无法访问 Cookie 数据。请先打开浏览器，并检查 macOS 访问权限后再导入。",
+    "settings.browsers.cookieStoreUnavailable": "暂时无法访问 Cookie 数据。请先打开浏览器，并检查系统访问权限后再导入。",
     "settings.browsers.help": "只读取此处勾选的浏览器，按此顺序。未安装的浏览器不会被读取。",
     "settings.browsers.none": "本机没有找到带 Cookie 存储的浏览器。",
     "settings.browsers.readAll": "读取所有已安装的浏览器",
@@ -5662,7 +5663,7 @@ export const messages: {
     "settings.miniCanvas.column": "列",
     "settings.miniCanvas.columns": "列数",
     "settings.miniCanvas.content": "文字内容",
-    "settings.miniCanvas.detail": "自由组合仪表、条形和文字，在 Studio 中编辑。",
+    "settings.miniCanvas.detail": "自由组合仪表、条形和文字，在布局工作台中编辑。",
     "settings.miniCanvas.element": "元素",
     "settings.miniCanvas.empty": "从检查器添加仪表、条形或文字。",
     "settings.miniCanvas.fontSize": "字号",
@@ -5670,7 +5671,6 @@ export const messages: {
     "settings.miniCanvas.front": "上移一层",
     "settings.miniCanvas.grid": "网格吸附",
     "settings.miniCanvas.height": "高度",
-    "settings.miniCanvas.hint": "拖动元素移动，拖动角点缩放。Shift 点选多个；⌘G 分组，⌘D 复制，Delete 删除。",
     "settings.miniCanvas.horizontalBar": "横向条形",
     "settings.miniCanvas.layers": "元素 · 从前到后",
     "settings.miniCanvas.providerColor": "供应商颜色",

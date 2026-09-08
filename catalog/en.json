@@ -7601,10 +7601,6 @@
       "value": "Text content",
       "comment": "Mini window free-canvas editor: content."
     },
-    "settings.miniCanvas.hint": {
-      "value": "Drag to move, drag a corner to resize. Shift-click to select more; ⌘G groups, ⌘D duplicates, Delete removes.",
-      "comment": "Mini window free-canvas editor: hint."
-    },
     "settings.miniCanvas.empty": {
       "value": "Add a gauge, bar or text from the inspector to begin.",
       "comment": "Mini window free-canvas editor: empty."
@@ -7634,7 +7630,7 @@
       "comment": "Mini window free-canvas editor: unavailable."
     },
     "settings.browsers.cookieStoreUnavailable": {
-      "value": "Cookie data is unavailable. Open the browser and check its macOS access permissions before importing.",
+      "value": "Cookie data is unavailable. Open the browser and check its access permissions before importing.",
       "comment": "Browser picker: app installed, but the profile or cookie-store probe failed."
     },
     "settings.miniCanvas.styleCycle": {
@@ -7668,6 +7664,10 @@
     "settings.miniCanvas.span": {
       "value": "Cell span",
       "comment": "Mini canvas grid geometry: span."
+    },
+    "platform.macos.miniCanvas.hint": {
+      "value": "Drag to move, drag a corner to resize. Shift-click to select more; ⌘G groups, ⌘D duplicates, Delete removes.",
+      "comment": "Mini window free-canvas editor: hint."
     }
   }
 }
