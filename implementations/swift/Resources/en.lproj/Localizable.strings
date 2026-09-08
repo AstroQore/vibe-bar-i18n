@@ -2079,6 +2079,12 @@
 /* Heading over the per-provider connection rows */
 "settings.connectionHealth" = "Connection health";
 
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.cookies.retryHelp" = "When enabled, each failed cookie-based refresh gets one silent browser re-read, including when no saved cookie is available. Changed cookies are retried once. Manual cookies and Keychain denials are respected.";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.cookies.retryToggle" = "Re-read browser cookies after each failed refresh";
+
 /* Intro under the Cost Data heading */
 "settings.costDataIntro" = "Cost is computed from local CLI session JSONL logs at ~/.codex/sessions and ~/.claude/projects. Web/desktop usage is not tracked.";
 
@@ -2690,6 +2696,90 @@
 
 /* Picker label choosing between remaining and used */
 "settings.percentShows" = "Percent shows";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.allowed" = "Authorized by macOS";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.automation" = "Terminal automation";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.automationHelp" = "Used to resume sessions in Terminal or iTerm. Checks do not send commands or request authorization. Open the terminal app before checking.";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.automationSettings" = "Open Automation settings";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.confirmInSettings" = "Confirm in System Settings";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.denied" = "Denied by macOS";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.enabled" = "Enabled by macOS";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.fullDisk" = "Full Disk Access";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.fullDiskHelp" = "macOS provides no public API to query this switch directly. Browser file checks below verify only those files, and do not prove Full Disk Access.";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.help" = "Review the access Vibe Bar uses. System permission status and checks of individual files or Keychain items are shown separately.";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.itemMissing" = "Item not found";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.itemVisible" = "Item metadata accessible";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.keychain" = "Keychain items";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.keychainDisabled" = "Keychain access disabled in app";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.keychainHelp" = "Checks item metadata without reading passwords or showing a prompt. A visible item does not guarantee permission to decrypt cookies. Use browser import to request any required Keychain approval.";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.loginItems" = "Login & background items";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.loginItemsHelp" = "Controls whether Vibe Bar starts at login. Managed by macOS Login Items.";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.loginItemsSettings" = "Open Login Items";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.needsApproval" = "Approval needed";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.notRegistered" = "Not registered";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.notRequired" = "Not required by current features";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.openKeychain" = "Open Keychain Access";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.systemSettings" = "Open Privacy & Security";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.targetNotRunning" = "Target app is not running";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.title" = "Permissions overview";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.unknown" = "Status unavailable";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.unused" = "Camera, microphone, screen recording & accessibility";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.vault" = "Saved provider credentials";
 
 /* Field label for a user-chosen plan label override */
 "settings.planBadge" = "Plan badge";

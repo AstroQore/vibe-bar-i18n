@@ -726,6 +726,8 @@ export type MessageKey =
   | "settings.checkingGitHub"
   | "settings.clearCostData"
   | "settings.connectionHealth"
+  | "settings.cookies.retryHelp"
+  | "settings.cookies.retryToggle"
   | "settings.costDataIntro"
   | "settings.couldNotDeleteCookies"
   | "settings.couldNotDeleteGeminiCookies"
@@ -930,6 +932,34 @@ export type MessageKey =
   | "settings.openRefreshDetail"
   | "settings.openStatusPage"
   | "settings.percentShows"
+  | "settings.permissions.allowed"
+  | "settings.permissions.automation"
+  | "settings.permissions.automationHelp"
+  | "settings.permissions.automationSettings"
+  | "settings.permissions.confirmInSettings"
+  | "settings.permissions.denied"
+  | "settings.permissions.enabled"
+  | "settings.permissions.fullDisk"
+  | "settings.permissions.fullDiskHelp"
+  | "settings.permissions.help"
+  | "settings.permissions.itemMissing"
+  | "settings.permissions.itemVisible"
+  | "settings.permissions.keychain"
+  | "settings.permissions.keychainDisabled"
+  | "settings.permissions.keychainHelp"
+  | "settings.permissions.loginItems"
+  | "settings.permissions.loginItemsHelp"
+  | "settings.permissions.loginItemsSettings"
+  | "settings.permissions.needsApproval"
+  | "settings.permissions.notRegistered"
+  | "settings.permissions.notRequired"
+  | "settings.permissions.openKeychain"
+  | "settings.permissions.systemSettings"
+  | "settings.permissions.targetNotRunning"
+  | "settings.permissions.title"
+  | "settings.permissions.unknown"
+  | "settings.permissions.unused"
+  | "settings.permissions.vault"
   | "settings.planBadge"
   | "settings.planBadgeDetail"
   | "settings.planFollows"
@@ -2364,6 +2394,8 @@ export interface MessageParams {
   "settings.checkingGitHub": undefined;
   "settings.clearCostData": undefined;
   "settings.connectionHealth": undefined;
+  "settings.cookies.retryHelp": undefined;
+  "settings.cookies.retryToggle": undefined;
   "settings.costDataIntro": undefined;
   "settings.couldNotDeleteCookies": undefined;
   "settings.couldNotDeleteGeminiCookies": undefined;
@@ -2568,6 +2600,34 @@ export interface MessageParams {
   "settings.openRefreshDetail": undefined;
   "settings.openStatusPage": { "company": string };
   "settings.percentShows": undefined;
+  "settings.permissions.allowed": undefined;
+  "settings.permissions.automation": undefined;
+  "settings.permissions.automationHelp": undefined;
+  "settings.permissions.automationSettings": undefined;
+  "settings.permissions.confirmInSettings": undefined;
+  "settings.permissions.denied": undefined;
+  "settings.permissions.enabled": undefined;
+  "settings.permissions.fullDisk": undefined;
+  "settings.permissions.fullDiskHelp": undefined;
+  "settings.permissions.help": undefined;
+  "settings.permissions.itemMissing": undefined;
+  "settings.permissions.itemVisible": undefined;
+  "settings.permissions.keychain": undefined;
+  "settings.permissions.keychainDisabled": undefined;
+  "settings.permissions.keychainHelp": undefined;
+  "settings.permissions.loginItems": undefined;
+  "settings.permissions.loginItemsHelp": undefined;
+  "settings.permissions.loginItemsSettings": undefined;
+  "settings.permissions.needsApproval": undefined;
+  "settings.permissions.notRegistered": undefined;
+  "settings.permissions.notRequired": undefined;
+  "settings.permissions.openKeychain": undefined;
+  "settings.permissions.systemSettings": undefined;
+  "settings.permissions.targetNotRunning": undefined;
+  "settings.permissions.title": undefined;
+  "settings.permissions.unknown": undefined;
+  "settings.permissions.unused": undefined;
+  "settings.permissions.vault": undefined;
   "settings.planBadge": undefined;
   "settings.planBadgeDetail": undefined;
   "settings.planFollows": { "provider": string };
@@ -4003,6 +4063,8 @@ export const messages: {
     "settings.checkingGitHub": "Checking github.com for the newest release…",
     "settings.clearCostData": "Clear cost data",
     "settings.connectionHealth": "Connection health",
+    "settings.cookies.retryHelp": "When enabled, each failed cookie-based refresh gets one silent browser re-read, including when no saved cookie is available. Changed cookies are retried once. Manual cookies and Keychain denials are respected.",
+    "settings.cookies.retryToggle": "Re-read browser cookies after each failed refresh",
     "settings.costDataIntro": "Cost is computed from local CLI session JSONL logs at ~/.codex/sessions and ~/.claude/projects. Web/desktop usage is not tracked.",
     "settings.couldNotDeleteCookies": "Could not delete saved cookies.",
     "settings.couldNotDeleteGeminiCookies": "Could not delete saved Gemini cookies.",
@@ -4207,6 +4269,34 @@ export const messages: {
     "settings.openRefreshDetail": "Opening the popover refreshes all visible providers at most once per cooldown period.",
     "settings.openStatusPage": "Open {company} status page",
     "settings.percentShows": "Percent shows",
+    "settings.permissions.allowed": "Authorized by macOS",
+    "settings.permissions.automation": "Terminal automation",
+    "settings.permissions.automationHelp": "Used to resume sessions in Terminal or iTerm. Checks do not send commands or request authorization. Open the terminal app before checking.",
+    "settings.permissions.automationSettings": "Open Automation settings",
+    "settings.permissions.confirmInSettings": "Confirm in System Settings",
+    "settings.permissions.denied": "Denied by macOS",
+    "settings.permissions.enabled": "Enabled by macOS",
+    "settings.permissions.fullDisk": "Full Disk Access",
+    "settings.permissions.fullDiskHelp": "macOS provides no public API to query this switch directly. Browser file checks below verify only those files, and do not prove Full Disk Access.",
+    "settings.permissions.help": "Review the access Vibe Bar uses. System permission status and checks of individual files or Keychain items are shown separately.",
+    "settings.permissions.itemMissing": "Item not found",
+    "settings.permissions.itemVisible": "Item metadata accessible",
+    "settings.permissions.keychain": "Keychain items",
+    "settings.permissions.keychainDisabled": "Keychain access disabled in app",
+    "settings.permissions.keychainHelp": "Checks item metadata without reading passwords or showing a prompt. A visible item does not guarantee permission to decrypt cookies. Use browser import to request any required Keychain approval.",
+    "settings.permissions.loginItems": "Login & background items",
+    "settings.permissions.loginItemsHelp": "Controls whether Vibe Bar starts at login. Managed by macOS Login Items.",
+    "settings.permissions.loginItemsSettings": "Open Login Items",
+    "settings.permissions.needsApproval": "Approval needed",
+    "settings.permissions.notRegistered": "Not registered",
+    "settings.permissions.notRequired": "Not required by current features",
+    "settings.permissions.openKeychain": "Open Keychain Access",
+    "settings.permissions.systemSettings": "Open Privacy & Security",
+    "settings.permissions.targetNotRunning": "Target app is not running",
+    "settings.permissions.title": "Permissions overview",
+    "settings.permissions.unknown": "Status unavailable",
+    "settings.permissions.unused": "Camera, microphone, screen recording & accessibility",
+    "settings.permissions.vault": "Saved provider credentials",
     "settings.planBadge": "Plan badge",
     "settings.planBadgeDetail": "Leave blank to use the detected account plan.",
     "settings.planFollows": "Follows {provider}",
@@ -5637,6 +5727,8 @@ export const messages: {
     "settings.checkingGitHub": "正在向 github.com 查询最新版本…",
     "settings.clearCostData": "清除花费数据",
     "settings.connectionHealth": "连接状态",
+    "settings.cookies.retryHelp": "开启后，每次 Cookie 方式刷新失败都会静默重读一次浏览器，包括没有已保存 Cookie 的情况。Cookie 更新后仅重试一次，并遵循手动 Cookie 设置和 Keychain 拒绝状态。",
+    "settings.cookies.retryToggle": "每次刷新失败后重新读取浏览器 Cookie",
     "settings.costDataIntro": "花费根据 ~/.codex/sessions 与 ~/.claude/projects 下的本地 CLI 会话 JSONL 日志计算。网页端与桌面端用量不计入。",
     "settings.couldNotDeleteCookies": "无法删除已保存的 cookies。",
     "settings.couldNotDeleteGeminiCookies": "无法删除已保存的 Gemini cookies。",
@@ -5841,6 +5933,34 @@ export const messages: {
     "settings.openRefreshDetail": "每个间隔周期内，打开面板最多刷新一次全部可见厂商。",
     "settings.openStatusPage": "打开 {company} 状态页",
     "settings.percentShows": "百分比显示",
+    "settings.permissions.allowed": "macOS 已授权",
+    "settings.permissions.automation": "终端自动化",
+    "settings.permissions.automationHelp": "用于在 Terminal 或 iTerm 中恢复会话。检查不会发送命令或申请授权；请先打开对应终端 App。",
+    "settings.permissions.automationSettings": "打开自动化权限",
+    "settings.permissions.confirmInSettings": "请在系统设置确认",
+    "settings.permissions.denied": "macOS 已拒绝",
+    "settings.permissions.enabled": "macOS 已启用",
+    "settings.permissions.fullDisk": "完全磁盘访问",
+    "settings.permissions.fullDiskHelp": "macOS 未提供直接查询此开关的公共 API。下方浏览器文件检查仅验证相应文件，不能证明已开启完全磁盘访问。",
+    "settings.permissions.help": "查看 Vibe Bar 使用的访问权限。系统授权状态与单个文件或 Keychain 条目的检查结果分别显示。",
+    "settings.permissions.itemMissing": "未找到条目",
+    "settings.permissions.itemVisible": "条目元数据可访问",
+    "settings.permissions.keychain": "Keychain 条目",
+    "settings.permissions.keychainDisabled": "App 已停用 Keychain 访问",
+    "settings.permissions.keychainHelp": "仅检查条目元数据，不读取密码或弹出提示。能查询到条目不代表可解密 Cookie。需要 Keychain 授权时，请使用浏览器导入。",
+    "settings.permissions.loginItems": "登录与后台项目",
+    "settings.permissions.loginItemsHelp": "控制 Vibe Bar 是否登录时启动，由 macOS 登录项管理。",
+    "settings.permissions.loginItemsSettings": "打开登录项",
+    "settings.permissions.needsApproval": "需要授权",
+    "settings.permissions.notRegistered": "未注册",
+    "settings.permissions.notRequired": "当前功能无需这些权限",
+    "settings.permissions.openKeychain": "打开 Keychain 访问",
+    "settings.permissions.systemSettings": "打开隐私与安全性",
+    "settings.permissions.targetNotRunning": "目标 App 未运行",
+    "settings.permissions.title": "权限总览",
+    "settings.permissions.unknown": "状态不可用",
+    "settings.permissions.unused": "摄像头、麦克风、屏幕录制与辅助功能",
+    "settings.permissions.vault": "已保存的提供商凭据",
     "settings.planBadge": "套餐标签",
     "settings.planBadgeDetail": "留空则使用自动检测到的账号套餐。",
     "settings.planFollows": "跟随 {provider}",

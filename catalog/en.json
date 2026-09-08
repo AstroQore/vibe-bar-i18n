@@ -7731,6 +7731,126 @@
     "settings.browsers.appleNotes": {
       "value": "Apple privacy release notes",
       "comment": "Browser data access diagnostics in macOS Settings and setup assistant."
+    },
+    "settings.permissions.title": {
+      "value": "Permissions overview",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.help": {
+      "value": "Review the access Vibe Bar uses. System permission status and checks of individual files or Keychain items are shown separately.",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.systemSettings": {
+      "value": "Open Privacy & Security",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.automation": {
+      "value": "Terminal automation",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.automationHelp": {
+      "value": "Used to resume sessions in Terminal or iTerm. Checks do not send commands or request authorization. Open the terminal app before checking.",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.automationSettings": {
+      "value": "Open Automation settings",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.allowed": {
+      "value": "Authorized by macOS",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.denied": {
+      "value": "Denied by macOS",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.needsApproval": {
+      "value": "Approval needed",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.targetNotRunning": {
+      "value": "Target app is not running",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.unknown": {
+      "value": "Status unavailable",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.keychain": {
+      "value": "Keychain items",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.keychainHelp": {
+      "value": "Checks item metadata without reading passwords or showing a prompt. A visible item does not guarantee permission to decrypt cookies. Use browser import to request any required Keychain approval.",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.vault": {
+      "value": "Saved provider credentials",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.itemVisible": {
+      "value": "Item metadata accessible",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.itemMissing": {
+      "value": "Item not found",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.keychainDisabled": {
+      "value": "Keychain access disabled in app",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.loginItems": {
+      "value": "Login & background items",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.loginItemsHelp": {
+      "value": "Controls whether Vibe Bar starts at login. Managed by macOS Login Items.",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.loginItemsSettings": {
+      "value": "Open Login Items",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.enabled": {
+      "value": "Enabled by macOS",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.notRegistered": {
+      "value": "Not registered",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.fullDisk": {
+      "value": "Full Disk Access",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.confirmInSettings": {
+      "value": "Confirm in System Settings",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.fullDiskHelp": {
+      "value": "macOS provides no public API to query this switch directly. Browser file checks below verify only those files, and do not prove Full Disk Access.",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.unused": {
+      "value": "Camera, microphone, screen recording & accessibility",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.notRequired": {
+      "value": "Not required by current features",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.permissions.openKeychain": {
+      "value": "Open Keychain Access",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.cookies.retryToggle": {
+      "value": "Re-read browser cookies after each failed refresh",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.cookies.retryHelp": {
+      "value": "When enabled, each failed cookie-based refresh gets one silent browser re-read, including when no saved cookie is available. Changed cookies are retried once. Manual cookies and Keychain denials are respected.",
+      "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
     }
   }
 }

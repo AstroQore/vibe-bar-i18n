@@ -5239,6 +5239,20 @@ public enum L10n {
             public static var title: String { L10nSupport.string("settings.browsers.title") }
         }
 
+        public enum Cookies {
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.cookies.retryHelp`
+            /// en: "When enabled, each failed cookie-based refresh gets one silent browser re-read, including when no saved cookie is available. Changed cookies are retried once. Manual cookies and Keychain denials are respected."
+            public static var retryHelp: String { L10nSupport.string("settings.cookies.retryHelp") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.cookies.retryToggle`
+            /// en: "Re-read browser cookies after each failed refresh"
+            public static var retryToggle: String { L10nSupport.string("settings.cookies.retryToggle") }
+        }
+
         public enum CredentialSource {
             /// Misc-provider credential source option
             ///
@@ -6349,6 +6363,176 @@ public enum L10n {
                 /// en: "Global (api.z.ai)"
                 public static var zaiGlobal: String { L10nSupport.string("settings.misc.region.zaiGlobal") }
             }
+        }
+
+        public enum Permissions {
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.allowed`
+            /// en: "Authorized by macOS"
+            public static var allowed: String { L10nSupport.string("settings.permissions.allowed") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.automation`
+            /// en: "Terminal automation"
+            public static var automation: String { L10nSupport.string("settings.permissions.automation") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.automationHelp`
+            /// en: "Used to resume sessions in Terminal or iTerm. Checks do not send commands or request authorization. Open the terminal app before checking."
+            public static var automationHelp: String { L10nSupport.string("settings.permissions.automationHelp") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.automationSettings`
+            /// en: "Open Automation settings"
+            public static var automationSettings: String { L10nSupport.string("settings.permissions.automationSettings") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.confirmInSettings`
+            /// en: "Confirm in System Settings"
+            public static var confirmInSettings: String { L10nSupport.string("settings.permissions.confirmInSettings") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.denied`
+            /// en: "Denied by macOS"
+            public static var denied: String { L10nSupport.string("settings.permissions.denied") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.enabled`
+            /// en: "Enabled by macOS"
+            public static var enabled: String { L10nSupport.string("settings.permissions.enabled") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.fullDisk`
+            /// en: "Full Disk Access"
+            public static var fullDisk: String { L10nSupport.string("settings.permissions.fullDisk") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.fullDiskHelp`
+            /// en: "macOS provides no public API to query this switch directly. Browser file checks below verify only those files, and do not prove Full Disk Access."
+            public static var fullDiskHelp: String { L10nSupport.string("settings.permissions.fullDiskHelp") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.help`
+            /// en: "Review the access Vibe Bar uses. System permission status and checks of individual files or Keychain items are shown separately."
+            public static var help: String { L10nSupport.string("settings.permissions.help") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.itemMissing`
+            /// en: "Item not found"
+            public static var itemMissing: String { L10nSupport.string("settings.permissions.itemMissing") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.itemVisible`
+            /// en: "Item metadata accessible"
+            public static var itemVisible: String { L10nSupport.string("settings.permissions.itemVisible") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.keychain`
+            /// en: "Keychain items"
+            public static var keychain: String { L10nSupport.string("settings.permissions.keychain") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.keychainDisabled`
+            /// en: "Keychain access disabled in app"
+            public static var keychainDisabled: String { L10nSupport.string("settings.permissions.keychainDisabled") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.keychainHelp`
+            /// en: "Checks item metadata without reading passwords or showing a prompt. A visible item does not guarantee permission to decrypt cookies. Use browser import to request any required Keychain approval."
+            public static var keychainHelp: String { L10nSupport.string("settings.permissions.keychainHelp") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.loginItems`
+            /// en: "Login & background items"
+            public static var loginItems: String { L10nSupport.string("settings.permissions.loginItems") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.loginItemsHelp`
+            /// en: "Controls whether Vibe Bar starts at login. Managed by macOS Login Items."
+            public static var loginItemsHelp: String { L10nSupport.string("settings.permissions.loginItemsHelp") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.loginItemsSettings`
+            /// en: "Open Login Items"
+            public static var loginItemsSettings: String { L10nSupport.string("settings.permissions.loginItemsSettings") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.needsApproval`
+            /// en: "Approval needed"
+            public static var needsApproval: String { L10nSupport.string("settings.permissions.needsApproval") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.notRegistered`
+            /// en: "Not registered"
+            public static var notRegistered: String { L10nSupport.string("settings.permissions.notRegistered") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.notRequired`
+            /// en: "Not required by current features"
+            public static var notRequired: String { L10nSupport.string("settings.permissions.notRequired") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.openKeychain`
+            /// en: "Open Keychain Access"
+            public static var openKeychain: String { L10nSupport.string("settings.permissions.openKeychain") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.systemSettings`
+            /// en: "Open Privacy & Security"
+            public static var systemSettings: String { L10nSupport.string("settings.permissions.systemSettings") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.targetNotRunning`
+            /// en: "Target app is not running"
+            public static var targetNotRunning: String { L10nSupport.string("settings.permissions.targetNotRunning") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.title`
+            /// en: "Permissions overview"
+            public static var title: String { L10nSupport.string("settings.permissions.title") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.unknown`
+            /// en: "Status unavailable"
+            public static var unknown: String { L10nSupport.string("settings.permissions.unknown") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.unused`
+            /// en: "Camera, microphone, screen recording & accessibility"
+            public static var unused: String { L10nSupport.string("settings.permissions.unused") }
+
+            /// macOS permissions overview or automatic browser-cookie recovery setting.
+            ///
+            /// Key: `settings.permissions.vault`
+            /// en: "Saved provider credentials"
+            public static var vault: String { L10nSupport.string("settings.permissions.vault") }
         }
 
         public enum PopoverDensity {
@@ -11739,6 +11923,8 @@ enum L10nCatalogFacts {
         "settings.checkingGitHub",
         "settings.clearCostData",
         "settings.connectionHealth",
+        "settings.cookies.retryHelp",
+        "settings.cookies.retryToggle",
         "settings.costDataIntro",
         "settings.couldNotDeleteCookies",
         "settings.couldNotDeleteGeminiCookies",
@@ -11943,6 +12129,34 @@ enum L10nCatalogFacts {
         "settings.openRefreshDetail",
         "settings.openStatusPage",
         "settings.percentShows",
+        "settings.permissions.allowed",
+        "settings.permissions.automation",
+        "settings.permissions.automationHelp",
+        "settings.permissions.automationSettings",
+        "settings.permissions.confirmInSettings",
+        "settings.permissions.denied",
+        "settings.permissions.enabled",
+        "settings.permissions.fullDisk",
+        "settings.permissions.fullDiskHelp",
+        "settings.permissions.help",
+        "settings.permissions.itemMissing",
+        "settings.permissions.itemVisible",
+        "settings.permissions.keychain",
+        "settings.permissions.keychainDisabled",
+        "settings.permissions.keychainHelp",
+        "settings.permissions.loginItems",
+        "settings.permissions.loginItemsHelp",
+        "settings.permissions.loginItemsSettings",
+        "settings.permissions.needsApproval",
+        "settings.permissions.notRegistered",
+        "settings.permissions.notRequired",
+        "settings.permissions.openKeychain",
+        "settings.permissions.systemSettings",
+        "settings.permissions.targetNotRunning",
+        "settings.permissions.title",
+        "settings.permissions.unknown",
+        "settings.permissions.unused",
+        "settings.permissions.vault",
         "settings.planBadge",
         "settings.planBadgeDetail",
         "settings.planFollows",
@@ -13427,6 +13641,8 @@ enum L10nCatalogFacts {
         "settings.checkingGitHub": 0,
         "settings.clearCostData": 0,
         "settings.connectionHealth": 0,
+        "settings.cookies.retryHelp": 0,
+        "settings.cookies.retryToggle": 0,
         "settings.costDataIntro": 0,
         "settings.couldNotDeleteCookies": 0,
         "settings.couldNotDeleteGeminiCookies": 0,
@@ -13631,6 +13847,34 @@ enum L10nCatalogFacts {
         "settings.openRefreshDetail": 0,
         "settings.openStatusPage": 1,
         "settings.percentShows": 0,
+        "settings.permissions.allowed": 0,
+        "settings.permissions.automation": 0,
+        "settings.permissions.automationHelp": 0,
+        "settings.permissions.automationSettings": 0,
+        "settings.permissions.confirmInSettings": 0,
+        "settings.permissions.denied": 0,
+        "settings.permissions.enabled": 0,
+        "settings.permissions.fullDisk": 0,
+        "settings.permissions.fullDiskHelp": 0,
+        "settings.permissions.help": 0,
+        "settings.permissions.itemMissing": 0,
+        "settings.permissions.itemVisible": 0,
+        "settings.permissions.keychain": 0,
+        "settings.permissions.keychainDisabled": 0,
+        "settings.permissions.keychainHelp": 0,
+        "settings.permissions.loginItems": 0,
+        "settings.permissions.loginItemsHelp": 0,
+        "settings.permissions.loginItemsSettings": 0,
+        "settings.permissions.needsApproval": 0,
+        "settings.permissions.notRegistered": 0,
+        "settings.permissions.notRequired": 0,
+        "settings.permissions.openKeychain": 0,
+        "settings.permissions.systemSettings": 0,
+        "settings.permissions.targetNotRunning": 0,
+        "settings.permissions.title": 0,
+        "settings.permissions.unknown": 0,
+        "settings.permissions.unused": 0,
+        "settings.permissions.vault": 0,
         "settings.planBadge": 0,
         "settings.planBadgeDetail": 0,
         "settings.planFollows": 1,

@@ -2079,6 +2079,12 @@
 /* Heading over the per-provider connection rows */
 "settings.connectionHealth" = "连接状态";
 
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.cookies.retryHelp" = "开启后，每次 Cookie 方式刷新失败都会静默重读一次浏览器，包括没有已保存 Cookie 的情况。Cookie 更新后仅重试一次，并遵循手动 Cookie 设置和 Keychain 拒绝状态。";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.cookies.retryToggle" = "每次刷新失败后重新读取浏览器 Cookie";
+
 /* Intro under the Cost Data heading */
 "settings.costDataIntro" = "花费根据 ~/.codex/sessions 与 ~/.claude/projects 下的本地 CLI 会话 JSONL 日志计算。网页端与桌面端用量不计入。";
 
@@ -2690,6 +2696,90 @@
 
 /* Picker label choosing between remaining and used */
 "settings.percentShows" = "百分比显示";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.allowed" = "macOS 已授权";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.automation" = "终端自动化";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.automationHelp" = "用于在 Terminal 或 iTerm 中恢复会话。检查不会发送命令或申请授权；请先打开对应终端 App。";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.automationSettings" = "打开自动化权限";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.confirmInSettings" = "请在系统设置确认";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.denied" = "macOS 已拒绝";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.enabled" = "macOS 已启用";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.fullDisk" = "完全磁盘访问";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.fullDiskHelp" = "macOS 未提供直接查询此开关的公共 API。下方浏览器文件检查仅验证相应文件，不能证明已开启完全磁盘访问。";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.help" = "查看 Vibe Bar 使用的访问权限。系统授权状态与单个文件或 Keychain 条目的检查结果分别显示。";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.itemMissing" = "未找到条目";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.itemVisible" = "条目元数据可访问";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.keychain" = "Keychain 条目";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.keychainDisabled" = "App 已停用 Keychain 访问";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.keychainHelp" = "仅检查条目元数据，不读取密码或弹出提示。能查询到条目不代表可解密 Cookie。需要 Keychain 授权时，请使用浏览器导入。";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.loginItems" = "登录与后台项目";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.loginItemsHelp" = "控制 Vibe Bar 是否登录时启动，由 macOS 登录项管理。";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.loginItemsSettings" = "打开登录项";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.needsApproval" = "需要授权";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.notRegistered" = "未注册";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.notRequired" = "当前功能无需这些权限";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.openKeychain" = "打开 Keychain 访问";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.systemSettings" = "打开隐私与安全性";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.targetNotRunning" = "目标 App 未运行";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.title" = "权限总览";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.unknown" = "状态不可用";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.unused" = "摄像头、麦克风、屏幕录制与辅助功能";
+
+/* macOS permissions overview or automatic browser-cookie recovery setting. */
+"settings.permissions.vault" = "已保存的提供商凭据";
 
 /* Field label for a user-chosen plan label override */
 "settings.planBadge" = "套餐标签";
