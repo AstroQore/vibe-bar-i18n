@@ -1056,6 +1056,9 @@
 /* Toggle in the menu-bar item editor. macOS-only: no other client renders a menu-bar extra. */
 "platform.macos.menuBar.showInMenuBar" = "Show in menu bar";
 
+/* Mini window free-canvas editor: hint. */
+"platform.macos.miniCanvas.hint" = "Drag to move, drag a corner to resize. Shift-click to select more; ⌘G groups, ⌘D duplicates, Delete removes.";
+
 /* Subtitle under the Machines page header */
 "popover.header.machinesSubtitle" = "End-to-end encrypted remote usage";
 
@@ -1995,6 +1998,9 @@
 /* Current version line; version is a raw version string */
 "settings.appVersion" = "Vibe Bar %@";
 
+/* Browser picker: app installed, but the profile or cookie-store probe failed. */
+"settings.browsers.cookieStoreUnavailable" = "Cookie data is unavailable. Open the browser and check its access permissions before importing.";
+
 /* Caption under the browser list in Settings and the setup assistant. */
 "settings.browsers.help" = "Only the browsers ticked here are read, in this order. A browser that is not installed is never read.";
 
@@ -2270,6 +2276,90 @@
 
 /* Shown when the watchdog is not running */
 "settings.menuBarHealthUnavailable" = "The menu bar health monitor is not attached in this process.";
+
+/* Mini window free-canvas editor: back. */
+"settings.miniCanvas.back" = "Send backward";
+
+/* Mini window free-canvas editor: canvas. */
+"settings.miniCanvas.canvas" = "Canvas";
+
+/* Mini canvas grid geometry: column. */
+"settings.miniCanvas.column" = "Column";
+
+/* Mini canvas grid geometry: columns. */
+"settings.miniCanvas.columns" = "Columns";
+
+/* Mini window free-canvas editor: content. */
+"settings.miniCanvas.content" = "Text content";
+
+/* Mini window free-canvas editor: detail. */
+"settings.miniCanvas.detail" = "Arrange gauges, bars and text freely on this window. Edit it in Studio.";
+
+/* Mini window free-canvas editor: element. */
+"settings.miniCanvas.element" = "Element";
+
+/* Mini window free-canvas editor: empty. */
+"settings.miniCanvas.empty" = "Add a gauge, bar or text from the inspector to begin.";
+
+/* Mini window free-canvas editor: fontSize. */
+"settings.miniCanvas.fontSize" = "Font size";
+
+/* Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates. */
+"settings.miniCanvas.free" = "Free layout";
+
+/* Mini window free-canvas editor: front. */
+"settings.miniCanvas.front" = "Bring forward";
+
+/* Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates. */
+"settings.miniCanvas.grid" = "Snap to grid";
+
+/* Mini window free-canvas editor: height. */
+"settings.miniCanvas.height" = "Height";
+
+/* Mini window free-canvas editor: horizontalBar. */
+"settings.miniCanvas.horizontalBar" = "Horizontal bar";
+
+/* Mini window free-canvas editor: layers. */
+"settings.miniCanvas.layers" = "Elements · front to back";
+
+/* Mini window free-canvas editor: providerColor. */
+"settings.miniCanvas.providerColor" = "Provider colour";
+
+/* Mini window free-canvas editor: quotaColor. */
+"settings.miniCanvas.quotaColor" = "Quota state colour";
+
+/* Mini window free-canvas editor: ring. */
+"settings.miniCanvas.ring" = "Ring gauge";
+
+/* Mini canvas grid geometry: row. */
+"settings.miniCanvas.row" = "Row";
+
+/* Mini canvas grid geometry: rows. */
+"settings.miniCanvas.rows" = "Rows";
+
+/* Mini window free-canvas editor: sector. */
+"settings.miniCanvas.sector" = "Sector gauge";
+
+/* Mini canvas grid geometry: span. */
+"settings.miniCanvas.span" = "Cell span";
+
+/* Mini window style-cycle help, including the opt-in Custom canvas style. */
+"settings.miniCanvas.styleCycle" = "Double-click cycles the selected styles in this order. With none selected, it cycles the built-in styles; add Custom explicitly.";
+
+/* Mini window free-canvas editor: thickness. */
+"settings.miniCanvas.thickness" = "Stroke width";
+
+/* Mini window free-canvas editor: unavailable. */
+"settings.miniCanvas.unavailable" = "No quota data";
+
+/* Mini window free-canvas editor: verticalBar. */
+"settings.miniCanvas.verticalBar" = "Vertical bar";
+
+/* Mini window free-canvas editor: x. */
+"settings.miniCanvas.x" = "X position";
+
+/* Mini window free-canvas editor: y. */
+"settings.miniCanvas.y" = "Y position";
 
 /* Button in the mini windows settings section */
 "settings.miniWindow.add" = "Add a mini window";

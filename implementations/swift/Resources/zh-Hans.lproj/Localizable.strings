@@ -1056,6 +1056,9 @@
 /* Toggle in the menu-bar item editor. macOS-only: no other client renders a menu-bar extra. */
 "platform.macos.menuBar.showInMenuBar" = "在菜单栏中显示";
 
+/* Mini window free-canvas editor: hint. */
+"platform.macos.miniCanvas.hint" = "拖动元素移动，拖动角点缩放。Shift 点选多个；⌘G 分组，⌘D 复制，Delete 删除。";
+
 /* Subtitle under the Machines page header */
 "popover.header.machinesSubtitle" = "端到端加密的远程用量";
 
@@ -1995,6 +1998,9 @@
 /* Current version line; version is a raw version string */
 "settings.appVersion" = "Vibe Bar %@";
 
+/* Browser picker: app installed, but the profile or cookie-store probe failed. */
+"settings.browsers.cookieStoreUnavailable" = "暂时无法访问 Cookie 数据。请先打开浏览器，并检查系统访问权限后再导入。";
+
 /* Caption under the browser list in Settings and the setup assistant. */
 "settings.browsers.help" = "只读取此处勾选的浏览器，按此顺序。未安装的浏览器不会被读取。";
 
@@ -2270,6 +2276,90 @@
 
 /* Shown when the watchdog is not running */
 "settings.menuBarHealthUnavailable" = "本进程未接入菜单栏健康监控。";
+
+/* Mini window free-canvas editor: back. */
+"settings.miniCanvas.back" = "下移一层";
+
+/* Mini window free-canvas editor: canvas. */
+"settings.miniCanvas.canvas" = "画布";
+
+/* Mini canvas grid geometry: column. */
+"settings.miniCanvas.column" = "列";
+
+/* Mini canvas grid geometry: columns. */
+"settings.miniCanvas.columns" = "列数";
+
+/* Mini window free-canvas editor: content. */
+"settings.miniCanvas.content" = "文字内容";
+
+/* Mini window free-canvas editor: detail. */
+"settings.miniCanvas.detail" = "自由组合仪表、条形和文字，在布局工作台中编辑。";
+
+/* Mini window free-canvas editor: element. */
+"settings.miniCanvas.element" = "元素";
+
+/* Mini window free-canvas editor: empty. */
+"settings.miniCanvas.empty" = "从检查器添加仪表、条形或文字。";
+
+/* Mini window free-canvas editor: fontSize. */
+"settings.miniCanvas.fontSize" = "字号";
+
+/* Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates. */
+"settings.miniCanvas.free" = "自由布局";
+
+/* Mini window free-canvas editor: front. */
+"settings.miniCanvas.front" = "上移一层";
+
+/* Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates. */
+"settings.miniCanvas.grid" = "网格吸附";
+
+/* Mini window free-canvas editor: height. */
+"settings.miniCanvas.height" = "高度";
+
+/* Mini window free-canvas editor: horizontalBar. */
+"settings.miniCanvas.horizontalBar" = "横向条形";
+
+/* Mini window free-canvas editor: layers. */
+"settings.miniCanvas.layers" = "元素 · 从前到后";
+
+/* Mini window free-canvas editor: providerColor. */
+"settings.miniCanvas.providerColor" = "供应商颜色";
+
+/* Mini window free-canvas editor: quotaColor. */
+"settings.miniCanvas.quotaColor" = "额度状态颜色";
+
+/* Mini window free-canvas editor: ring. */
+"settings.miniCanvas.ring" = "环形仪表";
+
+/* Mini canvas grid geometry: row. */
+"settings.miniCanvas.row" = "行";
+
+/* Mini canvas grid geometry: rows. */
+"settings.miniCanvas.rows" = "行数";
+
+/* Mini window free-canvas editor: sector. */
+"settings.miniCanvas.sector" = "扇形仪表";
+
+/* Mini canvas grid geometry: span. */
+"settings.miniCanvas.span" = "占格尺寸";
+
+/* Mini window style-cycle help, including the opt-in Custom canvas style. */
+"settings.miniCanvas.styleCycle" = "双击按顺序切换所选样式。未选择时只轮换内置样式；自定义样式需手动加入。";
+
+/* Mini window free-canvas editor: thickness. */
+"settings.miniCanvas.thickness" = "线宽";
+
+/* Mini window free-canvas editor: unavailable. */
+"settings.miniCanvas.unavailable" = "暂无额度数据";
+
+/* Mini window free-canvas editor: verticalBar. */
+"settings.miniCanvas.verticalBar" = "竖向条形";
+
+/* Mini window free-canvas editor: x. */
+"settings.miniCanvas.x" = "X 位置";
+
+/* Mini window free-canvas editor: y. */
+"settings.miniCanvas.y" = "Y 位置";
 
 /* Button in the mini windows settings section */
 "settings.miniWindow.add" = "添加迷你窗口";

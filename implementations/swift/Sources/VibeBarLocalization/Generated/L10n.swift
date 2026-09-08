@@ -2433,6 +2433,14 @@ public enum L10n {
                     public static var singleLine: String { L10nSupport.string("platform.macos.menuBar.layout.singleLine") }
                 }
             }
+
+            public enum MiniCanvas {
+                /// Mini window free-canvas editor: hint.
+                ///
+                /// Key: `platform.macos.miniCanvas.hint`
+                /// en: "Drag to move, drag a corner to resize. Shift-click to select more; ⌘G groups, ⌘D duplicates, Delete removes."
+                public static var hint: String { L10nSupport.string("platform.macos.miniCanvas.hint") }
+            }
         }
     }
 
@@ -5108,6 +5116,12 @@ public enum L10n {
         }
 
         public enum Browsers {
+            /// Browser picker: app installed, but the profile or cookie-store probe failed.
+            ///
+            /// Key: `settings.browsers.cookieStoreUnavailable`
+            /// en: "Cookie data is unavailable. Open the browser and check its access permissions before importing."
+            public static var cookieStoreUnavailable: String { L10nSupport.string("settings.browsers.cookieStoreUnavailable") }
+
             /// Caption under the browser list in Settings and the setup assistant.
             ///
             /// Key: `settings.browsers.help`
@@ -5509,6 +5523,176 @@ public enum L10n {
             /// Key: `settings.mcp.whatAgentsMayDo`
             /// en: "What agents may do"
             public static var whatAgentsMayDo: String { L10nSupport.string("settings.mcp.whatAgentsMayDo") }
+        }
+
+        public enum MiniCanvas {
+            /// Mini window free-canvas editor: back.
+            ///
+            /// Key: `settings.miniCanvas.back`
+            /// en: "Send backward"
+            public static var back: String { L10nSupport.string("settings.miniCanvas.back") }
+
+            /// Mini window free-canvas editor: canvas.
+            ///
+            /// Key: `settings.miniCanvas.canvas`
+            /// en: "Canvas"
+            public static var canvas: String { L10nSupport.string("settings.miniCanvas.canvas") }
+
+            /// Mini canvas grid geometry: column.
+            ///
+            /// Key: `settings.miniCanvas.column`
+            /// en: "Column"
+            public static var column: String { L10nSupport.string("settings.miniCanvas.column") }
+
+            /// Mini canvas grid geometry: columns.
+            ///
+            /// Key: `settings.miniCanvas.columns`
+            /// en: "Columns"
+            public static var columns: String { L10nSupport.string("settings.miniCanvas.columns") }
+
+            /// Mini window free-canvas editor: content.
+            ///
+            /// Key: `settings.miniCanvas.content`
+            /// en: "Text content"
+            public static var content: String { L10nSupport.string("settings.miniCanvas.content") }
+
+            /// Mini window free-canvas editor: detail.
+            ///
+            /// Key: `settings.miniCanvas.detail`
+            /// en: "Arrange gauges, bars and text freely on this window. Edit it in Studio."
+            public static var detail: String { L10nSupport.string("settings.miniCanvas.detail") }
+
+            /// Mini window free-canvas editor: element.
+            ///
+            /// Key: `settings.miniCanvas.element`
+            /// en: "Element"
+            public static var element: String { L10nSupport.string("settings.miniCanvas.element") }
+
+            /// Mini window free-canvas editor: empty.
+            ///
+            /// Key: `settings.miniCanvas.empty`
+            /// en: "Add a gauge, bar or text from the inspector to begin."
+            public static var empty: String { L10nSupport.string("settings.miniCanvas.empty") }
+
+            /// Mini window free-canvas editor: fontSize.
+            ///
+            /// Key: `settings.miniCanvas.fontSize`
+            /// en: "Font size"
+            public static var fontSize: String { L10nSupport.string("settings.miniCanvas.fontSize") }
+
+            /// Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates.
+            ///
+            /// Key: `settings.miniCanvas.free`
+            /// en: "Free layout"
+            public static var free: String { L10nSupport.string("settings.miniCanvas.free") }
+
+            /// Mini window free-canvas editor: front.
+            ///
+            /// Key: `settings.miniCanvas.front`
+            /// en: "Bring forward"
+            public static var front: String { L10nSupport.string("settings.miniCanvas.front") }
+
+            /// Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates.
+            ///
+            /// Key: `settings.miniCanvas.grid`
+            /// en: "Snap to grid"
+            public static var grid: String { L10nSupport.string("settings.miniCanvas.grid") }
+
+            /// Mini window free-canvas editor: height.
+            ///
+            /// Key: `settings.miniCanvas.height`
+            /// en: "Height"
+            public static var height: String { L10nSupport.string("settings.miniCanvas.height") }
+
+            /// Mini window free-canvas editor: horizontalBar.
+            ///
+            /// Key: `settings.miniCanvas.horizontalBar`
+            /// en: "Horizontal bar"
+            public static var horizontalBar: String { L10nSupport.string("settings.miniCanvas.horizontalBar") }
+
+            /// Mini window free-canvas editor: layers.
+            ///
+            /// Key: `settings.miniCanvas.layers`
+            /// en: "Elements · front to back"
+            public static var layers: String { L10nSupport.string("settings.miniCanvas.layers") }
+
+            /// Mini window free-canvas editor: providerColor.
+            ///
+            /// Key: `settings.miniCanvas.providerColor`
+            /// en: "Provider colour"
+            public static var providerColor: String { L10nSupport.string("settings.miniCanvas.providerColor") }
+
+            /// Mini window free-canvas editor: quotaColor.
+            ///
+            /// Key: `settings.miniCanvas.quotaColor`
+            /// en: "Quota state colour"
+            public static var quotaColor: String { L10nSupport.string("settings.miniCanvas.quotaColor") }
+
+            /// Mini window free-canvas editor: ring.
+            ///
+            /// Key: `settings.miniCanvas.ring`
+            /// en: "Ring gauge"
+            public static var ring: String { L10nSupport.string("settings.miniCanvas.ring") }
+
+            /// Mini canvas grid geometry: row.
+            ///
+            /// Key: `settings.miniCanvas.row`
+            /// en: "Row"
+            public static var row: String { L10nSupport.string("settings.miniCanvas.row") }
+
+            /// Mini canvas grid geometry: rows.
+            ///
+            /// Key: `settings.miniCanvas.rows`
+            /// en: "Rows"
+            public static var rows: String { L10nSupport.string("settings.miniCanvas.rows") }
+
+            /// Mini window free-canvas editor: sector.
+            ///
+            /// Key: `settings.miniCanvas.sector`
+            /// en: "Sector gauge"
+            public static var sector: String { L10nSupport.string("settings.miniCanvas.sector") }
+
+            /// Mini canvas grid geometry: span.
+            ///
+            /// Key: `settings.miniCanvas.span`
+            /// en: "Cell span"
+            public static var span: String { L10nSupport.string("settings.miniCanvas.span") }
+
+            /// Mini window style-cycle help, including the opt-in Custom canvas style.
+            ///
+            /// Key: `settings.miniCanvas.styleCycle`
+            /// en: "Double-click cycles the selected styles in this order. With none selected, it cycles the built-in styles; add Custom explicitly."
+            public static var styleCycle: String { L10nSupport.string("settings.miniCanvas.styleCycle") }
+
+            /// Mini window free-canvas editor: thickness.
+            ///
+            /// Key: `settings.miniCanvas.thickness`
+            /// en: "Stroke width"
+            public static var thickness: String { L10nSupport.string("settings.miniCanvas.thickness") }
+
+            /// Mini window free-canvas editor: unavailable.
+            ///
+            /// Key: `settings.miniCanvas.unavailable`
+            /// en: "No quota data"
+            public static var unavailable: String { L10nSupport.string("settings.miniCanvas.unavailable") }
+
+            /// Mini window free-canvas editor: verticalBar.
+            ///
+            /// Key: `settings.miniCanvas.verticalBar`
+            /// en: "Vertical bar"
+            public static var verticalBar: String { L10nSupport.string("settings.miniCanvas.verticalBar") }
+
+            /// Mini window free-canvas editor: x.
+            ///
+            /// Key: `settings.miniCanvas.x`
+            /// en: "X position"
+            public static var x: String { L10nSupport.string("settings.miniCanvas.x") }
+
+            /// Mini window free-canvas editor: y.
+            ///
+            /// Key: `settings.miniCanvas.y`
+            /// en: "Y position"
+            public static var y: String { L10nSupport.string("settings.miniCanvas.y") }
         }
 
         public enum MiniWindow {
@@ -11110,6 +11294,7 @@ enum L10nCatalogFacts {
         "platform.macos.menuBar.mergeGroupWindowsDetail",
         "platform.macos.menuBar.percentColor",
         "platform.macos.menuBar.showInMenuBar",
+        "platform.macos.miniCanvas.hint",
         "popover.header.machinesSubtitle",
         "popover.header.mini",
         "popover.header.miscSubtitle",
@@ -11435,6 +11620,7 @@ enum L10nCatalogFacts {
         "settings.antigravityLocalOnly",
         "settings.antigravitySource",
         "settings.appVersion",
+        "settings.browsers.cookieStoreUnavailable",
         "settings.browsers.help",
         "settings.browsers.none",
         "settings.browsers.readAll",
@@ -11527,6 +11713,34 @@ enum L10nCatalogFacts {
         "settings.mcp.title",
         "settings.mcp.whatAgentsMayDo",
         "settings.menuBarHealthUnavailable",
+        "settings.miniCanvas.back",
+        "settings.miniCanvas.canvas",
+        "settings.miniCanvas.column",
+        "settings.miniCanvas.columns",
+        "settings.miniCanvas.content",
+        "settings.miniCanvas.detail",
+        "settings.miniCanvas.element",
+        "settings.miniCanvas.empty",
+        "settings.miniCanvas.fontSize",
+        "settings.miniCanvas.free",
+        "settings.miniCanvas.front",
+        "settings.miniCanvas.grid",
+        "settings.miniCanvas.height",
+        "settings.miniCanvas.horizontalBar",
+        "settings.miniCanvas.layers",
+        "settings.miniCanvas.providerColor",
+        "settings.miniCanvas.quotaColor",
+        "settings.miniCanvas.ring",
+        "settings.miniCanvas.row",
+        "settings.miniCanvas.rows",
+        "settings.miniCanvas.sector",
+        "settings.miniCanvas.span",
+        "settings.miniCanvas.styleCycle",
+        "settings.miniCanvas.thickness",
+        "settings.miniCanvas.unavailable",
+        "settings.miniCanvas.verticalBar",
+        "settings.miniCanvas.x",
+        "settings.miniCanvas.y",
         "settings.miniWindow.add",
         "settings.miniWindow.allBucketsIncluded",
         "settings.miniWindow.density.narrow",
@@ -12753,6 +12967,7 @@ enum L10nCatalogFacts {
         "platform.macos.menuBar.mergeGroupWindowsDetail": 0,
         "platform.macos.menuBar.percentColor": 0,
         "platform.macos.menuBar.showInMenuBar": 0,
+        "platform.macos.miniCanvas.hint": 0,
         "popover.header.machinesSubtitle": 0,
         "popover.header.mini": 0,
         "popover.header.miscSubtitle": 0,
@@ -13078,6 +13293,7 @@ enum L10nCatalogFacts {
         "settings.antigravityLocalOnly": 0,
         "settings.antigravitySource": 0,
         "settings.appVersion": 1,
+        "settings.browsers.cookieStoreUnavailable": 0,
         "settings.browsers.help": 0,
         "settings.browsers.none": 0,
         "settings.browsers.readAll": 0,
@@ -13170,6 +13386,34 @@ enum L10nCatalogFacts {
         "settings.mcp.title": 0,
         "settings.mcp.whatAgentsMayDo": 0,
         "settings.menuBarHealthUnavailable": 0,
+        "settings.miniCanvas.back": 0,
+        "settings.miniCanvas.canvas": 0,
+        "settings.miniCanvas.column": 0,
+        "settings.miniCanvas.columns": 0,
+        "settings.miniCanvas.content": 0,
+        "settings.miniCanvas.detail": 0,
+        "settings.miniCanvas.element": 0,
+        "settings.miniCanvas.empty": 0,
+        "settings.miniCanvas.fontSize": 0,
+        "settings.miniCanvas.free": 0,
+        "settings.miniCanvas.front": 0,
+        "settings.miniCanvas.grid": 0,
+        "settings.miniCanvas.height": 0,
+        "settings.miniCanvas.horizontalBar": 0,
+        "settings.miniCanvas.layers": 0,
+        "settings.miniCanvas.providerColor": 0,
+        "settings.miniCanvas.quotaColor": 0,
+        "settings.miniCanvas.ring": 0,
+        "settings.miniCanvas.row": 0,
+        "settings.miniCanvas.rows": 0,
+        "settings.miniCanvas.sector": 0,
+        "settings.miniCanvas.span": 0,
+        "settings.miniCanvas.styleCycle": 0,
+        "settings.miniCanvas.thickness": 0,
+        "settings.miniCanvas.unavailable": 0,
+        "settings.miniCanvas.verticalBar": 0,
+        "settings.miniCanvas.x": 0,
+        "settings.miniCanvas.y": 0,
         "settings.miniWindow.add": 0,
         "settings.miniWindow.allBucketsIncluded": 0,
         "settings.miniWindow.density.narrow": 0,
