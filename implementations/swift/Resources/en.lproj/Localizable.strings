@@ -2295,8 +2295,14 @@
 /* Mini window free-canvas editor: fontSize. */
 "settings.miniCanvas.fontSize" = "Font size";
 
+/* Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates. */
+"settings.miniCanvas.free" = "Free layout";
+
 /* Mini window free-canvas editor: front. */
 "settings.miniCanvas.front" = "Bring forward";
+
+/* Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates. */
+"settings.miniCanvas.grid" = "Snap to grid";
 
 /* Mini window free-canvas editor: height. */
 "settings.miniCanvas.height" = "Height";
@@ -2321,9 +2327,6 @@
 
 /* Mini window free-canvas editor: sector. */
 "settings.miniCanvas.sector" = "Sector gauge";
-
-/* Mini window free-canvas editor: snap. */
-"settings.miniCanvas.snap" = "Snap to grid";
 
 /* Mini window style-cycle help, including the opt-in Custom canvas style. */
 "settings.miniCanvas.styleCycle" = "Double-click cycles the selected styles in this order. With none selected, it cycles the built-in styles; add Custom explicitly.";

@@ -4808,9 +4808,6 @@
     "settings.miniCanvas.empty": {
       "value": "从检查器添加仪表、条形或文字。"
     },
-    "settings.miniCanvas.snap": {
-      "value": "吸附网格"
-    },
     "settings.miniCanvas.front": {
       "value": "上移一层"
     },
@@ -4834,6 +4831,12 @@
     },
     "settings.miniCanvas.styleCycle": {
       "value": "双击按顺序切换所选样式。未选择时只轮换内置样式；自定义样式需手动加入。"
+    },
+    "settings.miniCanvas.grid": {
+      "value": "网格吸附"
+    },
+    "settings.miniCanvas.free": {
+      "value": "自由布局"
     }
   }
 }

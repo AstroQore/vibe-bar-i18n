@@ -5560,11 +5560,23 @@ public enum L10n {
             /// en: "Font size"
             public static var fontSize: String { L10nSupport.string("settings.miniCanvas.fontSize") }
 
+            /// Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates.
+            ///
+            /// Key: `settings.miniCanvas.free`
+            /// en: "Free layout"
+            public static var free: String { L10nSupport.string("settings.miniCanvas.free") }
+
             /// Mini window free-canvas editor: front.
             ///
             /// Key: `settings.miniCanvas.front`
             /// en: "Bring forward"
             public static var front: String { L10nSupport.string("settings.miniCanvas.front") }
+
+            /// Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates.
+            ///
+            /// Key: `settings.miniCanvas.grid`
+            /// en: "Snap to grid"
+            public static var grid: String { L10nSupport.string("settings.miniCanvas.grid") }
 
             /// Mini window free-canvas editor: height.
             ///
@@ -5613,12 +5625,6 @@ public enum L10n {
             /// Key: `settings.miniCanvas.sector`
             /// en: "Sector gauge"
             public static var sector: String { L10nSupport.string("settings.miniCanvas.sector") }
-
-            /// Mini window free-canvas editor: snap.
-            ///
-            /// Key: `settings.miniCanvas.snap`
-            /// en: "Snap to grid"
-            public static var snap: String { L10nSupport.string("settings.miniCanvas.snap") }
 
             /// Mini window style-cycle help, including the opt-in Custom canvas style.
             ///
@@ -11681,7 +11687,9 @@ enum L10nCatalogFacts {
         "settings.miniCanvas.element",
         "settings.miniCanvas.empty",
         "settings.miniCanvas.fontSize",
+        "settings.miniCanvas.free",
         "settings.miniCanvas.front",
+        "settings.miniCanvas.grid",
         "settings.miniCanvas.height",
         "settings.miniCanvas.hint",
         "settings.miniCanvas.horizontalBar",
@@ -11690,7 +11698,6 @@ enum L10nCatalogFacts {
         "settings.miniCanvas.quotaColor",
         "settings.miniCanvas.ring",
         "settings.miniCanvas.sector",
-        "settings.miniCanvas.snap",
         "settings.miniCanvas.styleCycle",
         "settings.miniCanvas.thickness",
         "settings.miniCanvas.unavailable",
@@ -13348,7 +13355,9 @@ enum L10nCatalogFacts {
         "settings.miniCanvas.element": 0,
         "settings.miniCanvas.empty": 0,
         "settings.miniCanvas.fontSize": 0,
+        "settings.miniCanvas.free": 0,
         "settings.miniCanvas.front": 0,
+        "settings.miniCanvas.grid": 0,
         "settings.miniCanvas.height": 0,
         "settings.miniCanvas.hint": 0,
         "settings.miniCanvas.horizontalBar": 0,
@@ -13357,7 +13366,6 @@ enum L10nCatalogFacts {
         "settings.miniCanvas.quotaColor": 0,
         "settings.miniCanvas.ring": 0,
         "settings.miniCanvas.sector": 0,
-        "settings.miniCanvas.snap": 0,
         "settings.miniCanvas.styleCycle": 0,
         "settings.miniCanvas.thickness": 0,
         "settings.miniCanvas.unavailable": 0,

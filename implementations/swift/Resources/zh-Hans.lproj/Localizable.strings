@@ -2295,8 +2295,14 @@
 /* Mini window free-canvas editor: fontSize. */
 "settings.miniCanvas.fontSize" = "字号";
 
+/* Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates. */
+"settings.miniCanvas.free" = "自由布局";
+
 /* Mini window free-canvas editor: front. */
 "settings.miniCanvas.front" = "上移一层";
+
+/* Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates. */
+"settings.miniCanvas.grid" = "网格吸附";
 
 /* Mini window free-canvas editor: height. */
 "settings.miniCanvas.height" = "高度";
@@ -2321,9 +2327,6 @@
 
 /* Mini window free-canvas editor: sector. */
 "settings.miniCanvas.sector" = "扇形仪表";
-
-/* Mini window free-canvas editor: snap. */
-"settings.miniCanvas.snap" = "吸附网格";
 
 /* Mini window style-cycle help, including the opt-in Custom canvas style. */
 "settings.miniCanvas.styleCycle" = "双击按顺序切换所选样式。未选择时只轮换内置样式；自定义样式需手动加入。";

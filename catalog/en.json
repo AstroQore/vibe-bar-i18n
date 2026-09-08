@@ -7609,10 +7609,6 @@
       "value": "Add a gauge, bar or text from the inspector to begin.",
       "comment": "Mini window free-canvas editor: empty."
     },
-    "settings.miniCanvas.snap": {
-      "value": "Snap to grid",
-      "comment": "Mini window free-canvas editor: snap."
-    },
     "settings.miniCanvas.front": {
       "value": "Bring forward",
       "comment": "Mini window free-canvas editor: front."
@@ -7644,6 +7640,14 @@
     "settings.miniCanvas.styleCycle": {
       "value": "Double-click cycles the selected styles in this order. With none selected, it cycles the built-in styles; add Custom explicitly.",
       "comment": "Mini window style-cycle help, including the opt-in Custom canvas style."
+    },
+    "settings.miniCanvas.grid": {
+      "value": "Snap to grid",
+      "comment": "Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates."
+    },
+    "settings.miniCanvas.free": {
+      "value": "Free layout",
+      "comment": "Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates."
     }
   }
 }

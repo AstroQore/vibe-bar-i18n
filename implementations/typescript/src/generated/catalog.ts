@@ -798,7 +798,9 @@ export type MessageKey =
   | "settings.miniCanvas.element"
   | "settings.miniCanvas.empty"
   | "settings.miniCanvas.fontSize"
+  | "settings.miniCanvas.free"
   | "settings.miniCanvas.front"
+  | "settings.miniCanvas.grid"
   | "settings.miniCanvas.height"
   | "settings.miniCanvas.hint"
   | "settings.miniCanvas.horizontalBar"
@@ -807,7 +809,6 @@ export type MessageKey =
   | "settings.miniCanvas.quotaColor"
   | "settings.miniCanvas.ring"
   | "settings.miniCanvas.sector"
-  | "settings.miniCanvas.snap"
   | "settings.miniCanvas.styleCycle"
   | "settings.miniCanvas.thickness"
   | "settings.miniCanvas.unavailable"
@@ -2415,7 +2416,9 @@ export interface MessageParams {
   "settings.miniCanvas.element": undefined;
   "settings.miniCanvas.empty": undefined;
   "settings.miniCanvas.fontSize": undefined;
+  "settings.miniCanvas.free": undefined;
   "settings.miniCanvas.front": undefined;
+  "settings.miniCanvas.grid": undefined;
   "settings.miniCanvas.height": undefined;
   "settings.miniCanvas.hint": undefined;
   "settings.miniCanvas.horizontalBar": undefined;
@@ -2424,7 +2427,6 @@ export interface MessageParams {
   "settings.miniCanvas.quotaColor": undefined;
   "settings.miniCanvas.ring": undefined;
   "settings.miniCanvas.sector": undefined;
-  "settings.miniCanvas.snap": undefined;
   "settings.miniCanvas.styleCycle": undefined;
   "settings.miniCanvas.thickness": undefined;
   "settings.miniCanvas.unavailable": undefined;
@@ -4033,7 +4035,9 @@ export const messages: {
     "settings.miniCanvas.element": "Element",
     "settings.miniCanvas.empty": "Add a gauge, bar or text from the inspector to begin.",
     "settings.miniCanvas.fontSize": "Font size",
+    "settings.miniCanvas.free": "Free layout",
     "settings.miniCanvas.front": "Bring forward",
+    "settings.miniCanvas.grid": "Snap to grid",
     "settings.miniCanvas.height": "Height",
     "settings.miniCanvas.hint": "Drag to move, drag a corner to resize. Shift-click to select more; ⌘G groups, ⌘D duplicates, Delete removes.",
     "settings.miniCanvas.horizontalBar": "Horizontal bar",
@@ -4042,7 +4046,6 @@ export const messages: {
     "settings.miniCanvas.quotaColor": "Quota state colour",
     "settings.miniCanvas.ring": "Ring gauge",
     "settings.miniCanvas.sector": "Sector gauge",
-    "settings.miniCanvas.snap": "Snap to grid",
     "settings.miniCanvas.styleCycle": "Double-click cycles the selected styles in this order. With none selected, it cycles the built-in styles; add Custom explicitly.",
     "settings.miniCanvas.thickness": "Stroke width",
     "settings.miniCanvas.unavailable": "No quota data",
@@ -5646,7 +5649,9 @@ export const messages: {
     "settings.miniCanvas.element": "元素",
     "settings.miniCanvas.empty": "从检查器添加仪表、条形或文字。",
     "settings.miniCanvas.fontSize": "字号",
+    "settings.miniCanvas.free": "自由布局",
     "settings.miniCanvas.front": "上移一层",
+    "settings.miniCanvas.grid": "网格吸附",
     "settings.miniCanvas.height": "高度",
     "settings.miniCanvas.hint": "拖动元素移动，拖动角点缩放。Shift 点选多个；⌘G 分组，⌘D 复制，Delete 删除。",
     "settings.miniCanvas.horizontalBar": "横向条形",
@@ -5655,7 +5660,6 @@ export const messages: {
     "settings.miniCanvas.quotaColor": "额度状态颜色",
     "settings.miniCanvas.ring": "环形仪表",
     "settings.miniCanvas.sector": "扇形仪表",
-    "settings.miniCanvas.snap": "吸附网格",
     "settings.miniCanvas.styleCycle": "双击按顺序切换所选样式。未选择时只轮换内置样式；自定义样式需手动加入。",
     "settings.miniCanvas.thickness": "线宽",
     "settings.miniCanvas.unavailable": "暂无额度数据",
