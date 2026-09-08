@@ -4898,90 +4898,6 @@
     "settings.browsers.appleNotes": {
       "value": "Apple 隐私变更说明"
     },
-    "settings.permissions.title": {
-      "value": "权限总览"
-    },
-    "settings.permissions.help": {
-      "value": "查看 Vibe Bar 使用的访问权限。系统授权状态与单个文件或 Keychain 条目的检查结果分别显示。"
-    },
-    "settings.permissions.systemSettings": {
-      "value": "打开隐私与安全性"
-    },
-    "settings.permissions.automation": {
-      "value": "终端自动化"
-    },
-    "settings.permissions.automationHelp": {
-      "value": "用于在 Terminal 或 iTerm 中恢复会话。检查不会发送命令或申请授权；请先打开对应终端 App。"
-    },
-    "settings.permissions.automationSettings": {
-      "value": "打开自动化权限"
-    },
-    "settings.permissions.allowed": {
-      "value": "macOS 已授权"
-    },
-    "settings.permissions.denied": {
-      "value": "macOS 已拒绝"
-    },
-    "settings.permissions.needsApproval": {
-      "value": "需要授权"
-    },
-    "settings.permissions.targetNotRunning": {
-      "value": "目标 App 未运行"
-    },
-    "settings.permissions.unknown": {
-      "value": "状态不可用"
-    },
-    "settings.permissions.keychain": {
-      "value": "Keychain 条目"
-    },
-    "settings.permissions.keychainHelp": {
-      "value": "仅检查条目元数据，不读取密码或弹出提示。能查询到条目不代表可解密 Cookie。需要 Keychain 授权时，请使用浏览器导入。"
-    },
-    "settings.permissions.vault": {
-      "value": "已保存的提供商凭据"
-    },
-    "settings.permissions.itemVisible": {
-      "value": "条目元数据可访问"
-    },
-    "settings.permissions.itemMissing": {
-      "value": "未找到条目"
-    },
-    "settings.permissions.keychainDisabled": {
-      "value": "App 已停用 Keychain 访问"
-    },
-    "settings.permissions.loginItems": {
-      "value": "登录与后台项目"
-    },
-    "settings.permissions.loginItemsHelp": {
-      "value": "控制 Vibe Bar 是否登录时启动，由 macOS 登录项管理。"
-    },
-    "settings.permissions.loginItemsSettings": {
-      "value": "打开登录项"
-    },
-    "settings.permissions.enabled": {
-      "value": "macOS 已启用"
-    },
-    "settings.permissions.notRegistered": {
-      "value": "未注册"
-    },
-    "settings.permissions.fullDisk": {
-      "value": "完全磁盘访问"
-    },
-    "settings.permissions.confirmInSettings": {
-      "value": "请在系统设置确认"
-    },
-    "settings.permissions.fullDiskHelp": {
-      "value": "macOS 未提供直接查询此开关的公共 API。下方浏览器文件检查仅验证相应文件，不能证明已开启完全磁盘访问。"
-    },
-    "settings.permissions.unused": {
-      "value": "摄像头、麦克风、屏幕录制与辅助功能"
-    },
-    "settings.permissions.notRequired": {
-      "value": "当前功能无需这些权限"
-    },
-    "settings.permissions.openKeychain": {
-      "value": "打开 Keychain 访问"
-    },
     "settings.cookies.retryToggle": {
       "value": "每次刷新失败后重新读取浏览器 Cookie"
     },
@@ -4992,13 +4908,13 @@
       "value": "基础元素"
     },
     "settings.miniCanvas.presetWidgets": {
-      "value": "Mini 预设组件"
+      "value": "迷你预设组件"
     },
     "settings.layout.inlineEditHint": {
       "value": "双击文字即可原位编辑，回车保存，Esc 取消。"
     },
     "settings.overviewGranularity.title": {
-      "value": "Overview 分块粒度"
+      "value": "总览分块粒度"
     },
     "settings.overviewGranularity.company": {
       "value": "厂商（默认）"
@@ -5007,10 +4923,94 @@
       "value": "SubProvider"
     },
     "settings.overviewGranularity.model": {
-      "value": "模型"
+      "value": "模型组"
     },
     "settings.overviewGranularity.help": {
       "value": "按厂商、SubProvider 或模型组拆分额度卡片，保留全部额度窗口、预测和重置信息。"
+    },
+    "platform.macos.permissions.title": {
+      "value": "权限总览"
+    },
+    "platform.macos.permissions.help": {
+      "value": "查看 Vibe Bar 使用的访问权限。系统授权状态与单个文件或 Keychain 条目的检查结果分别显示。"
+    },
+    "platform.macos.permissions.systemSettings": {
+      "value": "打开隐私与安全性"
+    },
+    "platform.macos.permissions.automation": {
+      "value": "终端自动化"
+    },
+    "platform.macos.permissions.automationHelp": {
+      "value": "用于在 Terminal 或 iTerm 中恢复会话。检查不会发送命令或申请授权；请先打开对应终端 App。"
+    },
+    "platform.macos.permissions.automationSettings": {
+      "value": "打开自动化权限"
+    },
+    "platform.macos.permissions.allowed": {
+      "value": "macOS 已授权"
+    },
+    "platform.macos.permissions.denied": {
+      "value": "macOS 已拒绝"
+    },
+    "platform.macos.permissions.needsApproval": {
+      "value": "需要授权"
+    },
+    "platform.macos.permissions.targetNotRunning": {
+      "value": "目标 App 未运行"
+    },
+    "platform.macos.permissions.unknown": {
+      "value": "状态不可用"
+    },
+    "platform.macos.permissions.keychain": {
+      "value": "Keychain 条目"
+    },
+    "platform.macos.permissions.keychainHelp": {
+      "value": "仅检查条目元数据，不读取密码或弹出提示。能查询到条目不代表可解密 Cookie。需要 Keychain 授权时，请使用浏览器导入。"
+    },
+    "platform.macos.permissions.vault": {
+      "value": "已保存的提供商凭据"
+    },
+    "platform.macos.permissions.itemVisible": {
+      "value": "条目元数据可访问"
+    },
+    "platform.macos.permissions.itemMissing": {
+      "value": "未找到条目"
+    },
+    "platform.macos.permissions.keychainDisabled": {
+      "value": "App 已停用 Keychain 访问"
+    },
+    "platform.macos.permissions.loginItems": {
+      "value": "登录与后台项目"
+    },
+    "platform.macos.permissions.loginItemsHelp": {
+      "value": "控制 Vibe Bar 是否登录时启动，由 macOS 登录项管理。"
+    },
+    "platform.macos.permissions.loginItemsSettings": {
+      "value": "打开登录项"
+    },
+    "platform.macos.permissions.enabled": {
+      "value": "macOS 已启用"
+    },
+    "platform.macos.permissions.notRegistered": {
+      "value": "未注册"
+    },
+    "platform.macos.permissions.fullDisk": {
+      "value": "完全磁盘访问"
+    },
+    "platform.macos.permissions.confirmInSettings": {
+      "value": "请在系统设置确认"
+    },
+    "platform.macos.permissions.fullDiskHelp": {
+      "value": "macOS 未提供直接查询此开关的公共 API。下方浏览器文件检查仅验证相应文件，不能证明已开启完全磁盘访问。"
+    },
+    "platform.macos.permissions.unused": {
+      "value": "摄像头、麦克风、屏幕录制与辅助功能"
+    },
+    "platform.macos.permissions.notRequired": {
+      "value": "当前功能无需这些权限"
+    },
+    "platform.macos.permissions.openKeychain": {
+      "value": "打开 Keychain 访问"
     }
   }
 }
