@@ -7548,6 +7548,102 @@
       "placeholders": {
         "time": "string"
       }
+    },
+    "settings.miniCanvas.detail": {
+      "value": "Arrange gauges, bars and text freely on this window. Edit it in Studio.",
+      "comment": "Mini window free-canvas editor: detail."
+    },
+    "settings.miniCanvas.ring": {
+      "value": "Ring gauge",
+      "comment": "Mini window free-canvas editor: ring."
+    },
+    "settings.miniCanvas.horizontalBar": {
+      "value": "Horizontal bar",
+      "comment": "Mini window free-canvas editor: horizontalBar."
+    },
+    "settings.miniCanvas.verticalBar": {
+      "value": "Vertical bar",
+      "comment": "Mini window free-canvas editor: verticalBar."
+    },
+    "settings.miniCanvas.sector": {
+      "value": "Sector gauge",
+      "comment": "Mini window free-canvas editor: sector."
+    },
+    "settings.miniCanvas.element": {
+      "value": "Element",
+      "comment": "Mini window free-canvas editor: element."
+    },
+    "settings.miniCanvas.canvas": {
+      "value": "Canvas",
+      "comment": "Mini window free-canvas editor: canvas."
+    },
+    "settings.miniCanvas.height": {
+      "value": "Height",
+      "comment": "Mini window free-canvas editor: height."
+    },
+    "settings.miniCanvas.x": {
+      "value": "X position",
+      "comment": "Mini window free-canvas editor: x."
+    },
+    "settings.miniCanvas.y": {
+      "value": "Y position",
+      "comment": "Mini window free-canvas editor: y."
+    },
+    "settings.miniCanvas.fontSize": {
+      "value": "Font size",
+      "comment": "Mini window free-canvas editor: fontSize."
+    },
+    "settings.miniCanvas.thickness": {
+      "value": "Stroke width",
+      "comment": "Mini window free-canvas editor: thickness."
+    },
+    "settings.miniCanvas.content": {
+      "value": "Text content",
+      "comment": "Mini window free-canvas editor: content."
+    },
+    "settings.miniCanvas.hint": {
+      "value": "Drag to move, drag a corner to resize. Shift-click to select more; ⌘G groups, ⌘D duplicates, Delete removes.",
+      "comment": "Mini window free-canvas editor: hint."
+    },
+    "settings.miniCanvas.empty": {
+      "value": "Add a gauge, bar or text from the inspector to begin.",
+      "comment": "Mini window free-canvas editor: empty."
+    },
+    "settings.miniCanvas.snap": {
+      "value": "Snap to grid",
+      "comment": "Mini window free-canvas editor: snap."
+    },
+    "settings.miniCanvas.front": {
+      "value": "Bring forward",
+      "comment": "Mini window free-canvas editor: front."
+    },
+    "settings.miniCanvas.back": {
+      "value": "Send backward",
+      "comment": "Mini window free-canvas editor: back."
+    },
+    "settings.miniCanvas.layers": {
+      "value": "Elements · front to back",
+      "comment": "Mini window free-canvas editor: layers."
+    },
+    "settings.miniCanvas.providerColor": {
+      "value": "Provider colour",
+      "comment": "Mini window free-canvas editor: providerColor."
+    },
+    "settings.miniCanvas.quotaColor": {
+      "value": "Quota state colour",
+      "comment": "Mini window free-canvas editor: quotaColor."
+    },
+    "settings.miniCanvas.unavailable": {
+      "value": "No quota data",
+      "comment": "Mini window free-canvas editor: unavailable."
+    },
+    "settings.browsers.cookieStoreUnavailable": {
+      "value": "Cookie data is unavailable. Open the browser and check its macOS access permissions before importing.",
+      "comment": "Browser picker: app installed, but the profile or cookie-store probe failed."
+    },
+    "settings.miniCanvas.styleCycle": {
+      "value": "Double-click cycles the selected styles in this order. With none selected, it cycles the built-in styles; add Custom explicitly.",
+      "comment": "Mini window style-cycle help, including the opt-in Custom canvas style."
     }
   }
 }

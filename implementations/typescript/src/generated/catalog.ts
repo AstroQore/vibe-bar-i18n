@@ -698,6 +698,7 @@ export type MessageKey =
   | "settings.antigravityLocalOnly"
   | "settings.antigravitySource"
   | "settings.appVersion"
+  | "settings.browsers.cookieStoreUnavailable"
   | "settings.browsers.help"
   | "settings.browsers.none"
   | "settings.browsers.readAll"
@@ -790,6 +791,29 @@ export type MessageKey =
   | "settings.mcp.title"
   | "settings.mcp.whatAgentsMayDo"
   | "settings.menuBarHealthUnavailable"
+  | "settings.miniCanvas.back"
+  | "settings.miniCanvas.canvas"
+  | "settings.miniCanvas.content"
+  | "settings.miniCanvas.detail"
+  | "settings.miniCanvas.element"
+  | "settings.miniCanvas.empty"
+  | "settings.miniCanvas.fontSize"
+  | "settings.miniCanvas.front"
+  | "settings.miniCanvas.height"
+  | "settings.miniCanvas.hint"
+  | "settings.miniCanvas.horizontalBar"
+  | "settings.miniCanvas.layers"
+  | "settings.miniCanvas.providerColor"
+  | "settings.miniCanvas.quotaColor"
+  | "settings.miniCanvas.ring"
+  | "settings.miniCanvas.sector"
+  | "settings.miniCanvas.snap"
+  | "settings.miniCanvas.styleCycle"
+  | "settings.miniCanvas.thickness"
+  | "settings.miniCanvas.unavailable"
+  | "settings.miniCanvas.verticalBar"
+  | "settings.miniCanvas.x"
+  | "settings.miniCanvas.y"
   | "settings.miniWindow.add"
   | "settings.miniWindow.allBucketsIncluded"
   | "settings.miniWindow.density.narrow"
@@ -2291,6 +2315,7 @@ export interface MessageParams {
   "settings.antigravityLocalOnly": undefined;
   "settings.antigravitySource": undefined;
   "settings.appVersion": { "version": string };
+  "settings.browsers.cookieStoreUnavailable": undefined;
   "settings.browsers.help": undefined;
   "settings.browsers.none": undefined;
   "settings.browsers.readAll": undefined;
@@ -2383,6 +2408,29 @@ export interface MessageParams {
   "settings.mcp.title": undefined;
   "settings.mcp.whatAgentsMayDo": undefined;
   "settings.menuBarHealthUnavailable": undefined;
+  "settings.miniCanvas.back": undefined;
+  "settings.miniCanvas.canvas": undefined;
+  "settings.miniCanvas.content": undefined;
+  "settings.miniCanvas.detail": undefined;
+  "settings.miniCanvas.element": undefined;
+  "settings.miniCanvas.empty": undefined;
+  "settings.miniCanvas.fontSize": undefined;
+  "settings.miniCanvas.front": undefined;
+  "settings.miniCanvas.height": undefined;
+  "settings.miniCanvas.hint": undefined;
+  "settings.miniCanvas.horizontalBar": undefined;
+  "settings.miniCanvas.layers": undefined;
+  "settings.miniCanvas.providerColor": undefined;
+  "settings.miniCanvas.quotaColor": undefined;
+  "settings.miniCanvas.ring": undefined;
+  "settings.miniCanvas.sector": undefined;
+  "settings.miniCanvas.snap": undefined;
+  "settings.miniCanvas.styleCycle": undefined;
+  "settings.miniCanvas.thickness": undefined;
+  "settings.miniCanvas.unavailable": undefined;
+  "settings.miniCanvas.verticalBar": undefined;
+  "settings.miniCanvas.x": undefined;
+  "settings.miniCanvas.y": undefined;
   "settings.miniWindow.add": undefined;
   "settings.miniWindow.allBucketsIncluded": undefined;
   "settings.miniWindow.density.narrow": undefined;
@@ -3885,6 +3933,7 @@ export const messages: {
     "settings.antigravityLocalOnly": "Antigravity reads the locally running language server. Cookie import is deferred until the Antigravity Cloud endpoint ships.",
     "settings.antigravitySource": "Antigravity source",
     "settings.appVersion": "Vibe Bar {version}",
+    "settings.browsers.cookieStoreUnavailable": "Cookie data is unavailable. Open the browser and check its macOS access permissions before importing.",
     "settings.browsers.help": "Only the browsers ticked here are read, in this order. A browser that is not installed is never read.",
     "settings.browsers.none": "No browser with a cookie store was found on this Mac.",
     "settings.browsers.readAll": "Read every installed browser",
@@ -3977,6 +4026,29 @@ export const messages: {
     "settings.mcp.title": "MCP Server",
     "settings.mcp.whatAgentsMayDo": "What agents may do",
     "settings.menuBarHealthUnavailable": "The menu bar health monitor is not attached in this process.",
+    "settings.miniCanvas.back": "Send backward",
+    "settings.miniCanvas.canvas": "Canvas",
+    "settings.miniCanvas.content": "Text content",
+    "settings.miniCanvas.detail": "Arrange gauges, bars and text freely on this window. Edit it in Studio.",
+    "settings.miniCanvas.element": "Element",
+    "settings.miniCanvas.empty": "Add a gauge, bar or text from the inspector to begin.",
+    "settings.miniCanvas.fontSize": "Font size",
+    "settings.miniCanvas.front": "Bring forward",
+    "settings.miniCanvas.height": "Height",
+    "settings.miniCanvas.hint": "Drag to move, drag a corner to resize. Shift-click to select more; ⌘G groups, ⌘D duplicates, Delete removes.",
+    "settings.miniCanvas.horizontalBar": "Horizontal bar",
+    "settings.miniCanvas.layers": "Elements · front to back",
+    "settings.miniCanvas.providerColor": "Provider colour",
+    "settings.miniCanvas.quotaColor": "Quota state colour",
+    "settings.miniCanvas.ring": "Ring gauge",
+    "settings.miniCanvas.sector": "Sector gauge",
+    "settings.miniCanvas.snap": "Snap to grid",
+    "settings.miniCanvas.styleCycle": "Double-click cycles the selected styles in this order. With none selected, it cycles the built-in styles; add Custom explicitly.",
+    "settings.miniCanvas.thickness": "Stroke width",
+    "settings.miniCanvas.unavailable": "No quota data",
+    "settings.miniCanvas.verticalBar": "Vertical bar",
+    "settings.miniCanvas.x": "X position",
+    "settings.miniCanvas.y": "Y position",
     "settings.miniWindow.add": "Add a mini window",
     "settings.miniWindow.allBucketsIncluded": "Every known bucket is already in this window.",
     "settings.miniWindow.density.narrow": "Narrow",
@@ -5474,6 +5546,7 @@ export const messages: {
     "settings.antigravityLocalOnly": "Antigravity 读取本机运行的语言服务。cookie 导入将等到 Antigravity Cloud 端点上线后再启用。",
     "settings.antigravitySource": "Antigravity 来源",
     "settings.appVersion": "Vibe Bar {version}",
+    "settings.browsers.cookieStoreUnavailable": "暂时无法访问 Cookie 数据。请先打开浏览器，并检查 macOS 访问权限后再导入。",
     "settings.browsers.help": "只读取此处勾选的浏览器，按此顺序。未安装的浏览器不会被读取。",
     "settings.browsers.none": "本机没有找到带 Cookie 存储的浏览器。",
     "settings.browsers.readAll": "读取所有已安装的浏览器",
@@ -5566,6 +5639,29 @@ export const messages: {
     "settings.mcp.title": "MCP 服务",
     "settings.mcp.whatAgentsMayDo": "agent 的权限范围",
     "settings.menuBarHealthUnavailable": "本进程未接入菜单栏健康监控。",
+    "settings.miniCanvas.back": "下移一层",
+    "settings.miniCanvas.canvas": "画布",
+    "settings.miniCanvas.content": "文字内容",
+    "settings.miniCanvas.detail": "自由组合仪表、条形和文字，在 Studio 中编辑。",
+    "settings.miniCanvas.element": "元素",
+    "settings.miniCanvas.empty": "从检查器添加仪表、条形或文字。",
+    "settings.miniCanvas.fontSize": "字号",
+    "settings.miniCanvas.front": "上移一层",
+    "settings.miniCanvas.height": "高度",
+    "settings.miniCanvas.hint": "拖动元素移动，拖动角点缩放。Shift 点选多个；⌘G 分组，⌘D 复制，Delete 删除。",
+    "settings.miniCanvas.horizontalBar": "横向条形",
+    "settings.miniCanvas.layers": "元素 · 从前到后",
+    "settings.miniCanvas.providerColor": "供应商颜色",
+    "settings.miniCanvas.quotaColor": "额度状态颜色",
+    "settings.miniCanvas.ring": "环形仪表",
+    "settings.miniCanvas.sector": "扇形仪表",
+    "settings.miniCanvas.snap": "吸附网格",
+    "settings.miniCanvas.styleCycle": "双击按顺序切换所选样式。未选择时只轮换内置样式；自定义样式需手动加入。",
+    "settings.miniCanvas.thickness": "线宽",
+    "settings.miniCanvas.unavailable": "暂无额度数据",
+    "settings.miniCanvas.verticalBar": "竖向条形",
+    "settings.miniCanvas.x": "X 位置",
+    "settings.miniCanvas.y": "Y 位置",
     "settings.miniWindow.add": "添加迷你窗口",
     "settings.miniWindow.allBucketsIncluded": "已知的 bucket 都已在此窗口中。",
     "settings.miniWindow.density.narrow": "紧凑",

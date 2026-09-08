@@ -4762,6 +4762,78 @@
     },
     "workbench.status.updated": {
       "value": "更新于 {time}"
+    },
+    "settings.miniCanvas.detail": {
+      "value": "自由组合仪表、条形和文字，在 Studio 中编辑。"
+    },
+    "settings.miniCanvas.ring": {
+      "value": "环形仪表"
+    },
+    "settings.miniCanvas.horizontalBar": {
+      "value": "横向条形"
+    },
+    "settings.miniCanvas.verticalBar": {
+      "value": "竖向条形"
+    },
+    "settings.miniCanvas.sector": {
+      "value": "扇形仪表"
+    },
+    "settings.miniCanvas.element": {
+      "value": "元素"
+    },
+    "settings.miniCanvas.canvas": {
+      "value": "画布"
+    },
+    "settings.miniCanvas.height": {
+      "value": "高度"
+    },
+    "settings.miniCanvas.x": {
+      "value": "X 位置"
+    },
+    "settings.miniCanvas.y": {
+      "value": "Y 位置"
+    },
+    "settings.miniCanvas.fontSize": {
+      "value": "字号"
+    },
+    "settings.miniCanvas.thickness": {
+      "value": "线宽"
+    },
+    "settings.miniCanvas.content": {
+      "value": "文字内容"
+    },
+    "settings.miniCanvas.hint": {
+      "value": "拖动元素移动，拖动角点缩放。Shift 点选多个；⌘G 分组，⌘D 复制，Delete 删除。"
+    },
+    "settings.miniCanvas.empty": {
+      "value": "从检查器添加仪表、条形或文字。"
+    },
+    "settings.miniCanvas.snap": {
+      "value": "吸附网格"
+    },
+    "settings.miniCanvas.front": {
+      "value": "上移一层"
+    },
+    "settings.miniCanvas.back": {
+      "value": "下移一层"
+    },
+    "settings.miniCanvas.layers": {
+      "value": "元素 · 从前到后"
+    },
+    "settings.miniCanvas.providerColor": {
+      "value": "供应商颜色"
+    },
+    "settings.miniCanvas.quotaColor": {
+      "value": "额度状态颜色"
+    },
+    "settings.miniCanvas.unavailable": {
+      "value": "暂无额度数据"
+    },
+    "settings.browsers.cookieStoreUnavailable": {
+      "value": "暂时无法访问 Cookie 数据。请先打开浏览器，并检查 macOS 访问权限后再导入。"
+    },
+    "settings.miniCanvas.styleCycle": {
+      "value": "双击按顺序切换所选样式。未选择时只轮换内置样式；自定义样式需手动加入。"
     }
   }
 }
