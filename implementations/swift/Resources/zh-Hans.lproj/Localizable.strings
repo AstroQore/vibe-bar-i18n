@@ -1998,17 +1998,62 @@
 /* Current version line; version is a raw version string */
 "settings.appVersion" = "Vibe Bar %@";
 
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.appleNotes" = "Apple 隐私变更说明";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.checkAccess" = "检查访问权限";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.checkHelp" = "由此 App 检查 Cookie 文件，不解密或导入 Cookie。macOS 可能询问是否允许访问。文件可读不代表已登录，也不代表已获Keychain访问权限。";
+
 /* Browser picker: app installed, but the profile or cookie-store probe failed. */
 "settings.browsers.cookieStoreUnavailable" = "暂时无法访问 Cookie 数据。请先打开浏览器，并检查系统访问权限后再导入。";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.denied" = "文件访问被拒绝";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.failed" = "无法检查访问权限";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.fullDiskHelp" = "如果仍无法访问，可考虑完全磁盘访问权限；它也允许读取其他受保护文件。接受此范围后再开启，并退出重开 Vibe Bar；之后可关闭。";
 
 /* Caption under the browser list in Settings and the setup assistant. */
 "settings.browsers.help" = "只读取此处勾选的浏览器，按此顺序。未安装的浏览器不会被读取。";
 
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.missing" = "未找到 Cookie 文件";
+
 /* Shown in place of the browser list when detection finds no installed browser with cookie data. */
 "settings.browsers.none" = "本机没有找到带 Cookie 存储的浏览器。";
 
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.openFullDisk" = "打开完全磁盘访问权限";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.openPermissions" = "打开文件与文件夹权限";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.partial" = "部分配置文件无法访问";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.permissionGuide" = "打开系统设置 → 隐私与安全性 → 文件与文件夹 → Vibe Bar，开启对应浏览器。返回此处重新检查后再导入。macOS 27 可能直接拒绝受保护的 App 数据访问，不弹出授权框。";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.permissionsTitle" = "浏览器数据访问";
+
 /* Button that clears the browser selection so every installed browser is read again. */
 "settings.browsers.readAll" = "读取所有已安装的浏览器";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.readable" = "Cookie 文件可读";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.runningApp" = "当前运行的 App：%@";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.signatureWarning" = "此构建使用 ad-hoc 签名，重新构建或更新可能使 macOS 权限失效。退出其他副本，启动要使用的副本，授权后重新检查。要让权限跨更新保留，需要使用稳定证书签名的构建。";
 
 /* Heading of the list of installed browsers whose cookie stores Vibe Bar may read. Shown in Settings > Misc Providers and in the setup assistant's browser-cookies step. */
 "settings.browsers.title" = "读取的浏览器";

@@ -1998,17 +1998,62 @@
 /* Current version line; version is a raw version string */
 "settings.appVersion" = "Vibe Bar %@";
 
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.appleNotes" = "Apple privacy release notes";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.checkAccess" = "Check access";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.checkHelp" = "Checks cookie files from this app without decrypting or importing cookies. macOS may ask for access. Readable files do not confirm a signed-in session or Keychain access.";
+
 /* Browser picker: app installed, but the profile or cookie-store probe failed. */
 "settings.browsers.cookieStoreUnavailable" = "Cookie data is unavailable. Open the browser and check its access permissions before importing.";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.denied" = "File access denied";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.failed" = "Could not check access";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.fullDiskHelp" = "If access still fails, Full Disk Access is a broader fallback: enable it only if you accept access to other protected files, then quit and reopen Vibe Bar. You can turn it off afterward.";
 
 /* Caption under the browser list in Settings and the setup assistant. */
 "settings.browsers.help" = "Only the browsers ticked here are read, in this order. A browser that is not installed is never read.";
 
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.missing" = "No cookie file found";
+
 /* Shown in place of the browser list when detection finds no installed browser with cookie data. */
 "settings.browsers.none" = "No browser with a cookie store was found on this Mac.";
 
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.openFullDisk" = "Open Full Disk Access";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.openPermissions" = "Open Files & Folders";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.partial" = "Some profiles are inaccessible";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.permissionGuide" = "Open System Settings → Privacy & Security → Files & Folders → Vibe Bar, then enable the browser. Return here and check again before importing. On macOS 27, protected app data can be denied without a prompt.";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.permissionsTitle" = "Browser data access";
+
 /* Button that clears the browser selection so every installed browser is read again. */
 "settings.browsers.readAll" = "Read every installed browser";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.readable" = "Cookie file readable";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.runningApp" = "Running app: %@";
+
+/* Browser data access diagnostics in macOS Settings and setup assistant. */
+"settings.browsers.signatureWarning" = "This build uses ad-hoc signing. Rebuilding or updating it can invalidate macOS permissions. Quit other copies, launch the copy you intend to use, grant access, and check again. A build signed with a stable certificate is needed for permissions to persist across updates.";
 
 /* Heading of the list of installed browsers whose cookie stores Vibe Bar may read. Shown in Settings > Misc Providers and in the setup assistant's browser-cookies step. */
 "settings.browsers.title" = "Browsers to read";
