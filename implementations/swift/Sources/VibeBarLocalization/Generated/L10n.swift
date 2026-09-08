@@ -5322,6 +5322,12 @@ public enum L10n {
         }
 
         public enum Layout {
+            /// Studio direct text editing and free mini canvas component palette.
+            ///
+            /// Key: `settings.layout.inlineEditHint`
+            /// en: "Double-click a label to edit it here. Return saves; Escape cancels."
+            public static var inlineEditHint: String { L10nSupport.string("settings.layout.inlineEditHint") }
+
             /// Button that opens the full-size layout studio window
             ///
             /// Key: `settings.layout.openStudio`
@@ -5721,6 +5727,18 @@ public enum L10n {
             /// Key: `settings.miniCanvas.layers`
             /// en: "Elements · front to back"
             public static var layers: String { L10nSupport.string("settings.miniCanvas.layers") }
+
+            /// Studio direct text editing and free mini canvas component palette.
+            ///
+            /// Key: `settings.miniCanvas.presetWidgets`
+            /// en: "Mini preset components"
+            public static var presetWidgets: String { L10nSupport.string("settings.miniCanvas.presetWidgets") }
+
+            /// Studio direct text editing and free mini canvas component palette.
+            ///
+            /// Key: `settings.miniCanvas.primitives`
+            /// en: "Basic elements"
+            public static var primitives: String { L10nSupport.string("settings.miniCanvas.primitives") }
 
             /// Mini window free-canvas editor: providerColor.
             ///
@@ -11955,6 +11973,7 @@ enum L10nCatalogFacts {
         "settings.language.caption",
         "settings.language.system",
         "settings.language.title",
+        "settings.layout.inlineEditHint",
         "settings.layout.openStudio",
         "settings.layout.openStudioHelp",
         "settings.layout.previewUnavailable",
@@ -12021,6 +12040,8 @@ enum L10nCatalogFacts {
         "settings.miniCanvas.height",
         "settings.miniCanvas.horizontalBar",
         "settings.miniCanvas.layers",
+        "settings.miniCanvas.presetWidgets",
+        "settings.miniCanvas.primitives",
         "settings.miniCanvas.providerColor",
         "settings.miniCanvas.quotaColor",
         "settings.miniCanvas.ring",
@@ -13673,6 +13694,7 @@ enum L10nCatalogFacts {
         "settings.language.caption": 0,
         "settings.language.system": 0,
         "settings.language.title": 0,
+        "settings.layout.inlineEditHint": 0,
         "settings.layout.openStudio": 0,
         "settings.layout.openStudioHelp": 0,
         "settings.layout.previewUnavailable": 0,
@@ -13739,6 +13761,8 @@ enum L10nCatalogFacts {
         "settings.miniCanvas.height": 0,
         "settings.miniCanvas.horizontalBar": 0,
         "settings.miniCanvas.layers": 0,
+        "settings.miniCanvas.presetWidgets": 0,
+        "settings.miniCanvas.primitives": 0,
         "settings.miniCanvas.providerColor": 0,
         "settings.miniCanvas.quotaColor": 0,
         "settings.miniCanvas.ring": 0,

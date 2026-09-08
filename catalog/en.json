@@ -7851,6 +7851,18 @@
     "settings.cookies.retryHelp": {
       "value": "When enabled, each failed cookie-based refresh gets one silent browser re-read, including when no saved cookie is available. Changed cookies are retried once. Manual cookies and Keychain denials are respected.",
       "comment": "macOS permissions overview or automatic browser-cookie recovery setting."
+    },
+    "settings.miniCanvas.primitives": {
+      "value": "Basic elements",
+      "comment": "Studio direct text editing and free mini canvas component palette."
+    },
+    "settings.miniCanvas.presetWidgets": {
+      "value": "Mini preset components",
+      "comment": "Studio direct text editing and free mini canvas component palette."
+    },
+    "settings.layout.inlineEditHint": {
+      "value": "Double-click a label to edit it here. Return saves; Escape cancels.",
+      "comment": "Studio direct text editing and free mini canvas component palette."
     }
   }
 }

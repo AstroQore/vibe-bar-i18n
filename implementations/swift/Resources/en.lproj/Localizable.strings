@@ -2175,6 +2175,9 @@
 /* Settings row label for the in-app language override */
 "settings.language.title" = "Language";
 
+/* Studio direct text editing and free mini canvas component palette. */
+"settings.layout.inlineEditHint" = "Double-click a label to edit it here. Return saves; Escape cancels.";
+
 /* Button that opens the full-size layout studio window */
 "settings.layout.openStudio" = "Open Studio";
 
@@ -2372,6 +2375,12 @@
 
 /* Mini window free-canvas editor: layers. */
 "settings.miniCanvas.layers" = "Elements · front to back";
+
+/* Studio direct text editing and free mini canvas component palette. */
+"settings.miniCanvas.presetWidgets" = "Mini preset components";
+
+/* Studio direct text editing and free mini canvas component palette. */
+"settings.miniCanvas.primitives" = "Basic elements";
 
 /* Mini window free-canvas editor: providerColor. */
 "settings.miniCanvas.providerColor" = "Provider colour";

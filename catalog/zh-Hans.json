@@ -4987,6 +4987,15 @@
     },
     "settings.cookies.retryHelp": {
       "value": "开启后，每次 Cookie 方式刷新失败都会静默重读一次浏览器，包括没有已保存 Cookie 的情况。Cookie 更新后仅重试一次，并遵循手动 Cookie 设置和 Keychain 拒绝状态。"
+    },
+    "settings.miniCanvas.primitives": {
+      "value": "基础元素"
+    },
+    "settings.miniCanvas.presetWidgets": {
+      "value": "Mini 预设组件"
+    },
+    "settings.layout.inlineEditHint": {
+      "value": "双击文字即可原位编辑，回车保存，Esc 取消。"
     }
   }
 }

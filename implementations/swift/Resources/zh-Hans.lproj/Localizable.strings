@@ -2175,6 +2175,9 @@
 /* Settings row label for the in-app language override */
 "settings.language.title" = "语言";
 
+/* Studio direct text editing and free mini canvas component palette. */
+"settings.layout.inlineEditHint" = "双击文字即可原位编辑，回车保存，Esc 取消。";
+
 /* Button that opens the full-size layout studio window */
 "settings.layout.openStudio" = "打开工作台";
 
@@ -2372,6 +2375,12 @@
 
 /* Mini window free-canvas editor: layers. */
 "settings.miniCanvas.layers" = "元素 · 从前到后";
+
+/* Studio direct text editing and free mini canvas component palette. */
+"settings.miniCanvas.presetWidgets" = "Mini 预设组件";
+
+/* Studio direct text editing and free mini canvas component palette. */
+"settings.miniCanvas.primitives" = "基础元素";
 
 /* Mini window free-canvas editor: providerColor. */
 "settings.miniCanvas.providerColor" = "供应商颜色";

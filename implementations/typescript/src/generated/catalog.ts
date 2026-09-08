@@ -758,6 +758,7 @@ export type MessageKey =
   | "settings.language.caption"
   | "settings.language.system"
   | "settings.language.title"
+  | "settings.layout.inlineEditHint"
   | "settings.layout.openStudio"
   | "settings.layout.openStudioHelp"
   | "settings.layout.previewUnavailable"
@@ -824,6 +825,8 @@ export type MessageKey =
   | "settings.miniCanvas.height"
   | "settings.miniCanvas.horizontalBar"
   | "settings.miniCanvas.layers"
+  | "settings.miniCanvas.presetWidgets"
+  | "settings.miniCanvas.primitives"
   | "settings.miniCanvas.providerColor"
   | "settings.miniCanvas.quotaColor"
   | "settings.miniCanvas.ring"
@@ -2426,6 +2429,7 @@ export interface MessageParams {
   "settings.language.caption": undefined;
   "settings.language.system": undefined;
   "settings.language.title": undefined;
+  "settings.layout.inlineEditHint": undefined;
   "settings.layout.openStudio": undefined;
   "settings.layout.openStudioHelp": undefined;
   "settings.layout.previewUnavailable": undefined;
@@ -2492,6 +2496,8 @@ export interface MessageParams {
   "settings.miniCanvas.height": undefined;
   "settings.miniCanvas.horizontalBar": undefined;
   "settings.miniCanvas.layers": undefined;
+  "settings.miniCanvas.presetWidgets": undefined;
+  "settings.miniCanvas.primitives": undefined;
   "settings.miniCanvas.providerColor": undefined;
   "settings.miniCanvas.quotaColor": undefined;
   "settings.miniCanvas.ring": undefined;
@@ -4095,6 +4101,7 @@ export const messages: {
     "settings.language.caption": "Vibe Bar follows the macOS language unless you pick one here. Provider, model and harness names stay as their owners spell them.",
     "settings.language.system": "Match system",
     "settings.language.title": "Language",
+    "settings.layout.inlineEditHint": "Double-click a label to edit it here. Return saves; Escape cancels.",
     "settings.layout.openStudio": "Open Studio",
     "settings.layout.openStudioHelp": "Arrange this surface beside a full-size, live preview of it.",
     "settings.layout.previewUnavailable": "This page has no popover tab to preview.",
@@ -4161,6 +4168,8 @@ export const messages: {
     "settings.miniCanvas.height": "Height",
     "settings.miniCanvas.horizontalBar": "Horizontal bar",
     "settings.miniCanvas.layers": "Elements · front to back",
+    "settings.miniCanvas.presetWidgets": "Mini preset components",
+    "settings.miniCanvas.primitives": "Basic elements",
     "settings.miniCanvas.providerColor": "Provider colour",
     "settings.miniCanvas.quotaColor": "Quota state colour",
     "settings.miniCanvas.ring": "Ring gauge",
@@ -5759,6 +5768,7 @@ export const messages: {
     "settings.language.caption": "Vibe Bar 默认跟随 macOS 语言，也可以在此单独指定。厂商、模型与 harness 名称保持原始拼写。",
     "settings.language.system": "跟随系统",
     "settings.language.title": "语言",
+    "settings.layout.inlineEditHint": "双击文字即可原位编辑，回车保存，Esc 取消。",
     "settings.layout.openStudio": "打开工作台",
     "settings.layout.openStudioHelp": "在整尺寸的实时预览旁边排布这个界面。",
     "settings.layout.previewUnavailable": "该页面没有可预览的弹出面板标签页。",
@@ -5825,6 +5835,8 @@ export const messages: {
     "settings.miniCanvas.height": "高度",
     "settings.miniCanvas.horizontalBar": "横向条形",
     "settings.miniCanvas.layers": "元素 · 从前到后",
+    "settings.miniCanvas.presetWidgets": "Mini 预设组件",
+    "settings.miniCanvas.primitives": "基础元素",
     "settings.miniCanvas.providerColor": "供应商颜色",
     "settings.miniCanvas.quotaColor": "额度状态颜色",
     "settings.miniCanvas.ring": "环形仪表",
