@@ -7648,6 +7648,26 @@
     "settings.miniCanvas.free": {
       "value": "Free layout",
       "comment": "Mini canvas layout mode. Grid is the default and snaps placement and size; Free allows arbitrary coordinates."
+    },
+    "settings.miniCanvas.columns": {
+      "value": "Columns",
+      "comment": "Mini canvas grid geometry: columns."
+    },
+    "settings.miniCanvas.rows": {
+      "value": "Rows",
+      "comment": "Mini canvas grid geometry: rows."
+    },
+    "settings.miniCanvas.column": {
+      "value": "Column",
+      "comment": "Mini canvas grid geometry: column."
+    },
+    "settings.miniCanvas.row": {
+      "value": "Row",
+      "comment": "Mini canvas grid geometry: row."
+    },
+    "settings.miniCanvas.span": {
+      "value": "Cell span",
+      "comment": "Mini canvas grid geometry: span."
     }
   }
 }

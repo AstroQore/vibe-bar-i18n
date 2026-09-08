@@ -4837,6 +4837,21 @@
     },
     "settings.miniCanvas.free": {
       "value": "自由布局"
+    },
+    "settings.miniCanvas.columns": {
+      "value": "列数"
+    },
+    "settings.miniCanvas.rows": {
+      "value": "行数"
+    },
+    "settings.miniCanvas.column": {
+      "value": "列"
+    },
+    "settings.miniCanvas.row": {
+      "value": "行"
+    },
+    "settings.miniCanvas.span": {
+      "value": "占格尺寸"
     }
   }
 }

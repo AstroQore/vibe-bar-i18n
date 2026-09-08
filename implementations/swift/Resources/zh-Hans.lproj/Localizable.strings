@@ -2280,6 +2280,12 @@
 /* Mini window free-canvas editor: canvas. */
 "settings.miniCanvas.canvas" = "画布";
 
+/* Mini canvas grid geometry: column. */
+"settings.miniCanvas.column" = "列";
+
+/* Mini canvas grid geometry: columns. */
+"settings.miniCanvas.columns" = "列数";
+
 /* Mini window free-canvas editor: content. */
 "settings.miniCanvas.content" = "文字内容";
 
@@ -2325,8 +2331,17 @@
 /* Mini window free-canvas editor: ring. */
 "settings.miniCanvas.ring" = "环形仪表";
 
+/* Mini canvas grid geometry: row. */
+"settings.miniCanvas.row" = "行";
+
+/* Mini canvas grid geometry: rows. */
+"settings.miniCanvas.rows" = "行数";
+
 /* Mini window free-canvas editor: sector. */
 "settings.miniCanvas.sector" = "扇形仪表";
+
+/* Mini canvas grid geometry: span. */
+"settings.miniCanvas.span" = "占格尺寸";
 
 /* Mini window style-cycle help, including the opt-in Custom canvas style. */
 "settings.miniCanvas.styleCycle" = "双击按顺序切换所选样式。未选择时只轮换内置样式；自定义样式需手动加入。";

@@ -5530,6 +5530,18 @@ public enum L10n {
             /// en: "Canvas"
             public static var canvas: String { L10nSupport.string("settings.miniCanvas.canvas") }
 
+            /// Mini canvas grid geometry: column.
+            ///
+            /// Key: `settings.miniCanvas.column`
+            /// en: "Column"
+            public static var column: String { L10nSupport.string("settings.miniCanvas.column") }
+
+            /// Mini canvas grid geometry: columns.
+            ///
+            /// Key: `settings.miniCanvas.columns`
+            /// en: "Columns"
+            public static var columns: String { L10nSupport.string("settings.miniCanvas.columns") }
+
             /// Mini window free-canvas editor: content.
             ///
             /// Key: `settings.miniCanvas.content`
@@ -5620,11 +5632,29 @@ public enum L10n {
             /// en: "Ring gauge"
             public static var ring: String { L10nSupport.string("settings.miniCanvas.ring") }
 
+            /// Mini canvas grid geometry: row.
+            ///
+            /// Key: `settings.miniCanvas.row`
+            /// en: "Row"
+            public static var row: String { L10nSupport.string("settings.miniCanvas.row") }
+
+            /// Mini canvas grid geometry: rows.
+            ///
+            /// Key: `settings.miniCanvas.rows`
+            /// en: "Rows"
+            public static var rows: String { L10nSupport.string("settings.miniCanvas.rows") }
+
             /// Mini window free-canvas editor: sector.
             ///
             /// Key: `settings.miniCanvas.sector`
             /// en: "Sector gauge"
             public static var sector: String { L10nSupport.string("settings.miniCanvas.sector") }
+
+            /// Mini canvas grid geometry: span.
+            ///
+            /// Key: `settings.miniCanvas.span`
+            /// en: "Cell span"
+            public static var span: String { L10nSupport.string("settings.miniCanvas.span") }
 
             /// Mini window style-cycle help, including the opt-in Custom canvas style.
             ///
@@ -11682,6 +11712,8 @@ enum L10nCatalogFacts {
         "settings.menuBarHealthUnavailable",
         "settings.miniCanvas.back",
         "settings.miniCanvas.canvas",
+        "settings.miniCanvas.column",
+        "settings.miniCanvas.columns",
         "settings.miniCanvas.content",
         "settings.miniCanvas.detail",
         "settings.miniCanvas.element",
@@ -11697,7 +11729,10 @@ enum L10nCatalogFacts {
         "settings.miniCanvas.providerColor",
         "settings.miniCanvas.quotaColor",
         "settings.miniCanvas.ring",
+        "settings.miniCanvas.row",
+        "settings.miniCanvas.rows",
         "settings.miniCanvas.sector",
+        "settings.miniCanvas.span",
         "settings.miniCanvas.styleCycle",
         "settings.miniCanvas.thickness",
         "settings.miniCanvas.unavailable",
@@ -13350,6 +13385,8 @@ enum L10nCatalogFacts {
         "settings.menuBarHealthUnavailable": 0,
         "settings.miniCanvas.back": 0,
         "settings.miniCanvas.canvas": 0,
+        "settings.miniCanvas.column": 0,
+        "settings.miniCanvas.columns": 0,
         "settings.miniCanvas.content": 0,
         "settings.miniCanvas.detail": 0,
         "settings.miniCanvas.element": 0,
@@ -13365,7 +13402,10 @@ enum L10nCatalogFacts {
         "settings.miniCanvas.providerColor": 0,
         "settings.miniCanvas.quotaColor": 0,
         "settings.miniCanvas.ring": 0,
+        "settings.miniCanvas.row": 0,
+        "settings.miniCanvas.rows": 0,
         "settings.miniCanvas.sector": 0,
+        "settings.miniCanvas.span": 0,
         "settings.miniCanvas.styleCycle": 0,
         "settings.miniCanvas.thickness": 0,
         "settings.miniCanvas.unavailable": 0,

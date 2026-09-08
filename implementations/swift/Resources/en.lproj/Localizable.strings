@@ -2280,6 +2280,12 @@
 /* Mini window free-canvas editor: canvas. */
 "settings.miniCanvas.canvas" = "Canvas";
 
+/* Mini canvas grid geometry: column. */
+"settings.miniCanvas.column" = "Column";
+
+/* Mini canvas grid geometry: columns. */
+"settings.miniCanvas.columns" = "Columns";
+
 /* Mini window free-canvas editor: content. */
 "settings.miniCanvas.content" = "Text content";
 
@@ -2325,8 +2331,17 @@
 /* Mini window free-canvas editor: ring. */
 "settings.miniCanvas.ring" = "Ring gauge";
 
+/* Mini canvas grid geometry: row. */
+"settings.miniCanvas.row" = "Row";
+
+/* Mini canvas grid geometry: rows. */
+"settings.miniCanvas.rows" = "Rows";
+
 /* Mini window free-canvas editor: sector. */
 "settings.miniCanvas.sector" = "Sector gauge";
+
+/* Mini canvas grid geometry: span. */
+"settings.miniCanvas.span" = "Cell span";
 
 /* Mini window style-cycle help, including the opt-in Custom canvas style. */
 "settings.miniCanvas.styleCycle" = "Double-click cycles the selected styles in this order. With none selected, it cycles the built-in styles; add Custom explicitly.";

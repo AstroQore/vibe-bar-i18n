@@ -793,6 +793,8 @@ export type MessageKey =
   | "settings.menuBarHealthUnavailable"
   | "settings.miniCanvas.back"
   | "settings.miniCanvas.canvas"
+  | "settings.miniCanvas.column"
+  | "settings.miniCanvas.columns"
   | "settings.miniCanvas.content"
   | "settings.miniCanvas.detail"
   | "settings.miniCanvas.element"
@@ -808,7 +810,10 @@ export type MessageKey =
   | "settings.miniCanvas.providerColor"
   | "settings.miniCanvas.quotaColor"
   | "settings.miniCanvas.ring"
+  | "settings.miniCanvas.row"
+  | "settings.miniCanvas.rows"
   | "settings.miniCanvas.sector"
+  | "settings.miniCanvas.span"
   | "settings.miniCanvas.styleCycle"
   | "settings.miniCanvas.thickness"
   | "settings.miniCanvas.unavailable"
@@ -2411,6 +2416,8 @@ export interface MessageParams {
   "settings.menuBarHealthUnavailable": undefined;
   "settings.miniCanvas.back": undefined;
   "settings.miniCanvas.canvas": undefined;
+  "settings.miniCanvas.column": undefined;
+  "settings.miniCanvas.columns": undefined;
   "settings.miniCanvas.content": undefined;
   "settings.miniCanvas.detail": undefined;
   "settings.miniCanvas.element": undefined;
@@ -2426,7 +2433,10 @@ export interface MessageParams {
   "settings.miniCanvas.providerColor": undefined;
   "settings.miniCanvas.quotaColor": undefined;
   "settings.miniCanvas.ring": undefined;
+  "settings.miniCanvas.row": undefined;
+  "settings.miniCanvas.rows": undefined;
   "settings.miniCanvas.sector": undefined;
+  "settings.miniCanvas.span": undefined;
   "settings.miniCanvas.styleCycle": undefined;
   "settings.miniCanvas.thickness": undefined;
   "settings.miniCanvas.unavailable": undefined;
@@ -4030,6 +4040,8 @@ export const messages: {
     "settings.menuBarHealthUnavailable": "The menu bar health monitor is not attached in this process.",
     "settings.miniCanvas.back": "Send backward",
     "settings.miniCanvas.canvas": "Canvas",
+    "settings.miniCanvas.column": "Column",
+    "settings.miniCanvas.columns": "Columns",
     "settings.miniCanvas.content": "Text content",
     "settings.miniCanvas.detail": "Arrange gauges, bars and text freely on this window. Edit it in Studio.",
     "settings.miniCanvas.element": "Element",
@@ -4045,7 +4057,10 @@ export const messages: {
     "settings.miniCanvas.providerColor": "Provider colour",
     "settings.miniCanvas.quotaColor": "Quota state colour",
     "settings.miniCanvas.ring": "Ring gauge",
+    "settings.miniCanvas.row": "Row",
+    "settings.miniCanvas.rows": "Rows",
     "settings.miniCanvas.sector": "Sector gauge",
+    "settings.miniCanvas.span": "Cell span",
     "settings.miniCanvas.styleCycle": "Double-click cycles the selected styles in this order. With none selected, it cycles the built-in styles; add Custom explicitly.",
     "settings.miniCanvas.thickness": "Stroke width",
     "settings.miniCanvas.unavailable": "No quota data",
@@ -5644,6 +5659,8 @@ export const messages: {
     "settings.menuBarHealthUnavailable": "本进程未接入菜单栏健康监控。",
     "settings.miniCanvas.back": "下移一层",
     "settings.miniCanvas.canvas": "画布",
+    "settings.miniCanvas.column": "列",
+    "settings.miniCanvas.columns": "列数",
     "settings.miniCanvas.content": "文字内容",
     "settings.miniCanvas.detail": "自由组合仪表、条形和文字，在 Studio 中编辑。",
     "settings.miniCanvas.element": "元素",
@@ -5659,7 +5676,10 @@ export const messages: {
     "settings.miniCanvas.providerColor": "供应商颜色",
     "settings.miniCanvas.quotaColor": "额度状态颜色",
     "settings.miniCanvas.ring": "环形仪表",
+    "settings.miniCanvas.row": "行",
+    "settings.miniCanvas.rows": "行数",
     "settings.miniCanvas.sector": "扇形仪表",
+    "settings.miniCanvas.span": "占格尺寸",
     "settings.miniCanvas.styleCycle": "双击按顺序切换所选样式。未选择时只轮换内置样式；自定义样式需手动加入。",
     "settings.miniCanvas.thickness": "线宽",
     "settings.miniCanvas.unavailable": "暂无额度数据",
