@@ -2703,6 +2703,21 @@
 /* Link to a company's public status page */
 "settings.openStatusPage" = "Open %@ status page";
 
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.company" = "Company (default)";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.help" = "Split quota cards by company, SubProvider or model group. Keep all quota windows, forecasts and reset information.";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.model" = "Model group";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.subProvider" = "SubProvider";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.title" = "Overview card granularity";
+
 /* Picker label choosing between remaining and used */
 "settings.percentShows" = "Percent shows";
 

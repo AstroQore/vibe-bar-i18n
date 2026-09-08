@@ -2703,6 +2703,21 @@
 /* Link to a company's public status page */
 "settings.openStatusPage" = "打开 %@ 状态页";
 
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.company" = "厂商（默认）";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.help" = "按厂商、SubProvider 或模型组拆分额度卡片，保留全部额度窗口、预测和重置信息。";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.model" = "模型";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.subProvider" = "SubProvider";
+
+/* Overview quota card granularity picker; changes card boundaries only. */
+"settings.overviewGranularity.title" = "Overview 分块粒度";
+
 /* Picker label choosing between remaining and used */
 "settings.percentShows" = "百分比显示";
 

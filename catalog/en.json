@@ -7863,6 +7863,26 @@
     "settings.layout.inlineEditHint": {
       "value": "Double-click a label to edit it here. Return saves; Escape cancels.",
       "comment": "Studio direct text editing and free mini canvas component palette."
+    },
+    "settings.overviewGranularity.title": {
+      "value": "Overview card granularity",
+      "comment": "Overview quota card granularity picker; changes card boundaries only."
+    },
+    "settings.overviewGranularity.company": {
+      "value": "Company (default)",
+      "comment": "Overview quota card granularity picker; changes card boundaries only."
+    },
+    "settings.overviewGranularity.subProvider": {
+      "value": "SubProvider",
+      "comment": "Overview quota card granularity picker; changes card boundaries only."
+    },
+    "settings.overviewGranularity.model": {
+      "value": "Model group",
+      "comment": "Overview quota card granularity picker; changes card boundaries only."
+    },
+    "settings.overviewGranularity.help": {
+      "value": "Split quota cards by company, SubProvider or model group. Keep all quota windows, forecasts and reset information.",
+      "comment": "Overview quota card granularity picker; changes card boundaries only."
     }
   }
 }

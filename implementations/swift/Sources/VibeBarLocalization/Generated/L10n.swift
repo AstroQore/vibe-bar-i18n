@@ -6383,6 +6383,38 @@ public enum L10n {
             }
         }
 
+        public enum OverviewGranularity {
+            /// Overview quota card granularity picker; changes card boundaries only.
+            ///
+            /// Key: `settings.overviewGranularity.company`
+            /// en: "Company (default)"
+            public static var company: String { L10nSupport.string("settings.overviewGranularity.company") }
+
+            /// Overview quota card granularity picker; changes card boundaries only.
+            ///
+            /// Key: `settings.overviewGranularity.help`
+            /// en: "Split quota cards by company, SubProvider or model group. Keep all quota windows, forecasts and reset information."
+            public static var help: String { L10nSupport.string("settings.overviewGranularity.help") }
+
+            /// Overview quota card granularity picker; changes card boundaries only.
+            ///
+            /// Key: `settings.overviewGranularity.model`
+            /// en: "Model group"
+            public static var model: String { L10nSupport.string("settings.overviewGranularity.model") }
+
+            /// Overview quota card granularity picker; changes card boundaries only.
+            ///
+            /// Key: `settings.overviewGranularity.subProvider`
+            /// en: "SubProvider"
+            public static var subProvider: String { L10nSupport.string("settings.overviewGranularity.subProvider") }
+
+            /// Overview quota card granularity picker; changes card boundaries only.
+            ///
+            /// Key: `settings.overviewGranularity.title`
+            /// en: "Overview card granularity"
+            public static var title: String { L10nSupport.string("settings.overviewGranularity.title") }
+        }
+
         public enum Permissions {
             /// macOS permissions overview or automatic browser-cookie recovery setting.
             ///
@@ -12149,6 +12181,11 @@ enum L10nCatalogFacts {
         "settings.openRefreshCooldown",
         "settings.openRefreshDetail",
         "settings.openStatusPage",
+        "settings.overviewGranularity.company",
+        "settings.overviewGranularity.help",
+        "settings.overviewGranularity.model",
+        "settings.overviewGranularity.subProvider",
+        "settings.overviewGranularity.title",
         "settings.percentShows",
         "settings.permissions.allowed",
         "settings.permissions.automation",
@@ -13870,6 +13907,11 @@ enum L10nCatalogFacts {
         "settings.openRefreshCooldown": 0,
         "settings.openRefreshDetail": 0,
         "settings.openStatusPage": 1,
+        "settings.overviewGranularity.company": 0,
+        "settings.overviewGranularity.help": 0,
+        "settings.overviewGranularity.model": 0,
+        "settings.overviewGranularity.subProvider": 0,
+        "settings.overviewGranularity.title": 0,
         "settings.percentShows": 0,
         "settings.permissions.allowed": 0,
         "settings.permissions.automation": 0,

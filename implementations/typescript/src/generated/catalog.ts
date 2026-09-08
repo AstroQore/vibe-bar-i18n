@@ -934,6 +934,11 @@ export type MessageKey =
   | "settings.openRefreshCooldown"
   | "settings.openRefreshDetail"
   | "settings.openStatusPage"
+  | "settings.overviewGranularity.company"
+  | "settings.overviewGranularity.help"
+  | "settings.overviewGranularity.model"
+  | "settings.overviewGranularity.subProvider"
+  | "settings.overviewGranularity.title"
   | "settings.percentShows"
   | "settings.permissions.allowed"
   | "settings.permissions.automation"
@@ -2605,6 +2610,11 @@ export interface MessageParams {
   "settings.openRefreshCooldown": undefined;
   "settings.openRefreshDetail": undefined;
   "settings.openStatusPage": { "company": string };
+  "settings.overviewGranularity.company": undefined;
+  "settings.overviewGranularity.help": undefined;
+  "settings.overviewGranularity.model": undefined;
+  "settings.overviewGranularity.subProvider": undefined;
+  "settings.overviewGranularity.title": undefined;
   "settings.percentShows": undefined;
   "settings.permissions.allowed": undefined;
   "settings.permissions.automation": undefined;
@@ -4277,6 +4287,11 @@ export const messages: {
     "settings.openRefreshCooldown": "Minimum open-refresh cooldown",
     "settings.openRefreshDetail": "Opening the popover refreshes all visible providers at most once per cooldown period.",
     "settings.openStatusPage": "Open {company} status page",
+    "settings.overviewGranularity.company": "Company (default)",
+    "settings.overviewGranularity.help": "Split quota cards by company, SubProvider or model group. Keep all quota windows, forecasts and reset information.",
+    "settings.overviewGranularity.model": "Model group",
+    "settings.overviewGranularity.subProvider": "SubProvider",
+    "settings.overviewGranularity.title": "Overview card granularity",
     "settings.percentShows": "Percent shows",
     "settings.permissions.allowed": "Authorized by macOS",
     "settings.permissions.automation": "Terminal automation",
@@ -5944,6 +5959,11 @@ export const messages: {
     "settings.openRefreshCooldown": "打开刷新的最小间隔",
     "settings.openRefreshDetail": "每个间隔周期内，打开面板最多刷新一次全部可见厂商。",
     "settings.openStatusPage": "打开 {company} 状态页",
+    "settings.overviewGranularity.company": "厂商（默认）",
+    "settings.overviewGranularity.help": "按厂商、SubProvider 或模型组拆分额度卡片，保留全部额度窗口、预测和重置信息。",
+    "settings.overviewGranularity.model": "模型",
+    "settings.overviewGranularity.subProvider": "SubProvider",
+    "settings.overviewGranularity.title": "Overview 分块粒度",
     "settings.percentShows": "百分比显示",
     "settings.permissions.allowed": "macOS 已授权",
     "settings.permissions.automation": "终端自动化",

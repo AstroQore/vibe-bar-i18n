@@ -4996,6 +4996,21 @@
     },
     "settings.layout.inlineEditHint": {
       "value": "双击文字即可原位编辑，回车保存，Esc 取消。"
+    },
+    "settings.overviewGranularity.title": {
+      "value": "Overview 分块粒度"
+    },
+    "settings.overviewGranularity.company": {
+      "value": "厂商（默认）"
+    },
+    "settings.overviewGranularity.subProvider": {
+      "value": "SubProvider"
+    },
+    "settings.overviewGranularity.model": {
+      "value": "模型"
+    },
+    "settings.overviewGranularity.help": {
+      "value": "按厂商、SubProvider 或模型组拆分额度卡片，保留全部额度窗口、预测和重置信息。"
     }
   }
 }
