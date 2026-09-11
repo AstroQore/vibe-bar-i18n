@@ -2232,7 +2232,7 @@
       "value": "{count, plural, other {设备循环中有 # 个 Canvas API 任务}}"
     },
     "settings.eink.loopTasksShort": {
-      "value": "循环中有 {tasks} 个 Canvas API 任务，而这台设备有 {slides} 张幻灯片。请在 Dot. App 中为每张幻灯片各添加一个 Canvas API 项目后重新扫描，或改用 Vibe Bar 驱动的轮播。"
+      "value": "循环中有 {tasks, plural, other {# 个 Canvas API 任务}}，而这台设备有 {slides, plural, other {# 张幻灯片}}。请在 Dot. App 中为每张幻灯片各添加一个 Canvas API 项目后重新扫描，或改用 Vibe Bar 驱动的轮播。"
     },
     "settings.eink.loopTasksUnknown": {
       "value": "尚未扫描设备循环。"
@@ -2304,10 +2304,7 @@
       "value": "立即推送"
     },
     "settings.eink.pushResult": {
-      "value": "已推送 {pushed} 张，跳过 {skipped} 张（屏幕上已是这些内容）。"
-    },
-    "settings.eink.removeApiKey": {
-      "value": "移除已保存的 Dot. API key"
+      "value": "已推送 {pushed} 张；{skipped} 张屏幕上已是这些内容。"
     },
     "settings.eink.removeSlide": {
       "value": "移除这张幻灯片"

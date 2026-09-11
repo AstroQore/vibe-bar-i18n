@@ -2307,9 +2307,6 @@
 /* Picker label for which of the built-in e-ink layouts a slide draws. */
 "settings.eink.layout" = "Slide layout";
 
-/* Guidance when an e-ink device's loop has fewer Canvas API tasks than the device has slides. */
-"settings.eink.loopTasksShort" = "The loop carries %1$lld Canvas API tasks and this device has %2$lld slides. Add one Canvas API item per slide in the Dot. app and scan again, or switch to the Vibe Bar carousel.";
-
 /* Shown before an e-ink device's loop has ever been scanned. */
 "settings.eink.loopTasksUnknown" = "The device loop has not been scanned yet.";
 
@@ -2380,10 +2377,7 @@
 "settings.eink.pushNow" = "Push now";
 
 /* Result line after pushing to an e-ink device. */
-"settings.eink.pushResult" = "Pushed %1$lld, skipped %2$lld that were already on the panel.";
-
-/* Tooltip on the trash button beside the e-ink API key field. */
-"settings.eink.removeApiKey" = "Remove the stored Dot. API key";
+"settings.eink.pushResult" = "Pushed %1$lld; %2$lld already on the panel.";
 
 /* Tooltip on the button that deletes one e-ink slide. */
 "settings.eink.removeSlide" = "Remove this slide";

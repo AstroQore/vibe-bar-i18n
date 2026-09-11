@@ -829,7 +829,6 @@ export type MessageKey =
   | "settings.eink.preset.trend"
   | "settings.eink.pushNow"
   | "settings.eink.pushResult"
-  | "settings.eink.removeApiKey"
   | "settings.eink.removeSlide"
   | "settings.eink.render"
   | "settings.eink.renderDetail"
@@ -2578,7 +2577,6 @@ export interface MessageParams {
   "settings.eink.preset.trend": undefined;
   "settings.eink.pushNow": undefined;
   "settings.eink.pushResult": { "pushed": number; "skipped": number };
-  "settings.eink.removeApiKey": undefined;
   "settings.eink.removeSlide": undefined;
   "settings.eink.render": undefined;
   "settings.eink.renderDetail": undefined;
@@ -4303,7 +4301,7 @@ export const messages: {
     "settings.eink.lastSlide": "The last slide cannot be removed.",
     "settings.eink.layout": "Slide layout",
     "settings.eink.loopTasks": "{count, plural, one {# Canvas API task in the device loop} other {# Canvas API tasks in the device loop}}",
-    "settings.eink.loopTasksShort": "The loop carries {tasks} Canvas API tasks and this device has {slides} slides. Add one Canvas API item per slide in the Dot. app and scan again, or switch to the Vibe Bar carousel.",
+    "settings.eink.loopTasksShort": "The loop carries {tasks, plural, one {# Canvas API task} other {# Canvas API tasks}} and this device has {slides, plural, one {# slide} other {# slides}}. Add one Canvas API item per slide in the Dot. app and scan again, or switch to the Vibe Bar carousel.",
     "settings.eink.loopTasksUnknown": "The device loop has not been scanned yet.",
     "settings.eink.needsKey": "Save an API key to reach your devices.",
     "settings.eink.noDevices": "No devices on this account yet.",
@@ -4327,8 +4325,7 @@ export const messages: {
     "settings.eink.preset.table": "Table",
     "settings.eink.preset.trend": "Trend",
     "settings.eink.pushNow": "Push now",
-    "settings.eink.pushResult": "Pushed {pushed}, skipped {skipped} that were already on the panel.",
-    "settings.eink.removeApiKey": "Remove the stored Dot. API key",
+    "settings.eink.pushResult": "Pushed {pushed}; {skipped} already on the panel.",
     "settings.eink.removeSlide": "Remove this slide",
     "settings.eink.render": "On the panel",
     "settings.eink.renderDetail": "What the device reported it was showing after the last push.",
@@ -6048,7 +6045,7 @@ export const messages: {
     "settings.eink.lastSlide": "最后一张幻灯片无法移除。",
     "settings.eink.layout": "幻灯片版式",
     "settings.eink.loopTasks": "{count, plural, other {设备循环中有 # 个 Canvas API 任务}}",
-    "settings.eink.loopTasksShort": "循环中有 {tasks} 个 Canvas API 任务，而这台设备有 {slides} 张幻灯片。请在 Dot. App 中为每张幻灯片各添加一个 Canvas API 项目后重新扫描，或改用 Vibe Bar 驱动的轮播。",
+    "settings.eink.loopTasksShort": "循环中有 {tasks, plural, other {# 个 Canvas API 任务}}，而这台设备有 {slides, plural, other {# 张幻灯片}}。请在 Dot. App 中为每张幻灯片各添加一个 Canvas API 项目后重新扫描，或改用 Vibe Bar 驱动的轮播。",
     "settings.eink.loopTasksUnknown": "尚未扫描设备循环。",
     "settings.eink.needsKey": "保存 API key 后才能连接设备。",
     "settings.eink.noDevices": "该账号下还没有设备。",
@@ -6072,8 +6069,7 @@ export const messages: {
     "settings.eink.preset.table": "表格",
     "settings.eink.preset.trend": "趋势",
     "settings.eink.pushNow": "立即推送",
-    "settings.eink.pushResult": "已推送 {pushed} 张，跳过 {skipped} 张（屏幕上已是这些内容）。",
-    "settings.eink.removeApiKey": "移除已保存的 Dot. API key",
+    "settings.eink.pushResult": "已推送 {pushed} 张；{skipped} 张屏幕上已是这些内容。",
     "settings.eink.removeSlide": "移除这张幻灯片",
     "settings.eink.render": "屏幕实拍",
     "settings.eink.renderDetail": "设备在上次推送后回报的显示内容。",

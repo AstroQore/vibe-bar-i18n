@@ -2307,9 +2307,6 @@
 /* Picker label for which of the built-in e-ink layouts a slide draws. */
 "settings.eink.layout" = "幻灯片版式";
 
-/* Guidance when an e-ink device's loop has fewer Canvas API tasks than the device has slides. */
-"settings.eink.loopTasksShort" = "循环中有 %1$lld 个 Canvas API 任务，而这台设备有 %2$lld 张幻灯片。请在 Dot. App 中为每张幻灯片各添加一个 Canvas API 项目后重新扫描，或改用 Vibe Bar 驱动的轮播。";
-
 /* Shown before an e-ink device's loop has ever been scanned. */
 "settings.eink.loopTasksUnknown" = "尚未扫描设备循环。";
 
@@ -2380,10 +2377,7 @@
 "settings.eink.pushNow" = "立即推送";
 
 /* Result line after pushing to an e-ink device. */
-"settings.eink.pushResult" = "已推送 %1$lld 张，跳过 %2$lld 张（屏幕上已是这些内容）。";
-
-/* Tooltip on the trash button beside the e-ink API key field. */
-"settings.eink.removeApiKey" = "移除已保存的 Dot. API key";
+"settings.eink.pushResult" = "已推送 %1$lld 张；%2$lld 张屏幕上已是这些内容。";
 
 /* Tooltip on the button that deletes one e-ink slide. */
 "settings.eink.removeSlide" = "移除这张幻灯片";

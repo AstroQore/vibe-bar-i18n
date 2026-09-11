@@ -3608,7 +3608,7 @@
       }
     },
     "settings.eink.loopTasksShort": {
-      "value": "The loop carries {tasks} Canvas API tasks and this device has {slides} slides. Add one Canvas API item per slide in the Dot. app and scan again, or switch to the Vibe Bar carousel.",
+      "value": "The loop carries {tasks, plural, one {# Canvas API task} other {# Canvas API tasks}} and this device has {slides, plural, one {# slide} other {# slides}}. Add one Canvas API item per slide in the Dot. app and scan again, or switch to the Vibe Bar carousel.",
       "comment": "Guidance when an e-ink device's loop has fewer Canvas API tasks than the device has slides.",
       "placeholders": {
         "tasks": "int",
@@ -3708,16 +3708,12 @@
       "comment": "Button that sends every slide to an e-ink device immediately."
     },
     "settings.eink.pushResult": {
-      "value": "Pushed {pushed}, skipped {skipped} that were already on the panel.",
+      "value": "Pushed {pushed}; {skipped} already on the panel.",
       "comment": "Result line after pushing to an e-ink device.",
       "placeholders": {
         "pushed": "int",
         "skipped": "int"
       }
-    },
-    "settings.eink.removeApiKey": {
-      "value": "Remove the stored Dot. API key",
-      "comment": "Tooltip on the trash button beside the e-ink API key field."
     },
     "settings.eink.removeSlide": {
       "value": "Remove this slide",

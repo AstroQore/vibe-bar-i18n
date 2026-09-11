@@ -208,6 +208,16 @@
     {
       "term": "iTerm",
       "kind": "product"
+    },
+    {
+      "term": "Dot.",
+      "kind": "product",
+      "note": "The e-ink device platform Vibe Bar pushes panels to. The trailing period is part of the name."
+    },
+    {
+      "term": "Canvas API",
+      "kind": "product",
+      "note": "The Dot. task type Vibe Bar updates. Named exactly as the Dot. app spells it, so guidance matches what the user sees there."
     }
   ]
 }

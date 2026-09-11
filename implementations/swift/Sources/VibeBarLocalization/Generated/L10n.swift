@@ -5599,9 +5599,9 @@ public enum L10n {
             /// Guidance when an e-ink device's loop has fewer Canvas API tasks than the device has slides.
             ///
             /// Key: `settings.eink.loopTasksShort`
-            /// en: "The loop carries {tasks} Canvas API tasks and this device has {slides} slides. Add one Canvas API item per slide in the Dot. app and scan again, or switch to the Vibe Bar carousel."
+            /// en: "The loop carries {tasks, plural, one {# Canvas API task} other {# Canvas API tasks}} and this device has {slides, plural, one {# slide} other {# slides}}. Add one Canvas API item per slide in the Dot. app and scan again, or switch to the Vibe Bar carousel."
             public static func loopTasksShort(tasks: Int, slides: Int) -> String {
-                L10nSupport.format("settings.eink.loopTasksShort", tasks, slides)
+                L10nSupport.localizedFormat("settings.eink.loopTasksShort", tasks, slides)
             }
 
             /// Shown before an e-ink device's loop has ever been scanned.
@@ -5655,16 +5655,10 @@ public enum L10n {
             /// Result line after pushing to an e-ink device.
             ///
             /// Key: `settings.eink.pushResult`
-            /// en: "Pushed {pushed}, skipped {skipped} that were already on the panel."
+            /// en: "Pushed {pushed}; {skipped} already on the panel."
             public static func pushResult(pushed: Int, skipped: Int) -> String {
                 L10nSupport.format("settings.eink.pushResult", pushed, skipped)
             }
-
-            /// Tooltip on the trash button beside the e-ink API key field.
-            ///
-            /// Key: `settings.eink.removeApiKey`
-            /// en: "Remove the stored Dot. API key"
-            public static var removeApiKey: String { L10nSupport.string("settings.eink.removeApiKey") }
 
             /// Tooltip on the button that deletes one e-ink slide.
             ///
@@ -12538,7 +12532,6 @@ enum L10nCatalogFacts {
         "settings.eink.preset.trend",
         "settings.eink.pushNow",
         "settings.eink.pushResult",
-        "settings.eink.removeApiKey",
         "settings.eink.removeSlide",
         "settings.eink.render",
         "settings.eink.renderDetail",
@@ -13491,6 +13484,7 @@ enum L10nCatalogFacts {
         "resetHistory.wastedSummary",
         "settings.eink.devicesFound",
         "settings.eink.loopTasks",
+        "settings.eink.loopTasksShort",
         "status.card.componentCount",
         "usage.filters.modelsSelected",
         "usage.harnessMix.activeCount",
@@ -14339,7 +14333,6 @@ enum L10nCatalogFacts {
         "settings.eink.preset.trend": 0,
         "settings.eink.pushNow": 0,
         "settings.eink.pushResult": 2,
-        "settings.eink.removeApiKey": 0,
         "settings.eink.removeSlide": 0,
         "settings.eink.render": 0,
         "settings.eink.renderDetail": 0,
