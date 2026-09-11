@@ -324,6 +324,38 @@
 			<string>%3$lld cycles</string>
 		</dict>
 	</dict>
+	<key>settings.eink.devicesFound</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld device on this account</string>
+			<key>other</key>
+			<string>%lld devices on this account</string>
+		</dict>
+	</dict>
+	<key>settings.eink.loopTasks</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld Canvas API task in the device loop</string>
+			<key>other</key>
+			<string>%lld Canvas API tasks in the device loop</string>
+		</dict>
+	</dict>
 	<key>status.card.componentCount</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>

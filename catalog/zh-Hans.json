@@ -347,6 +347,9 @@
     "error.credentialRejected": {
       "value": "凭据被拒绝"
     },
+    "error.keychainSave": {
+      "value": "无法写入 Keychain。"
+    },
     "error.needsReLogin": {
       "value": "需重新登录"
     },
@@ -2141,6 +2144,219 @@
     "settings.displayMode.used": {
       "value": "已用"
     },
+    "settings.eink.addSlide": {
+      "value": "添加幻灯片"
+    },
+    "settings.eink.allOrientations": {
+      "value": "全部方向"
+    },
+    "settings.eink.apiKeyHelp": {
+      "value": "在 Dot. App 的开发者设置中创建。密钥保存在 Keychain，不会写入 settings.json。"
+    },
+    "settings.eink.apiKeyPrompt": {
+      "value": "粘贴 Dot. API key"
+    },
+    "settings.eink.batteryRefresh": {
+      "value": "使用电池时"
+    },
+    "settings.eink.batteryRefreshDetail": {
+      "value": "设备报告正在使用自身电池时改用的较慢节奏。"
+    },
+    "settings.eink.buckets": {
+      "value": "额度 bucket"
+    },
+    "settings.eink.capacityFull": {
+      "value": "该版式在当前方向下最多容纳 {count} 项。请先取消一项再选择其他。"
+    },
+    "settings.eink.customSlide": {
+      "value": "自定义（随布局工作台推出）"
+    },
+    "settings.eink.customSlideDetail": {
+      "value": "这张幻灯片指向自定义版式。Vibe Bar 暂时无法绘制，因此不会为它向设备推送内容。"
+    },
+    "settings.eink.dataRefresh": {
+      "value": "数据刷新"
+    },
+    "settings.eink.dataRefreshDetail": {
+      "value": "设备接通电源时，重新生成并推送数字的间隔。"
+    },
+    "settings.eink.deviceSyncHelp": {
+      "value": "向这台设备推送幻灯片"
+    },
+    "settings.eink.devicesFound": {
+      "value": "{count, plural, other {该账号下有 # 台设备}}"
+    },
+    "settings.eink.error.deviceMissing": {
+      "value": "该设备已不在此账号下。请重新获取设备。"
+    },
+    "settings.eink.error.network": {
+      "value": "无法连接 Dot. 服务。"
+    },
+    "settings.eink.error.noSlides": {
+      "value": "请先添加幻灯片，再同步这台设备。"
+    },
+    "settings.eink.error.rateLimited": {
+      "value": "Dot. 服务正在限流，Vibe Bar 会在下次刷新时重试。"
+    },
+    "settings.eink.error.render": {
+      "value": "这张幻灯片无法绘制到屏幕上。"
+    },
+    "settings.eink.error.taskMissing": {
+      "value": "该 Canvas API 任务不在设备循环中。请先在 Dot. App 中添加，然后重新扫描循环。"
+    },
+    "settings.eink.error.unauthorized": {
+      "value": "Dot. 服务拒绝了该密钥。请保存新的密钥以恢复同步。"
+    },
+    "settings.eink.fetchDevices": {
+      "value": "获取设备"
+    },
+    "settings.eink.fixedContent": {
+      "value": "该版式固定绘制今天与最近 7 天，无需选择。"
+    },
+    "settings.eink.group.quota": {
+      "value": "额度版式"
+    },
+    "settings.eink.group.usage": {
+      "value": "用量版式"
+    },
+    "settings.eink.intro": {
+      "value": "Vibe Bar 会按墨水屏的排版绘制额度与用量，并推送到你在这里启用的每台设备。"
+    },
+    "settings.eink.lastSlide": {
+      "value": "最后一张幻灯片无法移除。"
+    },
+    "settings.eink.layout": {
+      "value": "幻灯片版式"
+    },
+    "settings.eink.loopTasks": {
+      "value": "{count, plural, other {设备循环中有 # 个 Canvas API 任务}}"
+    },
+    "settings.eink.loopTasksShort": {
+      "value": "循环中有 {tasks} 个 Canvas API 任务，而这台设备有 {slides} 张幻灯片。请在 Dot. App 中为每张幻灯片各添加一个 Canvas API 项目后重新扫描，或改用 Vibe Bar 驱动的轮播。"
+    },
+    "settings.eink.loopTasksUnknown": {
+      "value": "尚未扫描设备循环。"
+    },
+    "settings.eink.needsKey": {
+      "value": "保存 API key 后才能连接设备。"
+    },
+    "settings.eink.noDevices": {
+      "value": "该账号下还没有设备。"
+    },
+    "settings.eink.noSelection": {
+      "value": "未选择任何项 — 版式会按 Vibe Bar 的默认顺序尽量多画。"
+    },
+    "settings.eink.orientation": {
+      "value": "方向"
+    },
+    "settings.eink.orientation.inverted": {
+      "value": "倒置"
+    },
+    "settings.eink.orientation.left": {
+      "value": "左转 — 顶边朝左"
+    },
+    "settings.eink.orientation.right": {
+      "value": "右转 — 顶边朝右"
+    },
+    "settings.eink.orientation.upright": {
+      "value": "正向"
+    },
+    "settings.eink.panelTextNote": {
+      "value": "屏幕文字固定为英文：由设备使用自带字体绘制。"
+    },
+    "settings.eink.playback": {
+      "value": "播放方式"
+    },
+    "settings.eink.playback.appTimer": {
+      "value": "轮播 · 由 Vibe Bar 驱动"
+    },
+    "settings.eink.playback.appTimerDetail": {
+      "value": "由 Vibe Bar 主动推送下一张。手机端无需配置，但每次切换都是一次整屏刷新，且 Mac 睡眠时会停止。"
+    },
+    "settings.eink.playback.deviceLoop": {
+      "value": "轮播 · 由设备驱动"
+    },
+    "settings.eink.playback.deviceLoopDetail": {
+      "value": "每张幻灯片更新各自的 Canvas API 任务，由设备按自己的节奏轮换。屏幕刷新次数最少，Mac 睡眠时也会继续轮播。"
+    },
+    "settings.eink.playback.single": {
+      "value": "单张"
+    },
+    "settings.eink.playback.singleDetail": {
+      "value": "设备固定显示一张幻灯片，Vibe Bar 只就地刷新其中的数字。"
+    },
+    "settings.eink.preset.dual": {
+      "value": "双条"
+    },
+    "settings.eink.preset.rings": {
+      "value": "圆环"
+    },
+    "settings.eink.preset.split": {
+      "value": "分栏"
+    },
+    "settings.eink.preset.table": {
+      "value": "表格"
+    },
+    "settings.eink.preset.trend": {
+      "value": "趋势"
+    },
+    "settings.eink.pushNow": {
+      "value": "立即推送"
+    },
+    "settings.eink.pushResult": {
+      "value": "已推送 {pushed} 张，跳过 {skipped} 张（屏幕上已是这些内容）。"
+    },
+    "settings.eink.removeApiKey": {
+      "value": "移除已保存的 Dot. API key"
+    },
+    "settings.eink.removeSlide": {
+      "value": "移除这张幻灯片"
+    },
+    "settings.eink.render": {
+      "value": "屏幕实拍"
+    },
+    "settings.eink.renderDetail": {
+      "value": "设备在上次推送后回报的显示内容。"
+    },
+    "settings.eink.renderMissing": {
+      "value": "设备尚未回报画面。"
+    },
+    "settings.eink.rescanLoop": {
+      "value": "扫描循环"
+    },
+    "settings.eink.secondsPerSlide": {
+      "value": "每张停留秒数"
+    },
+    "settings.eink.slideName": {
+      "value": "幻灯片名称"
+    },
+    "settings.eink.slides": {
+      "value": "幻灯片"
+    },
+    "settings.eink.status.battery": {
+      "value": "电量"
+    },
+    "settings.eink.status.lastPush": {
+      "value": "上次推送"
+    },
+    "settings.eink.status.nextRefresh": {
+      "value": "下次刷新"
+    },
+    "settings.eink.status.pending": {
+      "value": "尚未推送"
+    },
+    "settings.eink.status.power": {
+      "value": "供电"
+    },
+    "settings.eink.status.wifi": {
+      "value": "Wi-Fi"
+    },
+    "settings.eink.sync": {
+      "value": "同步到设备"
+    },
+    "settings.eink.syncDetail": {
+      "value": "关闭后不再推送任何内容。幻灯片仍可编辑，预览也会继续更新。"
+    },
     "settings.externalChange.title": {
       "value": "另一个 Vibe Bar 覆盖了此处的修改"
     },
@@ -2965,6 +3181,9 @@
     },
     "settings.section.costData": {
       "value": "花费数据"
+    },
+    "settings.section.einkDisplays": {
+      "value": "墨水屏"
     },
     "settings.section.layout": {
       "value": "布局"

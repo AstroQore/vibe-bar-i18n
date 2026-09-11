@@ -284,6 +284,34 @@
 			<string>%3$lld 个周期</string>
 		</dict>
 	</dict>
+	<key>settings.eink.devicesFound</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>该账号下有 %lld 台设备</string>
+		</dict>
+	</dict>
+	<key>settings.eink.loopTasks</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>设备循环中有 %lld 个 Canvas API 任务</string>
+		</dict>
+	</dict>
 	<key>status.card.componentCount</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
