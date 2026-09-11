@@ -129,6 +129,7 @@ export type MessageKey =
   | "cost.topModel.share"
   | "cost.topModel.title"
   | "error.credentialRejected"
+  | "error.keychainSave"
   | "error.needsReLogin"
   | "error.network"
   | "error.networkWithReason"
@@ -774,6 +775,76 @@ export type MessageKey =
   | "settings.deleteProviderCookies"
   | "settings.displayMode.remaining"
   | "settings.displayMode.used"
+  | "settings.eink.addSlide"
+  | "settings.eink.allOrientations"
+  | "settings.eink.apiKeyHelp"
+  | "settings.eink.apiKeyPrompt"
+  | "settings.eink.batteryRefresh"
+  | "settings.eink.batteryRefreshDetail"
+  | "settings.eink.buckets"
+  | "settings.eink.capacityFull"
+  | "settings.eink.customSlide"
+  | "settings.eink.customSlideDetail"
+  | "settings.eink.dataRefresh"
+  | "settings.eink.dataRefreshDetail"
+  | "settings.eink.deviceSyncHelp"
+  | "settings.eink.devicesFound"
+  | "settings.eink.error.deviceMissing"
+  | "settings.eink.error.network"
+  | "settings.eink.error.noSlides"
+  | "settings.eink.error.rateLimited"
+  | "settings.eink.error.render"
+  | "settings.eink.error.taskMissing"
+  | "settings.eink.error.unauthorized"
+  | "settings.eink.fetchDevices"
+  | "settings.eink.fixedContent"
+  | "settings.eink.group.quota"
+  | "settings.eink.group.usage"
+  | "settings.eink.intro"
+  | "settings.eink.lastSlide"
+  | "settings.eink.layout"
+  | "settings.eink.loopTasks"
+  | "settings.eink.loopTasksShort"
+  | "settings.eink.loopTasksUnknown"
+  | "settings.eink.needsKey"
+  | "settings.eink.noDevices"
+  | "settings.eink.noSelection"
+  | "settings.eink.orientation"
+  | "settings.eink.orientation.inverted"
+  | "settings.eink.orientation.left"
+  | "settings.eink.orientation.right"
+  | "settings.eink.orientation.upright"
+  | "settings.eink.panelTextNote"
+  | "settings.eink.playback"
+  | "settings.eink.playback.appTimer"
+  | "settings.eink.playback.appTimerDetail"
+  | "settings.eink.playback.deviceLoop"
+  | "settings.eink.playback.deviceLoopDetail"
+  | "settings.eink.playback.single"
+  | "settings.eink.playback.singleDetail"
+  | "settings.eink.preset.dual"
+  | "settings.eink.preset.rings"
+  | "settings.eink.preset.split"
+  | "settings.eink.preset.table"
+  | "settings.eink.preset.trend"
+  | "settings.eink.pushNow"
+  | "settings.eink.pushResult"
+  | "settings.eink.removeSlide"
+  | "settings.eink.render"
+  | "settings.eink.renderDetail"
+  | "settings.eink.renderMissing"
+  | "settings.eink.rescanLoop"
+  | "settings.eink.secondsPerSlide"
+  | "settings.eink.slideName"
+  | "settings.eink.slides"
+  | "settings.eink.status.battery"
+  | "settings.eink.status.lastPush"
+  | "settings.eink.status.nextRefresh"
+  | "settings.eink.status.pending"
+  | "settings.eink.status.power"
+  | "settings.eink.status.wifi"
+  | "settings.eink.sync"
+  | "settings.eink.syncDetail"
   | "settings.externalChange.title"
   | "settings.geminiCookiesSaved"
   | "settings.geminiShared"
@@ -1085,6 +1156,7 @@ export type MessageKey =
   | "settings.search"
   | "settings.section.components"
   | "settings.section.costData"
+  | "settings.section.einkDisplays"
   | "settings.section.layout"
   | "settings.section.menuBar"
   | "settings.section.menuBarHealth"
@@ -1805,6 +1877,7 @@ export interface MessageParams {
   "cost.topModel.share": { "percent": number };
   "cost.topModel.title": undefined;
   "error.credentialRejected": undefined;
+  "error.keychainSave": undefined;
   "error.needsReLogin": undefined;
   "error.network": undefined;
   "error.networkWithReason": { "reason": string };
@@ -2450,6 +2523,76 @@ export interface MessageParams {
   "settings.deleteProviderCookies": { "provider": string };
   "settings.displayMode.remaining": undefined;
   "settings.displayMode.used": undefined;
+  "settings.eink.addSlide": undefined;
+  "settings.eink.allOrientations": undefined;
+  "settings.eink.apiKeyHelp": undefined;
+  "settings.eink.apiKeyPrompt": undefined;
+  "settings.eink.batteryRefresh": undefined;
+  "settings.eink.batteryRefreshDetail": undefined;
+  "settings.eink.buckets": undefined;
+  "settings.eink.capacityFull": { "count": number };
+  "settings.eink.customSlide": undefined;
+  "settings.eink.customSlideDetail": undefined;
+  "settings.eink.dataRefresh": undefined;
+  "settings.eink.dataRefreshDetail": undefined;
+  "settings.eink.deviceSyncHelp": undefined;
+  "settings.eink.devicesFound": { "count": number };
+  "settings.eink.error.deviceMissing": undefined;
+  "settings.eink.error.network": undefined;
+  "settings.eink.error.noSlides": undefined;
+  "settings.eink.error.rateLimited": undefined;
+  "settings.eink.error.render": undefined;
+  "settings.eink.error.taskMissing": undefined;
+  "settings.eink.error.unauthorized": undefined;
+  "settings.eink.fetchDevices": undefined;
+  "settings.eink.fixedContent": undefined;
+  "settings.eink.group.quota": undefined;
+  "settings.eink.group.usage": undefined;
+  "settings.eink.intro": undefined;
+  "settings.eink.lastSlide": undefined;
+  "settings.eink.layout": undefined;
+  "settings.eink.loopTasks": { "count": number };
+  "settings.eink.loopTasksShort": { "tasks": number; "slides": number };
+  "settings.eink.loopTasksUnknown": undefined;
+  "settings.eink.needsKey": undefined;
+  "settings.eink.noDevices": undefined;
+  "settings.eink.noSelection": undefined;
+  "settings.eink.orientation": undefined;
+  "settings.eink.orientation.inverted": undefined;
+  "settings.eink.orientation.left": undefined;
+  "settings.eink.orientation.right": undefined;
+  "settings.eink.orientation.upright": undefined;
+  "settings.eink.panelTextNote": undefined;
+  "settings.eink.playback": undefined;
+  "settings.eink.playback.appTimer": undefined;
+  "settings.eink.playback.appTimerDetail": undefined;
+  "settings.eink.playback.deviceLoop": undefined;
+  "settings.eink.playback.deviceLoopDetail": undefined;
+  "settings.eink.playback.single": undefined;
+  "settings.eink.playback.singleDetail": undefined;
+  "settings.eink.preset.dual": undefined;
+  "settings.eink.preset.rings": undefined;
+  "settings.eink.preset.split": undefined;
+  "settings.eink.preset.table": undefined;
+  "settings.eink.preset.trend": undefined;
+  "settings.eink.pushNow": undefined;
+  "settings.eink.pushResult": { "pushed": number; "skipped": number };
+  "settings.eink.removeSlide": undefined;
+  "settings.eink.render": undefined;
+  "settings.eink.renderDetail": undefined;
+  "settings.eink.renderMissing": undefined;
+  "settings.eink.rescanLoop": undefined;
+  "settings.eink.secondsPerSlide": undefined;
+  "settings.eink.slideName": undefined;
+  "settings.eink.slides": undefined;
+  "settings.eink.status.battery": undefined;
+  "settings.eink.status.lastPush": undefined;
+  "settings.eink.status.nextRefresh": undefined;
+  "settings.eink.status.pending": undefined;
+  "settings.eink.status.power": undefined;
+  "settings.eink.status.wifi": undefined;
+  "settings.eink.sync": undefined;
+  "settings.eink.syncDetail": undefined;
   "settings.externalChange.title": undefined;
   "settings.geminiCookiesSaved": undefined;
   "settings.geminiShared": undefined;
@@ -2761,6 +2904,7 @@ export interface MessageParams {
   "settings.search": undefined;
   "settings.section.components": undefined;
   "settings.section.costData": undefined;
+  "settings.section.einkDisplays": undefined;
   "settings.section.layout": undefined;
   "settings.section.menuBar": undefined;
   "settings.section.menuBarHealth": undefined;
@@ -3482,6 +3626,7 @@ export const messages: {
     "cost.topModel.share": "{percent}% share",
     "cost.topModel.title": "TOP MODEL",
     "error.credentialRejected": "Credential rejected",
+    "error.keychainSave": "Could not save to your Keychain.",
     "error.needsReLogin": "Needs re-login",
     "error.network": "Network error",
     "error.networkWithReason": "Network error: {reason}",
@@ -4127,6 +4272,76 @@ export const messages: {
     "settings.deleteProviderCookies": "Delete {provider} cookies",
     "settings.displayMode.remaining": "Remaining",
     "settings.displayMode.used": "Used",
+    "settings.eink.addSlide": "Add a slide",
+    "settings.eink.allOrientations": "Every orientation",
+    "settings.eink.apiKeyHelp": "Create one in the Dot. app's developer settings. It is stored in your Keychain, never in settings.json.",
+    "settings.eink.apiKeyPrompt": "Paste the Dot. API key",
+    "settings.eink.batteryRefresh": "On battery",
+    "settings.eink.batteryRefreshDetail": "The slower cadence used whenever the device reports it is running on its own cell.",
+    "settings.eink.buckets": "Quota buckets",
+    "settings.eink.capacityFull": "This layout has room for {count} at this orientation. Deselect one to pick another.",
+    "settings.eink.customSlide": "Custom (arrives with the Studio)",
+    "settings.eink.customSlideDetail": "This slide points at a custom layout. Vibe Bar cannot draw one yet, so the device is not sent anything for it.",
+    "settings.eink.dataRefresh": "Data refresh",
+    "settings.eink.dataRefreshDetail": "How often the numbers are rebuilt and pushed while the device has mains power.",
+    "settings.eink.deviceSyncHelp": "Push slides to this device",
+    "settings.eink.devicesFound": "{count, plural, one {# device on this account} other {# devices on this account}}",
+    "settings.eink.error.deviceMissing": "This device is no longer on the account. Fetch devices again.",
+    "settings.eink.error.network": "Could not reach the Dot. service.",
+    "settings.eink.error.noSlides": "Add a slide before syncing this device.",
+    "settings.eink.error.rateLimited": "The Dot. service is rate limiting. Vibe Bar retries on the next refresh.",
+    "settings.eink.error.render": "This slide could not be drawn for the panel.",
+    "settings.eink.error.taskMissing": "That Canvas API task is not in the device's loop. Add it in the Dot. app, then scan the loop again.",
+    "settings.eink.error.unauthorized": "The Dot. service rejected the key. Save a new one to start syncing again.",
+    "settings.eink.fetchDevices": "Fetch devices",
+    "settings.eink.fixedContent": "This layout always draws today and the last seven days — there is nothing to pick.",
+    "settings.eink.group.quota": "Quota layouts",
+    "settings.eink.group.usage": "Usage layouts",
+    "settings.eink.intro": "Vibe Bar draws your quota and usage in the panel's own layout and pushes it to every device you enable here.",
+    "settings.eink.lastSlide": "The last slide cannot be removed.",
+    "settings.eink.layout": "Slide layout",
+    "settings.eink.loopTasks": "{count, plural, one {# Canvas API task in the device loop} other {# Canvas API tasks in the device loop}}",
+    "settings.eink.loopTasksShort": "The loop carries {tasks, plural, one {# Canvas API task} other {# Canvas API tasks}} and this device has {slides, plural, one {# slide} other {# slides}}. Add one Canvas API item per slide in the Dot. app and scan again, or switch to the Vibe Bar carousel.",
+    "settings.eink.loopTasksUnknown": "The device loop has not been scanned yet.",
+    "settings.eink.needsKey": "Save an API key to reach your devices.",
+    "settings.eink.noDevices": "No devices on this account yet.",
+    "settings.eink.noSelection": "Nothing selected — the layout draws as many as it can fit, in Vibe Bar's own order.",
+    "settings.eink.orientation": "Orientation",
+    "settings.eink.orientation.inverted": "Upside down",
+    "settings.eink.orientation.left": "Turned left — the top edge is on the left",
+    "settings.eink.orientation.right": "Turned right — the top edge is on the right",
+    "settings.eink.orientation.upright": "Upright",
+    "settings.eink.panelTextNote": "Panel text stays English: the device draws it from its own built-in fonts.",
+    "settings.eink.playback": "Playback",
+    "settings.eink.playback.appTimer": "Carousel, run by Vibe Bar",
+    "settings.eink.playback.appTimerDetail": "Vibe Bar pushes the next slide itself. Nothing to set up on your phone, but every switch is a full panel refresh and it stops while the Mac is asleep.",
+    "settings.eink.playback.deviceLoop": "Carousel, run by the device",
+    "settings.eink.playback.deviceLoopDetail": "Each slide updates its own Canvas API task and the device rotates between them on its own schedule. Fewest panel refreshes, and it keeps turning while the Mac is asleep.",
+    "settings.eink.playback.single": "One slide",
+    "settings.eink.playback.singleDetail": "The device keeps one slide on screen and Vibe Bar refreshes its numbers in place.",
+    "settings.eink.preset.dual": "Dual bars",
+    "settings.eink.preset.rings": "Rings",
+    "settings.eink.preset.split": "Split",
+    "settings.eink.preset.table": "Table",
+    "settings.eink.preset.trend": "Trend",
+    "settings.eink.pushNow": "Push now",
+    "settings.eink.pushResult": "Pushed {pushed}; {skipped} already on the panel.",
+    "settings.eink.removeSlide": "Remove this slide",
+    "settings.eink.render": "On the panel",
+    "settings.eink.renderDetail": "What the device reported it was showing after the last push.",
+    "settings.eink.renderMissing": "The device has not reported a render yet.",
+    "settings.eink.rescanLoop": "Scan the loop",
+    "settings.eink.secondsPerSlide": "Seconds per slide",
+    "settings.eink.slideName": "Slide name",
+    "settings.eink.slides": "Slides",
+    "settings.eink.status.battery": "Battery",
+    "settings.eink.status.lastPush": "Last push",
+    "settings.eink.status.nextRefresh": "Next refresh",
+    "settings.eink.status.pending": "Not yet",
+    "settings.eink.status.power": "Power",
+    "settings.eink.status.wifi": "Wi-Fi",
+    "settings.eink.sync": "Sync to devices",
+    "settings.eink.syncDetail": "Off stops every push. Slides stay editable, and the preview still updates.",
     "settings.externalChange.title": "Another Vibe Bar replaced your change",
     "settings.geminiCookiesSaved": "Gemini cookies saved.",
     "settings.geminiShared": "Gemini and Antigravity share the same Google AI subscription quota. Cookie import is the only supported web path — there is no WebView login.",
@@ -4438,6 +4653,7 @@ export const messages: {
     "settings.search": "Search settings",
     "settings.section.components": "Components",
     "settings.section.costData": "Cost Data",
+    "settings.section.einkDisplays": "E-ink Displays",
     "settings.section.layout": "Layout",
     "settings.section.menuBar": "Menu Bar",
     "settings.section.menuBarHealth": "Menu Bar Health",
@@ -5154,6 +5370,7 @@ export const messages: {
     "cost.topModel.share": "占比 {percent}%",
     "cost.topModel.title": "最常用模型",
     "error.credentialRejected": "凭据被拒绝",
+    "error.keychainSave": "无法写入 Keychain。",
     "error.needsReLogin": "需重新登录",
     "error.network": "网络错误",
     "error.networkWithReason": "网络错误：{reason}",
@@ -5799,6 +6016,76 @@ export const messages: {
     "settings.deleteProviderCookies": "删除 {provider} cookies",
     "settings.displayMode.remaining": "剩余",
     "settings.displayMode.used": "已用",
+    "settings.eink.addSlide": "添加幻灯片",
+    "settings.eink.allOrientations": "全部方向",
+    "settings.eink.apiKeyHelp": "在 Dot. App 的开发者设置中创建。密钥保存在 Keychain，不会写入 settings.json。",
+    "settings.eink.apiKeyPrompt": "粘贴 Dot. API key",
+    "settings.eink.batteryRefresh": "使用电池时",
+    "settings.eink.batteryRefreshDetail": "设备报告正在使用自身电池时改用的较慢节奏。",
+    "settings.eink.buckets": "额度 bucket",
+    "settings.eink.capacityFull": "该版式在当前方向下最多容纳 {count} 项。请先取消一项再选择其他。",
+    "settings.eink.customSlide": "自定义（随布局工作台推出）",
+    "settings.eink.customSlideDetail": "这张幻灯片指向自定义版式。Vibe Bar 暂时无法绘制，因此不会为它向设备推送内容。",
+    "settings.eink.dataRefresh": "数据刷新",
+    "settings.eink.dataRefreshDetail": "设备接通电源时，重新生成并推送数字的间隔。",
+    "settings.eink.deviceSyncHelp": "向这台设备推送幻灯片",
+    "settings.eink.devicesFound": "{count, plural, other {该账号下有 # 台设备}}",
+    "settings.eink.error.deviceMissing": "该设备已不在此账号下。请重新获取设备。",
+    "settings.eink.error.network": "无法连接 Dot. 服务。",
+    "settings.eink.error.noSlides": "请先添加幻灯片，再同步这台设备。",
+    "settings.eink.error.rateLimited": "Dot. 服务正在限流，Vibe Bar 会在下次刷新时重试。",
+    "settings.eink.error.render": "这张幻灯片无法绘制到屏幕上。",
+    "settings.eink.error.taskMissing": "该 Canvas API 任务不在设备循环中。请先在 Dot. App 中添加，然后重新扫描循环。",
+    "settings.eink.error.unauthorized": "Dot. 服务拒绝了该密钥。请保存新的密钥以恢复同步。",
+    "settings.eink.fetchDevices": "获取设备",
+    "settings.eink.fixedContent": "该版式固定绘制今天与最近 7 天，无需选择。",
+    "settings.eink.group.quota": "额度版式",
+    "settings.eink.group.usage": "用量版式",
+    "settings.eink.intro": "Vibe Bar 会按墨水屏的排版绘制额度与用量，并推送到你在这里启用的每台设备。",
+    "settings.eink.lastSlide": "最后一张幻灯片无法移除。",
+    "settings.eink.layout": "幻灯片版式",
+    "settings.eink.loopTasks": "{count, plural, other {设备循环中有 # 个 Canvas API 任务}}",
+    "settings.eink.loopTasksShort": "循环中有 {tasks, plural, other {# 个 Canvas API 任务}}，而这台设备有 {slides, plural, other {# 张幻灯片}}。请在 Dot. App 中为每张幻灯片各添加一个 Canvas API 项目后重新扫描，或改用 Vibe Bar 驱动的轮播。",
+    "settings.eink.loopTasksUnknown": "尚未扫描设备循环。",
+    "settings.eink.needsKey": "保存 API key 后才能连接设备。",
+    "settings.eink.noDevices": "该账号下还没有设备。",
+    "settings.eink.noSelection": "未选择任何项 — 版式会按 Vibe Bar 的默认顺序尽量多画。",
+    "settings.eink.orientation": "方向",
+    "settings.eink.orientation.inverted": "倒置",
+    "settings.eink.orientation.left": "左转 — 顶边朝左",
+    "settings.eink.orientation.right": "右转 — 顶边朝右",
+    "settings.eink.orientation.upright": "正向",
+    "settings.eink.panelTextNote": "屏幕文字固定为英文：由设备使用自带字体绘制。",
+    "settings.eink.playback": "播放方式",
+    "settings.eink.playback.appTimer": "轮播 · 由 Vibe Bar 驱动",
+    "settings.eink.playback.appTimerDetail": "由 Vibe Bar 主动推送下一张。手机端无需配置，但每次切换都是一次整屏刷新，且 Mac 睡眠时会停止。",
+    "settings.eink.playback.deviceLoop": "轮播 · 由设备驱动",
+    "settings.eink.playback.deviceLoopDetail": "每张幻灯片更新各自的 Canvas API 任务，由设备按自己的节奏轮换。屏幕刷新次数最少，Mac 睡眠时也会继续轮播。",
+    "settings.eink.playback.single": "单张",
+    "settings.eink.playback.singleDetail": "设备固定显示一张幻灯片，Vibe Bar 只就地刷新其中的数字。",
+    "settings.eink.preset.dual": "双条",
+    "settings.eink.preset.rings": "圆环",
+    "settings.eink.preset.split": "分栏",
+    "settings.eink.preset.table": "表格",
+    "settings.eink.preset.trend": "趋势",
+    "settings.eink.pushNow": "立即推送",
+    "settings.eink.pushResult": "已推送 {pushed} 张；{skipped} 张屏幕上已是这些内容。",
+    "settings.eink.removeSlide": "移除这张幻灯片",
+    "settings.eink.render": "屏幕实拍",
+    "settings.eink.renderDetail": "设备在上次推送后回报的显示内容。",
+    "settings.eink.renderMissing": "设备尚未回报画面。",
+    "settings.eink.rescanLoop": "扫描循环",
+    "settings.eink.secondsPerSlide": "每张停留秒数",
+    "settings.eink.slideName": "幻灯片名称",
+    "settings.eink.slides": "幻灯片",
+    "settings.eink.status.battery": "电量",
+    "settings.eink.status.lastPush": "上次推送",
+    "settings.eink.status.nextRefresh": "下次刷新",
+    "settings.eink.status.pending": "尚未推送",
+    "settings.eink.status.power": "供电",
+    "settings.eink.status.wifi": "Wi-Fi",
+    "settings.eink.sync": "同步到设备",
+    "settings.eink.syncDetail": "关闭后不再推送任何内容。幻灯片仍可编辑，预览也会继续更新。",
     "settings.externalChange.title": "另一个 Vibe Bar 覆盖了此处的修改",
     "settings.geminiCookiesSaved": "Gemini 的 cookies 已保存。",
     "settings.geminiShared": "Gemini 与 Antigravity 共用同一份 Google AI 订阅额度。网页端仅支持 cookie 导入，没有 WebView 登录途径。",
@@ -6110,6 +6397,7 @@ export const messages: {
     "settings.search": "搜索设置",
     "settings.section.components": "组件",
     "settings.section.costData": "花费数据",
+    "settings.section.einkDisplays": "墨水屏",
     "settings.section.layout": "布局",
     "settings.section.menuBar": "菜单栏",
     "settings.section.menuBarHealth": "菜单栏健康",

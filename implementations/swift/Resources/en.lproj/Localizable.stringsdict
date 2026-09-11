@@ -324,6 +324,65 @@
 			<string>%3$lld cycles</string>
 		</dict>
 	</dict>
+	<key>settings.eink.devicesFound</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld device on this account</string>
+			<key>other</key>
+			<string>%lld devices on this account</string>
+		</dict>
+	</dict>
+	<key>settings.eink.loopTasks</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld Canvas API task in the device loop</string>
+			<key>other</key>
+			<string>%lld Canvas API tasks in the device loop</string>
+		</dict>
+	</dict>
+	<key>settings.eink.loopTasksShort</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>The loop carries %1$#@tasks@ and this device has %2$#@slides@. Add one Canvas API item per slide in the Dot. app and scan again, or switch to the Vibe Bar carousel.</string>
+		<key>tasks</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%1$lld Canvas API task</string>
+			<key>other</key>
+			<string>%1$lld Canvas API tasks</string>
+		</dict>
+		<key>slides</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%2$lld slide</string>
+			<key>other</key>
+			<string>%2$lld slides</string>
+		</dict>
+	</dict>
 	<key>status.card.componentCount</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>

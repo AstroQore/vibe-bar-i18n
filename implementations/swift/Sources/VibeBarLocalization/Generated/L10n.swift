@@ -795,6 +795,12 @@ public enum L10n {
         /// en: "Credential rejected"
         public static var credentialRejected: String { L10nSupport.string("error.credentialRejected") }
 
+        /// Shown beside a credential field when the Keychain write failed.
+        ///
+        /// Key: `error.keychainSave`
+        /// en: "Could not save to your Keychain."
+        public static var keychainSave: String { L10nSupport.string("error.keychainSave") }
+
         /// QuotaError: the stored browser session expired
         ///
         /// Key: `error.needsReLogin`
@@ -5463,6 +5469,450 @@ public enum L10n {
             public static var used: String { L10nSupport.string("settings.displayMode.used") }
         }
 
+        public enum Eink {
+            /// Button that appends a new screen to an e-ink device.
+            ///
+            /// Key: `settings.eink.addSlide`
+            /// en: "Add a slide"
+            public static var addSlide: String { L10nSupport.string("settings.eink.addSlide") }
+
+            /// Heading over the row of four e-ink previews, one per orientation.
+            ///
+            /// Key: `settings.eink.allOrientations`
+            /// en: "Every orientation"
+            public static var allOrientations: String { L10nSupport.string("settings.eink.allOrientations") }
+
+            /// Help line under the e-ink API key field, shown while no key is stored.
+            ///
+            /// Key: `settings.eink.apiKeyHelp`
+            /// en: "Create one in the Dot. app's developer settings. It is stored in your Keychain, never in settings.json."
+            public static var apiKeyHelp: String { L10nSupport.string("settings.eink.apiKeyHelp") }
+
+            /// Placeholder of the secure field that stores the e-ink service API key.
+            ///
+            /// Key: `settings.eink.apiKeyPrompt`
+            /// en: "Paste the Dot. API key"
+            public static var apiKeyPrompt: String { L10nSupport.string("settings.eink.apiKeyPrompt") }
+
+            /// Stepper label for the slower e-ink refresh cadence used on battery power.
+            ///
+            /// Key: `settings.eink.batteryRefresh`
+            /// en: "On battery"
+            public static var batteryRefresh: String { L10nSupport.string("settings.eink.batteryRefresh") }
+
+            /// Help line under the e-ink battery refresh stepper.
+            ///
+            /// Key: `settings.eink.batteryRefreshDetail`
+            /// en: "The slower cadence used whenever the device reports it is running on its own cell."
+            public static var batteryRefreshDetail: String { L10nSupport.string("settings.eink.batteryRefreshDetail") }
+
+            /// Heading of the bucket picker for a quota e-ink slide.
+            ///
+            /// Key: `settings.eink.buckets`
+            /// en: "Quota buckets"
+            public static var buckets: String { L10nSupport.string("settings.eink.buckets") }
+
+            /// Shown when an e-ink slide's bucket selection has reached the layout's capacity.
+            ///
+            /// Key: `settings.eink.capacityFull`
+            /// en: "This layout has room for {count} at this orientation. Deselect one to pick another."
+            public static func capacityFull(count: Int) -> String {
+                L10nSupport.format("settings.eink.capacityFull", count)
+            }
+
+            /// Disabled option in the e-ink layout picker standing in for a Studio-authored layout.
+            ///
+            /// Key: `settings.eink.customSlide`
+            /// en: "Custom (arrives with the Studio)"
+            public static var customSlide: String { L10nSupport.string("settings.eink.customSlide") }
+
+            /// Help line for an e-ink slide that names a custom layout the renderer cannot draw yet.
+            ///
+            /// Key: `settings.eink.customSlideDetail`
+            /// en: "This slide points at a custom layout. Vibe Bar cannot draw one yet, so the device is not sent anything for it."
+            public static var customSlideDetail: String { L10nSupport.string("settings.eink.customSlideDetail") }
+
+            /// Stepper label for how often an e-ink device's numbers are re-pushed on mains power.
+            ///
+            /// Key: `settings.eink.dataRefresh`
+            /// en: "Data refresh"
+            public static var dataRefresh: String { L10nSupport.string("settings.eink.dataRefresh") }
+
+            /// Help line under the e-ink data refresh stepper.
+            ///
+            /// Key: `settings.eink.dataRefreshDetail`
+            /// en: "How often the numbers are rebuilt and pushed while the device has mains power."
+            public static var dataRefreshDetail: String { L10nSupport.string("settings.eink.dataRefreshDetail") }
+
+            /// Tooltip on the per-device enable toggle in the E-ink section.
+            ///
+            /// Key: `settings.eink.deviceSyncHelp`
+            /// en: "Push slides to this device"
+            public static var deviceSyncHelp: String { L10nSupport.string("settings.eink.deviceSyncHelp") }
+
+            /// Result line after fetching the e-ink device roster.
+            ///
+            /// Key: `settings.eink.devicesFound`
+            /// en: "{count, plural, one {# device on this account} other {# devices on this account}}"
+            public static func devicesFound(count: Int) -> String {
+                L10nSupport.localizedFormat("settings.eink.devicesFound", count)
+            }
+
+            /// Button that asks the e-ink service which devices the account owns.
+            ///
+            /// Key: `settings.eink.fetchDevices`
+            /// en: "Fetch devices"
+            public static var fetchDevices: String { L10nSupport.string("settings.eink.fetchDevices") }
+
+            /// Shown for an e-ink layout whose content is fixed by the layout itself.
+            ///
+            /// Key: `settings.eink.fixedContent`
+            /// en: "This layout always draws today and the last seven days — there is nothing to pick."
+            public static var fixedContent: String { L10nSupport.string("settings.eink.fixedContent") }
+
+            /// Lead paragraph at the top of the E-ink Displays section.
+            ///
+            /// Key: `settings.eink.intro`
+            /// en: "Vibe Bar draws your quota and usage in the panel's own layout and pushes it to every device you enable here."
+            public static var intro: String { L10nSupport.string("settings.eink.intro") }
+
+            /// Tooltip on the disabled remove button of an e-ink device's only slide.
+            ///
+            /// Key: `settings.eink.lastSlide`
+            /// en: "The last slide cannot be removed."
+            public static var lastSlide: String { L10nSupport.string("settings.eink.lastSlide") }
+
+            /// Picker label for which of the built-in e-ink layouts a slide draws.
+            ///
+            /// Key: `settings.eink.layout`
+            /// en: "Slide layout"
+            public static var layout: String { L10nSupport.string("settings.eink.layout") }
+
+            /// How many Canvas API tasks the last loop scan found on an e-ink device.
+            ///
+            /// Key: `settings.eink.loopTasks`
+            /// en: "{count, plural, one {# Canvas API task in the device loop} other {# Canvas API tasks in the device loop}}"
+            public static func loopTasks(count: Int) -> String {
+                L10nSupport.localizedFormat("settings.eink.loopTasks", count)
+            }
+
+            /// Guidance when an e-ink device's loop has fewer Canvas API tasks than the device has slides.
+            ///
+            /// Key: `settings.eink.loopTasksShort`
+            /// en: "The loop carries {tasks, plural, one {# Canvas API task} other {# Canvas API tasks}} and this device has {slides, plural, one {# slide} other {# slides}}. Add one Canvas API item per slide in the Dot. app and scan again, or switch to the Vibe Bar carousel."
+            public static func loopTasksShort(tasks: Int, slides: Int) -> String {
+                L10nSupport.localizedFormat("settings.eink.loopTasksShort", tasks, slides)
+            }
+
+            /// Shown before an e-ink device's loop has ever been scanned.
+            ///
+            /// Key: `settings.eink.loopTasksUnknown`
+            /// en: "The device loop has not been scanned yet."
+            public static var loopTasksUnknown: String { L10nSupport.string("settings.eink.loopTasksUnknown") }
+
+            /// Shown in place of the device list while no e-ink API key is stored.
+            ///
+            /// Key: `settings.eink.needsKey`
+            /// en: "Save an API key to reach your devices."
+            public static var needsKey: String { L10nSupport.string("settings.eink.needsKey") }
+
+            /// Empty state after fetching the e-ink device roster.
+            ///
+            /// Key: `settings.eink.noDevices`
+            /// en: "No devices on this account yet."
+            public static var noDevices: String { L10nSupport.string("settings.eink.noDevices") }
+
+            /// Shown under an empty e-ink bucket or period selection.
+            ///
+            /// Key: `settings.eink.noSelection`
+            /// en: "Nothing selected — the layout draws as many as it can fit, in Vibe Bar's own order."
+            public static var noSelection: String { L10nSupport.string("settings.eink.noSelection") }
+
+            /// Picker label for how the layout is rotated before it reaches the e-ink panel.
+            ///
+            /// Key: `settings.eink.orientation`
+            /// en: "Orientation"
+            public static var orientation: String { L10nSupport.string("settings.eink.orientation") }
+
+            /// Note under the e-ink preview explaining why the drawn text is not translated.
+            ///
+            /// Key: `settings.eink.panelTextNote`
+            /// en: "Panel text stays English: the device draws it from its own built-in fonts."
+            public static var panelTextNote: String { L10nSupport.string("settings.eink.panelTextNote") }
+
+            /// Picker label for how an e-ink device moves between its slides.
+            ///
+            /// Key: `settings.eink.playback`
+            /// en: "Playback"
+            public static var playback: String { L10nSupport.string("settings.eink.playback") }
+
+            /// Button that sends every slide to an e-ink device immediately.
+            ///
+            /// Key: `settings.eink.pushNow`
+            /// en: "Push now"
+            public static var pushNow: String { L10nSupport.string("settings.eink.pushNow") }
+
+            /// Result line after pushing to an e-ink device.
+            ///
+            /// Key: `settings.eink.pushResult`
+            /// en: "Pushed {pushed}; {skipped} already on the panel."
+            public static func pushResult(pushed: Int, skipped: Int) -> String {
+                L10nSupport.format("settings.eink.pushResult", pushed, skipped)
+            }
+
+            /// Tooltip on the button that deletes one e-ink slide.
+            ///
+            /// Key: `settings.eink.removeSlide`
+            /// en: "Remove this slide"
+            public static var removeSlide: String { L10nSupport.string("settings.eink.removeSlide") }
+
+            /// Heading over the thumbnail read back from an e-ink device.
+            ///
+            /// Key: `settings.eink.render`
+            /// en: "On the panel"
+            public static var render: String { L10nSupport.string("settings.eink.render") }
+
+            /// Help line under the e-ink read-back thumbnail.
+            ///
+            /// Key: `settings.eink.renderDetail`
+            /// en: "What the device reported it was showing after the last push."
+            public static var renderDetail: String { L10nSupport.string("settings.eink.renderDetail") }
+
+            /// Empty state for the e-ink read-back thumbnail.
+            ///
+            /// Key: `settings.eink.renderMissing`
+            /// en: "The device has not reported a render yet."
+            public static var renderMissing: String { L10nSupport.string("settings.eink.renderMissing") }
+
+            /// Button that re-reads an e-ink device's loop to count its Canvas API tasks.
+            ///
+            /// Key: `settings.eink.rescanLoop`
+            /// en: "Scan the loop"
+            public static var rescanLoop: String { L10nSupport.string("settings.eink.rescanLoop") }
+
+            /// Stepper label for how long the app-driven e-ink carousel holds each slide.
+            ///
+            /// Key: `settings.eink.secondsPerSlide`
+            /// en: "Seconds per slide"
+            public static var secondsPerSlide: String { L10nSupport.string("settings.eink.secondsPerSlide") }
+
+            /// Placeholder of the text field naming one e-ink slide.
+            ///
+            /// Key: `settings.eink.slideName`
+            /// en: "Slide name"
+            public static var slideName: String { L10nSupport.string("settings.eink.slideName") }
+
+            /// Card title for the list of screens an e-ink device cycles through.
+            ///
+            /// Key: `settings.eink.slides`
+            /// en: "Slides"
+            public static var slides: String { L10nSupport.string("settings.eink.slides") }
+
+            /// Master toggle that lets the E-ink sync engine push anything at all.
+            ///
+            /// Key: `settings.eink.sync`
+            /// en: "Sync to devices"
+            public static var sync: String { L10nSupport.string("settings.eink.sync") }
+
+            /// Help line under the E-ink master sync toggle.
+            ///
+            /// Key: `settings.eink.syncDetail`
+            /// en: "Off stops every push. Slides stay editable, and the preview still updates."
+            public static var syncDetail: String { L10nSupport.string("settings.eink.syncDetail") }
+
+            public enum Error {
+                /// E-ink error shown after a device-scoped call answered 404.
+                ///
+                /// Key: `settings.eink.error.deviceMissing`
+                /// en: "This device is no longer on the account. Fetch devices again."
+                public static var deviceMissing: String { L10nSupport.string("settings.eink.error.deviceMissing") }
+
+                /// E-ink error shown after a network failure or a 5xx response.
+                ///
+                /// Key: `settings.eink.error.network`
+                /// en: "Could not reach the Dot. service."
+                public static var network: String { L10nSupport.string("settings.eink.error.network") }
+
+                /// E-ink error shown for an enabled device that has no slides.
+                ///
+                /// Key: `settings.eink.error.noSlides`
+                /// en: "Add a slide before syncing this device."
+                public static var noSlides: String { L10nSupport.string("settings.eink.error.noSlides") }
+
+                /// E-ink error shown after the service answered 429.
+                ///
+                /// Key: `settings.eink.error.rateLimited`
+                /// en: "The Dot. service is rate limiting. Vibe Bar retries on the next refresh."
+                public static var rateLimited: String { L10nSupport.string("settings.eink.error.rateLimited") }
+
+                /// E-ink error shown when a slide's layout could not be encoded for the device.
+                ///
+                /// Key: `settings.eink.error.render`
+                /// en: "This slide could not be drawn for the panel."
+                public static var render: String { L10nSupport.string("settings.eink.error.render") }
+
+                /// E-ink error shown after a canvas push answered 404.
+                ///
+                /// Key: `settings.eink.error.taskMissing`
+                /// en: "That Canvas API task is not in the device's loop. Add it in the Dot. app, then scan the loop again."
+                public static var taskMissing: String { L10nSupport.string("settings.eink.error.taskMissing") }
+
+                /// E-ink error shown after the service answered 401 or 403.
+                ///
+                /// Key: `settings.eink.error.unauthorized`
+                /// en: "The Dot. service rejected the key. Save a new one to start syncing again."
+                public static var unauthorized: String { L10nSupport.string("settings.eink.error.unauthorized") }
+            }
+
+            public enum Group {
+                /// Heading of the quota half of the e-ink layout picker.
+                ///
+                /// Key: `settings.eink.group.quota`
+                /// en: "Quota layouts"
+                public static var quota: String { L10nSupport.string("settings.eink.group.quota") }
+
+                /// Heading of the usage half of the e-ink layout picker.
+                ///
+                /// Key: `settings.eink.group.usage`
+                /// en: "Usage layouts"
+                public static var usage: String { L10nSupport.string("settings.eink.group.usage") }
+            }
+
+            public enum Orientation {
+                /// E-ink orientation option: rotated 180°.
+                ///
+                /// Key: `settings.eink.orientation.inverted`
+                /// en: "Upside down"
+                public static var inverted: String { L10nSupport.string("settings.eink.orientation.inverted") }
+
+                /// E-ink orientation option: rotated 270° clockwise, read as a portrait panel.
+                ///
+                /// Key: `settings.eink.orientation.left`
+                /// en: "Turned left — the top edge is on the left"
+                public static var `left`: String { L10nSupport.string("settings.eink.orientation.left") }
+
+                /// E-ink orientation option: rotated 90° clockwise, read as a portrait panel.
+                ///
+                /// Key: `settings.eink.orientation.right`
+                /// en: "Turned right — the top edge is on the right"
+                public static var `right`: String { L10nSupport.string("settings.eink.orientation.right") }
+
+                /// E-ink orientation option: no rotation, the panel read as it stands.
+                ///
+                /// Key: `settings.eink.orientation.upright`
+                /// en: "Upright"
+                public static var upright: String { L10nSupport.string("settings.eink.orientation.upright") }
+            }
+
+            public enum Playback {
+                /// E-ink playback option: Vibe Bar pushes the next slide on a timer.
+                ///
+                /// Key: `settings.eink.playback.appTimer`
+                /// en: "Carousel, run by Vibe Bar"
+                public static var appTimer: String { L10nSupport.string("settings.eink.playback.appTimer") }
+
+                /// Help line for the app-driven e-ink carousel option.
+                ///
+                /// Key: `settings.eink.playback.appTimerDetail`
+                /// en: "Vibe Bar pushes the next slide itself. Nothing to set up on your phone, but every switch is a full panel refresh and it stops while the Mac is asleep."
+                public static var appTimerDetail: String { L10nSupport.string("settings.eink.playback.appTimerDetail") }
+
+                /// E-ink playback option: one Canvas API task per slide, rotated by the device itself.
+                ///
+                /// Key: `settings.eink.playback.deviceLoop`
+                /// en: "Carousel, run by the device"
+                public static var deviceLoop: String { L10nSupport.string("settings.eink.playback.deviceLoop") }
+
+                /// Help line for the device-driven e-ink carousel option.
+                ///
+                /// Key: `settings.eink.playback.deviceLoopDetail`
+                /// en: "Each slide updates its own Canvas API task and the device rotates between them on its own schedule. Fewest panel refreshes, and it keeps turning while the Mac is asleep."
+                public static var deviceLoopDetail: String { L10nSupport.string("settings.eink.playback.deviceLoopDetail") }
+
+                /// E-ink playback option: the device always shows the same slide.
+                ///
+                /// Key: `settings.eink.playback.single`
+                /// en: "One slide"
+                public static var single: String { L10nSupport.string("settings.eink.playback.single") }
+
+                /// Help line for the single-slide e-ink playback option.
+                ///
+                /// Key: `settings.eink.playback.singleDetail`
+                /// en: "The device keeps one slide on screen and Vibe Bar refreshes its numbers in place."
+                public static var singleDetail: String { L10nSupport.string("settings.eink.playback.singleDetail") }
+            }
+
+            public enum Preset {
+                /// E-ink layout that draws cost and tokens as two bar columns per harness.
+                ///
+                /// Key: `settings.eink.preset.dual`
+                /// en: "Dual bars"
+                public static var dual: String { L10nSupport.string("settings.eink.preset.dual") }
+
+                /// E-ink layout that draws one ring gauge per quota bucket.
+                ///
+                /// Key: `settings.eink.preset.rings`
+                /// en: "Rings"
+                public static var rings: String { L10nSupport.string("settings.eink.preset.rings") }
+
+                /// E-ink layout that puts one large usage window beside the others.
+                ///
+                /// Key: `settings.eink.preset.split`
+                /// en: "Split"
+                public static var split: String { L10nSupport.string("settings.eink.preset.split") }
+
+                /// E-ink layout that lists one row per harness.
+                ///
+                /// Key: `settings.eink.preset.table`
+                /// en: "Table"
+                public static var table: String { L10nSupport.string("settings.eink.preset.table") }
+
+                /// E-ink layout that draws today plus the last seven days as a bar chart.
+                ///
+                /// Key: `settings.eink.preset.trend`
+                /// en: "Trend"
+                public static var trend: String { L10nSupport.string("settings.eink.preset.trend") }
+            }
+
+            public enum Status {
+                /// Status label for an e-ink device's battery reading.
+                ///
+                /// Key: `settings.eink.status.battery`
+                /// en: "Battery"
+                public static var battery: String { L10nSupport.string("settings.eink.status.battery") }
+
+                /// Status label for when Vibe Bar last pushed to an e-ink device.
+                ///
+                /// Key: `settings.eink.status.lastPush`
+                /// en: "Last push"
+                public static var lastPush: String { L10nSupport.string("settings.eink.status.lastPush") }
+
+                /// Status label for when Vibe Bar will next push to an e-ink device.
+                ///
+                /// Key: `settings.eink.status.nextRefresh`
+                /// en: "Next refresh"
+                public static var nextRefresh: String { L10nSupport.string("settings.eink.status.nextRefresh") }
+
+                /// Value shown for an e-ink device that has never been pushed to or read.
+                ///
+                /// Key: `settings.eink.status.pending`
+                /// en: "Not yet"
+                public static var pending: String { L10nSupport.string("settings.eink.status.pending") }
+
+                /// Status label for how an e-ink device is powered (mains or battery).
+                ///
+                /// Key: `settings.eink.status.power`
+                /// en: "Power"
+                public static var power: String { L10nSupport.string("settings.eink.status.power") }
+
+                /// Status label for an e-ink device's wireless signal.
+                ///
+                /// Key: `settings.eink.status.wifi`
+                /// en: "Wi-Fi"
+                public static var wifi: String { L10nSupport.string("settings.eink.status.wifi") }
+            }
+        }
+
         public enum ExternalChange {
             /// Banner shown when a second client overwrote a setting this one had changed
             ///
@@ -7221,6 +7671,12 @@ public enum L10n {
             /// Key: `settings.section.costData`
             /// en: "Cost Data"
             public static var costData: String { L10nSupport.string("settings.section.costData") }
+
+            /// Settings sidebar row and card title for the section that pushes quota and usage to an e-ink panel.
+            ///
+            /// Key: `settings.section.einkDisplays`
+            /// en: "E-ink Displays"
+            public static var einkDisplays: String { L10nSupport.string("settings.section.einkDisplays") }
 
             /// Settings section heading for page layout distinct-from: platform.macos.menuBar.layout — the menu-bar item's own arrangement and the Settings section about page layout are different things — Simplified Chinese already writes 排布 and 布局.
             ///
@@ -11376,6 +11832,7 @@ enum L10nCatalogFacts {
         "cost.topModel.share",
         "cost.topModel.title",
         "error.credentialRejected",
+        "error.keychainSave",
         "error.needsReLogin",
         "error.network",
         "error.networkWithReason",
@@ -12021,6 +12478,76 @@ enum L10nCatalogFacts {
         "settings.deleteProviderCookies",
         "settings.displayMode.remaining",
         "settings.displayMode.used",
+        "settings.eink.addSlide",
+        "settings.eink.allOrientations",
+        "settings.eink.apiKeyHelp",
+        "settings.eink.apiKeyPrompt",
+        "settings.eink.batteryRefresh",
+        "settings.eink.batteryRefreshDetail",
+        "settings.eink.buckets",
+        "settings.eink.capacityFull",
+        "settings.eink.customSlide",
+        "settings.eink.customSlideDetail",
+        "settings.eink.dataRefresh",
+        "settings.eink.dataRefreshDetail",
+        "settings.eink.deviceSyncHelp",
+        "settings.eink.devicesFound",
+        "settings.eink.error.deviceMissing",
+        "settings.eink.error.network",
+        "settings.eink.error.noSlides",
+        "settings.eink.error.rateLimited",
+        "settings.eink.error.render",
+        "settings.eink.error.taskMissing",
+        "settings.eink.error.unauthorized",
+        "settings.eink.fetchDevices",
+        "settings.eink.fixedContent",
+        "settings.eink.group.quota",
+        "settings.eink.group.usage",
+        "settings.eink.intro",
+        "settings.eink.lastSlide",
+        "settings.eink.layout",
+        "settings.eink.loopTasks",
+        "settings.eink.loopTasksShort",
+        "settings.eink.loopTasksUnknown",
+        "settings.eink.needsKey",
+        "settings.eink.noDevices",
+        "settings.eink.noSelection",
+        "settings.eink.orientation",
+        "settings.eink.orientation.inverted",
+        "settings.eink.orientation.left",
+        "settings.eink.orientation.right",
+        "settings.eink.orientation.upright",
+        "settings.eink.panelTextNote",
+        "settings.eink.playback",
+        "settings.eink.playback.appTimer",
+        "settings.eink.playback.appTimerDetail",
+        "settings.eink.playback.deviceLoop",
+        "settings.eink.playback.deviceLoopDetail",
+        "settings.eink.playback.single",
+        "settings.eink.playback.singleDetail",
+        "settings.eink.preset.dual",
+        "settings.eink.preset.rings",
+        "settings.eink.preset.split",
+        "settings.eink.preset.table",
+        "settings.eink.preset.trend",
+        "settings.eink.pushNow",
+        "settings.eink.pushResult",
+        "settings.eink.removeSlide",
+        "settings.eink.render",
+        "settings.eink.renderDetail",
+        "settings.eink.renderMissing",
+        "settings.eink.rescanLoop",
+        "settings.eink.secondsPerSlide",
+        "settings.eink.slideName",
+        "settings.eink.slides",
+        "settings.eink.status.battery",
+        "settings.eink.status.lastPush",
+        "settings.eink.status.nextRefresh",
+        "settings.eink.status.pending",
+        "settings.eink.status.power",
+        "settings.eink.status.wifi",
+        "settings.eink.sync",
+        "settings.eink.syncDetail",
         "settings.externalChange.title",
         "settings.geminiCookiesSaved",
         "settings.geminiShared",
@@ -12332,6 +12859,7 @@ enum L10nCatalogFacts {
         "settings.search",
         "settings.section.components",
         "settings.section.costData",
+        "settings.section.einkDisplays",
         "settings.section.layout",
         "settings.section.menuBar",
         "settings.section.menuBarHealth",
@@ -12954,6 +13482,9 @@ enum L10nCatalogFacts {
         "resetHistory.verdict.leaky",
         "resetHistory.verdict.wasteful",
         "resetHistory.wastedSummary",
+        "settings.eink.devicesFound",
+        "settings.eink.loopTasks",
+        "settings.eink.loopTasksShort",
         "status.card.componentCount",
         "usage.filters.modelsSelected",
         "usage.harnessMix.activeCount",
@@ -13102,6 +13633,7 @@ enum L10nCatalogFacts {
         "cost.topModel.share": 1,
         "cost.topModel.title": 0,
         "error.credentialRejected": 0,
+        "error.keychainSave": 0,
         "error.needsReLogin": 0,
         "error.network": 0,
         "error.networkWithReason": 1,
@@ -13747,6 +14279,76 @@ enum L10nCatalogFacts {
         "settings.deleteProviderCookies": 1,
         "settings.displayMode.remaining": 0,
         "settings.displayMode.used": 0,
+        "settings.eink.addSlide": 0,
+        "settings.eink.allOrientations": 0,
+        "settings.eink.apiKeyHelp": 0,
+        "settings.eink.apiKeyPrompt": 0,
+        "settings.eink.batteryRefresh": 0,
+        "settings.eink.batteryRefreshDetail": 0,
+        "settings.eink.buckets": 0,
+        "settings.eink.capacityFull": 1,
+        "settings.eink.customSlide": 0,
+        "settings.eink.customSlideDetail": 0,
+        "settings.eink.dataRefresh": 0,
+        "settings.eink.dataRefreshDetail": 0,
+        "settings.eink.deviceSyncHelp": 0,
+        "settings.eink.devicesFound": 1,
+        "settings.eink.error.deviceMissing": 0,
+        "settings.eink.error.network": 0,
+        "settings.eink.error.noSlides": 0,
+        "settings.eink.error.rateLimited": 0,
+        "settings.eink.error.render": 0,
+        "settings.eink.error.taskMissing": 0,
+        "settings.eink.error.unauthorized": 0,
+        "settings.eink.fetchDevices": 0,
+        "settings.eink.fixedContent": 0,
+        "settings.eink.group.quota": 0,
+        "settings.eink.group.usage": 0,
+        "settings.eink.intro": 0,
+        "settings.eink.lastSlide": 0,
+        "settings.eink.layout": 0,
+        "settings.eink.loopTasks": 1,
+        "settings.eink.loopTasksShort": 2,
+        "settings.eink.loopTasksUnknown": 0,
+        "settings.eink.needsKey": 0,
+        "settings.eink.noDevices": 0,
+        "settings.eink.noSelection": 0,
+        "settings.eink.orientation": 0,
+        "settings.eink.orientation.inverted": 0,
+        "settings.eink.orientation.left": 0,
+        "settings.eink.orientation.right": 0,
+        "settings.eink.orientation.upright": 0,
+        "settings.eink.panelTextNote": 0,
+        "settings.eink.playback": 0,
+        "settings.eink.playback.appTimer": 0,
+        "settings.eink.playback.appTimerDetail": 0,
+        "settings.eink.playback.deviceLoop": 0,
+        "settings.eink.playback.deviceLoopDetail": 0,
+        "settings.eink.playback.single": 0,
+        "settings.eink.playback.singleDetail": 0,
+        "settings.eink.preset.dual": 0,
+        "settings.eink.preset.rings": 0,
+        "settings.eink.preset.split": 0,
+        "settings.eink.preset.table": 0,
+        "settings.eink.preset.trend": 0,
+        "settings.eink.pushNow": 0,
+        "settings.eink.pushResult": 2,
+        "settings.eink.removeSlide": 0,
+        "settings.eink.render": 0,
+        "settings.eink.renderDetail": 0,
+        "settings.eink.renderMissing": 0,
+        "settings.eink.rescanLoop": 0,
+        "settings.eink.secondsPerSlide": 0,
+        "settings.eink.slideName": 0,
+        "settings.eink.slides": 0,
+        "settings.eink.status.battery": 0,
+        "settings.eink.status.lastPush": 0,
+        "settings.eink.status.nextRefresh": 0,
+        "settings.eink.status.pending": 0,
+        "settings.eink.status.power": 0,
+        "settings.eink.status.wifi": 0,
+        "settings.eink.sync": 0,
+        "settings.eink.syncDetail": 0,
         "settings.externalChange.title": 0,
         "settings.geminiCookiesSaved": 0,
         "settings.geminiShared": 0,
@@ -14058,6 +14660,7 @@ enum L10nCatalogFacts {
         "settings.search": 0,
         "settings.section.components": 0,
         "settings.section.costData": 0,
+        "settings.section.einkDisplays": 0,
         "settings.section.layout": 0,
         "settings.section.menuBar": 0,
         "settings.section.menuBarHealth": 0,

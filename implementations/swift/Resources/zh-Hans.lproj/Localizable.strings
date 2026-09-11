@@ -330,6 +330,9 @@
 /* QuotaError: the provider rejected the key we hold */
 "error.credentialRejected" = "凭据被拒绝";
 
+/* Shown beside a credential field when the Keychain write failed. */
+"error.keychainSave" = "无法写入 Keychain。";
+
 /* QuotaError: the stored browser session expired */
 "error.needsReLogin" = "需重新登录";
 
@@ -2223,6 +2226,207 @@
 /* Segmented option: the percentage shows what has been spent distinct-from: quota.mode.used — the lowercase caption under a bar and the title-case picker option are two renderings the app sets deliberately; collapsing them would move the casing into a call site, which is a code change rather than a rename. */
 "settings.displayMode.used" = "已用";
 
+/* Button that appends a new screen to an e-ink device. */
+"settings.eink.addSlide" = "添加幻灯片";
+
+/* Heading over the row of four e-ink previews, one per orientation. */
+"settings.eink.allOrientations" = "全部方向";
+
+/* Help line under the e-ink API key field, shown while no key is stored. */
+"settings.eink.apiKeyHelp" = "在 Dot. App 的开发者设置中创建。密钥保存在 Keychain，不会写入 settings.json。";
+
+/* Placeholder of the secure field that stores the e-ink service API key. */
+"settings.eink.apiKeyPrompt" = "粘贴 Dot. API key";
+
+/* Stepper label for the slower e-ink refresh cadence used on battery power. */
+"settings.eink.batteryRefresh" = "使用电池时";
+
+/* Help line under the e-ink battery refresh stepper. */
+"settings.eink.batteryRefreshDetail" = "设备报告正在使用自身电池时改用的较慢节奏。";
+
+/* Heading of the bucket picker for a quota e-ink slide. */
+"settings.eink.buckets" = "额度 bucket";
+
+/* Shown when an e-ink slide's bucket selection has reached the layout's capacity. */
+"settings.eink.capacityFull" = "该版式在当前方向下最多容纳 %lld 项。请先取消一项再选择其他。";
+
+/* Disabled option in the e-ink layout picker standing in for a Studio-authored layout. */
+"settings.eink.customSlide" = "自定义（随布局工作台推出）";
+
+/* Help line for an e-ink slide that names a custom layout the renderer cannot draw yet. */
+"settings.eink.customSlideDetail" = "这张幻灯片指向自定义版式。Vibe Bar 暂时无法绘制，因此不会为它向设备推送内容。";
+
+/* Stepper label for how often an e-ink device's numbers are re-pushed on mains power. */
+"settings.eink.dataRefresh" = "数据刷新";
+
+/* Help line under the e-ink data refresh stepper. */
+"settings.eink.dataRefreshDetail" = "设备接通电源时，重新生成并推送数字的间隔。";
+
+/* Tooltip on the per-device enable toggle in the E-ink section. */
+"settings.eink.deviceSyncHelp" = "向这台设备推送幻灯片";
+
+/* E-ink error shown after a device-scoped call answered 404. */
+"settings.eink.error.deviceMissing" = "该设备已不在此账号下。请重新获取设备。";
+
+/* E-ink error shown after a network failure or a 5xx response. */
+"settings.eink.error.network" = "无法连接 Dot. 服务。";
+
+/* E-ink error shown for an enabled device that has no slides. */
+"settings.eink.error.noSlides" = "请先添加幻灯片，再同步这台设备。";
+
+/* E-ink error shown after the service answered 429. */
+"settings.eink.error.rateLimited" = "Dot. 服务正在限流，Vibe Bar 会在下次刷新时重试。";
+
+/* E-ink error shown when a slide's layout could not be encoded for the device. */
+"settings.eink.error.render" = "这张幻灯片无法绘制到屏幕上。";
+
+/* E-ink error shown after a canvas push answered 404. */
+"settings.eink.error.taskMissing" = "该 Canvas API 任务不在设备循环中。请先在 Dot. App 中添加，然后重新扫描循环。";
+
+/* E-ink error shown after the service answered 401 or 403. */
+"settings.eink.error.unauthorized" = "Dot. 服务拒绝了该密钥。请保存新的密钥以恢复同步。";
+
+/* Button that asks the e-ink service which devices the account owns. */
+"settings.eink.fetchDevices" = "获取设备";
+
+/* Shown for an e-ink layout whose content is fixed by the layout itself. */
+"settings.eink.fixedContent" = "该版式固定绘制今天与最近 7 天，无需选择。";
+
+/* Heading of the quota half of the e-ink layout picker. */
+"settings.eink.group.quota" = "额度版式";
+
+/* Heading of the usage half of the e-ink layout picker. */
+"settings.eink.group.usage" = "用量版式";
+
+/* Lead paragraph at the top of the E-ink Displays section. */
+"settings.eink.intro" = "Vibe Bar 会按墨水屏的排版绘制额度与用量，并推送到你在这里启用的每台设备。";
+
+/* Tooltip on the disabled remove button of an e-ink device's only slide. */
+"settings.eink.lastSlide" = "最后一张幻灯片无法移除。";
+
+/* Picker label for which of the built-in e-ink layouts a slide draws. */
+"settings.eink.layout" = "幻灯片版式";
+
+/* Shown before an e-ink device's loop has ever been scanned. */
+"settings.eink.loopTasksUnknown" = "尚未扫描设备循环。";
+
+/* Shown in place of the device list while no e-ink API key is stored. */
+"settings.eink.needsKey" = "保存 API key 后才能连接设备。";
+
+/* Empty state after fetching the e-ink device roster. */
+"settings.eink.noDevices" = "该账号下还没有设备。";
+
+/* Shown under an empty e-ink bucket or period selection. */
+"settings.eink.noSelection" = "未选择任何项 — 版式会按 Vibe Bar 的默认顺序尽量多画。";
+
+/* Picker label for how the layout is rotated before it reaches the e-ink panel. */
+"settings.eink.orientation" = "方向";
+
+/* E-ink orientation option: rotated 180°. */
+"settings.eink.orientation.inverted" = "倒置";
+
+/* E-ink orientation option: rotated 270° clockwise, read as a portrait panel. */
+"settings.eink.orientation.left" = "左转 — 顶边朝左";
+
+/* E-ink orientation option: rotated 90° clockwise, read as a portrait panel. */
+"settings.eink.orientation.right" = "右转 — 顶边朝右";
+
+/* E-ink orientation option: no rotation, the panel read as it stands. */
+"settings.eink.orientation.upright" = "正向";
+
+/* Note under the e-ink preview explaining why the drawn text is not translated. */
+"settings.eink.panelTextNote" = "屏幕文字固定为英文：由设备使用自带字体绘制。";
+
+/* Picker label for how an e-ink device moves between its slides. */
+"settings.eink.playback" = "播放方式";
+
+/* E-ink playback option: Vibe Bar pushes the next slide on a timer. */
+"settings.eink.playback.appTimer" = "轮播 · 由 Vibe Bar 驱动";
+
+/* Help line for the app-driven e-ink carousel option. */
+"settings.eink.playback.appTimerDetail" = "由 Vibe Bar 主动推送下一张。手机端无需配置，但每次切换都是一次整屏刷新，且 Mac 睡眠时会停止。";
+
+/* E-ink playback option: one Canvas API task per slide, rotated by the device itself. */
+"settings.eink.playback.deviceLoop" = "轮播 · 由设备驱动";
+
+/* Help line for the device-driven e-ink carousel option. */
+"settings.eink.playback.deviceLoopDetail" = "每张幻灯片更新各自的 Canvas API 任务，由设备按自己的节奏轮换。屏幕刷新次数最少，Mac 睡眠时也会继续轮播。";
+
+/* E-ink playback option: the device always shows the same slide. */
+"settings.eink.playback.single" = "单张";
+
+/* Help line for the single-slide e-ink playback option. */
+"settings.eink.playback.singleDetail" = "设备固定显示一张幻灯片，Vibe Bar 只就地刷新其中的数字。";
+
+/* E-ink layout that draws cost and tokens as two bar columns per harness. */
+"settings.eink.preset.dual" = "双条";
+
+/* E-ink layout that draws one ring gauge per quota bucket. */
+"settings.eink.preset.rings" = "圆环";
+
+/* E-ink layout that puts one large usage window beside the others. */
+"settings.eink.preset.split" = "分栏";
+
+/* E-ink layout that lists one row per harness. */
+"settings.eink.preset.table" = "表格";
+
+/* E-ink layout that draws today plus the last seven days as a bar chart. */
+"settings.eink.preset.trend" = "趋势";
+
+/* Button that sends every slide to an e-ink device immediately. */
+"settings.eink.pushNow" = "立即推送";
+
+/* Result line after pushing to an e-ink device. */
+"settings.eink.pushResult" = "已推送 %1$lld 张；%2$lld 张屏幕上已是这些内容。";
+
+/* Tooltip on the button that deletes one e-ink slide. */
+"settings.eink.removeSlide" = "移除这张幻灯片";
+
+/* Heading over the thumbnail read back from an e-ink device. */
+"settings.eink.render" = "屏幕实拍";
+
+/* Help line under the e-ink read-back thumbnail. */
+"settings.eink.renderDetail" = "设备在上次推送后回报的显示内容。";
+
+/* Empty state for the e-ink read-back thumbnail. */
+"settings.eink.renderMissing" = "设备尚未回报画面。";
+
+/* Button that re-reads an e-ink device's loop to count its Canvas API tasks. */
+"settings.eink.rescanLoop" = "扫描循环";
+
+/* Stepper label for how long the app-driven e-ink carousel holds each slide. */
+"settings.eink.secondsPerSlide" = "每张停留秒数";
+
+/* Placeholder of the text field naming one e-ink slide. */
+"settings.eink.slideName" = "幻灯片名称";
+
+/* Card title for the list of screens an e-ink device cycles through. */
+"settings.eink.slides" = "幻灯片";
+
+/* Status label for an e-ink device's battery reading. */
+"settings.eink.status.battery" = "电量";
+
+/* Status label for when Vibe Bar last pushed to an e-ink device. */
+"settings.eink.status.lastPush" = "上次推送";
+
+/* Status label for when Vibe Bar will next push to an e-ink device. */
+"settings.eink.status.nextRefresh" = "下次刷新";
+
+/* Value shown for an e-ink device that has never been pushed to or read. */
+"settings.eink.status.pending" = "尚未推送";
+
+/* Status label for how an e-ink device is powered (mains or battery). */
+"settings.eink.status.power" = "供电";
+
+/* Status label for an e-ink device's wireless signal. */
+"settings.eink.status.wifi" = "Wi-Fi";
+
+/* Master toggle that lets the E-ink sync engine push anything at all. */
+"settings.eink.sync" = "同步到设备";
+
+/* Help line under the E-ink master sync toggle. */
+"settings.eink.syncDetail" = "关闭后不再推送任何内容。幻灯片仍可编辑，预览也会继续更新。";
+
 /* Banner shown when a second client overwrote a setting this one had changed */
 "settings.externalChange.title" = "另一个 Vibe Bar 覆盖了此处的修改";
 
@@ -3155,6 +3359,9 @@
 
 /* Settings section heading */
 "settings.section.costData" = "花费数据";
+
+/* Settings sidebar row and card title for the section that pushes quota and usage to an e-ink panel. */
+"settings.section.einkDisplays" = "墨水屏";
 
 /* Settings section heading for page layout distinct-from: platform.macos.menuBar.layout — the menu-bar item's own arrangement and the Settings section about page layout are different things — Simplified Chinese already writes 排布 and 布局. */
 "settings.section.layout" = "布局";
