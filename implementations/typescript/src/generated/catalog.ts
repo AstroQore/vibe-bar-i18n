@@ -822,6 +822,13 @@ export type MessageKey =
   | "settings.eink.headerPosition"
   | "settings.eink.headerRight"
   | "settings.eink.intro"
+  | "settings.eink.labelStyle"
+  | "settings.eink.labelStyle.detail"
+  | "settings.eink.labelStyle.logoAndGroup"
+  | "settings.eink.labelStyle.logoAndWindow"
+  | "settings.eink.labelStyle.logoOnly"
+  | "settings.eink.labelStyle.slideDefault"
+  | "settings.eink.labelStyle.text"
   | "settings.eink.lastSlide"
   | "settings.eink.layout"
   | "settings.eink.loopTasks"
@@ -2669,6 +2676,13 @@ export interface MessageParams {
   "settings.eink.headerPosition": undefined;
   "settings.eink.headerRight": undefined;
   "settings.eink.intro": undefined;
+  "settings.eink.labelStyle": undefined;
+  "settings.eink.labelStyle.detail": undefined;
+  "settings.eink.labelStyle.logoAndGroup": undefined;
+  "settings.eink.labelStyle.logoAndWindow": undefined;
+  "settings.eink.labelStyle.logoOnly": undefined;
+  "settings.eink.labelStyle.slideDefault": undefined;
+  "settings.eink.labelStyle.text": undefined;
   "settings.eink.lastSlide": undefined;
   "settings.eink.layout": undefined;
   "settings.eink.loopTasks": { "count": number };
@@ -4517,6 +4531,13 @@ export const messages: {
     "settings.eink.headerPosition": "Header position",
     "settings.eink.headerRight": "Right side",
     "settings.eink.intro": "Vibe Bar draws your quota and usage in the panel's own layout and pushes it to every device you enable here.",
+    "settings.eink.labelStyle": "Slot labels",
+    "settings.eink.labelStyle.detail": "A logo saves the width the provider's name costs, so a long bucket name still fits one line.",
+    "settings.eink.labelStyle.logoAndGroup": "Logo and group",
+    "settings.eink.labelStyle.logoAndWindow": "Logo and window",
+    "settings.eink.labelStyle.logoOnly": "Logo only",
+    "settings.eink.labelStyle.slideDefault": "Same as slide",
+    "settings.eink.labelStyle.text": "Full name",
     "settings.eink.lastSlide": "The last slide cannot be removed.",
     "settings.eink.layout": "Slide layout",
     "settings.eink.loopTasks": "{count, plural, one {# Canvas API task in the device loop} other {# Canvas API tasks in the device loop}}",
@@ -6360,6 +6381,13 @@ export const messages: {
     "settings.eink.headerPosition": "标题栏位置",
     "settings.eink.headerRight": "右侧内容",
     "settings.eink.intro": "Vibe Bar 会按墨水屏的排版绘制额度与用量，并推送到你在这里启用的每台设备。",
+    "settings.eink.labelStyle": "栏位标签",
+    "settings.eink.labelStyle.detail": "用图标代替厂商名称可以省出宽度，名字再长也能排进一行。",
+    "settings.eink.labelStyle.logoAndGroup": "图标与分组",
+    "settings.eink.labelStyle.logoAndWindow": "图标与时间窗口",
+    "settings.eink.labelStyle.logoOnly": "仅图标",
+    "settings.eink.labelStyle.slideDefault": "跟随幻灯片",
+    "settings.eink.labelStyle.text": "完整名称",
     "settings.eink.lastSlide": "最后一张幻灯片无法移除。",
     "settings.eink.layout": "幻灯片版式",
     "settings.eink.loopTasks": "{count, plural, other {设备循环中有 # 个 Canvas API 任务}}",

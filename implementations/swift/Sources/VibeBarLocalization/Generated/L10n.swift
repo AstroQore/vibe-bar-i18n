@@ -5666,6 +5666,12 @@ public enum L10n {
             /// en: "Vibe Bar draws your quota and usage in the panel's own layout and pushes it to every device you enable here."
             public static var intro: String { L10nSupport.string("settings.eink.intro") }
 
+            /// Picker that chooses whether e-ink quota slots name their provider in words or with its logo.
+            ///
+            /// Key: `settings.eink.labelStyle`
+            /// en: "Slot labels"
+            public static var labelStyle: String { L10nSupport.string("settings.eink.labelStyle") }
+
             /// Tooltip on the disabled remove button of an e-ink device's only slide.
             ///
             /// Key: `settings.eink.lastSlide`
@@ -5986,6 +5992,44 @@ public enum L10n {
                 /// Key: `settings.eink.group.usage`
                 /// en: "Usage layouts"
                 public static var usage: String { L10nSupport.string("settings.eink.group.usage") }
+            }
+
+            public enum LabelStyle {
+                /// Help text under the slot-label style picker.
+                ///
+                /// Key: `settings.eink.labelStyle.detail`
+                /// en: "A logo saves the width the provider's name costs, so a long bucket name still fits one line."
+                public static var detail: String { L10nSupport.string("settings.eink.labelStyle.detail") }
+
+                /// Slot label option: the provider's logo beside the quota group's name.
+                ///
+                /// Key: `settings.eink.labelStyle.logoAndGroup`
+                /// en: "Logo and group"
+                public static var logoAndGroup: String { L10nSupport.string("settings.eink.labelStyle.logoAndGroup") }
+
+                /// Slot label option: the provider's logo beside the quota window's name.
+                ///
+                /// Key: `settings.eink.labelStyle.logoAndWindow`
+                /// en: "Logo and window"
+                public static var logoAndWindow: String { L10nSupport.string("settings.eink.labelStyle.logoAndWindow") }
+
+                /// Slot label option: the logo alone, no text beside it.
+                ///
+                /// Key: `settings.eink.labelStyle.logoOnly`
+                /// en: "Logo only"
+                public static var logoOnly: String { L10nSupport.string("settings.eink.labelStyle.logoOnly") }
+
+                /// Per-slot label style option meaning 'inherit the slide's own setting'.
+                ///
+                /// Key: `settings.eink.labelStyle.slideDefault`
+                /// en: "Same as slide"
+                public static var slideDefault: String { L10nSupport.string("settings.eink.labelStyle.slideDefault") }
+
+                /// Slot label option: the provider's name written out in words.
+                ///
+                /// Key: `settings.eink.labelStyle.text`
+                /// en: "Full name"
+                public static var text: String { L10nSupport.string("settings.eink.labelStyle.text") }
             }
 
             public enum Orientation {
@@ -13153,6 +13197,13 @@ enum L10nCatalogFacts {
         "settings.eink.headerPosition",
         "settings.eink.headerRight",
         "settings.eink.intro",
+        "settings.eink.labelStyle",
+        "settings.eink.labelStyle.detail",
+        "settings.eink.labelStyle.logoAndGroup",
+        "settings.eink.labelStyle.logoAndWindow",
+        "settings.eink.labelStyle.logoOnly",
+        "settings.eink.labelStyle.slideDefault",
+        "settings.eink.labelStyle.text",
         "settings.eink.lastSlide",
         "settings.eink.layout",
         "settings.eink.loopTasks",
@@ -15054,6 +15105,13 @@ enum L10nCatalogFacts {
         "settings.eink.headerPosition": 0,
         "settings.eink.headerRight": 0,
         "settings.eink.intro": 0,
+        "settings.eink.labelStyle": 0,
+        "settings.eink.labelStyle.detail": 0,
+        "settings.eink.labelStyle.logoAndGroup": 0,
+        "settings.eink.labelStyle.logoAndWindow": 0,
+        "settings.eink.labelStyle.logoOnly": 0,
+        "settings.eink.labelStyle.slideDefault": 0,
+        "settings.eink.labelStyle.text": 0,
         "settings.eink.lastSlide": 0,
         "settings.eink.layout": 0,
         "settings.eink.loopTasks": 1,
