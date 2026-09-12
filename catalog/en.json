@@ -8367,6 +8367,226 @@
     "settings.eink.customLayoutDetail": {
       "value": "Lay this slide out yourself: place text, rings, bars and whole preset blocks on the panel.",
       "comment": "Detail line under the custom option in the E-ink slide layout picker."
+    },
+    "settings.eink.orientationNote": {
+      "value": "Previews are drawn the way you will read the panel. The notch marks the device's own top edge.",
+      "comment": "Caption under the orientation picker in the E-ink device settings."
+    },
+    "settings.eink.cadence": {
+      "value": "Refresh cadence",
+      "comment": "Heading above the three refresh interval fields of an E-ink device."
+    },
+    "settings.eink.unit.minutes": {
+      "value": "min",
+      "comment": "Unit suffix after a number of minutes in a settings field."
+    },
+    "settings.eink.unit.seconds": {
+      "value": "s",
+      "comment": "Unit suffix after a number of seconds in a settings field."
+    },
+    "settings.eink.secondsPerSlideDetail": {
+      "value": "How long each slide stays on the panel while the carousel is running.",
+      "comment": "Help text under the seconds-per-slide field."
+    },
+    "settings.eink.alerts": {
+      "value": "Alert slide",
+      "comment": "Toggle that enables the automatic alert panel for an E-ink device."
+    },
+    "settings.eink.alertsDetail": {
+      "value": "Draw an alert panel with a black border as soon as a bucket is at risk or falls below the threshold, and put the normal slide back when it clears.",
+      "comment": "Help text under the alert toggle of an E-ink device."
+    },
+    "settings.eink.alertThreshold": {
+      "value": "Alert below",
+      "comment": "Label before the percentage at which an E-ink device raises its alert slide."
+    },
+    "settings.eink.tapLink": {
+      "value": "Tap link",
+      "comment": "Label for the address a phone opens when it is tapped against the panel."
+    },
+    "settings.eink.tapLinkDetail": {
+      "value": "The panel is tappable: a phone held against it opens this address.",
+      "comment": "Help text under the tap link picker."
+    },
+    "settings.eink.tapLink.remote": {
+      "value": "Remote dashboard",
+      "comment": "Tap link option that opens the user's own Vibe Bar Remote dashboard."
+    },
+    "settings.eink.tapLink.custom": {
+      "value": "Custom address",
+      "comment": "Tap link option where the user types their own URL."
+    },
+    "settings.eink.tapLink.prompt": {
+      "value": "https://example.com",
+      "comment": "Placeholder in the custom tap link field."
+    },
+    "settings.eink.tapLink.invalid": {
+      "value": "Enter an http or https address.",
+      "comment": "Error under the custom tap link field when the text is not a usable URL."
+    },
+    "settings.eink.tapLink.remoteMissing": {
+      "value": "Set Remote up first — until then the panel carries no link.",
+      "comment": "Shown when the remote dashboard tap link is picked but Remote is not configured."
+    },
+    "settings.eink.quietHours": {
+      "value": "Quiet hours",
+      "comment": "Toggle that writes a sleep window to the E-ink device."
+    },
+    "settings.eink.quietHoursDetail": {
+      "value": "Vibe Bar writes this window to the device, which stops refreshing between the two times.",
+      "comment": "Help text under the quiet hours toggle."
+    },
+    "settings.eink.quietHours.until": {
+      "value": "Until",
+      "comment": "Label before the end time of the quiet hours window."
+    },
+    "settings.eink.quietHours.format": {
+      "value": "24-hour times, as HH:mm.",
+      "comment": "Help text under the quiet hours time fields."
+    },
+    "settings.eink.composition": {
+      "value": "Composition",
+      "comment": "Heading above the header, footer and density options of one slide."
+    },
+    "settings.eink.header": {
+      "value": "Header bar",
+      "comment": "Toggle that draws the bar at the top (or bottom) of a slide."
+    },
+    "settings.eink.headerPosition": {
+      "value": "Header position",
+      "comment": "Picker that puts the header bar at the top or the bottom of the panel."
+    },
+    "settings.eink.position.top": {
+      "value": "Top",
+      "comment": "Header position option: the bar sits at the top of the panel."
+    },
+    "settings.eink.position.bottom": {
+      "value": "Bottom",
+      "comment": "Header position option: the bar sits at the bottom of the panel."
+    },
+    "settings.eink.headerLeft": {
+      "value": "Left side",
+      "comment": "Picker for what the left half of the header bar prints."
+    },
+    "settings.eink.headerRight": {
+      "value": "Right side",
+      "comment": "Picker for what the right half of the header bar prints."
+    },
+    "settings.eink.bar.presetDefault": {
+      "value": "As the layout draws it",
+      "comment": "Header or footer option that keeps whatever the chosen layout has always printed there."
+    },
+    "settings.eink.bar.nothing": {
+      "value": "Nothing",
+      "comment": "Header side option that prints nothing at all."
+    },
+    "settings.eink.bar.providerStatus": {
+      "value": "Provider status",
+      "comment": "Header side option that prints one line of live provider service status."
+    },
+    "settings.eink.barTextPrompt": {
+      "value": "Text the panel prints",
+      "comment": "Placeholder in the field for a header or footer's fixed text."
+    },
+    "settings.eink.footer": {
+      "value": "Footer",
+      "comment": "Picker for the line a slide prints under its body."
+    },
+    "settings.eink.footer.usage": {
+      "value": "Spend summary",
+      "comment": "Footer option that prints the usage totals for the chosen windows."
+    },
+    "settings.eink.compact": {
+      "value": "Fill the panel when both bars are off",
+      "comment": "Toggle that lets a slide's body use the height the header and footer would have taken."
+    },
+    "settings.eink.slotOrder": {
+      "value": "Order",
+      "comment": "Heading above the drag-to-reorder list of a slide's chosen slots."
+    },
+    "settings.eink.slotLabel": {
+      "value": "Name on the panel",
+      "comment": "Field for the name one slide prints for one quota bucket."
+    },
+    "settings.eink.slotLabelDetail": {
+      "value": "Leave a name empty to print the bucket's own, written out in full.",
+      "comment": "Help text under the per-slot name fields."
+    },
+    "settings.eink.group.insight": {
+      "value": "Insight layouts",
+      "comment": "Section heading in the slide layout picker for the layouts that answer a question rather than restate a number."
+    },
+    "settings.eink.preset.briefing": {
+      "value": "Briefing",
+      "comment": "Name of the all-text E-ink layout that lists every bucket with its figures."
+    },
+    "settings.eink.preset.heatmap": {
+      "value": "Heatmap",
+      "comment": "Name of the E-ink layout that draws the week's activity as a dot matrix."
+    },
+    "settings.eink.preset.topModels": {
+      "value": "Top models",
+      "comment": "Name of the E-ink layout that lists today's most expensive models."
+    },
+    "settings.eink.resetToPreset": {
+      "value": "Reset to preset",
+      "comment": "Button that discards a slide's hand-made layouts and goes back to drawing its preset."
+    },
+    "settings.eink.resetToPresetConfirm": {
+      "value": "This drops every layout made for this slide, at every orientation.",
+      "comment": "Confirmation before a slide goes back to its preset."
+    },
+    "settings.eink.editInStudioDetail": {
+      "value": "Opens this slide in the Studio. A preset is broken into its modules first, so every part can be moved, rebound or removed.",
+      "comment": "Help text under the Edit in Studio button in the slide editor."
+    },
+    "settings.eink.uprightPreview": {
+      "value": "Shown the way you will read it",
+      "comment": "Caption over the live slide preview, which draws the panel upright rather than rotated."
+    },
+    "settings.eink.studio.snapHelp": {
+      "value": "Snap a drag to the eight-pixel grid. Hold Option while dragging to bypass it.",
+      "comment": "Tooltip on the Studio's snap-to-grid toggle."
+    },
+    "settings.eink.studio.relayout": {
+      "value": "Re-layout",
+      "comment": "Button that lays the current orientation out from the slide's preset again."
+    },
+    "settings.eink.studio.relayoutConfirm": {
+      "value": "Re-laying out replaces everything placed at this orientation.",
+      "comment": "Confirmation before the Studio re-explodes a preset over an edited layout."
+    },
+    "settings.eink.studio.relayoutMissing": {
+      "value": "Nothing is laid out for this orientation yet. Re-layout to start from the preset.",
+      "comment": "Shown in the Studio when the slide has no layout for the orientation being edited."
+    },
+    "settings.eink.studio.modules": {
+      "value": "Modules",
+      "comment": "Palette section holding the ready-made groups an author can drop on the panel."
+    },
+    "settings.eink.studio.elements": {
+      "value": "Elements",
+      "comment": "Palette section holding the single primitives an author can draw."
+    },
+    "settings.eink.studio.wholeLayouts": {
+      "value": "Whole layouts",
+      "comment": "Palette section holding the complete preset layouts, dropped as groups."
+    },
+    "settings.eink.studio.module.quotaSlot": {
+      "value": "Quota slot",
+      "comment": "Palette module: one quota bucket's name, bar, percentage and countdown."
+    },
+    "settings.eink.studio.module.usageSlot": {
+      "value": "Usage slot",
+      "comment": "Palette module: one usage window's caption and figure."
+    },
+    "settings.eink.studio.nothingToDraw": {
+      "value": "Nothing to draw",
+      "comment": "Marker on a Studio element that the panel would leave blank — unbound, or empty."
+    },
+    "settings.eink.studio.presetSubject": {
+      "value": "This slide still draws its preset. Edit it in the Studio to break it into modules you can move.",
+      "comment": "Shown on the Studio stage when the slide on it has not been exploded yet."
     }
   }
 }

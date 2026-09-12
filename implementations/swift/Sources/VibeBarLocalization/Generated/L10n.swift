@@ -5476,6 +5476,24 @@ public enum L10n {
             /// en: "Add a slide"
             public static var addSlide: String { L10nSupport.string("settings.eink.addSlide") }
 
+            /// Label before the percentage at which an E-ink device raises its alert slide.
+            ///
+            /// Key: `settings.eink.alertThreshold`
+            /// en: "Alert below"
+            public static var alertThreshold: String { L10nSupport.string("settings.eink.alertThreshold") }
+
+            /// Toggle that enables the automatic alert panel for an E-ink device.
+            ///
+            /// Key: `settings.eink.alerts`
+            /// en: "Alert slide"
+            public static var alerts: String { L10nSupport.string("settings.eink.alerts") }
+
+            /// Help text under the alert toggle of an E-ink device.
+            ///
+            /// Key: `settings.eink.alertsDetail`
+            /// en: "Draw an alert panel with a black border as soon as a bucket is at risk or falls below the threshold, and put the normal slide back when it clears."
+            public static var alertsDetail: String { L10nSupport.string("settings.eink.alertsDetail") }
+
             /// Heading over the row of four e-ink previews, one per orientation.
             ///
             /// Key: `settings.eink.allOrientations`
@@ -5493,6 +5511,12 @@ public enum L10n {
             /// Key: `settings.eink.apiKeyPrompt`
             /// en: "Paste the Dot. API key"
             public static var apiKeyPrompt: String { L10nSupport.string("settings.eink.apiKeyPrompt") }
+
+            /// Placeholder in the field for a header or footer's fixed text.
+            ///
+            /// Key: `settings.eink.barTextPrompt`
+            /// en: "Text the panel prints"
+            public static var barTextPrompt: String { L10nSupport.string("settings.eink.barTextPrompt") }
 
             /// Stepper label for the slower e-ink refresh cadence used on battery power.
             ///
@@ -5512,6 +5536,12 @@ public enum L10n {
             /// en: "Quota buckets"
             public static var buckets: String { L10nSupport.string("settings.eink.buckets") }
 
+            /// Heading above the three refresh interval fields of an E-ink device.
+            ///
+            /// Key: `settings.eink.cadence`
+            /// en: "Refresh cadence"
+            public static var cadence: String { L10nSupport.string("settings.eink.cadence") }
+
             /// Shown when an e-ink slide's bucket selection has reached the layout's capacity.
             ///
             /// Key: `settings.eink.capacityFull`
@@ -5519,6 +5549,18 @@ public enum L10n {
             public static func capacityFull(count: Int) -> String {
                 L10nSupport.format("settings.eink.capacityFull", count)
             }
+
+            /// Toggle that lets a slide's body use the height the header and footer would have taken.
+            ///
+            /// Key: `settings.eink.compact`
+            /// en: "Fill the panel when both bars are off"
+            public static var compact: String { L10nSupport.string("settings.eink.compact") }
+
+            /// Heading above the header, footer and density options of one slide.
+            ///
+            /// Key: `settings.eink.composition`
+            /// en: "Composition"
+            public static var composition: String { L10nSupport.string("settings.eink.composition") }
 
             /// Option in the E-ink slide layout picker that hands the slide to the Studio.
             ///
@@ -5570,6 +5612,12 @@ public enum L10n {
                 L10nSupport.localizedFormat("settings.eink.devicesFound", count)
             }
 
+            /// Help text under the Edit in Studio button in the slide editor.
+            ///
+            /// Key: `settings.eink.editInStudioDetail`
+            /// en: "Opens this slide in the Studio. A preset is broken into its modules first, so every part can be moved, rebound or removed."
+            public static var editInStudioDetail: String { L10nSupport.string("settings.eink.editInStudioDetail") }
+
             /// Button that asks the e-ink service which devices the account owns.
             ///
             /// Key: `settings.eink.fetchDevices`
@@ -5581,6 +5629,36 @@ public enum L10n {
             /// Key: `settings.eink.fixedContent`
             /// en: "This layout always draws today and the last seven days — there is nothing to pick."
             public static var fixedContent: String { L10nSupport.string("settings.eink.fixedContent") }
+
+            /// Picker for the line a slide prints under its body.
+            ///
+            /// Key: `settings.eink.footer`
+            /// en: "Footer"
+            public static var footer: String { L10nSupport.string("settings.eink.footer") }
+
+            /// Toggle that draws the bar at the top (or bottom) of a slide.
+            ///
+            /// Key: `settings.eink.header`
+            /// en: "Header bar"
+            public static var header: String { L10nSupport.string("settings.eink.header") }
+
+            /// Picker for what the left half of the header bar prints.
+            ///
+            /// Key: `settings.eink.headerLeft`
+            /// en: "Left side"
+            public static var headerLeft: String { L10nSupport.string("settings.eink.headerLeft") }
+
+            /// Picker that puts the header bar at the top or the bottom of the panel.
+            ///
+            /// Key: `settings.eink.headerPosition`
+            /// en: "Header position"
+            public static var headerPosition: String { L10nSupport.string("settings.eink.headerPosition") }
+
+            /// Picker for what the right half of the header bar prints.
+            ///
+            /// Key: `settings.eink.headerRight`
+            /// en: "Right side"
+            public static var headerRight: String { L10nSupport.string("settings.eink.headerRight") }
 
             /// Lead paragraph at the top of the E-ink Displays section.
             ///
@@ -5654,6 +5732,12 @@ public enum L10n {
             /// en: "Orientation"
             public static var orientation: String { L10nSupport.string("settings.eink.orientation") }
 
+            /// Caption under the orientation picker in the E-ink device settings.
+            ///
+            /// Key: `settings.eink.orientationNote`
+            /// en: "Previews are drawn the way you will read the panel. The notch marks the device's own top edge."
+            public static var orientationNote: String { L10nSupport.string("settings.eink.orientationNote") }
+
             /// Note under the e-ink preview explaining why the drawn text is not translated.
             ///
             /// Key: `settings.eink.panelTextNote`
@@ -5679,6 +5763,18 @@ public enum L10n {
             public static func pushResult(pushed: Int, skipped: Int) -> String {
                 L10nSupport.format("settings.eink.pushResult", pushed, skipped)
             }
+
+            /// Toggle that writes a sleep window to the E-ink device.
+            ///
+            /// Key: `settings.eink.quietHours`
+            /// en: "Quiet hours"
+            public static var quietHours: String { L10nSupport.string("settings.eink.quietHours") }
+
+            /// Help text under the quiet hours toggle.
+            ///
+            /// Key: `settings.eink.quietHoursDetail`
+            /// en: "Vibe Bar writes this window to the device, which stops refreshing between the two times."
+            public static var quietHoursDetail: String { L10nSupport.string("settings.eink.quietHoursDetail") }
 
             /// Tooltip on the button that deletes one e-ink slide.
             ///
@@ -5710,11 +5806,29 @@ public enum L10n {
             /// en: "Scan the loop"
             public static var rescanLoop: String { L10nSupport.string("settings.eink.rescanLoop") }
 
+            /// Button that discards a slide's hand-made layouts and goes back to drawing its preset.
+            ///
+            /// Key: `settings.eink.resetToPreset`
+            /// en: "Reset to preset"
+            public static var resetToPreset: String { L10nSupport.string("settings.eink.resetToPreset") }
+
+            /// Confirmation before a slide goes back to its preset.
+            ///
+            /// Key: `settings.eink.resetToPresetConfirm`
+            /// en: "This drops every layout made for this slide, at every orientation."
+            public static var resetToPresetConfirm: String { L10nSupport.string("settings.eink.resetToPresetConfirm") }
+
             /// Stepper label for how long the app-driven e-ink carousel holds each slide.
             ///
             /// Key: `settings.eink.secondsPerSlide`
             /// en: "Seconds per slide"
             public static var secondsPerSlide: String { L10nSupport.string("settings.eink.secondsPerSlide") }
+
+            /// Help text under the seconds-per-slide field.
+            ///
+            /// Key: `settings.eink.secondsPerSlideDetail`
+            /// en: "How long each slide stays on the panel while the carousel is running."
+            public static var secondsPerSlideDetail: String { L10nSupport.string("settings.eink.secondsPerSlideDetail") }
 
             /// Placeholder of the text field naming one e-ink slide.
             ///
@@ -5728,6 +5842,24 @@ public enum L10n {
             /// en: "Slides"
             public static var slides: String { L10nSupport.string("settings.eink.slides") }
 
+            /// Field for the name one slide prints for one quota bucket.
+            ///
+            /// Key: `settings.eink.slotLabel`
+            /// en: "Name on the panel"
+            public static var slotLabel: String { L10nSupport.string("settings.eink.slotLabel") }
+
+            /// Help text under the per-slot name fields.
+            ///
+            /// Key: `settings.eink.slotLabelDetail`
+            /// en: "Leave a name empty to print the bucket's own, written out in full."
+            public static var slotLabelDetail: String { L10nSupport.string("settings.eink.slotLabelDetail") }
+
+            /// Heading above the drag-to-reorder list of a slide's chosen slots.
+            ///
+            /// Key: `settings.eink.slotOrder`
+            /// en: "Order"
+            public static var slotOrder: String { L10nSupport.string("settings.eink.slotOrder") }
+
             /// Master toggle that lets the E-ink sync engine push anything at all.
             ///
             /// Key: `settings.eink.sync`
@@ -5739,6 +5871,44 @@ public enum L10n {
             /// Key: `settings.eink.syncDetail`
             /// en: "Off stops every push. Slides stay editable, and the preview still updates."
             public static var syncDetail: String { L10nSupport.string("settings.eink.syncDetail") }
+
+            /// Label for the address a phone opens when it is tapped against the panel.
+            ///
+            /// Key: `settings.eink.tapLink`
+            /// en: "Tap link"
+            public static var tapLink: String { L10nSupport.string("settings.eink.tapLink") }
+
+            /// Help text under the tap link picker.
+            ///
+            /// Key: `settings.eink.tapLinkDetail`
+            /// en: "The panel is tappable: a phone held against it opens this address."
+            public static var tapLinkDetail: String { L10nSupport.string("settings.eink.tapLinkDetail") }
+
+            /// Caption over the live slide preview, which draws the panel upright rather than rotated.
+            ///
+            /// Key: `settings.eink.uprightPreview`
+            /// en: "Shown the way you will read it"
+            public static var uprightPreview: String { L10nSupport.string("settings.eink.uprightPreview") }
+
+            public enum Bar {
+                /// Header side option that prints nothing at all.
+                ///
+                /// Key: `settings.eink.bar.nothing`
+                /// en: "Nothing"
+                public static var nothing: String { L10nSupport.string("settings.eink.bar.nothing") }
+
+                /// Header or footer option that keeps whatever the chosen layout has always printed there.
+                ///
+                /// Key: `settings.eink.bar.presetDefault`
+                /// en: "As the layout draws it"
+                public static var presetDefault: String { L10nSupport.string("settings.eink.bar.presetDefault") }
+
+                /// Header side option that prints one line of live provider service status.
+                ///
+                /// Key: `settings.eink.bar.providerStatus`
+                /// en: "Provider status"
+                public static var providerStatus: String { L10nSupport.string("settings.eink.bar.providerStatus") }
+            }
 
             public enum Error {
                 /// E-ink error shown after a device-scoped call answered 404.
@@ -5790,7 +5960,21 @@ public enum L10n {
                 public static var usageUnavailable: String { L10nSupport.string("settings.eink.error.usageUnavailable") }
             }
 
+            public enum Footer {
+                /// Footer option that prints the usage totals for the chosen windows.
+                ///
+                /// Key: `settings.eink.footer.usage`
+                /// en: "Spend summary"
+                public static var usage: String { L10nSupport.string("settings.eink.footer.usage") }
+            }
+
             public enum Group {
+                /// Section heading in the slide layout picker for the layouts that answer a question rather than restate a number.
+                ///
+                /// Key: `settings.eink.group.insight`
+                /// en: "Insight layouts"
+                public static var insight: String { L10nSupport.string("settings.eink.group.insight") }
+
                 /// Heading of the quota half of the e-ink layout picker.
                 ///
                 /// Key: `settings.eink.group.quota`
@@ -5868,12 +6052,38 @@ public enum L10n {
                 public static var singleDetail: String { L10nSupport.string("settings.eink.playback.singleDetail") }
             }
 
+            public enum Position {
+                /// Header position option: the bar sits at the bottom of the panel.
+                ///
+                /// Key: `settings.eink.position.bottom`
+                /// en: "Bottom"
+                public static var bottom: String { L10nSupport.string("settings.eink.position.bottom") }
+
+                /// Header position option: the bar sits at the top of the panel.
+                ///
+                /// Key: `settings.eink.position.top`
+                /// en: "Top"
+                public static var top: String { L10nSupport.string("settings.eink.position.top") }
+            }
+
             public enum Preset {
+                /// Name of the all-text E-ink layout that lists every bucket with its figures.
+                ///
+                /// Key: `settings.eink.preset.briefing`
+                /// en: "Briefing"
+                public static var briefing: String { L10nSupport.string("settings.eink.preset.briefing") }
+
                 /// E-ink layout that draws cost and tokens as two bar columns per harness.
                 ///
                 /// Key: `settings.eink.preset.dual`
                 /// en: "Dual bars"
                 public static var dual: String { L10nSupport.string("settings.eink.preset.dual") }
+
+                /// Name of the E-ink layout that draws the week's activity as a dot matrix.
+                ///
+                /// Key: `settings.eink.preset.heatmap`
+                /// en: "Heatmap"
+                public static var heatmap: String { L10nSupport.string("settings.eink.preset.heatmap") }
 
                 /// E-ink layout that draws one ring gauge per quota bucket.
                 ///
@@ -5893,11 +6103,31 @@ public enum L10n {
                 /// en: "Table"
                 public static var table: String { L10nSupport.string("settings.eink.preset.table") }
 
+                /// Name of the E-ink layout that lists today's most expensive models.
+                ///
+                /// Key: `settings.eink.preset.topModels`
+                /// en: "Top models"
+                public static var topModels: String { L10nSupport.string("settings.eink.preset.topModels") }
+
                 /// E-ink layout that draws today plus the last seven days as a bar chart.
                 ///
                 /// Key: `settings.eink.preset.trend`
                 /// en: "Trend"
                 public static var trend: String { L10nSupport.string("settings.eink.preset.trend") }
+            }
+
+            public enum QuietHours {
+                /// Help text under the quiet hours time fields.
+                ///
+                /// Key: `settings.eink.quietHours.format`
+                /// en: "24-hour times, as HH:mm."
+                public static var format: String { L10nSupport.string("settings.eink.quietHours.format") }
+
+                /// Label before the end time of the quiet hours window.
+                ///
+                /// Key: `settings.eink.quietHours.until`
+                /// en: "Until"
+                public static var until: String { L10nSupport.string("settings.eink.quietHours.until") }
             }
 
             public enum Status {
@@ -5989,6 +6219,12 @@ public enum L10n {
                 /// en: "Divider"
                 public static var divider: String { L10nSupport.string("settings.eink.studio.divider") }
 
+                /// Palette section holding the single primitives an author can draw.
+                ///
+                /// Key: `settings.eink.studio.elements`
+                /// en: "Elements"
+                public static var elements: String { L10nSupport.string("settings.eink.studio.elements") }
+
                 /// Picker choosing which of the panel's two built-in faces an element is drawn in.
                 ///
                 /// Key: `settings.eink.studio.font`
@@ -6006,6 +6242,18 @@ public enum L10n {
                 /// Key: `settings.eink.studio.metric`
                 /// en: "Figure"
                 public static var metric: String { L10nSupport.string("settings.eink.studio.metric") }
+
+                /// Palette section holding the ready-made groups an author can drop on the panel.
+                ///
+                /// Key: `settings.eink.studio.modules`
+                /// en: "Modules"
+                public static var modules: String { L10nSupport.string("settings.eink.studio.modules") }
+
+                /// Marker on a Studio element that the panel would leave blank — unbound, or empty.
+                ///
+                /// Key: `settings.eink.studio.nothingToDraw`
+                /// en: "Nothing to draw"
+                public static var nothingToDraw: String { L10nSupport.string("settings.eink.studio.nothingToDraw") }
 
                 /// Button on a custom E-ink slide that opens the Layout Studio on it.
                 ///
@@ -6039,6 +6287,12 @@ public enum L10n {
                 /// en: "Leave every box off to let Vibe Bar choose, in its own order."
                 public static var presetSelection: String { L10nSupport.string("settings.eink.studio.presetSelection") }
 
+                /// Shown on the Studio stage when the slide on it has not been exploded yet.
+                ///
+                /// Key: `settings.eink.studio.presetSubject`
+                /// en: "This slide still draws its preset. Edit it in the Studio to break it into modules you can move."
+                public static var presetSubject: String { L10nSupport.string("settings.eink.studio.presetSubject") }
+
                 /// Value an E-ink element draws in the Studio while no live quota bucket is picked for it.
                 ///
                 /// Key: `settings.eink.studio.previewPercent`
@@ -6051,6 +6305,30 @@ public enum L10n {
                 /// en: "Push to device"
                 public static var push: String { L10nSupport.string("settings.eink.studio.push") }
 
+                /// Button that lays the current orientation out from the slide's preset again.
+                ///
+                /// Key: `settings.eink.studio.relayout`
+                /// en: "Re-layout"
+                public static var relayout: String { L10nSupport.string("settings.eink.studio.relayout") }
+
+                /// Confirmation before the Studio re-explodes a preset over an edited layout.
+                ///
+                /// Key: `settings.eink.studio.relayoutConfirm`
+                /// en: "Re-laying out replaces everything placed at this orientation."
+                public static var relayoutConfirm: String { L10nSupport.string("settings.eink.studio.relayoutConfirm") }
+
+                /// Shown in the Studio when the slide has no layout for the orientation being edited.
+                ///
+                /// Key: `settings.eink.studio.relayoutMissing`
+                /// en: "Nothing is laid out for this orientation yet. Re-layout to start from the preset."
+                public static var relayoutMissing: String { L10nSupport.string("settings.eink.studio.relayoutMissing") }
+
+                /// Tooltip on the Studio's snap-to-grid toggle.
+                ///
+                /// Key: `settings.eink.studio.snapHelp`
+                /// en: "Snap a drag to the eight-pixel grid. Hold Option while dragging to bypass it."
+                public static var snapHelp: String { L10nSupport.string("settings.eink.studio.snapHelp") }
+
                 /// Name of the E-ink Studio element that draws a caption, a large figure and a smaller one under it.
                 ///
                 /// Key: `settings.eink.studio.statTile`
@@ -6062,6 +6340,12 @@ public enum L10n {
                 /// Key: `settings.eink.studio.subValue`
                 /// en: "Sub value"
                 public static var subValue: String { L10nSupport.string("settings.eink.studio.subValue") }
+
+                /// Palette section holding the complete preset layouts, dropped as groups.
+                ///
+                /// Key: `settings.eink.studio.wholeLayouts`
+                /// en: "Whole layouts"
+                public static var wholeLayouts: String { L10nSupport.string("settings.eink.studio.wholeLayouts") }
 
                 public enum Align {
                     /// Text alignment choice in the E-ink Studio.
@@ -6176,6 +6460,66 @@ public enum L10n {
                         L10nSupport.format("settings.eink.studio.issue.tooManyElements", count, limit)
                     }
                 }
+
+                public enum Module {
+                    /// Palette module: one quota bucket's name, bar, percentage and countdown.
+                    ///
+                    /// Key: `settings.eink.studio.module.quotaSlot`
+                    /// en: "Quota slot"
+                    public static var quotaSlot: String { L10nSupport.string("settings.eink.studio.module.quotaSlot") }
+
+                    /// Palette module: one usage window's caption and figure.
+                    ///
+                    /// Key: `settings.eink.studio.module.usageSlot`
+                    /// en: "Usage slot"
+                    public static var usageSlot: String { L10nSupport.string("settings.eink.studio.module.usageSlot") }
+                }
+            }
+
+            public enum TapLink {
+                /// Tap link option where the user types their own URL.
+                ///
+                /// Key: `settings.eink.tapLink.custom`
+                /// en: "Custom address"
+                public static var custom: String { L10nSupport.string("settings.eink.tapLink.custom") }
+
+                /// Error under the custom tap link field when the text is not a usable URL.
+                ///
+                /// Key: `settings.eink.tapLink.invalid`
+                /// en: "Enter an http or https address."
+                public static var invalid: String { L10nSupport.string("settings.eink.tapLink.invalid") }
+
+                /// Placeholder in the custom tap link field.
+                ///
+                /// Key: `settings.eink.tapLink.prompt`
+                /// en: "https://example.com"
+                public static var prompt: String { L10nSupport.string("settings.eink.tapLink.prompt") }
+
+                /// Tap link option that opens the user's own Vibe Bar Remote dashboard.
+                ///
+                /// Key: `settings.eink.tapLink.remote`
+                /// en: "Remote dashboard"
+                public static var remote: String { L10nSupport.string("settings.eink.tapLink.remote") }
+
+                /// Shown when the remote dashboard tap link is picked but Remote is not configured.
+                ///
+                /// Key: `settings.eink.tapLink.remoteMissing`
+                /// en: "Set Remote up first — until then the panel carries no link."
+                public static var remoteMissing: String { L10nSupport.string("settings.eink.tapLink.remoteMissing") }
+            }
+
+            public enum Unit {
+                /// Unit suffix after a number of minutes in a settings field.
+                ///
+                /// Key: `settings.eink.unit.minutes`
+                /// en: "min"
+                public static var minutes: String { L10nSupport.string("settings.eink.unit.minutes") }
+
+                /// Unit suffix after a number of seconds in a settings field.
+                ///
+                /// Key: `settings.eink.unit.seconds`
+                /// en: "s"
+                public static var seconds: String { L10nSupport.string("settings.eink.unit.seconds") }
             }
         }
 
@@ -12745,13 +13089,23 @@ enum L10nCatalogFacts {
         "settings.displayMode.remaining",
         "settings.displayMode.used",
         "settings.eink.addSlide",
+        "settings.eink.alertThreshold",
+        "settings.eink.alerts",
+        "settings.eink.alertsDetail",
         "settings.eink.allOrientations",
         "settings.eink.apiKeyHelp",
         "settings.eink.apiKeyPrompt",
+        "settings.eink.bar.nothing",
+        "settings.eink.bar.presetDefault",
+        "settings.eink.bar.providerStatus",
+        "settings.eink.barTextPrompt",
         "settings.eink.batteryRefresh",
         "settings.eink.batteryRefreshDetail",
         "settings.eink.buckets",
+        "settings.eink.cadence",
         "settings.eink.capacityFull",
+        "settings.eink.compact",
+        "settings.eink.composition",
         "settings.eink.customLayout",
         "settings.eink.customLayoutDetail",
         "settings.eink.customSlide",
@@ -12760,6 +13114,7 @@ enum L10nCatalogFacts {
         "settings.eink.dataRefreshDetail",
         "settings.eink.deviceSyncHelp",
         "settings.eink.devicesFound",
+        "settings.eink.editInStudioDetail",
         "settings.eink.error.deviceMissing",
         "settings.eink.error.network",
         "settings.eink.error.noSlides",
@@ -12770,8 +13125,15 @@ enum L10nCatalogFacts {
         "settings.eink.error.usageUnavailable",
         "settings.eink.fetchDevices",
         "settings.eink.fixedContent",
+        "settings.eink.footer",
+        "settings.eink.footer.usage",
+        "settings.eink.group.insight",
         "settings.eink.group.quota",
         "settings.eink.group.usage",
+        "settings.eink.header",
+        "settings.eink.headerLeft",
+        "settings.eink.headerPosition",
+        "settings.eink.headerRight",
         "settings.eink.intro",
         "settings.eink.lastSlide",
         "settings.eink.layout",
@@ -12787,6 +13149,7 @@ enum L10nCatalogFacts {
         "settings.eink.orientation.left",
         "settings.eink.orientation.right",
         "settings.eink.orientation.upright",
+        "settings.eink.orientationNote",
         "settings.eink.panelTextNote",
         "settings.eink.playback",
         "settings.eink.playback.appTimer",
@@ -12795,21 +13158,36 @@ enum L10nCatalogFacts {
         "settings.eink.playback.deviceLoopDetail",
         "settings.eink.playback.single",
         "settings.eink.playback.singleDetail",
+        "settings.eink.position.bottom",
+        "settings.eink.position.top",
+        "settings.eink.preset.briefing",
         "settings.eink.preset.dual",
+        "settings.eink.preset.heatmap",
         "settings.eink.preset.rings",
         "settings.eink.preset.split",
         "settings.eink.preset.table",
+        "settings.eink.preset.topModels",
         "settings.eink.preset.trend",
         "settings.eink.pushNow",
         "settings.eink.pushResult",
+        "settings.eink.quietHours",
+        "settings.eink.quietHours.format",
+        "settings.eink.quietHours.until",
+        "settings.eink.quietHoursDetail",
         "settings.eink.removeSlide",
         "settings.eink.render",
         "settings.eink.renderDetail",
         "settings.eink.renderMissing",
         "settings.eink.rescanLoop",
+        "settings.eink.resetToPreset",
+        "settings.eink.resetToPresetConfirm",
         "settings.eink.secondsPerSlide",
+        "settings.eink.secondsPerSlideDetail",
         "settings.eink.slideName",
         "settings.eink.slides",
+        "settings.eink.slotLabel",
+        "settings.eink.slotLabelDetail",
+        "settings.eink.slotOrder",
         "settings.eink.status.battery",
         "settings.eink.status.lastPush",
         "settings.eink.status.nextRefresh",
@@ -12834,6 +13212,7 @@ enum L10nCatalogFacts {
         "settings.eink.studio.diagnostics",
         "settings.eink.studio.diagnosticsClear",
         "settings.eink.studio.divider",
+        "settings.eink.studio.elements",
         "settings.eink.studio.font",
         "settings.eink.studio.font.pixel",
         "settings.eink.studio.font.sans",
@@ -12844,17 +13223,37 @@ enum L10nCatalogFacts {
         "settings.eink.studio.issue.textOverflow",
         "settings.eink.studio.issue.tooManyElements",
         "settings.eink.studio.metric",
+        "settings.eink.studio.module.quotaSlot",
+        "settings.eink.studio.module.usageSlot",
+        "settings.eink.studio.modules",
+        "settings.eink.studio.nothingToDraw",
         "settings.eink.studio.open",
         "settings.eink.studio.orientationNote",
         "settings.eink.studio.paperSize",
         "settings.eink.studio.period",
         "settings.eink.studio.presetSelection",
+        "settings.eink.studio.presetSubject",
         "settings.eink.studio.previewPercent",
         "settings.eink.studio.push",
+        "settings.eink.studio.relayout",
+        "settings.eink.studio.relayoutConfirm",
+        "settings.eink.studio.relayoutMissing",
+        "settings.eink.studio.snapHelp",
         "settings.eink.studio.statTile",
         "settings.eink.studio.subValue",
+        "settings.eink.studio.wholeLayouts",
         "settings.eink.sync",
         "settings.eink.syncDetail",
+        "settings.eink.tapLink",
+        "settings.eink.tapLink.custom",
+        "settings.eink.tapLink.invalid",
+        "settings.eink.tapLink.prompt",
+        "settings.eink.tapLink.remote",
+        "settings.eink.tapLink.remoteMissing",
+        "settings.eink.tapLinkDetail",
+        "settings.eink.unit.minutes",
+        "settings.eink.unit.seconds",
+        "settings.eink.uprightPreview",
         "settings.externalChange.title",
         "settings.geminiCookiesSaved",
         "settings.geminiShared",
@@ -14588,13 +14987,23 @@ enum L10nCatalogFacts {
         "settings.displayMode.remaining": 0,
         "settings.displayMode.used": 0,
         "settings.eink.addSlide": 0,
+        "settings.eink.alertThreshold": 0,
+        "settings.eink.alerts": 0,
+        "settings.eink.alertsDetail": 0,
         "settings.eink.allOrientations": 0,
         "settings.eink.apiKeyHelp": 0,
         "settings.eink.apiKeyPrompt": 0,
+        "settings.eink.bar.nothing": 0,
+        "settings.eink.bar.presetDefault": 0,
+        "settings.eink.bar.providerStatus": 0,
+        "settings.eink.barTextPrompt": 0,
         "settings.eink.batteryRefresh": 0,
         "settings.eink.batteryRefreshDetail": 0,
         "settings.eink.buckets": 0,
+        "settings.eink.cadence": 0,
         "settings.eink.capacityFull": 1,
+        "settings.eink.compact": 0,
+        "settings.eink.composition": 0,
         "settings.eink.customLayout": 0,
         "settings.eink.customLayoutDetail": 0,
         "settings.eink.customSlide": 0,
@@ -14603,6 +15012,7 @@ enum L10nCatalogFacts {
         "settings.eink.dataRefreshDetail": 0,
         "settings.eink.deviceSyncHelp": 0,
         "settings.eink.devicesFound": 1,
+        "settings.eink.editInStudioDetail": 0,
         "settings.eink.error.deviceMissing": 0,
         "settings.eink.error.network": 0,
         "settings.eink.error.noSlides": 0,
@@ -14613,8 +15023,15 @@ enum L10nCatalogFacts {
         "settings.eink.error.usageUnavailable": 0,
         "settings.eink.fetchDevices": 0,
         "settings.eink.fixedContent": 0,
+        "settings.eink.footer": 0,
+        "settings.eink.footer.usage": 0,
+        "settings.eink.group.insight": 0,
         "settings.eink.group.quota": 0,
         "settings.eink.group.usage": 0,
+        "settings.eink.header": 0,
+        "settings.eink.headerLeft": 0,
+        "settings.eink.headerPosition": 0,
+        "settings.eink.headerRight": 0,
         "settings.eink.intro": 0,
         "settings.eink.lastSlide": 0,
         "settings.eink.layout": 0,
@@ -14630,6 +15047,7 @@ enum L10nCatalogFacts {
         "settings.eink.orientation.left": 0,
         "settings.eink.orientation.right": 0,
         "settings.eink.orientation.upright": 0,
+        "settings.eink.orientationNote": 0,
         "settings.eink.panelTextNote": 0,
         "settings.eink.playback": 0,
         "settings.eink.playback.appTimer": 0,
@@ -14638,21 +15056,36 @@ enum L10nCatalogFacts {
         "settings.eink.playback.deviceLoopDetail": 0,
         "settings.eink.playback.single": 0,
         "settings.eink.playback.singleDetail": 0,
+        "settings.eink.position.bottom": 0,
+        "settings.eink.position.top": 0,
+        "settings.eink.preset.briefing": 0,
         "settings.eink.preset.dual": 0,
+        "settings.eink.preset.heatmap": 0,
         "settings.eink.preset.rings": 0,
         "settings.eink.preset.split": 0,
         "settings.eink.preset.table": 0,
+        "settings.eink.preset.topModels": 0,
         "settings.eink.preset.trend": 0,
         "settings.eink.pushNow": 0,
         "settings.eink.pushResult": 2,
+        "settings.eink.quietHours": 0,
+        "settings.eink.quietHours.format": 0,
+        "settings.eink.quietHours.until": 0,
+        "settings.eink.quietHoursDetail": 0,
         "settings.eink.removeSlide": 0,
         "settings.eink.render": 0,
         "settings.eink.renderDetail": 0,
         "settings.eink.renderMissing": 0,
         "settings.eink.rescanLoop": 0,
+        "settings.eink.resetToPreset": 0,
+        "settings.eink.resetToPresetConfirm": 0,
         "settings.eink.secondsPerSlide": 0,
+        "settings.eink.secondsPerSlideDetail": 0,
         "settings.eink.slideName": 0,
         "settings.eink.slides": 0,
+        "settings.eink.slotLabel": 0,
+        "settings.eink.slotLabelDetail": 0,
+        "settings.eink.slotOrder": 0,
         "settings.eink.status.battery": 0,
         "settings.eink.status.lastPush": 0,
         "settings.eink.status.nextRefresh": 0,
@@ -14677,6 +15110,7 @@ enum L10nCatalogFacts {
         "settings.eink.studio.diagnostics": 0,
         "settings.eink.studio.diagnosticsClear": 0,
         "settings.eink.studio.divider": 0,
+        "settings.eink.studio.elements": 0,
         "settings.eink.studio.font": 0,
         "settings.eink.studio.font.pixel": 0,
         "settings.eink.studio.font.sans": 0,
@@ -14687,17 +15121,37 @@ enum L10nCatalogFacts {
         "settings.eink.studio.issue.textOverflow": 0,
         "settings.eink.studio.issue.tooManyElements": 2,
         "settings.eink.studio.metric": 0,
+        "settings.eink.studio.module.quotaSlot": 0,
+        "settings.eink.studio.module.usageSlot": 0,
+        "settings.eink.studio.modules": 0,
+        "settings.eink.studio.nothingToDraw": 0,
         "settings.eink.studio.open": 0,
         "settings.eink.studio.orientationNote": 0,
         "settings.eink.studio.paperSize": 2,
         "settings.eink.studio.period": 0,
         "settings.eink.studio.presetSelection": 0,
+        "settings.eink.studio.presetSubject": 0,
         "settings.eink.studio.previewPercent": 0,
         "settings.eink.studio.push": 0,
+        "settings.eink.studio.relayout": 0,
+        "settings.eink.studio.relayoutConfirm": 0,
+        "settings.eink.studio.relayoutMissing": 0,
+        "settings.eink.studio.snapHelp": 0,
         "settings.eink.studio.statTile": 0,
         "settings.eink.studio.subValue": 0,
+        "settings.eink.studio.wholeLayouts": 0,
         "settings.eink.sync": 0,
         "settings.eink.syncDetail": 0,
+        "settings.eink.tapLink": 0,
+        "settings.eink.tapLink.custom": 0,
+        "settings.eink.tapLink.invalid": 0,
+        "settings.eink.tapLink.prompt": 0,
+        "settings.eink.tapLink.remote": 0,
+        "settings.eink.tapLink.remoteMissing": 0,
+        "settings.eink.tapLinkDetail": 0,
+        "settings.eink.unit.minutes": 0,
+        "settings.eink.unit.seconds": 0,
+        "settings.eink.uprightPreview": 0,
         "settings.externalChange.title": 0,
         "settings.geminiCookiesSaved": 0,
         "settings.geminiShared": 0,

@@ -776,13 +776,23 @@ export type MessageKey =
   | "settings.displayMode.remaining"
   | "settings.displayMode.used"
   | "settings.eink.addSlide"
+  | "settings.eink.alertThreshold"
+  | "settings.eink.alerts"
+  | "settings.eink.alertsDetail"
   | "settings.eink.allOrientations"
   | "settings.eink.apiKeyHelp"
   | "settings.eink.apiKeyPrompt"
+  | "settings.eink.bar.nothing"
+  | "settings.eink.bar.presetDefault"
+  | "settings.eink.bar.providerStatus"
+  | "settings.eink.barTextPrompt"
   | "settings.eink.batteryRefresh"
   | "settings.eink.batteryRefreshDetail"
   | "settings.eink.buckets"
+  | "settings.eink.cadence"
   | "settings.eink.capacityFull"
+  | "settings.eink.compact"
+  | "settings.eink.composition"
   | "settings.eink.customLayout"
   | "settings.eink.customLayoutDetail"
   | "settings.eink.customSlide"
@@ -791,6 +801,7 @@ export type MessageKey =
   | "settings.eink.dataRefreshDetail"
   | "settings.eink.deviceSyncHelp"
   | "settings.eink.devicesFound"
+  | "settings.eink.editInStudioDetail"
   | "settings.eink.error.deviceMissing"
   | "settings.eink.error.network"
   | "settings.eink.error.noSlides"
@@ -801,8 +812,15 @@ export type MessageKey =
   | "settings.eink.error.usageUnavailable"
   | "settings.eink.fetchDevices"
   | "settings.eink.fixedContent"
+  | "settings.eink.footer"
+  | "settings.eink.footer.usage"
+  | "settings.eink.group.insight"
   | "settings.eink.group.quota"
   | "settings.eink.group.usage"
+  | "settings.eink.header"
+  | "settings.eink.headerLeft"
+  | "settings.eink.headerPosition"
+  | "settings.eink.headerRight"
   | "settings.eink.intro"
   | "settings.eink.lastSlide"
   | "settings.eink.layout"
@@ -818,6 +836,7 @@ export type MessageKey =
   | "settings.eink.orientation.left"
   | "settings.eink.orientation.right"
   | "settings.eink.orientation.upright"
+  | "settings.eink.orientationNote"
   | "settings.eink.panelTextNote"
   | "settings.eink.playback"
   | "settings.eink.playback.appTimer"
@@ -826,21 +845,36 @@ export type MessageKey =
   | "settings.eink.playback.deviceLoopDetail"
   | "settings.eink.playback.single"
   | "settings.eink.playback.singleDetail"
+  | "settings.eink.position.bottom"
+  | "settings.eink.position.top"
+  | "settings.eink.preset.briefing"
   | "settings.eink.preset.dual"
+  | "settings.eink.preset.heatmap"
   | "settings.eink.preset.rings"
   | "settings.eink.preset.split"
   | "settings.eink.preset.table"
+  | "settings.eink.preset.topModels"
   | "settings.eink.preset.trend"
   | "settings.eink.pushNow"
   | "settings.eink.pushResult"
+  | "settings.eink.quietHours"
+  | "settings.eink.quietHours.format"
+  | "settings.eink.quietHours.until"
+  | "settings.eink.quietHoursDetail"
   | "settings.eink.removeSlide"
   | "settings.eink.render"
   | "settings.eink.renderDetail"
   | "settings.eink.renderMissing"
   | "settings.eink.rescanLoop"
+  | "settings.eink.resetToPreset"
+  | "settings.eink.resetToPresetConfirm"
   | "settings.eink.secondsPerSlide"
+  | "settings.eink.secondsPerSlideDetail"
   | "settings.eink.slideName"
   | "settings.eink.slides"
+  | "settings.eink.slotLabel"
+  | "settings.eink.slotLabelDetail"
+  | "settings.eink.slotOrder"
   | "settings.eink.status.battery"
   | "settings.eink.status.lastPush"
   | "settings.eink.status.nextRefresh"
@@ -865,6 +899,7 @@ export type MessageKey =
   | "settings.eink.studio.diagnostics"
   | "settings.eink.studio.diagnosticsClear"
   | "settings.eink.studio.divider"
+  | "settings.eink.studio.elements"
   | "settings.eink.studio.font"
   | "settings.eink.studio.font.pixel"
   | "settings.eink.studio.font.sans"
@@ -875,17 +910,37 @@ export type MessageKey =
   | "settings.eink.studio.issue.textOverflow"
   | "settings.eink.studio.issue.tooManyElements"
   | "settings.eink.studio.metric"
+  | "settings.eink.studio.module.quotaSlot"
+  | "settings.eink.studio.module.usageSlot"
+  | "settings.eink.studio.modules"
+  | "settings.eink.studio.nothingToDraw"
   | "settings.eink.studio.open"
   | "settings.eink.studio.orientationNote"
   | "settings.eink.studio.paperSize"
   | "settings.eink.studio.period"
   | "settings.eink.studio.presetSelection"
+  | "settings.eink.studio.presetSubject"
   | "settings.eink.studio.previewPercent"
   | "settings.eink.studio.push"
+  | "settings.eink.studio.relayout"
+  | "settings.eink.studio.relayoutConfirm"
+  | "settings.eink.studio.relayoutMissing"
+  | "settings.eink.studio.snapHelp"
   | "settings.eink.studio.statTile"
   | "settings.eink.studio.subValue"
+  | "settings.eink.studio.wholeLayouts"
   | "settings.eink.sync"
   | "settings.eink.syncDetail"
+  | "settings.eink.tapLink"
+  | "settings.eink.tapLink.custom"
+  | "settings.eink.tapLink.invalid"
+  | "settings.eink.tapLink.prompt"
+  | "settings.eink.tapLink.remote"
+  | "settings.eink.tapLink.remoteMissing"
+  | "settings.eink.tapLinkDetail"
+  | "settings.eink.unit.minutes"
+  | "settings.eink.unit.seconds"
+  | "settings.eink.uprightPreview"
   | "settings.externalChange.title"
   | "settings.geminiCookiesSaved"
   | "settings.geminiShared"
@@ -2565,13 +2620,23 @@ export interface MessageParams {
   "settings.displayMode.remaining": undefined;
   "settings.displayMode.used": undefined;
   "settings.eink.addSlide": undefined;
+  "settings.eink.alertThreshold": undefined;
+  "settings.eink.alerts": undefined;
+  "settings.eink.alertsDetail": undefined;
   "settings.eink.allOrientations": undefined;
   "settings.eink.apiKeyHelp": undefined;
   "settings.eink.apiKeyPrompt": undefined;
+  "settings.eink.bar.nothing": undefined;
+  "settings.eink.bar.presetDefault": undefined;
+  "settings.eink.bar.providerStatus": undefined;
+  "settings.eink.barTextPrompt": undefined;
   "settings.eink.batteryRefresh": undefined;
   "settings.eink.batteryRefreshDetail": undefined;
   "settings.eink.buckets": undefined;
+  "settings.eink.cadence": undefined;
   "settings.eink.capacityFull": { "count": number };
+  "settings.eink.compact": undefined;
+  "settings.eink.composition": undefined;
   "settings.eink.customLayout": undefined;
   "settings.eink.customLayoutDetail": undefined;
   "settings.eink.customSlide": undefined;
@@ -2580,6 +2645,7 @@ export interface MessageParams {
   "settings.eink.dataRefreshDetail": undefined;
   "settings.eink.deviceSyncHelp": undefined;
   "settings.eink.devicesFound": { "count": number };
+  "settings.eink.editInStudioDetail": undefined;
   "settings.eink.error.deviceMissing": undefined;
   "settings.eink.error.network": undefined;
   "settings.eink.error.noSlides": undefined;
@@ -2590,8 +2656,15 @@ export interface MessageParams {
   "settings.eink.error.usageUnavailable": undefined;
   "settings.eink.fetchDevices": undefined;
   "settings.eink.fixedContent": undefined;
+  "settings.eink.footer": undefined;
+  "settings.eink.footer.usage": undefined;
+  "settings.eink.group.insight": undefined;
   "settings.eink.group.quota": undefined;
   "settings.eink.group.usage": undefined;
+  "settings.eink.header": undefined;
+  "settings.eink.headerLeft": undefined;
+  "settings.eink.headerPosition": undefined;
+  "settings.eink.headerRight": undefined;
   "settings.eink.intro": undefined;
   "settings.eink.lastSlide": undefined;
   "settings.eink.layout": undefined;
@@ -2607,6 +2680,7 @@ export interface MessageParams {
   "settings.eink.orientation.left": undefined;
   "settings.eink.orientation.right": undefined;
   "settings.eink.orientation.upright": undefined;
+  "settings.eink.orientationNote": undefined;
   "settings.eink.panelTextNote": undefined;
   "settings.eink.playback": undefined;
   "settings.eink.playback.appTimer": undefined;
@@ -2615,21 +2689,36 @@ export interface MessageParams {
   "settings.eink.playback.deviceLoopDetail": undefined;
   "settings.eink.playback.single": undefined;
   "settings.eink.playback.singleDetail": undefined;
+  "settings.eink.position.bottom": undefined;
+  "settings.eink.position.top": undefined;
+  "settings.eink.preset.briefing": undefined;
   "settings.eink.preset.dual": undefined;
+  "settings.eink.preset.heatmap": undefined;
   "settings.eink.preset.rings": undefined;
   "settings.eink.preset.split": undefined;
   "settings.eink.preset.table": undefined;
+  "settings.eink.preset.topModels": undefined;
   "settings.eink.preset.trend": undefined;
   "settings.eink.pushNow": undefined;
   "settings.eink.pushResult": { "pushed": number; "skipped": number };
+  "settings.eink.quietHours": undefined;
+  "settings.eink.quietHours.format": undefined;
+  "settings.eink.quietHours.until": undefined;
+  "settings.eink.quietHoursDetail": undefined;
   "settings.eink.removeSlide": undefined;
   "settings.eink.render": undefined;
   "settings.eink.renderDetail": undefined;
   "settings.eink.renderMissing": undefined;
   "settings.eink.rescanLoop": undefined;
+  "settings.eink.resetToPreset": undefined;
+  "settings.eink.resetToPresetConfirm": undefined;
   "settings.eink.secondsPerSlide": undefined;
+  "settings.eink.secondsPerSlideDetail": undefined;
   "settings.eink.slideName": undefined;
   "settings.eink.slides": undefined;
+  "settings.eink.slotLabel": undefined;
+  "settings.eink.slotLabelDetail": undefined;
+  "settings.eink.slotOrder": undefined;
   "settings.eink.status.battery": undefined;
   "settings.eink.status.lastPush": undefined;
   "settings.eink.status.nextRefresh": undefined;
@@ -2654,6 +2743,7 @@ export interface MessageParams {
   "settings.eink.studio.diagnostics": undefined;
   "settings.eink.studio.diagnosticsClear": undefined;
   "settings.eink.studio.divider": undefined;
+  "settings.eink.studio.elements": undefined;
   "settings.eink.studio.font": undefined;
   "settings.eink.studio.font.pixel": undefined;
   "settings.eink.studio.font.sans": undefined;
@@ -2664,17 +2754,37 @@ export interface MessageParams {
   "settings.eink.studio.issue.textOverflow": undefined;
   "settings.eink.studio.issue.tooManyElements": { "count": number; "limit": number };
   "settings.eink.studio.metric": undefined;
+  "settings.eink.studio.module.quotaSlot": undefined;
+  "settings.eink.studio.module.usageSlot": undefined;
+  "settings.eink.studio.modules": undefined;
+  "settings.eink.studio.nothingToDraw": undefined;
   "settings.eink.studio.open": undefined;
   "settings.eink.studio.orientationNote": undefined;
   "settings.eink.studio.paperSize": { "height": number; "width": number };
   "settings.eink.studio.period": undefined;
   "settings.eink.studio.presetSelection": undefined;
+  "settings.eink.studio.presetSubject": undefined;
   "settings.eink.studio.previewPercent": undefined;
   "settings.eink.studio.push": undefined;
+  "settings.eink.studio.relayout": undefined;
+  "settings.eink.studio.relayoutConfirm": undefined;
+  "settings.eink.studio.relayoutMissing": undefined;
+  "settings.eink.studio.snapHelp": undefined;
   "settings.eink.studio.statTile": undefined;
   "settings.eink.studio.subValue": undefined;
+  "settings.eink.studio.wholeLayouts": undefined;
   "settings.eink.sync": undefined;
   "settings.eink.syncDetail": undefined;
+  "settings.eink.tapLink": undefined;
+  "settings.eink.tapLink.custom": undefined;
+  "settings.eink.tapLink.invalid": undefined;
+  "settings.eink.tapLink.prompt": undefined;
+  "settings.eink.tapLink.remote": undefined;
+  "settings.eink.tapLink.remoteMissing": undefined;
+  "settings.eink.tapLinkDetail": undefined;
+  "settings.eink.unit.minutes": undefined;
+  "settings.eink.unit.seconds": undefined;
+  "settings.eink.uprightPreview": undefined;
   "settings.externalChange.title": undefined;
   "settings.geminiCookiesSaved": undefined;
   "settings.geminiShared": undefined;
@@ -4355,13 +4465,23 @@ export const messages: {
     "settings.displayMode.remaining": "Remaining",
     "settings.displayMode.used": "Used",
     "settings.eink.addSlide": "Add a slide",
+    "settings.eink.alertThreshold": "Alert below",
+    "settings.eink.alerts": "Alert slide",
+    "settings.eink.alertsDetail": "Draw an alert panel with a black border as soon as a bucket is at risk or falls below the threshold, and put the normal slide back when it clears.",
     "settings.eink.allOrientations": "Every orientation",
     "settings.eink.apiKeyHelp": "Create one in the Dot. app's developer settings. It is stored in your Keychain, never in settings.json.",
     "settings.eink.apiKeyPrompt": "Paste the Dot. API key",
+    "settings.eink.bar.nothing": "Nothing",
+    "settings.eink.bar.presetDefault": "As the layout draws it",
+    "settings.eink.bar.providerStatus": "Provider status",
+    "settings.eink.barTextPrompt": "Text the panel prints",
     "settings.eink.batteryRefresh": "On battery",
     "settings.eink.batteryRefreshDetail": "The slower cadence used whenever the device reports it is running on its own cell.",
     "settings.eink.buckets": "Quota buckets",
+    "settings.eink.cadence": "Refresh cadence",
     "settings.eink.capacityFull": "This layout has room for {count} at this orientation. Deselect one to pick another.",
+    "settings.eink.compact": "Fill the panel when both bars are off",
+    "settings.eink.composition": "Composition",
     "settings.eink.customLayout": "Custom layout",
     "settings.eink.customLayoutDetail": "Lay this slide out yourself: place text, rings, bars and whole preset blocks on the panel.",
     "settings.eink.customSlide": "Custom (opens the Studio)",
@@ -4370,6 +4490,7 @@ export const messages: {
     "settings.eink.dataRefreshDetail": "How often the numbers are rebuilt and pushed while the device has mains power.",
     "settings.eink.deviceSyncHelp": "Push slides to this device",
     "settings.eink.devicesFound": "{count, plural, one {# device on this account} other {# devices on this account}}",
+    "settings.eink.editInStudioDetail": "Opens this slide in the Studio. A preset is broken into its modules first, so every part can be moved, rebound or removed.",
     "settings.eink.error.deviceMissing": "This device is no longer on the account. Fetch devices again.",
     "settings.eink.error.network": "Could not reach the Dot. service.",
     "settings.eink.error.noSlides": "Add a slide before syncing this device.",
@@ -4380,8 +4501,15 @@ export const messages: {
     "settings.eink.error.usageUnavailable": "Usage data could not be read, so only the quota slides were pushed — open the Cost Data settings and rescan to rebuild it.",
     "settings.eink.fetchDevices": "Fetch devices",
     "settings.eink.fixedContent": "This layout always draws today and the last seven days — there is nothing to pick.",
+    "settings.eink.footer": "Footer",
+    "settings.eink.footer.usage": "Spend summary",
+    "settings.eink.group.insight": "Insight layouts",
     "settings.eink.group.quota": "Quota layouts",
     "settings.eink.group.usage": "Usage layouts",
+    "settings.eink.header": "Header bar",
+    "settings.eink.headerLeft": "Left side",
+    "settings.eink.headerPosition": "Header position",
+    "settings.eink.headerRight": "Right side",
     "settings.eink.intro": "Vibe Bar draws your quota and usage in the panel's own layout and pushes it to every device you enable here.",
     "settings.eink.lastSlide": "The last slide cannot be removed.",
     "settings.eink.layout": "Slide layout",
@@ -4397,6 +4525,7 @@ export const messages: {
     "settings.eink.orientation.left": "Turned left — the top edge is on the left",
     "settings.eink.orientation.right": "Turned right — the top edge is on the right",
     "settings.eink.orientation.upright": "Upright",
+    "settings.eink.orientationNote": "Previews are drawn the way you will read the panel. The notch marks the device's own top edge.",
     "settings.eink.panelTextNote": "Panel text stays English: the device draws it from its own built-in fonts.",
     "settings.eink.playback": "Playback",
     "settings.eink.playback.appTimer": "Carousel, run by Vibe Bar",
@@ -4405,21 +4534,36 @@ export const messages: {
     "settings.eink.playback.deviceLoopDetail": "Each slide updates its own Canvas API task and the device rotates between them on its own schedule. Fewest panel refreshes, and it keeps turning while the Mac is asleep.",
     "settings.eink.playback.single": "One slide",
     "settings.eink.playback.singleDetail": "The device keeps one slide on screen and Vibe Bar refreshes its numbers in place.",
+    "settings.eink.position.bottom": "Bottom",
+    "settings.eink.position.top": "Top",
+    "settings.eink.preset.briefing": "Briefing",
     "settings.eink.preset.dual": "Dual bars",
+    "settings.eink.preset.heatmap": "Heatmap",
     "settings.eink.preset.rings": "Rings",
     "settings.eink.preset.split": "Split",
     "settings.eink.preset.table": "Table",
+    "settings.eink.preset.topModels": "Top models",
     "settings.eink.preset.trend": "Trend",
     "settings.eink.pushNow": "Push now",
     "settings.eink.pushResult": "Pushed {pushed}; {skipped} already on the panel.",
+    "settings.eink.quietHours": "Quiet hours",
+    "settings.eink.quietHours.format": "24-hour times, as HH:mm.",
+    "settings.eink.quietHours.until": "Until",
+    "settings.eink.quietHoursDetail": "Vibe Bar writes this window to the device, which stops refreshing between the two times.",
     "settings.eink.removeSlide": "Remove this slide",
     "settings.eink.render": "On the panel",
     "settings.eink.renderDetail": "What the device reported it was showing after the last push.",
     "settings.eink.renderMissing": "The device has not reported a render yet.",
     "settings.eink.rescanLoop": "Scan the loop",
+    "settings.eink.resetToPreset": "Reset to preset",
+    "settings.eink.resetToPresetConfirm": "This drops every layout made for this slide, at every orientation.",
     "settings.eink.secondsPerSlide": "Seconds per slide",
+    "settings.eink.secondsPerSlideDetail": "How long each slide stays on the panel while the carousel is running.",
     "settings.eink.slideName": "Slide name",
     "settings.eink.slides": "Slides",
+    "settings.eink.slotLabel": "Name on the panel",
+    "settings.eink.slotLabelDetail": "Leave a name empty to print the bucket's own, written out in full.",
+    "settings.eink.slotOrder": "Order",
     "settings.eink.status.battery": "Battery",
     "settings.eink.status.lastPush": "Last push",
     "settings.eink.status.nextRefresh": "Next refresh",
@@ -4444,6 +4588,7 @@ export const messages: {
     "settings.eink.studio.diagnostics": "Panel checks",
     "settings.eink.studio.diagnosticsClear": "Nothing out of place.",
     "settings.eink.studio.divider": "Divider",
+    "settings.eink.studio.elements": "Elements",
     "settings.eink.studio.font": "Panel font",
     "settings.eink.studio.font.pixel": "Pixel 12",
     "settings.eink.studio.font.sans": "Sans",
@@ -4454,17 +4599,37 @@ export const messages: {
     "settings.eink.studio.issue.textOverflow": "The text is wider than its box, so the panel cuts it.",
     "settings.eink.studio.issue.tooManyElements": "This layout draws {count} elements and the panel accepts {limit}.",
     "settings.eink.studio.metric": "Figure",
+    "settings.eink.studio.module.quotaSlot": "Quota slot",
+    "settings.eink.studio.module.usageSlot": "Usage slot",
+    "settings.eink.studio.modules": "Modules",
+    "settings.eink.studio.nothingToDraw": "Nothing to draw",
     "settings.eink.studio.open": "Edit in Studio",
     "settings.eink.studio.orientationNote": "Turning the device re-fits this layout to the new panel shape: elements keep their position and are pulled back inside the edge where they no longer fit.",
     "settings.eink.studio.paperSize": "{width} x {height} panel pixels",
     "settings.eink.studio.period": "Window",
     "settings.eink.studio.presetSelection": "Leave every box off to let Vibe Bar choose, in its own order.",
+    "settings.eink.studio.presetSubject": "This slide still draws its preset. Edit it in the Studio to break it into modules you can move.",
     "settings.eink.studio.previewPercent": "Preview percentage",
     "settings.eink.studio.push": "Push to device",
+    "settings.eink.studio.relayout": "Re-layout",
+    "settings.eink.studio.relayoutConfirm": "Re-laying out replaces everything placed at this orientation.",
+    "settings.eink.studio.relayoutMissing": "Nothing is laid out for this orientation yet. Re-layout to start from the preset.",
+    "settings.eink.studio.snapHelp": "Snap a drag to the eight-pixel grid. Hold Option while dragging to bypass it.",
     "settings.eink.studio.statTile": "Stat tile",
     "settings.eink.studio.subValue": "Sub value",
+    "settings.eink.studio.wholeLayouts": "Whole layouts",
     "settings.eink.sync": "Sync to devices",
     "settings.eink.syncDetail": "Off stops every push. Slides stay editable, and the preview still updates.",
+    "settings.eink.tapLink": "Tap link",
+    "settings.eink.tapLink.custom": "Custom address",
+    "settings.eink.tapLink.invalid": "Enter an http or https address.",
+    "settings.eink.tapLink.prompt": "https://example.com",
+    "settings.eink.tapLink.remote": "Remote dashboard",
+    "settings.eink.tapLink.remoteMissing": "Set Remote up first — until then the panel carries no link.",
+    "settings.eink.tapLinkDetail": "The panel is tappable: a phone held against it opens this address.",
+    "settings.eink.unit.minutes": "min",
+    "settings.eink.unit.seconds": "s",
+    "settings.eink.uprightPreview": "Shown the way you will read it",
     "settings.externalChange.title": "Another Vibe Bar replaced your change",
     "settings.geminiCookiesSaved": "Gemini cookies saved.",
     "settings.geminiShared": "Gemini and Antigravity share the same Google AI subscription quota. Cookie import is the only supported web path — there is no WebView login.",
@@ -6140,13 +6305,23 @@ export const messages: {
     "settings.displayMode.remaining": "剩余",
     "settings.displayMode.used": "已用",
     "settings.eink.addSlide": "添加幻灯片",
+    "settings.eink.alertThreshold": "低于此比例时预警",
+    "settings.eink.alerts": "预警幻灯片",
+    "settings.eink.alertsDetail": "当某个额度处于风险状态或低于阈值时立即绘制带黑色边框的预警面板，恢复后再切回正常幻灯片。",
     "settings.eink.allOrientations": "全部方向",
     "settings.eink.apiKeyHelp": "在 Dot. App 的开发者设置中创建。密钥保存在 Keychain，不会写入 settings.json。",
     "settings.eink.apiKeyPrompt": "粘贴 Dot. API key",
+    "settings.eink.bar.nothing": "不显示",
+    "settings.eink.bar.presetDefault": "按布局原样绘制",
+    "settings.eink.bar.providerStatus": "服务商状态",
+    "settings.eink.barTextPrompt": "面板上打印的文字",
     "settings.eink.batteryRefresh": "使用电池时",
     "settings.eink.batteryRefreshDetail": "设备报告正在使用自身电池时改用的较慢节奏。",
     "settings.eink.buckets": "额度 bucket",
+    "settings.eink.cadence": "刷新节奏",
     "settings.eink.capacityFull": "该版式在当前方向下最多容纳 {count} 项。请先取消一项再选择其他。",
+    "settings.eink.compact": "两栏都关闭时填满面板",
+    "settings.eink.composition": "版面构成",
     "settings.eink.customLayout": "自定义布局",
     "settings.eink.customLayoutDetail": "自行排布这张幻灯片：在面板上摆放文本、圆环、条形和整块预设。",
     "settings.eink.customSlide": "自定义（在 Studio 中编辑）",
@@ -6155,6 +6330,7 @@ export const messages: {
     "settings.eink.dataRefreshDetail": "设备接通电源时，重新生成并推送数字的间隔。",
     "settings.eink.deviceSyncHelp": "向这台设备推送幻灯片",
     "settings.eink.devicesFound": "{count, plural, other {该账号下有 # 台设备}}",
+    "settings.eink.editInStudioDetail": "在 Studio 中打开该幻灯片。预设会先拆成模块，每个部分都可移动、重新绑定或删除。",
     "settings.eink.error.deviceMissing": "该设备已不在此账号下。请重新获取设备。",
     "settings.eink.error.network": "无法连接 Dot. 服务。",
     "settings.eink.error.noSlides": "请先添加幻灯片，再同步这台设备。",
@@ -6165,8 +6341,15 @@ export const messages: {
     "settings.eink.error.usageUnavailable": "无法读取用量数据，本次只推送了额度幻灯片 — 请在「成本数据」设置中重新扫描以重建。",
     "settings.eink.fetchDevices": "获取设备",
     "settings.eink.fixedContent": "该版式固定绘制今天与最近 7 天，无需选择。",
+    "settings.eink.footer": "页脚",
+    "settings.eink.footer.usage": "花费摘要",
+    "settings.eink.group.insight": "洞察布局",
     "settings.eink.group.quota": "额度版式",
     "settings.eink.group.usage": "用量版式",
+    "settings.eink.header": "标题栏",
+    "settings.eink.headerLeft": "左侧内容",
+    "settings.eink.headerPosition": "标题栏位置",
+    "settings.eink.headerRight": "右侧内容",
     "settings.eink.intro": "Vibe Bar 会按墨水屏的排版绘制额度与用量，并推送到你在这里启用的每台设备。",
     "settings.eink.lastSlide": "最后一张幻灯片无法移除。",
     "settings.eink.layout": "幻灯片版式",
@@ -6182,6 +6365,7 @@ export const messages: {
     "settings.eink.orientation.left": "左转 — 顶边朝左",
     "settings.eink.orientation.right": "右转 — 顶边朝右",
     "settings.eink.orientation.upright": "正向",
+    "settings.eink.orientationNote": "预览按你实际阅读面板的方向绘制，缺口标示设备本身的顶边。",
     "settings.eink.panelTextNote": "屏幕文字固定为英文：由设备使用自带字体绘制。",
     "settings.eink.playback": "播放方式",
     "settings.eink.playback.appTimer": "轮播 · 由 Vibe Bar 驱动",
@@ -6190,21 +6374,36 @@ export const messages: {
     "settings.eink.playback.deviceLoopDetail": "每张幻灯片更新各自的 Canvas API 任务，由设备按自己的节奏轮换。屏幕刷新次数最少，Mac 睡眠时也会继续轮播。",
     "settings.eink.playback.single": "单张",
     "settings.eink.playback.singleDetail": "设备固定显示一张幻灯片，Vibe Bar 只就地刷新其中的数字。",
+    "settings.eink.position.bottom": "底部",
+    "settings.eink.position.top": "顶部",
+    "settings.eink.preset.briefing": "简报",
     "settings.eink.preset.dual": "双条",
+    "settings.eink.preset.heatmap": "热力图",
     "settings.eink.preset.rings": "圆环",
     "settings.eink.preset.split": "分栏",
     "settings.eink.preset.table": "表格",
+    "settings.eink.preset.topModels": "模型榜",
     "settings.eink.preset.trend": "趋势",
     "settings.eink.pushNow": "立即推送",
     "settings.eink.pushResult": "已推送 {pushed} 张；{skipped} 张屏幕上已是这些内容。",
+    "settings.eink.quietHours": "静默时段",
+    "settings.eink.quietHours.format": "使用 24 小时制，格式为 HH:mm。",
+    "settings.eink.quietHours.until": "至",
+    "settings.eink.quietHoursDetail": "Vibe Bar 会把该时段写入设备，设备在这两个时间之间停止刷新。",
     "settings.eink.removeSlide": "移除这张幻灯片",
     "settings.eink.render": "屏幕实拍",
     "settings.eink.renderDetail": "设备在上次推送后回报的显示内容。",
     "settings.eink.renderMissing": "设备尚未回报画面。",
     "settings.eink.rescanLoop": "扫描循环",
+    "settings.eink.resetToPreset": "恢复为预设布局",
+    "settings.eink.resetToPresetConfirm": "这会丢弃该幻灯片在所有方向上的自制布局。",
     "settings.eink.secondsPerSlide": "每张停留秒数",
+    "settings.eink.secondsPerSlideDetail": "轮播运行时每张幻灯片在面板上停留的时长。",
     "settings.eink.slideName": "幻灯片名称",
     "settings.eink.slides": "幻灯片",
+    "settings.eink.slotLabel": "面板上的名称",
+    "settings.eink.slotLabelDetail": "留空则打印该额度自己的完整名称。",
+    "settings.eink.slotOrder": "顺序",
     "settings.eink.status.battery": "电量",
     "settings.eink.status.lastPush": "上次推送",
     "settings.eink.status.nextRefresh": "下次刷新",
@@ -6229,6 +6428,7 @@ export const messages: {
     "settings.eink.studio.diagnostics": "面板检查",
     "settings.eink.studio.diagnosticsClear": "没有发现问题。",
     "settings.eink.studio.divider": "分隔线",
+    "settings.eink.studio.elements": "元素",
     "settings.eink.studio.font": "面板字体",
     "settings.eink.studio.font.pixel": "像素 12",
     "settings.eink.studio.font.sans": "无衬线",
@@ -6239,17 +6439,37 @@ export const messages: {
     "settings.eink.studio.issue.textOverflow": "文本宽度超过文本框，面板会截断。",
     "settings.eink.studio.issue.tooManyElements": "该布局会绘制 {count} 个元素，面板最多接受 {limit} 个。",
     "settings.eink.studio.metric": "指标",
+    "settings.eink.studio.module.quotaSlot": "额度栏位",
+    "settings.eink.studio.module.usageSlot": "用量栏位",
+    "settings.eink.studio.modules": "模块",
+    "settings.eink.studio.nothingToDraw": "无内容可绘制",
     "settings.eink.studio.open": "在 Studio 中编辑",
     "settings.eink.studio.orientationNote": "旋转设备会把布局重新适配到新的面板形状：元素保持原位，放不下的会被拉回边界内。",
     "settings.eink.studio.paperSize": "{width} x {height} 面板像素",
     "settings.eink.studio.period": "时间窗口",
     "settings.eink.studio.presetSelection": "全部不勾选则由 Vibe Bar 按自己的顺序选择。",
+    "settings.eink.studio.presetSubject": "该幻灯片仍在绘制预设。在 Studio 中编辑可将其拆成可移动的模块。",
     "settings.eink.studio.previewPercent": "预览百分比",
     "settings.eink.studio.push": "推送到设备",
+    "settings.eink.studio.relayout": "重新排布",
+    "settings.eink.studio.relayoutConfirm": "重新排布会替换当前方向上已摆放的全部内容。",
+    "settings.eink.studio.relayoutMissing": "当前方向尚未排布任何内容，可用重新排布从预设开始。",
+    "settings.eink.studio.snapHelp": "拖动时吸附到 8 像素网格，按住 Option 拖动可临时绕过。",
     "settings.eink.studio.statTile": "数据块",
     "settings.eink.studio.subValue": "副值",
+    "settings.eink.studio.wholeLayouts": "整套布局",
     "settings.eink.sync": "同步到设备",
     "settings.eink.syncDetail": "关闭后不再推送任何内容。幻灯片仍可编辑，预览也会继续更新。",
+    "settings.eink.tapLink": "轻触链接",
+    "settings.eink.tapLink.custom": "自定义地址",
+    "settings.eink.tapLink.invalid": "请输入 http 或 https 地址。",
+    "settings.eink.tapLink.prompt": "https://example.com",
+    "settings.eink.tapLink.remote": "远程仪表板",
+    "settings.eink.tapLink.remoteMissing": "请先配置 Remote，在此之前面板不会携带链接。",
+    "settings.eink.tapLinkDetail": "面板支持轻触：手机贴近时会打开这个地址。",
+    "settings.eink.unit.minutes": "分钟",
+    "settings.eink.unit.seconds": "秒",
+    "settings.eink.uprightPreview": "按实际阅读方向显示",
     "settings.externalChange.title": "另一个 Vibe Bar 覆盖了此处的修改",
     "settings.geminiCookiesSaved": "Gemini 的 cookies 已保存。",
     "settings.geminiShared": "Gemini 与 Antigravity 共用同一份 Google AI 订阅额度。网页端仅支持 cookie 导入，没有 WebView 登录途径。",
