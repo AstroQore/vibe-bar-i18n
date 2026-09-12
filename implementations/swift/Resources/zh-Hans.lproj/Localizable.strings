@@ -2364,6 +2364,27 @@
 /* Lead paragraph at the top of the E-ink Displays section. */
 "settings.eink.intro" = "Vibe Bar 会按墨水屏的排版绘制额度与用量，并推送到你在这里启用的每台设备。";
 
+/* Picker that chooses whether e-ink quota slots name their provider in words or with its logo. */
+"settings.eink.labelStyle" = "栏位标签";
+
+/* Help text under the slot-label style picker. */
+"settings.eink.labelStyle.detail" = "用图标代替厂商名称可以省出宽度，名字再长也能排进一行。";
+
+/* Slot label option: the provider's logo beside the quota group's name. */
+"settings.eink.labelStyle.logoAndGroup" = "图标与分组";
+
+/* Slot label option: the provider's logo beside the quota window's name. */
+"settings.eink.labelStyle.logoAndWindow" = "图标与时间窗口";
+
+/* Slot label option: the logo alone, no text beside it. */
+"settings.eink.labelStyle.logoOnly" = "仅图标";
+
+/* Per-slot label style option meaning 'inherit the slide's own setting'. */
+"settings.eink.labelStyle.slideDefault" = "跟随幻灯片";
+
+/* Slot label option: the provider's name written out in words. */
+"settings.eink.labelStyle.text" = "完整名称";
+
 /* Tooltip on the disabled remove button of an e-ink device's only slide. */
 "settings.eink.lastSlide" = "最后一张幻灯片无法移除。";
 

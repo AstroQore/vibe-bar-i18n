@@ -3596,6 +3596,34 @@
       "value": "Vibe Bar draws your quota and usage in the panel's own layout and pushes it to every device you enable here.",
       "comment": "Lead paragraph at the top of the E-ink Displays section."
     },
+    "settings.eink.labelStyle": {
+      "value": "Slot labels",
+      "comment": "Picker that chooses whether e-ink quota slots name their provider in words or with its logo."
+    },
+    "settings.eink.labelStyle.detail": {
+      "value": "A logo saves the width the provider's name costs, so a long bucket name still fits one line.",
+      "comment": "Help text under the slot-label style picker."
+    },
+    "settings.eink.labelStyle.logoAndGroup": {
+      "value": "Logo and group",
+      "comment": "Slot label option: the provider's logo beside the quota group's name."
+    },
+    "settings.eink.labelStyle.logoAndWindow": {
+      "value": "Logo and window",
+      "comment": "Slot label option: the provider's logo beside the quota window's name."
+    },
+    "settings.eink.labelStyle.logoOnly": {
+      "value": "Logo only",
+      "comment": "Slot label option: the logo alone, no text beside it."
+    },
+    "settings.eink.labelStyle.slideDefault": {
+      "value": "Same as slide",
+      "comment": "Per-slot label style option meaning 'inherit the slide's own setting'."
+    },
+    "settings.eink.labelStyle.text": {
+      "value": "Full name",
+      "comment": "Slot label option: the provider's name written out in words."
+    },
     "settings.eink.lastSlide": {
       "value": "The last slide cannot be removed.",
       "comment": "Tooltip on the disabled remove button of an e-ink device's only slide."

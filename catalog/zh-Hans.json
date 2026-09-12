@@ -2225,6 +2225,27 @@
     "settings.eink.intro": {
       "value": "Vibe Bar 会按墨水屏的排版绘制额度与用量，并推送到你在这里启用的每台设备。"
     },
+    "settings.eink.labelStyle": {
+      "value": "栏位标签"
+    },
+    "settings.eink.labelStyle.detail": {
+      "value": "用图标代替厂商名称可以省出宽度，名字再长也能排进一行。"
+    },
+    "settings.eink.labelStyle.logoAndGroup": {
+      "value": "图标与分组"
+    },
+    "settings.eink.labelStyle.logoAndWindow": {
+      "value": "图标与时间窗口"
+    },
+    "settings.eink.labelStyle.logoOnly": {
+      "value": "仅图标"
+    },
+    "settings.eink.labelStyle.slideDefault": {
+      "value": "跟随幻灯片"
+    },
+    "settings.eink.labelStyle.text": {
+      "value": "完整名称"
+    },
     "settings.eink.lastSlide": {
       "value": "最后一张幻灯片无法移除。"
     },
