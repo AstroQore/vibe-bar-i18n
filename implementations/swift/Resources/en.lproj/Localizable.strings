@@ -2286,6 +2286,9 @@
 /* E-ink error shown after the service answered 401 or 403. */
 "settings.eink.error.unauthorized" = "The Dot. service rejected the key. Save a new one to start syncing again.";
 
+/* E-ink error shown when the local usage ledger failed while a device also had quota slides to push. */
+"settings.eink.error.usageUnavailable" = "Usage data could not be read, so only the quota slides were pushed — open the Cost Data settings and rescan to rebuild it.";
+
 /* Button that asks the e-ink service which devices the account owns. */
 "settings.eink.fetchDevices" = "Fetch devices";
 

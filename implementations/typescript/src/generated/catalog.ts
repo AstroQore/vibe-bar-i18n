@@ -796,6 +796,7 @@ export type MessageKey =
   | "settings.eink.error.render"
   | "settings.eink.error.taskMissing"
   | "settings.eink.error.unauthorized"
+  | "settings.eink.error.usageUnavailable"
   | "settings.eink.fetchDevices"
   | "settings.eink.fixedContent"
   | "settings.eink.group.quota"
@@ -805,6 +806,7 @@ export type MessageKey =
   | "settings.eink.layout"
   | "settings.eink.loopTasks"
   | "settings.eink.loopTasksShort"
+  | "settings.eink.loopTasksSurplus"
   | "settings.eink.loopTasksUnknown"
   | "settings.eink.needsKey"
   | "settings.eink.noDevices"
@@ -2544,6 +2546,7 @@ export interface MessageParams {
   "settings.eink.error.render": undefined;
   "settings.eink.error.taskMissing": undefined;
   "settings.eink.error.unauthorized": undefined;
+  "settings.eink.error.usageUnavailable": undefined;
   "settings.eink.fetchDevices": undefined;
   "settings.eink.fixedContent": undefined;
   "settings.eink.group.quota": undefined;
@@ -2553,6 +2556,7 @@ export interface MessageParams {
   "settings.eink.layout": undefined;
   "settings.eink.loopTasks": { "count": number };
   "settings.eink.loopTasksShort": { "tasks": number; "slides": number };
+  "settings.eink.loopTasksSurplus": { "count": number };
   "settings.eink.loopTasksUnknown": undefined;
   "settings.eink.needsKey": undefined;
   "settings.eink.noDevices": undefined;
@@ -4293,6 +4297,7 @@ export const messages: {
     "settings.eink.error.render": "This slide could not be drawn for the panel.",
     "settings.eink.error.taskMissing": "That Canvas API task is not in the device's loop. Add it in the Dot. app, then scan the loop again.",
     "settings.eink.error.unauthorized": "The Dot. service rejected the key. Save a new one to start syncing again.",
+    "settings.eink.error.usageUnavailable": "Usage data could not be read, so only the quota slides were pushed — open the Cost Data settings and rescan to rebuild it.",
     "settings.eink.fetchDevices": "Fetch devices",
     "settings.eink.fixedContent": "This layout always draws today and the last seven days — there is nothing to pick.",
     "settings.eink.group.quota": "Quota layouts",
@@ -4302,6 +4307,7 @@ export const messages: {
     "settings.eink.layout": "Slide layout",
     "settings.eink.loopTasks": "{count, plural, one {# Canvas API task in the device loop} other {# Canvas API tasks in the device loop}}",
     "settings.eink.loopTasksShort": "The loop carries {tasks, plural, one {# Canvas API task} other {# Canvas API tasks}} and this device has {slides, plural, one {# slide} other {# slides}}. Add one Canvas API item per slide in the Dot. app and scan again, or switch to the Vibe Bar carousel.",
+    "settings.eink.loopTasksSurplus": "{count, plural, one {# Canvas API task in the loop has no slide behind it, and Vibe Bar draws a placeholder on it so nothing stale is left on the panel — remove it in the Dot. app to reclaim the slot.} other {# Canvas API tasks in the loop have no slide behind them, and Vibe Bar draws a placeholder on them so nothing stale is left on the panel — remove them in the Dot. app to reclaim the slots.}}",
     "settings.eink.loopTasksUnknown": "The device loop has not been scanned yet.",
     "settings.eink.needsKey": "Save an API key to reach your devices.",
     "settings.eink.noDevices": "No devices on this account yet.",
@@ -6037,6 +6043,7 @@ export const messages: {
     "settings.eink.error.render": "这张幻灯片无法绘制到屏幕上。",
     "settings.eink.error.taskMissing": "该 Canvas API 任务不在设备循环中。请先在 Dot. App 中添加，然后重新扫描循环。",
     "settings.eink.error.unauthorized": "Dot. 服务拒绝了该密钥。请保存新的密钥以恢复同步。",
+    "settings.eink.error.usageUnavailable": "无法读取用量数据，本次只推送了额度幻灯片 — 请在「成本数据」设置中重新扫描以重建。",
     "settings.eink.fetchDevices": "获取设备",
     "settings.eink.fixedContent": "该版式固定绘制今天与最近 7 天，无需选择。",
     "settings.eink.group.quota": "额度版式",
@@ -6046,6 +6053,7 @@ export const messages: {
     "settings.eink.layout": "幻灯片版式",
     "settings.eink.loopTasks": "{count, plural, other {设备循环中有 # 个 Canvas API 任务}}",
     "settings.eink.loopTasksShort": "循环中有 {tasks, plural, other {# 个 Canvas API 任务}}，而这台设备有 {slides, plural, other {# 张幻灯片}}。请在 Dot. App 中为每张幻灯片各添加一个 Canvas API 项目后重新扫描，或改用 Vibe Bar 驱动的轮播。",
+    "settings.eink.loopTasksSurplus": "{count, plural, other {循环中有 # 个 Canvas API 任务没有对应的幻灯片，Vibe Bar 会在其上绘制占位画面，避免屏幕停留在旧内容 — 如需收回这些位置，请在 Dot. App 中删除它们。}}",
     "settings.eink.loopTasksUnknown": "尚未扫描设备循环。",
     "settings.eink.needsKey": "保存 API key 后才能连接设备。",
     "settings.eink.noDevices": "该账号下还没有设备。",

@@ -3572,6 +3572,10 @@
       "value": "The Dot. service rejected the key. Save a new one to start syncing again.",
       "comment": "E-ink error shown after the service answered 401 or 403."
     },
+    "settings.eink.error.usageUnavailable": {
+      "value": "Usage data could not be read, so only the quota slides were pushed — open the Cost Data settings and rescan to rebuild it.",
+      "comment": "E-ink error shown when the local usage ledger failed while a device also had quota slides to push."
+    },
     "settings.eink.fetchDevices": {
       "value": "Fetch devices",
       "comment": "Button that asks the e-ink service which devices the account owns."
@@ -3613,6 +3617,13 @@
       "placeholders": {
         "tasks": "int",
         "slides": "int"
+      }
+    },
+    "settings.eink.loopTasksSurplus": {
+      "value": "{count, plural, one {# Canvas API task in the loop has no slide behind it, and Vibe Bar draws a placeholder on it so nothing stale is left on the panel — remove it in the Dot. app to reclaim the slot.} other {# Canvas API tasks in the loop have no slide behind them, and Vibe Bar draws a placeholder on them so nothing stale is left on the panel — remove them in the Dot. app to reclaim the slots.}}",
+      "comment": "Warning shown when an e-ink device's loop holds more Canvas API tasks than the device has slides.",
+      "placeholders": {
+        "count": "int"
       }
     },
     "settings.eink.loopTasksUnknown": {

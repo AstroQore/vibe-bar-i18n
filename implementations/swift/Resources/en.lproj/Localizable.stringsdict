@@ -383,6 +383,22 @@
 			<string>%2$lld slides</string>
 		</dict>
 	</dict>
+	<key>settings.eink.loopTasksSurplus</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld Canvas API task in the loop has no slide behind it, and Vibe Bar draws a placeholder on it so nothing stale is left on the panel — remove it in the Dot. app to reclaim the slot.</string>
+			<key>other</key>
+			<string>%lld Canvas API tasks in the loop have no slide behind them, and Vibe Bar draws a placeholder on them so nothing stale is left on the panel — remove them in the Dot. app to reclaim the slots.</string>
+		</dict>
+	</dict>
 	<key>status.card.componentCount</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>

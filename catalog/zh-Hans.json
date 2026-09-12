@@ -2207,6 +2207,9 @@
     "settings.eink.error.unauthorized": {
       "value": "Dot. 服务拒绝了该密钥。请保存新的密钥以恢复同步。"
     },
+    "settings.eink.error.usageUnavailable": {
+      "value": "无法读取用量数据，本次只推送了额度幻灯片 — 请在「成本数据」设置中重新扫描以重建。"
+    },
     "settings.eink.fetchDevices": {
       "value": "获取设备"
     },
@@ -2233,6 +2236,9 @@
     },
     "settings.eink.loopTasksShort": {
       "value": "循环中有 {tasks, plural, other {# 个 Canvas API 任务}}，而这台设备有 {slides, plural, other {# 张幻灯片}}。请在 Dot. App 中为每张幻灯片各添加一个 Canvas API 项目后重新扫描，或改用 Vibe Bar 驱动的轮播。"
+    },
+    "settings.eink.loopTasksSurplus": {
+      "value": "{count, plural, other {循环中有 # 个 Canvas API 任务没有对应的幻灯片，Vibe Bar 会在其上绘制占位画面，避免屏幕停留在旧内容 — 如需收回这些位置，请在 Dot. App 中删除它们。}}"
     },
     "settings.eink.loopTasksUnknown": {
       "value": "尚未扫描设备循环。"
