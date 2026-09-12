@@ -8209,8 +8209,8 @@
       "comment": "Button on the E-ink Studio stage that sends the slide being edited to its panel now."
     },
     "settings.eink.studio.hint": {
-      "value": "Drag to place. Arrow keys nudge one pixel, with Shift eight; hold Option to snap to the eight-pixel grid.",
-      "comment": "Hint under the E-ink Studio stage describing how elements are moved."
+      "value": "Drag to place. Arrow keys nudge one pixel, with Shift eight.",
+      "comment": "Hint under the E-ink Studio stage. The grid gesture is described by settings.eink.studio.snapHelp on the toggle that owns it, so this one does not repeat it."
     },
     "settings.eink.studio.paperSize": {
       "value": "{width} x {height} panel pixels",

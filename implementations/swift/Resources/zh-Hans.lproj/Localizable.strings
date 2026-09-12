@@ -2601,8 +2601,8 @@
 /* Font choice: the panel's scalable sans face, used for numbers. */
 "settings.eink.studio.font.sans" = "无衬线";
 
-/* Hint under the E-ink Studio stage describing how elements are moved. */
-"settings.eink.studio.hint" = "拖动摆放。方向键移动 1 像素，加 Shift 移动 8 像素；按住 Option 吸附到 8 像素网格。";
+/* Hint under the E-ink Studio stage. The grid gesture is described by settings.eink.studio.snapHelp on the toggle that owns it, so this one does not repeat it. */
+"settings.eink.studio.hint" = "拖动摆放。方向键移动 1 像素，按住 Shift 为 8 像素。";
 
 /* Name of a raster image element in the E-ink Studio's layer list, such as an exploded heatmap's dot grid. */
 "settings.eink.studio.image" = "图像";
@@ -2701,7 +2701,7 @@
 "settings.eink.tapLink.prompt" = "https://example.com";
 
 /* Tap link option that opens the user's own Vibe Bar Remote dashboard. */
-"settings.eink.tapLink.remote" = "远程仪表板";
+"settings.eink.tapLink.remote" = "Remote 仪表板";
 
 /* Shown when the remote dashboard tap link is picked but Remote is not configured. */
 "settings.eink.tapLink.remoteMissing" = "请先配置 Remote，在此之前面板不会携带链接。";

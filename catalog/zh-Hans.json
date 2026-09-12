@@ -5241,7 +5241,7 @@
       "value": "推送到设备"
     },
     "settings.eink.studio.hint": {
-      "value": "拖动摆放。方向键移动 1 像素，加 Shift 移动 8 像素；按住 Option 吸附到 8 像素网格。"
+      "value": "拖动摆放。方向键移动 1 像素，按住 Shift 为 8 像素。"
     },
     "settings.eink.studio.paperSize": {
       "value": "{width} x {height} 面板像素"
@@ -5382,7 +5382,7 @@
       "value": "面板支持轻触：手机贴近时会打开这个地址。"
     },
     "settings.eink.tapLink.remote": {
-      "value": "远程仪表板"
+      "value": "Remote 仪表板"
     },
     "settings.eink.tapLink.custom": {
       "value": "自定义地址"

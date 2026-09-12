@@ -2601,8 +2601,8 @@
 /* Font choice: the panel's scalable sans face, used for numbers. */
 "settings.eink.studio.font.sans" = "Sans";
 
-/* Hint under the E-ink Studio stage describing how elements are moved. */
-"settings.eink.studio.hint" = "Drag to place. Arrow keys nudge one pixel, with Shift eight; hold Option to snap to the eight-pixel grid.";
+/* Hint under the E-ink Studio stage. The grid gesture is described by settings.eink.studio.snapHelp on the toggle that owns it, so this one does not repeat it. */
+"settings.eink.studio.hint" = "Drag to place. Arrow keys nudge one pixel, with Shift eight.";
 
 /* Name of a raster image element in the E-ink Studio's layer list, such as an exploded heatmap's dot grid. */
 "settings.eink.studio.image" = "Image";

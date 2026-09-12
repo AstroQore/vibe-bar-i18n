@@ -6237,10 +6237,10 @@ public enum L10n {
                 /// en: "Panel font"
                 public static var font: String { L10nSupport.string("settings.eink.studio.font") }
 
-                /// Hint under the E-ink Studio stage describing how elements are moved.
+                /// Hint under the E-ink Studio stage. The grid gesture is described by settings.eink.studio.snapHelp on the toggle that owns it, so this one does not repeat it.
                 ///
                 /// Key: `settings.eink.studio.hint`
-                /// en: "Drag to place. Arrow keys nudge one pixel, with Shift eight; hold Option to snap to the eight-pixel grid."
+                /// en: "Drag to place. Arrow keys nudge one pixel, with Shift eight."
                 public static var hint: String { L10nSupport.string("settings.eink.studio.hint") }
 
                 /// Name of a raster image element in the E-ink Studio's layer list, such as an exploded heatmap's dot grid.
