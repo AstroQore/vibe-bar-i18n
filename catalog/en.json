@@ -8595,6 +8595,10 @@
     "settings.eink.studio.image": {
       "value": "Image",
       "comment": "Name of a raster image element in the E-ink Studio's layer list, such as an exploded heatmap's dot grid."
+    },
+    "settings.eink.studio.pushOtherOrientation": {
+      "value": "The device is showing another orientation. Switch back to it to push what will be on the panel.",
+      "comment": "Tooltip on the E-ink Studio's Push to device button when the orientation being edited is not the one the device is set to."
     }
   }
 }

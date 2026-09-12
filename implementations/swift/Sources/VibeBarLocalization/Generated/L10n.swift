@@ -6317,6 +6317,12 @@ public enum L10n {
                 /// en: "Push to device"
                 public static var push: String { L10nSupport.string("settings.eink.studio.push") }
 
+                /// Tooltip on the E-ink Studio's Push to device button when the orientation being edited is not the one the device is set to.
+                ///
+                /// Key: `settings.eink.studio.pushOtherOrientation`
+                /// en: "The device is showing another orientation. Switch back to it to push what will be on the panel."
+                public static var pushOtherOrientation: String { L10nSupport.string("settings.eink.studio.pushOtherOrientation") }
+
                 /// Button that lays the current orientation out from the slide's preset again.
                 ///
                 /// Key: `settings.eink.studio.relayout`
@@ -13249,6 +13255,7 @@ enum L10nCatalogFacts {
         "settings.eink.studio.presetSubject",
         "settings.eink.studio.previewPercent",
         "settings.eink.studio.push",
+        "settings.eink.studio.pushOtherOrientation",
         "settings.eink.studio.relayout",
         "settings.eink.studio.relayoutConfirm",
         "settings.eink.studio.relayoutMissing",
@@ -15149,6 +15156,7 @@ enum L10nCatalogFacts {
         "settings.eink.studio.presetSubject": 0,
         "settings.eink.studio.previewPercent": 0,
         "settings.eink.studio.push": 0,
+        "settings.eink.studio.pushOtherOrientation": 0,
         "settings.eink.studio.relayout": 0,
         "settings.eink.studio.relayoutConfirm": 0,
         "settings.eink.studio.relayoutMissing": 0,

@@ -5521,6 +5521,9 @@
     },
     "settings.eink.studio.image": {
       "value": "图像"
+    },
+    "settings.eink.studio.pushOtherOrientation": {
+      "value": "设备当前显示的是另一个方向。切回该方向后才能推送面板上实际显示的内容。"
     }
   }
 }
