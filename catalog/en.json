@@ -3518,11 +3518,11 @@
       }
     },
     "settings.eink.customSlide": {
-      "value": "Custom (arrives with the Studio)",
+      "value": "Custom (opens the Studio)",
       "comment": "Disabled option in the e-ink layout picker standing in for a Studio-authored layout."
     },
     "settings.eink.customSlideDetail": {
-      "value": "This slide points at a custom layout. Vibe Bar cannot draw one yet, so the device is not sent anything for it.",
+      "value": "This slide is laid out by hand. Open it in the Studio to place its elements.",
       "comment": "Help line for an e-ink slide that names a custom layout the renderer cannot draw yet."
     },
     "settings.eink.dataRefresh": {
@@ -8199,6 +8199,174 @@
     "platform.macos.permissions.openKeychain": {
       "value": "Open Keychain Access",
       "comment": "Button in the Keychain section that opens the macOS Keychain Access app."
+    },
+    "settings.eink.studio.open": {
+      "value": "Edit in Studio",
+      "comment": "Button on a custom E-ink slide that opens the Layout Studio on it."
+    },
+    "settings.eink.studio.push": {
+      "value": "Push to device",
+      "comment": "Button on the E-ink Studio stage that sends the slide being edited to its panel now."
+    },
+    "settings.eink.studio.hint": {
+      "value": "Drag to place. Arrow keys nudge one pixel, with Shift eight; hold Option to snap to the eight-pixel grid.",
+      "comment": "Hint under the E-ink Studio stage describing how elements are moved."
+    },
+    "settings.eink.studio.paperSize": {
+      "value": "{width} x {height} panel pixels",
+      "comment": "Caption under the E-ink Studio stage giving the panel's size in device pixels.",
+      "placeholders": {
+        "height": "int",
+        "width": "int"
+      }
+    },
+    "settings.eink.studio.divider": {
+      "value": "Divider",
+      "comment": "Name of the E-ink Studio element that draws a one-pixel rule."
+    },
+    "settings.eink.studio.statTile": {
+      "value": "Stat tile",
+      "comment": "Name of the E-ink Studio element that draws a caption, a large figure and a smaller one under it."
+    },
+    "settings.eink.studio.binding.percent": {
+      "value": "Quota left, percent",
+      "comment": "Binding choice: the picked quota bucket's remaining percentage."
+    },
+    "settings.eink.studio.binding.label": {
+      "value": "Bucket name",
+      "comment": "Binding choice: the picked quota bucket's provider and window, written out."
+    },
+    "settings.eink.studio.binding.countdown": {
+      "value": "Time to reset",
+      "comment": "Binding choice: how long until the picked quota bucket resets."
+    },
+    "settings.eink.studio.binding.usage": {
+      "value": "Usage figure",
+      "comment": "Binding choice: a cost, token or request total over a chosen window."
+    },
+    "settings.eink.studio.binding.custom": {
+      "value": "Fixed text",
+      "comment": "Binding choice: text typed by the user, drawn as it is."
+    },
+    "settings.eink.studio.period": {
+      "value": "Window",
+      "comment": "Picker choosing which usage window an E-ink Studio element reads."
+    },
+    "settings.eink.studio.metric": {
+      "value": "Figure",
+      "comment": "Picker choosing whether a usage-bound E-ink element draws cost, tokens or requests."
+    },
+    "settings.eink.studio.font": {
+      "value": "Panel font",
+      "comment": "Picker choosing which of the panel's two built-in faces an element is drawn in."
+    },
+    "settings.eink.studio.font.pixel": {
+      "value": "Pixel 12",
+      "comment": "Font choice: the panel's 12-pixel bitmap face, the only one with Chinese coverage."
+    },
+    "settings.eink.studio.font.sans": {
+      "value": "Sans",
+      "comment": "Font choice: the panel's scalable sans face, used for numbers."
+    },
+    "settings.eink.studio.bold": {
+      "value": "Bold",
+      "comment": "Toggle making an E-ink element's text bold."
+    },
+    "settings.eink.studio.alignment": {
+      "value": "Alignment",
+      "comment": "Picker choosing how an E-ink element's text sits in its box."
+    },
+    "settings.eink.studio.align.leading": {
+      "value": "Left",
+      "comment": "Text alignment choice in the E-ink Studio."
+    },
+    "settings.eink.studio.align.center": {
+      "value": "Centre",
+      "comment": "Text alignment choice in the E-ink Studio."
+    },
+    "settings.eink.studio.align.trailing": {
+      "value": "Right",
+      "comment": "Text alignment choice in the E-ink Studio."
+    },
+    "settings.eink.studio.boxWidth": {
+      "value": "Box width",
+      "comment": "Picker choosing whether an E-ink text box is measured from its text or fixed by the author."
+    },
+    "settings.eink.studio.boxWidth.auto": {
+      "value": "Fit the text",
+      "comment": "Box width choice: the box is as wide as the text it draws."
+    },
+    "settings.eink.studio.boxWidth.fixed": {
+      "value": "Fixed, longer text is cut",
+      "comment": "Box width choice: the box keeps the width set here and clips anything wider."
+    },
+    "settings.eink.studio.caption": {
+      "value": "Caption",
+      "comment": "Field for the small line above a stat tile's big figure."
+    },
+    "settings.eink.studio.subValue": {
+      "value": "Sub value",
+      "comment": "Field for the small line under a stat tile's big figure."
+    },
+    "settings.eink.studio.previewPercent": {
+      "value": "Preview percentage",
+      "comment": "Value an E-ink element draws in the Studio while no live quota bucket is picked for it."
+    },
+    "settings.eink.studio.diagnostics": {
+      "value": "Panel checks",
+      "comment": "Heading over the list of problems the E-ink Studio found in the layout."
+    },
+    "settings.eink.studio.diagnosticsClear": {
+      "value": "Nothing out of place.",
+      "comment": "Shown under the panel-checks heading when the E-ink layout has no problems."
+    },
+    "settings.eink.studio.budget": {
+      "value": "{count} of {limit} elements",
+      "comment": "Badge counting how many drawing elements the layout sends against the panel's hard limit.",
+      "placeholders": {
+        "count": "int",
+        "limit": "int"
+      }
+    },
+    "settings.eink.studio.issue.textOverflow": {
+      "value": "The text is wider than its box, so the panel cuts it.",
+      "comment": "Layout problem: a fixed-width E-ink text box is narrower than the string it draws."
+    },
+    "settings.eink.studio.issue.outOfFrame": {
+      "value": "This element falls outside the panel.",
+      "comment": "Layout problem: an E-ink element is partly or wholly off the panel."
+    },
+    "settings.eink.studio.issue.tooManyElements": {
+      "value": "This layout draws {count} elements and the panel accepts {limit}.",
+      "comment": "Layout problem: the E-ink layout exceeds the Canvas API's element limit.",
+      "placeholders": {
+        "count": "int",
+        "limit": "int"
+      }
+    },
+    "settings.eink.studio.issue.presetClipped": {
+      "value": "This preset block is smaller than the panel it was drawn for, so parts of it are cut.",
+      "comment": "Layout problem: a whole-preset E-ink element was scaled below the size the preset was authored at."
+    },
+    "settings.eink.studio.issue.noField": {
+      "value": "No quota bucket is picked, so this draws the preview value.",
+      "comment": "Layout problem: an E-ink element bound to quota has no bucket chosen."
+    },
+    "settings.eink.studio.presetSelection": {
+      "value": "Leave every box off to let Vibe Bar choose, in its own order.",
+      "comment": "Hint under the bucket or window list of a whole-preset element in the E-ink Studio."
+    },
+    "settings.eink.studio.orientationNote": {
+      "value": "Turning the device re-fits this layout to the new panel shape: elements keep their position and are pulled back inside the edge where they no longer fit.",
+      "comment": "Explains what happens to a custom E-ink layout when the device's orientation changes."
+    },
+    "settings.eink.customLayout": {
+      "value": "Custom layout",
+      "comment": "Option in the E-ink slide layout picker that hands the slide to the Studio."
+    },
+    "settings.eink.customLayoutDetail": {
+      "value": "Lay this slide out yourself: place text, rings, bars and whole preset blocks on the panel.",
+      "comment": "Detail line under the custom option in the E-ink slide layout picker."
     }
   }
 }

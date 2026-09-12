@@ -2250,11 +2250,17 @@
 /* Shown when an e-ink slide's bucket selection has reached the layout's capacity. */
 "settings.eink.capacityFull" = "该版式在当前方向下最多容纳 %lld 项。请先取消一项再选择其他。";
 
+/* Option in the E-ink slide layout picker that hands the slide to the Studio. */
+"settings.eink.customLayout" = "自定义布局";
+
+/* Detail line under the custom option in the E-ink slide layout picker. */
+"settings.eink.customLayoutDetail" = "自行排布这张幻灯片：在面板上摆放文本、圆环、条形和整块预设。";
+
 /* Disabled option in the e-ink layout picker standing in for a Studio-authored layout. */
-"settings.eink.customSlide" = "自定义（随布局工作台推出）";
+"settings.eink.customSlide" = "自定义（在 Studio 中编辑）";
 
 /* Help line for an e-ink slide that names a custom layout the renderer cannot draw yet. */
-"settings.eink.customSlideDetail" = "这张幻灯片指向自定义版式。Vibe Bar 暂时无法绘制，因此不会为它向设备推送内容。";
+"settings.eink.customSlideDetail" = "这张幻灯片由手动排布。在 Studio 中打开即可摆放元素。";
 
 /* Stepper label for how often an e-ink device's numbers are re-pushed on mains power. */
 "settings.eink.dataRefresh" = "数据刷新";
@@ -2423,6 +2429,117 @@
 
 /* Status label for an e-ink device's wireless signal. */
 "settings.eink.status.wifi" = "Wi-Fi";
+
+/* Text alignment choice in the E-ink Studio. */
+"settings.eink.studio.align.center" = "居中";
+
+/* Text alignment choice in the E-ink Studio. */
+"settings.eink.studio.align.leading" = "左";
+
+/* Text alignment choice in the E-ink Studio. */
+"settings.eink.studio.align.trailing" = "右";
+
+/* Picker choosing how an E-ink element's text sits in its box. */
+"settings.eink.studio.alignment" = "对齐";
+
+/* Binding choice: how long until the picked quota bucket resets. */
+"settings.eink.studio.binding.countdown" = "距离重置";
+
+/* Binding choice: text typed by the user, drawn as it is. */
+"settings.eink.studio.binding.custom" = "固定文本";
+
+/* Binding choice: the picked quota bucket's provider and window, written out. */
+"settings.eink.studio.binding.label" = "额度名称";
+
+/* Binding choice: the picked quota bucket's remaining percentage. */
+"settings.eink.studio.binding.percent" = "额度剩余百分比";
+
+/* Binding choice: a cost, token or request total over a chosen window. */
+"settings.eink.studio.binding.usage" = "用量数字";
+
+/* Toggle making an E-ink element's text bold. */
+"settings.eink.studio.bold" = "加粗";
+
+/* Picker choosing whether an E-ink text box is measured from its text or fixed by the author. */
+"settings.eink.studio.boxWidth" = "文本框宽度";
+
+/* Box width choice: the box is as wide as the text it draws. */
+"settings.eink.studio.boxWidth.auto" = "随文本";
+
+/* Box width choice: the box keeps the width set here and clips anything wider. */
+"settings.eink.studio.boxWidth.fixed" = "固定，超出部分截断";
+
+/* Badge counting how many drawing elements the layout sends against the panel's hard limit. */
+"settings.eink.studio.budget" = "%1$lld / %2$lld 个元素";
+
+/* Field for the small line above a stat tile's big figure. */
+"settings.eink.studio.caption" = "标题";
+
+/* Heading over the list of problems the E-ink Studio found in the layout. */
+"settings.eink.studio.diagnostics" = "面板检查";
+
+/* Shown under the panel-checks heading when the E-ink layout has no problems. */
+"settings.eink.studio.diagnosticsClear" = "没有发现问题。";
+
+/* Name of the E-ink Studio element that draws a one-pixel rule. */
+"settings.eink.studio.divider" = "分隔线";
+
+/* Picker choosing which of the panel's two built-in faces an element is drawn in. */
+"settings.eink.studio.font" = "面板字体";
+
+/* Font choice: the panel's 12-pixel bitmap face, the only one with Chinese coverage. */
+"settings.eink.studio.font.pixel" = "像素 12";
+
+/* Font choice: the panel's scalable sans face, used for numbers. */
+"settings.eink.studio.font.sans" = "无衬线";
+
+/* Hint under the E-ink Studio stage describing how elements are moved. */
+"settings.eink.studio.hint" = "拖动摆放。方向键移动 1 像素，加 Shift 移动 8 像素；按住 Option 吸附到 8 像素网格。";
+
+/* Layout problem: an E-ink element bound to quota has no bucket chosen. */
+"settings.eink.studio.issue.noField" = "未选择额度，显示的是预览值。";
+
+/* Layout problem: an E-ink element is partly or wholly off the panel. */
+"settings.eink.studio.issue.outOfFrame" = "该元素超出面板范围。";
+
+/* Layout problem: a whole-preset E-ink element was scaled below the size the preset was authored at. */
+"settings.eink.studio.issue.presetClipped" = "预设块小于其原本的面板尺寸，部分内容会被裁掉。";
+
+/* Layout problem: a fixed-width E-ink text box is narrower than the string it draws. */
+"settings.eink.studio.issue.textOverflow" = "文本宽度超过文本框，面板会截断。";
+
+/* Layout problem: the E-ink layout exceeds the Canvas API's element limit. */
+"settings.eink.studio.issue.tooManyElements" = "该布局会绘制 %1$lld 个元素，面板最多接受 %2$lld 个。";
+
+/* Picker choosing whether a usage-bound E-ink element draws cost, tokens or requests. */
+"settings.eink.studio.metric" = "指标";
+
+/* Button on a custom E-ink slide that opens the Layout Studio on it. */
+"settings.eink.studio.open" = "在 Studio 中编辑";
+
+/* Explains what happens to a custom E-ink layout when the device's orientation changes. */
+"settings.eink.studio.orientationNote" = "旋转设备会把布局重新适配到新的面板形状：元素保持原位，放不下的会被拉回边界内。";
+
+/* Caption under the E-ink Studio stage giving the panel's size in device pixels. */
+"settings.eink.studio.paperSize" = "%2$lld x %1$lld 面板像素";
+
+/* Picker choosing which usage window an E-ink Studio element reads. */
+"settings.eink.studio.period" = "时间窗口";
+
+/* Hint under the bucket or window list of a whole-preset element in the E-ink Studio. */
+"settings.eink.studio.presetSelection" = "全部不勾选则由 Vibe Bar 按自己的顺序选择。";
+
+/* Value an E-ink element draws in the Studio while no live quota bucket is picked for it. */
+"settings.eink.studio.previewPercent" = "预览百分比";
+
+/* Button on the E-ink Studio stage that sends the slide being edited to its panel now. */
+"settings.eink.studio.push" = "推送到设备";
+
+/* Name of the E-ink Studio element that draws a caption, a large figure and a smaller one under it. */
+"settings.eink.studio.statTile" = "数据块";
+
+/* Field for the small line under a stat tile's big figure. */
+"settings.eink.studio.subValue" = "副值";
 
 /* Master toggle that lets the E-ink sync engine push anything at all. */
 "settings.eink.sync" = "同步到设备";

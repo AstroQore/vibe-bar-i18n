@@ -5520,16 +5520,28 @@ public enum L10n {
                 L10nSupport.format("settings.eink.capacityFull", count)
             }
 
+            /// Option in the E-ink slide layout picker that hands the slide to the Studio.
+            ///
+            /// Key: `settings.eink.customLayout`
+            /// en: "Custom layout"
+            public static var customLayout: String { L10nSupport.string("settings.eink.customLayout") }
+
+            /// Detail line under the custom option in the E-ink slide layout picker.
+            ///
+            /// Key: `settings.eink.customLayoutDetail`
+            /// en: "Lay this slide out yourself: place text, rings, bars and whole preset blocks on the panel."
+            public static var customLayoutDetail: String { L10nSupport.string("settings.eink.customLayoutDetail") }
+
             /// Disabled option in the e-ink layout picker standing in for a Studio-authored layout.
             ///
             /// Key: `settings.eink.customSlide`
-            /// en: "Custom (arrives with the Studio)"
+            /// en: "Custom (opens the Studio)"
             public static var customSlide: String { L10nSupport.string("settings.eink.customSlide") }
 
             /// Help line for an e-ink slide that names a custom layout the renderer cannot draw yet.
             ///
             /// Key: `settings.eink.customSlideDetail`
-            /// en: "This slide points at a custom layout. Vibe Bar cannot draw one yet, so the device is not sent anything for it."
+            /// en: "This slide is laid out by hand. Open it in the Studio to place its elements."
             public static var customSlideDetail: String { L10nSupport.string("settings.eink.customSlideDetail") }
 
             /// Stepper label for how often an e-ink device's numbers are re-pushed on mains power.
@@ -5924,6 +5936,246 @@ public enum L10n {
                 /// Key: `settings.eink.status.wifi`
                 /// en: "Wi-Fi"
                 public static var wifi: String { L10nSupport.string("settings.eink.status.wifi") }
+            }
+
+            public enum Studio {
+                /// Picker choosing how an E-ink element's text sits in its box.
+                ///
+                /// Key: `settings.eink.studio.alignment`
+                /// en: "Alignment"
+                public static var alignment: String { L10nSupport.string("settings.eink.studio.alignment") }
+
+                /// Toggle making an E-ink element's text bold.
+                ///
+                /// Key: `settings.eink.studio.bold`
+                /// en: "Bold"
+                public static var bold: String { L10nSupport.string("settings.eink.studio.bold") }
+
+                /// Picker choosing whether an E-ink text box is measured from its text or fixed by the author.
+                ///
+                /// Key: `settings.eink.studio.boxWidth`
+                /// en: "Box width"
+                public static var boxWidth: String { L10nSupport.string("settings.eink.studio.boxWidth") }
+
+                /// Badge counting how many drawing elements the layout sends against the panel's hard limit.
+                ///
+                /// Key: `settings.eink.studio.budget`
+                /// en: "{count} of {limit} elements"
+                public static func budget(count: Int, limit: Int) -> String {
+                    L10nSupport.format("settings.eink.studio.budget", count, limit)
+                }
+
+                /// Field for the small line above a stat tile's big figure.
+                ///
+                /// Key: `settings.eink.studio.caption`
+                /// en: "Caption"
+                public static var caption: String { L10nSupport.string("settings.eink.studio.caption") }
+
+                /// Heading over the list of problems the E-ink Studio found in the layout.
+                ///
+                /// Key: `settings.eink.studio.diagnostics`
+                /// en: "Panel checks"
+                public static var diagnostics: String { L10nSupport.string("settings.eink.studio.diagnostics") }
+
+                /// Shown under the panel-checks heading when the E-ink layout has no problems.
+                ///
+                /// Key: `settings.eink.studio.diagnosticsClear`
+                /// en: "Nothing out of place."
+                public static var diagnosticsClear: String { L10nSupport.string("settings.eink.studio.diagnosticsClear") }
+
+                /// Name of the E-ink Studio element that draws a one-pixel rule.
+                ///
+                /// Key: `settings.eink.studio.divider`
+                /// en: "Divider"
+                public static var divider: String { L10nSupport.string("settings.eink.studio.divider") }
+
+                /// Picker choosing which of the panel's two built-in faces an element is drawn in.
+                ///
+                /// Key: `settings.eink.studio.font`
+                /// en: "Panel font"
+                public static var font: String { L10nSupport.string("settings.eink.studio.font") }
+
+                /// Hint under the E-ink Studio stage describing how elements are moved.
+                ///
+                /// Key: `settings.eink.studio.hint`
+                /// en: "Drag to place. Arrow keys nudge one pixel, with Shift eight; hold Option to snap to the eight-pixel grid."
+                public static var hint: String { L10nSupport.string("settings.eink.studio.hint") }
+
+                /// Picker choosing whether a usage-bound E-ink element draws cost, tokens or requests.
+                ///
+                /// Key: `settings.eink.studio.metric`
+                /// en: "Figure"
+                public static var metric: String { L10nSupport.string("settings.eink.studio.metric") }
+
+                /// Button on a custom E-ink slide that opens the Layout Studio on it.
+                ///
+                /// Key: `settings.eink.studio.open`
+                /// en: "Edit in Studio"
+                public static var `open`: String { L10nSupport.string("settings.eink.studio.open") }
+
+                /// Explains what happens to a custom E-ink layout when the device's orientation changes.
+                ///
+                /// Key: `settings.eink.studio.orientationNote`
+                /// en: "Turning the device re-fits this layout to the new panel shape: elements keep their position and are pulled back inside the edge where they no longer fit."
+                public static var orientationNote: String { L10nSupport.string("settings.eink.studio.orientationNote") }
+
+                /// Caption under the E-ink Studio stage giving the panel's size in device pixels.
+                ///
+                /// Key: `settings.eink.studio.paperSize`
+                /// en: "{width} x {height} panel pixels"
+                public static func paperSize(height: Int, width: Int) -> String {
+                    L10nSupport.format("settings.eink.studio.paperSize", height, width)
+                }
+
+                /// Picker choosing which usage window an E-ink Studio element reads.
+                ///
+                /// Key: `settings.eink.studio.period`
+                /// en: "Window"
+                public static var period: String { L10nSupport.string("settings.eink.studio.period") }
+
+                /// Hint under the bucket or window list of a whole-preset element in the E-ink Studio.
+                ///
+                /// Key: `settings.eink.studio.presetSelection`
+                /// en: "Leave every box off to let Vibe Bar choose, in its own order."
+                public static var presetSelection: String { L10nSupport.string("settings.eink.studio.presetSelection") }
+
+                /// Value an E-ink element draws in the Studio while no live quota bucket is picked for it.
+                ///
+                /// Key: `settings.eink.studio.previewPercent`
+                /// en: "Preview percentage"
+                public static var previewPercent: String { L10nSupport.string("settings.eink.studio.previewPercent") }
+
+                /// Button on the E-ink Studio stage that sends the slide being edited to its panel now.
+                ///
+                /// Key: `settings.eink.studio.push`
+                /// en: "Push to device"
+                public static var push: String { L10nSupport.string("settings.eink.studio.push") }
+
+                /// Name of the E-ink Studio element that draws a caption, a large figure and a smaller one under it.
+                ///
+                /// Key: `settings.eink.studio.statTile`
+                /// en: "Stat tile"
+                public static var statTile: String { L10nSupport.string("settings.eink.studio.statTile") }
+
+                /// Field for the small line under a stat tile's big figure.
+                ///
+                /// Key: `settings.eink.studio.subValue`
+                /// en: "Sub value"
+                public static var subValue: String { L10nSupport.string("settings.eink.studio.subValue") }
+
+                public enum Align {
+                    /// Text alignment choice in the E-ink Studio.
+                    ///
+                    /// Key: `settings.eink.studio.align.center`
+                    /// en: "Centre"
+                    public static var center: String { L10nSupport.string("settings.eink.studio.align.center") }
+
+                    /// Text alignment choice in the E-ink Studio.
+                    ///
+                    /// Key: `settings.eink.studio.align.leading`
+                    /// en: "Left"
+                    public static var leading: String { L10nSupport.string("settings.eink.studio.align.leading") }
+
+                    /// Text alignment choice in the E-ink Studio.
+                    ///
+                    /// Key: `settings.eink.studio.align.trailing`
+                    /// en: "Right"
+                    public static var trailing: String { L10nSupport.string("settings.eink.studio.align.trailing") }
+                }
+
+                public enum Binding {
+                    /// Binding choice: how long until the picked quota bucket resets.
+                    ///
+                    /// Key: `settings.eink.studio.binding.countdown`
+                    /// en: "Time to reset"
+                    public static var countdown: String { L10nSupport.string("settings.eink.studio.binding.countdown") }
+
+                    /// Binding choice: text typed by the user, drawn as it is.
+                    ///
+                    /// Key: `settings.eink.studio.binding.custom`
+                    /// en: "Fixed text"
+                    public static var custom: String { L10nSupport.string("settings.eink.studio.binding.custom") }
+
+                    /// Binding choice: the picked quota bucket's provider and window, written out.
+                    ///
+                    /// Key: `settings.eink.studio.binding.label`
+                    /// en: "Bucket name"
+                    public static var label: String { L10nSupport.string("settings.eink.studio.binding.label") }
+
+                    /// Binding choice: the picked quota bucket's remaining percentage.
+                    ///
+                    /// Key: `settings.eink.studio.binding.percent`
+                    /// en: "Quota left, percent"
+                    public static var percent: String { L10nSupport.string("settings.eink.studio.binding.percent") }
+
+                    /// Binding choice: a cost, token or request total over a chosen window.
+                    ///
+                    /// Key: `settings.eink.studio.binding.usage`
+                    /// en: "Usage figure"
+                    public static var usage: String { L10nSupport.string("settings.eink.studio.binding.usage") }
+                }
+
+                public enum BoxWidth {
+                    /// Box width choice: the box is as wide as the text it draws.
+                    ///
+                    /// Key: `settings.eink.studio.boxWidth.auto`
+                    /// en: "Fit the text"
+                    public static var auto: String { L10nSupport.string("settings.eink.studio.boxWidth.auto") }
+
+                    /// Box width choice: the box keeps the width set here and clips anything wider.
+                    ///
+                    /// Key: `settings.eink.studio.boxWidth.fixed`
+                    /// en: "Fixed, longer text is cut"
+                    public static var fixed: String { L10nSupport.string("settings.eink.studio.boxWidth.fixed") }
+                }
+
+                public enum Font {
+                    /// Font choice: the panel's 12-pixel bitmap face, the only one with Chinese coverage.
+                    ///
+                    /// Key: `settings.eink.studio.font.pixel`
+                    /// en: "Pixel 12"
+                    public static var pixel: String { L10nSupport.string("settings.eink.studio.font.pixel") }
+
+                    /// Font choice: the panel's scalable sans face, used for numbers.
+                    ///
+                    /// Key: `settings.eink.studio.font.sans`
+                    /// en: "Sans"
+                    public static var sans: String { L10nSupport.string("settings.eink.studio.font.sans") }
+                }
+
+                public enum Issue {
+                    /// Layout problem: an E-ink element bound to quota has no bucket chosen.
+                    ///
+                    /// Key: `settings.eink.studio.issue.noField`
+                    /// en: "No quota bucket is picked, so this draws the preview value."
+                    public static var noField: String { L10nSupport.string("settings.eink.studio.issue.noField") }
+
+                    /// Layout problem: an E-ink element is partly or wholly off the panel.
+                    ///
+                    /// Key: `settings.eink.studio.issue.outOfFrame`
+                    /// en: "This element falls outside the panel."
+                    public static var outOfFrame: String { L10nSupport.string("settings.eink.studio.issue.outOfFrame") }
+
+                    /// Layout problem: a whole-preset E-ink element was scaled below the size the preset was authored at.
+                    ///
+                    /// Key: `settings.eink.studio.issue.presetClipped`
+                    /// en: "This preset block is smaller than the panel it was drawn for, so parts of it are cut."
+                    public static var presetClipped: String { L10nSupport.string("settings.eink.studio.issue.presetClipped") }
+
+                    /// Layout problem: a fixed-width E-ink text box is narrower than the string it draws.
+                    ///
+                    /// Key: `settings.eink.studio.issue.textOverflow`
+                    /// en: "The text is wider than its box, so the panel cuts it."
+                    public static var textOverflow: String { L10nSupport.string("settings.eink.studio.issue.textOverflow") }
+
+                    /// Layout problem: the E-ink layout exceeds the Canvas API's element limit.
+                    ///
+                    /// Key: `settings.eink.studio.issue.tooManyElements`
+                    /// en: "This layout draws {count} elements and the panel accepts {limit}."
+                    public static func tooManyElements(count: Int, limit: Int) -> String {
+                        L10nSupport.format("settings.eink.studio.issue.tooManyElements", count, limit)
+                    }
+                }
             }
         }
 
@@ -12500,6 +12752,8 @@ enum L10nCatalogFacts {
         "settings.eink.batteryRefreshDetail",
         "settings.eink.buckets",
         "settings.eink.capacityFull",
+        "settings.eink.customLayout",
+        "settings.eink.customLayoutDetail",
         "settings.eink.customSlide",
         "settings.eink.customSlideDetail",
         "settings.eink.dataRefresh",
@@ -12562,6 +12816,43 @@ enum L10nCatalogFacts {
         "settings.eink.status.pending",
         "settings.eink.status.power",
         "settings.eink.status.wifi",
+        "settings.eink.studio.align.center",
+        "settings.eink.studio.align.leading",
+        "settings.eink.studio.align.trailing",
+        "settings.eink.studio.alignment",
+        "settings.eink.studio.binding.countdown",
+        "settings.eink.studio.binding.custom",
+        "settings.eink.studio.binding.label",
+        "settings.eink.studio.binding.percent",
+        "settings.eink.studio.binding.usage",
+        "settings.eink.studio.bold",
+        "settings.eink.studio.boxWidth",
+        "settings.eink.studio.boxWidth.auto",
+        "settings.eink.studio.boxWidth.fixed",
+        "settings.eink.studio.budget",
+        "settings.eink.studio.caption",
+        "settings.eink.studio.diagnostics",
+        "settings.eink.studio.diagnosticsClear",
+        "settings.eink.studio.divider",
+        "settings.eink.studio.font",
+        "settings.eink.studio.font.pixel",
+        "settings.eink.studio.font.sans",
+        "settings.eink.studio.hint",
+        "settings.eink.studio.issue.noField",
+        "settings.eink.studio.issue.outOfFrame",
+        "settings.eink.studio.issue.presetClipped",
+        "settings.eink.studio.issue.textOverflow",
+        "settings.eink.studio.issue.tooManyElements",
+        "settings.eink.studio.metric",
+        "settings.eink.studio.open",
+        "settings.eink.studio.orientationNote",
+        "settings.eink.studio.paperSize",
+        "settings.eink.studio.period",
+        "settings.eink.studio.presetSelection",
+        "settings.eink.studio.previewPercent",
+        "settings.eink.studio.push",
+        "settings.eink.studio.statTile",
+        "settings.eink.studio.subValue",
         "settings.eink.sync",
         "settings.eink.syncDetail",
         "settings.externalChange.title",
@@ -14304,6 +14595,8 @@ enum L10nCatalogFacts {
         "settings.eink.batteryRefreshDetail": 0,
         "settings.eink.buckets": 0,
         "settings.eink.capacityFull": 1,
+        "settings.eink.customLayout": 0,
+        "settings.eink.customLayoutDetail": 0,
         "settings.eink.customSlide": 0,
         "settings.eink.customSlideDetail": 0,
         "settings.eink.dataRefresh": 0,
@@ -14366,6 +14659,43 @@ enum L10nCatalogFacts {
         "settings.eink.status.pending": 0,
         "settings.eink.status.power": 0,
         "settings.eink.status.wifi": 0,
+        "settings.eink.studio.align.center": 0,
+        "settings.eink.studio.align.leading": 0,
+        "settings.eink.studio.align.trailing": 0,
+        "settings.eink.studio.alignment": 0,
+        "settings.eink.studio.binding.countdown": 0,
+        "settings.eink.studio.binding.custom": 0,
+        "settings.eink.studio.binding.label": 0,
+        "settings.eink.studio.binding.percent": 0,
+        "settings.eink.studio.binding.usage": 0,
+        "settings.eink.studio.bold": 0,
+        "settings.eink.studio.boxWidth": 0,
+        "settings.eink.studio.boxWidth.auto": 0,
+        "settings.eink.studio.boxWidth.fixed": 0,
+        "settings.eink.studio.budget": 2,
+        "settings.eink.studio.caption": 0,
+        "settings.eink.studio.diagnostics": 0,
+        "settings.eink.studio.diagnosticsClear": 0,
+        "settings.eink.studio.divider": 0,
+        "settings.eink.studio.font": 0,
+        "settings.eink.studio.font.pixel": 0,
+        "settings.eink.studio.font.sans": 0,
+        "settings.eink.studio.hint": 0,
+        "settings.eink.studio.issue.noField": 0,
+        "settings.eink.studio.issue.outOfFrame": 0,
+        "settings.eink.studio.issue.presetClipped": 0,
+        "settings.eink.studio.issue.textOverflow": 0,
+        "settings.eink.studio.issue.tooManyElements": 2,
+        "settings.eink.studio.metric": 0,
+        "settings.eink.studio.open": 0,
+        "settings.eink.studio.orientationNote": 0,
+        "settings.eink.studio.paperSize": 2,
+        "settings.eink.studio.period": 0,
+        "settings.eink.studio.presetSelection": 0,
+        "settings.eink.studio.previewPercent": 0,
+        "settings.eink.studio.push": 0,
+        "settings.eink.studio.statTile": 0,
+        "settings.eink.studio.subValue": 0,
         "settings.eink.sync": 0,
         "settings.eink.syncDetail": 0,
         "settings.externalChange.title": 0,

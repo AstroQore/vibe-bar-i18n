@@ -2169,10 +2169,10 @@
       "value": "该版式在当前方向下最多容纳 {count} 项。请先取消一项再选择其他。"
     },
     "settings.eink.customSlide": {
-      "value": "自定义（随布局工作台推出）"
+      "value": "自定义（在 Studio 中编辑）"
     },
     "settings.eink.customSlideDetail": {
-      "value": "这张幻灯片指向自定义版式。Vibe Bar 暂时无法绘制，因此不会为它向设备推送内容。"
+      "value": "这张幻灯片由手动排布。在 Studio 中打开即可摆放元素。"
     },
     "settings.eink.dataRefresh": {
       "value": "数据刷新"
@@ -5233,6 +5233,123 @@
     },
     "platform.macos.permissions.openKeychain": {
       "value": "打开 Keychain 访问"
+    },
+    "settings.eink.studio.open": {
+      "value": "在 Studio 中编辑"
+    },
+    "settings.eink.studio.push": {
+      "value": "推送到设备"
+    },
+    "settings.eink.studio.hint": {
+      "value": "拖动摆放。方向键移动 1 像素，加 Shift 移动 8 像素；按住 Option 吸附到 8 像素网格。"
+    },
+    "settings.eink.studio.paperSize": {
+      "value": "{width} x {height} 面板像素"
+    },
+    "settings.eink.studio.divider": {
+      "value": "分隔线"
+    },
+    "settings.eink.studio.statTile": {
+      "value": "数据块"
+    },
+    "settings.eink.studio.binding.percent": {
+      "value": "额度剩余百分比"
+    },
+    "settings.eink.studio.binding.label": {
+      "value": "额度名称"
+    },
+    "settings.eink.studio.binding.countdown": {
+      "value": "距离重置"
+    },
+    "settings.eink.studio.binding.usage": {
+      "value": "用量数字"
+    },
+    "settings.eink.studio.binding.custom": {
+      "value": "固定文本"
+    },
+    "settings.eink.studio.period": {
+      "value": "时间窗口"
+    },
+    "settings.eink.studio.metric": {
+      "value": "指标"
+    },
+    "settings.eink.studio.font": {
+      "value": "面板字体"
+    },
+    "settings.eink.studio.font.pixel": {
+      "value": "像素 12"
+    },
+    "settings.eink.studio.font.sans": {
+      "value": "无衬线"
+    },
+    "settings.eink.studio.bold": {
+      "value": "加粗"
+    },
+    "settings.eink.studio.alignment": {
+      "value": "对齐"
+    },
+    "settings.eink.studio.align.leading": {
+      "value": "左"
+    },
+    "settings.eink.studio.align.center": {
+      "value": "居中"
+    },
+    "settings.eink.studio.align.trailing": {
+      "value": "右"
+    },
+    "settings.eink.studio.boxWidth": {
+      "value": "文本框宽度"
+    },
+    "settings.eink.studio.boxWidth.auto": {
+      "value": "随文本"
+    },
+    "settings.eink.studio.boxWidth.fixed": {
+      "value": "固定，超出部分截断"
+    },
+    "settings.eink.studio.caption": {
+      "value": "标题"
+    },
+    "settings.eink.studio.subValue": {
+      "value": "副值"
+    },
+    "settings.eink.studio.previewPercent": {
+      "value": "预览百分比"
+    },
+    "settings.eink.studio.diagnostics": {
+      "value": "面板检查"
+    },
+    "settings.eink.studio.diagnosticsClear": {
+      "value": "没有发现问题。"
+    },
+    "settings.eink.studio.budget": {
+      "value": "{count} / {limit} 个元素"
+    },
+    "settings.eink.studio.issue.textOverflow": {
+      "value": "文本宽度超过文本框，面板会截断。"
+    },
+    "settings.eink.studio.issue.outOfFrame": {
+      "value": "该元素超出面板范围。"
+    },
+    "settings.eink.studio.issue.tooManyElements": {
+      "value": "该布局会绘制 {count} 个元素，面板最多接受 {limit} 个。"
+    },
+    "settings.eink.studio.issue.presetClipped": {
+      "value": "预设块小于其原本的面板尺寸，部分内容会被裁掉。"
+    },
+    "settings.eink.studio.issue.noField": {
+      "value": "未选择额度，显示的是预览值。"
+    },
+    "settings.eink.studio.presetSelection": {
+      "value": "全部不勾选则由 Vibe Bar 按自己的顺序选择。"
+    },
+    "settings.eink.studio.orientationNote": {
+      "value": "旋转设备会把布局重新适配到新的面板形状：元素保持原位，放不下的会被拉回边界内。"
+    },
+    "settings.eink.customLayout": {
+      "value": "自定义布局"
+    },
+    "settings.eink.customLayoutDetail": {
+      "value": "自行排布这张幻灯片：在面板上摆放文本、圆环、条形和整块预设。"
     }
   }
 }
