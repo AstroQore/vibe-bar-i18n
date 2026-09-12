@@ -5515,6 +5515,12 @@
     },
     "settings.eink.studio.presetSubject": {
       "value": "该幻灯片仍在绘制预设。在 Studio 中编辑可将其拆成可移动的模块。"
+    },
+    "settings.eink.studio.fill": {
+      "value": "黑色块"
+    },
+    "settings.eink.studio.image": {
+      "value": "图像"
     }
   }
 }

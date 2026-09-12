@@ -6225,6 +6225,12 @@ public enum L10n {
                 /// en: "Elements"
                 public static var elements: String { L10nSupport.string("settings.eink.studio.elements") }
 
+                /// Name of a solid filled rectangle in the E-ink Studio's layer list. Never offered in the palette; a layout can only get one by exploding a preset.
+                ///
+                /// Key: `settings.eink.studio.fill`
+                /// en: "Black block"
+                public static var fill: String { L10nSupport.string("settings.eink.studio.fill") }
+
                 /// Picker choosing which of the panel's two built-in faces an element is drawn in.
                 ///
                 /// Key: `settings.eink.studio.font`
@@ -6236,6 +6242,12 @@ public enum L10n {
                 /// Key: `settings.eink.studio.hint`
                 /// en: "Drag to place. Arrow keys nudge one pixel, with Shift eight; hold Option to snap to the eight-pixel grid."
                 public static var hint: String { L10nSupport.string("settings.eink.studio.hint") }
+
+                /// Name of a raster image element in the E-ink Studio's layer list, such as an exploded heatmap's dot grid.
+                ///
+                /// Key: `settings.eink.studio.image`
+                /// en: "Image"
+                public static var image: String { L10nSupport.string("settings.eink.studio.image") }
 
                 /// Picker choosing whether a usage-bound E-ink element draws cost, tokens or requests.
                 ///
@@ -13213,10 +13225,12 @@ enum L10nCatalogFacts {
         "settings.eink.studio.diagnosticsClear",
         "settings.eink.studio.divider",
         "settings.eink.studio.elements",
+        "settings.eink.studio.fill",
         "settings.eink.studio.font",
         "settings.eink.studio.font.pixel",
         "settings.eink.studio.font.sans",
         "settings.eink.studio.hint",
+        "settings.eink.studio.image",
         "settings.eink.studio.issue.noField",
         "settings.eink.studio.issue.outOfFrame",
         "settings.eink.studio.issue.presetClipped",
@@ -15111,10 +15125,12 @@ enum L10nCatalogFacts {
         "settings.eink.studio.diagnosticsClear": 0,
         "settings.eink.studio.divider": 0,
         "settings.eink.studio.elements": 0,
+        "settings.eink.studio.fill": 0,
         "settings.eink.studio.font": 0,
         "settings.eink.studio.font.pixel": 0,
         "settings.eink.studio.font.sans": 0,
         "settings.eink.studio.hint": 0,
+        "settings.eink.studio.image": 0,
         "settings.eink.studio.issue.noField": 0,
         "settings.eink.studio.issue.outOfFrame": 0,
         "settings.eink.studio.issue.presetClipped": 0,

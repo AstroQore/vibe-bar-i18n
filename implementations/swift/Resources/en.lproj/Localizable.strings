@@ -2589,6 +2589,9 @@
 /* Palette section holding the single primitives an author can draw. */
 "settings.eink.studio.elements" = "Elements";
 
+/* Name of a solid filled rectangle in the E-ink Studio's layer list. Never offered in the palette; a layout can only get one by exploding a preset. */
+"settings.eink.studio.fill" = "Black block";
+
 /* Picker choosing which of the panel's two built-in faces an element is drawn in. */
 "settings.eink.studio.font" = "Panel font";
 
@@ -2600,6 +2603,9 @@
 
 /* Hint under the E-ink Studio stage describing how elements are moved. */
 "settings.eink.studio.hint" = "Drag to place. Arrow keys nudge one pixel, with Shift eight; hold Option to snap to the eight-pixel grid.";
+
+/* Name of a raster image element in the E-ink Studio's layer list, such as an exploded heatmap's dot grid. */
+"settings.eink.studio.image" = "Image";
 
 /* Layout problem: an E-ink element bound to quota has no bucket chosen. */
 "settings.eink.studio.issue.noField" = "No quota bucket is picked, so this draws the preview value.";

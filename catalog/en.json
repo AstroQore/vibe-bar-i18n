@@ -8587,6 +8587,14 @@
     "settings.eink.studio.presetSubject": {
       "value": "This slide still draws its preset. Edit it in the Studio to break it into modules you can move.",
       "comment": "Shown on the Studio stage when the slide on it has not been exploded yet."
+    },
+    "settings.eink.studio.fill": {
+      "value": "Black block",
+      "comment": "Name of a solid filled rectangle in the E-ink Studio's layer list. Never offered in the palette; a layout can only get one by exploding a preset."
+    },
+    "settings.eink.studio.image": {
+      "value": "Image",
+      "comment": "Name of a raster image element in the E-ink Studio's layer list, such as an exploded heatmap's dot grid."
     }
   }
 }

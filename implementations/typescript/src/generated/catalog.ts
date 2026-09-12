@@ -900,10 +900,12 @@ export type MessageKey =
   | "settings.eink.studio.diagnosticsClear"
   | "settings.eink.studio.divider"
   | "settings.eink.studio.elements"
+  | "settings.eink.studio.fill"
   | "settings.eink.studio.font"
   | "settings.eink.studio.font.pixel"
   | "settings.eink.studio.font.sans"
   | "settings.eink.studio.hint"
+  | "settings.eink.studio.image"
   | "settings.eink.studio.issue.noField"
   | "settings.eink.studio.issue.outOfFrame"
   | "settings.eink.studio.issue.presetClipped"
@@ -2744,10 +2746,12 @@ export interface MessageParams {
   "settings.eink.studio.diagnosticsClear": undefined;
   "settings.eink.studio.divider": undefined;
   "settings.eink.studio.elements": undefined;
+  "settings.eink.studio.fill": undefined;
   "settings.eink.studio.font": undefined;
   "settings.eink.studio.font.pixel": undefined;
   "settings.eink.studio.font.sans": undefined;
   "settings.eink.studio.hint": undefined;
+  "settings.eink.studio.image": undefined;
   "settings.eink.studio.issue.noField": undefined;
   "settings.eink.studio.issue.outOfFrame": undefined;
   "settings.eink.studio.issue.presetClipped": undefined;
@@ -4589,10 +4593,12 @@ export const messages: {
     "settings.eink.studio.diagnosticsClear": "Nothing out of place.",
     "settings.eink.studio.divider": "Divider",
     "settings.eink.studio.elements": "Elements",
+    "settings.eink.studio.fill": "Black block",
     "settings.eink.studio.font": "Panel font",
     "settings.eink.studio.font.pixel": "Pixel 12",
     "settings.eink.studio.font.sans": "Sans",
     "settings.eink.studio.hint": "Drag to place. Arrow keys nudge one pixel, with Shift eight; hold Option to snap to the eight-pixel grid.",
+    "settings.eink.studio.image": "Image",
     "settings.eink.studio.issue.noField": "No quota bucket is picked, so this draws the preview value.",
     "settings.eink.studio.issue.outOfFrame": "This element falls outside the panel.",
     "settings.eink.studio.issue.presetClipped": "This preset block is smaller than the panel it was drawn for, so parts of it are cut.",
@@ -6429,10 +6435,12 @@ export const messages: {
     "settings.eink.studio.diagnosticsClear": "没有发现问题。",
     "settings.eink.studio.divider": "分隔线",
     "settings.eink.studio.elements": "元素",
+    "settings.eink.studio.fill": "黑色块",
     "settings.eink.studio.font": "面板字体",
     "settings.eink.studio.font.pixel": "像素 12",
     "settings.eink.studio.font.sans": "无衬线",
     "settings.eink.studio.hint": "拖动摆放。方向键移动 1 像素，加 Shift 移动 8 像素；按住 Option 吸附到 8 像素网格。",
+    "settings.eink.studio.image": "图像",
     "settings.eink.studio.issue.noField": "未选择额度，显示的是预览值。",
     "settings.eink.studio.issue.outOfFrame": "该元素超出面板范围。",
     "settings.eink.studio.issue.presetClipped": "预设块小于其原本的面板尺寸，部分内容会被裁掉。",
