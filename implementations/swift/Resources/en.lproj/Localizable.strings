@@ -2229,6 +2229,15 @@
 /* Button that appends a new screen to an e-ink device. */
 "settings.eink.addSlide" = "Add a slide";
 
+/* Label before the percentage at which an E-ink device raises its alert slide. */
+"settings.eink.alertThreshold" = "Alert below";
+
+/* Toggle that enables the automatic alert panel for an E-ink device. */
+"settings.eink.alerts" = "Alert slide";
+
+/* Help text under the alert toggle of an E-ink device. */
+"settings.eink.alertsDetail" = "Draw an alert panel with a black border as soon as a bucket is at risk or falls below the threshold, and put the normal slide back when it clears.";
+
 /* Heading over the row of four e-ink previews, one per orientation. */
 "settings.eink.allOrientations" = "Every orientation";
 
@@ -2237,6 +2246,18 @@
 
 /* Placeholder of the secure field that stores the e-ink service API key. */
 "settings.eink.apiKeyPrompt" = "Paste the Dot. API key";
+
+/* Header side option that prints nothing at all. */
+"settings.eink.bar.nothing" = "Nothing";
+
+/* Header or footer option that keeps whatever the chosen layout has always printed there. */
+"settings.eink.bar.presetDefault" = "As the layout draws it";
+
+/* Header side option that prints one line of live provider service status. */
+"settings.eink.bar.providerStatus" = "Provider status";
+
+/* Placeholder in the field for a header or footer's fixed text. */
+"settings.eink.barTextPrompt" = "Text the panel prints";
 
 /* Stepper label for the slower e-ink refresh cadence used on battery power. */
 "settings.eink.batteryRefresh" = "On battery";
@@ -2247,8 +2268,17 @@
 /* Heading of the bucket picker for a quota e-ink slide. */
 "settings.eink.buckets" = "Quota buckets";
 
+/* Heading above the three refresh interval fields of an E-ink device. */
+"settings.eink.cadence" = "Refresh cadence";
+
 /* Shown when an e-ink slide's bucket selection has reached the layout's capacity. */
 "settings.eink.capacityFull" = "This layout has room for %lld at this orientation. Deselect one to pick another.";
+
+/* Toggle that lets a slide's body use the height the header and footer would have taken. */
+"settings.eink.compact" = "Fill the panel when both bars are off";
+
+/* Heading above the header, footer and density options of one slide. */
+"settings.eink.composition" = "Composition";
 
 /* Option in the E-ink slide layout picker that hands the slide to the Studio. */
 "settings.eink.customLayout" = "Custom layout";
@@ -2270,6 +2300,9 @@
 
 /* Tooltip on the per-device enable toggle in the E-ink section. */
 "settings.eink.deviceSyncHelp" = "Push slides to this device";
+
+/* Help text under the Edit in Studio button in the slide editor. */
+"settings.eink.editInStudioDetail" = "Opens this slide in the Studio. A preset is broken into its modules first, so every part can be moved, rebound or removed.";
 
 /* E-ink error shown after a device-scoped call answered 404. */
 "settings.eink.error.deviceMissing" = "This device is no longer on the account. Fetch devices again.";
@@ -2301,11 +2334,32 @@
 /* Shown for an e-ink layout whose content is fixed by the layout itself. */
 "settings.eink.fixedContent" = "This layout always draws today and the last seven days — there is nothing to pick.";
 
+/* Picker for the line a slide prints under its body. */
+"settings.eink.footer" = "Footer";
+
+/* Footer option that prints the usage totals for the chosen windows. */
+"settings.eink.footer.usage" = "Spend summary";
+
+/* Section heading in the slide layout picker for the layouts that answer a question rather than restate a number. */
+"settings.eink.group.insight" = "Insight layouts";
+
 /* Heading of the quota half of the e-ink layout picker. */
 "settings.eink.group.quota" = "Quota layouts";
 
 /* Heading of the usage half of the e-ink layout picker. */
 "settings.eink.group.usage" = "Usage layouts";
+
+/* Toggle that draws the bar at the top (or bottom) of a slide. */
+"settings.eink.header" = "Header bar";
+
+/* Picker for what the left half of the header bar prints. */
+"settings.eink.headerLeft" = "Left side";
+
+/* Picker that puts the header bar at the top or the bottom of the panel. */
+"settings.eink.headerPosition" = "Header position";
+
+/* Picker for what the right half of the header bar prints. */
+"settings.eink.headerRight" = "Right side";
 
 /* Lead paragraph at the top of the E-ink Displays section. */
 "settings.eink.intro" = "Vibe Bar draws your quota and usage in the panel's own layout and pushes it to every device you enable here.";
@@ -2343,6 +2397,9 @@
 /* E-ink orientation option: no rotation, the panel read as it stands. */
 "settings.eink.orientation.upright" = "Upright";
 
+/* Caption under the orientation picker in the E-ink device settings. */
+"settings.eink.orientationNote" = "Previews are drawn the way you will read the panel. The notch marks the device's own top edge.";
+
 /* Note under the e-ink preview explaining why the drawn text is not translated. */
 "settings.eink.panelTextNote" = "Panel text stays English: the device draws it from its own built-in fonts.";
 
@@ -2367,8 +2424,20 @@
 /* Help line for the single-slide e-ink playback option. */
 "settings.eink.playback.singleDetail" = "The device keeps one slide on screen and Vibe Bar refreshes its numbers in place.";
 
+/* Header position option: the bar sits at the bottom of the panel. */
+"settings.eink.position.bottom" = "Bottom";
+
+/* Header position option: the bar sits at the top of the panel. */
+"settings.eink.position.top" = "Top";
+
+/* Name of the all-text E-ink layout that lists every bucket with its figures. */
+"settings.eink.preset.briefing" = "Briefing";
+
 /* E-ink layout that draws cost and tokens as two bar columns per harness. */
 "settings.eink.preset.dual" = "Dual bars";
+
+/* Name of the E-ink layout that draws the week's activity as a dot matrix. */
+"settings.eink.preset.heatmap" = "Heatmap";
 
 /* E-ink layout that draws one ring gauge per quota bucket. */
 "settings.eink.preset.rings" = "Rings";
@@ -2379,6 +2448,9 @@
 /* E-ink layout that lists one row per harness. */
 "settings.eink.preset.table" = "Table";
 
+/* Name of the E-ink layout that lists today's most expensive models. */
+"settings.eink.preset.topModels" = "Top models";
+
 /* E-ink layout that draws today plus the last seven days as a bar chart. */
 "settings.eink.preset.trend" = "Trend";
 
@@ -2387,6 +2459,18 @@
 
 /* Result line after pushing to an e-ink device. */
 "settings.eink.pushResult" = "Pushed %1$lld; %2$lld already on the panel.";
+
+/* Toggle that writes a sleep window to the E-ink device. */
+"settings.eink.quietHours" = "Quiet hours";
+
+/* Help text under the quiet hours time fields. */
+"settings.eink.quietHours.format" = "24-hour times, as HH:mm.";
+
+/* Label before the end time of the quiet hours window. */
+"settings.eink.quietHours.until" = "Until";
+
+/* Help text under the quiet hours toggle. */
+"settings.eink.quietHoursDetail" = "Vibe Bar writes this window to the device, which stops refreshing between the two times.";
 
 /* Tooltip on the button that deletes one e-ink slide. */
 "settings.eink.removeSlide" = "Remove this slide";
@@ -2403,14 +2487,32 @@
 /* Button that re-reads an e-ink device's loop to count its Canvas API tasks. */
 "settings.eink.rescanLoop" = "Scan the loop";
 
+/* Button that discards a slide's hand-made layouts and goes back to drawing its preset. */
+"settings.eink.resetToPreset" = "Reset to preset";
+
+/* Confirmation before a slide goes back to its preset. */
+"settings.eink.resetToPresetConfirm" = "This drops every layout made for this slide, at every orientation.";
+
 /* Stepper label for how long the app-driven e-ink carousel holds each slide. */
 "settings.eink.secondsPerSlide" = "Seconds per slide";
+
+/* Help text under the seconds-per-slide field. */
+"settings.eink.secondsPerSlideDetail" = "How long each slide stays on the panel while the carousel is running.";
 
 /* Placeholder of the text field naming one e-ink slide. */
 "settings.eink.slideName" = "Slide name";
 
 /* Card title for the list of screens an e-ink device cycles through. */
 "settings.eink.slides" = "Slides";
+
+/* Field for the name one slide prints for one quota bucket. */
+"settings.eink.slotLabel" = "Name on the panel";
+
+/* Help text under the per-slot name fields. */
+"settings.eink.slotLabelDetail" = "Leave a name empty to print the bucket's own, written out in full.";
+
+/* Heading above the drag-to-reorder list of a slide's chosen slots. */
+"settings.eink.slotOrder" = "Order";
 
 /* Status label for an e-ink device's battery reading. */
 "settings.eink.status.battery" = "Battery";
@@ -2484,6 +2586,12 @@
 /* Name of the E-ink Studio element that draws a one-pixel rule. */
 "settings.eink.studio.divider" = "Divider";
 
+/* Palette section holding the single primitives an author can draw. */
+"settings.eink.studio.elements" = "Elements";
+
+/* Name of a solid filled rectangle in the E-ink Studio's layer list. Never offered in the palette; a layout can only get one by exploding a preset. */
+"settings.eink.studio.fill" = "Black block";
+
 /* Picker choosing which of the panel's two built-in faces an element is drawn in. */
 "settings.eink.studio.font" = "Panel font";
 
@@ -2493,8 +2601,11 @@
 /* Font choice: the panel's scalable sans face, used for numbers. */
 "settings.eink.studio.font.sans" = "Sans";
 
-/* Hint under the E-ink Studio stage describing how elements are moved. */
-"settings.eink.studio.hint" = "Drag to place. Arrow keys nudge one pixel, with Shift eight; hold Option to snap to the eight-pixel grid.";
+/* Hint under the E-ink Studio stage. The grid gesture is described by settings.eink.studio.snapHelp on the toggle that owns it, so this one does not repeat it. */
+"settings.eink.studio.hint" = "Drag to place. Arrow keys nudge one pixel, with Shift eight.";
+
+/* Name of a raster image element in the E-ink Studio's layer list, such as an exploded heatmap's dot grid. */
+"settings.eink.studio.image" = "Image";
 
 /* Layout problem: an E-ink element bound to quota has no bucket chosen. */
 "settings.eink.studio.issue.noField" = "No quota bucket is picked, so this draws the preview value.";
@@ -2514,6 +2625,18 @@
 /* Picker choosing whether a usage-bound E-ink element draws cost, tokens or requests. */
 "settings.eink.studio.metric" = "Figure";
 
+/* Palette module: one quota bucket's name, bar, percentage and countdown. */
+"settings.eink.studio.module.quotaSlot" = "Quota slot";
+
+/* Palette module: one usage window's caption and figure. */
+"settings.eink.studio.module.usageSlot" = "Usage slot";
+
+/* Palette section holding the ready-made groups an author can drop on the panel. */
+"settings.eink.studio.modules" = "Modules";
+
+/* Marker on a Studio element that the panel would leave blank — unbound, or empty. */
+"settings.eink.studio.nothingToDraw" = "Nothing to draw";
+
 /* Button on a custom E-ink slide that opens the Layout Studio on it. */
 "settings.eink.studio.open" = "Edit in Studio";
 
@@ -2529,11 +2652,26 @@
 /* Hint under the bucket or window list of a whole-preset element in the E-ink Studio. */
 "settings.eink.studio.presetSelection" = "Leave every box off to let Vibe Bar choose, in its own order.";
 
+/* Shown on the Studio stage when the slide on it has not been exploded yet. */
+"settings.eink.studio.presetSubject" = "This slide still draws its preset. Edit it in the Studio to break it into modules you can move.";
+
 /* Value an E-ink element draws in the Studio while no live quota bucket is picked for it. */
 "settings.eink.studio.previewPercent" = "Preview percentage";
 
 /* Button on the E-ink Studio stage that sends the slide being edited to its panel now. */
 "settings.eink.studio.push" = "Push to device";
+
+/* Button that lays the current orientation out from the slide's preset again. */
+"settings.eink.studio.relayout" = "Re-layout";
+
+/* Confirmation before the Studio re-explodes a preset over an edited layout. */
+"settings.eink.studio.relayoutConfirm" = "Re-laying out replaces everything placed at this orientation.";
+
+/* Shown in the Studio when the slide has no layout for the orientation being edited. */
+"settings.eink.studio.relayoutMissing" = "Nothing is laid out for this orientation yet. Re-layout to start from the preset.";
+
+/* Tooltip on the Studio's snap-to-grid toggle. */
+"settings.eink.studio.snapHelp" = "Snap a drag to the eight-pixel grid. Hold Option while dragging to bypass it.";
 
 /* Name of the E-ink Studio element that draws a caption, a large figure and a smaller one under it. */
 "settings.eink.studio.statTile" = "Stat tile";
@@ -2541,11 +2679,44 @@
 /* Field for the small line under a stat tile's big figure. */
 "settings.eink.studio.subValue" = "Sub value";
 
+/* Palette section holding the complete preset layouts, dropped as groups. */
+"settings.eink.studio.wholeLayouts" = "Whole layouts";
+
 /* Master toggle that lets the E-ink sync engine push anything at all. */
 "settings.eink.sync" = "Sync to devices";
 
 /* Help line under the E-ink master sync toggle. */
 "settings.eink.syncDetail" = "Off stops every push. Slides stay editable, and the preview still updates.";
+
+/* Label for the address a phone opens when it is tapped against the panel. */
+"settings.eink.tapLink" = "Tap link";
+
+/* Tap link option where the user types their own URL. */
+"settings.eink.tapLink.custom" = "Custom address";
+
+/* Error under the custom tap link field when the text is not a usable URL. */
+"settings.eink.tapLink.invalid" = "Enter an http or https address.";
+
+/* Placeholder in the custom tap link field. */
+"settings.eink.tapLink.prompt" = "https://example.com";
+
+/* Tap link option that opens the user's own Vibe Bar Remote dashboard. */
+"settings.eink.tapLink.remote" = "Remote dashboard";
+
+/* Shown when the remote dashboard tap link is picked but Remote is not configured. */
+"settings.eink.tapLink.remoteMissing" = "Set Remote up first — until then the panel carries no link.";
+
+/* Help text under the tap link picker. */
+"settings.eink.tapLinkDetail" = "The panel is tappable: a phone held against it opens this address.";
+
+/* Unit suffix after a number of minutes in a settings field. */
+"settings.eink.unit.minutes" = "min";
+
+/* Unit suffix after a number of seconds in a settings field. */
+"settings.eink.unit.seconds" = "s";
+
+/* Caption over the live slide preview, which draws the panel upright rather than rotated. */
+"settings.eink.uprightPreview" = "Shown the way you will read it";
 
 /* Banner shown when a second client overwrote a setting this one had changed */
 "settings.externalChange.title" = "Another Vibe Bar replaced your change";

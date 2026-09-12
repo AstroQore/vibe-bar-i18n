@@ -5241,7 +5241,7 @@
       "value": "推送到设备"
     },
     "settings.eink.studio.hint": {
-      "value": "拖动摆放。方向键移动 1 像素，加 Shift 移动 8 像素；按住 Option 吸附到 8 像素网格。"
+      "value": "拖动摆放。方向键移动 1 像素，按住 Shift 为 8 像素。"
     },
     "settings.eink.studio.paperSize": {
       "value": "{width} x {height} 面板像素"
@@ -5350,6 +5350,177 @@
     },
     "settings.eink.customLayoutDetail": {
       "value": "自行排布这张幻灯片：在面板上摆放文本、圆环、条形和整块预设。"
+    },
+    "settings.eink.orientationNote": {
+      "value": "预览按你实际阅读面板的方向绘制，缺口标示设备本身的顶边。"
+    },
+    "settings.eink.cadence": {
+      "value": "刷新节奏"
+    },
+    "settings.eink.unit.minutes": {
+      "value": "分钟"
+    },
+    "settings.eink.unit.seconds": {
+      "value": "秒"
+    },
+    "settings.eink.secondsPerSlideDetail": {
+      "value": "轮播运行时每张幻灯片在面板上停留的时长。"
+    },
+    "settings.eink.alerts": {
+      "value": "预警幻灯片"
+    },
+    "settings.eink.alertsDetail": {
+      "value": "当某个额度处于风险状态或低于阈值时立即绘制带黑色边框的预警面板，恢复后再切回正常幻灯片。"
+    },
+    "settings.eink.alertThreshold": {
+      "value": "低于此比例时预警"
+    },
+    "settings.eink.tapLink": {
+      "value": "轻触链接"
+    },
+    "settings.eink.tapLinkDetail": {
+      "value": "面板支持轻触：手机贴近时会打开这个地址。"
+    },
+    "settings.eink.tapLink.remote": {
+      "value": "Remote 仪表板"
+    },
+    "settings.eink.tapLink.custom": {
+      "value": "自定义地址"
+    },
+    "settings.eink.tapLink.prompt": {
+      "value": "https://example.com"
+    },
+    "settings.eink.tapLink.invalid": {
+      "value": "请输入 http 或 https 地址。"
+    },
+    "settings.eink.tapLink.remoteMissing": {
+      "value": "请先配置 Remote，在此之前面板不会携带链接。"
+    },
+    "settings.eink.quietHours": {
+      "value": "静默时段"
+    },
+    "settings.eink.quietHoursDetail": {
+      "value": "Vibe Bar 会把该时段写入设备，设备在这两个时间之间停止刷新。"
+    },
+    "settings.eink.quietHours.until": {
+      "value": "至"
+    },
+    "settings.eink.quietHours.format": {
+      "value": "使用 24 小时制，格式为 HH:mm。"
+    },
+    "settings.eink.composition": {
+      "value": "版面构成"
+    },
+    "settings.eink.header": {
+      "value": "标题栏"
+    },
+    "settings.eink.headerPosition": {
+      "value": "标题栏位置"
+    },
+    "settings.eink.position.top": {
+      "value": "顶部"
+    },
+    "settings.eink.position.bottom": {
+      "value": "底部"
+    },
+    "settings.eink.headerLeft": {
+      "value": "左侧内容"
+    },
+    "settings.eink.headerRight": {
+      "value": "右侧内容"
+    },
+    "settings.eink.bar.presetDefault": {
+      "value": "按布局原样绘制"
+    },
+    "settings.eink.bar.nothing": {
+      "value": "不显示"
+    },
+    "settings.eink.bar.providerStatus": {
+      "value": "服务商状态"
+    },
+    "settings.eink.barTextPrompt": {
+      "value": "面板上打印的文字"
+    },
+    "settings.eink.footer": {
+      "value": "页脚"
+    },
+    "settings.eink.footer.usage": {
+      "value": "花费摘要"
+    },
+    "settings.eink.compact": {
+      "value": "两栏都关闭时填满面板"
+    },
+    "settings.eink.slotOrder": {
+      "value": "顺序"
+    },
+    "settings.eink.slotLabel": {
+      "value": "面板上的名称"
+    },
+    "settings.eink.slotLabelDetail": {
+      "value": "留空则打印该额度自己的完整名称。"
+    },
+    "settings.eink.group.insight": {
+      "value": "洞察布局"
+    },
+    "settings.eink.preset.briefing": {
+      "value": "简报"
+    },
+    "settings.eink.preset.heatmap": {
+      "value": "热力图"
+    },
+    "settings.eink.preset.topModels": {
+      "value": "模型榜"
+    },
+    "settings.eink.resetToPreset": {
+      "value": "恢复为预设布局"
+    },
+    "settings.eink.resetToPresetConfirm": {
+      "value": "这会丢弃该幻灯片在所有方向上的自制布局。"
+    },
+    "settings.eink.editInStudioDetail": {
+      "value": "在 Studio 中打开该幻灯片。预设会先拆成模块，每个部分都可移动、重新绑定或删除。"
+    },
+    "settings.eink.uprightPreview": {
+      "value": "按实际阅读方向显示"
+    },
+    "settings.eink.studio.snapHelp": {
+      "value": "拖动时吸附到 8 像素网格，按住 Option 拖动可临时绕过。"
+    },
+    "settings.eink.studio.relayout": {
+      "value": "重新排布"
+    },
+    "settings.eink.studio.relayoutConfirm": {
+      "value": "重新排布会替换当前方向上已摆放的全部内容。"
+    },
+    "settings.eink.studio.relayoutMissing": {
+      "value": "当前方向尚未排布任何内容，可用重新排布从预设开始。"
+    },
+    "settings.eink.studio.modules": {
+      "value": "模块"
+    },
+    "settings.eink.studio.elements": {
+      "value": "元素"
+    },
+    "settings.eink.studio.wholeLayouts": {
+      "value": "整套布局"
+    },
+    "settings.eink.studio.module.quotaSlot": {
+      "value": "额度栏位"
+    },
+    "settings.eink.studio.module.usageSlot": {
+      "value": "用量栏位"
+    },
+    "settings.eink.studio.nothingToDraw": {
+      "value": "无内容可绘制"
+    },
+    "settings.eink.studio.presetSubject": {
+      "value": "该幻灯片仍在绘制预设。在 Studio 中编辑可将其拆成可移动的模块。"
+    },
+    "settings.eink.studio.fill": {
+      "value": "黑色块"
+    },
+    "settings.eink.studio.image": {
+      "value": "图像"
     }
   }
 }
