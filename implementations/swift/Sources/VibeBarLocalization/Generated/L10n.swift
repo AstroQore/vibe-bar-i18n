@@ -5604,6 +5604,14 @@ public enum L10n {
                 L10nSupport.localizedFormat("settings.eink.loopTasksShort", tasks, slides)
             }
 
+            /// Warning shown when an e-ink device's loop holds more Canvas API tasks than the device has slides.
+            ///
+            /// Key: `settings.eink.loopTasksSurplus`
+            /// en: "{count, plural, one {# Canvas API task in the loop has no slide behind it, and Vibe Bar draws a placeholder on it so nothing stale is left on the panel — remove it in the Dot. app to reclaim the slot.} other {# Canvas API tasks in the loop have no slide behind them, and Vibe Bar draws a placeholder on them so nothing stale is left on the panel — remove them in the Dot. app to reclaim the slots.}}"
+            public static func loopTasksSurplus(count: Int) -> String {
+                L10nSupport.localizedFormat("settings.eink.loopTasksSurplus", count)
+            }
+
             /// Shown before an e-ink device's loop has ever been scanned.
             ///
             /// Key: `settings.eink.loopTasksUnknown`
@@ -5762,6 +5770,12 @@ public enum L10n {
                 /// Key: `settings.eink.error.unauthorized`
                 /// en: "The Dot. service rejected the key. Save a new one to start syncing again."
                 public static var unauthorized: String { L10nSupport.string("settings.eink.error.unauthorized") }
+
+                /// E-ink error shown when the local usage ledger failed while a device also had quota slides to push.
+                ///
+                /// Key: `settings.eink.error.usageUnavailable`
+                /// en: "Usage data could not be read, so only the quota slides were pushed — open the Cost Data settings and rescan to rebuild it."
+                public static var usageUnavailable: String { L10nSupport.string("settings.eink.error.usageUnavailable") }
             }
 
             public enum Group {
@@ -12499,6 +12513,7 @@ enum L10nCatalogFacts {
         "settings.eink.error.render",
         "settings.eink.error.taskMissing",
         "settings.eink.error.unauthorized",
+        "settings.eink.error.usageUnavailable",
         "settings.eink.fetchDevices",
         "settings.eink.fixedContent",
         "settings.eink.group.quota",
@@ -12508,6 +12523,7 @@ enum L10nCatalogFacts {
         "settings.eink.layout",
         "settings.eink.loopTasks",
         "settings.eink.loopTasksShort",
+        "settings.eink.loopTasksSurplus",
         "settings.eink.loopTasksUnknown",
         "settings.eink.needsKey",
         "settings.eink.noDevices",
@@ -13485,6 +13501,7 @@ enum L10nCatalogFacts {
         "settings.eink.devicesFound",
         "settings.eink.loopTasks",
         "settings.eink.loopTasksShort",
+        "settings.eink.loopTasksSurplus",
         "status.card.componentCount",
         "usage.filters.modelsSelected",
         "usage.harnessMix.activeCount",
@@ -14300,6 +14317,7 @@ enum L10nCatalogFacts {
         "settings.eink.error.render": 0,
         "settings.eink.error.taskMissing": 0,
         "settings.eink.error.unauthorized": 0,
+        "settings.eink.error.usageUnavailable": 0,
         "settings.eink.fetchDevices": 0,
         "settings.eink.fixedContent": 0,
         "settings.eink.group.quota": 0,
@@ -14309,6 +14327,7 @@ enum L10nCatalogFacts {
         "settings.eink.layout": 0,
         "settings.eink.loopTasks": 1,
         "settings.eink.loopTasksShort": 2,
+        "settings.eink.loopTasksSurplus": 1,
         "settings.eink.loopTasksUnknown": 0,
         "settings.eink.needsKey": 0,
         "settings.eink.noDevices": 0,

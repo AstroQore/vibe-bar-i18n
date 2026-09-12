@@ -2286,6 +2286,9 @@
 /* E-ink error shown after the service answered 401 or 403. */
 "settings.eink.error.unauthorized" = "Dot. 服务拒绝了该密钥。请保存新的密钥以恢复同步。";
 
+/* E-ink error shown when the local usage ledger failed while a device also had quota slides to push. */
+"settings.eink.error.usageUnavailable" = "无法读取用量数据，本次只推送了额度幻灯片 — 请在「成本数据」设置中重新扫描以重建。";
+
 /* Button that asks the e-ink service which devices the account owns. */
 "settings.eink.fetchDevices" = "获取设备";
 
