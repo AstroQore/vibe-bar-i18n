@@ -924,6 +924,7 @@ export type MessageKey =
   | "settings.eink.studio.presetSubject"
   | "settings.eink.studio.previewPercent"
   | "settings.eink.studio.push"
+  | "settings.eink.studio.pushOtherOrientation"
   | "settings.eink.studio.relayout"
   | "settings.eink.studio.relayoutConfirm"
   | "settings.eink.studio.relayoutMissing"
@@ -2770,6 +2771,7 @@ export interface MessageParams {
   "settings.eink.studio.presetSubject": undefined;
   "settings.eink.studio.previewPercent": undefined;
   "settings.eink.studio.push": undefined;
+  "settings.eink.studio.pushOtherOrientation": undefined;
   "settings.eink.studio.relayout": undefined;
   "settings.eink.studio.relayoutConfirm": undefined;
   "settings.eink.studio.relayoutMissing": undefined;
@@ -4617,6 +4619,7 @@ export const messages: {
     "settings.eink.studio.presetSubject": "This slide still draws its preset. Edit it in the Studio to break it into modules you can move.",
     "settings.eink.studio.previewPercent": "Preview percentage",
     "settings.eink.studio.push": "Push to device",
+    "settings.eink.studio.pushOtherOrientation": "The device is showing another orientation. Switch back to it to push what will be on the panel.",
     "settings.eink.studio.relayout": "Re-layout",
     "settings.eink.studio.relayoutConfirm": "Re-laying out replaces everything placed at this orientation.",
     "settings.eink.studio.relayoutMissing": "Nothing is laid out for this orientation yet. Re-layout to start from the preset.",
@@ -6459,6 +6462,7 @@ export const messages: {
     "settings.eink.studio.presetSubject": "该幻灯片仍在绘制预设。在 Studio 中编辑可将其拆成可移动的模块。",
     "settings.eink.studio.previewPercent": "预览百分比",
     "settings.eink.studio.push": "推送到设备",
+    "settings.eink.studio.pushOtherOrientation": "设备当前显示的是另一个方向。切回该方向后才能推送面板上实际显示的内容。",
     "settings.eink.studio.relayout": "重新排布",
     "settings.eink.studio.relayoutConfirm": "重新排布会替换当前方向上已摆放的全部内容。",
     "settings.eink.studio.relayoutMissing": "当前方向尚未排布任何内容，可用重新排布从预设开始。",

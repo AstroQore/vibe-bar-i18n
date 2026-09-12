@@ -2661,6 +2661,9 @@
 /* Button on the E-ink Studio stage that sends the slide being edited to its panel now. */
 "settings.eink.studio.push" = "推送到设备";
 
+/* Tooltip on the E-ink Studio's Push to device button when the orientation being edited is not the one the device is set to. */
+"settings.eink.studio.pushOtherOrientation" = "设备当前显示的是另一个方向。切回该方向后才能推送面板上实际显示的内容。";
+
 /* Button that lays the current orientation out from the slide's preset again. */
 "settings.eink.studio.relayout" = "重新排布";
 
