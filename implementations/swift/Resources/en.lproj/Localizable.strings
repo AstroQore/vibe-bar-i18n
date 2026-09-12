@@ -2250,11 +2250,17 @@
 /* Shown when an e-ink slide's bucket selection has reached the layout's capacity. */
 "settings.eink.capacityFull" = "This layout has room for %lld at this orientation. Deselect one to pick another.";
 
+/* Option in the E-ink slide layout picker that hands the slide to the Studio. */
+"settings.eink.customLayout" = "Custom layout";
+
+/* Detail line under the custom option in the E-ink slide layout picker. */
+"settings.eink.customLayoutDetail" = "Lay this slide out yourself: place text, rings, bars and whole preset blocks on the panel.";
+
 /* Disabled option in the e-ink layout picker standing in for a Studio-authored layout. */
-"settings.eink.customSlide" = "Custom (arrives with the Studio)";
+"settings.eink.customSlide" = "Custom (opens the Studio)";
 
 /* Help line for an e-ink slide that names a custom layout the renderer cannot draw yet. */
-"settings.eink.customSlideDetail" = "This slide points at a custom layout. Vibe Bar cannot draw one yet, so the device is not sent anything for it.";
+"settings.eink.customSlideDetail" = "This slide is laid out by hand. Open it in the Studio to place its elements.";
 
 /* Stepper label for how often an e-ink device's numbers are re-pushed on mains power. */
 "settings.eink.dataRefresh" = "Data refresh";
@@ -2423,6 +2429,117 @@
 
 /* Status label for an e-ink device's wireless signal. */
 "settings.eink.status.wifi" = "Wi-Fi";
+
+/* Text alignment choice in the E-ink Studio. */
+"settings.eink.studio.align.center" = "Centre";
+
+/* Text alignment choice in the E-ink Studio. */
+"settings.eink.studio.align.leading" = "Left";
+
+/* Text alignment choice in the E-ink Studio. */
+"settings.eink.studio.align.trailing" = "Right";
+
+/* Picker choosing how an E-ink element's text sits in its box. */
+"settings.eink.studio.alignment" = "Alignment";
+
+/* Binding choice: how long until the picked quota bucket resets. */
+"settings.eink.studio.binding.countdown" = "Time to reset";
+
+/* Binding choice: text typed by the user, drawn as it is. */
+"settings.eink.studio.binding.custom" = "Fixed text";
+
+/* Binding choice: the picked quota bucket's provider and window, written out. */
+"settings.eink.studio.binding.label" = "Bucket name";
+
+/* Binding choice: the picked quota bucket's remaining percentage. */
+"settings.eink.studio.binding.percent" = "Quota left, percent";
+
+/* Binding choice: a cost, token or request total over a chosen window. */
+"settings.eink.studio.binding.usage" = "Usage figure";
+
+/* Toggle making an E-ink element's text bold. */
+"settings.eink.studio.bold" = "Bold";
+
+/* Picker choosing whether an E-ink text box is measured from its text or fixed by the author. */
+"settings.eink.studio.boxWidth" = "Box width";
+
+/* Box width choice: the box is as wide as the text it draws. */
+"settings.eink.studio.boxWidth.auto" = "Fit the text";
+
+/* Box width choice: the box keeps the width set here and clips anything wider. */
+"settings.eink.studio.boxWidth.fixed" = "Fixed, longer text is cut";
+
+/* Badge counting how many drawing elements the layout sends against the panel's hard limit. */
+"settings.eink.studio.budget" = "%1$lld of %2$lld elements";
+
+/* Field for the small line above a stat tile's big figure. */
+"settings.eink.studio.caption" = "Caption";
+
+/* Heading over the list of problems the E-ink Studio found in the layout. */
+"settings.eink.studio.diagnostics" = "Panel checks";
+
+/* Shown under the panel-checks heading when the E-ink layout has no problems. */
+"settings.eink.studio.diagnosticsClear" = "Nothing out of place.";
+
+/* Name of the E-ink Studio element that draws a one-pixel rule. */
+"settings.eink.studio.divider" = "Divider";
+
+/* Picker choosing which of the panel's two built-in faces an element is drawn in. */
+"settings.eink.studio.font" = "Panel font";
+
+/* Font choice: the panel's 12-pixel bitmap face, the only one with Chinese coverage. */
+"settings.eink.studio.font.pixel" = "Pixel 12";
+
+/* Font choice: the panel's scalable sans face, used for numbers. */
+"settings.eink.studio.font.sans" = "Sans";
+
+/* Hint under the E-ink Studio stage describing how elements are moved. */
+"settings.eink.studio.hint" = "Drag to place. Arrow keys nudge one pixel, with Shift eight; hold Option to snap to the eight-pixel grid.";
+
+/* Layout problem: an E-ink element bound to quota has no bucket chosen. */
+"settings.eink.studio.issue.noField" = "No quota bucket is picked, so this draws the preview value.";
+
+/* Layout problem: an E-ink element is partly or wholly off the panel. */
+"settings.eink.studio.issue.outOfFrame" = "This element falls outside the panel.";
+
+/* Layout problem: a whole-preset E-ink element was scaled below the size the preset was authored at. */
+"settings.eink.studio.issue.presetClipped" = "This preset block is smaller than the panel it was drawn for, so parts of it are cut.";
+
+/* Layout problem: a fixed-width E-ink text box is narrower than the string it draws. */
+"settings.eink.studio.issue.textOverflow" = "The text is wider than its box, so the panel cuts it.";
+
+/* Layout problem: the E-ink layout exceeds the Canvas API's element limit. */
+"settings.eink.studio.issue.tooManyElements" = "This layout draws %1$lld elements and the panel accepts %2$lld.";
+
+/* Picker choosing whether a usage-bound E-ink element draws cost, tokens or requests. */
+"settings.eink.studio.metric" = "Figure";
+
+/* Button on a custom E-ink slide that opens the Layout Studio on it. */
+"settings.eink.studio.open" = "Edit in Studio";
+
+/* Explains what happens to a custom E-ink layout when the device's orientation changes. */
+"settings.eink.studio.orientationNote" = "Turning the device re-fits this layout to the new panel shape: elements keep their position and are pulled back inside the edge where they no longer fit.";
+
+/* Caption under the E-ink Studio stage giving the panel's size in device pixels. */
+"settings.eink.studio.paperSize" = "%2$lld x %1$lld panel pixels";
+
+/* Picker choosing which usage window an E-ink Studio element reads. */
+"settings.eink.studio.period" = "Window";
+
+/* Hint under the bucket or window list of a whole-preset element in the E-ink Studio. */
+"settings.eink.studio.presetSelection" = "Leave every box off to let Vibe Bar choose, in its own order.";
+
+/* Value an E-ink element draws in the Studio while no live quota bucket is picked for it. */
+"settings.eink.studio.previewPercent" = "Preview percentage";
+
+/* Button on the E-ink Studio stage that sends the slide being edited to its panel now. */
+"settings.eink.studio.push" = "Push to device";
+
+/* Name of the E-ink Studio element that draws a caption, a large figure and a smaller one under it. */
+"settings.eink.studio.statTile" = "Stat tile";
+
+/* Field for the small line under a stat tile's big figure. */
+"settings.eink.studio.subValue" = "Sub value";
 
 /* Master toggle that lets the E-ink sync engine push anything at all. */
 "settings.eink.sync" = "Sync to devices";

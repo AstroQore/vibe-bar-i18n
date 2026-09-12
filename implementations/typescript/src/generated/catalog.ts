@@ -783,6 +783,8 @@ export type MessageKey =
   | "settings.eink.batteryRefreshDetail"
   | "settings.eink.buckets"
   | "settings.eink.capacityFull"
+  | "settings.eink.customLayout"
+  | "settings.eink.customLayoutDetail"
   | "settings.eink.customSlide"
   | "settings.eink.customSlideDetail"
   | "settings.eink.dataRefresh"
@@ -845,6 +847,43 @@ export type MessageKey =
   | "settings.eink.status.pending"
   | "settings.eink.status.power"
   | "settings.eink.status.wifi"
+  | "settings.eink.studio.align.center"
+  | "settings.eink.studio.align.leading"
+  | "settings.eink.studio.align.trailing"
+  | "settings.eink.studio.alignment"
+  | "settings.eink.studio.binding.countdown"
+  | "settings.eink.studio.binding.custom"
+  | "settings.eink.studio.binding.label"
+  | "settings.eink.studio.binding.percent"
+  | "settings.eink.studio.binding.usage"
+  | "settings.eink.studio.bold"
+  | "settings.eink.studio.boxWidth"
+  | "settings.eink.studio.boxWidth.auto"
+  | "settings.eink.studio.boxWidth.fixed"
+  | "settings.eink.studio.budget"
+  | "settings.eink.studio.caption"
+  | "settings.eink.studio.diagnostics"
+  | "settings.eink.studio.diagnosticsClear"
+  | "settings.eink.studio.divider"
+  | "settings.eink.studio.font"
+  | "settings.eink.studio.font.pixel"
+  | "settings.eink.studio.font.sans"
+  | "settings.eink.studio.hint"
+  | "settings.eink.studio.issue.noField"
+  | "settings.eink.studio.issue.outOfFrame"
+  | "settings.eink.studio.issue.presetClipped"
+  | "settings.eink.studio.issue.textOverflow"
+  | "settings.eink.studio.issue.tooManyElements"
+  | "settings.eink.studio.metric"
+  | "settings.eink.studio.open"
+  | "settings.eink.studio.orientationNote"
+  | "settings.eink.studio.paperSize"
+  | "settings.eink.studio.period"
+  | "settings.eink.studio.presetSelection"
+  | "settings.eink.studio.previewPercent"
+  | "settings.eink.studio.push"
+  | "settings.eink.studio.statTile"
+  | "settings.eink.studio.subValue"
   | "settings.eink.sync"
   | "settings.eink.syncDetail"
   | "settings.externalChange.title"
@@ -2533,6 +2572,8 @@ export interface MessageParams {
   "settings.eink.batteryRefreshDetail": undefined;
   "settings.eink.buckets": undefined;
   "settings.eink.capacityFull": { "count": number };
+  "settings.eink.customLayout": undefined;
+  "settings.eink.customLayoutDetail": undefined;
   "settings.eink.customSlide": undefined;
   "settings.eink.customSlideDetail": undefined;
   "settings.eink.dataRefresh": undefined;
@@ -2595,6 +2636,43 @@ export interface MessageParams {
   "settings.eink.status.pending": undefined;
   "settings.eink.status.power": undefined;
   "settings.eink.status.wifi": undefined;
+  "settings.eink.studio.align.center": undefined;
+  "settings.eink.studio.align.leading": undefined;
+  "settings.eink.studio.align.trailing": undefined;
+  "settings.eink.studio.alignment": undefined;
+  "settings.eink.studio.binding.countdown": undefined;
+  "settings.eink.studio.binding.custom": undefined;
+  "settings.eink.studio.binding.label": undefined;
+  "settings.eink.studio.binding.percent": undefined;
+  "settings.eink.studio.binding.usage": undefined;
+  "settings.eink.studio.bold": undefined;
+  "settings.eink.studio.boxWidth": undefined;
+  "settings.eink.studio.boxWidth.auto": undefined;
+  "settings.eink.studio.boxWidth.fixed": undefined;
+  "settings.eink.studio.budget": { "count": number; "limit": number };
+  "settings.eink.studio.caption": undefined;
+  "settings.eink.studio.diagnostics": undefined;
+  "settings.eink.studio.diagnosticsClear": undefined;
+  "settings.eink.studio.divider": undefined;
+  "settings.eink.studio.font": undefined;
+  "settings.eink.studio.font.pixel": undefined;
+  "settings.eink.studio.font.sans": undefined;
+  "settings.eink.studio.hint": undefined;
+  "settings.eink.studio.issue.noField": undefined;
+  "settings.eink.studio.issue.outOfFrame": undefined;
+  "settings.eink.studio.issue.presetClipped": undefined;
+  "settings.eink.studio.issue.textOverflow": undefined;
+  "settings.eink.studio.issue.tooManyElements": { "count": number; "limit": number };
+  "settings.eink.studio.metric": undefined;
+  "settings.eink.studio.open": undefined;
+  "settings.eink.studio.orientationNote": undefined;
+  "settings.eink.studio.paperSize": { "height": number; "width": number };
+  "settings.eink.studio.period": undefined;
+  "settings.eink.studio.presetSelection": undefined;
+  "settings.eink.studio.previewPercent": undefined;
+  "settings.eink.studio.push": undefined;
+  "settings.eink.studio.statTile": undefined;
+  "settings.eink.studio.subValue": undefined;
   "settings.eink.sync": undefined;
   "settings.eink.syncDetail": undefined;
   "settings.externalChange.title": undefined;
@@ -4284,8 +4362,10 @@ export const messages: {
     "settings.eink.batteryRefreshDetail": "The slower cadence used whenever the device reports it is running on its own cell.",
     "settings.eink.buckets": "Quota buckets",
     "settings.eink.capacityFull": "This layout has room for {count} at this orientation. Deselect one to pick another.",
-    "settings.eink.customSlide": "Custom (arrives with the Studio)",
-    "settings.eink.customSlideDetail": "This slide points at a custom layout. Vibe Bar cannot draw one yet, so the device is not sent anything for it.",
+    "settings.eink.customLayout": "Custom layout",
+    "settings.eink.customLayoutDetail": "Lay this slide out yourself: place text, rings, bars and whole preset blocks on the panel.",
+    "settings.eink.customSlide": "Custom (opens the Studio)",
+    "settings.eink.customSlideDetail": "This slide is laid out by hand. Open it in the Studio to place its elements.",
     "settings.eink.dataRefresh": "Data refresh",
     "settings.eink.dataRefreshDetail": "How often the numbers are rebuilt and pushed while the device has mains power.",
     "settings.eink.deviceSyncHelp": "Push slides to this device",
@@ -4346,6 +4426,43 @@ export const messages: {
     "settings.eink.status.pending": "Not yet",
     "settings.eink.status.power": "Power",
     "settings.eink.status.wifi": "Wi-Fi",
+    "settings.eink.studio.align.center": "Centre",
+    "settings.eink.studio.align.leading": "Left",
+    "settings.eink.studio.align.trailing": "Right",
+    "settings.eink.studio.alignment": "Alignment",
+    "settings.eink.studio.binding.countdown": "Time to reset",
+    "settings.eink.studio.binding.custom": "Fixed text",
+    "settings.eink.studio.binding.label": "Bucket name",
+    "settings.eink.studio.binding.percent": "Quota left, percent",
+    "settings.eink.studio.binding.usage": "Usage figure",
+    "settings.eink.studio.bold": "Bold",
+    "settings.eink.studio.boxWidth": "Box width",
+    "settings.eink.studio.boxWidth.auto": "Fit the text",
+    "settings.eink.studio.boxWidth.fixed": "Fixed, longer text is cut",
+    "settings.eink.studio.budget": "{count} of {limit} elements",
+    "settings.eink.studio.caption": "Caption",
+    "settings.eink.studio.diagnostics": "Panel checks",
+    "settings.eink.studio.diagnosticsClear": "Nothing out of place.",
+    "settings.eink.studio.divider": "Divider",
+    "settings.eink.studio.font": "Panel font",
+    "settings.eink.studio.font.pixel": "Pixel 12",
+    "settings.eink.studio.font.sans": "Sans",
+    "settings.eink.studio.hint": "Drag to place. Arrow keys nudge one pixel, with Shift eight; hold Option to snap to the eight-pixel grid.",
+    "settings.eink.studio.issue.noField": "No quota bucket is picked, so this draws the preview value.",
+    "settings.eink.studio.issue.outOfFrame": "This element falls outside the panel.",
+    "settings.eink.studio.issue.presetClipped": "This preset block is smaller than the panel it was drawn for, so parts of it are cut.",
+    "settings.eink.studio.issue.textOverflow": "The text is wider than its box, so the panel cuts it.",
+    "settings.eink.studio.issue.tooManyElements": "This layout draws {count} elements and the panel accepts {limit}.",
+    "settings.eink.studio.metric": "Figure",
+    "settings.eink.studio.open": "Edit in Studio",
+    "settings.eink.studio.orientationNote": "Turning the device re-fits this layout to the new panel shape: elements keep their position and are pulled back inside the edge where they no longer fit.",
+    "settings.eink.studio.paperSize": "{width} x {height} panel pixels",
+    "settings.eink.studio.period": "Window",
+    "settings.eink.studio.presetSelection": "Leave every box off to let Vibe Bar choose, in its own order.",
+    "settings.eink.studio.previewPercent": "Preview percentage",
+    "settings.eink.studio.push": "Push to device",
+    "settings.eink.studio.statTile": "Stat tile",
+    "settings.eink.studio.subValue": "Sub value",
     "settings.eink.sync": "Sync to devices",
     "settings.eink.syncDetail": "Off stops every push. Slides stay editable, and the preview still updates.",
     "settings.externalChange.title": "Another Vibe Bar replaced your change",
@@ -6030,8 +6147,10 @@ export const messages: {
     "settings.eink.batteryRefreshDetail": "设备报告正在使用自身电池时改用的较慢节奏。",
     "settings.eink.buckets": "额度 bucket",
     "settings.eink.capacityFull": "该版式在当前方向下最多容纳 {count} 项。请先取消一项再选择其他。",
-    "settings.eink.customSlide": "自定义（随布局工作台推出）",
-    "settings.eink.customSlideDetail": "这张幻灯片指向自定义版式。Vibe Bar 暂时无法绘制，因此不会为它向设备推送内容。",
+    "settings.eink.customLayout": "自定义布局",
+    "settings.eink.customLayoutDetail": "自行排布这张幻灯片：在面板上摆放文本、圆环、条形和整块预设。",
+    "settings.eink.customSlide": "自定义（在 Studio 中编辑）",
+    "settings.eink.customSlideDetail": "这张幻灯片由手动排布。在 Studio 中打开即可摆放元素。",
     "settings.eink.dataRefresh": "数据刷新",
     "settings.eink.dataRefreshDetail": "设备接通电源时，重新生成并推送数字的间隔。",
     "settings.eink.deviceSyncHelp": "向这台设备推送幻灯片",
@@ -6092,6 +6211,43 @@ export const messages: {
     "settings.eink.status.pending": "尚未推送",
     "settings.eink.status.power": "供电",
     "settings.eink.status.wifi": "Wi-Fi",
+    "settings.eink.studio.align.center": "居中",
+    "settings.eink.studio.align.leading": "左",
+    "settings.eink.studio.align.trailing": "右",
+    "settings.eink.studio.alignment": "对齐",
+    "settings.eink.studio.binding.countdown": "距离重置",
+    "settings.eink.studio.binding.custom": "固定文本",
+    "settings.eink.studio.binding.label": "额度名称",
+    "settings.eink.studio.binding.percent": "额度剩余百分比",
+    "settings.eink.studio.binding.usage": "用量数字",
+    "settings.eink.studio.bold": "加粗",
+    "settings.eink.studio.boxWidth": "文本框宽度",
+    "settings.eink.studio.boxWidth.auto": "随文本",
+    "settings.eink.studio.boxWidth.fixed": "固定，超出部分截断",
+    "settings.eink.studio.budget": "{count} / {limit} 个元素",
+    "settings.eink.studio.caption": "标题",
+    "settings.eink.studio.diagnostics": "面板检查",
+    "settings.eink.studio.diagnosticsClear": "没有发现问题。",
+    "settings.eink.studio.divider": "分隔线",
+    "settings.eink.studio.font": "面板字体",
+    "settings.eink.studio.font.pixel": "像素 12",
+    "settings.eink.studio.font.sans": "无衬线",
+    "settings.eink.studio.hint": "拖动摆放。方向键移动 1 像素，加 Shift 移动 8 像素；按住 Option 吸附到 8 像素网格。",
+    "settings.eink.studio.issue.noField": "未选择额度，显示的是预览值。",
+    "settings.eink.studio.issue.outOfFrame": "该元素超出面板范围。",
+    "settings.eink.studio.issue.presetClipped": "预设块小于其原本的面板尺寸，部分内容会被裁掉。",
+    "settings.eink.studio.issue.textOverflow": "文本宽度超过文本框，面板会截断。",
+    "settings.eink.studio.issue.tooManyElements": "该布局会绘制 {count} 个元素，面板最多接受 {limit} 个。",
+    "settings.eink.studio.metric": "指标",
+    "settings.eink.studio.open": "在 Studio 中编辑",
+    "settings.eink.studio.orientationNote": "旋转设备会把布局重新适配到新的面板形状：元素保持原位，放不下的会被拉回边界内。",
+    "settings.eink.studio.paperSize": "{width} x {height} 面板像素",
+    "settings.eink.studio.period": "时间窗口",
+    "settings.eink.studio.presetSelection": "全部不勾选则由 Vibe Bar 按自己的顺序选择。",
+    "settings.eink.studio.previewPercent": "预览百分比",
+    "settings.eink.studio.push": "推送到设备",
+    "settings.eink.studio.statTile": "数据块",
+    "settings.eink.studio.subValue": "副值",
     "settings.eink.sync": "同步到设备",
     "settings.eink.syncDetail": "关闭后不再推送任何内容。幻灯片仍可编辑，预览也会继续更新。",
     "settings.externalChange.title": "另一个 Vibe Bar 覆盖了此处的修改",
