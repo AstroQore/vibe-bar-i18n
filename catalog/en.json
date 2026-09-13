@@ -3600,6 +3600,18 @@
       "value": "Slot labels",
       "comment": "Picker that chooses whether e-ink quota slots name their provider in words or with its logo."
     },
+    "settings.eink.addBucket": {
+      "value": "Add a bucket",
+      "comment": "Heading over the list of quota buckets an e-ink slide does not show yet."
+    },
+    "settings.eink.levelLabelDetail": {
+      "value": "Rename a provider or a group here and every bucket under it prints the new name.",
+      "comment": "Help text under the e-ink slide's provider and group name fields."
+    },
+    "settings.eink.noMoreBuckets": {
+      "value": "Every bucket this account returns is already on this slide.",
+      "comment": "Shown in place of the e-ink add-a-bucket list when nothing is left to add."
+    },
     "settings.eink.labelStyle.detail": {
       "value": "A logo saves the width the provider's name costs, so a long bucket name still fits one line.",
       "comment": "Help text under the slot-label style picker."

@@ -775,6 +775,7 @@ export type MessageKey =
   | "settings.deleteProviderCookies"
   | "settings.displayMode.remaining"
   | "settings.displayMode.used"
+  | "settings.eink.addBucket"
   | "settings.eink.addSlide"
   | "settings.eink.alertThreshold"
   | "settings.eink.alerts"
@@ -831,12 +832,14 @@ export type MessageKey =
   | "settings.eink.labelStyle.text"
   | "settings.eink.lastSlide"
   | "settings.eink.layout"
+  | "settings.eink.levelLabelDetail"
   | "settings.eink.loopTasks"
   | "settings.eink.loopTasksShort"
   | "settings.eink.loopTasksSurplus"
   | "settings.eink.loopTasksUnknown"
   | "settings.eink.needsKey"
   | "settings.eink.noDevices"
+  | "settings.eink.noMoreBuckets"
   | "settings.eink.noSelection"
   | "settings.eink.orientation"
   | "settings.eink.orientation.inverted"
@@ -2629,6 +2632,7 @@ export interface MessageParams {
   "settings.deleteProviderCookies": { "provider": string };
   "settings.displayMode.remaining": undefined;
   "settings.displayMode.used": undefined;
+  "settings.eink.addBucket": undefined;
   "settings.eink.addSlide": undefined;
   "settings.eink.alertThreshold": undefined;
   "settings.eink.alerts": undefined;
@@ -2685,12 +2689,14 @@ export interface MessageParams {
   "settings.eink.labelStyle.text": undefined;
   "settings.eink.lastSlide": undefined;
   "settings.eink.layout": undefined;
+  "settings.eink.levelLabelDetail": undefined;
   "settings.eink.loopTasks": { "count": number };
   "settings.eink.loopTasksShort": { "tasks": number; "slides": number };
   "settings.eink.loopTasksSurplus": { "count": number };
   "settings.eink.loopTasksUnknown": undefined;
   "settings.eink.needsKey": undefined;
   "settings.eink.noDevices": undefined;
+  "settings.eink.noMoreBuckets": undefined;
   "settings.eink.noSelection": undefined;
   "settings.eink.orientation": undefined;
   "settings.eink.orientation.inverted": undefined;
@@ -4484,6 +4490,7 @@ export const messages: {
     "settings.deleteProviderCookies": "Delete {provider} cookies",
     "settings.displayMode.remaining": "Remaining",
     "settings.displayMode.used": "Used",
+    "settings.eink.addBucket": "Add a bucket",
     "settings.eink.addSlide": "Add a slide",
     "settings.eink.alertThreshold": "Alert below",
     "settings.eink.alerts": "Alert slide",
@@ -4540,12 +4547,14 @@ export const messages: {
     "settings.eink.labelStyle.text": "Full name",
     "settings.eink.lastSlide": "The last slide cannot be removed.",
     "settings.eink.layout": "Slide layout",
+    "settings.eink.levelLabelDetail": "Rename a provider or a group here and every bucket under it prints the new name.",
     "settings.eink.loopTasks": "{count, plural, one {# Canvas API task in the device loop} other {# Canvas API tasks in the device loop}}",
     "settings.eink.loopTasksShort": "The loop carries {tasks, plural, one {# Canvas API task} other {# Canvas API tasks}} and this device has {slides, plural, one {# slide} other {# slides}}. Add one Canvas API item per slide in the Dot. app and scan again, or switch to the Vibe Bar carousel.",
     "settings.eink.loopTasksSurplus": "{count, plural, one {# Canvas API task in the loop has no slide behind it, and Vibe Bar draws a placeholder on it so nothing stale is left on the panel — remove it in the Dot. app to reclaim the slot.} other {# Canvas API tasks in the loop have no slide behind them, and Vibe Bar draws a placeholder on them so nothing stale is left on the panel — remove them in the Dot. app to reclaim the slots.}}",
     "settings.eink.loopTasksUnknown": "The device loop has not been scanned yet.",
     "settings.eink.needsKey": "Save an API key to reach your devices.",
     "settings.eink.noDevices": "No devices on this account yet.",
+    "settings.eink.noMoreBuckets": "Every bucket this account returns is already on this slide.",
     "settings.eink.noSelection": "Nothing selected — the layout draws as many as it can fit, in Vibe Bar's own order.",
     "settings.eink.orientation": "Orientation",
     "settings.eink.orientation.inverted": "Upside down",
@@ -6334,6 +6343,7 @@ export const messages: {
     "settings.deleteProviderCookies": "删除 {provider} cookies",
     "settings.displayMode.remaining": "剩余",
     "settings.displayMode.used": "已用",
+    "settings.eink.addBucket": "添加额度项",
     "settings.eink.addSlide": "添加幻灯片",
     "settings.eink.alertThreshold": "低于此比例时预警",
     "settings.eink.alerts": "预警幻灯片",
@@ -6390,12 +6400,14 @@ export const messages: {
     "settings.eink.labelStyle.text": "完整名称",
     "settings.eink.lastSlide": "最后一张幻灯片无法移除。",
     "settings.eink.layout": "幻灯片版式",
+    "settings.eink.levelLabelDetail": "在这里重命名供应商或分组，其下每个额度项都会按新名称打印。",
     "settings.eink.loopTasks": "{count, plural, other {设备循环中有 # 个 Canvas API 任务}}",
     "settings.eink.loopTasksShort": "循环中有 {tasks, plural, other {# 个 Canvas API 任务}}，而这台设备有 {slides, plural, other {# 张幻灯片}}。请在 Dot. App 中为每张幻灯片各添加一个 Canvas API 项目后重新扫描，或改用 Vibe Bar 驱动的轮播。",
     "settings.eink.loopTasksSurplus": "{count, plural, other {循环中有 # 个 Canvas API 任务没有对应的幻灯片，Vibe Bar 会在其上绘制占位画面，避免屏幕停留在旧内容 — 如需收回这些位置，请在 Dot. App 中删除它们。}}",
     "settings.eink.loopTasksUnknown": "尚未扫描设备循环。",
     "settings.eink.needsKey": "保存 API key 后才能连接设备。",
     "settings.eink.noDevices": "该账号下还没有设备。",
+    "settings.eink.noMoreBuckets": "该账号返回的额度项都已在这张幻灯片上。",
     "settings.eink.noSelection": "未选择任何项 — 版式会按 Vibe Bar 的默认顺序尽量多画。",
     "settings.eink.orientation": "方向",
     "settings.eink.orientation.inverted": "倒置",

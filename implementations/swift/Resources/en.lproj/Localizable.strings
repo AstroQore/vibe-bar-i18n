@@ -2226,6 +2226,9 @@
 /* Segmented option: the percentage shows what has been spent distinct-from: quota.mode.used — the lowercase caption under a bar and the title-case picker option are two renderings the app sets deliberately; collapsing them would move the casing into a call site, which is a code change rather than a rename. */
 "settings.displayMode.used" = "Used";
 
+/* Heading over the list of quota buckets an e-ink slide does not show yet. */
+"settings.eink.addBucket" = "Add a bucket";
+
 /* Button that appends a new screen to an e-ink device. */
 "settings.eink.addSlide" = "Add a slide";
 
@@ -2391,6 +2394,9 @@
 /* Picker label for which of the built-in e-ink layouts a slide draws. */
 "settings.eink.layout" = "Slide layout";
 
+/* Help text under the e-ink slide's provider and group name fields. */
+"settings.eink.levelLabelDetail" = "Rename a provider or a group here and every bucket under it prints the new name.";
+
 /* Shown before an e-ink device's loop has ever been scanned. */
 "settings.eink.loopTasksUnknown" = "The device loop has not been scanned yet.";
 
@@ -2399,6 +2405,9 @@
 
 /* Empty state after fetching the e-ink device roster. */
 "settings.eink.noDevices" = "No devices on this account yet.";
+
+/* Shown in place of the e-ink add-a-bucket list when nothing is left to add. */
+"settings.eink.noMoreBuckets" = "Every bucket this account returns is already on this slide.";
 
 /* Shown under an empty e-ink bucket or period selection. */
 "settings.eink.noSelection" = "Nothing selected — the layout draws as many as it can fit, in Vibe Bar's own order.";

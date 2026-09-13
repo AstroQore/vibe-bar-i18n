@@ -2228,6 +2228,15 @@
     "settings.eink.labelStyle": {
       "value": "栏位标签"
     },
+    "settings.eink.addBucket": {
+      "value": "添加额度项"
+    },
+    "settings.eink.levelLabelDetail": {
+      "value": "在这里重命名供应商或分组，其下每个额度项都会按新名称打印。"
+    },
+    "settings.eink.noMoreBuckets": {
+      "value": "该账号返回的额度项都已在这张幻灯片上。"
+    },
     "settings.eink.labelStyle.detail": {
       "value": "用图标代替厂商名称可以省出宽度，名字再长也能排进一行。"
     },

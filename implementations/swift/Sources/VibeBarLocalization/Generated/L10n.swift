@@ -5470,6 +5470,12 @@ public enum L10n {
         }
 
         public enum Eink {
+            /// Heading over the list of quota buckets an e-ink slide does not show yet.
+            ///
+            /// Key: `settings.eink.addBucket`
+            /// en: "Add a bucket"
+            public static var addBucket: String { L10nSupport.string("settings.eink.addBucket") }
+
             /// Button that appends a new screen to an e-ink device.
             ///
             /// Key: `settings.eink.addSlide`
@@ -5684,6 +5690,12 @@ public enum L10n {
             /// en: "Slide layout"
             public static var layout: String { L10nSupport.string("settings.eink.layout") }
 
+            /// Help text under the e-ink slide's provider and group name fields.
+            ///
+            /// Key: `settings.eink.levelLabelDetail`
+            /// en: "Rename a provider or a group here and every bucket under it prints the new name."
+            public static var levelLabelDetail: String { L10nSupport.string("settings.eink.levelLabelDetail") }
+
             /// How many Canvas API tasks the last loop scan found on an e-ink device.
             ///
             /// Key: `settings.eink.loopTasks`
@@ -5725,6 +5737,12 @@ public enum L10n {
             /// Key: `settings.eink.noDevices`
             /// en: "No devices on this account yet."
             public static var noDevices: String { L10nSupport.string("settings.eink.noDevices") }
+
+            /// Shown in place of the e-ink add-a-bucket list when nothing is left to add.
+            ///
+            /// Key: `settings.eink.noMoreBuckets`
+            /// en: "Every bucket this account returns is already on this slide."
+            public static var noMoreBuckets: String { L10nSupport.string("settings.eink.noMoreBuckets") }
 
             /// Shown under an empty e-ink bucket or period selection.
             ///
@@ -13150,6 +13168,7 @@ enum L10nCatalogFacts {
         "settings.deleteProviderCookies",
         "settings.displayMode.remaining",
         "settings.displayMode.used",
+        "settings.eink.addBucket",
         "settings.eink.addSlide",
         "settings.eink.alertThreshold",
         "settings.eink.alerts",
@@ -13206,12 +13225,14 @@ enum L10nCatalogFacts {
         "settings.eink.labelStyle.text",
         "settings.eink.lastSlide",
         "settings.eink.layout",
+        "settings.eink.levelLabelDetail",
         "settings.eink.loopTasks",
         "settings.eink.loopTasksShort",
         "settings.eink.loopTasksSurplus",
         "settings.eink.loopTasksUnknown",
         "settings.eink.needsKey",
         "settings.eink.noDevices",
+        "settings.eink.noMoreBuckets",
         "settings.eink.noSelection",
         "settings.eink.orientation",
         "settings.eink.orientation.inverted",
@@ -15058,6 +15079,7 @@ enum L10nCatalogFacts {
         "settings.deleteProviderCookies": 1,
         "settings.displayMode.remaining": 0,
         "settings.displayMode.used": 0,
+        "settings.eink.addBucket": 0,
         "settings.eink.addSlide": 0,
         "settings.eink.alertThreshold": 0,
         "settings.eink.alerts": 0,
@@ -15114,12 +15136,14 @@ enum L10nCatalogFacts {
         "settings.eink.labelStyle.text": 0,
         "settings.eink.lastSlide": 0,
         "settings.eink.layout": 0,
+        "settings.eink.levelLabelDetail": 0,
         "settings.eink.loopTasks": 1,
         "settings.eink.loopTasksShort": 2,
         "settings.eink.loopTasksSurplus": 1,
         "settings.eink.loopTasksUnknown": 0,
         "settings.eink.needsKey": 0,
         "settings.eink.noDevices": 0,
+        "settings.eink.noMoreBuckets": 0,
         "settings.eink.noSelection": 0,
         "settings.eink.orientation": 0,
         "settings.eink.orientation.inverted": 0,

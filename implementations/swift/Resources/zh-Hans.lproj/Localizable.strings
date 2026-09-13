@@ -2226,6 +2226,9 @@
 /* Segmented option: the percentage shows what has been spent distinct-from: quota.mode.used — the lowercase caption under a bar and the title-case picker option are two renderings the app sets deliberately; collapsing them would move the casing into a call site, which is a code change rather than a rename. */
 "settings.displayMode.used" = "已用";
 
+/* Heading over the list of quota buckets an e-ink slide does not show yet. */
+"settings.eink.addBucket" = "添加额度项";
+
 /* Button that appends a new screen to an e-ink device. */
 "settings.eink.addSlide" = "添加幻灯片";
 
@@ -2391,6 +2394,9 @@
 /* Picker label for which of the built-in e-ink layouts a slide draws. */
 "settings.eink.layout" = "幻灯片版式";
 
+/* Help text under the e-ink slide's provider and group name fields. */
+"settings.eink.levelLabelDetail" = "在这里重命名供应商或分组，其下每个额度项都会按新名称打印。";
+
 /* Shown before an e-ink device's loop has ever been scanned. */
 "settings.eink.loopTasksUnknown" = "尚未扫描设备循环。";
 
@@ -2399,6 +2405,9 @@
 
 /* Empty state after fetching the e-ink device roster. */
 "settings.eink.noDevices" = "该账号下还没有设备。";
+
+/* Shown in place of the e-ink add-a-bucket list when nothing is left to add. */
+"settings.eink.noMoreBuckets" = "该账号返回的额度项都已在这张幻灯片上。";
 
 /* Shown under an empty e-ink bucket or period selection. */
 "settings.eink.noSelection" = "未选择任何项 — 版式会按 Vibe Bar 的默认顺序尽量多画。";
