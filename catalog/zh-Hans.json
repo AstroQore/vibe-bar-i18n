@@ -5545,6 +5545,96 @@
     },
     "settings.eink.studio.pushOtherOrientation": {
       "value": "设备当前显示的是另一个方向。切回该方向后才能推送面板上实际显示的内容。"
+    },
+    "settings.eink.screenGroups.title": {
+      "value": "屏幕编组"
+    },
+    "settings.eink.screenGroups.addGroup": {
+      "value": "添加屏幕编组"
+    },
+    "settings.eink.screenGroups.intro": {
+      "value": "按显示像素排列屏幕。每一帧可显示独立页面，也可让一页跨越多个屏幕。"
+    },
+    "settings.eink.screenGroups.name": {
+      "value": "编组名称"
+    },
+    "settings.eink.screenGroups.enabled": {
+      "value": "启用编组播放"
+    },
+    "settings.eink.screenGroups.position": {
+      "value": "屏幕排列"
+    },
+    "settings.eink.screenGroups.vertical": {
+      "value": "上下排列"
+    },
+    "settings.eink.screenGroups.horizontal": {
+      "value": "左右排列"
+    },
+    "settings.eink.screenGroups.frames": {
+      "value": "共同时间轴"
+    },
+    "settings.eink.screenGroups.addFrame": {
+      "value": "添加时间轴帧"
+    },
+    "settings.eink.screenGroups.frameName": {
+      "value": "帧名称"
+    },
+    "settings.eink.screenGroups.seconds": {
+      "value": "每帧秒数"
+    },
+    "settings.eink.screenGroups.addRegion": {
+      "value": "添加页面区域"
+    },
+    "settings.eink.screenGroups.screens": {
+      "value": "此页面使用的屏幕"
+    },
+    "settings.eink.screenGroups.source": {
+      "value": "复制已有页面"
+    },
+    "settings.eink.screenGroups.blank": {
+      "value": "未分配内容的屏幕显示空白页。"
+    },
+    "settings.eink.screenGroups.syncDetail": {
+      "value": "Mac 使用同一份数据快照推进所有屏幕。请求依次发送，硬件刷新完成时间可能不同。请保持组内所有屏幕启用。"
+    },
+    "settings.eink.screenGroups.invalid": {
+      "value": "请检查排列：至少使用两块屏幕，位置不能重叠，每帧中每块屏幕最多分配一次。"
+    },
+    "settings.eink.screenGroups.grouped": {
+      "value": "此屏幕的播放由编组控制。"
+    },
+    "settings.eink.screenGroups.alertDetail": {
+      "value": "告警会向画廊追加一张临时卡片，与已有页面一起轮播，解除后自动移除。设备没有空余轮播任务时，告警期间由 Mac 驱动轮播。"
+    },
+    "settings.eink.screenGroups.preview": {
+      "value": "组合画布预览"
+    },
+    "settings.eink.screenGroups.edit": {
+      "value": "编辑组合页面"
+    },
+    "settings.eink.screenGroups.xPosition": {
+      "value": "水平位置"
+    },
+    "settings.eink.screenGroups.yPosition": {
+      "value": "垂直位置"
+    },
+    "settings.eink.screenGroups.dragHint": {
+      "value": "拖动屏幕，靠近边缘时自动吸附"
+    },
+    "settings.eink.screenGroups.emptyBoard": {
+      "value": "添加屏幕，开始排列"
+    },
+    "settings.eink.screenGroups.addScreen": {
+      "value": "添加屏幕"
+    },
+    "settings.eink.screenGroups.removeScreen": {
+      "value": "移除选中的屏幕"
+    },
+    "settings.eink.screenGroups.precise": {
+      "value": "精确调整"
+    },
+    "settings.eink.screenGroups.sharedPlayback": {
+      "value": "Mac 运行时，组内屏幕同步换页。"
     }
   }
 }

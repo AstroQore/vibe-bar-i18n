@@ -8627,6 +8627,126 @@
     "settings.eink.studio.pushOtherOrientation": {
       "value": "The device is showing another orientation. Switch back to it to push what will be on the panel.",
       "comment": "Tooltip on the E-ink Studio's Push to device button when the orientation being edited is not the one the device is set to."
+    },
+    "settings.eink.screenGroups.title": {
+      "value": "Screen groups",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.addGroup": {
+      "value": "Add screen group",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.intro": {
+      "value": "Arrange screens in display pixels. Each frame can show separate pages or one page across several screens.",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.name": {
+      "value": "Group name",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.enabled": {
+      "value": "Enable group playback",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.position": {
+      "value": "Screen arrangement",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.vertical": {
+      "value": "Stack vertically",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.horizontal": {
+      "value": "Place side by side",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.frames": {
+      "value": "Shared timeline",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.addFrame": {
+      "value": "Add timeline frame",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.frameName": {
+      "value": "Frame name",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.seconds": {
+      "value": "Seconds per frame",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.addRegion": {
+      "value": "Add page region",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.screens": {
+      "value": "Screens for this page",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.source": {
+      "value": "Copy an existing page",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.blank": {
+      "value": "Unassigned screens show a blank page.",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.syncDetail": {
+      "value": "The Mac advances every screen together using one data snapshot. Requests are sent in sequence; hardware refresh completion may differ. Keep all member screens enabled.",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.invalid": {
+      "value": "Check the arrangement: use at least two screens, avoid overlaps, and assign each screen at most once per frame.",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.grouped": {
+      "value": "Playback is controlled by the screen group.",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.alertDetail": {
+      "value": "Alerts add one temporary card to the gallery. It rotates with your pages and disappears when the condition clears. If the device has no spare loop task, the Mac drives rotation while the alert is active.",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.preview": {
+      "value": "Combined canvas preview",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.edit": {
+      "value": "Edit combined page",
+      "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.xPosition": {
+      "value": "Horizontal position",
+      "comment": "Screen origin in upright canvas pixels."
+    },
+    "settings.eink.screenGroups.yPosition": {
+      "value": "Vertical position",
+      "comment": "Screen origin in upright canvas pixels."
+    },
+    "settings.eink.screenGroups.dragHint": {
+      "value": "Drag screens together to snap their edges.",
+      "comment": "Visual screen arrangement canvas and its toolbar."
+    },
+    "settings.eink.screenGroups.emptyBoard": {
+      "value": "Add screens to start arranging.",
+      "comment": "Visual screen arrangement canvas and its toolbar."
+    },
+    "settings.eink.screenGroups.addScreen": {
+      "value": "Add screen",
+      "comment": "Visual screen arrangement canvas and its toolbar."
+    },
+    "settings.eink.screenGroups.removeScreen": {
+      "value": "Remove selected screen",
+      "comment": "Visual screen arrangement canvas and its toolbar."
+    },
+    "settings.eink.screenGroups.precise": {
+      "value": "Precise adjustment",
+      "comment": "Visual screen arrangement canvas and its toolbar."
+    },
+    "settings.eink.screenGroups.sharedPlayback": {
+      "value": "Pages advance together while the Mac is running.",
+      "comment": "Visual screen arrangement canvas and its toolbar."
     }
   }
 }

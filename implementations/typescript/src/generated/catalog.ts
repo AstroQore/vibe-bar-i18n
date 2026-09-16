@@ -875,6 +875,36 @@ export type MessageKey =
   | "settings.eink.rescanLoop"
   | "settings.eink.resetToPreset"
   | "settings.eink.resetToPresetConfirm"
+  | "settings.eink.screenGroups.addFrame"
+  | "settings.eink.screenGroups.addGroup"
+  | "settings.eink.screenGroups.addRegion"
+  | "settings.eink.screenGroups.addScreen"
+  | "settings.eink.screenGroups.alertDetail"
+  | "settings.eink.screenGroups.blank"
+  | "settings.eink.screenGroups.dragHint"
+  | "settings.eink.screenGroups.edit"
+  | "settings.eink.screenGroups.emptyBoard"
+  | "settings.eink.screenGroups.enabled"
+  | "settings.eink.screenGroups.frameName"
+  | "settings.eink.screenGroups.frames"
+  | "settings.eink.screenGroups.grouped"
+  | "settings.eink.screenGroups.horizontal"
+  | "settings.eink.screenGroups.intro"
+  | "settings.eink.screenGroups.invalid"
+  | "settings.eink.screenGroups.name"
+  | "settings.eink.screenGroups.position"
+  | "settings.eink.screenGroups.precise"
+  | "settings.eink.screenGroups.preview"
+  | "settings.eink.screenGroups.removeScreen"
+  | "settings.eink.screenGroups.screens"
+  | "settings.eink.screenGroups.seconds"
+  | "settings.eink.screenGroups.sharedPlayback"
+  | "settings.eink.screenGroups.source"
+  | "settings.eink.screenGroups.syncDetail"
+  | "settings.eink.screenGroups.title"
+  | "settings.eink.screenGroups.vertical"
+  | "settings.eink.screenGroups.xPosition"
+  | "settings.eink.screenGroups.yPosition"
   | "settings.eink.secondsPerSlide"
   | "settings.eink.secondsPerSlideDetail"
   | "settings.eink.slideName"
@@ -2729,6 +2759,36 @@ export interface MessageParams {
   "settings.eink.rescanLoop": undefined;
   "settings.eink.resetToPreset": undefined;
   "settings.eink.resetToPresetConfirm": undefined;
+  "settings.eink.screenGroups.addFrame": undefined;
+  "settings.eink.screenGroups.addGroup": undefined;
+  "settings.eink.screenGroups.addRegion": undefined;
+  "settings.eink.screenGroups.addScreen": undefined;
+  "settings.eink.screenGroups.alertDetail": undefined;
+  "settings.eink.screenGroups.blank": undefined;
+  "settings.eink.screenGroups.dragHint": undefined;
+  "settings.eink.screenGroups.edit": undefined;
+  "settings.eink.screenGroups.emptyBoard": undefined;
+  "settings.eink.screenGroups.enabled": undefined;
+  "settings.eink.screenGroups.frameName": undefined;
+  "settings.eink.screenGroups.frames": undefined;
+  "settings.eink.screenGroups.grouped": undefined;
+  "settings.eink.screenGroups.horizontal": undefined;
+  "settings.eink.screenGroups.intro": undefined;
+  "settings.eink.screenGroups.invalid": undefined;
+  "settings.eink.screenGroups.name": undefined;
+  "settings.eink.screenGroups.position": undefined;
+  "settings.eink.screenGroups.precise": undefined;
+  "settings.eink.screenGroups.preview": undefined;
+  "settings.eink.screenGroups.removeScreen": undefined;
+  "settings.eink.screenGroups.screens": undefined;
+  "settings.eink.screenGroups.seconds": undefined;
+  "settings.eink.screenGroups.sharedPlayback": undefined;
+  "settings.eink.screenGroups.source": undefined;
+  "settings.eink.screenGroups.syncDetail": undefined;
+  "settings.eink.screenGroups.title": undefined;
+  "settings.eink.screenGroups.vertical": undefined;
+  "settings.eink.screenGroups.xPosition": undefined;
+  "settings.eink.screenGroups.yPosition": undefined;
   "settings.eink.secondsPerSlide": undefined;
   "settings.eink.secondsPerSlideDetail": undefined;
   "settings.eink.slideName": undefined;
@@ -4584,6 +4644,36 @@ export const messages: {
     "settings.eink.rescanLoop": "Scan the loop",
     "settings.eink.resetToPreset": "Reset to preset",
     "settings.eink.resetToPresetConfirm": "This drops every layout made for this slide, at every orientation.",
+    "settings.eink.screenGroups.addFrame": "Add timeline frame",
+    "settings.eink.screenGroups.addGroup": "Add screen group",
+    "settings.eink.screenGroups.addRegion": "Add page region",
+    "settings.eink.screenGroups.addScreen": "Add screen",
+    "settings.eink.screenGroups.alertDetail": "Alerts add one temporary card to the gallery. It rotates with your pages and disappears when the condition clears. If the device has no spare loop task, the Mac drives rotation while the alert is active.",
+    "settings.eink.screenGroups.blank": "Unassigned screens show a blank page.",
+    "settings.eink.screenGroups.dragHint": "Drag screens together to snap their edges.",
+    "settings.eink.screenGroups.edit": "Edit combined page",
+    "settings.eink.screenGroups.emptyBoard": "Add screens to start arranging.",
+    "settings.eink.screenGroups.enabled": "Enable group playback",
+    "settings.eink.screenGroups.frameName": "Frame name",
+    "settings.eink.screenGroups.frames": "Shared timeline",
+    "settings.eink.screenGroups.grouped": "Playback is controlled by the screen group.",
+    "settings.eink.screenGroups.horizontal": "Place side by side",
+    "settings.eink.screenGroups.intro": "Arrange screens in display pixels. Each frame can show separate pages or one page across several screens.",
+    "settings.eink.screenGroups.invalid": "Check the arrangement: use at least two screens, avoid overlaps, and assign each screen at most once per frame.",
+    "settings.eink.screenGroups.name": "Group name",
+    "settings.eink.screenGroups.position": "Screen arrangement",
+    "settings.eink.screenGroups.precise": "Precise adjustment",
+    "settings.eink.screenGroups.preview": "Combined canvas preview",
+    "settings.eink.screenGroups.removeScreen": "Remove selected screen",
+    "settings.eink.screenGroups.screens": "Screens for this page",
+    "settings.eink.screenGroups.seconds": "Seconds per frame",
+    "settings.eink.screenGroups.sharedPlayback": "Pages advance together while the Mac is running.",
+    "settings.eink.screenGroups.source": "Copy an existing page",
+    "settings.eink.screenGroups.syncDetail": "The Mac advances every screen together using one data snapshot. Requests are sent in sequence; hardware refresh completion may differ. Keep all member screens enabled.",
+    "settings.eink.screenGroups.title": "Screen groups",
+    "settings.eink.screenGroups.vertical": "Stack vertically",
+    "settings.eink.screenGroups.xPosition": "Horizontal position",
+    "settings.eink.screenGroups.yPosition": "Vertical position",
     "settings.eink.secondsPerSlide": "Seconds per slide",
     "settings.eink.secondsPerSlideDetail": "How long each slide stays on the panel while the carousel is running.",
     "settings.eink.slideName": "Slide name",
@@ -6434,6 +6524,36 @@ export const messages: {
     "settings.eink.rescanLoop": "扫描循环",
     "settings.eink.resetToPreset": "恢复为预设布局",
     "settings.eink.resetToPresetConfirm": "这会丢弃该幻灯片在所有方向上的自制布局。",
+    "settings.eink.screenGroups.addFrame": "添加时间轴帧",
+    "settings.eink.screenGroups.addGroup": "添加屏幕编组",
+    "settings.eink.screenGroups.addRegion": "添加页面区域",
+    "settings.eink.screenGroups.addScreen": "添加屏幕",
+    "settings.eink.screenGroups.alertDetail": "告警会向画廊追加一张临时卡片，与已有页面一起轮播，解除后自动移除。设备没有空余轮播任务时，告警期间由 Mac 驱动轮播。",
+    "settings.eink.screenGroups.blank": "未分配内容的屏幕显示空白页。",
+    "settings.eink.screenGroups.dragHint": "拖动屏幕，靠近边缘时自动吸附",
+    "settings.eink.screenGroups.edit": "编辑组合页面",
+    "settings.eink.screenGroups.emptyBoard": "添加屏幕，开始排列",
+    "settings.eink.screenGroups.enabled": "启用编组播放",
+    "settings.eink.screenGroups.frameName": "帧名称",
+    "settings.eink.screenGroups.frames": "共同时间轴",
+    "settings.eink.screenGroups.grouped": "此屏幕的播放由编组控制。",
+    "settings.eink.screenGroups.horizontal": "左右排列",
+    "settings.eink.screenGroups.intro": "按显示像素排列屏幕。每一帧可显示独立页面，也可让一页跨越多个屏幕。",
+    "settings.eink.screenGroups.invalid": "请检查排列：至少使用两块屏幕，位置不能重叠，每帧中每块屏幕最多分配一次。",
+    "settings.eink.screenGroups.name": "编组名称",
+    "settings.eink.screenGroups.position": "屏幕排列",
+    "settings.eink.screenGroups.precise": "精确调整",
+    "settings.eink.screenGroups.preview": "组合画布预览",
+    "settings.eink.screenGroups.removeScreen": "移除选中的屏幕",
+    "settings.eink.screenGroups.screens": "此页面使用的屏幕",
+    "settings.eink.screenGroups.seconds": "每帧秒数",
+    "settings.eink.screenGroups.sharedPlayback": "Mac 运行时，组内屏幕同步换页。",
+    "settings.eink.screenGroups.source": "复制已有页面",
+    "settings.eink.screenGroups.syncDetail": "Mac 使用同一份数据快照推进所有屏幕。请求依次发送，硬件刷新完成时间可能不同。请保持组内所有屏幕启用。",
+    "settings.eink.screenGroups.title": "屏幕编组",
+    "settings.eink.screenGroups.vertical": "上下排列",
+    "settings.eink.screenGroups.xPosition": "水平位置",
+    "settings.eink.screenGroups.yPosition": "垂直位置",
     "settings.eink.secondsPerSlide": "每张停留秒数",
     "settings.eink.secondsPerSlideDetail": "轮播运行时每张幻灯片在面板上停留的时长。",
     "settings.eink.slideName": "幻灯片名称",
