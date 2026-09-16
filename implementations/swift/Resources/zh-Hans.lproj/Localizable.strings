@@ -2514,6 +2514,72 @@
 /* Confirmation before a slide goes back to its preset. */
 "settings.eink.resetToPresetConfirm" = "这会丢弃该幻灯片在所有方向上的自制布局。";
 
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.addFrame" = "添加时间轴帧";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.addGroup" = "添加屏幕编组";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.addRegion" = "添加页面区域";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.alertDetail" = "告警会向画廊追加一张临时卡片，与已有页面一起轮播，解除后自动移除。设备没有空余轮播任务时，告警期间由 Mac 驱动轮播。";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.blank" = "未分配内容的屏幕显示空白页。";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.edit" = "编辑组合页面";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.enabled" = "启用编组播放";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.frameName" = "帧名称";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.frames" = "共同时间轴";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.grouped" = "此屏幕的播放由编组控制。";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.horizontal" = "左右排列";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.intro" = "按显示像素排列屏幕。每一帧可显示独立页面，也可让一页跨越多个屏幕。";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.invalid" = "请检查排列：至少使用两块屏幕，位置不能重叠，每帧中每块屏幕最多分配一次。";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.name" = "编组名称";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.position" = "屏幕排列";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.preview" = "组合画布预览";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.screens" = "此页面使用的屏幕";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.seconds" = "每帧秒数";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.source" = "复制已有页面";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.syncDetail" = "Mac 使用同一份数据快照推进所有屏幕。请求依次发送，硬件刷新完成时间可能不同。请保持组内所有屏幕启用。";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.title" = "屏幕编组";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.vertical" = "上下排列";
+
 /* Stepper label for how long the app-driven e-ink carousel holds each slide. */
 "settings.eink.secondsPerSlide" = "每张停留秒数";
 

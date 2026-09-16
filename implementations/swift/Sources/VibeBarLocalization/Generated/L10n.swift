@@ -6174,6 +6174,140 @@ public enum L10n {
                 public static var until: String { L10nSupport.string("settings.eink.quietHours.until") }
             }
 
+            public enum ScreenGroups {
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.addFrame`
+                /// en: "Add timeline frame"
+                public static var addFrame: String { L10nSupport.string("settings.eink.screenGroups.addFrame") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.addGroup`
+                /// en: "Add screen group"
+                public static var addGroup: String { L10nSupport.string("settings.eink.screenGroups.addGroup") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.addRegion`
+                /// en: "Add page region"
+                public static var addRegion: String { L10nSupport.string("settings.eink.screenGroups.addRegion") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.alertDetail`
+                /// en: "Alerts add one temporary card to the gallery. It rotates with your pages and disappears when the condition clears. If the device has no spare loop task, the Mac drives rotation while the alert is active."
+                public static var alertDetail: String { L10nSupport.string("settings.eink.screenGroups.alertDetail") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.blank`
+                /// en: "Unassigned screens show a blank page."
+                public static var blank: String { L10nSupport.string("settings.eink.screenGroups.blank") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.edit`
+                /// en: "Edit combined page"
+                public static var edit: String { L10nSupport.string("settings.eink.screenGroups.edit") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.enabled`
+                /// en: "Enable group playback"
+                public static var enabled: String { L10nSupport.string("settings.eink.screenGroups.enabled") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.frameName`
+                /// en: "Frame name"
+                public static var frameName: String { L10nSupport.string("settings.eink.screenGroups.frameName") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.frames`
+                /// en: "Shared timeline"
+                public static var frames: String { L10nSupport.string("settings.eink.screenGroups.frames") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.grouped`
+                /// en: "Playback is controlled by the screen group."
+                public static var grouped: String { L10nSupport.string("settings.eink.screenGroups.grouped") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.horizontal`
+                /// en: "Place side by side"
+                public static var horizontal: String { L10nSupport.string("settings.eink.screenGroups.horizontal") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.intro`
+                /// en: "Arrange screens in display pixels. Each frame can show separate pages or one page across several screens."
+                public static var intro: String { L10nSupport.string("settings.eink.screenGroups.intro") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.invalid`
+                /// en: "Check the arrangement: use at least two screens, avoid overlaps, and assign each screen at most once per frame."
+                public static var invalid: String { L10nSupport.string("settings.eink.screenGroups.invalid") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.name`
+                /// en: "Group name"
+                public static var name: String { L10nSupport.string("settings.eink.screenGroups.name") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.position`
+                /// en: "Screen arrangement"
+                public static var position: String { L10nSupport.string("settings.eink.screenGroups.position") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.preview`
+                /// en: "Combined canvas preview"
+                public static var preview: String { L10nSupport.string("settings.eink.screenGroups.preview") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.screens`
+                /// en: "Screens for this page"
+                public static var screens: String { L10nSupport.string("settings.eink.screenGroups.screens") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.seconds`
+                /// en: "Seconds per frame"
+                public static var seconds: String { L10nSupport.string("settings.eink.screenGroups.seconds") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.source`
+                /// en: "Copy an existing page"
+                public static var source: String { L10nSupport.string("settings.eink.screenGroups.source") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.syncDetail`
+                /// en: "The Mac advances every screen together using one data snapshot. Requests are sent in sequence; hardware refresh completion may differ. Keep all member screens enabled."
+                public static var syncDetail: String { L10nSupport.string("settings.eink.screenGroups.syncDetail") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.title`
+                /// en: "Screen groups"
+                public static var title: String { L10nSupport.string("settings.eink.screenGroups.title") }
+
+                /// E-ink screen group configuration and shared timeline.
+                ///
+                /// Key: `settings.eink.screenGroups.vertical`
+                /// en: "Stack vertically"
+                public static var vertical: String { L10nSupport.string("settings.eink.screenGroups.vertical") }
+            }
+
             public enum Status {
                 /// Status label for an e-ink device's battery reading.
                 ///
@@ -13250,6 +13384,28 @@ enum L10nCatalogFacts {
         "settings.eink.rescanLoop",
         "settings.eink.resetToPreset",
         "settings.eink.resetToPresetConfirm",
+        "settings.eink.screenGroups.addFrame",
+        "settings.eink.screenGroups.addGroup",
+        "settings.eink.screenGroups.addRegion",
+        "settings.eink.screenGroups.alertDetail",
+        "settings.eink.screenGroups.blank",
+        "settings.eink.screenGroups.edit",
+        "settings.eink.screenGroups.enabled",
+        "settings.eink.screenGroups.frameName",
+        "settings.eink.screenGroups.frames",
+        "settings.eink.screenGroups.grouped",
+        "settings.eink.screenGroups.horizontal",
+        "settings.eink.screenGroups.intro",
+        "settings.eink.screenGroups.invalid",
+        "settings.eink.screenGroups.name",
+        "settings.eink.screenGroups.position",
+        "settings.eink.screenGroups.preview",
+        "settings.eink.screenGroups.screens",
+        "settings.eink.screenGroups.seconds",
+        "settings.eink.screenGroups.source",
+        "settings.eink.screenGroups.syncDetail",
+        "settings.eink.screenGroups.title",
+        "settings.eink.screenGroups.vertical",
         "settings.eink.secondsPerSlide",
         "settings.eink.secondsPerSlideDetail",
         "settings.eink.slideName",
@@ -15158,6 +15314,28 @@ enum L10nCatalogFacts {
         "settings.eink.rescanLoop": 0,
         "settings.eink.resetToPreset": 0,
         "settings.eink.resetToPresetConfirm": 0,
+        "settings.eink.screenGroups.addFrame": 0,
+        "settings.eink.screenGroups.addGroup": 0,
+        "settings.eink.screenGroups.addRegion": 0,
+        "settings.eink.screenGroups.alertDetail": 0,
+        "settings.eink.screenGroups.blank": 0,
+        "settings.eink.screenGroups.edit": 0,
+        "settings.eink.screenGroups.enabled": 0,
+        "settings.eink.screenGroups.frameName": 0,
+        "settings.eink.screenGroups.frames": 0,
+        "settings.eink.screenGroups.grouped": 0,
+        "settings.eink.screenGroups.horizontal": 0,
+        "settings.eink.screenGroups.intro": 0,
+        "settings.eink.screenGroups.invalid": 0,
+        "settings.eink.screenGroups.name": 0,
+        "settings.eink.screenGroups.position": 0,
+        "settings.eink.screenGroups.preview": 0,
+        "settings.eink.screenGroups.screens": 0,
+        "settings.eink.screenGroups.seconds": 0,
+        "settings.eink.screenGroups.source": 0,
+        "settings.eink.screenGroups.syncDetail": 0,
+        "settings.eink.screenGroups.title": 0,
+        "settings.eink.screenGroups.vertical": 0,
         "settings.eink.secondsPerSlide": 0,
         "settings.eink.secondsPerSlideDetail": 0,
         "settings.eink.slideName": 0,

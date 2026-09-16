@@ -2514,6 +2514,72 @@
 /* Confirmation before a slide goes back to its preset. */
 "settings.eink.resetToPresetConfirm" = "This drops every layout made for this slide, at every orientation.";
 
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.addFrame" = "Add timeline frame";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.addGroup" = "Add screen group";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.addRegion" = "Add page region";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.alertDetail" = "Alerts add one temporary card to the gallery. It rotates with your pages and disappears when the condition clears. If the device has no spare loop task, the Mac drives rotation while the alert is active.";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.blank" = "Unassigned screens show a blank page.";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.edit" = "Edit combined page";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.enabled" = "Enable group playback";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.frameName" = "Frame name";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.frames" = "Shared timeline";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.grouped" = "Playback is controlled by the screen group.";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.horizontal" = "Place side by side";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.intro" = "Arrange screens in display pixels. Each frame can show separate pages or one page across several screens.";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.invalid" = "Check the arrangement: use at least two screens, avoid overlaps, and assign each screen at most once per frame.";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.name" = "Group name";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.position" = "Screen arrangement";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.preview" = "Combined canvas preview";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.screens" = "Screens for this page";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.seconds" = "Seconds per frame";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.source" = "Copy an existing page";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.syncDetail" = "The Mac advances every screen together using one data snapshot. Requests are sent in sequence; hardware refresh completion may differ. Keep all member screens enabled.";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.title" = "Screen groups";
+
+/* E-ink screen group configuration and shared timeline. */
+"settings.eink.screenGroups.vertical" = "Stack vertically";
+
 /* Stepper label for how long the app-driven e-ink carousel holds each slide. */
 "settings.eink.secondsPerSlide" = "Seconds per slide";
 
