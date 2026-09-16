@@ -2832,6 +2832,66 @@
 /* Caption over the live slide preview, which draws the panel upright rather than rotated. */
 "settings.eink.uprightPreview" = "Shown the way you will read it";
 
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.allGrouped" = "These devices belong to screen groups. Edit their shared settings in Screen groups.";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.automaticPages" = "Select as many items as you need. Content that does not fit continues on the next page.";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.chooseContent" = "Choose content";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.combined" = "One page across all screens";
+
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.editPages" = "Edit paginated content in Studio";
+
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.editPagesDetail" = "Freeform editing needs separate pages. Keep all content by turning these pages into individual slides, then edit the selected page. You can keep single-slide playback or choose a carousel.";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.groupHelp" = "Choose screens to combine. A group has one set of settings and uses the same slide editor as a single screen.";
+
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.materializePages" = "Create separate slides and edit";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.memberMinimum" = "Select at least two screens.";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.mergeSlides" = "Merge slides";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.mixed" = "Combine the first two screens";
+
+/* Search in the quota content picker. */
+"settings.eink.workflow.searchContent" = "Search providers or quota";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.selectionSummary" = "%1$lld selected · %2$lld pages";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.separate" = "Separate page on each screen";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.sharedSettings" = "Group settings";
+
+/* Single logical slide can contain multiple overflow pages. */
+"settings.eink.workflow.singleSlideDetail" = "Play the selected slide. When its content needs more pages, turn them at the slide interval.";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.slideNumber" = "Slide %lld";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.splitSlides" = "Split into separate slides";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.template" = "Slide arrangement";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.ungroup" = "Ungroup screens";
+
 /* Banner shown when a second client overwrote a setting this one had changed */
 "settings.externalChange.title" = "Another Vibe Bar replaced your change";
 

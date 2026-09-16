@@ -981,6 +981,26 @@ export type MessageKey =
   | "settings.eink.unit.minutes"
   | "settings.eink.unit.seconds"
   | "settings.eink.uprightPreview"
+  | "settings.eink.workflow.allGrouped"
+  | "settings.eink.workflow.automaticPages"
+  | "settings.eink.workflow.chooseContent"
+  | "settings.eink.workflow.combined"
+  | "settings.eink.workflow.editPages"
+  | "settings.eink.workflow.editPagesDetail"
+  | "settings.eink.workflow.groupHelp"
+  | "settings.eink.workflow.materializePages"
+  | "settings.eink.workflow.memberMinimum"
+  | "settings.eink.workflow.mergeSlides"
+  | "settings.eink.workflow.mixed"
+  | "settings.eink.workflow.searchContent"
+  | "settings.eink.workflow.selectionSummary"
+  | "settings.eink.workflow.separate"
+  | "settings.eink.workflow.sharedSettings"
+  | "settings.eink.workflow.singleSlideDetail"
+  | "settings.eink.workflow.slideNumber"
+  | "settings.eink.workflow.splitSlides"
+  | "settings.eink.workflow.template"
+  | "settings.eink.workflow.ungroup"
   | "settings.externalChange.title"
   | "settings.geminiCookiesSaved"
   | "settings.geminiShared"
@@ -2865,6 +2885,26 @@ export interface MessageParams {
   "settings.eink.unit.minutes": undefined;
   "settings.eink.unit.seconds": undefined;
   "settings.eink.uprightPreview": undefined;
+  "settings.eink.workflow.allGrouped": undefined;
+  "settings.eink.workflow.automaticPages": undefined;
+  "settings.eink.workflow.chooseContent": undefined;
+  "settings.eink.workflow.combined": undefined;
+  "settings.eink.workflow.editPages": undefined;
+  "settings.eink.workflow.editPagesDetail": undefined;
+  "settings.eink.workflow.groupHelp": undefined;
+  "settings.eink.workflow.materializePages": undefined;
+  "settings.eink.workflow.memberMinimum": undefined;
+  "settings.eink.workflow.mergeSlides": undefined;
+  "settings.eink.workflow.mixed": undefined;
+  "settings.eink.workflow.searchContent": undefined;
+  "settings.eink.workflow.selectionSummary": { "items": number; "pages": number };
+  "settings.eink.workflow.separate": undefined;
+  "settings.eink.workflow.sharedSettings": undefined;
+  "settings.eink.workflow.singleSlideDetail": undefined;
+  "settings.eink.workflow.slideNumber": { "number": number };
+  "settings.eink.workflow.splitSlides": undefined;
+  "settings.eink.workflow.template": undefined;
+  "settings.eink.workflow.ungroup": undefined;
   "settings.externalChange.title": undefined;
   "settings.geminiCookiesSaved": undefined;
   "settings.geminiShared": undefined;
@@ -4750,6 +4790,26 @@ export const messages: {
     "settings.eink.unit.minutes": "min",
     "settings.eink.unit.seconds": "s",
     "settings.eink.uprightPreview": "Shown the way you will read it",
+    "settings.eink.workflow.allGrouped": "These devices belong to screen groups. Edit their shared settings in Screen groups.",
+    "settings.eink.workflow.automaticPages": "Select as many items as you need. Content that does not fit continues on the next page.",
+    "settings.eink.workflow.chooseContent": "Choose content",
+    "settings.eink.workflow.combined": "One page across all screens",
+    "settings.eink.workflow.editPages": "Edit paginated content in Studio",
+    "settings.eink.workflow.editPagesDetail": "Freeform editing needs separate pages. Keep all content by turning these pages into individual slides, then edit the selected page. You can keep single-slide playback or choose a carousel.",
+    "settings.eink.workflow.groupHelp": "Choose screens to combine. A group has one set of settings and uses the same slide editor as a single screen.",
+    "settings.eink.workflow.materializePages": "Create separate slides and edit",
+    "settings.eink.workflow.memberMinimum": "Select at least two screens.",
+    "settings.eink.workflow.mergeSlides": "Merge slides",
+    "settings.eink.workflow.mixed": "Combine the first two screens",
+    "settings.eink.workflow.searchContent": "Search providers or quota",
+    "settings.eink.workflow.selectionSummary": "{items} selected · {pages} pages",
+    "settings.eink.workflow.separate": "Separate page on each screen",
+    "settings.eink.workflow.sharedSettings": "Group settings",
+    "settings.eink.workflow.singleSlideDetail": "Play the selected slide. When its content needs more pages, turn them at the slide interval.",
+    "settings.eink.workflow.slideNumber": "Slide {number}",
+    "settings.eink.workflow.splitSlides": "Split into separate slides",
+    "settings.eink.workflow.template": "Slide arrangement",
+    "settings.eink.workflow.ungroup": "Ungroup screens",
     "settings.externalChange.title": "Another Vibe Bar replaced your change",
     "settings.geminiCookiesSaved": "Gemini cookies saved.",
     "settings.geminiShared": "Gemini and Antigravity share the same Google AI subscription quota. Cookie import is the only supported web path — there is no WebView login.",
@@ -6630,6 +6690,26 @@ export const messages: {
     "settings.eink.unit.minutes": "分钟",
     "settings.eink.unit.seconds": "秒",
     "settings.eink.uprightPreview": "按实际阅读方向显示",
+    "settings.eink.workflow.allGrouped": "这些设备已加入编组，请在「屏幕编组」中编辑共同设置。",
+    "settings.eink.workflow.automaticPages": "可以持续添加内容，当前页放不下的内容会自动显示在下一页。",
+    "settings.eink.workflow.chooseContent": "选择内容",
+    "settings.eink.workflow.combined": "整组显示一页",
+    "settings.eink.workflow.editPages": "在 Studio 中编辑分页内容",
+    "settings.eink.workflow.editPagesDetail": "自由排版需要独立页面。将全部分页保留为独立幻灯片，再编辑当前页；之后仍可选择单张或轮播。",
+    "settings.eink.workflow.groupHelp": "选择要合并的屏幕。组内共用一套设置，内容使用与单屏相同的幻灯片编辑器。",
+    "settings.eink.workflow.materializePages": "转为独立幻灯片并编辑",
+    "settings.eink.workflow.memberMinimum": "至少选择两块屏幕。",
+    "settings.eink.workflow.mergeSlides": "合并幻灯片",
+    "settings.eink.workflow.mixed": "前两屏合并，其余独立",
+    "settings.eink.workflow.searchContent": "搜索厂商或配额",
+    "settings.eink.workflow.selectionSummary": "已选 {items} 项 · 共 {pages} 页",
+    "settings.eink.workflow.separate": "每屏独立显示",
+    "settings.eink.workflow.sharedSettings": "编组设置",
+    "settings.eink.workflow.singleSlideDetail": "播放当前选中的幻灯片。内容较多时，按停留时长自动翻页。",
+    "settings.eink.workflow.slideNumber": "幻灯片 {number}",
+    "settings.eink.workflow.splitSlides": "拆分为独立幻灯片",
+    "settings.eink.workflow.template": "幻灯片组合",
+    "settings.eink.workflow.ungroup": "解散编组",
     "settings.externalChange.title": "另一个 Vibe Bar 覆盖了此处的修改",
     "settings.geminiCookiesSaved": "Gemini 的 cookies 已保存。",
     "settings.geminiShared": "Gemini 与 Antigravity 共用同一份 Google AI 订阅额度。网页端仅支持 cookie 导入，没有 WebView 登录途径。",

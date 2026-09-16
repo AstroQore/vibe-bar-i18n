@@ -5635,6 +5635,66 @@
     },
     "settings.eink.screenGroups.sharedPlayback": {
       "value": "Mac 运行时，组内屏幕同步换页。"
+    },
+    "settings.eink.workflow.chooseContent": {
+      "value": "选择内容"
+    },
+    "settings.eink.workflow.automaticPages": {
+      "value": "可以持续添加内容，当前页放不下的内容会自动显示在下一页。"
+    },
+    "settings.eink.workflow.groupHelp": {
+      "value": "选择要合并的屏幕。组内共用一套设置，内容使用与单屏相同的幻灯片编辑器。"
+    },
+    "settings.eink.workflow.allGrouped": {
+      "value": "这些设备已加入编组，请在「屏幕编组」中编辑共同设置。"
+    },
+    "settings.eink.workflow.ungroup": {
+      "value": "解散编组"
+    },
+    "settings.eink.workflow.mergeSlides": {
+      "value": "合并幻灯片"
+    },
+    "settings.eink.workflow.splitSlides": {
+      "value": "拆分为独立幻灯片"
+    },
+    "settings.eink.workflow.sharedSettings": {
+      "value": "编组设置"
+    },
+    "settings.eink.workflow.template": {
+      "value": "幻灯片组合"
+    },
+    "settings.eink.workflow.separate": {
+      "value": "每屏独立显示"
+    },
+    "settings.eink.workflow.combined": {
+      "value": "整组显示一页"
+    },
+    "settings.eink.workflow.mixed": {
+      "value": "前两屏合并，其余独立"
+    },
+    "settings.eink.workflow.memberMinimum": {
+      "value": "至少选择两块屏幕。"
+    },
+    "settings.eink.workflow.selectionSummary": {
+      "value": "已选 {items} 项 · 共 {pages} 页"
+    },
+    "settings.eink.workflow.slideNumber": {
+      "value": "幻灯片 {number}"
+    },
+    "settings.eink.workflow.searchContent": {
+      "value": "搜索厂商或配额"
+    },
+    "settings.eink.workflow.singleSlideDetail": {
+      "value": "播放当前选中的幻灯片。内容较多时，按停留时长自动翻页。"
+    },
+    "settings.eink.workflow.editPages": {
+      "value": "在 Studio 中编辑分页内容"
+    },
+    "settings.eink.workflow.materializePages": {
+      "value": "转为独立幻灯片并编辑"
+    },
+    "settings.eink.workflow.editPagesDetail": {
+      "value": "自由排版需要独立页面。将全部分页保留为独立幻灯片，再编辑当前页；之后仍可选择单张或轮播。"
     }
   }
 }

@@ -8747,6 +8747,93 @@
     "settings.eink.screenGroups.sharedPlayback": {
       "value": "Pages advance together while the Mac is running.",
       "comment": "Visual screen arrangement canvas and its toolbar."
+    },
+    "settings.eink.workflow.chooseContent": {
+      "value": "Choose content",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.automaticPages": {
+      "value": "Select as many items as you need. Content that does not fit continues on the next page.",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.groupHelp": {
+      "value": "Choose screens to combine. A group has one set of settings and uses the same slide editor as a single screen.",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.allGrouped": {
+      "value": "These devices belong to screen groups. Edit their shared settings in Screen groups.",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.ungroup": {
+      "value": "Ungroup screens",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.mergeSlides": {
+      "value": "Merge slides",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.splitSlides": {
+      "value": "Split into separate slides",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.sharedSettings": {
+      "value": "Group settings",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.template": {
+      "value": "Slide arrangement",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.separate": {
+      "value": "Separate page on each screen",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.combined": {
+      "value": "One page across all screens",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.mixed": {
+      "value": "Combine the first two screens",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.memberMinimum": {
+      "value": "Select at least two screens.",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.selectionSummary": {
+      "value": "{items} selected · {pages} pages",
+      "comment": "E-ink device ownership and shared slide workflow.",
+      "placeholders": {
+        "items": "int",
+        "pages": "int"
+      }
+    },
+    "settings.eink.workflow.slideNumber": {
+      "value": "Slide {number}",
+      "comment": "E-ink device ownership and shared slide workflow.",
+      "placeholders": {
+        "number": "int"
+      }
+    },
+    "settings.eink.workflow.searchContent": {
+      "value": "Search providers or quota",
+      "comment": "Search in the quota content picker."
+    },
+    "settings.eink.workflow.singleSlideDetail": {
+      "value": "Play the selected slide. When its content needs more pages, turn them at the slide interval.",
+      "comment": "Single logical slide can contain multiple overflow pages."
+    },
+    "settings.eink.workflow.editPages": {
+      "value": "Edit paginated content in Studio",
+      "comment": "Explicit conversion from automatically paginated presets to editable standalone slides."
+    },
+    "settings.eink.workflow.materializePages": {
+      "value": "Create separate slides and edit",
+      "comment": "Explicit conversion from automatically paginated presets to editable standalone slides."
+    },
+    "settings.eink.workflow.editPagesDetail": {
+      "value": "Freeform editing needs separate pages. Keep all content by turning these pages into individual slides, then edit the selected page. You can keep single-slide playback or choose a carousel.",
+      "comment": "Explicit conversion from automatically paginated presets to editable standalone slides."
     }
   }
 }
