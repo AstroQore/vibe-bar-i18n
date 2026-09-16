@@ -2523,14 +2523,23 @@
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.addRegion" = "添加页面区域";
 
+/* Visual screen arrangement canvas and its toolbar. */
+"settings.eink.screenGroups.addScreen" = "添加屏幕";
+
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.alertDetail" = "告警会向画廊追加一张临时卡片，与已有页面一起轮播，解除后自动移除。设备没有空余轮播任务时，告警期间由 Mac 驱动轮播。";
 
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.blank" = "未分配内容的屏幕显示空白页。";
 
+/* Visual screen arrangement canvas and its toolbar. */
+"settings.eink.screenGroups.dragHint" = "拖动屏幕，靠近边缘时自动吸附";
+
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.edit" = "编辑组合页面";
+
+/* Visual screen arrangement canvas and its toolbar. */
+"settings.eink.screenGroups.emptyBoard" = "添加屏幕，开始排列";
 
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.enabled" = "启用编组播放";
@@ -2559,14 +2568,23 @@
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.position" = "屏幕排列";
 
+/* Visual screen arrangement canvas and its toolbar. */
+"settings.eink.screenGroups.precise" = "精确调整";
+
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.preview" = "组合画布预览";
+
+/* Visual screen arrangement canvas and its toolbar. */
+"settings.eink.screenGroups.removeScreen" = "移除选中的屏幕";
 
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.screens" = "此页面使用的屏幕";
 
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.seconds" = "每帧秒数";
+
+/* Visual screen arrangement canvas and its toolbar. */
+"settings.eink.screenGroups.sharedPlayback" = "Mac 运行时，组内屏幕同步换页。";
 
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.source" = "复制已有页面";
@@ -2579,6 +2597,12 @@
 
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.vertical" = "上下排列";
+
+/* Screen origin in upright canvas pixels. */
+"settings.eink.screenGroups.xPosition" = "水平位置";
+
+/* Screen origin in upright canvas pixels. */
+"settings.eink.screenGroups.yPosition" = "垂直位置";
 
 /* Stepper label for how long the app-driven e-ink carousel holds each slide. */
 "settings.eink.secondsPerSlide" = "每张停留秒数";

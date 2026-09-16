@@ -2523,14 +2523,23 @@
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.addRegion" = "Add page region";
 
+/* Visual screen arrangement canvas and its toolbar. */
+"settings.eink.screenGroups.addScreen" = "Add screen";
+
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.alertDetail" = "Alerts add one temporary card to the gallery. It rotates with your pages and disappears when the condition clears. If the device has no spare loop task, the Mac drives rotation while the alert is active.";
 
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.blank" = "Unassigned screens show a blank page.";
 
+/* Visual screen arrangement canvas and its toolbar. */
+"settings.eink.screenGroups.dragHint" = "Drag screens together to snap their edges.";
+
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.edit" = "Edit combined page";
+
+/* Visual screen arrangement canvas and its toolbar. */
+"settings.eink.screenGroups.emptyBoard" = "Add screens to start arranging.";
 
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.enabled" = "Enable group playback";
@@ -2559,14 +2568,23 @@
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.position" = "Screen arrangement";
 
+/* Visual screen arrangement canvas and its toolbar. */
+"settings.eink.screenGroups.precise" = "Precise adjustment";
+
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.preview" = "Combined canvas preview";
+
+/* Visual screen arrangement canvas and its toolbar. */
+"settings.eink.screenGroups.removeScreen" = "Remove selected screen";
 
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.screens" = "Screens for this page";
 
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.seconds" = "Seconds per frame";
+
+/* Visual screen arrangement canvas and its toolbar. */
+"settings.eink.screenGroups.sharedPlayback" = "Pages advance together while the Mac is running.";
 
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.source" = "Copy an existing page";
@@ -2579,6 +2597,12 @@
 
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.vertical" = "Stack vertically";
+
+/* Screen origin in upright canvas pixels. */
+"settings.eink.screenGroups.xPosition" = "Horizontal position";
+
+/* Screen origin in upright canvas pixels. */
+"settings.eink.screenGroups.yPosition" = "Vertical position";
 
 /* Stepper label for how long the app-driven e-ink carousel holds each slide. */
 "settings.eink.secondsPerSlide" = "Seconds per slide";

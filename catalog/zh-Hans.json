@@ -5611,6 +5611,30 @@
     },
     "settings.eink.screenGroups.edit": {
       "value": "编辑组合页面"
+    },
+    "settings.eink.screenGroups.xPosition": {
+      "value": "水平位置"
+    },
+    "settings.eink.screenGroups.yPosition": {
+      "value": "垂直位置"
+    },
+    "settings.eink.screenGroups.dragHint": {
+      "value": "拖动屏幕，靠近边缘时自动吸附"
+    },
+    "settings.eink.screenGroups.emptyBoard": {
+      "value": "添加屏幕，开始排列"
+    },
+    "settings.eink.screenGroups.addScreen": {
+      "value": "添加屏幕"
+    },
+    "settings.eink.screenGroups.removeScreen": {
+      "value": "移除选中的屏幕"
+    },
+    "settings.eink.screenGroups.precise": {
+      "value": "精确调整"
+    },
+    "settings.eink.screenGroups.sharedPlayback": {
+      "value": "Mac 运行时，组内屏幕同步换页。"
     }
   }
 }

@@ -6193,6 +6193,12 @@ public enum L10n {
                 /// en: "Add page region"
                 public static var addRegion: String { L10nSupport.string("settings.eink.screenGroups.addRegion") }
 
+                /// Visual screen arrangement canvas and its toolbar.
+                ///
+                /// Key: `settings.eink.screenGroups.addScreen`
+                /// en: "Add screen"
+                public static var addScreen: String { L10nSupport.string("settings.eink.screenGroups.addScreen") }
+
                 /// E-ink screen group configuration and shared timeline.
                 ///
                 /// Key: `settings.eink.screenGroups.alertDetail`
@@ -6205,11 +6211,23 @@ public enum L10n {
                 /// en: "Unassigned screens show a blank page."
                 public static var blank: String { L10nSupport.string("settings.eink.screenGroups.blank") }
 
+                /// Visual screen arrangement canvas and its toolbar.
+                ///
+                /// Key: `settings.eink.screenGroups.dragHint`
+                /// en: "Drag screens together to snap their edges."
+                public static var dragHint: String { L10nSupport.string("settings.eink.screenGroups.dragHint") }
+
                 /// E-ink screen group configuration and shared timeline.
                 ///
                 /// Key: `settings.eink.screenGroups.edit`
                 /// en: "Edit combined page"
                 public static var edit: String { L10nSupport.string("settings.eink.screenGroups.edit") }
+
+                /// Visual screen arrangement canvas and its toolbar.
+                ///
+                /// Key: `settings.eink.screenGroups.emptyBoard`
+                /// en: "Add screens to start arranging."
+                public static var emptyBoard: String { L10nSupport.string("settings.eink.screenGroups.emptyBoard") }
 
                 /// E-ink screen group configuration and shared timeline.
                 ///
@@ -6265,11 +6283,23 @@ public enum L10n {
                 /// en: "Screen arrangement"
                 public static var position: String { L10nSupport.string("settings.eink.screenGroups.position") }
 
+                /// Visual screen arrangement canvas and its toolbar.
+                ///
+                /// Key: `settings.eink.screenGroups.precise`
+                /// en: "Precise adjustment"
+                public static var precise: String { L10nSupport.string("settings.eink.screenGroups.precise") }
+
                 /// E-ink screen group configuration and shared timeline.
                 ///
                 /// Key: `settings.eink.screenGroups.preview`
                 /// en: "Combined canvas preview"
                 public static var preview: String { L10nSupport.string("settings.eink.screenGroups.preview") }
+
+                /// Visual screen arrangement canvas and its toolbar.
+                ///
+                /// Key: `settings.eink.screenGroups.removeScreen`
+                /// en: "Remove selected screen"
+                public static var removeScreen: String { L10nSupport.string("settings.eink.screenGroups.removeScreen") }
 
                 /// E-ink screen group configuration and shared timeline.
                 ///
@@ -6282,6 +6312,12 @@ public enum L10n {
                 /// Key: `settings.eink.screenGroups.seconds`
                 /// en: "Seconds per frame"
                 public static var seconds: String { L10nSupport.string("settings.eink.screenGroups.seconds") }
+
+                /// Visual screen arrangement canvas and its toolbar.
+                ///
+                /// Key: `settings.eink.screenGroups.sharedPlayback`
+                /// en: "Pages advance together while the Mac is running."
+                public static var sharedPlayback: String { L10nSupport.string("settings.eink.screenGroups.sharedPlayback") }
 
                 /// E-ink screen group configuration and shared timeline.
                 ///
@@ -6306,6 +6342,18 @@ public enum L10n {
                 /// Key: `settings.eink.screenGroups.vertical`
                 /// en: "Stack vertically"
                 public static var vertical: String { L10nSupport.string("settings.eink.screenGroups.vertical") }
+
+                /// Screen origin in upright canvas pixels.
+                ///
+                /// Key: `settings.eink.screenGroups.xPosition`
+                /// en: "Horizontal position"
+                public static var xPosition: String { L10nSupport.string("settings.eink.screenGroups.xPosition") }
+
+                /// Screen origin in upright canvas pixels.
+                ///
+                /// Key: `settings.eink.screenGroups.yPosition`
+                /// en: "Vertical position"
+                public static var yPosition: String { L10nSupport.string("settings.eink.screenGroups.yPosition") }
             }
 
             public enum Status {
@@ -13387,9 +13435,12 @@ enum L10nCatalogFacts {
         "settings.eink.screenGroups.addFrame",
         "settings.eink.screenGroups.addGroup",
         "settings.eink.screenGroups.addRegion",
+        "settings.eink.screenGroups.addScreen",
         "settings.eink.screenGroups.alertDetail",
         "settings.eink.screenGroups.blank",
+        "settings.eink.screenGroups.dragHint",
         "settings.eink.screenGroups.edit",
+        "settings.eink.screenGroups.emptyBoard",
         "settings.eink.screenGroups.enabled",
         "settings.eink.screenGroups.frameName",
         "settings.eink.screenGroups.frames",
@@ -13399,13 +13450,18 @@ enum L10nCatalogFacts {
         "settings.eink.screenGroups.invalid",
         "settings.eink.screenGroups.name",
         "settings.eink.screenGroups.position",
+        "settings.eink.screenGroups.precise",
         "settings.eink.screenGroups.preview",
+        "settings.eink.screenGroups.removeScreen",
         "settings.eink.screenGroups.screens",
         "settings.eink.screenGroups.seconds",
+        "settings.eink.screenGroups.sharedPlayback",
         "settings.eink.screenGroups.source",
         "settings.eink.screenGroups.syncDetail",
         "settings.eink.screenGroups.title",
         "settings.eink.screenGroups.vertical",
+        "settings.eink.screenGroups.xPosition",
+        "settings.eink.screenGroups.yPosition",
         "settings.eink.secondsPerSlide",
         "settings.eink.secondsPerSlideDetail",
         "settings.eink.slideName",
@@ -15317,9 +15373,12 @@ enum L10nCatalogFacts {
         "settings.eink.screenGroups.addFrame": 0,
         "settings.eink.screenGroups.addGroup": 0,
         "settings.eink.screenGroups.addRegion": 0,
+        "settings.eink.screenGroups.addScreen": 0,
         "settings.eink.screenGroups.alertDetail": 0,
         "settings.eink.screenGroups.blank": 0,
+        "settings.eink.screenGroups.dragHint": 0,
         "settings.eink.screenGroups.edit": 0,
+        "settings.eink.screenGroups.emptyBoard": 0,
         "settings.eink.screenGroups.enabled": 0,
         "settings.eink.screenGroups.frameName": 0,
         "settings.eink.screenGroups.frames": 0,
@@ -15329,13 +15388,18 @@ enum L10nCatalogFacts {
         "settings.eink.screenGroups.invalid": 0,
         "settings.eink.screenGroups.name": 0,
         "settings.eink.screenGroups.position": 0,
+        "settings.eink.screenGroups.precise": 0,
         "settings.eink.screenGroups.preview": 0,
+        "settings.eink.screenGroups.removeScreen": 0,
         "settings.eink.screenGroups.screens": 0,
         "settings.eink.screenGroups.seconds": 0,
+        "settings.eink.screenGroups.sharedPlayback": 0,
         "settings.eink.screenGroups.source": 0,
         "settings.eink.screenGroups.syncDetail": 0,
         "settings.eink.screenGroups.title": 0,
         "settings.eink.screenGroups.vertical": 0,
+        "settings.eink.screenGroups.xPosition": 0,
+        "settings.eink.screenGroups.yPosition": 0,
         "settings.eink.secondsPerSlide": 0,
         "settings.eink.secondsPerSlideDetail": 0,
         "settings.eink.slideName": 0,

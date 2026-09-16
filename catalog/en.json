@@ -8715,6 +8715,38 @@
     "settings.eink.screenGroups.edit": {
       "value": "Edit combined page",
       "comment": "E-ink screen group configuration and shared timeline."
+    },
+    "settings.eink.screenGroups.xPosition": {
+      "value": "Horizontal position",
+      "comment": "Screen origin in upright canvas pixels."
+    },
+    "settings.eink.screenGroups.yPosition": {
+      "value": "Vertical position",
+      "comment": "Screen origin in upright canvas pixels."
+    },
+    "settings.eink.screenGroups.dragHint": {
+      "value": "Drag screens together to snap their edges.",
+      "comment": "Visual screen arrangement canvas and its toolbar."
+    },
+    "settings.eink.screenGroups.emptyBoard": {
+      "value": "Add screens to start arranging.",
+      "comment": "Visual screen arrangement canvas and its toolbar."
+    },
+    "settings.eink.screenGroups.addScreen": {
+      "value": "Add screen",
+      "comment": "Visual screen arrangement canvas and its toolbar."
+    },
+    "settings.eink.screenGroups.removeScreen": {
+      "value": "Remove selected screen",
+      "comment": "Visual screen arrangement canvas and its toolbar."
+    },
+    "settings.eink.screenGroups.precise": {
+      "value": "Precise adjustment",
+      "comment": "Visual screen arrangement canvas and its toolbar."
+    },
+    "settings.eink.screenGroups.sharedPlayback": {
+      "value": "Pages advance together while the Mac is running.",
+      "comment": "Visual screen arrangement canvas and its toolbar."
     }
   }
 }
