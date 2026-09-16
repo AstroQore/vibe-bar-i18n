@@ -2844,8 +2844,17 @@
 /* E-ink device ownership and shared slide workflow. */
 "settings.eink.workflow.combined" = "One page across all screens";
 
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.editPages" = "Edit paginated content in Studio";
+
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.editPagesDetail" = "Freeform editing needs separate pages. Keep all content by turning these pages into individual slides, then edit the selected page. You can keep single-slide playback or choose a carousel.";
+
 /* E-ink device ownership and shared slide workflow. */
 "settings.eink.workflow.groupHelp" = "Choose screens to combine. A group has one set of settings and uses the same slide editor as a single screen.";
+
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.materializePages" = "Create separate slides and edit";
 
 /* E-ink device ownership and shared slide workflow. */
 "settings.eink.workflow.memberMinimum" = "Select at least two screens.";

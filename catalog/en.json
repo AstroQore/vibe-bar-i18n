@@ -8822,6 +8822,18 @@
     "settings.eink.workflow.singleSlideDetail": {
       "value": "Play the selected slide. When its content needs more pages, turn them at the slide interval.",
       "comment": "Single logical slide can contain multiple overflow pages."
+    },
+    "settings.eink.workflow.editPages": {
+      "value": "Edit paginated content in Studio",
+      "comment": "Explicit conversion from automatically paginated presets to editable standalone slides."
+    },
+    "settings.eink.workflow.materializePages": {
+      "value": "Create separate slides and edit",
+      "comment": "Explicit conversion from automatically paginated presets to editable standalone slides."
+    },
+    "settings.eink.workflow.editPagesDetail": {
+      "value": "Freeform editing needs separate pages. Keep all content by turning these pages into individual slides, then edit the selected page. You can keep single-slide playback or choose a carousel.",
+      "comment": "Explicit conversion from automatically paginated presets to editable standalone slides."
     }
   }
 }

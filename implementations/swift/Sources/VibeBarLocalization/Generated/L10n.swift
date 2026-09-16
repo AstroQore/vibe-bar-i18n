@@ -6791,11 +6791,29 @@ public enum L10n {
                 /// en: "One page across all screens"
                 public static var combined: String { L10nSupport.string("settings.eink.workflow.combined") }
 
+                /// Explicit conversion from automatically paginated presets to editable standalone slides.
+                ///
+                /// Key: `settings.eink.workflow.editPages`
+                /// en: "Edit paginated content in Studio"
+                public static var editPages: String { L10nSupport.string("settings.eink.workflow.editPages") }
+
+                /// Explicit conversion from automatically paginated presets to editable standalone slides.
+                ///
+                /// Key: `settings.eink.workflow.editPagesDetail`
+                /// en: "Freeform editing needs separate pages. Keep all content by turning these pages into individual slides, then edit the selected page. You can keep single-slide playback or choose a carousel."
+                public static var editPagesDetail: String { L10nSupport.string("settings.eink.workflow.editPagesDetail") }
+
                 /// E-ink device ownership and shared slide workflow.
                 ///
                 /// Key: `settings.eink.workflow.groupHelp`
                 /// en: "Choose screens to combine. A group has one set of settings and uses the same slide editor as a single screen."
                 public static var groupHelp: String { L10nSupport.string("settings.eink.workflow.groupHelp") }
+
+                /// Explicit conversion from automatically paginated presets to editable standalone slides.
+                ///
+                /// Key: `settings.eink.workflow.materializePages`
+                /// en: "Create separate slides and edit"
+                public static var materializePages: String { L10nSupport.string("settings.eink.workflow.materializePages") }
 
                 /// E-ink device ownership and shared slide workflow.
                 ///
@@ -13650,7 +13668,10 @@ enum L10nCatalogFacts {
         "settings.eink.workflow.automaticPages",
         "settings.eink.workflow.chooseContent",
         "settings.eink.workflow.combined",
+        "settings.eink.workflow.editPages",
+        "settings.eink.workflow.editPagesDetail",
         "settings.eink.workflow.groupHelp",
+        "settings.eink.workflow.materializePages",
         "settings.eink.workflow.memberMinimum",
         "settings.eink.workflow.mergeSlides",
         "settings.eink.workflow.mixed",
@@ -15605,7 +15626,10 @@ enum L10nCatalogFacts {
         "settings.eink.workflow.automaticPages": 0,
         "settings.eink.workflow.chooseContent": 0,
         "settings.eink.workflow.combined": 0,
+        "settings.eink.workflow.editPages": 0,
+        "settings.eink.workflow.editPagesDetail": 0,
         "settings.eink.workflow.groupHelp": 0,
+        "settings.eink.workflow.materializePages": 0,
         "settings.eink.workflow.memberMinimum": 0,
         "settings.eink.workflow.mergeSlides": 0,
         "settings.eink.workflow.mixed": 0,

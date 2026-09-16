@@ -985,7 +985,10 @@ export type MessageKey =
   | "settings.eink.workflow.automaticPages"
   | "settings.eink.workflow.chooseContent"
   | "settings.eink.workflow.combined"
+  | "settings.eink.workflow.editPages"
+  | "settings.eink.workflow.editPagesDetail"
   | "settings.eink.workflow.groupHelp"
+  | "settings.eink.workflow.materializePages"
   | "settings.eink.workflow.memberMinimum"
   | "settings.eink.workflow.mergeSlides"
   | "settings.eink.workflow.mixed"
@@ -2886,7 +2889,10 @@ export interface MessageParams {
   "settings.eink.workflow.automaticPages": undefined;
   "settings.eink.workflow.chooseContent": undefined;
   "settings.eink.workflow.combined": undefined;
+  "settings.eink.workflow.editPages": undefined;
+  "settings.eink.workflow.editPagesDetail": undefined;
   "settings.eink.workflow.groupHelp": undefined;
+  "settings.eink.workflow.materializePages": undefined;
   "settings.eink.workflow.memberMinimum": undefined;
   "settings.eink.workflow.mergeSlides": undefined;
   "settings.eink.workflow.mixed": undefined;
@@ -4788,7 +4794,10 @@ export const messages: {
     "settings.eink.workflow.automaticPages": "Select as many items as you need. Content that does not fit continues on the next page.",
     "settings.eink.workflow.chooseContent": "Choose content",
     "settings.eink.workflow.combined": "One page across all screens",
+    "settings.eink.workflow.editPages": "Edit paginated content in Studio",
+    "settings.eink.workflow.editPagesDetail": "Freeform editing needs separate pages. Keep all content by turning these pages into individual slides, then edit the selected page. You can keep single-slide playback or choose a carousel.",
     "settings.eink.workflow.groupHelp": "Choose screens to combine. A group has one set of settings and uses the same slide editor as a single screen.",
+    "settings.eink.workflow.materializePages": "Create separate slides and edit",
     "settings.eink.workflow.memberMinimum": "Select at least two screens.",
     "settings.eink.workflow.mergeSlides": "Merge slides",
     "settings.eink.workflow.mixed": "Combine the first two screens",
@@ -6685,7 +6694,10 @@ export const messages: {
     "settings.eink.workflow.automaticPages": "可以持续添加内容，当前页放不下的内容会自动显示在下一页。",
     "settings.eink.workflow.chooseContent": "选择内容",
     "settings.eink.workflow.combined": "整组显示一页",
+    "settings.eink.workflow.editPages": "在 Studio 中编辑分页内容",
+    "settings.eink.workflow.editPagesDetail": "自由排版需要独立页面。将全部分页保留为独立幻灯片，再编辑当前页；之后仍可选择单张或轮播。",
     "settings.eink.workflow.groupHelp": "选择要合并的屏幕。组内共用一套设置，内容使用与单屏相同的幻灯片编辑器。",
+    "settings.eink.workflow.materializePages": "转为独立幻灯片并编辑",
     "settings.eink.workflow.memberMinimum": "至少选择两块屏幕。",
     "settings.eink.workflow.mergeSlides": "合并幻灯片",
     "settings.eink.workflow.mixed": "前两屏合并，其余独立",

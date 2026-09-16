@@ -5686,6 +5686,15 @@
     },
     "settings.eink.workflow.singleSlideDetail": {
       "value": "播放当前选中的幻灯片。内容较多时，按停留时长自动翻页。"
+    },
+    "settings.eink.workflow.editPages": {
+      "value": "在 Studio 中编辑分页内容"
+    },
+    "settings.eink.workflow.materializePages": {
+      "value": "转为独立幻灯片并编辑"
+    },
+    "settings.eink.workflow.editPagesDetail": {
+      "value": "自由排版需要独立页面。将全部分页保留为独立幻灯片，再编辑当前页；之后仍可选择单张或轮播。"
     }
   }
 }

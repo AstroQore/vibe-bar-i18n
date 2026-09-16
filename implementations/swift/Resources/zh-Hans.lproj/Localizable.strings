@@ -2844,8 +2844,17 @@
 /* E-ink device ownership and shared slide workflow. */
 "settings.eink.workflow.combined" = "整组显示一页";
 
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.editPages" = "在 Studio 中编辑分页内容";
+
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.editPagesDetail" = "自由排版需要独立页面。将全部分页保留为独立幻灯片，再编辑当前页；之后仍可选择单张或轮播。";
+
 /* E-ink device ownership and shared slide workflow. */
 "settings.eink.workflow.groupHelp" = "选择要合并的屏幕。组内共用一套设置，内容使用与单屏相同的幻灯片编辑器。";
+
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.materializePages" = "转为独立幻灯片并编辑";
 
 /* E-ink device ownership and shared slide workflow. */
 "settings.eink.workflow.memberMinimum" = "至少选择两块屏幕。";
