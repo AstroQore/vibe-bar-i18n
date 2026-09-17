@@ -164,9 +164,6 @@
     "cost.empty.muse": {
       "value": "尚未找到 Muse Code 会话。"
     },
-    "cost.muse.unpriced": {
-      "value": "Muse Code 为订阅制、没有按 token 计价，因此这里不显示成本，token 用量请到「用量统计」查看。"
-    },
     "cost.fullCharts": {
       "value": "{title} — 完整图表"
     },
@@ -3276,7 +3273,7 @@
       "value": "SpaceXAI 页面同时包含 Grok 与 Cursor。Grok 读取 `~/.grok/auth.json` 或 grok.com 的 cookies；Cursor 先读 Cursor.app，再读 cursor.com 的 cookie 槽位。Grok Bot 提供额度，以及来自本地缓存的只读会话 — 其云端运行仍不产生 token 或花费记录。"
     },
     "settings.metaAIIntro": {
-      "value": "Meta AI 页面追踪 Muse Code。额度来自 `muse login` 保存在 macOS Keychain 中的登录信息；token 用量来自 Muse Code 的本地会话日志，没有按 token 计价。"
+      "value": "Meta AI 页面追踪 Muse Code。额度来自 `muse login` 保存在 macOS Keychain 中的登录信息；token 用量来自 Muse Code 的本地会话日志，成本按 Meta API 的单价折算。"
     },
     "settings.muse.allowKeychainAccess": {
       "value": "允许 Keychain 访问…"
@@ -4821,7 +4818,7 @@
       "value": "按技能开关 {key} 位于 ~/{path}"
     },
     "workbench.skills.sync.projectionsBody": {
-      "value": "Claude Code 和 AntiGravity 只读取各自的技能目录，因此 Vibe Bar 会把技能链接（或复制）进去。Codex、Gemini CLI、Grok Build 和 Cursor 会自行扫描共享根目录，无需链接。"
+      "value": "Claude Code 和 AntiGravity 只读取各自的技能目录，因此 Vibe Bar 会把技能链接（或复制）进去。Codex、Gemini CLI、Grok Build、Cursor 和 Muse Code 会自行扫描共享根目录，无需链接。"
     },
     "workbench.skills.sync.projectionsLead": {
       "value": "投影。"

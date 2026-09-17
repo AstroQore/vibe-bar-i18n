@@ -270,10 +270,6 @@
       "value": "No Muse Code sessions found yet.",
       "comment": "Empty state of the Meta AI cost card before any Muse Code session log has been scanned."
     },
-    "cost.muse.unpriced": {
-      "value": "Muse Code is a subscription with no per-token price, so its usage has no cost to show here — token counts are in Usage Stats.",
-      "comment": "Shown on the Meta AI page in place of the dollar cost cards once Muse Code sessions have been scanned. 'Usage Stats' is the Workbench page of that name."
-    },
     "cost.fullCharts": {
       "value": "{title} — Full Charts",
       "comment": "Title of the expanded cost popover; title is the card's own title",
@@ -5076,7 +5072,7 @@
       "comment": "Explanation on the SpaceXAI settings page"
     },
     "settings.metaAIIntro": {
-      "value": "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, which carry no per-token price.",
+      "value": "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates.",
       "comment": "Intro paragraph at the top of the Meta AI settings page."
     },
     "settings.muse.allowKeychainAccess": {
@@ -7506,7 +7502,7 @@
       }
     },
     "workbench.skills.sync.projectionsBody": {
-      "value": "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, and Cursor scan the shared root themselves — no link needed.",
+      "value": "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, Cursor, and Muse Code scan the shared root themselves — no link needed.",
       "comment": "Sync explainer's second paragraph. The harness names are identifiers and stay as spelled."
     },
     "workbench.skills.sync.projectionsLead": {

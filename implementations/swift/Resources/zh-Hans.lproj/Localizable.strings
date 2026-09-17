@@ -273,9 +273,6 @@
 /* Card title: models ordered by spend */
 "cost.modelRanking.title" = "模型排行";
 
-/* Shown on the Meta AI page in place of the dollar cost cards once Muse Code sessions have been scanned. 'Usage Stats' is the Workbench page of that name. */
-"cost.muse.unpriced" = "Muse Code 为订阅制、没有按 token 计价，因此这里不显示成本，token 用量请到「用量统计」查看。";
-
 /* Subtitle on an empty provider cost card */
 "cost.noUsageYet" = "暂无用量";
 
@@ -3040,7 +3037,7 @@
 "settings.menuBarHealthUnavailable" = "本进程未接入菜单栏健康监控。";
 
 /* Intro paragraph at the top of the Meta AI settings page. */
-"settings.metaAIIntro" = "Meta AI 页面追踪 Muse Code。额度来自 `muse login` 保存在 macOS Keychain 中的登录信息；token 用量来自 Muse Code 的本地会话日志，没有按 token 计价。";
+"settings.metaAIIntro" = "Meta AI 页面追踪 Muse Code。额度来自 `muse login` 保存在 macOS Keychain 中的登录信息；token 用量来自 Muse Code 的本地会话日志，成本按 Meta API 的单价折算。";
 
 /* Mini window free-canvas editor: back. */
 "settings.miniCanvas.back" = "下移一层";
@@ -5308,7 +5305,7 @@
 "workbench.skills.sync.perSkillSwitch" = "按技能开关 %1$@ 位于 ~/%2$@";
 
 /* Sync explainer's second paragraph. The harness names are identifiers and stay as spelled. */
-"workbench.skills.sync.projectionsBody" = "Claude Code 和 AntiGravity 只读取各自的技能目录，因此 Vibe Bar 会把技能链接（或复制）进去。Codex、Gemini CLI、Grok Build 和 Cursor 会自行扫描共享根目录，无需链接。";
+"workbench.skills.sync.projectionsBody" = "Claude Code 和 AntiGravity 只读取各自的技能目录，因此 Vibe Bar 会把技能链接（或复制）进去。Codex、Gemini CLI、Grok Build、Cursor 和 Muse Code 会自行扫描共享根目录，无需链接。";
 
 /* Run-in heading of the sync explainer's second paragraph. */
 "workbench.skills.sync.projectionsLead" = "投影。";

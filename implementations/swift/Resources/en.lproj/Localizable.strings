@@ -273,9 +273,6 @@
 /* Card title: models ordered by spend */
 "cost.modelRanking.title" = "Model Ranking";
 
-/* Shown on the Meta AI page in place of the dollar cost cards once Muse Code sessions have been scanned. 'Usage Stats' is the Workbench page of that name. */
-"cost.muse.unpriced" = "Muse Code is a subscription with no per-token price, so its usage has no cost to show here — token counts are in Usage Stats.";
-
 /* Subtitle on an empty provider cost card */
 "cost.noUsageYet" = "No usage yet";
 
@@ -3040,7 +3037,7 @@
 "settings.menuBarHealthUnavailable" = "The menu bar health monitor is not attached in this process.";
 
 /* Intro paragraph at the top of the Meta AI settings page. */
-"settings.metaAIIntro" = "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, which carry no per-token price.";
+"settings.metaAIIntro" = "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates.";
 
 /* Mini window free-canvas editor: back. */
 "settings.miniCanvas.back" = "Send backward";
@@ -5308,7 +5305,7 @@
 "workbench.skills.sync.perSkillSwitch" = "per-skill switch %1$@ in ~/%2$@";
 
 /* Sync explainer's second paragraph. The harness names are identifiers and stay as spelled. */
-"workbench.skills.sync.projectionsBody" = "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, and Cursor scan the shared root themselves — no link needed.";
+"workbench.skills.sync.projectionsBody" = "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, Cursor, and Muse Code scan the shared root themselves — no link needed.";
 
 /* Run-in heading of the sync explainer's second paragraph. */
 "workbench.skills.sync.projectionsLead" = "Projections.";

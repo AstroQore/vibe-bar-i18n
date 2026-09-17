@@ -709,14 +709,6 @@ public enum L10n {
             public static var title: String { L10nSupport.string("cost.modelRanking.title") }
         }
 
-        public enum Muse {
-            /// Shown on the Meta AI page in place of the dollar cost cards once Muse Code sessions have been scanned. 'Usage Stats' is the Workbench page of that name.
-            ///
-            /// Key: `cost.muse.unpriced`
-            /// en: "Muse Code is a subscription with no per-token price, so its usage has no cost to show here — token counts are in Usage Stats."
-            public static var unpriced: String { L10nSupport.string("cost.muse.unpriced") }
-        }
-
         public enum Provider {
             /// Cost card title on a provider page; provider is a SubProvider name and is never translated
             ///
@@ -5134,7 +5126,7 @@ public enum L10n {
         /// Intro paragraph at the top of the Meta AI settings page.
         ///
         /// Key: `settings.metaAIIntro`
-        /// en: "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, which carry no per-token price."
+        /// en: "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates."
         public static var metaAIIntro: String { L10nSupport.string("settings.metaAIIntro") }
 
         /// Provider state: credentials are missing
@@ -12121,7 +12113,7 @@ public enum L10n {
                 /// Sync explainer's second paragraph. The harness names are identifiers and stay as spelled.
                 ///
                 /// Key: `workbench.skills.sync.projectionsBody`
-                /// en: "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, and Cursor scan the shared root themselves — no link needed."
+                /// en: "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, Cursor, and Muse Code scan the shared root themselves — no link needed."
                 public static var projectionsBody: String { L10nSupport.string("workbench.skills.sync.projectionsBody") }
 
                 /// Run-in heading of the sync explainer's second paragraph.
@@ -12751,7 +12743,6 @@ enum L10nCatalogFacts {
         "cost.modelRanking.allProvidersAllTime",
         "cost.modelRanking.allTime",
         "cost.modelRanking.title",
-        "cost.muse.unpriced",
         "cost.noUsageYet",
         "cost.notTracked",
         "cost.openFullCharts",
@@ -14702,7 +14693,6 @@ enum L10nCatalogFacts {
         "cost.modelRanking.allProvidersAllTime": 0,
         "cost.modelRanking.allTime": 0,
         "cost.modelRanking.title": 0,
-        "cost.muse.unpriced": 0,
         "cost.noUsageYet": 0,
         "cost.notTracked": 1,
         "cost.openFullCharts": 0,

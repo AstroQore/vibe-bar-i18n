@@ -110,7 +110,6 @@ export type MessageKey =
   | "cost.modelRanking.allProvidersAllTime"
   | "cost.modelRanking.allTime"
   | "cost.modelRanking.title"
-  | "cost.muse.unpriced"
   | "cost.noUsageYet"
   | "cost.notTracked"
   | "cost.openFullCharts"
@@ -2007,7 +2006,6 @@ export interface MessageParams {
   "cost.modelRanking.allProvidersAllTime": undefined;
   "cost.modelRanking.allTime": undefined;
   "cost.modelRanking.title": undefined;
-  "cost.muse.unpriced": undefined;
   "cost.noUsageYet": undefined;
   "cost.notTracked": { "provider": string };
   "cost.openFullCharts": undefined;
@@ -3905,7 +3903,6 @@ export const messages: {
     "cost.modelRanking.allProvidersAllTime": "All providers · all time",
     "cost.modelRanking.allTime": "All time",
     "cost.modelRanking.title": "Model Ranking",
-    "cost.muse.unpriced": "Muse Code is a subscription with no per-token price, so its usage has no cost to show here — token counts are in Usage Stats.",
     "cost.noUsageYet": "No usage yet",
     "cost.notTracked": "Cost history isn't tracked for {provider}.",
     "cost.openFullCharts": "Open full charts",
@@ -4845,7 +4842,7 @@ export const messages: {
     "settings.mcp.title": "MCP Server",
     "settings.mcp.whatAgentsMayDo": "What agents may do",
     "settings.menuBarHealthUnavailable": "The menu bar health monitor is not attached in this process.",
-    "settings.metaAIIntro": "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, which carry no per-token price.",
+    "settings.metaAIIntro": "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates.",
     "settings.miniCanvas.back": "Send backward",
     "settings.miniCanvas.canvas": "Canvas",
     "settings.miniCanvas.column": "Column",
@@ -5625,7 +5622,7 @@ export const messages: {
     "workbench.skills.sync.noPerSkillSwitch": "no per-skill switch",
     "workbench.skills.sync.noSwitchAlsoReads": "no per-skill switch; also reads ~/{path}",
     "workbench.skills.sync.perSkillSwitch": "per-skill switch {key} in ~/{path}",
-    "workbench.skills.sync.projectionsBody": "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, and Cursor scan the shared root themselves — no link needed.",
+    "workbench.skills.sync.projectionsBody": "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, Cursor, and Muse Code scan the shared root themselves — no link needed.",
     "workbench.skills.sync.projectionsLead": "Projections.",
     "workbench.skills.sync.readsOwnFolder": "reads only ~/{path}",
     "workbench.skills.sync.scansSharedRoot": "scans ~/{path} directly",
@@ -5798,7 +5795,6 @@ export const messages: {
     "cost.modelRanking.allProvidersAllTime": "全部厂商 · 全部时间",
     "cost.modelRanking.allTime": "全部时间",
     "cost.modelRanking.title": "模型排行",
-    "cost.muse.unpriced": "Muse Code 为订阅制、没有按 token 计价，因此这里不显示成本，token 用量请到「用量统计」查看。",
     "cost.noUsageYet": "暂无用量",
     "cost.notTracked": "{provider} 不记录花费历史。",
     "cost.openFullCharts": "打开完整图表",
@@ -6738,7 +6734,7 @@ export const messages: {
     "settings.mcp.title": "MCP 服务",
     "settings.mcp.whatAgentsMayDo": "agent 的权限范围",
     "settings.menuBarHealthUnavailable": "本进程未接入菜单栏健康监控。",
-    "settings.metaAIIntro": "Meta AI 页面追踪 Muse Code。额度来自 `muse login` 保存在 macOS Keychain 中的登录信息；token 用量来自 Muse Code 的本地会话日志，没有按 token 计价。",
+    "settings.metaAIIntro": "Meta AI 页面追踪 Muse Code。额度来自 `muse login` 保存在 macOS Keychain 中的登录信息；token 用量来自 Muse Code 的本地会话日志，成本按 Meta API 的单价折算。",
     "settings.miniCanvas.back": "下移一层",
     "settings.miniCanvas.canvas": "画布",
     "settings.miniCanvas.column": "列",
@@ -7518,7 +7514,7 @@ export const messages: {
     "workbench.skills.sync.noPerSkillSwitch": "无按技能开关",
     "workbench.skills.sync.noSwitchAlsoReads": "无按技能开关；同时读取 ~/{path}",
     "workbench.skills.sync.perSkillSwitch": "按技能开关 {key} 位于 ~/{path}",
-    "workbench.skills.sync.projectionsBody": "Claude Code 和 AntiGravity 只读取各自的技能目录，因此 Vibe Bar 会把技能链接（或复制）进去。Codex、Gemini CLI、Grok Build 和 Cursor 会自行扫描共享根目录，无需链接。",
+    "workbench.skills.sync.projectionsBody": "Claude Code 和 AntiGravity 只读取各自的技能目录，因此 Vibe Bar 会把技能链接（或复制）进去。Codex、Gemini CLI、Grok Build、Cursor 和 Muse Code 会自行扫描共享根目录，无需链接。",
     "workbench.skills.sync.projectionsLead": "投影。",
     "workbench.skills.sync.readsOwnFolder": "只读取 ~/{path}",
     "workbench.skills.sync.scansSharedRoot": "直接扫描 ~/{path}",
