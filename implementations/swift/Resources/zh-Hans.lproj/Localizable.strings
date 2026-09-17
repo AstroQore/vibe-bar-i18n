@@ -2334,6 +2334,18 @@
 /* Help line under the e-ink data refresh stepper. */
 "settings.eink.dataRefreshDetail" = "设备接通电源时，重新生成并推送数字的间隔。";
 
+/* Button above the display list in Settings › E-ink Displays that opens the sheet for combining two or more screens into one group. */
+"settings.eink.deviceGroup.create" = "合并为设备组…";
+
+/* Caption under the playback picker of a group, explaining why the device-driven carousel is missing. */
+"settings.eink.deviceGroup.playbackDetail" = "设备组的页面由 Mac 统一翻页，组内屏幕同步变化，因此不提供设备自带的轮播。";
+
+/* Title of the sheet that combines e-ink screens into one group, and the word for a group in the display list. */
+"settings.eink.deviceGroup.title" = "设备组";
+
+/* Confirmation message shown before a group of e-ink screens is taken apart. */
+"settings.eink.deviceGroup.ungroupConfirm" = "设备组的页面会被丢弃。每块屏幕恢复为独立显示，并沿用加入前的设置与幻灯片。";
+
 /* Tooltip on the per-device enable toggle in the E-ink section. */
 "settings.eink.deviceSyncHelp" = "向这台设备推送幻灯片";
 
@@ -2599,7 +2611,7 @@
 "settings.eink.screenGroups.invalid" = "请检查排列：至少使用两块屏幕，位置不能重叠，每帧中每块屏幕最多分配一次。";
 
 /* E-ink screen group configuration and shared timeline. */
-"settings.eink.screenGroups.name" = "编组名称";
+"settings.eink.screenGroups.name" = "设备组名称";
 
 /* E-ink screen group configuration and shared timeline. */
 "settings.eink.screenGroups.position" = "屏幕排列";
@@ -2639,6 +2651,24 @@
 
 /* Screen origin in upright canvas pixels. */
 "settings.eink.screenGroups.yPosition" = "垂直位置";
+
+/* Segment of the Screens picker: one template drawn across every screen of the group. */
+"settings.eink.screens.combined" = "合并显示";
+
+/* Caption under the Screens picker when a page is drawn across the whole group. */
+"settings.eink.screens.combinedDetail" = "整组拼成一块画布，这一页跨屏绘制同一个模板，能放下的内容比单屏更多。";
+
+/* Segment of the Screens picker: some screens of the group are merged into one canvas and others are not. distinct-from: menuBar.composer.colour.fixed */
+"settings.eink.screens.custom" = "自定义";
+
+/* Caption under the Screens picker when a page mixes merged and separate screens. */
+"settings.eink.screens.customDetail" = "把若干屏幕合并成一块画布，或把已合并的画布重新拆开。";
+
+/* Segment of the Screens picker: every screen of the group draws its own template. */
+"settings.eink.screens.separate" = "分屏显示";
+
+/* Caption under the Screens picker when every screen of the group draws its own page. */
+"settings.eink.screens.separateDetail" = "每块屏幕绘制各自的模板。先选屏幕，再编辑这一屏的内容。";
 
 /* Stepper label for how long the app-driven e-ink carousel holds each slide. */
 "settings.eink.secondsPerSlide" = "每张停留秒数";
@@ -2867,6 +2897,66 @@
 
 /* Caption over the live slide preview, which draws the panel upright rather than rotated. */
 "settings.eink.uprightPreview" = "按实际阅读方向显示";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.allGrouped" = "这些设备已加入编组，请在「屏幕编组」中编辑共同设置。";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.automaticPages" = "可以持续添加内容，当前页放不下的内容会自动显示在下一页。";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.chooseContent" = "选择内容";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.combined" = "整组显示一页";
+
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.editPages" = "在 Studio 中编辑分页内容";
+
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.editPagesDetail" = "自由排版需要独立页面。将全部分页保留为独立幻灯片，再编辑当前页；之后仍可选择单张或轮播。";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.groupHelp" = "选择要合并的屏幕。组内共用一套设置，内容使用与单屏相同的幻灯片编辑器。";
+
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.materializePages" = "转为独立幻灯片并编辑";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.memberMinimum" = "至少选择两块屏幕。";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.mergeSlides" = "合并幻灯片";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.mixed" = "前两屏合并，其余独立";
+
+/* Search in the quota content picker. */
+"settings.eink.workflow.searchContent" = "搜索厂商或配额";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.selectionSummary" = "已选 %1$lld 项 · 共 %2$lld 页";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.separate" = "每屏独立显示";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.sharedSettings" = "编组设置";
+
+/* Single logical slide can contain multiple overflow pages. */
+"settings.eink.workflow.singleSlideDetail" = "播放当前选中的幻灯片。内容较多时，按停留时长自动翻页。";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.slideNumber" = "幻灯片 %lld";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.splitSlides" = "拆分为独立幻灯片";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.template" = "幻灯片组合";
+
+/* E-ink device ownership and shared slide workflow. */
+"settings.eink.workflow.ungroup" = "解散设备组";
 
 /* Banner shown when a second client overwrote a setting this one had changed */
 "settings.externalChange.title" = "另一个 Vibe Bar 覆盖了此处的修改";

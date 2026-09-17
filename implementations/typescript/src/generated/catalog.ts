@@ -811,6 +811,10 @@ export type MessageKey =
   | "settings.eink.customSlideDetail"
   | "settings.eink.dataRefresh"
   | "settings.eink.dataRefreshDetail"
+  | "settings.eink.deviceGroup.create"
+  | "settings.eink.deviceGroup.playbackDetail"
+  | "settings.eink.deviceGroup.title"
+  | "settings.eink.deviceGroup.ungroupConfirm"
   | "settings.eink.deviceSyncHelp"
   | "settings.eink.devicesFound"
   | "settings.eink.editInStudioDetail"
@@ -917,6 +921,12 @@ export type MessageKey =
   | "settings.eink.screenGroups.vertical"
   | "settings.eink.screenGroups.xPosition"
   | "settings.eink.screenGroups.yPosition"
+  | "settings.eink.screens.combined"
+  | "settings.eink.screens.combinedDetail"
+  | "settings.eink.screens.custom"
+  | "settings.eink.screens.customDetail"
+  | "settings.eink.screens.separate"
+  | "settings.eink.screens.separateDetail"
   | "settings.eink.secondsPerSlide"
   | "settings.eink.secondsPerSlideDetail"
   | "settings.eink.slideName"
@@ -993,6 +1003,26 @@ export type MessageKey =
   | "settings.eink.unit.minutes"
   | "settings.eink.unit.seconds"
   | "settings.eink.uprightPreview"
+  | "settings.eink.workflow.allGrouped"
+  | "settings.eink.workflow.automaticPages"
+  | "settings.eink.workflow.chooseContent"
+  | "settings.eink.workflow.combined"
+  | "settings.eink.workflow.editPages"
+  | "settings.eink.workflow.editPagesDetail"
+  | "settings.eink.workflow.groupHelp"
+  | "settings.eink.workflow.materializePages"
+  | "settings.eink.workflow.memberMinimum"
+  | "settings.eink.workflow.mergeSlides"
+  | "settings.eink.workflow.mixed"
+  | "settings.eink.workflow.searchContent"
+  | "settings.eink.workflow.selectionSummary"
+  | "settings.eink.workflow.separate"
+  | "settings.eink.workflow.sharedSettings"
+  | "settings.eink.workflow.singleSlideDetail"
+  | "settings.eink.workflow.slideNumber"
+  | "settings.eink.workflow.splitSlides"
+  | "settings.eink.workflow.template"
+  | "settings.eink.workflow.ungroup"
   | "settings.externalChange.title"
   | "settings.geminiCookiesSaved"
   | "settings.geminiShared"
@@ -2717,6 +2747,10 @@ export interface MessageParams {
   "settings.eink.customSlideDetail": undefined;
   "settings.eink.dataRefresh": undefined;
   "settings.eink.dataRefreshDetail": undefined;
+  "settings.eink.deviceGroup.create": undefined;
+  "settings.eink.deviceGroup.playbackDetail": undefined;
+  "settings.eink.deviceGroup.title": undefined;
+  "settings.eink.deviceGroup.ungroupConfirm": undefined;
   "settings.eink.deviceSyncHelp": undefined;
   "settings.eink.devicesFound": { "count": number };
   "settings.eink.editInStudioDetail": undefined;
@@ -2823,6 +2857,12 @@ export interface MessageParams {
   "settings.eink.screenGroups.vertical": undefined;
   "settings.eink.screenGroups.xPosition": undefined;
   "settings.eink.screenGroups.yPosition": undefined;
+  "settings.eink.screens.combined": undefined;
+  "settings.eink.screens.combinedDetail": undefined;
+  "settings.eink.screens.custom": undefined;
+  "settings.eink.screens.customDetail": undefined;
+  "settings.eink.screens.separate": undefined;
+  "settings.eink.screens.separateDetail": undefined;
   "settings.eink.secondsPerSlide": undefined;
   "settings.eink.secondsPerSlideDetail": undefined;
   "settings.eink.slideName": undefined;
@@ -2899,6 +2939,26 @@ export interface MessageParams {
   "settings.eink.unit.minutes": undefined;
   "settings.eink.unit.seconds": undefined;
   "settings.eink.uprightPreview": undefined;
+  "settings.eink.workflow.allGrouped": undefined;
+  "settings.eink.workflow.automaticPages": undefined;
+  "settings.eink.workflow.chooseContent": undefined;
+  "settings.eink.workflow.combined": undefined;
+  "settings.eink.workflow.editPages": undefined;
+  "settings.eink.workflow.editPagesDetail": undefined;
+  "settings.eink.workflow.groupHelp": undefined;
+  "settings.eink.workflow.materializePages": undefined;
+  "settings.eink.workflow.memberMinimum": undefined;
+  "settings.eink.workflow.mergeSlides": undefined;
+  "settings.eink.workflow.mixed": undefined;
+  "settings.eink.workflow.searchContent": undefined;
+  "settings.eink.workflow.selectionSummary": { "items": number; "pages": number };
+  "settings.eink.workflow.separate": undefined;
+  "settings.eink.workflow.sharedSettings": undefined;
+  "settings.eink.workflow.singleSlideDetail": undefined;
+  "settings.eink.workflow.slideNumber": { "number": number };
+  "settings.eink.workflow.splitSlides": undefined;
+  "settings.eink.workflow.template": undefined;
+  "settings.eink.workflow.ungroup": undefined;
   "settings.externalChange.title": undefined;
   "settings.geminiCookiesSaved": undefined;
   "settings.geminiShared": undefined;
@@ -4624,6 +4684,10 @@ export const messages: {
     "settings.eink.customSlideDetail": "This slide is laid out by hand. Open it in the Studio to place its elements.",
     "settings.eink.dataRefresh": "Data refresh",
     "settings.eink.dataRefreshDetail": "How often the numbers are rebuilt and pushed while the device has mains power.",
+    "settings.eink.deviceGroup.create": "Group screens…",
+    "settings.eink.deviceGroup.playbackDetail": "The Mac turns a group's pages so every screen changes together, so the device's own loop is not offered here.",
+    "settings.eink.deviceGroup.title": "Device group",
+    "settings.eink.deviceGroup.ungroupConfirm": "The group's pages are discarded. Every screen comes back on its own, with the settings and slides it had before.",
     "settings.eink.deviceSyncHelp": "Push slides to this device",
     "settings.eink.devicesFound": "{count, plural, one {# device on this account} other {# devices on this account}}",
     "settings.eink.editInStudioDetail": "Opens this slide in the Studio. A preset is broken into its modules first, so every part can be moved, rebound or removed.",
@@ -4730,6 +4794,12 @@ export const messages: {
     "settings.eink.screenGroups.vertical": "Stack vertically",
     "settings.eink.screenGroups.xPosition": "Horizontal position",
     "settings.eink.screenGroups.yPosition": "Vertical position",
+    "settings.eink.screens.combined": "Combined",
+    "settings.eink.screens.combinedDetail": "The screens make one canvas and this page draws a single template across it, so it holds more than one panel fits.",
+    "settings.eink.screens.custom": "Custom",
+    "settings.eink.screens.customDetail": "Merge screens into one canvas, or split a merged canvas back into separate screens.",
+    "settings.eink.screens.separate": "Separate",
+    "settings.eink.screens.separateDetail": "Each screen draws its own template. Pick a screen to edit what it shows.",
     "settings.eink.secondsPerSlide": "Seconds per slide",
     "settings.eink.secondsPerSlideDetail": "How long each slide stays on the panel while the carousel is running.",
     "settings.eink.slideName": "Slide name",
@@ -4806,6 +4876,26 @@ export const messages: {
     "settings.eink.unit.minutes": "min",
     "settings.eink.unit.seconds": "s",
     "settings.eink.uprightPreview": "Shown the way you will read it",
+    "settings.eink.workflow.allGrouped": "These devices belong to screen groups. Edit their shared settings in Screen groups.",
+    "settings.eink.workflow.automaticPages": "Select as many items as you need. Content that does not fit continues on the next page.",
+    "settings.eink.workflow.chooseContent": "Choose content",
+    "settings.eink.workflow.combined": "One page across all screens",
+    "settings.eink.workflow.editPages": "Edit paginated content in Studio",
+    "settings.eink.workflow.editPagesDetail": "Freeform editing needs separate pages. Keep all content by turning these pages into individual slides, then edit the selected page. You can keep single-slide playback or choose a carousel.",
+    "settings.eink.workflow.groupHelp": "Choose screens to combine. A group has one set of settings and uses the same slide editor as a single screen.",
+    "settings.eink.workflow.materializePages": "Create separate slides and edit",
+    "settings.eink.workflow.memberMinimum": "Select at least two screens.",
+    "settings.eink.workflow.mergeSlides": "Merge slides",
+    "settings.eink.workflow.mixed": "Combine the first two screens",
+    "settings.eink.workflow.searchContent": "Search providers or quota",
+    "settings.eink.workflow.selectionSummary": "{items} selected · {pages} pages",
+    "settings.eink.workflow.separate": "Separate page on each screen",
+    "settings.eink.workflow.sharedSettings": "Group settings",
+    "settings.eink.workflow.singleSlideDetail": "Play the selected slide. When its content needs more pages, turn them at the slide interval.",
+    "settings.eink.workflow.slideNumber": "Slide {number}",
+    "settings.eink.workflow.splitSlides": "Split into separate slides",
+    "settings.eink.workflow.template": "Slide arrangement",
+    "settings.eink.workflow.ungroup": "Ungroup screens",
     "settings.externalChange.title": "Another Vibe Bar replaced your change",
     "settings.geminiCookiesSaved": "Gemini cookies saved.",
     "settings.geminiShared": "Gemini and Antigravity share the same Google AI subscription quota. Cookie import is the only supported web path — there is no WebView login.",
@@ -6526,6 +6616,10 @@ export const messages: {
     "settings.eink.customSlideDetail": "这张幻灯片由手动排布。在 Studio 中打开即可摆放元素。",
     "settings.eink.dataRefresh": "数据刷新",
     "settings.eink.dataRefreshDetail": "设备接通电源时，重新生成并推送数字的间隔。",
+    "settings.eink.deviceGroup.create": "合并为设备组…",
+    "settings.eink.deviceGroup.playbackDetail": "设备组的页面由 Mac 统一翻页，组内屏幕同步变化，因此不提供设备自带的轮播。",
+    "settings.eink.deviceGroup.title": "设备组",
+    "settings.eink.deviceGroup.ungroupConfirm": "设备组的页面会被丢弃。每块屏幕恢复为独立显示，并沿用加入前的设置与幻灯片。",
     "settings.eink.deviceSyncHelp": "向这台设备推送幻灯片",
     "settings.eink.devicesFound": "{count, plural, other {该账号下有 # 台设备}}",
     "settings.eink.editInStudioDetail": "在 Studio 中打开该幻灯片。预设会先拆成模块，每个部分都可移动、重新绑定或删除。",
@@ -6618,7 +6712,7 @@ export const messages: {
     "settings.eink.screenGroups.horizontal": "左右排列",
     "settings.eink.screenGroups.intro": "按显示像素排列屏幕。每一帧可显示独立页面，也可让一页跨越多个屏幕。",
     "settings.eink.screenGroups.invalid": "请检查排列：至少使用两块屏幕，位置不能重叠，每帧中每块屏幕最多分配一次。",
-    "settings.eink.screenGroups.name": "编组名称",
+    "settings.eink.screenGroups.name": "设备组名称",
     "settings.eink.screenGroups.position": "屏幕排列",
     "settings.eink.screenGroups.precise": "精确调整",
     "settings.eink.screenGroups.preview": "组合画布预览",
@@ -6632,6 +6726,12 @@ export const messages: {
     "settings.eink.screenGroups.vertical": "上下排列",
     "settings.eink.screenGroups.xPosition": "水平位置",
     "settings.eink.screenGroups.yPosition": "垂直位置",
+    "settings.eink.screens.combined": "合并显示",
+    "settings.eink.screens.combinedDetail": "整组拼成一块画布，这一页跨屏绘制同一个模板，能放下的内容比单屏更多。",
+    "settings.eink.screens.custom": "自定义",
+    "settings.eink.screens.customDetail": "把若干屏幕合并成一块画布，或把已合并的画布重新拆开。",
+    "settings.eink.screens.separate": "分屏显示",
+    "settings.eink.screens.separateDetail": "每块屏幕绘制各自的模板。先选屏幕，再编辑这一屏的内容。",
     "settings.eink.secondsPerSlide": "每张停留秒数",
     "settings.eink.secondsPerSlideDetail": "轮播运行时每张幻灯片在面板上停留的时长。",
     "settings.eink.slideName": "幻灯片名称",
@@ -6708,6 +6808,26 @@ export const messages: {
     "settings.eink.unit.minutes": "分钟",
     "settings.eink.unit.seconds": "秒",
     "settings.eink.uprightPreview": "按实际阅读方向显示",
+    "settings.eink.workflow.allGrouped": "这些设备已加入编组，请在「屏幕编组」中编辑共同设置。",
+    "settings.eink.workflow.automaticPages": "可以持续添加内容，当前页放不下的内容会自动显示在下一页。",
+    "settings.eink.workflow.chooseContent": "选择内容",
+    "settings.eink.workflow.combined": "整组显示一页",
+    "settings.eink.workflow.editPages": "在 Studio 中编辑分页内容",
+    "settings.eink.workflow.editPagesDetail": "自由排版需要独立页面。将全部分页保留为独立幻灯片，再编辑当前页；之后仍可选择单张或轮播。",
+    "settings.eink.workflow.groupHelp": "选择要合并的屏幕。组内共用一套设置，内容使用与单屏相同的幻灯片编辑器。",
+    "settings.eink.workflow.materializePages": "转为独立幻灯片并编辑",
+    "settings.eink.workflow.memberMinimum": "至少选择两块屏幕。",
+    "settings.eink.workflow.mergeSlides": "合并幻灯片",
+    "settings.eink.workflow.mixed": "前两屏合并，其余独立",
+    "settings.eink.workflow.searchContent": "搜索厂商或配额",
+    "settings.eink.workflow.selectionSummary": "已选 {items} 项 · 共 {pages} 页",
+    "settings.eink.workflow.separate": "每屏独立显示",
+    "settings.eink.workflow.sharedSettings": "编组设置",
+    "settings.eink.workflow.singleSlideDetail": "播放当前选中的幻灯片。内容较多时，按停留时长自动翻页。",
+    "settings.eink.workflow.slideNumber": "幻灯片 {number}",
+    "settings.eink.workflow.splitSlides": "拆分为独立幻灯片",
+    "settings.eink.workflow.template": "幻灯片组合",
+    "settings.eink.workflow.ungroup": "解散设备组",
     "settings.externalChange.title": "另一个 Vibe Bar 覆盖了此处的修改",
     "settings.geminiCookiesSaved": "Gemini 的 cookies 已保存。",
     "settings.geminiShared": "Gemini 与 Antigravity 共用同一份 Google AI 订阅额度。网页端仅支持 cookie 导入，没有 WebView 登录途径。",

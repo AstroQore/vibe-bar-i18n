@@ -3573,6 +3573,22 @@
       "value": "How often the numbers are rebuilt and pushed while the device has mains power.",
       "comment": "Help line under the e-ink data refresh stepper."
     },
+    "settings.eink.deviceGroup.create": {
+      "value": "Group screens…",
+      "comment": "Button above the display list in Settings › E-ink Displays that opens the sheet for combining two or more screens into one group."
+    },
+    "settings.eink.deviceGroup.playbackDetail": {
+      "value": "The Mac turns a group's pages so every screen changes together, so the device's own loop is not offered here.",
+      "comment": "Caption under the playback picker of a group, explaining why the device-driven carousel is missing."
+    },
+    "settings.eink.deviceGroup.title": {
+      "value": "Device group",
+      "comment": "Title of the sheet that combines e-ink screens into one group, and the word for a group in the display list."
+    },
+    "settings.eink.deviceGroup.ungroupConfirm": {
+      "value": "The group's pages are discarded. Every screen comes back on its own, with the settings and slides it had before.",
+      "comment": "Confirmation message shown before a group of e-ink screens is taken apart."
+    },
     "settings.eink.deviceSyncHelp": {
       "value": "Push slides to this device",
       "comment": "Tooltip on the per-device enable toggle in the E-ink section."
@@ -3813,6 +3829,30 @@
     "settings.eink.rescanLoop": {
       "value": "Scan the loop",
       "comment": "Button that re-reads an e-ink device's loop to count its Canvas API tasks."
+    },
+    "settings.eink.screens.combined": {
+      "value": "Combined",
+      "comment": "Segment of the Screens picker: one template drawn across every screen of the group."
+    },
+    "settings.eink.screens.combinedDetail": {
+      "value": "The screens make one canvas and this page draws a single template across it, so it holds more than one panel fits.",
+      "comment": "Caption under the Screens picker when a page is drawn across the whole group."
+    },
+    "settings.eink.screens.custom": {
+      "value": "Custom",
+      "comment": "Segment of the Screens picker: some screens of the group are merged into one canvas and others are not. distinct-from: menuBar.composer.colour.fixed"
+    },
+    "settings.eink.screens.customDetail": {
+      "value": "Merge screens into one canvas, or split a merged canvas back into separate screens.",
+      "comment": "Caption under the Screens picker when a page mixes merged and separate screens."
+    },
+    "settings.eink.screens.separate": {
+      "value": "Separate",
+      "comment": "Segment of the Screens picker: every screen of the group draws its own template."
+    },
+    "settings.eink.screens.separateDetail": {
+      "value": "Each screen draws its own template. Pick a screen to edit what it shows.",
+      "comment": "Caption under the Screens picker when every screen of the group draws its own page."
     },
     "settings.eink.secondsPerSlide": {
       "value": "Seconds per slide",
@@ -8835,6 +8875,93 @@
     "settings.eink.screenGroups.sharedPlayback": {
       "value": "Pages advance together while the Mac is running.",
       "comment": "Visual screen arrangement canvas and its toolbar."
+    },
+    "settings.eink.workflow.chooseContent": {
+      "value": "Choose content",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.automaticPages": {
+      "value": "Select as many items as you need. Content that does not fit continues on the next page.",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.groupHelp": {
+      "value": "Choose screens to combine. A group has one set of settings and uses the same slide editor as a single screen.",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.allGrouped": {
+      "value": "These devices belong to screen groups. Edit their shared settings in Screen groups.",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.ungroup": {
+      "value": "Ungroup screens",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.mergeSlides": {
+      "value": "Merge slides",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.splitSlides": {
+      "value": "Split into separate slides",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.sharedSettings": {
+      "value": "Group settings",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.template": {
+      "value": "Slide arrangement",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.separate": {
+      "value": "Separate page on each screen",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.combined": {
+      "value": "One page across all screens",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.mixed": {
+      "value": "Combine the first two screens",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.memberMinimum": {
+      "value": "Select at least two screens.",
+      "comment": "E-ink device ownership and shared slide workflow."
+    },
+    "settings.eink.workflow.selectionSummary": {
+      "value": "{items} selected · {pages} pages",
+      "comment": "E-ink device ownership and shared slide workflow.",
+      "placeholders": {
+        "items": "int",
+        "pages": "int"
+      }
+    },
+    "settings.eink.workflow.slideNumber": {
+      "value": "Slide {number}",
+      "comment": "E-ink device ownership and shared slide workflow.",
+      "placeholders": {
+        "number": "int"
+      }
+    },
+    "settings.eink.workflow.searchContent": {
+      "value": "Search providers or quota",
+      "comment": "Search in the quota content picker."
+    },
+    "settings.eink.workflow.singleSlideDetail": {
+      "value": "Play the selected slide. When its content needs more pages, turn them at the slide interval.",
+      "comment": "Single logical slide can contain multiple overflow pages."
+    },
+    "settings.eink.workflow.editPages": {
+      "value": "Edit paginated content in Studio",
+      "comment": "Explicit conversion from automatically paginated presets to editable standalone slides."
+    },
+    "settings.eink.workflow.materializePages": {
+      "value": "Create separate slides and edit",
+      "comment": "Explicit conversion from automatically paginated presets to editable standalone slides."
+    },
+    "settings.eink.workflow.editPagesDetail": {
+      "value": "Freeform editing needs separate pages. Keep all content by turning these pages into individual slides, then edit the selected page. You can keep single-slide playback or choose a carousel.",
+      "comment": "Explicit conversion from automatically paginated presets to editable standalone slides."
     }
   }
 }

@@ -6004,6 +6004,32 @@ public enum L10n {
                 public static var providerStatus: String { L10nSupport.string("settings.eink.bar.providerStatus") }
             }
 
+            public enum DeviceGroup {
+                /// Button above the display list in Settings › E-ink Displays that opens the sheet for combining two or more screens into one group.
+                ///
+                /// Key: `settings.eink.deviceGroup.create`
+                /// en: "Group screens…"
+                public static var create: String { L10nSupport.string("settings.eink.deviceGroup.create") }
+
+                /// Caption under the playback picker of a group, explaining why the device-driven carousel is missing.
+                ///
+                /// Key: `settings.eink.deviceGroup.playbackDetail`
+                /// en: "The Mac turns a group's pages so every screen changes together, so the device's own loop is not offered here."
+                public static var playbackDetail: String { L10nSupport.string("settings.eink.deviceGroup.playbackDetail") }
+
+                /// Title of the sheet that combines e-ink screens into one group, and the word for a group in the display list.
+                ///
+                /// Key: `settings.eink.deviceGroup.title`
+                /// en: "Device group"
+                public static var title: String { L10nSupport.string("settings.eink.deviceGroup.title") }
+
+                /// Confirmation message shown before a group of e-ink screens is taken apart.
+                ///
+                /// Key: `settings.eink.deviceGroup.ungroupConfirm`
+                /// en: "The group's pages are discarded. Every screen comes back on its own, with the settings and slides it had before."
+                public static var ungroupConfirm: String { L10nSupport.string("settings.eink.deviceGroup.ungroupConfirm") }
+            }
+
             public enum Error {
                 /// E-ink error shown after a device-scoped call answered 404.
                 ///
@@ -6444,6 +6470,44 @@ public enum L10n {
                 public static var yPosition: String { L10nSupport.string("settings.eink.screenGroups.yPosition") }
             }
 
+            public enum Screens {
+                /// Segment of the Screens picker: one template drawn across every screen of the group.
+                ///
+                /// Key: `settings.eink.screens.combined`
+                /// en: "Combined"
+                public static var combined: String { L10nSupport.string("settings.eink.screens.combined") }
+
+                /// Caption under the Screens picker when a page is drawn across the whole group.
+                ///
+                /// Key: `settings.eink.screens.combinedDetail`
+                /// en: "The screens make one canvas and this page draws a single template across it, so it holds more than one panel fits."
+                public static var combinedDetail: String { L10nSupport.string("settings.eink.screens.combinedDetail") }
+
+                /// Segment of the Screens picker: some screens of the group are merged into one canvas and others are not. distinct-from: menuBar.composer.colour.fixed
+                ///
+                /// Key: `settings.eink.screens.custom`
+                /// en: "Custom"
+                public static var custom: String { L10nSupport.string("settings.eink.screens.custom") }
+
+                /// Caption under the Screens picker when a page mixes merged and separate screens.
+                ///
+                /// Key: `settings.eink.screens.customDetail`
+                /// en: "Merge screens into one canvas, or split a merged canvas back into separate screens."
+                public static var customDetail: String { L10nSupport.string("settings.eink.screens.customDetail") }
+
+                /// Segment of the Screens picker: every screen of the group draws its own template.
+                ///
+                /// Key: `settings.eink.screens.separate`
+                /// en: "Separate"
+                public static var separate: String { L10nSupport.string("settings.eink.screens.separate") }
+
+                /// Caption under the Screens picker when every screen of the group draws its own page.
+                ///
+                /// Key: `settings.eink.screens.separateDetail`
+                /// en: "Each screen draws its own template. Pick a screen to edit what it shows."
+                public static var separateDetail: String { L10nSupport.string("settings.eink.screens.separateDetail") }
+            }
+
             public enum Status {
                 /// Status label for an e-ink device's battery reading.
                 ///
@@ -6852,6 +6916,132 @@ public enum L10n {
                 /// Key: `settings.eink.unit.seconds`
                 /// en: "s"
                 public static var seconds: String { L10nSupport.string("settings.eink.unit.seconds") }
+            }
+
+            public enum Workflow {
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.allGrouped`
+                /// en: "These devices belong to screen groups. Edit their shared settings in Screen groups."
+                public static var allGrouped: String { L10nSupport.string("settings.eink.workflow.allGrouped") }
+
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.automaticPages`
+                /// en: "Select as many items as you need. Content that does not fit continues on the next page."
+                public static var automaticPages: String { L10nSupport.string("settings.eink.workflow.automaticPages") }
+
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.chooseContent`
+                /// en: "Choose content"
+                public static var chooseContent: String { L10nSupport.string("settings.eink.workflow.chooseContent") }
+
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.combined`
+                /// en: "One page across all screens"
+                public static var combined: String { L10nSupport.string("settings.eink.workflow.combined") }
+
+                /// Explicit conversion from automatically paginated presets to editable standalone slides.
+                ///
+                /// Key: `settings.eink.workflow.editPages`
+                /// en: "Edit paginated content in Studio"
+                public static var editPages: String { L10nSupport.string("settings.eink.workflow.editPages") }
+
+                /// Explicit conversion from automatically paginated presets to editable standalone slides.
+                ///
+                /// Key: `settings.eink.workflow.editPagesDetail`
+                /// en: "Freeform editing needs separate pages. Keep all content by turning these pages into individual slides, then edit the selected page. You can keep single-slide playback or choose a carousel."
+                public static var editPagesDetail: String { L10nSupport.string("settings.eink.workflow.editPagesDetail") }
+
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.groupHelp`
+                /// en: "Choose screens to combine. A group has one set of settings and uses the same slide editor as a single screen."
+                public static var groupHelp: String { L10nSupport.string("settings.eink.workflow.groupHelp") }
+
+                /// Explicit conversion from automatically paginated presets to editable standalone slides.
+                ///
+                /// Key: `settings.eink.workflow.materializePages`
+                /// en: "Create separate slides and edit"
+                public static var materializePages: String { L10nSupport.string("settings.eink.workflow.materializePages") }
+
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.memberMinimum`
+                /// en: "Select at least two screens."
+                public static var memberMinimum: String { L10nSupport.string("settings.eink.workflow.memberMinimum") }
+
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.mergeSlides`
+                /// en: "Merge slides"
+                public static var mergeSlides: String { L10nSupport.string("settings.eink.workflow.mergeSlides") }
+
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.mixed`
+                /// en: "Combine the first two screens"
+                public static var mixed: String { L10nSupport.string("settings.eink.workflow.mixed") }
+
+                /// Search in the quota content picker.
+                ///
+                /// Key: `settings.eink.workflow.searchContent`
+                /// en: "Search providers or quota"
+                public static var searchContent: String { L10nSupport.string("settings.eink.workflow.searchContent") }
+
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.selectionSummary`
+                /// en: "{items} selected · {pages} pages"
+                public static func selectionSummary(items: Int, pages: Int) -> String {
+                    L10nSupport.format("settings.eink.workflow.selectionSummary", items, pages)
+                }
+
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.separate`
+                /// en: "Separate page on each screen"
+                public static var separate: String { L10nSupport.string("settings.eink.workflow.separate") }
+
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.sharedSettings`
+                /// en: "Group settings"
+                public static var sharedSettings: String { L10nSupport.string("settings.eink.workflow.sharedSettings") }
+
+                /// Single logical slide can contain multiple overflow pages.
+                ///
+                /// Key: `settings.eink.workflow.singleSlideDetail`
+                /// en: "Play the selected slide. When its content needs more pages, turn them at the slide interval."
+                public static var singleSlideDetail: String { L10nSupport.string("settings.eink.workflow.singleSlideDetail") }
+
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.slideNumber`
+                /// en: "Slide {number}"
+                public static func slideNumber(number: Int) -> String {
+                    L10nSupport.format("settings.eink.workflow.slideNumber", number)
+                }
+
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.splitSlides`
+                /// en: "Split into separate slides"
+                public static var splitSlides: String { L10nSupport.string("settings.eink.workflow.splitSlides") }
+
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.template`
+                /// en: "Slide arrangement"
+                public static var template: String { L10nSupport.string("settings.eink.workflow.template") }
+
+                /// E-ink device ownership and shared slide workflow.
+                ///
+                /// Key: `settings.eink.workflow.ungroup`
+                /// en: "Ungroup screens"
+                public static var ungroup: String { L10nSupport.string("settings.eink.workflow.ungroup") }
             }
         }
 
@@ -13506,6 +13696,10 @@ enum L10nCatalogFacts {
         "settings.eink.customSlideDetail",
         "settings.eink.dataRefresh",
         "settings.eink.dataRefreshDetail",
+        "settings.eink.deviceGroup.create",
+        "settings.eink.deviceGroup.playbackDetail",
+        "settings.eink.deviceGroup.title",
+        "settings.eink.deviceGroup.ungroupConfirm",
         "settings.eink.deviceSyncHelp",
         "settings.eink.devicesFound",
         "settings.eink.editInStudioDetail",
@@ -13612,6 +13806,12 @@ enum L10nCatalogFacts {
         "settings.eink.screenGroups.vertical",
         "settings.eink.screenGroups.xPosition",
         "settings.eink.screenGroups.yPosition",
+        "settings.eink.screens.combined",
+        "settings.eink.screens.combinedDetail",
+        "settings.eink.screens.custom",
+        "settings.eink.screens.customDetail",
+        "settings.eink.screens.separate",
+        "settings.eink.screens.separateDetail",
         "settings.eink.secondsPerSlide",
         "settings.eink.secondsPerSlideDetail",
         "settings.eink.slideName",
@@ -13688,6 +13888,26 @@ enum L10nCatalogFacts {
         "settings.eink.unit.minutes",
         "settings.eink.unit.seconds",
         "settings.eink.uprightPreview",
+        "settings.eink.workflow.allGrouped",
+        "settings.eink.workflow.automaticPages",
+        "settings.eink.workflow.chooseContent",
+        "settings.eink.workflow.combined",
+        "settings.eink.workflow.editPages",
+        "settings.eink.workflow.editPagesDetail",
+        "settings.eink.workflow.groupHelp",
+        "settings.eink.workflow.materializePages",
+        "settings.eink.workflow.memberMinimum",
+        "settings.eink.workflow.mergeSlides",
+        "settings.eink.workflow.mixed",
+        "settings.eink.workflow.searchContent",
+        "settings.eink.workflow.selectionSummary",
+        "settings.eink.workflow.separate",
+        "settings.eink.workflow.sharedSettings",
+        "settings.eink.workflow.singleSlideDetail",
+        "settings.eink.workflow.slideNumber",
+        "settings.eink.workflow.splitSlides",
+        "settings.eink.workflow.template",
+        "settings.eink.workflow.ungroup",
         "settings.externalChange.title",
         "settings.geminiCookiesSaved",
         "settings.geminiShared",
@@ -15466,6 +15686,10 @@ enum L10nCatalogFacts {
         "settings.eink.customSlideDetail": 0,
         "settings.eink.dataRefresh": 0,
         "settings.eink.dataRefreshDetail": 0,
+        "settings.eink.deviceGroup.create": 0,
+        "settings.eink.deviceGroup.playbackDetail": 0,
+        "settings.eink.deviceGroup.title": 0,
+        "settings.eink.deviceGroup.ungroupConfirm": 0,
         "settings.eink.deviceSyncHelp": 0,
         "settings.eink.devicesFound": 1,
         "settings.eink.editInStudioDetail": 0,
@@ -15572,6 +15796,12 @@ enum L10nCatalogFacts {
         "settings.eink.screenGroups.vertical": 0,
         "settings.eink.screenGroups.xPosition": 0,
         "settings.eink.screenGroups.yPosition": 0,
+        "settings.eink.screens.combined": 0,
+        "settings.eink.screens.combinedDetail": 0,
+        "settings.eink.screens.custom": 0,
+        "settings.eink.screens.customDetail": 0,
+        "settings.eink.screens.separate": 0,
+        "settings.eink.screens.separateDetail": 0,
         "settings.eink.secondsPerSlide": 0,
         "settings.eink.secondsPerSlideDetail": 0,
         "settings.eink.slideName": 0,
@@ -15648,6 +15878,26 @@ enum L10nCatalogFacts {
         "settings.eink.unit.minutes": 0,
         "settings.eink.unit.seconds": 0,
         "settings.eink.uprightPreview": 0,
+        "settings.eink.workflow.allGrouped": 0,
+        "settings.eink.workflow.automaticPages": 0,
+        "settings.eink.workflow.chooseContent": 0,
+        "settings.eink.workflow.combined": 0,
+        "settings.eink.workflow.editPages": 0,
+        "settings.eink.workflow.editPagesDetail": 0,
+        "settings.eink.workflow.groupHelp": 0,
+        "settings.eink.workflow.materializePages": 0,
+        "settings.eink.workflow.memberMinimum": 0,
+        "settings.eink.workflow.mergeSlides": 0,
+        "settings.eink.workflow.mixed": 0,
+        "settings.eink.workflow.searchContent": 0,
+        "settings.eink.workflow.selectionSummary": 2,
+        "settings.eink.workflow.separate": 0,
+        "settings.eink.workflow.sharedSettings": 0,
+        "settings.eink.workflow.singleSlideDetail": 0,
+        "settings.eink.workflow.slideNumber": 1,
+        "settings.eink.workflow.splitSlides": 0,
+        "settings.eink.workflow.template": 0,
+        "settings.eink.workflow.ungroup": 0,
         "settings.externalChange.title": 0,
         "settings.geminiCookiesSaved": 0,
         "settings.geminiShared": 0,
