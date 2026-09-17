@@ -1662,7 +1662,7 @@
       "value": "运行 muse login，然后刷新。"
     },
     "quota.muse.keychainAccessNeeded": {
-      "value": "请在「设置 → Meta AI」中允许 Vibe Bar 读取 Muse Code 登录信息，然后刷新。"
+      "value": "Vibe Bar 尚无权限读取 Muse Code 登录信息，请在「设置 → Meta AI」中允许后刷新。"
     },
     "quota.login.misc": {
       "value": "在「设置 → 其他厂商」中配置 {provider}。"
@@ -3285,7 +3285,7 @@
       "value": "Vibe Bar 已可读取 Muse Code 登录信息。"
     },
     "settings.muse.keychainAccessDenied": {
-      "value": "未获得 Keychain 访问权限。请重试并选择「始终允许」。"
+      "value": "未获得 Keychain 访问权限，请重试并选择「始终允许」。"
     },
     "settings.muse.noLogin": {
       "value": "尚无 Muse Code 登录信息。请运行 muse login，然后刷新。"

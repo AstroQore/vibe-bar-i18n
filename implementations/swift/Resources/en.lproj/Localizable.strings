@@ -1774,7 +1774,7 @@
 "quota.mode.used" = "used";
 
 /* Error on the Meta AI quota card when macOS has not yet let Vibe Bar read the Keychain item the muse CLI saved its login in. */
-"quota.muse.keychainAccessNeeded" = "Allow Vibe Bar to read the Muse Code login in Settings → Meta AI, then refresh.";
+"quota.muse.keychainAccessNeeded" = "Vibe Bar is not yet allowed to read the Muse Code login — allow it in Settings → Meta AI, then refresh.";
 
 /* Pace summary when usage is running ahead of the linear expectation */
 "quota.pace.deficit" = "%lld%% in deficit";
@@ -3403,7 +3403,7 @@
 "settings.muse.keychainAccessAllowed" = "Vibe Bar can read the Muse Code login.";
 
 /* Status line on the Meta AI settings page after the user declined or dismissed the Keychain prompt. */
-"settings.muse.keychainAccessDenied" = "Keychain access was not allowed. Try again and choose Always Allow.";
+"settings.muse.keychainAccessDenied" = "Keychain access was not allowed — try again and choose Always Allow.";
 
 /* Note on the Meta AI settings page about reaching Meta's API. api.meta.ai and HTTPS_PROXY are literal and stay as is. */
 "settings.muse.networkNote" = "api.meta.ai must be reachable from this Mac. If your network needs a proxy for it, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY.";

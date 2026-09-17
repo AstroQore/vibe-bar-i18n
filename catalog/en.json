@@ -2606,7 +2606,7 @@
       "comment": "Hint on the Meta AI quota card when this Mac has no Muse Code login. `muse login` is the CLI command and stays as is."
     },
     "quota.muse.keychainAccessNeeded": {
-      "value": "Allow Vibe Bar to read the Muse Code login in Settings → Meta AI, then refresh.",
+      "value": "Vibe Bar is not yet allowed to read the Muse Code login — allow it in Settings → Meta AI, then refresh.",
       "comment": "Error on the Meta AI quota card when macOS has not yet let Vibe Bar read the Keychain item the muse CLI saved its login in."
     },
     "quota.login.misc": {
@@ -5088,7 +5088,7 @@
       "comment": "Status line on the Meta AI settings page once Keychain access works without a prompt."
     },
     "settings.muse.keychainAccessDenied": {
-      "value": "Keychain access was not allowed. Try again and choose Always Allow.",
+      "value": "Keychain access was not allowed — try again and choose Always Allow.",
       "comment": "Status line on the Meta AI settings page after the user declined or dismissed the Keychain prompt."
     },
     "settings.muse.noLogin": {

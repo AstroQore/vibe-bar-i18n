@@ -4149,7 +4149,7 @@ public enum L10n {
             /// Error on the Meta AI quota card when macOS has not yet let Vibe Bar read the Keychain item the muse CLI saved its login in.
             ///
             /// Key: `quota.muse.keychainAccessNeeded`
-            /// en: "Allow Vibe Bar to read the Muse Code login in Settings → Meta AI, then refresh."
+            /// en: "Vibe Bar is not yet allowed to read the Muse Code login — allow it in Settings → Meta AI, then refresh."
             public static var keychainAccessNeeded: String { L10nSupport.string("quota.muse.keychainAccessNeeded") }
         }
 
@@ -7911,7 +7911,7 @@ public enum L10n {
             /// Status line on the Meta AI settings page after the user declined or dismissed the Keychain prompt.
             ///
             /// Key: `settings.muse.keychainAccessDenied`
-            /// en: "Keychain access was not allowed. Try again and choose Always Allow."
+            /// en: "Keychain access was not allowed — try again and choose Always Allow."
             public static var keychainAccessDenied: String { L10nSupport.string("settings.muse.keychainAccessDenied") }
 
             /// Note on the Meta AI settings page about reaching Meta's API. api.meta.ai and HTTPS_PROXY are literal and stay as is.
