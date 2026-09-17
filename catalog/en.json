@@ -1529,7 +1529,7 @@
       "comment": "Closing line of the welcome step"
     },
     "onboarding.welcome.intro": {
-      "value": "Vibe Bar sits in your menu bar and shows, at a glance, how much of each AI subscription you have left, what your coding agents are spending, and which sessions and skills live on this Mac. It reads the credentials the Codex, Claude Code, Gemini and Grok CLIs already keep here, adds web quotas from your browser's cookies when you ask it to, and never sends any of it anywhere but the provider it came from.",
+      "value": "Vibe Bar sits in your menu bar and shows, at a glance, how much of each AI subscription you have left, what your coding agents are spending, and which sessions and skills live on this Mac. It reads what the Codex, Claude Code, Gemini, Grok, Muse Code, Devin and Mistral Vibe CLIs already keep here, adds web quotas from your browser's cookies when you ask it to, and never sends any of it anywhere but the provider it came from.",
       "comment": "Opening paragraph of the setup assistant"
     },
     "onboarding.welcome.mcp.detail": {
@@ -1541,7 +1541,7 @@
       "comment": "Feature row title"
     },
     "onboarding.welcome.quotas.detail": {
-      "value": "Codex, Claude Code, Gemini, Grok and a shelf of API-key plans, each with its reset countdown.",
+      "value": "Codex, Claude Code, Gemini, Grok, Muse Code, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown.",
       "comment": "Feature row body"
     },
     "onboarding.welcome.quotas.title": {
@@ -2627,7 +2627,7 @@
     },
     "quota.login.mistralVibe": {
       "value": "Sign in at console.mistral.ai in your browser, then import its cookies in Settings → Mistral AI.",
-      "comment": "Hint on the Mistral AI quota card when no Mistral console session has been imported."
+      "comment": "Hint on the Mistral AI quota card when no Mistral AI console session has been imported."
     },
     "quota.muse.keychainAccessNeeded": {
       "value": "Vibe Bar is not yet allowed to read the Muse Code login — allow it in Settings → Meta AI, then refresh.",
@@ -5108,7 +5108,7 @@
       "comment": "Intro paragraph at the top of the Cognition settings page."
     },
     "settings.mistralAIIntro": {
-      "value": "The Mistral AI page tracks Mistral Vibe. The Monthly quota comes from your Mistral console session, imported from a browser signed in to console.mistral.ai; the plan name comes from the Vibe CLI's own cache. Token usage comes from Mistral Vibe's local session logs, priced at Mistral's API rates.",
+      "value": "The Mistral AI page tracks Mistral Vibe. The Monthly quota comes from your Mistral AI console session, imported from a browser signed in to console.mistral.ai; the plan name comes from the Mistral Vibe CLI's own cache. Token usage comes from Mistral Vibe's local session logs, priced at Mistral AI's API rates.",
       "comment": "Intro paragraph at the top of the Mistral AI settings page. 'Monthly' is the quota window's name and stays as is."
     },
     "settings.muse.allowKeychainAccess": {
@@ -5129,7 +5129,7 @@
     },
     "settings.muse.noLogin": {
       "value": "No Muse Code login yet. Run muse login, then refresh.",
-      "comment": "Status line on the Meta AI settings page when ~/.config/muse/auth.json is missing."
+      "comment": "Status line on the Meta AI settings page and the onboarding row when this Mac has no Muse Code CLI login: no login identity, or no token in its macOS Keychain item."
     },
     "settings.devin.noCache": {
       "value": "No Devin plan status cached yet. Run devin once, then refresh.",

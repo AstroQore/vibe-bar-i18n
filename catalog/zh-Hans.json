@@ -1005,7 +1005,7 @@
       "value": "全程约两分钟。此处的每项选择均可稍后在设置中修改，向导亦可在「设置 → 系统」中一键打开。"
     },
     "onboarding.welcome.intro": {
-      "value": "Vibe Bar 常驻菜单栏，可一览各 AI 订阅的剩余量、编码 agent 的支出，以及本机存有哪些会话与 skills。它读取 Codex、Claude Code、Gemini、Grok 等 CLI 已保存在本机的凭据，并在获得授权后从浏览器 cookies 补充网页端额度；所有数据仅发送至其来源厂商。"
+      "value": "Vibe Bar 常驻菜单栏，可一览各 AI 订阅的剩余量、编码 agent 的支出，以及本机存有哪些会话与 skills。它读取 Codex、Claude Code、Gemini、Grok、Muse Code、Devin、Mistral Vibe 等 CLI 已保存在本机的凭据与缓存，并在获得授权后从浏览器 cookies 补充网页端额度；所有数据仅发送至其来源厂商。"
     },
     "onboarding.welcome.mcp.detail": {
       "value": "agent 可通过 home 目录下的 Unix socket 向 Vibe Bar 查询额度与花费。"
@@ -1014,7 +1014,7 @@
       "value": "本地 MCP 服务"
     },
     "onboarding.welcome.quotas.detail": {
-      "value": "Codex、Claude Code、Gemini、Grok，以及一系列 API key 套餐，均附带重置倒计时。"
+      "value": "Codex、Claude Code、Gemini、Grok、Muse Code、Devin、Mistral Vibe，以及一系列 API key 套餐，均附带重置倒计时。"
     },
     "onboarding.welcome.quotas.title": {
       "value": "订阅额度"
@@ -3300,7 +3300,7 @@
       "value": "Cognition 页面追踪 Devin。额度来自 devin CLI 在本机缓存的套餐状态，新鲜程度取决于 Devin 上次运行的时间；token 用量来自 CLI 与 Devin 桌面 app 共用的会话数据库，成本按对应模型的 API 单价折算。"
     },
     "settings.mistralAIIntro": {
-      "value": "Mistral AI 页面追踪 Mistral Vibe。Monthly 额度来自 Mistral 控制台的登录会话，从已登录 console.mistral.ai 的浏览器导入；套餐名来自 Vibe CLI 自己的缓存。token 用量来自 Mistral Vibe 的本地会话日志，成本按 Mistral API 单价折算。"
+      "value": "Mistral AI 页面追踪 Mistral Vibe。Monthly 额度来自 Mistral AI 控制台的登录会话，从已登录 console.mistral.ai 的浏览器导入；套餐名来自 Mistral Vibe CLI 自己的缓存。token 用量来自 Mistral Vibe 的本地会话日志，成本按 Mistral AI 的 API 单价折算。"
     },
     "settings.muse.allowKeychainAccess": {
       "value": "允许 Keychain 访问…"

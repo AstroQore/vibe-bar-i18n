@@ -982,7 +982,7 @@
 "onboarding.welcome.footer" = "全程约两分钟。此处的每项选择均可稍后在设置中修改，向导亦可在「设置 → 系统」中一键打开。";
 
 /* Opening paragraph of the setup assistant */
-"onboarding.welcome.intro" = "Vibe Bar 常驻菜单栏，可一览各 AI 订阅的剩余量、编码 agent 的支出，以及本机存有哪些会话与 skills。它读取 Codex、Claude Code、Gemini、Grok 等 CLI 已保存在本机的凭据，并在获得授权后从浏览器 cookies 补充网页端额度；所有数据仅发送至其来源厂商。";
+"onboarding.welcome.intro" = "Vibe Bar 常驻菜单栏，可一览各 AI 订阅的剩余量、编码 agent 的支出，以及本机存有哪些会话与 skills。它读取 Codex、Claude Code、Gemini、Grok、Muse Code、Devin、Mistral Vibe 等 CLI 已保存在本机的凭据与缓存，并在获得授权后从浏览器 cookies 补充网页端额度；所有数据仅发送至其来源厂商。";
 
 /* Feature row body */
 "onboarding.welcome.mcp.detail" = "agent 可通过 home 目录下的 Unix socket 向 Vibe Bar 查询额度与花费。";
@@ -991,7 +991,7 @@
 "onboarding.welcome.mcp.title" = "本地 MCP 服务";
 
 /* Feature row body */
-"onboarding.welcome.quotas.detail" = "Codex、Claude Code、Gemini、Grok，以及一系列 API key 套餐，均附带重置倒计时。";
+"onboarding.welcome.quotas.detail" = "Codex、Claude Code、Gemini、Grok、Muse Code、Devin、Mistral Vibe，以及一系列 API key 套餐，均附带重置倒计时。";
 
 /* Feature row title */
 "onboarding.welcome.quotas.title" = "订阅额度";
@@ -1728,7 +1728,7 @@
 /* Fallback for a misc provider; provider is a SubProvider name */
 "quota.login.misc" = "在「设置 → 其他厂商」中配置 %@。";
 
-/* Hint on the Mistral AI quota card when no Mistral console session has been imported. */
+/* Hint on the Mistral AI quota card when no Mistral AI console session has been imported. */
 "quota.login.mistralVibe" = "请先在浏览器登录 console.mistral.ai，再到“设置 → Mistral AI”导入 cookie。";
 
 /* Hint on the Meta AI quota card when this Mac has no Muse Code login. `muse login` is the CLI command and stays as is. */
@@ -3418,7 +3418,7 @@
 "settings.misc.workspaceNote" = "仅当账号拥有多个工作区时才需要填写 — 否则 Vibe Bar 使用找到的第一个。";
 
 /* Intro paragraph at the top of the Mistral AI settings page. 'Monthly' is the quota window's name and stays as is. */
-"settings.mistralAIIntro" = "Mistral AI 页面追踪 Mistral Vibe。Monthly 额度来自 Mistral 控制台的登录会话，从已登录 console.mistral.ai 的浏览器导入；套餐名来自 Vibe CLI 自己的缓存。token 用量来自 Mistral Vibe 的本地会话日志，成本按 Mistral API 单价折算。";
+"settings.mistralAIIntro" = "Mistral AI 页面追踪 Mistral Vibe。Monthly 额度来自 Mistral AI 控制台的登录会话，从已登录 console.mistral.ai 的浏览器导入；套餐名来自 Mistral Vibe CLI 自己的缓存。token 用量来自 Mistral Vibe 的本地会话日志，成本按 Mistral AI 的 API 单价折算。";
 
 /* Button on the Meta AI settings page. Clicking it makes macOS ask whether Vibe Bar may read the Muse Code login. */
 "settings.muse.allowKeychainAccess" = "允许 Keychain 访问…";
@@ -3435,7 +3435,7 @@
 /* Note on the Meta AI settings page about reaching Meta's API. api.meta.ai and HTTPS_PROXY are literal and stay as is. */
 "settings.muse.networkNote" = "此 Mac 需要能访问 api.meta.ai。如果你的网络需要代理才能访问，请把代理设为 macOS 系统代理——Vibe Bar 不读取 shell 的 HTTPS_PROXY。";
 
-/* Status line on the Meta AI settings page when ~/.config/muse/auth.json is missing. */
+/* Status line on the Meta AI settings page and the onboarding row when this Mac has no Muse Code CLI login: no login identity, or no token in its macOS Keychain item. */
 "settings.muse.noLogin" = "尚无 Muse Code 登录信息。请运行 muse login，然后刷新。";
 
 /* Provider state: credentials are missing */

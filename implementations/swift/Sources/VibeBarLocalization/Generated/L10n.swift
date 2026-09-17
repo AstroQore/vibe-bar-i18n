@@ -2253,7 +2253,7 @@ public enum L10n {
             /// Opening paragraph of the setup assistant
             ///
             /// Key: `onboarding.welcome.intro`
-            /// en: "Vibe Bar sits in your menu bar and shows, at a glance, how much of each AI subscription you have left, what your coding agents are spending, and which sessions and skills live on this Mac. It reads the credentials the Codex, Claude Code, Gemini and Grok CLIs already keep here, adds web quotas from your browser's cookies when you ask it to, and never sends any of it anywhere but the provider it came from."
+            /// en: "Vibe Bar sits in your menu bar and shows, at a glance, how much of each AI subscription you have left, what your coding agents are spending, and which sessions and skills live on this Mac. It reads what the Codex, Claude Code, Gemini, Grok, Muse Code, Devin and Mistral Vibe CLIs already keep here, adds web quotas from your browser's cookies when you ask it to, and never sends any of it anywhere but the provider it came from."
             public static var intro: String { L10nSupport.string("onboarding.welcome.intro") }
 
             public enum Cost {
@@ -2288,7 +2288,7 @@ public enum L10n {
                 /// Feature row body
                 ///
                 /// Key: `onboarding.welcome.quotas.detail`
-                /// en: "Codex, Claude Code, Gemini, Grok and a shelf of API-key plans, each with its reset countdown."
+                /// en: "Codex, Claude Code, Gemini, Grok, Muse Code, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown."
                 public static var detail: String { L10nSupport.string("onboarding.welcome.quotas.detail") }
 
                 /// Feature row title
@@ -4016,7 +4016,7 @@ public enum L10n {
                 L10nSupport.format("quota.login.misc", provider)
             }
 
-            /// Hint on the Mistral AI quota card when no Mistral console session has been imported.
+            /// Hint on the Mistral AI quota card when no Mistral AI console session has been imported.
             ///
             /// Key: `quota.login.mistralVibe`
             /// en: "Sign in at console.mistral.ai in your browser, then import its cookies in Settings → Mistral AI."
@@ -5174,7 +5174,7 @@ public enum L10n {
         /// Intro paragraph at the top of the Mistral AI settings page. 'Monthly' is the quota window's name and stays as is.
         ///
         /// Key: `settings.mistralAIIntro`
-        /// en: "The Mistral AI page tracks Mistral Vibe. The Monthly quota comes from your Mistral console session, imported from a browser signed in to console.mistral.ai; the plan name comes from the Vibe CLI's own cache. Token usage comes from Mistral Vibe's local session logs, priced at Mistral's API rates."
+        /// en: "The Mistral AI page tracks Mistral Vibe. The Monthly quota comes from your Mistral AI console session, imported from a browser signed in to console.mistral.ai; the plan name comes from the Mistral Vibe CLI's own cache. Token usage comes from Mistral Vibe's local session logs, priced at Mistral AI's API rates."
         public static var mistralAIIntro: String { L10nSupport.string("settings.mistralAIIntro") }
 
         /// Provider state: credentials are missing
@@ -7976,7 +7976,7 @@ public enum L10n {
             /// en: "api.meta.ai must be reachable from this Mac. If your network needs a proxy for it, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY."
             public static var networkNote: String { L10nSupport.string("settings.muse.networkNote") }
 
-            /// Status line on the Meta AI settings page when ~/.config/muse/auth.json is missing.
+            /// Status line on the Meta AI settings page and the onboarding row when this Mac has no Muse Code CLI login: no login identity, or no token in its macOS Keychain item.
             ///
             /// Key: `settings.muse.noLogin`
             /// en: "No Muse Code login yet. Run muse login, then refresh."
