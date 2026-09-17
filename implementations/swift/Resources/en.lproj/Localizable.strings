@@ -273,6 +273,9 @@
 /* Card title: models ordered by spend */
 "cost.modelRanking.title" = "Model Ranking";
 
+/* Shown on the Meta AI page in place of the dollar cost cards once Muse Code sessions have been scanned. 'Usage Stats' is the Workbench page of that name. */
+"cost.muse.unpriced" = "Muse Code is a subscription with no per-token price, so its usage has no cost to show here — token counts are in Usage Stats.";
+
 /* Subtitle on an empty provider cost card */
 "cost.noUsageYet" = "No usage yet";
 

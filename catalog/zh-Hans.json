@@ -164,6 +164,9 @@
     "cost.empty.muse": {
       "value": "尚未找到 Muse Code 会话。"
     },
+    "cost.muse.unpriced": {
+      "value": "Muse Code 为订阅制、没有按 token 计价，因此这里不显示成本，token 用量请到「用量统计」查看。"
+    },
     "cost.fullCharts": {
       "value": "{title} — 完整图表"
     },

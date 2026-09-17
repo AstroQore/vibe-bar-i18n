@@ -110,6 +110,7 @@ export type MessageKey =
   | "cost.modelRanking.allProvidersAllTime"
   | "cost.modelRanking.allTime"
   | "cost.modelRanking.title"
+  | "cost.muse.unpriced"
   | "cost.noUsageYet"
   | "cost.notTracked"
   | "cost.openFullCharts"
@@ -2006,6 +2007,7 @@ export interface MessageParams {
   "cost.modelRanking.allProvidersAllTime": undefined;
   "cost.modelRanking.allTime": undefined;
   "cost.modelRanking.title": undefined;
+  "cost.muse.unpriced": undefined;
   "cost.noUsageYet": undefined;
   "cost.notTracked": { "provider": string };
   "cost.openFullCharts": undefined;
@@ -3903,6 +3905,7 @@ export const messages: {
     "cost.modelRanking.allProvidersAllTime": "All providers · all time",
     "cost.modelRanking.allTime": "All time",
     "cost.modelRanking.title": "Model Ranking",
+    "cost.muse.unpriced": "Muse Code is a subscription with no per-token price, so its usage has no cost to show here — token counts are in Usage Stats.",
     "cost.noUsageYet": "No usage yet",
     "cost.notTracked": "Cost history isn't tracked for {provider}.",
     "cost.openFullCharts": "Open full charts",
@@ -5795,6 +5798,7 @@ export const messages: {
     "cost.modelRanking.allProvidersAllTime": "全部厂商 · 全部时间",
     "cost.modelRanking.allTime": "全部时间",
     "cost.modelRanking.title": "模型排行",
+    "cost.muse.unpriced": "Muse Code 为订阅制、没有按 token 计价，因此这里不显示成本，token 用量请到「用量统计」查看。",
     "cost.noUsageYet": "暂无用量",
     "cost.notTracked": "{provider} 不记录花费历史。",
     "cost.openFullCharts": "打开完整图表",

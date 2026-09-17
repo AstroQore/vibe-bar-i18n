@@ -709,6 +709,14 @@ public enum L10n {
             public static var title: String { L10nSupport.string("cost.modelRanking.title") }
         }
 
+        public enum Muse {
+            /// Shown on the Meta AI page in place of the dollar cost cards once Muse Code sessions have been scanned. 'Usage Stats' is the Workbench page of that name.
+            ///
+            /// Key: `cost.muse.unpriced`
+            /// en: "Muse Code is a subscription with no per-token price, so its usage has no cost to show here — token counts are in Usage Stats."
+            public static var unpriced: String { L10nSupport.string("cost.muse.unpriced") }
+        }
+
         public enum Provider {
             /// Cost card title on a provider page; provider is a SubProvider name and is never translated
             ///
@@ -12743,6 +12751,7 @@ enum L10nCatalogFacts {
         "cost.modelRanking.allProvidersAllTime",
         "cost.modelRanking.allTime",
         "cost.modelRanking.title",
+        "cost.muse.unpriced",
         "cost.noUsageYet",
         "cost.notTracked",
         "cost.openFullCharts",
@@ -14693,6 +14702,7 @@ enum L10nCatalogFacts {
         "cost.modelRanking.allProvidersAllTime": 0,
         "cost.modelRanking.allTime": 0,
         "cost.modelRanking.title": 0,
+        "cost.muse.unpriced": 0,
         "cost.noUsageYet": 0,
         "cost.notTracked": 1,
         "cost.openFullCharts": 0,

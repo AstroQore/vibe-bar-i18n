@@ -270,6 +270,10 @@
       "value": "No Muse Code sessions found yet.",
       "comment": "Empty state of the Meta AI cost card before any Muse Code session log has been scanned."
     },
+    "cost.muse.unpriced": {
+      "value": "Muse Code is a subscription with no per-token price, so its usage has no cost to show here — token counts are in Usage Stats.",
+      "comment": "Shown on the Meta AI page in place of the dollar cost cards once Muse Code sessions have been scanned. 'Usage Stats' is the Workbench page of that name."
+    },
     "cost.fullCharts": {
       "value": "{title} — Full Charts",
       "comment": "Title of the expanded cost popover; title is the card's own title",
