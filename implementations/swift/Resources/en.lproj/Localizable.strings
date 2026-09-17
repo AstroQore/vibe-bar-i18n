@@ -144,6 +144,9 @@
 /* Empty cost history */
 "cost.empty.grok" = "No Grok session usage found yet.";
 
+/* Empty state of the Meta AI cost card before any Muse Code session log has been scanned. */
+"cost.empty.muse" = "No Muse Code sessions found yet.";
+
 /* Title of the expanded cost popover; title is the card's own title */
 "cost.fullCharts" = "%@ — Full Charts";
 
@@ -948,6 +951,9 @@
 /* Where this provider's quota can come from */
 "onboarding.subscriptions.productLine.grok" = "Grok CLI · grok.com · Cursor";
 
+/* Product line under the Meta AI row of the onboarding subscriptions step. */
+"onboarding.subscriptions.productLine.muse" = "Muse Code CLI";
+
 /* Per-provider toggle in the setup assistant */
 "onboarding.subscriptions.showInOverview" = "Show in Overview";
 
@@ -1707,6 +1713,9 @@
 /* Fallback for a misc provider; provider is a SubProvider name */
 "quota.login.misc" = "Configure %@ in Settings → Misc Providers.";
 
+/* Hint on the Meta AI quota card when this Mac has no Muse Code login. `muse login` is the CLI command and stays as is. */
+"quota.login.muse" = "Run muse login, then refresh.";
+
 /* Mini window forecast line while the forecast is still learning the usage pattern */
 "quota.mini.forecastLearning" = "learning · %lld%% left";
 
@@ -1763,6 +1772,9 @@
 
 /* Caption saying the bar shows what has been spent */
 "quota.mode.used" = "used";
+
+/* Error on the Meta AI quota card when macOS has not yet let Vibe Bar read the Keychain item the muse CLI saved its login in. */
+"quota.muse.keychainAccessNeeded" = "Allow Vibe Bar to read the Muse Code login in Settings → Meta AI, then refresh.";
 
 /* Pace summary when usage is running ahead of the linear expectation */
 "quota.pace.deficit" = "%lld%% in deficit";
@@ -3024,6 +3036,9 @@
 /* Shown when the watchdog is not running */
 "settings.menuBarHealthUnavailable" = "The menu bar health monitor is not attached in this process.";
 
+/* Intro paragraph at the top of the Meta AI settings page. */
+"settings.metaAIIntro" = "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, which carry no per-token price.";
+
 /* Mini window free-canvas editor: back. */
 "settings.miniCanvas.back" = "Send backward";
 
@@ -3378,6 +3393,24 @@
 /* Caption under the workspace field */
 "settings.misc.workspaceNote" = "Only needed when the account owns more than one workspace — otherwise Vibe Bar uses the first one it finds.";
 
+/* Button on the Meta AI settings page. Clicking it makes macOS ask whether Vibe Bar may read the Muse Code login. */
+"settings.muse.allowKeychainAccess" = "Allow Keychain Access…";
+
+/* Explanation under the Keychain access button on the Meta AI settings page. */
+"settings.muse.allowKeychainAccessHelp" = "macOS asks once whether Vibe Bar may read the login the muse CLI saved. Choose Always Allow so background refreshes can read it without asking again.";
+
+/* Status line on the Meta AI settings page once Keychain access works without a prompt. */
+"settings.muse.keychainAccessAllowed" = "Vibe Bar can read the Muse Code login.";
+
+/* Status line on the Meta AI settings page after the user declined or dismissed the Keychain prompt. */
+"settings.muse.keychainAccessDenied" = "Keychain access was not allowed. Try again and choose Always Allow.";
+
+/* Note on the Meta AI settings page about reaching Meta's API. api.meta.ai and HTTPS_PROXY are literal and stay as is. */
+"settings.muse.networkNote" = "api.meta.ai must be reachable from this Mac. If your network needs a proxy for it, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY.";
+
+/* Status line on the Meta AI settings page when ~/.config/muse/auth.json is missing. */
+"settings.muse.noLogin" = "No Muse Code login yet. Run muse login, then refresh.";
+
 /* Provider state: credentials are missing */
 "settings.needsSetup" = "Needs setup";
 
@@ -3707,6 +3740,9 @@
 
 /* Connection-health row: the Grok CLI's credential file. A path, never translated. */
 "settings.route.grokAuthFile" = "~/.grok/auth.json";
+
+/* Route-health row name on the Meta AI settings page: the login the muse CLI keeps in the macOS Keychain. */
+"settings.route.museKeychain" = "Muse Code login (Keychain)";
 
 /* Connection-health row: the OAuth credential path */
 "settings.route.oauth" = "OAuth";

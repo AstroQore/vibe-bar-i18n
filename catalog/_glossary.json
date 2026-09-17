@@ -18,6 +18,10 @@
       "kind": "company"
     },
     {
+      "term": "Meta AI",
+      "kind": "company"
+    },
+    {
       "term": "ByteDance",
       "kind": "company"
     },
@@ -82,6 +86,11 @@
       "term": "Grok Bot",
       "kind": "subProvider",
       "note": "Deliberately listed on both axes: the quota SubProvider under SpaceXAI (Cursor's grok_bot_weekly bucket) and, separately, the harness that spends it."
+    },
+    {
+      "term": "Muse Code",
+      "kind": "subProvider",
+      "note": "Deliberately listed on both axes: the quota SubProvider under Meta AI and, separately, the harness that spends it."
     },
     {
       "term": "Bailian",
@@ -187,6 +196,11 @@
       "term": "Grok Bot",
       "kind": "harness",
       "note": "The usage-axis entry. See the subProvider entry of the same name — one product, two axes, per AGENTS.md § 7.1 of the native app."
+    },
+    {
+      "term": "Muse Code",
+      "kind": "harness",
+      "note": "The usage-axis entry. See the subProvider entry of the same name."
     },
     {
       "term": "Cursor Agent",

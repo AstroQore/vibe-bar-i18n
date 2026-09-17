@@ -144,6 +144,9 @@
 /* Empty cost history */
 "cost.empty.grok" = "暂未发现 Grok 会话的用量。";
 
+/* Empty state of the Meta AI cost card before any Muse Code session log has been scanned. */
+"cost.empty.muse" = "尚未找到 Muse Code 会话。";
+
 /* Title of the expanded cost popover; title is the card's own title */
 "cost.fullCharts" = "%@ — 完整图表";
 
@@ -948,6 +951,9 @@
 /* Where this provider's quota can come from */
 "onboarding.subscriptions.productLine.grok" = "Grok CLI · grok.com · Cursor";
 
+/* Product line under the Meta AI row of the onboarding subscriptions step. */
+"onboarding.subscriptions.productLine.muse" = "Muse Code CLI";
+
 /* Per-provider toggle in the setup assistant */
 "onboarding.subscriptions.showInOverview" = "在总览中显示";
 
@@ -1707,6 +1713,9 @@
 /* Fallback for a misc provider; provider is a SubProvider name */
 "quota.login.misc" = "在「设置 → 其他厂商」中配置 %@。";
 
+/* Hint on the Meta AI quota card when this Mac has no Muse Code login. `muse login` is the CLI command and stays as is. */
+"quota.login.muse" = "运行 muse login，然后刷新。";
+
 /* Mini window forecast line while the forecast is still learning the usage pattern */
 "quota.mini.forecastLearning" = "学习中 · 剩余 %lld%%";
 
@@ -1763,6 +1772,9 @@
 
 /* Caption saying the bar shows what has been spent */
 "quota.mode.used" = "已用";
+
+/* Error on the Meta AI quota card when macOS has not yet let Vibe Bar read the Keychain item the muse CLI saved its login in. */
+"quota.muse.keychainAccessNeeded" = "请在「设置 → Meta AI」中允许 Vibe Bar 读取 Muse Code 登录信息，然后刷新。";
 
 /* Pace summary when usage is running ahead of the linear expectation */
 "quota.pace.deficit" = "超支 %lld%%";
@@ -3024,6 +3036,9 @@
 /* Shown when the watchdog is not running */
 "settings.menuBarHealthUnavailable" = "本进程未接入菜单栏健康监控。";
 
+/* Intro paragraph at the top of the Meta AI settings page. */
+"settings.metaAIIntro" = "Meta AI 页面追踪 Muse Code。额度来自 `muse login` 保存在 macOS Keychain 中的登录信息；token 用量来自 Muse Code 的本地会话日志，没有按 token 计价。";
+
 /* Mini window free-canvas editor: back. */
 "settings.miniCanvas.back" = "下移一层";
 
@@ -3378,6 +3393,24 @@
 /* Caption under the workspace field */
 "settings.misc.workspaceNote" = "仅当账号拥有多个工作区时才需要填写 — 否则 Vibe Bar 使用找到的第一个。";
 
+/* Button on the Meta AI settings page. Clicking it makes macOS ask whether Vibe Bar may read the Muse Code login. */
+"settings.muse.allowKeychainAccess" = "允许 Keychain 访问…";
+
+/* Explanation under the Keychain access button on the Meta AI settings page. */
+"settings.muse.allowKeychainAccessHelp" = "macOS 会询问一次是否允许 Vibe Bar 读取 muse CLI 保存的登录信息。请选择「始终允许」，之后后台刷新就无需再次询问。";
+
+/* Status line on the Meta AI settings page once Keychain access works without a prompt. */
+"settings.muse.keychainAccessAllowed" = "Vibe Bar 已可读取 Muse Code 登录信息。";
+
+/* Status line on the Meta AI settings page after the user declined or dismissed the Keychain prompt. */
+"settings.muse.keychainAccessDenied" = "未获得 Keychain 访问权限。请重试并选择「始终允许」。";
+
+/* Note on the Meta AI settings page about reaching Meta's API. api.meta.ai and HTTPS_PROXY are literal and stay as is. */
+"settings.muse.networkNote" = "此 Mac 需要能访问 api.meta.ai。如果你的网络需要代理才能访问，请把代理设为 macOS 系统代理——Vibe Bar 不读取 shell 的 HTTPS_PROXY。";
+
+/* Status line on the Meta AI settings page when ~/.config/muse/auth.json is missing. */
+"settings.muse.noLogin" = "尚无 Muse Code 登录信息。请运行 muse login，然后刷新。";
+
 /* Provider state: credentials are missing */
 "settings.needsSetup" = "需配置";
 
@@ -3707,6 +3740,9 @@
 
 /* Connection-health row: the Grok CLI's credential file. A path, never translated. */
 "settings.route.grokAuthFile" = "~/.grok/auth.json";
+
+/* Route-health row name on the Meta AI settings page: the login the muse CLI keeps in the macOS Keychain. */
+"settings.route.museKeychain" = "Muse Code 登录信息（Keychain）";
 
 /* Connection-health row: the OAuth credential path */
 "settings.route.oauth" = "OAuth";

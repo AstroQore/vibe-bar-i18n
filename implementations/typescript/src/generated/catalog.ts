@@ -67,6 +67,7 @@ export type MessageKey =
   | "cost.empty.gemini"
   | "cost.empty.genericCLI"
   | "cost.empty.grok"
+  | "cost.empty.muse"
   | "cost.fullCharts"
   | "cost.gemini.emptyDetail"
   | "cost.gemini.emptyTitle"
@@ -337,6 +338,7 @@ export type MessageKey =
   | "onboarding.subscriptions.productLine.codex"
   | "onboarding.subscriptions.productLine.gemini"
   | "onboarding.subscriptions.productLine.grok"
+  | "onboarding.subscriptions.productLine.muse"
   | "onboarding.subscriptions.showInOverview"
   | "onboarding.title"
   | "onboarding.welcome.cost.detail"
@@ -594,6 +596,7 @@ export type MessageKey =
   | "quota.login.cursor"
   | "quota.login.grok"
   | "quota.login.misc"
+  | "quota.login.muse"
   | "quota.mini.forecastLearning"
   | "quota.mini.forecastLearningCompact"
   | "quota.mini.forecastLeftCompact"
@@ -614,6 +617,7 @@ export type MessageKey =
   | "quota.misc.setUpInSettings"
   | "quota.mode.remaining"
   | "quota.mode.used"
+  | "quota.muse.keychainAccessNeeded"
   | "quota.pace.deficit"
   | "quota.pace.deficitShort"
   | "quota.pace.lastsUntilReset"
@@ -1045,6 +1049,7 @@ export type MessageKey =
   | "settings.mcp.title"
   | "settings.mcp.whatAgentsMayDo"
   | "settings.menuBarHealthUnavailable"
+  | "settings.metaAIIntro"
   | "settings.miniCanvas.back"
   | "settings.miniCanvas.canvas"
   | "settings.miniCanvas.column"
@@ -1163,6 +1168,12 @@ export type MessageKey =
   | "settings.misc.variant"
   | "settings.misc.waiting"
   | "settings.misc.workspaceNote"
+  | "settings.muse.allowKeychainAccess"
+  | "settings.muse.allowKeychainAccessHelp"
+  | "settings.muse.keychainAccessAllowed"
+  | "settings.muse.keychainAccessDenied"
+  | "settings.muse.networkNote"
+  | "settings.muse.noLogin"
   | "settings.needsSetup"
   | "settings.notChecked"
   | "settings.notCheckedYet"
@@ -1273,6 +1284,7 @@ export type MessageKey =
   | "settings.route.browserCookies"
   | "settings.route.cli"
   | "settings.route.grokAuthFile"
+  | "settings.route.museKeychain"
   | "settings.route.oauth"
   | "settings.route.webViewCookies"
   | "settings.routeHealth.agyAvailable"
@@ -1951,6 +1963,7 @@ export interface MessageParams {
   "cost.empty.gemini": undefined;
   "cost.empty.genericCLI": { "provider": string };
   "cost.empty.grok": undefined;
+  "cost.empty.muse": undefined;
   "cost.fullCharts": { "title": string };
   "cost.gemini.emptyDetail": undefined;
   "cost.gemini.emptyTitle": undefined;
@@ -2221,6 +2234,7 @@ export interface MessageParams {
   "onboarding.subscriptions.productLine.codex": undefined;
   "onboarding.subscriptions.productLine.gemini": undefined;
   "onboarding.subscriptions.productLine.grok": undefined;
+  "onboarding.subscriptions.productLine.muse": undefined;
   "onboarding.subscriptions.showInOverview": undefined;
   "onboarding.title": undefined;
   "onboarding.welcome.cost.detail": undefined;
@@ -2478,6 +2492,7 @@ export interface MessageParams {
   "quota.login.cursor": undefined;
   "quota.login.grok": undefined;
   "quota.login.misc": { "provider": string };
+  "quota.login.muse": undefined;
   "quota.mini.forecastLearning": { "percent": number };
   "quota.mini.forecastLearningCompact": { "percent": number };
   "quota.mini.forecastLeftCompact": { "percent": number };
@@ -2498,6 +2513,7 @@ export interface MessageParams {
   "quota.misc.setUpInSettings": undefined;
   "quota.mode.remaining": undefined;
   "quota.mode.used": undefined;
+  "quota.muse.keychainAccessNeeded": undefined;
   "quota.pace.deficit": { "percent": number };
   "quota.pace.deficitShort": { "percent": number };
   "quota.pace.lastsUntilReset": undefined;
@@ -2929,6 +2945,7 @@ export interface MessageParams {
   "settings.mcp.title": undefined;
   "settings.mcp.whatAgentsMayDo": undefined;
   "settings.menuBarHealthUnavailable": undefined;
+  "settings.metaAIIntro": undefined;
   "settings.miniCanvas.back": undefined;
   "settings.miniCanvas.canvas": undefined;
   "settings.miniCanvas.column": undefined;
@@ -3047,6 +3064,12 @@ export interface MessageParams {
   "settings.misc.variant": undefined;
   "settings.misc.waiting": undefined;
   "settings.misc.workspaceNote": undefined;
+  "settings.muse.allowKeychainAccess": undefined;
+  "settings.muse.allowKeychainAccessHelp": undefined;
+  "settings.muse.keychainAccessAllowed": undefined;
+  "settings.muse.keychainAccessDenied": undefined;
+  "settings.muse.networkNote": undefined;
+  "settings.muse.noLogin": undefined;
   "settings.needsSetup": undefined;
   "settings.notChecked": undefined;
   "settings.notCheckedYet": undefined;
@@ -3157,6 +3180,7 @@ export interface MessageParams {
   "settings.route.browserCookies": undefined;
   "settings.route.cli": undefined;
   "settings.route.grokAuthFile": undefined;
+  "settings.route.museKeychain": undefined;
   "settings.route.oauth": undefined;
   "settings.route.webViewCookies": undefined;
   "settings.routeHealth.agyAvailable": undefined;
@@ -3836,6 +3860,7 @@ export const messages: {
     "cost.empty.gemini": "No Gemini CLI or chat-history usage found yet.",
     "cost.empty.genericCLI": "No {provider} CLI sessions found yet.",
     "cost.empty.grok": "No Grok session usage found yet.",
+    "cost.empty.muse": "No Muse Code sessions found yet.",
     "cost.fullCharts": "{title} — Full Charts",
     "cost.gemini.emptyDetail": "Vibe Bar reads live AntiGravity quota from the desktop app when available, then falls back to the installed agy CLI. Cached values are marked stale when neither local source can refresh them.",
     "cost.gemini.emptyTitle": "No Gemini or AntiGravity usage found yet.",
@@ -4106,6 +4131,7 @@ export const messages: {
     "onboarding.subscriptions.productLine.codex": "Codex CLI · ChatGPT web",
     "onboarding.subscriptions.productLine.gemini": "Gemini web · AntiGravity",
     "onboarding.subscriptions.productLine.grok": "Grok CLI · grok.com · Cursor",
+    "onboarding.subscriptions.productLine.muse": "Muse Code CLI",
     "onboarding.subscriptions.showInOverview": "Show in Overview",
     "onboarding.title": "Setup",
     "onboarding.welcome.cost.detail": "Priced locally from the agents' own session logs against a merged model price catalog.",
@@ -4363,6 +4389,7 @@ export const messages: {
     "quota.login.cursor": "Sign in to Cursor.app or import cursor.com cookies, then refresh.",
     "quota.login.grok": "Run grok login or import grok.com cookies, then refresh.",
     "quota.login.misc": "Configure {provider} in Settings → Misc Providers.",
+    "quota.login.muse": "Run muse login, then refresh.",
     "quota.mini.forecastLearning": "learning · {percent}% left",
     "quota.mini.forecastLearningCompact": "~{percent}% left",
     "quota.mini.forecastLeftCompact": "left {percent}%",
@@ -4383,6 +4410,7 @@ export const messages: {
     "quota.misc.setUpInSettings": "Set up in Settings",
     "quota.mode.remaining": "remaining",
     "quota.mode.used": "used",
+    "quota.muse.keychainAccessNeeded": "Allow Vibe Bar to read the Muse Code login in Settings → Meta AI, then refresh.",
     "quota.pace.deficit": "{percent}% in deficit",
     "quota.pace.deficitShort": "{percent}% deficit",
     "quota.pace.lastsUntilReset": "Lasts until reset",
@@ -4814,6 +4842,7 @@ export const messages: {
     "settings.mcp.title": "MCP Server",
     "settings.mcp.whatAgentsMayDo": "What agents may do",
     "settings.menuBarHealthUnavailable": "The menu bar health monitor is not attached in this process.",
+    "settings.metaAIIntro": "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, which carry no per-token price.",
     "settings.miniCanvas.back": "Send backward",
     "settings.miniCanvas.canvas": "Canvas",
     "settings.miniCanvas.column": "Column",
@@ -4932,6 +4961,12 @@ export const messages: {
     "settings.misc.variant": "Variant",
     "settings.misc.waiting": "Waiting...",
     "settings.misc.workspaceNote": "Only needed when the account owns more than one workspace — otherwise Vibe Bar uses the first one it finds.",
+    "settings.muse.allowKeychainAccess": "Allow Keychain Access…",
+    "settings.muse.allowKeychainAccessHelp": "macOS asks once whether Vibe Bar may read the login the muse CLI saved. Choose Always Allow so background refreshes can read it without asking again.",
+    "settings.muse.keychainAccessAllowed": "Vibe Bar can read the Muse Code login.",
+    "settings.muse.keychainAccessDenied": "Keychain access was not allowed. Try again and choose Always Allow.",
+    "settings.muse.networkNote": "api.meta.ai must be reachable from this Mac. If your network needs a proxy for it, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY.",
+    "settings.muse.noLogin": "No Muse Code login yet. Run muse login, then refresh.",
     "settings.needsSetup": "Needs setup",
     "settings.notChecked": "Not checked",
     "settings.notCheckedYet": "Not checked. Nothing is fetched until you ask.",
@@ -5042,6 +5077,7 @@ export const messages: {
     "settings.route.browserCookies": "Chrome/Safari cookies",
     "settings.route.cli": "CLI",
     "settings.route.grokAuthFile": "~/.grok/auth.json",
+    "settings.route.museKeychain": "Muse Code login (Keychain)",
     "settings.route.oauth": "OAuth",
     "settings.route.webViewCookies": "WebView cookies",
     "settings.routeHealth.agyAvailable": "agy CLI available",
@@ -5716,6 +5752,7 @@ export const messages: {
     "cost.empty.gemini": "暂未发现 Gemini CLI 或聊天历史的用量。",
     "cost.empty.genericCLI": "暂未发现 {provider} CLI 会话。",
     "cost.empty.grok": "暂未发现 Grok 会话的用量。",
+    "cost.empty.muse": "尚未找到 Muse Code 会话。",
     "cost.fullCharts": "{title} — 完整图表",
     "cost.gemini.emptyDetail": "Vibe Bar 会优先从 AntiGravity 桌面端读取实时额度，其次回退到本机安装的 agy CLI。两个本地来源均无法刷新时，缓存值将标记为已过期。",
     "cost.gemini.emptyTitle": "暂未发现 Gemini 或 AntiGravity 的用量。",
@@ -5986,6 +6023,7 @@ export const messages: {
     "onboarding.subscriptions.productLine.codex": "Codex CLI · ChatGPT 网页",
     "onboarding.subscriptions.productLine.gemini": "Gemini 网页 · AntiGravity",
     "onboarding.subscriptions.productLine.grok": "Grok CLI · grok.com · Cursor",
+    "onboarding.subscriptions.productLine.muse": "Muse Code CLI",
     "onboarding.subscriptions.showInOverview": "在总览中显示",
     "onboarding.title": "设置向导",
     "onboarding.welcome.cost.detail": "完全在本机按 agent 自己的会话日志计价，对照合并后的模型价目表。",
@@ -6243,6 +6281,7 @@ export const messages: {
     "quota.login.cursor": "登录 Cursor.app，或导入 cursor.com 的 cookies，然后刷新。",
     "quota.login.grok": "运行 grok login，或导入 grok.com 的 cookies，然后刷新。",
     "quota.login.misc": "在「设置 → 其他厂商」中配置 {provider}。",
+    "quota.login.muse": "运行 muse login，然后刷新。",
     "quota.mini.forecastLearning": "学习中 · 剩余 {percent}%",
     "quota.mini.forecastLearningCompact": "约剩余 {percent}%",
     "quota.mini.forecastLeftCompact": "剩余 {percent}%",
@@ -6263,6 +6302,7 @@ export const messages: {
     "quota.misc.setUpInSettings": "在设置中配置",
     "quota.mode.remaining": "剩余",
     "quota.mode.used": "已用",
+    "quota.muse.keychainAccessNeeded": "请在「设置 → Meta AI」中允许 Vibe Bar 读取 Muse Code 登录信息，然后刷新。",
     "quota.pace.deficit": "超支 {percent}%",
     "quota.pace.deficitShort": "超支 {percent}%",
     "quota.pace.lastsUntilReset": "可用到重置",
@@ -6694,6 +6734,7 @@ export const messages: {
     "settings.mcp.title": "MCP 服务",
     "settings.mcp.whatAgentsMayDo": "agent 的权限范围",
     "settings.menuBarHealthUnavailable": "本进程未接入菜单栏健康监控。",
+    "settings.metaAIIntro": "Meta AI 页面追踪 Muse Code。额度来自 `muse login` 保存在 macOS Keychain 中的登录信息；token 用量来自 Muse Code 的本地会话日志，没有按 token 计价。",
     "settings.miniCanvas.back": "下移一层",
     "settings.miniCanvas.canvas": "画布",
     "settings.miniCanvas.column": "列",
@@ -6812,6 +6853,12 @@ export const messages: {
     "settings.misc.variant": "变体",
     "settings.misc.waiting": "等待中…",
     "settings.misc.workspaceNote": "仅当账号拥有多个工作区时才需要填写 — 否则 Vibe Bar 使用找到的第一个。",
+    "settings.muse.allowKeychainAccess": "允许 Keychain 访问…",
+    "settings.muse.allowKeychainAccessHelp": "macOS 会询问一次是否允许 Vibe Bar 读取 muse CLI 保存的登录信息。请选择「始终允许」，之后后台刷新就无需再次询问。",
+    "settings.muse.keychainAccessAllowed": "Vibe Bar 已可读取 Muse Code 登录信息。",
+    "settings.muse.keychainAccessDenied": "未获得 Keychain 访问权限。请重试并选择「始终允许」。",
+    "settings.muse.networkNote": "此 Mac 需要能访问 api.meta.ai。如果你的网络需要代理才能访问，请把代理设为 macOS 系统代理——Vibe Bar 不读取 shell 的 HTTPS_PROXY。",
+    "settings.muse.noLogin": "尚无 Muse Code 登录信息。请运行 muse login，然后刷新。",
     "settings.needsSetup": "需配置",
     "settings.notChecked": "未检查",
     "settings.notCheckedYet": "尚未检查。在主动发起前不会请求任何内容。",
@@ -6922,6 +6969,7 @@ export const messages: {
     "settings.route.browserCookies": "Chrome/Safari cookies",
     "settings.route.cli": "CLI",
     "settings.route.grokAuthFile": "~/.grok/auth.json",
+    "settings.route.museKeychain": "Muse Code 登录信息（Keychain）",
     "settings.route.oauth": "OAuth",
     "settings.route.webViewCookies": "WebView cookies",
     "settings.routeHealth.agyAvailable": "agy CLI 可用",

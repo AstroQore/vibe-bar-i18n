@@ -266,6 +266,10 @@
       "value": "No Grok session usage found yet.",
       "comment": "Empty cost history"
     },
+    "cost.empty.muse": {
+      "value": "No Muse Code sessions found yet.",
+      "comment": "Empty state of the Meta AI cost card before any Muse Code session log has been scanned."
+    },
     "cost.fullCharts": {
       "value": "{title} — Full Charts",
       "comment": "Title of the expanded cost popover; title is the card's own title",
@@ -1484,6 +1488,10 @@
       "value": "Grok CLI · grok.com · Cursor",
       "comment": "Where this provider's quota can come from"
     },
+    "onboarding.subscriptions.productLine.muse": {
+      "value": "Muse Code CLI",
+      "comment": "Product line under the Meta AI row of the onboarding subscriptions step."
+    },
     "onboarding.subscriptions.showInOverview": {
       "value": "Show in Overview",
       "comment": "Per-provider toggle in the setup assistant"
@@ -2592,6 +2600,14 @@
     "quota.login.grok": {
       "value": "Run grok login or import grok.com cookies, then refresh.",
       "comment": "What to do when no credential is stored"
+    },
+    "quota.login.muse": {
+      "value": "Run muse login, then refresh.",
+      "comment": "Hint on the Meta AI quota card when this Mac has no Muse Code login. `muse login` is the CLI command and stays as is."
+    },
+    "quota.muse.keychainAccessNeeded": {
+      "value": "Allow Vibe Bar to read the Muse Code login in Settings → Meta AI, then refresh.",
+      "comment": "Error on the Meta AI quota card when macOS has not yet let Vibe Bar read the Keychain item the muse CLI saved its login in."
     },
     "quota.login.misc": {
       "value": "Configure {provider} in Settings → Misc Providers.",
@@ -4907,6 +4923,10 @@
       "value": "~/.grok/auth.json",
       "comment": "Connection-health row: the Grok CLI's credential file. A path, never translated."
     },
+    "settings.route.museKeychain": {
+      "value": "Muse Code login (Keychain)",
+      "comment": "Route-health row name on the Meta AI settings page: the login the muse CLI keeps in the macOS Keychain."
+    },
     "settings.route.oauth": {
       "value": "OAuth",
       "comment": "Connection-health row: the OAuth credential path"
@@ -5050,6 +5070,34 @@
     "settings.spaceXAIIntro": {
       "value": "The SpaceXAI page combines Grok with Cursor. Grok reads `~/.grok/auth.json` or grok.com cookies; Cursor reads Cursor.app first, then cursor.com cookie slots. Grok Bot contributes quota, plus read-only sessions from its local cache — its cloud runs still add no token/cost rows.",
       "comment": "Explanation on the SpaceXAI settings page"
+    },
+    "settings.metaAIIntro": {
+      "value": "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, which carry no per-token price.",
+      "comment": "Intro paragraph at the top of the Meta AI settings page."
+    },
+    "settings.muse.allowKeychainAccess": {
+      "value": "Allow Keychain Access…",
+      "comment": "Button on the Meta AI settings page. Clicking it makes macOS ask whether Vibe Bar may read the Muse Code login."
+    },
+    "settings.muse.allowKeychainAccessHelp": {
+      "value": "macOS asks once whether Vibe Bar may read the login the muse CLI saved. Choose Always Allow so background refreshes can read it without asking again.",
+      "comment": "Explanation under the Keychain access button on the Meta AI settings page."
+    },
+    "settings.muse.keychainAccessAllowed": {
+      "value": "Vibe Bar can read the Muse Code login.",
+      "comment": "Status line on the Meta AI settings page once Keychain access works without a prompt."
+    },
+    "settings.muse.keychainAccessDenied": {
+      "value": "Keychain access was not allowed. Try again and choose Always Allow.",
+      "comment": "Status line on the Meta AI settings page after the user declined or dismissed the Keychain prompt."
+    },
+    "settings.muse.noLogin": {
+      "value": "No Muse Code login yet. Run muse login, then refresh.",
+      "comment": "Status line on the Meta AI settings page when ~/.config/muse/auth.json is missing."
+    },
+    "settings.muse.networkNote": {
+      "value": "api.meta.ai must be reachable from this Mac. If your network needs a proxy for it, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY.",
+      "comment": "Note on the Meta AI settings page about reaching Meta's API. api.meta.ai and HTTPS_PROXY are literal and stay as is."
     },
     "settings.subscriptionNameFormat": {
       "value": "Subscription name format",

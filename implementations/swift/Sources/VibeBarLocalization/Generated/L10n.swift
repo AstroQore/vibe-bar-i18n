@@ -427,6 +427,12 @@ public enum L10n {
             /// Key: `cost.empty.grok`
             /// en: "No Grok session usage found yet."
             public static var grok: String { L10nSupport.string("cost.empty.grok") }
+
+            /// Empty state of the Meta AI cost card before any Muse Code session log has been scanned.
+            ///
+            /// Key: `cost.empty.muse`
+            /// en: "No Muse Code sessions found yet."
+            public static var muse: String { L10nSupport.string("cost.empty.muse") }
         }
 
         public enum Gemini {
@@ -2204,6 +2210,12 @@ public enum L10n {
                 /// Key: `onboarding.subscriptions.productLine.grok`
                 /// en: "Grok CLI · grok.com · Cursor"
                 public static var grok: String { L10nSupport.string("onboarding.subscriptions.productLine.grok") }
+
+                /// Product line under the Meta AI row of the onboarding subscriptions step.
+                ///
+                /// Key: `onboarding.subscriptions.productLine.muse`
+                /// en: "Muse Code CLI"
+                public static var muse: String { L10nSupport.string("onboarding.subscriptions.productLine.muse") }
             }
         }
 
@@ -3973,6 +3985,12 @@ public enum L10n {
             public static func misc(provider: String) -> String {
                 L10nSupport.format("quota.login.misc", provider)
             }
+
+            /// Hint on the Meta AI quota card when this Mac has no Muse Code login. `muse login` is the CLI command and stays as is.
+            ///
+            /// Key: `quota.login.muse`
+            /// en: "Run muse login, then refresh."
+            public static var muse: String { L10nSupport.string("quota.login.muse") }
         }
 
         public enum Mini {
@@ -4125,6 +4143,14 @@ public enum L10n {
             /// Key: `quota.mode.used`
             /// en: "used"
             public static var used: String { L10nSupport.string("quota.mode.used") }
+        }
+
+        public enum Muse {
+            /// Error on the Meta AI quota card when macOS has not yet let Vibe Bar read the Keychain item the muse CLI saved its login in.
+            ///
+            /// Key: `quota.muse.keychainAccessNeeded`
+            /// en: "Allow Vibe Bar to read the Muse Code login in Settings → Meta AI, then refresh."
+            public static var keychainAccessNeeded: String { L10nSupport.string("quota.muse.keychainAccessNeeded") }
         }
 
         public enum Pace {
@@ -5096,6 +5122,12 @@ public enum L10n {
         /// Key: `settings.menuBarHealthUnavailable`
         /// en: "The menu bar health monitor is not attached in this process."
         public static var menuBarHealthUnavailable: String { L10nSupport.string("settings.menuBarHealthUnavailable") }
+
+        /// Intro paragraph at the top of the Meta AI settings page.
+        ///
+        /// Key: `settings.metaAIIntro`
+        /// en: "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, which carry no per-token price."
+        public static var metaAIIntro: String { L10nSupport.string("settings.metaAIIntro") }
 
         /// Provider state: credentials are missing
         ///
@@ -7857,6 +7889,44 @@ public enum L10n {
             }
         }
 
+        public enum Muse {
+            /// Button on the Meta AI settings page. Clicking it makes macOS ask whether Vibe Bar may read the Muse Code login.
+            ///
+            /// Key: `settings.muse.allowKeychainAccess`
+            /// en: "Allow Keychain Access…"
+            public static var allowKeychainAccess: String { L10nSupport.string("settings.muse.allowKeychainAccess") }
+
+            /// Explanation under the Keychain access button on the Meta AI settings page.
+            ///
+            /// Key: `settings.muse.allowKeychainAccessHelp`
+            /// en: "macOS asks once whether Vibe Bar may read the login the muse CLI saved. Choose Always Allow so background refreshes can read it without asking again."
+            public static var allowKeychainAccessHelp: String { L10nSupport.string("settings.muse.allowKeychainAccessHelp") }
+
+            /// Status line on the Meta AI settings page once Keychain access works without a prompt.
+            ///
+            /// Key: `settings.muse.keychainAccessAllowed`
+            /// en: "Vibe Bar can read the Muse Code login."
+            public static var keychainAccessAllowed: String { L10nSupport.string("settings.muse.keychainAccessAllowed") }
+
+            /// Status line on the Meta AI settings page after the user declined or dismissed the Keychain prompt.
+            ///
+            /// Key: `settings.muse.keychainAccessDenied`
+            /// en: "Keychain access was not allowed. Try again and choose Always Allow."
+            public static var keychainAccessDenied: String { L10nSupport.string("settings.muse.keychainAccessDenied") }
+
+            /// Note on the Meta AI settings page about reaching Meta's API. api.meta.ai and HTTPS_PROXY are literal and stay as is.
+            ///
+            /// Key: `settings.muse.networkNote`
+            /// en: "api.meta.ai must be reachable from this Mac. If your network needs a proxy for it, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY."
+            public static var networkNote: String { L10nSupport.string("settings.muse.networkNote") }
+
+            /// Status line on the Meta AI settings page when ~/.config/muse/auth.json is missing.
+            ///
+            /// Key: `settings.muse.noLogin`
+            /// en: "No Muse Code login yet. Run muse login, then refresh."
+            public static var noLogin: String { L10nSupport.string("settings.muse.noLogin") }
+        }
+
         public enum OverviewGranularity {
             /// Overview quota card granularity picker; changes card boundaries only.
             ///
@@ -8413,6 +8483,12 @@ public enum L10n {
             /// Key: `settings.route.grokAuthFile`
             /// en: "~/.grok/auth.json"
             public static var grokAuthFile: String { L10nSupport.string("settings.route.grokAuthFile") }
+
+            /// Route-health row name on the Meta AI settings page: the login the muse CLI keeps in the macOS Keychain.
+            ///
+            /// Key: `settings.route.museKeychain`
+            /// en: "Muse Code login (Keychain)"
+            public static var museKeychain: String { L10nSupport.string("settings.route.museKeychain") }
 
             /// Connection-health row: the OAuth credential path
             ///
@@ -12624,6 +12700,7 @@ enum L10nCatalogFacts {
         "cost.empty.gemini",
         "cost.empty.genericCLI",
         "cost.empty.grok",
+        "cost.empty.muse",
         "cost.fullCharts",
         "cost.gemini.emptyDetail",
         "cost.gemini.emptyTitle",
@@ -12894,6 +12971,7 @@ enum L10nCatalogFacts {
         "onboarding.subscriptions.productLine.codex",
         "onboarding.subscriptions.productLine.gemini",
         "onboarding.subscriptions.productLine.grok",
+        "onboarding.subscriptions.productLine.muse",
         "onboarding.subscriptions.showInOverview",
         "onboarding.title",
         "onboarding.welcome.cost.detail",
@@ -13151,6 +13229,7 @@ enum L10nCatalogFacts {
         "quota.login.cursor",
         "quota.login.grok",
         "quota.login.misc",
+        "quota.login.muse",
         "quota.mini.forecastLearning",
         "quota.mini.forecastLearningCompact",
         "quota.mini.forecastLeftCompact",
@@ -13171,6 +13250,7 @@ enum L10nCatalogFacts {
         "quota.misc.setUpInSettings",
         "quota.mode.remaining",
         "quota.mode.used",
+        "quota.muse.keychainAccessNeeded",
         "quota.pace.deficit",
         "quota.pace.deficitShort",
         "quota.pace.lastsUntilReset",
@@ -13602,6 +13682,7 @@ enum L10nCatalogFacts {
         "settings.mcp.title",
         "settings.mcp.whatAgentsMayDo",
         "settings.menuBarHealthUnavailable",
+        "settings.metaAIIntro",
         "settings.miniCanvas.back",
         "settings.miniCanvas.canvas",
         "settings.miniCanvas.column",
@@ -13720,6 +13801,12 @@ enum L10nCatalogFacts {
         "settings.misc.variant",
         "settings.misc.waiting",
         "settings.misc.workspaceNote",
+        "settings.muse.allowKeychainAccess",
+        "settings.muse.allowKeychainAccessHelp",
+        "settings.muse.keychainAccessAllowed",
+        "settings.muse.keychainAccessDenied",
+        "settings.muse.networkNote",
+        "settings.muse.noLogin",
         "settings.needsSetup",
         "settings.notChecked",
         "settings.notCheckedYet",
@@ -13830,6 +13917,7 @@ enum L10nCatalogFacts {
         "settings.route.browserCookies",
         "settings.route.cli",
         "settings.route.grokAuthFile",
+        "settings.route.museKeychain",
         "settings.route.oauth",
         "settings.route.webViewCookies",
         "settings.routeHealth.agyAvailable",
@@ -14562,6 +14650,7 @@ enum L10nCatalogFacts {
         "cost.empty.gemini": 0,
         "cost.empty.genericCLI": 1,
         "cost.empty.grok": 0,
+        "cost.empty.muse": 0,
         "cost.fullCharts": 1,
         "cost.gemini.emptyDetail": 0,
         "cost.gemini.emptyTitle": 0,
@@ -14832,6 +14921,7 @@ enum L10nCatalogFacts {
         "onboarding.subscriptions.productLine.codex": 0,
         "onboarding.subscriptions.productLine.gemini": 0,
         "onboarding.subscriptions.productLine.grok": 0,
+        "onboarding.subscriptions.productLine.muse": 0,
         "onboarding.subscriptions.showInOverview": 0,
         "onboarding.title": 0,
         "onboarding.welcome.cost.detail": 0,
@@ -15089,6 +15179,7 @@ enum L10nCatalogFacts {
         "quota.login.cursor": 0,
         "quota.login.grok": 0,
         "quota.login.misc": 1,
+        "quota.login.muse": 0,
         "quota.mini.forecastLearning": 1,
         "quota.mini.forecastLearningCompact": 1,
         "quota.mini.forecastLeftCompact": 1,
@@ -15109,6 +15200,7 @@ enum L10nCatalogFacts {
         "quota.misc.setUpInSettings": 0,
         "quota.mode.remaining": 0,
         "quota.mode.used": 0,
+        "quota.muse.keychainAccessNeeded": 0,
         "quota.pace.deficit": 1,
         "quota.pace.deficitShort": 1,
         "quota.pace.lastsUntilReset": 0,
@@ -15540,6 +15632,7 @@ enum L10nCatalogFacts {
         "settings.mcp.title": 0,
         "settings.mcp.whatAgentsMayDo": 0,
         "settings.menuBarHealthUnavailable": 0,
+        "settings.metaAIIntro": 0,
         "settings.miniCanvas.back": 0,
         "settings.miniCanvas.canvas": 0,
         "settings.miniCanvas.column": 0,
@@ -15658,6 +15751,12 @@ enum L10nCatalogFacts {
         "settings.misc.variant": 0,
         "settings.misc.waiting": 0,
         "settings.misc.workspaceNote": 0,
+        "settings.muse.allowKeychainAccess": 0,
+        "settings.muse.allowKeychainAccessHelp": 0,
+        "settings.muse.keychainAccessAllowed": 0,
+        "settings.muse.keychainAccessDenied": 0,
+        "settings.muse.networkNote": 0,
+        "settings.muse.noLogin": 0,
         "settings.needsSetup": 0,
         "settings.notChecked": 0,
         "settings.notCheckedYet": 0,
@@ -15768,6 +15867,7 @@ enum L10nCatalogFacts {
         "settings.route.browserCookies": 0,
         "settings.route.cli": 0,
         "settings.route.grokAuthFile": 0,
+        "settings.route.museKeychain": 0,
         "settings.route.oauth": 0,
         "settings.route.webViewCookies": 0,
         "settings.routeHealth.agyAvailable": 0,
