@@ -266,6 +266,18 @@
       "value": "No Grok session usage found yet.",
       "comment": "Empty cost history"
     },
+    "cost.empty.muse": {
+      "value": "No Muse Code sessions found yet.",
+      "comment": "Empty state of the Meta AI cost card before any Muse Code session log has been scanned."
+    },
+    "cost.empty.devin": {
+      "value": "No Devin sessions found yet.",
+      "comment": "Empty state of the Cognition cost card before any Devin session has been scanned."
+    },
+    "cost.empty.mistralVibe": {
+      "value": "No Mistral Vibe sessions found yet.",
+      "comment": "Empty state of the Mistral AI cost card before any Mistral Vibe session log has been scanned."
+    },
     "cost.fullCharts": {
       "value": "{title} — Full Charts",
       "comment": "Title of the expanded cost popover; title is the card's own title",
@@ -1484,6 +1496,18 @@
       "value": "Grok CLI · grok.com · Cursor",
       "comment": "Where this provider's quota can come from"
     },
+    "onboarding.subscriptions.productLine.muse": {
+      "value": "Muse Code CLI",
+      "comment": "Product line under the Meta AI row of the onboarding subscriptions step."
+    },
+    "onboarding.subscriptions.productLine.devin": {
+      "value": "Devin CLI · Devin app",
+      "comment": "Product line under the Cognition row of the onboarding subscriptions step."
+    },
+    "onboarding.subscriptions.productLine.mistralVibe": {
+      "value": "Mistral Vibe CLI · console.mistral.ai",
+      "comment": "Product line under the Mistral AI row of the onboarding subscriptions step."
+    },
     "onboarding.subscriptions.showInOverview": {
       "value": "Show in Overview",
       "comment": "Per-provider toggle in the setup assistant"
@@ -1505,7 +1529,7 @@
       "comment": "Closing line of the welcome step"
     },
     "onboarding.welcome.intro": {
-      "value": "Vibe Bar sits in your menu bar and shows, at a glance, how much of each AI subscription you have left, what your coding agents are spending, and which sessions and skills live on this Mac. It reads the credentials the Codex, Claude Code, Gemini and Grok CLIs already keep here, adds web quotas from your browser's cookies when you ask it to, and never sends any of it anywhere but the provider it came from.",
+      "value": "Vibe Bar sits in your menu bar and shows, at a glance, how much of each AI subscription you have left, what your coding agents are spending, and which sessions and skills live on this Mac. It reads what the Codex, Claude Code, Gemini, Grok, Muse Code, Devin and Mistral Vibe CLIs already keep here, adds web quotas from your browser's cookies when you ask it to, and never sends any of it anywhere but the provider it came from.",
       "comment": "Opening paragraph of the setup assistant"
     },
     "onboarding.welcome.mcp.detail": {
@@ -1517,7 +1541,7 @@
       "comment": "Feature row title"
     },
     "onboarding.welcome.quotas.detail": {
-      "value": "Codex, Claude Code, Gemini, Grok and a shelf of API-key plans, each with its reset countdown.",
+      "value": "Codex, Claude Code, Gemini, Grok, Muse Code, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown.",
       "comment": "Feature row body"
     },
     "onboarding.welcome.quotas.title": {
@@ -2592,6 +2616,22 @@
     "quota.login.grok": {
       "value": "Run grok login or import grok.com cookies, then refresh.",
       "comment": "What to do when no credential is stored"
+    },
+    "quota.login.muse": {
+      "value": "Run muse login, then refresh.",
+      "comment": "Hint on the Meta AI quota card when this Mac has no Muse Code login. `muse login` is the CLI command and stays as is."
+    },
+    "quota.login.devin": {
+      "value": "Run devin once so it caches your plan, then refresh.",
+      "comment": "Hint on the Cognition quota card when the devin CLI has not cached a plan status on this Mac. `devin` is the CLI command and stays as is."
+    },
+    "quota.login.mistralVibe": {
+      "value": "Sign in at console.mistral.ai in your browser, then import its cookies in Settings → Mistral AI.",
+      "comment": "Hint on the Mistral AI quota card when no Mistral AI console session has been imported."
+    },
+    "quota.muse.keychainAccessNeeded": {
+      "value": "Vibe Bar is not yet allowed to read the Muse Code login — allow it in Settings → Meta AI, then refresh.",
+      "comment": "Error on the Meta AI quota card when macOS has not yet let Vibe Bar read the Keychain item the muse CLI saved its login in."
     },
     "quota.login.misc": {
       "value": "Configure {provider} in Settings → Misc Providers.",
@@ -4907,6 +4947,14 @@
       "value": "~/.grok/auth.json",
       "comment": "Connection-health row: the Grok CLI's credential file. A path, never translated."
     },
+    "settings.route.museKeychain": {
+      "value": "Muse Code login (Keychain)",
+      "comment": "Route-health row name on the Meta AI settings page: the login the muse CLI keeps in the macOS Keychain."
+    },
+    "settings.route.devinStatusCache": {
+      "value": "Devin CLI plan cache",
+      "comment": "Route-health row name on the Cognition settings page: the plan status the devin CLI caches under ~/.cache/devin."
+    },
     "settings.route.oauth": {
       "value": "OAuth",
       "comment": "Connection-health row: the OAuth credential path"
@@ -5050,6 +5098,46 @@
     "settings.spaceXAIIntro": {
       "value": "The SpaceXAI page combines Grok with Cursor. Grok reads `~/.grok/auth.json` or grok.com cookies; Cursor reads Cursor.app first, then cursor.com cookie slots. Grok Bot contributes quota, plus read-only sessions from its local cache — its cloud runs still add no token/cost rows.",
       "comment": "Explanation on the SpaceXAI settings page"
+    },
+    "settings.metaAIIntro": {
+      "value": "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates.",
+      "comment": "Intro paragraph at the top of the Meta AI settings page."
+    },
+    "settings.cognitionIntro": {
+      "value": "The Cognition page tracks Devin. Quota comes from the plan status the devin CLI caches on this Mac, so it is as current as Devin's last run; token usage comes from the session database the CLI and the Devin app share, and its cost is what the same tokens cost at the model's API rates.",
+      "comment": "Intro paragraph at the top of the Cognition settings page."
+    },
+    "settings.mistralAIIntro": {
+      "value": "The Mistral AI page tracks Mistral Vibe. The Monthly quota comes from your Mistral AI console session, imported from a browser signed in to console.mistral.ai; the plan name comes from the Mistral Vibe CLI's own cache. Token usage comes from Mistral Vibe's local session logs, priced at Mistral AI's API rates.",
+      "comment": "Intro paragraph at the top of the Mistral AI settings page. 'Monthly' is the quota window's name and stays as is."
+    },
+    "settings.muse.allowKeychainAccess": {
+      "value": "Allow Keychain Access…",
+      "comment": "Button on the Meta AI settings page. Clicking it makes macOS ask whether Vibe Bar may read the Muse Code login."
+    },
+    "settings.muse.allowKeychainAccessHelp": {
+      "value": "macOS asks once whether Vibe Bar may read the login the muse CLI saved. Choose Always Allow so background refreshes can read it without asking again.",
+      "comment": "Explanation under the Keychain access button on the Meta AI settings page."
+    },
+    "settings.muse.keychainAccessAllowed": {
+      "value": "Vibe Bar can read the Muse Code login.",
+      "comment": "Status line on the Meta AI settings page once Keychain access works without a prompt."
+    },
+    "settings.muse.keychainAccessDenied": {
+      "value": "Keychain access was not allowed — try again and choose Always Allow.",
+      "comment": "Status line on the Meta AI settings page after the user declined or dismissed the Keychain prompt."
+    },
+    "settings.muse.noLogin": {
+      "value": "No Muse Code login yet. Run muse login, then refresh.",
+      "comment": "Status line on the Meta AI settings page and the onboarding row when this Mac has no Muse Code CLI login: no login identity, or no token in its macOS Keychain item."
+    },
+    "settings.devin.noCache": {
+      "value": "No Devin plan status cached yet. Run devin once, then refresh.",
+      "comment": "Status line on the Cognition settings page when ~/.cache/devin/cli holds no plan status."
+    },
+    "settings.muse.networkNote": {
+      "value": "api.meta.ai must be reachable from this Mac. If your network needs a proxy for it, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY.",
+      "comment": "Note on the Meta AI settings page about reaching Meta's API. api.meta.ai and HTTPS_PROXY are literal and stay as is."
     },
     "settings.subscriptionNameFormat": {
       "value": "Subscription name format",
@@ -7454,7 +7542,7 @@
       }
     },
     "workbench.skills.sync.projectionsBody": {
-      "value": "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, and Cursor scan the shared root themselves — no link needed.",
+      "value": "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, Cursor, and Muse Code scan the shared root themselves — no link needed.",
       "comment": "Sync explainer's second paragraph. The harness names are identifiers and stay as spelled."
     },
     "workbench.skills.sync.projectionsLead": {
