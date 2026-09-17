@@ -2334,6 +2334,18 @@
 /* Help line under the e-ink data refresh stepper. */
 "settings.eink.dataRefreshDetail" = "How often the numbers are rebuilt and pushed while the device has mains power.";
 
+/* Button above the display list in Settings › E-ink Displays that opens the sheet for combining two or more screens into one group. */
+"settings.eink.deviceGroup.create" = "Group screens…";
+
+/* Caption under the playback picker of a group, explaining why the device-driven carousel is missing. */
+"settings.eink.deviceGroup.playbackDetail" = "The Mac turns a group's pages so every screen changes together, so the device's own loop is not offered here.";
+
+/* Title of the sheet that combines e-ink screens into one group, and the word for a group in the display list. */
+"settings.eink.deviceGroup.title" = "Device group";
+
+/* Confirmation message shown before a group of e-ink screens is taken apart. */
+"settings.eink.deviceGroup.ungroupConfirm" = "The group's pages are discarded. Every screen comes back on its own, with the settings and slides it had before.";
+
 /* Tooltip on the per-device enable toggle in the E-ink section. */
 "settings.eink.deviceSyncHelp" = "Push slides to this device";
 
@@ -2639,6 +2651,24 @@
 
 /* Screen origin in upright canvas pixels. */
 "settings.eink.screenGroups.yPosition" = "Vertical position";
+
+/* Segment of the Screens picker: one template drawn across every screen of the group. */
+"settings.eink.screens.combined" = "Combined";
+
+/* Caption under the Screens picker when a page is drawn across the whole group. */
+"settings.eink.screens.combinedDetail" = "The screens make one canvas and this page draws a single template across it, so it holds more than one panel fits.";
+
+/* Segment of the Screens picker: some screens of the group are merged into one canvas and others are not. distinct-from: menuBar.composer.colour.fixed */
+"settings.eink.screens.custom" = "Custom";
+
+/* Caption under the Screens picker when a page mixes merged and separate screens. */
+"settings.eink.screens.customDetail" = "Merge screens into one canvas, or split a merged canvas back into separate screens.";
+
+/* Segment of the Screens picker: every screen of the group draws its own template. */
+"settings.eink.screens.separate" = "Separate";
+
+/* Caption under the Screens picker when every screen of the group draws its own page. */
+"settings.eink.screens.separateDetail" = "Each screen draws its own template. Pick a screen to edit what it shows.";
 
 /* Stepper label for how long the app-driven e-ink carousel holds each slide. */
 "settings.eink.secondsPerSlide" = "Seconds per slide";

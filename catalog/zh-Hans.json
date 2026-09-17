@@ -2210,6 +2210,18 @@
     "settings.eink.dataRefreshDetail": {
       "value": "设备接通电源时，重新生成并推送数字的间隔。"
     },
+    "settings.eink.deviceGroup.create": {
+      "value": "合并为设备组…"
+    },
+    "settings.eink.deviceGroup.playbackDetail": {
+      "value": "设备组的页面由 Mac 统一翻页，组内屏幕同步变化，因此不提供设备自带的轮播。"
+    },
+    "settings.eink.deviceGroup.title": {
+      "value": "设备组"
+    },
+    "settings.eink.deviceGroup.ungroupConfirm": {
+      "value": "设备组的页面会被丢弃。每块屏幕恢复为独立显示，并沿用加入前的设置与幻灯片。"
+    },
     "settings.eink.deviceSyncHelp": {
       "value": "向这台设备推送幻灯片"
     },
@@ -2377,6 +2389,24 @@
     },
     "settings.eink.rescanLoop": {
       "value": "扫描循环"
+    },
+    "settings.eink.screens.combined": {
+      "value": "合并显示"
+    },
+    "settings.eink.screens.combinedDetail": {
+      "value": "整组拼成一块画布，这一页跨屏绘制同一个模板，能放下的内容比单屏更多。"
+    },
+    "settings.eink.screens.custom": {
+      "value": "自定义"
+    },
+    "settings.eink.screens.customDetail": {
+      "value": "把若干屏幕合并成一块画布，或把已合并的画布重新拆开。"
+    },
+    "settings.eink.screens.separate": {
+      "value": "分屏显示"
+    },
+    "settings.eink.screens.separateDetail": {
+      "value": "每块屏幕绘制各自的模板。先选屏幕，再编辑这一屏的内容。"
     },
     "settings.eink.secondsPerSlide": {
       "value": "每张停留秒数"
@@ -5622,7 +5652,7 @@
       "value": "按显示像素排列屏幕。每一帧可显示独立页面，也可让一页跨越多个屏幕。"
     },
     "settings.eink.screenGroups.name": {
-      "value": "编组名称"
+      "value": "设备组名称"
     },
     "settings.eink.screenGroups.enabled": {
       "value": "启用编组播放"
@@ -5715,7 +5745,7 @@
       "value": "这些设备已加入编组，请在「屏幕编组」中编辑共同设置。"
     },
     "settings.eink.workflow.ungroup": {
-      "value": "解散编组"
+      "value": "解散设备组"
     },
     "settings.eink.workflow.mergeSlides": {
       "value": "合并幻灯片"
