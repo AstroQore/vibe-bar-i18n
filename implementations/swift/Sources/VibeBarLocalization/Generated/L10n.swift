@@ -408,6 +408,12 @@ public enum L10n {
             /// en: "No Codex CLI sessions found yet."
             public static var codex: String { L10nSupport.string("cost.empty.codex") }
 
+            /// Empty state of the Cognition cost card before any Devin session has been scanned.
+            ///
+            /// Key: `cost.empty.devin`
+            /// en: "No Devin sessions found yet."
+            public static var devin: String { L10nSupport.string("cost.empty.devin") }
+
             /// Empty cost history
             ///
             /// Key: `cost.empty.gemini`
@@ -427,6 +433,18 @@ public enum L10n {
             /// Key: `cost.empty.grok`
             /// en: "No Grok session usage found yet."
             public static var grok: String { L10nSupport.string("cost.empty.grok") }
+
+            /// Empty state of the Mistral AI cost card before any Mistral Vibe session log has been scanned.
+            ///
+            /// Key: `cost.empty.mistralVibe`
+            /// en: "No Mistral Vibe sessions found yet."
+            public static var mistralVibe: String { L10nSupport.string("cost.empty.mistralVibe") }
+
+            /// Empty state of the Meta AI cost card before any Muse Code session log has been scanned.
+            ///
+            /// Key: `cost.empty.muse`
+            /// en: "No Muse Code sessions found yet."
+            public static var muse: String { L10nSupport.string("cost.empty.muse") }
         }
 
         public enum Gemini {
@@ -2193,6 +2211,12 @@ public enum L10n {
                 /// en: "Codex CLI · ChatGPT web"
                 public static var codex: String { L10nSupport.string("onboarding.subscriptions.productLine.codex") }
 
+                /// Product line under the Cognition row of the onboarding subscriptions step.
+                ///
+                /// Key: `onboarding.subscriptions.productLine.devin`
+                /// en: "Devin CLI · Devin app"
+                public static var devin: String { L10nSupport.string("onboarding.subscriptions.productLine.devin") }
+
                 /// Where this provider's quota can come from
                 ///
                 /// Key: `onboarding.subscriptions.productLine.gemini`
@@ -2204,6 +2228,18 @@ public enum L10n {
                 /// Key: `onboarding.subscriptions.productLine.grok`
                 /// en: "Grok CLI · grok.com · Cursor"
                 public static var grok: String { L10nSupport.string("onboarding.subscriptions.productLine.grok") }
+
+                /// Product line under the Mistral AI row of the onboarding subscriptions step.
+                ///
+                /// Key: `onboarding.subscriptions.productLine.mistralVibe`
+                /// en: "Mistral Vibe CLI · console.mistral.ai"
+                public static var mistralVibe: String { L10nSupport.string("onboarding.subscriptions.productLine.mistralVibe") }
+
+                /// Product line under the Meta AI row of the onboarding subscriptions step.
+                ///
+                /// Key: `onboarding.subscriptions.productLine.muse`
+                /// en: "Muse Code CLI"
+                public static var muse: String { L10nSupport.string("onboarding.subscriptions.productLine.muse") }
             }
         }
 
@@ -2217,7 +2253,7 @@ public enum L10n {
             /// Opening paragraph of the setup assistant
             ///
             /// Key: `onboarding.welcome.intro`
-            /// en: "Vibe Bar sits in your menu bar and shows, at a glance, how much of each AI subscription you have left, what your coding agents are spending, and which sessions and skills live on this Mac. It reads the credentials the Codex, Claude Code, Gemini and Grok CLIs already keep here, adds web quotas from your browser's cookies when you ask it to, and never sends any of it anywhere but the provider it came from."
+            /// en: "Vibe Bar sits in your menu bar and shows, at a glance, how much of each AI subscription you have left, what your coding agents are spending, and which sessions and skills live on this Mac. It reads what the Codex, Claude Code, Gemini, Grok, Muse Code, Devin and Mistral Vibe CLIs already keep here, adds web quotas from your browser's cookies when you ask it to, and never sends any of it anywhere but the provider it came from."
             public static var intro: String { L10nSupport.string("onboarding.welcome.intro") }
 
             public enum Cost {
@@ -2252,7 +2288,7 @@ public enum L10n {
                 /// Feature row body
                 ///
                 /// Key: `onboarding.welcome.quotas.detail`
-                /// en: "Codex, Claude Code, Gemini, Grok and a shelf of API-key plans, each with its reset countdown."
+                /// en: "Codex, Claude Code, Gemini, Grok, Muse Code, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown."
                 public static var detail: String { L10nSupport.string("onboarding.welcome.quotas.detail") }
 
                 /// Feature row title
@@ -3960,6 +3996,12 @@ public enum L10n {
             /// en: "Sign in to Cursor.app or import cursor.com cookies, then refresh."
             public static var cursor: String { L10nSupport.string("quota.login.cursor") }
 
+            /// Hint on the Cognition quota card when the devin CLI has not cached a plan status on this Mac. `devin` is the CLI command and stays as is.
+            ///
+            /// Key: `quota.login.devin`
+            /// en: "Run devin once so it caches your plan, then refresh."
+            public static var devin: String { L10nSupport.string("quota.login.devin") }
+
             /// What to do when no credential is stored
             ///
             /// Key: `quota.login.grok`
@@ -3973,6 +4015,18 @@ public enum L10n {
             public static func misc(provider: String) -> String {
                 L10nSupport.format("quota.login.misc", provider)
             }
+
+            /// Hint on the Mistral AI quota card when no Mistral AI console session has been imported.
+            ///
+            /// Key: `quota.login.mistralVibe`
+            /// en: "Sign in at console.mistral.ai in your browser, then import its cookies in Settings → Mistral AI."
+            public static var mistralVibe: String { L10nSupport.string("quota.login.mistralVibe") }
+
+            /// Hint on the Meta AI quota card when this Mac has no Muse Code login. `muse login` is the CLI command and stays as is.
+            ///
+            /// Key: `quota.login.muse`
+            /// en: "Run muse login, then refresh."
+            public static var muse: String { L10nSupport.string("quota.login.muse") }
         }
 
         public enum Mini {
@@ -4125,6 +4179,14 @@ public enum L10n {
             /// Key: `quota.mode.used`
             /// en: "used"
             public static var used: String { L10nSupport.string("quota.mode.used") }
+        }
+
+        public enum Muse {
+            /// Error on the Meta AI quota card when macOS has not yet let Vibe Bar read the Keychain item the muse CLI saved its login in.
+            ///
+            /// Key: `quota.muse.keychainAccessNeeded`
+            /// en: "Vibe Bar is not yet allowed to read the Muse Code login — allow it in Settings → Meta AI, then refresh."
+            public static var keychainAccessNeeded: String { L10nSupport.string("quota.muse.keychainAccessNeeded") }
         }
 
         public enum Pace {
@@ -4963,6 +5025,12 @@ public enum L10n {
         /// en: "Clear cost data"
         public static var clearCostData: String { L10nSupport.string("settings.clearCostData") }
 
+        /// Intro paragraph at the top of the Cognition settings page.
+        ///
+        /// Key: `settings.cognitionIntro`
+        /// en: "The Cognition page tracks Devin. Quota comes from the plan status the devin CLI caches on this Mac, so it is as current as Devin's last run; token usage comes from the session database the CLI and the Devin app share, and its cost is what the same tokens cost at the model's API rates."
+        public static var cognitionIntro: String { L10nSupport.string("settings.cognitionIntro") }
+
         /// Heading over the per-provider connection rows
         ///
         /// Key: `settings.connectionHealth`
@@ -5096,6 +5164,18 @@ public enum L10n {
         /// Key: `settings.menuBarHealthUnavailable`
         /// en: "The menu bar health monitor is not attached in this process."
         public static var menuBarHealthUnavailable: String { L10nSupport.string("settings.menuBarHealthUnavailable") }
+
+        /// Intro paragraph at the top of the Meta AI settings page.
+        ///
+        /// Key: `settings.metaAIIntro`
+        /// en: "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates."
+        public static var metaAIIntro: String { L10nSupport.string("settings.metaAIIntro") }
+
+        /// Intro paragraph at the top of the Mistral AI settings page. 'Monthly' is the quota window's name and stays as is.
+        ///
+        /// Key: `settings.mistralAIIntro`
+        /// en: "The Mistral AI page tracks Mistral Vibe. The Monthly quota comes from your Mistral AI console session, imported from a browser signed in to console.mistral.ai; the plan name comes from the Mistral Vibe CLI's own cache. Token usage comes from Mistral Vibe's local session logs, priced at Mistral AI's API rates."
+        public static var mistralAIIntro: String { L10nSupport.string("settings.mistralAIIntro") }
 
         /// Provider state: credentials are missing
         ///
@@ -5453,6 +5533,14 @@ public enum L10n {
             /// Key: `settings.credentialSource.off`
             /// en: "Off"
             public static var off: String { L10nSupport.string("settings.credentialSource.off") }
+        }
+
+        public enum Devin {
+            /// Status line on the Cognition settings page when ~/.cache/devin/cli holds no plan status.
+            ///
+            /// Key: `settings.devin.noCache`
+            /// en: "No Devin plan status cached yet. Run devin once, then refresh."
+            public static var noCache: String { L10nSupport.string("settings.devin.noCache") }
         }
 
         public enum DisplayMode {
@@ -7857,6 +7945,44 @@ public enum L10n {
             }
         }
 
+        public enum Muse {
+            /// Button on the Meta AI settings page. Clicking it makes macOS ask whether Vibe Bar may read the Muse Code login.
+            ///
+            /// Key: `settings.muse.allowKeychainAccess`
+            /// en: "Allow Keychain Access…"
+            public static var allowKeychainAccess: String { L10nSupport.string("settings.muse.allowKeychainAccess") }
+
+            /// Explanation under the Keychain access button on the Meta AI settings page.
+            ///
+            /// Key: `settings.muse.allowKeychainAccessHelp`
+            /// en: "macOS asks once whether Vibe Bar may read the login the muse CLI saved. Choose Always Allow so background refreshes can read it without asking again."
+            public static var allowKeychainAccessHelp: String { L10nSupport.string("settings.muse.allowKeychainAccessHelp") }
+
+            /// Status line on the Meta AI settings page once Keychain access works without a prompt.
+            ///
+            /// Key: `settings.muse.keychainAccessAllowed`
+            /// en: "Vibe Bar can read the Muse Code login."
+            public static var keychainAccessAllowed: String { L10nSupport.string("settings.muse.keychainAccessAllowed") }
+
+            /// Status line on the Meta AI settings page after the user declined or dismissed the Keychain prompt.
+            ///
+            /// Key: `settings.muse.keychainAccessDenied`
+            /// en: "Keychain access was not allowed — try again and choose Always Allow."
+            public static var keychainAccessDenied: String { L10nSupport.string("settings.muse.keychainAccessDenied") }
+
+            /// Note on the Meta AI settings page about reaching Meta's API. api.meta.ai and HTTPS_PROXY are literal and stay as is.
+            ///
+            /// Key: `settings.muse.networkNote`
+            /// en: "api.meta.ai must be reachable from this Mac. If your network needs a proxy for it, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY."
+            public static var networkNote: String { L10nSupport.string("settings.muse.networkNote") }
+
+            /// Status line on the Meta AI settings page and the onboarding row when this Mac has no Muse Code CLI login: no login identity, or no token in its macOS Keychain item.
+            ///
+            /// Key: `settings.muse.noLogin`
+            /// en: "No Muse Code login yet. Run muse login, then refresh."
+            public static var noLogin: String { L10nSupport.string("settings.muse.noLogin") }
+        }
+
         public enum OverviewGranularity {
             /// Overview quota card granularity picker; changes card boundaries only.
             ///
@@ -8408,11 +8534,23 @@ public enum L10n {
             /// en: "CLI"
             public static var cli: String { L10nSupport.string("settings.route.cli") }
 
+            /// Route-health row name on the Cognition settings page: the plan status the devin CLI caches under ~/.cache/devin.
+            ///
+            /// Key: `settings.route.devinStatusCache`
+            /// en: "Devin CLI plan cache"
+            public static var devinStatusCache: String { L10nSupport.string("settings.route.devinStatusCache") }
+
             /// Connection-health row: the Grok CLI's credential file. A path, never translated.
             ///
             /// Key: `settings.route.grokAuthFile`
             /// en: "~/.grok/auth.json"
             public static var grokAuthFile: String { L10nSupport.string("settings.route.grokAuthFile") }
+
+            /// Route-health row name on the Meta AI settings page: the login the muse CLI keeps in the macOS Keychain.
+            ///
+            /// Key: `settings.route.museKeychain`
+            /// en: "Muse Code login (Keychain)"
+            public static var museKeychain: String { L10nSupport.string("settings.route.museKeychain") }
 
             /// Connection-health row: the OAuth credential path
             ///
@@ -12037,7 +12175,7 @@ public enum L10n {
                 /// Sync explainer's second paragraph. The harness names are identifiers and stay as spelled.
                 ///
                 /// Key: `workbench.skills.sync.projectionsBody`
-                /// en: "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, and Cursor scan the shared root themselves — no link needed."
+                /// en: "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, Cursor, and Muse Code scan the shared root themselves — no link needed."
                 public static var projectionsBody: String { L10nSupport.string("workbench.skills.sync.projectionsBody") }
 
                 /// Run-in heading of the sync explainer's second paragraph.
@@ -12621,9 +12759,12 @@ enum L10nCatalogFacts {
         "cost.empty.antigravity",
         "cost.empty.claude",
         "cost.empty.codex",
+        "cost.empty.devin",
         "cost.empty.gemini",
         "cost.empty.genericCLI",
         "cost.empty.grok",
+        "cost.empty.mistralVibe",
+        "cost.empty.muse",
         "cost.fullCharts",
         "cost.gemini.emptyDetail",
         "cost.gemini.emptyTitle",
@@ -12892,8 +13033,11 @@ enum L10nCatalogFacts {
         "onboarding.subscriptions.intro",
         "onboarding.subscriptions.productLine.claude",
         "onboarding.subscriptions.productLine.codex",
+        "onboarding.subscriptions.productLine.devin",
         "onboarding.subscriptions.productLine.gemini",
         "onboarding.subscriptions.productLine.grok",
+        "onboarding.subscriptions.productLine.mistralVibe",
+        "onboarding.subscriptions.productLine.muse",
         "onboarding.subscriptions.showInOverview",
         "onboarding.title",
         "onboarding.welcome.cost.detail",
@@ -13149,8 +13293,11 @@ enum L10nCatalogFacts {
         "quota.login.claude",
         "quota.login.codex",
         "quota.login.cursor",
+        "quota.login.devin",
         "quota.login.grok",
         "quota.login.misc",
+        "quota.login.mistralVibe",
+        "quota.login.muse",
         "quota.mini.forecastLearning",
         "quota.mini.forecastLearningCompact",
         "quota.mini.forecastLeftCompact",
@@ -13171,6 +13318,7 @@ enum L10nCatalogFacts {
         "quota.misc.setUpInSettings",
         "quota.mode.remaining",
         "quota.mode.used",
+        "quota.muse.keychainAccessNeeded",
         "quota.pace.deficit",
         "quota.pace.deficitShort",
         "quota.pace.lastsUntilReset",
@@ -13311,6 +13459,7 @@ enum L10nCatalogFacts {
         "settings.checkKitUpdates",
         "settings.checkingGitHub",
         "settings.clearCostData",
+        "settings.cognitionIntro",
         "settings.connectionHealth",
         "settings.cookies.retryHelp",
         "settings.cookies.retryToggle",
@@ -13330,6 +13479,7 @@ enum L10nCatalogFacts {
         "settings.deleteGeminiCookies",
         "settings.deleteGrokCookies",
         "settings.deleteProviderCookies",
+        "settings.devin.noCache",
         "settings.displayMode.remaining",
         "settings.displayMode.used",
         "settings.eink.addSlide",
@@ -13602,6 +13752,7 @@ enum L10nCatalogFacts {
         "settings.mcp.title",
         "settings.mcp.whatAgentsMayDo",
         "settings.menuBarHealthUnavailable",
+        "settings.metaAIIntro",
         "settings.miniCanvas.back",
         "settings.miniCanvas.canvas",
         "settings.miniCanvas.column",
@@ -13720,6 +13871,13 @@ enum L10nCatalogFacts {
         "settings.misc.variant",
         "settings.misc.waiting",
         "settings.misc.workspaceNote",
+        "settings.mistralAIIntro",
+        "settings.muse.allowKeychainAccess",
+        "settings.muse.allowKeychainAccessHelp",
+        "settings.muse.keychainAccessAllowed",
+        "settings.muse.keychainAccessDenied",
+        "settings.muse.networkNote",
+        "settings.muse.noLogin",
         "settings.needsSetup",
         "settings.notChecked",
         "settings.notCheckedYet",
@@ -13829,7 +13987,9 @@ enum L10nCatalogFacts {
         "settings.route.antigravityLocal",
         "settings.route.browserCookies",
         "settings.route.cli",
+        "settings.route.devinStatusCache",
         "settings.route.grokAuthFile",
+        "settings.route.museKeychain",
         "settings.route.oauth",
         "settings.route.webViewCookies",
         "settings.routeHealth.agyAvailable",
@@ -14559,9 +14719,12 @@ enum L10nCatalogFacts {
         "cost.empty.antigravity": 0,
         "cost.empty.claude": 0,
         "cost.empty.codex": 0,
+        "cost.empty.devin": 0,
         "cost.empty.gemini": 0,
         "cost.empty.genericCLI": 1,
         "cost.empty.grok": 0,
+        "cost.empty.mistralVibe": 0,
+        "cost.empty.muse": 0,
         "cost.fullCharts": 1,
         "cost.gemini.emptyDetail": 0,
         "cost.gemini.emptyTitle": 0,
@@ -14830,8 +14993,11 @@ enum L10nCatalogFacts {
         "onboarding.subscriptions.intro": 0,
         "onboarding.subscriptions.productLine.claude": 0,
         "onboarding.subscriptions.productLine.codex": 0,
+        "onboarding.subscriptions.productLine.devin": 0,
         "onboarding.subscriptions.productLine.gemini": 0,
         "onboarding.subscriptions.productLine.grok": 0,
+        "onboarding.subscriptions.productLine.mistralVibe": 0,
+        "onboarding.subscriptions.productLine.muse": 0,
         "onboarding.subscriptions.showInOverview": 0,
         "onboarding.title": 0,
         "onboarding.welcome.cost.detail": 0,
@@ -15087,8 +15253,11 @@ enum L10nCatalogFacts {
         "quota.login.claude": 0,
         "quota.login.codex": 0,
         "quota.login.cursor": 0,
+        "quota.login.devin": 0,
         "quota.login.grok": 0,
         "quota.login.misc": 1,
+        "quota.login.mistralVibe": 0,
+        "quota.login.muse": 0,
         "quota.mini.forecastLearning": 1,
         "quota.mini.forecastLearningCompact": 1,
         "quota.mini.forecastLeftCompact": 1,
@@ -15109,6 +15278,7 @@ enum L10nCatalogFacts {
         "quota.misc.setUpInSettings": 0,
         "quota.mode.remaining": 0,
         "quota.mode.used": 0,
+        "quota.muse.keychainAccessNeeded": 0,
         "quota.pace.deficit": 1,
         "quota.pace.deficitShort": 1,
         "quota.pace.lastsUntilReset": 0,
@@ -15249,6 +15419,7 @@ enum L10nCatalogFacts {
         "settings.checkKitUpdates": 0,
         "settings.checkingGitHub": 0,
         "settings.clearCostData": 0,
+        "settings.cognitionIntro": 0,
         "settings.connectionHealth": 0,
         "settings.cookies.retryHelp": 0,
         "settings.cookies.retryToggle": 0,
@@ -15268,6 +15439,7 @@ enum L10nCatalogFacts {
         "settings.deleteGeminiCookies": 0,
         "settings.deleteGrokCookies": 0,
         "settings.deleteProviderCookies": 1,
+        "settings.devin.noCache": 0,
         "settings.displayMode.remaining": 0,
         "settings.displayMode.used": 0,
         "settings.eink.addSlide": 0,
@@ -15540,6 +15712,7 @@ enum L10nCatalogFacts {
         "settings.mcp.title": 0,
         "settings.mcp.whatAgentsMayDo": 0,
         "settings.menuBarHealthUnavailable": 0,
+        "settings.metaAIIntro": 0,
         "settings.miniCanvas.back": 0,
         "settings.miniCanvas.canvas": 0,
         "settings.miniCanvas.column": 0,
@@ -15658,6 +15831,13 @@ enum L10nCatalogFacts {
         "settings.misc.variant": 0,
         "settings.misc.waiting": 0,
         "settings.misc.workspaceNote": 0,
+        "settings.mistralAIIntro": 0,
+        "settings.muse.allowKeychainAccess": 0,
+        "settings.muse.allowKeychainAccessHelp": 0,
+        "settings.muse.keychainAccessAllowed": 0,
+        "settings.muse.keychainAccessDenied": 0,
+        "settings.muse.networkNote": 0,
+        "settings.muse.noLogin": 0,
         "settings.needsSetup": 0,
         "settings.notChecked": 0,
         "settings.notCheckedYet": 0,
@@ -15767,7 +15947,9 @@ enum L10nCatalogFacts {
         "settings.route.antigravityLocal": 0,
         "settings.route.browserCookies": 0,
         "settings.route.cli": 0,
+        "settings.route.devinStatusCache": 0,
         "settings.route.grokAuthFile": 0,
+        "settings.route.museKeychain": 0,
         "settings.route.oauth": 0,
         "settings.route.webViewCookies": 0,
         "settings.routeHealth.agyAvailable": 0,

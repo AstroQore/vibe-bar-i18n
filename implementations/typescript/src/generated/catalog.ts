@@ -64,9 +64,12 @@ export type MessageKey =
   | "cost.empty.antigravity"
   | "cost.empty.claude"
   | "cost.empty.codex"
+  | "cost.empty.devin"
   | "cost.empty.gemini"
   | "cost.empty.genericCLI"
   | "cost.empty.grok"
+  | "cost.empty.mistralVibe"
+  | "cost.empty.muse"
   | "cost.fullCharts"
   | "cost.gemini.emptyDetail"
   | "cost.gemini.emptyTitle"
@@ -335,8 +338,11 @@ export type MessageKey =
   | "onboarding.subscriptions.intro"
   | "onboarding.subscriptions.productLine.claude"
   | "onboarding.subscriptions.productLine.codex"
+  | "onboarding.subscriptions.productLine.devin"
   | "onboarding.subscriptions.productLine.gemini"
   | "onboarding.subscriptions.productLine.grok"
+  | "onboarding.subscriptions.productLine.mistralVibe"
+  | "onboarding.subscriptions.productLine.muse"
   | "onboarding.subscriptions.showInOverview"
   | "onboarding.title"
   | "onboarding.welcome.cost.detail"
@@ -592,8 +598,11 @@ export type MessageKey =
   | "quota.login.claude"
   | "quota.login.codex"
   | "quota.login.cursor"
+  | "quota.login.devin"
   | "quota.login.grok"
   | "quota.login.misc"
+  | "quota.login.mistralVibe"
+  | "quota.login.muse"
   | "quota.mini.forecastLearning"
   | "quota.mini.forecastLearningCompact"
   | "quota.mini.forecastLeftCompact"
@@ -614,6 +623,7 @@ export type MessageKey =
   | "quota.misc.setUpInSettings"
   | "quota.mode.remaining"
   | "quota.mode.used"
+  | "quota.muse.keychainAccessNeeded"
   | "quota.pace.deficit"
   | "quota.pace.deficitShort"
   | "quota.pace.lastsUntilReset"
@@ -754,6 +764,7 @@ export type MessageKey =
   | "settings.checkKitUpdates"
   | "settings.checkingGitHub"
   | "settings.clearCostData"
+  | "settings.cognitionIntro"
   | "settings.connectionHealth"
   | "settings.cookies.retryHelp"
   | "settings.cookies.retryToggle"
@@ -773,6 +784,7 @@ export type MessageKey =
   | "settings.deleteGeminiCookies"
   | "settings.deleteGrokCookies"
   | "settings.deleteProviderCookies"
+  | "settings.devin.noCache"
   | "settings.displayMode.remaining"
   | "settings.displayMode.used"
   | "settings.eink.addSlide"
@@ -1045,6 +1057,7 @@ export type MessageKey =
   | "settings.mcp.title"
   | "settings.mcp.whatAgentsMayDo"
   | "settings.menuBarHealthUnavailable"
+  | "settings.metaAIIntro"
   | "settings.miniCanvas.back"
   | "settings.miniCanvas.canvas"
   | "settings.miniCanvas.column"
@@ -1163,6 +1176,13 @@ export type MessageKey =
   | "settings.misc.variant"
   | "settings.misc.waiting"
   | "settings.misc.workspaceNote"
+  | "settings.mistralAIIntro"
+  | "settings.muse.allowKeychainAccess"
+  | "settings.muse.allowKeychainAccessHelp"
+  | "settings.muse.keychainAccessAllowed"
+  | "settings.muse.keychainAccessDenied"
+  | "settings.muse.networkNote"
+  | "settings.muse.noLogin"
   | "settings.needsSetup"
   | "settings.notChecked"
   | "settings.notCheckedYet"
@@ -1272,7 +1292,9 @@ export type MessageKey =
   | "settings.route.antigravityLocal"
   | "settings.route.browserCookies"
   | "settings.route.cli"
+  | "settings.route.devinStatusCache"
   | "settings.route.grokAuthFile"
+  | "settings.route.museKeychain"
   | "settings.route.oauth"
   | "settings.route.webViewCookies"
   | "settings.routeHealth.agyAvailable"
@@ -1948,9 +1970,12 @@ export interface MessageParams {
   "cost.empty.antigravity": undefined;
   "cost.empty.claude": undefined;
   "cost.empty.codex": undefined;
+  "cost.empty.devin": undefined;
   "cost.empty.gemini": undefined;
   "cost.empty.genericCLI": { "provider": string };
   "cost.empty.grok": undefined;
+  "cost.empty.mistralVibe": undefined;
+  "cost.empty.muse": undefined;
   "cost.fullCharts": { "title": string };
   "cost.gemini.emptyDetail": undefined;
   "cost.gemini.emptyTitle": undefined;
@@ -2219,8 +2244,11 @@ export interface MessageParams {
   "onboarding.subscriptions.intro": undefined;
   "onboarding.subscriptions.productLine.claude": undefined;
   "onboarding.subscriptions.productLine.codex": undefined;
+  "onboarding.subscriptions.productLine.devin": undefined;
   "onboarding.subscriptions.productLine.gemini": undefined;
   "onboarding.subscriptions.productLine.grok": undefined;
+  "onboarding.subscriptions.productLine.mistralVibe": undefined;
+  "onboarding.subscriptions.productLine.muse": undefined;
   "onboarding.subscriptions.showInOverview": undefined;
   "onboarding.title": undefined;
   "onboarding.welcome.cost.detail": undefined;
@@ -2476,8 +2504,11 @@ export interface MessageParams {
   "quota.login.claude": undefined;
   "quota.login.codex": undefined;
   "quota.login.cursor": undefined;
+  "quota.login.devin": undefined;
   "quota.login.grok": undefined;
   "quota.login.misc": { "provider": string };
+  "quota.login.mistralVibe": undefined;
+  "quota.login.muse": undefined;
   "quota.mini.forecastLearning": { "percent": number };
   "quota.mini.forecastLearningCompact": { "percent": number };
   "quota.mini.forecastLeftCompact": { "percent": number };
@@ -2498,6 +2529,7 @@ export interface MessageParams {
   "quota.misc.setUpInSettings": undefined;
   "quota.mode.remaining": undefined;
   "quota.mode.used": undefined;
+  "quota.muse.keychainAccessNeeded": undefined;
   "quota.pace.deficit": { "percent": number };
   "quota.pace.deficitShort": { "percent": number };
   "quota.pace.lastsUntilReset": undefined;
@@ -2638,6 +2670,7 @@ export interface MessageParams {
   "settings.checkKitUpdates": undefined;
   "settings.checkingGitHub": undefined;
   "settings.clearCostData": undefined;
+  "settings.cognitionIntro": undefined;
   "settings.connectionHealth": undefined;
   "settings.cookies.retryHelp": undefined;
   "settings.cookies.retryToggle": undefined;
@@ -2657,6 +2690,7 @@ export interface MessageParams {
   "settings.deleteGeminiCookies": undefined;
   "settings.deleteGrokCookies": undefined;
   "settings.deleteProviderCookies": { "provider": string };
+  "settings.devin.noCache": undefined;
   "settings.displayMode.remaining": undefined;
   "settings.displayMode.used": undefined;
   "settings.eink.addSlide": undefined;
@@ -2929,6 +2963,7 @@ export interface MessageParams {
   "settings.mcp.title": undefined;
   "settings.mcp.whatAgentsMayDo": undefined;
   "settings.menuBarHealthUnavailable": undefined;
+  "settings.metaAIIntro": undefined;
   "settings.miniCanvas.back": undefined;
   "settings.miniCanvas.canvas": undefined;
   "settings.miniCanvas.column": undefined;
@@ -3047,6 +3082,13 @@ export interface MessageParams {
   "settings.misc.variant": undefined;
   "settings.misc.waiting": undefined;
   "settings.misc.workspaceNote": undefined;
+  "settings.mistralAIIntro": undefined;
+  "settings.muse.allowKeychainAccess": undefined;
+  "settings.muse.allowKeychainAccessHelp": undefined;
+  "settings.muse.keychainAccessAllowed": undefined;
+  "settings.muse.keychainAccessDenied": undefined;
+  "settings.muse.networkNote": undefined;
+  "settings.muse.noLogin": undefined;
   "settings.needsSetup": undefined;
   "settings.notChecked": undefined;
   "settings.notCheckedYet": undefined;
@@ -3156,7 +3198,9 @@ export interface MessageParams {
   "settings.route.antigravityLocal": undefined;
   "settings.route.browserCookies": undefined;
   "settings.route.cli": undefined;
+  "settings.route.devinStatusCache": undefined;
   "settings.route.grokAuthFile": undefined;
+  "settings.route.museKeychain": undefined;
   "settings.route.oauth": undefined;
   "settings.route.webViewCookies": undefined;
   "settings.routeHealth.agyAvailable": undefined;
@@ -3833,9 +3877,12 @@ export const messages: {
     "cost.empty.antigravity": "No Antigravity conversation token metadata found yet.",
     "cost.empty.claude": "No Claude CLI sessions found yet.",
     "cost.empty.codex": "No Codex CLI sessions found yet.",
+    "cost.empty.devin": "No Devin sessions found yet.",
     "cost.empty.gemini": "No Gemini CLI or chat-history usage found yet.",
     "cost.empty.genericCLI": "No {provider} CLI sessions found yet.",
     "cost.empty.grok": "No Grok session usage found yet.",
+    "cost.empty.mistralVibe": "No Mistral Vibe sessions found yet.",
+    "cost.empty.muse": "No Muse Code sessions found yet.",
     "cost.fullCharts": "{title} — Full Charts",
     "cost.gemini.emptyDetail": "Vibe Bar reads live AntiGravity quota from the desktop app when available, then falls back to the installed agy CLI. Cached values are marked stale when neither local source can refresh them.",
     "cost.gemini.emptyTitle": "No Gemini or AntiGravity usage found yet.",
@@ -4104,17 +4151,20 @@ export const messages: {
     "onboarding.subscriptions.intro": "Turn on the subscriptions you use. A provider that is off stays out of the Overview and the menu bar; turning one off later keeps its credentials and history.",
     "onboarding.subscriptions.productLine.claude": "Claude Code · claude.ai web",
     "onboarding.subscriptions.productLine.codex": "Codex CLI · ChatGPT web",
+    "onboarding.subscriptions.productLine.devin": "Devin CLI · Devin app",
     "onboarding.subscriptions.productLine.gemini": "Gemini web · AntiGravity",
     "onboarding.subscriptions.productLine.grok": "Grok CLI · grok.com · Cursor",
+    "onboarding.subscriptions.productLine.mistralVibe": "Mistral Vibe CLI · console.mistral.ai",
+    "onboarding.subscriptions.productLine.muse": "Muse Code CLI",
     "onboarding.subscriptions.showInOverview": "Show in Overview",
     "onboarding.title": "Setup",
     "onboarding.welcome.cost.detail": "Priced locally from the agents' own session logs against a merged model price catalog.",
     "onboarding.welcome.cost.title": "Token cost",
     "onboarding.welcome.footer": "This takes about two minutes. Every choice here can be changed later in Settings, and the assistant is one click away under Settings → System.",
-    "onboarding.welcome.intro": "Vibe Bar sits in your menu bar and shows, at a glance, how much of each AI subscription you have left, what your coding agents are spending, and which sessions and skills live on this Mac. It reads the credentials the Codex, Claude Code, Gemini and Grok CLIs already keep here, adds web quotas from your browser's cookies when you ask it to, and never sends any of it anywhere but the provider it came from.",
+    "onboarding.welcome.intro": "Vibe Bar sits in your menu bar and shows, at a glance, how much of each AI subscription you have left, what your coding agents are spending, and which sessions and skills live on this Mac. It reads what the Codex, Claude Code, Gemini, Grok, Muse Code, Devin and Mistral Vibe CLIs already keep here, adds web quotas from your browser's cookies when you ask it to, and never sends any of it anywhere but the provider it came from.",
     "onboarding.welcome.mcp.detail": "Your agents can ask Vibe Bar for quota and cost over a Unix socket in your home directory.",
     "onboarding.welcome.mcp.title": "Local MCP server",
-    "onboarding.welcome.quotas.detail": "Codex, Claude Code, Gemini, Grok and a shelf of API-key plans, each with its reset countdown.",
+    "onboarding.welcome.quotas.detail": "Codex, Claude Code, Gemini, Grok, Muse Code, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown.",
     "onboarding.welcome.quotas.title": "Subscription quotas",
     "onboarding.welcome.sessions.detail": "Browse, search and tidy agent sessions and shared skills from the Workbench.",
     "onboarding.welcome.sessions.title": "Sessions and skills",
@@ -4361,8 +4411,11 @@ export const messages: {
     "quota.login.claude": "Run claude login, then refresh.",
     "quota.login.codex": "Run codex login, then refresh.",
     "quota.login.cursor": "Sign in to Cursor.app or import cursor.com cookies, then refresh.",
+    "quota.login.devin": "Run devin once so it caches your plan, then refresh.",
     "quota.login.grok": "Run grok login or import grok.com cookies, then refresh.",
     "quota.login.misc": "Configure {provider} in Settings → Misc Providers.",
+    "quota.login.mistralVibe": "Sign in at console.mistral.ai in your browser, then import its cookies in Settings → Mistral AI.",
+    "quota.login.muse": "Run muse login, then refresh.",
     "quota.mini.forecastLearning": "learning · {percent}% left",
     "quota.mini.forecastLearningCompact": "~{percent}% left",
     "quota.mini.forecastLeftCompact": "left {percent}%",
@@ -4383,6 +4436,7 @@ export const messages: {
     "quota.misc.setUpInSettings": "Set up in Settings",
     "quota.mode.remaining": "remaining",
     "quota.mode.used": "used",
+    "quota.muse.keychainAccessNeeded": "Vibe Bar is not yet allowed to read the Muse Code login — allow it in Settings → Meta AI, then refresh.",
     "quota.pace.deficit": "{percent}% in deficit",
     "quota.pace.deficitShort": "{percent}% deficit",
     "quota.pace.lastsUntilReset": "Lasts until reset",
@@ -4523,6 +4577,7 @@ export const messages: {
     "settings.checkKitUpdates": "Check for kit updates",
     "settings.checkingGitHub": "Checking github.com for the newest release…",
     "settings.clearCostData": "Clear cost data",
+    "settings.cognitionIntro": "The Cognition page tracks Devin. Quota comes from the plan status the devin CLI caches on this Mac, so it is as current as Devin's last run; token usage comes from the session database the CLI and the Devin app share, and its cost is what the same tokens cost at the model's API rates.",
     "settings.connectionHealth": "Connection health",
     "settings.cookies.retryHelp": "When enabled, each failed cookie-based refresh gets one silent browser re-read, including when no saved cookie is available. Changed cookies are retried once. Manual cookies and Keychain denials are respected.",
     "settings.cookies.retryToggle": "Re-read browser cookies after each failed refresh",
@@ -4542,6 +4597,7 @@ export const messages: {
     "settings.deleteGeminiCookies": "Delete Gemini cookies",
     "settings.deleteGrokCookies": "Delete Grok cookies",
     "settings.deleteProviderCookies": "Delete {provider} cookies",
+    "settings.devin.noCache": "No Devin plan status cached yet. Run devin once, then refresh.",
     "settings.displayMode.remaining": "Remaining",
     "settings.displayMode.used": "Used",
     "settings.eink.addSlide": "Add a slide",
@@ -4814,6 +4870,7 @@ export const messages: {
     "settings.mcp.title": "MCP Server",
     "settings.mcp.whatAgentsMayDo": "What agents may do",
     "settings.menuBarHealthUnavailable": "The menu bar health monitor is not attached in this process.",
+    "settings.metaAIIntro": "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates.",
     "settings.miniCanvas.back": "Send backward",
     "settings.miniCanvas.canvas": "Canvas",
     "settings.miniCanvas.column": "Column",
@@ -4932,6 +4989,13 @@ export const messages: {
     "settings.misc.variant": "Variant",
     "settings.misc.waiting": "Waiting...",
     "settings.misc.workspaceNote": "Only needed when the account owns more than one workspace — otherwise Vibe Bar uses the first one it finds.",
+    "settings.mistralAIIntro": "The Mistral AI page tracks Mistral Vibe. The Monthly quota comes from your Mistral AI console session, imported from a browser signed in to console.mistral.ai; the plan name comes from the Mistral Vibe CLI's own cache. Token usage comes from Mistral Vibe's local session logs, priced at Mistral AI's API rates.",
+    "settings.muse.allowKeychainAccess": "Allow Keychain Access…",
+    "settings.muse.allowKeychainAccessHelp": "macOS asks once whether Vibe Bar may read the login the muse CLI saved. Choose Always Allow so background refreshes can read it without asking again.",
+    "settings.muse.keychainAccessAllowed": "Vibe Bar can read the Muse Code login.",
+    "settings.muse.keychainAccessDenied": "Keychain access was not allowed — try again and choose Always Allow.",
+    "settings.muse.networkNote": "api.meta.ai must be reachable from this Mac. If your network needs a proxy for it, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY.",
+    "settings.muse.noLogin": "No Muse Code login yet. Run muse login, then refresh.",
     "settings.needsSetup": "Needs setup",
     "settings.notChecked": "Not checked",
     "settings.notCheckedYet": "Not checked. Nothing is fetched until you ask.",
@@ -5041,7 +5105,9 @@ export const messages: {
     "settings.route.antigravityLocal": "Local Antigravity / agy",
     "settings.route.browserCookies": "Chrome/Safari cookies",
     "settings.route.cli": "CLI",
+    "settings.route.devinStatusCache": "Devin CLI plan cache",
     "settings.route.grokAuthFile": "~/.grok/auth.json",
+    "settings.route.museKeychain": "Muse Code login (Keychain)",
     "settings.route.oauth": "OAuth",
     "settings.route.webViewCookies": "WebView cookies",
     "settings.routeHealth.agyAvailable": "agy CLI available",
@@ -5586,7 +5652,7 @@ export const messages: {
     "workbench.skills.sync.noPerSkillSwitch": "no per-skill switch",
     "workbench.skills.sync.noSwitchAlsoReads": "no per-skill switch; also reads ~/{path}",
     "workbench.skills.sync.perSkillSwitch": "per-skill switch {key} in ~/{path}",
-    "workbench.skills.sync.projectionsBody": "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, and Cursor scan the shared root themselves — no link needed.",
+    "workbench.skills.sync.projectionsBody": "Claude Code and AntiGravity read only their own skills folders, so Vibe Bar links (or copies) skills into them. Codex, Gemini CLI, Grok Build, Cursor, and Muse Code scan the shared root themselves — no link needed.",
     "workbench.skills.sync.projectionsLead": "Projections.",
     "workbench.skills.sync.readsOwnFolder": "reads only ~/{path}",
     "workbench.skills.sync.scansSharedRoot": "scans ~/{path} directly",
@@ -5713,9 +5779,12 @@ export const messages: {
     "cost.empty.antigravity": "暂未发现 Antigravity 会话的 token 元数据。",
     "cost.empty.claude": "暂未发现 Claude CLI 会话。",
     "cost.empty.codex": "暂未发现 Codex CLI 会话。",
+    "cost.empty.devin": "尚未找到 Devin 会话。",
     "cost.empty.gemini": "暂未发现 Gemini CLI 或聊天历史的用量。",
     "cost.empty.genericCLI": "暂未发现 {provider} CLI 会话。",
     "cost.empty.grok": "暂未发现 Grok 会话的用量。",
+    "cost.empty.mistralVibe": "尚未找到 Mistral Vibe 会话。",
+    "cost.empty.muse": "尚未找到 Muse Code 会话。",
     "cost.fullCharts": "{title} — 完整图表",
     "cost.gemini.emptyDetail": "Vibe Bar 会优先从 AntiGravity 桌面端读取实时额度，其次回退到本机安装的 agy CLI。两个本地来源均无法刷新时，缓存值将标记为已过期。",
     "cost.gemini.emptyTitle": "暂未发现 Gemini 或 AntiGravity 的用量。",
@@ -5984,17 +6053,20 @@ export const messages: {
     "onboarding.subscriptions.intro": "启用正在使用的订阅。已关闭的厂商不会出现在总览与菜单栏；之后关闭亦不会删除其凭据与历史。",
     "onboarding.subscriptions.productLine.claude": "Claude Code · claude.ai 网页",
     "onboarding.subscriptions.productLine.codex": "Codex CLI · ChatGPT 网页",
+    "onboarding.subscriptions.productLine.devin": "Devin CLI · Devin 桌面 app",
     "onboarding.subscriptions.productLine.gemini": "Gemini 网页 · AntiGravity",
     "onboarding.subscriptions.productLine.grok": "Grok CLI · grok.com · Cursor",
+    "onboarding.subscriptions.productLine.mistralVibe": "Mistral Vibe CLI · console.mistral.ai",
+    "onboarding.subscriptions.productLine.muse": "Muse Code CLI",
     "onboarding.subscriptions.showInOverview": "在总览中显示",
     "onboarding.title": "设置向导",
     "onboarding.welcome.cost.detail": "完全在本机按 agent 自己的会话日志计价，对照合并后的模型价目表。",
     "onboarding.welcome.cost.title": "Token 花费",
     "onboarding.welcome.footer": "全程约两分钟。此处的每项选择均可稍后在设置中修改，向导亦可在「设置 → 系统」中一键打开。",
-    "onboarding.welcome.intro": "Vibe Bar 常驻菜单栏，可一览各 AI 订阅的剩余量、编码 agent 的支出，以及本机存有哪些会话与 skills。它读取 Codex、Claude Code、Gemini、Grok 等 CLI 已保存在本机的凭据，并在获得授权后从浏览器 cookies 补充网页端额度；所有数据仅发送至其来源厂商。",
+    "onboarding.welcome.intro": "Vibe Bar 常驻菜单栏，可一览各 AI 订阅的剩余量、编码 agent 的支出，以及本机存有哪些会话与 skills。它读取 Codex、Claude Code、Gemini、Grok、Muse Code、Devin、Mistral Vibe 等 CLI 已保存在本机的凭据与缓存，并在获得授权后从浏览器 cookies 补充网页端额度；所有数据仅发送至其来源厂商。",
     "onboarding.welcome.mcp.detail": "agent 可通过 home 目录下的 Unix socket 向 Vibe Bar 查询额度与花费。",
     "onboarding.welcome.mcp.title": "本地 MCP 服务",
-    "onboarding.welcome.quotas.detail": "Codex、Claude Code、Gemini、Grok，以及一系列 API key 套餐，均附带重置倒计时。",
+    "onboarding.welcome.quotas.detail": "Codex、Claude Code、Gemini、Grok、Muse Code、Devin、Mistral Vibe，以及一系列 API key 套餐，均附带重置倒计时。",
     "onboarding.welcome.quotas.title": "订阅额度",
     "onboarding.welcome.sessions.detail": "在 Workbench 中浏览、搜索并整理 agent 会话与共享 skills。",
     "onboarding.welcome.sessions.title": "会话与 skills",
@@ -6241,8 +6313,11 @@ export const messages: {
     "quota.login.claude": "运行 claude login，然后刷新。",
     "quota.login.codex": "运行 codex login，然后刷新。",
     "quota.login.cursor": "登录 Cursor.app，或导入 cursor.com 的 cookies，然后刷新。",
+    "quota.login.devin": "先运行一次 devin，让它缓存套餐状态，然后刷新。",
     "quota.login.grok": "运行 grok login，或导入 grok.com 的 cookies，然后刷新。",
     "quota.login.misc": "在「设置 → 其他厂商」中配置 {provider}。",
+    "quota.login.mistralVibe": "请先在浏览器登录 console.mistral.ai，再到“设置 → Mistral AI”导入 cookie。",
+    "quota.login.muse": "运行 muse login，然后刷新。",
     "quota.mini.forecastLearning": "学习中 · 剩余 {percent}%",
     "quota.mini.forecastLearningCompact": "约剩余 {percent}%",
     "quota.mini.forecastLeftCompact": "剩余 {percent}%",
@@ -6263,6 +6338,7 @@ export const messages: {
     "quota.misc.setUpInSettings": "在设置中配置",
     "quota.mode.remaining": "剩余",
     "quota.mode.used": "已用",
+    "quota.muse.keychainAccessNeeded": "Vibe Bar 尚无权限读取 Muse Code 登录信息，请在「设置 → Meta AI」中允许后刷新。",
     "quota.pace.deficit": "超支 {percent}%",
     "quota.pace.deficitShort": "超支 {percent}%",
     "quota.pace.lastsUntilReset": "可用到重置",
@@ -6403,6 +6479,7 @@ export const messages: {
     "settings.checkKitUpdates": "检查组件更新",
     "settings.checkingGitHub": "正在向 github.com 查询最新版本…",
     "settings.clearCostData": "清除花费数据",
+    "settings.cognitionIntro": "Cognition 页面追踪 Devin。额度来自 devin CLI 在本机缓存的套餐状态，新鲜程度取决于 Devin 上次运行的时间；token 用量来自 CLI 与 Devin 桌面 app 共用的会话数据库，成本按对应模型的 API 单价折算。",
     "settings.connectionHealth": "连接状态",
     "settings.cookies.retryHelp": "开启后，每次 Cookie 方式刷新失败都会静默重读一次浏览器，包括没有已保存 Cookie 的情况。Cookie 更新后仅重试一次，并遵循手动 Cookie 设置和 Keychain 拒绝状态。",
     "settings.cookies.retryToggle": "每次刷新失败后重新读取浏览器 Cookie",
@@ -6422,6 +6499,7 @@ export const messages: {
     "settings.deleteGeminiCookies": "删除 Gemini 的 cookies",
     "settings.deleteGrokCookies": "删除 Grok 的 cookies",
     "settings.deleteProviderCookies": "删除 {provider} cookies",
+    "settings.devin.noCache": "尚无 Devin 套餐缓存。请先运行一次 devin，然后刷新。",
     "settings.displayMode.remaining": "剩余",
     "settings.displayMode.used": "已用",
     "settings.eink.addSlide": "添加幻灯片",
@@ -6694,6 +6772,7 @@ export const messages: {
     "settings.mcp.title": "MCP 服务",
     "settings.mcp.whatAgentsMayDo": "agent 的权限范围",
     "settings.menuBarHealthUnavailable": "本进程未接入菜单栏健康监控。",
+    "settings.metaAIIntro": "Meta AI 页面追踪 Muse Code。额度来自 `muse login` 保存在 macOS Keychain 中的登录信息；token 用量来自 Muse Code 的本地会话日志，成本按 Meta API 的单价折算。",
     "settings.miniCanvas.back": "下移一层",
     "settings.miniCanvas.canvas": "画布",
     "settings.miniCanvas.column": "列",
@@ -6812,6 +6891,13 @@ export const messages: {
     "settings.misc.variant": "变体",
     "settings.misc.waiting": "等待中…",
     "settings.misc.workspaceNote": "仅当账号拥有多个工作区时才需要填写 — 否则 Vibe Bar 使用找到的第一个。",
+    "settings.mistralAIIntro": "Mistral AI 页面追踪 Mistral Vibe。Monthly 额度来自 Mistral AI 控制台的登录会话，从已登录 console.mistral.ai 的浏览器导入；套餐名来自 Mistral Vibe CLI 自己的缓存。token 用量来自 Mistral Vibe 的本地会话日志，成本按 Mistral AI 的 API 单价折算。",
+    "settings.muse.allowKeychainAccess": "允许 Keychain 访问…",
+    "settings.muse.allowKeychainAccessHelp": "macOS 会询问一次是否允许 Vibe Bar 读取 muse CLI 保存的登录信息。请选择「始终允许」，之后后台刷新就无需再次询问。",
+    "settings.muse.keychainAccessAllowed": "Vibe Bar 已可读取 Muse Code 登录信息。",
+    "settings.muse.keychainAccessDenied": "未获得 Keychain 访问权限，请重试并选择「始终允许」。",
+    "settings.muse.networkNote": "此 Mac 需要能访问 api.meta.ai。如果你的网络需要代理才能访问，请把代理设为 macOS 系统代理——Vibe Bar 不读取 shell 的 HTTPS_PROXY。",
+    "settings.muse.noLogin": "尚无 Muse Code 登录信息。请运行 muse login，然后刷新。",
     "settings.needsSetup": "需配置",
     "settings.notChecked": "未检查",
     "settings.notCheckedYet": "尚未检查。在主动发起前不会请求任何内容。",
@@ -6921,7 +7007,9 @@ export const messages: {
     "settings.route.antigravityLocal": "本地 Antigravity / agy",
     "settings.route.browserCookies": "Chrome/Safari cookies",
     "settings.route.cli": "CLI",
+    "settings.route.devinStatusCache": "Devin CLI 套餐缓存",
     "settings.route.grokAuthFile": "~/.grok/auth.json",
+    "settings.route.museKeychain": "Muse Code 登录信息（Keychain）",
     "settings.route.oauth": "OAuth",
     "settings.route.webViewCookies": "WebView cookies",
     "settings.routeHealth.agyAvailable": "agy CLI 可用",
@@ -7466,7 +7554,7 @@ export const messages: {
     "workbench.skills.sync.noPerSkillSwitch": "无按技能开关",
     "workbench.skills.sync.noSwitchAlsoReads": "无按技能开关；同时读取 ~/{path}",
     "workbench.skills.sync.perSkillSwitch": "按技能开关 {key} 位于 ~/{path}",
-    "workbench.skills.sync.projectionsBody": "Claude Code 和 AntiGravity 只读取各自的技能目录，因此 Vibe Bar 会把技能链接（或复制）进去。Codex、Gemini CLI、Grok Build 和 Cursor 会自行扫描共享根目录，无需链接。",
+    "workbench.skills.sync.projectionsBody": "Claude Code 和 AntiGravity 只读取各自的技能目录，因此 Vibe Bar 会把技能链接（或复制）进去。Codex、Gemini CLI、Grok Build、Cursor 和 Muse Code 会自行扫描共享根目录，无需链接。",
     "workbench.skills.sync.projectionsLead": "投影。",
     "workbench.skills.sync.readsOwnFolder": "只读取 ~/{path}",
     "workbench.skills.sync.scansSharedRoot": "直接扫描 ~/{path}",
