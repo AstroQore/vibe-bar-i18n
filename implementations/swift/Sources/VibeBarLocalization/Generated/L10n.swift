@@ -408,6 +408,12 @@ public enum L10n {
             /// en: "No Codex CLI sessions found yet."
             public static var codex: String { L10nSupport.string("cost.empty.codex") }
 
+            /// Empty state of the Cognition cost card before any Devin session has been scanned.
+            ///
+            /// Key: `cost.empty.devin`
+            /// en: "No Devin sessions found yet."
+            public static var devin: String { L10nSupport.string("cost.empty.devin") }
+
             /// Empty cost history
             ///
             /// Key: `cost.empty.gemini`
@@ -427,6 +433,12 @@ public enum L10n {
             /// Key: `cost.empty.grok`
             /// en: "No Grok session usage found yet."
             public static var grok: String { L10nSupport.string("cost.empty.grok") }
+
+            /// Empty state of the Mistral AI cost card before any Mistral Vibe session log has been scanned.
+            ///
+            /// Key: `cost.empty.mistralVibe`
+            /// en: "No Mistral Vibe sessions found yet."
+            public static var mistralVibe: String { L10nSupport.string("cost.empty.mistralVibe") }
 
             /// Empty state of the Meta AI cost card before any Muse Code session log has been scanned.
             ///
@@ -2199,6 +2211,12 @@ public enum L10n {
                 /// en: "Codex CLI · ChatGPT web"
                 public static var codex: String { L10nSupport.string("onboarding.subscriptions.productLine.codex") }
 
+                /// Product line under the Cognition row of the onboarding subscriptions step.
+                ///
+                /// Key: `onboarding.subscriptions.productLine.devin`
+                /// en: "Devin CLI · Devin app"
+                public static var devin: String { L10nSupport.string("onboarding.subscriptions.productLine.devin") }
+
                 /// Where this provider's quota can come from
                 ///
                 /// Key: `onboarding.subscriptions.productLine.gemini`
@@ -2210,6 +2228,12 @@ public enum L10n {
                 /// Key: `onboarding.subscriptions.productLine.grok`
                 /// en: "Grok CLI · grok.com · Cursor"
                 public static var grok: String { L10nSupport.string("onboarding.subscriptions.productLine.grok") }
+
+                /// Product line under the Mistral AI row of the onboarding subscriptions step.
+                ///
+                /// Key: `onboarding.subscriptions.productLine.mistralVibe`
+                /// en: "Mistral Vibe CLI · console.mistral.ai"
+                public static var mistralVibe: String { L10nSupport.string("onboarding.subscriptions.productLine.mistralVibe") }
 
                 /// Product line under the Meta AI row of the onboarding subscriptions step.
                 ///
@@ -3972,6 +3996,12 @@ public enum L10n {
             /// en: "Sign in to Cursor.app or import cursor.com cookies, then refresh."
             public static var cursor: String { L10nSupport.string("quota.login.cursor") }
 
+            /// Hint on the Cognition quota card when the devin CLI has not cached a plan status on this Mac. `devin` is the CLI command and stays as is.
+            ///
+            /// Key: `quota.login.devin`
+            /// en: "Run devin once so it caches your plan, then refresh."
+            public static var devin: String { L10nSupport.string("quota.login.devin") }
+
             /// What to do when no credential is stored
             ///
             /// Key: `quota.login.grok`
@@ -3985,6 +4015,12 @@ public enum L10n {
             public static func misc(provider: String) -> String {
                 L10nSupport.format("quota.login.misc", provider)
             }
+
+            /// Hint on the Mistral AI quota card when no Mistral console session has been imported.
+            ///
+            /// Key: `quota.login.mistralVibe`
+            /// en: "Sign in at console.mistral.ai in your browser, then import its cookies in Settings → Mistral AI."
+            public static var mistralVibe: String { L10nSupport.string("quota.login.mistralVibe") }
 
             /// Hint on the Meta AI quota card when this Mac has no Muse Code login. `muse login` is the CLI command and stays as is.
             ///
@@ -4989,6 +5025,12 @@ public enum L10n {
         /// en: "Clear cost data"
         public static var clearCostData: String { L10nSupport.string("settings.clearCostData") }
 
+        /// Intro paragraph at the top of the Cognition settings page.
+        ///
+        /// Key: `settings.cognitionIntro`
+        /// en: "The Cognition page tracks Devin. Quota comes from the plan status the devin CLI caches on this Mac, so it is as current as Devin's last run; token usage comes from the session database the CLI and the Devin app share, and its cost is what the same tokens cost at the model's API rates."
+        public static var cognitionIntro: String { L10nSupport.string("settings.cognitionIntro") }
+
         /// Heading over the per-provider connection rows
         ///
         /// Key: `settings.connectionHealth`
@@ -5128,6 +5170,12 @@ public enum L10n {
         /// Key: `settings.metaAIIntro`
         /// en: "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates."
         public static var metaAIIntro: String { L10nSupport.string("settings.metaAIIntro") }
+
+        /// Intro paragraph at the top of the Mistral AI settings page. 'Monthly' is the quota window's name and stays as is.
+        ///
+        /// Key: `settings.mistralAIIntro`
+        /// en: "The Mistral AI page tracks Mistral Vibe. The Monthly quota comes from your Mistral console session, imported from a browser signed in to console.mistral.ai; the plan name comes from the Vibe CLI's own cache. Token usage comes from Mistral Vibe's local session logs, priced at Mistral's API rates."
+        public static var mistralAIIntro: String { L10nSupport.string("settings.mistralAIIntro") }
 
         /// Provider state: credentials are missing
         ///
@@ -5485,6 +5533,14 @@ public enum L10n {
             /// Key: `settings.credentialSource.off`
             /// en: "Off"
             public static var off: String { L10nSupport.string("settings.credentialSource.off") }
+        }
+
+        public enum Devin {
+            /// Status line on the Cognition settings page when ~/.cache/devin/cli holds no plan status.
+            ///
+            /// Key: `settings.devin.noCache`
+            /// en: "No Devin plan status cached yet. Run devin once, then refresh."
+            public static var noCache: String { L10nSupport.string("settings.devin.noCache") }
         }
 
         public enum DisplayMode {
@@ -8477,6 +8533,12 @@ public enum L10n {
             /// Key: `settings.route.cli`
             /// en: "CLI"
             public static var cli: String { L10nSupport.string("settings.route.cli") }
+
+            /// Route-health row name on the Cognition settings page: the plan status the devin CLI caches under ~/.cache/devin.
+            ///
+            /// Key: `settings.route.devinStatusCache`
+            /// en: "Devin CLI plan cache"
+            public static var devinStatusCache: String { L10nSupport.string("settings.route.devinStatusCache") }
 
             /// Connection-health row: the Grok CLI's credential file. A path, never translated.
             ///
@@ -12697,9 +12759,11 @@ enum L10nCatalogFacts {
         "cost.empty.antigravity",
         "cost.empty.claude",
         "cost.empty.codex",
+        "cost.empty.devin",
         "cost.empty.gemini",
         "cost.empty.genericCLI",
         "cost.empty.grok",
+        "cost.empty.mistralVibe",
         "cost.empty.muse",
         "cost.fullCharts",
         "cost.gemini.emptyDetail",
@@ -12969,8 +13033,10 @@ enum L10nCatalogFacts {
         "onboarding.subscriptions.intro",
         "onboarding.subscriptions.productLine.claude",
         "onboarding.subscriptions.productLine.codex",
+        "onboarding.subscriptions.productLine.devin",
         "onboarding.subscriptions.productLine.gemini",
         "onboarding.subscriptions.productLine.grok",
+        "onboarding.subscriptions.productLine.mistralVibe",
         "onboarding.subscriptions.productLine.muse",
         "onboarding.subscriptions.showInOverview",
         "onboarding.title",
@@ -13227,8 +13293,10 @@ enum L10nCatalogFacts {
         "quota.login.claude",
         "quota.login.codex",
         "quota.login.cursor",
+        "quota.login.devin",
         "quota.login.grok",
         "quota.login.misc",
+        "quota.login.mistralVibe",
         "quota.login.muse",
         "quota.mini.forecastLearning",
         "quota.mini.forecastLearningCompact",
@@ -13391,6 +13459,7 @@ enum L10nCatalogFacts {
         "settings.checkKitUpdates",
         "settings.checkingGitHub",
         "settings.clearCostData",
+        "settings.cognitionIntro",
         "settings.connectionHealth",
         "settings.cookies.retryHelp",
         "settings.cookies.retryToggle",
@@ -13410,6 +13479,7 @@ enum L10nCatalogFacts {
         "settings.deleteGeminiCookies",
         "settings.deleteGrokCookies",
         "settings.deleteProviderCookies",
+        "settings.devin.noCache",
         "settings.displayMode.remaining",
         "settings.displayMode.used",
         "settings.eink.addSlide",
@@ -13801,6 +13871,7 @@ enum L10nCatalogFacts {
         "settings.misc.variant",
         "settings.misc.waiting",
         "settings.misc.workspaceNote",
+        "settings.mistralAIIntro",
         "settings.muse.allowKeychainAccess",
         "settings.muse.allowKeychainAccessHelp",
         "settings.muse.keychainAccessAllowed",
@@ -13916,6 +13987,7 @@ enum L10nCatalogFacts {
         "settings.route.antigravityLocal",
         "settings.route.browserCookies",
         "settings.route.cli",
+        "settings.route.devinStatusCache",
         "settings.route.grokAuthFile",
         "settings.route.museKeychain",
         "settings.route.oauth",
@@ -14647,9 +14719,11 @@ enum L10nCatalogFacts {
         "cost.empty.antigravity": 0,
         "cost.empty.claude": 0,
         "cost.empty.codex": 0,
+        "cost.empty.devin": 0,
         "cost.empty.gemini": 0,
         "cost.empty.genericCLI": 1,
         "cost.empty.grok": 0,
+        "cost.empty.mistralVibe": 0,
         "cost.empty.muse": 0,
         "cost.fullCharts": 1,
         "cost.gemini.emptyDetail": 0,
@@ -14919,8 +14993,10 @@ enum L10nCatalogFacts {
         "onboarding.subscriptions.intro": 0,
         "onboarding.subscriptions.productLine.claude": 0,
         "onboarding.subscriptions.productLine.codex": 0,
+        "onboarding.subscriptions.productLine.devin": 0,
         "onboarding.subscriptions.productLine.gemini": 0,
         "onboarding.subscriptions.productLine.grok": 0,
+        "onboarding.subscriptions.productLine.mistralVibe": 0,
         "onboarding.subscriptions.productLine.muse": 0,
         "onboarding.subscriptions.showInOverview": 0,
         "onboarding.title": 0,
@@ -15177,8 +15253,10 @@ enum L10nCatalogFacts {
         "quota.login.claude": 0,
         "quota.login.codex": 0,
         "quota.login.cursor": 0,
+        "quota.login.devin": 0,
         "quota.login.grok": 0,
         "quota.login.misc": 1,
+        "quota.login.mistralVibe": 0,
         "quota.login.muse": 0,
         "quota.mini.forecastLearning": 1,
         "quota.mini.forecastLearningCompact": 1,
@@ -15341,6 +15419,7 @@ enum L10nCatalogFacts {
         "settings.checkKitUpdates": 0,
         "settings.checkingGitHub": 0,
         "settings.clearCostData": 0,
+        "settings.cognitionIntro": 0,
         "settings.connectionHealth": 0,
         "settings.cookies.retryHelp": 0,
         "settings.cookies.retryToggle": 0,
@@ -15360,6 +15439,7 @@ enum L10nCatalogFacts {
         "settings.deleteGeminiCookies": 0,
         "settings.deleteGrokCookies": 0,
         "settings.deleteProviderCookies": 1,
+        "settings.devin.noCache": 0,
         "settings.displayMode.remaining": 0,
         "settings.displayMode.used": 0,
         "settings.eink.addSlide": 0,
@@ -15751,6 +15831,7 @@ enum L10nCatalogFacts {
         "settings.misc.variant": 0,
         "settings.misc.waiting": 0,
         "settings.misc.workspaceNote": 0,
+        "settings.mistralAIIntro": 0,
         "settings.muse.allowKeychainAccess": 0,
         "settings.muse.allowKeychainAccessHelp": 0,
         "settings.muse.keychainAccessAllowed": 0,
@@ -15866,6 +15947,7 @@ enum L10nCatalogFacts {
         "settings.route.antigravityLocal": 0,
         "settings.route.browserCookies": 0,
         "settings.route.cli": 0,
+        "settings.route.devinStatusCache": 0,
         "settings.route.grokAuthFile": 0,
         "settings.route.museKeychain": 0,
         "settings.route.oauth": 0,

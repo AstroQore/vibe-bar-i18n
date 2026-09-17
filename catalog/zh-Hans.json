@@ -164,6 +164,12 @@
     "cost.empty.muse": {
       "value": "尚未找到 Muse Code 会话。"
     },
+    "cost.empty.devin": {
+      "value": "尚未找到 Devin 会话。"
+    },
+    "cost.empty.mistralVibe": {
+      "value": "尚未找到 Mistral Vibe 会话。"
+    },
     "cost.fullCharts": {
       "value": "{title} — 完整图表"
     },
@@ -977,6 +983,12 @@
     "onboarding.subscriptions.productLine.muse": {
       "value": "Muse Code CLI"
     },
+    "onboarding.subscriptions.productLine.devin": {
+      "value": "Devin CLI · Devin 桌面 app"
+    },
+    "onboarding.subscriptions.productLine.mistralVibe": {
+      "value": "Mistral Vibe CLI · console.mistral.ai"
+    },
     "onboarding.subscriptions.showInOverview": {
       "value": "在总览中显示"
     },
@@ -1660,6 +1672,12 @@
     },
     "quota.login.muse": {
       "value": "运行 muse login，然后刷新。"
+    },
+    "quota.login.devin": {
+      "value": "先运行一次 devin，让它缓存套餐状态，然后刷新。"
+    },
+    "quota.login.mistralVibe": {
+      "value": "请先在浏览器登录 console.mistral.ai，再到“设置 → Mistral AI”导入 cookie。"
     },
     "quota.muse.keychainAccessNeeded": {
       "value": "Vibe Bar 尚无权限读取 Muse Code 登录信息，请在「设置 → Meta AI」中允许后刷新。"
@@ -3164,6 +3182,9 @@
     "settings.route.museKeychain": {
       "value": "Muse Code 登录信息（Keychain）"
     },
+    "settings.route.devinStatusCache": {
+      "value": "Devin CLI 套餐缓存"
+    },
     "settings.route.oauth": {
       "value": "OAuth"
     },
@@ -3275,6 +3296,12 @@
     "settings.metaAIIntro": {
       "value": "Meta AI 页面追踪 Muse Code。额度来自 `muse login` 保存在 macOS Keychain 中的登录信息；token 用量来自 Muse Code 的本地会话日志，成本按 Meta API 的单价折算。"
     },
+    "settings.cognitionIntro": {
+      "value": "Cognition 页面追踪 Devin。额度来自 devin CLI 在本机缓存的套餐状态，新鲜程度取决于 Devin 上次运行的时间；token 用量来自 CLI 与 Devin 桌面 app 共用的会话数据库，成本按对应模型的 API 单价折算。"
+    },
+    "settings.mistralAIIntro": {
+      "value": "Mistral AI 页面追踪 Mistral Vibe。Monthly 额度来自 Mistral 控制台的登录会话，从已登录 console.mistral.ai 的浏览器导入；套餐名来自 Vibe CLI 自己的缓存。token 用量来自 Mistral Vibe 的本地会话日志，成本按 Mistral API 单价折算。"
+    },
     "settings.muse.allowKeychainAccess": {
       "value": "允许 Keychain 访问…"
     },
@@ -3289,6 +3316,9 @@
     },
     "settings.muse.noLogin": {
       "value": "尚无 Muse Code 登录信息。请运行 muse login，然后刷新。"
+    },
+    "settings.devin.noCache": {
+      "value": "尚无 Devin 套餐缓存。请先运行一次 devin，然后刷新。"
     },
     "settings.muse.networkNote": {
       "value": "此 Mac 需要能访问 api.meta.ai。如果你的网络需要代理才能访问，请把代理设为 macOS 系统代理——Vibe Bar 不读取 shell 的 HTTPS_PROXY。"

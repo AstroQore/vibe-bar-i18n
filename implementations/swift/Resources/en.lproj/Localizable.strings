@@ -135,6 +135,9 @@
 /* Empty cost history; the harness name is never translated */
 "cost.empty.codex" = "No Codex CLI sessions found yet.";
 
+/* Empty state of the Cognition cost card before any Devin session has been scanned. */
+"cost.empty.devin" = "No Devin sessions found yet.";
+
 /* Empty cost history */
 "cost.empty.gemini" = "No Gemini CLI or chat-history usage found yet.";
 
@@ -143,6 +146,9 @@
 
 /* Empty cost history */
 "cost.empty.grok" = "No Grok session usage found yet.";
+
+/* Empty state of the Mistral AI cost card before any Mistral Vibe session log has been scanned. */
+"cost.empty.mistralVibe" = "No Mistral Vibe sessions found yet.";
 
 /* Empty state of the Meta AI cost card before any Muse Code session log has been scanned. */
 "cost.empty.muse" = "No Muse Code sessions found yet.";
@@ -945,11 +951,17 @@
 /* Where this provider's quota can come from; the harness and SubProvider names are never translated */
 "onboarding.subscriptions.productLine.codex" = "Codex CLI · ChatGPT web";
 
+/* Product line under the Cognition row of the onboarding subscriptions step. */
+"onboarding.subscriptions.productLine.devin" = "Devin CLI · Devin app";
+
 /* Where this provider's quota can come from */
 "onboarding.subscriptions.productLine.gemini" = "Gemini web · AntiGravity";
 
 /* Where this provider's quota can come from */
 "onboarding.subscriptions.productLine.grok" = "Grok CLI · grok.com · Cursor";
+
+/* Product line under the Mistral AI row of the onboarding subscriptions step. */
+"onboarding.subscriptions.productLine.mistralVibe" = "Mistral Vibe CLI · console.mistral.ai";
 
 /* Product line under the Meta AI row of the onboarding subscriptions step. */
 "onboarding.subscriptions.productLine.muse" = "Muse Code CLI";
@@ -1707,11 +1719,17 @@
 /* What to do when no credential is stored */
 "quota.login.cursor" = "Sign in to Cursor.app or import cursor.com cookies, then refresh.";
 
+/* Hint on the Cognition quota card when the devin CLI has not cached a plan status on this Mac. `devin` is the CLI command and stays as is. */
+"quota.login.devin" = "Run devin once so it caches your plan, then refresh.";
+
 /* What to do when no credential is stored */
 "quota.login.grok" = "Run grok login or import grok.com cookies, then refresh.";
 
 /* Fallback for a misc provider; provider is a SubProvider name */
 "quota.login.misc" = "Configure %@ in Settings → Misc Providers.";
+
+/* Hint on the Mistral AI quota card when no Mistral console session has been imported. */
+"quota.login.mistralVibe" = "Sign in at console.mistral.ai in your browser, then import its cookies in Settings → Mistral AI.";
 
 /* Hint on the Meta AI quota card when this Mac has no Muse Code login. `muse login` is the CLI command and stays as is. */
 "quota.login.muse" = "Run muse login, then refresh.";
@@ -2175,6 +2193,9 @@
 /* Button label */
 "settings.clearCostData" = "Clear cost data";
 
+/* Intro paragraph at the top of the Cognition settings page. */
+"settings.cognitionIntro" = "The Cognition page tracks Devin. Quota comes from the plan status the devin CLI caches on this Mac, so it is as current as Devin's last run; token usage comes from the session database the CLI and the Devin app share, and its cost is what the same tokens cost at the model's API rates.";
+
 /* Heading over the per-provider connection rows */
 "settings.connectionHealth" = "Connection health";
 
@@ -2231,6 +2252,9 @@
 
 /* Destructive button that removes every saved cookie for one provider; {provider} is the provider name */
 "settings.deleteProviderCookies" = "Delete %@ cookies";
+
+/* Status line on the Cognition settings page when ~/.cache/devin/cli holds no plan status. */
+"settings.devin.noCache" = "No Devin plan status cached yet. Run devin once, then refresh.";
 
 /* Segmented option: the percentage shows what is left. Title case because it is a picker option; quota.mode.remaining is the lowercase caption under a bar. distinct-from: quota.mode.remaining — the lowercase caption under a bar and the title-case picker option are two renderings the app sets deliberately; collapsing them would move the casing into a call site, which is a code change rather than a rename. */
 "settings.displayMode.remaining" = "Remaining";
@@ -3393,6 +3417,9 @@
 /* Caption under the workspace field */
 "settings.misc.workspaceNote" = "Only needed when the account owns more than one workspace — otherwise Vibe Bar uses the first one it finds.";
 
+/* Intro paragraph at the top of the Mistral AI settings page. 'Monthly' is the quota window's name and stays as is. */
+"settings.mistralAIIntro" = "The Mistral AI page tracks Mistral Vibe. The Monthly quota comes from your Mistral console session, imported from a browser signed in to console.mistral.ai; the plan name comes from the Vibe CLI's own cache. Token usage comes from Mistral Vibe's local session logs, priced at Mistral's API rates.";
+
 /* Button on the Meta AI settings page. Clicking it makes macOS ask whether Vibe Bar may read the Muse Code login. */
 "settings.muse.allowKeychainAccess" = "Allow Keychain Access…";
 
@@ -3737,6 +3764,9 @@
 
 /* Connection-health row: the local CLI credential path */
 "settings.route.cli" = "CLI";
+
+/* Route-health row name on the Cognition settings page: the plan status the devin CLI caches under ~/.cache/devin. */
+"settings.route.devinStatusCache" = "Devin CLI plan cache";
 
 /* Connection-health row: the Grok CLI's credential file. A path, never translated. */
 "settings.route.grokAuthFile" = "~/.grok/auth.json";

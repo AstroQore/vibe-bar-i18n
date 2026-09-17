@@ -22,6 +22,14 @@
       "kind": "company"
     },
     {
+      "term": "Cognition",
+      "kind": "company"
+    },
+    {
+      "term": "Mistral AI",
+      "kind": "company"
+    },
+    {
       "term": "ByteDance",
       "kind": "company"
     },
@@ -91,6 +99,16 @@
       "term": "Muse Code",
       "kind": "subProvider",
       "note": "Deliberately listed on both axes: the quota SubProvider under Meta AI and, separately, the harness that spends it."
+    },
+    {
+      "term": "Devin",
+      "kind": "subProvider",
+      "note": "Deliberately listed on both axes, like Muse Code: the quota SubProvider and, separately, the harness that spends it."
+    },
+    {
+      "term": "Mistral Vibe",
+      "kind": "subProvider",
+      "note": "Deliberately listed on both axes, like Muse Code: the quota SubProvider and, separately, the harness that spends it."
     },
     {
       "term": "Bailian",
@@ -199,6 +217,16 @@
     },
     {
       "term": "Muse Code",
+      "kind": "harness",
+      "note": "The usage-axis entry. See the subProvider entry of the same name."
+    },
+    {
+      "term": "Devin",
+      "kind": "harness",
+      "note": "The usage-axis entry. See the subProvider entry of the same name."
+    },
+    {
+      "term": "Mistral Vibe",
       "kind": "harness",
       "note": "The usage-axis entry. See the subProvider entry of the same name."
     },

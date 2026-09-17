@@ -270,6 +270,14 @@
       "value": "No Muse Code sessions found yet.",
       "comment": "Empty state of the Meta AI cost card before any Muse Code session log has been scanned."
     },
+    "cost.empty.devin": {
+      "value": "No Devin sessions found yet.",
+      "comment": "Empty state of the Cognition cost card before any Devin session has been scanned."
+    },
+    "cost.empty.mistralVibe": {
+      "value": "No Mistral Vibe sessions found yet.",
+      "comment": "Empty state of the Mistral AI cost card before any Mistral Vibe session log has been scanned."
+    },
     "cost.fullCharts": {
       "value": "{title} — Full Charts",
       "comment": "Title of the expanded cost popover; title is the card's own title",
@@ -1492,6 +1500,14 @@
       "value": "Muse Code CLI",
       "comment": "Product line under the Meta AI row of the onboarding subscriptions step."
     },
+    "onboarding.subscriptions.productLine.devin": {
+      "value": "Devin CLI · Devin app",
+      "comment": "Product line under the Cognition row of the onboarding subscriptions step."
+    },
+    "onboarding.subscriptions.productLine.mistralVibe": {
+      "value": "Mistral Vibe CLI · console.mistral.ai",
+      "comment": "Product line under the Mistral AI row of the onboarding subscriptions step."
+    },
     "onboarding.subscriptions.showInOverview": {
       "value": "Show in Overview",
       "comment": "Per-provider toggle in the setup assistant"
@@ -2604,6 +2620,14 @@
     "quota.login.muse": {
       "value": "Run muse login, then refresh.",
       "comment": "Hint on the Meta AI quota card when this Mac has no Muse Code login. `muse login` is the CLI command and stays as is."
+    },
+    "quota.login.devin": {
+      "value": "Run devin once so it caches your plan, then refresh.",
+      "comment": "Hint on the Cognition quota card when the devin CLI has not cached a plan status on this Mac. `devin` is the CLI command and stays as is."
+    },
+    "quota.login.mistralVibe": {
+      "value": "Sign in at console.mistral.ai in your browser, then import its cookies in Settings → Mistral AI.",
+      "comment": "Hint on the Mistral AI quota card when no Mistral console session has been imported."
     },
     "quota.muse.keychainAccessNeeded": {
       "value": "Vibe Bar is not yet allowed to read the Muse Code login — allow it in Settings → Meta AI, then refresh.",
@@ -4927,6 +4951,10 @@
       "value": "Muse Code login (Keychain)",
       "comment": "Route-health row name on the Meta AI settings page: the login the muse CLI keeps in the macOS Keychain."
     },
+    "settings.route.devinStatusCache": {
+      "value": "Devin CLI plan cache",
+      "comment": "Route-health row name on the Cognition settings page: the plan status the devin CLI caches under ~/.cache/devin."
+    },
     "settings.route.oauth": {
       "value": "OAuth",
       "comment": "Connection-health row: the OAuth credential path"
@@ -5075,6 +5103,14 @@
       "value": "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates.",
       "comment": "Intro paragraph at the top of the Meta AI settings page."
     },
+    "settings.cognitionIntro": {
+      "value": "The Cognition page tracks Devin. Quota comes from the plan status the devin CLI caches on this Mac, so it is as current as Devin's last run; token usage comes from the session database the CLI and the Devin app share, and its cost is what the same tokens cost at the model's API rates.",
+      "comment": "Intro paragraph at the top of the Cognition settings page."
+    },
+    "settings.mistralAIIntro": {
+      "value": "The Mistral AI page tracks Mistral Vibe. The Monthly quota comes from your Mistral console session, imported from a browser signed in to console.mistral.ai; the plan name comes from the Vibe CLI's own cache. Token usage comes from Mistral Vibe's local session logs, priced at Mistral's API rates.",
+      "comment": "Intro paragraph at the top of the Mistral AI settings page. 'Monthly' is the quota window's name and stays as is."
+    },
     "settings.muse.allowKeychainAccess": {
       "value": "Allow Keychain Access…",
       "comment": "Button on the Meta AI settings page. Clicking it makes macOS ask whether Vibe Bar may read the Muse Code login."
@@ -5094,6 +5130,10 @@
     "settings.muse.noLogin": {
       "value": "No Muse Code login yet. Run muse login, then refresh.",
       "comment": "Status line on the Meta AI settings page when ~/.config/muse/auth.json is missing."
+    },
+    "settings.devin.noCache": {
+      "value": "No Devin plan status cached yet. Run devin once, then refresh.",
+      "comment": "Status line on the Cognition settings page when ~/.cache/devin/cli holds no plan status."
     },
     "settings.muse.networkNote": {
       "value": "api.meta.ai must be reachable from this Mac. If your network needs a proxy for it, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY.",
