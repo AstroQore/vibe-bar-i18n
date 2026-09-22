@@ -2898,16 +2898,16 @@
 /* Caption over the live slide preview, which draws the panel upright rather than rotated. */
 "settings.eink.uprightPreview" = "按实际阅读方向显示";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Notice card on the Layout Studio stage when the selected e-ink device belongs to a device group, whose pages are edited from the group instead. */
 "settings.eink.workflow.allGrouped" = "这些设备已加入编组，请在「屏幕编组」中编辑共同设置。";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Caption under the Choose content button and at the foot of the e-ink content picker sheet, explaining that overflowing rows spill onto further pages. */
 "settings.eink.workflow.automaticPages" = "可以持续添加内容，当前页放不下的内容会自动显示在下一页。";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Button under an e-ink slide's quota list in Settings › E-ink displays that opens the content picker, and the title of that picker sheet. */
 "settings.eink.workflow.chooseContent" = "选择内容";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Option in the create-device-group sheet's arrangement picker: the screens form one canvas that draws a single page. */
 "settings.eink.workflow.combined" = "整组显示一页";
 
 /* Explicit conversion from automatically paginated presets to editable standalone slides. */
@@ -2916,46 +2916,46 @@
 /* Explicit conversion from automatically paginated presets to editable standalone slides. */
 "settings.eink.workflow.editPagesDetail" = "自由排版需要独立页面。将全部分页保留为独立幻灯片，再编辑当前页；之后仍可选择单张或轮播。";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Explanatory caption at the top of the sheet that creates an e-ink device group, under its title. */
 "settings.eink.workflow.groupHelp" = "选择要合并的屏幕。组内共用一套设置，内容使用与单屏相同的幻灯片编辑器。";
 
 /* Explicit conversion from automatically paginated presets to editable standalone slides. */
 "settings.eink.workflow.materializePages" = "转为独立幻灯片并编辑";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Caption in the create-device-group sheet, and the tooltip of the Group screens… button, which stays disabled until two ungrouped screens exist. */
 "settings.eink.workflow.memberMinimum" = "至少选择两块屏幕。";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Menu button in the e-ink slide editor, shown when a group page uses the Custom screen mode; its items name the screen to merge the active screen with. */
 "settings.eink.workflow.mergeSlides" = "合并幻灯片";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Arrangement option for an e-ink device group page: the first two screens share one merged page and the rest draw their own. Not shown by the macOS app at present. */
 "settings.eink.workflow.mixed" = "前两屏合并，其余独立";
 
 /* Search in the quota content picker. */
 "settings.eink.workflow.searchContent" = "搜索厂商或配额";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Superseded by settings.eink.workflow.selectionPages, which pluralizes the page count; kept so clients pinned to an earlier tag still build. */
 "settings.eink.workflow.selectionSummary" = "已选 %1$lld 项 · 共 %2$lld 页";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Option in the create-device-group sheet's arrangement picker: every screen draws its own page. */
 "settings.eink.workflow.separate" = "每屏独立显示";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Heading for the settings every screen in an e-ink device group shares. Not shown by the macOS app at present. */
 "settings.eink.workflow.sharedSettings" = "编组设置";
 
 /* Single logical slide can contain multiple overflow pages. */
 "settings.eink.workflow.singleSlideDetail" = "播放当前选中的幻灯片。内容较多时，按停留时长自动翻页。";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Default title given to each slide when paginated e-ink content is turned into separate slides and the original slide had no title. The number is the slide's position, starting at 1. */
 "settings.eink.workflow.slideNumber" = "幻灯片 %lld";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Button in the e-ink slide editor, shown when a group page uses the Custom screen mode, that splits the active merged canvas back into separate screens. */
 "settings.eink.workflow.splitSlides" = "拆分为独立幻灯片";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Label of the picker in the create-device-group sheet that chooses how the group's first page uses its screens. */
 "settings.eink.workflow.template" = "幻灯片组合";
 
-/* E-ink device ownership and shared slide workflow. */
+/* Button on an e-ink device group's header in Settings, and the title and destructive button of the confirmation dialog it opens. */
 "settings.eink.workflow.ungroup" = "解散设备组";
 
 /* Banner shown when a second client overwrote a setting this one had changed */

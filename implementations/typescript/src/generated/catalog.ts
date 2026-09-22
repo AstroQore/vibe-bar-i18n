@@ -1015,6 +1015,7 @@ export type MessageKey =
   | "settings.eink.workflow.mergeSlides"
   | "settings.eink.workflow.mixed"
   | "settings.eink.workflow.searchContent"
+  | "settings.eink.workflow.selectionPages"
   | "settings.eink.workflow.selectionSummary"
   | "settings.eink.workflow.separate"
   | "settings.eink.workflow.sharedSettings"
@@ -2951,6 +2952,7 @@ export interface MessageParams {
   "settings.eink.workflow.mergeSlides": undefined;
   "settings.eink.workflow.mixed": undefined;
   "settings.eink.workflow.searchContent": undefined;
+  "settings.eink.workflow.selectionPages": { "items": number; "pages": number };
   "settings.eink.workflow.selectionSummary": { "items": number; "pages": number };
   "settings.eink.workflow.separate": undefined;
   "settings.eink.workflow.sharedSettings": undefined;
@@ -4888,6 +4890,7 @@ export const messages: {
     "settings.eink.workflow.mergeSlides": "Merge slides",
     "settings.eink.workflow.mixed": "Combine the first two screens",
     "settings.eink.workflow.searchContent": "Search providers or quota",
+    "settings.eink.workflow.selectionPages": "{items} selected · {pages, plural, one {# page} other {# pages}}",
     "settings.eink.workflow.selectionSummary": "{items} selected · {pages} pages",
     "settings.eink.workflow.separate": "Separate page on each screen",
     "settings.eink.workflow.sharedSettings": "Group settings",
@@ -6820,6 +6823,7 @@ export const messages: {
     "settings.eink.workflow.mergeSlides": "合并幻灯片",
     "settings.eink.workflow.mixed": "前两屏合并，其余独立",
     "settings.eink.workflow.searchContent": "搜索厂商或配额",
+    "settings.eink.workflow.selectionPages": "已选 {items} 项 · 共 {pages, plural, other {# 页}}",
     "settings.eink.workflow.selectionSummary": "已选 {items} 项 · 共 {pages} 页",
     "settings.eink.workflow.separate": "每屏独立显示",
     "settings.eink.workflow.sharedSettings": "编组设置",

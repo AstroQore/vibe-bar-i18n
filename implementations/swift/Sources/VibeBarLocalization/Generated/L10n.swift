@@ -6919,25 +6919,25 @@ public enum L10n {
             }
 
             public enum Workflow {
-                /// E-ink device ownership and shared slide workflow.
+                /// Notice card on the Layout Studio stage when the selected e-ink device belongs to a device group, whose pages are edited from the group instead.
                 ///
                 /// Key: `settings.eink.workflow.allGrouped`
                 /// en: "These devices belong to screen groups. Edit their shared settings in Screen groups."
                 public static var allGrouped: String { L10nSupport.string("settings.eink.workflow.allGrouped") }
 
-                /// E-ink device ownership and shared slide workflow.
+                /// Caption under the Choose content button and at the foot of the e-ink content picker sheet, explaining that overflowing rows spill onto further pages.
                 ///
                 /// Key: `settings.eink.workflow.automaticPages`
                 /// en: "Select as many items as you need. Content that does not fit continues on the next page."
                 public static var automaticPages: String { L10nSupport.string("settings.eink.workflow.automaticPages") }
 
-                /// E-ink device ownership and shared slide workflow.
+                /// Button under an e-ink slide's quota list in Settings › E-ink displays that opens the content picker, and the title of that picker sheet.
                 ///
                 /// Key: `settings.eink.workflow.chooseContent`
                 /// en: "Choose content"
                 public static var chooseContent: String { L10nSupport.string("settings.eink.workflow.chooseContent") }
 
-                /// E-ink device ownership and shared slide workflow.
+                /// Option in the create-device-group sheet's arrangement picker: the screens form one canvas that draws a single page.
                 ///
                 /// Key: `settings.eink.workflow.combined`
                 /// en: "One page across all screens"
@@ -6955,7 +6955,7 @@ public enum L10n {
                 /// en: "Freeform editing needs separate pages. Keep all content by turning these pages into individual slides, then edit the selected page. You can keep single-slide playback or choose a carousel."
                 public static var editPagesDetail: String { L10nSupport.string("settings.eink.workflow.editPagesDetail") }
 
-                /// E-ink device ownership and shared slide workflow.
+                /// Explanatory caption at the top of the sheet that creates an e-ink device group, under its title.
                 ///
                 /// Key: `settings.eink.workflow.groupHelp`
                 /// en: "Choose screens to combine. A group has one set of settings and uses the same slide editor as a single screen."
@@ -6967,19 +6967,19 @@ public enum L10n {
                 /// en: "Create separate slides and edit"
                 public static var materializePages: String { L10nSupport.string("settings.eink.workflow.materializePages") }
 
-                /// E-ink device ownership and shared slide workflow.
+                /// Caption in the create-device-group sheet, and the tooltip of the Group screens… button, which stays disabled until two ungrouped screens exist.
                 ///
                 /// Key: `settings.eink.workflow.memberMinimum`
                 /// en: "Select at least two screens."
                 public static var memberMinimum: String { L10nSupport.string("settings.eink.workflow.memberMinimum") }
 
-                /// E-ink device ownership and shared slide workflow.
+                /// Menu button in the e-ink slide editor, shown when a group page uses the Custom screen mode; its items name the screen to merge the active screen with.
                 ///
                 /// Key: `settings.eink.workflow.mergeSlides`
                 /// en: "Merge slides"
                 public static var mergeSlides: String { L10nSupport.string("settings.eink.workflow.mergeSlides") }
 
-                /// E-ink device ownership and shared slide workflow.
+                /// Arrangement option for an e-ink device group page: the first two screens share one merged page and the rest draw their own. Not shown by the macOS app at present.
                 ///
                 /// Key: `settings.eink.workflow.mixed`
                 /// en: "Combine the first two screens"
@@ -6991,7 +6991,15 @@ public enum L10n {
                 /// en: "Search providers or quota"
                 public static var searchContent: String { L10nSupport.string("settings.eink.workflow.searchContent") }
 
-                /// E-ink device ownership and shared slide workflow.
+                /// Count beside the quota-rows and usage-periods headings in the e-ink slide editor: how many items are selected and how many pages they fill on the panel. Both are whole numbers; pages is at least 1.
+                ///
+                /// Key: `settings.eink.workflow.selectionPages`
+                /// en: "{items} selected · {pages, plural, one {# page} other {# pages}}"
+                public static func selectionPages(items: Int, pages: Int) -> String {
+                    L10nSupport.localizedFormat("settings.eink.workflow.selectionPages", items, pages)
+                }
+
+                /// Superseded by settings.eink.workflow.selectionPages, which pluralizes the page count; kept so clients pinned to an earlier tag still build.
                 ///
                 /// Key: `settings.eink.workflow.selectionSummary`
                 /// en: "{items} selected · {pages} pages"
@@ -6999,13 +7007,13 @@ public enum L10n {
                     L10nSupport.format("settings.eink.workflow.selectionSummary", items, pages)
                 }
 
-                /// E-ink device ownership and shared slide workflow.
+                /// Option in the create-device-group sheet's arrangement picker: every screen draws its own page.
                 ///
                 /// Key: `settings.eink.workflow.separate`
                 /// en: "Separate page on each screen"
                 public static var separate: String { L10nSupport.string("settings.eink.workflow.separate") }
 
-                /// E-ink device ownership and shared slide workflow.
+                /// Heading for the settings every screen in an e-ink device group shares. Not shown by the macOS app at present.
                 ///
                 /// Key: `settings.eink.workflow.sharedSettings`
                 /// en: "Group settings"
@@ -7017,7 +7025,7 @@ public enum L10n {
                 /// en: "Play the selected slide. When its content needs more pages, turn them at the slide interval."
                 public static var singleSlideDetail: String { L10nSupport.string("settings.eink.workflow.singleSlideDetail") }
 
-                /// E-ink device ownership and shared slide workflow.
+                /// Default title given to each slide when paginated e-ink content is turned into separate slides and the original slide had no title. The number is the slide's position, starting at 1.
                 ///
                 /// Key: `settings.eink.workflow.slideNumber`
                 /// en: "Slide {number}"
@@ -7025,19 +7033,19 @@ public enum L10n {
                     L10nSupport.format("settings.eink.workflow.slideNumber", number)
                 }
 
-                /// E-ink device ownership and shared slide workflow.
+                /// Button in the e-ink slide editor, shown when a group page uses the Custom screen mode, that splits the active merged canvas back into separate screens.
                 ///
                 /// Key: `settings.eink.workflow.splitSlides`
                 /// en: "Split into separate slides"
                 public static var splitSlides: String { L10nSupport.string("settings.eink.workflow.splitSlides") }
 
-                /// E-ink device ownership and shared slide workflow.
+                /// Label of the picker in the create-device-group sheet that chooses how the group's first page uses its screens.
                 ///
                 /// Key: `settings.eink.workflow.template`
                 /// en: "Slide arrangement"
                 public static var template: String { L10nSupport.string("settings.eink.workflow.template") }
 
-                /// E-ink device ownership and shared slide workflow.
+                /// Button on an e-ink device group's header in Settings, and the title and destructive button of the confirmation dialog it opens.
                 ///
                 /// Key: `settings.eink.workflow.ungroup`
                 /// en: "Ungroup screens"
@@ -13900,6 +13908,7 @@ enum L10nCatalogFacts {
         "settings.eink.workflow.mergeSlides",
         "settings.eink.workflow.mixed",
         "settings.eink.workflow.searchContent",
+        "settings.eink.workflow.selectionPages",
         "settings.eink.workflow.selectionSummary",
         "settings.eink.workflow.separate",
         "settings.eink.workflow.sharedSettings",
@@ -14856,6 +14865,7 @@ enum L10nCatalogFacts {
         "settings.eink.loopTasks",
         "settings.eink.loopTasksShort",
         "settings.eink.loopTasksSurplus",
+        "settings.eink.workflow.selectionPages",
         "status.card.componentCount",
         "usage.filters.modelsSelected",
         "usage.harnessMix.activeCount",
@@ -15890,6 +15900,7 @@ enum L10nCatalogFacts {
         "settings.eink.workflow.mergeSlides": 0,
         "settings.eink.workflow.mixed": 0,
         "settings.eink.workflow.searchContent": 0,
+        "settings.eink.workflow.selectionPages": 2,
         "settings.eink.workflow.selectionSummary": 2,
         "settings.eink.workflow.separate": 0,
         "settings.eink.workflow.sharedSettings": 0,

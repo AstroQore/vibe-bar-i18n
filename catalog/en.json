@@ -8878,59 +8878,67 @@
     },
     "settings.eink.workflow.chooseContent": {
       "value": "Choose content",
-      "comment": "E-ink device ownership and shared slide workflow."
+      "comment": "Button under an e-ink slide's quota list in Settings › E-ink displays that opens the content picker, and the title of that picker sheet."
     },
     "settings.eink.workflow.automaticPages": {
       "value": "Select as many items as you need. Content that does not fit continues on the next page.",
-      "comment": "E-ink device ownership and shared slide workflow."
+      "comment": "Caption under the Choose content button and at the foot of the e-ink content picker sheet, explaining that overflowing rows spill onto further pages."
     },
     "settings.eink.workflow.groupHelp": {
       "value": "Choose screens to combine. A group has one set of settings and uses the same slide editor as a single screen.",
-      "comment": "E-ink device ownership and shared slide workflow."
+      "comment": "Explanatory caption at the top of the sheet that creates an e-ink device group, under its title."
     },
     "settings.eink.workflow.allGrouped": {
       "value": "These devices belong to screen groups. Edit their shared settings in Screen groups.",
-      "comment": "E-ink device ownership and shared slide workflow."
+      "comment": "Notice card on the Layout Studio stage when the selected e-ink device belongs to a device group, whose pages are edited from the group instead."
     },
     "settings.eink.workflow.ungroup": {
       "value": "Ungroup screens",
-      "comment": "E-ink device ownership and shared slide workflow."
+      "comment": "Button on an e-ink device group's header in Settings, and the title and destructive button of the confirmation dialog it opens."
     },
     "settings.eink.workflow.mergeSlides": {
       "value": "Merge slides",
-      "comment": "E-ink device ownership and shared slide workflow."
+      "comment": "Menu button in the e-ink slide editor, shown when a group page uses the Custom screen mode; its items name the screen to merge the active screen with."
     },
     "settings.eink.workflow.splitSlides": {
       "value": "Split into separate slides",
-      "comment": "E-ink device ownership and shared slide workflow."
+      "comment": "Button in the e-ink slide editor, shown when a group page uses the Custom screen mode, that splits the active merged canvas back into separate screens."
     },
     "settings.eink.workflow.sharedSettings": {
       "value": "Group settings",
-      "comment": "E-ink device ownership and shared slide workflow."
+      "comment": "Heading for the settings every screen in an e-ink device group shares. Not shown by the macOS app at present."
     },
     "settings.eink.workflow.template": {
       "value": "Slide arrangement",
-      "comment": "E-ink device ownership and shared slide workflow."
+      "comment": "Label of the picker in the create-device-group sheet that chooses how the group's first page uses its screens."
     },
     "settings.eink.workflow.separate": {
       "value": "Separate page on each screen",
-      "comment": "E-ink device ownership and shared slide workflow."
+      "comment": "Option in the create-device-group sheet's arrangement picker: every screen draws its own page."
     },
     "settings.eink.workflow.combined": {
       "value": "One page across all screens",
-      "comment": "E-ink device ownership and shared slide workflow."
+      "comment": "Option in the create-device-group sheet's arrangement picker: the screens form one canvas that draws a single page."
     },
     "settings.eink.workflow.mixed": {
       "value": "Combine the first two screens",
-      "comment": "E-ink device ownership and shared slide workflow."
+      "comment": "Arrangement option for an e-ink device group page: the first two screens share one merged page and the rest draw their own. Not shown by the macOS app at present."
     },
     "settings.eink.workflow.memberMinimum": {
       "value": "Select at least two screens.",
-      "comment": "E-ink device ownership and shared slide workflow."
+      "comment": "Caption in the create-device-group sheet, and the tooltip of the Group screens… button, which stays disabled until two ungrouped screens exist."
     },
     "settings.eink.workflow.selectionSummary": {
       "value": "{items} selected · {pages} pages",
-      "comment": "E-ink device ownership and shared slide workflow.",
+      "comment": "Superseded by settings.eink.workflow.selectionPages, which pluralizes the page count; kept so clients pinned to an earlier tag still build.",
+      "placeholders": {
+        "items": "int",
+        "pages": "int"
+      }
+    },
+    "settings.eink.workflow.selectionPages": {
+      "value": "{items} selected · {pages, plural, one {# page} other {# pages}}",
+      "comment": "Count beside the quota-rows and usage-periods headings in the e-ink slide editor: how many items are selected and how many pages they fill on the panel. Both are whole numbers; pages is at least 1.",
       "placeholders": {
         "items": "int",
         "pages": "int"
@@ -8938,7 +8946,7 @@
     },
     "settings.eink.workflow.slideNumber": {
       "value": "Slide {number}",
-      "comment": "E-ink device ownership and shared slide workflow.",
+      "comment": "Default title given to each slide when paginated e-ink content is turned into separate slides and the original slide had no title. The number is the slide's position, starting at 1.",
       "placeholders": {
         "number": "int"
       }
