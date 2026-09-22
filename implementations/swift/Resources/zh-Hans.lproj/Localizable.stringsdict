@@ -349,6 +349,20 @@
 			<string>循环中有 %lld 个 Canvas API 任务没有对应的幻灯片，Vibe Bar 会在其上绘制占位画面，避免屏幕停留在旧内容 — 如需收回这些位置，请在 Dot. App 中删除它们。</string>
 		</dict>
 	</dict>
+	<key>settings.eink.workflow.selectionPages</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>已选 %1$lld 项 · 共 %2$#@pages@</string>
+		<key>pages</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%2$lld 页</string>
+		</dict>
+	</dict>
 	<key>status.card.componentCount</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>

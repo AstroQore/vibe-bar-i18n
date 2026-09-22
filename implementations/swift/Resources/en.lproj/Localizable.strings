@@ -2334,6 +2334,18 @@
 /* Help line under the e-ink data refresh stepper. */
 "settings.eink.dataRefreshDetail" = "How often the numbers are rebuilt and pushed while the device has mains power.";
 
+/* Button above the display list in Settings › E-ink Displays that opens the sheet for combining two or more screens into one group. */
+"settings.eink.deviceGroup.create" = "Group screens…";
+
+/* Caption under the playback picker of a group, explaining why the device-driven carousel is missing. */
+"settings.eink.deviceGroup.playbackDetail" = "The Mac turns a group's pages so every screen changes together, so the device's own loop is not offered here.";
+
+/* Title of the sheet that combines e-ink screens into one group, and the word for a group in the display list. */
+"settings.eink.deviceGroup.title" = "Device group";
+
+/* Confirmation message shown before a group of e-ink screens is taken apart. */
+"settings.eink.deviceGroup.ungroupConfirm" = "The group's pages are discarded. Every screen comes back on its own, with the settings and slides it had before.";
+
 /* Tooltip on the per-device enable toggle in the E-ink section. */
 "settings.eink.deviceSyncHelp" = "Push slides to this device";
 
@@ -2640,6 +2652,24 @@
 /* Screen origin in upright canvas pixels. */
 "settings.eink.screenGroups.yPosition" = "Vertical position";
 
+/* Segment of the Screens picker: one template drawn across every screen of the group. */
+"settings.eink.screens.combined" = "Combined";
+
+/* Caption under the Screens picker when a page is drawn across the whole group. */
+"settings.eink.screens.combinedDetail" = "The screens make one canvas and this page draws a single template across it, so it holds more than one panel fits.";
+
+/* Segment of the Screens picker: some screens of the group are merged into one canvas and others are not. distinct-from: menuBar.composer.colour.fixed */
+"settings.eink.screens.custom" = "Custom";
+
+/* Caption under the Screens picker when a page mixes merged and separate screens. */
+"settings.eink.screens.customDetail" = "Merge screens into one canvas, or split a merged canvas back into separate screens.";
+
+/* Segment of the Screens picker: every screen of the group draws its own template. */
+"settings.eink.screens.separate" = "Separate";
+
+/* Caption under the Screens picker when every screen of the group draws its own page. */
+"settings.eink.screens.separateDetail" = "Each screen draws its own template. Pick a screen to edit what it shows.";
+
 /* Stepper label for how long the app-driven e-ink carousel holds each slide. */
 "settings.eink.secondsPerSlide" = "Seconds per slide";
 
@@ -2867,6 +2897,66 @@
 
 /* Caption over the live slide preview, which draws the panel upright rather than rotated. */
 "settings.eink.uprightPreview" = "Shown the way you will read it";
+
+/* Notice card on the Layout Studio stage when the selected e-ink device belongs to a device group, whose pages are edited from the group instead. */
+"settings.eink.workflow.allGrouped" = "These devices belong to screen groups. Edit their shared settings in Screen groups.";
+
+/* Caption under the Choose content button and at the foot of the e-ink content picker sheet, explaining that overflowing rows spill onto further pages. */
+"settings.eink.workflow.automaticPages" = "Select as many items as you need. Content that does not fit continues on the next page.";
+
+/* Button under an e-ink slide's quota list in Settings › E-ink displays that opens the content picker, and the title of that picker sheet. */
+"settings.eink.workflow.chooseContent" = "Choose content";
+
+/* Option in the create-device-group sheet's arrangement picker: the screens form one canvas that draws a single page. */
+"settings.eink.workflow.combined" = "One page across all screens";
+
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.editPages" = "Edit paginated content in Studio";
+
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.editPagesDetail" = "Freeform editing needs separate pages. Keep all content by turning these pages into individual slides, then edit the selected page. You can keep single-slide playback or choose a carousel.";
+
+/* Explanatory caption at the top of the sheet that creates an e-ink device group, under its title. */
+"settings.eink.workflow.groupHelp" = "Choose screens to combine. A group has one set of settings and uses the same slide editor as a single screen.";
+
+/* Explicit conversion from automatically paginated presets to editable standalone slides. */
+"settings.eink.workflow.materializePages" = "Create separate slides and edit";
+
+/* Caption in the create-device-group sheet, and the tooltip of the Group screens… button, which stays disabled until two ungrouped screens exist. */
+"settings.eink.workflow.memberMinimum" = "Select at least two screens.";
+
+/* Menu button in the e-ink slide editor, shown when a group page uses the Custom screen mode; its items name the screen to merge the active screen with. */
+"settings.eink.workflow.mergeSlides" = "Merge slides";
+
+/* Arrangement option for an e-ink device group page: the first two screens share one merged page and the rest draw their own. Not shown by the macOS app at present. */
+"settings.eink.workflow.mixed" = "Combine the first two screens";
+
+/* Search in the quota content picker. */
+"settings.eink.workflow.searchContent" = "Search providers or quota";
+
+/* Superseded by settings.eink.workflow.selectionPages, which pluralizes the page count; kept so clients pinned to an earlier tag still build. */
+"settings.eink.workflow.selectionSummary" = "%1$lld selected · %2$lld pages";
+
+/* Option in the create-device-group sheet's arrangement picker: every screen draws its own page. */
+"settings.eink.workflow.separate" = "Separate page on each screen";
+
+/* Heading for the settings every screen in an e-ink device group shares. Not shown by the macOS app at present. */
+"settings.eink.workflow.sharedSettings" = "Group settings";
+
+/* Single logical slide can contain multiple overflow pages. */
+"settings.eink.workflow.singleSlideDetail" = "Play the selected slide. When its content needs more pages, turn them at the slide interval.";
+
+/* Default title given to each slide when paginated e-ink content is turned into separate slides and the original slide had no title. The number is the slide's position, starting at 1. */
+"settings.eink.workflow.slideNumber" = "Slide %lld";
+
+/* Button in the e-ink slide editor, shown when a group page uses the Custom screen mode, that splits the active merged canvas back into separate screens. */
+"settings.eink.workflow.splitSlides" = "Split into separate slides";
+
+/* Label of the picker in the create-device-group sheet that chooses how the group's first page uses its screens. */
+"settings.eink.workflow.template" = "Slide arrangement";
+
+/* Button on an e-ink device group's header in Settings, and the title and destructive button of the confirmation dialog it opens. */
+"settings.eink.workflow.ungroup" = "Ungroup screens";
 
 /* Banner shown when a second client overwrote a setting this one had changed */
 "settings.externalChange.title" = "Another Vibe Bar replaced your change";
