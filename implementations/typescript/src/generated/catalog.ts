@@ -341,6 +341,7 @@ export type MessageKey =
   | "onboarding.subscriptions.productLine.devin"
   | "onboarding.subscriptions.productLine.gemini"
   | "onboarding.subscriptions.productLine.grok"
+  | "onboarding.subscriptions.productLine.metaAI"
   | "onboarding.subscriptions.productLine.mistralVibe"
   | "onboarding.subscriptions.productLine.muse"
   | "onboarding.subscriptions.showInOverview"
@@ -603,6 +604,7 @@ export type MessageKey =
   | "quota.login.misc"
   | "quota.login.mistralVibe"
   | "quota.login.muse"
+  | "quota.login.museAgent"
   | "quota.mini.forecastLearning"
   | "quota.mini.forecastLearningCompact"
   | "quota.mini.forecastLeftCompact"
@@ -1088,6 +1090,8 @@ export type MessageKey =
   | "settings.mcp.title"
   | "settings.mcp.whatAgentsMayDo"
   | "settings.menuBarHealthUnavailable"
+  | "settings.metaAI.intro"
+  | "settings.metaAI.networkNote"
   | "settings.metaAIIntro"
   | "settings.miniCanvas.back"
   | "settings.miniCanvas.canvas"
@@ -1214,6 +1218,8 @@ export type MessageKey =
   | "settings.muse.keychainAccessDenied"
   | "settings.muse.networkNote"
   | "settings.muse.noLogin"
+  | "settings.museAgent.noSession"
+  | "settings.museAgent.sessionSaved"
   | "settings.needsSetup"
   | "settings.notChecked"
   | "settings.notCheckedYet"
@@ -1261,6 +1267,7 @@ export type MessageKey =
   | "settings.privacyDetail"
   | "settings.privacyMode"
   | "settings.privacyModeDetail"
+  | "settings.providerSource"
   | "settings.ready"
   | "settings.refreshEvery"
   | "settings.refreshOnPopoverOpen"
@@ -1325,6 +1332,7 @@ export type MessageKey =
   | "settings.route.cli"
   | "settings.route.devinStatusCache"
   | "settings.route.grokAuthFile"
+  | "settings.route.museAgentSession"
   | "settings.route.museKeychain"
   | "settings.route.oauth"
   | "settings.route.webViewCookies"
@@ -2278,6 +2286,7 @@ export interface MessageParams {
   "onboarding.subscriptions.productLine.devin": undefined;
   "onboarding.subscriptions.productLine.gemini": undefined;
   "onboarding.subscriptions.productLine.grok": undefined;
+  "onboarding.subscriptions.productLine.metaAI": undefined;
   "onboarding.subscriptions.productLine.mistralVibe": undefined;
   "onboarding.subscriptions.productLine.muse": undefined;
   "onboarding.subscriptions.showInOverview": undefined;
@@ -2540,6 +2549,7 @@ export interface MessageParams {
   "quota.login.misc": { "provider": string };
   "quota.login.mistralVibe": undefined;
   "quota.login.muse": undefined;
+  "quota.login.museAgent": undefined;
   "quota.mini.forecastLearning": { "percent": number };
   "quota.mini.forecastLearningCompact": { "percent": number };
   "quota.mini.forecastLeftCompact": { "percent": number };
@@ -3025,6 +3035,8 @@ export interface MessageParams {
   "settings.mcp.title": undefined;
   "settings.mcp.whatAgentsMayDo": undefined;
   "settings.menuBarHealthUnavailable": undefined;
+  "settings.metaAI.intro": undefined;
+  "settings.metaAI.networkNote": undefined;
   "settings.metaAIIntro": undefined;
   "settings.miniCanvas.back": undefined;
   "settings.miniCanvas.canvas": undefined;
@@ -3151,6 +3163,8 @@ export interface MessageParams {
   "settings.muse.keychainAccessDenied": undefined;
   "settings.muse.networkNote": undefined;
   "settings.muse.noLogin": undefined;
+  "settings.museAgent.noSession": undefined;
+  "settings.museAgent.sessionSaved": undefined;
   "settings.needsSetup": undefined;
   "settings.notChecked": undefined;
   "settings.notCheckedYet": undefined;
@@ -3198,6 +3212,7 @@ export interface MessageParams {
   "settings.privacyDetail": undefined;
   "settings.privacyMode": undefined;
   "settings.privacyModeDetail": undefined;
+  "settings.providerSource": { "provider": string };
   "settings.ready": undefined;
   "settings.refreshEvery": undefined;
   "settings.refreshOnPopoverOpen": undefined;
@@ -3262,6 +3277,7 @@ export interface MessageParams {
   "settings.route.cli": undefined;
   "settings.route.devinStatusCache": undefined;
   "settings.route.grokAuthFile": undefined;
+  "settings.route.museAgentSession": undefined;
   "settings.route.museKeychain": undefined;
   "settings.route.oauth": undefined;
   "settings.route.webViewCookies": undefined;
@@ -4216,6 +4232,7 @@ export const messages: {
     "onboarding.subscriptions.productLine.devin": "Devin CLI · Devin app",
     "onboarding.subscriptions.productLine.gemini": "Gemini web · AntiGravity",
     "onboarding.subscriptions.productLine.grok": "Grok CLI · grok.com · Cursor",
+    "onboarding.subscriptions.productLine.metaAI": "Muse Code CLI · Muse (muse.ai, Muse app)",
     "onboarding.subscriptions.productLine.mistralVibe": "Mistral Vibe CLI · console.mistral.ai",
     "onboarding.subscriptions.productLine.muse": "Muse Code CLI",
     "onboarding.subscriptions.showInOverview": "Show in Overview",
@@ -4478,6 +4495,7 @@ export const messages: {
     "quota.login.misc": "Configure {provider} in Settings → Misc Providers.",
     "quota.login.mistralVibe": "Sign in at console.mistral.ai in your browser, then import its cookies in Settings → Mistral AI.",
     "quota.login.muse": "Run muse login, then refresh.",
+    "quota.login.museAgent": "Sign in at muse.ai in your browser, then import its cookies in Settings → Meta AI.",
     "quota.mini.forecastLearning": "learning · {percent}% left",
     "quota.mini.forecastLearningCompact": "~{percent}% left",
     "quota.mini.forecastLeftCompact": "left {percent}%",
@@ -4963,6 +4981,8 @@ export const messages: {
     "settings.mcp.title": "MCP Server",
     "settings.mcp.whatAgentsMayDo": "What agents may do",
     "settings.menuBarHealthUnavailable": "The menu bar health monitor is not attached in this process.",
+    "settings.metaAI.intro": "The Meta AI page tracks Muse Code and Muse. Muse Code's quota comes from the login `muse login` saved in the macOS Keychain; its token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates. Muse's weekly quota comes from your muse.ai session, imported from a browser signed in to muse.ai. Muse keeps no model or token counts on this Mac, so it has quota and sessions but no cost.",
+    "settings.metaAI.networkNote": "api.meta.ai and muse.ai must be reachable from this Mac. If your network needs a proxy for them, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY.",
     "settings.metaAIIntro": "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates.",
     "settings.miniCanvas.back": "Send backward",
     "settings.miniCanvas.canvas": "Canvas",
@@ -5089,6 +5109,8 @@ export const messages: {
     "settings.muse.keychainAccessDenied": "Keychain access was not allowed — try again and choose Always Allow.",
     "settings.muse.networkNote": "api.meta.ai must be reachable from this Mac. If your network needs a proxy for it, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY.",
     "settings.muse.noLogin": "No Muse Code login yet. Run muse login, then refresh.",
+    "settings.museAgent.noSession": "No muse.ai session yet — sign in at muse.ai in your browser, then import its cookies below.",
+    "settings.museAgent.sessionSaved": "muse.ai session saved",
     "settings.needsSetup": "Needs setup",
     "settings.notChecked": "Not checked",
     "settings.notCheckedYet": "Not checked. Nothing is fetched until you ask.",
@@ -5136,6 +5158,7 @@ export const messages: {
     "settings.privacyDetail": "Tokens are read from local CLI credentials. Saved OpenAI and Claude Web cookies are stored in macOS Keychain, split by browser and WebView source. Legacy plaintext cookie files under ~/.vibebar/cookies are migrated once and deleted. Settings, quota cache, and cost summaries stay under ~/.vibebar.",
     "settings.privacyMode": "Privacy mode",
     "settings.privacyModeDetail": "Privacy mode keeps cost data off disk and clears local cost history, snapshots, and scan cache.",
+    "settings.providerSource": "{provider} source",
     "settings.ready": "Ready",
     "settings.refreshEvery": "Refresh every",
     "settings.refreshOnPopoverOpen": "Refresh when the popover opens",
@@ -5200,6 +5223,7 @@ export const messages: {
     "settings.route.cli": "CLI",
     "settings.route.devinStatusCache": "Devin CLI plan cache",
     "settings.route.grokAuthFile": "~/.grok/auth.json",
+    "settings.route.museAgentSession": "Muse web session (cookies)",
     "settings.route.museKeychain": "Muse Code login (Keychain)",
     "settings.route.oauth": "OAuth",
     "settings.route.webViewCookies": "WebView cookies",
@@ -6149,6 +6173,7 @@ export const messages: {
     "onboarding.subscriptions.productLine.devin": "Devin CLI · Devin 桌面 app",
     "onboarding.subscriptions.productLine.gemini": "Gemini 网页 · AntiGravity",
     "onboarding.subscriptions.productLine.grok": "Grok CLI · grok.com · Cursor",
+    "onboarding.subscriptions.productLine.metaAI": "Muse Code CLI · Muse（muse.ai、Muse 桌面 app）",
     "onboarding.subscriptions.productLine.mistralVibe": "Mistral Vibe CLI · console.mistral.ai",
     "onboarding.subscriptions.productLine.muse": "Muse Code CLI",
     "onboarding.subscriptions.showInOverview": "在总览中显示",
@@ -6411,6 +6436,7 @@ export const messages: {
     "quota.login.misc": "在「设置 → 其他厂商」中配置 {provider}。",
     "quota.login.mistralVibe": "请先在浏览器登录 console.mistral.ai，再到“设置 → Mistral AI”导入 cookie。",
     "quota.login.muse": "运行 muse login，然后刷新。",
+    "quota.login.museAgent": "请先在浏览器登录 muse.ai，再到“设置 → Meta AI”导入 cookie。",
     "quota.mini.forecastLearning": "学习中 · 剩余 {percent}%",
     "quota.mini.forecastLearningCompact": "约剩余 {percent}%",
     "quota.mini.forecastLeftCompact": "剩余 {percent}%",
@@ -6896,6 +6922,8 @@ export const messages: {
     "settings.mcp.title": "MCP 服务",
     "settings.mcp.whatAgentsMayDo": "agent 的权限范围",
     "settings.menuBarHealthUnavailable": "本进程未接入菜单栏健康监控。",
+    "settings.metaAI.intro": "Meta AI 页面追踪 Muse Code 与 Muse。Muse Code 的额度来自 `muse login` 保存在 macOS Keychain 中的登录信息；token 用量来自 Muse Code 的本地会话日志，成本按 Meta API 的单价折算。Muse 的每周额度来自 muse.ai 的登录会话，从已登录 muse.ai 的浏览器导入。Muse 不在本机记录模型和 token 数，因此只有额度与会话，没有成本。",
+    "settings.metaAI.networkNote": "此 Mac 需要能访问 api.meta.ai 和 muse.ai。如果你的网络需要代理才能访问，请把代理设为 macOS 系统代理——Vibe Bar 不读取 shell 的 HTTPS_PROXY。",
     "settings.metaAIIntro": "Meta AI 页面追踪 Muse Code。额度来自 `muse login` 保存在 macOS Keychain 中的登录信息；token 用量来自 Muse Code 的本地会话日志，成本按 Meta API 的单价折算。",
     "settings.miniCanvas.back": "下移一层",
     "settings.miniCanvas.canvas": "画布",
@@ -7022,6 +7050,8 @@ export const messages: {
     "settings.muse.keychainAccessDenied": "未获得 Keychain 访问权限，请重试并选择「始终允许」。",
     "settings.muse.networkNote": "此 Mac 需要能访问 api.meta.ai。如果你的网络需要代理才能访问，请把代理设为 macOS 系统代理——Vibe Bar 不读取 shell 的 HTTPS_PROXY。",
     "settings.muse.noLogin": "尚无 Muse Code 登录信息。请运行 muse login，然后刷新。",
+    "settings.museAgent.noSession": "尚无 muse.ai 登录会话 — 请先在浏览器登录 muse.ai，再在下方导入它的 cookies。",
+    "settings.museAgent.sessionSaved": "已保存 muse.ai 登录会话",
     "settings.needsSetup": "需配置",
     "settings.notChecked": "未检查",
     "settings.notCheckedYet": "尚未检查。在主动发起前不会请求任何内容。",
@@ -7069,6 +7099,7 @@ export const messages: {
     "settings.privacyDetail": "token 从本地 CLI 凭据读取。已保存的 OpenAI 与 Claude 网页 cookies 存放在 macOS Keychain 中，按浏览器与 WebView 来源分开。~/.vibebar/cookies 下的旧版明文 cookie 文件会迁移一次并删除。设置、额度缓存与花费汇总保留在 ~/.vibebar 下。",
     "settings.privacyMode": "隐私模式",
     "settings.privacyModeDetail": "隐私模式不将花费数据写入磁盘，并清除本地花费历史、快照与扫描缓存。",
+    "settings.providerSource": "{provider} 来源",
     "settings.ready": "就绪",
     "settings.refreshEvery": "刷新间隔",
     "settings.refreshOnPopoverOpen": "打开面板时刷新",
@@ -7133,6 +7164,7 @@ export const messages: {
     "settings.route.cli": "CLI",
     "settings.route.devinStatusCache": "Devin CLI 套餐缓存",
     "settings.route.grokAuthFile": "~/.grok/auth.json",
+    "settings.route.museAgentSession": "Muse 网页会话（cookies）",
     "settings.route.museKeychain": "Muse Code 登录信息（Keychain）",
     "settings.route.oauth": "OAuth",
     "settings.route.webViewCookies": "WebView cookies",

@@ -101,6 +101,11 @@
       "note": "Deliberately listed on both axes: the quota SubProvider under Meta AI and, separately, the harness that spends it."
     },
     {
+      "term": "Muse",
+      "kind": "subProvider",
+      "note": "Meta AI's personal agent (muse.ai and the Muse Mac app), a second SubProvider beside Muse Code. Deliberately listed on both axes, like Muse Code: the quota SubProvider and, separately, the harness whose local sessions it leaves."
+    },
+    {
       "term": "Devin",
       "kind": "subProvider",
       "note": "Deliberately listed on both axes, like Muse Code: the quota SubProvider and, separately, the harness that spends it."
@@ -217,6 +222,11 @@
     },
     {
       "term": "Muse Code",
+      "kind": "harness",
+      "note": "The usage-axis entry. See the subProvider entry of the same name."
+    },
+    {
+      "term": "Muse",
       "kind": "harness",
       "note": "The usage-axis entry. See the subProvider entry of the same name."
     },

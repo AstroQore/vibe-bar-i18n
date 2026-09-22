@@ -960,6 +960,9 @@
 /* Where this provider's quota can come from */
 "onboarding.subscriptions.productLine.grok" = "Grok CLI · grok.com · Cursor";
 
+/* Product line under Meta AI in the onboarding subscriptions list: its two SubProviders, the Muse Code CLI and Muse, the personal agent whose website and Mac app share one account. Replaces onboarding.subscriptions.productLine.muse, which named Muse Code only. */
+"onboarding.subscriptions.productLine.metaAI" = "Muse Code CLI · Muse（muse.ai、Muse 桌面 app）";
+
 /* Product line under the Mistral AI row of the onboarding subscriptions step. */
 "onboarding.subscriptions.productLine.mistralVibe" = "Mistral Vibe CLI · console.mistral.ai";
 
@@ -1733,6 +1736,9 @@
 
 /* Hint on the Meta AI quota card when this Mac has no Muse Code login. `muse login` is the CLI command and stays as is. */
 "quota.login.muse" = "运行 muse login，然后刷新。";
+
+/* Hint on the Meta AI quota card when Muse (the personal agent at muse.ai) has no imported web session yet. */
+"quota.login.museAgent" = "请先在浏览器登录 muse.ai，再到“设置 → Meta AI”导入 cookie。";
 
 /* Mini window forecast line while the forecast is still learning the usage pattern */
 "quota.mini.forecastLearning" = "学习中 · 剩余 %lld%%";
@@ -3150,6 +3156,12 @@
 /* Shown when the watchdog is not running */
 "settings.menuBarHealthUnavailable" = "本进程未接入菜单栏健康监控。";
 
+/* Explanation on the Meta AI settings page, covering both of its SubProviders: Muse Code (the CLI) and Muse (the personal agent at muse.ai). Replaces settings.metaAIIntro, which named Muse Code only. */
+"settings.metaAI.intro" = "Meta AI 页面追踪 Muse Code 与 Muse。Muse Code 的额度来自 `muse login` 保存在 macOS Keychain 中的登录信息；token 用量来自 Muse Code 的本地会话日志，成本按 Meta API 的单价折算。Muse 的每周额度来自 muse.ai 的登录会话，从已登录 muse.ai 的浏览器导入。Muse 不在本机记录模型和 token 数，因此只有额度与会话，没有成本。";
+
+/* Note on the Meta AI settings page, under both SubProviders' controls. api.meta.ai is Muse Code's quota host and muse.ai is Muse's. Replaces settings.muse.networkNote, which named api.meta.ai only. */
+"settings.metaAI.networkNote" = "此 Mac 需要能访问 api.meta.ai 和 muse.ai。如果你的网络需要代理才能访问，请把代理设为 macOS 系统代理——Vibe Bar 不读取 shell 的 HTTPS_PROXY。";
+
 /* Intro paragraph at the top of the Meta AI settings page. */
 "settings.metaAIIntro" = "Meta AI 页面追踪 Muse Code。额度来自 `muse login` 保存在 macOS Keychain 中的登录信息；token 用量来自 Muse Code 的本地会话日志，成本按 Meta API 的单价折算。";
 
@@ -3528,6 +3540,12 @@
 /* Status line on the Meta AI settings page and the onboarding row when this Mac has no Muse Code CLI login: no login identity, or no token in its macOS Keychain item. */
 "settings.muse.noLogin" = "尚无 Muse Code 登录信息。请运行 muse login，然后刷新。";
 
+/* Status line on the Meta AI settings page when Muse (the personal agent at muse.ai) has no imported web session. */
+"settings.museAgent.noSession" = "尚无 muse.ai 登录会话 — 请先在浏览器登录 muse.ai，再在下方导入它的 cookies。";
+
+/* Status line on the Meta AI settings page once a Muse web session has been imported or pasted. */
+"settings.museAgent.sessionSaved" = "已保存 muse.ai 登录会话";
+
 /* Provider state: credentials are missing */
 "settings.needsSetup" = "需配置";
 
@@ -3668,6 +3686,9 @@
 
 /* Caption under the privacy toggle */
 "settings.privacyModeDetail" = "隐私模式不将花费数据写入磁盘，并清除本地花费历史、快照与扫描缓存。";
+
+/* Row label naming where one SubProvider's quota is read from, on a settings page that holds more than one; {provider} is the SubProvider name, e.g. Muse. */
+"settings.providerSource" = "%@ 来源";
 
 /* Provider state: credentials are usable */
 "settings.ready" = "就绪";
@@ -3860,6 +3881,9 @@
 
 /* Connection-health row: the Grok CLI's credential file. A path, never translated. */
 "settings.route.grokAuthFile" = "~/.grok/auth.json";
+
+/* Route-health row name on the Meta AI settings page: the muse.ai session cookies imported for Muse, the personal agent. Sits under settings.route.museKeychain, so it names its SubProvider the same way. */
+"settings.route.museAgentSession" = "Muse 网页会话（cookies）";
 
 /* Route-health row name on the Meta AI settings page: the login the muse CLI keeps in the macOS Keychain. */
 "settings.route.museKeychain" = "Muse Code 登录信息（Keychain）";

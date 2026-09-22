@@ -1500,6 +1500,10 @@
       "value": "Muse Code CLI",
       "comment": "Product line under the Meta AI row of the onboarding subscriptions step."
     },
+    "onboarding.subscriptions.productLine.metaAI": {
+      "value": "Muse Code CLI · Muse (muse.ai, Muse app)",
+      "comment": "Product line under Meta AI in the onboarding subscriptions list: its two SubProviders, the Muse Code CLI and Muse, the personal agent whose website and Mac app share one account. Replaces onboarding.subscriptions.productLine.muse, which named Muse Code only."
+    },
     "onboarding.subscriptions.productLine.devin": {
       "value": "Devin CLI · Devin app",
       "comment": "Product line under the Cognition row of the onboarding subscriptions step."
@@ -2621,6 +2625,10 @@
       "value": "Run muse login, then refresh.",
       "comment": "Hint on the Meta AI quota card when this Mac has no Muse Code login. `muse login` is the CLI command and stays as is."
     },
+    "quota.login.museAgent": {
+      "value": "Sign in at muse.ai in your browser, then import its cookies in Settings → Meta AI.",
+      "comment": "Hint on the Meta AI quota card when Muse (the personal agent at muse.ai) has no imported web session yet."
+    },
     "quota.login.devin": {
       "value": "Run devin once so it caches your plan, then refresh.",
       "comment": "Hint on the Cognition quota card when the devin CLI has not cached a plan status on this Mac. `devin` is the CLI command and stays as is."
@@ -3494,6 +3502,13 @@
     "settings.cursorSourceValue": {
       "value": "Cursor.app → Web",
       "comment": "Value beside the Cursor source row"
+    },
+    "settings.providerSource": {
+      "value": "{provider} source",
+      "comment": "Row label naming where one SubProvider's quota is read from, on a settings page that holds more than one; {provider} is the SubProvider name, e.g. Muse.",
+      "placeholders": {
+        "provider": "string"
+      }
     },
     "settings.deleteCookies": {
       "value": "Delete cookies",
@@ -4991,6 +5006,10 @@
       "value": "Muse Code login (Keychain)",
       "comment": "Route-health row name on the Meta AI settings page: the login the muse CLI keeps in the macOS Keychain."
     },
+    "settings.route.museAgentSession": {
+      "value": "Muse web session (cookies)",
+      "comment": "Route-health row name on the Meta AI settings page: the muse.ai session cookies imported for Muse, the personal agent. Sits under settings.route.museKeychain, so it names its SubProvider the same way."
+    },
     "settings.route.devinStatusCache": {
       "value": "Devin CLI plan cache",
       "comment": "Route-health row name on the Cognition settings page: the plan status the devin CLI caches under ~/.cache/devin."
@@ -5143,6 +5162,10 @@
       "value": "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates.",
       "comment": "Intro paragraph at the top of the Meta AI settings page."
     },
+    "settings.metaAI.intro": {
+      "value": "The Meta AI page tracks Muse Code and Muse. Muse Code's quota comes from the login `muse login` saved in the macOS Keychain; its token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates. Muse's weekly quota comes from your muse.ai session, imported from a browser signed in to muse.ai. Muse keeps no model or token counts on this Mac, so it has quota and sessions but no cost.",
+      "comment": "Explanation on the Meta AI settings page, covering both of its SubProviders: Muse Code (the CLI) and Muse (the personal agent at muse.ai). Replaces settings.metaAIIntro, which named Muse Code only."
+    },
     "settings.cognitionIntro": {
       "value": "The Cognition page tracks Devin. Quota comes from the plan status the devin CLI caches on this Mac, so it is as current as Devin's last run; token usage comes from the session database the CLI and the Devin app share, and its cost is what the same tokens cost at the model's API rates.",
       "comment": "Intro paragraph at the top of the Cognition settings page."
@@ -5178,6 +5201,18 @@
     "settings.muse.networkNote": {
       "value": "api.meta.ai must be reachable from this Mac. If your network needs a proxy for it, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY.",
       "comment": "Note on the Meta AI settings page about reaching Meta's API. api.meta.ai and HTTPS_PROXY are literal and stay as is."
+    },
+    "settings.museAgent.noSession": {
+      "value": "No muse.ai session yet — sign in at muse.ai in your browser, then import its cookies below.",
+      "comment": "Status line on the Meta AI settings page when Muse (the personal agent at muse.ai) has no imported web session."
+    },
+    "settings.museAgent.sessionSaved": {
+      "value": "muse.ai session saved",
+      "comment": "Status line on the Meta AI settings page once a Muse web session has been imported or pasted."
+    },
+    "settings.metaAI.networkNote": {
+      "value": "api.meta.ai and muse.ai must be reachable from this Mac. If your network needs a proxy for them, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY.",
+      "comment": "Note on the Meta AI settings page, under both SubProviders' controls. api.meta.ai is Muse Code's quota host and muse.ai is Muse's. Replaces settings.muse.networkNote, which named api.meta.ai only."
     },
     "settings.subscriptionNameFormat": {
       "value": "Subscription name format",
