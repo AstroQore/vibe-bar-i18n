@@ -994,7 +994,7 @@
 "onboarding.welcome.mcp.title" = "Local MCP server";
 
 /* Feature row body */
-"onboarding.welcome.quotas.detail" = "Codex, Claude Code, Gemini, Grok, Muse Code, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown.";
+"onboarding.welcome.quotas.detail" = "Codex, Claude Code, Gemini, Grok, Muse Code, Muse, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown.";
 
 /* Feature row title */
 "onboarding.welcome.quotas.title" = "Subscription quotas";

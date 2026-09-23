@@ -1545,7 +1545,7 @@
       "comment": "Feature row title"
     },
     "onboarding.welcome.quotas.detail": {
-      "value": "Codex, Claude Code, Gemini, Grok, Muse Code, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown.",
+      "value": "Codex, Claude Code, Gemini, Grok, Muse Code, Muse, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown.",
       "comment": "Feature row body"
     },
     "onboarding.welcome.quotas.title": {

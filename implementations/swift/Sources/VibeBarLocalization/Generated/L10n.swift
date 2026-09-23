@@ -2294,7 +2294,7 @@ public enum L10n {
                 /// Feature row body
                 ///
                 /// Key: `onboarding.welcome.quotas.detail`
-                /// en: "Codex, Claude Code, Gemini, Grok, Muse Code, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown."
+                /// en: "Codex, Claude Code, Gemini, Grok, Muse Code, Muse, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown."
                 public static var detail: String { L10nSupport.string("onboarding.welcome.quotas.detail") }
 
                 /// Feature row title
