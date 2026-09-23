@@ -2229,6 +2229,12 @@ public enum L10n {
                 /// en: "Grok CLI · grok.com · Cursor"
                 public static var grok: String { L10nSupport.string("onboarding.subscriptions.productLine.grok") }
 
+                /// Product line under Meta AI in the onboarding subscriptions list: its two SubProviders, the Muse Code CLI and Muse, the personal agent whose website and Mac app share one account. Replaces onboarding.subscriptions.productLine.muse, which named Muse Code only.
+                ///
+                /// Key: `onboarding.subscriptions.productLine.metaAI`
+                /// en: "Muse Code CLI · Muse (muse.ai, Muse app)"
+                public static var metaAI: String { L10nSupport.string("onboarding.subscriptions.productLine.metaAI") }
+
                 /// Product line under the Mistral AI row of the onboarding subscriptions step.
                 ///
                 /// Key: `onboarding.subscriptions.productLine.mistralVibe`
@@ -2288,7 +2294,7 @@ public enum L10n {
                 /// Feature row body
                 ///
                 /// Key: `onboarding.welcome.quotas.detail`
-                /// en: "Codex, Claude Code, Gemini, Grok, Muse Code, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown."
+                /// en: "Codex, Claude Code, Gemini, Grok, Muse Code, Muse, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown."
                 public static var detail: String { L10nSupport.string("onboarding.welcome.quotas.detail") }
 
                 /// Feature row title
@@ -4027,6 +4033,12 @@ public enum L10n {
             /// Key: `quota.login.muse`
             /// en: "Run muse login, then refresh."
             public static var muse: String { L10nSupport.string("quota.login.muse") }
+
+            /// Hint on the Meta AI quota card when Muse (the personal agent at muse.ai) has no imported web session yet.
+            ///
+            /// Key: `quota.login.museAgent`
+            /// en: "Sign in at muse.ai in your browser, then import its cookies in Settings → Meta AI."
+            public static var museAgent: String { L10nSupport.string("quota.login.museAgent") }
         }
 
         public enum Mini {
@@ -5266,6 +5278,14 @@ public enum L10n {
         /// Key: `settings.privacyModeDetail`
         /// en: "Privacy mode keeps cost data off disk and clears local cost history, snapshots, and scan cache."
         public static var privacyModeDetail: String { L10nSupport.string("settings.privacyModeDetail") }
+
+        /// Row label naming where one SubProvider's quota is read from, on a settings page that holds more than one; {provider} is the SubProvider name, e.g. Muse.
+        ///
+        /// Key: `settings.providerSource`
+        /// en: "{provider} source"
+        public static func providerSource(provider: String) -> String {
+            L10nSupport.format("settings.providerSource", provider)
+        }
 
         /// Provider state: credentials are usable
         ///
@@ -7397,6 +7417,20 @@ public enum L10n {
             public static var whatAgentsMayDo: String { L10nSupport.string("settings.mcp.whatAgentsMayDo") }
         }
 
+        public enum MetaAI {
+            /// Explanation on the Meta AI settings page, covering both of its SubProviders: Muse Code (the CLI) and Muse (the personal agent at muse.ai). Replaces settings.metaAIIntro, which named Muse Code only.
+            ///
+            /// Key: `settings.metaAI.intro`
+            /// en: "The Meta AI page tracks Muse Code and Muse. Muse Code's quota comes from the login `muse login` saved in the macOS Keychain; its token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates. Muse's weekly quota comes from your muse.ai session, imported from a browser signed in to muse.ai. Muse keeps no model or token counts on this Mac, so it has quota and sessions but no cost."
+            public static var intro: String { L10nSupport.string("settings.metaAI.intro") }
+
+            /// Note on the Meta AI settings page, under both SubProviders' controls. api.meta.ai is Muse Code's quota host and muse.ai is Muse's. Replaces settings.muse.networkNote, which named api.meta.ai only.
+            ///
+            /// Key: `settings.metaAI.networkNote`
+            /// en: "api.meta.ai and muse.ai must be reachable from this Mac. If your network needs a proxy for them, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY."
+            public static var networkNote: String { L10nSupport.string("settings.metaAI.networkNote") }
+        }
+
         public enum MiniCanvas {
             /// Mini window free-canvas editor: back.
             ///
@@ -8181,6 +8215,20 @@ public enum L10n {
             public static var noLogin: String { L10nSupport.string("settings.muse.noLogin") }
         }
 
+        public enum MuseAgent {
+            /// Status line on the Meta AI settings page when Muse (the personal agent at muse.ai) has no imported web session.
+            ///
+            /// Key: `settings.museAgent.noSession`
+            /// en: "No muse.ai session yet — sign in at muse.ai in your browser, then import its cookies below."
+            public static var noSession: String { L10nSupport.string("settings.museAgent.noSession") }
+
+            /// Status line on the Meta AI settings page once a Muse web session has been imported or pasted.
+            ///
+            /// Key: `settings.museAgent.sessionSaved`
+            /// en: "muse.ai session saved"
+            public static var sessionSaved: String { L10nSupport.string("settings.museAgent.sessionSaved") }
+        }
+
         public enum OverviewGranularity {
             /// Overview quota card granularity picker; changes card boundaries only.
             ///
@@ -8743,6 +8791,12 @@ public enum L10n {
             /// Key: `settings.route.grokAuthFile`
             /// en: "~/.grok/auth.json"
             public static var grokAuthFile: String { L10nSupport.string("settings.route.grokAuthFile") }
+
+            /// Route-health row name on the Meta AI settings page: the muse.ai session cookies imported for Muse, the personal agent. Sits under settings.route.museKeychain, so it names its SubProvider the same way.
+            ///
+            /// Key: `settings.route.museAgentSession`
+            /// en: "Muse web session (cookies)"
+            public static var museAgentSession: String { L10nSupport.string("settings.route.museAgentSession") }
 
             /// Route-health row name on the Meta AI settings page: the login the muse CLI keeps in the macOS Keychain.
             ///
@@ -13234,6 +13288,7 @@ enum L10nCatalogFacts {
         "onboarding.subscriptions.productLine.devin",
         "onboarding.subscriptions.productLine.gemini",
         "onboarding.subscriptions.productLine.grok",
+        "onboarding.subscriptions.productLine.metaAI",
         "onboarding.subscriptions.productLine.mistralVibe",
         "onboarding.subscriptions.productLine.muse",
         "onboarding.subscriptions.showInOverview",
@@ -13496,6 +13551,7 @@ enum L10nCatalogFacts {
         "quota.login.misc",
         "quota.login.mistralVibe",
         "quota.login.muse",
+        "quota.login.museAgent",
         "quota.mini.forecastLearning",
         "quota.mini.forecastLearningCompact",
         "quota.mini.forecastLeftCompact",
@@ -13981,6 +14037,8 @@ enum L10nCatalogFacts {
         "settings.mcp.title",
         "settings.mcp.whatAgentsMayDo",
         "settings.menuBarHealthUnavailable",
+        "settings.metaAI.intro",
+        "settings.metaAI.networkNote",
         "settings.metaAIIntro",
         "settings.miniCanvas.back",
         "settings.miniCanvas.canvas",
@@ -14107,6 +14165,8 @@ enum L10nCatalogFacts {
         "settings.muse.keychainAccessDenied",
         "settings.muse.networkNote",
         "settings.muse.noLogin",
+        "settings.museAgent.noSession",
+        "settings.museAgent.sessionSaved",
         "settings.needsSetup",
         "settings.notChecked",
         "settings.notCheckedYet",
@@ -14154,6 +14214,7 @@ enum L10nCatalogFacts {
         "settings.privacyDetail",
         "settings.privacyMode",
         "settings.privacyModeDetail",
+        "settings.providerSource",
         "settings.ready",
         "settings.refreshEvery",
         "settings.refreshOnPopoverOpen",
@@ -14218,6 +14279,7 @@ enum L10nCatalogFacts {
         "settings.route.cli",
         "settings.route.devinStatusCache",
         "settings.route.grokAuthFile",
+        "settings.route.museAgentSession",
         "settings.route.museKeychain",
         "settings.route.oauth",
         "settings.route.webViewCookies",
@@ -15226,6 +15288,7 @@ enum L10nCatalogFacts {
         "onboarding.subscriptions.productLine.devin": 0,
         "onboarding.subscriptions.productLine.gemini": 0,
         "onboarding.subscriptions.productLine.grok": 0,
+        "onboarding.subscriptions.productLine.metaAI": 0,
         "onboarding.subscriptions.productLine.mistralVibe": 0,
         "onboarding.subscriptions.productLine.muse": 0,
         "onboarding.subscriptions.showInOverview": 0,
@@ -15488,6 +15551,7 @@ enum L10nCatalogFacts {
         "quota.login.misc": 1,
         "quota.login.mistralVibe": 0,
         "quota.login.muse": 0,
+        "quota.login.museAgent": 0,
         "quota.mini.forecastLearning": 1,
         "quota.mini.forecastLearningCompact": 1,
         "quota.mini.forecastLeftCompact": 1,
@@ -15973,6 +16037,8 @@ enum L10nCatalogFacts {
         "settings.mcp.title": 0,
         "settings.mcp.whatAgentsMayDo": 0,
         "settings.menuBarHealthUnavailable": 0,
+        "settings.metaAI.intro": 0,
+        "settings.metaAI.networkNote": 0,
         "settings.metaAIIntro": 0,
         "settings.miniCanvas.back": 0,
         "settings.miniCanvas.canvas": 0,
@@ -16099,6 +16165,8 @@ enum L10nCatalogFacts {
         "settings.muse.keychainAccessDenied": 0,
         "settings.muse.networkNote": 0,
         "settings.muse.noLogin": 0,
+        "settings.museAgent.noSession": 0,
+        "settings.museAgent.sessionSaved": 0,
         "settings.needsSetup": 0,
         "settings.notChecked": 0,
         "settings.notCheckedYet": 0,
@@ -16146,6 +16214,7 @@ enum L10nCatalogFacts {
         "settings.privacyDetail": 0,
         "settings.privacyMode": 0,
         "settings.privacyModeDetail": 0,
+        "settings.providerSource": 1,
         "settings.ready": 0,
         "settings.refreshEvery": 0,
         "settings.refreshOnPopoverOpen": 0,
@@ -16210,6 +16279,7 @@ enum L10nCatalogFacts {
         "settings.route.cli": 0,
         "settings.route.devinStatusCache": 0,
         "settings.route.grokAuthFile": 0,
+        "settings.route.museAgentSession": 0,
         "settings.route.museKeychain": 0,
         "settings.route.oauth": 0,
         "settings.route.webViewCookies": 0,

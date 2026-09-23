@@ -960,6 +960,9 @@
 /* Where this provider's quota can come from */
 "onboarding.subscriptions.productLine.grok" = "Grok CLI · grok.com · Cursor";
 
+/* Product line under Meta AI in the onboarding subscriptions list: its two SubProviders, the Muse Code CLI and Muse, the personal agent whose website and Mac app share one account. Replaces onboarding.subscriptions.productLine.muse, which named Muse Code only. */
+"onboarding.subscriptions.productLine.metaAI" = "Muse Code CLI · Muse (muse.ai, Muse app)";
+
 /* Product line under the Mistral AI row of the onboarding subscriptions step. */
 "onboarding.subscriptions.productLine.mistralVibe" = "Mistral Vibe CLI · console.mistral.ai";
 
@@ -991,7 +994,7 @@
 "onboarding.welcome.mcp.title" = "Local MCP server";
 
 /* Feature row body */
-"onboarding.welcome.quotas.detail" = "Codex, Claude Code, Gemini, Grok, Muse Code, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown.";
+"onboarding.welcome.quotas.detail" = "Codex, Claude Code, Gemini, Grok, Muse Code, Muse, Devin, Mistral Vibe and a shelf of API-key plans, each with its reset countdown.";
 
 /* Feature row title */
 "onboarding.welcome.quotas.title" = "Subscription quotas";
@@ -1733,6 +1736,9 @@
 
 /* Hint on the Meta AI quota card when this Mac has no Muse Code login. `muse login` is the CLI command and stays as is. */
 "quota.login.muse" = "Run muse login, then refresh.";
+
+/* Hint on the Meta AI quota card when Muse (the personal agent at muse.ai) has no imported web session yet. */
+"quota.login.museAgent" = "Sign in at muse.ai in your browser, then import its cookies in Settings → Meta AI.";
 
 /* Mini window forecast line while the forecast is still learning the usage pattern */
 "quota.mini.forecastLearning" = "learning · %lld%% left";
@@ -3150,6 +3156,12 @@
 /* Shown when the watchdog is not running */
 "settings.menuBarHealthUnavailable" = "The menu bar health monitor is not attached in this process.";
 
+/* Explanation on the Meta AI settings page, covering both of its SubProviders: Muse Code (the CLI) and Muse (the personal agent at muse.ai). Replaces settings.metaAIIntro, which named Muse Code only. */
+"settings.metaAI.intro" = "The Meta AI page tracks Muse Code and Muse. Muse Code's quota comes from the login `muse login` saved in the macOS Keychain; its token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates. Muse's weekly quota comes from your muse.ai session, imported from a browser signed in to muse.ai. Muse keeps no model or token counts on this Mac, so it has quota and sessions but no cost.";
+
+/* Note on the Meta AI settings page, under both SubProviders' controls. api.meta.ai is Muse Code's quota host and muse.ai is Muse's. Replaces settings.muse.networkNote, which named api.meta.ai only. */
+"settings.metaAI.networkNote" = "api.meta.ai and muse.ai must be reachable from this Mac. If your network needs a proxy for them, set that proxy as the macOS system proxy — Vibe Bar does not read a shell's HTTPS_PROXY.";
+
 /* Intro paragraph at the top of the Meta AI settings page. */
 "settings.metaAIIntro" = "The Meta AI page tracks Muse Code. Quota comes from the login `muse login` saved in the macOS Keychain; token usage comes from Muse Code's local session logs, and its cost is what the same tokens would cost at Meta's API rates.";
 
@@ -3528,6 +3540,12 @@
 /* Status line on the Meta AI settings page and the onboarding row when this Mac has no Muse Code CLI login: no login identity, or no token in its macOS Keychain item. */
 "settings.muse.noLogin" = "No Muse Code login yet. Run muse login, then refresh.";
 
+/* Status line on the Meta AI settings page when Muse (the personal agent at muse.ai) has no imported web session. */
+"settings.museAgent.noSession" = "No muse.ai session yet — sign in at muse.ai in your browser, then import its cookies below.";
+
+/* Status line on the Meta AI settings page once a Muse web session has been imported or pasted. */
+"settings.museAgent.sessionSaved" = "muse.ai session saved";
+
 /* Provider state: credentials are missing */
 "settings.needsSetup" = "Needs setup";
 
@@ -3668,6 +3686,9 @@
 
 /* Caption under the privacy toggle */
 "settings.privacyModeDetail" = "Privacy mode keeps cost data off disk and clears local cost history, snapshots, and scan cache.";
+
+/* Row label naming where one SubProvider's quota is read from, on a settings page that holds more than one; {provider} is the SubProvider name, e.g. Muse. */
+"settings.providerSource" = "%@ source";
 
 /* Provider state: credentials are usable */
 "settings.ready" = "Ready";
@@ -3860,6 +3881,9 @@
 
 /* Connection-health row: the Grok CLI's credential file. A path, never translated. */
 "settings.route.grokAuthFile" = "~/.grok/auth.json";
+
+/* Route-health row name on the Meta AI settings page: the muse.ai session cookies imported for Muse, the personal agent. Sits under settings.route.museKeychain, so it names its SubProvider the same way. */
+"settings.route.museAgentSession" = "Muse web session (cookies)";
 
 /* Route-health row name on the Meta AI settings page: the login the muse CLI keeps in the macOS Keychain. */
 "settings.route.museKeychain" = "Muse Code login (Keychain)";
