@@ -809,6 +809,10 @@ export type MessageKey =
   | "settings.eink.capacityFull"
   | "settings.eink.compact"
   | "settings.eink.composition"
+  | "settings.eink.content.capacity"
+  | "settings.eink.content.hint"
+  | "settings.eink.content.page"
+  | "settings.eink.content.title"
   | "settings.eink.customLayout"
   | "settings.eink.customLayoutDetail"
   | "settings.eink.customSlide"
@@ -836,7 +840,12 @@ export type MessageKey =
   | "settings.eink.footer.usage"
   | "settings.eink.group.insight"
   | "settings.eink.group.quota"
+  | "settings.eink.group.screenGroup"
   | "settings.eink.group.usage"
+  | "settings.eink.groupLayout.cardsDetail"
+  | "settings.eink.groupLayout.headlineDetail"
+  | "settings.eink.groupLayout.tiledDetail"
+  | "settings.eink.groupLayout.wideLedgerDetail"
   | "settings.eink.header"
   | "settings.eink.headerLeft"
   | "settings.eink.headerPosition"
@@ -875,13 +884,16 @@ export type MessageKey =
   | "settings.eink.position.bottom"
   | "settings.eink.position.top"
   | "settings.eink.preset.briefing"
+  | "settings.eink.preset.cards"
   | "settings.eink.preset.dual"
+  | "settings.eink.preset.headline"
   | "settings.eink.preset.heatmap"
   | "settings.eink.preset.rings"
   | "settings.eink.preset.split"
   | "settings.eink.preset.table"
   | "settings.eink.preset.topModels"
   | "settings.eink.preset.trend"
+  | "settings.eink.preset.wideLedger"
   | "settings.eink.pushNow"
   | "settings.eink.pushResult"
   | "settings.eink.quietHours"
@@ -2759,6 +2771,10 @@ export interface MessageParams {
   "settings.eink.capacityFull": { "count": number };
   "settings.eink.compact": undefined;
   "settings.eink.composition": undefined;
+  "settings.eink.content.capacity": { "count": number };
+  "settings.eink.content.hint": undefined;
+  "settings.eink.content.page": { "number": number };
+  "settings.eink.content.title": undefined;
   "settings.eink.customLayout": undefined;
   "settings.eink.customLayoutDetail": undefined;
   "settings.eink.customSlide": undefined;
@@ -2786,7 +2802,12 @@ export interface MessageParams {
   "settings.eink.footer.usage": undefined;
   "settings.eink.group.insight": undefined;
   "settings.eink.group.quota": undefined;
+  "settings.eink.group.screenGroup": undefined;
   "settings.eink.group.usage": undefined;
+  "settings.eink.groupLayout.cardsDetail": undefined;
+  "settings.eink.groupLayout.headlineDetail": undefined;
+  "settings.eink.groupLayout.tiledDetail": undefined;
+  "settings.eink.groupLayout.wideLedgerDetail": undefined;
   "settings.eink.header": undefined;
   "settings.eink.headerLeft": undefined;
   "settings.eink.headerPosition": undefined;
@@ -2825,13 +2846,16 @@ export interface MessageParams {
   "settings.eink.position.bottom": undefined;
   "settings.eink.position.top": undefined;
   "settings.eink.preset.briefing": undefined;
+  "settings.eink.preset.cards": undefined;
   "settings.eink.preset.dual": undefined;
+  "settings.eink.preset.headline": undefined;
   "settings.eink.preset.heatmap": undefined;
   "settings.eink.preset.rings": undefined;
   "settings.eink.preset.split": undefined;
   "settings.eink.preset.table": undefined;
   "settings.eink.preset.topModels": undefined;
   "settings.eink.preset.trend": undefined;
+  "settings.eink.preset.wideLedger": undefined;
   "settings.eink.pushNow": undefined;
   "settings.eink.pushResult": { "pushed": number; "skipped": number };
   "settings.eink.quietHours": undefined;
@@ -4710,6 +4734,10 @@ export const messages: {
     "settings.eink.capacityFull": "This layout has room for {count} at this orientation. Deselect one to pick another.",
     "settings.eink.compact": "Fill the panel when both bars are off",
     "settings.eink.composition": "Composition",
+    "settings.eink.content.capacity": "{count, plural, one {# fits on one page} other {# fit on one page}}",
+    "settings.eink.content.hint": "Tick to show, drag to reorder.",
+    "settings.eink.content.page": "Page {number}",
+    "settings.eink.content.title": "Content on this page",
     "settings.eink.customLayout": "Custom layout",
     "settings.eink.customLayoutDetail": "Lay this slide out yourself: place text, rings, bars and whole preset blocks on the panel.",
     "settings.eink.customSlide": "Custom (opens the Studio)",
@@ -4737,7 +4765,12 @@ export const messages: {
     "settings.eink.footer.usage": "Spend summary",
     "settings.eink.group.insight": "Insight layouts",
     "settings.eink.group.quota": "Quota layouts",
+    "settings.eink.group.screenGroup": "Screen group layouts",
     "settings.eink.group.usage": "Usage layouts",
+    "settings.eink.groupLayout.cardsDetail": "Every screen is a grid of cards, one bucket each.",
+    "settings.eink.groupLayout.headlineDetail": "The first screen shows two buckets large, with the verdict and the reset beside each. The other screens continue the list.",
+    "settings.eink.groupLayout.tiledDetail": "Each screen draws this layout on its own with its share of the list, so nothing is drawn across the gap between screens.",
+    "settings.eink.groupLayout.wideLedgerDetail": "Each row reads across two screens side by side: the full name and the percentage on the left, the bar, the reset and the verdict on the right. Stacked screens get a ledger each.",
     "settings.eink.header": "Header bar",
     "settings.eink.headerLeft": "Left side",
     "settings.eink.headerPosition": "Header position",
@@ -4776,13 +4809,16 @@ export const messages: {
     "settings.eink.position.bottom": "Bottom",
     "settings.eink.position.top": "Top",
     "settings.eink.preset.briefing": "Briefing",
+    "settings.eink.preset.cards": "Card grid",
     "settings.eink.preset.dual": "Dual bars",
+    "settings.eink.preset.headline": "Headline and list",
     "settings.eink.preset.heatmap": "Heatmap",
     "settings.eink.preset.rings": "Rings",
     "settings.eink.preset.split": "Split",
     "settings.eink.preset.table": "Table",
     "settings.eink.preset.topModels": "Top models",
     "settings.eink.preset.trend": "Trend",
+    "settings.eink.preset.wideLedger": "Wide ledger",
     "settings.eink.pushNow": "Push now",
     "settings.eink.pushResult": "Pushed {pushed}; {skipped} already on the panel.",
     "settings.eink.quietHours": "Quiet hours",
@@ -6656,6 +6692,10 @@ export const messages: {
     "settings.eink.capacityFull": "该版式在当前方向下最多容纳 {count} 项。请先取消一项再选择其他。",
     "settings.eink.compact": "两栏都关闭时填满面板",
     "settings.eink.composition": "版面构成",
+    "settings.eink.content.capacity": "{count, plural, other {每页可放 # 项}}",
+    "settings.eink.content.hint": "勾选即显示，拖动调整顺序",
+    "settings.eink.content.page": "第 {number} 页",
+    "settings.eink.content.title": "本页内容",
     "settings.eink.customLayout": "自定义布局",
     "settings.eink.customLayoutDetail": "自行排布这张幻灯片：在面板上摆放文本、圆环、条形和整块预设。",
     "settings.eink.customSlide": "自定义（在 Studio 中编辑）",
@@ -6683,7 +6723,12 @@ export const messages: {
     "settings.eink.footer.usage": "花费摘要",
     "settings.eink.group.insight": "洞察布局",
     "settings.eink.group.quota": "额度版式",
+    "settings.eink.group.screenGroup": "设备组版式",
     "settings.eink.group.usage": "用量版式",
+    "settings.eink.groupLayout.cardsDetail": "每块屏幕是一组卡片，每张卡片一项额度。",
+    "settings.eink.groupLayout.headlineDetail": "第一块屏幕放大显示两项额度，并附带预测结论与重置时间，其余屏幕接着显示后续列表。",
+    "settings.eink.groupLayout.tiledDetail": "每块屏幕各自绘制该版式，按顺序分摊列表内容，不会有内容跨越屏幕之间的边框。",
+    "settings.eink.groupLayout.wideLedgerDetail": "每一行横跨左右两块屏幕：左屏显示完整名称与百分比，右屏显示进度条、重置时间与预测结论。上下排列的屏幕各显示一份清单。",
     "settings.eink.header": "标题栏",
     "settings.eink.headerLeft": "左侧内容",
     "settings.eink.headerPosition": "标题栏位置",
@@ -6722,13 +6767,16 @@ export const messages: {
     "settings.eink.position.bottom": "底部",
     "settings.eink.position.top": "顶部",
     "settings.eink.preset.briefing": "简报",
+    "settings.eink.preset.cards": "卡片网格",
     "settings.eink.preset.dual": "双条",
+    "settings.eink.preset.headline": "头条 + 清单",
     "settings.eink.preset.heatmap": "热力图",
     "settings.eink.preset.rings": "圆环",
     "settings.eink.preset.split": "分栏",
     "settings.eink.preset.table": "表格",
     "settings.eink.preset.topModels": "模型榜",
     "settings.eink.preset.trend": "趋势",
+    "settings.eink.preset.wideLedger": "通栏清单",
     "settings.eink.pushNow": "立即推送",
     "settings.eink.pushResult": "已推送 {pushed} 张；{skipped} 张屏幕上已是这些内容。",
     "settings.eink.quietHours": "静默时段",
