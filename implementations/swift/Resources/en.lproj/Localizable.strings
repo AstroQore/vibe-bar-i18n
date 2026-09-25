@@ -2064,6 +2064,12 @@
 /* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
 "resetJournal.creditConfirmed" = "Confirmed by a redemption receipt";
 
+/* Quota reset journal and the Workbench reset-credit record: one limit reset credit the provider granted to the account (+1). */
+"resetJournal.creditGranted" = "Reset credit received";
+
+/* Quota reset journal and reset-credit record: explains the ≈ mark on a credit use that was inferred because the available count fell, with no server receipt. */
+"resetJournal.creditInferred" = "Inferred from a falling credit count · no receipt";
+
 /* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
 "resetJournal.creditOnly" = "Redemption recorded · quota change not observed";
 
@@ -4757,6 +4763,15 @@
 
 /* Button that returns the reset calendar to the current month distinct-from: cost.timeframe.today — a timeframe covering today is a value; the calendar's Today button is a command that returns the grid to the current month. */
 "workbench.resets.calendar.today" = "Today";
+
+/* Caption beside the Limit reset credits card title on the Workbench Resets page */
+"workbench.resets.credits.detail" = "every credit used or received · newest first";
+
+/* Shown in a SubProvider's reset-credit record on the Workbench Resets page when credits are available but none has been spent or granted since recording began */
+"workbench.resets.credits.empty" = "No credit used or received yet";
+
+/* Line under a SubProvider's available reset credits on the Workbench Resets page: how many credits the record holds as spent and as granted */
+"workbench.resets.credits.summary" = "%1$lld used · %2$lld received";
 
 /* Tooltip on a cycle card's fill curve; bucket is the quota window's label */
 "workbench.resets.cycle.curveHelp" = "Remaining %% across the current %@ cycle";

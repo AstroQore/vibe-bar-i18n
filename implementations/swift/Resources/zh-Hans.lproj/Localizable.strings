@@ -2064,6 +2064,12 @@
 /* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
 "resetJournal.creditConfirmed" = "已确认重置券兑换记录";
 
+/* Quota reset journal and the Workbench reset-credit record: one limit reset credit the provider granted to the account (+1). */
+"resetJournal.creditGranted" = "获得重置券";
+
+/* Quota reset journal and reset-credit record: explains the ≈ mark on a credit use that was inferred because the available count fell, with no server receipt. */
+"resetJournal.creditInferred" = "由重置券数量减少推断 · 无兑换记录";
+
 /* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
 "resetJournal.creditOnly" = "已记录兑换 · 未观察到对应额度变化";
 
@@ -4757,6 +4763,15 @@
 
 /* Button that returns the reset calendar to the current month distinct-from: cost.timeframe.today — a timeframe covering today is a value; the calendar's Today button is a command that returns the grid to the current month. */
 "workbench.resets.calendar.today" = "今日";
+
+/* Caption beside the Limit reset credits card title on the Workbench Resets page */
+"workbench.resets.credits.detail" = "每张券的使用与获得 · 最新在前";
+
+/* Shown in a SubProvider's reset-credit record on the Workbench Resets page when credits are available but none has been spent or granted since recording began */
+"workbench.resets.credits.empty" = "暂无用券或得券记录";
+
+/* Line under a SubProvider's available reset credits on the Workbench Resets page: how many credits the record holds as spent and as granted */
+"workbench.resets.credits.summary" = "已用 %1$lld · 获得 %2$lld";
 
 /* Tooltip on a cycle card's fill curve; bucket is the quota window's label */
 "workbench.resets.cycle.curveHelp" = "当前 %@ 周期内的剩余百分比";

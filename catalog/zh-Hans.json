@@ -2033,6 +2033,12 @@
     "resetJournal.credit": {
       "value": "使用重置券"
     },
+    "resetJournal.creditGranted": {
+      "value": "获得重置券"
+    },
+    "resetJournal.creditInferred": {
+      "value": "由重置券数量减少推断 · 无兑换记录"
+    },
     "resetJournal.creditConfirmed": {
       "value": "已确认重置券兑换记录"
     },
@@ -4186,6 +4192,15 @@
     },
     "workbench.resets.cycle.headline": {
       "value": "{bucket} · 距重置 {countdown}"
+    },
+    "workbench.resets.credits.detail": {
+      "value": "每张券的使用与获得 · 最新在前"
+    },
+    "workbench.resets.credits.empty": {
+      "value": "暂无用券或得券记录"
+    },
+    "workbench.resets.credits.summary": {
+      "value": "已用 {used} · 获得 {received}"
     },
     "workbench.resets.refillHorizon.detail": {
       "value": "未来 7 天 · 柱高即补回的额度"

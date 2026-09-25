@@ -4881,6 +4881,18 @@ public enum L10n {
         /// en: "Confirmed by a redemption receipt"
         public static var creditConfirmed: String { L10nSupport.string("resetJournal.creditConfirmed") }
 
+        /// Quota reset journal and the Workbench reset-credit record: one limit reset credit the provider granted to the account (+1).
+        ///
+        /// Key: `resetJournal.creditGranted`
+        /// en: "Reset credit received"
+        public static var creditGranted: String { L10nSupport.string("resetJournal.creditGranted") }
+
+        /// Quota reset journal and reset-credit record: explains the ≈ mark on a credit use that was inferred because the available count fell, with no server receipt.
+        ///
+        /// Key: `resetJournal.creditInferred`
+        /// en: "Inferred from a falling credit count · no receipt"
+        public static var creditInferred: String { L10nSupport.string("resetJournal.creditInferred") }
+
         /// Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts.
         ///
         /// Key: `resetJournal.creditOnly`
@@ -10769,6 +10781,28 @@ public enum L10n {
                 public static var today: String { L10nSupport.string("workbench.resets.calendar.today") }
             }
 
+            public enum Credits {
+                /// Caption beside the Limit reset credits card title on the Workbench Resets page
+                ///
+                /// Key: `workbench.resets.credits.detail`
+                /// en: "every credit used or received · newest first"
+                public static var detail: String { L10nSupport.string("workbench.resets.credits.detail") }
+
+                /// Shown in a SubProvider's reset-credit record on the Workbench Resets page when credits are available but none has been spent or granted since recording began
+                ///
+                /// Key: `workbench.resets.credits.empty`
+                /// en: "No credit used or received yet"
+                public static var empty: String { L10nSupport.string("workbench.resets.credits.empty") }
+
+                /// Line under a SubProvider's available reset credits on the Workbench Resets page: how many credits the record holds as spent and as granted
+                ///
+                /// Key: `workbench.resets.credits.summary`
+                /// en: "{used} used · {received} received"
+                public static func summary(used: Int, received: Int) -> String {
+                    L10nSupport.format("workbench.resets.credits.summary", used, received)
+                }
+            }
+
             public enum Cycle {
                 /// Tooltip on a cycle card's fill curve; bucket is the quota window's label
                 ///
@@ -13668,6 +13702,8 @@ enum L10nCatalogFacts {
         "resetJournal.beforeReset",
         "resetJournal.credit",
         "resetJournal.creditConfirmed",
+        "resetJournal.creditGranted",
+        "resetJournal.creditInferred",
         "resetJournal.creditOnly",
         "resetJournal.earlyRestarted",
         "resetJournal.earlyUnchanged",
@@ -14585,6 +14621,9 @@ enum L10nCatalogFacts {
         "workbench.resets.calendar.previousMonth",
         "workbench.resets.calendar.title",
         "workbench.resets.calendar.today",
+        "workbench.resets.credits.detail",
+        "workbench.resets.credits.empty",
+        "workbench.resets.credits.summary",
         "workbench.resets.cycle.curveHelp",
         "workbench.resets.cycle.headline",
         "workbench.resets.refillHorizon.detail",
@@ -15668,6 +15707,8 @@ enum L10nCatalogFacts {
         "resetJournal.beforeReset": 0,
         "resetJournal.credit": 0,
         "resetJournal.creditConfirmed": 0,
+        "resetJournal.creditGranted": 0,
+        "resetJournal.creditInferred": 0,
         "resetJournal.creditOnly": 0,
         "resetJournal.earlyRestarted": 0,
         "resetJournal.earlyUnchanged": 0,
@@ -16585,6 +16626,9 @@ enum L10nCatalogFacts {
         "workbench.resets.calendar.previousMonth": 0,
         "workbench.resets.calendar.title": 0,
         "workbench.resets.calendar.today": 0,
+        "workbench.resets.credits.detail": 0,
+        "workbench.resets.credits.empty": 0,
+        "workbench.resets.credits.summary": 2,
         "workbench.resets.cycle.curveHelp": 1,
         "workbench.resets.cycle.headline": 2,
         "workbench.resets.refillHorizon.detail": 0,

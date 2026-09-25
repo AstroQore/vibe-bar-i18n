@@ -721,6 +721,8 @@ export type MessageKey =
   | "resetJournal.beforeReset"
   | "resetJournal.credit"
   | "resetJournal.creditConfirmed"
+  | "resetJournal.creditGranted"
+  | "resetJournal.creditInferred"
   | "resetJournal.creditOnly"
   | "resetJournal.earlyRestarted"
   | "resetJournal.earlyUnchanged"
@@ -1638,6 +1640,9 @@ export type MessageKey =
   | "workbench.resets.calendar.previousMonth"
   | "workbench.resets.calendar.title"
   | "workbench.resets.calendar.today"
+  | "workbench.resets.credits.detail"
+  | "workbench.resets.credits.empty"
+  | "workbench.resets.credits.summary"
   | "workbench.resets.cycle.curveHelp"
   | "workbench.resets.cycle.headline"
   | "workbench.resets.refillHorizon.detail"
@@ -2666,6 +2671,8 @@ export interface MessageParams {
   "resetJournal.beforeReset": undefined;
   "resetJournal.credit": undefined;
   "resetJournal.creditConfirmed": undefined;
+  "resetJournal.creditGranted": undefined;
+  "resetJournal.creditInferred": undefined;
   "resetJournal.creditOnly": undefined;
   "resetJournal.earlyRestarted": undefined;
   "resetJournal.earlyUnchanged": undefined;
@@ -3583,6 +3590,9 @@ export interface MessageParams {
   "workbench.resets.calendar.previousMonth": undefined;
   "workbench.resets.calendar.title": undefined;
   "workbench.resets.calendar.today": undefined;
+  "workbench.resets.credits.detail": undefined;
+  "workbench.resets.credits.empty": undefined;
+  "workbench.resets.credits.summary": { "used": number; "received": number };
   "workbench.resets.cycle.curveHelp": { "bucket": string };
   "workbench.resets.cycle.headline": { "bucket": string; "countdown": string };
   "workbench.resets.refillHorizon.detail": undefined;
@@ -4612,6 +4622,8 @@ export const messages: {
     "resetJournal.beforeReset": "Previous deadline",
     "resetJournal.credit": "Reset credit used",
     "resetJournal.creditConfirmed": "Confirmed by a redemption receipt",
+    "resetJournal.creditGranted": "Reset credit received",
+    "resetJournal.creditInferred": "Inferred from a falling credit count · no receipt",
     "resetJournal.creditOnly": "Redemption recorded · quota change not observed",
     "resetJournal.earlyRestarted": "Early reset · new deadline",
     "resetJournal.earlyUnchanged": "Early refill · same deadline",
@@ -5529,6 +5541,9 @@ export const messages: {
     "workbench.resets.calendar.previousMonth": "Previous month",
     "workbench.resets.calendar.title": "Reset Calendar",
     "workbench.resets.calendar.today": "Today",
+    "workbench.resets.credits.detail": "every credit used or received · newest first",
+    "workbench.resets.credits.empty": "No credit used or received yet",
+    "workbench.resets.credits.summary": "{used} used · {received} received",
     "workbench.resets.cycle.curveHelp": "Remaining % across the current {bucket} cycle",
     "workbench.resets.cycle.headline": "{bucket} · resets {countdown}",
     "workbench.resets.refillHorizon.detail": "next 7 days · column height = how much comes back",
@@ -6553,6 +6568,8 @@ export const messages: {
     "resetJournal.beforeReset": "原到期时间",
     "resetJournal.credit": "使用重置券",
     "resetJournal.creditConfirmed": "已确认重置券兑换记录",
+    "resetJournal.creditGranted": "获得重置券",
+    "resetJournal.creditInferred": "由重置券数量减少推断 · 无兑换记录",
     "resetJournal.creditOnly": "已记录兑换 · 未观察到对应额度变化",
     "resetJournal.earlyRestarted": "提前重置 · 到期时间重设",
     "resetJournal.earlyUnchanged": "提前补额 · 到期时间不变",
@@ -7470,6 +7487,9 @@ export const messages: {
     "workbench.resets.calendar.previousMonth": "上一月",
     "workbench.resets.calendar.title": "重置日历",
     "workbench.resets.calendar.today": "今日",
+    "workbench.resets.credits.detail": "每张券的使用与获得 · 最新在前",
+    "workbench.resets.credits.empty": "暂无用券或得券记录",
+    "workbench.resets.credits.summary": "已用 {used} · 获得 {received}",
     "workbench.resets.cycle.curveHelp": "当前 {bucket} 周期内的剩余百分比",
     "workbench.resets.cycle.headline": "{bucket} · 距重置 {countdown}",
     "workbench.resets.refillHorizon.detail": "未来 7 天 · 柱高即补回的额度",

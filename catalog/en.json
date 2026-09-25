@@ -3325,6 +3325,14 @@
       "value": "Reset credit used",
       "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
     },
+    "resetJournal.creditGranted": {
+      "value": "Reset credit received",
+      "comment": "Quota reset journal and the Workbench reset-credit record: one limit reset credit the provider granted to the account (+1)."
+    },
+    "resetJournal.creditInferred": {
+      "value": "Inferred from a falling credit count · no receipt",
+      "comment": "Quota reset journal and reset-credit record: explains the ≈ mark on a credit use that was inferred because the available count fell, with no server receipt."
+    },
     "resetJournal.creditConfirmed": {
       "value": "Confirmed by a redemption receipt",
       "comment": "Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts."
@@ -6485,6 +6493,22 @@
       "placeholders": {
         "bucket": "string",
         "countdown": "string"
+      }
+    },
+    "workbench.resets.credits.detail": {
+      "value": "every credit used or received · newest first",
+      "comment": "Caption beside the Limit reset credits card title on the Workbench Resets page"
+    },
+    "workbench.resets.credits.empty": {
+      "value": "No credit used or received yet",
+      "comment": "Shown in a SubProvider's reset-credit record on the Workbench Resets page when credits are available but none has been spent or granted since recording began"
+    },
+    "workbench.resets.credits.summary": {
+      "value": "{used} used · {received} received",
+      "comment": "Line under a SubProvider's available reset credits on the Workbench Resets page: how many credits the record holds as spent and as granted",
+      "placeholders": {
+        "used": "int",
+        "received": "int"
       }
     },
     "workbench.resets.refillHorizon.detail": {
