@@ -2064,6 +2064,12 @@
 /* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
 "resetJournal.creditConfirmed" = "已确认重置券兑换记录";
 
+/* Quota reset journal and the Workbench reset-credit record: one limit reset credit the provider granted to the account (+1). */
+"resetJournal.creditGranted" = "获得重置券";
+
+/* Quota reset journal and reset-credit record: explains the ≈ mark on a credit use that was inferred because the available count fell, with no server receipt. */
+"resetJournal.creditInferred" = "由重置券数量减少推断 · 无兑换记录";
+
 /* Quota reset journal shared by popover and Workbench; persisted reset evidence and confirmed redemption receipts. */
 "resetJournal.creditOnly" = "已记录兑换 · 未观察到对应额度变化";
 
@@ -2322,6 +2328,15 @@
 /* Heading above the header, footer and density options of one slide. */
 "settings.eink.composition" = "版面构成";
 
+/* One-line help under the content list at the top of the slide editor. */
+"settings.eink.content.hint" = "勾选即显示，拖动调整顺序";
+
+/* Small label marking where the ticked items move on to the next page of a slide. */
+"settings.eink.content.page" = "第 %lld 页";
+
+/* Heading of the list at the top of the slide editor where the items the page shows are ticked and ordered. */
+"settings.eink.content.title" = "本页内容";
+
 /* Option in the E-ink slide layout picker that hands the slide to the Studio. */
 "settings.eink.customLayout" = "自定义布局";
 
@@ -2400,8 +2415,23 @@
 /* Heading of the quota half of the e-ink layout picker. */
 "settings.eink.group.quota" = "额度版式";
 
+/* Section heading in the slide layout picker for layouts that only exist for a page drawn across several E-ink screens. */
+"settings.eink.group.screenGroup" = "设备组版式";
+
 /* Heading of the usage half of the e-ink layout picker. */
 "settings.eink.group.usage" = "用量版式";
+
+/* Help text under the layout picker when a combined screen-group page uses the Card grid layout. */
+"settings.eink.groupLayout.cardsDetail" = "每块屏幕是一组卡片，每张卡片一项额度。";
+
+/* Help text under the layout picker when a combined screen-group page uses the Headline and list layout. */
+"settings.eink.groupLayout.headlineDetail" = "第一块屏幕放大显示两项额度，并附带预测结论与重置时间，其余屏幕接着显示后续列表。";
+
+/* Help text under the layout picker when a combined screen-group page uses an ordinary layout, which every screen draws separately. */
+"settings.eink.groupLayout.tiledDetail" = "每块屏幕各自绘制该版式，按顺序分摊列表内容，不会有内容跨越屏幕之间的边框。";
+
+/* Help text under the layout picker when a combined screen-group page uses the Wide ledger layout. */
+"settings.eink.groupLayout.wideLedgerDetail" = "每一行横跨左右两块屏幕：左屏显示完整名称与百分比，右屏显示进度条、重置时间与预测结论。上下排列的屏幕各显示一份清单。";
 
 /* Toggle that draws the bar at the top (or bottom) of a slide. */
 "settings.eink.header" = "标题栏";
@@ -2508,8 +2538,14 @@
 /* Name of the all-text E-ink layout that lists every bucket with its figures. */
 "settings.eink.preset.briefing" = "简报";
 
+/* Name of the screen-group E-ink layout that draws each quota bucket as a card in a grid on every screen. */
+"settings.eink.preset.cards" = "卡片网格";
+
 /* E-ink layout that draws cost and tokens as two bar columns per harness. */
 "settings.eink.preset.dual" = "双条";
+
+/* Name of the screen-group E-ink layout whose first screen shows two quota buckets large and whose other screens continue the list. */
+"settings.eink.preset.headline" = "头条 + 清单";
 
 /* Name of the E-ink layout that draws the week's activity as a dot matrix. */
 "settings.eink.preset.heatmap" = "热力图";
@@ -2528,6 +2564,9 @@
 
 /* E-ink layout that draws today plus the last seven days as a bar chart. */
 "settings.eink.preset.trend" = "趋势";
+
+/* Name of the screen-group E-ink layout where each ledger row reads across two screens placed side by side. */
+"settings.eink.preset.wideLedger" = "通栏清单";
 
 /* Button that sends every slide to an e-ink device immediately. */
 "settings.eink.pushNow" = "立即推送";
@@ -4757,6 +4796,15 @@
 
 /* Button that returns the reset calendar to the current month distinct-from: cost.timeframe.today — a timeframe covering today is a value; the calendar's Today button is a command that returns the grid to the current month. */
 "workbench.resets.calendar.today" = "今日";
+
+/* Caption beside the Limit reset credits card title on the Workbench Resets page */
+"workbench.resets.credits.detail" = "每张券的使用与获得 · 最新在前";
+
+/* Shown in a SubProvider's reset-credit record on the Workbench Resets page when credits are available but none has been spent or granted since recording began */
+"workbench.resets.credits.empty" = "暂无用券或得券记录";
+
+/* Line under a SubProvider's available reset credits on the Workbench Resets page: how many credits the record holds as spent and as granted */
+"workbench.resets.credits.summary" = "已用 %1$lld · 获得 %2$lld";
 
 /* Tooltip on a cycle card's fill curve; bucket is the quota window's label */
 "workbench.resets.cycle.curveHelp" = "当前 %@ 周期内的剩余百分比";

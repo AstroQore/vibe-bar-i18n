@@ -2033,6 +2033,12 @@
     "resetJournal.credit": {
       "value": "使用重置券"
     },
+    "resetJournal.creditGranted": {
+      "value": "获得重置券"
+    },
+    "resetJournal.creditInferred": {
+      "value": "由重置券数量减少推断 · 无兑换记录"
+    },
     "resetJournal.creditConfirmed": {
       "value": "已确认重置券兑换记录"
     },
@@ -4187,6 +4193,15 @@
     "workbench.resets.cycle.headline": {
       "value": "{bucket} · 距重置 {countdown}"
     },
+    "workbench.resets.credits.detail": {
+      "value": "每张券的使用与获得 · 最新在前"
+    },
+    "workbench.resets.credits.empty": {
+      "value": "暂无用券或得券记录"
+    },
+    "workbench.resets.credits.summary": {
+      "value": "已用 {used} · 获得 {received}"
+    },
     "workbench.resets.refillHorizon.detail": {
       "value": "未来 7 天 · 柱高即补回的额度"
     },
@@ -5611,6 +5626,42 @@
     },
     "settings.eink.preset.topModels": {
       "value": "模型榜"
+    },
+    "settings.eink.preset.headline": {
+      "value": "头条 + 清单"
+    },
+    "settings.eink.preset.wideLedger": {
+      "value": "通栏清单"
+    },
+    "settings.eink.preset.cards": {
+      "value": "卡片网格"
+    },
+    "settings.eink.group.screenGroup": {
+      "value": "设备组版式"
+    },
+    "settings.eink.groupLayout.headlineDetail": {
+      "value": "第一块屏幕放大显示两项额度，并附带预测结论与重置时间，其余屏幕接着显示后续列表。"
+    },
+    "settings.eink.groupLayout.wideLedgerDetail": {
+      "value": "每一行横跨左右两块屏幕：左屏显示完整名称与百分比，右屏显示进度条、重置时间与预测结论。上下排列的屏幕各显示一份清单。"
+    },
+    "settings.eink.groupLayout.cardsDetail": {
+      "value": "每块屏幕是一组卡片，每张卡片一项额度。"
+    },
+    "settings.eink.groupLayout.tiledDetail": {
+      "value": "每块屏幕各自绘制该版式，按顺序分摊列表内容，不会有内容跨越屏幕之间的边框。"
+    },
+    "settings.eink.content.title": {
+      "value": "本页内容"
+    },
+    "settings.eink.content.capacity": {
+      "value": "{count, plural, other {每页可放 # 项}}"
+    },
+    "settings.eink.content.hint": {
+      "value": "勾选即显示，拖动调整顺序"
+    },
+    "settings.eink.content.page": {
+      "value": "第 {number} 页"
     },
     "settings.eink.resetToPreset": {
       "value": "恢复为预设布局"
