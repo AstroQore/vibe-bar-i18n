@@ -2322,6 +2322,15 @@
 /* Heading above the header, footer and density options of one slide. */
 "settings.eink.composition" = "Composition";
 
+/* One-line help under the content list at the top of the slide editor. */
+"settings.eink.content.hint" = "Tick to show, drag to reorder.";
+
+/* Small label marking where the ticked items move on to the next page of a slide. */
+"settings.eink.content.page" = "Page %lld";
+
+/* Heading of the list at the top of the slide editor where the items the page shows are ticked and ordered. */
+"settings.eink.content.title" = "Content on this page";
+
 /* Option in the E-ink slide layout picker that hands the slide to the Studio. */
 "settings.eink.customLayout" = "Custom layout";
 
@@ -2400,8 +2409,23 @@
 /* Heading of the quota half of the e-ink layout picker. */
 "settings.eink.group.quota" = "Quota layouts";
 
+/* Section heading in the slide layout picker for layouts that only exist for a page drawn across several E-ink screens. */
+"settings.eink.group.screenGroup" = "Screen group layouts";
+
 /* Heading of the usage half of the e-ink layout picker. */
 "settings.eink.group.usage" = "Usage layouts";
+
+/* Help text under the layout picker when a combined screen-group page uses the Card grid layout. */
+"settings.eink.groupLayout.cardsDetail" = "Every screen is a grid of cards, one bucket each.";
+
+/* Help text under the layout picker when a combined screen-group page uses the Headline and list layout. */
+"settings.eink.groupLayout.headlineDetail" = "The first screen shows two buckets large, with the verdict and the reset beside each. The other screens continue the list.";
+
+/* Help text under the layout picker when a combined screen-group page uses an ordinary layout, which every screen draws separately. */
+"settings.eink.groupLayout.tiledDetail" = "Each screen draws this layout on its own with its share of the list, so nothing is drawn across the gap between screens.";
+
+/* Help text under the layout picker when a combined screen-group page uses the Wide ledger layout. */
+"settings.eink.groupLayout.wideLedgerDetail" = "Each row reads across two screens side by side: the full name and the percentage on the left, the bar, the reset and the verdict on the right. Stacked screens get a ledger each.";
 
 /* Toggle that draws the bar at the top (or bottom) of a slide. */
 "settings.eink.header" = "Header bar";
@@ -2508,8 +2532,14 @@
 /* Name of the all-text E-ink layout that lists every bucket with its figures. */
 "settings.eink.preset.briefing" = "Briefing";
 
+/* Name of the screen-group E-ink layout that draws each quota bucket as a card in a grid on every screen. */
+"settings.eink.preset.cards" = "Card grid";
+
 /* E-ink layout that draws cost and tokens as two bar columns per harness. */
 "settings.eink.preset.dual" = "Dual bars";
+
+/* Name of the screen-group E-ink layout whose first screen shows two quota buckets large and whose other screens continue the list. */
+"settings.eink.preset.headline" = "Headline and list";
 
 /* Name of the E-ink layout that draws the week's activity as a dot matrix. */
 "settings.eink.preset.heatmap" = "Heatmap";
@@ -2528,6 +2558,9 @@
 
 /* E-ink layout that draws today plus the last seven days as a bar chart. */
 "settings.eink.preset.trend" = "Trend";
+
+/* Name of the screen-group E-ink layout where each ledger row reads across two screens placed side by side. */
+"settings.eink.preset.wideLedger" = "Wide ledger";
 
 /* Button that sends every slide to an e-ink device immediately. */
 "settings.eink.pushNow" = "Push now";

@@ -8719,6 +8719,60 @@
       "value": "Top models",
       "comment": "Name of the E-ink layout that lists today's most expensive models."
     },
+    "settings.eink.preset.headline": {
+      "value": "Headline and list",
+      "comment": "Name of the screen-group E-ink layout whose first screen shows two quota buckets large and whose other screens continue the list."
+    },
+    "settings.eink.preset.wideLedger": {
+      "value": "Wide ledger",
+      "comment": "Name of the screen-group E-ink layout where each ledger row reads across two screens placed side by side."
+    },
+    "settings.eink.preset.cards": {
+      "value": "Card grid",
+      "comment": "Name of the screen-group E-ink layout that draws each quota bucket as a card in a grid on every screen."
+    },
+    "settings.eink.group.screenGroup": {
+      "value": "Screen group layouts",
+      "comment": "Section heading in the slide layout picker for layouts that only exist for a page drawn across several E-ink screens."
+    },
+    "settings.eink.groupLayout.headlineDetail": {
+      "value": "The first screen shows two buckets large, with the verdict and the reset beside each. The other screens continue the list.",
+      "comment": "Help text under the layout picker when a combined screen-group page uses the Headline and list layout."
+    },
+    "settings.eink.groupLayout.wideLedgerDetail": {
+      "value": "Each row reads across two screens side by side: the full name and the percentage on the left, the bar, the reset and the verdict on the right. Stacked screens get a ledger each.",
+      "comment": "Help text under the layout picker when a combined screen-group page uses the Wide ledger layout."
+    },
+    "settings.eink.groupLayout.cardsDetail": {
+      "value": "Every screen is a grid of cards, one bucket each.",
+      "comment": "Help text under the layout picker when a combined screen-group page uses the Card grid layout."
+    },
+    "settings.eink.groupLayout.tiledDetail": {
+      "value": "Each screen draws this layout on its own with its share of the list, so nothing is drawn across the gap between screens.",
+      "comment": "Help text under the layout picker when a combined screen-group page uses an ordinary layout, which every screen draws separately."
+    },
+    "settings.eink.content.title": {
+      "value": "Content on this page",
+      "comment": "Heading of the list at the top of the slide editor where the items the page shows are ticked and ordered."
+    },
+    "settings.eink.content.capacity": {
+      "value": "{count, plural, one {# fits on one page} other {# fit on one page}}",
+      "comment": "Beside the content heading: how many items this layout draws on one page of the selected screens.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "settings.eink.content.hint": {
+      "value": "Tick to show, drag to reorder.",
+      "comment": "One-line help under the content list at the top of the slide editor."
+    },
+    "settings.eink.content.page": {
+      "value": "Page {number}",
+      "comment": "Small label marking where the ticked items move on to the next page of a slide.",
+      "placeholders": {
+        "number": "int"
+      }
+    },
     "settings.eink.resetToPreset": {
       "value": "Reset to preset",
       "comment": "Button that discards a slide's hand-made layouts and goes back to drawing its preset."

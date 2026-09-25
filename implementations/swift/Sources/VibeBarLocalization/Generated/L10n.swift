@@ -6024,6 +6024,36 @@ public enum L10n {
                 public static var providerStatus: String { L10nSupport.string("settings.eink.bar.providerStatus") }
             }
 
+            public enum Content {
+                /// Beside the content heading: how many items this layout draws on one page of the selected screens.
+                ///
+                /// Key: `settings.eink.content.capacity`
+                /// en: "{count, plural, one {# fits on one page} other {# fit on one page}}"
+                public static func capacity(count: Int) -> String {
+                    L10nSupport.localizedFormat("settings.eink.content.capacity", count)
+                }
+
+                /// One-line help under the content list at the top of the slide editor.
+                ///
+                /// Key: `settings.eink.content.hint`
+                /// en: "Tick to show, drag to reorder."
+                public static var hint: String { L10nSupport.string("settings.eink.content.hint") }
+
+                /// Small label marking where the ticked items move on to the next page of a slide.
+                ///
+                /// Key: `settings.eink.content.page`
+                /// en: "Page {number}"
+                public static func page(number: Int) -> String {
+                    L10nSupport.format("settings.eink.content.page", number)
+                }
+
+                /// Heading of the list at the top of the slide editor where the items the page shows are ticked and ordered.
+                ///
+                /// Key: `settings.eink.content.title`
+                /// en: "Content on this page"
+                public static var title: String { L10nSupport.string("settings.eink.content.title") }
+            }
+
             public enum DeviceGroup {
                 /// Button above the display list in Settings › E-ink Displays that opens the sheet for combining two or more screens into one group.
                 ///
@@ -6121,11 +6151,43 @@ public enum L10n {
                 /// en: "Quota layouts"
                 public static var quota: String { L10nSupport.string("settings.eink.group.quota") }
 
+                /// Section heading in the slide layout picker for layouts that only exist for a page drawn across several E-ink screens.
+                ///
+                /// Key: `settings.eink.group.screenGroup`
+                /// en: "Screen group layouts"
+                public static var screenGroup: String { L10nSupport.string("settings.eink.group.screenGroup") }
+
                 /// Heading of the usage half of the e-ink layout picker.
                 ///
                 /// Key: `settings.eink.group.usage`
                 /// en: "Usage layouts"
                 public static var usage: String { L10nSupport.string("settings.eink.group.usage") }
+            }
+
+            public enum GroupLayout {
+                /// Help text under the layout picker when a combined screen-group page uses the Card grid layout.
+                ///
+                /// Key: `settings.eink.groupLayout.cardsDetail`
+                /// en: "Every screen is a grid of cards, one bucket each."
+                public static var cardsDetail: String { L10nSupport.string("settings.eink.groupLayout.cardsDetail") }
+
+                /// Help text under the layout picker when a combined screen-group page uses the Headline and list layout.
+                ///
+                /// Key: `settings.eink.groupLayout.headlineDetail`
+                /// en: "The first screen shows two buckets large, with the verdict and the reset beside each. The other screens continue the list."
+                public static var headlineDetail: String { L10nSupport.string("settings.eink.groupLayout.headlineDetail") }
+
+                /// Help text under the layout picker when a combined screen-group page uses an ordinary layout, which every screen draws separately.
+                ///
+                /// Key: `settings.eink.groupLayout.tiledDetail`
+                /// en: "Each screen draws this layout on its own with its share of the list, so nothing is drawn across the gap between screens."
+                public static var tiledDetail: String { L10nSupport.string("settings.eink.groupLayout.tiledDetail") }
+
+                /// Help text under the layout picker when a combined screen-group page uses the Wide ledger layout.
+                ///
+                /// Key: `settings.eink.groupLayout.wideLedgerDetail`
+                /// en: "Each row reads across two screens side by side: the full name and the percentage on the left, the bar, the reset and the verdict on the right. Stacked screens get a ledger each."
+                public static var wideLedgerDetail: String { L10nSupport.string("settings.eink.groupLayout.wideLedgerDetail") }
             }
 
             public enum LabelStyle {
@@ -6251,11 +6313,23 @@ public enum L10n {
                 /// en: "Briefing"
                 public static var briefing: String { L10nSupport.string("settings.eink.preset.briefing") }
 
+                /// Name of the screen-group E-ink layout that draws each quota bucket as a card in a grid on every screen.
+                ///
+                /// Key: `settings.eink.preset.cards`
+                /// en: "Card grid"
+                public static var cards: String { L10nSupport.string("settings.eink.preset.cards") }
+
                 /// E-ink layout that draws cost and tokens as two bar columns per harness.
                 ///
                 /// Key: `settings.eink.preset.dual`
                 /// en: "Dual bars"
                 public static var dual: String { L10nSupport.string("settings.eink.preset.dual") }
+
+                /// Name of the screen-group E-ink layout whose first screen shows two quota buckets large and whose other screens continue the list.
+                ///
+                /// Key: `settings.eink.preset.headline`
+                /// en: "Headline and list"
+                public static var headline: String { L10nSupport.string("settings.eink.preset.headline") }
 
                 /// Name of the E-ink layout that draws the week's activity as a dot matrix.
                 ///
@@ -6292,6 +6366,12 @@ public enum L10n {
                 /// Key: `settings.eink.preset.trend`
                 /// en: "Trend"
                 public static var trend: String { L10nSupport.string("settings.eink.preset.trend") }
+
+                /// Name of the screen-group E-ink layout where each ledger row reads across two screens placed side by side.
+                ///
+                /// Key: `settings.eink.preset.wideLedger`
+                /// en: "Wide ledger"
+                public static var wideLedger: String { L10nSupport.string("settings.eink.preset.wideLedger") }
             }
 
             public enum QuietHours {
@@ -13754,6 +13834,10 @@ enum L10nCatalogFacts {
         "settings.eink.capacityFull",
         "settings.eink.compact",
         "settings.eink.composition",
+        "settings.eink.content.capacity",
+        "settings.eink.content.hint",
+        "settings.eink.content.page",
+        "settings.eink.content.title",
         "settings.eink.customLayout",
         "settings.eink.customLayoutDetail",
         "settings.eink.customSlide",
@@ -13781,7 +13865,12 @@ enum L10nCatalogFacts {
         "settings.eink.footer.usage",
         "settings.eink.group.insight",
         "settings.eink.group.quota",
+        "settings.eink.group.screenGroup",
         "settings.eink.group.usage",
+        "settings.eink.groupLayout.cardsDetail",
+        "settings.eink.groupLayout.headlineDetail",
+        "settings.eink.groupLayout.tiledDetail",
+        "settings.eink.groupLayout.wideLedgerDetail",
         "settings.eink.header",
         "settings.eink.headerLeft",
         "settings.eink.headerPosition",
@@ -13820,13 +13909,16 @@ enum L10nCatalogFacts {
         "settings.eink.position.bottom",
         "settings.eink.position.top",
         "settings.eink.preset.briefing",
+        "settings.eink.preset.cards",
         "settings.eink.preset.dual",
+        "settings.eink.preset.headline",
         "settings.eink.preset.heatmap",
         "settings.eink.preset.rings",
         "settings.eink.preset.split",
         "settings.eink.preset.table",
         "settings.eink.preset.topModels",
         "settings.eink.preset.trend",
+        "settings.eink.preset.wideLedger",
         "settings.eink.pushNow",
         "settings.eink.pushResult",
         "settings.eink.quietHours",
@@ -14923,6 +15015,7 @@ enum L10nCatalogFacts {
         "resetHistory.verdict.leaky",
         "resetHistory.verdict.wasteful",
         "resetHistory.wastedSummary",
+        "settings.eink.content.capacity",
         "settings.eink.devicesFound",
         "settings.eink.loopTasks",
         "settings.eink.loopTasksShort",
@@ -15754,6 +15847,10 @@ enum L10nCatalogFacts {
         "settings.eink.capacityFull": 1,
         "settings.eink.compact": 0,
         "settings.eink.composition": 0,
+        "settings.eink.content.capacity": 1,
+        "settings.eink.content.hint": 0,
+        "settings.eink.content.page": 1,
+        "settings.eink.content.title": 0,
         "settings.eink.customLayout": 0,
         "settings.eink.customLayoutDetail": 0,
         "settings.eink.customSlide": 0,
@@ -15781,7 +15878,12 @@ enum L10nCatalogFacts {
         "settings.eink.footer.usage": 0,
         "settings.eink.group.insight": 0,
         "settings.eink.group.quota": 0,
+        "settings.eink.group.screenGroup": 0,
         "settings.eink.group.usage": 0,
+        "settings.eink.groupLayout.cardsDetail": 0,
+        "settings.eink.groupLayout.headlineDetail": 0,
+        "settings.eink.groupLayout.tiledDetail": 0,
+        "settings.eink.groupLayout.wideLedgerDetail": 0,
         "settings.eink.header": 0,
         "settings.eink.headerLeft": 0,
         "settings.eink.headerPosition": 0,
@@ -15820,13 +15922,16 @@ enum L10nCatalogFacts {
         "settings.eink.position.bottom": 0,
         "settings.eink.position.top": 0,
         "settings.eink.preset.briefing": 0,
+        "settings.eink.preset.cards": 0,
         "settings.eink.preset.dual": 0,
+        "settings.eink.preset.headline": 0,
         "settings.eink.preset.heatmap": 0,
         "settings.eink.preset.rings": 0,
         "settings.eink.preset.split": 0,
         "settings.eink.preset.table": 0,
         "settings.eink.preset.topModels": 0,
         "settings.eink.preset.trend": 0,
+        "settings.eink.preset.wideLedger": 0,
         "settings.eink.pushNow": 0,
         "settings.eink.pushResult": 2,
         "settings.eink.quietHours": 0,
