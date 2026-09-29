@@ -9304,6 +9304,246 @@
     "workbench.skills.filterBuiltIn": {
       "value": "Show built-in skills",
       "comment": "Checkable toggle that includes harness-bundled skills in the list."
+    },
+    "workbench.library.title": {
+      "value": "Library",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.subtitle": {
+      "value": "Skills, MCP servers, and shared agent instructions",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.mcp": {
+      "value": "MCP servers",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.instructions": {
+      "value": "AGENTS.md",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.managed": {
+      "value": "Managed",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.discovered": {
+      "value": "Discovered on disk",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.linkedSource": {
+      "value": "Linked source",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.discoveredDetail": {
+      "value": "Shared resources found on disk, with source links.",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.target": {
+      "value": "Target",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.targets": {
+      "value": "Share with",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.transport": {
+      "value": "Transport",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.edit": {
+      "value": "Edit",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.addMCP": {
+      "value": "Add MCP server",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.emptyMCP": {
+      "value": "No MCP servers found",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.canonical": {
+      "value": "Shared instructions",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.editInstructions": {
+      "value": "Edit instructions",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.linkInstructions": {
+      "value": "Link shared instructions",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.removeProjection": {
+      "value": "Remove link",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.saveResult": {
+      "value": "Saved",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.confirmDelete": {
+      "value": "Delete {name}?",
+      "comment": "Label or feedback in the shared agent resource Library.",
+      "placeholders": {
+        "name": "string"
+      }
+    },
+    "workbench.library.failed": {
+      "value": "Operation could not complete ({code}).",
+      "comment": "Label or feedback in the shared agent resource Library.",
+      "placeholders": {
+        "code": "string"
+      }
+    },
+    "workbench.library.brokenLink": {
+      "value": "Broken link",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.cyclicLink": {
+      "value": "Link cycle",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.missingSkillFile": {
+      "value": "SKILL.md missing",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.unreadable": {
+      "value": "Cannot read resource",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.tooLarge": {
+      "value": "Preview exceeds the read limit",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.readOnlySource": {
+      "value": "Files remain in their source folder.",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.availableTo": {
+      "value": "Available to {agents}",
+      "comment": "Label or feedback in the shared agent resource Library.",
+      "placeholders": {
+        "agents": "string"
+      }
+    },
+    "workbench.library.error.invalidHome": {
+      "value": "The resource home folder is unavailable.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.unsafePath": {
+      "value": "This path is outside the supported resource locations.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.symlinkLoop": {
+      "value": "This link forms a cycle. Open its location to repair it.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.unsupportedTarget": {
+      "value": "This agent does not support this file-based operation.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.invalidDocument": {
+      "value": "The configuration could not be parsed. Open the source file to check it.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.invalidDefinition": {
+      "value": "Check the server name, transport, and required fields.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.unsupportedTransport": {
+      "value": "This agent does not support the selected transport.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.unsupportedConversion": {
+      "value": "This definition has settings that cannot be shared with the selected agent.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.staleRevision": {
+      "value": "The source changed. Refresh before saving.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.sameNameConflict": {
+      "value": "A different resource already uses this name in the target.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.notFound": {
+      "value": "The resource is no longer present. Refresh the list.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.notOwnedProjection": {
+      "value": "This link is managed elsewhere. Open its source to change it.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.projectionModified": {
+      "value": "The link was changed outside Vibe Bar. Refresh to inspect it.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.backupMissing": {
+      "value": "The backup is no longer available.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.invalidBackup": {
+      "value": "This backup could not be verified.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.ioFailure": {
+      "value": "The file could not be read or saved. Check its permissions.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.oversizedFile": {
+      "value": "This file exceeds the editor's size limit.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.missingCanonical": {
+      "value": "Create shared instructions before linking them.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.unsupportedTOML": {
+      "value": "This TOML syntax needs to be edited in the source file.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.ambiguousDefinition": {
+      "value": "Multiple definitions use the same name. Check the source file.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.invalidReceipt": {
+      "value": "The saved ownership record could not be read.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.readable": {
+      "value": "Readable",
+      "comment": "Local Library configuration state; not server network health."
+    },
+    "workbench.library.notCreated": {
+      "value": "Not created",
+      "comment": "Local Library configuration state; not server network health."
+    },
+    "workbench.library.overrideActive": {
+      "value": "{file} takes precedence over these instructions.",
+      "comment": "Local Library configuration state; not server network health.",
+      "placeholders": {
+        "file": "string"
+      }
+    },
+    "workbench.library.command": {
+      "value": "Command",
+      "comment": "Field label in the single MCP server editor."
+    },
+    "workbench.library.arguments": {
+      "value": "Arguments (JSON array)",
+      "comment": "Field label in the single MCP server editor."
+    },
+    "workbench.library.environment": {
+      "value": "Environment variables (JSON object)",
+      "comment": "Field label in the single MCP server editor."
+    },
+    "workbench.library.headers": {
+      "value": "HTTP headers (JSON object)",
+      "comment": "Field label in the single MCP server editor."
+    },
+    "workbench.library.url": {
+      "value": "Server URL",
+      "comment": "Field label in the single MCP server editor."
     }
   }
 }
