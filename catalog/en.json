@@ -9083,6 +9083,227 @@
     "settings.eink.workflow.editPagesDetail": {
       "value": "Freeform editing needs separate pages. Keep all content by turning these pages into individual slides, then edit the selected page. You can keep single-slide playback or choose a carousel.",
       "comment": "Explicit conversion from automatically paginated presets to editable standalone slides."
+    },
+    "workbench.skills.bulk.enableForShown": {
+      "value": "Enable {app} for all shown skills",
+      "comment": "Menu item on a harness capsule above the Skills list. Acts on every row the current filter shows.",
+      "placeholders": {
+        "app": "string"
+      }
+    },
+    "workbench.skills.bulk.disableForShown": {
+      "value": "Disable {app} for all shown skills",
+      "comment": "Menu item on a harness capsule above the Skills list. Acts on every row the current filter shows.",
+      "placeholders": {
+        "app": "string"
+      }
+    },
+    "workbench.skills.bulk.useAsDefault": {
+      "value": "Pre-select for new installs",
+      "comment": "Checkable menu item on a harness capsule. When on, install, discover, import, and adopt sheets start with this harness selected."
+    },
+    "workbench.skills.bulk.defaultHelp": {
+      "value": "Right-click to change every shown skill at once or set the default selection for new installs",
+      "comment": "Tooltip on a harness capsule above the Skills list."
+    },
+    "workbench.skills.bulk.confirmEnableTitle": {
+      "value": "Enable {app} for {count, plural, one {# skill} other {# skills}}?",
+      "comment": "Confirmation dialog title before a bulk enable.",
+      "placeholders": {
+        "app": "string",
+        "count": "int"
+      }
+    },
+    "workbench.skills.bulk.confirmDisableTitle": {
+      "value": "Disable {app} for {count, plural, one {# skill} other {# skills}}?",
+      "comment": "Confirmation dialog title before a bulk disable.",
+      "placeholders": {
+        "app": "string",
+        "count": "int"
+      }
+    },
+    "workbench.skills.bulk.confirmMessage": {
+      "value": "Each skill is changed one at a time; a failure stops nothing else.",
+      "comment": "Confirmation dialog message for a bulk enable or disable."
+    },
+    "workbench.skills.bulk.apply": {
+      "value": "Apply",
+      "comment": "Confirmation dialog button that runs the bulk change."
+    },
+    "workbench.skills.toast.bulkDone": {
+      "value": "Changed {app} for {succeeded, plural, one {# skill} other {# skills}}.",
+      "comment": "Toast after a bulk change with no failures.",
+      "placeholders": {
+        "app": "string",
+        "succeeded": "int"
+      }
+    },
+    "workbench.skills.toast.bulkPartial": {
+      "value": "Changed {app} for {succeeded} skills; {failed} failed.",
+      "comment": "Toast after a bulk change where some rows failed. Both values are whole numbers.",
+      "placeholders": {
+        "app": "string",
+        "succeeded": "int",
+        "failed": "int"
+      }
+    },
+    "workbench.skills.import.applyToAllRows": {
+      "value": "Apply this selection to every row",
+      "comment": "Button in the import sheet's 'Needs adoption' section that copies the harness selection to every unmanaged row."
+    },
+    "workbench.skills.import.selectAllRows": {
+      "value": "Adopt all",
+      "comment": "Button in the import sheet that checks every unmanaged row with the default harness selection."
+    },
+    "workbench.skills.import.selectNoRows": {
+      "value": "Adopt none",
+      "comment": "Button in the import sheet that unchecks every unmanaged row."
+    },
+    "workbench.skills.badge.modified": {
+      "value": "MODIFIED",
+      "comment": "Capsule on a Skills row: the shared copy's files changed since Vibe Bar recorded them."
+    },
+    "workbench.skills.badge.modifiedHelp": {
+      "value": "Files in the shared copy changed since Vibe Bar last recorded them",
+      "comment": "Tooltip for the MODIFIED capsule."
+    },
+    "workbench.skills.menuAcceptLocalChanges": {
+      "value": "Accept Local Changes",
+      "comment": "Row menu item: record the shared copy's current contents as the known state."
+    },
+    "workbench.skills.toast.acceptedLocalChanges": {
+      "value": "Recorded the current contents of {skill}.",
+      "comment": "Toast after accepting local changes.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.modifiedCount": {
+      "value": "{count, plural, one {# modified locally} other {# modified locally}}",
+      "comment": "Count in the summary line above the Skills list.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.skills.badge.updateHelpModified": {
+      "value": "The repository has newer content. Updating backs up and then replaces your local edits.",
+      "comment": "Tooltip for the UPDATE capsule when the row is also modified locally."
+    },
+    "workbench.skills.sourceBuiltIn": {
+      "value": "{app} built-in",
+      "comment": "Source capsule on a row for a skill that ships inside a harness's own folder.",
+      "placeholders": {
+        "app": "string"
+      }
+    },
+    "workbench.skills.sourceBuiltInHelp": {
+      "value": "Ships with {app} in its own folder. Vibe Bar shows it and does not change it.",
+      "comment": "Tooltip for the built-in source capsule.",
+      "placeholders": {
+        "app": "string"
+      }
+    },
+    "workbench.skills.badge.copies": {
+      "value": "{count, plural, one {# OTHER COPY} other {# OTHER COPIES}}",
+      "comment": "Capsule on a row: the same skill name exists in other places on this Mac.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.skills.badge.copiesHelp": {
+      "value": "The same skill name exists elsewhere on this Mac. Click to compare.",
+      "comment": "Tooltip for the copies capsule."
+    },
+    "workbench.skills.copies.title": {
+      "value": "Copies of {skill}",
+      "comment": "Title of the popover listing every copy of one skill.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.copies.appFolder": {
+      "value": "{app} folder",
+      "comment": "Location label for a real directory inside a harness's own skills folder.",
+      "placeholders": {
+        "app": "string"
+      }
+    },
+    "workbench.skills.copies.builtIn": {
+      "value": "{app} built-in",
+      "comment": "Location label for a copy inside a harness's bundled skills folder. distinct-from: workbench.skills.sourceBuiltIn",
+      "placeholders": {
+        "app": "string"
+      }
+    },
+    "workbench.skills.copies.identical": {
+      "value": "Identical to the shared copy",
+      "comment": "Comparison line under a copy."
+    },
+    "workbench.skills.copies.differs": {
+      "value": "Differs from the shared copy",
+      "comment": "Comparison line under a copy."
+    },
+    "workbench.skills.copies.noShared": {
+      "value": "Not in the shared library",
+      "comment": "Comparison line when the skill has no shared copy to compare against."
+    },
+    "workbench.skills.copies.changed": {
+      "value": "Changed {date}",
+      "comment": "Last modification, formatted by the client.",
+      "placeholders": {
+        "date": "string"
+      }
+    },
+    "workbench.skills.copies.shadowsShared": {
+      "value": "{app} loads this copy instead of the shared one",
+      "comment": "Warning under an app-folder copy that hides the shared copy from that harness.",
+      "placeholders": {
+        "app": "string"
+      }
+    },
+    "workbench.skills.copies.replaceShared": {
+      "value": "Replace Shared Copy With This",
+      "comment": "Action under a copy that differs from the shared one."
+    },
+    "workbench.skills.copies.replaceConfirmTitle": {
+      "value": "Replace the shared copy of {skill}?",
+      "comment": "Confirmation dialog title.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.copies.replaceConfirmMessage": {
+      "value": "A backup is taken first. Every harness linked to the shared copy sees the new content.",
+      "comment": "Confirmation dialog message."
+    },
+    "workbench.skills.copies.copyToShared": {
+      "value": "Copy Into Shared Library",
+      "comment": "Action for a built-in or app-folder skill that has no shared copy yet."
+    },
+    "workbench.skills.toast.replacedShared": {
+      "value": "Replaced the shared copy of {skill}.",
+      "comment": "Toast after replacing the shared copy.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.toast.copiedToShared": {
+      "value": "Copied {skill} into the shared library.",
+      "comment": "Toast after copying a built-in or app-folder skill into ~/.agents/skills.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.builtInCount": {
+      "value": "{count, plural, one {# built-in} other {# built-in}}",
+      "comment": "Count in the summary line above the Skills list for harness-bundled skills.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.skills.filterBuiltIn": {
+      "value": "Show built-in skills",
+      "comment": "Checkable toggle that includes harness-bundled skills in the list."
     }
   }
 }

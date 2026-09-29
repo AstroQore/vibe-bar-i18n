@@ -11887,6 +11887,14 @@ public enum L10n {
             /// en: "Backups"
             public static var backups: String { L10nSupport.string("workbench.skills.backups") }
 
+            /// Count in the summary line above the Skills list for harness-bundled skills.
+            ///
+            /// Key: `workbench.skills.builtInCount`
+            /// en: "{count, plural, one {# built-in} other {# built-in}}"
+            public static func builtInCount(count: Int) -> String {
+                L10nSupport.localizedFormat("workbench.skills.builtInCount", count)
+            }
+
             /// Skills toolbar button that asks every repository-backed skill whether it has a newer commit.
             ///
             /// Key: `workbench.skills.checkUpdates`
@@ -11953,6 +11961,12 @@ public enum L10n {
             /// en: "Browse configured repositories and the skills.sh index"
             public static var discoverHelp: String { L10nSupport.string("workbench.skills.discoverHelp") }
 
+            /// Checkable toggle that includes harness-bundled skills in the list.
+            ///
+            /// Key: `workbench.skills.filterBuiltIn`
+            /// en: "Show built-in skills"
+            public static var filterBuiltIn: String { L10nSupport.string("workbench.skills.filterBuiltIn") }
+
             /// Accessibility label on the button that empties the Skills search field.
             ///
             /// Key: `workbench.skills.filterClear`
@@ -11982,6 +11996,12 @@ public enum L10n {
             /// Key: `workbench.skills.installFromZip`
             /// en: "Install from ZIP"
             public static var installFromZip: String { L10nSupport.string("workbench.skills.installFromZip") }
+
+            /// Row menu item: record the shared copy's current contents as the known state.
+            ///
+            /// Key: `workbench.skills.menuAcceptLocalChanges`
+            /// en: "Accept Local Changes"
+            public static var menuAcceptLocalChanges: String { L10nSupport.string("workbench.skills.menuAcceptLocalChanges") }
 
             /// Accessibility label on a skill row's overflow menu button.
             ///
@@ -12015,6 +12035,14 @@ public enum L10n {
             /// en: "Wiring Details…"
             public static var menuWiringDetails: String { L10nSupport.string("workbench.skills.menuWiringDetails") }
 
+            /// Count in the summary line above the Skills list.
+            ///
+            /// Key: `workbench.skills.modifiedCount`
+            /// en: "{count, plural, one {# modified locally} other {# modified locally}}"
+            public static func modifiedCount(count: Int) -> String {
+                L10nSupport.localizedFormat("workbench.skills.modifiedCount", count)
+            }
+
             /// Card shown when the Skills search field matches nothing. {query} is what the user typed.
             ///
             /// Key: `workbench.skills.noMatch`
@@ -12029,6 +12057,22 @@ public enum L10n {
             /// en: "Branch {branch}"
             public static func sourceBranch(branch: String) -> String {
                 L10nSupport.format("workbench.skills.sourceBranch", branch)
+            }
+
+            /// Source capsule on a row for a skill that ships inside a harness's own folder.
+            ///
+            /// Key: `workbench.skills.sourceBuiltIn`
+            /// en: "{app} built-in"
+            public static func sourceBuiltIn(app: String) -> String {
+                L10nSupport.format("workbench.skills.sourceBuiltIn", app)
+            }
+
+            /// Tooltip for the built-in source capsule.
+            ///
+            /// Key: `workbench.skills.sourceBuiltInHelp`
+            /// en: "Ships with {app} in its own folder. Vibe Bar shows it and does not change it."
+            public static func sourceBuiltInHelp(app: String) -> String {
+                L10nSupport.format("workbench.skills.sourceBuiltInHelp", app)
             }
 
             /// Tooltip on the source badge when the skill has no repository.
@@ -12140,11 +12184,37 @@ public enum L10n {
             }
 
             public enum Badge {
+                /// Capsule on a row: the same skill name exists in other places on this Mac.
+                ///
+                /// Key: `workbench.skills.badge.copies`
+                /// en: "{count, plural, one {# OTHER COPY} other {# OTHER COPIES}}"
+                public static func copies(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.badge.copies", count)
+                }
+
+                /// Tooltip for the copies capsule.
+                ///
+                /// Key: `workbench.skills.badge.copiesHelp`
+                /// en: "The same skill name exists elsewhere on this Mac. Click to compare."
+                public static var copiesHelp: String { L10nSupport.string("workbench.skills.badge.copiesHelp") }
+
                 /// Badge on a discover-sheet row for a skill already installed on this Mac.
                 ///
                 /// Key: `workbench.skills.badge.installed`
                 /// en: "INSTALLED"
                 public static var installed: String { L10nSupport.string("workbench.skills.badge.installed") }
+
+                /// Capsule on a Skills row: the shared copy's files changed since Vibe Bar recorded them.
+                ///
+                /// Key: `workbench.skills.badge.modified`
+                /// en: "MODIFIED"
+                public static var modified: String { L10nSupport.string("workbench.skills.badge.modified") }
+
+                /// Tooltip for the MODIFIED capsule.
+                ///
+                /// Key: `workbench.skills.badge.modifiedHelp`
+                /// en: "Files in the shared copy changed since Vibe Bar last recorded them"
+                public static var modifiedHelp: String { L10nSupport.string("workbench.skills.badge.modifiedHelp") }
 
                 /// Row badge: the skill is linked into {app} but that harness's own config switches it off.
                 ///
@@ -12177,6 +12247,156 @@ public enum L10n {
                 /// Key: `workbench.skills.badge.update`
                 /// en: "UPDATE"
                 public static var update: String { L10nSupport.string("workbench.skills.badge.update") }
+
+                /// Tooltip for the UPDATE capsule when the row is also modified locally.
+                ///
+                /// Key: `workbench.skills.badge.updateHelpModified`
+                /// en: "The repository has newer content. Updating backs up and then replaces your local edits."
+                public static var updateHelpModified: String { L10nSupport.string("workbench.skills.badge.updateHelpModified") }
+            }
+
+            public enum Bulk {
+                /// Confirmation dialog button that runs the bulk change.
+                ///
+                /// Key: `workbench.skills.bulk.apply`
+                /// en: "Apply"
+                public static var apply: String { L10nSupport.string("workbench.skills.bulk.apply") }
+
+                /// Confirmation dialog title before a bulk disable.
+                ///
+                /// Key: `workbench.skills.bulk.confirmDisableTitle`
+                /// en: "Disable {app} for {count, plural, one {# skill} other {# skills}}?"
+                public static func confirmDisableTitle(app: String, count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.bulk.confirmDisableTitle", app, count)
+                }
+
+                /// Confirmation dialog title before a bulk enable.
+                ///
+                /// Key: `workbench.skills.bulk.confirmEnableTitle`
+                /// en: "Enable {app} for {count, plural, one {# skill} other {# skills}}?"
+                public static func confirmEnableTitle(app: String, count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.bulk.confirmEnableTitle", app, count)
+                }
+
+                /// Confirmation dialog message for a bulk enable or disable.
+                ///
+                /// Key: `workbench.skills.bulk.confirmMessage`
+                /// en: "Each skill is changed one at a time; a failure stops nothing else."
+                public static var confirmMessage: String { L10nSupport.string("workbench.skills.bulk.confirmMessage") }
+
+                /// Tooltip on a harness capsule above the Skills list.
+                ///
+                /// Key: `workbench.skills.bulk.defaultHelp`
+                /// en: "Right-click to change every shown skill at once or set the default selection for new installs"
+                public static var defaultHelp: String { L10nSupport.string("workbench.skills.bulk.defaultHelp") }
+
+                /// Menu item on a harness capsule above the Skills list. Acts on every row the current filter shows.
+                ///
+                /// Key: `workbench.skills.bulk.disableForShown`
+                /// en: "Disable {app} for all shown skills"
+                public static func disableForShown(app: String) -> String {
+                    L10nSupport.format("workbench.skills.bulk.disableForShown", app)
+                }
+
+                /// Menu item on a harness capsule above the Skills list. Acts on every row the current filter shows.
+                ///
+                /// Key: `workbench.skills.bulk.enableForShown`
+                /// en: "Enable {app} for all shown skills"
+                public static func enableForShown(app: String) -> String {
+                    L10nSupport.format("workbench.skills.bulk.enableForShown", app)
+                }
+
+                /// Checkable menu item on a harness capsule. When on, install, discover, import, and adopt sheets start with this harness selected.
+                ///
+                /// Key: `workbench.skills.bulk.useAsDefault`
+                /// en: "Pre-select for new installs"
+                public static var useAsDefault: String { L10nSupport.string("workbench.skills.bulk.useAsDefault") }
+            }
+
+            public enum Copies {
+                /// Location label for a real directory inside a harness's own skills folder.
+                ///
+                /// Key: `workbench.skills.copies.appFolder`
+                /// en: "{app} folder"
+                public static func appFolder(app: String) -> String {
+                    L10nSupport.format("workbench.skills.copies.appFolder", app)
+                }
+
+                /// Location label for a copy inside a harness's bundled skills folder. distinct-from: workbench.skills.sourceBuiltIn
+                ///
+                /// Key: `workbench.skills.copies.builtIn`
+                /// en: "{app} built-in"
+                public static func builtIn(app: String) -> String {
+                    L10nSupport.format("workbench.skills.copies.builtIn", app)
+                }
+
+                /// Last modification, formatted by the client.
+                ///
+                /// Key: `workbench.skills.copies.changed`
+                /// en: "Changed {date}"
+                public static func changed(date: String) -> String {
+                    L10nSupport.format("workbench.skills.copies.changed", date)
+                }
+
+                /// Action for a built-in or app-folder skill that has no shared copy yet.
+                ///
+                /// Key: `workbench.skills.copies.copyToShared`
+                /// en: "Copy Into Shared Library"
+                public static var copyToShared: String { L10nSupport.string("workbench.skills.copies.copyToShared") }
+
+                /// Comparison line under a copy.
+                ///
+                /// Key: `workbench.skills.copies.differs`
+                /// en: "Differs from the shared copy"
+                public static var differs: String { L10nSupport.string("workbench.skills.copies.differs") }
+
+                /// Comparison line under a copy.
+                ///
+                /// Key: `workbench.skills.copies.identical`
+                /// en: "Identical to the shared copy"
+                public static var identical: String { L10nSupport.string("workbench.skills.copies.identical") }
+
+                /// Comparison line when the skill has no shared copy to compare against.
+                ///
+                /// Key: `workbench.skills.copies.noShared`
+                /// en: "Not in the shared library"
+                public static var noShared: String { L10nSupport.string("workbench.skills.copies.noShared") }
+
+                /// Confirmation dialog message.
+                ///
+                /// Key: `workbench.skills.copies.replaceConfirmMessage`
+                /// en: "A backup is taken first. Every harness linked to the shared copy sees the new content."
+                public static var replaceConfirmMessage: String { L10nSupport.string("workbench.skills.copies.replaceConfirmMessage") }
+
+                /// Confirmation dialog title.
+                ///
+                /// Key: `workbench.skills.copies.replaceConfirmTitle`
+                /// en: "Replace the shared copy of {skill}?"
+                public static func replaceConfirmTitle(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.copies.replaceConfirmTitle", skill)
+                }
+
+                /// Action under a copy that differs from the shared one.
+                ///
+                /// Key: `workbench.skills.copies.replaceShared`
+                /// en: "Replace Shared Copy With This"
+                public static var replaceShared: String { L10nSupport.string("workbench.skills.copies.replaceShared") }
+
+                /// Warning under an app-folder copy that hides the shared copy from that harness.
+                ///
+                /// Key: `workbench.skills.copies.shadowsShared`
+                /// en: "{app} loads this copy instead of the shared one"
+                public static func shadowsShared(app: String) -> String {
+                    L10nSupport.format("workbench.skills.copies.shadowsShared", app)
+                }
+
+                /// Title of the popover listing every copy of one skill.
+                ///
+                /// Key: `workbench.skills.copies.title`
+                /// en: "Copies of {skill}"
+                public static func title(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.copies.title", skill)
+                }
             }
 
             public enum Discover {
@@ -12344,6 +12564,12 @@ public enum L10n {
                     L10nSupport.localizedFormat("workbench.skills.import.apply", count)
                 }
 
+                /// Button in the import sheet's 'Needs adoption' section that copies the harness selection to every unmanaged row.
+                ///
+                /// Key: `workbench.skills.import.applyToAllRows`
+                /// en: "Apply this selection to every row"
+                public static var applyToAllRows: String { L10nSupport.string("workbench.skills.import.applyToAllRows") }
+
                 /// Import sheet section header for app folders whose name collides with a shared skill.
                 ///
                 /// Key: `workbench.skills.import.conflicts`
@@ -12409,6 +12635,18 @@ public enum L10n {
                 public static func recognizedCount(count: Int) -> String {
                     L10nSupport.format("workbench.skills.import.recognizedCount", count)
                 }
+
+                /// Button in the import sheet that checks every unmanaged row with the default harness selection.
+                ///
+                /// Key: `workbench.skills.import.selectAllRows`
+                /// en: "Adopt all"
+                public static var selectAllRows: String { L10nSupport.string("workbench.skills.import.selectAllRows") }
+
+                /// Button in the import sheet that unchecks every unmanaged row.
+                ///
+                /// Key: `workbench.skills.import.selectNoRows`
+                /// en: "Adopt none"
+                public static var selectNoRows: String { L10nSupport.string("workbench.skills.import.selectNoRows") }
 
                 /// Subtitle of the import sheet: what applying it will and will not touch.
                 ///
@@ -12588,6 +12826,14 @@ public enum L10n {
             }
 
             public enum Toast {
+                /// Toast after accepting local changes.
+                ///
+                /// Key: `workbench.skills.toast.acceptedLocalChanges`
+                /// en: "Recorded the current contents of {skill}."
+                public static func acceptedLocalChanges(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.acceptedLocalChanges", skill)
+                }
+
                 /// Toast when a scan is asked for with no repositories configured.
                 ///
                 /// Key: `workbench.skills.toast.addRepoFirst`
@@ -12605,6 +12851,30 @@ public enum L10n {
                 /// Key: `workbench.skills.toast.archiveEmpty`
                 /// en: "Nothing in that archive could be installed."
                 public static var archiveEmpty: String { L10nSupport.string("workbench.skills.toast.archiveEmpty") }
+
+                /// Toast after a bulk change with no failures.
+                ///
+                /// Key: `workbench.skills.toast.bulkDone`
+                /// en: "Changed {app} for {succeeded, plural, one {# skill} other {# skills}}."
+                public static func bulkDone(app: String, succeeded: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.toast.bulkDone", app, succeeded)
+                }
+
+                /// Toast after a bulk change where some rows failed. Both values are whole numbers.
+                ///
+                /// Key: `workbench.skills.toast.bulkPartial`
+                /// en: "Changed {app} for {succeeded} skills; {failed} failed."
+                public static func bulkPartial(app: String, succeeded: Int, failed: Int) -> String {
+                    L10nSupport.format("workbench.skills.toast.bulkPartial", app, succeeded, failed)
+                }
+
+                /// Toast after copying a built-in or app-folder skill into ~/.agents/skills.
+                ///
+                /// Key: `workbench.skills.toast.copiedToShared`
+                /// en: "Copied {skill} into the shared library."
+                public static func copiedToShared(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.copiedToShared", skill)
+                }
 
                 /// Toast after flipping a harness's own per-skill switch off.
                 ///
@@ -12712,6 +12982,14 @@ public enum L10n {
                 /// en: "Recorded {count, plural, one {# skill} other {# skills}}."
                 public static func recorded(count: Int) -> String {
                     L10nSupport.localizedFormat("workbench.skills.toast.recorded", count)
+                }
+
+                /// Toast after replacing the shared copy.
+                ///
+                /// Key: `workbench.skills.toast.replacedShared`
+                /// en: "Replaced the shared copy of {skill}."
+                public static func replacedShared(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.replacedShared", skill)
                 }
 
                 /// Toast after a scan in which more than one repository failed.
@@ -14874,17 +15152,43 @@ enum L10nCatalogFacts {
         "workbench.skills.backups.restoreHelp",
         "workbench.skills.backups.subtitle",
         "workbench.skills.backups.title",
+        "workbench.skills.badge.copies",
+        "workbench.skills.badge.copiesHelp",
         "workbench.skills.badge.installed",
+        "workbench.skills.badge.modified",
+        "workbench.skills.badge.modifiedHelp",
         "workbench.skills.badge.nativeOff",
         "workbench.skills.badge.nativeOffHelp",
         "workbench.skills.badge.nativeUnknown",
         "workbench.skills.badge.nativeUnknownHelp",
         "workbench.skills.badge.update",
+        "workbench.skills.badge.updateHelpModified",
+        "workbench.skills.builtInCount",
+        "workbench.skills.bulk.apply",
+        "workbench.skills.bulk.confirmDisableTitle",
+        "workbench.skills.bulk.confirmEnableTitle",
+        "workbench.skills.bulk.confirmMessage",
+        "workbench.skills.bulk.defaultHelp",
+        "workbench.skills.bulk.disableForShown",
+        "workbench.skills.bulk.enableForShown",
+        "workbench.skills.bulk.useAsDefault",
         "workbench.skills.checkUpdates",
         "workbench.skills.checkUpdatesCount",
         "workbench.skills.contextDisableKeepProjection",
         "workbench.skills.contextEnableIn",
         "workbench.skills.contextRemoveProjection",
+        "workbench.skills.copies.appFolder",
+        "workbench.skills.copies.builtIn",
+        "workbench.skills.copies.changed",
+        "workbench.skills.copies.copyToShared",
+        "workbench.skills.copies.differs",
+        "workbench.skills.copies.identical",
+        "workbench.skills.copies.noShared",
+        "workbench.skills.copies.replaceConfirmMessage",
+        "workbench.skills.copies.replaceConfirmTitle",
+        "workbench.skills.copies.replaceShared",
+        "workbench.skills.copies.shadowsShared",
+        "workbench.skills.copies.title",
         "workbench.skills.countFiltered",
         "workbench.skills.countTotal",
         "workbench.skills.discover",
@@ -14911,11 +15215,13 @@ enum L10nCatalogFacts {
         "workbench.skills.discoverHelp",
         "workbench.skills.empty.body",
         "workbench.skills.empty.headline",
+        "workbench.skills.filterBuiltIn",
         "workbench.skills.filterClear",
         "workbench.skills.filterPlaceholder",
         "workbench.skills.import.alreadyShared",
         "workbench.skills.import.alreadySharedDetail",
         "workbench.skills.import.apply",
+        "workbench.skills.import.applyToAllRows",
         "workbench.skills.import.conflicts",
         "workbench.skills.import.conflictsCount",
         "workbench.skills.import.conflictsDetail",
@@ -14926,23 +15232,29 @@ enum L10nCatalogFacts {
         "workbench.skills.import.notSkills",
         "workbench.skills.import.notSkillsDetail",
         "workbench.skills.import.recognizedCount",
+        "workbench.skills.import.selectAllRows",
+        "workbench.skills.import.selectNoRows",
         "workbench.skills.import.subtitle",
         "workbench.skills.import.summary",
         "workbench.skills.import.title",
         "workbench.skills.importExisting",
         "workbench.skills.install",
         "workbench.skills.installFromZip",
+        "workbench.skills.menuAcceptLocalChanges",
         "workbench.skills.menuMoreActions",
         "workbench.skills.menuRevealInFinder",
         "workbench.skills.menuUninstall",
         "workbench.skills.menuUpdateFromRepository",
         "workbench.skills.menuWiringDetails",
+        "workbench.skills.modifiedCount",
         "workbench.skills.noMatch",
         "workbench.skills.phase.downloadedOne",
         "workbench.skills.phase.downloadedProgress",
         "workbench.skills.phase.downloading",
         "workbench.skills.phase.scanning",
         "workbench.skills.sourceBranch",
+        "workbench.skills.sourceBuiltIn",
+        "workbench.skills.sourceBuiltInHelp",
         "workbench.skills.sourceInstalledLocally",
         "workbench.skills.sourceLocal",
         "workbench.skills.state.coupled",
@@ -14964,9 +15276,13 @@ enum L10nCatalogFacts {
         "workbench.skills.sync.ssotLead",
         "workbench.skills.sync.title",
         "workbench.skills.syncExplainerHelp",
+        "workbench.skills.toast.acceptedLocalChanges",
         "workbench.skills.toast.addRepoFirst",
         "workbench.skills.toast.allUpToDate",
         "workbench.skills.toast.archiveEmpty",
+        "workbench.skills.toast.bulkDone",
+        "workbench.skills.toast.bulkPartial",
+        "workbench.skills.toast.copiedToShared",
         "workbench.skills.toast.disabledKeptProjection",
         "workbench.skills.toast.enabledForApps",
         "workbench.skills.toast.importConflicts",
@@ -14981,6 +15297,7 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.notFoundInRepo",
         "workbench.skills.toast.projectionClearedFolderKept",
         "workbench.skills.toast.recorded",
+        "workbench.skills.toast.replacedShared",
         "workbench.skills.toast.reposUnreadable",
         "workbench.skills.toast.restored",
         "workbench.skills.toast.scanStopped",
@@ -15081,9 +15398,15 @@ enum L10nCatalogFacts {
         "workbench.sessions.toast.deleted",
         "workbench.sessions.transcript.truncatedTitle",
         "workbench.skills.appSeesCount",
+        "workbench.skills.badge.copies",
+        "workbench.skills.builtInCount",
+        "workbench.skills.bulk.confirmDisableTitle",
+        "workbench.skills.bulk.confirmEnableTitle",
         "workbench.skills.countTotal",
         "workbench.skills.discover.installs",
         "workbench.skills.import.apply",
+        "workbench.skills.modifiedCount",
+        "workbench.skills.toast.bulkDone",
         "workbench.skills.toast.importConflicts",
         "workbench.skills.toast.importRecognized",
         "workbench.skills.toast.installedArchive",
@@ -16892,17 +17215,43 @@ enum L10nCatalogFacts {
         "workbench.skills.backups.restoreHelp": 0,
         "workbench.skills.backups.subtitle": 0,
         "workbench.skills.backups.title": 0,
+        "workbench.skills.badge.copies": 1,
+        "workbench.skills.badge.copiesHelp": 0,
         "workbench.skills.badge.installed": 0,
+        "workbench.skills.badge.modified": 0,
+        "workbench.skills.badge.modifiedHelp": 0,
         "workbench.skills.badge.nativeOff": 1,
         "workbench.skills.badge.nativeOffHelp": 0,
         "workbench.skills.badge.nativeUnknown": 0,
         "workbench.skills.badge.nativeUnknownHelp": 0,
         "workbench.skills.badge.update": 0,
+        "workbench.skills.badge.updateHelpModified": 0,
+        "workbench.skills.builtInCount": 1,
+        "workbench.skills.bulk.apply": 0,
+        "workbench.skills.bulk.confirmDisableTitle": 2,
+        "workbench.skills.bulk.confirmEnableTitle": 2,
+        "workbench.skills.bulk.confirmMessage": 0,
+        "workbench.skills.bulk.defaultHelp": 0,
+        "workbench.skills.bulk.disableForShown": 1,
+        "workbench.skills.bulk.enableForShown": 1,
+        "workbench.skills.bulk.useAsDefault": 0,
         "workbench.skills.checkUpdates": 0,
         "workbench.skills.checkUpdatesCount": 1,
         "workbench.skills.contextDisableKeepProjection": 1,
         "workbench.skills.contextEnableIn": 1,
         "workbench.skills.contextRemoveProjection": 1,
+        "workbench.skills.copies.appFolder": 1,
+        "workbench.skills.copies.builtIn": 1,
+        "workbench.skills.copies.changed": 1,
+        "workbench.skills.copies.copyToShared": 0,
+        "workbench.skills.copies.differs": 0,
+        "workbench.skills.copies.identical": 0,
+        "workbench.skills.copies.noShared": 0,
+        "workbench.skills.copies.replaceConfirmMessage": 0,
+        "workbench.skills.copies.replaceConfirmTitle": 1,
+        "workbench.skills.copies.replaceShared": 0,
+        "workbench.skills.copies.shadowsShared": 1,
+        "workbench.skills.copies.title": 1,
         "workbench.skills.countFiltered": 2,
         "workbench.skills.countTotal": 1,
         "workbench.skills.discover": 0,
@@ -16929,11 +17278,13 @@ enum L10nCatalogFacts {
         "workbench.skills.discoverHelp": 0,
         "workbench.skills.empty.body": 0,
         "workbench.skills.empty.headline": 0,
+        "workbench.skills.filterBuiltIn": 0,
         "workbench.skills.filterClear": 0,
         "workbench.skills.filterPlaceholder": 0,
         "workbench.skills.import.alreadyShared": 0,
         "workbench.skills.import.alreadySharedDetail": 0,
         "workbench.skills.import.apply": 1,
+        "workbench.skills.import.applyToAllRows": 0,
         "workbench.skills.import.conflicts": 0,
         "workbench.skills.import.conflictsCount": 1,
         "workbench.skills.import.conflictsDetail": 0,
@@ -16944,23 +17295,29 @@ enum L10nCatalogFacts {
         "workbench.skills.import.notSkills": 0,
         "workbench.skills.import.notSkillsDetail": 0,
         "workbench.skills.import.recognizedCount": 1,
+        "workbench.skills.import.selectAllRows": 0,
+        "workbench.skills.import.selectNoRows": 0,
         "workbench.skills.import.subtitle": 0,
         "workbench.skills.import.summary": 3,
         "workbench.skills.import.title": 0,
         "workbench.skills.importExisting": 0,
         "workbench.skills.install": 0,
         "workbench.skills.installFromZip": 0,
+        "workbench.skills.menuAcceptLocalChanges": 0,
         "workbench.skills.menuMoreActions": 1,
         "workbench.skills.menuRevealInFinder": 0,
         "workbench.skills.menuUninstall": 0,
         "workbench.skills.menuUpdateFromRepository": 0,
         "workbench.skills.menuWiringDetails": 0,
+        "workbench.skills.modifiedCount": 1,
         "workbench.skills.noMatch": 1,
         "workbench.skills.phase.downloadedOne": 0,
         "workbench.skills.phase.downloadedProgress": 2,
         "workbench.skills.phase.downloading": 1,
         "workbench.skills.phase.scanning": 1,
         "workbench.skills.sourceBranch": 1,
+        "workbench.skills.sourceBuiltIn": 1,
+        "workbench.skills.sourceBuiltInHelp": 1,
         "workbench.skills.sourceInstalledLocally": 0,
         "workbench.skills.sourceLocal": 0,
         "workbench.skills.state.coupled": 0,
@@ -16982,9 +17339,13 @@ enum L10nCatalogFacts {
         "workbench.skills.sync.ssotLead": 0,
         "workbench.skills.sync.title": 0,
         "workbench.skills.syncExplainerHelp": 0,
+        "workbench.skills.toast.acceptedLocalChanges": 1,
         "workbench.skills.toast.addRepoFirst": 0,
         "workbench.skills.toast.allUpToDate": 0,
         "workbench.skills.toast.archiveEmpty": 0,
+        "workbench.skills.toast.bulkDone": 2,
+        "workbench.skills.toast.bulkPartial": 3,
+        "workbench.skills.toast.copiedToShared": 1,
         "workbench.skills.toast.disabledKeptProjection": 2,
         "workbench.skills.toast.enabledForApps": 1,
         "workbench.skills.toast.importConflicts": 1,
@@ -16999,6 +17360,7 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.notFoundInRepo": 2,
         "workbench.skills.toast.projectionClearedFolderKept": 2,
         "workbench.skills.toast.recorded": 1,
+        "workbench.skills.toast.replacedShared": 1,
         "workbench.skills.toast.reposUnreadable": 1,
         "workbench.skills.toast.restored": 1,
         "workbench.skills.toast.scanStopped": 0,

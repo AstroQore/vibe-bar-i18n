@@ -5259,8 +5259,17 @@
 /* Title of the backups sheet. */
 "workbench.skills.backups.title" = "技能备份";
 
+/* Tooltip for the copies capsule. */
+"workbench.skills.badge.copiesHelp" = "这台 Mac 上还有同名 skill。点击查看对比。";
+
 /* Badge on a discover-sheet row for a skill already installed on this Mac. */
 "workbench.skills.badge.installed" = "已安装";
+
+/* Capsule on a Skills row: the shared copy's files changed since Vibe Bar recorded them. */
+"workbench.skills.badge.modified" = "已修改";
+
+/* Tooltip for the MODIFIED capsule. */
+"workbench.skills.badge.modifiedHelp" = "共享目录中的文件在 Vibe Bar 上次记录后被修改过";
 
 /* Row badge: the skill is linked into {app} but that harness's own config switches it off. */
 "workbench.skills.badge.nativeOff" = "%@ 已关闭";
@@ -5277,6 +5286,27 @@
 /* Row badge: the repository this skill came from has a newer version. */
 "workbench.skills.badge.update" = "可更新";
 
+/* Tooltip for the UPDATE capsule when the row is also modified locally. */
+"workbench.skills.badge.updateHelpModified" = "仓库有更新内容。更新会先备份，然后覆盖本地修改。";
+
+/* Confirmation dialog button that runs the bulk change. */
+"workbench.skills.bulk.apply" = "应用";
+
+/* Confirmation dialog message for a bulk enable or disable. */
+"workbench.skills.bulk.confirmMessage" = "逐个更改，单个失败不影响其余。";
+
+/* Tooltip on a harness capsule above the Skills list. */
+"workbench.skills.bulk.defaultHelp" = "右键可一次更改所有已显示 skill，或设置新安装的默认勾选";
+
+/* Menu item on a harness capsule above the Skills list. Acts on every row the current filter shows. */
+"workbench.skills.bulk.disableForShown" = "停用所有已显示 skill 的 %@";
+
+/* Menu item on a harness capsule above the Skills list. Acts on every row the current filter shows. */
+"workbench.skills.bulk.enableForShown" = "启用所有已显示 skill 的 %@";
+
+/* Checkable menu item on a harness capsule. When on, install, discover, import, and adopt sheets start with this harness selected. */
+"workbench.skills.bulk.useAsDefault" = "新安装时默认勾选";
+
 /* Skills toolbar button that asks every repository-backed skill whether it has a newer commit. */
 "workbench.skills.checkUpdates" = "检查更新";
 
@@ -5291,6 +5321,42 @@
 
 /* Context-menu item: delete the link or copy Vibe Bar made inside that harness's skills folder. */
 "workbench.skills.contextRemoveProjection" = "移除 %@ 投影";
+
+/* Location label for a real directory inside a harness's own skills folder. */
+"workbench.skills.copies.appFolder" = "%@ 目录";
+
+/* Location label for a copy inside a harness's bundled skills folder. distinct-from: workbench.skills.sourceBuiltIn */
+"workbench.skills.copies.builtIn" = "%@ 内置";
+
+/* Last modification, formatted by the client. */
+"workbench.skills.copies.changed" = "修改于 %@";
+
+/* Action for a built-in or app-folder skill that has no shared copy yet. */
+"workbench.skills.copies.copyToShared" = "复制到共享库";
+
+/* Comparison line under a copy. */
+"workbench.skills.copies.differs" = "与共享副本不同";
+
+/* Comparison line under a copy. */
+"workbench.skills.copies.identical" = "与共享副本相同";
+
+/* Comparison line when the skill has no shared copy to compare against. */
+"workbench.skills.copies.noShared" = "不在共享库中";
+
+/* Confirmation dialog message. */
+"workbench.skills.copies.replaceConfirmMessage" = "会先备份。所有链接到共享副本的 harness 都会看到新内容。";
+
+/* Confirmation dialog title. */
+"workbench.skills.copies.replaceConfirmTitle" = "替换 %@ 的共享副本？";
+
+/* Action under a copy that differs from the shared one. */
+"workbench.skills.copies.replaceShared" = "用此副本替换共享副本";
+
+/* Warning under an app-folder copy that hides the shared copy from that harness. */
+"workbench.skills.copies.shadowsShared" = "%@ 会加载此副本而非共享副本";
+
+/* Title of the popover listing every copy of one skill. */
+"workbench.skills.copies.title" = "%@ 的副本";
 
 /* Skills page count caption while the search field filters the list. */
 "workbench.skills.countFiltered" = "%2$lld 个技能中的 %1$lld 个";
@@ -5364,6 +5430,9 @@
 /* Headline of the Skills page empty state. */
 "workbench.skills.empty.headline" = "尚未记录任何技能";
 
+/* Checkable toggle that includes harness-bundled skills in the list. */
+"workbench.skills.filterBuiltIn" = "显示内置 skill";
+
 /* Accessibility label on the button that empties the Skills search field. */
 "workbench.skills.filterClear" = "清除筛选";
 
@@ -5375,6 +5444,9 @@
 
 /* Caption of the already-shared section. The path and CC Switch are identifiers. */
 "workbench.skills.import.alreadySharedDetail" = "这些技能已经位于 ~/.agents/skills，包括 CC Switch 建立的目录结构。Vibe Bar 只记录它们已有的链接，不会再次导入或复制。";
+
+/* Button in the import sheet's 'Needs adoption' section that copies the harness selection to every unmanaged row. */
+"workbench.skills.import.applyToAllRows" = "把这组勾选应用到所有行";
 
 /* Import sheet section header for app folders whose name collides with a shared skill. */
 "workbench.skills.import.conflicts" = "冲突的应用副本";
@@ -5406,6 +5478,12 @@
 /* Count beside the already-shared section header. */
 "workbench.skills.import.recognizedCount" = "已识别 %lld 个";
 
+/* Button in the import sheet that checks every unmanaged row with the default harness selection. */
+"workbench.skills.import.selectAllRows" = "全部采纳";
+
+/* Button in the import sheet that unchecks every unmanaged row. */
+"workbench.skills.import.selectNoRows" = "全不采纳";
+
 /* Subtitle of the import sheet: what applying it will and will not touch. */
 "workbench.skills.import.subtitle" = "Vibe Bar 已识别共享技能。只有选中的应用本地目录会被移动。";
 
@@ -5423,6 +5501,9 @@
 
 /* Skills toolbar button that opens a file picker for a skill archive. */
 "workbench.skills.installFromZip" = "从 ZIP 安装";
+
+/* Row menu item: record the shared copy's current contents as the known state. */
+"workbench.skills.menuAcceptLocalChanges" = "接受本地修改";
 
 /* Accessibility label on a skill row's overflow menu button. */
 "workbench.skills.menuMoreActions" = "%@ 的更多操作";
@@ -5456,6 +5537,12 @@
 
 /* Tooltip on the source badge naming the git branch the skill was fetched from. */
 "workbench.skills.sourceBranch" = "分支 %@";
+
+/* Source capsule on a row for a skill that ships inside a harness's own folder. */
+"workbench.skills.sourceBuiltIn" = "%@ 内置";
+
+/* Tooltip for the built-in source capsule. */
+"workbench.skills.sourceBuiltInHelp" = "随 %@ 一起安装，位于其自有目录。Vibe Bar 只显示，不会更改。";
 
 /* Tooltip on the source badge when the skill has no repository. */
 "workbench.skills.sourceInstalledLocally" = "本地安装";
@@ -5520,6 +5607,9 @@
 /* Tooltip on the question-mark button that opens the sync explainer popover. */
 "workbench.skills.syncExplainerHelp" = "技能同步的原理 — 根目录、链接与原生开关";
 
+/* Toast after accepting local changes. */
+"workbench.skills.toast.acceptedLocalChanges" = "已记录 %@ 的当前内容。";
+
 /* Toast when a scan is asked for with no repositories configured. */
 "workbench.skills.toast.addRepoFirst" = "请先添加一个仓库。";
 
@@ -5528,6 +5618,12 @@
 
 /* Toast after a ZIP import that produced no skill. */
 "workbench.skills.toast.archiveEmpty" = "该压缩包中没有可安装的内容。";
+
+/* Toast after a bulk change where some rows failed. Both values are whole numbers. */
+"workbench.skills.toast.bulkPartial" = "已为 %2$lld 个 skill 更改 %1$@，%3$lld 个失败。";
+
+/* Toast after copying a built-in or app-folder skill into ~/.agents/skills. */
+"workbench.skills.toast.copiedToShared" = "已把 %@ 复制到共享库。";
 
 /* Toast after flipping a harness's own per-skill switch off. */
 "workbench.skills.toast.disabledKeptProjection" = "已在 %2$@ 中停用 %1$@，并保留其投影。";
@@ -5558,6 +5654,9 @@
 
 /* Toast after removing a projection that turned out to be a real folder Vibe Bar did not create. */
 "workbench.skills.toast.projectionClearedFolderKept" = "已清除 %1$@ 在 %2$@ 的 Vibe Bar 投影记录，但原有文件夹保留在原处。";
+
+/* Toast after replacing the shared copy. */
+"workbench.skills.toast.replacedShared" = "已替换 %@ 的共享副本。";
 
 /* Toast after restoring a backup into the shared directory. */
 "workbench.skills.toast.restored" = "已恢复 %@。可按需为相应应用启用。";

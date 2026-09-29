@@ -767,6 +767,70 @@
 			<string>%2$lld skills</string>
 		</dict>
 	</dict>
+	<key>workbench.skills.badge.copies</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld OTHER COPY</string>
+			<key>other</key>
+			<string>%lld OTHER COPIES</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.builtInCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld built-in</string>
+			<key>other</key>
+			<string>%lld built-in</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.bulk.confirmDisableTitle</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>Disable %1$@ for %2$#@count@?</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%2$lld skill</string>
+			<key>other</key>
+			<string>%2$lld skills</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.bulk.confirmEnableTitle</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>Enable %1$@ for %2$#@count@?</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%2$lld skill</string>
+			<key>other</key>
+			<string>%2$lld skills</string>
+		</dict>
+	</dict>
 	<key>workbench.skills.countTotal</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -813,6 +877,38 @@
 			<string>%lld change</string>
 			<key>other</key>
 			<string>%lld changes</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.modifiedCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld modified locally</string>
+			<key>other</key>
+			<string>%lld modified locally</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.toast.bulkDone</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>Changed %1$@ for %2$#@succeeded@.</string>
+		<key>succeeded</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%2$lld skill</string>
+			<key>other</key>
+			<string>%2$lld skills</string>
 		</dict>
 	</dict>
 	<key>workbench.skills.toast.importConflicts</key>

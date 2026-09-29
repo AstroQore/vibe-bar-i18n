@@ -5259,8 +5259,17 @@
 /* Title of the backups sheet. */
 "workbench.skills.backups.title" = "Skill Backups";
 
+/* Tooltip for the copies capsule. */
+"workbench.skills.badge.copiesHelp" = "The same skill name exists elsewhere on this Mac. Click to compare.";
+
 /* Badge on a discover-sheet row for a skill already installed on this Mac. */
 "workbench.skills.badge.installed" = "INSTALLED";
+
+/* Capsule on a Skills row: the shared copy's files changed since Vibe Bar recorded them. */
+"workbench.skills.badge.modified" = "MODIFIED";
+
+/* Tooltip for the MODIFIED capsule. */
+"workbench.skills.badge.modifiedHelp" = "Files in the shared copy changed since Vibe Bar last recorded them";
 
 /* Row badge: the skill is linked into {app} but that harness's own config switches it off. */
 "workbench.skills.badge.nativeOff" = "%@ OFF";
@@ -5277,6 +5286,27 @@
 /* Row badge: the repository this skill came from has a newer version. */
 "workbench.skills.badge.update" = "UPDATE";
 
+/* Tooltip for the UPDATE capsule when the row is also modified locally. */
+"workbench.skills.badge.updateHelpModified" = "The repository has newer content. Updating backs up and then replaces your local edits.";
+
+/* Confirmation dialog button that runs the bulk change. */
+"workbench.skills.bulk.apply" = "Apply";
+
+/* Confirmation dialog message for a bulk enable or disable. */
+"workbench.skills.bulk.confirmMessage" = "Each skill is changed one at a time; a failure stops nothing else.";
+
+/* Tooltip on a harness capsule above the Skills list. */
+"workbench.skills.bulk.defaultHelp" = "Right-click to change every shown skill at once or set the default selection for new installs";
+
+/* Menu item on a harness capsule above the Skills list. Acts on every row the current filter shows. */
+"workbench.skills.bulk.disableForShown" = "Disable %@ for all shown skills";
+
+/* Menu item on a harness capsule above the Skills list. Acts on every row the current filter shows. */
+"workbench.skills.bulk.enableForShown" = "Enable %@ for all shown skills";
+
+/* Checkable menu item on a harness capsule. When on, install, discover, import, and adopt sheets start with this harness selected. */
+"workbench.skills.bulk.useAsDefault" = "Pre-select for new installs";
+
 /* Skills toolbar button that asks every repository-backed skill whether it has a newer commit. */
 "workbench.skills.checkUpdates" = "Check Updates";
 
@@ -5291,6 +5321,42 @@
 
 /* Context-menu item: delete the link or copy Vibe Bar made inside that harness's skills folder. */
 "workbench.skills.contextRemoveProjection" = "Remove %@ Projection";
+
+/* Location label for a real directory inside a harness's own skills folder. */
+"workbench.skills.copies.appFolder" = "%@ folder";
+
+/* Location label for a copy inside a harness's bundled skills folder. distinct-from: workbench.skills.sourceBuiltIn */
+"workbench.skills.copies.builtIn" = "%@ built-in";
+
+/* Last modification, formatted by the client. */
+"workbench.skills.copies.changed" = "Changed %@";
+
+/* Action for a built-in or app-folder skill that has no shared copy yet. */
+"workbench.skills.copies.copyToShared" = "Copy Into Shared Library";
+
+/* Comparison line under a copy. */
+"workbench.skills.copies.differs" = "Differs from the shared copy";
+
+/* Comparison line under a copy. */
+"workbench.skills.copies.identical" = "Identical to the shared copy";
+
+/* Comparison line when the skill has no shared copy to compare against. */
+"workbench.skills.copies.noShared" = "Not in the shared library";
+
+/* Confirmation dialog message. */
+"workbench.skills.copies.replaceConfirmMessage" = "A backup is taken first. Every harness linked to the shared copy sees the new content.";
+
+/* Confirmation dialog title. */
+"workbench.skills.copies.replaceConfirmTitle" = "Replace the shared copy of %@?";
+
+/* Action under a copy that differs from the shared one. */
+"workbench.skills.copies.replaceShared" = "Replace Shared Copy With This";
+
+/* Warning under an app-folder copy that hides the shared copy from that harness. */
+"workbench.skills.copies.shadowsShared" = "%@ loads this copy instead of the shared one";
+
+/* Title of the popover listing every copy of one skill. */
+"workbench.skills.copies.title" = "Copies of %@";
 
 /* Skills page count caption while the search field filters the list. */
 "workbench.skills.countFiltered" = "%1$lld of %2$lld skills";
@@ -5364,6 +5430,9 @@
 /* Headline of the Skills page empty state. */
 "workbench.skills.empty.headline" = "No skills recorded yet";
 
+/* Checkable toggle that includes harness-bundled skills in the list. */
+"workbench.skills.filterBuiltIn" = "Show built-in skills";
+
 /* Accessibility label on the button that empties the Skills search field. */
 "workbench.skills.filterClear" = "Clear the filter";
 
@@ -5375,6 +5444,9 @@
 
 /* Caption of the already-shared section. The path and CC Switch are identifiers. */
 "workbench.skills.import.alreadySharedDetail" = "These already live in ~/.agents/skills, including layouts created by CC Switch. Vibe Bar records their existing links; it does not import or copy them again.";
+
+/* Button in the import sheet's 'Needs adoption' section that copies the harness selection to every unmanaged row. */
+"workbench.skills.import.applyToAllRows" = "Apply this selection to every row";
 
 /* Import sheet section header for app folders whose name collides with a shared skill. */
 "workbench.skills.import.conflicts" = "Conflicting app copies";
@@ -5406,6 +5478,12 @@
 /* Count beside the already-shared section header. */
 "workbench.skills.import.recognizedCount" = "%lld recognized";
 
+/* Button in the import sheet that checks every unmanaged row with the default harness selection. */
+"workbench.skills.import.selectAllRows" = "Adopt all";
+
+/* Button in the import sheet that unchecks every unmanaged row. */
+"workbench.skills.import.selectNoRows" = "Adopt none";
+
 /* Subtitle of the import sheet: what applying it will and will not touch. */
 "workbench.skills.import.subtitle" = "Vibe Bar already recognizes shared skills. Only selected app-local folders will move.";
 
@@ -5423,6 +5501,9 @@
 
 /* Skills toolbar button that opens a file picker for a skill archive. */
 "workbench.skills.installFromZip" = "Install from ZIP";
+
+/* Row menu item: record the shared copy's current contents as the known state. */
+"workbench.skills.menuAcceptLocalChanges" = "Accept Local Changes";
 
 /* Accessibility label on a skill row's overflow menu button. */
 "workbench.skills.menuMoreActions" = "More actions for %@";
@@ -5456,6 +5537,12 @@
 
 /* Tooltip on the source badge naming the git branch the skill was fetched from. */
 "workbench.skills.sourceBranch" = "Branch %@";
+
+/* Source capsule on a row for a skill that ships inside a harness's own folder. */
+"workbench.skills.sourceBuiltIn" = "%@ built-in";
+
+/* Tooltip for the built-in source capsule. */
+"workbench.skills.sourceBuiltInHelp" = "Ships with %@ in its own folder. Vibe Bar shows it and does not change it.";
 
 /* Tooltip on the source badge when the skill has no repository. */
 "workbench.skills.sourceInstalledLocally" = "Installed locally";
@@ -5520,6 +5607,9 @@
 /* Tooltip on the question-mark button that opens the sync explainer popover. */
 "workbench.skills.syncExplainerHelp" = "How skill syncing works — roots, links, and native switches";
 
+/* Toast after accepting local changes. */
+"workbench.skills.toast.acceptedLocalChanges" = "Recorded the current contents of %@.";
+
 /* Toast when a scan is asked for with no repositories configured. */
 "workbench.skills.toast.addRepoFirst" = "Add a repository first.";
 
@@ -5528,6 +5618,12 @@
 
 /* Toast after a ZIP import that produced no skill. */
 "workbench.skills.toast.archiveEmpty" = "Nothing in that archive could be installed.";
+
+/* Toast after a bulk change where some rows failed. Both values are whole numbers. */
+"workbench.skills.toast.bulkPartial" = "Changed %1$@ for %2$lld skills; %3$lld failed.";
+
+/* Toast after copying a built-in or app-folder skill into ~/.agents/skills. */
+"workbench.skills.toast.copiedToShared" = "Copied %@ into the shared library.";
 
 /* Toast after flipping a harness's own per-skill switch off. */
 "workbench.skills.toast.disabledKeptProjection" = "Disabled %1$@ in %2$@ and kept its projection.";
@@ -5558,6 +5654,9 @@
 
 /* Toast after removing a projection that turned out to be a real folder Vibe Bar did not create. */
 "workbench.skills.toast.projectionClearedFolderKept" = "%1$@'s Vibe Bar projection was cleared for %2$@, but the existing folder was left in place.";
+
+/* Toast after replacing the shared copy. */
+"workbench.skills.toast.replacedShared" = "Replaced the shared copy of %@.";
 
 /* Toast after restoring a backup into the shared directory. */
 "workbench.skills.toast.restored" = "Restored %@. Enable it for the apps you want it in.";
