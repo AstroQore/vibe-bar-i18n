@@ -1813,17 +1813,43 @@ export type MessageKey =
   | "workbench.skills.backups.restoreHelp"
   | "workbench.skills.backups.subtitle"
   | "workbench.skills.backups.title"
+  | "workbench.skills.badge.copies"
+  | "workbench.skills.badge.copiesHelp"
   | "workbench.skills.badge.installed"
+  | "workbench.skills.badge.modified"
+  | "workbench.skills.badge.modifiedHelp"
   | "workbench.skills.badge.nativeOff"
   | "workbench.skills.badge.nativeOffHelp"
   | "workbench.skills.badge.nativeUnknown"
   | "workbench.skills.badge.nativeUnknownHelp"
   | "workbench.skills.badge.update"
+  | "workbench.skills.badge.updateHelpModified"
+  | "workbench.skills.builtInCount"
+  | "workbench.skills.bulk.apply"
+  | "workbench.skills.bulk.confirmDisableTitle"
+  | "workbench.skills.bulk.confirmEnableTitle"
+  | "workbench.skills.bulk.confirmMessage"
+  | "workbench.skills.bulk.defaultHelp"
+  | "workbench.skills.bulk.disableForShown"
+  | "workbench.skills.bulk.enableForShown"
+  | "workbench.skills.bulk.useAsDefault"
   | "workbench.skills.checkUpdates"
   | "workbench.skills.checkUpdatesCount"
   | "workbench.skills.contextDisableKeepProjection"
   | "workbench.skills.contextEnableIn"
   | "workbench.skills.contextRemoveProjection"
+  | "workbench.skills.copies.appFolder"
+  | "workbench.skills.copies.builtIn"
+  | "workbench.skills.copies.changed"
+  | "workbench.skills.copies.copyToShared"
+  | "workbench.skills.copies.differs"
+  | "workbench.skills.copies.identical"
+  | "workbench.skills.copies.noShared"
+  | "workbench.skills.copies.replaceConfirmMessage"
+  | "workbench.skills.copies.replaceConfirmTitle"
+  | "workbench.skills.copies.replaceShared"
+  | "workbench.skills.copies.shadowsShared"
+  | "workbench.skills.copies.title"
   | "workbench.skills.countFiltered"
   | "workbench.skills.countTotal"
   | "workbench.skills.discover"
@@ -1850,11 +1876,13 @@ export type MessageKey =
   | "workbench.skills.discoverHelp"
   | "workbench.skills.empty.body"
   | "workbench.skills.empty.headline"
+  | "workbench.skills.filterBuiltIn"
   | "workbench.skills.filterClear"
   | "workbench.skills.filterPlaceholder"
   | "workbench.skills.import.alreadyShared"
   | "workbench.skills.import.alreadySharedDetail"
   | "workbench.skills.import.apply"
+  | "workbench.skills.import.applyToAllRows"
   | "workbench.skills.import.conflicts"
   | "workbench.skills.import.conflictsCount"
   | "workbench.skills.import.conflictsDetail"
@@ -1865,23 +1893,29 @@ export type MessageKey =
   | "workbench.skills.import.notSkills"
   | "workbench.skills.import.notSkillsDetail"
   | "workbench.skills.import.recognizedCount"
+  | "workbench.skills.import.selectAllRows"
+  | "workbench.skills.import.selectNoRows"
   | "workbench.skills.import.subtitle"
   | "workbench.skills.import.summary"
   | "workbench.skills.import.title"
   | "workbench.skills.importExisting"
   | "workbench.skills.install"
   | "workbench.skills.installFromZip"
+  | "workbench.skills.menuAcceptLocalChanges"
   | "workbench.skills.menuMoreActions"
   | "workbench.skills.menuRevealInFinder"
   | "workbench.skills.menuUninstall"
   | "workbench.skills.menuUpdateFromRepository"
   | "workbench.skills.menuWiringDetails"
+  | "workbench.skills.modifiedCount"
   | "workbench.skills.noMatch"
   | "workbench.skills.phase.downloadedOne"
   | "workbench.skills.phase.downloadedProgress"
   | "workbench.skills.phase.downloading"
   | "workbench.skills.phase.scanning"
   | "workbench.skills.sourceBranch"
+  | "workbench.skills.sourceBuiltIn"
+  | "workbench.skills.sourceBuiltInHelp"
   | "workbench.skills.sourceInstalledLocally"
   | "workbench.skills.sourceLocal"
   | "workbench.skills.state.coupled"
@@ -1903,9 +1937,13 @@ export type MessageKey =
   | "workbench.skills.sync.ssotLead"
   | "workbench.skills.sync.title"
   | "workbench.skills.syncExplainerHelp"
+  | "workbench.skills.toast.acceptedLocalChanges"
   | "workbench.skills.toast.addRepoFirst"
   | "workbench.skills.toast.allUpToDate"
   | "workbench.skills.toast.archiveEmpty"
+  | "workbench.skills.toast.bulkDone"
+  | "workbench.skills.toast.bulkPartial"
+  | "workbench.skills.toast.copiedToShared"
   | "workbench.skills.toast.disabledKeptProjection"
   | "workbench.skills.toast.enabledForApps"
   | "workbench.skills.toast.importConflicts"
@@ -1920,6 +1958,7 @@ export type MessageKey =
   | "workbench.skills.toast.notFoundInRepo"
   | "workbench.skills.toast.projectionClearedFolderKept"
   | "workbench.skills.toast.recorded"
+  | "workbench.skills.toast.replacedShared"
   | "workbench.skills.toast.reposUnreadable"
   | "workbench.skills.toast.restored"
   | "workbench.skills.toast.scanStopped"
@@ -3775,17 +3814,43 @@ export interface MessageParams {
   "workbench.skills.backups.restoreHelp": undefined;
   "workbench.skills.backups.subtitle": undefined;
   "workbench.skills.backups.title": undefined;
+  "workbench.skills.badge.copies": { "count": number };
+  "workbench.skills.badge.copiesHelp": undefined;
   "workbench.skills.badge.installed": undefined;
+  "workbench.skills.badge.modified": undefined;
+  "workbench.skills.badge.modifiedHelp": undefined;
   "workbench.skills.badge.nativeOff": { "app": string };
   "workbench.skills.badge.nativeOffHelp": undefined;
   "workbench.skills.badge.nativeUnknown": undefined;
   "workbench.skills.badge.nativeUnknownHelp": undefined;
   "workbench.skills.badge.update": undefined;
+  "workbench.skills.badge.updateHelpModified": undefined;
+  "workbench.skills.builtInCount": { "count": number };
+  "workbench.skills.bulk.apply": undefined;
+  "workbench.skills.bulk.confirmDisableTitle": { "app": string; "count": number };
+  "workbench.skills.bulk.confirmEnableTitle": { "app": string; "count": number };
+  "workbench.skills.bulk.confirmMessage": undefined;
+  "workbench.skills.bulk.defaultHelp": undefined;
+  "workbench.skills.bulk.disableForShown": { "app": string };
+  "workbench.skills.bulk.enableForShown": { "app": string };
+  "workbench.skills.bulk.useAsDefault": undefined;
   "workbench.skills.checkUpdates": undefined;
   "workbench.skills.checkUpdatesCount": { "count": number };
   "workbench.skills.contextDisableKeepProjection": { "app": string };
   "workbench.skills.contextEnableIn": { "app": string };
   "workbench.skills.contextRemoveProjection": { "app": string };
+  "workbench.skills.copies.appFolder": { "app": string };
+  "workbench.skills.copies.builtIn": { "app": string };
+  "workbench.skills.copies.changed": { "date": string };
+  "workbench.skills.copies.copyToShared": undefined;
+  "workbench.skills.copies.differs": undefined;
+  "workbench.skills.copies.identical": undefined;
+  "workbench.skills.copies.noShared": undefined;
+  "workbench.skills.copies.replaceConfirmMessage": undefined;
+  "workbench.skills.copies.replaceConfirmTitle": { "skill": string };
+  "workbench.skills.copies.replaceShared": undefined;
+  "workbench.skills.copies.shadowsShared": { "app": string };
+  "workbench.skills.copies.title": { "skill": string };
   "workbench.skills.countFiltered": { "shown": number; "total": number };
   "workbench.skills.countTotal": { "count": number };
   "workbench.skills.discover": undefined;
@@ -3812,11 +3877,13 @@ export interface MessageParams {
   "workbench.skills.discoverHelp": undefined;
   "workbench.skills.empty.body": undefined;
   "workbench.skills.empty.headline": undefined;
+  "workbench.skills.filterBuiltIn": undefined;
   "workbench.skills.filterClear": undefined;
   "workbench.skills.filterPlaceholder": undefined;
   "workbench.skills.import.alreadyShared": undefined;
   "workbench.skills.import.alreadySharedDetail": undefined;
   "workbench.skills.import.apply": { "count": number };
+  "workbench.skills.import.applyToAllRows": undefined;
   "workbench.skills.import.conflicts": undefined;
   "workbench.skills.import.conflictsCount": { "count": number };
   "workbench.skills.import.conflictsDetail": undefined;
@@ -3827,23 +3894,29 @@ export interface MessageParams {
   "workbench.skills.import.notSkills": undefined;
   "workbench.skills.import.notSkillsDetail": undefined;
   "workbench.skills.import.recognizedCount": { "count": number };
+  "workbench.skills.import.selectAllRows": undefined;
+  "workbench.skills.import.selectNoRows": undefined;
   "workbench.skills.import.subtitle": undefined;
   "workbench.skills.import.summary": { "adopted": number; "unmanaged": number; "conflicts": number };
   "workbench.skills.import.title": undefined;
   "workbench.skills.importExisting": undefined;
   "workbench.skills.install": undefined;
   "workbench.skills.installFromZip": undefined;
+  "workbench.skills.menuAcceptLocalChanges": undefined;
   "workbench.skills.menuMoreActions": { "skill": string };
   "workbench.skills.menuRevealInFinder": undefined;
   "workbench.skills.menuUninstall": undefined;
   "workbench.skills.menuUpdateFromRepository": undefined;
   "workbench.skills.menuWiringDetails": undefined;
+  "workbench.skills.modifiedCount": { "count": number };
   "workbench.skills.noMatch": { "query": string };
   "workbench.skills.phase.downloadedOne": undefined;
   "workbench.skills.phase.downloadedProgress": { "completed": number; "total": number };
   "workbench.skills.phase.downloading": { "repo": string };
   "workbench.skills.phase.scanning": { "repo": string };
   "workbench.skills.sourceBranch": { "branch": string };
+  "workbench.skills.sourceBuiltIn": { "app": string };
+  "workbench.skills.sourceBuiltInHelp": { "app": string };
   "workbench.skills.sourceInstalledLocally": undefined;
   "workbench.skills.sourceLocal": undefined;
   "workbench.skills.state.coupled": undefined;
@@ -3865,9 +3938,13 @@ export interface MessageParams {
   "workbench.skills.sync.ssotLead": undefined;
   "workbench.skills.sync.title": undefined;
   "workbench.skills.syncExplainerHelp": undefined;
+  "workbench.skills.toast.acceptedLocalChanges": { "skill": string };
   "workbench.skills.toast.addRepoFirst": undefined;
   "workbench.skills.toast.allUpToDate": undefined;
   "workbench.skills.toast.archiveEmpty": undefined;
+  "workbench.skills.toast.bulkDone": { "app": string; "succeeded": number };
+  "workbench.skills.toast.bulkPartial": { "app": string; "succeeded": number; "failed": number };
+  "workbench.skills.toast.copiedToShared": { "skill": string };
   "workbench.skills.toast.disabledKeptProjection": { "skill": string; "app": string };
   "workbench.skills.toast.enabledForApps": { "apps": string };
   "workbench.skills.toast.importConflicts": { "count": number };
@@ -3882,6 +3959,7 @@ export interface MessageParams {
   "workbench.skills.toast.notFoundInRepo": { "skill": string; "repo": string };
   "workbench.skills.toast.projectionClearedFolderKept": { "skill": string; "app": string };
   "workbench.skills.toast.recorded": { "count": number };
+  "workbench.skills.toast.replacedShared": { "skill": string };
   "workbench.skills.toast.reposUnreadable": { "count": number };
   "workbench.skills.toast.restored": { "skill": string };
   "workbench.skills.toast.scanStopped": undefined;
@@ -5738,17 +5816,43 @@ export const messages: {
     "workbench.skills.backups.restoreHelp": "Copy the snapshot back into ~/.agents/skills",
     "workbench.skills.backups.subtitle": "Taken automatically before an uninstall or an update.",
     "workbench.skills.backups.title": "Skill Backups",
+    "workbench.skills.badge.copies": "{count, plural, one {# OTHER COPY} other {# OTHER COPIES}}",
+    "workbench.skills.badge.copiesHelp": "The same skill name exists elsewhere on this Mac. Click to compare.",
     "workbench.skills.badge.installed": "INSTALLED",
+    "workbench.skills.badge.modified": "MODIFIED",
+    "workbench.skills.badge.modifiedHelp": "Files in the shared copy changed since Vibe Bar last recorded them",
     "workbench.skills.badge.nativeOff": "{app} OFF",
     "workbench.skills.badge.nativeOffHelp": "Projected, but disabled by the harness's own configuration",
     "workbench.skills.badge.nativeUnknown": "NATIVE STATE ?",
     "workbench.skills.badge.nativeUnknownHelp": "The harness configuration could not be parsed safely",
     "workbench.skills.badge.update": "UPDATE",
+    "workbench.skills.badge.updateHelpModified": "The repository has newer content. Updating backs up and then replaces your local edits.",
+    "workbench.skills.builtInCount": "{count, plural, one {# built-in} other {# built-in}}",
+    "workbench.skills.bulk.apply": "Apply",
+    "workbench.skills.bulk.confirmDisableTitle": "Disable {app} for {count, plural, one {# skill} other {# skills}}?",
+    "workbench.skills.bulk.confirmEnableTitle": "Enable {app} for {count, plural, one {# skill} other {# skills}}?",
+    "workbench.skills.bulk.confirmMessage": "Each skill is changed one at a time; a failure stops nothing else.",
+    "workbench.skills.bulk.defaultHelp": "Right-click to change every shown skill at once or set the default selection for new installs",
+    "workbench.skills.bulk.disableForShown": "Disable {app} for all shown skills",
+    "workbench.skills.bulk.enableForShown": "Enable {app} for all shown skills",
+    "workbench.skills.bulk.useAsDefault": "Pre-select for new installs",
     "workbench.skills.checkUpdates": "Check Updates",
     "workbench.skills.checkUpdatesCount": "Check Updates · {count}",
     "workbench.skills.contextDisableKeepProjection": "Disable in {app} · Keep Projection",
     "workbench.skills.contextEnableIn": "Enable in {app}",
     "workbench.skills.contextRemoveProjection": "Remove {app} Projection",
+    "workbench.skills.copies.appFolder": "{app} folder",
+    "workbench.skills.copies.builtIn": "{app} built-in",
+    "workbench.skills.copies.changed": "Changed {date}",
+    "workbench.skills.copies.copyToShared": "Copy Into Shared Library",
+    "workbench.skills.copies.differs": "Differs from the shared copy",
+    "workbench.skills.copies.identical": "Identical to the shared copy",
+    "workbench.skills.copies.noShared": "Not in the shared library",
+    "workbench.skills.copies.replaceConfirmMessage": "A backup is taken first. Every harness linked to the shared copy sees the new content.",
+    "workbench.skills.copies.replaceConfirmTitle": "Replace the shared copy of {skill}?",
+    "workbench.skills.copies.replaceShared": "Replace Shared Copy With This",
+    "workbench.skills.copies.shadowsShared": "{app} loads this copy instead of the shared one",
+    "workbench.skills.copies.title": "Copies of {skill}",
     "workbench.skills.countFiltered": "{shown} of {total} skills",
     "workbench.skills.countTotal": "{count, plural, one {# skill} other {# skills}}",
     "workbench.skills.discover": "Discover",
@@ -5775,11 +5879,13 @@ export const messages: {
     "workbench.skills.discoverHelp": "Browse configured repositories and the skills.sh index",
     "workbench.skills.empty.body": "Vibe Bar keeps one copy of every skill in ~/.agents/skills and links it into each agent CLI. Import what is already on this Mac, or install something new from a repository.",
     "workbench.skills.empty.headline": "No skills recorded yet",
+    "workbench.skills.filterBuiltIn": "Show built-in skills",
     "workbench.skills.filterClear": "Clear the filter",
     "workbench.skills.filterPlaceholder": "Filter installed skills",
     "workbench.skills.import.alreadyShared": "Already shared",
     "workbench.skills.import.alreadySharedDetail": "These already live in ~/.agents/skills, including layouts created by CC Switch. Vibe Bar records their existing links; it does not import or copy them again.",
     "workbench.skills.import.apply": "Apply {count, plural, one {# change} other {# changes}}",
+    "workbench.skills.import.applyToAllRows": "Apply this selection to every row",
     "workbench.skills.import.conflicts": "Conflicting app copies",
     "workbench.skills.import.conflictsCount": "{count} unchanged",
     "workbench.skills.import.conflictsDetail": "A real folder in an app's skills directory has the same name as one in ~/.agents/skills. Vibe Bar will not overwrite it — resolve it by hand, or enable the shared skill for that app once the folder is gone.",
@@ -5790,23 +5896,29 @@ export const messages: {
     "workbench.skills.import.notSkills": "Not skills",
     "workbench.skills.import.notSkillsDetail": "Directories in ~/.agents/skills with no SKILL.md. Left exactly as they are.",
     "workbench.skills.import.recognizedCount": "{count} recognized",
+    "workbench.skills.import.selectAllRows": "Adopt all",
+    "workbench.skills.import.selectNoRows": "Adopt none",
     "workbench.skills.import.subtitle": "Vibe Bar already recognizes shared skills. Only selected app-local folders will move.",
     "workbench.skills.import.summary": "{adopted} already shared · {unmanaged} need adoption · {conflicts} left unchanged",
     "workbench.skills.import.title": "Review On-Disk Skills",
     "workbench.skills.importExisting": "Import Existing",
     "workbench.skills.install": "Install",
     "workbench.skills.installFromZip": "Install from ZIP",
+    "workbench.skills.menuAcceptLocalChanges": "Accept Local Changes",
     "workbench.skills.menuMoreActions": "More actions for {skill}",
     "workbench.skills.menuRevealInFinder": "Reveal in Finder",
     "workbench.skills.menuUninstall": "Uninstall…",
     "workbench.skills.menuUpdateFromRepository": "Update from repository",
     "workbench.skills.menuWiringDetails": "Wiring Details…",
+    "workbench.skills.modifiedCount": "{count, plural, one {# modified locally} other {# modified locally}}",
     "workbench.skills.noMatch": "No skill matches “{query}”",
     "workbench.skills.phase.downloadedOne": "Downloaded 1 repository",
     "workbench.skills.phase.downloadedProgress": "Downloaded {completed} of {total} repositories",
     "workbench.skills.phase.downloading": "Downloading {repo}…",
     "workbench.skills.phase.scanning": "Scanning {repo}…",
     "workbench.skills.sourceBranch": "Branch {branch}",
+    "workbench.skills.sourceBuiltIn": "{app} built-in",
+    "workbench.skills.sourceBuiltInHelp": "Ships with {app} in its own folder. Vibe Bar shows it and does not change it.",
     "workbench.skills.sourceInstalledLocally": "Installed locally",
     "workbench.skills.sourceLocal": "local",
     "workbench.skills.state.coupled": "Available through a shared or compatibility root",
@@ -5828,9 +5940,13 @@ export const messages: {
     "workbench.skills.sync.ssotLead": "One source of truth.",
     "workbench.skills.sync.title": "How skill syncing works",
     "workbench.skills.syncExplainerHelp": "How skill syncing works — roots, links, and native switches",
+    "workbench.skills.toast.acceptedLocalChanges": "Recorded the current contents of {skill}.",
     "workbench.skills.toast.addRepoFirst": "Add a repository first.",
     "workbench.skills.toast.allUpToDate": "Every repository skill is up to date.",
     "workbench.skills.toast.archiveEmpty": "Nothing in that archive could be installed.",
+    "workbench.skills.toast.bulkDone": "Changed {app} for {succeeded, plural, one {# skill} other {# skills}}.",
+    "workbench.skills.toast.bulkPartial": "Changed {app} for {succeeded} skills; {failed} failed.",
+    "workbench.skills.toast.copiedToShared": "Copied {skill} into the shared library.",
     "workbench.skills.toast.disabledKeptProjection": "Disabled {skill} in {app} and kept its projection.",
     "workbench.skills.toast.enabledForApps": "Enabled for {apps}.",
     "workbench.skills.toast.importConflicts": "Left {count, plural, one {# conflicting app copy} other {# conflicting app copies}} unchanged.",
@@ -5845,6 +5961,7 @@ export const messages: {
     "workbench.skills.toast.notFoundInRepo": "{skill} was not found in {repo}.",
     "workbench.skills.toast.projectionClearedFolderKept": "{skill}'s Vibe Bar projection was cleared for {app}, but the existing folder was left in place.",
     "workbench.skills.toast.recorded": "Recorded {count, plural, one {# skill} other {# skills}}.",
+    "workbench.skills.toast.replacedShared": "Replaced the shared copy of {skill}.",
     "workbench.skills.toast.reposUnreadable": "{count, plural, one {# repository} other {# repositories}} could not be read.",
     "workbench.skills.toast.restored": "Restored {skill}. Enable it for the apps you want it in.",
     "workbench.skills.toast.scanStopped": "Stopped scanning.",
@@ -7696,17 +7813,43 @@ export const messages: {
     "workbench.skills.backups.restoreHelp": "把快照复制回 ~/.agents/skills",
     "workbench.skills.backups.subtitle": "在卸载或更新前自动创建。",
     "workbench.skills.backups.title": "技能备份",
+    "workbench.skills.badge.copies": "{count, plural, other {# 个其他副本}}",
+    "workbench.skills.badge.copiesHelp": "这台 Mac 上还有同名 skill。点击查看对比。",
     "workbench.skills.badge.installed": "已安装",
+    "workbench.skills.badge.modified": "已修改",
+    "workbench.skills.badge.modifiedHelp": "共享目录中的文件在 Vibe Bar 上次记录后被修改过",
     "workbench.skills.badge.nativeOff": "{app} 已关闭",
     "workbench.skills.badge.nativeOffHelp": "已投影，但被 harness 自身的配置停用",
     "workbench.skills.badge.nativeUnknown": "原生状态未知",
     "workbench.skills.badge.nativeUnknownHelp": "无法安全解析 harness 的配置",
     "workbench.skills.badge.update": "可更新",
+    "workbench.skills.badge.updateHelpModified": "仓库有更新内容。更新会先备份，然后覆盖本地修改。",
+    "workbench.skills.builtInCount": "{count, plural, other {# 个内置}}",
+    "workbench.skills.bulk.apply": "应用",
+    "workbench.skills.bulk.confirmDisableTitle": "为 {count, plural, other {# 个 skill}} 停用 {app}？",
+    "workbench.skills.bulk.confirmEnableTitle": "为 {count, plural, other {# 个 skill}} 启用 {app}？",
+    "workbench.skills.bulk.confirmMessage": "逐个更改，单个失败不影响其余。",
+    "workbench.skills.bulk.defaultHelp": "右键可一次更改所有已显示 skill，或设置新安装的默认勾选",
+    "workbench.skills.bulk.disableForShown": "停用所有已显示 skill 的 {app}",
+    "workbench.skills.bulk.enableForShown": "启用所有已显示 skill 的 {app}",
+    "workbench.skills.bulk.useAsDefault": "新安装时默认勾选",
     "workbench.skills.checkUpdates": "检查更新",
     "workbench.skills.checkUpdatesCount": "检查更新 · {count}",
     "workbench.skills.contextDisableKeepProjection": "在 {app} 中停用 · 保留投影",
     "workbench.skills.contextEnableIn": "在 {app} 中启用",
     "workbench.skills.contextRemoveProjection": "移除 {app} 投影",
+    "workbench.skills.copies.appFolder": "{app} 目录",
+    "workbench.skills.copies.builtIn": "{app} 内置",
+    "workbench.skills.copies.changed": "修改于 {date}",
+    "workbench.skills.copies.copyToShared": "复制到共享库",
+    "workbench.skills.copies.differs": "与共享副本不同",
+    "workbench.skills.copies.identical": "与共享副本相同",
+    "workbench.skills.copies.noShared": "不在共享库中",
+    "workbench.skills.copies.replaceConfirmMessage": "会先备份。所有链接到共享副本的 harness 都会看到新内容。",
+    "workbench.skills.copies.replaceConfirmTitle": "替换 {skill} 的共享副本？",
+    "workbench.skills.copies.replaceShared": "用此副本替换共享副本",
+    "workbench.skills.copies.shadowsShared": "{app} 会加载此副本而非共享副本",
+    "workbench.skills.copies.title": "{skill} 的副本",
     "workbench.skills.countFiltered": "{total} 个技能中的 {shown} 个",
     "workbench.skills.countTotal": "{count, plural, other {# 个技能}}",
     "workbench.skills.discover": "发现",
@@ -7733,11 +7876,13 @@ export const messages: {
     "workbench.skills.discoverHelp": "浏览已配置的仓库和 skills.sh 索引",
     "workbench.skills.empty.body": "Vibe Bar 在 ~/.agents/skills 中保存每个技能的唯一副本，并将其链接到各个 agent CLI。可以导入这台 Mac 上已有的技能，也可以从仓库安装新的。",
     "workbench.skills.empty.headline": "尚未记录任何技能",
+    "workbench.skills.filterBuiltIn": "显示内置 skill",
     "workbench.skills.filterClear": "清除筛选",
     "workbench.skills.filterPlaceholder": "筛选已安装的技能",
     "workbench.skills.import.alreadyShared": "已共享",
     "workbench.skills.import.alreadySharedDetail": "这些技能已经位于 ~/.agents/skills，包括 CC Switch 建立的目录结构。Vibe Bar 只记录它们已有的链接，不会再次导入或复制。",
     "workbench.skills.import.apply": "应用 {count, plural, other {# 项更改}}",
+    "workbench.skills.import.applyToAllRows": "把这组勾选应用到所有行",
     "workbench.skills.import.conflicts": "冲突的应用副本",
     "workbench.skills.import.conflictsCount": "{count} 个保持不变",
     "workbench.skills.import.conflictsDetail": "某个应用技能目录中的真实文件夹与 ~/.agents/skills 中的同名。Vibe Bar 不会覆盖它 — 需手动处理，或在该文件夹删除后再为该应用启用共享技能。",
@@ -7748,23 +7893,29 @@ export const messages: {
     "workbench.skills.import.notSkills": "非技能目录",
     "workbench.skills.import.notSkillsDetail": "~/.agents/skills 中没有 SKILL.md 的目录。将保持原样。",
     "workbench.skills.import.recognizedCount": "已识别 {count} 个",
+    "workbench.skills.import.selectAllRows": "全部采纳",
+    "workbench.skills.import.selectNoRows": "全不采纳",
     "workbench.skills.import.subtitle": "Vibe Bar 已识别共享技能。只有选中的应用本地目录会被移动。",
     "workbench.skills.import.summary": "{adopted} 个已共享 · {unmanaged} 个待接管 · {conflicts} 个保持不变",
     "workbench.skills.import.title": "检查磁盘上的技能",
     "workbench.skills.importExisting": "导入已有技能",
     "workbench.skills.install": "安装",
     "workbench.skills.installFromZip": "从 ZIP 安装",
+    "workbench.skills.menuAcceptLocalChanges": "接受本地修改",
     "workbench.skills.menuMoreActions": "{skill} 的更多操作",
     "workbench.skills.menuRevealInFinder": "在 Finder 中显示",
     "workbench.skills.menuUninstall": "卸载…",
     "workbench.skills.menuUpdateFromRepository": "从仓库更新",
     "workbench.skills.menuWiringDetails": "连接详情…",
+    "workbench.skills.modifiedCount": "{count, plural, other {# 个本地已修改}}",
     "workbench.skills.noMatch": "没有技能匹配「{query}」",
     "workbench.skills.phase.downloadedOne": "已下载 1 个仓库",
     "workbench.skills.phase.downloadedProgress": "已下载 {total} 个仓库中的 {completed} 个",
     "workbench.skills.phase.downloading": "正在下载 {repo}…",
     "workbench.skills.phase.scanning": "正在扫描 {repo}…",
     "workbench.skills.sourceBranch": "分支 {branch}",
+    "workbench.skills.sourceBuiltIn": "{app} 内置",
+    "workbench.skills.sourceBuiltInHelp": "随 {app} 一起安装，位于其自有目录。Vibe Bar 只显示，不会更改。",
     "workbench.skills.sourceInstalledLocally": "本地安装",
     "workbench.skills.sourceLocal": "本地",
     "workbench.skills.state.coupled": "通过共享根目录或兼容根目录可用",
@@ -7786,9 +7937,13 @@ export const messages: {
     "workbench.skills.sync.ssotLead": "唯一真相源。",
     "workbench.skills.sync.title": "技能同步的原理",
     "workbench.skills.syncExplainerHelp": "技能同步的原理 — 根目录、链接与原生开关",
+    "workbench.skills.toast.acceptedLocalChanges": "已记录 {skill} 的当前内容。",
     "workbench.skills.toast.addRepoFirst": "请先添加一个仓库。",
     "workbench.skills.toast.allUpToDate": "所有来自仓库的技能都是最新的。",
     "workbench.skills.toast.archiveEmpty": "该压缩包中没有可安装的内容。",
+    "workbench.skills.toast.bulkDone": "已为 {succeeded, plural, other {# 个 skill}} 更改 {app}。",
+    "workbench.skills.toast.bulkPartial": "已为 {succeeded} 个 skill 更改 {app}，{failed} 个失败。",
+    "workbench.skills.toast.copiedToShared": "已把 {skill} 复制到共享库。",
     "workbench.skills.toast.disabledKeptProjection": "已在 {app} 中停用 {skill}，并保留其投影。",
     "workbench.skills.toast.enabledForApps": "已为 {apps} 启用。",
     "workbench.skills.toast.importConflicts": "有 {count, plural, other {# 个冲突的应用副本}}保持不变。",
@@ -7803,6 +7958,7 @@ export const messages: {
     "workbench.skills.toast.notFoundInRepo": "在 {repo} 中未找到 {skill}。",
     "workbench.skills.toast.projectionClearedFolderKept": "已清除 {skill} 在 {app} 的 Vibe Bar 投影记录，但原有文件夹保留在原处。",
     "workbench.skills.toast.recorded": "已记录 {count, plural, other {# 个技能}}。",
+    "workbench.skills.toast.replacedShared": "已替换 {skill} 的共享副本。",
     "workbench.skills.toast.reposUnreadable": "有 {count, plural, other {# 个仓库}}无法读取。",
     "workbench.skills.toast.restored": "已恢复 {skill}。可按需为相应应用启用。",
     "workbench.skills.toast.scanStopped": "已停止扫描。",

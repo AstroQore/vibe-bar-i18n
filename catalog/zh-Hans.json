@@ -5869,6 +5869,123 @@
     },
     "settings.eink.workflow.editPagesDetail": {
       "value": "自由排版需要独立页面。将全部分页保留为独立幻灯片，再编辑当前页；之后仍可选择单张或轮播。"
+    },
+    "workbench.skills.bulk.enableForShown": {
+      "value": "启用所有已显示 skill 的 {app}"
+    },
+    "workbench.skills.bulk.disableForShown": {
+      "value": "停用所有已显示 skill 的 {app}"
+    },
+    "workbench.skills.bulk.useAsDefault": {
+      "value": "新安装时默认勾选"
+    },
+    "workbench.skills.bulk.defaultHelp": {
+      "value": "右键可一次更改所有已显示 skill，或设置新安装的默认勾选"
+    },
+    "workbench.skills.bulk.confirmEnableTitle": {
+      "value": "为 {count, plural, other {# 个 skill}} 启用 {app}？"
+    },
+    "workbench.skills.bulk.confirmDisableTitle": {
+      "value": "为 {count, plural, other {# 个 skill}} 停用 {app}？"
+    },
+    "workbench.skills.bulk.confirmMessage": {
+      "value": "逐个更改，单个失败不影响其余。"
+    },
+    "workbench.skills.bulk.apply": {
+      "value": "应用"
+    },
+    "workbench.skills.toast.bulkDone": {
+      "value": "已为 {succeeded, plural, other {# 个 skill}} 更改 {app}。"
+    },
+    "workbench.skills.toast.bulkPartial": {
+      "value": "已为 {succeeded} 个 skill 更改 {app}，{failed} 个失败。"
+    },
+    "workbench.skills.import.applyToAllRows": {
+      "value": "把这组勾选应用到所有行"
+    },
+    "workbench.skills.import.selectAllRows": {
+      "value": "全部采纳"
+    },
+    "workbench.skills.import.selectNoRows": {
+      "value": "全不采纳"
+    },
+    "workbench.skills.badge.modified": {
+      "value": "已修改"
+    },
+    "workbench.skills.badge.modifiedHelp": {
+      "value": "共享目录中的文件在 Vibe Bar 上次记录后被修改过"
+    },
+    "workbench.skills.menuAcceptLocalChanges": {
+      "value": "接受本地修改"
+    },
+    "workbench.skills.toast.acceptedLocalChanges": {
+      "value": "已记录 {skill} 的当前内容。"
+    },
+    "workbench.skills.modifiedCount": {
+      "value": "{count, plural, other {# 个本地已修改}}"
+    },
+    "workbench.skills.badge.updateHelpModified": {
+      "value": "仓库有更新内容。更新会先备份，然后覆盖本地修改。"
+    },
+    "workbench.skills.sourceBuiltIn": {
+      "value": "{app} 内置"
+    },
+    "workbench.skills.sourceBuiltInHelp": {
+      "value": "随 {app} 一起安装，位于其自有目录。Vibe Bar 只显示，不会更改。"
+    },
+    "workbench.skills.badge.copies": {
+      "value": "{count, plural, other {# 个其他副本}}"
+    },
+    "workbench.skills.badge.copiesHelp": {
+      "value": "这台 Mac 上还有同名 skill。点击查看对比。"
+    },
+    "workbench.skills.copies.title": {
+      "value": "{skill} 的副本"
+    },
+    "workbench.skills.copies.appFolder": {
+      "value": "{app} 目录"
+    },
+    "workbench.skills.copies.builtIn": {
+      "value": "{app} 内置"
+    },
+    "workbench.skills.copies.identical": {
+      "value": "与共享副本相同"
+    },
+    "workbench.skills.copies.differs": {
+      "value": "与共享副本不同"
+    },
+    "workbench.skills.copies.noShared": {
+      "value": "不在共享库中"
+    },
+    "workbench.skills.copies.changed": {
+      "value": "修改于 {date}"
+    },
+    "workbench.skills.copies.shadowsShared": {
+      "value": "{app} 会加载此副本而非共享副本"
+    },
+    "workbench.skills.copies.replaceShared": {
+      "value": "用此副本替换共享副本"
+    },
+    "workbench.skills.copies.replaceConfirmTitle": {
+      "value": "替换 {skill} 的共享副本？"
+    },
+    "workbench.skills.copies.replaceConfirmMessage": {
+      "value": "会先备份。所有链接到共享副本的 harness 都会看到新内容。"
+    },
+    "workbench.skills.copies.copyToShared": {
+      "value": "复制到共享库"
+    },
+    "workbench.skills.toast.replacedShared": {
+      "value": "已替换 {skill} 的共享副本。"
+    },
+    "workbench.skills.toast.copiedToShared": {
+      "value": "已把 {skill} 复制到共享库。"
+    },
+    "workbench.skills.builtInCount": {
+      "value": "{count, plural, other {# 个内置}}"
+    },
+    "workbench.skills.filterBuiltIn": {
+      "value": "显示内置 skill"
     }
   }
 }

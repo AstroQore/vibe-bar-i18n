@@ -671,6 +671,62 @@
 			<string>%2$lld 个技能</string>
 		</dict>
 	</dict>
+	<key>workbench.skills.badge.copies</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个其他副本</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.builtInCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个内置</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.bulk.confirmDisableTitle</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>为 %2$#@count@ 停用 %1$@？</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%2$lld 个 skill</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.bulk.confirmEnableTitle</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>为 %2$#@count@ 启用 %1$@？</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%2$lld 个 skill</string>
+		</dict>
+	</dict>
 	<key>workbench.skills.countTotal</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -711,6 +767,34 @@
 			<string>lld</string>
 			<key>other</key>
 			<string>%lld 项更改</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.modifiedCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个本地已修改</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.toast.bulkDone</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>已为 %2$#@succeeded@ 更改 %1$@。</string>
+		<key>succeeded</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%2$lld 个 skill</string>
 		</dict>
 	</dict>
 	<key>workbench.skills.toast.importConflicts</key>
