@@ -6160,6 +6160,15 @@
     },
     "settings.pricing.ultrafastContextRates": {
       "value": "Ultrafast · 输入超过 {threshold} token：输入 {input} · 输出 {output} · 缓存读取 {cacheRead} · 缓存写入 {cacheWrite}"
+    },
+    "settings.pricing.serviceTier": {
+      "value": "服务档位"
+    },
+    "settings.pricing.standardTier": {
+      "value": "普通"
+    },
+    "settings.pricing.tierContextRates": {
+      "value": "{tier} · 输入超过 {threshold} token：输入 {input} · 输出 {output} · 缓存读取 {cacheRead} · 缓存写入 {cacheWrite}"
     }
   }
 }

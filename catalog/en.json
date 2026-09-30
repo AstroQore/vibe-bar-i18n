@@ -9555,6 +9555,26 @@
         "cacheRead": "string",
         "cacheWrite": "string"
       }
+    },
+    "settings.pricing.serviceTier": {
+      "value": "Service tier",
+      "comment": "Column title for service tiers under a single model in the effective price table."
+    },
+    "settings.pricing.standardTier": {
+      "value": "Standard",
+      "comment": "Label for a model standard service tier."
+    },
+    "settings.pricing.tierContextRates": {
+      "value": "{tier} · Above {threshold} tokens: input {input} · output {output} · cache read {cacheRead} · cache write {cacheWrite}",
+      "comment": "Long-context tooltip for any service tier. Client supplies the tier label and formatted USD-per-million prices; unpublished rates use an em dash.",
+      "placeholders": {
+        "tier": "string",
+        "threshold": "string",
+        "input": "string",
+        "output": "string",
+        "cacheRead": "string",
+        "cacheWrite": "string"
+      }
     }
   }
 }

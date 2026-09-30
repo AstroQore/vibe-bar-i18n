@@ -3711,8 +3711,17 @@
 /* Button label while a price refresh runs distinct-from: popover.header.refreshing — a Settings section for refresh intervals, a button label while a fetch runs, and a provider's in-flight state are three things. */
 "settings.pricing.refreshing" = "正在刷新…";
 
+/* Column title for service tiers under a single model in the effective price table. */
+"settings.pricing.serviceTier" = "服务档位";
+
+/* Label for a model standard service tier. */
+"settings.pricing.standardTier" = "普通";
+
 /* Field label: the token count above which the higher rates apply */
 "settings.pricing.thresholdTokens" = "分档阈值 token 数";
+
+/* Long-context tooltip for any service tier. Client supplies the tier label and formatted USD-per-million prices; unpublished rates use an em dash. */
+"settings.pricing.tierContextRates" = "%1$@ · 输入超过 %2$@ token：输入 %3$@ · 输出 %4$@ · 缓存读取 %5$@ · 缓存写入 %6$@";
 
 /* Tooltip for Ultrafast long-context prices, in USD per million tokens. Values are formatted by the client; unpublished rates appear as an em dash. */
 "settings.pricing.ultrafastContextRates" = "Ultrafast · 输入超过 %1$@ token：输入 %2$@ · 输出 %3$@ · 缓存读取 %4$@ · 缓存写入 %5$@";

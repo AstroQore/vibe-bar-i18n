@@ -8518,11 +8518,31 @@ public enum L10n {
             /// en: "Refreshing…"
             public static var refreshing: String { L10nSupport.string("settings.pricing.refreshing") }
 
+            /// Column title for service tiers under a single model in the effective price table.
+            ///
+            /// Key: `settings.pricing.serviceTier`
+            /// en: "Service tier"
+            public static var serviceTier: String { L10nSupport.string("settings.pricing.serviceTier") }
+
+            /// Label for a model standard service tier.
+            ///
+            /// Key: `settings.pricing.standardTier`
+            /// en: "Standard"
+            public static var standardTier: String { L10nSupport.string("settings.pricing.standardTier") }
+
             /// Field label: the token count above which the higher rates apply
             ///
             /// Key: `settings.pricing.thresholdTokens`
             /// en: "Threshold tokens"
             public static var thresholdTokens: String { L10nSupport.string("settings.pricing.thresholdTokens") }
+
+            /// Long-context tooltip for any service tier. Client supplies the tier label and formatted USD-per-million prices; unpublished rates use an em dash.
+            ///
+            /// Key: `settings.pricing.tierContextRates`
+            /// en: "{tier} · Above {threshold} tokens: input {input} · output {output} · cache read {cacheRead} · cache write {cacheWrite}"
+            public static func tierContextRates(tier: String, threshold: String, input: String, output: String, cacheRead: String, cacheWrite: String) -> String {
+                L10nSupport.format("settings.pricing.tierContextRates", tier, threshold, input, output, cacheRead, cacheWrite)
+            }
 
             /// Tooltip for Ultrafast long-context prices, in USD per million tokens. Values are formatted by the client; unpublished rates appear as an em dash.
             ///
@@ -14977,7 +14997,10 @@ enum L10nCatalogFacts {
         "settings.pricing.rateOutput",
         "settings.pricing.refreshNow",
         "settings.pricing.refreshing",
+        "settings.pricing.serviceTier",
+        "settings.pricing.standardTier",
         "settings.pricing.thresholdTokens",
+        "settings.pricing.tierContextRates",
         "settings.pricing.ultrafastContextRates",
         "settings.pricingDataDate",
         "settings.privacyDetail",
@@ -17098,7 +17121,10 @@ enum L10nCatalogFacts {
         "settings.pricing.rateOutput": 0,
         "settings.pricing.refreshNow": 0,
         "settings.pricing.refreshing": 0,
+        "settings.pricing.serviceTier": 0,
+        "settings.pricing.standardTier": 0,
         "settings.pricing.thresholdTokens": 0,
+        "settings.pricing.tierContextRates": 6,
         "settings.pricing.ultrafastContextRates": 5,
         "settings.pricingDataDate": 1,
         "settings.privacyDetail": 0,
