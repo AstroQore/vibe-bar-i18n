@@ -1276,7 +1276,11 @@ export type MessageKey =
   | "settings.pricing.rateOutput"
   | "settings.pricing.refreshNow"
   | "settings.pricing.refreshing"
+  | "settings.pricing.serviceTier"
+  | "settings.pricing.standardTier"
   | "settings.pricing.thresholdTokens"
+  | "settings.pricing.tierContextRates"
+  | "settings.pricing.ultrafastContextRates"
   | "settings.pricingDataDate"
   | "settings.privacyDetail"
   | "settings.privacyMode"
@@ -1631,6 +1635,63 @@ export type MessageKey =
   | "workbench.filter.searchModels"
   | "workbench.filter.soloHint"
   | "workbench.header.refreshPage"
+  | "workbench.library.addMCP"
+  | "workbench.library.arguments"
+  | "workbench.library.availableTo"
+  | "workbench.library.brokenLink"
+  | "workbench.library.canonical"
+  | "workbench.library.command"
+  | "workbench.library.confirmDelete"
+  | "workbench.library.cyclicLink"
+  | "workbench.library.discovered"
+  | "workbench.library.discoveredDetail"
+  | "workbench.library.edit"
+  | "workbench.library.editInstructions"
+  | "workbench.library.emptyMCP"
+  | "workbench.library.environment"
+  | "workbench.library.error.ambiguousDefinition"
+  | "workbench.library.error.backupMissing"
+  | "workbench.library.error.invalidBackup"
+  | "workbench.library.error.invalidDefinition"
+  | "workbench.library.error.invalidDocument"
+  | "workbench.library.error.invalidHome"
+  | "workbench.library.error.invalidReceipt"
+  | "workbench.library.error.ioFailure"
+  | "workbench.library.error.missingCanonical"
+  | "workbench.library.error.notFound"
+  | "workbench.library.error.notOwnedProjection"
+  | "workbench.library.error.oversizedFile"
+  | "workbench.library.error.projectionModified"
+  | "workbench.library.error.sameNameConflict"
+  | "workbench.library.error.staleRevision"
+  | "workbench.library.error.symlinkLoop"
+  | "workbench.library.error.unsafePath"
+  | "workbench.library.error.unsupportedConversion"
+  | "workbench.library.error.unsupportedTOML"
+  | "workbench.library.error.unsupportedTarget"
+  | "workbench.library.error.unsupportedTransport"
+  | "workbench.library.failed"
+  | "workbench.library.headers"
+  | "workbench.library.instructions"
+  | "workbench.library.linkInstructions"
+  | "workbench.library.linkedSource"
+  | "workbench.library.managed"
+  | "workbench.library.mcp"
+  | "workbench.library.missingSkillFile"
+  | "workbench.library.notCreated"
+  | "workbench.library.overrideActive"
+  | "workbench.library.readOnlySource"
+  | "workbench.library.readable"
+  | "workbench.library.removeProjection"
+  | "workbench.library.saveResult"
+  | "workbench.library.subtitle"
+  | "workbench.library.target"
+  | "workbench.library.targets"
+  | "workbench.library.title"
+  | "workbench.library.tooLarge"
+  | "workbench.library.transport"
+  | "workbench.library.unreadable"
+  | "workbench.library.url"
   | "workbench.page.resets.subtitle"
   | "workbench.page.resets.title"
   | "workbench.page.sessions.subtitle"
@@ -3277,7 +3338,11 @@ export interface MessageParams {
   "settings.pricing.rateOutput": undefined;
   "settings.pricing.refreshNow": undefined;
   "settings.pricing.refreshing": undefined;
+  "settings.pricing.serviceTier": undefined;
+  "settings.pricing.standardTier": undefined;
   "settings.pricing.thresholdTokens": undefined;
+  "settings.pricing.tierContextRates": { "tier": string; "threshold": string; "input": string; "output": string; "cacheRead": string; "cacheWrite": string };
+  "settings.pricing.ultrafastContextRates": { "threshold": string; "input": string; "output": string; "cacheRead": string; "cacheWrite": string };
   "settings.pricingDataDate": { "date": string };
   "settings.privacyDetail": undefined;
   "settings.privacyMode": undefined;
@@ -3632,6 +3697,63 @@ export interface MessageParams {
   "workbench.filter.searchModels": undefined;
   "workbench.filter.soloHint": undefined;
   "workbench.header.refreshPage": { "page": string };
+  "workbench.library.addMCP": undefined;
+  "workbench.library.arguments": undefined;
+  "workbench.library.availableTo": { "agents": string };
+  "workbench.library.brokenLink": undefined;
+  "workbench.library.canonical": undefined;
+  "workbench.library.command": undefined;
+  "workbench.library.confirmDelete": { "name": string };
+  "workbench.library.cyclicLink": undefined;
+  "workbench.library.discovered": undefined;
+  "workbench.library.discoveredDetail": undefined;
+  "workbench.library.edit": undefined;
+  "workbench.library.editInstructions": undefined;
+  "workbench.library.emptyMCP": undefined;
+  "workbench.library.environment": undefined;
+  "workbench.library.error.ambiguousDefinition": undefined;
+  "workbench.library.error.backupMissing": undefined;
+  "workbench.library.error.invalidBackup": undefined;
+  "workbench.library.error.invalidDefinition": undefined;
+  "workbench.library.error.invalidDocument": undefined;
+  "workbench.library.error.invalidHome": undefined;
+  "workbench.library.error.invalidReceipt": undefined;
+  "workbench.library.error.ioFailure": undefined;
+  "workbench.library.error.missingCanonical": undefined;
+  "workbench.library.error.notFound": undefined;
+  "workbench.library.error.notOwnedProjection": undefined;
+  "workbench.library.error.oversizedFile": undefined;
+  "workbench.library.error.projectionModified": undefined;
+  "workbench.library.error.sameNameConflict": undefined;
+  "workbench.library.error.staleRevision": undefined;
+  "workbench.library.error.symlinkLoop": undefined;
+  "workbench.library.error.unsafePath": undefined;
+  "workbench.library.error.unsupportedConversion": undefined;
+  "workbench.library.error.unsupportedTOML": undefined;
+  "workbench.library.error.unsupportedTarget": undefined;
+  "workbench.library.error.unsupportedTransport": undefined;
+  "workbench.library.failed": { "code": string };
+  "workbench.library.headers": undefined;
+  "workbench.library.instructions": undefined;
+  "workbench.library.linkInstructions": undefined;
+  "workbench.library.linkedSource": undefined;
+  "workbench.library.managed": undefined;
+  "workbench.library.mcp": undefined;
+  "workbench.library.missingSkillFile": undefined;
+  "workbench.library.notCreated": undefined;
+  "workbench.library.overrideActive": { "file": string };
+  "workbench.library.readOnlySource": undefined;
+  "workbench.library.readable": undefined;
+  "workbench.library.removeProjection": undefined;
+  "workbench.library.saveResult": undefined;
+  "workbench.library.subtitle": undefined;
+  "workbench.library.target": undefined;
+  "workbench.library.targets": undefined;
+  "workbench.library.title": undefined;
+  "workbench.library.tooLarge": undefined;
+  "workbench.library.transport": undefined;
+  "workbench.library.unreadable": undefined;
+  "workbench.library.url": undefined;
   "workbench.page.resets.subtitle": undefined;
   "workbench.page.resets.title": undefined;
   "workbench.page.sessions.subtitle": undefined;
@@ -5279,7 +5401,11 @@ export const messages: {
     "settings.pricing.rateOutput": "Output",
     "settings.pricing.refreshNow": "Refresh now",
     "settings.pricing.refreshing": "Refreshing…",
+    "settings.pricing.serviceTier": "Service tier",
+    "settings.pricing.standardTier": "Standard",
     "settings.pricing.thresholdTokens": "Threshold tokens",
+    "settings.pricing.tierContextRates": "{tier} · Above {threshold} tokens: input {input} · output {output} · cache read {cacheRead} · cache write {cacheWrite}",
+    "settings.pricing.ultrafastContextRates": "Ultrafast · Above {threshold} tokens: input {input} · output {output} · cache read {cacheRead} · cache write {cacheWrite}",
     "settings.pricingDataDate": "Pricing data: {date}",
     "settings.privacyDetail": "Tokens are read from local CLI credentials. Saved OpenAI and Claude Web cookies are stored in macOS Keychain, split by browser and WebView source. Legacy plaintext cookie files under ~/.vibebar/cookies are migrated once and deleted. Settings, quota cache, and cost summaries stay under ~/.vibebar.",
     "settings.privacyMode": "Privacy mode",
@@ -5634,6 +5760,63 @@ export const messages: {
     "workbench.filter.searchModels": "Find a model",
     "workbench.filter.soloHint": "⌥-click keeps only that one",
     "workbench.header.refreshPage": "Refresh {page}",
+    "workbench.library.addMCP": "Add MCP server",
+    "workbench.library.arguments": "Arguments (JSON array)",
+    "workbench.library.availableTo": "Available to {agents}",
+    "workbench.library.brokenLink": "Broken link",
+    "workbench.library.canonical": "Shared instructions",
+    "workbench.library.command": "Command",
+    "workbench.library.confirmDelete": "Delete {name}?",
+    "workbench.library.cyclicLink": "Link cycle",
+    "workbench.library.discovered": "Discovered on disk",
+    "workbench.library.discoveredDetail": "Shared resources found on disk, with source links.",
+    "workbench.library.edit": "Edit",
+    "workbench.library.editInstructions": "Edit instructions",
+    "workbench.library.emptyMCP": "No MCP servers found",
+    "workbench.library.environment": "Environment variables (JSON object)",
+    "workbench.library.error.ambiguousDefinition": "Multiple definitions use the same name. Check the source file.",
+    "workbench.library.error.backupMissing": "The backup is no longer available.",
+    "workbench.library.error.invalidBackup": "This backup could not be verified.",
+    "workbench.library.error.invalidDefinition": "Check the server name, transport, and required fields.",
+    "workbench.library.error.invalidDocument": "The configuration could not be parsed. Open the source file to check it.",
+    "workbench.library.error.invalidHome": "The resource home folder is unavailable.",
+    "workbench.library.error.invalidReceipt": "The saved ownership record could not be read.",
+    "workbench.library.error.ioFailure": "The file could not be read or saved. Check its permissions.",
+    "workbench.library.error.missingCanonical": "Create shared instructions before linking them.",
+    "workbench.library.error.notFound": "The resource is no longer present. Refresh the list.",
+    "workbench.library.error.notOwnedProjection": "This link is managed elsewhere. Open its source to change it.",
+    "workbench.library.error.oversizedFile": "This file exceeds the editor's size limit.",
+    "workbench.library.error.projectionModified": "The link was changed outside Vibe Bar. Refresh to inspect it.",
+    "workbench.library.error.sameNameConflict": "A different resource already uses this name in the target.",
+    "workbench.library.error.staleRevision": "The source changed. Refresh before saving.",
+    "workbench.library.error.symlinkLoop": "This link forms a cycle. Open its location to repair it.",
+    "workbench.library.error.unsafePath": "This path is outside the supported resource locations.",
+    "workbench.library.error.unsupportedConversion": "This definition has settings that cannot be shared with the selected agent.",
+    "workbench.library.error.unsupportedTOML": "This TOML syntax needs to be edited in the source file.",
+    "workbench.library.error.unsupportedTarget": "This agent does not support this file-based operation.",
+    "workbench.library.error.unsupportedTransport": "This agent does not support the selected transport.",
+    "workbench.library.failed": "Operation could not complete ({code}).",
+    "workbench.library.headers": "HTTP headers (JSON object)",
+    "workbench.library.instructions": "AGENTS.md",
+    "workbench.library.linkInstructions": "Link shared instructions",
+    "workbench.library.linkedSource": "Linked source",
+    "workbench.library.managed": "Managed",
+    "workbench.library.mcp": "MCP servers",
+    "workbench.library.missingSkillFile": "SKILL.md missing",
+    "workbench.library.notCreated": "Not created",
+    "workbench.library.overrideActive": "{file} takes precedence over these instructions.",
+    "workbench.library.readOnlySource": "Files remain in their source folder.",
+    "workbench.library.readable": "Readable",
+    "workbench.library.removeProjection": "Remove link",
+    "workbench.library.saveResult": "Saved",
+    "workbench.library.subtitle": "Skills, MCP servers, and shared agent instructions",
+    "workbench.library.target": "Target",
+    "workbench.library.targets": "Share with",
+    "workbench.library.title": "Library",
+    "workbench.library.tooLarge": "Preview exceeds the read limit",
+    "workbench.library.transport": "Transport",
+    "workbench.library.unreadable": "Cannot read resource",
+    "workbench.library.url": "Server URL",
     "workbench.page.resets.subtitle": "Cycles, refills, and run-out forecasts",
     "workbench.page.resets.title": "Resets",
     "workbench.page.sessions.subtitle": "Search and resume local agent sessions",
@@ -7276,7 +7459,11 @@ export const messages: {
     "settings.pricing.rateOutput": "输出",
     "settings.pricing.refreshNow": "立即刷新",
     "settings.pricing.refreshing": "正在刷新…",
+    "settings.pricing.serviceTier": "服务档位",
+    "settings.pricing.standardTier": "普通",
     "settings.pricing.thresholdTokens": "分档阈值 token 数",
+    "settings.pricing.tierContextRates": "{tier} · 输入超过 {threshold} token：输入 {input} · 输出 {output} · 缓存读取 {cacheRead} · 缓存写入 {cacheWrite}",
+    "settings.pricing.ultrafastContextRates": "Ultrafast · 输入超过 {threshold} token：输入 {input} · 输出 {output} · 缓存读取 {cacheRead} · 缓存写入 {cacheWrite}",
     "settings.pricingDataDate": "价格数据：{date}",
     "settings.privacyDetail": "token 从本地 CLI 凭据读取。已保存的 OpenAI 与 Claude 网页 cookies 存放在 macOS Keychain 中，按浏览器与 WebView 来源分开。~/.vibebar/cookies 下的旧版明文 cookie 文件会迁移一次并删除。设置、额度缓存与花费汇总保留在 ~/.vibebar 下。",
     "settings.privacyMode": "隐私模式",
@@ -7631,6 +7818,63 @@ export const messages: {
     "workbench.filter.searchModels": "查找模型",
     "workbench.filter.soloHint": "⌥ 点按只保留这一个",
     "workbench.header.refreshPage": "刷新{page}",
+    "workbench.library.addMCP": "新增 MCP 服务器",
+    "workbench.library.arguments": "参数（JSON 数组）",
+    "workbench.library.availableTo": "可供 {agents} 读取",
+    "workbench.library.brokenLink": "链接已断开",
+    "workbench.library.canonical": "共享指令",
+    "workbench.library.command": "命令",
+    "workbench.library.confirmDelete": "删除 {name}？",
+    "workbench.library.cyclicLink": "链接形成循环",
+    "workbench.library.discovered": "磁盘发现",
+    "workbench.library.discoveredDetail": "磁盘中的共享资源及其来源链接。",
+    "workbench.library.edit": "编辑",
+    "workbench.library.editInstructions": "编辑指令",
+    "workbench.library.emptyMCP": "未发现 MCP 服务器",
+    "workbench.library.environment": "环境变量（JSON 对象）",
+    "workbench.library.error.ambiguousDefinition": "有多条配置使用同一名称，请检查源文件。",
+    "workbench.library.error.backupMissing": "备份已不可用。",
+    "workbench.library.error.invalidBackup": "无法验证此备份。",
+    "workbench.library.error.invalidDefinition": "请检查服务器名称、传输方式和必填字段。",
+    "workbench.library.error.invalidDocument": "无法解析配置，请打开源文件检查。",
+    "workbench.library.error.invalidHome": "资源主目录不可用。",
+    "workbench.library.error.invalidReceipt": "无法读取已保存的管理记录。",
+    "workbench.library.error.ioFailure": "无法读取或保存文件，请检查权限。",
+    "workbench.library.error.missingCanonical": "请先创建共享指令，再建立链接。",
+    "workbench.library.error.notFound": "资源已不存在，请刷新列表。",
+    "workbench.library.error.notOwnedProjection": "该链接由其他工具管理，请打开来源修改。",
+    "workbench.library.error.oversizedFile": "该文件超出编辑器的大小限制。",
+    "workbench.library.error.projectionModified": "链接已在 Vibe Bar 外被修改，请刷新检查。",
+    "workbench.library.error.sameNameConflict": "目标中已有内容不同的同名资源。",
+    "workbench.library.error.staleRevision": "源文件已变化，请刷新后再保存。",
+    "workbench.library.error.symlinkLoop": "该链接形成循环，请打开所在目录修复。",
+    "workbench.library.error.unsafePath": "该路径不在支持的资源位置内。",
+    "workbench.library.error.unsupportedConversion": "此配置包含目标 Agent 无法使用的设置。",
+    "workbench.library.error.unsupportedTOML": "此 TOML 语法需要在源文件中编辑。",
+    "workbench.library.error.unsupportedTarget": "该 Agent 不支持此文件操作。",
+    "workbench.library.error.unsupportedTransport": "该 Agent 不支持所选传输方式。",
+    "workbench.library.failed": "操作未完成（{code}）。",
+    "workbench.library.headers": "HTTP 请求头（JSON 对象）",
+    "workbench.library.instructions": "AGENTS.md",
+    "workbench.library.linkInstructions": "链接共享指令",
+    "workbench.library.linkedSource": "链接来源",
+    "workbench.library.managed": "已管理",
+    "workbench.library.mcp": "MCP 服务器",
+    "workbench.library.missingSkillFile": "缺少 SKILL.md",
+    "workbench.library.notCreated": "尚未创建",
+    "workbench.library.overrideActive": "{file} 会优先于此指令生效。",
+    "workbench.library.readOnlySource": "文件保留在其来源目录。",
+    "workbench.library.readable": "可读取",
+    "workbench.library.removeProjection": "移除链接",
+    "workbench.library.saveResult": "已保存",
+    "workbench.library.subtitle": "技能、MCP 服务器与共享指令",
+    "workbench.library.target": "目标",
+    "workbench.library.targets": "共享至",
+    "workbench.library.title": "资源库",
+    "workbench.library.tooLarge": "预览超出读取上限",
+    "workbench.library.transport": "传输方式",
+    "workbench.library.unreadable": "无法读取资源",
+    "workbench.library.url": "服务器 URL",
     "workbench.page.resets.subtitle": "周期、补额与耗尽预测",
     "workbench.page.resets.title": "重置",
     "workbench.page.sessions.subtitle": "搜索并恢复本机 agent 会话",

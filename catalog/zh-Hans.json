@@ -5986,6 +5986,189 @@
     },
     "workbench.skills.filterBuiltIn": {
       "value": "显示内置 skill"
+    },
+    "workbench.library.title": {
+      "value": "资源库"
+    },
+    "workbench.library.subtitle": {
+      "value": "技能、MCP 服务器与共享指令"
+    },
+    "workbench.library.mcp": {
+      "value": "MCP 服务器"
+    },
+    "workbench.library.instructions": {
+      "value": "AGENTS.md"
+    },
+    "workbench.library.managed": {
+      "value": "已管理"
+    },
+    "workbench.library.discovered": {
+      "value": "磁盘发现"
+    },
+    "workbench.library.linkedSource": {
+      "value": "链接来源"
+    },
+    "workbench.library.discoveredDetail": {
+      "value": "磁盘中的共享资源及其来源链接。"
+    },
+    "workbench.library.target": {
+      "value": "目标"
+    },
+    "workbench.library.targets": {
+      "value": "共享至"
+    },
+    "workbench.library.transport": {
+      "value": "传输方式"
+    },
+    "workbench.library.edit": {
+      "value": "编辑"
+    },
+    "workbench.library.addMCP": {
+      "value": "新增 MCP 服务器"
+    },
+    "workbench.library.emptyMCP": {
+      "value": "未发现 MCP 服务器"
+    },
+    "workbench.library.canonical": {
+      "value": "共享指令"
+    },
+    "workbench.library.editInstructions": {
+      "value": "编辑指令"
+    },
+    "workbench.library.linkInstructions": {
+      "value": "链接共享指令"
+    },
+    "workbench.library.removeProjection": {
+      "value": "移除链接"
+    },
+    "workbench.library.saveResult": {
+      "value": "已保存"
+    },
+    "workbench.library.confirmDelete": {
+      "value": "删除 {name}？"
+    },
+    "workbench.library.failed": {
+      "value": "操作未完成（{code}）。"
+    },
+    "workbench.library.brokenLink": {
+      "value": "链接已断开"
+    },
+    "workbench.library.cyclicLink": {
+      "value": "链接形成循环"
+    },
+    "workbench.library.missingSkillFile": {
+      "value": "缺少 SKILL.md"
+    },
+    "workbench.library.unreadable": {
+      "value": "无法读取资源"
+    },
+    "workbench.library.tooLarge": {
+      "value": "预览超出读取上限"
+    },
+    "workbench.library.readOnlySource": {
+      "value": "文件保留在其来源目录。"
+    },
+    "workbench.library.availableTo": {
+      "value": "可供 {agents} 读取"
+    },
+    "workbench.library.error.invalidHome": {
+      "value": "资源主目录不可用。"
+    },
+    "workbench.library.error.unsafePath": {
+      "value": "该路径不在支持的资源位置内。"
+    },
+    "workbench.library.error.symlinkLoop": {
+      "value": "该链接形成循环，请打开所在目录修复。"
+    },
+    "workbench.library.error.unsupportedTarget": {
+      "value": "该 Agent 不支持此文件操作。"
+    },
+    "workbench.library.error.invalidDocument": {
+      "value": "无法解析配置，请打开源文件检查。"
+    },
+    "workbench.library.error.invalidDefinition": {
+      "value": "请检查服务器名称、传输方式和必填字段。"
+    },
+    "workbench.library.error.unsupportedTransport": {
+      "value": "该 Agent 不支持所选传输方式。"
+    },
+    "workbench.library.error.unsupportedConversion": {
+      "value": "此配置包含目标 Agent 无法使用的设置。"
+    },
+    "workbench.library.error.staleRevision": {
+      "value": "源文件已变化，请刷新后再保存。"
+    },
+    "workbench.library.error.sameNameConflict": {
+      "value": "目标中已有内容不同的同名资源。"
+    },
+    "workbench.library.error.notFound": {
+      "value": "资源已不存在，请刷新列表。"
+    },
+    "workbench.library.error.notOwnedProjection": {
+      "value": "该链接由其他工具管理，请打开来源修改。"
+    },
+    "workbench.library.error.projectionModified": {
+      "value": "链接已在 Vibe Bar 外被修改，请刷新检查。"
+    },
+    "workbench.library.error.backupMissing": {
+      "value": "备份已不可用。"
+    },
+    "workbench.library.error.invalidBackup": {
+      "value": "无法验证此备份。"
+    },
+    "workbench.library.error.ioFailure": {
+      "value": "无法读取或保存文件，请检查权限。"
+    },
+    "workbench.library.error.oversizedFile": {
+      "value": "该文件超出编辑器的大小限制。"
+    },
+    "workbench.library.error.missingCanonical": {
+      "value": "请先创建共享指令，再建立链接。"
+    },
+    "workbench.library.error.unsupportedTOML": {
+      "value": "此 TOML 语法需要在源文件中编辑。"
+    },
+    "workbench.library.error.ambiguousDefinition": {
+      "value": "有多条配置使用同一名称，请检查源文件。"
+    },
+    "workbench.library.error.invalidReceipt": {
+      "value": "无法读取已保存的管理记录。"
+    },
+    "workbench.library.readable": {
+      "value": "可读取"
+    },
+    "workbench.library.notCreated": {
+      "value": "尚未创建"
+    },
+    "workbench.library.overrideActive": {
+      "value": "{file} 会优先于此指令生效。"
+    },
+    "workbench.library.command": {
+      "value": "命令"
+    },
+    "workbench.library.arguments": {
+      "value": "参数（JSON 数组）"
+    },
+    "workbench.library.environment": {
+      "value": "环境变量（JSON 对象）"
+    },
+    "workbench.library.headers": {
+      "value": "HTTP 请求头（JSON 对象）"
+    },
+    "workbench.library.url": {
+      "value": "服务器 URL"
+    },
+    "settings.pricing.ultrafastContextRates": {
+      "value": "Ultrafast · 输入超过 {threshold} token：输入 {input} · 输出 {output} · 缓存读取 {cacheRead} · 缓存写入 {cacheWrite}"
+    },
+    "settings.pricing.serviceTier": {
+      "value": "服务档位"
+    },
+    "settings.pricing.standardTier": {
+      "value": "普通"
+    },
+    "settings.pricing.tierContextRates": {
+      "value": "{tier} · 输入超过 {threshold} token：输入 {input} · 输出 {output} · 缓存读取 {cacheRead} · 缓存写入 {cacheWrite}"
     }
   }
 }

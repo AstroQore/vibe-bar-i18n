@@ -8518,11 +8518,39 @@ public enum L10n {
             /// en: "Refreshing…"
             public static var refreshing: String { L10nSupport.string("settings.pricing.refreshing") }
 
+            /// Column title for service tiers under a single model in the effective price table.
+            ///
+            /// Key: `settings.pricing.serviceTier`
+            /// en: "Service tier"
+            public static var serviceTier: String { L10nSupport.string("settings.pricing.serviceTier") }
+
+            /// Label for a model standard service tier.
+            ///
+            /// Key: `settings.pricing.standardTier`
+            /// en: "Standard"
+            public static var standardTier: String { L10nSupport.string("settings.pricing.standardTier") }
+
             /// Field label: the token count above which the higher rates apply
             ///
             /// Key: `settings.pricing.thresholdTokens`
             /// en: "Threshold tokens"
             public static var thresholdTokens: String { L10nSupport.string("settings.pricing.thresholdTokens") }
+
+            /// Long-context tooltip for any service tier. Client supplies the tier label and formatted USD-per-million prices; unpublished rates use an em dash.
+            ///
+            /// Key: `settings.pricing.tierContextRates`
+            /// en: "{tier} · Above {threshold} tokens: input {input} · output {output} · cache read {cacheRead} · cache write {cacheWrite}"
+            public static func tierContextRates(tier: String, threshold: String, input: String, output: String, cacheRead: String, cacheWrite: String) -> String {
+                L10nSupport.format("settings.pricing.tierContextRates", tier, threshold, input, output, cacheRead, cacheWrite)
+            }
+
+            /// Tooltip for Ultrafast long-context prices, in USD per million tokens. Values are formatted by the client; unpublished rates appear as an em dash.
+            ///
+            /// Key: `settings.pricing.ultrafastContextRates`
+            /// en: "Ultrafast · Above {threshold} tokens: input {input} · output {output} · cache read {cacheRead} · cache write {cacheWrite}"
+            public static func ultrafastContextRates(threshold: String, input: String, output: String, cacheRead: String, cacheWrite: String) -> String {
+                L10nSupport.format("settings.pricing.ultrafastContextRates", threshold, input, output, cacheRead, cacheWrite)
+            }
         }
 
         public enum Remote {
@@ -10709,6 +10737,360 @@ public enum L10n {
             /// en: "Refresh {page}"
             public static func refreshPage(page: String) -> String {
                 L10nSupport.format("workbench.header.refreshPage", page)
+            }
+        }
+
+        public enum Library {
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.addMCP`
+            /// en: "Add MCP server"
+            public static var addMCP: String { L10nSupport.string("workbench.library.addMCP") }
+
+            /// Field label in the single MCP server editor.
+            ///
+            /// Key: `workbench.library.arguments`
+            /// en: "Arguments (JSON array)"
+            public static var arguments: String { L10nSupport.string("workbench.library.arguments") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.availableTo`
+            /// en: "Available to {agents}"
+            public static func availableTo(agents: String) -> String {
+                L10nSupport.format("workbench.library.availableTo", agents)
+            }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.brokenLink`
+            /// en: "Broken link"
+            public static var brokenLink: String { L10nSupport.string("workbench.library.brokenLink") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.canonical`
+            /// en: "Shared instructions"
+            public static var canonical: String { L10nSupport.string("workbench.library.canonical") }
+
+            /// Field label in the single MCP server editor.
+            ///
+            /// Key: `workbench.library.command`
+            /// en: "Command"
+            public static var command: String { L10nSupport.string("workbench.library.command") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.confirmDelete`
+            /// en: "Delete {name}?"
+            public static func confirmDelete(name: String) -> String {
+                L10nSupport.format("workbench.library.confirmDelete", name)
+            }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.cyclicLink`
+            /// en: "Link cycle"
+            public static var cyclicLink: String { L10nSupport.string("workbench.library.cyclicLink") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.discovered`
+            /// en: "Discovered on disk"
+            public static var discovered: String { L10nSupport.string("workbench.library.discovered") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.discoveredDetail`
+            /// en: "Shared resources found on disk, with source links."
+            public static var discoveredDetail: String { L10nSupport.string("workbench.library.discoveredDetail") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.edit`
+            /// en: "Edit"
+            public static var edit: String { L10nSupport.string("workbench.library.edit") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.editInstructions`
+            /// en: "Edit instructions"
+            public static var editInstructions: String { L10nSupport.string("workbench.library.editInstructions") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.emptyMCP`
+            /// en: "No MCP servers found"
+            public static var emptyMCP: String { L10nSupport.string("workbench.library.emptyMCP") }
+
+            /// Field label in the single MCP server editor.
+            ///
+            /// Key: `workbench.library.environment`
+            /// en: "Environment variables (JSON object)"
+            public static var environment: String { L10nSupport.string("workbench.library.environment") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.failed`
+            /// en: "Operation could not complete ({code})."
+            public static func failed(code: String) -> String {
+                L10nSupport.format("workbench.library.failed", code)
+            }
+
+            /// Field label in the single MCP server editor.
+            ///
+            /// Key: `workbench.library.headers`
+            /// en: "HTTP headers (JSON object)"
+            public static var headers: String { L10nSupport.string("workbench.library.headers") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.instructions`
+            /// en: "AGENTS.md"
+            public static var instructions: String { L10nSupport.string("workbench.library.instructions") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.linkInstructions`
+            /// en: "Link shared instructions"
+            public static var linkInstructions: String { L10nSupport.string("workbench.library.linkInstructions") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.linkedSource`
+            /// en: "Linked source"
+            public static var linkedSource: String { L10nSupport.string("workbench.library.linkedSource") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.managed`
+            /// en: "Managed"
+            public static var managed: String { L10nSupport.string("workbench.library.managed") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.mcp`
+            /// en: "MCP servers"
+            public static var mcp: String { L10nSupport.string("workbench.library.mcp") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.missingSkillFile`
+            /// en: "SKILL.md missing"
+            public static var missingSkillFile: String { L10nSupport.string("workbench.library.missingSkillFile") }
+
+            /// Local Library configuration state; not server network health.
+            ///
+            /// Key: `workbench.library.notCreated`
+            /// en: "Not created"
+            public static var notCreated: String { L10nSupport.string("workbench.library.notCreated") }
+
+            /// Local Library configuration state; not server network health.
+            ///
+            /// Key: `workbench.library.overrideActive`
+            /// en: "{file} takes precedence over these instructions."
+            public static func overrideActive(file: String) -> String {
+                L10nSupport.format("workbench.library.overrideActive", file)
+            }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.readOnlySource`
+            /// en: "Files remain in their source folder."
+            public static var readOnlySource: String { L10nSupport.string("workbench.library.readOnlySource") }
+
+            /// Local Library configuration state; not server network health.
+            ///
+            /// Key: `workbench.library.readable`
+            /// en: "Readable"
+            public static var readable: String { L10nSupport.string("workbench.library.readable") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.removeProjection`
+            /// en: "Remove link"
+            public static var removeProjection: String { L10nSupport.string("workbench.library.removeProjection") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.saveResult`
+            /// en: "Saved"
+            public static var saveResult: String { L10nSupport.string("workbench.library.saveResult") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.subtitle`
+            /// en: "Skills, MCP servers, and shared agent instructions"
+            public static var subtitle: String { L10nSupport.string("workbench.library.subtitle") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.target`
+            /// en: "Target"
+            public static var target: String { L10nSupport.string("workbench.library.target") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.targets`
+            /// en: "Share with"
+            public static var targets: String { L10nSupport.string("workbench.library.targets") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.title`
+            /// en: "Library"
+            public static var title: String { L10nSupport.string("workbench.library.title") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.tooLarge`
+            /// en: "Preview exceeds the read limit"
+            public static var tooLarge: String { L10nSupport.string("workbench.library.tooLarge") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.transport`
+            /// en: "Transport"
+            public static var transport: String { L10nSupport.string("workbench.library.transport") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.unreadable`
+            /// en: "Cannot read resource"
+            public static var unreadable: String { L10nSupport.string("workbench.library.unreadable") }
+
+            /// Field label in the single MCP server editor.
+            ///
+            /// Key: `workbench.library.url`
+            /// en: "Server URL"
+            public static var url: String { L10nSupport.string("workbench.library.url") }
+
+            public enum Error {
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.ambiguousDefinition`
+                /// en: "Multiple definitions use the same name. Check the source file."
+                public static var ambiguousDefinition: String { L10nSupport.string("workbench.library.error.ambiguousDefinition") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.backupMissing`
+                /// en: "The backup is no longer available."
+                public static var backupMissing: String { L10nSupport.string("workbench.library.error.backupMissing") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.invalidBackup`
+                /// en: "This backup could not be verified."
+                public static var invalidBackup: String { L10nSupport.string("workbench.library.error.invalidBackup") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.invalidDefinition`
+                /// en: "Check the server name, transport, and required fields."
+                public static var invalidDefinition: String { L10nSupport.string("workbench.library.error.invalidDefinition") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.invalidDocument`
+                /// en: "The configuration could not be parsed. Open the source file to check it."
+                public static var invalidDocument: String { L10nSupport.string("workbench.library.error.invalidDocument") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.invalidHome`
+                /// en: "The resource home folder is unavailable."
+                public static var invalidHome: String { L10nSupport.string("workbench.library.error.invalidHome") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.invalidReceipt`
+                /// en: "The saved ownership record could not be read."
+                public static var invalidReceipt: String { L10nSupport.string("workbench.library.error.invalidReceipt") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.ioFailure`
+                /// en: "The file could not be read or saved. Check its permissions."
+                public static var ioFailure: String { L10nSupport.string("workbench.library.error.ioFailure") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.missingCanonical`
+                /// en: "Create shared instructions before linking them."
+                public static var missingCanonical: String { L10nSupport.string("workbench.library.error.missingCanonical") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.notFound`
+                /// en: "The resource is no longer present. Refresh the list."
+                public static var notFound: String { L10nSupport.string("workbench.library.error.notFound") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.notOwnedProjection`
+                /// en: "This link is managed elsewhere. Open its source to change it."
+                public static var notOwnedProjection: String { L10nSupport.string("workbench.library.error.notOwnedProjection") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.oversizedFile`
+                /// en: "This file exceeds the editor's size limit."
+                public static var oversizedFile: String { L10nSupport.string("workbench.library.error.oversizedFile") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.projectionModified`
+                /// en: "The link was changed outside Vibe Bar. Refresh to inspect it."
+                public static var projectionModified: String { L10nSupport.string("workbench.library.error.projectionModified") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.sameNameConflict`
+                /// en: "A different resource already uses this name in the target."
+                public static var sameNameConflict: String { L10nSupport.string("workbench.library.error.sameNameConflict") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.staleRevision`
+                /// en: "The source changed. Refresh before saving."
+                public static var staleRevision: String { L10nSupport.string("workbench.library.error.staleRevision") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.symlinkLoop`
+                /// en: "This link forms a cycle. Open its location to repair it."
+                public static var symlinkLoop: String { L10nSupport.string("workbench.library.error.symlinkLoop") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.unsafePath`
+                /// en: "This path is outside the supported resource locations."
+                public static var unsafePath: String { L10nSupport.string("workbench.library.error.unsafePath") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.unsupportedConversion`
+                /// en: "This definition has settings that cannot be shared with the selected agent."
+                public static var unsupportedConversion: String { L10nSupport.string("workbench.library.error.unsupportedConversion") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.unsupportedTOML`
+                /// en: "This TOML syntax needs to be edited in the source file."
+                public static var unsupportedTOML: String { L10nSupport.string("workbench.library.error.unsupportedTOML") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.unsupportedTarget`
+                /// en: "This agent does not support this file-based operation."
+                public static var unsupportedTarget: String { L10nSupport.string("workbench.library.error.unsupportedTarget") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.unsupportedTransport`
+                /// en: "This agent does not support the selected transport."
+                public static var unsupportedTransport: String { L10nSupport.string("workbench.library.error.unsupportedTransport") }
             }
         }
 
@@ -14615,7 +14997,11 @@ enum L10nCatalogFacts {
         "settings.pricing.rateOutput",
         "settings.pricing.refreshNow",
         "settings.pricing.refreshing",
+        "settings.pricing.serviceTier",
+        "settings.pricing.standardTier",
         "settings.pricing.thresholdTokens",
+        "settings.pricing.tierContextRates",
+        "settings.pricing.ultrafastContextRates",
         "settings.pricingDataDate",
         "settings.privacyDetail",
         "settings.privacyMode",
@@ -14970,6 +15356,63 @@ enum L10nCatalogFacts {
         "workbench.filter.searchModels",
         "workbench.filter.soloHint",
         "workbench.header.refreshPage",
+        "workbench.library.addMCP",
+        "workbench.library.arguments",
+        "workbench.library.availableTo",
+        "workbench.library.brokenLink",
+        "workbench.library.canonical",
+        "workbench.library.command",
+        "workbench.library.confirmDelete",
+        "workbench.library.cyclicLink",
+        "workbench.library.discovered",
+        "workbench.library.discoveredDetail",
+        "workbench.library.edit",
+        "workbench.library.editInstructions",
+        "workbench.library.emptyMCP",
+        "workbench.library.environment",
+        "workbench.library.error.ambiguousDefinition",
+        "workbench.library.error.backupMissing",
+        "workbench.library.error.invalidBackup",
+        "workbench.library.error.invalidDefinition",
+        "workbench.library.error.invalidDocument",
+        "workbench.library.error.invalidHome",
+        "workbench.library.error.invalidReceipt",
+        "workbench.library.error.ioFailure",
+        "workbench.library.error.missingCanonical",
+        "workbench.library.error.notFound",
+        "workbench.library.error.notOwnedProjection",
+        "workbench.library.error.oversizedFile",
+        "workbench.library.error.projectionModified",
+        "workbench.library.error.sameNameConflict",
+        "workbench.library.error.staleRevision",
+        "workbench.library.error.symlinkLoop",
+        "workbench.library.error.unsafePath",
+        "workbench.library.error.unsupportedConversion",
+        "workbench.library.error.unsupportedTOML",
+        "workbench.library.error.unsupportedTarget",
+        "workbench.library.error.unsupportedTransport",
+        "workbench.library.failed",
+        "workbench.library.headers",
+        "workbench.library.instructions",
+        "workbench.library.linkInstructions",
+        "workbench.library.linkedSource",
+        "workbench.library.managed",
+        "workbench.library.mcp",
+        "workbench.library.missingSkillFile",
+        "workbench.library.notCreated",
+        "workbench.library.overrideActive",
+        "workbench.library.readOnlySource",
+        "workbench.library.readable",
+        "workbench.library.removeProjection",
+        "workbench.library.saveResult",
+        "workbench.library.subtitle",
+        "workbench.library.target",
+        "workbench.library.targets",
+        "workbench.library.title",
+        "workbench.library.tooLarge",
+        "workbench.library.transport",
+        "workbench.library.unreadable",
+        "workbench.library.url",
         "workbench.page.resets.subtitle",
         "workbench.page.resets.title",
         "workbench.page.sessions.subtitle",
@@ -16678,7 +17121,11 @@ enum L10nCatalogFacts {
         "settings.pricing.rateOutput": 0,
         "settings.pricing.refreshNow": 0,
         "settings.pricing.refreshing": 0,
+        "settings.pricing.serviceTier": 0,
+        "settings.pricing.standardTier": 0,
         "settings.pricing.thresholdTokens": 0,
+        "settings.pricing.tierContextRates": 6,
+        "settings.pricing.ultrafastContextRates": 5,
         "settings.pricingDataDate": 1,
         "settings.privacyDetail": 0,
         "settings.privacyMode": 0,
@@ -17033,6 +17480,63 @@ enum L10nCatalogFacts {
         "workbench.filter.searchModels": 0,
         "workbench.filter.soloHint": 0,
         "workbench.header.refreshPage": 1,
+        "workbench.library.addMCP": 0,
+        "workbench.library.arguments": 0,
+        "workbench.library.availableTo": 1,
+        "workbench.library.brokenLink": 0,
+        "workbench.library.canonical": 0,
+        "workbench.library.command": 0,
+        "workbench.library.confirmDelete": 1,
+        "workbench.library.cyclicLink": 0,
+        "workbench.library.discovered": 0,
+        "workbench.library.discoveredDetail": 0,
+        "workbench.library.edit": 0,
+        "workbench.library.editInstructions": 0,
+        "workbench.library.emptyMCP": 0,
+        "workbench.library.environment": 0,
+        "workbench.library.error.ambiguousDefinition": 0,
+        "workbench.library.error.backupMissing": 0,
+        "workbench.library.error.invalidBackup": 0,
+        "workbench.library.error.invalidDefinition": 0,
+        "workbench.library.error.invalidDocument": 0,
+        "workbench.library.error.invalidHome": 0,
+        "workbench.library.error.invalidReceipt": 0,
+        "workbench.library.error.ioFailure": 0,
+        "workbench.library.error.missingCanonical": 0,
+        "workbench.library.error.notFound": 0,
+        "workbench.library.error.notOwnedProjection": 0,
+        "workbench.library.error.oversizedFile": 0,
+        "workbench.library.error.projectionModified": 0,
+        "workbench.library.error.sameNameConflict": 0,
+        "workbench.library.error.staleRevision": 0,
+        "workbench.library.error.symlinkLoop": 0,
+        "workbench.library.error.unsafePath": 0,
+        "workbench.library.error.unsupportedConversion": 0,
+        "workbench.library.error.unsupportedTOML": 0,
+        "workbench.library.error.unsupportedTarget": 0,
+        "workbench.library.error.unsupportedTransport": 0,
+        "workbench.library.failed": 1,
+        "workbench.library.headers": 0,
+        "workbench.library.instructions": 0,
+        "workbench.library.linkInstructions": 0,
+        "workbench.library.linkedSource": 0,
+        "workbench.library.managed": 0,
+        "workbench.library.mcp": 0,
+        "workbench.library.missingSkillFile": 0,
+        "workbench.library.notCreated": 0,
+        "workbench.library.overrideActive": 1,
+        "workbench.library.readOnlySource": 0,
+        "workbench.library.readable": 0,
+        "workbench.library.removeProjection": 0,
+        "workbench.library.saveResult": 0,
+        "workbench.library.subtitle": 0,
+        "workbench.library.target": 0,
+        "workbench.library.targets": 0,
+        "workbench.library.title": 0,
+        "workbench.library.tooLarge": 0,
+        "workbench.library.transport": 0,
+        "workbench.library.unreadable": 0,
+        "workbench.library.url": 0,
         "workbench.page.resets.subtitle": 0,
         "workbench.page.resets.title": 0,
         "workbench.page.sessions.subtitle": 0,

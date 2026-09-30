@@ -3711,8 +3711,20 @@
 /* Button label while a price refresh runs distinct-from: popover.header.refreshing — a Settings section for refresh intervals, a button label while a fetch runs, and a provider's in-flight state are three things. */
 "settings.pricing.refreshing" = "正在刷新…";
 
+/* Column title for service tiers under a single model in the effective price table. */
+"settings.pricing.serviceTier" = "服务档位";
+
+/* Label for a model standard service tier. */
+"settings.pricing.standardTier" = "普通";
+
 /* Field label: the token count above which the higher rates apply */
 "settings.pricing.thresholdTokens" = "分档阈值 token 数";
+
+/* Long-context tooltip for any service tier. Client supplies the tier label and formatted USD-per-million prices; unpublished rates use an em dash. */
+"settings.pricing.tierContextRates" = "%1$@ · 输入超过 %2$@ token：输入 %3$@ · 输出 %4$@ · 缓存读取 %5$@ · 缓存写入 %6$@";
+
+/* Tooltip for Ultrafast long-context prices, in USD per million tokens. Values are formatted by the client; unpublished rates appear as an em dash. */
+"settings.pricing.ultrafastContextRates" = "Ultrafast · 输入超过 %1$@ token：输入 %2$@ · 输出 %3$@ · 缓存读取 %4$@ · 缓存写入 %5$@";
 
 /* Footer showing when the bundled price table was built; date is a raw stamp */
 "settings.pricingDataDate" = "价格数据：%@";
@@ -4733,6 +4745,177 @@
 
 /* Tooltip on the Workbench header refresh button; page is the current page's title distinct-from: quota.misc.refreshProvider — a provider name stays Latin and takes a space in Simplified Chinese; a page title is translated and does not. */
 "workbench.header.refreshPage" = "刷新%@";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.addMCP" = "新增 MCP 服务器";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.arguments" = "参数（JSON 数组）";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.availableTo" = "可供 %@ 读取";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.brokenLink" = "链接已断开";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.canonical" = "共享指令";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.command" = "命令";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.confirmDelete" = "删除 %@？";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.cyclicLink" = "链接形成循环";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.discovered" = "磁盘发现";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.discoveredDetail" = "磁盘中的共享资源及其来源链接。";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.edit" = "编辑";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.editInstructions" = "编辑指令";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.emptyMCP" = "未发现 MCP 服务器";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.environment" = "环境变量（JSON 对象）";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.ambiguousDefinition" = "有多条配置使用同一名称，请检查源文件。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.backupMissing" = "备份已不可用。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidBackup" = "无法验证此备份。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidDefinition" = "请检查服务器名称、传输方式和必填字段。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidDocument" = "无法解析配置，请打开源文件检查。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidHome" = "资源主目录不可用。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidReceipt" = "无法读取已保存的管理记录。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.ioFailure" = "无法读取或保存文件，请检查权限。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.missingCanonical" = "请先创建共享指令，再建立链接。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.notFound" = "资源已不存在，请刷新列表。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.notOwnedProjection" = "该链接由其他工具管理，请打开来源修改。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.oversizedFile" = "该文件超出编辑器的大小限制。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.projectionModified" = "链接已在 Vibe Bar 外被修改，请刷新检查。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.sameNameConflict" = "目标中已有内容不同的同名资源。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.staleRevision" = "源文件已变化，请刷新后再保存。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.symlinkLoop" = "该链接形成循环，请打开所在目录修复。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsafePath" = "该路径不在支持的资源位置内。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsupportedConversion" = "此配置包含目标 Agent 无法使用的设置。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsupportedTOML" = "此 TOML 语法需要在源文件中编辑。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsupportedTarget" = "该 Agent 不支持此文件操作。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsupportedTransport" = "该 Agent 不支持所选传输方式。";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.failed" = "操作未完成（%@）。";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.headers" = "HTTP 请求头（JSON 对象）";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.instructions" = "AGENTS.md";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.linkInstructions" = "链接共享指令";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.linkedSource" = "链接来源";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.managed" = "已管理";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.mcp" = "MCP 服务器";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.missingSkillFile" = "缺少 SKILL.md";
+
+/* Local Library configuration state; not server network health. */
+"workbench.library.notCreated" = "尚未创建";
+
+/* Local Library configuration state; not server network health. */
+"workbench.library.overrideActive" = "%@ 会优先于此指令生效。";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.readOnlySource" = "文件保留在其来源目录。";
+
+/* Local Library configuration state; not server network health. */
+"workbench.library.readable" = "可读取";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.removeProjection" = "移除链接";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.saveResult" = "已保存";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.subtitle" = "技能、MCP 服务器与共享指令";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.target" = "目标";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.targets" = "共享至";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.title" = "资源库";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.tooLarge" = "预览超出读取上限";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.transport" = "传输方式";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.unreadable" = "无法读取资源";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.url" = "服务器 URL";
 
 /* Subtitle under the Resets page title */
 "workbench.page.resets.subtitle" = "周期、补额与耗尽预测";
