@@ -6157,6 +6157,9 @@
     },
     "workbench.library.url": {
       "value": "服务器 URL"
+    },
+    "settings.pricing.ultrafastContextRates": {
+      "value": "Ultrafast · 输入超过 {threshold} token：输入 {input} · 输出 {output} · 缓存读取 {cacheRead} · 缓存写入 {cacheWrite}"
     }
   }
 }

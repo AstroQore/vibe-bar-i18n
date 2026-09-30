@@ -8523,6 +8523,14 @@ public enum L10n {
             /// Key: `settings.pricing.thresholdTokens`
             /// en: "Threshold tokens"
             public static var thresholdTokens: String { L10nSupport.string("settings.pricing.thresholdTokens") }
+
+            /// Tooltip for Ultrafast long-context prices, in USD per million tokens. Values are formatted by the client; unpublished rates appear as an em dash.
+            ///
+            /// Key: `settings.pricing.ultrafastContextRates`
+            /// en: "Ultrafast · Above {threshold} tokens: input {input} · output {output} · cache read {cacheRead} · cache write {cacheWrite}"
+            public static func ultrafastContextRates(threshold: String, input: String, output: String, cacheRead: String, cacheWrite: String) -> String {
+                L10nSupport.format("settings.pricing.ultrafastContextRates", threshold, input, output, cacheRead, cacheWrite)
+            }
         }
 
         public enum Remote {
@@ -14970,6 +14978,7 @@ enum L10nCatalogFacts {
         "settings.pricing.refreshNow",
         "settings.pricing.refreshing",
         "settings.pricing.thresholdTokens",
+        "settings.pricing.ultrafastContextRates",
         "settings.pricingDataDate",
         "settings.privacyDetail",
         "settings.privacyMode",
@@ -17090,6 +17099,7 @@ enum L10nCatalogFacts {
         "settings.pricing.refreshNow": 0,
         "settings.pricing.refreshing": 0,
         "settings.pricing.thresholdTokens": 0,
+        "settings.pricing.ultrafastContextRates": 5,
         "settings.pricingDataDate": 1,
         "settings.privacyDetail": 0,
         "settings.privacyMode": 0,

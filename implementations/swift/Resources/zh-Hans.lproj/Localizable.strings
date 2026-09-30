@@ -3714,6 +3714,9 @@
 /* Field label: the token count above which the higher rates apply */
 "settings.pricing.thresholdTokens" = "分档阈值 token 数";
 
+/* Tooltip for Ultrafast long-context prices, in USD per million tokens. Values are formatted by the client; unpublished rates appear as an em dash. */
+"settings.pricing.ultrafastContextRates" = "Ultrafast · 输入超过 %1$@ token：输入 %2$@ · 输出 %3$@ · 缓存读取 %4$@ · 缓存写入 %5$@";
+
 /* Footer showing when the bundled price table was built; date is a raw stamp */
 "settings.pricingDataDate" = "价格数据：%@";
 

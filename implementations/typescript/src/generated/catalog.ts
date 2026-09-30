@@ -1277,6 +1277,7 @@ export type MessageKey =
   | "settings.pricing.refreshNow"
   | "settings.pricing.refreshing"
   | "settings.pricing.thresholdTokens"
+  | "settings.pricing.ultrafastContextRates"
   | "settings.pricingDataDate"
   | "settings.privacyDetail"
   | "settings.privacyMode"
@@ -3335,6 +3336,7 @@ export interface MessageParams {
   "settings.pricing.refreshNow": undefined;
   "settings.pricing.refreshing": undefined;
   "settings.pricing.thresholdTokens": undefined;
+  "settings.pricing.ultrafastContextRates": { "threshold": string; "input": string; "output": string; "cacheRead": string; "cacheWrite": string };
   "settings.pricingDataDate": { "date": string };
   "settings.privacyDetail": undefined;
   "settings.privacyMode": undefined;
@@ -5394,6 +5396,7 @@ export const messages: {
     "settings.pricing.refreshNow": "Refresh now",
     "settings.pricing.refreshing": "Refreshing…",
     "settings.pricing.thresholdTokens": "Threshold tokens",
+    "settings.pricing.ultrafastContextRates": "Ultrafast · Above {threshold} tokens: input {input} · output {output} · cache read {cacheRead} · cache write {cacheWrite}",
     "settings.pricingDataDate": "Pricing data: {date}",
     "settings.privacyDetail": "Tokens are read from local CLI credentials. Saved OpenAI and Claude Web cookies are stored in macOS Keychain, split by browser and WebView source. Legacy plaintext cookie files under ~/.vibebar/cookies are migrated once and deleted. Settings, quota cache, and cost summaries stay under ~/.vibebar.",
     "settings.privacyMode": "Privacy mode",
@@ -7448,6 +7451,7 @@ export const messages: {
     "settings.pricing.refreshNow": "立即刷新",
     "settings.pricing.refreshing": "正在刷新…",
     "settings.pricing.thresholdTokens": "分档阈值 token 数",
+    "settings.pricing.ultrafastContextRates": "Ultrafast · 输入超过 {threshold} token：输入 {input} · 输出 {output} · 缓存读取 {cacheRead} · 缓存写入 {cacheWrite}",
     "settings.pricingDataDate": "价格数据：{date}",
     "settings.privacyDetail": "token 从本地 CLI 凭据读取。已保存的 OpenAI 与 Claude 网页 cookies 存放在 macOS Keychain 中，按浏览器与 WebView 来源分开。~/.vibebar/cookies 下的旧版明文 cookie 文件会迁移一次并删除。设置、额度缓存与花费汇总保留在 ~/.vibebar 下。",
     "settings.privacyMode": "隐私模式",
