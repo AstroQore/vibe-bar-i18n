@@ -1900,16 +1900,53 @@ export type MessageKey =
   | "workbench.skills.contextEnableIn"
   | "workbench.skills.contextRemoveProjection"
   | "workbench.skills.copies.appFolder"
+  | "workbench.skills.copies.backupTitle"
+  | "workbench.skills.copies.baselineUnavailable"
   | "workbench.skills.copies.builtIn"
   | "workbench.skills.copies.changed"
+  | "workbench.skills.copies.copyPath"
   | "workbench.skills.copies.copyToShared"
+  | "workbench.skills.copies.diff.absent"
+  | "workbench.skills.copies.diff.base"
+  | "workbench.skills.copies.diff.binary"
+  | "workbench.skills.copies.diff.change.added"
+  | "workbench.skills.copies.diff.change.modified"
+  | "workbench.skills.copies.diff.change.removed"
+  | "workbench.skills.copies.diff.change.unchanged"
+  | "workbench.skills.copies.diff.compared"
+  | "workbench.skills.copies.diff.fileFacts"
+  | "workbench.skills.copies.diff.lineStats"
+  | "workbench.skills.copies.diff.loading"
+  | "workbench.skills.copies.diff.noDifferences"
+  | "workbench.skills.copies.diff.pickVersion"
+  | "workbench.skills.copies.diff.sideBySide"
+  | "workbench.skills.copies.diff.summary"
+  | "workbench.skills.copies.diff.symlinkTarget"
+  | "workbench.skills.copies.diff.tooLarge"
+  | "workbench.skills.copies.diff.truncated"
+  | "workbench.skills.copies.diff.unified"
+  | "workbench.skills.copies.diff.unreadable"
+  | "workbench.skills.copies.diff.unreadableVersion"
   | "workbench.skills.copies.differs"
   | "workbench.skills.copies.identical"
+  | "workbench.skills.copies.kind.backup"
+  | "workbench.skills.copies.kind.builtIn"
+  | "workbench.skills.copies.kind.independentCopy"
+  | "workbench.skills.copies.kind.managedCopy"
+  | "workbench.skills.copies.kind.source"
+  | "workbench.skills.copies.kind.symlink"
+  | "workbench.skills.copies.linkBroken"
+  | "workbench.skills.copies.linkOutside"
+  | "workbench.skills.copies.linkTarget"
+  | "workbench.skills.copies.linkToShared"
   | "workbench.skills.copies.noShared"
+  | "workbench.skills.copies.notCompared"
+  | "workbench.skills.copies.recordedBaseline"
   | "workbench.skills.copies.replaceConfirmMessage"
   | "workbench.skills.copies.replaceConfirmTitle"
   | "workbench.skills.copies.replaceShared"
   | "workbench.skills.copies.shadowsShared"
+  | "workbench.skills.copies.subtitle"
   | "workbench.skills.copies.title"
   | "workbench.skills.countFiltered"
   | "workbench.skills.countTotal"
@@ -1963,6 +2000,7 @@ export type MessageKey =
   | "workbench.skills.install"
   | "workbench.skills.installFromZip"
   | "workbench.skills.menuAcceptLocalChanges"
+  | "workbench.skills.menuCopiesAndDiff"
   | "workbench.skills.menuMoreActions"
   | "workbench.skills.menuRevealInFinder"
   | "workbench.skills.menuUninstall"
@@ -3962,16 +4000,53 @@ export interface MessageParams {
   "workbench.skills.contextEnableIn": { "app": string };
   "workbench.skills.contextRemoveProjection": { "app": string };
   "workbench.skills.copies.appFolder": { "app": string };
+  "workbench.skills.copies.backupTitle": { "date": string };
+  "workbench.skills.copies.baselineUnavailable": undefined;
   "workbench.skills.copies.builtIn": { "app": string };
   "workbench.skills.copies.changed": { "date": string };
+  "workbench.skills.copies.copyPath": undefined;
   "workbench.skills.copies.copyToShared": undefined;
+  "workbench.skills.copies.diff.absent": undefined;
+  "workbench.skills.copies.diff.base": undefined;
+  "workbench.skills.copies.diff.binary": undefined;
+  "workbench.skills.copies.diff.change.added": undefined;
+  "workbench.skills.copies.diff.change.modified": undefined;
+  "workbench.skills.copies.diff.change.removed": undefined;
+  "workbench.skills.copies.diff.change.unchanged": undefined;
+  "workbench.skills.copies.diff.compared": undefined;
+  "workbench.skills.copies.diff.fileFacts": { "size": string; "hash": string };
+  "workbench.skills.copies.diff.lineStats": { "added": number; "removed": number };
+  "workbench.skills.copies.diff.loading": undefined;
+  "workbench.skills.copies.diff.noDifferences": undefined;
+  "workbench.skills.copies.diff.pickVersion": undefined;
+  "workbench.skills.copies.diff.sideBySide": undefined;
+  "workbench.skills.copies.diff.summary": { "added": number; "removed": number; "modified": number; "unchanged": number };
+  "workbench.skills.copies.diff.symlinkTarget": { "target": string };
+  "workbench.skills.copies.diff.tooLarge": undefined;
+  "workbench.skills.copies.diff.truncated": { "count": number };
+  "workbench.skills.copies.diff.unified": undefined;
+  "workbench.skills.copies.diff.unreadable": undefined;
+  "workbench.skills.copies.diff.unreadableVersion": undefined;
   "workbench.skills.copies.differs": undefined;
   "workbench.skills.copies.identical": undefined;
+  "workbench.skills.copies.kind.backup": undefined;
+  "workbench.skills.copies.kind.builtIn": undefined;
+  "workbench.skills.copies.kind.independentCopy": undefined;
+  "workbench.skills.copies.kind.managedCopy": undefined;
+  "workbench.skills.copies.kind.source": undefined;
+  "workbench.skills.copies.kind.symlink": undefined;
+  "workbench.skills.copies.linkBroken": undefined;
+  "workbench.skills.copies.linkOutside": undefined;
+  "workbench.skills.copies.linkTarget": { "path": string };
+  "workbench.skills.copies.linkToShared": undefined;
   "workbench.skills.copies.noShared": undefined;
+  "workbench.skills.copies.notCompared": undefined;
+  "workbench.skills.copies.recordedBaseline": undefined;
   "workbench.skills.copies.replaceConfirmMessage": undefined;
   "workbench.skills.copies.replaceConfirmTitle": { "skill": string };
   "workbench.skills.copies.replaceShared": undefined;
   "workbench.skills.copies.shadowsShared": { "app": string };
+  "workbench.skills.copies.subtitle": undefined;
   "workbench.skills.copies.title": { "skill": string };
   "workbench.skills.countFiltered": { "shown": number; "total": number };
   "workbench.skills.countTotal": { "count": number };
@@ -4025,6 +4100,7 @@ export interface MessageParams {
   "workbench.skills.install": undefined;
   "workbench.skills.installFromZip": undefined;
   "workbench.skills.menuAcceptLocalChanges": undefined;
+  "workbench.skills.menuCopiesAndDiff": undefined;
   "workbench.skills.menuMoreActions": { "skill": string };
   "workbench.skills.menuRevealInFinder": undefined;
   "workbench.skills.menuUninstall": undefined;
@@ -6025,16 +6101,53 @@ export const messages: {
     "workbench.skills.contextEnableIn": "Enable in {app}",
     "workbench.skills.contextRemoveProjection": "Remove {app} Projection",
     "workbench.skills.copies.appFolder": "{app} folder",
+    "workbench.skills.copies.backupTitle": "Backup from {date}",
+    "workbench.skills.copies.baselineUnavailable": "The shared copy was edited, but Vibe Bar kept only a fingerprint of the version it last recorded, so the content before the edit cannot be shown. Backups listed here are earlier snapshots.",
     "workbench.skills.copies.builtIn": "{app} built-in",
     "workbench.skills.copies.changed": "Changed {date}",
+    "workbench.skills.copies.copyPath": "Copy Path",
     "workbench.skills.copies.copyToShared": "Copy Into Shared Library",
+    "workbench.skills.copies.diff.absent": "Not present",
+    "workbench.skills.copies.diff.base": "Base",
+    "workbench.skills.copies.diff.binary": "Binary file, contents not shown",
+    "workbench.skills.copies.diff.change.added": "Only in the compared version",
+    "workbench.skills.copies.diff.change.modified": "Content differs",
+    "workbench.skills.copies.diff.change.removed": "Only in the base version",
+    "workbench.skills.copies.diff.change.unchanged": "Same in both versions",
+    "workbench.skills.copies.diff.compared": "Compare with",
+    "workbench.skills.copies.diff.fileFacts": "{size} · SHA-256 {hash}",
+    "workbench.skills.copies.diff.lineStats": "+{added} −{removed}",
+    "workbench.skills.copies.diff.loading": "Comparing…",
+    "workbench.skills.copies.diff.noDifferences": "No differences",
+    "workbench.skills.copies.diff.pickVersion": "Select another version to compare with the base",
+    "workbench.skills.copies.diff.sideBySide": "Side by Side",
+    "workbench.skills.copies.diff.summary": "{added} added · {removed} removed · {modified} modified · {unchanged} unchanged",
+    "workbench.skills.copies.diff.symlinkTarget": "Link target: {target}",
+    "workbench.skills.copies.diff.tooLarge": "Too large to compare line by line",
+    "workbench.skills.copies.diff.truncated": "Only the first {count} files of each version are compared",
+    "workbench.skills.copies.diff.unified": "Unified",
+    "workbench.skills.copies.diff.unreadable": "This file could not be read",
+    "workbench.skills.copies.diff.unreadableVersion": "This version cannot be read",
     "workbench.skills.copies.differs": "Differs from the shared copy",
     "workbench.skills.copies.identical": "Identical to the shared copy",
+    "workbench.skills.copies.kind.backup": "Backup",
+    "workbench.skills.copies.kind.builtIn": "Read-only built-in",
+    "workbench.skills.copies.kind.independentCopy": "Independent copy",
+    "workbench.skills.copies.kind.managedCopy": "Managed copy",
+    "workbench.skills.copies.kind.source": "Managed source",
+    "workbench.skills.copies.kind.symlink": "Symlink",
+    "workbench.skills.copies.linkBroken": "Broken link: the target does not exist",
+    "workbench.skills.copies.linkOutside": "Points outside the skills folders, so it is not read",
+    "workbench.skills.copies.linkTarget": "Points to {path}",
+    "workbench.skills.copies.linkToShared": "Links to the shared copy",
     "workbench.skills.copies.noShared": "Not in the shared library",
+    "workbench.skills.copies.notCompared": "Could not be compared",
+    "workbench.skills.copies.recordedBaseline": "Last recorded version",
     "workbench.skills.copies.replaceConfirmMessage": "A backup is taken first. Every harness linked to the shared copy sees the new content.",
     "workbench.skills.copies.replaceConfirmTitle": "Replace the shared copy of {skill}?",
     "workbench.skills.copies.replaceShared": "Replace Shared Copy With This",
     "workbench.skills.copies.shadowsShared": "{app} loads this copy instead of the shared one",
+    "workbench.skills.copies.subtitle": "Every place this skill exists on this Mac. Pick two versions to see what differs.",
     "workbench.skills.copies.title": "Copies of {skill}",
     "workbench.skills.countFiltered": "{shown} of {total} skills",
     "workbench.skills.countTotal": "{count, plural, one {# skill} other {# skills}}",
@@ -6088,6 +6201,7 @@ export const messages: {
     "workbench.skills.install": "Install",
     "workbench.skills.installFromZip": "Install from ZIP",
     "workbench.skills.menuAcceptLocalChanges": "Accept Local Changes",
+    "workbench.skills.menuCopiesAndDiff": "Copies and Differences…",
     "workbench.skills.menuMoreActions": "More actions for {skill}",
     "workbench.skills.menuRevealInFinder": "Reveal in Finder",
     "workbench.skills.menuUninstall": "Uninstall…",
@@ -8083,16 +8197,53 @@ export const messages: {
     "workbench.skills.contextEnableIn": "在 {app} 中启用",
     "workbench.skills.contextRemoveProjection": "移除 {app} 投影",
     "workbench.skills.copies.appFolder": "{app} 目录",
+    "workbench.skills.copies.backupTitle": "{date} 的备份",
+    "workbench.skills.copies.baselineUnavailable": "共享副本已被修改，但 Vibe Bar 只保存了上次记录版本的指纹，无法显示修改前的内容。这里列出的备份是更早的快照。",
     "workbench.skills.copies.builtIn": "{app} 内置",
     "workbench.skills.copies.changed": "修改于 {date}",
+    "workbench.skills.copies.copyPath": "复制路径",
     "workbench.skills.copies.copyToShared": "复制到共享库",
+    "workbench.skills.copies.diff.absent": "不存在",
+    "workbench.skills.copies.diff.base": "基准",
+    "workbench.skills.copies.diff.binary": "二进制文件，不显示内容",
+    "workbench.skills.copies.diff.change.added": "仅在对比对象中",
+    "workbench.skills.copies.diff.change.modified": "内容不同",
+    "workbench.skills.copies.diff.change.removed": "仅在基准中",
+    "workbench.skills.copies.diff.change.unchanged": "两个版本相同",
+    "workbench.skills.copies.diff.compared": "对比对象",
+    "workbench.skills.copies.diff.fileFacts": "{size} · SHA-256 {hash}",
+    "workbench.skills.copies.diff.lineStats": "+{added} −{removed}",
+    "workbench.skills.copies.diff.loading": "正在对比…",
+    "workbench.skills.copies.diff.noDifferences": "没有差异",
+    "workbench.skills.copies.diff.pickVersion": "选择另一个版本与基准对比",
+    "workbench.skills.copies.diff.sideBySide": "并排视图",
+    "workbench.skills.copies.diff.summary": "新增 {added} · 删除 {removed} · 修改 {modified} · 相同 {unchanged}",
+    "workbench.skills.copies.diff.symlinkTarget": "链接目标：{target}",
+    "workbench.skills.copies.diff.tooLarge": "文件过大，无法逐行对比",
+    "workbench.skills.copies.diff.truncated": "每个版本仅对比前 {count} 个文件",
+    "workbench.skills.copies.diff.unified": "合并视图",
+    "workbench.skills.copies.diff.unreadable": "无法读取此文件",
+    "workbench.skills.copies.diff.unreadableVersion": "无法读取此版本",
     "workbench.skills.copies.differs": "与共享副本不同",
     "workbench.skills.copies.identical": "与共享副本相同",
+    "workbench.skills.copies.kind.backup": "备份",
+    "workbench.skills.copies.kind.builtIn": "内置只读",
+    "workbench.skills.copies.kind.independentCopy": "独立拷贝",
+    "workbench.skills.copies.kind.managedCopy": "受管拷贝",
+    "workbench.skills.copies.kind.source": "受管源",
+    "workbench.skills.copies.kind.symlink": "软链",
+    "workbench.skills.copies.linkBroken": "链接已失效：目标不存在",
+    "workbench.skills.copies.linkOutside": "指向 skills 目录之外，因此不读取",
+    "workbench.skills.copies.linkTarget": "指向 {path}",
+    "workbench.skills.copies.linkToShared": "链接到共享副本",
     "workbench.skills.copies.noShared": "不在共享库中",
+    "workbench.skills.copies.notCompared": "无法对比",
+    "workbench.skills.copies.recordedBaseline": "上次记录的版本",
     "workbench.skills.copies.replaceConfirmMessage": "会先备份。所有链接到共享副本的 harness 都会看到新内容。",
     "workbench.skills.copies.replaceConfirmTitle": "替换 {skill} 的共享副本？",
     "workbench.skills.copies.replaceShared": "用此副本替换共享副本",
     "workbench.skills.copies.shadowsShared": "{app} 会加载此副本而非共享副本",
+    "workbench.skills.copies.subtitle": "此 skill 在这台 Mac 上的所有位置。选择两个版本查看差异。",
     "workbench.skills.copies.title": "{skill} 的副本",
     "workbench.skills.countFiltered": "{total} 个技能中的 {shown} 个",
     "workbench.skills.countTotal": "{count, plural, other {# 个技能}}",
@@ -8146,6 +8297,7 @@ export const messages: {
     "workbench.skills.install": "安装",
     "workbench.skills.installFromZip": "从 ZIP 安装",
     "workbench.skills.menuAcceptLocalChanges": "接受本地修改",
+    "workbench.skills.menuCopiesAndDiff": "副本与差异…",
     "workbench.skills.menuMoreActions": "{skill} 的更多操作",
     "workbench.skills.menuRevealInFinder": "在 Finder 中显示",
     "workbench.skills.menuUninstall": "卸载…",

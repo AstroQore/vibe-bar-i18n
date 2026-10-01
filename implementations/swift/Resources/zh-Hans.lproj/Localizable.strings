@@ -5508,14 +5508,86 @@
 /* Location label for a real directory inside a harness's own skills folder. */
 "workbench.skills.copies.appFolder" = "%@ 目录";
 
+/* Title of a backup snapshot row in the copies sheet; date formatted by the client. */
+"workbench.skills.copies.backupTitle" = "%@ 的备份";
+
+/* Note in the copies sheet when a locally modified skill has no snapshot of its recorded version. */
+"workbench.skills.copies.baselineUnavailable" = "共享副本已被修改，但 Vibe Bar 只保存了上次记录版本的指纹，无法显示修改前的内容。这里列出的备份是更早的快照。";
+
 /* Location label for a copy inside a harness's bundled skills folder. distinct-from: workbench.skills.sourceBuiltIn */
 "workbench.skills.copies.builtIn" = "%@ 内置";
 
 /* Last modification, formatted by the client. */
 "workbench.skills.copies.changed" = "修改于 %@";
 
+/* Button that copies a version's full folder path to the clipboard. */
+"workbench.skills.copies.copyPath" = "复制路径";
+
 /* Action for a built-in or app-folder skill that has no shared copy yet. */
 "workbench.skills.copies.copyToShared" = "复制到共享库";
+
+/* One side of a file comparison where the file does not exist. */
+"workbench.skills.copies.diff.absent" = "不存在";
+
+/* Picker label: the version the comparison starts from. */
+"workbench.skills.copies.diff.base" = "基准";
+
+/* Shown in place of a line diff for a binary file. */
+"workbench.skills.copies.diff.binary" = "二进制文件，不显示内容";
+
+/* Tooltip on a file that exists only in the compared version. */
+"workbench.skills.copies.diff.change.added" = "仅在对比对象中";
+
+/* Tooltip on a file present in both versions with different content. */
+"workbench.skills.copies.diff.change.modified" = "内容不同";
+
+/* Tooltip on a file that exists only in the base version. */
+"workbench.skills.copies.diff.change.removed" = "仅在基准中";
+
+/* Tooltip on a file identical in both versions. */
+"workbench.skills.copies.diff.change.unchanged" = "两个版本相同";
+
+/* Picker label: the version compared against the base. */
+"workbench.skills.copies.diff.compared" = "对比对象";
+
+/* Size and digest of one side of a binary or oversized file; size formatted by the client. */
+"workbench.skills.copies.diff.fileFacts" = "%1$@ · SHA-256 %2$@";
+
+/* Lines added and removed in the selected file. */
+"workbench.skills.copies.diff.lineStats" = "+%1$lld −%2$lld";
+
+/* Progress while two versions are compared. */
+"workbench.skills.copies.diff.loading" = "正在对比…";
+
+/* Shown in place of a line diff when the selected file is identical. */
+"workbench.skills.copies.diff.noDifferences" = "没有差异";
+
+/* Empty state of the comparison pane. */
+"workbench.skills.copies.diff.pickVersion" = "选择另一个版本与基准对比";
+
+/* Segment: show the line diff in two columns. */
+"workbench.skills.copies.diff.sideBySide" = "并排视图";
+
+/* File counts of a comparison between two versions of a skill. */
+"workbench.skills.copies.diff.summary" = "新增 %1$lld · 删除 %2$lld · 修改 %3$lld · 相同 %4$lld";
+
+/* One side of a comparison of a symlink inside a skill. The target is an identifier. */
+"workbench.skills.copies.diff.symlinkTarget" = "链接目标：%@";
+
+/* Shown in place of a line diff for an oversized file. */
+"workbench.skills.copies.diff.tooLarge" = "文件过大，无法逐行对比";
+
+/* Note when a version holds more files than the comparison reads. */
+"workbench.skills.copies.diff.truncated" = "每个版本仅对比前 %lld 个文件";
+
+/* Segment: show the line diff as one column. */
+"workbench.skills.copies.diff.unified" = "合并视图";
+
+/* Shown in place of a line diff when the file could not be read safely. */
+"workbench.skills.copies.diff.unreadable" = "无法读取此文件";
+
+/* Shown when a selected version is a broken or out-of-scope link. */
+"workbench.skills.copies.diff.unreadableVersion" = "无法读取此版本";
 
 /* Comparison line under a copy. */
 "workbench.skills.copies.differs" = "与共享副本不同";
@@ -5523,8 +5595,44 @@
 /* Comparison line under a copy. */
 "workbench.skills.copies.identical" = "与共享副本相同";
 
+/* Chip on a backup snapshot listed as a version in the copies sheet. */
+"workbench.skills.copies.kind.backup" = "备份";
+
+/* Chip on a skill the harness ships in its own folder; never written. */
+"workbench.skills.copies.kind.builtIn" = "内置只读";
+
+/* Chip on a real folder in a harness skills folder that Vibe Bar did not write. */
+"workbench.skills.copies.kind.independentCopy" = "独立拷贝";
+
+/* Chip on a copy Vibe Bar wrote into a harness folder. */
+"workbench.skills.copies.kind.managedCopy" = "受管拷贝";
+
+/* Chip on the shared copy in the copies sheet: the directory every projection comes from. */
+"workbench.skills.copies.kind.source" = "受管源";
+
+/* Chip on a symlink entry in a harness skills folder. */
+"workbench.skills.copies.kind.symlink" = "软链";
+
+/* Under a symlink version whose target is missing. */
+"workbench.skills.copies.linkBroken" = "链接已失效：目标不存在";
+
+/* Under a symlink version whose target is outside every skills folder. */
+"workbench.skills.copies.linkOutside" = "指向 skills 目录之外，因此不读取";
+
+/* Under a symlink version: where the link resolves. The path is an identifier. */
+"workbench.skills.copies.linkTarget" = "指向 %@";
+
+/* Under a symlink version that resolves to this skill's shared copy. */
+"workbench.skills.copies.linkToShared" = "链接到共享副本";
+
 /* Comparison line when the skill has no shared copy to compare against. */
 "workbench.skills.copies.noShared" = "不在共享库中";
+
+/* Under a version whose content could not be hashed against the shared copy. */
+"workbench.skills.copies.notCompared" = "无法对比";
+
+/* Tag on the backup whose content matches what Vibe Bar last recorded for the shared copy: the state before local edits. */
+"workbench.skills.copies.recordedBaseline" = "上次记录的版本";
 
 /* Confirmation dialog message. */
 "workbench.skills.copies.replaceConfirmMessage" = "会先备份。所有链接到共享副本的 harness 都会看到新内容。";
@@ -5537,6 +5645,9 @@
 
 /* Warning under an app-folder copy that hides the shared copy from that harness. */
 "workbench.skills.copies.shadowsShared" = "%@ 会加载此副本而非共享副本";
+
+/* Subtitle of the copies and differences sheet. */
+"workbench.skills.copies.subtitle" = "此 skill 在这台 Mac 上的所有位置。选择两个版本查看差异。";
 
 /* Title of the popover listing every copy of one skill. */
 "workbench.skills.copies.title" = "%@ 的副本";
@@ -5687,6 +5798,9 @@
 
 /* Row menu item: record the shared copy's current contents as the known state. */
 "workbench.skills.menuAcceptLocalChanges" = "接受本地修改";
+
+/* Row overflow menu item that opens the copies and differences sheet. */
+"workbench.skills.menuCopiesAndDiff" = "副本与差异…";
 
 /* Accessibility label on a skill row's overflow menu button. */
 "workbench.skills.menuMoreActions" = "%@ 的更多操作";
