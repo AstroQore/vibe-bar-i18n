@@ -12385,6 +12385,12 @@ public enum L10n {
             /// en: "Accept Local Changes"
             public static var menuAcceptLocalChanges: String { L10nSupport.string("workbench.skills.menuAcceptLocalChanges") }
 
+            /// Row overflow menu item that opens the copies and differences sheet.
+            ///
+            /// Key: `workbench.skills.menuCopiesAndDiff`
+            /// en: "Copies and Differences…"
+            public static var menuCopiesAndDiff: String { L10nSupport.string("workbench.skills.menuCopiesAndDiff") }
+
             /// Accessibility label on a skill row's overflow menu button.
             ///
             /// Key: `workbench.skills.menuMoreActions`
@@ -12704,6 +12710,20 @@ public enum L10n {
                     L10nSupport.format("workbench.skills.copies.appFolder", app)
                 }
 
+                /// Title of a backup snapshot row in the copies sheet; date formatted by the client.
+                ///
+                /// Key: `workbench.skills.copies.backupTitle`
+                /// en: "Backup from {date}"
+                public static func backupTitle(date: String) -> String {
+                    L10nSupport.format("workbench.skills.copies.backupTitle", date)
+                }
+
+                /// Note in the copies sheet when a locally modified skill has no snapshot of its recorded version.
+                ///
+                /// Key: `workbench.skills.copies.baselineUnavailable`
+                /// en: "The shared copy was edited, but Vibe Bar kept only a fingerprint of the version it last recorded, so the content before the edit cannot be shown. Backups listed here are earlier snapshots."
+                public static var baselineUnavailable: String { L10nSupport.string("workbench.skills.copies.baselineUnavailable") }
+
                 /// Location label for a copy inside a harness's bundled skills folder. distinct-from: workbench.skills.sourceBuiltIn
                 ///
                 /// Key: `workbench.skills.copies.builtIn`
@@ -12719,6 +12739,12 @@ public enum L10n {
                 public static func changed(date: String) -> String {
                     L10nSupport.format("workbench.skills.copies.changed", date)
                 }
+
+                /// Button that copies a version's full folder path to the clipboard.
+                ///
+                /// Key: `workbench.skills.copies.copyPath`
+                /// en: "Copy Path"
+                public static var copyPath: String { L10nSupport.string("workbench.skills.copies.copyPath") }
 
                 /// Action for a built-in or app-folder skill that has no shared copy yet.
                 ///
@@ -12738,11 +12764,49 @@ public enum L10n {
                 /// en: "Identical to the shared copy"
                 public static var identical: String { L10nSupport.string("workbench.skills.copies.identical") }
 
+                /// Under a symlink version whose target is missing.
+                ///
+                /// Key: `workbench.skills.copies.linkBroken`
+                /// en: "Broken link: the target does not exist"
+                public static var linkBroken: String { L10nSupport.string("workbench.skills.copies.linkBroken") }
+
+                /// Under a symlink version whose target is outside every skills folder.
+                ///
+                /// Key: `workbench.skills.copies.linkOutside`
+                /// en: "Points outside the skills folders, so it is not read"
+                public static var linkOutside: String { L10nSupport.string("workbench.skills.copies.linkOutside") }
+
+                /// Under a symlink version: where the link resolves. The path is an identifier.
+                ///
+                /// Key: `workbench.skills.copies.linkTarget`
+                /// en: "Points to {path}"
+                public static func linkTarget(path: String) -> String {
+                    L10nSupport.format("workbench.skills.copies.linkTarget", path)
+                }
+
+                /// Under a symlink version that resolves to this skill's shared copy.
+                ///
+                /// Key: `workbench.skills.copies.linkToShared`
+                /// en: "Links to the shared copy"
+                public static var linkToShared: String { L10nSupport.string("workbench.skills.copies.linkToShared") }
+
                 /// Comparison line when the skill has no shared copy to compare against.
                 ///
                 /// Key: `workbench.skills.copies.noShared`
                 /// en: "Not in the shared library"
                 public static var noShared: String { L10nSupport.string("workbench.skills.copies.noShared") }
+
+                /// Under a version whose content could not be hashed against the shared copy.
+                ///
+                /// Key: `workbench.skills.copies.notCompared`
+                /// en: "Could not be compared"
+                public static var notCompared: String { L10nSupport.string("workbench.skills.copies.notCompared") }
+
+                /// Tag on the backup whose content matches what Vibe Bar last recorded for the shared copy: the state before local edits.
+                ///
+                /// Key: `workbench.skills.copies.recordedBaseline`
+                /// en: "Last recorded version"
+                public static var recordedBaseline: String { L10nSupport.string("workbench.skills.copies.recordedBaseline") }
 
                 /// Confirmation dialog message.
                 ///
@@ -12772,12 +12836,196 @@ public enum L10n {
                     L10nSupport.format("workbench.skills.copies.shadowsShared", app)
                 }
 
+                /// Subtitle of the copies and differences sheet.
+                ///
+                /// Key: `workbench.skills.copies.subtitle`
+                /// en: "Every place this skill exists on this Mac. Pick two versions to see what differs."
+                public static var subtitle: String { L10nSupport.string("workbench.skills.copies.subtitle") }
+
                 /// Title of the popover listing every copy of one skill.
                 ///
                 /// Key: `workbench.skills.copies.title`
                 /// en: "Copies of {skill}"
                 public static func title(skill: String) -> String {
                     L10nSupport.format("workbench.skills.copies.title", skill)
+                }
+
+                public enum Diff {
+                    /// One side of a file comparison where the file does not exist.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.absent`
+                    /// en: "Not present"
+                    public static var absent: String { L10nSupport.string("workbench.skills.copies.diff.absent") }
+
+                    /// Picker label: the version the comparison starts from.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.base`
+                    /// en: "Base"
+                    public static var base: String { L10nSupport.string("workbench.skills.copies.diff.base") }
+
+                    /// Shown in place of a line diff for a binary file.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.binary`
+                    /// en: "Binary file, contents not shown"
+                    public static var binary: String { L10nSupport.string("workbench.skills.copies.diff.binary") }
+
+                    /// Picker label: the version compared against the base.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.compared`
+                    /// en: "Compare with"
+                    public static var compared: String { L10nSupport.string("workbench.skills.copies.diff.compared") }
+
+                    /// Size and digest of one side of a binary or oversized file; size formatted by the client.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.fileFacts`
+                    /// en: "{size} · SHA-256 {hash}"
+                    public static func fileFacts(size: String, hash: String) -> String {
+                        L10nSupport.format("workbench.skills.copies.diff.fileFacts", size, hash)
+                    }
+
+                    /// Lines added and removed in the selected file.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.lineStats`
+                    /// en: "+{added} −{removed}"
+                    public static func lineStats(added: Int, removed: Int) -> String {
+                        L10nSupport.format("workbench.skills.copies.diff.lineStats", added, removed)
+                    }
+
+                    /// Progress while two versions are compared.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.loading`
+                    /// en: "Comparing…"
+                    public static var loading: String { L10nSupport.string("workbench.skills.copies.diff.loading") }
+
+                    /// Shown in place of a line diff when the selected file is identical.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.noDifferences`
+                    /// en: "No differences"
+                    public static var noDifferences: String { L10nSupport.string("workbench.skills.copies.diff.noDifferences") }
+
+                    /// Empty state of the comparison pane.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.pickVersion`
+                    /// en: "Select another version to compare with the base"
+                    public static var pickVersion: String { L10nSupport.string("workbench.skills.copies.diff.pickVersion") }
+
+                    /// Segment: show the line diff in two columns.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.sideBySide`
+                    /// en: "Side by Side"
+                    public static var sideBySide: String { L10nSupport.string("workbench.skills.copies.diff.sideBySide") }
+
+                    /// File counts of a comparison between two versions of a skill.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.summary`
+                    /// en: "{added} added · {removed} removed · {modified} modified · {unchanged} unchanged"
+                    public static func summary(added: Int, removed: Int, modified: Int, unchanged: Int) -> String {
+                        L10nSupport.format("workbench.skills.copies.diff.summary", added, removed, modified, unchanged)
+                    }
+
+                    /// One side of a comparison of a symlink inside a skill. The target is an identifier.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.symlinkTarget`
+                    /// en: "Link target: {target}"
+                    public static func symlinkTarget(target: String) -> String {
+                        L10nSupport.format("workbench.skills.copies.diff.symlinkTarget", target)
+                    }
+
+                    /// Shown in place of a line diff for an oversized file.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.tooLarge`
+                    /// en: "Too large to compare line by line"
+                    public static var tooLarge: String { L10nSupport.string("workbench.skills.copies.diff.tooLarge") }
+
+                    /// Note when a version holds more files than the comparison reads.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.truncated`
+                    /// en: "Only the first {count} files of each version are compared"
+                    public static func truncated(count: Int) -> String {
+                        L10nSupport.format("workbench.skills.copies.diff.truncated", count)
+                    }
+
+                    /// Segment: show the line diff as one column.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.unified`
+                    /// en: "Unified"
+                    public static var unified: String { L10nSupport.string("workbench.skills.copies.diff.unified") }
+
+                    /// Shown in place of a line diff when the file could not be read safely.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.unreadable`
+                    /// en: "This file could not be read"
+                    public static var unreadable: String { L10nSupport.string("workbench.skills.copies.diff.unreadable") }
+
+                    /// Shown when a selected version is a broken or out-of-scope link.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.unreadableVersion`
+                    /// en: "This version cannot be read"
+                    public static var unreadableVersion: String { L10nSupport.string("workbench.skills.copies.diff.unreadableVersion") }
+
+                    public enum Change {
+                        /// Tooltip on a file that exists only in the compared version.
+                        ///
+                        /// Key: `workbench.skills.copies.diff.change.added`
+                        /// en: "Only in the compared version"
+                        public static var added: String { L10nSupport.string("workbench.skills.copies.diff.change.added") }
+
+                        /// Tooltip on a file present in both versions with different content.
+                        ///
+                        /// Key: `workbench.skills.copies.diff.change.modified`
+                        /// en: "Content differs"
+                        public static var modified: String { L10nSupport.string("workbench.skills.copies.diff.change.modified") }
+
+                        /// Tooltip on a file that exists only in the base version.
+                        ///
+                        /// Key: `workbench.skills.copies.diff.change.removed`
+                        /// en: "Only in the base version"
+                        public static var removed: String { L10nSupport.string("workbench.skills.copies.diff.change.removed") }
+
+                        /// Tooltip on a file identical in both versions.
+                        ///
+                        /// Key: `workbench.skills.copies.diff.change.unchanged`
+                        /// en: "Same in both versions"
+                        public static var unchanged: String { L10nSupport.string("workbench.skills.copies.diff.change.unchanged") }
+                    }
+                }
+
+                public enum Kind {
+                    /// Chip on a backup snapshot listed as a version in the copies sheet.
+                    ///
+                    /// Key: `workbench.skills.copies.kind.backup`
+                    /// en: "Backup"
+                    public static var backup: String { L10nSupport.string("workbench.skills.copies.kind.backup") }
+
+                    /// Chip on a skill the harness ships in its own folder; never written.
+                    ///
+                    /// Key: `workbench.skills.copies.kind.builtIn`
+                    /// en: "Read-only built-in"
+                    public static var builtIn: String { L10nSupport.string("workbench.skills.copies.kind.builtIn") }
+
+                    /// Chip on a real folder in a harness skills folder that Vibe Bar did not write.
+                    ///
+                    /// Key: `workbench.skills.copies.kind.independentCopy`
+                    /// en: "Independent copy"
+                    public static var independentCopy: String { L10nSupport.string("workbench.skills.copies.kind.independentCopy") }
+
+                    /// Chip on a copy Vibe Bar wrote into a harness folder.
+                    ///
+                    /// Key: `workbench.skills.copies.kind.managedCopy`
+                    /// en: "Managed copy"
+                    public static var managedCopy: String { L10nSupport.string("workbench.skills.copies.kind.managedCopy") }
+
+                    /// Chip on the shared copy in the copies sheet: the directory every projection comes from.
+                    ///
+                    /// Key: `workbench.skills.copies.kind.source`
+                    /// en: "Managed source"
+                    public static var source: String { L10nSupport.string("workbench.skills.copies.kind.source") }
+
+                    /// Chip on a symlink entry in a harness skills folder.
+                    ///
+                    /// Key: `workbench.skills.copies.kind.symlink`
+                    /// en: "Symlink"
+                    public static var symlink: String { L10nSupport.string("workbench.skills.copies.kind.symlink") }
                 }
             }
 
@@ -15621,16 +15869,53 @@ enum L10nCatalogFacts {
         "workbench.skills.contextEnableIn",
         "workbench.skills.contextRemoveProjection",
         "workbench.skills.copies.appFolder",
+        "workbench.skills.copies.backupTitle",
+        "workbench.skills.copies.baselineUnavailable",
         "workbench.skills.copies.builtIn",
         "workbench.skills.copies.changed",
+        "workbench.skills.copies.copyPath",
         "workbench.skills.copies.copyToShared",
+        "workbench.skills.copies.diff.absent",
+        "workbench.skills.copies.diff.base",
+        "workbench.skills.copies.diff.binary",
+        "workbench.skills.copies.diff.change.added",
+        "workbench.skills.copies.diff.change.modified",
+        "workbench.skills.copies.diff.change.removed",
+        "workbench.skills.copies.diff.change.unchanged",
+        "workbench.skills.copies.diff.compared",
+        "workbench.skills.copies.diff.fileFacts",
+        "workbench.skills.copies.diff.lineStats",
+        "workbench.skills.copies.diff.loading",
+        "workbench.skills.copies.diff.noDifferences",
+        "workbench.skills.copies.diff.pickVersion",
+        "workbench.skills.copies.diff.sideBySide",
+        "workbench.skills.copies.diff.summary",
+        "workbench.skills.copies.diff.symlinkTarget",
+        "workbench.skills.copies.diff.tooLarge",
+        "workbench.skills.copies.diff.truncated",
+        "workbench.skills.copies.diff.unified",
+        "workbench.skills.copies.diff.unreadable",
+        "workbench.skills.copies.diff.unreadableVersion",
         "workbench.skills.copies.differs",
         "workbench.skills.copies.identical",
+        "workbench.skills.copies.kind.backup",
+        "workbench.skills.copies.kind.builtIn",
+        "workbench.skills.copies.kind.independentCopy",
+        "workbench.skills.copies.kind.managedCopy",
+        "workbench.skills.copies.kind.source",
+        "workbench.skills.copies.kind.symlink",
+        "workbench.skills.copies.linkBroken",
+        "workbench.skills.copies.linkOutside",
+        "workbench.skills.copies.linkTarget",
+        "workbench.skills.copies.linkToShared",
         "workbench.skills.copies.noShared",
+        "workbench.skills.copies.notCompared",
+        "workbench.skills.copies.recordedBaseline",
         "workbench.skills.copies.replaceConfirmMessage",
         "workbench.skills.copies.replaceConfirmTitle",
         "workbench.skills.copies.replaceShared",
         "workbench.skills.copies.shadowsShared",
+        "workbench.skills.copies.subtitle",
         "workbench.skills.copies.title",
         "workbench.skills.countFiltered",
         "workbench.skills.countTotal",
@@ -15684,6 +15969,7 @@ enum L10nCatalogFacts {
         "workbench.skills.install",
         "workbench.skills.installFromZip",
         "workbench.skills.menuAcceptLocalChanges",
+        "workbench.skills.menuCopiesAndDiff",
         "workbench.skills.menuMoreActions",
         "workbench.skills.menuRevealInFinder",
         "workbench.skills.menuUninstall",
@@ -17745,16 +18031,53 @@ enum L10nCatalogFacts {
         "workbench.skills.contextEnableIn": 1,
         "workbench.skills.contextRemoveProjection": 1,
         "workbench.skills.copies.appFolder": 1,
+        "workbench.skills.copies.backupTitle": 1,
+        "workbench.skills.copies.baselineUnavailable": 0,
         "workbench.skills.copies.builtIn": 1,
         "workbench.skills.copies.changed": 1,
+        "workbench.skills.copies.copyPath": 0,
         "workbench.skills.copies.copyToShared": 0,
+        "workbench.skills.copies.diff.absent": 0,
+        "workbench.skills.copies.diff.base": 0,
+        "workbench.skills.copies.diff.binary": 0,
+        "workbench.skills.copies.diff.change.added": 0,
+        "workbench.skills.copies.diff.change.modified": 0,
+        "workbench.skills.copies.diff.change.removed": 0,
+        "workbench.skills.copies.diff.change.unchanged": 0,
+        "workbench.skills.copies.diff.compared": 0,
+        "workbench.skills.copies.diff.fileFacts": 2,
+        "workbench.skills.copies.diff.lineStats": 2,
+        "workbench.skills.copies.diff.loading": 0,
+        "workbench.skills.copies.diff.noDifferences": 0,
+        "workbench.skills.copies.diff.pickVersion": 0,
+        "workbench.skills.copies.diff.sideBySide": 0,
+        "workbench.skills.copies.diff.summary": 4,
+        "workbench.skills.copies.diff.symlinkTarget": 1,
+        "workbench.skills.copies.diff.tooLarge": 0,
+        "workbench.skills.copies.diff.truncated": 1,
+        "workbench.skills.copies.diff.unified": 0,
+        "workbench.skills.copies.diff.unreadable": 0,
+        "workbench.skills.copies.diff.unreadableVersion": 0,
         "workbench.skills.copies.differs": 0,
         "workbench.skills.copies.identical": 0,
+        "workbench.skills.copies.kind.backup": 0,
+        "workbench.skills.copies.kind.builtIn": 0,
+        "workbench.skills.copies.kind.independentCopy": 0,
+        "workbench.skills.copies.kind.managedCopy": 0,
+        "workbench.skills.copies.kind.source": 0,
+        "workbench.skills.copies.kind.symlink": 0,
+        "workbench.skills.copies.linkBroken": 0,
+        "workbench.skills.copies.linkOutside": 0,
+        "workbench.skills.copies.linkTarget": 1,
+        "workbench.skills.copies.linkToShared": 0,
         "workbench.skills.copies.noShared": 0,
+        "workbench.skills.copies.notCompared": 0,
+        "workbench.skills.copies.recordedBaseline": 0,
         "workbench.skills.copies.replaceConfirmMessage": 0,
         "workbench.skills.copies.replaceConfirmTitle": 1,
         "workbench.skills.copies.replaceShared": 0,
         "workbench.skills.copies.shadowsShared": 1,
+        "workbench.skills.copies.subtitle": 0,
         "workbench.skills.copies.title": 1,
         "workbench.skills.countFiltered": 2,
         "workbench.skills.countTotal": 1,
@@ -17808,6 +18131,7 @@ enum L10nCatalogFacts {
         "workbench.skills.install": 0,
         "workbench.skills.installFromZip": 0,
         "workbench.skills.menuAcceptLocalChanges": 0,
+        "workbench.skills.menuCopiesAndDiff": 0,
         "workbench.skills.menuMoreActions": 1,
         "workbench.skills.menuRevealInFinder": 0,
         "workbench.skills.menuUninstall": 0,

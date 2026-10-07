@@ -5975,6 +5975,120 @@
     "workbench.skills.copies.copyToShared": {
       "value": "复制到共享库"
     },
+    "workbench.skills.copies.subtitle": {
+      "value": "此 skill 在这台 Mac 上的所有位置。选择两个版本查看差异。"
+    },
+    "workbench.skills.copies.kind.source": {
+      "value": "受管源"
+    },
+    "workbench.skills.copies.kind.managedCopy": {
+      "value": "受管拷贝"
+    },
+    "workbench.skills.copies.kind.symlink": {
+      "value": "软链"
+    },
+    "workbench.skills.copies.kind.independentCopy": {
+      "value": "独立拷贝"
+    },
+    "workbench.skills.copies.kind.builtIn": {
+      "value": "内置只读"
+    },
+    "workbench.skills.copies.kind.backup": {
+      "value": "备份"
+    },
+    "workbench.skills.copies.backupTitle": {
+      "value": "{date} 的备份"
+    },
+    "workbench.skills.copies.linkTarget": {
+      "value": "指向 {path}"
+    },
+    "workbench.skills.copies.linkToShared": {
+      "value": "链接到共享副本"
+    },
+    "workbench.skills.copies.linkOutside": {
+      "value": "指向 skills 目录之外，因此不读取"
+    },
+    "workbench.skills.copies.linkBroken": {
+      "value": "链接已失效：目标不存在"
+    },
+    "workbench.skills.copies.notCompared": {
+      "value": "无法对比"
+    },
+    "workbench.skills.copies.copyPath": {
+      "value": "复制路径"
+    },
+    "workbench.skills.copies.recordedBaseline": {
+      "value": "上次记录的版本"
+    },
+    "workbench.skills.copies.baselineUnavailable": {
+      "value": "共享副本已被修改，但 Vibe Bar 只保存了上次记录版本的指纹，无法显示修改前的内容。这里列出的备份是更早的快照。"
+    },
+    "workbench.skills.copies.diff.base": {
+      "value": "基准"
+    },
+    "workbench.skills.copies.diff.compared": {
+      "value": "对比对象"
+    },
+    "workbench.skills.copies.diff.unified": {
+      "value": "合并视图"
+    },
+    "workbench.skills.copies.diff.sideBySide": {
+      "value": "并排视图"
+    },
+    "workbench.skills.copies.diff.summary": {
+      "value": "新增 {added} · 删除 {removed} · 修改 {modified} · 相同 {unchanged}"
+    },
+    "workbench.skills.copies.diff.lineStats": {
+      "value": "+{added} −{removed}"
+    },
+    "workbench.skills.copies.diff.change.added": {
+      "value": "仅在对比对象中"
+    },
+    "workbench.skills.copies.diff.change.removed": {
+      "value": "仅在基准中"
+    },
+    "workbench.skills.copies.diff.change.modified": {
+      "value": "内容不同"
+    },
+    "workbench.skills.copies.diff.change.unchanged": {
+      "value": "两个版本相同"
+    },
+    "workbench.skills.copies.diff.noDifferences": {
+      "value": "没有差异"
+    },
+    "workbench.skills.copies.diff.binary": {
+      "value": "二进制文件，不显示内容"
+    },
+    "workbench.skills.copies.diff.tooLarge": {
+      "value": "文件过大，无法逐行对比"
+    },
+    "workbench.skills.copies.diff.fileFacts": {
+      "value": "{size} · SHA-256 {hash}"
+    },
+    "workbench.skills.copies.diff.absent": {
+      "value": "不存在"
+    },
+    "workbench.skills.copies.diff.symlinkTarget": {
+      "value": "链接目标：{target}"
+    },
+    "workbench.skills.copies.diff.unreadable": {
+      "value": "无法读取此文件"
+    },
+    "workbench.skills.copies.diff.unreadableVersion": {
+      "value": "无法读取此版本"
+    },
+    "workbench.skills.copies.diff.loading": {
+      "value": "正在对比…"
+    },
+    "workbench.skills.copies.diff.truncated": {
+      "value": "每个版本仅对比前 {count} 个文件"
+    },
+    "workbench.skills.copies.diff.pickVersion": {
+      "value": "选择另一个版本与基准对比"
+    },
+    "workbench.skills.menuCopiesAndDiff": {
+      "value": "副本与差异…"
+    },
     "workbench.skills.toast.replacedShared": {
       "value": "已替换 {skill} 的共享副本。"
     },

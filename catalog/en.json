@@ -9280,6 +9280,184 @@
       "value": "Copy Into Shared Library",
       "comment": "Action for a built-in or app-folder skill that has no shared copy yet."
     },
+    "workbench.skills.copies.subtitle": {
+      "value": "Every place this skill exists on this Mac. Pick two versions to see what differs.",
+      "comment": "Subtitle of the copies and differences sheet."
+    },
+    "workbench.skills.copies.kind.source": {
+      "value": "Managed source",
+      "comment": "Chip on the shared copy in the copies sheet: the directory every projection comes from."
+    },
+    "workbench.skills.copies.kind.managedCopy": {
+      "value": "Managed copy",
+      "comment": "Chip on a copy Vibe Bar wrote into a harness folder."
+    },
+    "workbench.skills.copies.kind.symlink": {
+      "value": "Symlink",
+      "comment": "Chip on a symlink entry in a harness skills folder."
+    },
+    "workbench.skills.copies.kind.independentCopy": {
+      "value": "Independent copy",
+      "comment": "Chip on a real folder in a harness skills folder that Vibe Bar did not write."
+    },
+    "workbench.skills.copies.kind.builtIn": {
+      "value": "Read-only built-in",
+      "comment": "Chip on a skill the harness ships in its own folder; never written."
+    },
+    "workbench.skills.copies.kind.backup": {
+      "value": "Backup",
+      "comment": "Chip on a backup snapshot listed as a version in the copies sheet."
+    },
+    "workbench.skills.copies.backupTitle": {
+      "value": "Backup from {date}",
+      "comment": "Title of a backup snapshot row in the copies sheet; date formatted by the client.",
+      "placeholders": {
+        "date": "string"
+      }
+    },
+    "workbench.skills.copies.linkTarget": {
+      "value": "Points to {path}",
+      "comment": "Under a symlink version: where the link resolves. The path is an identifier.",
+      "placeholders": {
+        "path": "string"
+      }
+    },
+    "workbench.skills.copies.linkToShared": {
+      "value": "Links to the shared copy",
+      "comment": "Under a symlink version that resolves to this skill's shared copy."
+    },
+    "workbench.skills.copies.linkOutside": {
+      "value": "Points outside the skills folders, so it is not read",
+      "comment": "Under a symlink version whose target is outside every skills folder."
+    },
+    "workbench.skills.copies.linkBroken": {
+      "value": "Broken link: the target does not exist",
+      "comment": "Under a symlink version whose target is missing."
+    },
+    "workbench.skills.copies.notCompared": {
+      "value": "Could not be compared",
+      "comment": "Under a version whose content could not be hashed against the shared copy."
+    },
+    "workbench.skills.copies.copyPath": {
+      "value": "Copy Path",
+      "comment": "Button that copies a version's full folder path to the clipboard."
+    },
+    "workbench.skills.copies.recordedBaseline": {
+      "value": "Last recorded version",
+      "comment": "Tag on the backup whose content matches what Vibe Bar last recorded for the shared copy: the state before local edits."
+    },
+    "workbench.skills.copies.baselineUnavailable": {
+      "value": "The shared copy was edited, but Vibe Bar kept only a fingerprint of the version it last recorded, so the content before the edit cannot be shown. Backups listed here are earlier snapshots.",
+      "comment": "Note in the copies sheet when a locally modified skill has no snapshot of its recorded version."
+    },
+    "workbench.skills.copies.diff.base": {
+      "value": "Base",
+      "comment": "Picker label: the version the comparison starts from."
+    },
+    "workbench.skills.copies.diff.compared": {
+      "value": "Compare with",
+      "comment": "Picker label: the version compared against the base."
+    },
+    "workbench.skills.copies.diff.unified": {
+      "value": "Unified",
+      "comment": "Segment: show the line diff as one column."
+    },
+    "workbench.skills.copies.diff.sideBySide": {
+      "value": "Side by Side",
+      "comment": "Segment: show the line diff in two columns."
+    },
+    "workbench.skills.copies.diff.summary": {
+      "value": "{added} added · {removed} removed · {modified} modified · {unchanged} unchanged",
+      "comment": "File counts of a comparison between two versions of a skill.",
+      "placeholders": {
+        "added": "int",
+        "removed": "int",
+        "modified": "int",
+        "unchanged": "int"
+      }
+    },
+    "workbench.skills.copies.diff.lineStats": {
+      "value": "+{added} −{removed}",
+      "comment": "Lines added and removed in the selected file.",
+      "placeholders": {
+        "added": "int",
+        "removed": "int"
+      }
+    },
+    "workbench.skills.copies.diff.change.added": {
+      "value": "Only in the compared version",
+      "comment": "Tooltip on a file that exists only in the compared version."
+    },
+    "workbench.skills.copies.diff.change.removed": {
+      "value": "Only in the base version",
+      "comment": "Tooltip on a file that exists only in the base version."
+    },
+    "workbench.skills.copies.diff.change.modified": {
+      "value": "Content differs",
+      "comment": "Tooltip on a file present in both versions with different content."
+    },
+    "workbench.skills.copies.diff.change.unchanged": {
+      "value": "Same in both versions",
+      "comment": "Tooltip on a file identical in both versions."
+    },
+    "workbench.skills.copies.diff.noDifferences": {
+      "value": "No differences",
+      "comment": "Shown in place of a line diff when the selected file is identical."
+    },
+    "workbench.skills.copies.diff.binary": {
+      "value": "Binary file, contents not shown",
+      "comment": "Shown in place of a line diff for a binary file."
+    },
+    "workbench.skills.copies.diff.tooLarge": {
+      "value": "Too large to compare line by line",
+      "comment": "Shown in place of a line diff for an oversized file."
+    },
+    "workbench.skills.copies.diff.fileFacts": {
+      "value": "{size} · SHA-256 {hash}",
+      "comment": "Size and digest of one side of a binary or oversized file; size formatted by the client.",
+      "placeholders": {
+        "size": "string",
+        "hash": "string"
+      }
+    },
+    "workbench.skills.copies.diff.absent": {
+      "value": "Not present",
+      "comment": "One side of a file comparison where the file does not exist."
+    },
+    "workbench.skills.copies.diff.symlinkTarget": {
+      "value": "Link target: {target}",
+      "comment": "One side of a comparison of a symlink inside a skill. The target is an identifier.",
+      "placeholders": {
+        "target": "string"
+      }
+    },
+    "workbench.skills.copies.diff.unreadable": {
+      "value": "This file could not be read",
+      "comment": "Shown in place of a line diff when the file could not be read safely."
+    },
+    "workbench.skills.copies.diff.unreadableVersion": {
+      "value": "This version cannot be read",
+      "comment": "Shown when a selected version is a broken or out-of-scope link."
+    },
+    "workbench.skills.copies.diff.loading": {
+      "value": "Comparing…",
+      "comment": "Progress while two versions are compared."
+    },
+    "workbench.skills.copies.diff.truncated": {
+      "value": "Only the first {count} files of each version are compared",
+      "comment": "Note when a version holds more files than the comparison reads.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.skills.copies.diff.pickVersion": {
+      "value": "Select another version to compare with the base",
+      "comment": "Empty state of the comparison pane."
+    },
+    "workbench.skills.menuCopiesAndDiff": {
+      "value": "Copies and Differences…",
+      "comment": "Row overflow menu item that opens the copies and differences sheet."
+    },
     "workbench.skills.toast.replacedShared": {
       "value": "Replaced the shared copy of {skill}.",
       "comment": "Toast after replacing the shared copy.",
