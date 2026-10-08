@@ -10747,6 +10747,18 @@ public enum L10n {
             /// en: "Add MCP server"
             public static var addMCP: String { L10nSupport.string("workbench.library.addMCP") }
 
+            /// Button on a discovered row whose shared entry is a symlink to a folder outside Vibe Bar's management. Records the link as a managed skill; nothing on disk changes.
+            ///
+            /// Key: `workbench.library.adoptLink`
+            /// en: "Adopt link"
+            public static var adoptLink: String { L10nSupport.string("workbench.library.adoptLink") }
+
+            /// Tooltip on the Adopt link button of a discovered linked skill.
+            ///
+            /// Key: `workbench.library.adoptLinkHelp`
+            /// en: "Record this link so Vibe Bar can switch it per agent. Nothing on disk changes, and the folder it points to is never written."
+            public static var adoptLinkHelp: String { L10nSupport.string("workbench.library.adoptLinkHelp") }
+
             /// Field label in the single MCP server editor.
             ///
             /// Key: `workbench.library.arguments`
@@ -10855,6 +10867,18 @@ public enum L10n {
             /// en: "Link shared instructions"
             public static var linkInstructions: String { L10nSupport.string("workbench.library.linkInstructions") }
 
+            /// State label on a discovered row: an adopted link no longer exists in ~/.agents/skills; the row stays so its projections can be cleaned up by unlinking.
+            ///
+            /// Key: `workbench.library.linkMissing`
+            /// en: "Link removed"
+            public static var linkMissing: String { L10nSupport.string("workbench.library.linkMissing") }
+
+            /// Explanation under a discovered row whose adopted link was replaced by a real folder. 'Import Existing' is the name of the Skills page button.
+            ///
+            /// Key: `workbench.library.linkReplacedDetail`
+            /// en: "The adopted link was replaced by a folder. Use Import Existing to manage that folder instead."
+            public static var linkReplacedDetail: String { L10nSupport.string("workbench.library.linkReplacedDetail") }
+
             /// Label or feedback in the shared agent resource Library.
             ///
             /// Key: `workbench.library.linkedSource`
@@ -10916,6 +10940,18 @@ public enum L10n {
             /// Key: `workbench.library.saveResult`
             /// en: "Saved"
             public static var saveResult: String { L10nSupport.string("workbench.library.saveResult") }
+
+            /// State label on a discovered row: an adopted link now points somewhere other than where Vibe Bar recorded it, so changes to it are paused.
+            ///
+            /// Key: `workbench.library.sourceChanged`
+            /// en: "Source changed"
+            public static var sourceChanged: String { L10nSupport.string("workbench.library.sourceChanged") }
+
+            /// Explanation under a discovered row whose adopted link was re-pointed, broken, or replaced.
+            ///
+            /// Key: `workbench.library.sourceChangedDetail`
+            /// en: "This link no longer points where Vibe Bar recorded it. Changes are paused until you re-confirm its source or unlink it."
+            public static var sourceChangedDetail: String { L10nSupport.string("workbench.library.sourceChangedDetail") }
 
             /// Label or feedback in the shared agent resource Library.
             ///
@@ -12315,6 +12351,26 @@ public enum L10n {
                 L10nSupport.format("workbench.skills.contextRemoveProjection", app)
             }
 
+            /// Body of the confirmation before converting a linked skill to a copy.
+            ///
+            /// Key: `workbench.skills.convertConfirmMessage`
+            /// en: "Vibe Bar reads the linked folder once, copies it into ~/.agents/skills, and replaces the link with that copy. The original folder is left unchanged, and later edits there no longer reach this skill."
+            public static var convertConfirmMessage: String { L10nSupport.string("workbench.skills.convertConfirmMessage") }
+
+            /// Title of the confirmation before converting a linked skill to a copy.
+            ///
+            /// Key: `workbench.skills.convertConfirmTitle`
+            /// en: "Convert {skill} to a copy?"
+            public static func convertConfirmTitle(skill: String) -> String {
+                L10nSupport.format("workbench.skills.convertConfirmTitle", skill)
+            }
+
+            /// Button in the convert-to-copy confirmation dialog. distinct-from: workbench.skills.menuConvertToCopy — the menu item's ellipsis promises the confirmation dialog; this is the button inside it.
+            ///
+            /// Key: `workbench.skills.convertToCopy`
+            /// en: "Convert to Copy"
+            public static var convertToCopy: String { L10nSupport.string("workbench.skills.convertToCopy") }
+
             /// Skills page count caption while the search field filters the list.
             ///
             /// Key: `workbench.skills.countFiltered`
@@ -12385,6 +12441,12 @@ public enum L10n {
             /// en: "Accept Local Changes"
             public static var menuAcceptLocalChanges: String { L10nSupport.string("workbench.skills.menuAcceptLocalChanges") }
 
+            /// Row menu item for a linked skill: replaces the link with a copy of the folder it points to. Opens a confirmation.
+            ///
+            /// Key: `workbench.skills.menuConvertToCopy`
+            /// en: "Convert to Copy…"
+            public static var menuConvertToCopy: String { L10nSupport.string("workbench.skills.menuConvertToCopy") }
+
             /// Row overflow menu item that opens the copies and differences sheet.
             ///
             /// Key: `workbench.skills.menuCopiesAndDiff`
@@ -12399,17 +12461,35 @@ public enum L10n {
                 L10nSupport.format("workbench.skills.menuMoreActions", skill)
             }
 
+            /// Row menu item and button for a linked skill: records where the link points now as its trusted source.
+            ///
+            /// Key: `workbench.skills.menuReconfirmSource`
+            /// en: "Re-confirm Source"
+            public static var menuReconfirmSource: String { L10nSupport.string("workbench.skills.menuReconfirmSource") }
+
             /// Overflow-menu item that selects the skill's directory in Finder.
             ///
             /// Key: `workbench.skills.menuRevealInFinder`
             /// en: "Reveal in Finder"
             public static var menuRevealInFinder: String { L10nSupport.string("workbench.skills.menuRevealInFinder") }
 
+            /// Row menu item for a linked skill: shows the folder the link points to in Finder.
+            ///
+            /// Key: `workbench.skills.menuRevealSource`
+            /// en: "Reveal Source in Finder"
+            public static var menuRevealSource: String { L10nSupport.string("workbench.skills.menuRevealSource") }
+
             /// Overflow-menu item that asks to uninstall the skill.
             ///
             /// Key: `workbench.skills.menuUninstall`
             /// en: "Uninstall…"
             public static var menuUninstall: String { L10nSupport.string("workbench.skills.menuUninstall") }
+
+            /// Row menu item for a linked skill, in place of Uninstall: removes the link and its projections, never the folder it points to. Opens a confirmation.
+            ///
+            /// Key: `workbench.skills.menuUnlink`
+            /// en: "Unlink…"
+            public static var menuUnlink: String { L10nSupport.string("workbench.skills.menuUnlink") }
 
             /// Overflow-menu item that re-fetches the skill from its repository.
             ///
@@ -12469,6 +12549,20 @@ public enum L10n {
             /// en: "Installed locally"
             public static var sourceInstalledLocally: String { L10nSupport.string("workbench.skills.sourceInstalledLocally") }
 
+            /// Source badge for a managed skill whose shared entry is a link to a folder outside Vibe Bar's management. Lowercase like the 'local' badge.
+            ///
+            /// Key: `workbench.skills.sourceLinked`
+            /// en: "linked"
+            public static var sourceLinked: String { L10nSupport.string("workbench.skills.sourceLinked") }
+
+            /// Tooltip on the linked source badge and line in the wiring details. {target} is the link's target path as written on disk.
+            ///
+            /// Key: `workbench.skills.sourceLinkedHelp`
+            /// en: "Links to {target}. Vibe Bar manages the link and its projections, never the folder it points to."
+            public static func sourceLinkedHelp(target: String) -> String {
+                L10nSupport.format("workbench.skills.sourceLinkedHelp", target)
+            }
+
             /// Source badge and result-group heading for a skill with no repository behind it.
             ///
             /// Key: `workbench.skills.sourceLocal`
@@ -12499,6 +12593,26 @@ public enum L10n {
             /// en: "Uninstall {skill}?"
             public static func uninstallConfirmTitle(skill: String) -> String {
                 L10nSupport.format("workbench.skills.uninstallConfirmTitle", skill)
+            }
+
+            /// Destructive button in the unlink confirmation dialog; also the button on a discovered row whose adopted link changed or disappeared. distinct-from: workbench.skills.menuUnlink — the menu item's ellipsis promises the confirmation dialog; this is the button that acts.
+            ///
+            /// Key: `workbench.skills.unlink`
+            /// en: "Unlink"
+            public static var unlink: String { L10nSupport.string("workbench.skills.unlink") }
+
+            /// Body of the confirmation before unlinking a linked skill.
+            ///
+            /// Key: `workbench.skills.unlinkConfirmMessage`
+            /// en: "Vibe Bar removes the link in ~/.agents/skills, every projection of it, and its per-skill switches. The folder it points to is not touched; a backup records where the link pointed."
+            public static var unlinkConfirmMessage: String { L10nSupport.string("workbench.skills.unlinkConfirmMessage") }
+
+            /// Title of the confirmation before unlinking a linked skill.
+            ///
+            /// Key: `workbench.skills.unlinkConfirmTitle`
+            /// en: "Unlink {skill}?"
+            public static func unlinkConfirmTitle(skill: String) -> String {
+                L10nSupport.format("workbench.skills.unlinkConfirmTitle", skill)
             }
 
             public enum Backups {
@@ -12789,6 +12903,12 @@ public enum L10n {
                 /// Key: `workbench.skills.copies.linkToShared`
                 /// en: "Links to the shared copy"
                 public static var linkToShared: String { L10nSupport.string("workbench.skills.copies.linkToShared") }
+
+                /// Note in the copies sheet of a linked skill: its folder is never read, so no version is compared with it.
+                ///
+                /// Key: `workbench.skills.copies.linkedNotCompared`
+                /// en: "This skill's source is outside Vibe Bar's management, so its files are not compared."
+                public static var linkedNotCompared: String { L10nSupport.string("workbench.skills.copies.linkedNotCompared") }
 
                 /// Comparison line when the skill has no shared copy to compare against.
                 ///
@@ -13234,6 +13354,26 @@ public enum L10n {
                 /// en: "Keep evidence for"
                 public static var keepEvidenceFor: String { L10nSupport.string("workbench.skills.import.keepEvidenceFor") }
 
+                /// Section title in the import sheet listing links in ~/.agents/skills that point to folders outside Vibe Bar's management.
+                ///
+                /// Key: `workbench.skills.import.linked`
+                /// en: "Linked from elsewhere"
+                public static var linked: String { L10nSupport.string("workbench.skills.import.linked") }
+
+                /// Explanation under the linked section of the import sheet.
+                ///
+                /// Key: `workbench.skills.import.linkedDetail`
+                /// en: "Links in ~/.agents/skills that point to folders outside Vibe Bar's management. Adopting one records the link so it can be switched per agent; nothing on disk changes, and the folder it points to is never written or copied."
+                public static var linkedDetail: String { L10nSupport.string("workbench.skills.import.linkedDetail") }
+
+                /// Caption under a linked skill in the import sheet. {target} is the link's target path as written on disk.
+                ///
+                /// Key: `workbench.skills.import.linksTo`
+                /// en: "links to {target}"
+                public static func linksTo(target: String) -> String {
+                    L10nSupport.format("workbench.skills.import.linksTo", target)
+                }
+
                 /// Import sheet section header for app-local directories that are not in the shared directory yet.
                 ///
                 /// Key: `workbench.skills.import.needsAdoption`
@@ -13498,6 +13638,14 @@ public enum L10n {
                     L10nSupport.format("workbench.skills.toast.bulkPartial", app, succeeded, failed)
                 }
 
+                /// Toast after a linked skill was converted to a copy.
+                ///
+                /// Key: `workbench.skills.toast.convertedToCopy`
+                /// en: "{skill} is now a copy in the shared library."
+                public static func convertedToCopy(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.convertedToCopy", skill)
+                }
+
                 /// Toast after copying a built-in or app-folder skill into ~/.agents/skills.
                 ///
                 /// Key: `workbench.skills.toast.copiedToShared`
@@ -13606,6 +13754,14 @@ public enum L10n {
                     L10nSupport.format("workbench.skills.toast.projectionClearedFolderKept", skill, app)
                 }
 
+                /// Toast after the user re-confirmed where a linked skill's link points.
+                ///
+                /// Key: `workbench.skills.toast.reconfirmedSource`
+                /// en: "Recorded the current source of {skill}."
+                public static func reconfirmedSource(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.reconfirmedSource", skill)
+                }
+
                 /// Toast after applying the import sheet.
                 ///
                 /// Key: `workbench.skills.toast.recorded`
@@ -13672,6 +13828,22 @@ public enum L10n {
                 /// en: "Uninstalled {skill}. Left in place for {apps}."
                 public static func uninstalledLeftInPlace(skill: String, apps: String) -> String {
                     L10nSupport.format("workbench.skills.toast.uninstalledLeftInPlace", skill, apps)
+                }
+
+                /// Toast after a linked skill was unlinked.
+                ///
+                /// Key: `workbench.skills.toast.unlinked`
+                /// en: "Unlinked {skill}. The folder it pointed to was not changed."
+                public static func unlinked(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.unlinked", skill)
+                }
+
+                /// Toast after unlinking when some harness entries or per-skill switches were left as they were. {apps} is a comma-separated list of harness names.
+                ///
+                /// Key: `workbench.skills.toast.unlinkedLeftInPlace`
+                /// en: "Unlinked {skill}. Left in place for {apps}."
+                public static func unlinkedLeftInPlace(skill: String, apps: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.unlinkedLeftInPlace", skill, apps)
                 }
 
                 /// Toast after re-fetching one skill from its repository.
@@ -15605,6 +15777,8 @@ enum L10nCatalogFacts {
         "workbench.filter.soloHint",
         "workbench.header.refreshPage",
         "workbench.library.addMCP",
+        "workbench.library.adoptLink",
+        "workbench.library.adoptLinkHelp",
         "workbench.library.arguments",
         "workbench.library.availableTo",
         "workbench.library.brokenLink",
@@ -15643,6 +15817,8 @@ enum L10nCatalogFacts {
         "workbench.library.headers",
         "workbench.library.instructions",
         "workbench.library.linkInstructions",
+        "workbench.library.linkMissing",
+        "workbench.library.linkReplacedDetail",
         "workbench.library.linkedSource",
         "workbench.library.managed",
         "workbench.library.mcp",
@@ -15653,6 +15829,8 @@ enum L10nCatalogFacts {
         "workbench.library.readable",
         "workbench.library.removeProjection",
         "workbench.library.saveResult",
+        "workbench.library.sourceChanged",
+        "workbench.library.sourceChangedDetail",
         "workbench.library.subtitle",
         "workbench.library.target",
         "workbench.library.targets",
@@ -15868,6 +16046,9 @@ enum L10nCatalogFacts {
         "workbench.skills.contextDisableKeepProjection",
         "workbench.skills.contextEnableIn",
         "workbench.skills.contextRemoveProjection",
+        "workbench.skills.convertConfirmMessage",
+        "workbench.skills.convertConfirmTitle",
+        "workbench.skills.convertToCopy",
         "workbench.skills.copies.appFolder",
         "workbench.skills.copies.backupTitle",
         "workbench.skills.copies.baselineUnavailable",
@@ -15908,6 +16089,7 @@ enum L10nCatalogFacts {
         "workbench.skills.copies.linkOutside",
         "workbench.skills.copies.linkTarget",
         "workbench.skills.copies.linkToShared",
+        "workbench.skills.copies.linkedNotCompared",
         "workbench.skills.copies.noShared",
         "workbench.skills.copies.notCompared",
         "workbench.skills.copies.recordedBaseline",
@@ -15955,6 +16137,9 @@ enum L10nCatalogFacts {
         "workbench.skills.import.conflictsDetail",
         "workbench.skills.import.foundIn",
         "workbench.skills.import.keepEvidenceFor",
+        "workbench.skills.import.linked",
+        "workbench.skills.import.linkedDetail",
+        "workbench.skills.import.linksTo",
         "workbench.skills.import.needsAdoption",
         "workbench.skills.import.needsAdoptionDetail",
         "workbench.skills.import.notSkills",
@@ -15969,10 +16154,14 @@ enum L10nCatalogFacts {
         "workbench.skills.install",
         "workbench.skills.installFromZip",
         "workbench.skills.menuAcceptLocalChanges",
+        "workbench.skills.menuConvertToCopy",
         "workbench.skills.menuCopiesAndDiff",
         "workbench.skills.menuMoreActions",
+        "workbench.skills.menuReconfirmSource",
         "workbench.skills.menuRevealInFinder",
+        "workbench.skills.menuRevealSource",
         "workbench.skills.menuUninstall",
+        "workbench.skills.menuUnlink",
         "workbench.skills.menuUpdateFromRepository",
         "workbench.skills.menuWiringDetails",
         "workbench.skills.modifiedCount",
@@ -15985,6 +16174,8 @@ enum L10nCatalogFacts {
         "workbench.skills.sourceBuiltIn",
         "workbench.skills.sourceBuiltInHelp",
         "workbench.skills.sourceInstalledLocally",
+        "workbench.skills.sourceLinked",
+        "workbench.skills.sourceLinkedHelp",
         "workbench.skills.sourceLocal",
         "workbench.skills.state.coupled",
         "workbench.skills.state.disabledInHarness",
@@ -16011,6 +16202,7 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.archiveEmpty",
         "workbench.skills.toast.bulkDone",
         "workbench.skills.toast.bulkPartial",
+        "workbench.skills.toast.convertedToCopy",
         "workbench.skills.toast.copiedToShared",
         "workbench.skills.toast.disabledKeptProjection",
         "workbench.skills.toast.enabledForApps",
@@ -16025,6 +16217,7 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.noSkillsFound",
         "workbench.skills.toast.notFoundInRepo",
         "workbench.skills.toast.projectionClearedFolderKept",
+        "workbench.skills.toast.reconfirmedSource",
         "workbench.skills.toast.recorded",
         "workbench.skills.toast.replacedShared",
         "workbench.skills.toast.reposUnreadable",
@@ -16034,6 +16227,8 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.sharedRootNoSwitch",
         "workbench.skills.toast.uninstalledBackedUp",
         "workbench.skills.toast.uninstalledLeftInPlace",
+        "workbench.skills.toast.unlinked",
+        "workbench.skills.toast.unlinkedLeftInPlace",
         "workbench.skills.toast.updated",
         "workbench.skills.toast.updatesAvailable",
         "workbench.skills.toggleHelp.installInto",
@@ -16050,6 +16245,9 @@ enum L10nCatalogFacts {
         "workbench.skills.uninstall",
         "workbench.skills.uninstallConfirmMessage",
         "workbench.skills.uninstallConfirmTitle",
+        "workbench.skills.unlink",
+        "workbench.skills.unlinkConfirmMessage",
+        "workbench.skills.unlinkConfirmTitle",
         "workbench.skills.wiring.footer",
         "workbench.skills.wiring.mechanismGeminiCompat",
         "workbench.skills.wiring.mechanismSharedRoot",
@@ -17767,6 +17965,8 @@ enum L10nCatalogFacts {
         "workbench.filter.soloHint": 0,
         "workbench.header.refreshPage": 1,
         "workbench.library.addMCP": 0,
+        "workbench.library.adoptLink": 0,
+        "workbench.library.adoptLinkHelp": 0,
         "workbench.library.arguments": 0,
         "workbench.library.availableTo": 1,
         "workbench.library.brokenLink": 0,
@@ -17805,6 +18005,8 @@ enum L10nCatalogFacts {
         "workbench.library.headers": 0,
         "workbench.library.instructions": 0,
         "workbench.library.linkInstructions": 0,
+        "workbench.library.linkMissing": 0,
+        "workbench.library.linkReplacedDetail": 0,
         "workbench.library.linkedSource": 0,
         "workbench.library.managed": 0,
         "workbench.library.mcp": 0,
@@ -17815,6 +18017,8 @@ enum L10nCatalogFacts {
         "workbench.library.readable": 0,
         "workbench.library.removeProjection": 0,
         "workbench.library.saveResult": 0,
+        "workbench.library.sourceChanged": 0,
+        "workbench.library.sourceChangedDetail": 0,
         "workbench.library.subtitle": 0,
         "workbench.library.target": 0,
         "workbench.library.targets": 0,
@@ -18030,6 +18234,9 @@ enum L10nCatalogFacts {
         "workbench.skills.contextDisableKeepProjection": 1,
         "workbench.skills.contextEnableIn": 1,
         "workbench.skills.contextRemoveProjection": 1,
+        "workbench.skills.convertConfirmMessage": 0,
+        "workbench.skills.convertConfirmTitle": 1,
+        "workbench.skills.convertToCopy": 0,
         "workbench.skills.copies.appFolder": 1,
         "workbench.skills.copies.backupTitle": 1,
         "workbench.skills.copies.baselineUnavailable": 0,
@@ -18070,6 +18277,7 @@ enum L10nCatalogFacts {
         "workbench.skills.copies.linkOutside": 0,
         "workbench.skills.copies.linkTarget": 1,
         "workbench.skills.copies.linkToShared": 0,
+        "workbench.skills.copies.linkedNotCompared": 0,
         "workbench.skills.copies.noShared": 0,
         "workbench.skills.copies.notCompared": 0,
         "workbench.skills.copies.recordedBaseline": 0,
@@ -18117,6 +18325,9 @@ enum L10nCatalogFacts {
         "workbench.skills.import.conflictsDetail": 0,
         "workbench.skills.import.foundIn": 1,
         "workbench.skills.import.keepEvidenceFor": 0,
+        "workbench.skills.import.linked": 0,
+        "workbench.skills.import.linkedDetail": 0,
+        "workbench.skills.import.linksTo": 1,
         "workbench.skills.import.needsAdoption": 0,
         "workbench.skills.import.needsAdoptionDetail": 0,
         "workbench.skills.import.notSkills": 0,
@@ -18131,10 +18342,14 @@ enum L10nCatalogFacts {
         "workbench.skills.install": 0,
         "workbench.skills.installFromZip": 0,
         "workbench.skills.menuAcceptLocalChanges": 0,
+        "workbench.skills.menuConvertToCopy": 0,
         "workbench.skills.menuCopiesAndDiff": 0,
         "workbench.skills.menuMoreActions": 1,
+        "workbench.skills.menuReconfirmSource": 0,
         "workbench.skills.menuRevealInFinder": 0,
+        "workbench.skills.menuRevealSource": 0,
         "workbench.skills.menuUninstall": 0,
+        "workbench.skills.menuUnlink": 0,
         "workbench.skills.menuUpdateFromRepository": 0,
         "workbench.skills.menuWiringDetails": 0,
         "workbench.skills.modifiedCount": 1,
@@ -18147,6 +18362,8 @@ enum L10nCatalogFacts {
         "workbench.skills.sourceBuiltIn": 1,
         "workbench.skills.sourceBuiltInHelp": 1,
         "workbench.skills.sourceInstalledLocally": 0,
+        "workbench.skills.sourceLinked": 0,
+        "workbench.skills.sourceLinkedHelp": 1,
         "workbench.skills.sourceLocal": 0,
         "workbench.skills.state.coupled": 0,
         "workbench.skills.state.disabledInHarness": 0,
@@ -18173,6 +18390,7 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.archiveEmpty": 0,
         "workbench.skills.toast.bulkDone": 2,
         "workbench.skills.toast.bulkPartial": 3,
+        "workbench.skills.toast.convertedToCopy": 1,
         "workbench.skills.toast.copiedToShared": 1,
         "workbench.skills.toast.disabledKeptProjection": 2,
         "workbench.skills.toast.enabledForApps": 1,
@@ -18187,6 +18405,7 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.noSkillsFound": 0,
         "workbench.skills.toast.notFoundInRepo": 2,
         "workbench.skills.toast.projectionClearedFolderKept": 2,
+        "workbench.skills.toast.reconfirmedSource": 1,
         "workbench.skills.toast.recorded": 1,
         "workbench.skills.toast.replacedShared": 1,
         "workbench.skills.toast.reposUnreadable": 1,
@@ -18196,6 +18415,8 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.sharedRootNoSwitch": 2,
         "workbench.skills.toast.uninstalledBackedUp": 1,
         "workbench.skills.toast.uninstalledLeftInPlace": 2,
+        "workbench.skills.toast.unlinked": 1,
+        "workbench.skills.toast.unlinkedLeftInPlace": 2,
         "workbench.skills.toast.updated": 1,
         "workbench.skills.toast.updatesAvailable": 1,
         "workbench.skills.toggleHelp.installInto": 1,
@@ -18212,6 +18433,9 @@ enum L10nCatalogFacts {
         "workbench.skills.uninstall": 0,
         "workbench.skills.uninstallConfirmMessage": 0,
         "workbench.skills.uninstallConfirmTitle": 1,
+        "workbench.skills.unlink": 0,
+        "workbench.skills.unlinkConfirmMessage": 0,
+        "workbench.skills.unlinkConfirmTitle": 1,
         "workbench.skills.wiring.footer": 0,
         "workbench.skills.wiring.mechanismGeminiCompat": 0,
         "workbench.skills.wiring.mechanismSharedRoot": 0,

@@ -9753,6 +9753,135 @@
         "cacheRead": "string",
         "cacheWrite": "string"
       }
+    },
+    "workbench.library.adoptLink": {
+      "value": "Adopt link",
+      "comment": "Button on a discovered row whose shared entry is a symlink to a folder outside Vibe Bar's management. Records the link as a managed skill; nothing on disk changes."
+    },
+    "workbench.library.adoptLinkHelp": {
+      "value": "Record this link so Vibe Bar can switch it per agent. Nothing on disk changes, and the folder it points to is never written.",
+      "comment": "Tooltip on the Adopt link button of a discovered linked skill."
+    },
+    "workbench.library.sourceChanged": {
+      "value": "Source changed",
+      "comment": "State label on a discovered row: an adopted link now points somewhere other than where Vibe Bar recorded it, so changes to it are paused."
+    },
+    "workbench.library.sourceChangedDetail": {
+      "value": "This link no longer points where Vibe Bar recorded it. Changes are paused until you re-confirm its source or unlink it.",
+      "comment": "Explanation under a discovered row whose adopted link was re-pointed, broken, or replaced."
+    },
+    "workbench.library.linkReplacedDetail": {
+      "value": "The adopted link was replaced by a folder. Use Import Existing to manage that folder instead.",
+      "comment": "Explanation under a discovered row whose adopted link was replaced by a real folder. 'Import Existing' is the name of the Skills page button."
+    },
+    "workbench.library.linkMissing": {
+      "value": "Link removed",
+      "comment": "State label on a discovered row: an adopted link no longer exists in ~/.agents/skills; the row stays so its projections can be cleaned up by unlinking."
+    },
+    "workbench.skills.sourceLinked": {
+      "value": "linked",
+      "comment": "Source badge for a managed skill whose shared entry is a link to a folder outside Vibe Bar's management. Lowercase like the 'local' badge."
+    },
+    "workbench.skills.sourceLinkedHelp": {
+      "value": "Links to {target}. Vibe Bar manages the link and its projections, never the folder it points to.",
+      "comment": "Tooltip on the linked source badge and line in the wiring details. {target} is the link's target path as written on disk.",
+      "placeholders": {
+        "target": "string"
+      }
+    },
+    "workbench.skills.menuRevealSource": {
+      "value": "Reveal Source in Finder",
+      "comment": "Row menu item for a linked skill: shows the folder the link points to in Finder."
+    },
+    "workbench.skills.menuReconfirmSource": {
+      "value": "Re-confirm Source",
+      "comment": "Row menu item and button for a linked skill: records where the link points now as its trusted source."
+    },
+    "workbench.skills.menuConvertToCopy": {
+      "value": "Convert to Copy…",
+      "comment": "Row menu item for a linked skill: replaces the link with a copy of the folder it points to. Opens a confirmation."
+    },
+    "workbench.skills.menuUnlink": {
+      "value": "Unlink…",
+      "comment": "Row menu item for a linked skill, in place of Uninstall: removes the link and its projections, never the folder it points to. Opens a confirmation."
+    },
+    "workbench.skills.unlink": {
+      "value": "Unlink",
+      "comment": "Destructive button in the unlink confirmation dialog; also the button on a discovered row whose adopted link changed or disappeared. distinct-from: workbench.skills.menuUnlink — the menu item's ellipsis promises the confirmation dialog; this is the button that acts."
+    },
+    "workbench.skills.unlinkConfirmTitle": {
+      "value": "Unlink {skill}?",
+      "comment": "Title of the confirmation before unlinking a linked skill.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.unlinkConfirmMessage": {
+      "value": "Vibe Bar removes the link in ~/.agents/skills, every projection of it, and its per-skill switches. The folder it points to is not touched; a backup records where the link pointed.",
+      "comment": "Body of the confirmation before unlinking a linked skill."
+    },
+    "workbench.skills.convertToCopy": {
+      "value": "Convert to Copy",
+      "comment": "Button in the convert-to-copy confirmation dialog. distinct-from: workbench.skills.menuConvertToCopy — the menu item's ellipsis promises the confirmation dialog; this is the button inside it."
+    },
+    "workbench.skills.convertConfirmTitle": {
+      "value": "Convert {skill} to a copy?",
+      "comment": "Title of the confirmation before converting a linked skill to a copy.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.convertConfirmMessage": {
+      "value": "Vibe Bar reads the linked folder once, copies it into ~/.agents/skills, and replaces the link with that copy. The original folder is left unchanged, and later edits there no longer reach this skill.",
+      "comment": "Body of the confirmation before converting a linked skill to a copy."
+    },
+    "workbench.skills.toast.unlinked": {
+      "value": "Unlinked {skill}. The folder it pointed to was not changed.",
+      "comment": "Toast after a linked skill was unlinked.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.toast.unlinkedLeftInPlace": {
+      "value": "Unlinked {skill}. Left in place for {apps}.",
+      "comment": "Toast after unlinking when some harness entries or per-skill switches were left as they were. {apps} is a comma-separated list of harness names.",
+      "placeholders": {
+        "skill": "string",
+        "apps": "string"
+      }
+    },
+    "workbench.skills.toast.convertedToCopy": {
+      "value": "{skill} is now a copy in the shared library.",
+      "comment": "Toast after a linked skill was converted to a copy.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.toast.reconfirmedSource": {
+      "value": "Recorded the current source of {skill}.",
+      "comment": "Toast after the user re-confirmed where a linked skill's link points.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.import.linked": {
+      "value": "Linked from elsewhere",
+      "comment": "Section title in the import sheet listing links in ~/.agents/skills that point to folders outside Vibe Bar's management."
+    },
+    "workbench.skills.import.linkedDetail": {
+      "value": "Links in ~/.agents/skills that point to folders outside Vibe Bar's management. Adopting one records the link so it can be switched per agent; nothing on disk changes, and the folder it points to is never written or copied.",
+      "comment": "Explanation under the linked section of the import sheet."
+    },
+    "workbench.skills.import.linksTo": {
+      "value": "links to {target}",
+      "comment": "Caption under a linked skill in the import sheet. {target} is the link's target path as written on disk.",
+      "placeholders": {
+        "target": "string"
+      }
+    },
+    "workbench.skills.copies.linkedNotCompared": {
+      "value": "This skill's source is outside Vibe Bar's management, so its files are not compared.",
+      "comment": "Note in the copies sheet of a linked skill: its folder is never read, so no version is compared with it."
     }
   }
 }

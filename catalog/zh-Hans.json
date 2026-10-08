@@ -6283,6 +6283,84 @@
     },
     "settings.pricing.tierContextRates": {
       "value": "{tier} · 输入超过 {threshold} token：输入 {input} · 输出 {output} · 缓存读取 {cacheRead} · 缓存写入 {cacheWrite}"
+    },
+    "workbench.library.adoptLink": {
+      "value": "接管链接"
+    },
+    "workbench.library.adoptLinkHelp": {
+      "value": "记录这个链接，以便 Vibe Bar 按 agent 开关它。磁盘上不会有任何改动，它指向的文件夹也永远不会被写入。"
+    },
+    "workbench.library.sourceChanged": {
+      "value": "来源已变更"
+    },
+    "workbench.library.sourceChangedDetail": {
+      "value": "这个链接已不再指向 Vibe Bar 记录的位置。在你重新确认来源或解除链接之前，对它的修改都会暂停。"
+    },
+    "workbench.library.linkReplacedDetail": {
+      "value": "已接管的链接被一个文件夹取代。请使用“导入已有技能”来管理这个文件夹。"
+    },
+    "workbench.library.linkMissing": {
+      "value": "链接已移除"
+    },
+    "workbench.skills.sourceLinked": {
+      "value": "链接"
+    },
+    "workbench.skills.sourceLinkedHelp": {
+      "value": "链接到 {target}。Vibe Bar 只管理这个链接及其投影，从不改动它指向的文件夹。"
+    },
+    "workbench.skills.menuRevealSource": {
+      "value": "在 Finder 中显示来源"
+    },
+    "workbench.skills.menuReconfirmSource": {
+      "value": "重新确认来源"
+    },
+    "workbench.skills.menuConvertToCopy": {
+      "value": "转为副本…"
+    },
+    "workbench.skills.menuUnlink": {
+      "value": "解除链接…"
+    },
+    "workbench.skills.unlink": {
+      "value": "解除链接"
+    },
+    "workbench.skills.unlinkConfirmTitle": {
+      "value": "解除 {skill} 的链接？"
+    },
+    "workbench.skills.unlinkConfirmMessage": {
+      "value": "Vibe Bar 会移除 ~/.agents/skills 中的链接、它的所有投影以及它的单技能开关。它指向的文件夹不会被改动；备份会记录链接原本指向的位置。"
+    },
+    "workbench.skills.convertToCopy": {
+      "value": "转为副本"
+    },
+    "workbench.skills.convertConfirmTitle": {
+      "value": "把 {skill} 转为副本？"
+    },
+    "workbench.skills.convertConfirmMessage": {
+      "value": "Vibe Bar 会读取一次链接的文件夹，把它复制到 ~/.agents/skills，并用这份副本替换链接。原文件夹保持不变，之后在那里的修改不会再影响这个技能。"
+    },
+    "workbench.skills.toast.unlinked": {
+      "value": "已解除 {skill} 的链接。它指向的文件夹未被改动。"
+    },
+    "workbench.skills.toast.unlinkedLeftInPlace": {
+      "value": "已解除 {skill} 的链接。在 {apps} 中保持原样。"
+    },
+    "workbench.skills.toast.convertedToCopy": {
+      "value": "{skill} 现在是共享库中的一份副本。"
+    },
+    "workbench.skills.toast.reconfirmedSource": {
+      "value": "已记录 {skill} 的当前来源。"
+    },
+    "workbench.skills.import.linked": {
+      "value": "来自其他位置的链接"
+    },
+    "workbench.skills.import.linkedDetail": {
+      "value": "~/.agents/skills 中指向 Vibe Bar 管理范围之外文件夹的链接。接管后会记录这个链接，以便按 agent 开关；磁盘上不会有任何改动，它指向的文件夹也永远不会被写入或复制。"
+    },
+    "workbench.skills.import.linksTo": {
+      "value": "链接到 {target}"
+    },
+    "workbench.skills.copies.linkedNotCompared": {
+      "value": "这个技能的来源在 Vibe Bar 管理范围之外，因此不会比较它的文件。"
     }
   }
 }
