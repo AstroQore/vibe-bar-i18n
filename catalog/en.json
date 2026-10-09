@@ -10653,7 +10653,7 @@
     },
     "workbench.usage.session.untitled": {
       "value": "Untitled session",
-      "comment": "Usage page session row whose session has no title."
+      "comment": "Usage page session row whose session has no title. distinct-from: workbench.sessions.list.untitled — the Usage row keeps its own key so the two pages can diverge in wording."
     },
     "workbench.usage.session.empty": {
       "value": "No sessions in this range",

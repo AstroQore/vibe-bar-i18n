@@ -15326,7 +15326,7 @@ public enum L10n {
                 /// en: "Codex keeps no session id in the usage ledger, so this session's tokens and cost come from its parsed log."
                 public static var sourceLog: String { L10nSupport.string("workbench.usage.session.sourceLog") }
 
-                /// Usage page session row whose session has no title.
+                /// Usage page session row whose session has no title. distinct-from: workbench.sessions.list.untitled — the Usage row keeps its own key so the two pages can diverge in wording.
                 ///
                 /// Key: `workbench.usage.session.untitled`
                 /// en: "Untitled session"

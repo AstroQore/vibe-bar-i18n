@@ -6642,7 +6642,7 @@
 /* Tooltip on a Codex session's figure on the Usage page. */
 "workbench.usage.session.sourceLog" = "Codex 不在用量账本中记录会话 ID，此会话的 token 与费用取自解析后的会话日志。";
 
-/* Usage page session row whose session has no title. */
+/* Usage page session row whose session has no title. distinct-from: workbench.sessions.list.untitled — the Usage row keeps its own key so the two pages can diverge in wording. */
 "workbench.usage.session.untitled" = "未命名会话";
 
 /* Usage page session-shape bin label for the open last bin. */
