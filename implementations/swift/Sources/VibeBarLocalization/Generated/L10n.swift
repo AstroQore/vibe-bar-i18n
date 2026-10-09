@@ -14141,6 +14141,706 @@ public enum L10n {
                 L10nSupport.format("workbench.status.updated", time)
             }
         }
+
+        public enum Usage {
+            public enum Count {
+                /// Active clock hours in one trend bar, in its tooltip.
+                ///
+                /// Key: `workbench.usage.count.activeHours`
+                /// en: "{count, plural, one {# active hour} other {# active hours}}"
+                public static func activeHours(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.count.activeHours", count)
+                }
+
+                /// How many tool calls, on the Usage page tools card.
+                ///
+                /// Key: `workbench.usage.count.calls`
+                /// en: "{count, plural, one {# call} other {# calls}}"
+                public static func calls(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.count.calls", count)
+                }
+
+                /// A number of sessions, on Usage page cards.
+                ///
+                /// Key: `workbench.usage.count.sessions`
+                /// en: "{count, plural, one {# session} other {# sessions}}"
+                public static func sessions(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.count.sessions", count)
+                }
+
+                /// How many times a skill was used, on the Usage page skills card.
+                ///
+                /// Key: `workbench.usage.count.uses`
+                /// en: "{count, plural, one {# use} other {# uses}}"
+                public static func uses(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.count.uses", count)
+                }
+            }
+
+            public enum Filter {
+                /// Usage page project picker: the entry that removes the project filter.
+                ///
+                /// Key: `workbench.usage.filter.allProjects`
+                /// en: "All projects"
+                public static var allProjects: String { L10nSupport.string("workbench.usage.filter.allProjects") }
+
+                /// Tooltip on the Usage page Clear button.
+                ///
+                /// Key: `workbench.usage.filter.clearHelp`
+                /// en: "Clear the harness, model and project filters"
+                public static var clearHelp: String { L10nSupport.string("workbench.usage.filter.clearHelp") }
+
+                /// Usage page toolbar: label of the project (working directory) picker.
+                ///
+                /// Key: `workbench.usage.filter.project`
+                /// en: "Project"
+                public static var project: String { L10nSupport.string("workbench.usage.filter.project") }
+
+                /// Tooltip on the Usage page project picker.
+                ///
+                /// Key: `workbench.usage.filter.projectHelp`
+                /// en: "Projects are the directories sessions ran in; worktrees count toward their repository."
+                public static var projectHelp: String { L10nSupport.string("workbench.usage.filter.projectHelp") }
+
+                /// Search field at the top of the Usage page project picker.
+                ///
+                /// Key: `workbench.usage.filter.searchProjects`
+                /// en: "Find a project"
+                public static var searchProjects: String { L10nSupport.string("workbench.usage.filter.searchProjects") }
+            }
+
+            public enum Health {
+                /// Harness health card footnote: what a local log cannot show.
+                ///
+                /// Key: `workbench.usage.health.composition`
+                /// en: "Prompt composition (system prompt, tools, memory, files) needs gateway data."
+                public static var composition: String { L10nSupport.string("workbench.usage.health.composition") }
+
+                /// Harness health card header. Both values arrive formatted.
+                ///
+                /// Key: `workbench.usage.health.counts`
+                /// en: "{requests} requests · {sessions} sessions"
+                public static func counts(requests: String, sessions: String) -> String {
+                    L10nSupport.format("workbench.usage.health.counts", requests, sessions)
+                }
+
+                /// Usage page harness health section with nothing to show.
+                ///
+                /// Key: `workbench.usage.health.empty`
+                /// en: "No harness activity in this range"
+                public static var empty: String { L10nSupport.string("workbench.usage.health.empty") }
+
+                /// Harness health card: the models this harness used most in the range.
+                ///
+                /// Key: `workbench.usage.health.models`
+                /// en: "Recent models"
+                public static var models: String { L10nSupport.string("workbench.usage.health.models") }
+
+                /// Tooltip on a harness health score.
+                ///
+                /// Key: `workbench.usage.health.scoreHelp`
+                /// en: "Weighted: cache 35%, lean start 20%, pace 20%, reliability 25%. A part without data is left out."
+                public static var scoreHelp: String { L10nSupport.string("workbench.usage.health.scoreHelp") }
+
+                /// Subtitle of the Usage page harness health section.
+                ///
+                /// Key: `workbench.usage.health.subtitle`
+                /// en: "How lean and cache-friendly each harness keeps its prompts"
+                public static var subtitle: String { L10nSupport.string("workbench.usage.health.subtitle") }
+
+                /// Usage page section of per-harness prompt health cards.
+                ///
+                /// Key: `workbench.usage.health.title`
+                /// en: "Harness health"
+                public static var title: String { L10nSupport.string("workbench.usage.health.title") }
+
+                public enum Metric {
+                    /// Harness health metric: share of the prompt served from cache.
+                    ///
+                    /// Key: `workbench.usage.health.metric.cacheHit`
+                    /// en: "Cache hit rate"
+                    public static var cacheHit: String { L10nSupport.string("workbench.usage.health.metric.cacheHit") }
+
+                    /// Harness health metric: failed share of parsed tool calls.
+                    ///
+                    /// Key: `workbench.usage.health.metric.failures`
+                    /// en: "Tool failures"
+                    public static var failures: String { L10nSupport.string("workbench.usage.health.metric.failures") }
+
+                    /// Harness health metric: median prompt growth per request.
+                    ///
+                    /// Key: `workbench.usage.health.metric.growth`
+                    /// en: "Growth per request"
+                    public static var growth: String { L10nSupport.string("workbench.usage.health.metric.growth") }
+
+                    /// Harness health metric: the largest prompt.
+                    ///
+                    /// Key: `workbench.usage.health.metric.largest`
+                    /// en: "Largest"
+                    public static var largest: String { L10nSupport.string("workbench.usage.health.metric.largest") }
+
+                    /// Harness health metric: median prompt of a session's first request.
+                    ///
+                    /// Key: `workbench.usage.health.metric.start`
+                    /// en: "Starting size"
+                    public static var start: String { L10nSupport.string("workbench.usage.health.metric.start") }
+
+                    /// Harness health metric: median prompt size per request.
+                    ///
+                    /// Key: `workbench.usage.health.metric.typical`
+                    /// en: "Typical prompt"
+                    public static var typical: String { L10nSupport.string("workbench.usage.health.metric.typical") }
+
+                    /// Harness health metric: the model's context window.
+                    ///
+                    /// Key: `workbench.usage.health.metric.window`
+                    /// en: "Context window"
+                    public static var window: String { L10nSupport.string("workbench.usage.health.metric.window") }
+                }
+
+                public enum Rating {
+                    /// Harness health rating, score 90 and up.
+                    ///
+                    /// Key: `workbench.usage.health.rating.excellent`
+                    /// en: "Excellent"
+                    public static var excellent: String { L10nSupport.string("workbench.usage.health.rating.excellent") }
+
+                    /// Harness health rating, score 55–74.
+                    ///
+                    /// Key: `workbench.usage.health.rating.fair`
+                    /// en: "Fair"
+                    public static var fair: String { L10nSupport.string("workbench.usage.health.rating.fair") }
+
+                    /// Harness health rating, score 75–89.
+                    ///
+                    /// Key: `workbench.usage.health.rating.good`
+                    /// en: "Good"
+                    public static var good: String { L10nSupport.string("workbench.usage.health.rating.good") }
+
+                    /// Harness health rating, score under 55. distinct-from: status.overview.needsAttention (a verdict on prompt health, not a status tile; zh reads 需关注).
+                    ///
+                    /// Key: `workbench.usage.health.rating.poor`
+                    /// en: "Needs attention"
+                    public static var poor: String { L10nSupport.string("workbench.usage.health.rating.poor") }
+
+                    /// Harness health rating when no part of the score has evidence.
+                    ///
+                    /// Key: `workbench.usage.health.rating.unknown`
+                    /// en: "Not enough data"
+                    public static var unknown: String { L10nSupport.string("workbench.usage.health.rating.unknown") }
+                }
+
+                public enum Sub {
+                    /// Harness health part: how small a session's first prompt is.
+                    ///
+                    /// Key: `workbench.usage.health.sub.leanStart`
+                    /// en: "Lean start"
+                    public static var leanStart: String { L10nSupport.string("workbench.usage.health.sub.leanStart") }
+
+                    /// Harness health part: how slowly prompts grow per request. distinct-from: menuBar.composer.metric.pace (quota burn pace, a different measure).
+                    ///
+                    /// Key: `workbench.usage.health.sub.pace`
+                    /// en: "Pace"
+                    public static var pace: String { L10nSupport.string("workbench.usage.health.sub.pace") }
+
+                    /// Harness health part: how few tool calls fail.
+                    ///
+                    /// Key: `workbench.usage.health.sub.reliability`
+                    /// en: "Reliability"
+                    public static var reliability: String { L10nSupport.string("workbench.usage.health.sub.reliability") }
+                }
+            }
+
+            public enum Heatmap {
+                /// Usage page by-hour card. {slot} is a weekday and hour, already formatted.
+                ///
+                /// Key: `workbench.usage.heatmap.busiest`
+                /// en: "Busiest: {slot}"
+                public static func busiest(slot: String) -> String {
+                    L10nSupport.format("workbench.usage.heatmap.busiest", slot)
+                }
+
+                /// Tooltip on one cell of the Usage page by-hour card.
+                ///
+                /// Key: `workbench.usage.heatmap.cell`
+                /// en: "{slot} · {count, plural, one {# request} other {# requests}}"
+                public static func cell(slot: String, count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.heatmap.cell", slot, count)
+                }
+
+                /// Usage page by-hour card with nothing to place on the clock.
+                ///
+                /// Key: `workbench.usage.heatmap.empty`
+                /// en: "No request-level history in this range"
+                public static var empty: String { L10nSupport.string("workbench.usage.heatmap.empty") }
+
+                /// Subtitle of the Usage page by-hour card.
+                ///
+                /// Key: `workbench.usage.heatmap.subtitle`
+                /// en: "Requests by weekday and hour, local time"
+                public static var subtitle: String { L10nSupport.string("workbench.usage.heatmap.subtitle") }
+
+                /// Usage page card: requests by weekday and hour.
+                ///
+                /// Key: `workbench.usage.heatmap.title`
+                /// en: "By hour"
+                public static var title: String { L10nSupport.string("workbench.usage.heatmap.title") }
+            }
+
+            public enum Hero {
+                /// Usage page hero tile under active hours.
+                ///
+                /// Key: `workbench.usage.hero.activeDetail`
+                /// en: "Across {count, plural, one {# day} other {# days}}"
+                public static func activeDetail(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.hero.activeDetail", count)
+                }
+
+                /// Usage page hero tile title: clock hours with at least one request.
+                ///
+                /// Key: `workbench.usage.hero.activeTime`
+                /// en: "Active time"
+                public static var activeTime: String { L10nSupport.string("workbench.usage.hero.activeTime") }
+
+                /// Usage page hero tile under cache reads. {rate} is a formatted percentage.
+                ///
+                /// Key: `workbench.usage.hero.cacheDetail`
+                /// en: "{rate} hit rate"
+                public static func cacheDetail(rate: String) -> String {
+                    L10nSupport.format("workbench.usage.hero.cacheDetail", rate)
+                }
+
+                /// Usage page hero tile under the cost when every request had a price.
+                ///
+                /// Key: `workbench.usage.hero.costDetail`
+                /// en: "At effective prices"
+                public static var costDetail: String { L10nSupport.string("workbench.usage.hero.costDetail") }
+
+                /// Usage page hero tile under the cost when some usage had no price; the value carries a +.
+                ///
+                /// Key: `workbench.usage.hero.costUnpriced`
+                /// en: "Plus unpriced usage"
+                public static var costUnpriced: String { L10nSupport.string("workbench.usage.hero.costUnpriced") }
+
+                /// Usage page hero tile under the project count. {name} is a directory name, {share} a percentage.
+                ///
+                /// Key: `workbench.usage.hero.projectsDetail`
+                /// en: "Top: {name} · {share}"
+                public static func projectsDetail(name: String, share: String) -> String {
+                    L10nSupport.format("workbench.usage.hero.projectsDetail", name, share)
+                }
+
+                /// Usage page hero tile under the session count. Values are compact token counts.
+                ///
+                /// Key: `workbench.usage.hero.sessionsDetail`
+                /// en: "Median {median} · p90 {p90} tokens"
+                public static func sessionsDetail(median: String, p90: String) -> String {
+                    L10nSupport.format("workbench.usage.hero.sessionsDetail", median, p90)
+                }
+
+                /// Usage page hero tile under the token total. Prompt is everything sent to the model (fresh input plus cache read and write), Out the output.
+                ///
+                /// Key: `workbench.usage.hero.tokensDetail`
+                /// en: "Prompt {input} · Out {output}"
+                public static func tokensDetail(input: String, output: String) -> String {
+                    L10nSupport.format("workbench.usage.hero.tokensDetail", input, output)
+                }
+            }
+
+            public enum Range {
+                /// Usage page range control: the last 90 local calendar days, today included.
+                ///
+                /// Key: `workbench.usage.range.quarter`
+                /// en: "90 days"
+                public static var quarter: String { L10nSupport.string("workbench.usage.range.quarter") }
+            }
+
+            public enum Ranking {
+                /// Usage page models card with no model.
+                ///
+                /// Key: `workbench.usage.ranking.emptyModels`
+                /// en: "No model recorded in this range"
+                public static var emptyModels: String { L10nSupport.string("workbench.usage.ranking.emptyModels") }
+
+                /// Usage page projects card with no project.
+                ///
+                /// Key: `workbench.usage.ranking.emptyProjects`
+                /// en: "No project recorded in this range"
+                public static var emptyProjects: String { L10nSupport.string("workbench.usage.ranking.emptyProjects") }
+
+                /// Footer of the Usage page project or model ranking: entries past the top six and their tokens.
+                ///
+                /// Key: `workbench.usage.ranking.more`
+                /// en: "+{count} more · {tokens}"
+                public static func more(count: Int, tokens: String) -> String {
+                    L10nSupport.format("workbench.usage.ranking.more", count, tokens)
+                }
+            }
+
+            public enum Recent {
+                /// Usage page recent sessions when the search finds nothing.
+                ///
+                /// Key: `workbench.usage.recent.noMatch`
+                /// en: "No session matches “{query}”"
+                public static func noMatch(query: String) -> String {
+                    L10nSupport.format("workbench.usage.recent.noMatch", query)
+                }
+
+                /// Usage page recent sessions footer. Values arrive formatted.
+                ///
+                /// Key: `workbench.usage.recent.showing`
+                /// en: "Showing {shown} of {total}"
+                public static func showing(shown: String, total: String) -> String {
+                    L10nSupport.format("workbench.usage.recent.showing", shown, total)
+                }
+
+                /// Usage page card listing sessions active in the range, newest first.
+                ///
+                /// Key: `workbench.usage.recent.title`
+                /// en: "Recent sessions"
+                public static var title: String { L10nSupport.string("workbench.usage.recent.title") }
+
+                /// Usage page recent-session row token breakdown. Values are compact token counts.
+                ///
+                /// Key: `workbench.usage.recent.tokens`
+                /// en: "In {input} · Out {output} · Cache {cache}"
+                public static func tokens(input: String, output: String, cache: String) -> String {
+                    L10nSupport.format("workbench.usage.recent.tokens", input, output, cache)
+                }
+            }
+
+            public enum Session {
+                /// Usage page session card with no session.
+                ///
+                /// Key: `workbench.usage.session.empty`
+                /// en: "No sessions in this range"
+                public static var empty: String { L10nSupport.string("workbench.usage.session.empty") }
+
+                /// Usage page session row whose harness keeps no per-session tokens on this Mac.
+                ///
+                /// Key: `workbench.usage.session.noTokens`
+                /// en: "No local token record"
+                public static var noTokens: String { L10nSupport.string("workbench.usage.session.noTokens") }
+
+                /// Tooltip on a Usage page session row; clicking opens the Sessions page on it.
+                ///
+                /// Key: `workbench.usage.session.openHelp`
+                /// en: "Open in Sessions"
+                public static var openHelp: String { L10nSupport.string("workbench.usage.session.openHelp") }
+
+                /// Tooltip on a Usage page session's figure when it comes from the ledger.
+                ///
+                /// Key: `workbench.usage.session.sourceLedger`
+                /// en: "Tokens and cost from the usage ledger's rows for this session — the rows every total on this page sums."
+                public static var sourceLedger: String { L10nSupport.string("workbench.usage.session.sourceLedger") }
+
+                /// Tooltip on a Codex session's figure on the Usage page.
+                ///
+                /// Key: `workbench.usage.session.sourceLog`
+                /// en: "Codex keeps no session id in the usage ledger, so this session's tokens and cost come from its parsed log."
+                public static var sourceLog: String { L10nSupport.string("workbench.usage.session.sourceLog") }
+
+                /// Usage page session row whose session has no title.
+                ///
+                /// Key: `workbench.usage.session.untitled`
+                /// en: "Untitled session"
+                public static var untitled: String { L10nSupport.string("workbench.usage.session.untitled") }
+            }
+
+            public enum Shape {
+                /// Usage page session-shape bin label for the open last bin.
+                ///
+                /// Key: `workbench.usage.shape.atLeast`
+                /// en: "{value}+"
+                public static func atLeast(value: String) -> String {
+                    L10nSupport.format("workbench.usage.shape.atLeast", value)
+                }
+
+                /// Tooltip on a Usage page session-shape bar.
+                ///
+                /// Key: `workbench.usage.shape.bin`
+                /// en: "{range} · {count, plural, one {# session} other {# sessions}}"
+                public static func bin(range: String, count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.shape.bin", range, count)
+                }
+
+                /// Usage page session-shape card. {value} is already formatted.
+                ///
+                /// Key: `workbench.usage.shape.median`
+                /// en: "Median {value}"
+                public static func median(value: String) -> String {
+                    L10nSupport.format("workbench.usage.shape.median", value)
+                }
+
+                /// Usage page session-shape bin label, both ends included.
+                ///
+                /// Key: `workbench.usage.shape.range`
+                /// en: "{from}–{to}"
+                public static func range(from: String, to: String) -> String {
+                    L10nSupport.format("workbench.usage.shape.range", from, to)
+                }
+
+                /// Usage page session-shape card footer.
+                ///
+                /// Key: `workbench.usage.shape.samples`
+                /// en: "{count, plural, one {# session with data} other {# sessions with data}}"
+                public static func samples(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.shape.samples", count)
+                }
+
+                /// Usage page card: how sessions are distributed by size.
+                ///
+                /// Key: `workbench.usage.shape.title`
+                /// en: "Session shape"
+                public static var title: String { L10nSupport.string("workbench.usage.shape.title") }
+
+                /// Usage page session-shape bin label for the first duration bin.
+                ///
+                /// Key: `workbench.usage.shape.under`
+                /// en: "Under {value}"
+                public static func under(value: String) -> String {
+                    L10nSupport.format("workbench.usage.shape.under", value)
+                }
+
+                public enum Metric {
+                    /// Usage page session-shape metric: wall-clock length of a session.
+                    ///
+                    /// Key: `workbench.usage.shape.metric.duration`
+                    /// en: "Duration"
+                    public static var duration: String { L10nSupport.string("workbench.usage.shape.metric.duration") }
+
+                    /// Usage page session-shape metric: tool calls per session.
+                    ///
+                    /// Key: `workbench.usage.shape.metric.toolCalls`
+                    /// en: "Tool calls"
+                    public static var toolCalls: String { L10nSupport.string("workbench.usage.shape.metric.toolCalls") }
+                }
+            }
+
+            public enum Skills {
+                /// Usage page skills card with nothing to list.
+                ///
+                /// Key: `workbench.usage.skills.empty`
+                /// en: "No skill use found in analyzed sessions"
+                public static var empty: String { L10nSupport.string("workbench.usage.skills.empty") }
+
+                /// Tooltip on one harness's part of a skill's share bar. {harness} is a harness name.
+                ///
+                /// Key: `workbench.usage.skills.harnessUses`
+                /// en: "{harness} · {count, plural, one {# use} other {# uses}}"
+                public static func harnessUses(harness: String, count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.skills.harnessUses", harness, count)
+                }
+
+                /// Usage page skills row. {when} is a relative time.
+                ///
+                /// Key: `workbench.usage.skills.lastUsed`
+                /// en: "Last used {when}"
+                public static func lastUsed(when: String) -> String {
+                    L10nSupport.format("workbench.usage.skills.lastUsed", when)
+                }
+
+                /// Usage page skills row. {projects} is a list of directory names.
+                ///
+                /// Key: `workbench.usage.skills.projects`
+                /// en: "In {projects}"
+                public static func projects(projects: String) -> String {
+                    L10nSupport.format("workbench.usage.skills.projects", projects)
+                }
+
+                /// Subtitle of the Usage page skills card.
+                ///
+                /// Key: `workbench.usage.skills.subtitle`
+                /// en: "From analyzed Codex and Claude Code sessions"
+                public static var subtitle: String { L10nSupport.string("workbench.usage.skills.subtitle") }
+            }
+
+            public enum Status {
+                /// Usage page status line while session files are parsed for tools, skills and per-session cost.
+                ///
+                /// Key: `workbench.usage.status.analyzing`
+                /// en: "Reading sessions in the background · {ready} of {total} ready"
+                public static func analyzing(ready: Int, total: Int) -> String {
+                    L10nSupport.format("workbench.usage.status.analyzing", ready, total)
+                }
+
+                /// Usage page note when the range reaches past the ledger's request-level detail. {date} is a formatted day.
+                ///
+                /// Key: `workbench.usage.status.hourlyFrom`
+                /// en: "Hourly cards cover {date} onward; older days only have daily totals."
+                public static func hourlyFrom(date: String) -> String {
+                    L10nSupport.format("workbench.usage.status.hourlyFrom", date)
+                }
+
+                /// Usage page note when the local session index has never been built.
+                ///
+                /// Key: `workbench.usage.status.indexEmpty`
+                /// en: "Sessions appear once the session index is built. It is being built now."
+                public static var indexEmpty: String { L10nSupport.string("workbench.usage.status.indexEmpty") }
+
+                /// Usage page note: daily rollups carry no project, so a project filter leaves them out.
+                ///
+                /// Key: `workbench.usage.status.projectDetailOnly`
+                /// en: "A project filter covers request-level history only."
+                public static var projectDetailOnly: String { L10nSupport.string("workbench.usage.status.projectDetailOnly") }
+
+                /// Usage page note: sessions the background fill will not reach.
+                ///
+                /// Key: `workbench.usage.status.skipped`
+                /// en: "{count, plural, one {# session is} other {# sessions are}} too large or too old to read in the background."
+                public static func skipped(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.status.skipped", count)
+                }
+            }
+
+            public enum Tokens {
+                /// Usage page trend legend and tooltip: everything sent to the model in a bar — fresh input plus cache read and write, as opposed to In, the fresh part alone.
+                ///
+                /// Key: `workbench.usage.tokens.prompt`
+                /// en: "Prompt"
+                public static var prompt: String { L10nSupport.string("workbench.usage.tokens.prompt") }
+            }
+
+            public enum Tools {
+                /// Column header on the Usage page tools card.
+                ///
+                /// Key: `workbench.usage.tools.calls`
+                /// en: "Calls"
+                public static var calls: String { L10nSupport.string("workbench.usage.tools.calls") }
+
+                /// Usage page tools card with nothing to list.
+                ///
+                /// Key: `workbench.usage.tools.empty`
+                /// en: "No tool calls found in analyzed sessions"
+                public static var empty: String { L10nSupport.string("workbench.usage.tools.empty") }
+
+                /// Footer of the Usage page tools card.
+                ///
+                /// Key: `workbench.usage.tools.more`
+                /// en: "{count, plural, one {# more tool} other {# more tools}}"
+                public static func more(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.tools.more", count)
+                }
+
+                /// Column header on the Usage page tools card.
+                ///
+                /// Key: `workbench.usage.tools.share`
+                /// en: "Share"
+                public static var share: String { L10nSupport.string("workbench.usage.tools.share") }
+
+                /// Usage page card ranking tools by calls.
+                ///
+                /// Key: `workbench.usage.tools.title`
+                /// en: "Tool use"
+                public static var title: String { L10nSupport.string("workbench.usage.tools.title") }
+
+                /// Tooltip on a weekly bar on the Usage page tools card.
+                ///
+                /// Key: `workbench.usage.tools.week`
+                /// en: "Week of {date} · {count, plural, one {# call} other {# calls}}"
+                public static func week(date: String, count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.tools.week", date, count)
+                }
+
+                /// Usage page tools card: heading over the weekly stacked bars.
+                ///
+                /// Key: `workbench.usage.tools.weekly`
+                /// en: "Weekly by kind"
+                public static var weekly: String { L10nSupport.string("workbench.usage.tools.weekly") }
+
+                public enum Category {
+                    /// Kind of tool on the Usage page tools card: subagents, plans and skills.
+                    ///
+                    /// Key: `workbench.usage.tools.category.agent`
+                    /// en: "Agents"
+                    public static var agent: String { L10nSupport.string("workbench.usage.tools.category.agent") }
+
+                    /// Kind of tool on the Usage page tools card: writing and patching files. distinct-from: workbench.library.edit (a noun naming a kind of tool, not the verb on a button).
+                    ///
+                    /// Key: `workbench.usage.tools.category.edit`
+                    /// en: "Edit"
+                    public static var edit: String { L10nSupport.string("workbench.usage.tools.category.edit") }
+
+                    /// Kind of tool on the Usage page tools card: reading and searching files.
+                    ///
+                    /// Key: `workbench.usage.tools.category.read`
+                    /// en: "Read"
+                    public static var read: String { L10nSupport.string("workbench.usage.tools.category.read") }
+
+                    /// Kind of tool on the Usage page tools card: shell and code execution.
+                    ///
+                    /// Key: `workbench.usage.tools.category.shell`
+                    /// en: "Shell"
+                    public static var shell: String { L10nSupport.string("workbench.usage.tools.category.shell") }
+
+                    /// Kind of tool on the Usage page tools card: web search and fetch.
+                    ///
+                    /// Key: `workbench.usage.tools.category.web`
+                    /// en: "Web"
+                    public static var web: String { L10nSupport.string("workbench.usage.tools.category.web") }
+                }
+            }
+
+            public enum TopSessions {
+                /// Usage page card listing the sessions with the most tokens, cost or active time.
+                ///
+                /// Key: `workbench.usage.topSessions.title`
+                /// en: "Heaviest sessions"
+                public static var title: String { L10nSupport.string("workbench.usage.topSessions.title") }
+            }
+
+            public enum Trend {
+                /// Accessibility label of the Usage page trend chart.
+                ///
+                /// Key: `workbench.usage.trend.a11y`
+                /// en: "Usage trend chart"
+                public static var a11y: String { L10nSupport.string("workbench.usage.trend.a11y") }
+
+                /// Usage page trend card with nothing to draw.
+                ///
+                /// Key: `workbench.usage.trend.empty`
+                /// en: "No usage in this range"
+                public static var empty: String { L10nSupport.string("workbench.usage.trend.empty") }
+
+                /// Usage page trend control: stack each bar as prompt under output (the other choice splits it by harness).
+                ///
+                /// Key: `workbench.usage.trend.splitFlow`
+                /// en: "Prompt · Out"
+                public static var splitFlow: String { L10nSupport.string("workbench.usage.trend.splitFlow") }
+
+                /// Usage page trend card title with one bar per day.
+                ///
+                /// Key: `workbench.usage.trend.titleDaily`
+                /// en: "Daily trend"
+                public static var titleDaily: String { L10nSupport.string("workbench.usage.trend.titleDaily") }
+
+                /// Usage page trend card title when a long range is drawn one bar per week.
+                ///
+                /// Key: `workbench.usage.trend.titleWeekly`
+                /// en: "Weekly trend"
+                public static var titleWeekly: String { L10nSupport.string("workbench.usage.trend.titleWeekly") }
+
+                public enum Metric {
+                    /// Usage page metric: active hours (trend) or active time (heaviest sessions).
+                    ///
+                    /// Key: `workbench.usage.trend.metric.active`
+                    /// en: "Active"
+                    public static var active: String { L10nSupport.string("workbench.usage.trend.metric.active") }
+
+                    /// Usage page metric: requests (trend) or messages per session (session shape).
+                    ///
+                    /// Key: `workbench.usage.trend.metric.messages`
+                    /// en: "Messages"
+                    public static var messages: String { L10nSupport.string("workbench.usage.trend.metric.messages") }
+
+                    /// Usage page trend metric: output tokens only.
+                    ///
+                    /// Key: `workbench.usage.trend.metric.output`
+                    /// en: "Output tokens"
+                    public static var output: String { L10nSupport.string("workbench.usage.trend.metric.output") }
+                }
+            }
+        }
     }
 }
 
@@ -16275,6 +16975,105 @@ enum L10nCatalogFacts {
         "workbench.status.nextRefill",
         "workbench.status.sharedLibrary",
         "workbench.status.updated",
+        "workbench.usage.count.activeHours",
+        "workbench.usage.count.calls",
+        "workbench.usage.count.sessions",
+        "workbench.usage.count.uses",
+        "workbench.usage.filter.allProjects",
+        "workbench.usage.filter.clearHelp",
+        "workbench.usage.filter.project",
+        "workbench.usage.filter.projectHelp",
+        "workbench.usage.filter.searchProjects",
+        "workbench.usage.health.composition",
+        "workbench.usage.health.counts",
+        "workbench.usage.health.empty",
+        "workbench.usage.health.metric.cacheHit",
+        "workbench.usage.health.metric.failures",
+        "workbench.usage.health.metric.growth",
+        "workbench.usage.health.metric.largest",
+        "workbench.usage.health.metric.start",
+        "workbench.usage.health.metric.typical",
+        "workbench.usage.health.metric.window",
+        "workbench.usage.health.models",
+        "workbench.usage.health.rating.excellent",
+        "workbench.usage.health.rating.fair",
+        "workbench.usage.health.rating.good",
+        "workbench.usage.health.rating.poor",
+        "workbench.usage.health.rating.unknown",
+        "workbench.usage.health.scoreHelp",
+        "workbench.usage.health.sub.leanStart",
+        "workbench.usage.health.sub.pace",
+        "workbench.usage.health.sub.reliability",
+        "workbench.usage.health.subtitle",
+        "workbench.usage.health.title",
+        "workbench.usage.heatmap.busiest",
+        "workbench.usage.heatmap.cell",
+        "workbench.usage.heatmap.empty",
+        "workbench.usage.heatmap.subtitle",
+        "workbench.usage.heatmap.title",
+        "workbench.usage.hero.activeDetail",
+        "workbench.usage.hero.activeTime",
+        "workbench.usage.hero.cacheDetail",
+        "workbench.usage.hero.costDetail",
+        "workbench.usage.hero.costUnpriced",
+        "workbench.usage.hero.projectsDetail",
+        "workbench.usage.hero.sessionsDetail",
+        "workbench.usage.hero.tokensDetail",
+        "workbench.usage.range.quarter",
+        "workbench.usage.ranking.emptyModels",
+        "workbench.usage.ranking.emptyProjects",
+        "workbench.usage.ranking.more",
+        "workbench.usage.recent.noMatch",
+        "workbench.usage.recent.showing",
+        "workbench.usage.recent.title",
+        "workbench.usage.recent.tokens",
+        "workbench.usage.session.empty",
+        "workbench.usage.session.noTokens",
+        "workbench.usage.session.openHelp",
+        "workbench.usage.session.sourceLedger",
+        "workbench.usage.session.sourceLog",
+        "workbench.usage.session.untitled",
+        "workbench.usage.shape.atLeast",
+        "workbench.usage.shape.bin",
+        "workbench.usage.shape.median",
+        "workbench.usage.shape.metric.duration",
+        "workbench.usage.shape.metric.toolCalls",
+        "workbench.usage.shape.range",
+        "workbench.usage.shape.samples",
+        "workbench.usage.shape.title",
+        "workbench.usage.shape.under",
+        "workbench.usage.skills.empty",
+        "workbench.usage.skills.harnessUses",
+        "workbench.usage.skills.lastUsed",
+        "workbench.usage.skills.projects",
+        "workbench.usage.skills.subtitle",
+        "workbench.usage.status.analyzing",
+        "workbench.usage.status.hourlyFrom",
+        "workbench.usage.status.indexEmpty",
+        "workbench.usage.status.projectDetailOnly",
+        "workbench.usage.status.skipped",
+        "workbench.usage.tokens.prompt",
+        "workbench.usage.tools.calls",
+        "workbench.usage.tools.category.agent",
+        "workbench.usage.tools.category.edit",
+        "workbench.usage.tools.category.read",
+        "workbench.usage.tools.category.shell",
+        "workbench.usage.tools.category.web",
+        "workbench.usage.tools.empty",
+        "workbench.usage.tools.more",
+        "workbench.usage.tools.share",
+        "workbench.usage.tools.title",
+        "workbench.usage.tools.week",
+        "workbench.usage.tools.weekly",
+        "workbench.usage.topSessions.title",
+        "workbench.usage.trend.a11y",
+        "workbench.usage.trend.empty",
+        "workbench.usage.trend.metric.active",
+        "workbench.usage.trend.metric.messages",
+        "workbench.usage.trend.metric.output",
+        "workbench.usage.trend.splitFlow",
+        "workbench.usage.trend.titleDaily",
+        "workbench.usage.trend.titleWeekly",
     ]
 
     static let pluralKeys: Set<String> = [
@@ -16340,6 +17139,18 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.recorded",
         "workbench.skills.toast.reposUnreadable",
         "workbench.skills.toast.updatesAvailable",
+        "workbench.usage.count.activeHours",
+        "workbench.usage.count.calls",
+        "workbench.usage.count.sessions",
+        "workbench.usage.count.uses",
+        "workbench.usage.heatmap.cell",
+        "workbench.usage.hero.activeDetail",
+        "workbench.usage.shape.bin",
+        "workbench.usage.shape.samples",
+        "workbench.usage.skills.harnessUses",
+        "workbench.usage.status.skipped",
+        "workbench.usage.tools.more",
+        "workbench.usage.tools.week",
     ]
 
     static let placeholderCounts: [String: Int] = [
@@ -18463,5 +19274,104 @@ enum L10nCatalogFacts {
         "workbench.status.nextRefill": 1,
         "workbench.status.sharedLibrary": 0,
         "workbench.status.updated": 1,
+        "workbench.usage.count.activeHours": 1,
+        "workbench.usage.count.calls": 1,
+        "workbench.usage.count.sessions": 1,
+        "workbench.usage.count.uses": 1,
+        "workbench.usage.filter.allProjects": 0,
+        "workbench.usage.filter.clearHelp": 0,
+        "workbench.usage.filter.project": 0,
+        "workbench.usage.filter.projectHelp": 0,
+        "workbench.usage.filter.searchProjects": 0,
+        "workbench.usage.health.composition": 0,
+        "workbench.usage.health.counts": 2,
+        "workbench.usage.health.empty": 0,
+        "workbench.usage.health.metric.cacheHit": 0,
+        "workbench.usage.health.metric.failures": 0,
+        "workbench.usage.health.metric.growth": 0,
+        "workbench.usage.health.metric.largest": 0,
+        "workbench.usage.health.metric.start": 0,
+        "workbench.usage.health.metric.typical": 0,
+        "workbench.usage.health.metric.window": 0,
+        "workbench.usage.health.models": 0,
+        "workbench.usage.health.rating.excellent": 0,
+        "workbench.usage.health.rating.fair": 0,
+        "workbench.usage.health.rating.good": 0,
+        "workbench.usage.health.rating.poor": 0,
+        "workbench.usage.health.rating.unknown": 0,
+        "workbench.usage.health.scoreHelp": 0,
+        "workbench.usage.health.sub.leanStart": 0,
+        "workbench.usage.health.sub.pace": 0,
+        "workbench.usage.health.sub.reliability": 0,
+        "workbench.usage.health.subtitle": 0,
+        "workbench.usage.health.title": 0,
+        "workbench.usage.heatmap.busiest": 1,
+        "workbench.usage.heatmap.cell": 2,
+        "workbench.usage.heatmap.empty": 0,
+        "workbench.usage.heatmap.subtitle": 0,
+        "workbench.usage.heatmap.title": 0,
+        "workbench.usage.hero.activeDetail": 1,
+        "workbench.usage.hero.activeTime": 0,
+        "workbench.usage.hero.cacheDetail": 1,
+        "workbench.usage.hero.costDetail": 0,
+        "workbench.usage.hero.costUnpriced": 0,
+        "workbench.usage.hero.projectsDetail": 2,
+        "workbench.usage.hero.sessionsDetail": 2,
+        "workbench.usage.hero.tokensDetail": 2,
+        "workbench.usage.range.quarter": 0,
+        "workbench.usage.ranking.emptyModels": 0,
+        "workbench.usage.ranking.emptyProjects": 0,
+        "workbench.usage.ranking.more": 2,
+        "workbench.usage.recent.noMatch": 1,
+        "workbench.usage.recent.showing": 2,
+        "workbench.usage.recent.title": 0,
+        "workbench.usage.recent.tokens": 3,
+        "workbench.usage.session.empty": 0,
+        "workbench.usage.session.noTokens": 0,
+        "workbench.usage.session.openHelp": 0,
+        "workbench.usage.session.sourceLedger": 0,
+        "workbench.usage.session.sourceLog": 0,
+        "workbench.usage.session.untitled": 0,
+        "workbench.usage.shape.atLeast": 1,
+        "workbench.usage.shape.bin": 2,
+        "workbench.usage.shape.median": 1,
+        "workbench.usage.shape.metric.duration": 0,
+        "workbench.usage.shape.metric.toolCalls": 0,
+        "workbench.usage.shape.range": 2,
+        "workbench.usage.shape.samples": 1,
+        "workbench.usage.shape.title": 0,
+        "workbench.usage.shape.under": 1,
+        "workbench.usage.skills.empty": 0,
+        "workbench.usage.skills.harnessUses": 2,
+        "workbench.usage.skills.lastUsed": 1,
+        "workbench.usage.skills.projects": 1,
+        "workbench.usage.skills.subtitle": 0,
+        "workbench.usage.status.analyzing": 2,
+        "workbench.usage.status.hourlyFrom": 1,
+        "workbench.usage.status.indexEmpty": 0,
+        "workbench.usage.status.projectDetailOnly": 0,
+        "workbench.usage.status.skipped": 1,
+        "workbench.usage.tokens.prompt": 0,
+        "workbench.usage.tools.calls": 0,
+        "workbench.usage.tools.category.agent": 0,
+        "workbench.usage.tools.category.edit": 0,
+        "workbench.usage.tools.category.read": 0,
+        "workbench.usage.tools.category.shell": 0,
+        "workbench.usage.tools.category.web": 0,
+        "workbench.usage.tools.empty": 0,
+        "workbench.usage.tools.more": 1,
+        "workbench.usage.tools.share": 0,
+        "workbench.usage.tools.title": 0,
+        "workbench.usage.tools.week": 2,
+        "workbench.usage.tools.weekly": 0,
+        "workbench.usage.topSessions.title": 0,
+        "workbench.usage.trend.a11y": 0,
+        "workbench.usage.trend.empty": 0,
+        "workbench.usage.trend.metric.active": 0,
+        "workbench.usage.trend.metric.messages": 0,
+        "workbench.usage.trend.metric.output": 0,
+        "workbench.usage.trend.splitFlow": 0,
+        "workbench.usage.trend.titleDaily": 0,
+        "workbench.usage.trend.titleWeekly": 0,
     ]
 }

@@ -6176,3 +6176,264 @@
 
 /* Workbench header status for the Usage Stats page; time is a clock time distinct-from: workbench.skills.toast.updated — a toast naming the skill it re-fetched and a header line naming the time it refreshed are different sentences. */
 "workbench.status.updated" = "updated %@";
+
+/* Usage page project picker: the entry that removes the project filter. */
+"workbench.usage.filter.allProjects" = "All projects";
+
+/* Tooltip on the Usage page Clear button. */
+"workbench.usage.filter.clearHelp" = "Clear the harness, model and project filters";
+
+/* Usage page toolbar: label of the project (working directory) picker. */
+"workbench.usage.filter.project" = "Project";
+
+/* Tooltip on the Usage page project picker. */
+"workbench.usage.filter.projectHelp" = "Projects are the directories sessions ran in; worktrees count toward their repository.";
+
+/* Search field at the top of the Usage page project picker. */
+"workbench.usage.filter.searchProjects" = "Find a project";
+
+/* Harness health card footnote: what a local log cannot show. */
+"workbench.usage.health.composition" = "Prompt composition (system prompt, tools, memory, files) needs gateway data.";
+
+/* Harness health card header. Both values arrive formatted. */
+"workbench.usage.health.counts" = "%1$@ requests · %2$@ sessions";
+
+/* Usage page harness health section with nothing to show. */
+"workbench.usage.health.empty" = "No harness activity in this range";
+
+/* Harness health metric: share of the prompt served from cache. */
+"workbench.usage.health.metric.cacheHit" = "Cache hit rate";
+
+/* Harness health metric: failed share of parsed tool calls. */
+"workbench.usage.health.metric.failures" = "Tool failures";
+
+/* Harness health metric: median prompt growth per request. */
+"workbench.usage.health.metric.growth" = "Growth per request";
+
+/* Harness health metric: the largest prompt. */
+"workbench.usage.health.metric.largest" = "Largest";
+
+/* Harness health metric: median prompt of a session's first request. */
+"workbench.usage.health.metric.start" = "Starting size";
+
+/* Harness health metric: median prompt size per request. */
+"workbench.usage.health.metric.typical" = "Typical prompt";
+
+/* Harness health metric: the model's context window. */
+"workbench.usage.health.metric.window" = "Context window";
+
+/* Harness health card: the models this harness used most in the range. */
+"workbench.usage.health.models" = "Recent models";
+
+/* Harness health rating, score 90 and up. */
+"workbench.usage.health.rating.excellent" = "Excellent";
+
+/* Harness health rating, score 55–74. */
+"workbench.usage.health.rating.fair" = "Fair";
+
+/* Harness health rating, score 75–89. */
+"workbench.usage.health.rating.good" = "Good";
+
+/* Harness health rating, score under 55. distinct-from: status.overview.needsAttention (a verdict on prompt health, not a status tile; zh reads 需关注). */
+"workbench.usage.health.rating.poor" = "Needs attention";
+
+/* Harness health rating when no part of the score has evidence. */
+"workbench.usage.health.rating.unknown" = "Not enough data";
+
+/* Tooltip on a harness health score. */
+"workbench.usage.health.scoreHelp" = "Weighted: cache 35%%, lean start 20%%, pace 20%%, reliability 25%%. A part without data is left out.";
+
+/* Harness health part: how small a session's first prompt is. */
+"workbench.usage.health.sub.leanStart" = "Lean start";
+
+/* Harness health part: how slowly prompts grow per request. distinct-from: menuBar.composer.metric.pace (quota burn pace, a different measure). */
+"workbench.usage.health.sub.pace" = "Pace";
+
+/* Harness health part: how few tool calls fail. */
+"workbench.usage.health.sub.reliability" = "Reliability";
+
+/* Subtitle of the Usage page harness health section. */
+"workbench.usage.health.subtitle" = "How lean and cache-friendly each harness keeps its prompts";
+
+/* Usage page section of per-harness prompt health cards. */
+"workbench.usage.health.title" = "Harness health";
+
+/* Usage page by-hour card. {slot} is a weekday and hour, already formatted. */
+"workbench.usage.heatmap.busiest" = "Busiest: %@";
+
+/* Usage page by-hour card with nothing to place on the clock. */
+"workbench.usage.heatmap.empty" = "No request-level history in this range";
+
+/* Subtitle of the Usage page by-hour card. */
+"workbench.usage.heatmap.subtitle" = "Requests by weekday and hour, local time";
+
+/* Usage page card: requests by weekday and hour. */
+"workbench.usage.heatmap.title" = "By hour";
+
+/* Usage page hero tile title: clock hours with at least one request. */
+"workbench.usage.hero.activeTime" = "Active time";
+
+/* Usage page hero tile under cache reads. {rate} is a formatted percentage. */
+"workbench.usage.hero.cacheDetail" = "%@ hit rate";
+
+/* Usage page hero tile under the cost when every request had a price. */
+"workbench.usage.hero.costDetail" = "At effective prices";
+
+/* Usage page hero tile under the cost when some usage had no price; the value carries a +. */
+"workbench.usage.hero.costUnpriced" = "Plus unpriced usage";
+
+/* Usage page hero tile under the project count. {name} is a directory name, {share} a percentage. */
+"workbench.usage.hero.projectsDetail" = "Top: %1$@ · %2$@";
+
+/* Usage page hero tile under the session count. Values are compact token counts. */
+"workbench.usage.hero.sessionsDetail" = "Median %1$@ · p90 %2$@ tokens";
+
+/* Usage page hero tile under the token total. Prompt is everything sent to the model (fresh input plus cache read and write), Out the output. */
+"workbench.usage.hero.tokensDetail" = "Prompt %1$@ · Out %2$@";
+
+/* Usage page range control: the last 90 local calendar days, today included. */
+"workbench.usage.range.quarter" = "90 days";
+
+/* Usage page models card with no model. */
+"workbench.usage.ranking.emptyModels" = "No model recorded in this range";
+
+/* Usage page projects card with no project. */
+"workbench.usage.ranking.emptyProjects" = "No project recorded in this range";
+
+/* Footer of the Usage page project or model ranking: entries past the top six and their tokens. */
+"workbench.usage.ranking.more" = "+%1$lld more · %2$@";
+
+/* Usage page recent sessions when the search finds nothing. */
+"workbench.usage.recent.noMatch" = "No session matches “%@”";
+
+/* Usage page recent sessions footer. Values arrive formatted. */
+"workbench.usage.recent.showing" = "Showing %1$@ of %2$@";
+
+/* Usage page card listing sessions active in the range, newest first. */
+"workbench.usage.recent.title" = "Recent sessions";
+
+/* Usage page recent-session row token breakdown. Values are compact token counts. */
+"workbench.usage.recent.tokens" = "In %1$@ · Out %2$@ · Cache %3$@";
+
+/* Usage page session card with no session. */
+"workbench.usage.session.empty" = "No sessions in this range";
+
+/* Usage page session row whose harness keeps no per-session tokens on this Mac. */
+"workbench.usage.session.noTokens" = "No local token record";
+
+/* Tooltip on a Usage page session row; clicking opens the Sessions page on it. */
+"workbench.usage.session.openHelp" = "Open in Sessions";
+
+/* Tooltip on a Usage page session's figure when it comes from the ledger. */
+"workbench.usage.session.sourceLedger" = "Tokens and cost from the usage ledger's rows for this session — the rows every total on this page sums.";
+
+/* Tooltip on a Codex session's figure on the Usage page. */
+"workbench.usage.session.sourceLog" = "Codex keeps no session id in the usage ledger, so this session's tokens and cost come from its parsed log.";
+
+/* Usage page session row whose session has no title. */
+"workbench.usage.session.untitled" = "Untitled session";
+
+/* Usage page session-shape bin label for the open last bin. */
+"workbench.usage.shape.atLeast" = "%@+";
+
+/* Usage page session-shape card. {value} is already formatted. */
+"workbench.usage.shape.median" = "Median %@";
+
+/* Usage page session-shape metric: wall-clock length of a session. */
+"workbench.usage.shape.metric.duration" = "Duration";
+
+/* Usage page session-shape metric: tool calls per session. */
+"workbench.usage.shape.metric.toolCalls" = "Tool calls";
+
+/* Usage page session-shape bin label, both ends included. */
+"workbench.usage.shape.range" = "%1$@–%2$@";
+
+/* Usage page card: how sessions are distributed by size. */
+"workbench.usage.shape.title" = "Session shape";
+
+/* Usage page session-shape bin label for the first duration bin. */
+"workbench.usage.shape.under" = "Under %@";
+
+/* Usage page skills card with nothing to list. */
+"workbench.usage.skills.empty" = "No skill use found in analyzed sessions";
+
+/* Usage page skills row. {when} is a relative time. */
+"workbench.usage.skills.lastUsed" = "Last used %@";
+
+/* Usage page skills row. {projects} is a list of directory names. */
+"workbench.usage.skills.projects" = "In %@";
+
+/* Subtitle of the Usage page skills card. */
+"workbench.usage.skills.subtitle" = "From analyzed Codex and Claude Code sessions";
+
+/* Usage page status line while session files are parsed for tools, skills and per-session cost. */
+"workbench.usage.status.analyzing" = "Reading sessions in the background · %1$lld of %2$lld ready";
+
+/* Usage page note when the range reaches past the ledger's request-level detail. {date} is a formatted day. */
+"workbench.usage.status.hourlyFrom" = "Hourly cards cover %@ onward; older days only have daily totals.";
+
+/* Usage page note when the local session index has never been built. */
+"workbench.usage.status.indexEmpty" = "Sessions appear once the session index is built. It is being built now.";
+
+/* Usage page note: daily rollups carry no project, so a project filter leaves them out. */
+"workbench.usage.status.projectDetailOnly" = "A project filter covers request-level history only.";
+
+/* Usage page trend legend and tooltip: everything sent to the model in a bar — fresh input plus cache read and write, as opposed to In, the fresh part alone. */
+"workbench.usage.tokens.prompt" = "Prompt";
+
+/* Column header on the Usage page tools card. */
+"workbench.usage.tools.calls" = "Calls";
+
+/* Kind of tool on the Usage page tools card: subagents, plans and skills. */
+"workbench.usage.tools.category.agent" = "Agents";
+
+/* Kind of tool on the Usage page tools card: writing and patching files. distinct-from: workbench.library.edit (a noun naming a kind of tool, not the verb on a button). */
+"workbench.usage.tools.category.edit" = "Edit";
+
+/* Kind of tool on the Usage page tools card: reading and searching files. */
+"workbench.usage.tools.category.read" = "Read";
+
+/* Kind of tool on the Usage page tools card: shell and code execution. */
+"workbench.usage.tools.category.shell" = "Shell";
+
+/* Kind of tool on the Usage page tools card: web search and fetch. */
+"workbench.usage.tools.category.web" = "Web";
+
+/* Usage page tools card with nothing to list. */
+"workbench.usage.tools.empty" = "No tool calls found in analyzed sessions";
+
+/* Column header on the Usage page tools card. */
+"workbench.usage.tools.share" = "Share";
+
+/* Usage page card ranking tools by calls. */
+"workbench.usage.tools.title" = "Tool use";
+
+/* Usage page tools card: heading over the weekly stacked bars. */
+"workbench.usage.tools.weekly" = "Weekly by kind";
+
+/* Usage page card listing the sessions with the most tokens, cost or active time. */
+"workbench.usage.topSessions.title" = "Heaviest sessions";
+
+/* Accessibility label of the Usage page trend chart. */
+"workbench.usage.trend.a11y" = "Usage trend chart";
+
+/* Usage page trend card with nothing to draw. */
+"workbench.usage.trend.empty" = "No usage in this range";
+
+/* Usage page metric: active hours (trend) or active time (heaviest sessions). */
+"workbench.usage.trend.metric.active" = "Active";
+
+/* Usage page metric: requests (trend) or messages per session (session shape). */
+"workbench.usage.trend.metric.messages" = "Messages";
+
+/* Usage page trend metric: output tokens only. */
+"workbench.usage.trend.metric.output" = "Output tokens";
+
+/* Usage page trend control: stack each bar as prompt under output (the other choice splits it by harness). */
+"workbench.usage.trend.splitFlow" = "Prompt · Out";
+
+/* Usage page trend card title with one bar per day. */
+"workbench.usage.trend.titleDaily" = "Daily trend";
+
+/* Usage page trend card title when a long range is drawn one bar per week. */
+"workbench.usage.trend.titleWeekly" = "Weekly trend";

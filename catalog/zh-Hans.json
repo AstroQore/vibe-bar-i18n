@@ -6361,6 +6361,303 @@
     },
     "workbench.skills.copies.linkedNotCompared": {
       "value": "这个技能的来源在 Vibe Bar 管理范围之外，因此不会比较它的文件。"
+    },
+    "workbench.usage.range.quarter": {
+      "value": "90 天"
+    },
+    "workbench.usage.filter.project": {
+      "value": "项目"
+    },
+    "workbench.usage.filter.allProjects": {
+      "value": "全部项目"
+    },
+    "workbench.usage.filter.projectHelp": {
+      "value": "项目指会话运行所在的目录；worktree 计入其所属仓库。"
+    },
+    "workbench.usage.status.analyzing": {
+      "value": "正在后台读取会话 · {ready}/{total} 已就绪"
+    },
+    "workbench.usage.status.hourlyFrom": {
+      "value": "按小时的卡片从 {date} 起；更早的日期只有每日汇总。"
+    },
+    "workbench.usage.status.projectDetailOnly": {
+      "value": "按项目筛选仅覆盖逐请求明细。"
+    },
+    "workbench.usage.status.skipped": {
+      "value": "{count, plural, other {# 个会话}}过大或过旧，未在后台读取。"
+    },
+    "workbench.usage.status.indexEmpty": {
+      "value": "会话索引建立后才会显示会话，正在建立。"
+    },
+    "workbench.usage.hero.sessionsDetail": {
+      "value": "中位 {median} · p90 {p90} token"
+    },
+    "workbench.usage.hero.tokensDetail": {
+      "value": "提示词 {input} · 输出 {output}"
+    },
+    "workbench.usage.hero.costDetail": {
+      "value": "按生效价格计"
+    },
+    "workbench.usage.hero.costUnpriced": {
+      "value": "另有未计价用量"
+    },
+    "workbench.usage.hero.cacheDetail": {
+      "value": "命中率 {rate}"
+    },
+    "workbench.usage.hero.activeTime": {
+      "value": "活跃时长"
+    },
+    "workbench.usage.hero.activeDetail": {
+      "value": "分布在 {count, plural, other {# 天}}"
+    },
+    "workbench.usage.hero.projectsDetail": {
+      "value": "最多：{name} · {share}"
+    },
+    "workbench.usage.trend.titleDaily": {
+      "value": "每日趋势"
+    },
+    "workbench.usage.trend.titleWeekly": {
+      "value": "每周趋势"
+    },
+    "workbench.usage.trend.metric.output": {
+      "value": "输出 Token"
+    },
+    "workbench.usage.trend.metric.messages": {
+      "value": "消息"
+    },
+    "workbench.usage.trend.metric.active": {
+      "value": "活跃"
+    },
+    "workbench.usage.trend.empty": {
+      "value": "此范围内没有用量"
+    },
+    "workbench.usage.trend.a11y": {
+      "value": "用量趋势图"
+    },
+    "workbench.usage.count.sessions": {
+      "value": "{count, plural, other {# 个会话}}"
+    },
+    "workbench.usage.count.uses": {
+      "value": "{count, plural, other {# 次}}"
+    },
+    "workbench.usage.count.calls": {
+      "value": "{count, plural, other {# 次调用}}"
+    },
+    "workbench.usage.count.activeHours": {
+      "value": "{count, plural, other {# 个活跃小时}}"
+    },
+    "workbench.usage.ranking.more": {
+      "value": "另 {count} 项 · {tokens}"
+    },
+    "workbench.usage.ranking.emptyProjects": {
+      "value": "此范围内没有项目记录"
+    },
+    "workbench.usage.ranking.emptyModels": {
+      "value": "此范围内没有模型记录"
+    },
+    "workbench.usage.heatmap.title": {
+      "value": "按时段"
+    },
+    "workbench.usage.heatmap.subtitle": {
+      "value": "按星期与小时统计的请求（本地时间）"
+    },
+    "workbench.usage.heatmap.busiest": {
+      "value": "最忙：{slot}"
+    },
+    "workbench.usage.heatmap.cell": {
+      "value": "{slot} · {count, plural, other {# 条请求}}"
+    },
+    "workbench.usage.heatmap.empty": {
+      "value": "此范围内没有逐请求记录"
+    },
+    "workbench.usage.topSessions.title": {
+      "value": "最耗会话"
+    },
+    "workbench.usage.session.untitled": {
+      "value": "未命名会话"
+    },
+    "workbench.usage.session.empty": {
+      "value": "此范围内没有会话"
+    },
+    "workbench.usage.session.openHelp": {
+      "value": "在会话页中打开"
+    },
+    "workbench.usage.session.noTokens": {
+      "value": "本机无 token 记录"
+    },
+    "workbench.usage.shape.title": {
+      "value": "会话形态"
+    },
+    "workbench.usage.shape.metric.duration": {
+      "value": "时长"
+    },
+    "workbench.usage.shape.metric.toolCalls": {
+      "value": "工具调用"
+    },
+    "workbench.usage.shape.median": {
+      "value": "中位数 {value}"
+    },
+    "workbench.usage.shape.samples": {
+      "value": "{count, plural, other {# 个有数据的会话}}"
+    },
+    "workbench.usage.shape.range": {
+      "value": "{from}–{to}"
+    },
+    "workbench.usage.shape.atLeast": {
+      "value": "{value}+"
+    },
+    "workbench.usage.shape.under": {
+      "value": "{value} 以内"
+    },
+    "workbench.usage.shape.bin": {
+      "value": "{range} · {count, plural, other {# 个会话}}"
+    },
+    "workbench.usage.skills.subtitle": {
+      "value": "来自已分析的 Codex 与 Claude Code 会话"
+    },
+    "workbench.usage.skills.lastUsed": {
+      "value": "最近使用 {when}"
+    },
+    "workbench.usage.skills.projects": {
+      "value": "用于 {projects}"
+    },
+    "workbench.usage.skills.empty": {
+      "value": "已分析的会话中没有技能使用记录"
+    },
+    "workbench.usage.tools.title": {
+      "value": "工具使用"
+    },
+    "workbench.usage.tools.calls": {
+      "value": "调用"
+    },
+    "workbench.usage.tools.share": {
+      "value": "占比"
+    },
+    "workbench.usage.tools.weekly": {
+      "value": "按类别每周"
+    },
+    "workbench.usage.tools.week": {
+      "value": "{date} 当周 · {count, plural, other {# 次调用}}"
+    },
+    "workbench.usage.tools.more": {
+      "value": "{count, plural, other {另 # 个工具}}"
+    },
+    "workbench.usage.tools.empty": {
+      "value": "已分析的会话中没有工具调用"
+    },
+    "workbench.usage.tools.category.shell": {
+      "value": "终端"
+    },
+    "workbench.usage.tools.category.read": {
+      "value": "读取"
+    },
+    "workbench.usage.tools.category.edit": {
+      "value": "编辑"
+    },
+    "workbench.usage.tools.category.web": {
+      "value": "网页"
+    },
+    "workbench.usage.tools.category.agent": {
+      "value": "代理"
+    },
+    "workbench.usage.health.title": {
+      "value": "Harness 健康度"
+    },
+    "workbench.usage.health.subtitle": {
+      "value": "各 harness 的 prompt 是否精简、缓存是否高效"
+    },
+    "workbench.usage.health.rating.excellent": {
+      "value": "优秀"
+    },
+    "workbench.usage.health.rating.good": {
+      "value": "良好"
+    },
+    "workbench.usage.health.rating.fair": {
+      "value": "一般"
+    },
+    "workbench.usage.health.rating.poor": {
+      "value": "需关注"
+    },
+    "workbench.usage.health.rating.unknown": {
+      "value": "数据不足"
+    },
+    "workbench.usage.health.sub.leanStart": {
+      "value": "起步精简"
+    },
+    "workbench.usage.health.sub.pace": {
+      "value": "增长节奏"
+    },
+    "workbench.usage.health.sub.reliability": {
+      "value": "可靠性"
+    },
+    "workbench.usage.health.metric.typical": {
+      "value": "典型 prompt"
+    },
+    "workbench.usage.health.metric.largest": {
+      "value": "最大"
+    },
+    "workbench.usage.health.metric.start": {
+      "value": "起始大小"
+    },
+    "workbench.usage.health.metric.growth": {
+      "value": "每请求增长"
+    },
+    "workbench.usage.health.metric.cacheHit": {
+      "value": "缓存命中率"
+    },
+    "workbench.usage.health.metric.window": {
+      "value": "上下文窗口"
+    },
+    "workbench.usage.health.metric.failures": {
+      "value": "工具失败率"
+    },
+    "workbench.usage.health.counts": {
+      "value": "{requests} 条请求 · {sessions} 个会话"
+    },
+    "workbench.usage.health.models": {
+      "value": "最近使用的模型"
+    },
+    "workbench.usage.health.composition": {
+      "value": "Prompt 构成（系统提示词、工具、记忆、文件）需要网关数据。"
+    },
+    "workbench.usage.health.scoreHelp": {
+      "value": "加权：缓存 35%、起步精简 20%、增长节奏 20%、可靠性 25%。无数据的部分不计入。"
+    },
+    "workbench.usage.health.empty": {
+      "value": "此范围内没有 harness 活动"
+    },
+    "workbench.usage.recent.title": {
+      "value": "最近会话"
+    },
+    "workbench.usage.recent.tokens": {
+      "value": "输入 {input} · 输出 {output} · 缓存 {cache}"
+    },
+    "workbench.usage.recent.noMatch": {
+      "value": "没有会话匹配“{query}”"
+    },
+    "workbench.usage.recent.showing": {
+      "value": "显示 {shown}/{total}"
+    },
+    "workbench.usage.filter.searchProjects": {
+      "value": "查找项目"
+    },
+    "workbench.usage.filter.clearHelp": {
+      "value": "清除 harness、模型与项目筛选"
+    },
+    "workbench.usage.skills.harnessUses": {
+      "value": "{harness} · {count, plural, other {# 次}}"
+    },
+    "workbench.usage.session.sourceLedger": {
+      "value": "Token 与费用取自用量账本中该会话的记录——与本页所有合计同源。"
+    },
+    "workbench.usage.session.sourceLog": {
+      "value": "Codex 不在用量账本中记录会话 ID，此会话的 token 与费用取自解析后的会话日志。"
+    },
+    "workbench.usage.tokens.prompt": {
+      "value": "提示词"
+    },
+    "workbench.usage.trend.splitFlow": {
+      "value": "提示词 · 输出"
     }
   }
 }

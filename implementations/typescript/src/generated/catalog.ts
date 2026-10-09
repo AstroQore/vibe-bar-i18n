@@ -2133,7 +2133,106 @@ export type MessageKey =
   | "workbench.status.localLedger"
   | "workbench.status.nextRefill"
   | "workbench.status.sharedLibrary"
-  | "workbench.status.updated";
+  | "workbench.status.updated"
+  | "workbench.usage.count.activeHours"
+  | "workbench.usage.count.calls"
+  | "workbench.usage.count.sessions"
+  | "workbench.usage.count.uses"
+  | "workbench.usage.filter.allProjects"
+  | "workbench.usage.filter.clearHelp"
+  | "workbench.usage.filter.project"
+  | "workbench.usage.filter.projectHelp"
+  | "workbench.usage.filter.searchProjects"
+  | "workbench.usage.health.composition"
+  | "workbench.usage.health.counts"
+  | "workbench.usage.health.empty"
+  | "workbench.usage.health.metric.cacheHit"
+  | "workbench.usage.health.metric.failures"
+  | "workbench.usage.health.metric.growth"
+  | "workbench.usage.health.metric.largest"
+  | "workbench.usage.health.metric.start"
+  | "workbench.usage.health.metric.typical"
+  | "workbench.usage.health.metric.window"
+  | "workbench.usage.health.models"
+  | "workbench.usage.health.rating.excellent"
+  | "workbench.usage.health.rating.fair"
+  | "workbench.usage.health.rating.good"
+  | "workbench.usage.health.rating.poor"
+  | "workbench.usage.health.rating.unknown"
+  | "workbench.usage.health.scoreHelp"
+  | "workbench.usage.health.sub.leanStart"
+  | "workbench.usage.health.sub.pace"
+  | "workbench.usage.health.sub.reliability"
+  | "workbench.usage.health.subtitle"
+  | "workbench.usage.health.title"
+  | "workbench.usage.heatmap.busiest"
+  | "workbench.usage.heatmap.cell"
+  | "workbench.usage.heatmap.empty"
+  | "workbench.usage.heatmap.subtitle"
+  | "workbench.usage.heatmap.title"
+  | "workbench.usage.hero.activeDetail"
+  | "workbench.usage.hero.activeTime"
+  | "workbench.usage.hero.cacheDetail"
+  | "workbench.usage.hero.costDetail"
+  | "workbench.usage.hero.costUnpriced"
+  | "workbench.usage.hero.projectsDetail"
+  | "workbench.usage.hero.sessionsDetail"
+  | "workbench.usage.hero.tokensDetail"
+  | "workbench.usage.range.quarter"
+  | "workbench.usage.ranking.emptyModels"
+  | "workbench.usage.ranking.emptyProjects"
+  | "workbench.usage.ranking.more"
+  | "workbench.usage.recent.noMatch"
+  | "workbench.usage.recent.showing"
+  | "workbench.usage.recent.title"
+  | "workbench.usage.recent.tokens"
+  | "workbench.usage.session.empty"
+  | "workbench.usage.session.noTokens"
+  | "workbench.usage.session.openHelp"
+  | "workbench.usage.session.sourceLedger"
+  | "workbench.usage.session.sourceLog"
+  | "workbench.usage.session.untitled"
+  | "workbench.usage.shape.atLeast"
+  | "workbench.usage.shape.bin"
+  | "workbench.usage.shape.median"
+  | "workbench.usage.shape.metric.duration"
+  | "workbench.usage.shape.metric.toolCalls"
+  | "workbench.usage.shape.range"
+  | "workbench.usage.shape.samples"
+  | "workbench.usage.shape.title"
+  | "workbench.usage.shape.under"
+  | "workbench.usage.skills.empty"
+  | "workbench.usage.skills.harnessUses"
+  | "workbench.usage.skills.lastUsed"
+  | "workbench.usage.skills.projects"
+  | "workbench.usage.skills.subtitle"
+  | "workbench.usage.status.analyzing"
+  | "workbench.usage.status.hourlyFrom"
+  | "workbench.usage.status.indexEmpty"
+  | "workbench.usage.status.projectDetailOnly"
+  | "workbench.usage.status.skipped"
+  | "workbench.usage.tokens.prompt"
+  | "workbench.usage.tools.calls"
+  | "workbench.usage.tools.category.agent"
+  | "workbench.usage.tools.category.edit"
+  | "workbench.usage.tools.category.read"
+  | "workbench.usage.tools.category.shell"
+  | "workbench.usage.tools.category.web"
+  | "workbench.usage.tools.empty"
+  | "workbench.usage.tools.more"
+  | "workbench.usage.tools.share"
+  | "workbench.usage.tools.title"
+  | "workbench.usage.tools.week"
+  | "workbench.usage.tools.weekly"
+  | "workbench.usage.topSessions.title"
+  | "workbench.usage.trend.a11y"
+  | "workbench.usage.trend.empty"
+  | "workbench.usage.trend.metric.active"
+  | "workbench.usage.trend.metric.messages"
+  | "workbench.usage.trend.metric.output"
+  | "workbench.usage.trend.splitFlow"
+  | "workbench.usage.trend.titleDaily"
+  | "workbench.usage.trend.titleWeekly";
 
 /**
  * The parameter object each key takes. `undefined` means the key takes
@@ -4260,6 +4359,105 @@ export interface MessageParams {
   "workbench.status.nextRefill": { "countdown": string };
   "workbench.status.sharedLibrary": undefined;
   "workbench.status.updated": { "time": string };
+  "workbench.usage.count.activeHours": { "count": number };
+  "workbench.usage.count.calls": { "count": number };
+  "workbench.usage.count.sessions": { "count": number };
+  "workbench.usage.count.uses": { "count": number };
+  "workbench.usage.filter.allProjects": undefined;
+  "workbench.usage.filter.clearHelp": undefined;
+  "workbench.usage.filter.project": undefined;
+  "workbench.usage.filter.projectHelp": undefined;
+  "workbench.usage.filter.searchProjects": undefined;
+  "workbench.usage.health.composition": undefined;
+  "workbench.usage.health.counts": { "requests": string; "sessions": string };
+  "workbench.usage.health.empty": undefined;
+  "workbench.usage.health.metric.cacheHit": undefined;
+  "workbench.usage.health.metric.failures": undefined;
+  "workbench.usage.health.metric.growth": undefined;
+  "workbench.usage.health.metric.largest": undefined;
+  "workbench.usage.health.metric.start": undefined;
+  "workbench.usage.health.metric.typical": undefined;
+  "workbench.usage.health.metric.window": undefined;
+  "workbench.usage.health.models": undefined;
+  "workbench.usage.health.rating.excellent": undefined;
+  "workbench.usage.health.rating.fair": undefined;
+  "workbench.usage.health.rating.good": undefined;
+  "workbench.usage.health.rating.poor": undefined;
+  "workbench.usage.health.rating.unknown": undefined;
+  "workbench.usage.health.scoreHelp": undefined;
+  "workbench.usage.health.sub.leanStart": undefined;
+  "workbench.usage.health.sub.pace": undefined;
+  "workbench.usage.health.sub.reliability": undefined;
+  "workbench.usage.health.subtitle": undefined;
+  "workbench.usage.health.title": undefined;
+  "workbench.usage.heatmap.busiest": { "slot": string };
+  "workbench.usage.heatmap.cell": { "slot": string; "count": number };
+  "workbench.usage.heatmap.empty": undefined;
+  "workbench.usage.heatmap.subtitle": undefined;
+  "workbench.usage.heatmap.title": undefined;
+  "workbench.usage.hero.activeDetail": { "count": number };
+  "workbench.usage.hero.activeTime": undefined;
+  "workbench.usage.hero.cacheDetail": { "rate": string };
+  "workbench.usage.hero.costDetail": undefined;
+  "workbench.usage.hero.costUnpriced": undefined;
+  "workbench.usage.hero.projectsDetail": { "name": string; "share": string };
+  "workbench.usage.hero.sessionsDetail": { "median": string; "p90": string };
+  "workbench.usage.hero.tokensDetail": { "input": string; "output": string };
+  "workbench.usage.range.quarter": undefined;
+  "workbench.usage.ranking.emptyModels": undefined;
+  "workbench.usage.ranking.emptyProjects": undefined;
+  "workbench.usage.ranking.more": { "count": number; "tokens": string };
+  "workbench.usage.recent.noMatch": { "query": string };
+  "workbench.usage.recent.showing": { "shown": string; "total": string };
+  "workbench.usage.recent.title": undefined;
+  "workbench.usage.recent.tokens": { "input": string; "output": string; "cache": string };
+  "workbench.usage.session.empty": undefined;
+  "workbench.usage.session.noTokens": undefined;
+  "workbench.usage.session.openHelp": undefined;
+  "workbench.usage.session.sourceLedger": undefined;
+  "workbench.usage.session.sourceLog": undefined;
+  "workbench.usage.session.untitled": undefined;
+  "workbench.usage.shape.atLeast": { "value": string };
+  "workbench.usage.shape.bin": { "range": string; "count": number };
+  "workbench.usage.shape.median": { "value": string };
+  "workbench.usage.shape.metric.duration": undefined;
+  "workbench.usage.shape.metric.toolCalls": undefined;
+  "workbench.usage.shape.range": { "from": string; "to": string };
+  "workbench.usage.shape.samples": { "count": number };
+  "workbench.usage.shape.title": undefined;
+  "workbench.usage.shape.under": { "value": string };
+  "workbench.usage.skills.empty": undefined;
+  "workbench.usage.skills.harnessUses": { "harness": string; "count": number };
+  "workbench.usage.skills.lastUsed": { "when": string };
+  "workbench.usage.skills.projects": { "projects": string };
+  "workbench.usage.skills.subtitle": undefined;
+  "workbench.usage.status.analyzing": { "ready": number; "total": number };
+  "workbench.usage.status.hourlyFrom": { "date": string };
+  "workbench.usage.status.indexEmpty": undefined;
+  "workbench.usage.status.projectDetailOnly": undefined;
+  "workbench.usage.status.skipped": { "count": number };
+  "workbench.usage.tokens.prompt": undefined;
+  "workbench.usage.tools.calls": undefined;
+  "workbench.usage.tools.category.agent": undefined;
+  "workbench.usage.tools.category.edit": undefined;
+  "workbench.usage.tools.category.read": undefined;
+  "workbench.usage.tools.category.shell": undefined;
+  "workbench.usage.tools.category.web": undefined;
+  "workbench.usage.tools.empty": undefined;
+  "workbench.usage.tools.more": { "count": number };
+  "workbench.usage.tools.share": undefined;
+  "workbench.usage.tools.title": undefined;
+  "workbench.usage.tools.week": { "date": string; "count": number };
+  "workbench.usage.tools.weekly": undefined;
+  "workbench.usage.topSessions.title": undefined;
+  "workbench.usage.trend.a11y": undefined;
+  "workbench.usage.trend.empty": undefined;
+  "workbench.usage.trend.metric.active": undefined;
+  "workbench.usage.trend.metric.messages": undefined;
+  "workbench.usage.trend.metric.output": undefined;
+  "workbench.usage.trend.splitFlow": undefined;
+  "workbench.usage.trend.titleDaily": undefined;
+  "workbench.usage.trend.titleWeekly": undefined;
 }
 
 /** Raw ICU messages, per locale. Formatted by `t` — never read directly. */
@@ -6387,6 +6585,105 @@ export const messages: {
     "workbench.status.nextRefill": "next refill {countdown}",
     "workbench.status.sharedLibrary": "shared library",
     "workbench.status.updated": "updated {time}",
+    "workbench.usage.count.activeHours": "{count, plural, one {# active hour} other {# active hours}}",
+    "workbench.usage.count.calls": "{count, plural, one {# call} other {# calls}}",
+    "workbench.usage.count.sessions": "{count, plural, one {# session} other {# sessions}}",
+    "workbench.usage.count.uses": "{count, plural, one {# use} other {# uses}}",
+    "workbench.usage.filter.allProjects": "All projects",
+    "workbench.usage.filter.clearHelp": "Clear the harness, model and project filters",
+    "workbench.usage.filter.project": "Project",
+    "workbench.usage.filter.projectHelp": "Projects are the directories sessions ran in; worktrees count toward their repository.",
+    "workbench.usage.filter.searchProjects": "Find a project",
+    "workbench.usage.health.composition": "Prompt composition (system prompt, tools, memory, files) needs gateway data.",
+    "workbench.usage.health.counts": "{requests} requests · {sessions} sessions",
+    "workbench.usage.health.empty": "No harness activity in this range",
+    "workbench.usage.health.metric.cacheHit": "Cache hit rate",
+    "workbench.usage.health.metric.failures": "Tool failures",
+    "workbench.usage.health.metric.growth": "Growth per request",
+    "workbench.usage.health.metric.largest": "Largest",
+    "workbench.usage.health.metric.start": "Starting size",
+    "workbench.usage.health.metric.typical": "Typical prompt",
+    "workbench.usage.health.metric.window": "Context window",
+    "workbench.usage.health.models": "Recent models",
+    "workbench.usage.health.rating.excellent": "Excellent",
+    "workbench.usage.health.rating.fair": "Fair",
+    "workbench.usage.health.rating.good": "Good",
+    "workbench.usage.health.rating.poor": "Needs attention",
+    "workbench.usage.health.rating.unknown": "Not enough data",
+    "workbench.usage.health.scoreHelp": "Weighted: cache 35%, lean start 20%, pace 20%, reliability 25%. A part without data is left out.",
+    "workbench.usage.health.sub.leanStart": "Lean start",
+    "workbench.usage.health.sub.pace": "Pace",
+    "workbench.usage.health.sub.reliability": "Reliability",
+    "workbench.usage.health.subtitle": "How lean and cache-friendly each harness keeps its prompts",
+    "workbench.usage.health.title": "Harness health",
+    "workbench.usage.heatmap.busiest": "Busiest: {slot}",
+    "workbench.usage.heatmap.cell": "{slot} · {count, plural, one {# request} other {# requests}}",
+    "workbench.usage.heatmap.empty": "No request-level history in this range",
+    "workbench.usage.heatmap.subtitle": "Requests by weekday and hour, local time",
+    "workbench.usage.heatmap.title": "By hour",
+    "workbench.usage.hero.activeDetail": "Across {count, plural, one {# day} other {# days}}",
+    "workbench.usage.hero.activeTime": "Active time",
+    "workbench.usage.hero.cacheDetail": "{rate} hit rate",
+    "workbench.usage.hero.costDetail": "At effective prices",
+    "workbench.usage.hero.costUnpriced": "Plus unpriced usage",
+    "workbench.usage.hero.projectsDetail": "Top: {name} · {share}",
+    "workbench.usage.hero.sessionsDetail": "Median {median} · p90 {p90} tokens",
+    "workbench.usage.hero.tokensDetail": "Prompt {input} · Out {output}",
+    "workbench.usage.range.quarter": "90 days",
+    "workbench.usage.ranking.emptyModels": "No model recorded in this range",
+    "workbench.usage.ranking.emptyProjects": "No project recorded in this range",
+    "workbench.usage.ranking.more": "+{count} more · {tokens}",
+    "workbench.usage.recent.noMatch": "No session matches “{query}”",
+    "workbench.usage.recent.showing": "Showing {shown} of {total}",
+    "workbench.usage.recent.title": "Recent sessions",
+    "workbench.usage.recent.tokens": "In {input} · Out {output} · Cache {cache}",
+    "workbench.usage.session.empty": "No sessions in this range",
+    "workbench.usage.session.noTokens": "No local token record",
+    "workbench.usage.session.openHelp": "Open in Sessions",
+    "workbench.usage.session.sourceLedger": "Tokens and cost from the usage ledger's rows for this session — the rows every total on this page sums.",
+    "workbench.usage.session.sourceLog": "Codex keeps no session id in the usage ledger, so this session's tokens and cost come from its parsed log.",
+    "workbench.usage.session.untitled": "Untitled session",
+    "workbench.usage.shape.atLeast": "{value}+",
+    "workbench.usage.shape.bin": "{range} · {count, plural, one {# session} other {# sessions}}",
+    "workbench.usage.shape.median": "Median {value}",
+    "workbench.usage.shape.metric.duration": "Duration",
+    "workbench.usage.shape.metric.toolCalls": "Tool calls",
+    "workbench.usage.shape.range": "{from}–{to}",
+    "workbench.usage.shape.samples": "{count, plural, one {# session with data} other {# sessions with data}}",
+    "workbench.usage.shape.title": "Session shape",
+    "workbench.usage.shape.under": "Under {value}",
+    "workbench.usage.skills.empty": "No skill use found in analyzed sessions",
+    "workbench.usage.skills.harnessUses": "{harness} · {count, plural, one {# use} other {# uses}}",
+    "workbench.usage.skills.lastUsed": "Last used {when}",
+    "workbench.usage.skills.projects": "In {projects}",
+    "workbench.usage.skills.subtitle": "From analyzed Codex and Claude Code sessions",
+    "workbench.usage.status.analyzing": "Reading sessions in the background · {ready} of {total} ready",
+    "workbench.usage.status.hourlyFrom": "Hourly cards cover {date} onward; older days only have daily totals.",
+    "workbench.usage.status.indexEmpty": "Sessions appear once the session index is built. It is being built now.",
+    "workbench.usage.status.projectDetailOnly": "A project filter covers request-level history only.",
+    "workbench.usage.status.skipped": "{count, plural, one {# session is} other {# sessions are}} too large or too old to read in the background.",
+    "workbench.usage.tokens.prompt": "Prompt",
+    "workbench.usage.tools.calls": "Calls",
+    "workbench.usage.tools.category.agent": "Agents",
+    "workbench.usage.tools.category.edit": "Edit",
+    "workbench.usage.tools.category.read": "Read",
+    "workbench.usage.tools.category.shell": "Shell",
+    "workbench.usage.tools.category.web": "Web",
+    "workbench.usage.tools.empty": "No tool calls found in analyzed sessions",
+    "workbench.usage.tools.more": "{count, plural, one {# more tool} other {# more tools}}",
+    "workbench.usage.tools.share": "Share",
+    "workbench.usage.tools.title": "Tool use",
+    "workbench.usage.tools.week": "Week of {date} · {count, plural, one {# call} other {# calls}}",
+    "workbench.usage.tools.weekly": "Weekly by kind",
+    "workbench.usage.topSessions.title": "Heaviest sessions",
+    "workbench.usage.trend.a11y": "Usage trend chart",
+    "workbench.usage.trend.empty": "No usage in this range",
+    "workbench.usage.trend.metric.active": "Active",
+    "workbench.usage.trend.metric.messages": "Messages",
+    "workbench.usage.trend.metric.output": "Output tokens",
+    "workbench.usage.trend.splitFlow": "Prompt · Out",
+    "workbench.usage.trend.titleDaily": "Daily trend",
+    "workbench.usage.trend.titleWeekly": "Weekly trend",
   },
   "zh-Hans": {
     "common.add": "添加",
@@ -8509,5 +8806,104 @@ export const messages: {
     "workbench.status.nextRefill": "下次补额 {countdown}",
     "workbench.status.sharedLibrary": "共享库",
     "workbench.status.updated": "更新于 {time}",
+    "workbench.usage.count.activeHours": "{count, plural, other {# 个活跃小时}}",
+    "workbench.usage.count.calls": "{count, plural, other {# 次调用}}",
+    "workbench.usage.count.sessions": "{count, plural, other {# 个会话}}",
+    "workbench.usage.count.uses": "{count, plural, other {# 次}}",
+    "workbench.usage.filter.allProjects": "全部项目",
+    "workbench.usage.filter.clearHelp": "清除 harness、模型与项目筛选",
+    "workbench.usage.filter.project": "项目",
+    "workbench.usage.filter.projectHelp": "项目指会话运行所在的目录；worktree 计入其所属仓库。",
+    "workbench.usage.filter.searchProjects": "查找项目",
+    "workbench.usage.health.composition": "Prompt 构成（系统提示词、工具、记忆、文件）需要网关数据。",
+    "workbench.usage.health.counts": "{requests} 条请求 · {sessions} 个会话",
+    "workbench.usage.health.empty": "此范围内没有 harness 活动",
+    "workbench.usage.health.metric.cacheHit": "缓存命中率",
+    "workbench.usage.health.metric.failures": "工具失败率",
+    "workbench.usage.health.metric.growth": "每请求增长",
+    "workbench.usage.health.metric.largest": "最大",
+    "workbench.usage.health.metric.start": "起始大小",
+    "workbench.usage.health.metric.typical": "典型 prompt",
+    "workbench.usage.health.metric.window": "上下文窗口",
+    "workbench.usage.health.models": "最近使用的模型",
+    "workbench.usage.health.rating.excellent": "优秀",
+    "workbench.usage.health.rating.fair": "一般",
+    "workbench.usage.health.rating.good": "良好",
+    "workbench.usage.health.rating.poor": "需关注",
+    "workbench.usage.health.rating.unknown": "数据不足",
+    "workbench.usage.health.scoreHelp": "加权：缓存 35%、起步精简 20%、增长节奏 20%、可靠性 25%。无数据的部分不计入。",
+    "workbench.usage.health.sub.leanStart": "起步精简",
+    "workbench.usage.health.sub.pace": "增长节奏",
+    "workbench.usage.health.sub.reliability": "可靠性",
+    "workbench.usage.health.subtitle": "各 harness 的 prompt 是否精简、缓存是否高效",
+    "workbench.usage.health.title": "Harness 健康度",
+    "workbench.usage.heatmap.busiest": "最忙：{slot}",
+    "workbench.usage.heatmap.cell": "{slot} · {count, plural, other {# 条请求}}",
+    "workbench.usage.heatmap.empty": "此范围内没有逐请求记录",
+    "workbench.usage.heatmap.subtitle": "按星期与小时统计的请求（本地时间）",
+    "workbench.usage.heatmap.title": "按时段",
+    "workbench.usage.hero.activeDetail": "分布在 {count, plural, other {# 天}}",
+    "workbench.usage.hero.activeTime": "活跃时长",
+    "workbench.usage.hero.cacheDetail": "命中率 {rate}",
+    "workbench.usage.hero.costDetail": "按生效价格计",
+    "workbench.usage.hero.costUnpriced": "另有未计价用量",
+    "workbench.usage.hero.projectsDetail": "最多：{name} · {share}",
+    "workbench.usage.hero.sessionsDetail": "中位 {median} · p90 {p90} token",
+    "workbench.usage.hero.tokensDetail": "提示词 {input} · 输出 {output}",
+    "workbench.usage.range.quarter": "90 天",
+    "workbench.usage.ranking.emptyModels": "此范围内没有模型记录",
+    "workbench.usage.ranking.emptyProjects": "此范围内没有项目记录",
+    "workbench.usage.ranking.more": "另 {count} 项 · {tokens}",
+    "workbench.usage.recent.noMatch": "没有会话匹配“{query}”",
+    "workbench.usage.recent.showing": "显示 {shown}/{total}",
+    "workbench.usage.recent.title": "最近会话",
+    "workbench.usage.recent.tokens": "输入 {input} · 输出 {output} · 缓存 {cache}",
+    "workbench.usage.session.empty": "此范围内没有会话",
+    "workbench.usage.session.noTokens": "本机无 token 记录",
+    "workbench.usage.session.openHelp": "在会话页中打开",
+    "workbench.usage.session.sourceLedger": "Token 与费用取自用量账本中该会话的记录——与本页所有合计同源。",
+    "workbench.usage.session.sourceLog": "Codex 不在用量账本中记录会话 ID，此会话的 token 与费用取自解析后的会话日志。",
+    "workbench.usage.session.untitled": "未命名会话",
+    "workbench.usage.shape.atLeast": "{value}+",
+    "workbench.usage.shape.bin": "{range} · {count, plural, other {# 个会话}}",
+    "workbench.usage.shape.median": "中位数 {value}",
+    "workbench.usage.shape.metric.duration": "时长",
+    "workbench.usage.shape.metric.toolCalls": "工具调用",
+    "workbench.usage.shape.range": "{from}–{to}",
+    "workbench.usage.shape.samples": "{count, plural, other {# 个有数据的会话}}",
+    "workbench.usage.shape.title": "会话形态",
+    "workbench.usage.shape.under": "{value} 以内",
+    "workbench.usage.skills.empty": "已分析的会话中没有技能使用记录",
+    "workbench.usage.skills.harnessUses": "{harness} · {count, plural, other {# 次}}",
+    "workbench.usage.skills.lastUsed": "最近使用 {when}",
+    "workbench.usage.skills.projects": "用于 {projects}",
+    "workbench.usage.skills.subtitle": "来自已分析的 Codex 与 Claude Code 会话",
+    "workbench.usage.status.analyzing": "正在后台读取会话 · {ready}/{total} 已就绪",
+    "workbench.usage.status.hourlyFrom": "按小时的卡片从 {date} 起；更早的日期只有每日汇总。",
+    "workbench.usage.status.indexEmpty": "会话索引建立后才会显示会话，正在建立。",
+    "workbench.usage.status.projectDetailOnly": "按项目筛选仅覆盖逐请求明细。",
+    "workbench.usage.status.skipped": "{count, plural, other {# 个会话}}过大或过旧，未在后台读取。",
+    "workbench.usage.tokens.prompt": "提示词",
+    "workbench.usage.tools.calls": "调用",
+    "workbench.usage.tools.category.agent": "代理",
+    "workbench.usage.tools.category.edit": "编辑",
+    "workbench.usage.tools.category.read": "读取",
+    "workbench.usage.tools.category.shell": "终端",
+    "workbench.usage.tools.category.web": "网页",
+    "workbench.usage.tools.empty": "已分析的会话中没有工具调用",
+    "workbench.usage.tools.more": "{count, plural, other {另 # 个工具}}",
+    "workbench.usage.tools.share": "占比",
+    "workbench.usage.tools.title": "工具使用",
+    "workbench.usage.tools.week": "{date} 当周 · {count, plural, other {# 次调用}}",
+    "workbench.usage.tools.weekly": "按类别每周",
+    "workbench.usage.topSessions.title": "最耗会话",
+    "workbench.usage.trend.a11y": "用量趋势图",
+    "workbench.usage.trend.empty": "此范围内没有用量",
+    "workbench.usage.trend.metric.active": "活跃",
+    "workbench.usage.trend.metric.messages": "消息",
+    "workbench.usage.trend.metric.output": "输出 Token",
+    "workbench.usage.trend.splitFlow": "提示词 · 输出",
+    "workbench.usage.trend.titleDaily": "每日趋势",
+    "workbench.usage.trend.titleWeekly": "每周趋势",
   },
 };
