@@ -8518,11 +8518,39 @@ public enum L10n {
             /// en: "Refreshing…"
             public static var refreshing: String { L10nSupport.string("settings.pricing.refreshing") }
 
+            /// Column title for service tiers under a single model in the effective price table.
+            ///
+            /// Key: `settings.pricing.serviceTier`
+            /// en: "Service tier"
+            public static var serviceTier: String { L10nSupport.string("settings.pricing.serviceTier") }
+
+            /// Label for a model standard service tier.
+            ///
+            /// Key: `settings.pricing.standardTier`
+            /// en: "Standard"
+            public static var standardTier: String { L10nSupport.string("settings.pricing.standardTier") }
+
             /// Field label: the token count above which the higher rates apply
             ///
             /// Key: `settings.pricing.thresholdTokens`
             /// en: "Threshold tokens"
             public static var thresholdTokens: String { L10nSupport.string("settings.pricing.thresholdTokens") }
+
+            /// Long-context tooltip for any service tier. Client supplies the tier label and formatted USD-per-million prices; unpublished rates use an em dash.
+            ///
+            /// Key: `settings.pricing.tierContextRates`
+            /// en: "{tier} · Above {threshold} tokens: input {input} · output {output} · cache read {cacheRead} · cache write {cacheWrite}"
+            public static func tierContextRates(tier: String, threshold: String, input: String, output: String, cacheRead: String, cacheWrite: String) -> String {
+                L10nSupport.format("settings.pricing.tierContextRates", tier, threshold, input, output, cacheRead, cacheWrite)
+            }
+
+            /// Tooltip for Ultrafast long-context prices, in USD per million tokens. Values are formatted by the client; unpublished rates appear as an em dash.
+            ///
+            /// Key: `settings.pricing.ultrafastContextRates`
+            /// en: "Ultrafast · Above {threshold} tokens: input {input} · output {output} · cache read {cacheRead} · cache write {cacheWrite}"
+            public static func ultrafastContextRates(threshold: String, input: String, output: String, cacheRead: String, cacheWrite: String) -> String {
+                L10nSupport.format("settings.pricing.ultrafastContextRates", threshold, input, output, cacheRead, cacheWrite)
+            }
         }
 
         public enum Remote {
@@ -10712,6 +10740,396 @@ public enum L10n {
             }
         }
 
+        public enum Library {
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.addMCP`
+            /// en: "Add MCP server"
+            public static var addMCP: String { L10nSupport.string("workbench.library.addMCP") }
+
+            /// Button on a discovered row whose shared entry is a symlink to a folder outside Vibe Bar's management. Records the link as a managed skill; nothing on disk changes.
+            ///
+            /// Key: `workbench.library.adoptLink`
+            /// en: "Adopt link"
+            public static var adoptLink: String { L10nSupport.string("workbench.library.adoptLink") }
+
+            /// Tooltip on the Adopt link button of a discovered linked skill.
+            ///
+            /// Key: `workbench.library.adoptLinkHelp`
+            /// en: "Record this link so Vibe Bar can switch it per agent. Nothing on disk changes, and the folder it points to is never written."
+            public static var adoptLinkHelp: String { L10nSupport.string("workbench.library.adoptLinkHelp") }
+
+            /// Field label in the single MCP server editor.
+            ///
+            /// Key: `workbench.library.arguments`
+            /// en: "Arguments (JSON array)"
+            public static var arguments: String { L10nSupport.string("workbench.library.arguments") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.availableTo`
+            /// en: "Available to {agents}"
+            public static func availableTo(agents: String) -> String {
+                L10nSupport.format("workbench.library.availableTo", agents)
+            }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.brokenLink`
+            /// en: "Broken link"
+            public static var brokenLink: String { L10nSupport.string("workbench.library.brokenLink") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.canonical`
+            /// en: "Shared instructions"
+            public static var canonical: String { L10nSupport.string("workbench.library.canonical") }
+
+            /// Field label in the single MCP server editor.
+            ///
+            /// Key: `workbench.library.command`
+            /// en: "Command"
+            public static var command: String { L10nSupport.string("workbench.library.command") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.confirmDelete`
+            /// en: "Delete {name}?"
+            public static func confirmDelete(name: String) -> String {
+                L10nSupport.format("workbench.library.confirmDelete", name)
+            }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.cyclicLink`
+            /// en: "Link cycle"
+            public static var cyclicLink: String { L10nSupport.string("workbench.library.cyclicLink") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.discovered`
+            /// en: "Discovered on disk"
+            public static var discovered: String { L10nSupport.string("workbench.library.discovered") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.discoveredDetail`
+            /// en: "Shared resources found on disk, with source links."
+            public static var discoveredDetail: String { L10nSupport.string("workbench.library.discoveredDetail") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.edit`
+            /// en: "Edit"
+            public static var edit: String { L10nSupport.string("workbench.library.edit") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.editInstructions`
+            /// en: "Edit instructions"
+            public static var editInstructions: String { L10nSupport.string("workbench.library.editInstructions") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.emptyMCP`
+            /// en: "No MCP servers found"
+            public static var emptyMCP: String { L10nSupport.string("workbench.library.emptyMCP") }
+
+            /// Field label in the single MCP server editor.
+            ///
+            /// Key: `workbench.library.environment`
+            /// en: "Environment variables (JSON object)"
+            public static var environment: String { L10nSupport.string("workbench.library.environment") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.failed`
+            /// en: "Operation could not complete ({code})."
+            public static func failed(code: String) -> String {
+                L10nSupport.format("workbench.library.failed", code)
+            }
+
+            /// Field label in the single MCP server editor.
+            ///
+            /// Key: `workbench.library.headers`
+            /// en: "HTTP headers (JSON object)"
+            public static var headers: String { L10nSupport.string("workbench.library.headers") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.instructions`
+            /// en: "AGENTS.md"
+            public static var instructions: String { L10nSupport.string("workbench.library.instructions") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.linkInstructions`
+            /// en: "Link shared instructions"
+            public static var linkInstructions: String { L10nSupport.string("workbench.library.linkInstructions") }
+
+            /// State label on a discovered row: an adopted link no longer exists in ~/.agents/skills; the row stays so its projections can be cleaned up by unlinking.
+            ///
+            /// Key: `workbench.library.linkMissing`
+            /// en: "Link removed"
+            public static var linkMissing: String { L10nSupport.string("workbench.library.linkMissing") }
+
+            /// Explanation under a discovered row whose adopted link was replaced by a real folder. 'Import Existing' is the name of the Skills page button.
+            ///
+            /// Key: `workbench.library.linkReplacedDetail`
+            /// en: "The adopted link was replaced by a folder. Use Import Existing to manage that folder instead."
+            public static var linkReplacedDetail: String { L10nSupport.string("workbench.library.linkReplacedDetail") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.linkedSource`
+            /// en: "Linked source"
+            public static var linkedSource: String { L10nSupport.string("workbench.library.linkedSource") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.managed`
+            /// en: "Managed"
+            public static var managed: String { L10nSupport.string("workbench.library.managed") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.mcp`
+            /// en: "MCP servers"
+            public static var mcp: String { L10nSupport.string("workbench.library.mcp") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.missingSkillFile`
+            /// en: "SKILL.md missing"
+            public static var missingSkillFile: String { L10nSupport.string("workbench.library.missingSkillFile") }
+
+            /// Local Library configuration state; not server network health.
+            ///
+            /// Key: `workbench.library.notCreated`
+            /// en: "Not created"
+            public static var notCreated: String { L10nSupport.string("workbench.library.notCreated") }
+
+            /// Local Library configuration state; not server network health.
+            ///
+            /// Key: `workbench.library.overrideActive`
+            /// en: "{file} takes precedence over these instructions."
+            public static func overrideActive(file: String) -> String {
+                L10nSupport.format("workbench.library.overrideActive", file)
+            }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.readOnlySource`
+            /// en: "Files remain in their source folder."
+            public static var readOnlySource: String { L10nSupport.string("workbench.library.readOnlySource") }
+
+            /// Local Library configuration state; not server network health.
+            ///
+            /// Key: `workbench.library.readable`
+            /// en: "Readable"
+            public static var readable: String { L10nSupport.string("workbench.library.readable") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.removeProjection`
+            /// en: "Remove link"
+            public static var removeProjection: String { L10nSupport.string("workbench.library.removeProjection") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.saveResult`
+            /// en: "Saved"
+            public static var saveResult: String { L10nSupport.string("workbench.library.saveResult") }
+
+            /// State label on a discovered row: an adopted link now points somewhere other than where Vibe Bar recorded it, so changes to it are paused.
+            ///
+            /// Key: `workbench.library.sourceChanged`
+            /// en: "Source changed"
+            public static var sourceChanged: String { L10nSupport.string("workbench.library.sourceChanged") }
+
+            /// Explanation under a discovered row whose adopted link was re-pointed, broken, or replaced.
+            ///
+            /// Key: `workbench.library.sourceChangedDetail`
+            /// en: "This link no longer points where Vibe Bar recorded it. Changes are paused until you re-confirm its source or unlink it."
+            public static var sourceChangedDetail: String { L10nSupport.string("workbench.library.sourceChangedDetail") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.subtitle`
+            /// en: "Skills, MCP servers, and shared agent instructions"
+            public static var subtitle: String { L10nSupport.string("workbench.library.subtitle") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.target`
+            /// en: "Target"
+            public static var target: String { L10nSupport.string("workbench.library.target") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.targets`
+            /// en: "Share with"
+            public static var targets: String { L10nSupport.string("workbench.library.targets") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.title`
+            /// en: "Library"
+            public static var title: String { L10nSupport.string("workbench.library.title") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.tooLarge`
+            /// en: "Preview exceeds the read limit"
+            public static var tooLarge: String { L10nSupport.string("workbench.library.tooLarge") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.transport`
+            /// en: "Transport"
+            public static var transport: String { L10nSupport.string("workbench.library.transport") }
+
+            /// Label or feedback in the shared agent resource Library.
+            ///
+            /// Key: `workbench.library.unreadable`
+            /// en: "Cannot read resource"
+            public static var unreadable: String { L10nSupport.string("workbench.library.unreadable") }
+
+            /// Field label in the single MCP server editor.
+            ///
+            /// Key: `workbench.library.url`
+            /// en: "Server URL"
+            public static var url: String { L10nSupport.string("workbench.library.url") }
+
+            public enum Error {
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.ambiguousDefinition`
+                /// en: "Multiple definitions use the same name. Check the source file."
+                public static var ambiguousDefinition: String { L10nSupport.string("workbench.library.error.ambiguousDefinition") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.backupMissing`
+                /// en: "The backup is no longer available."
+                public static var backupMissing: String { L10nSupport.string("workbench.library.error.backupMissing") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.invalidBackup`
+                /// en: "This backup could not be verified."
+                public static var invalidBackup: String { L10nSupport.string("workbench.library.error.invalidBackup") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.invalidDefinition`
+                /// en: "Check the server name, transport, and required fields."
+                public static var invalidDefinition: String { L10nSupport.string("workbench.library.error.invalidDefinition") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.invalidDocument`
+                /// en: "The configuration could not be parsed. Open the source file to check it."
+                public static var invalidDocument: String { L10nSupport.string("workbench.library.error.invalidDocument") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.invalidHome`
+                /// en: "The resource home folder is unavailable."
+                public static var invalidHome: String { L10nSupport.string("workbench.library.error.invalidHome") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.invalidReceipt`
+                /// en: "The saved ownership record could not be read."
+                public static var invalidReceipt: String { L10nSupport.string("workbench.library.error.invalidReceipt") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.ioFailure`
+                /// en: "The file could not be read or saved. Check its permissions."
+                public static var ioFailure: String { L10nSupport.string("workbench.library.error.ioFailure") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.missingCanonical`
+                /// en: "Create shared instructions before linking them."
+                public static var missingCanonical: String { L10nSupport.string("workbench.library.error.missingCanonical") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.notFound`
+                /// en: "The resource is no longer present. Refresh the list."
+                public static var notFound: String { L10nSupport.string("workbench.library.error.notFound") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.notOwnedProjection`
+                /// en: "This link is managed elsewhere. Open its source to change it."
+                public static var notOwnedProjection: String { L10nSupport.string("workbench.library.error.notOwnedProjection") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.oversizedFile`
+                /// en: "This file exceeds the editor's size limit."
+                public static var oversizedFile: String { L10nSupport.string("workbench.library.error.oversizedFile") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.projectionModified`
+                /// en: "The link was changed outside Vibe Bar. Refresh to inspect it."
+                public static var projectionModified: String { L10nSupport.string("workbench.library.error.projectionModified") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.sameNameConflict`
+                /// en: "A different resource already uses this name in the target."
+                public static var sameNameConflict: String { L10nSupport.string("workbench.library.error.sameNameConflict") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.staleRevision`
+                /// en: "The source changed. Refresh before saving."
+                public static var staleRevision: String { L10nSupport.string("workbench.library.error.staleRevision") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.symlinkLoop`
+                /// en: "This link forms a cycle. Open its location to repair it."
+                public static var symlinkLoop: String { L10nSupport.string("workbench.library.error.symlinkLoop") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.unsafePath`
+                /// en: "This path is outside the supported resource locations."
+                public static var unsafePath: String { L10nSupport.string("workbench.library.error.unsafePath") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.unsupportedConversion`
+                /// en: "This definition has settings that cannot be shared with the selected agent."
+                public static var unsupportedConversion: String { L10nSupport.string("workbench.library.error.unsupportedConversion") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.unsupportedTOML`
+                /// en: "This TOML syntax needs to be edited in the source file."
+                public static var unsupportedTOML: String { L10nSupport.string("workbench.library.error.unsupportedTOML") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.unsupportedTarget`
+                /// en: "This agent does not support this file-based operation."
+                public static var unsupportedTarget: String { L10nSupport.string("workbench.library.error.unsupportedTarget") }
+
+                /// Actionable error for agent Library resource operations.
+                ///
+                /// Key: `workbench.library.error.unsupportedTransport`
+                /// en: "This agent does not support the selected transport."
+                public static var unsupportedTransport: String { L10nSupport.string("workbench.library.error.unsupportedTransport") }
+            }
+        }
+
         public enum Page {
             public enum Resets {
                 /// Subtitle under the Resets page title
@@ -11933,6 +12351,26 @@ public enum L10n {
                 L10nSupport.format("workbench.skills.contextRemoveProjection", app)
             }
 
+            /// Body of the confirmation before converting a linked skill to a copy.
+            ///
+            /// Key: `workbench.skills.convertConfirmMessage`
+            /// en: "Vibe Bar reads the linked folder once, copies it into ~/.agents/skills, and replaces the link with that copy. The original folder is left unchanged, and later edits there no longer reach this skill."
+            public static var convertConfirmMessage: String { L10nSupport.string("workbench.skills.convertConfirmMessage") }
+
+            /// Title of the confirmation before converting a linked skill to a copy.
+            ///
+            /// Key: `workbench.skills.convertConfirmTitle`
+            /// en: "Convert {skill} to a copy?"
+            public static func convertConfirmTitle(skill: String) -> String {
+                L10nSupport.format("workbench.skills.convertConfirmTitle", skill)
+            }
+
+            /// Button in the convert-to-copy confirmation dialog. distinct-from: workbench.skills.menuConvertToCopy — the menu item's ellipsis promises the confirmation dialog; this is the button inside it.
+            ///
+            /// Key: `workbench.skills.convertToCopy`
+            /// en: "Convert to Copy"
+            public static var convertToCopy: String { L10nSupport.string("workbench.skills.convertToCopy") }
+
             /// Skills page count caption while the search field filters the list.
             ///
             /// Key: `workbench.skills.countFiltered`
@@ -12003,6 +12441,18 @@ public enum L10n {
             /// en: "Accept Local Changes"
             public static var menuAcceptLocalChanges: String { L10nSupport.string("workbench.skills.menuAcceptLocalChanges") }
 
+            /// Row menu item for a linked skill: replaces the link with a copy of the folder it points to. Opens a confirmation.
+            ///
+            /// Key: `workbench.skills.menuConvertToCopy`
+            /// en: "Convert to Copy…"
+            public static var menuConvertToCopy: String { L10nSupport.string("workbench.skills.menuConvertToCopy") }
+
+            /// Row overflow menu item that opens the copies and differences sheet.
+            ///
+            /// Key: `workbench.skills.menuCopiesAndDiff`
+            /// en: "Copies and Differences…"
+            public static var menuCopiesAndDiff: String { L10nSupport.string("workbench.skills.menuCopiesAndDiff") }
+
             /// Accessibility label on a skill row's overflow menu button.
             ///
             /// Key: `workbench.skills.menuMoreActions`
@@ -12011,17 +12461,35 @@ public enum L10n {
                 L10nSupport.format("workbench.skills.menuMoreActions", skill)
             }
 
+            /// Row menu item and button for a linked skill: records where the link points now as its trusted source.
+            ///
+            /// Key: `workbench.skills.menuReconfirmSource`
+            /// en: "Re-confirm Source"
+            public static var menuReconfirmSource: String { L10nSupport.string("workbench.skills.menuReconfirmSource") }
+
             /// Overflow-menu item that selects the skill's directory in Finder.
             ///
             /// Key: `workbench.skills.menuRevealInFinder`
             /// en: "Reveal in Finder"
             public static var menuRevealInFinder: String { L10nSupport.string("workbench.skills.menuRevealInFinder") }
 
+            /// Row menu item for a linked skill: shows the folder the link points to in Finder.
+            ///
+            /// Key: `workbench.skills.menuRevealSource`
+            /// en: "Reveal Source in Finder"
+            public static var menuRevealSource: String { L10nSupport.string("workbench.skills.menuRevealSource") }
+
             /// Overflow-menu item that asks to uninstall the skill.
             ///
             /// Key: `workbench.skills.menuUninstall`
             /// en: "Uninstall…"
             public static var menuUninstall: String { L10nSupport.string("workbench.skills.menuUninstall") }
+
+            /// Row menu item for a linked skill, in place of Uninstall: removes the link and its projections, never the folder it points to. Opens a confirmation.
+            ///
+            /// Key: `workbench.skills.menuUnlink`
+            /// en: "Unlink…"
+            public static var menuUnlink: String { L10nSupport.string("workbench.skills.menuUnlink") }
 
             /// Overflow-menu item that re-fetches the skill from its repository.
             ///
@@ -12081,6 +12549,20 @@ public enum L10n {
             /// en: "Installed locally"
             public static var sourceInstalledLocally: String { L10nSupport.string("workbench.skills.sourceInstalledLocally") }
 
+            /// Source badge for a managed skill whose shared entry is a link to a folder outside Vibe Bar's management. Lowercase like the 'local' badge.
+            ///
+            /// Key: `workbench.skills.sourceLinked`
+            /// en: "linked"
+            public static var sourceLinked: String { L10nSupport.string("workbench.skills.sourceLinked") }
+
+            /// Tooltip on the linked source badge and line in the wiring details. {target} is the link's target path as written on disk.
+            ///
+            /// Key: `workbench.skills.sourceLinkedHelp`
+            /// en: "Links to {target}. Vibe Bar manages the link and its projections, never the folder it points to."
+            public static func sourceLinkedHelp(target: String) -> String {
+                L10nSupport.format("workbench.skills.sourceLinkedHelp", target)
+            }
+
             /// Source badge and result-group heading for a skill with no repository behind it.
             ///
             /// Key: `workbench.skills.sourceLocal`
@@ -12111,6 +12593,26 @@ public enum L10n {
             /// en: "Uninstall {skill}?"
             public static func uninstallConfirmTitle(skill: String) -> String {
                 L10nSupport.format("workbench.skills.uninstallConfirmTitle", skill)
+            }
+
+            /// Destructive button in the unlink confirmation dialog; also the button on a discovered row whose adopted link changed or disappeared. distinct-from: workbench.skills.menuUnlink — the menu item's ellipsis promises the confirmation dialog; this is the button that acts.
+            ///
+            /// Key: `workbench.skills.unlink`
+            /// en: "Unlink"
+            public static var unlink: String { L10nSupport.string("workbench.skills.unlink") }
+
+            /// Body of the confirmation before unlinking a linked skill.
+            ///
+            /// Key: `workbench.skills.unlinkConfirmMessage`
+            /// en: "Vibe Bar removes the link in ~/.agents/skills, every projection of it, and its per-skill switches. The folder it points to is not touched; a backup records where the link pointed."
+            public static var unlinkConfirmMessage: String { L10nSupport.string("workbench.skills.unlinkConfirmMessage") }
+
+            /// Title of the confirmation before unlinking a linked skill.
+            ///
+            /// Key: `workbench.skills.unlinkConfirmTitle`
+            /// en: "Unlink {skill}?"
+            public static func unlinkConfirmTitle(skill: String) -> String {
+                L10nSupport.format("workbench.skills.unlinkConfirmTitle", skill)
             }
 
             public enum Backups {
@@ -12322,6 +12824,20 @@ public enum L10n {
                     L10nSupport.format("workbench.skills.copies.appFolder", app)
                 }
 
+                /// Title of a backup snapshot row in the copies sheet; date formatted by the client.
+                ///
+                /// Key: `workbench.skills.copies.backupTitle`
+                /// en: "Backup from {date}"
+                public static func backupTitle(date: String) -> String {
+                    L10nSupport.format("workbench.skills.copies.backupTitle", date)
+                }
+
+                /// Note in the copies sheet when a locally modified skill has no snapshot of its recorded version.
+                ///
+                /// Key: `workbench.skills.copies.baselineUnavailable`
+                /// en: "The shared copy was edited, but Vibe Bar kept only a fingerprint of the version it last recorded, so the content before the edit cannot be shown. Backups listed here are earlier snapshots."
+                public static var baselineUnavailable: String { L10nSupport.string("workbench.skills.copies.baselineUnavailable") }
+
                 /// Location label for a copy inside a harness's bundled skills folder. distinct-from: workbench.skills.sourceBuiltIn
                 ///
                 /// Key: `workbench.skills.copies.builtIn`
@@ -12337,6 +12853,12 @@ public enum L10n {
                 public static func changed(date: String) -> String {
                     L10nSupport.format("workbench.skills.copies.changed", date)
                 }
+
+                /// Button that copies a version's full folder path to the clipboard.
+                ///
+                /// Key: `workbench.skills.copies.copyPath`
+                /// en: "Copy Path"
+                public static var copyPath: String { L10nSupport.string("workbench.skills.copies.copyPath") }
 
                 /// Action for a built-in or app-folder skill that has no shared copy yet.
                 ///
@@ -12356,11 +12878,55 @@ public enum L10n {
                 /// en: "Identical to the shared copy"
                 public static var identical: String { L10nSupport.string("workbench.skills.copies.identical") }
 
+                /// Under a symlink version whose target is missing.
+                ///
+                /// Key: `workbench.skills.copies.linkBroken`
+                /// en: "Broken link: the target does not exist"
+                public static var linkBroken: String { L10nSupport.string("workbench.skills.copies.linkBroken") }
+
+                /// Under a symlink version whose target is outside every skills folder.
+                ///
+                /// Key: `workbench.skills.copies.linkOutside`
+                /// en: "Points outside the skills folders, so it is not read"
+                public static var linkOutside: String { L10nSupport.string("workbench.skills.copies.linkOutside") }
+
+                /// Under a symlink version: where the link resolves. The path is an identifier.
+                ///
+                /// Key: `workbench.skills.copies.linkTarget`
+                /// en: "Points to {path}"
+                public static func linkTarget(path: String) -> String {
+                    L10nSupport.format("workbench.skills.copies.linkTarget", path)
+                }
+
+                /// Under a symlink version that resolves to this skill's shared copy.
+                ///
+                /// Key: `workbench.skills.copies.linkToShared`
+                /// en: "Links to the shared copy"
+                public static var linkToShared: String { L10nSupport.string("workbench.skills.copies.linkToShared") }
+
+                /// Note in the copies sheet of a linked skill: its folder is never read, so no version is compared with it.
+                ///
+                /// Key: `workbench.skills.copies.linkedNotCompared`
+                /// en: "This skill's source is outside Vibe Bar's management, so its files are not compared."
+                public static var linkedNotCompared: String { L10nSupport.string("workbench.skills.copies.linkedNotCompared") }
+
                 /// Comparison line when the skill has no shared copy to compare against.
                 ///
                 /// Key: `workbench.skills.copies.noShared`
                 /// en: "Not in the shared library"
                 public static var noShared: String { L10nSupport.string("workbench.skills.copies.noShared") }
+
+                /// Under a version whose content could not be hashed against the shared copy.
+                ///
+                /// Key: `workbench.skills.copies.notCompared`
+                /// en: "Could not be compared"
+                public static var notCompared: String { L10nSupport.string("workbench.skills.copies.notCompared") }
+
+                /// Tag on the backup whose content matches what Vibe Bar last recorded for the shared copy: the state before local edits.
+                ///
+                /// Key: `workbench.skills.copies.recordedBaseline`
+                /// en: "Last recorded version"
+                public static var recordedBaseline: String { L10nSupport.string("workbench.skills.copies.recordedBaseline") }
 
                 /// Confirmation dialog message.
                 ///
@@ -12390,12 +12956,196 @@ public enum L10n {
                     L10nSupport.format("workbench.skills.copies.shadowsShared", app)
                 }
 
+                /// Subtitle of the copies and differences sheet.
+                ///
+                /// Key: `workbench.skills.copies.subtitle`
+                /// en: "Every place this skill exists on this Mac. Pick two versions to see what differs."
+                public static var subtitle: String { L10nSupport.string("workbench.skills.copies.subtitle") }
+
                 /// Title of the popover listing every copy of one skill.
                 ///
                 /// Key: `workbench.skills.copies.title`
                 /// en: "Copies of {skill}"
                 public static func title(skill: String) -> String {
                     L10nSupport.format("workbench.skills.copies.title", skill)
+                }
+
+                public enum Diff {
+                    /// One side of a file comparison where the file does not exist.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.absent`
+                    /// en: "Not present"
+                    public static var absent: String { L10nSupport.string("workbench.skills.copies.diff.absent") }
+
+                    /// Picker label: the version the comparison starts from.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.base`
+                    /// en: "Base"
+                    public static var base: String { L10nSupport.string("workbench.skills.copies.diff.base") }
+
+                    /// Shown in place of a line diff for a binary file.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.binary`
+                    /// en: "Binary file, contents not shown"
+                    public static var binary: String { L10nSupport.string("workbench.skills.copies.diff.binary") }
+
+                    /// Picker label: the version compared against the base.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.compared`
+                    /// en: "Compare with"
+                    public static var compared: String { L10nSupport.string("workbench.skills.copies.diff.compared") }
+
+                    /// Size and digest of one side of a binary or oversized file; size formatted by the client.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.fileFacts`
+                    /// en: "{size} · SHA-256 {hash}"
+                    public static func fileFacts(size: String, hash: String) -> String {
+                        L10nSupport.format("workbench.skills.copies.diff.fileFacts", size, hash)
+                    }
+
+                    /// Lines added and removed in the selected file.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.lineStats`
+                    /// en: "+{added} −{removed}"
+                    public static func lineStats(added: Int, removed: Int) -> String {
+                        L10nSupport.format("workbench.skills.copies.diff.lineStats", added, removed)
+                    }
+
+                    /// Progress while two versions are compared.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.loading`
+                    /// en: "Comparing…"
+                    public static var loading: String { L10nSupport.string("workbench.skills.copies.diff.loading") }
+
+                    /// Shown in place of a line diff when the selected file is identical.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.noDifferences`
+                    /// en: "No differences"
+                    public static var noDifferences: String { L10nSupport.string("workbench.skills.copies.diff.noDifferences") }
+
+                    /// Empty state of the comparison pane.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.pickVersion`
+                    /// en: "Select another version to compare with the base"
+                    public static var pickVersion: String { L10nSupport.string("workbench.skills.copies.diff.pickVersion") }
+
+                    /// Segment: show the line diff in two columns.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.sideBySide`
+                    /// en: "Side by Side"
+                    public static var sideBySide: String { L10nSupport.string("workbench.skills.copies.diff.sideBySide") }
+
+                    /// File counts of a comparison between two versions of a skill.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.summary`
+                    /// en: "{added} added · {removed} removed · {modified} modified · {unchanged} unchanged"
+                    public static func summary(added: Int, removed: Int, modified: Int, unchanged: Int) -> String {
+                        L10nSupport.format("workbench.skills.copies.diff.summary", added, removed, modified, unchanged)
+                    }
+
+                    /// One side of a comparison of a symlink inside a skill. The target is an identifier.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.symlinkTarget`
+                    /// en: "Link target: {target}"
+                    public static func symlinkTarget(target: String) -> String {
+                        L10nSupport.format("workbench.skills.copies.diff.symlinkTarget", target)
+                    }
+
+                    /// Shown in place of a line diff for an oversized file.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.tooLarge`
+                    /// en: "Too large to compare line by line"
+                    public static var tooLarge: String { L10nSupport.string("workbench.skills.copies.diff.tooLarge") }
+
+                    /// Note when a version holds more files than the comparison reads.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.truncated`
+                    /// en: "Only the first {count} files of each version are compared"
+                    public static func truncated(count: Int) -> String {
+                        L10nSupport.format("workbench.skills.copies.diff.truncated", count)
+                    }
+
+                    /// Segment: show the line diff as one column.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.unified`
+                    /// en: "Unified"
+                    public static var unified: String { L10nSupport.string("workbench.skills.copies.diff.unified") }
+
+                    /// Shown in place of a line diff when the file could not be read safely.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.unreadable`
+                    /// en: "This file could not be read"
+                    public static var unreadable: String { L10nSupport.string("workbench.skills.copies.diff.unreadable") }
+
+                    /// Shown when a selected version is a broken or out-of-scope link.
+                    ///
+                    /// Key: `workbench.skills.copies.diff.unreadableVersion`
+                    /// en: "This version cannot be read"
+                    public static var unreadableVersion: String { L10nSupport.string("workbench.skills.copies.diff.unreadableVersion") }
+
+                    public enum Change {
+                        /// Tooltip on a file that exists only in the compared version.
+                        ///
+                        /// Key: `workbench.skills.copies.diff.change.added`
+                        /// en: "Only in the compared version"
+                        public static var added: String { L10nSupport.string("workbench.skills.copies.diff.change.added") }
+
+                        /// Tooltip on a file present in both versions with different content.
+                        ///
+                        /// Key: `workbench.skills.copies.diff.change.modified`
+                        /// en: "Content differs"
+                        public static var modified: String { L10nSupport.string("workbench.skills.copies.diff.change.modified") }
+
+                        /// Tooltip on a file that exists only in the base version.
+                        ///
+                        /// Key: `workbench.skills.copies.diff.change.removed`
+                        /// en: "Only in the base version"
+                        public static var removed: String { L10nSupport.string("workbench.skills.copies.diff.change.removed") }
+
+                        /// Tooltip on a file identical in both versions.
+                        ///
+                        /// Key: `workbench.skills.copies.diff.change.unchanged`
+                        /// en: "Same in both versions"
+                        public static var unchanged: String { L10nSupport.string("workbench.skills.copies.diff.change.unchanged") }
+                    }
+                }
+
+                public enum Kind {
+                    /// Chip on a backup snapshot listed as a version in the copies sheet.
+                    ///
+                    /// Key: `workbench.skills.copies.kind.backup`
+                    /// en: "Backup"
+                    public static var backup: String { L10nSupport.string("workbench.skills.copies.kind.backup") }
+
+                    /// Chip on a skill the harness ships in its own folder; never written.
+                    ///
+                    /// Key: `workbench.skills.copies.kind.builtIn`
+                    /// en: "Read-only built-in"
+                    public static var builtIn: String { L10nSupport.string("workbench.skills.copies.kind.builtIn") }
+
+                    /// Chip on a real folder in a harness skills folder that Vibe Bar did not write.
+                    ///
+                    /// Key: `workbench.skills.copies.kind.independentCopy`
+                    /// en: "Independent copy"
+                    public static var independentCopy: String { L10nSupport.string("workbench.skills.copies.kind.independentCopy") }
+
+                    /// Chip on a copy Vibe Bar wrote into a harness folder.
+                    ///
+                    /// Key: `workbench.skills.copies.kind.managedCopy`
+                    /// en: "Managed copy"
+                    public static var managedCopy: String { L10nSupport.string("workbench.skills.copies.kind.managedCopy") }
+
+                    /// Chip on the shared copy in the copies sheet: the directory every projection comes from.
+                    ///
+                    /// Key: `workbench.skills.copies.kind.source`
+                    /// en: "Managed source"
+                    public static var source: String { L10nSupport.string("workbench.skills.copies.kind.source") }
+
+                    /// Chip on a symlink entry in a harness skills folder.
+                    ///
+                    /// Key: `workbench.skills.copies.kind.symlink`
+                    /// en: "Symlink"
+                    public static var symlink: String { L10nSupport.string("workbench.skills.copies.kind.symlink") }
                 }
             }
 
@@ -12603,6 +13353,26 @@ public enum L10n {
                 /// Key: `workbench.skills.import.keepEvidenceFor`
                 /// en: "Keep evidence for"
                 public static var keepEvidenceFor: String { L10nSupport.string("workbench.skills.import.keepEvidenceFor") }
+
+                /// Section title in the import sheet listing links in ~/.agents/skills that point to folders outside Vibe Bar's management.
+                ///
+                /// Key: `workbench.skills.import.linked`
+                /// en: "Linked from elsewhere"
+                public static var linked: String { L10nSupport.string("workbench.skills.import.linked") }
+
+                /// Explanation under the linked section of the import sheet.
+                ///
+                /// Key: `workbench.skills.import.linkedDetail`
+                /// en: "Links in ~/.agents/skills that point to folders outside Vibe Bar's management. Adopting one records the link so it can be switched per agent; nothing on disk changes, and the folder it points to is never written or copied."
+                public static var linkedDetail: String { L10nSupport.string("workbench.skills.import.linkedDetail") }
+
+                /// Caption under a linked skill in the import sheet. {target} is the link's target path as written on disk.
+                ///
+                /// Key: `workbench.skills.import.linksTo`
+                /// en: "links to {target}"
+                public static func linksTo(target: String) -> String {
+                    L10nSupport.format("workbench.skills.import.linksTo", target)
+                }
 
                 /// Import sheet section header for app-local directories that are not in the shared directory yet.
                 ///
@@ -12868,6 +13638,14 @@ public enum L10n {
                     L10nSupport.format("workbench.skills.toast.bulkPartial", app, succeeded, failed)
                 }
 
+                /// Toast after a linked skill was converted to a copy.
+                ///
+                /// Key: `workbench.skills.toast.convertedToCopy`
+                /// en: "{skill} is now a copy in the shared library."
+                public static func convertedToCopy(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.convertedToCopy", skill)
+                }
+
                 /// Toast after copying a built-in or app-folder skill into ~/.agents/skills.
                 ///
                 /// Key: `workbench.skills.toast.copiedToShared`
@@ -12976,6 +13754,14 @@ public enum L10n {
                     L10nSupport.format("workbench.skills.toast.projectionClearedFolderKept", skill, app)
                 }
 
+                /// Toast after the user re-confirmed where a linked skill's link points.
+                ///
+                /// Key: `workbench.skills.toast.reconfirmedSource`
+                /// en: "Recorded the current source of {skill}."
+                public static func reconfirmedSource(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.reconfirmedSource", skill)
+                }
+
                 /// Toast after applying the import sheet.
                 ///
                 /// Key: `workbench.skills.toast.recorded`
@@ -13042,6 +13828,22 @@ public enum L10n {
                 /// en: "Uninstalled {skill}. Left in place for {apps}."
                 public static func uninstalledLeftInPlace(skill: String, apps: String) -> String {
                     L10nSupport.format("workbench.skills.toast.uninstalledLeftInPlace", skill, apps)
+                }
+
+                /// Toast after a linked skill was unlinked.
+                ///
+                /// Key: `workbench.skills.toast.unlinked`
+                /// en: "Unlinked {skill}. The folder it pointed to was not changed."
+                public static func unlinked(skill: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.unlinked", skill)
+                }
+
+                /// Toast after unlinking when some harness entries or per-skill switches were left as they were. {apps} is a comma-separated list of harness names.
+                ///
+                /// Key: `workbench.skills.toast.unlinkedLeftInPlace`
+                /// en: "Unlinked {skill}. Left in place for {apps}."
+                public static func unlinkedLeftInPlace(skill: String, apps: String) -> String {
+                    L10nSupport.format("workbench.skills.toast.unlinkedLeftInPlace", skill, apps)
                 }
 
                 /// Toast after re-fetching one skill from its repository.
@@ -14615,7 +15417,11 @@ enum L10nCatalogFacts {
         "settings.pricing.rateOutput",
         "settings.pricing.refreshNow",
         "settings.pricing.refreshing",
+        "settings.pricing.serviceTier",
+        "settings.pricing.standardTier",
         "settings.pricing.thresholdTokens",
+        "settings.pricing.tierContextRates",
+        "settings.pricing.ultrafastContextRates",
         "settings.pricingDataDate",
         "settings.privacyDetail",
         "settings.privacyMode",
@@ -14970,6 +15776,69 @@ enum L10nCatalogFacts {
         "workbench.filter.searchModels",
         "workbench.filter.soloHint",
         "workbench.header.refreshPage",
+        "workbench.library.addMCP",
+        "workbench.library.adoptLink",
+        "workbench.library.adoptLinkHelp",
+        "workbench.library.arguments",
+        "workbench.library.availableTo",
+        "workbench.library.brokenLink",
+        "workbench.library.canonical",
+        "workbench.library.command",
+        "workbench.library.confirmDelete",
+        "workbench.library.cyclicLink",
+        "workbench.library.discovered",
+        "workbench.library.discoveredDetail",
+        "workbench.library.edit",
+        "workbench.library.editInstructions",
+        "workbench.library.emptyMCP",
+        "workbench.library.environment",
+        "workbench.library.error.ambiguousDefinition",
+        "workbench.library.error.backupMissing",
+        "workbench.library.error.invalidBackup",
+        "workbench.library.error.invalidDefinition",
+        "workbench.library.error.invalidDocument",
+        "workbench.library.error.invalidHome",
+        "workbench.library.error.invalidReceipt",
+        "workbench.library.error.ioFailure",
+        "workbench.library.error.missingCanonical",
+        "workbench.library.error.notFound",
+        "workbench.library.error.notOwnedProjection",
+        "workbench.library.error.oversizedFile",
+        "workbench.library.error.projectionModified",
+        "workbench.library.error.sameNameConflict",
+        "workbench.library.error.staleRevision",
+        "workbench.library.error.symlinkLoop",
+        "workbench.library.error.unsafePath",
+        "workbench.library.error.unsupportedConversion",
+        "workbench.library.error.unsupportedTOML",
+        "workbench.library.error.unsupportedTarget",
+        "workbench.library.error.unsupportedTransport",
+        "workbench.library.failed",
+        "workbench.library.headers",
+        "workbench.library.instructions",
+        "workbench.library.linkInstructions",
+        "workbench.library.linkMissing",
+        "workbench.library.linkReplacedDetail",
+        "workbench.library.linkedSource",
+        "workbench.library.managed",
+        "workbench.library.mcp",
+        "workbench.library.missingSkillFile",
+        "workbench.library.notCreated",
+        "workbench.library.overrideActive",
+        "workbench.library.readOnlySource",
+        "workbench.library.readable",
+        "workbench.library.removeProjection",
+        "workbench.library.saveResult",
+        "workbench.library.sourceChanged",
+        "workbench.library.sourceChangedDetail",
+        "workbench.library.subtitle",
+        "workbench.library.target",
+        "workbench.library.targets",
+        "workbench.library.title",
+        "workbench.library.tooLarge",
+        "workbench.library.transport",
+        "workbench.library.unreadable",
+        "workbench.library.url",
         "workbench.page.resets.subtitle",
         "workbench.page.resets.title",
         "workbench.page.sessions.subtitle",
@@ -15177,17 +16046,58 @@ enum L10nCatalogFacts {
         "workbench.skills.contextDisableKeepProjection",
         "workbench.skills.contextEnableIn",
         "workbench.skills.contextRemoveProjection",
+        "workbench.skills.convertConfirmMessage",
+        "workbench.skills.convertConfirmTitle",
+        "workbench.skills.convertToCopy",
         "workbench.skills.copies.appFolder",
+        "workbench.skills.copies.backupTitle",
+        "workbench.skills.copies.baselineUnavailable",
         "workbench.skills.copies.builtIn",
         "workbench.skills.copies.changed",
+        "workbench.skills.copies.copyPath",
         "workbench.skills.copies.copyToShared",
+        "workbench.skills.copies.diff.absent",
+        "workbench.skills.copies.diff.base",
+        "workbench.skills.copies.diff.binary",
+        "workbench.skills.copies.diff.change.added",
+        "workbench.skills.copies.diff.change.modified",
+        "workbench.skills.copies.diff.change.removed",
+        "workbench.skills.copies.diff.change.unchanged",
+        "workbench.skills.copies.diff.compared",
+        "workbench.skills.copies.diff.fileFacts",
+        "workbench.skills.copies.diff.lineStats",
+        "workbench.skills.copies.diff.loading",
+        "workbench.skills.copies.diff.noDifferences",
+        "workbench.skills.copies.diff.pickVersion",
+        "workbench.skills.copies.diff.sideBySide",
+        "workbench.skills.copies.diff.summary",
+        "workbench.skills.copies.diff.symlinkTarget",
+        "workbench.skills.copies.diff.tooLarge",
+        "workbench.skills.copies.diff.truncated",
+        "workbench.skills.copies.diff.unified",
+        "workbench.skills.copies.diff.unreadable",
+        "workbench.skills.copies.diff.unreadableVersion",
         "workbench.skills.copies.differs",
         "workbench.skills.copies.identical",
+        "workbench.skills.copies.kind.backup",
+        "workbench.skills.copies.kind.builtIn",
+        "workbench.skills.copies.kind.independentCopy",
+        "workbench.skills.copies.kind.managedCopy",
+        "workbench.skills.copies.kind.source",
+        "workbench.skills.copies.kind.symlink",
+        "workbench.skills.copies.linkBroken",
+        "workbench.skills.copies.linkOutside",
+        "workbench.skills.copies.linkTarget",
+        "workbench.skills.copies.linkToShared",
+        "workbench.skills.copies.linkedNotCompared",
         "workbench.skills.copies.noShared",
+        "workbench.skills.copies.notCompared",
+        "workbench.skills.copies.recordedBaseline",
         "workbench.skills.copies.replaceConfirmMessage",
         "workbench.skills.copies.replaceConfirmTitle",
         "workbench.skills.copies.replaceShared",
         "workbench.skills.copies.shadowsShared",
+        "workbench.skills.copies.subtitle",
         "workbench.skills.copies.title",
         "workbench.skills.countFiltered",
         "workbench.skills.countTotal",
@@ -15227,6 +16137,9 @@ enum L10nCatalogFacts {
         "workbench.skills.import.conflictsDetail",
         "workbench.skills.import.foundIn",
         "workbench.skills.import.keepEvidenceFor",
+        "workbench.skills.import.linked",
+        "workbench.skills.import.linkedDetail",
+        "workbench.skills.import.linksTo",
         "workbench.skills.import.needsAdoption",
         "workbench.skills.import.needsAdoptionDetail",
         "workbench.skills.import.notSkills",
@@ -15241,9 +16154,14 @@ enum L10nCatalogFacts {
         "workbench.skills.install",
         "workbench.skills.installFromZip",
         "workbench.skills.menuAcceptLocalChanges",
+        "workbench.skills.menuConvertToCopy",
+        "workbench.skills.menuCopiesAndDiff",
         "workbench.skills.menuMoreActions",
+        "workbench.skills.menuReconfirmSource",
         "workbench.skills.menuRevealInFinder",
+        "workbench.skills.menuRevealSource",
         "workbench.skills.menuUninstall",
+        "workbench.skills.menuUnlink",
         "workbench.skills.menuUpdateFromRepository",
         "workbench.skills.menuWiringDetails",
         "workbench.skills.modifiedCount",
@@ -15256,6 +16174,8 @@ enum L10nCatalogFacts {
         "workbench.skills.sourceBuiltIn",
         "workbench.skills.sourceBuiltInHelp",
         "workbench.skills.sourceInstalledLocally",
+        "workbench.skills.sourceLinked",
+        "workbench.skills.sourceLinkedHelp",
         "workbench.skills.sourceLocal",
         "workbench.skills.state.coupled",
         "workbench.skills.state.disabledInHarness",
@@ -15282,6 +16202,7 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.archiveEmpty",
         "workbench.skills.toast.bulkDone",
         "workbench.skills.toast.bulkPartial",
+        "workbench.skills.toast.convertedToCopy",
         "workbench.skills.toast.copiedToShared",
         "workbench.skills.toast.disabledKeptProjection",
         "workbench.skills.toast.enabledForApps",
@@ -15296,6 +16217,7 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.noSkillsFound",
         "workbench.skills.toast.notFoundInRepo",
         "workbench.skills.toast.projectionClearedFolderKept",
+        "workbench.skills.toast.reconfirmedSource",
         "workbench.skills.toast.recorded",
         "workbench.skills.toast.replacedShared",
         "workbench.skills.toast.reposUnreadable",
@@ -15305,6 +16227,8 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.sharedRootNoSwitch",
         "workbench.skills.toast.uninstalledBackedUp",
         "workbench.skills.toast.uninstalledLeftInPlace",
+        "workbench.skills.toast.unlinked",
+        "workbench.skills.toast.unlinkedLeftInPlace",
         "workbench.skills.toast.updated",
         "workbench.skills.toast.updatesAvailable",
         "workbench.skills.toggleHelp.installInto",
@@ -15321,6 +16245,9 @@ enum L10nCatalogFacts {
         "workbench.skills.uninstall",
         "workbench.skills.uninstallConfirmMessage",
         "workbench.skills.uninstallConfirmTitle",
+        "workbench.skills.unlink",
+        "workbench.skills.unlinkConfirmMessage",
+        "workbench.skills.unlinkConfirmTitle",
         "workbench.skills.wiring.footer",
         "workbench.skills.wiring.mechanismGeminiCompat",
         "workbench.skills.wiring.mechanismSharedRoot",
@@ -16678,7 +17605,11 @@ enum L10nCatalogFacts {
         "settings.pricing.rateOutput": 0,
         "settings.pricing.refreshNow": 0,
         "settings.pricing.refreshing": 0,
+        "settings.pricing.serviceTier": 0,
+        "settings.pricing.standardTier": 0,
         "settings.pricing.thresholdTokens": 0,
+        "settings.pricing.tierContextRates": 6,
+        "settings.pricing.ultrafastContextRates": 5,
         "settings.pricingDataDate": 1,
         "settings.privacyDetail": 0,
         "settings.privacyMode": 0,
@@ -17033,6 +17964,69 @@ enum L10nCatalogFacts {
         "workbench.filter.searchModels": 0,
         "workbench.filter.soloHint": 0,
         "workbench.header.refreshPage": 1,
+        "workbench.library.addMCP": 0,
+        "workbench.library.adoptLink": 0,
+        "workbench.library.adoptLinkHelp": 0,
+        "workbench.library.arguments": 0,
+        "workbench.library.availableTo": 1,
+        "workbench.library.brokenLink": 0,
+        "workbench.library.canonical": 0,
+        "workbench.library.command": 0,
+        "workbench.library.confirmDelete": 1,
+        "workbench.library.cyclicLink": 0,
+        "workbench.library.discovered": 0,
+        "workbench.library.discoveredDetail": 0,
+        "workbench.library.edit": 0,
+        "workbench.library.editInstructions": 0,
+        "workbench.library.emptyMCP": 0,
+        "workbench.library.environment": 0,
+        "workbench.library.error.ambiguousDefinition": 0,
+        "workbench.library.error.backupMissing": 0,
+        "workbench.library.error.invalidBackup": 0,
+        "workbench.library.error.invalidDefinition": 0,
+        "workbench.library.error.invalidDocument": 0,
+        "workbench.library.error.invalidHome": 0,
+        "workbench.library.error.invalidReceipt": 0,
+        "workbench.library.error.ioFailure": 0,
+        "workbench.library.error.missingCanonical": 0,
+        "workbench.library.error.notFound": 0,
+        "workbench.library.error.notOwnedProjection": 0,
+        "workbench.library.error.oversizedFile": 0,
+        "workbench.library.error.projectionModified": 0,
+        "workbench.library.error.sameNameConflict": 0,
+        "workbench.library.error.staleRevision": 0,
+        "workbench.library.error.symlinkLoop": 0,
+        "workbench.library.error.unsafePath": 0,
+        "workbench.library.error.unsupportedConversion": 0,
+        "workbench.library.error.unsupportedTOML": 0,
+        "workbench.library.error.unsupportedTarget": 0,
+        "workbench.library.error.unsupportedTransport": 0,
+        "workbench.library.failed": 1,
+        "workbench.library.headers": 0,
+        "workbench.library.instructions": 0,
+        "workbench.library.linkInstructions": 0,
+        "workbench.library.linkMissing": 0,
+        "workbench.library.linkReplacedDetail": 0,
+        "workbench.library.linkedSource": 0,
+        "workbench.library.managed": 0,
+        "workbench.library.mcp": 0,
+        "workbench.library.missingSkillFile": 0,
+        "workbench.library.notCreated": 0,
+        "workbench.library.overrideActive": 1,
+        "workbench.library.readOnlySource": 0,
+        "workbench.library.readable": 0,
+        "workbench.library.removeProjection": 0,
+        "workbench.library.saveResult": 0,
+        "workbench.library.sourceChanged": 0,
+        "workbench.library.sourceChangedDetail": 0,
+        "workbench.library.subtitle": 0,
+        "workbench.library.target": 0,
+        "workbench.library.targets": 0,
+        "workbench.library.title": 0,
+        "workbench.library.tooLarge": 0,
+        "workbench.library.transport": 0,
+        "workbench.library.unreadable": 0,
+        "workbench.library.url": 0,
         "workbench.page.resets.subtitle": 0,
         "workbench.page.resets.title": 0,
         "workbench.page.sessions.subtitle": 0,
@@ -17240,17 +18234,58 @@ enum L10nCatalogFacts {
         "workbench.skills.contextDisableKeepProjection": 1,
         "workbench.skills.contextEnableIn": 1,
         "workbench.skills.contextRemoveProjection": 1,
+        "workbench.skills.convertConfirmMessage": 0,
+        "workbench.skills.convertConfirmTitle": 1,
+        "workbench.skills.convertToCopy": 0,
         "workbench.skills.copies.appFolder": 1,
+        "workbench.skills.copies.backupTitle": 1,
+        "workbench.skills.copies.baselineUnavailable": 0,
         "workbench.skills.copies.builtIn": 1,
         "workbench.skills.copies.changed": 1,
+        "workbench.skills.copies.copyPath": 0,
         "workbench.skills.copies.copyToShared": 0,
+        "workbench.skills.copies.diff.absent": 0,
+        "workbench.skills.copies.diff.base": 0,
+        "workbench.skills.copies.diff.binary": 0,
+        "workbench.skills.copies.diff.change.added": 0,
+        "workbench.skills.copies.diff.change.modified": 0,
+        "workbench.skills.copies.diff.change.removed": 0,
+        "workbench.skills.copies.diff.change.unchanged": 0,
+        "workbench.skills.copies.diff.compared": 0,
+        "workbench.skills.copies.diff.fileFacts": 2,
+        "workbench.skills.copies.diff.lineStats": 2,
+        "workbench.skills.copies.diff.loading": 0,
+        "workbench.skills.copies.diff.noDifferences": 0,
+        "workbench.skills.copies.diff.pickVersion": 0,
+        "workbench.skills.copies.diff.sideBySide": 0,
+        "workbench.skills.copies.diff.summary": 4,
+        "workbench.skills.copies.diff.symlinkTarget": 1,
+        "workbench.skills.copies.diff.tooLarge": 0,
+        "workbench.skills.copies.diff.truncated": 1,
+        "workbench.skills.copies.diff.unified": 0,
+        "workbench.skills.copies.diff.unreadable": 0,
+        "workbench.skills.copies.diff.unreadableVersion": 0,
         "workbench.skills.copies.differs": 0,
         "workbench.skills.copies.identical": 0,
+        "workbench.skills.copies.kind.backup": 0,
+        "workbench.skills.copies.kind.builtIn": 0,
+        "workbench.skills.copies.kind.independentCopy": 0,
+        "workbench.skills.copies.kind.managedCopy": 0,
+        "workbench.skills.copies.kind.source": 0,
+        "workbench.skills.copies.kind.symlink": 0,
+        "workbench.skills.copies.linkBroken": 0,
+        "workbench.skills.copies.linkOutside": 0,
+        "workbench.skills.copies.linkTarget": 1,
+        "workbench.skills.copies.linkToShared": 0,
+        "workbench.skills.copies.linkedNotCompared": 0,
         "workbench.skills.copies.noShared": 0,
+        "workbench.skills.copies.notCompared": 0,
+        "workbench.skills.copies.recordedBaseline": 0,
         "workbench.skills.copies.replaceConfirmMessage": 0,
         "workbench.skills.copies.replaceConfirmTitle": 1,
         "workbench.skills.copies.replaceShared": 0,
         "workbench.skills.copies.shadowsShared": 1,
+        "workbench.skills.copies.subtitle": 0,
         "workbench.skills.copies.title": 1,
         "workbench.skills.countFiltered": 2,
         "workbench.skills.countTotal": 1,
@@ -17290,6 +18325,9 @@ enum L10nCatalogFacts {
         "workbench.skills.import.conflictsDetail": 0,
         "workbench.skills.import.foundIn": 1,
         "workbench.skills.import.keepEvidenceFor": 0,
+        "workbench.skills.import.linked": 0,
+        "workbench.skills.import.linkedDetail": 0,
+        "workbench.skills.import.linksTo": 1,
         "workbench.skills.import.needsAdoption": 0,
         "workbench.skills.import.needsAdoptionDetail": 0,
         "workbench.skills.import.notSkills": 0,
@@ -17304,9 +18342,14 @@ enum L10nCatalogFacts {
         "workbench.skills.install": 0,
         "workbench.skills.installFromZip": 0,
         "workbench.skills.menuAcceptLocalChanges": 0,
+        "workbench.skills.menuConvertToCopy": 0,
+        "workbench.skills.menuCopiesAndDiff": 0,
         "workbench.skills.menuMoreActions": 1,
+        "workbench.skills.menuReconfirmSource": 0,
         "workbench.skills.menuRevealInFinder": 0,
+        "workbench.skills.menuRevealSource": 0,
         "workbench.skills.menuUninstall": 0,
+        "workbench.skills.menuUnlink": 0,
         "workbench.skills.menuUpdateFromRepository": 0,
         "workbench.skills.menuWiringDetails": 0,
         "workbench.skills.modifiedCount": 1,
@@ -17319,6 +18362,8 @@ enum L10nCatalogFacts {
         "workbench.skills.sourceBuiltIn": 1,
         "workbench.skills.sourceBuiltInHelp": 1,
         "workbench.skills.sourceInstalledLocally": 0,
+        "workbench.skills.sourceLinked": 0,
+        "workbench.skills.sourceLinkedHelp": 1,
         "workbench.skills.sourceLocal": 0,
         "workbench.skills.state.coupled": 0,
         "workbench.skills.state.disabledInHarness": 0,
@@ -17345,6 +18390,7 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.archiveEmpty": 0,
         "workbench.skills.toast.bulkDone": 2,
         "workbench.skills.toast.bulkPartial": 3,
+        "workbench.skills.toast.convertedToCopy": 1,
         "workbench.skills.toast.copiedToShared": 1,
         "workbench.skills.toast.disabledKeptProjection": 2,
         "workbench.skills.toast.enabledForApps": 1,
@@ -17359,6 +18405,7 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.noSkillsFound": 0,
         "workbench.skills.toast.notFoundInRepo": 2,
         "workbench.skills.toast.projectionClearedFolderKept": 2,
+        "workbench.skills.toast.reconfirmedSource": 1,
         "workbench.skills.toast.recorded": 1,
         "workbench.skills.toast.replacedShared": 1,
         "workbench.skills.toast.reposUnreadable": 1,
@@ -17368,6 +18415,8 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.sharedRootNoSwitch": 2,
         "workbench.skills.toast.uninstalledBackedUp": 1,
         "workbench.skills.toast.uninstalledLeftInPlace": 2,
+        "workbench.skills.toast.unlinked": 1,
+        "workbench.skills.toast.unlinkedLeftInPlace": 2,
         "workbench.skills.toast.updated": 1,
         "workbench.skills.toast.updatesAvailable": 1,
         "workbench.skills.toggleHelp.installInto": 1,
@@ -17384,6 +18433,9 @@ enum L10nCatalogFacts {
         "workbench.skills.uninstall": 0,
         "workbench.skills.uninstallConfirmMessage": 0,
         "workbench.skills.uninstallConfirmTitle": 1,
+        "workbench.skills.unlink": 0,
+        "workbench.skills.unlinkConfirmMessage": 0,
+        "workbench.skills.unlinkConfirmTitle": 1,
         "workbench.skills.wiring.footer": 0,
         "workbench.skills.wiring.mechanismGeminiCompat": 0,
         "workbench.skills.wiring.mechanismSharedRoot": 0,

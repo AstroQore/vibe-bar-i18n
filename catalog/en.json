@@ -9280,6 +9280,184 @@
       "value": "Copy Into Shared Library",
       "comment": "Action for a built-in or app-folder skill that has no shared copy yet."
     },
+    "workbench.skills.copies.subtitle": {
+      "value": "Every place this skill exists on this Mac. Pick two versions to see what differs.",
+      "comment": "Subtitle of the copies and differences sheet."
+    },
+    "workbench.skills.copies.kind.source": {
+      "value": "Managed source",
+      "comment": "Chip on the shared copy in the copies sheet: the directory every projection comes from."
+    },
+    "workbench.skills.copies.kind.managedCopy": {
+      "value": "Managed copy",
+      "comment": "Chip on a copy Vibe Bar wrote into a harness folder."
+    },
+    "workbench.skills.copies.kind.symlink": {
+      "value": "Symlink",
+      "comment": "Chip on a symlink entry in a harness skills folder."
+    },
+    "workbench.skills.copies.kind.independentCopy": {
+      "value": "Independent copy",
+      "comment": "Chip on a real folder in a harness skills folder that Vibe Bar did not write."
+    },
+    "workbench.skills.copies.kind.builtIn": {
+      "value": "Read-only built-in",
+      "comment": "Chip on a skill the harness ships in its own folder; never written."
+    },
+    "workbench.skills.copies.kind.backup": {
+      "value": "Backup",
+      "comment": "Chip on a backup snapshot listed as a version in the copies sheet."
+    },
+    "workbench.skills.copies.backupTitle": {
+      "value": "Backup from {date}",
+      "comment": "Title of a backup snapshot row in the copies sheet; date formatted by the client.",
+      "placeholders": {
+        "date": "string"
+      }
+    },
+    "workbench.skills.copies.linkTarget": {
+      "value": "Points to {path}",
+      "comment": "Under a symlink version: where the link resolves. The path is an identifier.",
+      "placeholders": {
+        "path": "string"
+      }
+    },
+    "workbench.skills.copies.linkToShared": {
+      "value": "Links to the shared copy",
+      "comment": "Under a symlink version that resolves to this skill's shared copy."
+    },
+    "workbench.skills.copies.linkOutside": {
+      "value": "Points outside the skills folders, so it is not read",
+      "comment": "Under a symlink version whose target is outside every skills folder."
+    },
+    "workbench.skills.copies.linkBroken": {
+      "value": "Broken link: the target does not exist",
+      "comment": "Under a symlink version whose target is missing."
+    },
+    "workbench.skills.copies.notCompared": {
+      "value": "Could not be compared",
+      "comment": "Under a version whose content could not be hashed against the shared copy."
+    },
+    "workbench.skills.copies.copyPath": {
+      "value": "Copy Path",
+      "comment": "Button that copies a version's full folder path to the clipboard."
+    },
+    "workbench.skills.copies.recordedBaseline": {
+      "value": "Last recorded version",
+      "comment": "Tag on the backup whose content matches what Vibe Bar last recorded for the shared copy: the state before local edits."
+    },
+    "workbench.skills.copies.baselineUnavailable": {
+      "value": "The shared copy was edited, but Vibe Bar kept only a fingerprint of the version it last recorded, so the content before the edit cannot be shown. Backups listed here are earlier snapshots.",
+      "comment": "Note in the copies sheet when a locally modified skill has no snapshot of its recorded version."
+    },
+    "workbench.skills.copies.diff.base": {
+      "value": "Base",
+      "comment": "Picker label: the version the comparison starts from."
+    },
+    "workbench.skills.copies.diff.compared": {
+      "value": "Compare with",
+      "comment": "Picker label: the version compared against the base."
+    },
+    "workbench.skills.copies.diff.unified": {
+      "value": "Unified",
+      "comment": "Segment: show the line diff as one column."
+    },
+    "workbench.skills.copies.diff.sideBySide": {
+      "value": "Side by Side",
+      "comment": "Segment: show the line diff in two columns."
+    },
+    "workbench.skills.copies.diff.summary": {
+      "value": "{added} added · {removed} removed · {modified} modified · {unchanged} unchanged",
+      "comment": "File counts of a comparison between two versions of a skill.",
+      "placeholders": {
+        "added": "int",
+        "removed": "int",
+        "modified": "int",
+        "unchanged": "int"
+      }
+    },
+    "workbench.skills.copies.diff.lineStats": {
+      "value": "+{added} −{removed}",
+      "comment": "Lines added and removed in the selected file.",
+      "placeholders": {
+        "added": "int",
+        "removed": "int"
+      }
+    },
+    "workbench.skills.copies.diff.change.added": {
+      "value": "Only in the compared version",
+      "comment": "Tooltip on a file that exists only in the compared version."
+    },
+    "workbench.skills.copies.diff.change.removed": {
+      "value": "Only in the base version",
+      "comment": "Tooltip on a file that exists only in the base version."
+    },
+    "workbench.skills.copies.diff.change.modified": {
+      "value": "Content differs",
+      "comment": "Tooltip on a file present in both versions with different content."
+    },
+    "workbench.skills.copies.diff.change.unchanged": {
+      "value": "Same in both versions",
+      "comment": "Tooltip on a file identical in both versions."
+    },
+    "workbench.skills.copies.diff.noDifferences": {
+      "value": "No differences",
+      "comment": "Shown in place of a line diff when the selected file is identical."
+    },
+    "workbench.skills.copies.diff.binary": {
+      "value": "Binary file, contents not shown",
+      "comment": "Shown in place of a line diff for a binary file."
+    },
+    "workbench.skills.copies.diff.tooLarge": {
+      "value": "Too large to compare line by line",
+      "comment": "Shown in place of a line diff for an oversized file."
+    },
+    "workbench.skills.copies.diff.fileFacts": {
+      "value": "{size} · SHA-256 {hash}",
+      "comment": "Size and digest of one side of a binary or oversized file; size formatted by the client.",
+      "placeholders": {
+        "size": "string",
+        "hash": "string"
+      }
+    },
+    "workbench.skills.copies.diff.absent": {
+      "value": "Not present",
+      "comment": "One side of a file comparison where the file does not exist."
+    },
+    "workbench.skills.copies.diff.symlinkTarget": {
+      "value": "Link target: {target}",
+      "comment": "One side of a comparison of a symlink inside a skill. The target is an identifier.",
+      "placeholders": {
+        "target": "string"
+      }
+    },
+    "workbench.skills.copies.diff.unreadable": {
+      "value": "This file could not be read",
+      "comment": "Shown in place of a line diff when the file could not be read safely."
+    },
+    "workbench.skills.copies.diff.unreadableVersion": {
+      "value": "This version cannot be read",
+      "comment": "Shown when a selected version is a broken or out-of-scope link."
+    },
+    "workbench.skills.copies.diff.loading": {
+      "value": "Comparing…",
+      "comment": "Progress while two versions are compared."
+    },
+    "workbench.skills.copies.diff.truncated": {
+      "value": "Only the first {count} files of each version are compared",
+      "comment": "Note when a version holds more files than the comparison reads.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.skills.copies.diff.pickVersion": {
+      "value": "Select another version to compare with the base",
+      "comment": "Empty state of the comparison pane."
+    },
+    "workbench.skills.menuCopiesAndDiff": {
+      "value": "Copies and Differences…",
+      "comment": "Row overflow menu item that opens the copies and differences sheet."
+    },
     "workbench.skills.toast.replacedShared": {
       "value": "Replaced the shared copy of {skill}.",
       "comment": "Toast after replacing the shared copy.",
@@ -9304,6 +9482,406 @@
     "workbench.skills.filterBuiltIn": {
       "value": "Show built-in skills",
       "comment": "Checkable toggle that includes harness-bundled skills in the list."
+    },
+    "workbench.library.title": {
+      "value": "Library",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.subtitle": {
+      "value": "Skills, MCP servers, and shared agent instructions",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.mcp": {
+      "value": "MCP servers",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.instructions": {
+      "value": "AGENTS.md",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.managed": {
+      "value": "Managed",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.discovered": {
+      "value": "Discovered on disk",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.linkedSource": {
+      "value": "Linked source",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.discoveredDetail": {
+      "value": "Shared resources found on disk, with source links.",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.target": {
+      "value": "Target",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.targets": {
+      "value": "Share with",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.transport": {
+      "value": "Transport",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.edit": {
+      "value": "Edit",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.addMCP": {
+      "value": "Add MCP server",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.emptyMCP": {
+      "value": "No MCP servers found",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.canonical": {
+      "value": "Shared instructions",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.editInstructions": {
+      "value": "Edit instructions",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.linkInstructions": {
+      "value": "Link shared instructions",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.removeProjection": {
+      "value": "Remove link",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.saveResult": {
+      "value": "Saved",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.confirmDelete": {
+      "value": "Delete {name}?",
+      "comment": "Label or feedback in the shared agent resource Library.",
+      "placeholders": {
+        "name": "string"
+      }
+    },
+    "workbench.library.failed": {
+      "value": "Operation could not complete ({code}).",
+      "comment": "Label or feedback in the shared agent resource Library.",
+      "placeholders": {
+        "code": "string"
+      }
+    },
+    "workbench.library.brokenLink": {
+      "value": "Broken link",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.cyclicLink": {
+      "value": "Link cycle",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.missingSkillFile": {
+      "value": "SKILL.md missing",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.unreadable": {
+      "value": "Cannot read resource",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.tooLarge": {
+      "value": "Preview exceeds the read limit",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.readOnlySource": {
+      "value": "Files remain in their source folder.",
+      "comment": "Label or feedback in the shared agent resource Library."
+    },
+    "workbench.library.availableTo": {
+      "value": "Available to {agents}",
+      "comment": "Label or feedback in the shared agent resource Library.",
+      "placeholders": {
+        "agents": "string"
+      }
+    },
+    "workbench.library.error.invalidHome": {
+      "value": "The resource home folder is unavailable.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.unsafePath": {
+      "value": "This path is outside the supported resource locations.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.symlinkLoop": {
+      "value": "This link forms a cycle. Open its location to repair it.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.unsupportedTarget": {
+      "value": "This agent does not support this file-based operation.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.invalidDocument": {
+      "value": "The configuration could not be parsed. Open the source file to check it.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.invalidDefinition": {
+      "value": "Check the server name, transport, and required fields.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.unsupportedTransport": {
+      "value": "This agent does not support the selected transport.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.unsupportedConversion": {
+      "value": "This definition has settings that cannot be shared with the selected agent.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.staleRevision": {
+      "value": "The source changed. Refresh before saving.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.sameNameConflict": {
+      "value": "A different resource already uses this name in the target.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.notFound": {
+      "value": "The resource is no longer present. Refresh the list.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.notOwnedProjection": {
+      "value": "This link is managed elsewhere. Open its source to change it.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.projectionModified": {
+      "value": "The link was changed outside Vibe Bar. Refresh to inspect it.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.backupMissing": {
+      "value": "The backup is no longer available.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.invalidBackup": {
+      "value": "This backup could not be verified.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.ioFailure": {
+      "value": "The file could not be read or saved. Check its permissions.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.oversizedFile": {
+      "value": "This file exceeds the editor's size limit.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.missingCanonical": {
+      "value": "Create shared instructions before linking them.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.unsupportedTOML": {
+      "value": "This TOML syntax needs to be edited in the source file.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.ambiguousDefinition": {
+      "value": "Multiple definitions use the same name. Check the source file.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.error.invalidReceipt": {
+      "value": "The saved ownership record could not be read.",
+      "comment": "Actionable error for agent Library resource operations."
+    },
+    "workbench.library.readable": {
+      "value": "Readable",
+      "comment": "Local Library configuration state; not server network health."
+    },
+    "workbench.library.notCreated": {
+      "value": "Not created",
+      "comment": "Local Library configuration state; not server network health."
+    },
+    "workbench.library.overrideActive": {
+      "value": "{file} takes precedence over these instructions.",
+      "comment": "Local Library configuration state; not server network health.",
+      "placeholders": {
+        "file": "string"
+      }
+    },
+    "workbench.library.command": {
+      "value": "Command",
+      "comment": "Field label in the single MCP server editor."
+    },
+    "workbench.library.arguments": {
+      "value": "Arguments (JSON array)",
+      "comment": "Field label in the single MCP server editor."
+    },
+    "workbench.library.environment": {
+      "value": "Environment variables (JSON object)",
+      "comment": "Field label in the single MCP server editor."
+    },
+    "workbench.library.headers": {
+      "value": "HTTP headers (JSON object)",
+      "comment": "Field label in the single MCP server editor."
+    },
+    "workbench.library.url": {
+      "value": "Server URL",
+      "comment": "Field label in the single MCP server editor."
+    },
+    "settings.pricing.ultrafastContextRates": {
+      "value": "Ultrafast · Above {threshold} tokens: input {input} · output {output} · cache read {cacheRead} · cache write {cacheWrite}",
+      "comment": "Tooltip for Ultrafast long-context prices, in USD per million tokens. Values are formatted by the client; unpublished rates appear as an em dash.",
+      "placeholders": {
+        "threshold": "string",
+        "input": "string",
+        "output": "string",
+        "cacheRead": "string",
+        "cacheWrite": "string"
+      }
+    },
+    "settings.pricing.serviceTier": {
+      "value": "Service tier",
+      "comment": "Column title for service tiers under a single model in the effective price table."
+    },
+    "settings.pricing.standardTier": {
+      "value": "Standard",
+      "comment": "Label for a model standard service tier."
+    },
+    "settings.pricing.tierContextRates": {
+      "value": "{tier} · Above {threshold} tokens: input {input} · output {output} · cache read {cacheRead} · cache write {cacheWrite}",
+      "comment": "Long-context tooltip for any service tier. Client supplies the tier label and formatted USD-per-million prices; unpublished rates use an em dash.",
+      "placeholders": {
+        "tier": "string",
+        "threshold": "string",
+        "input": "string",
+        "output": "string",
+        "cacheRead": "string",
+        "cacheWrite": "string"
+      }
+    },
+    "workbench.library.adoptLink": {
+      "value": "Adopt link",
+      "comment": "Button on a discovered row whose shared entry is a symlink to a folder outside Vibe Bar's management. Records the link as a managed skill; nothing on disk changes."
+    },
+    "workbench.library.adoptLinkHelp": {
+      "value": "Record this link so Vibe Bar can switch it per agent. Nothing on disk changes, and the folder it points to is never written.",
+      "comment": "Tooltip on the Adopt link button of a discovered linked skill."
+    },
+    "workbench.library.sourceChanged": {
+      "value": "Source changed",
+      "comment": "State label on a discovered row: an adopted link now points somewhere other than where Vibe Bar recorded it, so changes to it are paused."
+    },
+    "workbench.library.sourceChangedDetail": {
+      "value": "This link no longer points where Vibe Bar recorded it. Changes are paused until you re-confirm its source or unlink it.",
+      "comment": "Explanation under a discovered row whose adopted link was re-pointed, broken, or replaced."
+    },
+    "workbench.library.linkReplacedDetail": {
+      "value": "The adopted link was replaced by a folder. Use Import Existing to manage that folder instead.",
+      "comment": "Explanation under a discovered row whose adopted link was replaced by a real folder. 'Import Existing' is the name of the Skills page button."
+    },
+    "workbench.library.linkMissing": {
+      "value": "Link removed",
+      "comment": "State label on a discovered row: an adopted link no longer exists in ~/.agents/skills; the row stays so its projections can be cleaned up by unlinking."
+    },
+    "workbench.skills.sourceLinked": {
+      "value": "linked",
+      "comment": "Source badge for a managed skill whose shared entry is a link to a folder outside Vibe Bar's management. Lowercase like the 'local' badge."
+    },
+    "workbench.skills.sourceLinkedHelp": {
+      "value": "Links to {target}. Vibe Bar manages the link and its projections, never the folder it points to.",
+      "comment": "Tooltip on the linked source badge and line in the wiring details. {target} is the link's target path as written on disk.",
+      "placeholders": {
+        "target": "string"
+      }
+    },
+    "workbench.skills.menuRevealSource": {
+      "value": "Reveal Source in Finder",
+      "comment": "Row menu item for a linked skill: shows the folder the link points to in Finder."
+    },
+    "workbench.skills.menuReconfirmSource": {
+      "value": "Re-confirm Source",
+      "comment": "Row menu item and button for a linked skill: records where the link points now as its trusted source."
+    },
+    "workbench.skills.menuConvertToCopy": {
+      "value": "Convert to Copy…",
+      "comment": "Row menu item for a linked skill: replaces the link with a copy of the folder it points to. Opens a confirmation."
+    },
+    "workbench.skills.menuUnlink": {
+      "value": "Unlink…",
+      "comment": "Row menu item for a linked skill, in place of Uninstall: removes the link and its projections, never the folder it points to. Opens a confirmation."
+    },
+    "workbench.skills.unlink": {
+      "value": "Unlink",
+      "comment": "Destructive button in the unlink confirmation dialog; also the button on a discovered row whose adopted link changed or disappeared. distinct-from: workbench.skills.menuUnlink — the menu item's ellipsis promises the confirmation dialog; this is the button that acts."
+    },
+    "workbench.skills.unlinkConfirmTitle": {
+      "value": "Unlink {skill}?",
+      "comment": "Title of the confirmation before unlinking a linked skill.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.unlinkConfirmMessage": {
+      "value": "Vibe Bar removes the link in ~/.agents/skills, every projection of it, and its per-skill switches. The folder it points to is not touched; a backup records where the link pointed.",
+      "comment": "Body of the confirmation before unlinking a linked skill."
+    },
+    "workbench.skills.convertToCopy": {
+      "value": "Convert to Copy",
+      "comment": "Button in the convert-to-copy confirmation dialog. distinct-from: workbench.skills.menuConvertToCopy — the menu item's ellipsis promises the confirmation dialog; this is the button inside it."
+    },
+    "workbench.skills.convertConfirmTitle": {
+      "value": "Convert {skill} to a copy?",
+      "comment": "Title of the confirmation before converting a linked skill to a copy.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.convertConfirmMessage": {
+      "value": "Vibe Bar reads the linked folder once, copies it into ~/.agents/skills, and replaces the link with that copy. The original folder is left unchanged, and later edits there no longer reach this skill.",
+      "comment": "Body of the confirmation before converting a linked skill to a copy."
+    },
+    "workbench.skills.toast.unlinked": {
+      "value": "Unlinked {skill}. The folder it pointed to was not changed.",
+      "comment": "Toast after a linked skill was unlinked.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.toast.unlinkedLeftInPlace": {
+      "value": "Unlinked {skill}. Left in place for {apps}.",
+      "comment": "Toast after unlinking when some harness entries or per-skill switches were left as they were. {apps} is a comma-separated list of harness names.",
+      "placeholders": {
+        "skill": "string",
+        "apps": "string"
+      }
+    },
+    "workbench.skills.toast.convertedToCopy": {
+      "value": "{skill} is now a copy in the shared library.",
+      "comment": "Toast after a linked skill was converted to a copy.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.toast.reconfirmedSource": {
+      "value": "Recorded the current source of {skill}.",
+      "comment": "Toast after the user re-confirmed where a linked skill's link points.",
+      "placeholders": {
+        "skill": "string"
+      }
+    },
+    "workbench.skills.import.linked": {
+      "value": "Linked from elsewhere",
+      "comment": "Section title in the import sheet listing links in ~/.agents/skills that point to folders outside Vibe Bar's management."
+    },
+    "workbench.skills.import.linkedDetail": {
+      "value": "Links in ~/.agents/skills that point to folders outside Vibe Bar's management. Adopting one records the link so it can be switched per agent; nothing on disk changes, and the folder it points to is never written or copied.",
+      "comment": "Explanation under the linked section of the import sheet."
+    },
+    "workbench.skills.import.linksTo": {
+      "value": "links to {target}",
+      "comment": "Caption under a linked skill in the import sheet. {target} is the link's target path as written on disk.",
+      "placeholders": {
+        "target": "string"
+      }
+    },
+    "workbench.skills.copies.linkedNotCompared": {
+      "value": "This skill's source is outside Vibe Bar's management, so its files are not compared.",
+      "comment": "Note in the copies sheet of a linked skill: its folder is never read, so no version is compared with it."
     }
   }
 }

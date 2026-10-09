@@ -5975,6 +5975,120 @@
     "workbench.skills.copies.copyToShared": {
       "value": "复制到共享库"
     },
+    "workbench.skills.copies.subtitle": {
+      "value": "此 skill 在这台 Mac 上的所有位置。选择两个版本查看差异。"
+    },
+    "workbench.skills.copies.kind.source": {
+      "value": "受管源"
+    },
+    "workbench.skills.copies.kind.managedCopy": {
+      "value": "受管拷贝"
+    },
+    "workbench.skills.copies.kind.symlink": {
+      "value": "软链"
+    },
+    "workbench.skills.copies.kind.independentCopy": {
+      "value": "独立拷贝"
+    },
+    "workbench.skills.copies.kind.builtIn": {
+      "value": "内置只读"
+    },
+    "workbench.skills.copies.kind.backup": {
+      "value": "备份"
+    },
+    "workbench.skills.copies.backupTitle": {
+      "value": "{date} 的备份"
+    },
+    "workbench.skills.copies.linkTarget": {
+      "value": "指向 {path}"
+    },
+    "workbench.skills.copies.linkToShared": {
+      "value": "链接到共享副本"
+    },
+    "workbench.skills.copies.linkOutside": {
+      "value": "指向 skills 目录之外，因此不读取"
+    },
+    "workbench.skills.copies.linkBroken": {
+      "value": "链接已失效：目标不存在"
+    },
+    "workbench.skills.copies.notCompared": {
+      "value": "无法对比"
+    },
+    "workbench.skills.copies.copyPath": {
+      "value": "复制路径"
+    },
+    "workbench.skills.copies.recordedBaseline": {
+      "value": "上次记录的版本"
+    },
+    "workbench.skills.copies.baselineUnavailable": {
+      "value": "共享副本已被修改，但 Vibe Bar 只保存了上次记录版本的指纹，无法显示修改前的内容。这里列出的备份是更早的快照。"
+    },
+    "workbench.skills.copies.diff.base": {
+      "value": "基准"
+    },
+    "workbench.skills.copies.diff.compared": {
+      "value": "对比对象"
+    },
+    "workbench.skills.copies.diff.unified": {
+      "value": "合并视图"
+    },
+    "workbench.skills.copies.diff.sideBySide": {
+      "value": "并排视图"
+    },
+    "workbench.skills.copies.diff.summary": {
+      "value": "新增 {added} · 删除 {removed} · 修改 {modified} · 相同 {unchanged}"
+    },
+    "workbench.skills.copies.diff.lineStats": {
+      "value": "+{added} −{removed}"
+    },
+    "workbench.skills.copies.diff.change.added": {
+      "value": "仅在对比对象中"
+    },
+    "workbench.skills.copies.diff.change.removed": {
+      "value": "仅在基准中"
+    },
+    "workbench.skills.copies.diff.change.modified": {
+      "value": "内容不同"
+    },
+    "workbench.skills.copies.diff.change.unchanged": {
+      "value": "两个版本相同"
+    },
+    "workbench.skills.copies.diff.noDifferences": {
+      "value": "没有差异"
+    },
+    "workbench.skills.copies.diff.binary": {
+      "value": "二进制文件，不显示内容"
+    },
+    "workbench.skills.copies.diff.tooLarge": {
+      "value": "文件过大，无法逐行对比"
+    },
+    "workbench.skills.copies.diff.fileFacts": {
+      "value": "{size} · SHA-256 {hash}"
+    },
+    "workbench.skills.copies.diff.absent": {
+      "value": "不存在"
+    },
+    "workbench.skills.copies.diff.symlinkTarget": {
+      "value": "链接目标：{target}"
+    },
+    "workbench.skills.copies.diff.unreadable": {
+      "value": "无法读取此文件"
+    },
+    "workbench.skills.copies.diff.unreadableVersion": {
+      "value": "无法读取此版本"
+    },
+    "workbench.skills.copies.diff.loading": {
+      "value": "正在对比…"
+    },
+    "workbench.skills.copies.diff.truncated": {
+      "value": "每个版本仅对比前 {count} 个文件"
+    },
+    "workbench.skills.copies.diff.pickVersion": {
+      "value": "选择另一个版本与基准对比"
+    },
+    "workbench.skills.menuCopiesAndDiff": {
+      "value": "副本与差异…"
+    },
     "workbench.skills.toast.replacedShared": {
       "value": "已替换 {skill} 的共享副本。"
     },
@@ -5986,6 +6100,267 @@
     },
     "workbench.skills.filterBuiltIn": {
       "value": "显示内置 skill"
+    },
+    "workbench.library.title": {
+      "value": "资源库"
+    },
+    "workbench.library.subtitle": {
+      "value": "技能、MCP 服务器与共享指令"
+    },
+    "workbench.library.mcp": {
+      "value": "MCP 服务器"
+    },
+    "workbench.library.instructions": {
+      "value": "AGENTS.md"
+    },
+    "workbench.library.managed": {
+      "value": "已管理"
+    },
+    "workbench.library.discovered": {
+      "value": "磁盘发现"
+    },
+    "workbench.library.linkedSource": {
+      "value": "链接来源"
+    },
+    "workbench.library.discoveredDetail": {
+      "value": "磁盘中的共享资源及其来源链接。"
+    },
+    "workbench.library.target": {
+      "value": "目标"
+    },
+    "workbench.library.targets": {
+      "value": "共享至"
+    },
+    "workbench.library.transport": {
+      "value": "传输方式"
+    },
+    "workbench.library.edit": {
+      "value": "编辑"
+    },
+    "workbench.library.addMCP": {
+      "value": "新增 MCP 服务器"
+    },
+    "workbench.library.emptyMCP": {
+      "value": "未发现 MCP 服务器"
+    },
+    "workbench.library.canonical": {
+      "value": "共享指令"
+    },
+    "workbench.library.editInstructions": {
+      "value": "编辑指令"
+    },
+    "workbench.library.linkInstructions": {
+      "value": "链接共享指令"
+    },
+    "workbench.library.removeProjection": {
+      "value": "移除链接"
+    },
+    "workbench.library.saveResult": {
+      "value": "已保存"
+    },
+    "workbench.library.confirmDelete": {
+      "value": "删除 {name}？"
+    },
+    "workbench.library.failed": {
+      "value": "操作未完成（{code}）。"
+    },
+    "workbench.library.brokenLink": {
+      "value": "链接已断开"
+    },
+    "workbench.library.cyclicLink": {
+      "value": "链接形成循环"
+    },
+    "workbench.library.missingSkillFile": {
+      "value": "缺少 SKILL.md"
+    },
+    "workbench.library.unreadable": {
+      "value": "无法读取资源"
+    },
+    "workbench.library.tooLarge": {
+      "value": "预览超出读取上限"
+    },
+    "workbench.library.readOnlySource": {
+      "value": "文件保留在其来源目录。"
+    },
+    "workbench.library.availableTo": {
+      "value": "可供 {agents} 读取"
+    },
+    "workbench.library.error.invalidHome": {
+      "value": "资源主目录不可用。"
+    },
+    "workbench.library.error.unsafePath": {
+      "value": "该路径不在支持的资源位置内。"
+    },
+    "workbench.library.error.symlinkLoop": {
+      "value": "该链接形成循环，请打开所在目录修复。"
+    },
+    "workbench.library.error.unsupportedTarget": {
+      "value": "该 Agent 不支持此文件操作。"
+    },
+    "workbench.library.error.invalidDocument": {
+      "value": "无法解析配置，请打开源文件检查。"
+    },
+    "workbench.library.error.invalidDefinition": {
+      "value": "请检查服务器名称、传输方式和必填字段。"
+    },
+    "workbench.library.error.unsupportedTransport": {
+      "value": "该 Agent 不支持所选传输方式。"
+    },
+    "workbench.library.error.unsupportedConversion": {
+      "value": "此配置包含目标 Agent 无法使用的设置。"
+    },
+    "workbench.library.error.staleRevision": {
+      "value": "源文件已变化，请刷新后再保存。"
+    },
+    "workbench.library.error.sameNameConflict": {
+      "value": "目标中已有内容不同的同名资源。"
+    },
+    "workbench.library.error.notFound": {
+      "value": "资源已不存在，请刷新列表。"
+    },
+    "workbench.library.error.notOwnedProjection": {
+      "value": "该链接由其他工具管理，请打开来源修改。"
+    },
+    "workbench.library.error.projectionModified": {
+      "value": "链接已在 Vibe Bar 外被修改，请刷新检查。"
+    },
+    "workbench.library.error.backupMissing": {
+      "value": "备份已不可用。"
+    },
+    "workbench.library.error.invalidBackup": {
+      "value": "无法验证此备份。"
+    },
+    "workbench.library.error.ioFailure": {
+      "value": "无法读取或保存文件，请检查权限。"
+    },
+    "workbench.library.error.oversizedFile": {
+      "value": "该文件超出编辑器的大小限制。"
+    },
+    "workbench.library.error.missingCanonical": {
+      "value": "请先创建共享指令，再建立链接。"
+    },
+    "workbench.library.error.unsupportedTOML": {
+      "value": "此 TOML 语法需要在源文件中编辑。"
+    },
+    "workbench.library.error.ambiguousDefinition": {
+      "value": "有多条配置使用同一名称，请检查源文件。"
+    },
+    "workbench.library.error.invalidReceipt": {
+      "value": "无法读取已保存的管理记录。"
+    },
+    "workbench.library.readable": {
+      "value": "可读取"
+    },
+    "workbench.library.notCreated": {
+      "value": "尚未创建"
+    },
+    "workbench.library.overrideActive": {
+      "value": "{file} 会优先于此指令生效。"
+    },
+    "workbench.library.command": {
+      "value": "命令"
+    },
+    "workbench.library.arguments": {
+      "value": "参数（JSON 数组）"
+    },
+    "workbench.library.environment": {
+      "value": "环境变量（JSON 对象）"
+    },
+    "workbench.library.headers": {
+      "value": "HTTP 请求头（JSON 对象）"
+    },
+    "workbench.library.url": {
+      "value": "服务器 URL"
+    },
+    "settings.pricing.ultrafastContextRates": {
+      "value": "Ultrafast · 输入超过 {threshold} token：输入 {input} · 输出 {output} · 缓存读取 {cacheRead} · 缓存写入 {cacheWrite}"
+    },
+    "settings.pricing.serviceTier": {
+      "value": "服务档位"
+    },
+    "settings.pricing.standardTier": {
+      "value": "普通"
+    },
+    "settings.pricing.tierContextRates": {
+      "value": "{tier} · 输入超过 {threshold} token：输入 {input} · 输出 {output} · 缓存读取 {cacheRead} · 缓存写入 {cacheWrite}"
+    },
+    "workbench.library.adoptLink": {
+      "value": "接管链接"
+    },
+    "workbench.library.adoptLinkHelp": {
+      "value": "记录这个链接，以便 Vibe Bar 按 agent 开关它。磁盘上不会有任何改动，它指向的文件夹也永远不会被写入。"
+    },
+    "workbench.library.sourceChanged": {
+      "value": "来源已变更"
+    },
+    "workbench.library.sourceChangedDetail": {
+      "value": "这个链接已不再指向 Vibe Bar 记录的位置。在你重新确认来源或解除链接之前，对它的修改都会暂停。"
+    },
+    "workbench.library.linkReplacedDetail": {
+      "value": "已接管的链接被一个文件夹取代。请使用“导入已有技能”来管理这个文件夹。"
+    },
+    "workbench.library.linkMissing": {
+      "value": "链接已移除"
+    },
+    "workbench.skills.sourceLinked": {
+      "value": "链接"
+    },
+    "workbench.skills.sourceLinkedHelp": {
+      "value": "链接到 {target}。Vibe Bar 只管理这个链接及其投影，从不改动它指向的文件夹。"
+    },
+    "workbench.skills.menuRevealSource": {
+      "value": "在 Finder 中显示来源"
+    },
+    "workbench.skills.menuReconfirmSource": {
+      "value": "重新确认来源"
+    },
+    "workbench.skills.menuConvertToCopy": {
+      "value": "转为副本…"
+    },
+    "workbench.skills.menuUnlink": {
+      "value": "解除链接…"
+    },
+    "workbench.skills.unlink": {
+      "value": "解除链接"
+    },
+    "workbench.skills.unlinkConfirmTitle": {
+      "value": "解除 {skill} 的链接？"
+    },
+    "workbench.skills.unlinkConfirmMessage": {
+      "value": "Vibe Bar 会移除 ~/.agents/skills 中的链接、它的所有投影以及它的单技能开关。它指向的文件夹不会被改动；备份会记录链接原本指向的位置。"
+    },
+    "workbench.skills.convertToCopy": {
+      "value": "转为副本"
+    },
+    "workbench.skills.convertConfirmTitle": {
+      "value": "把 {skill} 转为副本？"
+    },
+    "workbench.skills.convertConfirmMessage": {
+      "value": "Vibe Bar 会读取一次链接的文件夹，把它复制到 ~/.agents/skills，并用这份副本替换链接。原文件夹保持不变，之后在那里的修改不会再影响这个技能。"
+    },
+    "workbench.skills.toast.unlinked": {
+      "value": "已解除 {skill} 的链接。它指向的文件夹未被改动。"
+    },
+    "workbench.skills.toast.unlinkedLeftInPlace": {
+      "value": "已解除 {skill} 的链接。在 {apps} 中保持原样。"
+    },
+    "workbench.skills.toast.convertedToCopy": {
+      "value": "{skill} 现在是共享库中的一份副本。"
+    },
+    "workbench.skills.toast.reconfirmedSource": {
+      "value": "已记录 {skill} 的当前来源。"
+    },
+    "workbench.skills.import.linked": {
+      "value": "来自其他位置的链接"
+    },
+    "workbench.skills.import.linkedDetail": {
+      "value": "~/.agents/skills 中指向 Vibe Bar 管理范围之外文件夹的链接。接管后会记录这个链接，以便按 agent 开关；磁盘上不会有任何改动，它指向的文件夹也永远不会被写入或复制。"
+    },
+    "workbench.skills.import.linksTo": {
+      "value": "链接到 {target}"
+    },
+    "workbench.skills.copies.linkedNotCompared": {
+      "value": "这个技能的来源在 Vibe Bar 管理范围之外，因此不会比较它的文件。"
     }
   }
 }

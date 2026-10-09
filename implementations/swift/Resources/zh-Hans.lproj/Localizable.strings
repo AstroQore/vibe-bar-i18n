@@ -3711,8 +3711,20 @@
 /* Button label while a price refresh runs distinct-from: popover.header.refreshing — a Settings section for refresh intervals, a button label while a fetch runs, and a provider's in-flight state are three things. */
 "settings.pricing.refreshing" = "正在刷新…";
 
+/* Column title for service tiers under a single model in the effective price table. */
+"settings.pricing.serviceTier" = "服务档位";
+
+/* Label for a model standard service tier. */
+"settings.pricing.standardTier" = "普通";
+
 /* Field label: the token count above which the higher rates apply */
 "settings.pricing.thresholdTokens" = "分档阈值 token 数";
+
+/* Long-context tooltip for any service tier. Client supplies the tier label and formatted USD-per-million prices; unpublished rates use an em dash. */
+"settings.pricing.tierContextRates" = "%1$@ · 输入超过 %2$@ token：输入 %3$@ · 输出 %4$@ · 缓存读取 %5$@ · 缓存写入 %6$@";
+
+/* Tooltip for Ultrafast long-context prices, in USD per million tokens. Values are formatted by the client; unpublished rates appear as an em dash. */
+"settings.pricing.ultrafastContextRates" = "Ultrafast · 输入超过 %1$@ token：输入 %2$@ · 输出 %3$@ · 缓存读取 %4$@ · 缓存写入 %5$@";
 
 /* Footer showing when the bundled price table was built; date is a raw stamp */
 "settings.pricingDataDate" = "价格数据：%@";
@@ -4734,6 +4746,195 @@
 /* Tooltip on the Workbench header refresh button; page is the current page's title distinct-from: quota.misc.refreshProvider — a provider name stays Latin and takes a space in Simplified Chinese; a page title is translated and does not. */
 "workbench.header.refreshPage" = "刷新%@";
 
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.addMCP" = "新增 MCP 服务器";
+
+/* Button on a discovered row whose shared entry is a symlink to a folder outside Vibe Bar's management. Records the link as a managed skill; nothing on disk changes. */
+"workbench.library.adoptLink" = "接管链接";
+
+/* Tooltip on the Adopt link button of a discovered linked skill. */
+"workbench.library.adoptLinkHelp" = "记录这个链接，以便 Vibe Bar 按 agent 开关它。磁盘上不会有任何改动，它指向的文件夹也永远不会被写入。";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.arguments" = "参数（JSON 数组）";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.availableTo" = "可供 %@ 读取";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.brokenLink" = "链接已断开";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.canonical" = "共享指令";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.command" = "命令";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.confirmDelete" = "删除 %@？";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.cyclicLink" = "链接形成循环";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.discovered" = "磁盘发现";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.discoveredDetail" = "磁盘中的共享资源及其来源链接。";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.edit" = "编辑";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.editInstructions" = "编辑指令";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.emptyMCP" = "未发现 MCP 服务器";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.environment" = "环境变量（JSON 对象）";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.ambiguousDefinition" = "有多条配置使用同一名称，请检查源文件。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.backupMissing" = "备份已不可用。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidBackup" = "无法验证此备份。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidDefinition" = "请检查服务器名称、传输方式和必填字段。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidDocument" = "无法解析配置，请打开源文件检查。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidHome" = "资源主目录不可用。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidReceipt" = "无法读取已保存的管理记录。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.ioFailure" = "无法读取或保存文件，请检查权限。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.missingCanonical" = "请先创建共享指令，再建立链接。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.notFound" = "资源已不存在，请刷新列表。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.notOwnedProjection" = "该链接由其他工具管理，请打开来源修改。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.oversizedFile" = "该文件超出编辑器的大小限制。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.projectionModified" = "链接已在 Vibe Bar 外被修改，请刷新检查。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.sameNameConflict" = "目标中已有内容不同的同名资源。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.staleRevision" = "源文件已变化，请刷新后再保存。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.symlinkLoop" = "该链接形成循环，请打开所在目录修复。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsafePath" = "该路径不在支持的资源位置内。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsupportedConversion" = "此配置包含目标 Agent 无法使用的设置。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsupportedTOML" = "此 TOML 语法需要在源文件中编辑。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsupportedTarget" = "该 Agent 不支持此文件操作。";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsupportedTransport" = "该 Agent 不支持所选传输方式。";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.failed" = "操作未完成（%@）。";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.headers" = "HTTP 请求头（JSON 对象）";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.instructions" = "AGENTS.md";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.linkInstructions" = "链接共享指令";
+
+/* State label on a discovered row: an adopted link no longer exists in ~/.agents/skills; the row stays so its projections can be cleaned up by unlinking. */
+"workbench.library.linkMissing" = "链接已移除";
+
+/* Explanation under a discovered row whose adopted link was replaced by a real folder. 'Import Existing' is the name of the Skills page button. */
+"workbench.library.linkReplacedDetail" = "已接管的链接被一个文件夹取代。请使用“导入已有技能”来管理这个文件夹。";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.linkedSource" = "链接来源";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.managed" = "已管理";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.mcp" = "MCP 服务器";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.missingSkillFile" = "缺少 SKILL.md";
+
+/* Local Library configuration state; not server network health. */
+"workbench.library.notCreated" = "尚未创建";
+
+/* Local Library configuration state; not server network health. */
+"workbench.library.overrideActive" = "%@ 会优先于此指令生效。";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.readOnlySource" = "文件保留在其来源目录。";
+
+/* Local Library configuration state; not server network health. */
+"workbench.library.readable" = "可读取";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.removeProjection" = "移除链接";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.saveResult" = "已保存";
+
+/* State label on a discovered row: an adopted link now points somewhere other than where Vibe Bar recorded it, so changes to it are paused. */
+"workbench.library.sourceChanged" = "来源已变更";
+
+/* Explanation under a discovered row whose adopted link was re-pointed, broken, or replaced. */
+"workbench.library.sourceChangedDetail" = "这个链接已不再指向 Vibe Bar 记录的位置。在你重新确认来源或解除链接之前，对它的修改都会暂停。";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.subtitle" = "技能、MCP 服务器与共享指令";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.target" = "目标";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.targets" = "共享至";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.title" = "资源库";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.tooLarge" = "预览超出读取上限";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.transport" = "传输方式";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.unreadable" = "无法读取资源";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.url" = "服务器 URL";
+
 /* Subtitle under the Resets page title */
 "workbench.page.resets.subtitle" = "周期、补额与耗尽预测";
 
@@ -5322,8 +5523,23 @@
 /* Context-menu item: delete the link or copy Vibe Bar made inside that harness's skills folder. */
 "workbench.skills.contextRemoveProjection" = "移除 %@ 投影";
 
+/* Body of the confirmation before converting a linked skill to a copy. */
+"workbench.skills.convertConfirmMessage" = "Vibe Bar 会读取一次链接的文件夹，把它复制到 ~/.agents/skills，并用这份副本替换链接。原文件夹保持不变，之后在那里的修改不会再影响这个技能。";
+
+/* Title of the confirmation before converting a linked skill to a copy. */
+"workbench.skills.convertConfirmTitle" = "把 %@ 转为副本？";
+
+/* Button in the convert-to-copy confirmation dialog. distinct-from: workbench.skills.menuConvertToCopy — the menu item's ellipsis promises the confirmation dialog; this is the button inside it. */
+"workbench.skills.convertToCopy" = "转为副本";
+
 /* Location label for a real directory inside a harness's own skills folder. */
 "workbench.skills.copies.appFolder" = "%@ 目录";
+
+/* Title of a backup snapshot row in the copies sheet; date formatted by the client. */
+"workbench.skills.copies.backupTitle" = "%@ 的备份";
+
+/* Note in the copies sheet when a locally modified skill has no snapshot of its recorded version. */
+"workbench.skills.copies.baselineUnavailable" = "共享副本已被修改，但 Vibe Bar 只保存了上次记录版本的指纹，无法显示修改前的内容。这里列出的备份是更早的快照。";
 
 /* Location label for a copy inside a harness's bundled skills folder. distinct-from: workbench.skills.sourceBuiltIn */
 "workbench.skills.copies.builtIn" = "%@ 内置";
@@ -5331,8 +5547,74 @@
 /* Last modification, formatted by the client. */
 "workbench.skills.copies.changed" = "修改于 %@";
 
+/* Button that copies a version's full folder path to the clipboard. */
+"workbench.skills.copies.copyPath" = "复制路径";
+
 /* Action for a built-in or app-folder skill that has no shared copy yet. */
 "workbench.skills.copies.copyToShared" = "复制到共享库";
+
+/* One side of a file comparison where the file does not exist. */
+"workbench.skills.copies.diff.absent" = "不存在";
+
+/* Picker label: the version the comparison starts from. */
+"workbench.skills.copies.diff.base" = "基准";
+
+/* Shown in place of a line diff for a binary file. */
+"workbench.skills.copies.diff.binary" = "二进制文件，不显示内容";
+
+/* Tooltip on a file that exists only in the compared version. */
+"workbench.skills.copies.diff.change.added" = "仅在对比对象中";
+
+/* Tooltip on a file present in both versions with different content. */
+"workbench.skills.copies.diff.change.modified" = "内容不同";
+
+/* Tooltip on a file that exists only in the base version. */
+"workbench.skills.copies.diff.change.removed" = "仅在基准中";
+
+/* Tooltip on a file identical in both versions. */
+"workbench.skills.copies.diff.change.unchanged" = "两个版本相同";
+
+/* Picker label: the version compared against the base. */
+"workbench.skills.copies.diff.compared" = "对比对象";
+
+/* Size and digest of one side of a binary or oversized file; size formatted by the client. */
+"workbench.skills.copies.diff.fileFacts" = "%1$@ · SHA-256 %2$@";
+
+/* Lines added and removed in the selected file. */
+"workbench.skills.copies.diff.lineStats" = "+%1$lld −%2$lld";
+
+/* Progress while two versions are compared. */
+"workbench.skills.copies.diff.loading" = "正在对比…";
+
+/* Shown in place of a line diff when the selected file is identical. */
+"workbench.skills.copies.diff.noDifferences" = "没有差异";
+
+/* Empty state of the comparison pane. */
+"workbench.skills.copies.diff.pickVersion" = "选择另一个版本与基准对比";
+
+/* Segment: show the line diff in two columns. */
+"workbench.skills.copies.diff.sideBySide" = "并排视图";
+
+/* File counts of a comparison between two versions of a skill. */
+"workbench.skills.copies.diff.summary" = "新增 %1$lld · 删除 %2$lld · 修改 %3$lld · 相同 %4$lld";
+
+/* One side of a comparison of a symlink inside a skill. The target is an identifier. */
+"workbench.skills.copies.diff.symlinkTarget" = "链接目标：%@";
+
+/* Shown in place of a line diff for an oversized file. */
+"workbench.skills.copies.diff.tooLarge" = "文件过大，无法逐行对比";
+
+/* Note when a version holds more files than the comparison reads. */
+"workbench.skills.copies.diff.truncated" = "每个版本仅对比前 %lld 个文件";
+
+/* Segment: show the line diff as one column. */
+"workbench.skills.copies.diff.unified" = "合并视图";
+
+/* Shown in place of a line diff when the file could not be read safely. */
+"workbench.skills.copies.diff.unreadable" = "无法读取此文件";
+
+/* Shown when a selected version is a broken or out-of-scope link. */
+"workbench.skills.copies.diff.unreadableVersion" = "无法读取此版本";
 
 /* Comparison line under a copy. */
 "workbench.skills.copies.differs" = "与共享副本不同";
@@ -5340,8 +5622,47 @@
 /* Comparison line under a copy. */
 "workbench.skills.copies.identical" = "与共享副本相同";
 
+/* Chip on a backup snapshot listed as a version in the copies sheet. */
+"workbench.skills.copies.kind.backup" = "备份";
+
+/* Chip on a skill the harness ships in its own folder; never written. */
+"workbench.skills.copies.kind.builtIn" = "内置只读";
+
+/* Chip on a real folder in a harness skills folder that Vibe Bar did not write. */
+"workbench.skills.copies.kind.independentCopy" = "独立拷贝";
+
+/* Chip on a copy Vibe Bar wrote into a harness folder. */
+"workbench.skills.copies.kind.managedCopy" = "受管拷贝";
+
+/* Chip on the shared copy in the copies sheet: the directory every projection comes from. */
+"workbench.skills.copies.kind.source" = "受管源";
+
+/* Chip on a symlink entry in a harness skills folder. */
+"workbench.skills.copies.kind.symlink" = "软链";
+
+/* Under a symlink version whose target is missing. */
+"workbench.skills.copies.linkBroken" = "链接已失效：目标不存在";
+
+/* Under a symlink version whose target is outside every skills folder. */
+"workbench.skills.copies.linkOutside" = "指向 skills 目录之外，因此不读取";
+
+/* Under a symlink version: where the link resolves. The path is an identifier. */
+"workbench.skills.copies.linkTarget" = "指向 %@";
+
+/* Under a symlink version that resolves to this skill's shared copy. */
+"workbench.skills.copies.linkToShared" = "链接到共享副本";
+
+/* Note in the copies sheet of a linked skill: its folder is never read, so no version is compared with it. */
+"workbench.skills.copies.linkedNotCompared" = "这个技能的来源在 Vibe Bar 管理范围之外，因此不会比较它的文件。";
+
 /* Comparison line when the skill has no shared copy to compare against. */
 "workbench.skills.copies.noShared" = "不在共享库中";
+
+/* Under a version whose content could not be hashed against the shared copy. */
+"workbench.skills.copies.notCompared" = "无法对比";
+
+/* Tag on the backup whose content matches what Vibe Bar last recorded for the shared copy: the state before local edits. */
+"workbench.skills.copies.recordedBaseline" = "上次记录的版本";
 
 /* Confirmation dialog message. */
 "workbench.skills.copies.replaceConfirmMessage" = "会先备份。所有链接到共享副本的 harness 都会看到新内容。";
@@ -5354,6 +5675,9 @@
 
 /* Warning under an app-folder copy that hides the shared copy from that harness. */
 "workbench.skills.copies.shadowsShared" = "%@ 会加载此副本而非共享副本";
+
+/* Subtitle of the copies and differences sheet. */
+"workbench.skills.copies.subtitle" = "此 skill 在这台 Mac 上的所有位置。选择两个版本查看差异。";
 
 /* Title of the popover listing every copy of one skill. */
 "workbench.skills.copies.title" = "%@ 的副本";
@@ -5463,6 +5787,15 @@
 /* Label before the harness circles that choose which existing links the import records. */
 "workbench.skills.import.keepEvidenceFor" = "为以下应用保留记录";
 
+/* Section title in the import sheet listing links in ~/.agents/skills that point to folders outside Vibe Bar's management. */
+"workbench.skills.import.linked" = "来自其他位置的链接";
+
+/* Explanation under the linked section of the import sheet. */
+"workbench.skills.import.linkedDetail" = "~/.agents/skills 中指向 Vibe Bar 管理范围之外文件夹的链接。接管后会记录这个链接，以便按 agent 开关；磁盘上不会有任何改动，它指向的文件夹也永远不会被写入或复制。";
+
+/* Caption under a linked skill in the import sheet. {target} is the link's target path as written on disk. */
+"workbench.skills.import.linksTo" = "链接到 %@";
+
 /* Import sheet section header for app-local directories that are not in the shared directory yet. */
 "workbench.skills.import.needsAdoption" = "待接管";
 
@@ -5505,14 +5838,29 @@
 /* Row menu item: record the shared copy's current contents as the known state. */
 "workbench.skills.menuAcceptLocalChanges" = "接受本地修改";
 
+/* Row menu item for a linked skill: replaces the link with a copy of the folder it points to. Opens a confirmation. */
+"workbench.skills.menuConvertToCopy" = "转为副本…";
+
+/* Row overflow menu item that opens the copies and differences sheet. */
+"workbench.skills.menuCopiesAndDiff" = "副本与差异…";
+
 /* Accessibility label on a skill row's overflow menu button. */
 "workbench.skills.menuMoreActions" = "%@ 的更多操作";
+
+/* Row menu item and button for a linked skill: records where the link points now as its trusted source. */
+"workbench.skills.menuReconfirmSource" = "重新确认来源";
 
 /* Overflow-menu item that selects the skill's directory in Finder. */
 "workbench.skills.menuRevealInFinder" = "在 Finder 中显示";
 
+/* Row menu item for a linked skill: shows the folder the link points to in Finder. */
+"workbench.skills.menuRevealSource" = "在 Finder 中显示来源";
+
 /* Overflow-menu item that asks to uninstall the skill. */
 "workbench.skills.menuUninstall" = "卸载…";
+
+/* Row menu item for a linked skill, in place of Uninstall: removes the link and its projections, never the folder it points to. Opens a confirmation. */
+"workbench.skills.menuUnlink" = "解除链接…";
 
 /* Overflow-menu item that re-fetches the skill from its repository. */
 "workbench.skills.menuUpdateFromRepository" = "从仓库更新";
@@ -5546,6 +5894,12 @@
 
 /* Tooltip on the source badge when the skill has no repository. */
 "workbench.skills.sourceInstalledLocally" = "本地安装";
+
+/* Source badge for a managed skill whose shared entry is a link to a folder outside Vibe Bar's management. Lowercase like the 'local' badge. */
+"workbench.skills.sourceLinked" = "链接";
+
+/* Tooltip on the linked source badge and line in the wiring details. {target} is the link's target path as written on disk. */
+"workbench.skills.sourceLinkedHelp" = "链接到 %@。Vibe Bar 只管理这个链接及其投影，从不改动它指向的文件夹。";
 
 /* Source badge and result-group heading for a skill with no repository behind it. */
 "workbench.skills.sourceLocal" = "本地";
@@ -5622,6 +5976,9 @@
 /* Toast after a bulk change where some rows failed. Both values are whole numbers. */
 "workbench.skills.toast.bulkPartial" = "已为 %2$lld 个 skill 更改 %1$@，%3$lld 个失败。";
 
+/* Toast after a linked skill was converted to a copy. */
+"workbench.skills.toast.convertedToCopy" = "%@ 现在是共享库中的一份副本。";
+
 /* Toast after copying a built-in or app-folder skill into ~/.agents/skills. */
 "workbench.skills.toast.copiedToShared" = "已把 %@ 复制到共享库。";
 
@@ -5655,6 +6012,9 @@
 /* Toast after removing a projection that turned out to be a real folder Vibe Bar did not create. */
 "workbench.skills.toast.projectionClearedFolderKept" = "已清除 %1$@ 在 %2$@ 的 Vibe Bar 投影记录，但原有文件夹保留在原处。";
 
+/* Toast after the user re-confirmed where a linked skill's link points. */
+"workbench.skills.toast.reconfirmedSource" = "已记录 %@ 的当前来源。";
+
 /* Toast after replacing the shared copy. */
 "workbench.skills.toast.replacedShared" = "已替换 %@ 的共享副本。";
 
@@ -5675,6 +6035,12 @@
 
 /* Toast after an uninstall that left real folders in some harnesses. {apps} is a list of harness names. */
 "workbench.skills.toast.uninstalledLeftInPlace" = "已卸载 %1$@。在 %2$@ 中保持原样。";
+
+/* Toast after a linked skill was unlinked. */
+"workbench.skills.toast.unlinked" = "已解除 %@ 的链接。它指向的文件夹未被改动。";
+
+/* Toast after unlinking when some harness entries or per-skill switches were left as they were. {apps} is a comma-separated list of harness names. */
+"workbench.skills.toast.unlinkedLeftInPlace" = "已解除 %1$@ 的链接。在 %2$@ 中保持原样。";
 
 /* Toast after re-fetching one skill from its repository. */
 "workbench.skills.toast.updated" = "已更新 %@。";
@@ -5720,6 +6086,15 @@
 
 /* Title of the confirmation dialog for uninstalling a skill. */
 "workbench.skills.uninstallConfirmTitle" = "卸载 %@？";
+
+/* Destructive button in the unlink confirmation dialog; also the button on a discovered row whose adopted link changed or disappeared. distinct-from: workbench.skills.menuUnlink — the menu item's ellipsis promises the confirmation dialog; this is the button that acts. */
+"workbench.skills.unlink" = "解除链接";
+
+/* Body of the confirmation before unlinking a linked skill. */
+"workbench.skills.unlinkConfirmMessage" = "Vibe Bar 会移除 ~/.agents/skills 中的链接、它的所有投影以及它的单技能开关。它指向的文件夹不会被改动；备份会记录链接原本指向的位置。";
+
+/* Title of the confirmation before unlinking a linked skill. */
+"workbench.skills.unlinkConfirmTitle" = "解除 %@ 的链接？";
 
 /* Footer of the per-skill wiring popover: the write scope, in one sentence. */
 "workbench.skills.wiring.footer" = "Vibe Bar 只写入上面的技能目录和列出的四个配置文件，并在卸载前先备份技能。";

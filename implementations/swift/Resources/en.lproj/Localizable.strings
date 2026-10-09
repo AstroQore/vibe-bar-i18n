@@ -3711,8 +3711,20 @@
 /* Button label while a price refresh runs distinct-from: popover.header.refreshing — a Settings section for refresh intervals, a button label while a fetch runs, and a provider's in-flight state are three things. */
 "settings.pricing.refreshing" = "Refreshing…";
 
+/* Column title for service tiers under a single model in the effective price table. */
+"settings.pricing.serviceTier" = "Service tier";
+
+/* Label for a model standard service tier. */
+"settings.pricing.standardTier" = "Standard";
+
 /* Field label: the token count above which the higher rates apply */
 "settings.pricing.thresholdTokens" = "Threshold tokens";
+
+/* Long-context tooltip for any service tier. Client supplies the tier label and formatted USD-per-million prices; unpublished rates use an em dash. */
+"settings.pricing.tierContextRates" = "%1$@ · Above %2$@ tokens: input %3$@ · output %4$@ · cache read %5$@ · cache write %6$@";
+
+/* Tooltip for Ultrafast long-context prices, in USD per million tokens. Values are formatted by the client; unpublished rates appear as an em dash. */
+"settings.pricing.ultrafastContextRates" = "Ultrafast · Above %1$@ tokens: input %2$@ · output %3$@ · cache read %4$@ · cache write %5$@";
 
 /* Footer showing when the bundled price table was built; date is a raw stamp */
 "settings.pricingDataDate" = "Pricing data: %@";
@@ -4734,6 +4746,195 @@
 /* Tooltip on the Workbench header refresh button; page is the current page's title distinct-from: quota.misc.refreshProvider — a provider name stays Latin and takes a space in Simplified Chinese; a page title is translated and does not. */
 "workbench.header.refreshPage" = "Refresh %@";
 
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.addMCP" = "Add MCP server";
+
+/* Button on a discovered row whose shared entry is a symlink to a folder outside Vibe Bar's management. Records the link as a managed skill; nothing on disk changes. */
+"workbench.library.adoptLink" = "Adopt link";
+
+/* Tooltip on the Adopt link button of a discovered linked skill. */
+"workbench.library.adoptLinkHelp" = "Record this link so Vibe Bar can switch it per agent. Nothing on disk changes, and the folder it points to is never written.";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.arguments" = "Arguments (JSON array)";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.availableTo" = "Available to %@";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.brokenLink" = "Broken link";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.canonical" = "Shared instructions";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.command" = "Command";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.confirmDelete" = "Delete %@?";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.cyclicLink" = "Link cycle";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.discovered" = "Discovered on disk";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.discoveredDetail" = "Shared resources found on disk, with source links.";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.edit" = "Edit";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.editInstructions" = "Edit instructions";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.emptyMCP" = "No MCP servers found";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.environment" = "Environment variables (JSON object)";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.ambiguousDefinition" = "Multiple definitions use the same name. Check the source file.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.backupMissing" = "The backup is no longer available.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidBackup" = "This backup could not be verified.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidDefinition" = "Check the server name, transport, and required fields.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidDocument" = "The configuration could not be parsed. Open the source file to check it.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidHome" = "The resource home folder is unavailable.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.invalidReceipt" = "The saved ownership record could not be read.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.ioFailure" = "The file could not be read or saved. Check its permissions.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.missingCanonical" = "Create shared instructions before linking them.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.notFound" = "The resource is no longer present. Refresh the list.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.notOwnedProjection" = "This link is managed elsewhere. Open its source to change it.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.oversizedFile" = "This file exceeds the editor's size limit.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.projectionModified" = "The link was changed outside Vibe Bar. Refresh to inspect it.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.sameNameConflict" = "A different resource already uses this name in the target.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.staleRevision" = "The source changed. Refresh before saving.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.symlinkLoop" = "This link forms a cycle. Open its location to repair it.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsafePath" = "This path is outside the supported resource locations.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsupportedConversion" = "This definition has settings that cannot be shared with the selected agent.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsupportedTOML" = "This TOML syntax needs to be edited in the source file.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsupportedTarget" = "This agent does not support this file-based operation.";
+
+/* Actionable error for agent Library resource operations. */
+"workbench.library.error.unsupportedTransport" = "This agent does not support the selected transport.";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.failed" = "Operation could not complete (%@).";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.headers" = "HTTP headers (JSON object)";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.instructions" = "AGENTS.md";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.linkInstructions" = "Link shared instructions";
+
+/* State label on a discovered row: an adopted link no longer exists in ~/.agents/skills; the row stays so its projections can be cleaned up by unlinking. */
+"workbench.library.linkMissing" = "Link removed";
+
+/* Explanation under a discovered row whose adopted link was replaced by a real folder. 'Import Existing' is the name of the Skills page button. */
+"workbench.library.linkReplacedDetail" = "The adopted link was replaced by a folder. Use Import Existing to manage that folder instead.";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.linkedSource" = "Linked source";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.managed" = "Managed";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.mcp" = "MCP servers";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.missingSkillFile" = "SKILL.md missing";
+
+/* Local Library configuration state; not server network health. */
+"workbench.library.notCreated" = "Not created";
+
+/* Local Library configuration state; not server network health. */
+"workbench.library.overrideActive" = "%@ takes precedence over these instructions.";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.readOnlySource" = "Files remain in their source folder.";
+
+/* Local Library configuration state; not server network health. */
+"workbench.library.readable" = "Readable";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.removeProjection" = "Remove link";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.saveResult" = "Saved";
+
+/* State label on a discovered row: an adopted link now points somewhere other than where Vibe Bar recorded it, so changes to it are paused. */
+"workbench.library.sourceChanged" = "Source changed";
+
+/* Explanation under a discovered row whose adopted link was re-pointed, broken, or replaced. */
+"workbench.library.sourceChangedDetail" = "This link no longer points where Vibe Bar recorded it. Changes are paused until you re-confirm its source or unlink it.";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.subtitle" = "Skills, MCP servers, and shared agent instructions";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.target" = "Target";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.targets" = "Share with";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.title" = "Library";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.tooLarge" = "Preview exceeds the read limit";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.transport" = "Transport";
+
+/* Label or feedback in the shared agent resource Library. */
+"workbench.library.unreadable" = "Cannot read resource";
+
+/* Field label in the single MCP server editor. */
+"workbench.library.url" = "Server URL";
+
 /* Subtitle under the Resets page title */
 "workbench.page.resets.subtitle" = "Cycles, refills, and run-out forecasts";
 
@@ -5322,8 +5523,23 @@
 /* Context-menu item: delete the link or copy Vibe Bar made inside that harness's skills folder. */
 "workbench.skills.contextRemoveProjection" = "Remove %@ Projection";
 
+/* Body of the confirmation before converting a linked skill to a copy. */
+"workbench.skills.convertConfirmMessage" = "Vibe Bar reads the linked folder once, copies it into ~/.agents/skills, and replaces the link with that copy. The original folder is left unchanged, and later edits there no longer reach this skill.";
+
+/* Title of the confirmation before converting a linked skill to a copy. */
+"workbench.skills.convertConfirmTitle" = "Convert %@ to a copy?";
+
+/* Button in the convert-to-copy confirmation dialog. distinct-from: workbench.skills.menuConvertToCopy — the menu item's ellipsis promises the confirmation dialog; this is the button inside it. */
+"workbench.skills.convertToCopy" = "Convert to Copy";
+
 /* Location label for a real directory inside a harness's own skills folder. */
 "workbench.skills.copies.appFolder" = "%@ folder";
+
+/* Title of a backup snapshot row in the copies sheet; date formatted by the client. */
+"workbench.skills.copies.backupTitle" = "Backup from %@";
+
+/* Note in the copies sheet when a locally modified skill has no snapshot of its recorded version. */
+"workbench.skills.copies.baselineUnavailable" = "The shared copy was edited, but Vibe Bar kept only a fingerprint of the version it last recorded, so the content before the edit cannot be shown. Backups listed here are earlier snapshots.";
 
 /* Location label for a copy inside a harness's bundled skills folder. distinct-from: workbench.skills.sourceBuiltIn */
 "workbench.skills.copies.builtIn" = "%@ built-in";
@@ -5331,8 +5547,74 @@
 /* Last modification, formatted by the client. */
 "workbench.skills.copies.changed" = "Changed %@";
 
+/* Button that copies a version's full folder path to the clipboard. */
+"workbench.skills.copies.copyPath" = "Copy Path";
+
 /* Action for a built-in or app-folder skill that has no shared copy yet. */
 "workbench.skills.copies.copyToShared" = "Copy Into Shared Library";
+
+/* One side of a file comparison where the file does not exist. */
+"workbench.skills.copies.diff.absent" = "Not present";
+
+/* Picker label: the version the comparison starts from. */
+"workbench.skills.copies.diff.base" = "Base";
+
+/* Shown in place of a line diff for a binary file. */
+"workbench.skills.copies.diff.binary" = "Binary file, contents not shown";
+
+/* Tooltip on a file that exists only in the compared version. */
+"workbench.skills.copies.diff.change.added" = "Only in the compared version";
+
+/* Tooltip on a file present in both versions with different content. */
+"workbench.skills.copies.diff.change.modified" = "Content differs";
+
+/* Tooltip on a file that exists only in the base version. */
+"workbench.skills.copies.diff.change.removed" = "Only in the base version";
+
+/* Tooltip on a file identical in both versions. */
+"workbench.skills.copies.diff.change.unchanged" = "Same in both versions";
+
+/* Picker label: the version compared against the base. */
+"workbench.skills.copies.diff.compared" = "Compare with";
+
+/* Size and digest of one side of a binary or oversized file; size formatted by the client. */
+"workbench.skills.copies.diff.fileFacts" = "%1$@ · SHA-256 %2$@";
+
+/* Lines added and removed in the selected file. */
+"workbench.skills.copies.diff.lineStats" = "+%1$lld −%2$lld";
+
+/* Progress while two versions are compared. */
+"workbench.skills.copies.diff.loading" = "Comparing…";
+
+/* Shown in place of a line diff when the selected file is identical. */
+"workbench.skills.copies.diff.noDifferences" = "No differences";
+
+/* Empty state of the comparison pane. */
+"workbench.skills.copies.diff.pickVersion" = "Select another version to compare with the base";
+
+/* Segment: show the line diff in two columns. */
+"workbench.skills.copies.diff.sideBySide" = "Side by Side";
+
+/* File counts of a comparison between two versions of a skill. */
+"workbench.skills.copies.diff.summary" = "%1$lld added · %2$lld removed · %3$lld modified · %4$lld unchanged";
+
+/* One side of a comparison of a symlink inside a skill. The target is an identifier. */
+"workbench.skills.copies.diff.symlinkTarget" = "Link target: %@";
+
+/* Shown in place of a line diff for an oversized file. */
+"workbench.skills.copies.diff.tooLarge" = "Too large to compare line by line";
+
+/* Note when a version holds more files than the comparison reads. */
+"workbench.skills.copies.diff.truncated" = "Only the first %lld files of each version are compared";
+
+/* Segment: show the line diff as one column. */
+"workbench.skills.copies.diff.unified" = "Unified";
+
+/* Shown in place of a line diff when the file could not be read safely. */
+"workbench.skills.copies.diff.unreadable" = "This file could not be read";
+
+/* Shown when a selected version is a broken or out-of-scope link. */
+"workbench.skills.copies.diff.unreadableVersion" = "This version cannot be read";
 
 /* Comparison line under a copy. */
 "workbench.skills.copies.differs" = "Differs from the shared copy";
@@ -5340,8 +5622,47 @@
 /* Comparison line under a copy. */
 "workbench.skills.copies.identical" = "Identical to the shared copy";
 
+/* Chip on a backup snapshot listed as a version in the copies sheet. */
+"workbench.skills.copies.kind.backup" = "Backup";
+
+/* Chip on a skill the harness ships in its own folder; never written. */
+"workbench.skills.copies.kind.builtIn" = "Read-only built-in";
+
+/* Chip on a real folder in a harness skills folder that Vibe Bar did not write. */
+"workbench.skills.copies.kind.independentCopy" = "Independent copy";
+
+/* Chip on a copy Vibe Bar wrote into a harness folder. */
+"workbench.skills.copies.kind.managedCopy" = "Managed copy";
+
+/* Chip on the shared copy in the copies sheet: the directory every projection comes from. */
+"workbench.skills.copies.kind.source" = "Managed source";
+
+/* Chip on a symlink entry in a harness skills folder. */
+"workbench.skills.copies.kind.symlink" = "Symlink";
+
+/* Under a symlink version whose target is missing. */
+"workbench.skills.copies.linkBroken" = "Broken link: the target does not exist";
+
+/* Under a symlink version whose target is outside every skills folder. */
+"workbench.skills.copies.linkOutside" = "Points outside the skills folders, so it is not read";
+
+/* Under a symlink version: where the link resolves. The path is an identifier. */
+"workbench.skills.copies.linkTarget" = "Points to %@";
+
+/* Under a symlink version that resolves to this skill's shared copy. */
+"workbench.skills.copies.linkToShared" = "Links to the shared copy";
+
+/* Note in the copies sheet of a linked skill: its folder is never read, so no version is compared with it. */
+"workbench.skills.copies.linkedNotCompared" = "This skill's source is outside Vibe Bar's management, so its files are not compared.";
+
 /* Comparison line when the skill has no shared copy to compare against. */
 "workbench.skills.copies.noShared" = "Not in the shared library";
+
+/* Under a version whose content could not be hashed against the shared copy. */
+"workbench.skills.copies.notCompared" = "Could not be compared";
+
+/* Tag on the backup whose content matches what Vibe Bar last recorded for the shared copy: the state before local edits. */
+"workbench.skills.copies.recordedBaseline" = "Last recorded version";
 
 /* Confirmation dialog message. */
 "workbench.skills.copies.replaceConfirmMessage" = "A backup is taken first. Every harness linked to the shared copy sees the new content.";
@@ -5354,6 +5675,9 @@
 
 /* Warning under an app-folder copy that hides the shared copy from that harness. */
 "workbench.skills.copies.shadowsShared" = "%@ loads this copy instead of the shared one";
+
+/* Subtitle of the copies and differences sheet. */
+"workbench.skills.copies.subtitle" = "Every place this skill exists on this Mac. Pick two versions to see what differs.";
 
 /* Title of the popover listing every copy of one skill. */
 "workbench.skills.copies.title" = "Copies of %@";
@@ -5463,6 +5787,15 @@
 /* Label before the harness circles that choose which existing links the import records. */
 "workbench.skills.import.keepEvidenceFor" = "Keep evidence for";
 
+/* Section title in the import sheet listing links in ~/.agents/skills that point to folders outside Vibe Bar's management. */
+"workbench.skills.import.linked" = "Linked from elsewhere";
+
+/* Explanation under the linked section of the import sheet. */
+"workbench.skills.import.linkedDetail" = "Links in ~/.agents/skills that point to folders outside Vibe Bar's management. Adopting one records the link so it can be switched per agent; nothing on disk changes, and the folder it points to is never written or copied.";
+
+/* Caption under a linked skill in the import sheet. {target} is the link's target path as written on disk. */
+"workbench.skills.import.linksTo" = "links to %@";
+
 /* Import sheet section header for app-local directories that are not in the shared directory yet. */
 "workbench.skills.import.needsAdoption" = "Needs adoption";
 
@@ -5505,14 +5838,29 @@
 /* Row menu item: record the shared copy's current contents as the known state. */
 "workbench.skills.menuAcceptLocalChanges" = "Accept Local Changes";
 
+/* Row menu item for a linked skill: replaces the link with a copy of the folder it points to. Opens a confirmation. */
+"workbench.skills.menuConvertToCopy" = "Convert to Copy…";
+
+/* Row overflow menu item that opens the copies and differences sheet. */
+"workbench.skills.menuCopiesAndDiff" = "Copies and Differences…";
+
 /* Accessibility label on a skill row's overflow menu button. */
 "workbench.skills.menuMoreActions" = "More actions for %@";
+
+/* Row menu item and button for a linked skill: records where the link points now as its trusted source. */
+"workbench.skills.menuReconfirmSource" = "Re-confirm Source";
 
 /* Overflow-menu item that selects the skill's directory in Finder. */
 "workbench.skills.menuRevealInFinder" = "Reveal in Finder";
 
+/* Row menu item for a linked skill: shows the folder the link points to in Finder. */
+"workbench.skills.menuRevealSource" = "Reveal Source in Finder";
+
 /* Overflow-menu item that asks to uninstall the skill. */
 "workbench.skills.menuUninstall" = "Uninstall…";
+
+/* Row menu item for a linked skill, in place of Uninstall: removes the link and its projections, never the folder it points to. Opens a confirmation. */
+"workbench.skills.menuUnlink" = "Unlink…";
 
 /* Overflow-menu item that re-fetches the skill from its repository. */
 "workbench.skills.menuUpdateFromRepository" = "Update from repository";
@@ -5546,6 +5894,12 @@
 
 /* Tooltip on the source badge when the skill has no repository. */
 "workbench.skills.sourceInstalledLocally" = "Installed locally";
+
+/* Source badge for a managed skill whose shared entry is a link to a folder outside Vibe Bar's management. Lowercase like the 'local' badge. */
+"workbench.skills.sourceLinked" = "linked";
+
+/* Tooltip on the linked source badge and line in the wiring details. {target} is the link's target path as written on disk. */
+"workbench.skills.sourceLinkedHelp" = "Links to %@. Vibe Bar manages the link and its projections, never the folder it points to.";
 
 /* Source badge and result-group heading for a skill with no repository behind it. */
 "workbench.skills.sourceLocal" = "local";
@@ -5622,6 +5976,9 @@
 /* Toast after a bulk change where some rows failed. Both values are whole numbers. */
 "workbench.skills.toast.bulkPartial" = "Changed %1$@ for %2$lld skills; %3$lld failed.";
 
+/* Toast after a linked skill was converted to a copy. */
+"workbench.skills.toast.convertedToCopy" = "%@ is now a copy in the shared library.";
+
 /* Toast after copying a built-in or app-folder skill into ~/.agents/skills. */
 "workbench.skills.toast.copiedToShared" = "Copied %@ into the shared library.";
 
@@ -5655,6 +6012,9 @@
 /* Toast after removing a projection that turned out to be a real folder Vibe Bar did not create. */
 "workbench.skills.toast.projectionClearedFolderKept" = "%1$@'s Vibe Bar projection was cleared for %2$@, but the existing folder was left in place.";
 
+/* Toast after the user re-confirmed where a linked skill's link points. */
+"workbench.skills.toast.reconfirmedSource" = "Recorded the current source of %@.";
+
 /* Toast after replacing the shared copy. */
 "workbench.skills.toast.replacedShared" = "Replaced the shared copy of %@.";
 
@@ -5675,6 +6035,12 @@
 
 /* Toast after an uninstall that left real folders in some harnesses. {apps} is a list of harness names. */
 "workbench.skills.toast.uninstalledLeftInPlace" = "Uninstalled %1$@. Left in place for %2$@.";
+
+/* Toast after a linked skill was unlinked. */
+"workbench.skills.toast.unlinked" = "Unlinked %@. The folder it pointed to was not changed.";
+
+/* Toast after unlinking when some harness entries or per-skill switches were left as they were. {apps} is a comma-separated list of harness names. */
+"workbench.skills.toast.unlinkedLeftInPlace" = "Unlinked %1$@. Left in place for %2$@.";
 
 /* Toast after re-fetching one skill from its repository. */
 "workbench.skills.toast.updated" = "Updated %@.";
@@ -5720,6 +6086,15 @@
 
 /* Title of the confirmation dialog for uninstalling a skill. */
 "workbench.skills.uninstallConfirmTitle" = "Uninstall %@?";
+
+/* Destructive button in the unlink confirmation dialog; also the button on a discovered row whose adopted link changed or disappeared. distinct-from: workbench.skills.menuUnlink — the menu item's ellipsis promises the confirmation dialog; this is the button that acts. */
+"workbench.skills.unlink" = "Unlink";
+
+/* Body of the confirmation before unlinking a linked skill. */
+"workbench.skills.unlinkConfirmMessage" = "Vibe Bar removes the link in ~/.agents/skills, every projection of it, and its per-skill switches. The folder it points to is not touched; a backup records where the link pointed.";
+
+/* Title of the confirmation before unlinking a linked skill. */
+"workbench.skills.unlinkConfirmTitle" = "Unlink %@?";
 
 /* Footer of the per-skill wiring popover: the write scope, in one sentence. */
 "workbench.skills.wiring.footer" = "Vibe Bar writes only inside the skills folders above and the four listed config files, and backs a skill up before uninstalling it.";
