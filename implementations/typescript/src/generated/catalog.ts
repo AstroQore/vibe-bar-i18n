@@ -1738,6 +1738,19 @@ export type MessageKey =
   | "workbench.sessions.allChip.helpUnselected"
   | "workbench.sessions.allChip.labelUnselected"
   | "workbench.sessions.antigravityNotice"
+  | "workbench.sessions.conversation.cancelled"
+  | "workbench.sessions.conversation.childNotFound"
+  | "workbench.sessions.conversation.collapseAll"
+  | "workbench.sessions.conversation.empty"
+  | "workbench.sessions.conversation.expandAll"
+  | "workbench.sessions.conversation.jumpLatest"
+  | "workbench.sessions.conversation.loadEarlier"
+  | "workbench.sessions.conversation.loadLater"
+  | "workbench.sessions.conversation.loadingOutline"
+  | "workbench.sessions.conversation.loadingTurns"
+  | "workbench.sessions.conversation.unreadable"
+  | "workbench.sessions.conversation.viewRaw"
+  | "workbench.sessions.conversation.windowed"
   | "workbench.sessions.copyResumeCommand"
   | "workbench.sessions.copySessionID"
   | "workbench.sessions.copySessionIDLabel"
@@ -1752,6 +1765,8 @@ export type MessageKey =
   | "workbench.sessions.details"
   | "workbench.sessions.details.collapsed"
   | "workbench.sessions.details.expanded"
+  | "workbench.sessions.duration.lessThanSecond"
+  | "workbench.sessions.duration.seconds"
   | "workbench.sessions.empty.indexUnavailableDetail"
   | "workbench.sessions.empty.indexUnavailableTitle"
   | "workbench.sessions.empty.noLogsDetail"
@@ -1789,11 +1804,44 @@ export type MessageKey =
   | "workbench.sessions.groupByProject"
   | "workbench.sessions.index.scanning"
   | "workbench.sessions.index.unavailable"
+  | "workbench.sessions.kind.agentCreated"
+  | "workbench.sessions.kind.automation"
+  | "workbench.sessions.kind.exec"
+  | "workbench.sessions.kind.fork"
+  | "workbench.sessions.kind.subagent"
+  | "workbench.sessions.layout.outlineHelp"
   | "workbench.sessions.list.capNotice"
+  | "workbench.sessions.list.collapseThreads"
+  | "workbench.sessions.list.costHelp"
+  | "workbench.sessions.list.expandThreads"
+  | "workbench.sessions.list.loadingThreads"
+  | "workbench.sessions.list.threadCount"
+  | "workbench.sessions.list.tokensHelp"
+  | "workbench.sessions.list.untitled"
   | "workbench.sessions.message.copy"
   | "workbench.sessions.message.copyHelp"
   | "workbench.sessions.message.showLess"
   | "workbench.sessions.message.showMore"
+  | "workbench.sessions.meta.back"
+  | "workbench.sessions.meta.branchHelp"
+  | "workbench.sessions.meta.costEstimate"
+  | "workbench.sessions.meta.costHelp"
+  | "workbench.sessions.meta.costLowerBound"
+  | "workbench.sessions.meta.costLowerBoundHelp"
+  | "workbench.sessions.meta.modelsHelp"
+  | "workbench.sessions.meta.more"
+  | "workbench.sessions.meta.openFolder"
+  | "workbench.sessions.meta.prompts"
+  | "workbench.sessions.meta.revealFolder"
+  | "workbench.sessions.meta.revealLog"
+  | "workbench.sessions.meta.reviews"
+  | "workbench.sessions.meta.subagents"
+  | "workbench.sessions.meta.timeHelp"
+  | "workbench.sessions.meta.tokensHelp"
+  | "workbench.sessions.meta.tokensTotalOnly"
+  | "workbench.sessions.meta.toolCalls"
+  | "workbench.sessions.meta.toolCallsFailed"
+  | "workbench.sessions.meta.verdicts"
   | "workbench.sessions.openInTerminal"
   | "workbench.sessions.options.help"
   | "workbench.sessions.options.indexMessageText"
@@ -1807,10 +1855,18 @@ export type MessageKey =
   | "workbench.sessions.page.previous"
   | "workbench.sessions.project.none"
   | "workbench.sessions.project.projectless"
+  | "workbench.sessions.rail.allHelp"
+  | "workbench.sessions.rail.collapse"
+  | "workbench.sessions.rail.expand"
+  | "workbench.sessions.rail.selectHelp"
+  | "workbench.sessions.rail.threadsIncluded"
   | "workbench.sessions.range.all"
   | "workbench.sessions.refreshHelp"
   | "workbench.sessions.resume.heading"
+  | "workbench.sessions.resume.inTerminal"
   | "workbench.sessions.resume.none"
+  | "workbench.sessions.resume.options"
+  | "workbench.sessions.resume.subagentHelp"
   | "workbench.sessions.role.assistant"
   | "workbench.sessions.role.other"
   | "workbench.sessions.role.system"
@@ -1839,6 +1895,26 @@ export type MessageKey =
   | "workbench.sessions.sort.byProject"
   | "workbench.sessions.sort.oldestFirst"
   | "workbench.sessions.sort.recentFirst"
+  | "workbench.sessions.step.arguments"
+  | "workbench.sessions.step.compaction"
+  | "workbench.sessions.step.exitCode"
+  | "workbench.sessions.step.failed"
+  | "workbench.sessions.step.noDetail"
+  | "workbench.sessions.step.openThread"
+  | "workbench.sessions.step.orphan"
+  | "workbench.sessions.step.pending"
+  | "workbench.sessions.step.result"
+  | "workbench.sessions.step.succeeded"
+  | "workbench.sessions.step.thinking"
+  | "workbench.sessions.step.thinkingHidden"
+  | "workbench.sessions.threads.collapseAll"
+  | "workbench.sessions.threads.expandAll"
+  | "workbench.sessions.threads.foldedNote"
+  | "workbench.sessions.threads.hidden"
+  | "workbench.sessions.threads.menu"
+  | "workbench.sessions.threads.menuHelp"
+  | "workbench.sessions.threads.showAutomation"
+  | "workbench.sessions.threads.showExec"
   | "workbench.sessions.toast.bodyIndexDropFailed"
   | "workbench.sessions.toast.bodyIndexDropped"
   | "workbench.sessions.toast.copied"
@@ -1852,6 +1928,9 @@ export type MessageKey =
   | "workbench.sessions.toast.openedIn"
   | "workbench.sessions.toast.sessionIDCopied"
   | "workbench.sessions.toast.sourcePathCopied"
+  | "workbench.sessions.toc.heading"
+  | "workbench.sessions.toc.hide"
+  | "workbench.sessions.toc.unsupported"
   | "workbench.sessions.transcript.autoReviewDivider"
   | "workbench.sessions.transcript.cancelled"
   | "workbench.sessions.transcript.loadAll"
@@ -1864,6 +1943,42 @@ export type MessageKey =
   | "workbench.sessions.transcript.readFailed"
   | "workbench.sessions.transcript.truncatedDetail"
   | "workbench.sessions.transcript.truncatedTitle"
+  | "workbench.sessions.turn.answerCopied"
+  | "workbench.sessions.turn.commands"
+  | "workbench.sessions.turn.continueLoading"
+  | "workbench.sessions.turn.copyAnswer"
+  | "workbench.sessions.turn.copyPrompt"
+  | "workbench.sessions.turn.failures"
+  | "workbench.sessions.turn.followUps"
+  | "workbench.sessions.turn.hideSteps"
+  | "workbench.sessions.turn.injected"
+  | "workbench.sessions.turn.injectedHelp"
+  | "workbench.sessions.turn.loading"
+  | "workbench.sessions.turn.ordinal"
+  | "workbench.sessions.turn.origin.agent"
+  | "workbench.sessions.turn.origin.automation"
+  | "workbench.sessions.turn.origin.guardianRequest"
+  | "workbench.sessions.turn.origin.none"
+  | "workbench.sessions.turn.process"
+  | "workbench.sessions.turn.promptCopied"
+  | "workbench.sessions.turn.showSteps"
+  | "workbench.sessions.turn.status.abandoned"
+  | "workbench.sessions.turn.status.abandonedHelp"
+  | "workbench.sessions.turn.status.aborted"
+  | "workbench.sessions.turn.status.open"
+  | "workbench.sessions.turn.steps"
+  | "workbench.sessions.turn.stopped"
+  | "workbench.sessions.turn.thinking"
+  | "workbench.sessions.turn.unavailable"
+  | "workbench.sessions.verdict.allow"
+  | "workbench.sessions.verdict.deny"
+  | "workbench.sessions.verdict.help"
+  | "workbench.sessions.verdict.risk"
+  | "workbench.sessions.view.help"
+  | "workbench.sessions.view.raw"
+  | "workbench.sessions.view.searchHit"
+  | "workbench.sessions.view.showHit"
+  | "workbench.sessions.view.turns"
   | "workbench.skills.appCountNativeDisabled"
   | "workbench.skills.appCountViaGeminiRoot"
   | "workbench.skills.appCountViaSharedRoot"
@@ -3864,6 +3979,19 @@ export interface MessageParams {
   "workbench.sessions.allChip.helpUnselected": undefined;
   "workbench.sessions.allChip.labelUnselected": undefined;
   "workbench.sessions.antigravityNotice": undefined;
+  "workbench.sessions.conversation.cancelled": undefined;
+  "workbench.sessions.conversation.childNotFound": undefined;
+  "workbench.sessions.conversation.collapseAll": undefined;
+  "workbench.sessions.conversation.empty": undefined;
+  "workbench.sessions.conversation.expandAll": undefined;
+  "workbench.sessions.conversation.jumpLatest": undefined;
+  "workbench.sessions.conversation.loadEarlier": { "count": string };
+  "workbench.sessions.conversation.loadLater": { "count": string };
+  "workbench.sessions.conversation.loadingOutline": undefined;
+  "workbench.sessions.conversation.loadingTurns": { "done": string; "total": string };
+  "workbench.sessions.conversation.unreadable": undefined;
+  "workbench.sessions.conversation.viewRaw": undefined;
+  "workbench.sessions.conversation.windowed": undefined;
   "workbench.sessions.copyResumeCommand": undefined;
   "workbench.sessions.copySessionID": undefined;
   "workbench.sessions.copySessionIDLabel": { "id": string };
@@ -3878,6 +4006,8 @@ export interface MessageParams {
   "workbench.sessions.details": undefined;
   "workbench.sessions.details.collapsed": undefined;
   "workbench.sessions.details.expanded": undefined;
+  "workbench.sessions.duration.lessThanSecond": undefined;
+  "workbench.sessions.duration.seconds": { "seconds": string };
   "workbench.sessions.empty.indexUnavailableDetail": undefined;
   "workbench.sessions.empty.indexUnavailableTitle": undefined;
   "workbench.sessions.empty.noLogsDetail": { "count": number };
@@ -3915,11 +4045,44 @@ export interface MessageParams {
   "workbench.sessions.groupByProject": undefined;
   "workbench.sessions.index.scanning": undefined;
   "workbench.sessions.index.unavailable": undefined;
+  "workbench.sessions.kind.agentCreated": undefined;
+  "workbench.sessions.kind.automation": undefined;
+  "workbench.sessions.kind.exec": undefined;
+  "workbench.sessions.kind.fork": undefined;
+  "workbench.sessions.kind.subagent": undefined;
+  "workbench.sessions.layout.outlineHelp": undefined;
   "workbench.sessions.list.capNotice": { "shown": number; "total": number };
+  "workbench.sessions.list.collapseThreads": undefined;
+  "workbench.sessions.list.costHelp": { "cost": string };
+  "workbench.sessions.list.expandThreads": undefined;
+  "workbench.sessions.list.loadingThreads": undefined;
+  "workbench.sessions.list.threadCount": { "count": number };
+  "workbench.sessions.list.tokensHelp": { "tokens": string };
+  "workbench.sessions.list.untitled": undefined;
   "workbench.sessions.message.copy": undefined;
   "workbench.sessions.message.copyHelp": undefined;
   "workbench.sessions.message.showLess": undefined;
   "workbench.sessions.message.showMore": { "count": number };
+  "workbench.sessions.meta.back": { "title": string };
+  "workbench.sessions.meta.branchHelp": undefined;
+  "workbench.sessions.meta.costEstimate": { "cost": string };
+  "workbench.sessions.meta.costHelp": undefined;
+  "workbench.sessions.meta.costLowerBound": { "cost": string };
+  "workbench.sessions.meta.costLowerBoundHelp": undefined;
+  "workbench.sessions.meta.modelsHelp": undefined;
+  "workbench.sessions.meta.more": undefined;
+  "workbench.sessions.meta.openFolder": undefined;
+  "workbench.sessions.meta.prompts": { "count": number };
+  "workbench.sessions.meta.revealFolder": { "folder": string };
+  "workbench.sessions.meta.revealLog": undefined;
+  "workbench.sessions.meta.reviews": { "count": number };
+  "workbench.sessions.meta.subagents": { "count": number };
+  "workbench.sessions.meta.timeHelp": { "start": string; "end": string };
+  "workbench.sessions.meta.tokensHelp": { "input": string; "output": string; "cacheRead": string; "cacheWrite": string };
+  "workbench.sessions.meta.tokensTotalOnly": undefined;
+  "workbench.sessions.meta.toolCalls": { "count": number };
+  "workbench.sessions.meta.toolCallsFailed": { "calls": string; "failed": string };
+  "workbench.sessions.meta.verdicts": { "allow": string; "deny": string };
   "workbench.sessions.openInTerminal": undefined;
   "workbench.sessions.options.help": undefined;
   "workbench.sessions.options.indexMessageText": undefined;
@@ -3933,10 +4096,18 @@ export interface MessageParams {
   "workbench.sessions.page.previous": undefined;
   "workbench.sessions.project.none": undefined;
   "workbench.sessions.project.projectless": undefined;
+  "workbench.sessions.rail.allHelp": undefined;
+  "workbench.sessions.rail.collapse": undefined;
+  "workbench.sessions.rail.expand": undefined;
+  "workbench.sessions.rail.selectHelp": { "harness": string };
+  "workbench.sessions.rail.threadsIncluded": { "count": number };
   "workbench.sessions.range.all": undefined;
   "workbench.sessions.refreshHelp": undefined;
   "workbench.sessions.resume.heading": undefined;
+  "workbench.sessions.resume.inTerminal": { "terminal": string };
   "workbench.sessions.resume.none": undefined;
+  "workbench.sessions.resume.options": undefined;
+  "workbench.sessions.resume.subagentHelp": undefined;
   "workbench.sessions.role.assistant": undefined;
   "workbench.sessions.role.other": undefined;
   "workbench.sessions.role.system": undefined;
@@ -3965,6 +4136,26 @@ export interface MessageParams {
   "workbench.sessions.sort.byProject": undefined;
   "workbench.sessions.sort.oldestFirst": undefined;
   "workbench.sessions.sort.recentFirst": undefined;
+  "workbench.sessions.step.arguments": undefined;
+  "workbench.sessions.step.compaction": undefined;
+  "workbench.sessions.step.exitCode": { "code": string };
+  "workbench.sessions.step.failed": undefined;
+  "workbench.sessions.step.noDetail": undefined;
+  "workbench.sessions.step.openThread": undefined;
+  "workbench.sessions.step.orphan": undefined;
+  "workbench.sessions.step.pending": undefined;
+  "workbench.sessions.step.result": undefined;
+  "workbench.sessions.step.succeeded": undefined;
+  "workbench.sessions.step.thinking": { "count": string };
+  "workbench.sessions.step.thinkingHidden": undefined;
+  "workbench.sessions.threads.collapseAll": undefined;
+  "workbench.sessions.threads.expandAll": undefined;
+  "workbench.sessions.threads.foldedNote": undefined;
+  "workbench.sessions.threads.hidden": { "count": string };
+  "workbench.sessions.threads.menu": undefined;
+  "workbench.sessions.threads.menuHelp": undefined;
+  "workbench.sessions.threads.showAutomation": { "count": string };
+  "workbench.sessions.threads.showExec": { "count": string };
   "workbench.sessions.toast.bodyIndexDropFailed": undefined;
   "workbench.sessions.toast.bodyIndexDropped": undefined;
   "workbench.sessions.toast.copied": undefined;
@@ -3978,6 +4169,9 @@ export interface MessageParams {
   "workbench.sessions.toast.openedIn": { "terminal": string };
   "workbench.sessions.toast.sessionIDCopied": undefined;
   "workbench.sessions.toast.sourcePathCopied": undefined;
+  "workbench.sessions.toc.heading": undefined;
+  "workbench.sessions.toc.hide": undefined;
+  "workbench.sessions.toc.unsupported": undefined;
   "workbench.sessions.transcript.autoReviewDivider": undefined;
   "workbench.sessions.transcript.cancelled": undefined;
   "workbench.sessions.transcript.loadAll": undefined;
@@ -3990,6 +4184,42 @@ export interface MessageParams {
   "workbench.sessions.transcript.readFailed": undefined;
   "workbench.sessions.transcript.truncatedDetail": { "parsed": string; "file": string };
   "workbench.sessions.transcript.truncatedTitle": { "count": number };
+  "workbench.sessions.turn.answerCopied": undefined;
+  "workbench.sessions.turn.commands": { "count": number };
+  "workbench.sessions.turn.continueLoading": undefined;
+  "workbench.sessions.turn.copyAnswer": undefined;
+  "workbench.sessions.turn.copyPrompt": undefined;
+  "workbench.sessions.turn.failures": { "count": number };
+  "workbench.sessions.turn.followUps": { "count": number };
+  "workbench.sessions.turn.hideSteps": undefined;
+  "workbench.sessions.turn.injected": { "count": number };
+  "workbench.sessions.turn.injectedHelp": undefined;
+  "workbench.sessions.turn.loading": undefined;
+  "workbench.sessions.turn.ordinal": { "number": string };
+  "workbench.sessions.turn.origin.agent": undefined;
+  "workbench.sessions.turn.origin.automation": undefined;
+  "workbench.sessions.turn.origin.guardianRequest": undefined;
+  "workbench.sessions.turn.origin.none": undefined;
+  "workbench.sessions.turn.process": undefined;
+  "workbench.sessions.turn.promptCopied": undefined;
+  "workbench.sessions.turn.showSteps": undefined;
+  "workbench.sessions.turn.status.abandoned": undefined;
+  "workbench.sessions.turn.status.abandonedHelp": undefined;
+  "workbench.sessions.turn.status.aborted": undefined;
+  "workbench.sessions.turn.status.open": undefined;
+  "workbench.sessions.turn.steps": { "count": number };
+  "workbench.sessions.turn.stopped": undefined;
+  "workbench.sessions.turn.thinking": undefined;
+  "workbench.sessions.turn.unavailable": undefined;
+  "workbench.sessions.verdict.allow": undefined;
+  "workbench.sessions.verdict.deny": undefined;
+  "workbench.sessions.verdict.help": undefined;
+  "workbench.sessions.verdict.risk": { "level": string };
+  "workbench.sessions.view.help": undefined;
+  "workbench.sessions.view.raw": undefined;
+  "workbench.sessions.view.searchHit": undefined;
+  "workbench.sessions.view.showHit": undefined;
+  "workbench.sessions.view.turns": undefined;
   "workbench.skills.appCountNativeDisabled": { "count": number };
   "workbench.skills.appCountViaGeminiRoot": { "enabled": number; "coupled": number };
   "workbench.skills.appCountViaSharedRoot": { "enabled": number; "coupled": number };
@@ -5991,6 +6221,19 @@ export const messages: {
     "workbench.sessions.allChip.helpUnselected": "Click to show sessions from every harness",
     "workbench.sessions.allChip.labelUnselected": "Show every session source",
     "workbench.sessions.antigravityNotice": "AntiGravity stores its turns as an undocumented binary payload, so this transcript is a partial reconstruction and its sessions cannot be deleted from here — the IDE keeps them open.",
+    "workbench.sessions.conversation.cancelled": "Reading this session was stopped.",
+    "workbench.sessions.conversation.childNotFound": "That thread's log was not found.",
+    "workbench.sessions.conversation.collapseAll": "Collapse every turn's steps",
+    "workbench.sessions.conversation.empty": "This session has no turns yet.",
+    "workbench.sessions.conversation.expandAll": "Expand every turn's steps",
+    "workbench.sessions.conversation.jumpLatest": "Jump to the latest turn",
+    "workbench.sessions.conversation.loadEarlier": "Load earlier turns ({count} more)",
+    "workbench.sessions.conversation.loadLater": "Load later turns ({count} more)",
+    "workbench.sessions.conversation.loadingOutline": "Reading the session's structure…",
+    "workbench.sessions.conversation.loadingTurns": "Reading turns {done} of {total}",
+    "workbench.sessions.conversation.unreadable": "This session's structure could not be read.",
+    "workbench.sessions.conversation.viewRaw": "Open the raw transcript",
+    "workbench.sessions.conversation.windowed": "Large log: turns are read one at a time.",
     "workbench.sessions.copyResumeCommand": "Copy resume command",
     "workbench.sessions.copySessionID": "Copy session ID",
     "workbench.sessions.copySessionIDLabel": "Session ID {id}. Copy",
@@ -6005,6 +6248,8 @@ export const messages: {
     "workbench.sessions.details": "Details",
     "workbench.sessions.details.collapsed": "Collapsed",
     "workbench.sessions.details.expanded": "Expanded",
+    "workbench.sessions.duration.lessThanSecond": "<1s",
+    "workbench.sessions.duration.seconds": "{seconds}s",
     "workbench.sessions.empty.indexUnavailableDetail": "The index under ~/.vibebar could not be opened, so sessions cannot be listed this session.",
     "workbench.sessions.empty.indexUnavailableTitle": "Session index unavailable",
     "workbench.sessions.empty.noLogsDetail": "No session logs were found on this Mac for any of the {count} harnesses Vibe Bar scans.",
@@ -6042,11 +6287,44 @@ export const messages: {
     "workbench.sessions.groupByProject": "Group by project",
     "workbench.sessions.index.scanning": "scanning…",
     "workbench.sessions.index.unavailable": "index unavailable",
+    "workbench.sessions.kind.agentCreated": "Agent thread",
+    "workbench.sessions.kind.automation": "Automation",
+    "workbench.sessions.kind.exec": "Headless",
+    "workbench.sessions.kind.fork": "Fork",
+    "workbench.sessions.kind.subagent": "Subagent",
+    "workbench.sessions.layout.outlineHelp": "Show or hide the conversation contents",
     "workbench.sessions.list.capNotice": "Showing the first {shown} of {total} sessions. Narrow the filters or search to reach the rest.",
+    "workbench.sessions.list.collapseThreads": "Hide the threads this session started",
+    "workbench.sessions.list.costHelp": "Estimated cost at list prices: {cost}",
+    "workbench.sessions.list.expandThreads": "Show the threads this session started",
+    "workbench.sessions.list.loadingThreads": "Reading threads…",
+    "workbench.sessions.list.threadCount": "{count, plural, one {1 thread} other {# threads}}",
+    "workbench.sessions.list.tokensHelp": "{tokens} tokens in this session",
+    "workbench.sessions.list.untitled": "Untitled session",
     "workbench.sessions.message.copy": "Copy Message",
     "workbench.sessions.message.copyHelp": "Copy this message",
     "workbench.sessions.message.showLess": "Show less",
     "workbench.sessions.message.showMore": "Show more ({count} chars)",
+    "workbench.sessions.meta.back": "Back to {title}",
+    "workbench.sessions.meta.branchHelp": "Git branch",
+    "workbench.sessions.meta.costEstimate": "≈ {cost}",
+    "workbench.sessions.meta.costHelp": "Estimated at list prices from the tokens in the log.",
+    "workbench.sessions.meta.costLowerBound": "≥ {cost}",
+    "workbench.sessions.meta.costLowerBoundHelp": "Some usage ran on a model without a known price, so this is a lower bound.",
+    "workbench.sessions.meta.modelsHelp": "Models used in this session",
+    "workbench.sessions.meta.more": "More",
+    "workbench.sessions.meta.openFolder": "Open the project folder",
+    "workbench.sessions.meta.prompts": "{count, plural, one {1 prompt} other {# prompts}}",
+    "workbench.sessions.meta.revealFolder": "Show {folder} in Finder",
+    "workbench.sessions.meta.revealLog": "Show the session log in Finder",
+    "workbench.sessions.meta.reviews": "{count, plural, one {1 Auto Review} other {# Auto Reviews}}",
+    "workbench.sessions.meta.subagents": "{count, plural, one {1 subagent} other {# subagents}}",
+    "workbench.sessions.meta.timeHelp": "Started {start}, last activity {end}",
+    "workbench.sessions.meta.tokensHelp": "Input {input} · Output {output} · Cache read {cacheRead} · Cache write {cacheWrite}",
+    "workbench.sessions.meta.tokensTotalOnly": "Only a total was recorded for this session.",
+    "workbench.sessions.meta.toolCalls": "{count, plural, one {1 tool call} other {# tool calls}}",
+    "workbench.sessions.meta.toolCallsFailed": "{calls}, {failed} failed",
+    "workbench.sessions.meta.verdicts": "Auto Review: {allow} allowed, {deny} denied",
     "workbench.sessions.openInTerminal": "Open in Terminal",
     "workbench.sessions.options.help": "Terminal and index options",
     "workbench.sessions.options.indexMessageText": "Index message text",
@@ -6060,10 +6338,18 @@ export const messages: {
     "workbench.sessions.page.previous": "Previous",
     "workbench.sessions.project.none": "No project",
     "workbench.sessions.project.projectless": "Projectless",
+    "workbench.sessions.rail.allHelp": "Show sessions from every harness",
+    "workbench.sessions.rail.collapse": "Collapse the harness column",
+    "workbench.sessions.rail.expand": "Expand the harness column",
+    "workbench.sessions.rail.selectHelp": "Show only {harness}. ⌘-click to add or remove it from the selection.",
+    "workbench.sessions.rail.threadsIncluded": "{count, plural, one {Includes 1 thread} other {Includes # threads}}",
     "workbench.sessions.range.all": "Any time",
     "workbench.sessions.refreshHelp": "Rescan the session logs on disk",
     "workbench.sessions.resume.heading": "RESUME",
+    "workbench.sessions.resume.inTerminal": "Resume in {terminal}",
     "workbench.sessions.resume.none": "This session has no command-line entry point.",
+    "workbench.sessions.resume.options": "Choose where to resume",
+    "workbench.sessions.resume.subagentHelp": "A subagent thread is resumed through the session that started it.",
     "workbench.sessions.role.assistant": "Assistant",
     "workbench.sessions.role.other": "Note",
     "workbench.sessions.role.system": "System",
@@ -6092,6 +6378,26 @@ export const messages: {
     "workbench.sessions.sort.byProject": "By project",
     "workbench.sessions.sort.oldestFirst": "Oldest first",
     "workbench.sessions.sort.recentFirst": "Newest first",
+    "workbench.sessions.step.arguments": "Arguments",
+    "workbench.sessions.step.compaction": "Context compacted",
+    "workbench.sessions.step.exitCode": "Exit code {code}",
+    "workbench.sessions.step.failed": "Failed",
+    "workbench.sessions.step.noDetail": "No output was recorded for this step.",
+    "workbench.sessions.step.openThread": "Open thread",
+    "workbench.sessions.step.orphan": "Result without its call",
+    "workbench.sessions.step.pending": "No result recorded",
+    "workbench.sessions.step.result": "Result",
+    "workbench.sessions.step.succeeded": "Succeeded",
+    "workbench.sessions.step.thinking": "Thinking · {count} characters",
+    "workbench.sessions.step.thinkingHidden": "Thinking (not readable)",
+    "workbench.sessions.threads.collapseAll": "Collapse all threads",
+    "workbench.sessions.threads.expandAll": "Expand all threads",
+    "workbench.sessions.threads.foldedNote": "Subagents and forks are folded under the session that started them.",
+    "workbench.sessions.threads.hidden": "{count} hidden",
+    "workbench.sessions.threads.menu": "Threads",
+    "workbench.sessions.threads.menuHelp": "Choose which threads and headless runs the list shows",
+    "workbench.sessions.threads.showAutomation": "Show automations ({count})",
+    "workbench.sessions.threads.showExec": "Show headless runs ({count})",
     "workbench.sessions.toast.bodyIndexDropFailed": "Clearing the indexed message text failed.",
     "workbench.sessions.toast.bodyIndexDropped": "Indexed message text removed.",
     "workbench.sessions.toast.copied": "Copied to the clipboard.",
@@ -6105,6 +6411,9 @@ export const messages: {
     "workbench.sessions.toast.openedIn": "Opened in {terminal}.",
     "workbench.sessions.toast.sessionIDCopied": "Session ID copied.",
     "workbench.sessions.toast.sourcePathCopied": "Source path copied.",
+    "workbench.sessions.toc.heading": "Contents",
+    "workbench.sessions.toc.hide": "Hide the contents",
+    "workbench.sessions.toc.unsupported": "Turn contents are available for Codex and Claude Code sessions. The raw transcript has its own outline.",
     "workbench.sessions.transcript.autoReviewDivider": "Auto Review",
     "workbench.sessions.transcript.cancelled": "Reading this session was stopped. Select it again to reopen it.",
     "workbench.sessions.transcript.loadAll": "Load entire transcript",
@@ -6117,6 +6426,42 @@ export const messages: {
     "workbench.sessions.transcript.readFailed": "This session's log could not be read.",
     "workbench.sessions.transcript.truncatedDetail": "{parsed} read of {file}. Reading all of it holds the whole transcript in memory.",
     "workbench.sessions.transcript.truncatedTitle": "Showing the first {count, plural, one {# message} other {# messages}} of a very large log",
+    "workbench.sessions.turn.answerCopied": "Answer copied.",
+    "workbench.sessions.turn.commands": "{count, plural, one {1 command} other {# commands}}",
+    "workbench.sessions.turn.continueLoading": "Continue reading",
+    "workbench.sessions.turn.copyAnswer": "Copy answer",
+    "workbench.sessions.turn.copyPrompt": "Copy prompt",
+    "workbench.sessions.turn.failures": "{count, plural, one {1 failed} other {# failed}}",
+    "workbench.sessions.turn.followUps": "{count, plural, one {+1 follow-up} other {+# follow-ups}}",
+    "workbench.sessions.turn.hideSteps": "Hide the steps",
+    "workbench.sessions.turn.injected": "{count, plural, one {+1 injected block} other {+# injected blocks}}",
+    "workbench.sessions.turn.injectedHelp": "Context the harness attached to this prompt — instructions, environment, reminders — is counted here and not shown.",
+    "workbench.sessions.turn.loading": "Reading this turn…",
+    "workbench.sessions.turn.ordinal": "Turn {number}",
+    "workbench.sessions.turn.origin.agent": "From another agent",
+    "workbench.sessions.turn.origin.automation": "Started by an automation",
+    "workbench.sessions.turn.origin.guardianRequest": "Review request",
+    "workbench.sessions.turn.origin.none": "Continued",
+    "workbench.sessions.turn.process": "Process",
+    "workbench.sessions.turn.promptCopied": "Prompt copied.",
+    "workbench.sessions.turn.showSteps": "Show the steps",
+    "workbench.sessions.turn.status.abandoned": "Rewound",
+    "workbench.sessions.turn.status.abandonedHelp": "The conversation was rewound past this turn, so it is no longer part of the active thread.",
+    "workbench.sessions.turn.status.aborted": "Interrupted",
+    "workbench.sessions.turn.status.open": "Unfinished",
+    "workbench.sessions.turn.steps": "{count, plural, one {1 step} other {# steps}}",
+    "workbench.sessions.turn.stopped": "Reading stopped before this turn.",
+    "workbench.sessions.turn.thinking": "Thinking",
+    "workbench.sessions.turn.unavailable": "This turn could not be read. The log may have changed since it was opened.",
+    "workbench.sessions.verdict.allow": "Allowed",
+    "workbench.sessions.verdict.deny": "Denied",
+    "workbench.sessions.verdict.help": "Auto Review verdict on this turn",
+    "workbench.sessions.verdict.risk": "Risk {level}",
+    "workbench.sessions.view.help": "Switch between the turn view and the raw transcript",
+    "workbench.sessions.view.raw": "Raw",
+    "workbench.sessions.view.searchHit": "Your search matched a message in this session.",
+    "workbench.sessions.view.showHit": "Show it in the raw transcript",
+    "workbench.sessions.view.turns": "Turns",
     "workbench.skills.appCountNativeDisabled": "{count} projected but disabled",
     "workbench.skills.appCountViaGeminiRoot": "{enabled} enabled + {coupled} via the Gemini CLI compatibility root",
     "workbench.skills.appCountViaSharedRoot": "{enabled} enabled + {coupled} via the shared skills root",
@@ -8113,6 +8458,19 @@ export const messages: {
     "workbench.sessions.allChip.helpUnselected": "点击后显示全部 harness 的会话",
     "workbench.sessions.allChip.labelUnselected": "显示全部会话来源",
     "workbench.sessions.antigravityNotice": "AntiGravity 以未公开的二进制格式保存对话轮次，因此这份对话记录是部分重建的结果，其会话也无法在此删除 — IDE 会一直占用它们。",
+    "workbench.sessions.conversation.cancelled": "已停止读取此会话。",
+    "workbench.sessions.conversation.childNotFound": "找不到该子线程的日志。",
+    "workbench.sessions.conversation.collapseAll": "收起所有回合的步骤",
+    "workbench.sessions.conversation.empty": "此会话还没有回合。",
+    "workbench.sessions.conversation.expandAll": "展开所有回合的步骤",
+    "workbench.sessions.conversation.jumpLatest": "跳到最新回合",
+    "workbench.sessions.conversation.loadEarlier": "加载更早的回合（还有 {count} 个）",
+    "workbench.sessions.conversation.loadLater": "加载之后的回合（还有 {count} 个）",
+    "workbench.sessions.conversation.loadingOutline": "正在读取会话结构…",
+    "workbench.sessions.conversation.loadingTurns": "正在读取回合 {done}/{total}",
+    "workbench.sessions.conversation.unreadable": "无法读取此会话的结构。",
+    "workbench.sessions.conversation.viewRaw": "打开原始记录",
+    "workbench.sessions.conversation.windowed": "大型日志：按回合逐个读取。",
     "workbench.sessions.copyResumeCommand": "复制恢复命令",
     "workbench.sessions.copySessionID": "复制会话 ID",
     "workbench.sessions.copySessionIDLabel": "会话 ID {id}。复制",
@@ -8127,6 +8485,8 @@ export const messages: {
     "workbench.sessions.details": "详情",
     "workbench.sessions.details.collapsed": "已收起",
     "workbench.sessions.details.expanded": "已展开",
+    "workbench.sessions.duration.lessThanSecond": "<1 秒",
+    "workbench.sessions.duration.seconds": "{seconds} 秒",
     "workbench.sessions.empty.indexUnavailableDetail": "无法打开 ~/.vibebar 下的会话索引，本次运行期间无法列出会话。",
     "workbench.sessions.empty.indexUnavailableTitle": "会话索引不可用",
     "workbench.sessions.empty.noLogsDetail": "这台 Mac 上没有找到 Vibe Bar 扫描的 {count} 个 harness 的任何会话日志。",
@@ -8164,11 +8524,44 @@ export const messages: {
     "workbench.sessions.groupByProject": "按项目分组",
     "workbench.sessions.index.scanning": "扫描中…",
     "workbench.sessions.index.unavailable": "索引不可用",
+    "workbench.sessions.kind.agentCreated": "代理线程",
+    "workbench.sessions.kind.automation": "自动化",
+    "workbench.sessions.kind.exec": "无头运行",
+    "workbench.sessions.kind.fork": "分叉",
+    "workbench.sessions.kind.subagent": "子代理",
+    "workbench.sessions.layout.outlineHelp": "显示或隐藏对话目录",
     "workbench.sessions.list.capNotice": "当前只显示 {total} 个会话中的前 {shown} 个。缩小筛选范围或使用搜索以查看其余会话。",
+    "workbench.sessions.list.collapseThreads": "隐藏此会话发起的子线程",
+    "workbench.sessions.list.costHelp": "按公开价格估算的费用：{cost}",
+    "workbench.sessions.list.expandThreads": "显示此会话发起的子线程",
+    "workbench.sessions.list.loadingThreads": "正在读取子线程…",
+    "workbench.sessions.list.threadCount": "{count, plural, other {# 个}}子线程",
+    "workbench.sessions.list.tokensHelp": "本会话共 {tokens} tokens",
+    "workbench.sessions.list.untitled": "未命名会话",
     "workbench.sessions.message.copy": "复制消息",
     "workbench.sessions.message.copyHelp": "复制这条消息",
     "workbench.sessions.message.showLess": "收起",
     "workbench.sessions.message.showMore": "展开全部（{count} 字符）",
+    "workbench.sessions.meta.back": "返回 {title}",
+    "workbench.sessions.meta.branchHelp": "Git 分支",
+    "workbench.sessions.meta.costEstimate": "约 {cost}",
+    "workbench.sessions.meta.costHelp": "按日志中的 token 与公开价格估算。",
+    "workbench.sessions.meta.costLowerBound": "至少 {cost}",
+    "workbench.sessions.meta.costLowerBoundHelp": "部分用量所用模型没有已知价格，此为下限。",
+    "workbench.sessions.meta.modelsHelp": "本会话使用的模型",
+    "workbench.sessions.meta.more": "更多",
+    "workbench.sessions.meta.openFolder": "打开项目文件夹",
+    "workbench.sessions.meta.prompts": "{count, plural, other {# 次}}提问",
+    "workbench.sessions.meta.revealFolder": "在 Finder 中显示 {folder}",
+    "workbench.sessions.meta.revealLog": "在 Finder 中显示会话日志",
+    "workbench.sessions.meta.reviews": "{count, plural, other {# 次}} Auto Review",
+    "workbench.sessions.meta.subagents": "{count, plural, other {# 个}}子代理",
+    "workbench.sessions.meta.timeHelp": "开始于 {start}，最后活动于 {end}",
+    "workbench.sessions.meta.tokensHelp": "输入 {input} · 输出 {output} · 缓存读取 {cacheRead} · 缓存写入 {cacheWrite}",
+    "workbench.sessions.meta.tokensTotalOnly": "此会话只记录了总量。",
+    "workbench.sessions.meta.toolCalls": "{count, plural, other {# 次}}工具调用",
+    "workbench.sessions.meta.toolCallsFailed": "{calls}，{failed} 个失败",
+    "workbench.sessions.meta.verdicts": "Auto Review：允许 {allow}，拒绝 {deny}",
     "workbench.sessions.openInTerminal": "在 Terminal 中打开",
     "workbench.sessions.options.help": "终端与索引选项",
     "workbench.sessions.options.indexMessageText": "索引消息正文",
@@ -8182,10 +8575,18 @@ export const messages: {
     "workbench.sessions.page.previous": "上一页",
     "workbench.sessions.project.none": "无项目",
     "workbench.sessions.project.projectless": "未指定项目",
+    "workbench.sessions.rail.allHelp": "显示所有 Harness 的会话",
+    "workbench.sessions.rail.collapse": "收起 Harness 栏",
+    "workbench.sessions.rail.expand": "展开 Harness 栏",
+    "workbench.sessions.rail.selectHelp": "只显示 {harness}。按住 ⌘ 点击可加入或移出选择。",
+    "workbench.sessions.rail.threadsIncluded": "含 {count, plural, other {# 个}}子线程",
     "workbench.sessions.range.all": "全部时间",
     "workbench.sessions.refreshHelp": "重新扫描磁盘上的会话日志",
     "workbench.sessions.resume.heading": "恢复命令",
+    "workbench.sessions.resume.inTerminal": "在 {terminal} 中恢复",
     "workbench.sessions.resume.none": "该会话没有命令行入口。",
+    "workbench.sessions.resume.options": "选择恢复方式",
+    "workbench.sessions.resume.subagentHelp": "子代理线程需通过发起它的会话恢复。",
     "workbench.sessions.role.assistant": "助手",
     "workbench.sessions.role.other": "备注",
     "workbench.sessions.role.system": "系统",
@@ -8214,6 +8615,26 @@ export const messages: {
     "workbench.sessions.sort.byProject": "按项目",
     "workbench.sessions.sort.oldestFirst": "最早优先",
     "workbench.sessions.sort.recentFirst": "最新优先",
+    "workbench.sessions.step.arguments": "参数",
+    "workbench.sessions.step.compaction": "上下文已压缩",
+    "workbench.sessions.step.exitCode": "退出码 {code}",
+    "workbench.sessions.step.failed": "失败",
+    "workbench.sessions.step.noDetail": "此步骤没有记录输出。",
+    "workbench.sessions.step.openThread": "打开子线程",
+    "workbench.sessions.step.orphan": "缺少调用的结果",
+    "workbench.sessions.step.pending": "无结果记录",
+    "workbench.sessions.step.result": "结果",
+    "workbench.sessions.step.succeeded": "成功",
+    "workbench.sessions.step.thinking": "思考 · {count} 字",
+    "workbench.sessions.step.thinkingHidden": "思考（不可读）",
+    "workbench.sessions.threads.collapseAll": "收起全部子线程",
+    "workbench.sessions.threads.expandAll": "展开全部子线程",
+    "workbench.sessions.threads.foldedNote": "子代理与分叉折叠在发起它们的会话下。",
+    "workbench.sessions.threads.hidden": "已隐藏 {count}",
+    "workbench.sessions.threads.menu": "线程",
+    "workbench.sessions.threads.menuHelp": "选择列表显示哪些线程与无头运行",
+    "workbench.sessions.threads.showAutomation": "显示自动化任务（{count}）",
+    "workbench.sessions.threads.showExec": "显示无头运行（{count}）",
     "workbench.sessions.toast.bodyIndexDropFailed": "清除已索引的消息正文失败。",
     "workbench.sessions.toast.bodyIndexDropped": "已删除已索引的消息正文。",
     "workbench.sessions.toast.copied": "已复制到剪贴板。",
@@ -8227,6 +8648,9 @@ export const messages: {
     "workbench.sessions.toast.openedIn": "已在 {terminal} 中打开。",
     "workbench.sessions.toast.sessionIDCopied": "会话 ID 已复制。",
     "workbench.sessions.toast.sourcePathCopied": "源文件路径已复制。",
+    "workbench.sessions.toc.heading": "目录",
+    "workbench.sessions.toc.hide": "隐藏目录",
+    "workbench.sessions.toc.unsupported": "回合目录仅支持 Codex 与 Claude Code 会话；原始记录有自己的提问目录。",
     "workbench.sessions.transcript.autoReviewDivider": "Auto Review",
     "workbench.sessions.transcript.cancelled": "已停止读取该会话。再次选中它即可重新打开。",
     "workbench.sessions.transcript.loadAll": "加载完整对话记录",
@@ -8239,6 +8663,42 @@ export const messages: {
     "workbench.sessions.transcript.readFailed": "无法读取该会话的日志。",
     "workbench.sessions.transcript.truncatedDetail": "已读取 {file} 中的 {parsed}。完整读取会把整份对话记录留在内存中。",
     "workbench.sessions.transcript.truncatedTitle": "已显示这份超大日志中的前 {count, plural, other {# 条消息}}",
+    "workbench.sessions.turn.answerCopied": "回答已复制。",
+    "workbench.sessions.turn.commands": "{count, plural, other {# 个}}命令",
+    "workbench.sessions.turn.continueLoading": "继续读取",
+    "workbench.sessions.turn.copyAnswer": "复制回答",
+    "workbench.sessions.turn.copyPrompt": "复制提问",
+    "workbench.sessions.turn.failures": "{count, plural, other {# 个}}失败",
+    "workbench.sessions.turn.followUps": "+{count, plural, other {# 条}}追加消息",
+    "workbench.sessions.turn.hideSteps": "隐藏执行步骤",
+    "workbench.sessions.turn.injected": "+{count, plural, other {# 条}}注入",
+    "workbench.sessions.turn.injectedHelp": "工具自动附加到这次提问的上下文（指令、环境、提醒）只计数，不显示。",
+    "workbench.sessions.turn.loading": "正在读取此回合…",
+    "workbench.sessions.turn.ordinal": "第 {number} 轮",
+    "workbench.sessions.turn.origin.agent": "来自其他代理",
+    "workbench.sessions.turn.origin.automation": "由自动化任务发起",
+    "workbench.sessions.turn.origin.guardianRequest": "审查请求",
+    "workbench.sessions.turn.origin.none": "继续执行",
+    "workbench.sessions.turn.process": "执行过程",
+    "workbench.sessions.turn.promptCopied": "提问已复制。",
+    "workbench.sessions.turn.showSteps": "显示执行步骤",
+    "workbench.sessions.turn.status.abandoned": "已回退",
+    "workbench.sessions.turn.status.abandonedHelp": "对话已回退到此回合之前，它不再属于当前对话线。",
+    "workbench.sessions.turn.status.aborted": "已中断",
+    "workbench.sessions.turn.status.open": "未完成",
+    "workbench.sessions.turn.steps": "{count, plural, other {# 步}}",
+    "workbench.sessions.turn.stopped": "读取在此回合前停止。",
+    "workbench.sessions.turn.thinking": "思考",
+    "workbench.sessions.turn.unavailable": "无法读取此回合，日志在打开后可能已变化。",
+    "workbench.sessions.verdict.allow": "允许",
+    "workbench.sessions.verdict.deny": "拒绝",
+    "workbench.sessions.verdict.help": "Auto Review 对此回合的裁决",
+    "workbench.sessions.verdict.risk": "风险 {level}",
+    "workbench.sessions.view.help": "在回合视图与原始记录之间切换",
+    "workbench.sessions.view.raw": "原始",
+    "workbench.sessions.view.searchHit": "搜索命中了本会话中的一条消息。",
+    "workbench.sessions.view.showHit": "在原始记录中查看",
+    "workbench.sessions.view.turns": "回合",
     "workbench.skills.appCountNativeDisabled": "{count} 个已投影但被停用",
     "workbench.skills.appCountViaGeminiRoot": "{enabled} 个已启用 + {coupled} 个来自 Gemini CLI 兼容根目录",
     "workbench.skills.appCountViaSharedRoot": "{enabled} 个已启用 + {coupled} 个来自共享技能根目录",

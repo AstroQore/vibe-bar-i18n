@@ -7150,6 +7150,575 @@
         "count": "int"
       }
     },
+    "workbench.sessions.conversation.cancelled": {
+      "value": "Reading this session was stopped.",
+      "comment": "Shown after the user stopped a session from loading."
+    },
+    "workbench.sessions.conversation.childNotFound": {
+      "value": "That thread's log was not found.",
+      "comment": "Toast when a subagent step's thread cannot be opened."
+    },
+    "workbench.sessions.conversation.collapseAll": {
+      "value": "Collapse every turn's steps",
+      "comment": "Menu item that closes every loaded turn's process."
+    },
+    "workbench.sessions.conversation.empty": {
+      "value": "This session has no turns yet.",
+      "comment": "Shown for a session log with no turns."
+    },
+    "workbench.sessions.conversation.expandAll": {
+      "value": "Expand every turn's steps",
+      "comment": "Menu item that opens every loaded turn's process."
+    },
+    "workbench.sessions.conversation.jumpLatest": {
+      "value": "Jump to the latest turn",
+      "comment": "Button that scrolls a conversation back to its end."
+    },
+    "workbench.sessions.conversation.loadEarlier": {
+      "value": "Load earlier turns ({count} more)",
+      "comment": "Button at the top of a conversation. count is a formatted number of turns not yet shown.",
+      "placeholders": {
+        "count": "string"
+      }
+    },
+    "workbench.sessions.conversation.loadLater": {
+      "value": "Load later turns ({count} more)",
+      "comment": "Button at the bottom of a conversation opened at an earlier turn. count is a formatted number.",
+      "placeholders": {
+        "count": "string"
+      }
+    },
+    "workbench.sessions.conversation.loadingOutline": {
+      "value": "Reading the session's structure…",
+      "comment": "Shown while a session's turns are being read."
+    },
+    "workbench.sessions.conversation.loadingTurns": {
+      "value": "Reading turns {done} of {total}",
+      "comment": "Progress while a large session's turns are read one at a time. Values are formatted numbers.",
+      "placeholders": {
+        "done": "string",
+        "total": "string"
+      }
+    },
+    "workbench.sessions.conversation.unreadable": {
+      "value": "This session's structure could not be read.",
+      "comment": "Shown when a session log could not be parsed into turns."
+    },
+    "workbench.sessions.conversation.viewRaw": {
+      "value": "Open the raw transcript",
+      "comment": "Button offered when a session's structure could not be read."
+    },
+    "workbench.sessions.conversation.windowed": {
+      "value": "Large log: turns are read one at a time.",
+      "comment": "Note in the conversation header for a log above the full-parse limit."
+    },
+    "workbench.sessions.duration.lessThanSecond": {
+      "value": "<1s",
+      "comment": "How long a step took, when it was under a second."
+    },
+    "workbench.sessions.duration.seconds": {
+      "value": "{seconds}s",
+      "comment": "How long a step took, under a minute. seconds is a formatted number that may have one decimal, which is why this is distinct-from: quota.freshness.age.seconds (an integer age).",
+      "placeholders": {
+        "seconds": "string"
+      }
+    },
+    "workbench.sessions.kind.agentCreated": {
+      "value": "Agent thread",
+      "comment": "Chip on a session row or header: another agent created this thread as a peer."
+    },
+    "workbench.sessions.kind.automation": {
+      "value": "Automation",
+      "comment": "Chip on a session row or header: a scheduled automation started this session."
+    },
+    "workbench.sessions.kind.exec": {
+      "value": "Headless",
+      "comment": "Chip on a session row or header: a headless run (codex exec, an SDK call) nobody typed into."
+    },
+    "workbench.sessions.kind.fork": {
+      "value": "Fork",
+      "comment": "Chip on a session row or header: the session is a fork of another session."
+    },
+    "workbench.sessions.kind.subagent": {
+      "value": "Subagent",
+      "comment": "Chip on a session row or header: the session is a subagent another session started."
+    },
+    "workbench.sessions.layout.outlineHelp": {
+      "value": "Show or hide the conversation contents",
+      "comment": "Help for the toolbar button that toggles the Sessions page's contents column."
+    },
+    "workbench.sessions.list.collapseThreads": {
+      "value": "Hide the threads this session started",
+      "comment": "Help for the capsule that folds a session row's subagent threads away."
+    },
+    "workbench.sessions.list.costHelp": {
+      "value": "Estimated cost at list prices: {cost}",
+      "comment": "Tooltip on a session row's cost figure. The amount is already formatted.",
+      "placeholders": {
+        "cost": "string"
+      }
+    },
+    "workbench.sessions.list.expandThreads": {
+      "value": "Show the threads this session started",
+      "comment": "Help for the capsule that unfolds a session row's subagent threads."
+    },
+    "workbench.sessions.list.loadingThreads": {
+      "value": "Reading threads…",
+      "comment": "Shown under a Claude Code session row while its subagent transcripts are listed."
+    },
+    "workbench.sessions.list.threadCount": {
+      "value": "{count, plural, one {1 thread} other {# threads}}",
+      "comment": "Capsule on a session row: how many subagent or fork threads are folded under it.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.sessions.list.tokensHelp": {
+      "value": "{tokens} tokens in this session",
+      "comment": "Tooltip on a session row's token figure. The figure is already formatted.",
+      "placeholders": {
+        "tokens": "string"
+      }
+    },
+    "workbench.sessions.list.untitled": {
+      "value": "Untitled session",
+      "comment": "Title of a session row when the log has no title and no readable first prompt."
+    },
+    "workbench.sessions.meta.back": {
+      "value": "Back to {title}",
+      "comment": "Breadcrumb button above a subagent thread that returns to the session that started it.",
+      "placeholders": {
+        "title": "string"
+      }
+    },
+    "workbench.sessions.meta.branchHelp": {
+      "value": "Git branch",
+      "comment": "Tooltip on the conversation header's branch chip."
+    },
+    "workbench.sessions.meta.costEstimate": {
+      "value": "≈ {cost}",
+      "comment": "Conversation header fact: the estimated cost. The amount is already formatted.",
+      "placeholders": {
+        "cost": "string"
+      }
+    },
+    "workbench.sessions.meta.costHelp": {
+      "value": "Estimated at list prices from the tokens in the log.",
+      "comment": "Tooltip on the conversation header's cost figure."
+    },
+    "workbench.sessions.meta.costLowerBound": {
+      "value": "≥ {cost}",
+      "comment": "Conversation header fact when part of the usage has no known price.",
+      "placeholders": {
+        "cost": "string"
+      }
+    },
+    "workbench.sessions.meta.costLowerBoundHelp": {
+      "value": "Some usage ran on a model without a known price, so this is a lower bound.",
+      "comment": "Tooltip on the conversation header's cost figure when it is a lower bound."
+    },
+    "workbench.sessions.meta.modelsHelp": {
+      "value": "Models used in this session",
+      "comment": "Tooltip on the conversation header's model chips."
+    },
+    "workbench.sessions.meta.more": {
+      "value": "More",
+      "comment": "Conversation header overflow menu. distinct-from: usage.yearHeatmap.more (that one is the high end of a heatmap legend, not a menu)."
+    },
+    "workbench.sessions.meta.openFolder": {
+      "value": "Open the project folder",
+      "comment": "Help for the conversation header button that opens the session's working directory."
+    },
+    "workbench.sessions.meta.prompts": {
+      "value": "{count, plural, one {1 prompt} other {# prompts}}",
+      "comment": "Conversation header fact: how many prompts the person typed.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.sessions.meta.revealFolder": {
+      "value": "Show {folder} in Finder",
+      "comment": "Tooltip on the conversation header's project-folder chip.",
+      "placeholders": {
+        "folder": "string"
+      }
+    },
+    "workbench.sessions.meta.revealLog": {
+      "value": "Show the session log in Finder",
+      "comment": "Conversation header overflow menu item."
+    },
+    "workbench.sessions.meta.reviews": {
+      "value": "{count, plural, one {1 Auto Review} other {# Auto Reviews}}",
+      "comment": "Conversation header fact: how many Auto Review passes this Codex session has — the same count the list row and sessions.transcript report.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.sessions.meta.subagents": {
+      "value": "{count, plural, one {1 subagent} other {# subagents}}",
+      "comment": "Conversation header menu listing the subagent threads this session started.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.sessions.meta.timeHelp": {
+      "value": "Started {start}, last activity {end}",
+      "comment": "Tooltip on the conversation header's time range. Both values are formatted dates.",
+      "placeholders": {
+        "start": "string",
+        "end": "string"
+      }
+    },
+    "workbench.sessions.meta.tokensHelp": {
+      "value": "Input {input} · Output {output} · Cache read {cacheRead} · Cache write {cacheWrite}",
+      "comment": "Tooltip on the conversation header's token figure. Every value is already formatted.",
+      "placeholders": {
+        "input": "string",
+        "output": "string",
+        "cacheRead": "string",
+        "cacheWrite": "string"
+      }
+    },
+    "workbench.sessions.meta.tokensTotalOnly": {
+      "value": "Only a total was recorded for this session.",
+      "comment": "Tooltip on the conversation header's token figure when no per-bucket breakdown exists."
+    },
+    "workbench.sessions.meta.toolCalls": {
+      "value": "{count, plural, one {1 tool call} other {# tool calls}}",
+      "comment": "Conversation header fact: how many actions the agent took.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.sessions.meta.toolCallsFailed": {
+      "value": "{calls}, {failed} failed",
+      "comment": "Conversation header fact when some actions failed. calls is the already-formatted tool-call count phrase; failed is a formatted number.",
+      "placeholders": {
+        "calls": "string",
+        "failed": "string"
+      }
+    },
+    "workbench.sessions.meta.verdicts": {
+      "value": "Auto Review: {allow} allowed, {deny} denied",
+      "comment": "Conversation header fact: Auto Review verdicts on this session's turns. Values are formatted numbers.",
+      "placeholders": {
+        "allow": "string",
+        "deny": "string"
+      }
+    },
+    "workbench.sessions.rail.allHelp": {
+      "value": "Show sessions from every harness",
+      "comment": "Tooltip on the All row of the Sessions page's harness column."
+    },
+    "workbench.sessions.rail.collapse": {
+      "value": "Collapse the harness column",
+      "comment": "Help for the button that shrinks the Sessions page's harness column to icons."
+    },
+    "workbench.sessions.rail.expand": {
+      "value": "Expand the harness column",
+      "comment": "Help for the button that widens the Sessions page's harness column back to names and counts."
+    },
+    "workbench.sessions.rail.selectHelp": {
+      "value": "Show only {harness}. ⌘-click to add or remove it from the selection.",
+      "comment": "Tooltip on a harness row in the Sessions page's left column.",
+      "placeholders": {
+        "harness": "string"
+      }
+    },
+    "workbench.sessions.rail.threadsIncluded": {
+      "value": "{count, plural, one {Includes 1 thread} other {Includes # threads}}",
+      "comment": "Under a harness in the Sessions page's left column: how many of its sessions are subagent or fork threads, folded under the session that started them.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.sessions.resume.inTerminal": {
+      "value": "Resume in {terminal}",
+      "comment": "Primary button of the conversation header: reopens the session in the named terminal app.",
+      "placeholders": {
+        "terminal": "string"
+      }
+    },
+    "workbench.sessions.resume.options": {
+      "value": "Choose where to resume",
+      "comment": "Help for the dropdown half of the resume button."
+    },
+    "workbench.sessions.resume.subagentHelp": {
+      "value": "A subagent thread is resumed through the session that started it.",
+      "comment": "Help on the disabled resume button of a subagent thread."
+    },
+    "workbench.sessions.step.arguments": {
+      "value": "Arguments",
+      "comment": "Caption above a step's argument summary in its detail."
+    },
+    "workbench.sessions.step.compaction": {
+      "value": "Context compacted",
+      "comment": "A note step: the harness compacted the conversation context here."
+    },
+    "workbench.sessions.step.exitCode": {
+      "value": "Exit code {code}",
+      "comment": "Step detail for a shell command. code is the number as text.",
+      "placeholders": {
+        "code": "string"
+      }
+    },
+    "workbench.sessions.step.failed": {
+      "value": "Failed",
+      "comment": "Status of a step whose result reported failure."
+    },
+    "workbench.sessions.step.noDetail": {
+      "value": "No output was recorded for this step.",
+      "comment": "Step detail when the log kept neither arguments nor a result."
+    },
+    "workbench.sessions.step.openThread": {
+      "value": "Open thread",
+      "comment": "Button on a subagent step that opens the thread it started."
+    },
+    "workbench.sessions.step.orphan": {
+      "value": "Result without its call",
+      "comment": "Step detail: a result whose call is not in the log."
+    },
+    "workbench.sessions.step.pending": {
+      "value": "No result recorded",
+      "comment": "Step detail: the call has no result in the log."
+    },
+    "workbench.sessions.step.result": {
+      "value": "Result",
+      "comment": "Caption above a step's result summary in its detail."
+    },
+    "workbench.sessions.step.succeeded": {
+      "value": "Succeeded",
+      "comment": "Status of a step whose result reported success."
+    },
+    "workbench.sessions.step.thinking": {
+      "value": "Thinking · {count} characters",
+      "comment": "A thinking step in a turn's process. count is a formatted number.",
+      "placeholders": {
+        "count": "string"
+      }
+    },
+    "workbench.sessions.step.thinkingHidden": {
+      "value": "Thinking (not readable)",
+      "comment": "A thinking step whose text is encrypted in the log."
+    },
+    "workbench.sessions.threads.collapseAll": {
+      "value": "Collapse all threads",
+      "comment": "Threads menu item that folds every session's threads."
+    },
+    "workbench.sessions.threads.expandAll": {
+      "value": "Expand all threads",
+      "comment": "Threads menu item that unfolds every session's threads."
+    },
+    "workbench.sessions.threads.foldedNote": {
+      "value": "Subagents and forks are folded under the session that started them.",
+      "comment": "Explanation at the top of the Threads menu on the Sessions page."
+    },
+    "workbench.sessions.threads.hidden": {
+      "value": "{count} hidden",
+      "comment": "Detail on the Threads toolbar pill: how many loaded rows the thread filters hide.",
+      "placeholders": {
+        "count": "string"
+      }
+    },
+    "workbench.sessions.threads.menu": {
+      "value": "Threads",
+      "comment": "Toolbar menu on the Sessions page that controls how threads and headless runs are listed."
+    },
+    "workbench.sessions.threads.menuHelp": {
+      "value": "Choose which threads and headless runs the list shows",
+      "comment": "Help for the Threads toolbar menu on the Sessions page."
+    },
+    "workbench.sessions.threads.showAutomation": {
+      "value": "Show automations ({count})",
+      "comment": "Toggle in the Threads menu. The count is how many loaded rows it would add.",
+      "placeholders": {
+        "count": "string"
+      }
+    },
+    "workbench.sessions.threads.showExec": {
+      "value": "Show headless runs ({count})",
+      "comment": "Toggle in the Threads menu. The count is how many loaded rows it would add.",
+      "placeholders": {
+        "count": "string"
+      }
+    },
+    "workbench.sessions.toc.heading": {
+      "value": "Contents",
+      "comment": "Heading of the Sessions page's right column: one entry per turn."
+    },
+    "workbench.sessions.toc.hide": {
+      "value": "Hide the contents",
+      "comment": "Help for the button that hides the contents column."
+    },
+    "workbench.sessions.toc.unsupported": {
+      "value": "Turn contents are available for Codex and Claude Code sessions. The raw transcript has its own outline.",
+      "comment": "Shown in the contents column for a session whose harness has no turn structure."
+    },
+    "workbench.sessions.turn.answerCopied": {
+      "value": "Answer copied.",
+      "comment": "Toast after copying an answer."
+    },
+    "workbench.sessions.turn.commands": {
+      "value": "{count, plural, one {1 command} other {# commands}}",
+      "comment": "Process row fact: how many shell commands ran in the turn.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.sessions.turn.continueLoading": {
+      "value": "Continue reading",
+      "comment": "Button on a stopped turn placeholder."
+    },
+    "workbench.sessions.turn.copyAnswer": {
+      "value": "Copy answer",
+      "comment": "Help for the copy button on an answer."
+    },
+    "workbench.sessions.turn.copyPrompt": {
+      "value": "Copy prompt",
+      "comment": "Help for the copy button on a prompt bubble."
+    },
+    "workbench.sessions.turn.failures": {
+      "value": "{count, plural, one {1 failed} other {# failed}}",
+      "comment": "Process row and contents fact: how many actions failed.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.sessions.turn.followUps": {
+      "value": "{count, plural, one {+1 follow-up} other {+# follow-ups}}",
+      "comment": "Turn header note: further messages the person sent while the turn was running.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.sessions.turn.hideSteps": {
+      "value": "Hide the steps",
+      "comment": "Help for collapsing a turn's process row."
+    },
+    "workbench.sessions.turn.injected": {
+      "value": "{count, plural, one {+1 injected block} other {+# injected blocks}}",
+      "comment": "Turn header note: blocks of context the harness added to the prompt, which are not shown.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.sessions.turn.injectedHelp": {
+      "value": "Context the harness attached to this prompt — instructions, environment, reminders — is counted here and not shown.",
+      "comment": "Tooltip on the injected-blocks note of a turn header."
+    },
+    "workbench.sessions.turn.loading": {
+      "value": "Reading this turn…",
+      "comment": "Placeholder for a turn whose detail is still being read."
+    },
+    "workbench.sessions.turn.ordinal": {
+      "value": "Turn {number}",
+      "comment": "Header of one turn in the conversation. number is a formatted ordinal.",
+      "placeholders": {
+        "number": "string"
+      }
+    },
+    "workbench.sessions.turn.origin.agent": {
+      "value": "From another agent",
+      "comment": "Label in place of a prompt bubble: another agent sent this turn's task."
+    },
+    "workbench.sessions.turn.origin.automation": {
+      "value": "Started by an automation",
+      "comment": "Label in place of a prompt bubble: a scheduled automation opened this turn."
+    },
+    "workbench.sessions.turn.origin.guardianRequest": {
+      "value": "Review request",
+      "comment": "Label in place of a prompt bubble: an Auto Review request opened this turn."
+    },
+    "workbench.sessions.turn.origin.none": {
+      "value": "Continued",
+      "comment": "Label in place of a prompt bubble: the turn opened without a new prompt."
+    },
+    "workbench.sessions.turn.process": {
+      "value": "Process",
+      "comment": "Label of the collapsible row that lists what the agent did in a turn."
+    },
+    "workbench.sessions.turn.promptCopied": {
+      "value": "Prompt copied.",
+      "comment": "Toast after copying a prompt."
+    },
+    "workbench.sessions.turn.showSteps": {
+      "value": "Show the steps",
+      "comment": "Help for expanding a turn's process row."
+    },
+    "workbench.sessions.turn.status.abandoned": {
+      "value": "Rewound",
+      "comment": "Turn header chip: the conversation was rewound past this turn."
+    },
+    "workbench.sessions.turn.status.abandonedHelp": {
+      "value": "The conversation was rewound past this turn, so it is no longer part of the active thread.",
+      "comment": "Tooltip on the Rewound chip of a turn header."
+    },
+    "workbench.sessions.turn.status.aborted": {
+      "value": "Interrupted",
+      "comment": "Turn header chip: the turn was stopped before it finished."
+    },
+    "workbench.sessions.turn.status.open": {
+      "value": "Unfinished",
+      "comment": "Turn header chip: the log ends without the turn finishing."
+    },
+    "workbench.sessions.turn.steps": {
+      "value": "{count, plural, one {1 step} other {# steps}}",
+      "comment": "Process row fact: how many actions the agent took in the turn.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.sessions.turn.stopped": {
+      "value": "Reading stopped before this turn.",
+      "comment": "Placeholder for a turn left unread when loading was stopped."
+    },
+    "workbench.sessions.turn.thinking": {
+      "value": "Thinking",
+      "comment": "Process row label for a turn whose only steps are thinking."
+    },
+    "workbench.sessions.turn.unavailable": {
+      "value": "This turn could not be read. The log may have changed since it was opened.",
+      "comment": "Placeholder for a turn whose detail could not be read."
+    },
+    "workbench.sessions.verdict.allow": {
+      "value": "Allowed",
+      "comment": "Badge on a turn header: Auto Review allowed the turn's action."
+    },
+    "workbench.sessions.verdict.deny": {
+      "value": "Denied",
+      "comment": "Badge on a turn header: Auto Review denied the turn's action."
+    },
+    "workbench.sessions.verdict.help": {
+      "value": "Auto Review verdict on this turn",
+      "comment": "Tooltip on an Auto Review badge."
+    },
+    "workbench.sessions.verdict.risk": {
+      "value": "Risk {level}",
+      "comment": "Badge on a turn header: the risk level Auto Review assigned, as the reviewer wrote it.",
+      "placeholders": {
+        "level": "string"
+      }
+    },
+    "workbench.sessions.view.help": {
+      "value": "Switch between the turn view and the raw transcript",
+      "comment": "Help for the conversation view switch."
+    },
+    "workbench.sessions.view.raw": {
+      "value": "Raw",
+      "comment": "Segment of the conversation view switch: the raw message transcript."
+    },
+    "workbench.sessions.view.searchHit": {
+      "value": "Your search matched a message in this session.",
+      "comment": "Banner above the turn view when a full-text search hit opened the session."
+    },
+    "workbench.sessions.view.showHit": {
+      "value": "Show it in the raw transcript",
+      "comment": "Button on the search-hit banner."
+    },
+    "workbench.sessions.view.turns": {
+      "value": "Turns",
+      "comment": "Segment of the conversation view switch: the structured turn-by-turn view."
+    },
     "workbench.skills.appCountNativeDisabled": {
       "value": "{count} projected but disabled",
       "comment": "Last clause of the per-harness count tooltip: skills linked into the harness but switched off in its own config.",
