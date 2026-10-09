@@ -5055,6 +5055,45 @@
 /* Notice under the transcript Details for an AntiGravity session, explaining why the transcript is partial and cannot be deleted */
 "workbench.sessions.antigravityNotice" = "AntiGravity 以未公开的二进制格式保存对话轮次，因此这份对话记录是部分重建的结果，其会话也无法在此删除 — IDE 会一直占用它们。";
 
+/* Shown after the user stopped a session from loading. */
+"workbench.sessions.conversation.cancelled" = "已停止读取此会话。";
+
+/* Toast when a subagent step's thread cannot be opened. */
+"workbench.sessions.conversation.childNotFound" = "找不到该子线程的日志。";
+
+/* Menu item that closes every loaded turn's process. */
+"workbench.sessions.conversation.collapseAll" = "收起所有回合的步骤";
+
+/* Shown for a session log with no turns. */
+"workbench.sessions.conversation.empty" = "此会话还没有回合。";
+
+/* Menu item that opens every loaded turn's process. */
+"workbench.sessions.conversation.expandAll" = "展开所有回合的步骤";
+
+/* Button that scrolls a conversation back to its end. */
+"workbench.sessions.conversation.jumpLatest" = "跳到最新回合";
+
+/* Button at the top of a conversation. count is a formatted number of turns not yet shown. */
+"workbench.sessions.conversation.loadEarlier" = "加载更早的回合（还有 %@ 个）";
+
+/* Button at the bottom of a conversation opened at an earlier turn. count is a formatted number. */
+"workbench.sessions.conversation.loadLater" = "加载之后的回合（还有 %@ 个）";
+
+/* Shown while a session's turns are being read. */
+"workbench.sessions.conversation.loadingOutline" = "正在读取会话结构…";
+
+/* Progress while a large session's turns are read one at a time. Values are formatted numbers. */
+"workbench.sessions.conversation.loadingTurns" = "正在读取回合 %1$@/%2$@";
+
+/* Shown when a session log could not be parsed into turns. */
+"workbench.sessions.conversation.unreadable" = "无法读取此会话的结构。";
+
+/* Button offered when a session's structure could not be read. */
+"workbench.sessions.conversation.viewRaw" = "打开原始记录";
+
+/* Note in the conversation header for a log above the full-parse limit. */
+"workbench.sessions.conversation.windowed" = "大型日志：按回合逐个读取。";
+
 /* Sessions row context menu and transcript header: copy the shell line that reopens this session */
 "workbench.sessions.copyResumeCommand" = "复制恢复命令";
 
@@ -5090,6 +5129,12 @@
 
 /* Accessibility value of the Details button while the facts are shown */
 "workbench.sessions.details.expanded" = "已展开";
+
+/* How long a step took, when it was under a second. */
+"workbench.sessions.duration.lessThanSecond" = "<1 秒";
+
+/* How long a step took, under a minute. seconds is a formatted number that may have one decimal, which is why this is distinct-from: quota.freshness.age.seconds (an integer age). */
+"workbench.sessions.duration.seconds" = "%@ 秒";
 
 /* Sessions list empty state when the SQLite index would not open */
 "workbench.sessions.empty.indexUnavailableDetail" = "无法打开 ~/.vibebar 下的会话索引，本次运行期间无法列出会话。";
@@ -5202,8 +5247,44 @@
 /* Sessions filter bar status when the SQLite index would not open */
 "workbench.sessions.index.unavailable" = "索引不可用";
 
+/* Chip on a session row or header: another agent created this thread as a peer. */
+"workbench.sessions.kind.agentCreated" = "代理线程";
+
+/* Chip on a session row or header: a scheduled automation started this session. */
+"workbench.sessions.kind.automation" = "自动化";
+
+/* Chip on a session row or header: a headless run (codex exec, an SDK call) nobody typed into. */
+"workbench.sessions.kind.exec" = "无头运行";
+
+/* Chip on a session row or header: the session is a fork of another session. */
+"workbench.sessions.kind.fork" = "分叉";
+
+/* Chip on a session row or header: the session is a subagent another session started. */
+"workbench.sessions.kind.subagent" = "子代理";
+
+/* Help for the toolbar button that toggles the Sessions page's contents column. */
+"workbench.sessions.layout.outlineHelp" = "显示或隐藏对话目录";
+
 /* Notice at the foot of the Sessions list when it stops at the loaded-summary ceiling */
 "workbench.sessions.list.capNotice" = "当前只显示 %2$lld 个会话中的前 %1$lld 个。缩小筛选范围或使用搜索以查看其余会话。";
+
+/* Help for the capsule that folds a session row's subagent threads away. */
+"workbench.sessions.list.collapseThreads" = "隐藏此会话发起的子线程";
+
+/* Tooltip on a session row's cost figure. The amount is already formatted. */
+"workbench.sessions.list.costHelp" = "按公开价格估算的费用：%@";
+
+/* Help for the capsule that unfolds a session row's subagent threads. */
+"workbench.sessions.list.expandThreads" = "显示此会话发起的子线程";
+
+/* Shown under a Claude Code session row while its subagent transcripts are listed. */
+"workbench.sessions.list.loadingThreads" = "正在读取子线程…";
+
+/* Tooltip on a session row's token figure. The figure is already formatted. */
+"workbench.sessions.list.tokensHelp" = "本会话共 %@ tokens";
+
+/* Title of a session row when the log has no title and no readable first prompt. */
+"workbench.sessions.list.untitled" = "未命名会话";
 
 /* Context menu item on a transcript message card */
 "workbench.sessions.message.copy" = "复制消息";
@@ -5216,6 +5297,54 @@
 
 /* Button that unfolds a long transcript message; {count} is the message's length in characters */
 "workbench.sessions.message.showMore" = "展开全部（%lld 字符）";
+
+/* Breadcrumb button above a subagent thread that returns to the session that started it. */
+"workbench.sessions.meta.back" = "返回 %@";
+
+/* Tooltip on the conversation header's branch chip. */
+"workbench.sessions.meta.branchHelp" = "Git 分支";
+
+/* Conversation header fact: the estimated cost. The amount is already formatted. */
+"workbench.sessions.meta.costEstimate" = "约 %@";
+
+/* Tooltip on the conversation header's cost figure. */
+"workbench.sessions.meta.costHelp" = "按日志中的 token 与公开价格估算。";
+
+/* Conversation header fact when part of the usage has no known price. */
+"workbench.sessions.meta.costLowerBound" = "至少 %@";
+
+/* Tooltip on the conversation header's cost figure when it is a lower bound. */
+"workbench.sessions.meta.costLowerBoundHelp" = "部分用量所用模型没有已知价格，此为下限。";
+
+/* Tooltip on the conversation header's model chips. */
+"workbench.sessions.meta.modelsHelp" = "本会话使用的模型";
+
+/* Conversation header overflow menu. distinct-from: usage.yearHeatmap.more (that one is the high end of a heatmap legend, not a menu). */
+"workbench.sessions.meta.more" = "更多";
+
+/* Help for the conversation header button that opens the session's working directory. */
+"workbench.sessions.meta.openFolder" = "打开项目文件夹";
+
+/* Tooltip on the conversation header's project-folder chip. */
+"workbench.sessions.meta.revealFolder" = "在 Finder 中显示 %@";
+
+/* Conversation header overflow menu item. */
+"workbench.sessions.meta.revealLog" = "在 Finder 中显示会话日志";
+
+/* Tooltip on the conversation header's time range. Both values are formatted dates. */
+"workbench.sessions.meta.timeHelp" = "开始于 %1$@，最后活动于 %2$@";
+
+/* Tooltip on the conversation header's token figure. Every value is already formatted. */
+"workbench.sessions.meta.tokensHelp" = "输入 %1$@ · 输出 %2$@ · 缓存读取 %3$@ · 缓存写入 %4$@";
+
+/* Tooltip on the conversation header's token figure when no per-bucket breakdown exists. */
+"workbench.sessions.meta.tokensTotalOnly" = "此会话只记录了总量。";
+
+/* Conversation header fact when some actions failed. calls is the already-formatted tool-call count phrase; failed is a formatted number. */
+"workbench.sessions.meta.toolCallsFailed" = "%1$@，%2$@ 个失败";
+
+/* Conversation header fact: Auto Review verdicts on this session's turns. Values are formatted numbers. */
+"workbench.sessions.meta.verdicts" = "Auto Review：允许 %1$@，拒绝 %2$@";
 
 /* Sessions row context menu and transcript resume row: run the resume command in a terminal */
 "workbench.sessions.openInTerminal" = "在 Terminal 中打开";
@@ -5256,6 +5385,18 @@
 /* Sessions group heading, footer label and Details value for a Codex task started without a project */
 "workbench.sessions.project.projectless" = "未指定项目";
 
+/* Tooltip on the All row of the Sessions page's harness column. */
+"workbench.sessions.rail.allHelp" = "显示所有 Harness 的会话";
+
+/* Help for the button that shrinks the Sessions page's harness column to icons. */
+"workbench.sessions.rail.collapse" = "收起 Harness 栏";
+
+/* Help for the button that widens the Sessions page's harness column back to names and counts. */
+"workbench.sessions.rail.expand" = "展开 Harness 栏";
+
+/* Tooltip on a harness row in the Sessions page's left column. */
+"workbench.sessions.rail.selectHelp" = "只显示 %@。按住 ⌘ 点击可加入或移出选择。";
+
 /* Sessions When menu option: no lower bound */
 "workbench.sessions.range.all" = "全部时间";
 
@@ -5265,8 +5406,17 @@
 /* Heading above the shell line that reopens a session, in the transcript Details */
 "workbench.sessions.resume.heading" = "恢复命令";
 
+/* Primary button of the conversation header: reopens the session in the named terminal app. */
+"workbench.sessions.resume.inTerminal" = "在 %@ 中恢复";
+
 /* Shown in the transcript Details when the provider offers no resume command */
 "workbench.sessions.resume.none" = "该会话没有命令行入口。";
+
+/* Help for the dropdown half of the resume button. */
+"workbench.sessions.resume.options" = "选择恢复方式";
+
+/* Help on the disabled resume button of a subagent thread. */
+"workbench.sessions.resume.subagentHelp" = "子代理线程需通过发起它的会话恢复。";
 
 /* Role label on a transcript message card */
 "workbench.sessions.role.assistant" = "助手";
@@ -5346,6 +5496,66 @@
 /* Sessions Sort menu option */
 "workbench.sessions.sort.recentFirst" = "最新优先";
 
+/* Caption above a step's argument summary in its detail. */
+"workbench.sessions.step.arguments" = "参数";
+
+/* A note step: the harness compacted the conversation context here. */
+"workbench.sessions.step.compaction" = "上下文已压缩";
+
+/* Step detail for a shell command. code is the number as text. */
+"workbench.sessions.step.exitCode" = "退出码 %@";
+
+/* Status of a step whose result reported failure. */
+"workbench.sessions.step.failed" = "失败";
+
+/* Step detail when the log kept neither arguments nor a result. */
+"workbench.sessions.step.noDetail" = "此步骤没有记录输出。";
+
+/* Button on a subagent step that opens the thread it started. */
+"workbench.sessions.step.openThread" = "打开子线程";
+
+/* Step detail: a result whose call is not in the log. */
+"workbench.sessions.step.orphan" = "缺少调用的结果";
+
+/* Step detail: the call has no result in the log. */
+"workbench.sessions.step.pending" = "无结果记录";
+
+/* Caption above a step's result summary in its detail. */
+"workbench.sessions.step.result" = "结果";
+
+/* Status of a step whose result reported success. */
+"workbench.sessions.step.succeeded" = "成功";
+
+/* A thinking step in a turn's process. count is a formatted number. */
+"workbench.sessions.step.thinking" = "思考 · %@ 字";
+
+/* A thinking step whose text is encrypted in the log. */
+"workbench.sessions.step.thinkingHidden" = "思考（不可读）";
+
+/* Threads menu item that folds every session's threads. */
+"workbench.sessions.threads.collapseAll" = "收起全部子线程";
+
+/* Threads menu item that unfolds every session's threads. */
+"workbench.sessions.threads.expandAll" = "展开全部子线程";
+
+/* Explanation at the top of the Threads menu on the Sessions page. */
+"workbench.sessions.threads.foldedNote" = "子代理与分叉折叠在发起它们的会话下。";
+
+/* Detail on the Threads toolbar pill: how many loaded rows the thread filters hide. */
+"workbench.sessions.threads.hidden" = "已隐藏 %@";
+
+/* Toolbar menu on the Sessions page that controls how threads and headless runs are listed. */
+"workbench.sessions.threads.menu" = "线程";
+
+/* Help for the Threads toolbar menu on the Sessions page. */
+"workbench.sessions.threads.menuHelp" = "选择列表显示哪些线程与无头运行";
+
+/* Toggle in the Threads menu. The count is how many loaded rows it would add. */
+"workbench.sessions.threads.showAutomation" = "显示自动化任务（%@）";
+
+/* Toggle in the Threads menu. The count is how many loaded rows it would add. */
+"workbench.sessions.threads.showExec" = "显示无头运行（%@）";
+
 /* Sessions toast after turning message indexing off and the stored excerpts could not be dropped */
 "workbench.sessions.toast.bodyIndexDropFailed" = "清除已索引的消息正文失败。";
 
@@ -5382,6 +5592,15 @@
 /* Sessions toast after copying a session log's path */
 "workbench.sessions.toast.sourcePathCopied" = "源文件路径已复制。";
 
+/* Heading of the Sessions page's right column: one entry per turn. */
+"workbench.sessions.toc.heading" = "目录";
+
+/* Help for the button that hides the contents column. */
+"workbench.sessions.toc.hide" = "隐藏目录";
+
+/* Shown in the contents column for a session whose harness has no turn structure. */
+"workbench.sessions.toc.unsupported" = "回合目录仅支持 Codex 与 Claude Code 会话；原始记录有自己的提问目录。";
+
 /* Separator inserted in a transcript where a Codex Auto Review child session is merged in. Auto Review is Codex's own feature name and stays in English. */
 "workbench.sessions.transcript.autoReviewDivider" = "Auto Review";
 
@@ -5414,6 +5633,99 @@
 
 /* Truncation banner detail. Both sizes arrive already formatted as byte counts. */
 "workbench.sessions.transcript.truncatedDetail" = "已读取 %2$@ 中的 %1$@。完整读取会把整份对话记录留在内存中。";
+
+/* Toast after copying an answer. */
+"workbench.sessions.turn.answerCopied" = "回答已复制。";
+
+/* Button on a stopped turn placeholder. */
+"workbench.sessions.turn.continueLoading" = "继续读取";
+
+/* Help for the copy button on an answer. */
+"workbench.sessions.turn.copyAnswer" = "复制回答";
+
+/* Help for the copy button on a prompt bubble. */
+"workbench.sessions.turn.copyPrompt" = "复制提问";
+
+/* Help for collapsing a turn's process row. */
+"workbench.sessions.turn.hideSteps" = "隐藏执行步骤";
+
+/* Tooltip on the injected-blocks note of a turn header. */
+"workbench.sessions.turn.injectedHelp" = "工具自动附加到这次提问的上下文（指令、环境、提醒）只计数，不显示。";
+
+/* Placeholder for a turn whose detail is still being read. */
+"workbench.sessions.turn.loading" = "正在读取此回合…";
+
+/* Header of one turn in the conversation. number is a formatted ordinal. */
+"workbench.sessions.turn.ordinal" = "第 %@ 轮";
+
+/* Label in place of a prompt bubble: another agent sent this turn's task. */
+"workbench.sessions.turn.origin.agent" = "来自其他代理";
+
+/* Label in place of a prompt bubble: a scheduled automation opened this turn. */
+"workbench.sessions.turn.origin.automation" = "由自动化任务发起";
+
+/* Label in place of a prompt bubble: an Auto Review request opened this turn. */
+"workbench.sessions.turn.origin.guardianRequest" = "审查请求";
+
+/* Label in place of a prompt bubble: the turn opened without a new prompt. */
+"workbench.sessions.turn.origin.none" = "继续执行";
+
+/* Label of the collapsible row that lists what the agent did in a turn. */
+"workbench.sessions.turn.process" = "执行过程";
+
+/* Toast after copying a prompt. */
+"workbench.sessions.turn.promptCopied" = "提问已复制。";
+
+/* Help for expanding a turn's process row. */
+"workbench.sessions.turn.showSteps" = "显示执行步骤";
+
+/* Turn header chip: the conversation was rewound past this turn. */
+"workbench.sessions.turn.status.abandoned" = "已回退";
+
+/* Tooltip on the Rewound chip of a turn header. */
+"workbench.sessions.turn.status.abandonedHelp" = "对话已回退到此回合之前，它不再属于当前对话线。";
+
+/* Turn header chip: the turn was stopped before it finished. */
+"workbench.sessions.turn.status.aborted" = "已中断";
+
+/* Turn header chip: the log ends without the turn finishing. */
+"workbench.sessions.turn.status.open" = "未完成";
+
+/* Placeholder for a turn left unread when loading was stopped. */
+"workbench.sessions.turn.stopped" = "读取在此回合前停止。";
+
+/* Process row label for a turn whose only steps are thinking. */
+"workbench.sessions.turn.thinking" = "思考";
+
+/* Placeholder for a turn whose detail could not be read. */
+"workbench.sessions.turn.unavailable" = "无法读取此回合，日志在打开后可能已变化。";
+
+/* Badge on a turn header: Auto Review allowed the turn's action. */
+"workbench.sessions.verdict.allow" = "允许";
+
+/* Badge on a turn header: Auto Review denied the turn's action. */
+"workbench.sessions.verdict.deny" = "拒绝";
+
+/* Tooltip on an Auto Review badge. */
+"workbench.sessions.verdict.help" = "Auto Review 对此回合的裁决";
+
+/* Badge on a turn header: the risk level Auto Review assigned, as the reviewer wrote it. */
+"workbench.sessions.verdict.risk" = "风险 %@";
+
+/* Help for the conversation view switch. */
+"workbench.sessions.view.help" = "在回合视图与原始记录之间切换";
+
+/* Segment of the conversation view switch: the raw message transcript. */
+"workbench.sessions.view.raw" = "原始";
+
+/* Banner above the turn view when a full-text search hit opened the session. */
+"workbench.sessions.view.searchHit" = "搜索命中了本会话中的一条消息。";
+
+/* Button on the search-hit banner. */
+"workbench.sessions.view.showHit" = "在原始记录中查看";
+
+/* Segment of the conversation view switch: the structured turn-by-turn view. */
+"workbench.sessions.view.turns" = "回合";
 
 /* Last clause of the per-harness count tooltip: skills linked into the harness but switched off in its own config. */
 "workbench.skills.appCountNativeDisabled" = "%lld 个已投影但被停用";
@@ -6176,3 +6488,264 @@
 
 /* Workbench header status for the Usage Stats page; time is a clock time distinct-from: workbench.skills.toast.updated — a toast naming the skill it re-fetched and a header line naming the time it refreshed are different sentences. */
 "workbench.status.updated" = "更新于 %@";
+
+/* Usage page project picker: the entry that removes the project filter. */
+"workbench.usage.filter.allProjects" = "全部项目";
+
+/* Tooltip on the Usage page Clear button. */
+"workbench.usage.filter.clearHelp" = "清除 harness、模型与项目筛选";
+
+/* Usage page toolbar: label of the project (working directory) picker. */
+"workbench.usage.filter.project" = "项目";
+
+/* Tooltip on the Usage page project picker. */
+"workbench.usage.filter.projectHelp" = "项目指会话运行所在的目录；worktree 计入其所属仓库。";
+
+/* Search field at the top of the Usage page project picker. */
+"workbench.usage.filter.searchProjects" = "查找项目";
+
+/* Harness health card footnote: what a local log cannot show. */
+"workbench.usage.health.composition" = "Prompt 构成（系统提示词、工具、记忆、文件）需要网关数据。";
+
+/* Harness health card header. Both values arrive formatted. */
+"workbench.usage.health.counts" = "%1$@ 条请求 · %2$@ 个会话";
+
+/* Usage page harness health section with nothing to show. */
+"workbench.usage.health.empty" = "此范围内没有 harness 活动";
+
+/* Harness health metric: share of the prompt served from cache. */
+"workbench.usage.health.metric.cacheHit" = "缓存命中率";
+
+/* Harness health metric: failed share of parsed tool calls. */
+"workbench.usage.health.metric.failures" = "工具失败率";
+
+/* Harness health metric: median prompt growth per request. */
+"workbench.usage.health.metric.growth" = "每请求增长";
+
+/* Harness health metric: the largest prompt. */
+"workbench.usage.health.metric.largest" = "最大";
+
+/* Harness health metric: median prompt of a session's first request. */
+"workbench.usage.health.metric.start" = "起始大小";
+
+/* Harness health metric: median prompt size per request. */
+"workbench.usage.health.metric.typical" = "典型 prompt";
+
+/* Harness health metric: the model's context window. */
+"workbench.usage.health.metric.window" = "上下文窗口";
+
+/* Harness health card: the models this harness used most in the range. */
+"workbench.usage.health.models" = "最近使用的模型";
+
+/* Harness health rating, score 90 and up. */
+"workbench.usage.health.rating.excellent" = "优秀";
+
+/* Harness health rating, score 55–74. */
+"workbench.usage.health.rating.fair" = "一般";
+
+/* Harness health rating, score 75–89. */
+"workbench.usage.health.rating.good" = "良好";
+
+/* Harness health rating, score under 55. distinct-from: status.overview.needsAttention (a verdict on prompt health, not a status tile; zh reads 需关注). */
+"workbench.usage.health.rating.poor" = "需关注";
+
+/* Harness health rating when no part of the score has evidence. */
+"workbench.usage.health.rating.unknown" = "数据不足";
+
+/* Tooltip on a harness health score. */
+"workbench.usage.health.scoreHelp" = "加权：缓存 35%%、起步精简 20%%、增长节奏 20%%、可靠性 25%%。无数据的部分不计入。";
+
+/* Harness health part: how small a session's first prompt is. */
+"workbench.usage.health.sub.leanStart" = "起步精简";
+
+/* Harness health part: how slowly prompts grow per request. distinct-from: menuBar.composer.metric.pace (quota burn pace, a different measure). */
+"workbench.usage.health.sub.pace" = "增长节奏";
+
+/* Harness health part: how few tool calls fail. */
+"workbench.usage.health.sub.reliability" = "可靠性";
+
+/* Subtitle of the Usage page harness health section. */
+"workbench.usage.health.subtitle" = "各 harness 的 prompt 是否精简、缓存是否高效";
+
+/* Usage page section of per-harness prompt health cards. */
+"workbench.usage.health.title" = "Harness 健康度";
+
+/* Usage page by-hour card. {slot} is a weekday and hour, already formatted. */
+"workbench.usage.heatmap.busiest" = "最忙：%@";
+
+/* Usage page by-hour card with nothing to place on the clock. */
+"workbench.usage.heatmap.empty" = "此范围内没有逐请求记录";
+
+/* Subtitle of the Usage page by-hour card. */
+"workbench.usage.heatmap.subtitle" = "按星期与小时统计的请求（本地时间）";
+
+/* Usage page card: requests by weekday and hour. */
+"workbench.usage.heatmap.title" = "按时段";
+
+/* Usage page hero tile title: clock hours with at least one request. */
+"workbench.usage.hero.activeTime" = "活跃时长";
+
+/* Usage page hero tile under cache reads. {rate} is a formatted percentage. */
+"workbench.usage.hero.cacheDetail" = "命中率 %@";
+
+/* Usage page hero tile under the cost when every request had a price. */
+"workbench.usage.hero.costDetail" = "按生效价格计";
+
+/* Usage page hero tile under the cost when some usage had no price; the value carries a +. */
+"workbench.usage.hero.costUnpriced" = "另有未计价用量";
+
+/* Usage page hero tile under the project count. {name} is a directory name, {share} a percentage. */
+"workbench.usage.hero.projectsDetail" = "最多：%1$@ · %2$@";
+
+/* Usage page hero tile under the session count. Values are compact token counts. */
+"workbench.usage.hero.sessionsDetail" = "中位 %1$@ · p90 %2$@ token";
+
+/* Usage page hero tile under the token total. Prompt is everything sent to the model (fresh input plus cache read and write), Out the output. */
+"workbench.usage.hero.tokensDetail" = "提示词 %1$@ · 输出 %2$@";
+
+/* Usage page range control: the last 90 local calendar days, today included. */
+"workbench.usage.range.quarter" = "90 天";
+
+/* Usage page models card with no model. */
+"workbench.usage.ranking.emptyModels" = "此范围内没有模型记录";
+
+/* Usage page projects card with no project. */
+"workbench.usage.ranking.emptyProjects" = "此范围内没有项目记录";
+
+/* Footer of the Usage page project or model ranking: entries past the top six and their tokens. */
+"workbench.usage.ranking.more" = "另 %1$lld 项 · %2$@";
+
+/* Usage page recent sessions when the search finds nothing. */
+"workbench.usage.recent.noMatch" = "没有会话匹配“%@”";
+
+/* Usage page recent sessions footer. Values arrive formatted. */
+"workbench.usage.recent.showing" = "显示 %1$@/%2$@";
+
+/* Usage page card listing sessions active in the range, newest first. */
+"workbench.usage.recent.title" = "最近会话";
+
+/* Usage page recent-session row token breakdown. Values are compact token counts. */
+"workbench.usage.recent.tokens" = "输入 %1$@ · 输出 %2$@ · 缓存 %3$@";
+
+/* Usage page session card with no session. */
+"workbench.usage.session.empty" = "此范围内没有会话";
+
+/* Usage page session row whose harness keeps no per-session tokens on this Mac. */
+"workbench.usage.session.noTokens" = "本机无 token 记录";
+
+/* Tooltip on a Usage page session row; clicking opens the Sessions page on it. */
+"workbench.usage.session.openHelp" = "在会话页中打开";
+
+/* Tooltip on a Usage page session's figure when it comes from the ledger. */
+"workbench.usage.session.sourceLedger" = "Token 与费用取自用量账本中该会话的记录——与本页所有合计同源。";
+
+/* Tooltip on a Codex session's figure on the Usage page. */
+"workbench.usage.session.sourceLog" = "Codex 不在用量账本中记录会话 ID，此会话的 token 与费用取自解析后的会话日志。";
+
+/* Usage page session row whose session has no title. distinct-from: workbench.sessions.list.untitled — the Usage row keeps its own key so the two pages can diverge in wording. */
+"workbench.usage.session.untitled" = "未命名会话";
+
+/* Usage page session-shape bin label for the open last bin. */
+"workbench.usage.shape.atLeast" = "%@+";
+
+/* Usage page session-shape card. {value} is already formatted. */
+"workbench.usage.shape.median" = "中位数 %@";
+
+/* Usage page session-shape metric: wall-clock length of a session. */
+"workbench.usage.shape.metric.duration" = "时长";
+
+/* Usage page session-shape metric: tool calls per session. */
+"workbench.usage.shape.metric.toolCalls" = "工具调用";
+
+/* Usage page session-shape bin label, both ends included. */
+"workbench.usage.shape.range" = "%1$@–%2$@";
+
+/* Usage page card: how sessions are distributed by size. */
+"workbench.usage.shape.title" = "会话形态";
+
+/* Usage page session-shape bin label for the first duration bin. */
+"workbench.usage.shape.under" = "%@ 以内";
+
+/* Usage page skills card with nothing to list. */
+"workbench.usage.skills.empty" = "已分析的会话中没有技能使用记录";
+
+/* Usage page skills row. {when} is a relative time. */
+"workbench.usage.skills.lastUsed" = "最近使用 %@";
+
+/* Usage page skills row. {projects} is a list of directory names. */
+"workbench.usage.skills.projects" = "用于 %@";
+
+/* Subtitle of the Usage page skills card. */
+"workbench.usage.skills.subtitle" = "来自已分析的 Codex 与 Claude Code 会话";
+
+/* Usage page status line while session files are parsed for tools, skills and per-session cost. */
+"workbench.usage.status.analyzing" = "正在后台读取会话 · %1$lld/%2$lld 已就绪";
+
+/* Usage page note when the range reaches past the ledger's request-level detail. {date} is a formatted day. */
+"workbench.usage.status.hourlyFrom" = "按小时的卡片从 %@ 起；更早的日期只有每日汇总。";
+
+/* Usage page note when the local session index has never been built. */
+"workbench.usage.status.indexEmpty" = "会话索引建立后才会显示会话，正在建立。";
+
+/* Usage page note: daily rollups carry no project, so a project filter leaves them out. */
+"workbench.usage.status.projectDetailOnly" = "按项目筛选仅覆盖逐请求明细。";
+
+/* Usage page trend legend and tooltip: everything sent to the model in a bar — fresh input plus cache read and write, as opposed to In, the fresh part alone. */
+"workbench.usage.tokens.prompt" = "提示词";
+
+/* Column header on the Usage page tools card. */
+"workbench.usage.tools.calls" = "调用";
+
+/* Kind of tool on the Usage page tools card: subagents, plans and skills. */
+"workbench.usage.tools.category.agent" = "代理";
+
+/* Kind of tool on the Usage page tools card: writing and patching files. distinct-from: workbench.library.edit (a noun naming a kind of tool, not the verb on a button). */
+"workbench.usage.tools.category.edit" = "编辑";
+
+/* Kind of tool on the Usage page tools card: reading and searching files. */
+"workbench.usage.tools.category.read" = "读取";
+
+/* Kind of tool on the Usage page tools card: shell and code execution. */
+"workbench.usage.tools.category.shell" = "终端";
+
+/* Kind of tool on the Usage page tools card: web search and fetch. */
+"workbench.usage.tools.category.web" = "网页";
+
+/* Usage page tools card with nothing to list. */
+"workbench.usage.tools.empty" = "已分析的会话中没有工具调用";
+
+/* Column header on the Usage page tools card. */
+"workbench.usage.tools.share" = "占比";
+
+/* Usage page card ranking tools by calls. */
+"workbench.usage.tools.title" = "工具使用";
+
+/* Usage page tools card: heading over the weekly stacked bars. */
+"workbench.usage.tools.weekly" = "按类别每周";
+
+/* Usage page card listing the sessions with the most tokens, cost or active time. */
+"workbench.usage.topSessions.title" = "最耗会话";
+
+/* Accessibility label of the Usage page trend chart. */
+"workbench.usage.trend.a11y" = "用量趋势图";
+
+/* Usage page trend card with nothing to draw. */
+"workbench.usage.trend.empty" = "此范围内没有用量";
+
+/* Usage page metric: active hours (trend) or active time (heaviest sessions). */
+"workbench.usage.trend.metric.active" = "活跃";
+
+/* Usage page metric: requests (trend) or messages per session (session shape). */
+"workbench.usage.trend.metric.messages" = "消息";
+
+/* Usage page trend metric: output tokens only. */
+"workbench.usage.trend.metric.output" = "输出 Token";
+
+/* Usage page trend control: stack each bar as prompt under output (the other choice splits it by harness). */
+"workbench.usage.trend.splitFlow" = "提示词 · 输出";
+
+/* Usage page trend card title with one bar per day. */
+"workbench.usage.trend.titleDaily" = "每日趋势";
+
+/* Usage page trend card title when a long range is drawn one bar per week. */
+"workbench.usage.trend.titleWeekly" = "每周趋势";

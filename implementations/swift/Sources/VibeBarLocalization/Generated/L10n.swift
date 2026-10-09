@@ -11507,6 +11507,92 @@ public enum L10n {
                 public static var labelUnselected: String { L10nSupport.string("workbench.sessions.allChip.labelUnselected") }
             }
 
+            public enum Conversation {
+                /// Shown after the user stopped a session from loading.
+                ///
+                /// Key: `workbench.sessions.conversation.cancelled`
+                /// en: "Reading this session was stopped."
+                public static var cancelled: String { L10nSupport.string("workbench.sessions.conversation.cancelled") }
+
+                /// Toast when a subagent step's thread cannot be opened.
+                ///
+                /// Key: `workbench.sessions.conversation.childNotFound`
+                /// en: "That thread's log was not found."
+                public static var childNotFound: String { L10nSupport.string("workbench.sessions.conversation.childNotFound") }
+
+                /// Menu item that closes every loaded turn's process.
+                ///
+                /// Key: `workbench.sessions.conversation.collapseAll`
+                /// en: "Collapse every turn's steps"
+                public static var collapseAll: String { L10nSupport.string("workbench.sessions.conversation.collapseAll") }
+
+                /// Shown for a session log with no turns.
+                ///
+                /// Key: `workbench.sessions.conversation.empty`
+                /// en: "This session has no turns yet."
+                public static var empty: String { L10nSupport.string("workbench.sessions.conversation.empty") }
+
+                /// Menu item that opens every loaded turn's process.
+                ///
+                /// Key: `workbench.sessions.conversation.expandAll`
+                /// en: "Expand every turn's steps"
+                public static var expandAll: String { L10nSupport.string("workbench.sessions.conversation.expandAll") }
+
+                /// Button that scrolls a conversation back to its end.
+                ///
+                /// Key: `workbench.sessions.conversation.jumpLatest`
+                /// en: "Jump to the latest turn"
+                public static var jumpLatest: String { L10nSupport.string("workbench.sessions.conversation.jumpLatest") }
+
+                /// Button at the top of a conversation. count is a formatted number of turns not yet shown.
+                ///
+                /// Key: `workbench.sessions.conversation.loadEarlier`
+                /// en: "Load earlier turns ({count} more)"
+                public static func loadEarlier(count: String) -> String {
+                    L10nSupport.format("workbench.sessions.conversation.loadEarlier", count)
+                }
+
+                /// Button at the bottom of a conversation opened at an earlier turn. count is a formatted number.
+                ///
+                /// Key: `workbench.sessions.conversation.loadLater`
+                /// en: "Load later turns ({count} more)"
+                public static func loadLater(count: String) -> String {
+                    L10nSupport.format("workbench.sessions.conversation.loadLater", count)
+                }
+
+                /// Shown while a session's turns are being read.
+                ///
+                /// Key: `workbench.sessions.conversation.loadingOutline`
+                /// en: "Reading the session's structure…"
+                public static var loadingOutline: String { L10nSupport.string("workbench.sessions.conversation.loadingOutline") }
+
+                /// Progress while a large session's turns are read one at a time. Values are formatted numbers.
+                ///
+                /// Key: `workbench.sessions.conversation.loadingTurns`
+                /// en: "Reading turns {done} of {total}"
+                public static func loadingTurns(done: String, total: String) -> String {
+                    L10nSupport.format("workbench.sessions.conversation.loadingTurns", done, total)
+                }
+
+                /// Shown when a session log could not be parsed into turns.
+                ///
+                /// Key: `workbench.sessions.conversation.unreadable`
+                /// en: "This session's structure could not be read."
+                public static var unreadable: String { L10nSupport.string("workbench.sessions.conversation.unreadable") }
+
+                /// Button offered when a session's structure could not be read.
+                ///
+                /// Key: `workbench.sessions.conversation.viewRaw`
+                /// en: "Open the raw transcript"
+                public static var viewRaw: String { L10nSupport.string("workbench.sessions.conversation.viewRaw") }
+
+                /// Note in the conversation header for a log above the full-parse limit.
+                ///
+                /// Key: `workbench.sessions.conversation.windowed`
+                /// en: "Large log: turns are read one at a time."
+                public static var windowed: String { L10nSupport.string("workbench.sessions.conversation.windowed") }
+            }
+
             public enum Count {
                 /// Sessions filter bar counter when the whole filtered list is on screen
                 ///
@@ -11561,6 +11647,22 @@ public enum L10n {
                 /// Key: `workbench.sessions.details.expanded`
                 /// en: "Expanded"
                 public static var expanded: String { L10nSupport.string("workbench.sessions.details.expanded") }
+            }
+
+            public enum Duration {
+                /// How long a step took, when it was under a second.
+                ///
+                /// Key: `workbench.sessions.duration.lessThanSecond`
+                /// en: "<1s"
+                public static var lessThanSecond: String { L10nSupport.string("workbench.sessions.duration.lessThanSecond") }
+
+                /// How long a step took, under a minute. seconds is a formatted number that may have one decimal, which is why this is distinct-from: quota.freshness.age.seconds (an integer age).
+                ///
+                /// Key: `workbench.sessions.duration.seconds`
+                /// en: "{seconds}s"
+                public static func seconds(seconds: String) -> String {
+                    L10nSupport.format("workbench.sessions.duration.seconds", seconds)
+                }
             }
 
             public enum Empty {
@@ -11791,6 +11893,46 @@ public enum L10n {
                 public static var unavailable: String { L10nSupport.string("workbench.sessions.index.unavailable") }
             }
 
+            public enum Kind {
+                /// Chip on a session row or header: another agent created this thread as a peer.
+                ///
+                /// Key: `workbench.sessions.kind.agentCreated`
+                /// en: "Agent thread"
+                public static var agentCreated: String { L10nSupport.string("workbench.sessions.kind.agentCreated") }
+
+                /// Chip on a session row or header: a scheduled automation started this session.
+                ///
+                /// Key: `workbench.sessions.kind.automation`
+                /// en: "Automation"
+                public static var automation: String { L10nSupport.string("workbench.sessions.kind.automation") }
+
+                /// Chip on a session row or header: a headless run (codex exec, an SDK call) nobody typed into.
+                ///
+                /// Key: `workbench.sessions.kind.exec`
+                /// en: "Headless"
+                public static var exec: String { L10nSupport.string("workbench.sessions.kind.exec") }
+
+                /// Chip on a session row or header: the session is a fork of another session.
+                ///
+                /// Key: `workbench.sessions.kind.fork`
+                /// en: "Fork"
+                public static var fork: String { L10nSupport.string("workbench.sessions.kind.fork") }
+
+                /// Chip on a session row or header: the session is a subagent another session started.
+                ///
+                /// Key: `workbench.sessions.kind.subagent`
+                /// en: "Subagent"
+                public static var subagent: String { L10nSupport.string("workbench.sessions.kind.subagent") }
+            }
+
+            public enum Layout {
+                /// Help for the toolbar button that toggles the Sessions page's contents column.
+                ///
+                /// Key: `workbench.sessions.layout.outlineHelp`
+                /// en: "Show or hide the conversation contents"
+                public static var outlineHelp: String { L10nSupport.string("workbench.sessions.layout.outlineHelp") }
+            }
+
             public enum List {
                 /// Notice at the foot of the Sessions list when it stops at the loaded-summary ceiling
                 ///
@@ -11799,6 +11941,54 @@ public enum L10n {
                 public static func capNotice(shown: Int, total: Int) -> String {
                     L10nSupport.format("workbench.sessions.list.capNotice", shown, total)
                 }
+
+                /// Help for the capsule that folds a session row's subagent threads away.
+                ///
+                /// Key: `workbench.sessions.list.collapseThreads`
+                /// en: "Hide the threads this session started"
+                public static var collapseThreads: String { L10nSupport.string("workbench.sessions.list.collapseThreads") }
+
+                /// Tooltip on a session row's cost figure. The amount is already formatted.
+                ///
+                /// Key: `workbench.sessions.list.costHelp`
+                /// en: "Estimated cost at list prices: {cost}"
+                public static func costHelp(cost: String) -> String {
+                    L10nSupport.format("workbench.sessions.list.costHelp", cost)
+                }
+
+                /// Help for the capsule that unfolds a session row's subagent threads.
+                ///
+                /// Key: `workbench.sessions.list.expandThreads`
+                /// en: "Show the threads this session started"
+                public static var expandThreads: String { L10nSupport.string("workbench.sessions.list.expandThreads") }
+
+                /// Shown under a Claude Code session row while its subagent transcripts are listed.
+                ///
+                /// Key: `workbench.sessions.list.loadingThreads`
+                /// en: "Reading threads…"
+                public static var loadingThreads: String { L10nSupport.string("workbench.sessions.list.loadingThreads") }
+
+                /// Capsule on a session row: how many subagent or fork threads are folded under it.
+                ///
+                /// Key: `workbench.sessions.list.threadCount`
+                /// en: "{count, plural, one {1 thread} other {# threads}}"
+                public static func threadCount(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.list.threadCount", count)
+                }
+
+                /// Tooltip on a session row's token figure. The figure is already formatted.
+                ///
+                /// Key: `workbench.sessions.list.tokensHelp`
+                /// en: "{tokens} tokens in this session"
+                public static func tokensHelp(tokens: String) -> String {
+                    L10nSupport.format("workbench.sessions.list.tokensHelp", tokens)
+                }
+
+                /// Title of a session row when the log has no title and no readable first prompt.
+                ///
+                /// Key: `workbench.sessions.list.untitled`
+                /// en: "Untitled session"
+                public static var untitled: String { L10nSupport.string("workbench.sessions.list.untitled") }
             }
 
             public enum Message {
@@ -11826,6 +12016,152 @@ public enum L10n {
                 /// en: "Show more ({count} chars)"
                 public static func showMore(count: Int) -> String {
                     L10nSupport.format("workbench.sessions.message.showMore", count)
+                }
+            }
+
+            public enum Meta {
+                /// Breadcrumb button above a subagent thread that returns to the session that started it.
+                ///
+                /// Key: `workbench.sessions.meta.back`
+                /// en: "Back to {title}"
+                public static func back(title: String) -> String {
+                    L10nSupport.format("workbench.sessions.meta.back", title)
+                }
+
+                /// Tooltip on the conversation header's branch chip.
+                ///
+                /// Key: `workbench.sessions.meta.branchHelp`
+                /// en: "Git branch"
+                public static var branchHelp: String { L10nSupport.string("workbench.sessions.meta.branchHelp") }
+
+                /// Conversation header fact: the estimated cost. The amount is already formatted.
+                ///
+                /// Key: `workbench.sessions.meta.costEstimate`
+                /// en: "≈ {cost}"
+                public static func costEstimate(cost: String) -> String {
+                    L10nSupport.format("workbench.sessions.meta.costEstimate", cost)
+                }
+
+                /// Tooltip on the conversation header's cost figure.
+                ///
+                /// Key: `workbench.sessions.meta.costHelp`
+                /// en: "Estimated at list prices from the tokens in the log."
+                public static var costHelp: String { L10nSupport.string("workbench.sessions.meta.costHelp") }
+
+                /// Conversation header fact when part of the usage has no known price.
+                ///
+                /// Key: `workbench.sessions.meta.costLowerBound`
+                /// en: "≥ {cost}"
+                public static func costLowerBound(cost: String) -> String {
+                    L10nSupport.format("workbench.sessions.meta.costLowerBound", cost)
+                }
+
+                /// Tooltip on the conversation header's cost figure when it is a lower bound.
+                ///
+                /// Key: `workbench.sessions.meta.costLowerBoundHelp`
+                /// en: "Some usage ran on a model without a known price, so this is a lower bound."
+                public static var costLowerBoundHelp: String { L10nSupport.string("workbench.sessions.meta.costLowerBoundHelp") }
+
+                /// Tooltip on the conversation header's model chips.
+                ///
+                /// Key: `workbench.sessions.meta.modelsHelp`
+                /// en: "Models used in this session"
+                public static var modelsHelp: String { L10nSupport.string("workbench.sessions.meta.modelsHelp") }
+
+                /// Conversation header overflow menu. distinct-from: usage.yearHeatmap.more (that one is the high end of a heatmap legend, not a menu).
+                ///
+                /// Key: `workbench.sessions.meta.more`
+                /// en: "More"
+                public static var more: String { L10nSupport.string("workbench.sessions.meta.more") }
+
+                /// Help for the conversation header button that opens the session's working directory.
+                ///
+                /// Key: `workbench.sessions.meta.openFolder`
+                /// en: "Open the project folder"
+                public static var openFolder: String { L10nSupport.string("workbench.sessions.meta.openFolder") }
+
+                /// Conversation header fact: how many prompts the person typed.
+                ///
+                /// Key: `workbench.sessions.meta.prompts`
+                /// en: "{count, plural, one {1 prompt} other {# prompts}}"
+                public static func prompts(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.meta.prompts", count)
+                }
+
+                /// Tooltip on the conversation header's project-folder chip.
+                ///
+                /// Key: `workbench.sessions.meta.revealFolder`
+                /// en: "Show {folder} in Finder"
+                public static func revealFolder(folder: String) -> String {
+                    L10nSupport.format("workbench.sessions.meta.revealFolder", folder)
+                }
+
+                /// Conversation header overflow menu item.
+                ///
+                /// Key: `workbench.sessions.meta.revealLog`
+                /// en: "Show the session log in Finder"
+                public static var revealLog: String { L10nSupport.string("workbench.sessions.meta.revealLog") }
+
+                /// Conversation header fact: how many Auto Review passes this Codex session has — the same count the list row and sessions.transcript report.
+                ///
+                /// Key: `workbench.sessions.meta.reviews`
+                /// en: "{count, plural, one {1 Auto Review} other {# Auto Reviews}}"
+                public static func reviews(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.meta.reviews", count)
+                }
+
+                /// Conversation header menu listing the subagent threads this session started.
+                ///
+                /// Key: `workbench.sessions.meta.subagents`
+                /// en: "{count, plural, one {1 subagent} other {# subagents}}"
+                public static func subagents(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.meta.subagents", count)
+                }
+
+                /// Tooltip on the conversation header's time range. Both values are formatted dates.
+                ///
+                /// Key: `workbench.sessions.meta.timeHelp`
+                /// en: "Started {start}, last activity {end}"
+                public static func timeHelp(start: String, end: String) -> String {
+                    L10nSupport.format("workbench.sessions.meta.timeHelp", start, end)
+                }
+
+                /// Tooltip on the conversation header's token figure. Every value is already formatted.
+                ///
+                /// Key: `workbench.sessions.meta.tokensHelp`
+                /// en: "Input {input} · Output {output} · Cache read {cacheRead} · Cache write {cacheWrite}"
+                public static func tokensHelp(input: String, output: String, cacheRead: String, cacheWrite: String) -> String {
+                    L10nSupport.format("workbench.sessions.meta.tokensHelp", input, output, cacheRead, cacheWrite)
+                }
+
+                /// Tooltip on the conversation header's token figure when no per-bucket breakdown exists.
+                ///
+                /// Key: `workbench.sessions.meta.tokensTotalOnly`
+                /// en: "Only a total was recorded for this session."
+                public static var tokensTotalOnly: String { L10nSupport.string("workbench.sessions.meta.tokensTotalOnly") }
+
+                /// Conversation header fact: how many actions the agent took.
+                ///
+                /// Key: `workbench.sessions.meta.toolCalls`
+                /// en: "{count, plural, one {1 tool call} other {# tool calls}}"
+                public static func toolCalls(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.meta.toolCalls", count)
+                }
+
+                /// Conversation header fact when some actions failed. calls is the already-formatted tool-call count phrase; failed is a formatted number.
+                ///
+                /// Key: `workbench.sessions.meta.toolCallsFailed`
+                /// en: "{calls}, {failed} failed"
+                public static func toolCallsFailed(calls: String, failed: String) -> String {
+                    L10nSupport.format("workbench.sessions.meta.toolCallsFailed", calls, failed)
+                }
+
+                /// Conversation header fact: Auto Review verdicts on this session's turns. Values are formatted numbers.
+                ///
+                /// Key: `workbench.sessions.meta.verdicts`
+                /// en: "Auto Review: {allow} allowed, {deny} denied"
+                public static func verdicts(allow: String, deny: String) -> String {
+                    L10nSupport.format("workbench.sessions.meta.verdicts", allow, deny)
                 }
             }
 
@@ -11909,6 +12245,42 @@ public enum L10n {
                 public static var projectless: String { L10nSupport.string("workbench.sessions.project.projectless") }
             }
 
+            public enum Rail {
+                /// Tooltip on the All row of the Sessions page's harness column.
+                ///
+                /// Key: `workbench.sessions.rail.allHelp`
+                /// en: "Show sessions from every harness"
+                public static var allHelp: String { L10nSupport.string("workbench.sessions.rail.allHelp") }
+
+                /// Help for the button that shrinks the Sessions page's harness column to icons.
+                ///
+                /// Key: `workbench.sessions.rail.collapse`
+                /// en: "Collapse the harness column"
+                public static var collapse: String { L10nSupport.string("workbench.sessions.rail.collapse") }
+
+                /// Help for the button that widens the Sessions page's harness column back to names and counts.
+                ///
+                /// Key: `workbench.sessions.rail.expand`
+                /// en: "Expand the harness column"
+                public static var expand: String { L10nSupport.string("workbench.sessions.rail.expand") }
+
+                /// Tooltip on a harness row in the Sessions page's left column.
+                ///
+                /// Key: `workbench.sessions.rail.selectHelp`
+                /// en: "Show only {harness}. ⌘-click to add or remove it from the selection."
+                public static func selectHelp(harness: String) -> String {
+                    L10nSupport.format("workbench.sessions.rail.selectHelp", harness)
+                }
+
+                /// Under a harness in the Sessions page's left column: how many of its sessions are subagent or fork threads, folded under the session that started them.
+                ///
+                /// Key: `workbench.sessions.rail.threadsIncluded`
+                /// en: "{count, plural, one {Includes 1 thread} other {Includes # threads}}"
+                public static func threadsIncluded(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.rail.threadsIncluded", count)
+                }
+            }
+
             public enum Range {
                 /// Sessions When menu option: no lower bound
                 ///
@@ -11924,11 +12296,31 @@ public enum L10n {
                 /// en: "RESUME"
                 public static var heading: String { L10nSupport.string("workbench.sessions.resume.heading") }
 
+                /// Primary button of the conversation header: reopens the session in the named terminal app.
+                ///
+                /// Key: `workbench.sessions.resume.inTerminal`
+                /// en: "Resume in {terminal}"
+                public static func inTerminal(terminal: String) -> String {
+                    L10nSupport.format("workbench.sessions.resume.inTerminal", terminal)
+                }
+
                 /// Shown in the transcript Details when the provider offers no resume command
                 ///
                 /// Key: `workbench.sessions.resume.none`
                 /// en: "This session has no command-line entry point."
                 public static var `none`: String { L10nSupport.string("workbench.sessions.resume.none") }
+
+                /// Help for the dropdown half of the resume button.
+                ///
+                /// Key: `workbench.sessions.resume.options`
+                /// en: "Choose where to resume"
+                public static var options: String { L10nSupport.string("workbench.sessions.resume.options") }
+
+                /// Help on the disabled resume button of a subagent thread.
+                ///
+                /// Key: `workbench.sessions.resume.subagentHelp`
+                /// en: "A subagent thread is resumed through the session that started it."
+                public static var subagentHelp: String { L10nSupport.string("workbench.sessions.resume.subagentHelp") }
             }
 
             public enum Role {
@@ -12095,6 +12487,140 @@ public enum L10n {
                 public static var recentFirst: String { L10nSupport.string("workbench.sessions.sort.recentFirst") }
             }
 
+            public enum Step {
+                /// Caption above a step's argument summary in its detail.
+                ///
+                /// Key: `workbench.sessions.step.arguments`
+                /// en: "Arguments"
+                public static var arguments: String { L10nSupport.string("workbench.sessions.step.arguments") }
+
+                /// A note step: the harness compacted the conversation context here.
+                ///
+                /// Key: `workbench.sessions.step.compaction`
+                /// en: "Context compacted"
+                public static var compaction: String { L10nSupport.string("workbench.sessions.step.compaction") }
+
+                /// Step detail for a shell command. code is the number as text.
+                ///
+                /// Key: `workbench.sessions.step.exitCode`
+                /// en: "Exit code {code}"
+                public static func exitCode(code: String) -> String {
+                    L10nSupport.format("workbench.sessions.step.exitCode", code)
+                }
+
+                /// Status of a step whose result reported failure.
+                ///
+                /// Key: `workbench.sessions.step.failed`
+                /// en: "Failed"
+                public static var failed: String { L10nSupport.string("workbench.sessions.step.failed") }
+
+                /// Step detail when the log kept neither arguments nor a result.
+                ///
+                /// Key: `workbench.sessions.step.noDetail`
+                /// en: "No output was recorded for this step."
+                public static var noDetail: String { L10nSupport.string("workbench.sessions.step.noDetail") }
+
+                /// Button on a subagent step that opens the thread it started.
+                ///
+                /// Key: `workbench.sessions.step.openThread`
+                /// en: "Open thread"
+                public static var openThread: String { L10nSupport.string("workbench.sessions.step.openThread") }
+
+                /// Step detail: a result whose call is not in the log.
+                ///
+                /// Key: `workbench.sessions.step.orphan`
+                /// en: "Result without its call"
+                public static var orphan: String { L10nSupport.string("workbench.sessions.step.orphan") }
+
+                /// Step detail: the call has no result in the log.
+                ///
+                /// Key: `workbench.sessions.step.pending`
+                /// en: "No result recorded"
+                public static var pending: String { L10nSupport.string("workbench.sessions.step.pending") }
+
+                /// Caption above a step's result summary in its detail.
+                ///
+                /// Key: `workbench.sessions.step.result`
+                /// en: "Result"
+                public static var result: String { L10nSupport.string("workbench.sessions.step.result") }
+
+                /// Status of a step whose result reported success.
+                ///
+                /// Key: `workbench.sessions.step.succeeded`
+                /// en: "Succeeded"
+                public static var succeeded: String { L10nSupport.string("workbench.sessions.step.succeeded") }
+
+                /// A thinking step in a turn's process. count is a formatted number.
+                ///
+                /// Key: `workbench.sessions.step.thinking`
+                /// en: "Thinking · {count} characters"
+                public static func thinking(count: String) -> String {
+                    L10nSupport.format("workbench.sessions.step.thinking", count)
+                }
+
+                /// A thinking step whose text is encrypted in the log.
+                ///
+                /// Key: `workbench.sessions.step.thinkingHidden`
+                /// en: "Thinking (not readable)"
+                public static var thinkingHidden: String { L10nSupport.string("workbench.sessions.step.thinkingHidden") }
+            }
+
+            public enum Threads {
+                /// Threads menu item that folds every session's threads.
+                ///
+                /// Key: `workbench.sessions.threads.collapseAll`
+                /// en: "Collapse all threads"
+                public static var collapseAll: String { L10nSupport.string("workbench.sessions.threads.collapseAll") }
+
+                /// Threads menu item that unfolds every session's threads.
+                ///
+                /// Key: `workbench.sessions.threads.expandAll`
+                /// en: "Expand all threads"
+                public static var expandAll: String { L10nSupport.string("workbench.sessions.threads.expandAll") }
+
+                /// Explanation at the top of the Threads menu on the Sessions page.
+                ///
+                /// Key: `workbench.sessions.threads.foldedNote`
+                /// en: "Subagents and forks are folded under the session that started them."
+                public static var foldedNote: String { L10nSupport.string("workbench.sessions.threads.foldedNote") }
+
+                /// Detail on the Threads toolbar pill: how many loaded rows the thread filters hide.
+                ///
+                /// Key: `workbench.sessions.threads.hidden`
+                /// en: "{count} hidden"
+                public static func hidden(count: String) -> String {
+                    L10nSupport.format("workbench.sessions.threads.hidden", count)
+                }
+
+                /// Toolbar menu on the Sessions page that controls how threads and headless runs are listed.
+                ///
+                /// Key: `workbench.sessions.threads.menu`
+                /// en: "Threads"
+                public static var menu: String { L10nSupport.string("workbench.sessions.threads.menu") }
+
+                /// Help for the Threads toolbar menu on the Sessions page.
+                ///
+                /// Key: `workbench.sessions.threads.menuHelp`
+                /// en: "Choose which threads and headless runs the list shows"
+                public static var menuHelp: String { L10nSupport.string("workbench.sessions.threads.menuHelp") }
+
+                /// Toggle in the Threads menu. The count is how many loaded rows it would add.
+                ///
+                /// Key: `workbench.sessions.threads.showAutomation`
+                /// en: "Show automations ({count})"
+                public static func showAutomation(count: String) -> String {
+                    L10nSupport.format("workbench.sessions.threads.showAutomation", count)
+                }
+
+                /// Toggle in the Threads menu. The count is how many loaded rows it would add.
+                ///
+                /// Key: `workbench.sessions.threads.showExec`
+                /// en: "Show headless runs ({count})"
+                public static func showExec(count: String) -> String {
+                    L10nSupport.format("workbench.sessions.threads.showExec", count)
+                }
+            }
+
             public enum Toast {
                 /// Sessions toast after turning message indexing off and the stored excerpts could not be dropped
                 ///
@@ -12183,6 +12709,26 @@ public enum L10n {
                 public static var sourcePathCopied: String { L10nSupport.string("workbench.sessions.toast.sourcePathCopied") }
             }
 
+            public enum Toc {
+                /// Heading of the Sessions page's right column: one entry per turn.
+                ///
+                /// Key: `workbench.sessions.toc.heading`
+                /// en: "Contents"
+                public static var heading: String { L10nSupport.string("workbench.sessions.toc.heading") }
+
+                /// Help for the button that hides the contents column.
+                ///
+                /// Key: `workbench.sessions.toc.hide`
+                /// en: "Hide the contents"
+                public static var hide: String { L10nSupport.string("workbench.sessions.toc.hide") }
+
+                /// Shown in the contents column for a session whose harness has no turn structure.
+                ///
+                /// Key: `workbench.sessions.toc.unsupported`
+                /// en: "Turn contents are available for Codex and Claude Code sessions. The raw transcript has its own outline."
+                public static var unsupported: String { L10nSupport.string("workbench.sessions.toc.unsupported") }
+            }
+
             public enum Transcript {
                 /// Separator inserted in a transcript where a Codex Auto Review child session is merged in. Auto Review is Codex's own feature name and stays in English.
                 ///
@@ -12263,6 +12809,246 @@ public enum L10n {
                 public static func truncatedTitle(count: Int) -> String {
                     L10nSupport.localizedFormat("workbench.sessions.transcript.truncatedTitle", count)
                 }
+            }
+
+            public enum Turn {
+                /// Toast after copying an answer.
+                ///
+                /// Key: `workbench.sessions.turn.answerCopied`
+                /// en: "Answer copied."
+                public static var answerCopied: String { L10nSupport.string("workbench.sessions.turn.answerCopied") }
+
+                /// Process row fact: how many shell commands ran in the turn.
+                ///
+                /// Key: `workbench.sessions.turn.commands`
+                /// en: "{count, plural, one {1 command} other {# commands}}"
+                public static func commands(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.turn.commands", count)
+                }
+
+                /// Button on a stopped turn placeholder.
+                ///
+                /// Key: `workbench.sessions.turn.continueLoading`
+                /// en: "Continue reading"
+                public static var continueLoading: String { L10nSupport.string("workbench.sessions.turn.continueLoading") }
+
+                /// Help for the copy button on an answer.
+                ///
+                /// Key: `workbench.sessions.turn.copyAnswer`
+                /// en: "Copy answer"
+                public static var copyAnswer: String { L10nSupport.string("workbench.sessions.turn.copyAnswer") }
+
+                /// Help for the copy button on a prompt bubble.
+                ///
+                /// Key: `workbench.sessions.turn.copyPrompt`
+                /// en: "Copy prompt"
+                public static var copyPrompt: String { L10nSupport.string("workbench.sessions.turn.copyPrompt") }
+
+                /// Process row and contents fact: how many actions failed.
+                ///
+                /// Key: `workbench.sessions.turn.failures`
+                /// en: "{count, plural, one {1 failed} other {# failed}}"
+                public static func failures(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.turn.failures", count)
+                }
+
+                /// Turn header note: further messages the person sent while the turn was running.
+                ///
+                /// Key: `workbench.sessions.turn.followUps`
+                /// en: "{count, plural, one {+1 follow-up} other {+# follow-ups}}"
+                public static func followUps(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.turn.followUps", count)
+                }
+
+                /// Help for collapsing a turn's process row.
+                ///
+                /// Key: `workbench.sessions.turn.hideSteps`
+                /// en: "Hide the steps"
+                public static var hideSteps: String { L10nSupport.string("workbench.sessions.turn.hideSteps") }
+
+                /// Turn header note: blocks of context the harness added to the prompt, which are not shown.
+                ///
+                /// Key: `workbench.sessions.turn.injected`
+                /// en: "{count, plural, one {+1 injected block} other {+# injected blocks}}"
+                public static func injected(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.turn.injected", count)
+                }
+
+                /// Tooltip on the injected-blocks note of a turn header.
+                ///
+                /// Key: `workbench.sessions.turn.injectedHelp`
+                /// en: "Context the harness attached to this prompt — instructions, environment, reminders — is counted here and not shown."
+                public static var injectedHelp: String { L10nSupport.string("workbench.sessions.turn.injectedHelp") }
+
+                /// Placeholder for a turn whose detail is still being read.
+                ///
+                /// Key: `workbench.sessions.turn.loading`
+                /// en: "Reading this turn…"
+                public static var loading: String { L10nSupport.string("workbench.sessions.turn.loading") }
+
+                /// Header of one turn in the conversation. number is a formatted ordinal.
+                ///
+                /// Key: `workbench.sessions.turn.ordinal`
+                /// en: "Turn {number}"
+                public static func ordinal(number: String) -> String {
+                    L10nSupport.format("workbench.sessions.turn.ordinal", number)
+                }
+
+                /// Label of the collapsible row that lists what the agent did in a turn.
+                ///
+                /// Key: `workbench.sessions.turn.process`
+                /// en: "Process"
+                public static var process: String { L10nSupport.string("workbench.sessions.turn.process") }
+
+                /// Toast after copying a prompt.
+                ///
+                /// Key: `workbench.sessions.turn.promptCopied`
+                /// en: "Prompt copied."
+                public static var promptCopied: String { L10nSupport.string("workbench.sessions.turn.promptCopied") }
+
+                /// Help for expanding a turn's process row.
+                ///
+                /// Key: `workbench.sessions.turn.showSteps`
+                /// en: "Show the steps"
+                public static var showSteps: String { L10nSupport.string("workbench.sessions.turn.showSteps") }
+
+                /// Process row fact: how many actions the agent took in the turn.
+                ///
+                /// Key: `workbench.sessions.turn.steps`
+                /// en: "{count, plural, one {1 step} other {# steps}}"
+                public static func steps(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.sessions.turn.steps", count)
+                }
+
+                /// Placeholder for a turn left unread when loading was stopped.
+                ///
+                /// Key: `workbench.sessions.turn.stopped`
+                /// en: "Reading stopped before this turn."
+                public static var stopped: String { L10nSupport.string("workbench.sessions.turn.stopped") }
+
+                /// Process row label for a turn whose only steps are thinking.
+                ///
+                /// Key: `workbench.sessions.turn.thinking`
+                /// en: "Thinking"
+                public static var thinking: String { L10nSupport.string("workbench.sessions.turn.thinking") }
+
+                /// Placeholder for a turn whose detail could not be read.
+                ///
+                /// Key: `workbench.sessions.turn.unavailable`
+                /// en: "This turn could not be read. The log may have changed since it was opened."
+                public static var unavailable: String { L10nSupport.string("workbench.sessions.turn.unavailable") }
+
+                public enum Origin {
+                    /// Label in place of a prompt bubble: another agent sent this turn's task.
+                    ///
+                    /// Key: `workbench.sessions.turn.origin.agent`
+                    /// en: "From another agent"
+                    public static var agent: String { L10nSupport.string("workbench.sessions.turn.origin.agent") }
+
+                    /// Label in place of a prompt bubble: a scheduled automation opened this turn.
+                    ///
+                    /// Key: `workbench.sessions.turn.origin.automation`
+                    /// en: "Started by an automation"
+                    public static var automation: String { L10nSupport.string("workbench.sessions.turn.origin.automation") }
+
+                    /// Label in place of a prompt bubble: an Auto Review request opened this turn.
+                    ///
+                    /// Key: `workbench.sessions.turn.origin.guardianRequest`
+                    /// en: "Review request"
+                    public static var guardianRequest: String { L10nSupport.string("workbench.sessions.turn.origin.guardianRequest") }
+
+                    /// Label in place of a prompt bubble: the turn opened without a new prompt.
+                    ///
+                    /// Key: `workbench.sessions.turn.origin.none`
+                    /// en: "Continued"
+                    public static var `none`: String { L10nSupport.string("workbench.sessions.turn.origin.none") }
+                }
+
+                public enum Status {
+                    /// Turn header chip: the conversation was rewound past this turn.
+                    ///
+                    /// Key: `workbench.sessions.turn.status.abandoned`
+                    /// en: "Rewound"
+                    public static var abandoned: String { L10nSupport.string("workbench.sessions.turn.status.abandoned") }
+
+                    /// Tooltip on the Rewound chip of a turn header.
+                    ///
+                    /// Key: `workbench.sessions.turn.status.abandonedHelp`
+                    /// en: "The conversation was rewound past this turn, so it is no longer part of the active thread."
+                    public static var abandonedHelp: String { L10nSupport.string("workbench.sessions.turn.status.abandonedHelp") }
+
+                    /// Turn header chip: the turn was stopped before it finished.
+                    ///
+                    /// Key: `workbench.sessions.turn.status.aborted`
+                    /// en: "Interrupted"
+                    public static var aborted: String { L10nSupport.string("workbench.sessions.turn.status.aborted") }
+
+                    /// Turn header chip: the log ends without the turn finishing.
+                    ///
+                    /// Key: `workbench.sessions.turn.status.open`
+                    /// en: "Unfinished"
+                    public static var `open`: String { L10nSupport.string("workbench.sessions.turn.status.open") }
+                }
+            }
+
+            public enum Verdict {
+                /// Badge on a turn header: Auto Review allowed the turn's action.
+                ///
+                /// Key: `workbench.sessions.verdict.allow`
+                /// en: "Allowed"
+                public static var allow: String { L10nSupport.string("workbench.sessions.verdict.allow") }
+
+                /// Badge on a turn header: Auto Review denied the turn's action.
+                ///
+                /// Key: `workbench.sessions.verdict.deny`
+                /// en: "Denied"
+                public static var deny: String { L10nSupport.string("workbench.sessions.verdict.deny") }
+
+                /// Tooltip on an Auto Review badge.
+                ///
+                /// Key: `workbench.sessions.verdict.help`
+                /// en: "Auto Review verdict on this turn"
+                public static var help: String { L10nSupport.string("workbench.sessions.verdict.help") }
+
+                /// Badge on a turn header: the risk level Auto Review assigned, as the reviewer wrote it.
+                ///
+                /// Key: `workbench.sessions.verdict.risk`
+                /// en: "Risk {level}"
+                public static func risk(level: String) -> String {
+                    L10nSupport.format("workbench.sessions.verdict.risk", level)
+                }
+            }
+
+            public enum View {
+                /// Help for the conversation view switch.
+                ///
+                /// Key: `workbench.sessions.view.help`
+                /// en: "Switch between the turn view and the raw transcript"
+                public static var help: String { L10nSupport.string("workbench.sessions.view.help") }
+
+                /// Segment of the conversation view switch: the raw message transcript.
+                ///
+                /// Key: `workbench.sessions.view.raw`
+                /// en: "Raw"
+                public static var raw: String { L10nSupport.string("workbench.sessions.view.raw") }
+
+                /// Banner above the turn view when a full-text search hit opened the session.
+                ///
+                /// Key: `workbench.sessions.view.searchHit`
+                /// en: "Your search matched a message in this session."
+                public static var searchHit: String { L10nSupport.string("workbench.sessions.view.searchHit") }
+
+                /// Button on the search-hit banner.
+                ///
+                /// Key: `workbench.sessions.view.showHit`
+                /// en: "Show it in the raw transcript"
+                public static var showHit: String { L10nSupport.string("workbench.sessions.view.showHit") }
+
+                /// Segment of the conversation view switch: the structured turn-by-turn view.
+                ///
+                /// Key: `workbench.sessions.view.turns`
+                /// en: "Turns"
+                public static var turns: String { L10nSupport.string("workbench.sessions.view.turns") }
             }
         }
 
@@ -14141,6 +14927,706 @@ public enum L10n {
                 L10nSupport.format("workbench.status.updated", time)
             }
         }
+
+        public enum Usage {
+            public enum Count {
+                /// Active clock hours in one trend bar, in its tooltip.
+                ///
+                /// Key: `workbench.usage.count.activeHours`
+                /// en: "{count, plural, one {# active hour} other {# active hours}}"
+                public static func activeHours(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.count.activeHours", count)
+                }
+
+                /// How many tool calls, on the Usage page tools card.
+                ///
+                /// Key: `workbench.usage.count.calls`
+                /// en: "{count, plural, one {# call} other {# calls}}"
+                public static func calls(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.count.calls", count)
+                }
+
+                /// A number of sessions, on Usage page cards.
+                ///
+                /// Key: `workbench.usage.count.sessions`
+                /// en: "{count, plural, one {# session} other {# sessions}}"
+                public static func sessions(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.count.sessions", count)
+                }
+
+                /// How many times a skill was used, on the Usage page skills card.
+                ///
+                /// Key: `workbench.usage.count.uses`
+                /// en: "{count, plural, one {# use} other {# uses}}"
+                public static func uses(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.count.uses", count)
+                }
+            }
+
+            public enum Filter {
+                /// Usage page project picker: the entry that removes the project filter.
+                ///
+                /// Key: `workbench.usage.filter.allProjects`
+                /// en: "All projects"
+                public static var allProjects: String { L10nSupport.string("workbench.usage.filter.allProjects") }
+
+                /// Tooltip on the Usage page Clear button.
+                ///
+                /// Key: `workbench.usage.filter.clearHelp`
+                /// en: "Clear the harness, model and project filters"
+                public static var clearHelp: String { L10nSupport.string("workbench.usage.filter.clearHelp") }
+
+                /// Usage page toolbar: label of the project (working directory) picker.
+                ///
+                /// Key: `workbench.usage.filter.project`
+                /// en: "Project"
+                public static var project: String { L10nSupport.string("workbench.usage.filter.project") }
+
+                /// Tooltip on the Usage page project picker.
+                ///
+                /// Key: `workbench.usage.filter.projectHelp`
+                /// en: "Projects are the directories sessions ran in; worktrees count toward their repository."
+                public static var projectHelp: String { L10nSupport.string("workbench.usage.filter.projectHelp") }
+
+                /// Search field at the top of the Usage page project picker.
+                ///
+                /// Key: `workbench.usage.filter.searchProjects`
+                /// en: "Find a project"
+                public static var searchProjects: String { L10nSupport.string("workbench.usage.filter.searchProjects") }
+            }
+
+            public enum Health {
+                /// Harness health card footnote: what a local log cannot show.
+                ///
+                /// Key: `workbench.usage.health.composition`
+                /// en: "Prompt composition (system prompt, tools, memory, files) needs gateway data."
+                public static var composition: String { L10nSupport.string("workbench.usage.health.composition") }
+
+                /// Harness health card header. Both values arrive formatted.
+                ///
+                /// Key: `workbench.usage.health.counts`
+                /// en: "{requests} requests · {sessions} sessions"
+                public static func counts(requests: String, sessions: String) -> String {
+                    L10nSupport.format("workbench.usage.health.counts", requests, sessions)
+                }
+
+                /// Usage page harness health section with nothing to show.
+                ///
+                /// Key: `workbench.usage.health.empty`
+                /// en: "No harness activity in this range"
+                public static var empty: String { L10nSupport.string("workbench.usage.health.empty") }
+
+                /// Harness health card: the models this harness used most in the range.
+                ///
+                /// Key: `workbench.usage.health.models`
+                /// en: "Recent models"
+                public static var models: String { L10nSupport.string("workbench.usage.health.models") }
+
+                /// Tooltip on a harness health score.
+                ///
+                /// Key: `workbench.usage.health.scoreHelp`
+                /// en: "Weighted: cache 35%, lean start 20%, pace 20%, reliability 25%. A part without data is left out."
+                public static var scoreHelp: String { L10nSupport.string("workbench.usage.health.scoreHelp") }
+
+                /// Subtitle of the Usage page harness health section.
+                ///
+                /// Key: `workbench.usage.health.subtitle`
+                /// en: "How lean and cache-friendly each harness keeps its prompts"
+                public static var subtitle: String { L10nSupport.string("workbench.usage.health.subtitle") }
+
+                /// Usage page section of per-harness prompt health cards.
+                ///
+                /// Key: `workbench.usage.health.title`
+                /// en: "Harness health"
+                public static var title: String { L10nSupport.string("workbench.usage.health.title") }
+
+                public enum Metric {
+                    /// Harness health metric: share of the prompt served from cache.
+                    ///
+                    /// Key: `workbench.usage.health.metric.cacheHit`
+                    /// en: "Cache hit rate"
+                    public static var cacheHit: String { L10nSupport.string("workbench.usage.health.metric.cacheHit") }
+
+                    /// Harness health metric: failed share of parsed tool calls.
+                    ///
+                    /// Key: `workbench.usage.health.metric.failures`
+                    /// en: "Tool failures"
+                    public static var failures: String { L10nSupport.string("workbench.usage.health.metric.failures") }
+
+                    /// Harness health metric: median prompt growth per request.
+                    ///
+                    /// Key: `workbench.usage.health.metric.growth`
+                    /// en: "Growth per request"
+                    public static var growth: String { L10nSupport.string("workbench.usage.health.metric.growth") }
+
+                    /// Harness health metric: the largest prompt.
+                    ///
+                    /// Key: `workbench.usage.health.metric.largest`
+                    /// en: "Largest"
+                    public static var largest: String { L10nSupport.string("workbench.usage.health.metric.largest") }
+
+                    /// Harness health metric: median prompt of a session's first request.
+                    ///
+                    /// Key: `workbench.usage.health.metric.start`
+                    /// en: "Starting size"
+                    public static var start: String { L10nSupport.string("workbench.usage.health.metric.start") }
+
+                    /// Harness health metric: median prompt size per request.
+                    ///
+                    /// Key: `workbench.usage.health.metric.typical`
+                    /// en: "Typical prompt"
+                    public static var typical: String { L10nSupport.string("workbench.usage.health.metric.typical") }
+
+                    /// Harness health metric: the model's context window.
+                    ///
+                    /// Key: `workbench.usage.health.metric.window`
+                    /// en: "Context window"
+                    public static var window: String { L10nSupport.string("workbench.usage.health.metric.window") }
+                }
+
+                public enum Rating {
+                    /// Harness health rating, score 90 and up.
+                    ///
+                    /// Key: `workbench.usage.health.rating.excellent`
+                    /// en: "Excellent"
+                    public static var excellent: String { L10nSupport.string("workbench.usage.health.rating.excellent") }
+
+                    /// Harness health rating, score 55–74.
+                    ///
+                    /// Key: `workbench.usage.health.rating.fair`
+                    /// en: "Fair"
+                    public static var fair: String { L10nSupport.string("workbench.usage.health.rating.fair") }
+
+                    /// Harness health rating, score 75–89.
+                    ///
+                    /// Key: `workbench.usage.health.rating.good`
+                    /// en: "Good"
+                    public static var good: String { L10nSupport.string("workbench.usage.health.rating.good") }
+
+                    /// Harness health rating, score under 55. distinct-from: status.overview.needsAttention (a verdict on prompt health, not a status tile; zh reads 需关注).
+                    ///
+                    /// Key: `workbench.usage.health.rating.poor`
+                    /// en: "Needs attention"
+                    public static var poor: String { L10nSupport.string("workbench.usage.health.rating.poor") }
+
+                    /// Harness health rating when no part of the score has evidence.
+                    ///
+                    /// Key: `workbench.usage.health.rating.unknown`
+                    /// en: "Not enough data"
+                    public static var unknown: String { L10nSupport.string("workbench.usage.health.rating.unknown") }
+                }
+
+                public enum Sub {
+                    /// Harness health part: how small a session's first prompt is.
+                    ///
+                    /// Key: `workbench.usage.health.sub.leanStart`
+                    /// en: "Lean start"
+                    public static var leanStart: String { L10nSupport.string("workbench.usage.health.sub.leanStart") }
+
+                    /// Harness health part: how slowly prompts grow per request. distinct-from: menuBar.composer.metric.pace (quota burn pace, a different measure).
+                    ///
+                    /// Key: `workbench.usage.health.sub.pace`
+                    /// en: "Pace"
+                    public static var pace: String { L10nSupport.string("workbench.usage.health.sub.pace") }
+
+                    /// Harness health part: how few tool calls fail.
+                    ///
+                    /// Key: `workbench.usage.health.sub.reliability`
+                    /// en: "Reliability"
+                    public static var reliability: String { L10nSupport.string("workbench.usage.health.sub.reliability") }
+                }
+            }
+
+            public enum Heatmap {
+                /// Usage page by-hour card. {slot} is a weekday and hour, already formatted.
+                ///
+                /// Key: `workbench.usage.heatmap.busiest`
+                /// en: "Busiest: {slot}"
+                public static func busiest(slot: String) -> String {
+                    L10nSupport.format("workbench.usage.heatmap.busiest", slot)
+                }
+
+                /// Tooltip on one cell of the Usage page by-hour card.
+                ///
+                /// Key: `workbench.usage.heatmap.cell`
+                /// en: "{slot} · {count, plural, one {# request} other {# requests}}"
+                public static func cell(slot: String, count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.heatmap.cell", slot, count)
+                }
+
+                /// Usage page by-hour card with nothing to place on the clock.
+                ///
+                /// Key: `workbench.usage.heatmap.empty`
+                /// en: "No request-level history in this range"
+                public static var empty: String { L10nSupport.string("workbench.usage.heatmap.empty") }
+
+                /// Subtitle of the Usage page by-hour card.
+                ///
+                /// Key: `workbench.usage.heatmap.subtitle`
+                /// en: "Requests by weekday and hour, local time"
+                public static var subtitle: String { L10nSupport.string("workbench.usage.heatmap.subtitle") }
+
+                /// Usage page card: requests by weekday and hour.
+                ///
+                /// Key: `workbench.usage.heatmap.title`
+                /// en: "By hour"
+                public static var title: String { L10nSupport.string("workbench.usage.heatmap.title") }
+            }
+
+            public enum Hero {
+                /// Usage page hero tile under active hours.
+                ///
+                /// Key: `workbench.usage.hero.activeDetail`
+                /// en: "Across {count, plural, one {# day} other {# days}}"
+                public static func activeDetail(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.hero.activeDetail", count)
+                }
+
+                /// Usage page hero tile title: clock hours with at least one request.
+                ///
+                /// Key: `workbench.usage.hero.activeTime`
+                /// en: "Active time"
+                public static var activeTime: String { L10nSupport.string("workbench.usage.hero.activeTime") }
+
+                /// Usage page hero tile under cache reads. {rate} is a formatted percentage.
+                ///
+                /// Key: `workbench.usage.hero.cacheDetail`
+                /// en: "{rate} hit rate"
+                public static func cacheDetail(rate: String) -> String {
+                    L10nSupport.format("workbench.usage.hero.cacheDetail", rate)
+                }
+
+                /// Usage page hero tile under the cost when every request had a price.
+                ///
+                /// Key: `workbench.usage.hero.costDetail`
+                /// en: "At effective prices"
+                public static var costDetail: String { L10nSupport.string("workbench.usage.hero.costDetail") }
+
+                /// Usage page hero tile under the cost when some usage had no price; the value carries a +.
+                ///
+                /// Key: `workbench.usage.hero.costUnpriced`
+                /// en: "Plus unpriced usage"
+                public static var costUnpriced: String { L10nSupport.string("workbench.usage.hero.costUnpriced") }
+
+                /// Usage page hero tile under the project count. {name} is a directory name, {share} a percentage.
+                ///
+                /// Key: `workbench.usage.hero.projectsDetail`
+                /// en: "Top: {name} · {share}"
+                public static func projectsDetail(name: String, share: String) -> String {
+                    L10nSupport.format("workbench.usage.hero.projectsDetail", name, share)
+                }
+
+                /// Usage page hero tile under the session count. Values are compact token counts.
+                ///
+                /// Key: `workbench.usage.hero.sessionsDetail`
+                /// en: "Median {median} · p90 {p90} tokens"
+                public static func sessionsDetail(median: String, p90: String) -> String {
+                    L10nSupport.format("workbench.usage.hero.sessionsDetail", median, p90)
+                }
+
+                /// Usage page hero tile under the token total. Prompt is everything sent to the model (fresh input plus cache read and write), Out the output.
+                ///
+                /// Key: `workbench.usage.hero.tokensDetail`
+                /// en: "Prompt {input} · Out {output}"
+                public static func tokensDetail(input: String, output: String) -> String {
+                    L10nSupport.format("workbench.usage.hero.tokensDetail", input, output)
+                }
+            }
+
+            public enum Range {
+                /// Usage page range control: the last 90 local calendar days, today included.
+                ///
+                /// Key: `workbench.usage.range.quarter`
+                /// en: "90 days"
+                public static var quarter: String { L10nSupport.string("workbench.usage.range.quarter") }
+            }
+
+            public enum Ranking {
+                /// Usage page models card with no model.
+                ///
+                /// Key: `workbench.usage.ranking.emptyModels`
+                /// en: "No model recorded in this range"
+                public static var emptyModels: String { L10nSupport.string("workbench.usage.ranking.emptyModels") }
+
+                /// Usage page projects card with no project.
+                ///
+                /// Key: `workbench.usage.ranking.emptyProjects`
+                /// en: "No project recorded in this range"
+                public static var emptyProjects: String { L10nSupport.string("workbench.usage.ranking.emptyProjects") }
+
+                /// Footer of the Usage page project or model ranking: entries past the top six and their tokens.
+                ///
+                /// Key: `workbench.usage.ranking.more`
+                /// en: "+{count} more · {tokens}"
+                public static func more(count: Int, tokens: String) -> String {
+                    L10nSupport.format("workbench.usage.ranking.more", count, tokens)
+                }
+            }
+
+            public enum Recent {
+                /// Usage page recent sessions when the search finds nothing.
+                ///
+                /// Key: `workbench.usage.recent.noMatch`
+                /// en: "No session matches “{query}”"
+                public static func noMatch(query: String) -> String {
+                    L10nSupport.format("workbench.usage.recent.noMatch", query)
+                }
+
+                /// Usage page recent sessions footer. Values arrive formatted.
+                ///
+                /// Key: `workbench.usage.recent.showing`
+                /// en: "Showing {shown} of {total}"
+                public static func showing(shown: String, total: String) -> String {
+                    L10nSupport.format("workbench.usage.recent.showing", shown, total)
+                }
+
+                /// Usage page card listing sessions active in the range, newest first.
+                ///
+                /// Key: `workbench.usage.recent.title`
+                /// en: "Recent sessions"
+                public static var title: String { L10nSupport.string("workbench.usage.recent.title") }
+
+                /// Usage page recent-session row token breakdown. Values are compact token counts.
+                ///
+                /// Key: `workbench.usage.recent.tokens`
+                /// en: "In {input} · Out {output} · Cache {cache}"
+                public static func tokens(input: String, output: String, cache: String) -> String {
+                    L10nSupport.format("workbench.usage.recent.tokens", input, output, cache)
+                }
+            }
+
+            public enum Session {
+                /// Usage page session card with no session.
+                ///
+                /// Key: `workbench.usage.session.empty`
+                /// en: "No sessions in this range"
+                public static var empty: String { L10nSupport.string("workbench.usage.session.empty") }
+
+                /// Usage page session row whose harness keeps no per-session tokens on this Mac.
+                ///
+                /// Key: `workbench.usage.session.noTokens`
+                /// en: "No local token record"
+                public static var noTokens: String { L10nSupport.string("workbench.usage.session.noTokens") }
+
+                /// Tooltip on a Usage page session row; clicking opens the Sessions page on it.
+                ///
+                /// Key: `workbench.usage.session.openHelp`
+                /// en: "Open in Sessions"
+                public static var openHelp: String { L10nSupport.string("workbench.usage.session.openHelp") }
+
+                /// Tooltip on a Usage page session's figure when it comes from the ledger.
+                ///
+                /// Key: `workbench.usage.session.sourceLedger`
+                /// en: "Tokens and cost from the usage ledger's rows for this session — the rows every total on this page sums."
+                public static var sourceLedger: String { L10nSupport.string("workbench.usage.session.sourceLedger") }
+
+                /// Tooltip on a Codex session's figure on the Usage page.
+                ///
+                /// Key: `workbench.usage.session.sourceLog`
+                /// en: "Codex keeps no session id in the usage ledger, so this session's tokens and cost come from its parsed log."
+                public static var sourceLog: String { L10nSupport.string("workbench.usage.session.sourceLog") }
+
+                /// Usage page session row whose session has no title. distinct-from: workbench.sessions.list.untitled — the Usage row keeps its own key so the two pages can diverge in wording.
+                ///
+                /// Key: `workbench.usage.session.untitled`
+                /// en: "Untitled session"
+                public static var untitled: String { L10nSupport.string("workbench.usage.session.untitled") }
+            }
+
+            public enum Shape {
+                /// Usage page session-shape bin label for the open last bin.
+                ///
+                /// Key: `workbench.usage.shape.atLeast`
+                /// en: "{value}+"
+                public static func atLeast(value: String) -> String {
+                    L10nSupport.format("workbench.usage.shape.atLeast", value)
+                }
+
+                /// Tooltip on a Usage page session-shape bar.
+                ///
+                /// Key: `workbench.usage.shape.bin`
+                /// en: "{range} · {count, plural, one {# session} other {# sessions}}"
+                public static func bin(range: String, count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.shape.bin", range, count)
+                }
+
+                /// Usage page session-shape card. {value} is already formatted.
+                ///
+                /// Key: `workbench.usage.shape.median`
+                /// en: "Median {value}"
+                public static func median(value: String) -> String {
+                    L10nSupport.format("workbench.usage.shape.median", value)
+                }
+
+                /// Usage page session-shape bin label, both ends included.
+                ///
+                /// Key: `workbench.usage.shape.range`
+                /// en: "{from}–{to}"
+                public static func range(from: String, to: String) -> String {
+                    L10nSupport.format("workbench.usage.shape.range", from, to)
+                }
+
+                /// Usage page session-shape card footer.
+                ///
+                /// Key: `workbench.usage.shape.samples`
+                /// en: "{count, plural, one {# session with data} other {# sessions with data}}"
+                public static func samples(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.shape.samples", count)
+                }
+
+                /// Usage page card: how sessions are distributed by size.
+                ///
+                /// Key: `workbench.usage.shape.title`
+                /// en: "Session shape"
+                public static var title: String { L10nSupport.string("workbench.usage.shape.title") }
+
+                /// Usage page session-shape bin label for the first duration bin.
+                ///
+                /// Key: `workbench.usage.shape.under`
+                /// en: "Under {value}"
+                public static func under(value: String) -> String {
+                    L10nSupport.format("workbench.usage.shape.under", value)
+                }
+
+                public enum Metric {
+                    /// Usage page session-shape metric: wall-clock length of a session.
+                    ///
+                    /// Key: `workbench.usage.shape.metric.duration`
+                    /// en: "Duration"
+                    public static var duration: String { L10nSupport.string("workbench.usage.shape.metric.duration") }
+
+                    /// Usage page session-shape metric: tool calls per session.
+                    ///
+                    /// Key: `workbench.usage.shape.metric.toolCalls`
+                    /// en: "Tool calls"
+                    public static var toolCalls: String { L10nSupport.string("workbench.usage.shape.metric.toolCalls") }
+                }
+            }
+
+            public enum Skills {
+                /// Usage page skills card with nothing to list.
+                ///
+                /// Key: `workbench.usage.skills.empty`
+                /// en: "No skill use found in analyzed sessions"
+                public static var empty: String { L10nSupport.string("workbench.usage.skills.empty") }
+
+                /// Tooltip on one harness's part of a skill's share bar. {harness} is a harness name.
+                ///
+                /// Key: `workbench.usage.skills.harnessUses`
+                /// en: "{harness} · {count, plural, one {# use} other {# uses}}"
+                public static func harnessUses(harness: String, count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.skills.harnessUses", harness, count)
+                }
+
+                /// Usage page skills row. {when} is a relative time.
+                ///
+                /// Key: `workbench.usage.skills.lastUsed`
+                /// en: "Last used {when}"
+                public static func lastUsed(when: String) -> String {
+                    L10nSupport.format("workbench.usage.skills.lastUsed", when)
+                }
+
+                /// Usage page skills row. {projects} is a list of directory names.
+                ///
+                /// Key: `workbench.usage.skills.projects`
+                /// en: "In {projects}"
+                public static func projects(projects: String) -> String {
+                    L10nSupport.format("workbench.usage.skills.projects", projects)
+                }
+
+                /// Subtitle of the Usage page skills card.
+                ///
+                /// Key: `workbench.usage.skills.subtitle`
+                /// en: "From analyzed Codex and Claude Code sessions"
+                public static var subtitle: String { L10nSupport.string("workbench.usage.skills.subtitle") }
+            }
+
+            public enum Status {
+                /// Usage page status line while session files are parsed for tools, skills and per-session cost.
+                ///
+                /// Key: `workbench.usage.status.analyzing`
+                /// en: "Reading sessions in the background · {ready} of {total} ready"
+                public static func analyzing(ready: Int, total: Int) -> String {
+                    L10nSupport.format("workbench.usage.status.analyzing", ready, total)
+                }
+
+                /// Usage page note when the range reaches past the ledger's request-level detail. {date} is a formatted day.
+                ///
+                /// Key: `workbench.usage.status.hourlyFrom`
+                /// en: "Hourly cards cover {date} onward; older days only have daily totals."
+                public static func hourlyFrom(date: String) -> String {
+                    L10nSupport.format("workbench.usage.status.hourlyFrom", date)
+                }
+
+                /// Usage page note when the local session index has never been built.
+                ///
+                /// Key: `workbench.usage.status.indexEmpty`
+                /// en: "Sessions appear once the session index is built. It is being built now."
+                public static var indexEmpty: String { L10nSupport.string("workbench.usage.status.indexEmpty") }
+
+                /// Usage page note: daily rollups carry no project, so a project filter leaves them out.
+                ///
+                /// Key: `workbench.usage.status.projectDetailOnly`
+                /// en: "A project filter covers request-level history only."
+                public static var projectDetailOnly: String { L10nSupport.string("workbench.usage.status.projectDetailOnly") }
+
+                /// Usage page note: sessions the background fill will not reach.
+                ///
+                /// Key: `workbench.usage.status.skipped`
+                /// en: "{count, plural, one {# session is} other {# sessions are}} too large or too old to read in the background."
+                public static func skipped(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.status.skipped", count)
+                }
+            }
+
+            public enum Tokens {
+                /// Usage page trend legend and tooltip: everything sent to the model in a bar — fresh input plus cache read and write, as opposed to In, the fresh part alone.
+                ///
+                /// Key: `workbench.usage.tokens.prompt`
+                /// en: "Prompt"
+                public static var prompt: String { L10nSupport.string("workbench.usage.tokens.prompt") }
+            }
+
+            public enum Tools {
+                /// Column header on the Usage page tools card.
+                ///
+                /// Key: `workbench.usage.tools.calls`
+                /// en: "Calls"
+                public static var calls: String { L10nSupport.string("workbench.usage.tools.calls") }
+
+                /// Usage page tools card with nothing to list.
+                ///
+                /// Key: `workbench.usage.tools.empty`
+                /// en: "No tool calls found in analyzed sessions"
+                public static var empty: String { L10nSupport.string("workbench.usage.tools.empty") }
+
+                /// Footer of the Usage page tools card.
+                ///
+                /// Key: `workbench.usage.tools.more`
+                /// en: "{count, plural, one {# more tool} other {# more tools}}"
+                public static func more(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.tools.more", count)
+                }
+
+                /// Column header on the Usage page tools card.
+                ///
+                /// Key: `workbench.usage.tools.share`
+                /// en: "Share"
+                public static var share: String { L10nSupport.string("workbench.usage.tools.share") }
+
+                /// Usage page card ranking tools by calls.
+                ///
+                /// Key: `workbench.usage.tools.title`
+                /// en: "Tool use"
+                public static var title: String { L10nSupport.string("workbench.usage.tools.title") }
+
+                /// Tooltip on a weekly bar on the Usage page tools card.
+                ///
+                /// Key: `workbench.usage.tools.week`
+                /// en: "Week of {date} · {count, plural, one {# call} other {# calls}}"
+                public static func week(date: String, count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.tools.week", date, count)
+                }
+
+                /// Usage page tools card: heading over the weekly stacked bars.
+                ///
+                /// Key: `workbench.usage.tools.weekly`
+                /// en: "Weekly by kind"
+                public static var weekly: String { L10nSupport.string("workbench.usage.tools.weekly") }
+
+                public enum Category {
+                    /// Kind of tool on the Usage page tools card: subagents, plans and skills.
+                    ///
+                    /// Key: `workbench.usage.tools.category.agent`
+                    /// en: "Agents"
+                    public static var agent: String { L10nSupport.string("workbench.usage.tools.category.agent") }
+
+                    /// Kind of tool on the Usage page tools card: writing and patching files. distinct-from: workbench.library.edit (a noun naming a kind of tool, not the verb on a button).
+                    ///
+                    /// Key: `workbench.usage.tools.category.edit`
+                    /// en: "Edit"
+                    public static var edit: String { L10nSupport.string("workbench.usage.tools.category.edit") }
+
+                    /// Kind of tool on the Usage page tools card: reading and searching files.
+                    ///
+                    /// Key: `workbench.usage.tools.category.read`
+                    /// en: "Read"
+                    public static var read: String { L10nSupport.string("workbench.usage.tools.category.read") }
+
+                    /// Kind of tool on the Usage page tools card: shell and code execution.
+                    ///
+                    /// Key: `workbench.usage.tools.category.shell`
+                    /// en: "Shell"
+                    public static var shell: String { L10nSupport.string("workbench.usage.tools.category.shell") }
+
+                    /// Kind of tool on the Usage page tools card: web search and fetch.
+                    ///
+                    /// Key: `workbench.usage.tools.category.web`
+                    /// en: "Web"
+                    public static var web: String { L10nSupport.string("workbench.usage.tools.category.web") }
+                }
+            }
+
+            public enum TopSessions {
+                /// Usage page card listing the sessions with the most tokens, cost or active time.
+                ///
+                /// Key: `workbench.usage.topSessions.title`
+                /// en: "Heaviest sessions"
+                public static var title: String { L10nSupport.string("workbench.usage.topSessions.title") }
+            }
+
+            public enum Trend {
+                /// Accessibility label of the Usage page trend chart.
+                ///
+                /// Key: `workbench.usage.trend.a11y`
+                /// en: "Usage trend chart"
+                public static var a11y: String { L10nSupport.string("workbench.usage.trend.a11y") }
+
+                /// Usage page trend card with nothing to draw.
+                ///
+                /// Key: `workbench.usage.trend.empty`
+                /// en: "No usage in this range"
+                public static var empty: String { L10nSupport.string("workbench.usage.trend.empty") }
+
+                /// Usage page trend control: stack each bar as prompt under output (the other choice splits it by harness).
+                ///
+                /// Key: `workbench.usage.trend.splitFlow`
+                /// en: "Prompt · Out"
+                public static var splitFlow: String { L10nSupport.string("workbench.usage.trend.splitFlow") }
+
+                /// Usage page trend card title with one bar per day.
+                ///
+                /// Key: `workbench.usage.trend.titleDaily`
+                /// en: "Daily trend"
+                public static var titleDaily: String { L10nSupport.string("workbench.usage.trend.titleDaily") }
+
+                /// Usage page trend card title when a long range is drawn one bar per week.
+                ///
+                /// Key: `workbench.usage.trend.titleWeekly`
+                /// en: "Weekly trend"
+                public static var titleWeekly: String { L10nSupport.string("workbench.usage.trend.titleWeekly") }
+
+                public enum Metric {
+                    /// Usage page metric: active hours (trend) or active time (heaviest sessions).
+                    ///
+                    /// Key: `workbench.usage.trend.metric.active`
+                    /// en: "Active"
+                    public static var active: String { L10nSupport.string("workbench.usage.trend.metric.active") }
+
+                    /// Usage page metric: requests (trend) or messages per session (session shape).
+                    ///
+                    /// Key: `workbench.usage.trend.metric.messages`
+                    /// en: "Messages"
+                    public static var messages: String { L10nSupport.string("workbench.usage.trend.metric.messages") }
+
+                    /// Usage page trend metric: output tokens only.
+                    ///
+                    /// Key: `workbench.usage.trend.metric.output`
+                    /// en: "Output tokens"
+                    public static var output: String { L10nSupport.string("workbench.usage.trend.metric.output") }
+                }
+            }
+        }
     }
 }
 
@@ -15879,6 +17365,19 @@ enum L10nCatalogFacts {
         "workbench.sessions.allChip.helpUnselected",
         "workbench.sessions.allChip.labelUnselected",
         "workbench.sessions.antigravityNotice",
+        "workbench.sessions.conversation.cancelled",
+        "workbench.sessions.conversation.childNotFound",
+        "workbench.sessions.conversation.collapseAll",
+        "workbench.sessions.conversation.empty",
+        "workbench.sessions.conversation.expandAll",
+        "workbench.sessions.conversation.jumpLatest",
+        "workbench.sessions.conversation.loadEarlier",
+        "workbench.sessions.conversation.loadLater",
+        "workbench.sessions.conversation.loadingOutline",
+        "workbench.sessions.conversation.loadingTurns",
+        "workbench.sessions.conversation.unreadable",
+        "workbench.sessions.conversation.viewRaw",
+        "workbench.sessions.conversation.windowed",
         "workbench.sessions.copyResumeCommand",
         "workbench.sessions.copySessionID",
         "workbench.sessions.copySessionIDLabel",
@@ -15893,6 +17392,8 @@ enum L10nCatalogFacts {
         "workbench.sessions.details",
         "workbench.sessions.details.collapsed",
         "workbench.sessions.details.expanded",
+        "workbench.sessions.duration.lessThanSecond",
+        "workbench.sessions.duration.seconds",
         "workbench.sessions.empty.indexUnavailableDetail",
         "workbench.sessions.empty.indexUnavailableTitle",
         "workbench.sessions.empty.noLogsDetail",
@@ -15930,11 +17431,44 @@ enum L10nCatalogFacts {
         "workbench.sessions.groupByProject",
         "workbench.sessions.index.scanning",
         "workbench.sessions.index.unavailable",
+        "workbench.sessions.kind.agentCreated",
+        "workbench.sessions.kind.automation",
+        "workbench.sessions.kind.exec",
+        "workbench.sessions.kind.fork",
+        "workbench.sessions.kind.subagent",
+        "workbench.sessions.layout.outlineHelp",
         "workbench.sessions.list.capNotice",
+        "workbench.sessions.list.collapseThreads",
+        "workbench.sessions.list.costHelp",
+        "workbench.sessions.list.expandThreads",
+        "workbench.sessions.list.loadingThreads",
+        "workbench.sessions.list.threadCount",
+        "workbench.sessions.list.tokensHelp",
+        "workbench.sessions.list.untitled",
         "workbench.sessions.message.copy",
         "workbench.sessions.message.copyHelp",
         "workbench.sessions.message.showLess",
         "workbench.sessions.message.showMore",
+        "workbench.sessions.meta.back",
+        "workbench.sessions.meta.branchHelp",
+        "workbench.sessions.meta.costEstimate",
+        "workbench.sessions.meta.costHelp",
+        "workbench.sessions.meta.costLowerBound",
+        "workbench.sessions.meta.costLowerBoundHelp",
+        "workbench.sessions.meta.modelsHelp",
+        "workbench.sessions.meta.more",
+        "workbench.sessions.meta.openFolder",
+        "workbench.sessions.meta.prompts",
+        "workbench.sessions.meta.revealFolder",
+        "workbench.sessions.meta.revealLog",
+        "workbench.sessions.meta.reviews",
+        "workbench.sessions.meta.subagents",
+        "workbench.sessions.meta.timeHelp",
+        "workbench.sessions.meta.tokensHelp",
+        "workbench.sessions.meta.tokensTotalOnly",
+        "workbench.sessions.meta.toolCalls",
+        "workbench.sessions.meta.toolCallsFailed",
+        "workbench.sessions.meta.verdicts",
         "workbench.sessions.openInTerminal",
         "workbench.sessions.options.help",
         "workbench.sessions.options.indexMessageText",
@@ -15948,10 +17482,18 @@ enum L10nCatalogFacts {
         "workbench.sessions.page.previous",
         "workbench.sessions.project.none",
         "workbench.sessions.project.projectless",
+        "workbench.sessions.rail.allHelp",
+        "workbench.sessions.rail.collapse",
+        "workbench.sessions.rail.expand",
+        "workbench.sessions.rail.selectHelp",
+        "workbench.sessions.rail.threadsIncluded",
         "workbench.sessions.range.all",
         "workbench.sessions.refreshHelp",
         "workbench.sessions.resume.heading",
+        "workbench.sessions.resume.inTerminal",
         "workbench.sessions.resume.none",
+        "workbench.sessions.resume.options",
+        "workbench.sessions.resume.subagentHelp",
         "workbench.sessions.role.assistant",
         "workbench.sessions.role.other",
         "workbench.sessions.role.system",
@@ -15980,6 +17522,26 @@ enum L10nCatalogFacts {
         "workbench.sessions.sort.byProject",
         "workbench.sessions.sort.oldestFirst",
         "workbench.sessions.sort.recentFirst",
+        "workbench.sessions.step.arguments",
+        "workbench.sessions.step.compaction",
+        "workbench.sessions.step.exitCode",
+        "workbench.sessions.step.failed",
+        "workbench.sessions.step.noDetail",
+        "workbench.sessions.step.openThread",
+        "workbench.sessions.step.orphan",
+        "workbench.sessions.step.pending",
+        "workbench.sessions.step.result",
+        "workbench.sessions.step.succeeded",
+        "workbench.sessions.step.thinking",
+        "workbench.sessions.step.thinkingHidden",
+        "workbench.sessions.threads.collapseAll",
+        "workbench.sessions.threads.expandAll",
+        "workbench.sessions.threads.foldedNote",
+        "workbench.sessions.threads.hidden",
+        "workbench.sessions.threads.menu",
+        "workbench.sessions.threads.menuHelp",
+        "workbench.sessions.threads.showAutomation",
+        "workbench.sessions.threads.showExec",
         "workbench.sessions.toast.bodyIndexDropFailed",
         "workbench.sessions.toast.bodyIndexDropped",
         "workbench.sessions.toast.copied",
@@ -15993,6 +17555,9 @@ enum L10nCatalogFacts {
         "workbench.sessions.toast.openedIn",
         "workbench.sessions.toast.sessionIDCopied",
         "workbench.sessions.toast.sourcePathCopied",
+        "workbench.sessions.toc.heading",
+        "workbench.sessions.toc.hide",
+        "workbench.sessions.toc.unsupported",
         "workbench.sessions.transcript.autoReviewDivider",
         "workbench.sessions.transcript.cancelled",
         "workbench.sessions.transcript.loadAll",
@@ -16005,6 +17570,42 @@ enum L10nCatalogFacts {
         "workbench.sessions.transcript.readFailed",
         "workbench.sessions.transcript.truncatedDetail",
         "workbench.sessions.transcript.truncatedTitle",
+        "workbench.sessions.turn.answerCopied",
+        "workbench.sessions.turn.commands",
+        "workbench.sessions.turn.continueLoading",
+        "workbench.sessions.turn.copyAnswer",
+        "workbench.sessions.turn.copyPrompt",
+        "workbench.sessions.turn.failures",
+        "workbench.sessions.turn.followUps",
+        "workbench.sessions.turn.hideSteps",
+        "workbench.sessions.turn.injected",
+        "workbench.sessions.turn.injectedHelp",
+        "workbench.sessions.turn.loading",
+        "workbench.sessions.turn.ordinal",
+        "workbench.sessions.turn.origin.agent",
+        "workbench.sessions.turn.origin.automation",
+        "workbench.sessions.turn.origin.guardianRequest",
+        "workbench.sessions.turn.origin.none",
+        "workbench.sessions.turn.process",
+        "workbench.sessions.turn.promptCopied",
+        "workbench.sessions.turn.showSteps",
+        "workbench.sessions.turn.status.abandoned",
+        "workbench.sessions.turn.status.abandonedHelp",
+        "workbench.sessions.turn.status.aborted",
+        "workbench.sessions.turn.status.open",
+        "workbench.sessions.turn.steps",
+        "workbench.sessions.turn.stopped",
+        "workbench.sessions.turn.thinking",
+        "workbench.sessions.turn.unavailable",
+        "workbench.sessions.verdict.allow",
+        "workbench.sessions.verdict.deny",
+        "workbench.sessions.verdict.help",
+        "workbench.sessions.verdict.risk",
+        "workbench.sessions.view.help",
+        "workbench.sessions.view.raw",
+        "workbench.sessions.view.searchHit",
+        "workbench.sessions.view.showHit",
+        "workbench.sessions.view.turns",
         "workbench.skills.appCountNativeDisabled",
         "workbench.skills.appCountViaGeminiRoot",
         "workbench.skills.appCountViaSharedRoot",
@@ -16275,6 +17876,105 @@ enum L10nCatalogFacts {
         "workbench.status.nextRefill",
         "workbench.status.sharedLibrary",
         "workbench.status.updated",
+        "workbench.usage.count.activeHours",
+        "workbench.usage.count.calls",
+        "workbench.usage.count.sessions",
+        "workbench.usage.count.uses",
+        "workbench.usage.filter.allProjects",
+        "workbench.usage.filter.clearHelp",
+        "workbench.usage.filter.project",
+        "workbench.usage.filter.projectHelp",
+        "workbench.usage.filter.searchProjects",
+        "workbench.usage.health.composition",
+        "workbench.usage.health.counts",
+        "workbench.usage.health.empty",
+        "workbench.usage.health.metric.cacheHit",
+        "workbench.usage.health.metric.failures",
+        "workbench.usage.health.metric.growth",
+        "workbench.usage.health.metric.largest",
+        "workbench.usage.health.metric.start",
+        "workbench.usage.health.metric.typical",
+        "workbench.usage.health.metric.window",
+        "workbench.usage.health.models",
+        "workbench.usage.health.rating.excellent",
+        "workbench.usage.health.rating.fair",
+        "workbench.usage.health.rating.good",
+        "workbench.usage.health.rating.poor",
+        "workbench.usage.health.rating.unknown",
+        "workbench.usage.health.scoreHelp",
+        "workbench.usage.health.sub.leanStart",
+        "workbench.usage.health.sub.pace",
+        "workbench.usage.health.sub.reliability",
+        "workbench.usage.health.subtitle",
+        "workbench.usage.health.title",
+        "workbench.usage.heatmap.busiest",
+        "workbench.usage.heatmap.cell",
+        "workbench.usage.heatmap.empty",
+        "workbench.usage.heatmap.subtitle",
+        "workbench.usage.heatmap.title",
+        "workbench.usage.hero.activeDetail",
+        "workbench.usage.hero.activeTime",
+        "workbench.usage.hero.cacheDetail",
+        "workbench.usage.hero.costDetail",
+        "workbench.usage.hero.costUnpriced",
+        "workbench.usage.hero.projectsDetail",
+        "workbench.usage.hero.sessionsDetail",
+        "workbench.usage.hero.tokensDetail",
+        "workbench.usage.range.quarter",
+        "workbench.usage.ranking.emptyModels",
+        "workbench.usage.ranking.emptyProjects",
+        "workbench.usage.ranking.more",
+        "workbench.usage.recent.noMatch",
+        "workbench.usage.recent.showing",
+        "workbench.usage.recent.title",
+        "workbench.usage.recent.tokens",
+        "workbench.usage.session.empty",
+        "workbench.usage.session.noTokens",
+        "workbench.usage.session.openHelp",
+        "workbench.usage.session.sourceLedger",
+        "workbench.usage.session.sourceLog",
+        "workbench.usage.session.untitled",
+        "workbench.usage.shape.atLeast",
+        "workbench.usage.shape.bin",
+        "workbench.usage.shape.median",
+        "workbench.usage.shape.metric.duration",
+        "workbench.usage.shape.metric.toolCalls",
+        "workbench.usage.shape.range",
+        "workbench.usage.shape.samples",
+        "workbench.usage.shape.title",
+        "workbench.usage.shape.under",
+        "workbench.usage.skills.empty",
+        "workbench.usage.skills.harnessUses",
+        "workbench.usage.skills.lastUsed",
+        "workbench.usage.skills.projects",
+        "workbench.usage.skills.subtitle",
+        "workbench.usage.status.analyzing",
+        "workbench.usage.status.hourlyFrom",
+        "workbench.usage.status.indexEmpty",
+        "workbench.usage.status.projectDetailOnly",
+        "workbench.usage.status.skipped",
+        "workbench.usage.tokens.prompt",
+        "workbench.usage.tools.calls",
+        "workbench.usage.tools.category.agent",
+        "workbench.usage.tools.category.edit",
+        "workbench.usage.tools.category.read",
+        "workbench.usage.tools.category.shell",
+        "workbench.usage.tools.category.web",
+        "workbench.usage.tools.empty",
+        "workbench.usage.tools.more",
+        "workbench.usage.tools.share",
+        "workbench.usage.tools.title",
+        "workbench.usage.tools.week",
+        "workbench.usage.tools.weekly",
+        "workbench.usage.topSessions.title",
+        "workbench.usage.trend.a11y",
+        "workbench.usage.trend.empty",
+        "workbench.usage.trend.metric.active",
+        "workbench.usage.trend.metric.messages",
+        "workbench.usage.trend.metric.output",
+        "workbench.usage.trend.splitFlow",
+        "workbench.usage.trend.titleDaily",
+        "workbench.usage.trend.titleWeekly",
     ]
 
     static let pluralKeys: Set<String> = [
@@ -16320,10 +18020,21 @@ enum L10nCatalogFacts {
         "usage.yearHeatmap.a11y",
         "workbench.sessions.count.sessions",
         "workbench.sessions.delete.confirm",
+        "workbench.sessions.list.threadCount",
+        "workbench.sessions.meta.prompts",
+        "workbench.sessions.meta.reviews",
+        "workbench.sessions.meta.subagents",
+        "workbench.sessions.meta.toolCalls",
+        "workbench.sessions.rail.threadsIncluded",
         "workbench.sessions.row.autoReviewsMerged",
         "workbench.sessions.row.messageCount",
         "workbench.sessions.toast.deleted",
         "workbench.sessions.transcript.truncatedTitle",
+        "workbench.sessions.turn.commands",
+        "workbench.sessions.turn.failures",
+        "workbench.sessions.turn.followUps",
+        "workbench.sessions.turn.injected",
+        "workbench.sessions.turn.steps",
         "workbench.skills.appSeesCount",
         "workbench.skills.badge.copies",
         "workbench.skills.builtInCount",
@@ -16340,6 +18051,18 @@ enum L10nCatalogFacts {
         "workbench.skills.toast.recorded",
         "workbench.skills.toast.reposUnreadable",
         "workbench.skills.toast.updatesAvailable",
+        "workbench.usage.count.activeHours",
+        "workbench.usage.count.calls",
+        "workbench.usage.count.sessions",
+        "workbench.usage.count.uses",
+        "workbench.usage.heatmap.cell",
+        "workbench.usage.hero.activeDetail",
+        "workbench.usage.shape.bin",
+        "workbench.usage.shape.samples",
+        "workbench.usage.skills.harnessUses",
+        "workbench.usage.status.skipped",
+        "workbench.usage.tools.more",
+        "workbench.usage.tools.week",
     ]
 
     static let placeholderCounts: [String: Int] = [
@@ -18067,6 +19790,19 @@ enum L10nCatalogFacts {
         "workbench.sessions.allChip.helpUnselected": 0,
         "workbench.sessions.allChip.labelUnselected": 0,
         "workbench.sessions.antigravityNotice": 0,
+        "workbench.sessions.conversation.cancelled": 0,
+        "workbench.sessions.conversation.childNotFound": 0,
+        "workbench.sessions.conversation.collapseAll": 0,
+        "workbench.sessions.conversation.empty": 0,
+        "workbench.sessions.conversation.expandAll": 0,
+        "workbench.sessions.conversation.jumpLatest": 0,
+        "workbench.sessions.conversation.loadEarlier": 1,
+        "workbench.sessions.conversation.loadLater": 1,
+        "workbench.sessions.conversation.loadingOutline": 0,
+        "workbench.sessions.conversation.loadingTurns": 2,
+        "workbench.sessions.conversation.unreadable": 0,
+        "workbench.sessions.conversation.viewRaw": 0,
+        "workbench.sessions.conversation.windowed": 0,
         "workbench.sessions.copyResumeCommand": 0,
         "workbench.sessions.copySessionID": 0,
         "workbench.sessions.copySessionIDLabel": 1,
@@ -18081,6 +19817,8 @@ enum L10nCatalogFacts {
         "workbench.sessions.details": 0,
         "workbench.sessions.details.collapsed": 0,
         "workbench.sessions.details.expanded": 0,
+        "workbench.sessions.duration.lessThanSecond": 0,
+        "workbench.sessions.duration.seconds": 1,
         "workbench.sessions.empty.indexUnavailableDetail": 0,
         "workbench.sessions.empty.indexUnavailableTitle": 0,
         "workbench.sessions.empty.noLogsDetail": 1,
@@ -18118,11 +19856,44 @@ enum L10nCatalogFacts {
         "workbench.sessions.groupByProject": 0,
         "workbench.sessions.index.scanning": 0,
         "workbench.sessions.index.unavailable": 0,
+        "workbench.sessions.kind.agentCreated": 0,
+        "workbench.sessions.kind.automation": 0,
+        "workbench.sessions.kind.exec": 0,
+        "workbench.sessions.kind.fork": 0,
+        "workbench.sessions.kind.subagent": 0,
+        "workbench.sessions.layout.outlineHelp": 0,
         "workbench.sessions.list.capNotice": 2,
+        "workbench.sessions.list.collapseThreads": 0,
+        "workbench.sessions.list.costHelp": 1,
+        "workbench.sessions.list.expandThreads": 0,
+        "workbench.sessions.list.loadingThreads": 0,
+        "workbench.sessions.list.threadCount": 1,
+        "workbench.sessions.list.tokensHelp": 1,
+        "workbench.sessions.list.untitled": 0,
         "workbench.sessions.message.copy": 0,
         "workbench.sessions.message.copyHelp": 0,
         "workbench.sessions.message.showLess": 0,
         "workbench.sessions.message.showMore": 1,
+        "workbench.sessions.meta.back": 1,
+        "workbench.sessions.meta.branchHelp": 0,
+        "workbench.sessions.meta.costEstimate": 1,
+        "workbench.sessions.meta.costHelp": 0,
+        "workbench.sessions.meta.costLowerBound": 1,
+        "workbench.sessions.meta.costLowerBoundHelp": 0,
+        "workbench.sessions.meta.modelsHelp": 0,
+        "workbench.sessions.meta.more": 0,
+        "workbench.sessions.meta.openFolder": 0,
+        "workbench.sessions.meta.prompts": 1,
+        "workbench.sessions.meta.revealFolder": 1,
+        "workbench.sessions.meta.revealLog": 0,
+        "workbench.sessions.meta.reviews": 1,
+        "workbench.sessions.meta.subagents": 1,
+        "workbench.sessions.meta.timeHelp": 2,
+        "workbench.sessions.meta.tokensHelp": 4,
+        "workbench.sessions.meta.tokensTotalOnly": 0,
+        "workbench.sessions.meta.toolCalls": 1,
+        "workbench.sessions.meta.toolCallsFailed": 2,
+        "workbench.sessions.meta.verdicts": 2,
         "workbench.sessions.openInTerminal": 0,
         "workbench.sessions.options.help": 0,
         "workbench.sessions.options.indexMessageText": 0,
@@ -18136,10 +19907,18 @@ enum L10nCatalogFacts {
         "workbench.sessions.page.previous": 0,
         "workbench.sessions.project.none": 0,
         "workbench.sessions.project.projectless": 0,
+        "workbench.sessions.rail.allHelp": 0,
+        "workbench.sessions.rail.collapse": 0,
+        "workbench.sessions.rail.expand": 0,
+        "workbench.sessions.rail.selectHelp": 1,
+        "workbench.sessions.rail.threadsIncluded": 1,
         "workbench.sessions.range.all": 0,
         "workbench.sessions.refreshHelp": 0,
         "workbench.sessions.resume.heading": 0,
+        "workbench.sessions.resume.inTerminal": 1,
         "workbench.sessions.resume.none": 0,
+        "workbench.sessions.resume.options": 0,
+        "workbench.sessions.resume.subagentHelp": 0,
         "workbench.sessions.role.assistant": 0,
         "workbench.sessions.role.other": 0,
         "workbench.sessions.role.system": 0,
@@ -18168,6 +19947,26 @@ enum L10nCatalogFacts {
         "workbench.sessions.sort.byProject": 0,
         "workbench.sessions.sort.oldestFirst": 0,
         "workbench.sessions.sort.recentFirst": 0,
+        "workbench.sessions.step.arguments": 0,
+        "workbench.sessions.step.compaction": 0,
+        "workbench.sessions.step.exitCode": 1,
+        "workbench.sessions.step.failed": 0,
+        "workbench.sessions.step.noDetail": 0,
+        "workbench.sessions.step.openThread": 0,
+        "workbench.sessions.step.orphan": 0,
+        "workbench.sessions.step.pending": 0,
+        "workbench.sessions.step.result": 0,
+        "workbench.sessions.step.succeeded": 0,
+        "workbench.sessions.step.thinking": 1,
+        "workbench.sessions.step.thinkingHidden": 0,
+        "workbench.sessions.threads.collapseAll": 0,
+        "workbench.sessions.threads.expandAll": 0,
+        "workbench.sessions.threads.foldedNote": 0,
+        "workbench.sessions.threads.hidden": 1,
+        "workbench.sessions.threads.menu": 0,
+        "workbench.sessions.threads.menuHelp": 0,
+        "workbench.sessions.threads.showAutomation": 1,
+        "workbench.sessions.threads.showExec": 1,
         "workbench.sessions.toast.bodyIndexDropFailed": 0,
         "workbench.sessions.toast.bodyIndexDropped": 0,
         "workbench.sessions.toast.copied": 0,
@@ -18181,6 +19980,9 @@ enum L10nCatalogFacts {
         "workbench.sessions.toast.openedIn": 1,
         "workbench.sessions.toast.sessionIDCopied": 0,
         "workbench.sessions.toast.sourcePathCopied": 0,
+        "workbench.sessions.toc.heading": 0,
+        "workbench.sessions.toc.hide": 0,
+        "workbench.sessions.toc.unsupported": 0,
         "workbench.sessions.transcript.autoReviewDivider": 0,
         "workbench.sessions.transcript.cancelled": 0,
         "workbench.sessions.transcript.loadAll": 0,
@@ -18193,6 +19995,42 @@ enum L10nCatalogFacts {
         "workbench.sessions.transcript.readFailed": 0,
         "workbench.sessions.transcript.truncatedDetail": 2,
         "workbench.sessions.transcript.truncatedTitle": 1,
+        "workbench.sessions.turn.answerCopied": 0,
+        "workbench.sessions.turn.commands": 1,
+        "workbench.sessions.turn.continueLoading": 0,
+        "workbench.sessions.turn.copyAnswer": 0,
+        "workbench.sessions.turn.copyPrompt": 0,
+        "workbench.sessions.turn.failures": 1,
+        "workbench.sessions.turn.followUps": 1,
+        "workbench.sessions.turn.hideSteps": 0,
+        "workbench.sessions.turn.injected": 1,
+        "workbench.sessions.turn.injectedHelp": 0,
+        "workbench.sessions.turn.loading": 0,
+        "workbench.sessions.turn.ordinal": 1,
+        "workbench.sessions.turn.origin.agent": 0,
+        "workbench.sessions.turn.origin.automation": 0,
+        "workbench.sessions.turn.origin.guardianRequest": 0,
+        "workbench.sessions.turn.origin.none": 0,
+        "workbench.sessions.turn.process": 0,
+        "workbench.sessions.turn.promptCopied": 0,
+        "workbench.sessions.turn.showSteps": 0,
+        "workbench.sessions.turn.status.abandoned": 0,
+        "workbench.sessions.turn.status.abandonedHelp": 0,
+        "workbench.sessions.turn.status.aborted": 0,
+        "workbench.sessions.turn.status.open": 0,
+        "workbench.sessions.turn.steps": 1,
+        "workbench.sessions.turn.stopped": 0,
+        "workbench.sessions.turn.thinking": 0,
+        "workbench.sessions.turn.unavailable": 0,
+        "workbench.sessions.verdict.allow": 0,
+        "workbench.sessions.verdict.deny": 0,
+        "workbench.sessions.verdict.help": 0,
+        "workbench.sessions.verdict.risk": 1,
+        "workbench.sessions.view.help": 0,
+        "workbench.sessions.view.raw": 0,
+        "workbench.sessions.view.searchHit": 0,
+        "workbench.sessions.view.showHit": 0,
+        "workbench.sessions.view.turns": 0,
         "workbench.skills.appCountNativeDisabled": 1,
         "workbench.skills.appCountViaGeminiRoot": 2,
         "workbench.skills.appCountViaSharedRoot": 2,
@@ -18463,5 +20301,104 @@ enum L10nCatalogFacts {
         "workbench.status.nextRefill": 1,
         "workbench.status.sharedLibrary": 0,
         "workbench.status.updated": 1,
+        "workbench.usage.count.activeHours": 1,
+        "workbench.usage.count.calls": 1,
+        "workbench.usage.count.sessions": 1,
+        "workbench.usage.count.uses": 1,
+        "workbench.usage.filter.allProjects": 0,
+        "workbench.usage.filter.clearHelp": 0,
+        "workbench.usage.filter.project": 0,
+        "workbench.usage.filter.projectHelp": 0,
+        "workbench.usage.filter.searchProjects": 0,
+        "workbench.usage.health.composition": 0,
+        "workbench.usage.health.counts": 2,
+        "workbench.usage.health.empty": 0,
+        "workbench.usage.health.metric.cacheHit": 0,
+        "workbench.usage.health.metric.failures": 0,
+        "workbench.usage.health.metric.growth": 0,
+        "workbench.usage.health.metric.largest": 0,
+        "workbench.usage.health.metric.start": 0,
+        "workbench.usage.health.metric.typical": 0,
+        "workbench.usage.health.metric.window": 0,
+        "workbench.usage.health.models": 0,
+        "workbench.usage.health.rating.excellent": 0,
+        "workbench.usage.health.rating.fair": 0,
+        "workbench.usage.health.rating.good": 0,
+        "workbench.usage.health.rating.poor": 0,
+        "workbench.usage.health.rating.unknown": 0,
+        "workbench.usage.health.scoreHelp": 0,
+        "workbench.usage.health.sub.leanStart": 0,
+        "workbench.usage.health.sub.pace": 0,
+        "workbench.usage.health.sub.reliability": 0,
+        "workbench.usage.health.subtitle": 0,
+        "workbench.usage.health.title": 0,
+        "workbench.usage.heatmap.busiest": 1,
+        "workbench.usage.heatmap.cell": 2,
+        "workbench.usage.heatmap.empty": 0,
+        "workbench.usage.heatmap.subtitle": 0,
+        "workbench.usage.heatmap.title": 0,
+        "workbench.usage.hero.activeDetail": 1,
+        "workbench.usage.hero.activeTime": 0,
+        "workbench.usage.hero.cacheDetail": 1,
+        "workbench.usage.hero.costDetail": 0,
+        "workbench.usage.hero.costUnpriced": 0,
+        "workbench.usage.hero.projectsDetail": 2,
+        "workbench.usage.hero.sessionsDetail": 2,
+        "workbench.usage.hero.tokensDetail": 2,
+        "workbench.usage.range.quarter": 0,
+        "workbench.usage.ranking.emptyModels": 0,
+        "workbench.usage.ranking.emptyProjects": 0,
+        "workbench.usage.ranking.more": 2,
+        "workbench.usage.recent.noMatch": 1,
+        "workbench.usage.recent.showing": 2,
+        "workbench.usage.recent.title": 0,
+        "workbench.usage.recent.tokens": 3,
+        "workbench.usage.session.empty": 0,
+        "workbench.usage.session.noTokens": 0,
+        "workbench.usage.session.openHelp": 0,
+        "workbench.usage.session.sourceLedger": 0,
+        "workbench.usage.session.sourceLog": 0,
+        "workbench.usage.session.untitled": 0,
+        "workbench.usage.shape.atLeast": 1,
+        "workbench.usage.shape.bin": 2,
+        "workbench.usage.shape.median": 1,
+        "workbench.usage.shape.metric.duration": 0,
+        "workbench.usage.shape.metric.toolCalls": 0,
+        "workbench.usage.shape.range": 2,
+        "workbench.usage.shape.samples": 1,
+        "workbench.usage.shape.title": 0,
+        "workbench.usage.shape.under": 1,
+        "workbench.usage.skills.empty": 0,
+        "workbench.usage.skills.harnessUses": 2,
+        "workbench.usage.skills.lastUsed": 1,
+        "workbench.usage.skills.projects": 1,
+        "workbench.usage.skills.subtitle": 0,
+        "workbench.usage.status.analyzing": 2,
+        "workbench.usage.status.hourlyFrom": 1,
+        "workbench.usage.status.indexEmpty": 0,
+        "workbench.usage.status.projectDetailOnly": 0,
+        "workbench.usage.status.skipped": 1,
+        "workbench.usage.tokens.prompt": 0,
+        "workbench.usage.tools.calls": 0,
+        "workbench.usage.tools.category.agent": 0,
+        "workbench.usage.tools.category.edit": 0,
+        "workbench.usage.tools.category.read": 0,
+        "workbench.usage.tools.category.shell": 0,
+        "workbench.usage.tools.category.web": 0,
+        "workbench.usage.tools.empty": 0,
+        "workbench.usage.tools.more": 1,
+        "workbench.usage.tools.share": 0,
+        "workbench.usage.tools.title": 0,
+        "workbench.usage.tools.week": 2,
+        "workbench.usage.tools.weekly": 0,
+        "workbench.usage.topSessions.title": 0,
+        "workbench.usage.trend.a11y": 0,
+        "workbench.usage.trend.empty": 0,
+        "workbench.usage.trend.metric.active": 0,
+        "workbench.usage.trend.metric.messages": 0,
+        "workbench.usage.trend.metric.output": 0,
+        "workbench.usage.trend.splitFlow": 0,
+        "workbench.usage.trend.titleDaily": 0,
+        "workbench.usage.trend.titleWeekly": 0,
     ]
 }

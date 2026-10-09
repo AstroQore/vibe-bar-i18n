@@ -5055,6 +5055,45 @@
 /* Notice under the transcript Details for an AntiGravity session, explaining why the transcript is partial and cannot be deleted */
 "workbench.sessions.antigravityNotice" = "AntiGravity stores its turns as an undocumented binary payload, so this transcript is a partial reconstruction and its sessions cannot be deleted from here — the IDE keeps them open.";
 
+/* Shown after the user stopped a session from loading. */
+"workbench.sessions.conversation.cancelled" = "Reading this session was stopped.";
+
+/* Toast when a subagent step's thread cannot be opened. */
+"workbench.sessions.conversation.childNotFound" = "That thread's log was not found.";
+
+/* Menu item that closes every loaded turn's process. */
+"workbench.sessions.conversation.collapseAll" = "Collapse every turn's steps";
+
+/* Shown for a session log with no turns. */
+"workbench.sessions.conversation.empty" = "This session has no turns yet.";
+
+/* Menu item that opens every loaded turn's process. */
+"workbench.sessions.conversation.expandAll" = "Expand every turn's steps";
+
+/* Button that scrolls a conversation back to its end. */
+"workbench.sessions.conversation.jumpLatest" = "Jump to the latest turn";
+
+/* Button at the top of a conversation. count is a formatted number of turns not yet shown. */
+"workbench.sessions.conversation.loadEarlier" = "Load earlier turns (%@ more)";
+
+/* Button at the bottom of a conversation opened at an earlier turn. count is a formatted number. */
+"workbench.sessions.conversation.loadLater" = "Load later turns (%@ more)";
+
+/* Shown while a session's turns are being read. */
+"workbench.sessions.conversation.loadingOutline" = "Reading the session's structure…";
+
+/* Progress while a large session's turns are read one at a time. Values are formatted numbers. */
+"workbench.sessions.conversation.loadingTurns" = "Reading turns %1$@ of %2$@";
+
+/* Shown when a session log could not be parsed into turns. */
+"workbench.sessions.conversation.unreadable" = "This session's structure could not be read.";
+
+/* Button offered when a session's structure could not be read. */
+"workbench.sessions.conversation.viewRaw" = "Open the raw transcript";
+
+/* Note in the conversation header for a log above the full-parse limit. */
+"workbench.sessions.conversation.windowed" = "Large log: turns are read one at a time.";
+
 /* Sessions row context menu and transcript header: copy the shell line that reopens this session */
 "workbench.sessions.copyResumeCommand" = "Copy resume command";
 
@@ -5090,6 +5129,12 @@
 
 /* Accessibility value of the Details button while the facts are shown */
 "workbench.sessions.details.expanded" = "Expanded";
+
+/* How long a step took, when it was under a second. */
+"workbench.sessions.duration.lessThanSecond" = "<1s";
+
+/* How long a step took, under a minute. seconds is a formatted number that may have one decimal, which is why this is distinct-from: quota.freshness.age.seconds (an integer age). */
+"workbench.sessions.duration.seconds" = "%@s";
 
 /* Sessions list empty state when the SQLite index would not open */
 "workbench.sessions.empty.indexUnavailableDetail" = "The index under ~/.vibebar could not be opened, so sessions cannot be listed this session.";
@@ -5202,8 +5247,44 @@
 /* Sessions filter bar status when the SQLite index would not open */
 "workbench.sessions.index.unavailable" = "index unavailable";
 
+/* Chip on a session row or header: another agent created this thread as a peer. */
+"workbench.sessions.kind.agentCreated" = "Agent thread";
+
+/* Chip on a session row or header: a scheduled automation started this session. */
+"workbench.sessions.kind.automation" = "Automation";
+
+/* Chip on a session row or header: a headless run (codex exec, an SDK call) nobody typed into. */
+"workbench.sessions.kind.exec" = "Headless";
+
+/* Chip on a session row or header: the session is a fork of another session. */
+"workbench.sessions.kind.fork" = "Fork";
+
+/* Chip on a session row or header: the session is a subagent another session started. */
+"workbench.sessions.kind.subagent" = "Subagent";
+
+/* Help for the toolbar button that toggles the Sessions page's contents column. */
+"workbench.sessions.layout.outlineHelp" = "Show or hide the conversation contents";
+
 /* Notice at the foot of the Sessions list when it stops at the loaded-summary ceiling */
 "workbench.sessions.list.capNotice" = "Showing the first %1$lld of %2$lld sessions. Narrow the filters or search to reach the rest.";
+
+/* Help for the capsule that folds a session row's subagent threads away. */
+"workbench.sessions.list.collapseThreads" = "Hide the threads this session started";
+
+/* Tooltip on a session row's cost figure. The amount is already formatted. */
+"workbench.sessions.list.costHelp" = "Estimated cost at list prices: %@";
+
+/* Help for the capsule that unfolds a session row's subagent threads. */
+"workbench.sessions.list.expandThreads" = "Show the threads this session started";
+
+/* Shown under a Claude Code session row while its subagent transcripts are listed. */
+"workbench.sessions.list.loadingThreads" = "Reading threads…";
+
+/* Tooltip on a session row's token figure. The figure is already formatted. */
+"workbench.sessions.list.tokensHelp" = "%@ tokens in this session";
+
+/* Title of a session row when the log has no title and no readable first prompt. */
+"workbench.sessions.list.untitled" = "Untitled session";
 
 /* Context menu item on a transcript message card */
 "workbench.sessions.message.copy" = "Copy Message";
@@ -5216,6 +5297,54 @@
 
 /* Button that unfolds a long transcript message; {count} is the message's length in characters */
 "workbench.sessions.message.showMore" = "Show more (%lld chars)";
+
+/* Breadcrumb button above a subagent thread that returns to the session that started it. */
+"workbench.sessions.meta.back" = "Back to %@";
+
+/* Tooltip on the conversation header's branch chip. */
+"workbench.sessions.meta.branchHelp" = "Git branch";
+
+/* Conversation header fact: the estimated cost. The amount is already formatted. */
+"workbench.sessions.meta.costEstimate" = "≈ %@";
+
+/* Tooltip on the conversation header's cost figure. */
+"workbench.sessions.meta.costHelp" = "Estimated at list prices from the tokens in the log.";
+
+/* Conversation header fact when part of the usage has no known price. */
+"workbench.sessions.meta.costLowerBound" = "≥ %@";
+
+/* Tooltip on the conversation header's cost figure when it is a lower bound. */
+"workbench.sessions.meta.costLowerBoundHelp" = "Some usage ran on a model without a known price, so this is a lower bound.";
+
+/* Tooltip on the conversation header's model chips. */
+"workbench.sessions.meta.modelsHelp" = "Models used in this session";
+
+/* Conversation header overflow menu. distinct-from: usage.yearHeatmap.more (that one is the high end of a heatmap legend, not a menu). */
+"workbench.sessions.meta.more" = "More";
+
+/* Help for the conversation header button that opens the session's working directory. */
+"workbench.sessions.meta.openFolder" = "Open the project folder";
+
+/* Tooltip on the conversation header's project-folder chip. */
+"workbench.sessions.meta.revealFolder" = "Show %@ in Finder";
+
+/* Conversation header overflow menu item. */
+"workbench.sessions.meta.revealLog" = "Show the session log in Finder";
+
+/* Tooltip on the conversation header's time range. Both values are formatted dates. */
+"workbench.sessions.meta.timeHelp" = "Started %1$@, last activity %2$@";
+
+/* Tooltip on the conversation header's token figure. Every value is already formatted. */
+"workbench.sessions.meta.tokensHelp" = "Input %1$@ · Output %2$@ · Cache read %3$@ · Cache write %4$@";
+
+/* Tooltip on the conversation header's token figure when no per-bucket breakdown exists. */
+"workbench.sessions.meta.tokensTotalOnly" = "Only a total was recorded for this session.";
+
+/* Conversation header fact when some actions failed. calls is the already-formatted tool-call count phrase; failed is a formatted number. */
+"workbench.sessions.meta.toolCallsFailed" = "%1$@, %2$@ failed";
+
+/* Conversation header fact: Auto Review verdicts on this session's turns. Values are formatted numbers. */
+"workbench.sessions.meta.verdicts" = "Auto Review: %1$@ allowed, %2$@ denied";
 
 /* Sessions row context menu and transcript resume row: run the resume command in a terminal */
 "workbench.sessions.openInTerminal" = "Open in Terminal";
@@ -5256,6 +5385,18 @@
 /* Sessions group heading, footer label and Details value for a Codex task started without a project */
 "workbench.sessions.project.projectless" = "Projectless";
 
+/* Tooltip on the All row of the Sessions page's harness column. */
+"workbench.sessions.rail.allHelp" = "Show sessions from every harness";
+
+/* Help for the button that shrinks the Sessions page's harness column to icons. */
+"workbench.sessions.rail.collapse" = "Collapse the harness column";
+
+/* Help for the button that widens the Sessions page's harness column back to names and counts. */
+"workbench.sessions.rail.expand" = "Expand the harness column";
+
+/* Tooltip on a harness row in the Sessions page's left column. */
+"workbench.sessions.rail.selectHelp" = "Show only %@. ⌘-click to add or remove it from the selection.";
+
 /* Sessions When menu option: no lower bound */
 "workbench.sessions.range.all" = "Any time";
 
@@ -5265,8 +5406,17 @@
 /* Heading above the shell line that reopens a session, in the transcript Details */
 "workbench.sessions.resume.heading" = "RESUME";
 
+/* Primary button of the conversation header: reopens the session in the named terminal app. */
+"workbench.sessions.resume.inTerminal" = "Resume in %@";
+
 /* Shown in the transcript Details when the provider offers no resume command */
 "workbench.sessions.resume.none" = "This session has no command-line entry point.";
+
+/* Help for the dropdown half of the resume button. */
+"workbench.sessions.resume.options" = "Choose where to resume";
+
+/* Help on the disabled resume button of a subagent thread. */
+"workbench.sessions.resume.subagentHelp" = "A subagent thread is resumed through the session that started it.";
 
 /* Role label on a transcript message card */
 "workbench.sessions.role.assistant" = "Assistant";
@@ -5346,6 +5496,66 @@
 /* Sessions Sort menu option */
 "workbench.sessions.sort.recentFirst" = "Newest first";
 
+/* Caption above a step's argument summary in its detail. */
+"workbench.sessions.step.arguments" = "Arguments";
+
+/* A note step: the harness compacted the conversation context here. */
+"workbench.sessions.step.compaction" = "Context compacted";
+
+/* Step detail for a shell command. code is the number as text. */
+"workbench.sessions.step.exitCode" = "Exit code %@";
+
+/* Status of a step whose result reported failure. */
+"workbench.sessions.step.failed" = "Failed";
+
+/* Step detail when the log kept neither arguments nor a result. */
+"workbench.sessions.step.noDetail" = "No output was recorded for this step.";
+
+/* Button on a subagent step that opens the thread it started. */
+"workbench.sessions.step.openThread" = "Open thread";
+
+/* Step detail: a result whose call is not in the log. */
+"workbench.sessions.step.orphan" = "Result without its call";
+
+/* Step detail: the call has no result in the log. */
+"workbench.sessions.step.pending" = "No result recorded";
+
+/* Caption above a step's result summary in its detail. */
+"workbench.sessions.step.result" = "Result";
+
+/* Status of a step whose result reported success. */
+"workbench.sessions.step.succeeded" = "Succeeded";
+
+/* A thinking step in a turn's process. count is a formatted number. */
+"workbench.sessions.step.thinking" = "Thinking · %@ characters";
+
+/* A thinking step whose text is encrypted in the log. */
+"workbench.sessions.step.thinkingHidden" = "Thinking (not readable)";
+
+/* Threads menu item that folds every session's threads. */
+"workbench.sessions.threads.collapseAll" = "Collapse all threads";
+
+/* Threads menu item that unfolds every session's threads. */
+"workbench.sessions.threads.expandAll" = "Expand all threads";
+
+/* Explanation at the top of the Threads menu on the Sessions page. */
+"workbench.sessions.threads.foldedNote" = "Subagents and forks are folded under the session that started them.";
+
+/* Detail on the Threads toolbar pill: how many loaded rows the thread filters hide. */
+"workbench.sessions.threads.hidden" = "%@ hidden";
+
+/* Toolbar menu on the Sessions page that controls how threads and headless runs are listed. */
+"workbench.sessions.threads.menu" = "Threads";
+
+/* Help for the Threads toolbar menu on the Sessions page. */
+"workbench.sessions.threads.menuHelp" = "Choose which threads and headless runs the list shows";
+
+/* Toggle in the Threads menu. The count is how many loaded rows it would add. */
+"workbench.sessions.threads.showAutomation" = "Show automations (%@)";
+
+/* Toggle in the Threads menu. The count is how many loaded rows it would add. */
+"workbench.sessions.threads.showExec" = "Show headless runs (%@)";
+
 /* Sessions toast after turning message indexing off and the stored excerpts could not be dropped */
 "workbench.sessions.toast.bodyIndexDropFailed" = "Clearing the indexed message text failed.";
 
@@ -5382,6 +5592,15 @@
 /* Sessions toast after copying a session log's path */
 "workbench.sessions.toast.sourcePathCopied" = "Source path copied.";
 
+/* Heading of the Sessions page's right column: one entry per turn. */
+"workbench.sessions.toc.heading" = "Contents";
+
+/* Help for the button that hides the contents column. */
+"workbench.sessions.toc.hide" = "Hide the contents";
+
+/* Shown in the contents column for a session whose harness has no turn structure. */
+"workbench.sessions.toc.unsupported" = "Turn contents are available for Codex and Claude Code sessions. The raw transcript has its own outline.";
+
 /* Separator inserted in a transcript where a Codex Auto Review child session is merged in. Auto Review is Codex's own feature name and stays in English. */
 "workbench.sessions.transcript.autoReviewDivider" = "Auto Review";
 
@@ -5414,6 +5633,99 @@
 
 /* Truncation banner detail. Both sizes arrive already formatted as byte counts. */
 "workbench.sessions.transcript.truncatedDetail" = "%1$@ read of %2$@. Reading all of it holds the whole transcript in memory.";
+
+/* Toast after copying an answer. */
+"workbench.sessions.turn.answerCopied" = "Answer copied.";
+
+/* Button on a stopped turn placeholder. */
+"workbench.sessions.turn.continueLoading" = "Continue reading";
+
+/* Help for the copy button on an answer. */
+"workbench.sessions.turn.copyAnswer" = "Copy answer";
+
+/* Help for the copy button on a prompt bubble. */
+"workbench.sessions.turn.copyPrompt" = "Copy prompt";
+
+/* Help for collapsing a turn's process row. */
+"workbench.sessions.turn.hideSteps" = "Hide the steps";
+
+/* Tooltip on the injected-blocks note of a turn header. */
+"workbench.sessions.turn.injectedHelp" = "Context the harness attached to this prompt — instructions, environment, reminders — is counted here and not shown.";
+
+/* Placeholder for a turn whose detail is still being read. */
+"workbench.sessions.turn.loading" = "Reading this turn…";
+
+/* Header of one turn in the conversation. number is a formatted ordinal. */
+"workbench.sessions.turn.ordinal" = "Turn %@";
+
+/* Label in place of a prompt bubble: another agent sent this turn's task. */
+"workbench.sessions.turn.origin.agent" = "From another agent";
+
+/* Label in place of a prompt bubble: a scheduled automation opened this turn. */
+"workbench.sessions.turn.origin.automation" = "Started by an automation";
+
+/* Label in place of a prompt bubble: an Auto Review request opened this turn. */
+"workbench.sessions.turn.origin.guardianRequest" = "Review request";
+
+/* Label in place of a prompt bubble: the turn opened without a new prompt. */
+"workbench.sessions.turn.origin.none" = "Continued";
+
+/* Label of the collapsible row that lists what the agent did in a turn. */
+"workbench.sessions.turn.process" = "Process";
+
+/* Toast after copying a prompt. */
+"workbench.sessions.turn.promptCopied" = "Prompt copied.";
+
+/* Help for expanding a turn's process row. */
+"workbench.sessions.turn.showSteps" = "Show the steps";
+
+/* Turn header chip: the conversation was rewound past this turn. */
+"workbench.sessions.turn.status.abandoned" = "Rewound";
+
+/* Tooltip on the Rewound chip of a turn header. */
+"workbench.sessions.turn.status.abandonedHelp" = "The conversation was rewound past this turn, so it is no longer part of the active thread.";
+
+/* Turn header chip: the turn was stopped before it finished. */
+"workbench.sessions.turn.status.aborted" = "Interrupted";
+
+/* Turn header chip: the log ends without the turn finishing. */
+"workbench.sessions.turn.status.open" = "Unfinished";
+
+/* Placeholder for a turn left unread when loading was stopped. */
+"workbench.sessions.turn.stopped" = "Reading stopped before this turn.";
+
+/* Process row label for a turn whose only steps are thinking. */
+"workbench.sessions.turn.thinking" = "Thinking";
+
+/* Placeholder for a turn whose detail could not be read. */
+"workbench.sessions.turn.unavailable" = "This turn could not be read. The log may have changed since it was opened.";
+
+/* Badge on a turn header: Auto Review allowed the turn's action. */
+"workbench.sessions.verdict.allow" = "Allowed";
+
+/* Badge on a turn header: Auto Review denied the turn's action. */
+"workbench.sessions.verdict.deny" = "Denied";
+
+/* Tooltip on an Auto Review badge. */
+"workbench.sessions.verdict.help" = "Auto Review verdict on this turn";
+
+/* Badge on a turn header: the risk level Auto Review assigned, as the reviewer wrote it. */
+"workbench.sessions.verdict.risk" = "Risk %@";
+
+/* Help for the conversation view switch. */
+"workbench.sessions.view.help" = "Switch between the turn view and the raw transcript";
+
+/* Segment of the conversation view switch: the raw message transcript. */
+"workbench.sessions.view.raw" = "Raw";
+
+/* Banner above the turn view when a full-text search hit opened the session. */
+"workbench.sessions.view.searchHit" = "Your search matched a message in this session.";
+
+/* Button on the search-hit banner. */
+"workbench.sessions.view.showHit" = "Show it in the raw transcript";
+
+/* Segment of the conversation view switch: the structured turn-by-turn view. */
+"workbench.sessions.view.turns" = "Turns";
 
 /* Last clause of the per-harness count tooltip: skills linked into the harness but switched off in its own config. */
 "workbench.skills.appCountNativeDisabled" = "%lld projected but disabled";
@@ -6176,3 +6488,264 @@
 
 /* Workbench header status for the Usage Stats page; time is a clock time distinct-from: workbench.skills.toast.updated — a toast naming the skill it re-fetched and a header line naming the time it refreshed are different sentences. */
 "workbench.status.updated" = "updated %@";
+
+/* Usage page project picker: the entry that removes the project filter. */
+"workbench.usage.filter.allProjects" = "All projects";
+
+/* Tooltip on the Usage page Clear button. */
+"workbench.usage.filter.clearHelp" = "Clear the harness, model and project filters";
+
+/* Usage page toolbar: label of the project (working directory) picker. */
+"workbench.usage.filter.project" = "Project";
+
+/* Tooltip on the Usage page project picker. */
+"workbench.usage.filter.projectHelp" = "Projects are the directories sessions ran in; worktrees count toward their repository.";
+
+/* Search field at the top of the Usage page project picker. */
+"workbench.usage.filter.searchProjects" = "Find a project";
+
+/* Harness health card footnote: what a local log cannot show. */
+"workbench.usage.health.composition" = "Prompt composition (system prompt, tools, memory, files) needs gateway data.";
+
+/* Harness health card header. Both values arrive formatted. */
+"workbench.usage.health.counts" = "%1$@ requests · %2$@ sessions";
+
+/* Usage page harness health section with nothing to show. */
+"workbench.usage.health.empty" = "No harness activity in this range";
+
+/* Harness health metric: share of the prompt served from cache. */
+"workbench.usage.health.metric.cacheHit" = "Cache hit rate";
+
+/* Harness health metric: failed share of parsed tool calls. */
+"workbench.usage.health.metric.failures" = "Tool failures";
+
+/* Harness health metric: median prompt growth per request. */
+"workbench.usage.health.metric.growth" = "Growth per request";
+
+/* Harness health metric: the largest prompt. */
+"workbench.usage.health.metric.largest" = "Largest";
+
+/* Harness health metric: median prompt of a session's first request. */
+"workbench.usage.health.metric.start" = "Starting size";
+
+/* Harness health metric: median prompt size per request. */
+"workbench.usage.health.metric.typical" = "Typical prompt";
+
+/* Harness health metric: the model's context window. */
+"workbench.usage.health.metric.window" = "Context window";
+
+/* Harness health card: the models this harness used most in the range. */
+"workbench.usage.health.models" = "Recent models";
+
+/* Harness health rating, score 90 and up. */
+"workbench.usage.health.rating.excellent" = "Excellent";
+
+/* Harness health rating, score 55–74. */
+"workbench.usage.health.rating.fair" = "Fair";
+
+/* Harness health rating, score 75–89. */
+"workbench.usage.health.rating.good" = "Good";
+
+/* Harness health rating, score under 55. distinct-from: status.overview.needsAttention (a verdict on prompt health, not a status tile; zh reads 需关注). */
+"workbench.usage.health.rating.poor" = "Needs attention";
+
+/* Harness health rating when no part of the score has evidence. */
+"workbench.usage.health.rating.unknown" = "Not enough data";
+
+/* Tooltip on a harness health score. */
+"workbench.usage.health.scoreHelp" = "Weighted: cache 35%%, lean start 20%%, pace 20%%, reliability 25%%. A part without data is left out.";
+
+/* Harness health part: how small a session's first prompt is. */
+"workbench.usage.health.sub.leanStart" = "Lean start";
+
+/* Harness health part: how slowly prompts grow per request. distinct-from: menuBar.composer.metric.pace (quota burn pace, a different measure). */
+"workbench.usage.health.sub.pace" = "Pace";
+
+/* Harness health part: how few tool calls fail. */
+"workbench.usage.health.sub.reliability" = "Reliability";
+
+/* Subtitle of the Usage page harness health section. */
+"workbench.usage.health.subtitle" = "How lean and cache-friendly each harness keeps its prompts";
+
+/* Usage page section of per-harness prompt health cards. */
+"workbench.usage.health.title" = "Harness health";
+
+/* Usage page by-hour card. {slot} is a weekday and hour, already formatted. */
+"workbench.usage.heatmap.busiest" = "Busiest: %@";
+
+/* Usage page by-hour card with nothing to place on the clock. */
+"workbench.usage.heatmap.empty" = "No request-level history in this range";
+
+/* Subtitle of the Usage page by-hour card. */
+"workbench.usage.heatmap.subtitle" = "Requests by weekday and hour, local time";
+
+/* Usage page card: requests by weekday and hour. */
+"workbench.usage.heatmap.title" = "By hour";
+
+/* Usage page hero tile title: clock hours with at least one request. */
+"workbench.usage.hero.activeTime" = "Active time";
+
+/* Usage page hero tile under cache reads. {rate} is a formatted percentage. */
+"workbench.usage.hero.cacheDetail" = "%@ hit rate";
+
+/* Usage page hero tile under the cost when every request had a price. */
+"workbench.usage.hero.costDetail" = "At effective prices";
+
+/* Usage page hero tile under the cost when some usage had no price; the value carries a +. */
+"workbench.usage.hero.costUnpriced" = "Plus unpriced usage";
+
+/* Usage page hero tile under the project count. {name} is a directory name, {share} a percentage. */
+"workbench.usage.hero.projectsDetail" = "Top: %1$@ · %2$@";
+
+/* Usage page hero tile under the session count. Values are compact token counts. */
+"workbench.usage.hero.sessionsDetail" = "Median %1$@ · p90 %2$@ tokens";
+
+/* Usage page hero tile under the token total. Prompt is everything sent to the model (fresh input plus cache read and write), Out the output. */
+"workbench.usage.hero.tokensDetail" = "Prompt %1$@ · Out %2$@";
+
+/* Usage page range control: the last 90 local calendar days, today included. */
+"workbench.usage.range.quarter" = "90 days";
+
+/* Usage page models card with no model. */
+"workbench.usage.ranking.emptyModels" = "No model recorded in this range";
+
+/* Usage page projects card with no project. */
+"workbench.usage.ranking.emptyProjects" = "No project recorded in this range";
+
+/* Footer of the Usage page project or model ranking: entries past the top six and their tokens. */
+"workbench.usage.ranking.more" = "+%1$lld more · %2$@";
+
+/* Usage page recent sessions when the search finds nothing. */
+"workbench.usage.recent.noMatch" = "No session matches “%@”";
+
+/* Usage page recent sessions footer. Values arrive formatted. */
+"workbench.usage.recent.showing" = "Showing %1$@ of %2$@";
+
+/* Usage page card listing sessions active in the range, newest first. */
+"workbench.usage.recent.title" = "Recent sessions";
+
+/* Usage page recent-session row token breakdown. Values are compact token counts. */
+"workbench.usage.recent.tokens" = "In %1$@ · Out %2$@ · Cache %3$@";
+
+/* Usage page session card with no session. */
+"workbench.usage.session.empty" = "No sessions in this range";
+
+/* Usage page session row whose harness keeps no per-session tokens on this Mac. */
+"workbench.usage.session.noTokens" = "No local token record";
+
+/* Tooltip on a Usage page session row; clicking opens the Sessions page on it. */
+"workbench.usage.session.openHelp" = "Open in Sessions";
+
+/* Tooltip on a Usage page session's figure when it comes from the ledger. */
+"workbench.usage.session.sourceLedger" = "Tokens and cost from the usage ledger's rows for this session — the rows every total on this page sums.";
+
+/* Tooltip on a Codex session's figure on the Usage page. */
+"workbench.usage.session.sourceLog" = "Codex keeps no session id in the usage ledger, so this session's tokens and cost come from its parsed log.";
+
+/* Usage page session row whose session has no title. distinct-from: workbench.sessions.list.untitled — the Usage row keeps its own key so the two pages can diverge in wording. */
+"workbench.usage.session.untitled" = "Untitled session";
+
+/* Usage page session-shape bin label for the open last bin. */
+"workbench.usage.shape.atLeast" = "%@+";
+
+/* Usage page session-shape card. {value} is already formatted. */
+"workbench.usage.shape.median" = "Median %@";
+
+/* Usage page session-shape metric: wall-clock length of a session. */
+"workbench.usage.shape.metric.duration" = "Duration";
+
+/* Usage page session-shape metric: tool calls per session. */
+"workbench.usage.shape.metric.toolCalls" = "Tool calls";
+
+/* Usage page session-shape bin label, both ends included. */
+"workbench.usage.shape.range" = "%1$@–%2$@";
+
+/* Usage page card: how sessions are distributed by size. */
+"workbench.usage.shape.title" = "Session shape";
+
+/* Usage page session-shape bin label for the first duration bin. */
+"workbench.usage.shape.under" = "Under %@";
+
+/* Usage page skills card with nothing to list. */
+"workbench.usage.skills.empty" = "No skill use found in analyzed sessions";
+
+/* Usage page skills row. {when} is a relative time. */
+"workbench.usage.skills.lastUsed" = "Last used %@";
+
+/* Usage page skills row. {projects} is a list of directory names. */
+"workbench.usage.skills.projects" = "In %@";
+
+/* Subtitle of the Usage page skills card. */
+"workbench.usage.skills.subtitle" = "From analyzed Codex and Claude Code sessions";
+
+/* Usage page status line while session files are parsed for tools, skills and per-session cost. */
+"workbench.usage.status.analyzing" = "Reading sessions in the background · %1$lld of %2$lld ready";
+
+/* Usage page note when the range reaches past the ledger's request-level detail. {date} is a formatted day. */
+"workbench.usage.status.hourlyFrom" = "Hourly cards cover %@ onward; older days only have daily totals.";
+
+/* Usage page note when the local session index has never been built. */
+"workbench.usage.status.indexEmpty" = "Sessions appear once the session index is built. It is being built now.";
+
+/* Usage page note: daily rollups carry no project, so a project filter leaves them out. */
+"workbench.usage.status.projectDetailOnly" = "A project filter covers request-level history only.";
+
+/* Usage page trend legend and tooltip: everything sent to the model in a bar — fresh input plus cache read and write, as opposed to In, the fresh part alone. */
+"workbench.usage.tokens.prompt" = "Prompt";
+
+/* Column header on the Usage page tools card. */
+"workbench.usage.tools.calls" = "Calls";
+
+/* Kind of tool on the Usage page tools card: subagents, plans and skills. */
+"workbench.usage.tools.category.agent" = "Agents";
+
+/* Kind of tool on the Usage page tools card: writing and patching files. distinct-from: workbench.library.edit (a noun naming a kind of tool, not the verb on a button). */
+"workbench.usage.tools.category.edit" = "Edit";
+
+/* Kind of tool on the Usage page tools card: reading and searching files. */
+"workbench.usage.tools.category.read" = "Read";
+
+/* Kind of tool on the Usage page tools card: shell and code execution. */
+"workbench.usage.tools.category.shell" = "Shell";
+
+/* Kind of tool on the Usage page tools card: web search and fetch. */
+"workbench.usage.tools.category.web" = "Web";
+
+/* Usage page tools card with nothing to list. */
+"workbench.usage.tools.empty" = "No tool calls found in analyzed sessions";
+
+/* Column header on the Usage page tools card. */
+"workbench.usage.tools.share" = "Share";
+
+/* Usage page card ranking tools by calls. */
+"workbench.usage.tools.title" = "Tool use";
+
+/* Usage page tools card: heading over the weekly stacked bars. */
+"workbench.usage.tools.weekly" = "Weekly by kind";
+
+/* Usage page card listing the sessions with the most tokens, cost or active time. */
+"workbench.usage.topSessions.title" = "Heaviest sessions";
+
+/* Accessibility label of the Usage page trend chart. */
+"workbench.usage.trend.a11y" = "Usage trend chart";
+
+/* Usage page trend card with nothing to draw. */
+"workbench.usage.trend.empty" = "No usage in this range";
+
+/* Usage page metric: active hours (trend) or active time (heaviest sessions). */
+"workbench.usage.trend.metric.active" = "Active";
+
+/* Usage page metric: requests (trend) or messages per session (session shape). */
+"workbench.usage.trend.metric.messages" = "Messages";
+
+/* Usage page trend metric: output tokens only. */
+"workbench.usage.trend.metric.output" = "Output tokens";
+
+/* Usage page trend control: stack each bar as prompt under output (the other choice splits it by harness). */
+"workbench.usage.trend.splitFlow" = "Prompt · Out";
+
+/* Usage page trend card title with one bar per day. */
+"workbench.usage.trend.titleDaily" = "Daily trend";
+
+/* Usage page trend card title when a long range is drawn one bar per week. */
+"workbench.usage.trend.titleWeekly" = "Weekly trend";

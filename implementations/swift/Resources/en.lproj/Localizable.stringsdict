@@ -687,6 +687,102 @@
 			<string>Delete %lld sessions?</string>
 		</dict>
 	</dict>
+	<key>workbench.sessions.list.threadCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>1 thread</string>
+			<key>other</key>
+			<string>%lld threads</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.meta.prompts</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>1 prompt</string>
+			<key>other</key>
+			<string>%lld prompts</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.meta.reviews</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>1 Auto Review</string>
+			<key>other</key>
+			<string>%lld Auto Reviews</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.meta.subagents</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>1 subagent</string>
+			<key>other</key>
+			<string>%lld subagents</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.meta.toolCalls</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>1 tool call</string>
+			<key>other</key>
+			<string>%lld tool calls</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.rail.threadsIncluded</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>Includes 1 thread</string>
+			<key>other</key>
+			<string>Includes %lld threads</string>
+		</dict>
+	</dict>
 	<key>workbench.sessions.row.autoReviewsMerged</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -749,6 +845,86 @@
 			<string>%lld message</string>
 			<key>other</key>
 			<string>%lld messages</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.turn.commands</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>1 command</string>
+			<key>other</key>
+			<string>%lld commands</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.turn.failures</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>1 failed</string>
+			<key>other</key>
+			<string>%lld failed</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.turn.followUps</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>+1 follow-up</string>
+			<key>other</key>
+			<string>+%lld follow-ups</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.turn.injected</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>+1 injected block</string>
+			<key>other</key>
+			<string>+%lld injected blocks</string>
+		</dict>
+	</dict>
+	<key>workbench.sessions.turn.steps</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>1 step</string>
+			<key>other</key>
+			<string>%lld steps</string>
 		</dict>
 	</dict>
 	<key>workbench.skills.appSeesCount</key>
@@ -1005,6 +1181,198 @@
 			<string>%lld skill</string>
 			<key>other</key>
 			<string>%lld skills</string>
+		</dict>
+	</dict>
+	<key>workbench.usage.count.activeHours</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld active hour</string>
+			<key>other</key>
+			<string>%lld active hours</string>
+		</dict>
+	</dict>
+	<key>workbench.usage.count.calls</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld call</string>
+			<key>other</key>
+			<string>%lld calls</string>
+		</dict>
+	</dict>
+	<key>workbench.usage.count.sessions</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld session</string>
+			<key>other</key>
+			<string>%lld sessions</string>
+		</dict>
+	</dict>
+	<key>workbench.usage.count.uses</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld use</string>
+			<key>other</key>
+			<string>%lld uses</string>
+		</dict>
+	</dict>
+	<key>workbench.usage.heatmap.cell</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$@ · %2$#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%2$lld request</string>
+			<key>other</key>
+			<string>%2$lld requests</string>
+		</dict>
+	</dict>
+	<key>workbench.usage.hero.activeDetail</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>Across %#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld day</string>
+			<key>other</key>
+			<string>%lld days</string>
+		</dict>
+	</dict>
+	<key>workbench.usage.shape.bin</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$@ · %2$#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%2$lld session</string>
+			<key>other</key>
+			<string>%2$lld sessions</string>
+		</dict>
+	</dict>
+	<key>workbench.usage.shape.samples</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld session with data</string>
+			<key>other</key>
+			<string>%lld sessions with data</string>
+		</dict>
+	</dict>
+	<key>workbench.usage.skills.harnessUses</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$@ · %2$#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%2$lld use</string>
+			<key>other</key>
+			<string>%2$lld uses</string>
+		</dict>
+	</dict>
+	<key>workbench.usage.status.skipped</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@ too large or too old to read in the background.</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld session is</string>
+			<key>other</key>
+			<string>%lld sessions are</string>
+		</dict>
+	</dict>
+	<key>workbench.usage.tools.more</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld more tool</string>
+			<key>other</key>
+			<string>%lld more tools</string>
+		</dict>
+	</dict>
+	<key>workbench.usage.tools.week</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>Week of %1$@ · %2$#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%2$lld call</string>
+			<key>other</key>
+			<string>%2$lld calls</string>
 		</dict>
 	</dict>
 </dict>
