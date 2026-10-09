@@ -4622,6 +4622,351 @@
     "workbench.sessions.transcript.truncatedTitle": {
       "value": "已显示这份超大日志中的前 {count, plural, other {# 条消息}}"
     },
+    "workbench.sessions.conversation.cancelled": {
+      "value": "已停止读取此会话。"
+    },
+    "workbench.sessions.conversation.childNotFound": {
+      "value": "找不到该子线程的日志。"
+    },
+    "workbench.sessions.conversation.collapseAll": {
+      "value": "收起所有回合的步骤"
+    },
+    "workbench.sessions.conversation.empty": {
+      "value": "此会话还没有回合。"
+    },
+    "workbench.sessions.conversation.expandAll": {
+      "value": "展开所有回合的步骤"
+    },
+    "workbench.sessions.conversation.jumpLatest": {
+      "value": "跳到最新回合"
+    },
+    "workbench.sessions.conversation.loadEarlier": {
+      "value": "加载更早的回合（还有 {count} 个）"
+    },
+    "workbench.sessions.conversation.loadLater": {
+      "value": "加载之后的回合（还有 {count} 个）"
+    },
+    "workbench.sessions.conversation.loadingOutline": {
+      "value": "正在读取会话结构…"
+    },
+    "workbench.sessions.conversation.loadingTurns": {
+      "value": "正在读取回合 {done}/{total}"
+    },
+    "workbench.sessions.conversation.unreadable": {
+      "value": "无法读取此会话的结构。"
+    },
+    "workbench.sessions.conversation.viewRaw": {
+      "value": "打开原始记录"
+    },
+    "workbench.sessions.conversation.windowed": {
+      "value": "大型日志：按回合逐个读取。"
+    },
+    "workbench.sessions.duration.lessThanSecond": {
+      "value": "<1 秒"
+    },
+    "workbench.sessions.duration.seconds": {
+      "value": "{seconds} 秒"
+    },
+    "workbench.sessions.kind.agentCreated": {
+      "value": "代理线程"
+    },
+    "workbench.sessions.kind.automation": {
+      "value": "自动化"
+    },
+    "workbench.sessions.kind.exec": {
+      "value": "无头运行"
+    },
+    "workbench.sessions.kind.fork": {
+      "value": "分叉"
+    },
+    "workbench.sessions.kind.subagent": {
+      "value": "子代理"
+    },
+    "workbench.sessions.layout.outlineHelp": {
+      "value": "显示或隐藏对话目录"
+    },
+    "workbench.sessions.list.collapseThreads": {
+      "value": "隐藏此会话发起的子线程"
+    },
+    "workbench.sessions.list.costHelp": {
+      "value": "按公开价格估算的费用：{cost}"
+    },
+    "workbench.sessions.list.expandThreads": {
+      "value": "显示此会话发起的子线程"
+    },
+    "workbench.sessions.list.loadingThreads": {
+      "value": "正在读取子线程…"
+    },
+    "workbench.sessions.list.threadCount": {
+      "value": "{count, plural, other {# 个}}子线程"
+    },
+    "workbench.sessions.list.tokensHelp": {
+      "value": "本会话共 {tokens} tokens"
+    },
+    "workbench.sessions.list.untitled": {
+      "value": "未命名会话"
+    },
+    "workbench.sessions.meta.back": {
+      "value": "返回 {title}"
+    },
+    "workbench.sessions.meta.branchHelp": {
+      "value": "Git 分支"
+    },
+    "workbench.sessions.meta.costEstimate": {
+      "value": "约 {cost}"
+    },
+    "workbench.sessions.meta.costHelp": {
+      "value": "按日志中的 token 与公开价格估算。"
+    },
+    "workbench.sessions.meta.costLowerBound": {
+      "value": "至少 {cost}"
+    },
+    "workbench.sessions.meta.costLowerBoundHelp": {
+      "value": "部分用量所用模型没有已知价格，此为下限。"
+    },
+    "workbench.sessions.meta.modelsHelp": {
+      "value": "本会话使用的模型"
+    },
+    "workbench.sessions.meta.more": {
+      "value": "更多"
+    },
+    "workbench.sessions.meta.openFolder": {
+      "value": "打开项目文件夹"
+    },
+    "workbench.sessions.meta.prompts": {
+      "value": "{count, plural, other {# 次}}提问"
+    },
+    "workbench.sessions.meta.revealFolder": {
+      "value": "在 Finder 中显示 {folder}"
+    },
+    "workbench.sessions.meta.revealLog": {
+      "value": "在 Finder 中显示会话日志"
+    },
+    "workbench.sessions.meta.reviews": {
+      "value": "{count, plural, other {# 次}} Auto Review"
+    },
+    "workbench.sessions.meta.subagents": {
+      "value": "{count, plural, other {# 个}}子代理"
+    },
+    "workbench.sessions.meta.timeHelp": {
+      "value": "开始于 {start}，最后活动于 {end}"
+    },
+    "workbench.sessions.meta.tokensHelp": {
+      "value": "输入 {input} · 输出 {output} · 缓存读取 {cacheRead} · 缓存写入 {cacheWrite}"
+    },
+    "workbench.sessions.meta.tokensTotalOnly": {
+      "value": "此会话只记录了总量。"
+    },
+    "workbench.sessions.meta.toolCalls": {
+      "value": "{count, plural, other {# 次}}工具调用"
+    },
+    "workbench.sessions.meta.toolCallsFailed": {
+      "value": "{calls}，{failed} 个失败"
+    },
+    "workbench.sessions.meta.verdicts": {
+      "value": "Auto Review：允许 {allow}，拒绝 {deny}"
+    },
+    "workbench.sessions.rail.allHelp": {
+      "value": "显示所有 Harness 的会话"
+    },
+    "workbench.sessions.rail.collapse": {
+      "value": "收起 Harness 栏"
+    },
+    "workbench.sessions.rail.expand": {
+      "value": "展开 Harness 栏"
+    },
+    "workbench.sessions.rail.selectHelp": {
+      "value": "只显示 {harness}。按住 ⌘ 点击可加入或移出选择。"
+    },
+    "workbench.sessions.rail.threadsIncluded": {
+      "value": "含 {count, plural, other {# 个}}子线程"
+    },
+    "workbench.sessions.resume.inTerminal": {
+      "value": "在 {terminal} 中恢复"
+    },
+    "workbench.sessions.resume.options": {
+      "value": "选择恢复方式"
+    },
+    "workbench.sessions.resume.subagentHelp": {
+      "value": "子代理线程需通过发起它的会话恢复。"
+    },
+    "workbench.sessions.step.arguments": {
+      "value": "参数"
+    },
+    "workbench.sessions.step.compaction": {
+      "value": "上下文已压缩"
+    },
+    "workbench.sessions.step.exitCode": {
+      "value": "退出码 {code}"
+    },
+    "workbench.sessions.step.failed": {
+      "value": "失败"
+    },
+    "workbench.sessions.step.noDetail": {
+      "value": "此步骤没有记录输出。"
+    },
+    "workbench.sessions.step.openThread": {
+      "value": "打开子线程"
+    },
+    "workbench.sessions.step.orphan": {
+      "value": "缺少调用的结果"
+    },
+    "workbench.sessions.step.pending": {
+      "value": "无结果记录"
+    },
+    "workbench.sessions.step.result": {
+      "value": "结果"
+    },
+    "workbench.sessions.step.succeeded": {
+      "value": "成功"
+    },
+    "workbench.sessions.step.thinking": {
+      "value": "思考 · {count} 字"
+    },
+    "workbench.sessions.step.thinkingHidden": {
+      "value": "思考（不可读）"
+    },
+    "workbench.sessions.threads.collapseAll": {
+      "value": "收起全部子线程"
+    },
+    "workbench.sessions.threads.expandAll": {
+      "value": "展开全部子线程"
+    },
+    "workbench.sessions.threads.foldedNote": {
+      "value": "子代理与分叉折叠在发起它们的会话下。"
+    },
+    "workbench.sessions.threads.hidden": {
+      "value": "已隐藏 {count}"
+    },
+    "workbench.sessions.threads.menu": {
+      "value": "线程"
+    },
+    "workbench.sessions.threads.menuHelp": {
+      "value": "选择列表显示哪些线程与无头运行"
+    },
+    "workbench.sessions.threads.showAutomation": {
+      "value": "显示自动化任务（{count}）"
+    },
+    "workbench.sessions.threads.showExec": {
+      "value": "显示无头运行（{count}）"
+    },
+    "workbench.sessions.toc.heading": {
+      "value": "目录"
+    },
+    "workbench.sessions.toc.hide": {
+      "value": "隐藏目录"
+    },
+    "workbench.sessions.toc.unsupported": {
+      "value": "回合目录仅支持 Codex 与 Claude Code 会话；原始记录有自己的提问目录。"
+    },
+    "workbench.sessions.turn.answerCopied": {
+      "value": "回答已复制。"
+    },
+    "workbench.sessions.turn.commands": {
+      "value": "{count, plural, other {# 个}}命令"
+    },
+    "workbench.sessions.turn.continueLoading": {
+      "value": "继续读取"
+    },
+    "workbench.sessions.turn.copyAnswer": {
+      "value": "复制回答"
+    },
+    "workbench.sessions.turn.copyPrompt": {
+      "value": "复制提问"
+    },
+    "workbench.sessions.turn.failures": {
+      "value": "{count, plural, other {# 个}}失败"
+    },
+    "workbench.sessions.turn.followUps": {
+      "value": "+{count, plural, other {# 条}}追加消息"
+    },
+    "workbench.sessions.turn.hideSteps": {
+      "value": "隐藏执行步骤"
+    },
+    "workbench.sessions.turn.injected": {
+      "value": "+{count, plural, other {# 条}}注入"
+    },
+    "workbench.sessions.turn.injectedHelp": {
+      "value": "工具自动附加到这次提问的上下文（指令、环境、提醒）只计数，不显示。"
+    },
+    "workbench.sessions.turn.loading": {
+      "value": "正在读取此回合…"
+    },
+    "workbench.sessions.turn.ordinal": {
+      "value": "第 {number} 轮"
+    },
+    "workbench.sessions.turn.origin.agent": {
+      "value": "来自其他代理"
+    },
+    "workbench.sessions.turn.origin.automation": {
+      "value": "由自动化任务发起"
+    },
+    "workbench.sessions.turn.origin.guardianRequest": {
+      "value": "审查请求"
+    },
+    "workbench.sessions.turn.origin.none": {
+      "value": "继续执行"
+    },
+    "workbench.sessions.turn.process": {
+      "value": "执行过程"
+    },
+    "workbench.sessions.turn.promptCopied": {
+      "value": "提问已复制。"
+    },
+    "workbench.sessions.turn.showSteps": {
+      "value": "显示执行步骤"
+    },
+    "workbench.sessions.turn.status.abandoned": {
+      "value": "已回退"
+    },
+    "workbench.sessions.turn.status.abandonedHelp": {
+      "value": "对话已回退到此回合之前，它不再属于当前对话线。"
+    },
+    "workbench.sessions.turn.status.aborted": {
+      "value": "已中断"
+    },
+    "workbench.sessions.turn.status.open": {
+      "value": "未完成"
+    },
+    "workbench.sessions.turn.steps": {
+      "value": "{count, plural, other {# 步}}"
+    },
+    "workbench.sessions.turn.stopped": {
+      "value": "读取在此回合前停止。"
+    },
+    "workbench.sessions.turn.thinking": {
+      "value": "思考"
+    },
+    "workbench.sessions.turn.unavailable": {
+      "value": "无法读取此回合，日志在打开后可能已变化。"
+    },
+    "workbench.sessions.verdict.allow": {
+      "value": "允许"
+    },
+    "workbench.sessions.verdict.deny": {
+      "value": "拒绝"
+    },
+    "workbench.sessions.verdict.help": {
+      "value": "Auto Review 对此回合的裁决"
+    },
+    "workbench.sessions.verdict.risk": {
+      "value": "风险 {level}"
+    },
+    "workbench.sessions.view.help": {
+      "value": "在回合视图与原始记录之间切换"
+    },
+    "workbench.sessions.view.raw": {
+      "value": "原始"
+    },
+    "workbench.sessions.view.searchHit": {
+      "value": "搜索命中了本会话中的一条消息。"
+    },
+    "workbench.sessions.view.showHit": {
+      "value": "在原始记录中查看"
+    },
+    "workbench.sessions.view.turns": {
+      "value": "回合"
+    },
     "workbench.skills.appCountNativeDisabled": {
       "value": "{count} 个已投影但被停用"
     },

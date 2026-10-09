@@ -5055,6 +5055,45 @@
 /* Notice under the transcript Details for an AntiGravity session, explaining why the transcript is partial and cannot be deleted */
 "workbench.sessions.antigravityNotice" = "AntiGravity stores its turns as an undocumented binary payload, so this transcript is a partial reconstruction and its sessions cannot be deleted from here — the IDE keeps them open.";
 
+/* Shown after the user stopped a session from loading. */
+"workbench.sessions.conversation.cancelled" = "Reading this session was stopped.";
+
+/* Toast when a subagent step's thread cannot be opened. */
+"workbench.sessions.conversation.childNotFound" = "That thread's log was not found.";
+
+/* Menu item that closes every loaded turn's process. */
+"workbench.sessions.conversation.collapseAll" = "Collapse every turn's steps";
+
+/* Shown for a session log with no turns. */
+"workbench.sessions.conversation.empty" = "This session has no turns yet.";
+
+/* Menu item that opens every loaded turn's process. */
+"workbench.sessions.conversation.expandAll" = "Expand every turn's steps";
+
+/* Button that scrolls a conversation back to its end. */
+"workbench.sessions.conversation.jumpLatest" = "Jump to the latest turn";
+
+/* Button at the top of a conversation. count is a formatted number of turns not yet shown. */
+"workbench.sessions.conversation.loadEarlier" = "Load earlier turns (%@ more)";
+
+/* Button at the bottom of a conversation opened at an earlier turn. count is a formatted number. */
+"workbench.sessions.conversation.loadLater" = "Load later turns (%@ more)";
+
+/* Shown while a session's turns are being read. */
+"workbench.sessions.conversation.loadingOutline" = "Reading the session's structure…";
+
+/* Progress while a large session's turns are read one at a time. Values are formatted numbers. */
+"workbench.sessions.conversation.loadingTurns" = "Reading turns %1$@ of %2$@";
+
+/* Shown when a session log could not be parsed into turns. */
+"workbench.sessions.conversation.unreadable" = "This session's structure could not be read.";
+
+/* Button offered when a session's structure could not be read. */
+"workbench.sessions.conversation.viewRaw" = "Open the raw transcript";
+
+/* Note in the conversation header for a log above the full-parse limit. */
+"workbench.sessions.conversation.windowed" = "Large log: turns are read one at a time.";
+
 /* Sessions row context menu and transcript header: copy the shell line that reopens this session */
 "workbench.sessions.copyResumeCommand" = "Copy resume command";
 
@@ -5090,6 +5129,12 @@
 
 /* Accessibility value of the Details button while the facts are shown */
 "workbench.sessions.details.expanded" = "Expanded";
+
+/* How long a step took, when it was under a second. */
+"workbench.sessions.duration.lessThanSecond" = "<1s";
+
+/* How long a step took, under a minute. seconds is a formatted number that may have one decimal, which is why this is distinct-from: quota.freshness.age.seconds (an integer age). */
+"workbench.sessions.duration.seconds" = "%@s";
 
 /* Sessions list empty state when the SQLite index would not open */
 "workbench.sessions.empty.indexUnavailableDetail" = "The index under ~/.vibebar could not be opened, so sessions cannot be listed this session.";
@@ -5202,8 +5247,44 @@
 /* Sessions filter bar status when the SQLite index would not open */
 "workbench.sessions.index.unavailable" = "index unavailable";
 
+/* Chip on a session row or header: another agent created this thread as a peer. */
+"workbench.sessions.kind.agentCreated" = "Agent thread";
+
+/* Chip on a session row or header: a scheduled automation started this session. */
+"workbench.sessions.kind.automation" = "Automation";
+
+/* Chip on a session row or header: a headless run (codex exec, an SDK call) nobody typed into. */
+"workbench.sessions.kind.exec" = "Headless";
+
+/* Chip on a session row or header: the session is a fork of another session. */
+"workbench.sessions.kind.fork" = "Fork";
+
+/* Chip on a session row or header: the session is a subagent another session started. */
+"workbench.sessions.kind.subagent" = "Subagent";
+
+/* Help for the toolbar button that toggles the Sessions page's contents column. */
+"workbench.sessions.layout.outlineHelp" = "Show or hide the conversation contents";
+
 /* Notice at the foot of the Sessions list when it stops at the loaded-summary ceiling */
 "workbench.sessions.list.capNotice" = "Showing the first %1$lld of %2$lld sessions. Narrow the filters or search to reach the rest.";
+
+/* Help for the capsule that folds a session row's subagent threads away. */
+"workbench.sessions.list.collapseThreads" = "Hide the threads this session started";
+
+/* Tooltip on a session row's cost figure. The amount is already formatted. */
+"workbench.sessions.list.costHelp" = "Estimated cost at list prices: %@";
+
+/* Help for the capsule that unfolds a session row's subagent threads. */
+"workbench.sessions.list.expandThreads" = "Show the threads this session started";
+
+/* Shown under a Claude Code session row while its subagent transcripts are listed. */
+"workbench.sessions.list.loadingThreads" = "Reading threads…";
+
+/* Tooltip on a session row's token figure. The figure is already formatted. */
+"workbench.sessions.list.tokensHelp" = "%@ tokens in this session";
+
+/* Title of a session row when the log has no title and no readable first prompt. */
+"workbench.sessions.list.untitled" = "Untitled session";
 
 /* Context menu item on a transcript message card */
 "workbench.sessions.message.copy" = "Copy Message";
@@ -5216,6 +5297,54 @@
 
 /* Button that unfolds a long transcript message; {count} is the message's length in characters */
 "workbench.sessions.message.showMore" = "Show more (%lld chars)";
+
+/* Breadcrumb button above a subagent thread that returns to the session that started it. */
+"workbench.sessions.meta.back" = "Back to %@";
+
+/* Tooltip on the conversation header's branch chip. */
+"workbench.sessions.meta.branchHelp" = "Git branch";
+
+/* Conversation header fact: the estimated cost. The amount is already formatted. */
+"workbench.sessions.meta.costEstimate" = "≈ %@";
+
+/* Tooltip on the conversation header's cost figure. */
+"workbench.sessions.meta.costHelp" = "Estimated at list prices from the tokens in the log.";
+
+/* Conversation header fact when part of the usage has no known price. */
+"workbench.sessions.meta.costLowerBound" = "≥ %@";
+
+/* Tooltip on the conversation header's cost figure when it is a lower bound. */
+"workbench.sessions.meta.costLowerBoundHelp" = "Some usage ran on a model without a known price, so this is a lower bound.";
+
+/* Tooltip on the conversation header's model chips. */
+"workbench.sessions.meta.modelsHelp" = "Models used in this session";
+
+/* Conversation header overflow menu. distinct-from: usage.yearHeatmap.more (that one is the high end of a heatmap legend, not a menu). */
+"workbench.sessions.meta.more" = "More";
+
+/* Help for the conversation header button that opens the session's working directory. */
+"workbench.sessions.meta.openFolder" = "Open the project folder";
+
+/* Tooltip on the conversation header's project-folder chip. */
+"workbench.sessions.meta.revealFolder" = "Show %@ in Finder";
+
+/* Conversation header overflow menu item. */
+"workbench.sessions.meta.revealLog" = "Show the session log in Finder";
+
+/* Tooltip on the conversation header's time range. Both values are formatted dates. */
+"workbench.sessions.meta.timeHelp" = "Started %1$@, last activity %2$@";
+
+/* Tooltip on the conversation header's token figure. Every value is already formatted. */
+"workbench.sessions.meta.tokensHelp" = "Input %1$@ · Output %2$@ · Cache read %3$@ · Cache write %4$@";
+
+/* Tooltip on the conversation header's token figure when no per-bucket breakdown exists. */
+"workbench.sessions.meta.tokensTotalOnly" = "Only a total was recorded for this session.";
+
+/* Conversation header fact when some actions failed. calls is the already-formatted tool-call count phrase; failed is a formatted number. */
+"workbench.sessions.meta.toolCallsFailed" = "%1$@, %2$@ failed";
+
+/* Conversation header fact: Auto Review verdicts on this session's turns. Values are formatted numbers. */
+"workbench.sessions.meta.verdicts" = "Auto Review: %1$@ allowed, %2$@ denied";
 
 /* Sessions row context menu and transcript resume row: run the resume command in a terminal */
 "workbench.sessions.openInTerminal" = "Open in Terminal";
@@ -5256,6 +5385,18 @@
 /* Sessions group heading, footer label and Details value for a Codex task started without a project */
 "workbench.sessions.project.projectless" = "Projectless";
 
+/* Tooltip on the All row of the Sessions page's harness column. */
+"workbench.sessions.rail.allHelp" = "Show sessions from every harness";
+
+/* Help for the button that shrinks the Sessions page's harness column to icons. */
+"workbench.sessions.rail.collapse" = "Collapse the harness column";
+
+/* Help for the button that widens the Sessions page's harness column back to names and counts. */
+"workbench.sessions.rail.expand" = "Expand the harness column";
+
+/* Tooltip on a harness row in the Sessions page's left column. */
+"workbench.sessions.rail.selectHelp" = "Show only %@. ⌘-click to add or remove it from the selection.";
+
 /* Sessions When menu option: no lower bound */
 "workbench.sessions.range.all" = "Any time";
 
@@ -5265,8 +5406,17 @@
 /* Heading above the shell line that reopens a session, in the transcript Details */
 "workbench.sessions.resume.heading" = "RESUME";
 
+/* Primary button of the conversation header: reopens the session in the named terminal app. */
+"workbench.sessions.resume.inTerminal" = "Resume in %@";
+
 /* Shown in the transcript Details when the provider offers no resume command */
 "workbench.sessions.resume.none" = "This session has no command-line entry point.";
+
+/* Help for the dropdown half of the resume button. */
+"workbench.sessions.resume.options" = "Choose where to resume";
+
+/* Help on the disabled resume button of a subagent thread. */
+"workbench.sessions.resume.subagentHelp" = "A subagent thread is resumed through the session that started it.";
 
 /* Role label on a transcript message card */
 "workbench.sessions.role.assistant" = "Assistant";
@@ -5346,6 +5496,66 @@
 /* Sessions Sort menu option */
 "workbench.sessions.sort.recentFirst" = "Newest first";
 
+/* Caption above a step's argument summary in its detail. */
+"workbench.sessions.step.arguments" = "Arguments";
+
+/* A note step: the harness compacted the conversation context here. */
+"workbench.sessions.step.compaction" = "Context compacted";
+
+/* Step detail for a shell command. code is the number as text. */
+"workbench.sessions.step.exitCode" = "Exit code %@";
+
+/* Status of a step whose result reported failure. */
+"workbench.sessions.step.failed" = "Failed";
+
+/* Step detail when the log kept neither arguments nor a result. */
+"workbench.sessions.step.noDetail" = "No output was recorded for this step.";
+
+/* Button on a subagent step that opens the thread it started. */
+"workbench.sessions.step.openThread" = "Open thread";
+
+/* Step detail: a result whose call is not in the log. */
+"workbench.sessions.step.orphan" = "Result without its call";
+
+/* Step detail: the call has no result in the log. */
+"workbench.sessions.step.pending" = "No result recorded";
+
+/* Caption above a step's result summary in its detail. */
+"workbench.sessions.step.result" = "Result";
+
+/* Status of a step whose result reported success. */
+"workbench.sessions.step.succeeded" = "Succeeded";
+
+/* A thinking step in a turn's process. count is a formatted number. */
+"workbench.sessions.step.thinking" = "Thinking · %@ characters";
+
+/* A thinking step whose text is encrypted in the log. */
+"workbench.sessions.step.thinkingHidden" = "Thinking (not readable)";
+
+/* Threads menu item that folds every session's threads. */
+"workbench.sessions.threads.collapseAll" = "Collapse all threads";
+
+/* Threads menu item that unfolds every session's threads. */
+"workbench.sessions.threads.expandAll" = "Expand all threads";
+
+/* Explanation at the top of the Threads menu on the Sessions page. */
+"workbench.sessions.threads.foldedNote" = "Subagents and forks are folded under the session that started them.";
+
+/* Detail on the Threads toolbar pill: how many loaded rows the thread filters hide. */
+"workbench.sessions.threads.hidden" = "%@ hidden";
+
+/* Toolbar menu on the Sessions page that controls how threads and headless runs are listed. */
+"workbench.sessions.threads.menu" = "Threads";
+
+/* Help for the Threads toolbar menu on the Sessions page. */
+"workbench.sessions.threads.menuHelp" = "Choose which threads and headless runs the list shows";
+
+/* Toggle in the Threads menu. The count is how many loaded rows it would add. */
+"workbench.sessions.threads.showAutomation" = "Show automations (%@)";
+
+/* Toggle in the Threads menu. The count is how many loaded rows it would add. */
+"workbench.sessions.threads.showExec" = "Show headless runs (%@)";
+
 /* Sessions toast after turning message indexing off and the stored excerpts could not be dropped */
 "workbench.sessions.toast.bodyIndexDropFailed" = "Clearing the indexed message text failed.";
 
@@ -5382,6 +5592,15 @@
 /* Sessions toast after copying a session log's path */
 "workbench.sessions.toast.sourcePathCopied" = "Source path copied.";
 
+/* Heading of the Sessions page's right column: one entry per turn. */
+"workbench.sessions.toc.heading" = "Contents";
+
+/* Help for the button that hides the contents column. */
+"workbench.sessions.toc.hide" = "Hide the contents";
+
+/* Shown in the contents column for a session whose harness has no turn structure. */
+"workbench.sessions.toc.unsupported" = "Turn contents are available for Codex and Claude Code sessions. The raw transcript has its own outline.";
+
 /* Separator inserted in a transcript where a Codex Auto Review child session is merged in. Auto Review is Codex's own feature name and stays in English. */
 "workbench.sessions.transcript.autoReviewDivider" = "Auto Review";
 
@@ -5414,6 +5633,99 @@
 
 /* Truncation banner detail. Both sizes arrive already formatted as byte counts. */
 "workbench.sessions.transcript.truncatedDetail" = "%1$@ read of %2$@. Reading all of it holds the whole transcript in memory.";
+
+/* Toast after copying an answer. */
+"workbench.sessions.turn.answerCopied" = "Answer copied.";
+
+/* Button on a stopped turn placeholder. */
+"workbench.sessions.turn.continueLoading" = "Continue reading";
+
+/* Help for the copy button on an answer. */
+"workbench.sessions.turn.copyAnswer" = "Copy answer";
+
+/* Help for the copy button on a prompt bubble. */
+"workbench.sessions.turn.copyPrompt" = "Copy prompt";
+
+/* Help for collapsing a turn's process row. */
+"workbench.sessions.turn.hideSteps" = "Hide the steps";
+
+/* Tooltip on the injected-blocks note of a turn header. */
+"workbench.sessions.turn.injectedHelp" = "Context the harness attached to this prompt — instructions, environment, reminders — is counted here and not shown.";
+
+/* Placeholder for a turn whose detail is still being read. */
+"workbench.sessions.turn.loading" = "Reading this turn…";
+
+/* Header of one turn in the conversation. number is a formatted ordinal. */
+"workbench.sessions.turn.ordinal" = "Turn %@";
+
+/* Label in place of a prompt bubble: another agent sent this turn's task. */
+"workbench.sessions.turn.origin.agent" = "From another agent";
+
+/* Label in place of a prompt bubble: a scheduled automation opened this turn. */
+"workbench.sessions.turn.origin.automation" = "Started by an automation";
+
+/* Label in place of a prompt bubble: an Auto Review request opened this turn. */
+"workbench.sessions.turn.origin.guardianRequest" = "Review request";
+
+/* Label in place of a prompt bubble: the turn opened without a new prompt. */
+"workbench.sessions.turn.origin.none" = "Continued";
+
+/* Label of the collapsible row that lists what the agent did in a turn. */
+"workbench.sessions.turn.process" = "Process";
+
+/* Toast after copying a prompt. */
+"workbench.sessions.turn.promptCopied" = "Prompt copied.";
+
+/* Help for expanding a turn's process row. */
+"workbench.sessions.turn.showSteps" = "Show the steps";
+
+/* Turn header chip: the conversation was rewound past this turn. */
+"workbench.sessions.turn.status.abandoned" = "Rewound";
+
+/* Tooltip on the Rewound chip of a turn header. */
+"workbench.sessions.turn.status.abandonedHelp" = "The conversation was rewound past this turn, so it is no longer part of the active thread.";
+
+/* Turn header chip: the turn was stopped before it finished. */
+"workbench.sessions.turn.status.aborted" = "Interrupted";
+
+/* Turn header chip: the log ends without the turn finishing. */
+"workbench.sessions.turn.status.open" = "Unfinished";
+
+/* Placeholder for a turn left unread when loading was stopped. */
+"workbench.sessions.turn.stopped" = "Reading stopped before this turn.";
+
+/* Process row label for a turn whose only steps are thinking. */
+"workbench.sessions.turn.thinking" = "Thinking";
+
+/* Placeholder for a turn whose detail could not be read. */
+"workbench.sessions.turn.unavailable" = "This turn could not be read. The log may have changed since it was opened.";
+
+/* Badge on a turn header: Auto Review allowed the turn's action. */
+"workbench.sessions.verdict.allow" = "Allowed";
+
+/* Badge on a turn header: Auto Review denied the turn's action. */
+"workbench.sessions.verdict.deny" = "Denied";
+
+/* Tooltip on an Auto Review badge. */
+"workbench.sessions.verdict.help" = "Auto Review verdict on this turn";
+
+/* Badge on a turn header: the risk level Auto Review assigned, as the reviewer wrote it. */
+"workbench.sessions.verdict.risk" = "Risk %@";
+
+/* Help for the conversation view switch. */
+"workbench.sessions.view.help" = "Switch between the turn view and the raw transcript";
+
+/* Segment of the conversation view switch: the raw message transcript. */
+"workbench.sessions.view.raw" = "Raw";
+
+/* Banner above the turn view when a full-text search hit opened the session. */
+"workbench.sessions.view.searchHit" = "Your search matched a message in this session.";
+
+/* Button on the search-hit banner. */
+"workbench.sessions.view.showHit" = "Show it in the raw transcript";
+
+/* Segment of the conversation view switch: the structured turn-by-turn view. */
+"workbench.sessions.view.turns" = "Turns";
 
 /* Last clause of the per-harness count tooltip: skills linked into the harness but switched off in its own config. */
 "workbench.skills.appCountNativeDisabled" = "%lld projected but disabled";
