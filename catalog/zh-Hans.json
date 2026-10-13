@@ -3920,6 +3920,12 @@
     "usage.table.column.weekOf": {
       "value": "周起始"
     },
+    "usage.table.column.speed": {
+      "value": "速度"
+    },
+    "usage.table.column.firstToken": {
+      "value": "首字"
+    },
     "usage.table.companyCount": {
       "value": "{count, plural, other {# 家厂商}}"
     },
@@ -3979,6 +3985,21 @@
     },
     "usage.table.unpricedHelp": {
       "value": "该请求没有可用价格"
+    },
+    "usage.table.speedValue": {
+      "value": "≈{value} tok/s"
+    },
+    "usage.table.firstTokenSeconds": {
+      "value": "≈{seconds} 秒"
+    },
+    "usage.table.firstTokenMillis": {
+      "value": "≈{milliseconds} 毫秒"
+    },
+    "usage.table.speedHelp": {
+      "value": "输出 token 数除以从发出请求到写入最后一个内容块的墙钟时间。数据来自本地会话日志，因此包含网络与排队时间。统计范围为 Claude Code 与 Codex 的日志（含 Claude Cowork 与 ChatGPT Work）。"
+    },
+    "usage.table.firstTokenHelp": {
+      "value": "从发出请求到第一个内容块完成的时间。本地日志只在内容块完成后才写入，因此这是真实首字延迟的上界。统计范围为 Claude Code 与 Codex 的日志（含 Claude Cowork 与 ChatGPT Work）。"
     },
     "usage.tokens.cacheRead": {
       "value": "缓存读取"
@@ -6749,6 +6770,12 @@
     "workbench.usage.hero.cacheDetail": {
       "value": "命中率 {rate}"
     },
+    "workbench.usage.hero.tokensHelp": {
+      "value": "范围内的全部 token：新输入 + 输出 + 缓存写入 + 缓存读取。菜单栏面板的 token 合计按相同的四部分计算。"
+    },
+    "workbench.usage.hero.cacheHelp": {
+      "value": "由服务商提示词缓存提供的输入 token。命中率 = 缓存读取 ÷（新输入 + 缓存读取 + 缓存写入）。"
+    },
     "workbench.usage.hero.activeTime": {
       "value": "活跃时长"
     },
@@ -6971,6 +6998,27 @@
     "workbench.usage.health.empty": {
       "value": "此范围内没有 harness 活动"
     },
+    "workbench.usage.speed.title": {
+      "value": "响应速度"
+    },
+    "workbench.usage.speed.subtitle": {
+      "value": "输出速度与首字延迟的中位数，来自本地会话日志"
+    },
+    "workbench.usage.speed.byHarness": {
+      "value": "按 harness"
+    },
+    "workbench.usage.speed.byModel": {
+      "value": "按模型"
+    },
+    "workbench.usage.speed.samples": {
+      "value": "{count, plural, other {# 个计时请求}}"
+    },
+    "workbench.usage.speed.empty": {
+      "value": "此范围内没有带计时的请求。速度数据来自 Claude Code 与 Codex 的日志（含 Claude Cowork 与 ChatGPT Work）。"
+    },
+    "workbench.usage.speed.p90Help": {
+      "value": "中位 {median} · p90 {p90} tok/s"
+    },
     "workbench.usage.recent.title": {
       "value": "最近会话"
     },
@@ -7003,6 +7051,66 @@
     },
     "workbench.usage.trend.splitFlow": {
       "value": "提示词 · 输出"
+    },
+    "workbench.skills.copies.overwriteCopy": {
+      "value": "用共享覆盖此副本"
+    },
+    "workbench.skills.copies.adoptManaged": {
+      "value": "收编为托管投影"
+    },
+    "workbench.skills.copies.restoreShared": {
+      "value": "恢复到共享"
+    },
+    "workbench.skills.copies.allMatch": {
+      "value": "所有副本一致"
+    },
+    "workbench.skills.copies.differCount": {
+      "value": "{count, plural, other {# 个副本与共享不同}}"
+    },
+    "workbench.skills.copies.backupNotice": {
+      "value": "替换前会将当前内容备份到 {path}。托管副本会同步共享内容。"
+    },
+    "workbench.skills.copies.adoptNotice": {
+      "value": "此副本将成为托管投影，当前内容会备份到 {path}。请选择保留共享内容，或先用此副本替换共享。若要按文件合并，请取消并选择共享库为 Base，先完成合并。Agent 启用设置保持不变。"
+    },
+    "workbench.skills.copies.adoptShared": {
+      "value": "采用共享内容并收编"
+    },
+    "workbench.skills.copies.adoptCompared": {
+      "value": "替换共享后收编"
+    },
+    "workbench.skills.copies.mergeShared": {
+      "value": "合并到共享"
+    },
+    "workbench.skills.copies.keepBase": {
+      "value": "保留 Base"
+    },
+    "workbench.skills.copies.useCompared": {
+      "value": "采用 Compared"
+    },
+    "workbench.skills.copies.unresolved": {
+      "value": "{count, plural, other {还需处理 # 个文件才能合并}}"
+    },
+    "workbench.skills.copies.mergeReady": {
+      "value": "已处理全部差异文件"
+    },
+    "workbench.skills.copies.mergeBaseHint": {
+      "value": "选择共享库为 Base，即可按文件合并。"
+    },
+    "workbench.skills.copies.updated": {
+      "value": "已更新技能副本"
+    },
+    "workbench.skills.copies.errorIncomplete": {
+      "value": "比较结果不完整，请缩小技能目录后再合并。"
+    },
+    "workbench.skills.copies.errorUnresolved": {
+      "value": "仍有差异文件未选择处理方式，请逐项选择后合并。"
+    },
+    "workbench.skills.copies.errorChanged": {
+      "value": "技能自比较后已发生变化，请刷新副本后重试。"
+    },
+    "workbench.skills.copies.errorStructure": {
+      "value": "所选文件与目录或链接冲突，请调整文件选择。"
     }
   }
 }

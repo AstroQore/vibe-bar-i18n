@@ -1559,11 +1559,13 @@ export type MessageKey =
   | "usage.table.cacheReadWrite"
   | "usage.table.column.average"
   | "usage.table.column.day"
+  | "usage.table.column.firstToken"
   | "usage.table.column.harness"
   | "usage.table.column.hour"
   | "usage.table.column.input"
   | "usage.table.column.model"
   | "usage.table.column.requests"
+  | "usage.table.column.speed"
   | "usage.table.column.tier"
   | "usage.table.column.time"
   | "usage.table.column.weekOf"
@@ -1573,6 +1575,9 @@ export type MessageKey =
   | "usage.table.emptyProjects"
   | "usage.table.emptyProviders"
   | "usage.table.emptyRequests"
+  | "usage.table.firstTokenHelp"
+  | "usage.table.firstTokenMillis"
+  | "usage.table.firstTokenSeconds"
   | "usage.table.harnessHelp"
   | "usage.table.inputHelp"
   | "usage.table.loadMore"
@@ -1584,6 +1589,8 @@ export type MessageKey =
   | "usage.table.requestsLabel"
   | "usage.table.requestsLoaded"
   | "usage.table.showMorePeriods"
+  | "usage.table.speedHelp"
+  | "usage.table.speedValue"
   | "usage.table.statRow"
   | "usage.table.unpriced"
   | "usage.table.unpricedHelp"
@@ -2023,7 +2030,13 @@ export type MessageKey =
   | "workbench.skills.convertConfirmMessage"
   | "workbench.skills.convertConfirmTitle"
   | "workbench.skills.convertToCopy"
+  | "workbench.skills.copies.adoptCompared"
+  | "workbench.skills.copies.adoptManaged"
+  | "workbench.skills.copies.adoptNotice"
+  | "workbench.skills.copies.adoptShared"
+  | "workbench.skills.copies.allMatch"
   | "workbench.skills.copies.appFolder"
+  | "workbench.skills.copies.backupNotice"
   | "workbench.skills.copies.backupTitle"
   | "workbench.skills.copies.baselineUnavailable"
   | "workbench.skills.copies.builtIn"
@@ -2051,8 +2064,14 @@ export type MessageKey =
   | "workbench.skills.copies.diff.unified"
   | "workbench.skills.copies.diff.unreadable"
   | "workbench.skills.copies.diff.unreadableVersion"
+  | "workbench.skills.copies.differCount"
   | "workbench.skills.copies.differs"
+  | "workbench.skills.copies.errorChanged"
+  | "workbench.skills.copies.errorIncomplete"
+  | "workbench.skills.copies.errorStructure"
+  | "workbench.skills.copies.errorUnresolved"
   | "workbench.skills.copies.identical"
+  | "workbench.skills.copies.keepBase"
   | "workbench.skills.copies.kind.backup"
   | "workbench.skills.copies.kind.builtIn"
   | "workbench.skills.copies.kind.independentCopy"
@@ -2064,15 +2083,23 @@ export type MessageKey =
   | "workbench.skills.copies.linkTarget"
   | "workbench.skills.copies.linkToShared"
   | "workbench.skills.copies.linkedNotCompared"
+  | "workbench.skills.copies.mergeBaseHint"
+  | "workbench.skills.copies.mergeReady"
+  | "workbench.skills.copies.mergeShared"
   | "workbench.skills.copies.noShared"
   | "workbench.skills.copies.notCompared"
+  | "workbench.skills.copies.overwriteCopy"
   | "workbench.skills.copies.recordedBaseline"
   | "workbench.skills.copies.replaceConfirmMessage"
   | "workbench.skills.copies.replaceConfirmTitle"
   | "workbench.skills.copies.replaceShared"
+  | "workbench.skills.copies.restoreShared"
   | "workbench.skills.copies.shadowsShared"
   | "workbench.skills.copies.subtitle"
   | "workbench.skills.copies.title"
+  | "workbench.skills.copies.unresolved"
+  | "workbench.skills.copies.updated"
+  | "workbench.skills.copies.useCompared"
   | "workbench.skills.countFiltered"
   | "workbench.skills.countTotal"
   | "workbench.skills.discover"
@@ -2288,11 +2315,13 @@ export type MessageKey =
   | "workbench.usage.hero.activeDetail"
   | "workbench.usage.hero.activeTime"
   | "workbench.usage.hero.cacheDetail"
+  | "workbench.usage.hero.cacheHelp"
   | "workbench.usage.hero.costDetail"
   | "workbench.usage.hero.costUnpriced"
   | "workbench.usage.hero.projectsDetail"
   | "workbench.usage.hero.sessionsDetail"
   | "workbench.usage.hero.tokensDetail"
+  | "workbench.usage.hero.tokensHelp"
   | "workbench.usage.range.quarter"
   | "workbench.usage.ranking.emptyModels"
   | "workbench.usage.ranking.emptyProjects"
@@ -2321,6 +2350,13 @@ export type MessageKey =
   | "workbench.usage.skills.lastUsed"
   | "workbench.usage.skills.projects"
   | "workbench.usage.skills.subtitle"
+  | "workbench.usage.speed.byHarness"
+  | "workbench.usage.speed.byModel"
+  | "workbench.usage.speed.empty"
+  | "workbench.usage.speed.p90Help"
+  | "workbench.usage.speed.samples"
+  | "workbench.usage.speed.subtitle"
+  | "workbench.usage.speed.title"
   | "workbench.usage.status.analyzing"
   | "workbench.usage.status.hourlyFrom"
   | "workbench.usage.status.indexEmpty"
@@ -3899,11 +3935,13 @@ export interface MessageParams {
   "usage.table.cacheReadWrite": { "read": string; "write": string };
   "usage.table.column.average": undefined;
   "usage.table.column.day": undefined;
+  "usage.table.column.firstToken": undefined;
   "usage.table.column.harness": undefined;
   "usage.table.column.hour": undefined;
   "usage.table.column.input": undefined;
   "usage.table.column.model": undefined;
   "usage.table.column.requests": undefined;
+  "usage.table.column.speed": undefined;
   "usage.table.column.tier": undefined;
   "usage.table.column.time": undefined;
   "usage.table.column.weekOf": undefined;
@@ -3913,6 +3951,9 @@ export interface MessageParams {
   "usage.table.emptyProjects": undefined;
   "usage.table.emptyProviders": undefined;
   "usage.table.emptyRequests": undefined;
+  "usage.table.firstTokenHelp": undefined;
+  "usage.table.firstTokenMillis": { "milliseconds": string };
+  "usage.table.firstTokenSeconds": { "seconds": string };
   "usage.table.harnessHelp": { "company": string; "harness": string };
   "usage.table.inputHelp": { "input": string; "read": string; "write": string };
   "usage.table.loadMore": { "remaining": number };
@@ -3924,6 +3965,8 @@ export interface MessageParams {
   "usage.table.requestsLabel": undefined;
   "usage.table.requestsLoaded": { "loaded": number; "total": number };
   "usage.table.showMorePeriods": { "count": number; "total": number };
+  "usage.table.speedHelp": undefined;
+  "usage.table.speedValue": { "value": string };
   "usage.table.statRow": { "name": string; "requests": number; "tokens": string; "cost": string };
   "usage.table.unpriced": undefined;
   "usage.table.unpricedHelp": undefined;
@@ -4363,7 +4406,13 @@ export interface MessageParams {
   "workbench.skills.convertConfirmMessage": undefined;
   "workbench.skills.convertConfirmTitle": { "skill": string };
   "workbench.skills.convertToCopy": undefined;
+  "workbench.skills.copies.adoptCompared": undefined;
+  "workbench.skills.copies.adoptManaged": undefined;
+  "workbench.skills.copies.adoptNotice": { "path": string };
+  "workbench.skills.copies.adoptShared": undefined;
+  "workbench.skills.copies.allMatch": undefined;
   "workbench.skills.copies.appFolder": { "app": string };
+  "workbench.skills.copies.backupNotice": { "path": string };
   "workbench.skills.copies.backupTitle": { "date": string };
   "workbench.skills.copies.baselineUnavailable": undefined;
   "workbench.skills.copies.builtIn": { "app": string };
@@ -4391,8 +4440,14 @@ export interface MessageParams {
   "workbench.skills.copies.diff.unified": undefined;
   "workbench.skills.copies.diff.unreadable": undefined;
   "workbench.skills.copies.diff.unreadableVersion": undefined;
+  "workbench.skills.copies.differCount": { "count": number };
   "workbench.skills.copies.differs": undefined;
+  "workbench.skills.copies.errorChanged": undefined;
+  "workbench.skills.copies.errorIncomplete": undefined;
+  "workbench.skills.copies.errorStructure": undefined;
+  "workbench.skills.copies.errorUnresolved": undefined;
   "workbench.skills.copies.identical": undefined;
+  "workbench.skills.copies.keepBase": undefined;
   "workbench.skills.copies.kind.backup": undefined;
   "workbench.skills.copies.kind.builtIn": undefined;
   "workbench.skills.copies.kind.independentCopy": undefined;
@@ -4404,15 +4459,23 @@ export interface MessageParams {
   "workbench.skills.copies.linkTarget": { "path": string };
   "workbench.skills.copies.linkToShared": undefined;
   "workbench.skills.copies.linkedNotCompared": undefined;
+  "workbench.skills.copies.mergeBaseHint": undefined;
+  "workbench.skills.copies.mergeReady": undefined;
+  "workbench.skills.copies.mergeShared": undefined;
   "workbench.skills.copies.noShared": undefined;
   "workbench.skills.copies.notCompared": undefined;
+  "workbench.skills.copies.overwriteCopy": undefined;
   "workbench.skills.copies.recordedBaseline": undefined;
   "workbench.skills.copies.replaceConfirmMessage": undefined;
   "workbench.skills.copies.replaceConfirmTitle": { "skill": string };
   "workbench.skills.copies.replaceShared": undefined;
+  "workbench.skills.copies.restoreShared": undefined;
   "workbench.skills.copies.shadowsShared": { "app": string };
   "workbench.skills.copies.subtitle": undefined;
   "workbench.skills.copies.title": { "skill": string };
+  "workbench.skills.copies.unresolved": { "count": number };
+  "workbench.skills.copies.updated": undefined;
+  "workbench.skills.copies.useCompared": undefined;
   "workbench.skills.countFiltered": { "shown": number; "total": number };
   "workbench.skills.countTotal": { "count": number };
   "workbench.skills.discover": undefined;
@@ -4628,11 +4691,13 @@ export interface MessageParams {
   "workbench.usage.hero.activeDetail": { "count": number };
   "workbench.usage.hero.activeTime": undefined;
   "workbench.usage.hero.cacheDetail": { "rate": string };
+  "workbench.usage.hero.cacheHelp": undefined;
   "workbench.usage.hero.costDetail": undefined;
   "workbench.usage.hero.costUnpriced": undefined;
   "workbench.usage.hero.projectsDetail": { "name": string; "share": string };
   "workbench.usage.hero.sessionsDetail": { "median": string; "p90": string };
   "workbench.usage.hero.tokensDetail": { "input": string; "output": string };
+  "workbench.usage.hero.tokensHelp": undefined;
   "workbench.usage.range.quarter": undefined;
   "workbench.usage.ranking.emptyModels": undefined;
   "workbench.usage.ranking.emptyProjects": undefined;
@@ -4661,6 +4726,13 @@ export interface MessageParams {
   "workbench.usage.skills.lastUsed": { "when": string };
   "workbench.usage.skills.projects": { "projects": string };
   "workbench.usage.skills.subtitle": undefined;
+  "workbench.usage.speed.byHarness": undefined;
+  "workbench.usage.speed.byModel": undefined;
+  "workbench.usage.speed.empty": undefined;
+  "workbench.usage.speed.p90Help": { "median": string; "p90": string };
+  "workbench.usage.speed.samples": { "count": number };
+  "workbench.usage.speed.subtitle": undefined;
+  "workbench.usage.speed.title": undefined;
   "workbench.usage.status.analyzing": { "ready": number; "total": number };
   "workbench.usage.status.hourlyFrom": { "date": string };
   "workbench.usage.status.indexEmpty": undefined;
@@ -6240,11 +6312,13 @@ export const messages: {
     "usage.table.cacheReadWrite": "R {read} · W {write}",
     "usage.table.column.average": "Avg/req",
     "usage.table.column.day": "Day",
+    "usage.table.column.firstToken": "First token",
     "usage.table.column.harness": "Harness",
     "usage.table.column.hour": "Hour",
     "usage.table.column.input": "Input",
     "usage.table.column.model": "Model",
     "usage.table.column.requests": "Requests",
+    "usage.table.column.speed": "Speed",
     "usage.table.column.tier": "Tier",
     "usage.table.column.time": "Time",
     "usage.table.column.weekOf": "Week of",
@@ -6254,6 +6328,9 @@ export const messages: {
     "usage.table.emptyProjects": "No project-attributed Codex or Claude usage in this range",
     "usage.table.emptyProviders": "No provider totals in this range",
     "usage.table.emptyRequests": "No request-level rows in this range",
+    "usage.table.firstTokenHelp": "Time from sending the request until its first content block finished. Local logs record a block only once it is complete, so this is an upper bound on the true time to first token. Measured from Claude Code and Codex logs (Claude Cowork and ChatGPT Work included).",
+    "usage.table.firstTokenMillis": "≈{milliseconds} ms",
+    "usage.table.firstTokenSeconds": "≈{seconds}s",
     "usage.table.harnessHelp": "{company} · {harness}",
     "usage.table.inputHelp": "Fresh input: {input}\nCache read: {read}\nCache write: {write}",
     "usage.table.loadMore": "Load more ({remaining} remaining)",
@@ -6265,6 +6342,8 @@ export const messages: {
     "usage.table.requestsLabel": "Request usage table",
     "usage.table.requestsLoaded": "{loaded} of {total} requests",
     "usage.table.showMorePeriods": "Show {count} more of {total} periods",
+    "usage.table.speedHelp": "Output tokens divided by the wall-clock time from sending the request to writing its last content block. Read from local session logs, so network and queueing time count. Measured from Claude Code and Codex logs (Claude Cowork and ChatGPT Work included).",
+    "usage.table.speedValue": "≈{value} tok/s",
     "usage.table.statRow": "{name}, {requests, plural, one {1 request} other {# requests}}, {tokens}, {cost}",
     "usage.table.unpriced": "unpriced",
     "usage.table.unpricedHelp": "No price was available for this request",
@@ -6704,7 +6783,13 @@ export const messages: {
     "workbench.skills.convertConfirmMessage": "Vibe Bar reads the linked folder once, copies it into ~/.agents/skills, and replaces the link with that copy. The original folder is left unchanged, and later edits there no longer reach this skill.",
     "workbench.skills.convertConfirmTitle": "Convert {skill} to a copy?",
     "workbench.skills.convertToCopy": "Convert to Copy",
+    "workbench.skills.copies.adoptCompared": "Replace Shared, Then Adopt",
+    "workbench.skills.copies.adoptManaged": "Adopt as Managed",
+    "workbench.skills.copies.adoptNotice": "This copy will become a managed projection. Its current content will be backed up in {path}. Choose whether to keep shared content or replace shared content first. To combine files, cancel and select Shared Library as Base to merge first. Agent enable settings stay as they are.",
+    "workbench.skills.copies.adoptShared": "Adopt Using Shared Content",
+    "workbench.skills.copies.allMatch": "All copies match",
     "workbench.skills.copies.appFolder": "{app} folder",
+    "workbench.skills.copies.backupNotice": "The current content will be backed up in {path} before it is replaced. Managed copies will follow the shared content.",
     "workbench.skills.copies.backupTitle": "Backup from {date}",
     "workbench.skills.copies.baselineUnavailable": "The shared copy was edited, but Vibe Bar kept only a fingerprint of the version it last recorded, so the content before the edit cannot be shown. Backups listed here are earlier snapshots.",
     "workbench.skills.copies.builtIn": "{app} built-in",
@@ -6732,8 +6817,14 @@ export const messages: {
     "workbench.skills.copies.diff.unified": "Unified",
     "workbench.skills.copies.diff.unreadable": "This file could not be read",
     "workbench.skills.copies.diff.unreadableVersion": "This version cannot be read",
+    "workbench.skills.copies.differCount": "{count, plural, one {# copy differs from shared} other {# copies differ from shared}}",
     "workbench.skills.copies.differs": "Differs from the shared copy",
+    "workbench.skills.copies.errorChanged": "The skill changed since it was compared. Refresh the copies and try again.",
+    "workbench.skills.copies.errorIncomplete": "The comparison is incomplete. Reduce the skill size before merging.",
+    "workbench.skills.copies.errorStructure": "The selected files conflict with a directory or link. Choose a consistent set of files.",
+    "workbench.skills.copies.errorUnresolved": "Some differing files have no resolution. Review every file before merging.",
     "workbench.skills.copies.identical": "Identical to the shared copy",
+    "workbench.skills.copies.keepBase": "Keep Base",
     "workbench.skills.copies.kind.backup": "Backup",
     "workbench.skills.copies.kind.builtIn": "Read-only built-in",
     "workbench.skills.copies.kind.independentCopy": "Independent copy",
@@ -6745,15 +6836,23 @@ export const messages: {
     "workbench.skills.copies.linkTarget": "Points to {path}",
     "workbench.skills.copies.linkToShared": "Links to the shared copy",
     "workbench.skills.copies.linkedNotCompared": "This skill's source is outside Vibe Bar's management, so its files are not compared.",
+    "workbench.skills.copies.mergeBaseHint": "Choose Shared Library as Base to merge files into it.",
+    "workbench.skills.copies.mergeReady": "All differing files resolved",
+    "workbench.skills.copies.mergeShared": "Merge into Shared",
     "workbench.skills.copies.noShared": "Not in the shared library",
     "workbench.skills.copies.notCompared": "Could not be compared",
+    "workbench.skills.copies.overwriteCopy": "Overwrite This With Shared",
     "workbench.skills.copies.recordedBaseline": "Last recorded version",
     "workbench.skills.copies.replaceConfirmMessage": "A backup is taken first. Every harness linked to the shared copy sees the new content.",
     "workbench.skills.copies.replaceConfirmTitle": "Replace the shared copy of {skill}?",
     "workbench.skills.copies.replaceShared": "Replace Shared Copy With This",
+    "workbench.skills.copies.restoreShared": "Restore to Shared",
     "workbench.skills.copies.shadowsShared": "{app} loads this copy instead of the shared one",
     "workbench.skills.copies.subtitle": "Every place this skill exists on this Mac. Pick two versions to see what differs.",
     "workbench.skills.copies.title": "Copies of {skill}",
+    "workbench.skills.copies.unresolved": "{count, plural, one {Resolve # more file before merging} other {Resolve # more files before merging}}",
+    "workbench.skills.copies.updated": "Skill copies updated",
+    "workbench.skills.copies.useCompared": "Use Compared",
     "workbench.skills.countFiltered": "{shown} of {total} skills",
     "workbench.skills.countTotal": "{count, plural, one {# skill} other {# skills}}",
     "workbench.skills.discover": "Discover",
@@ -6969,11 +7068,13 @@ export const messages: {
     "workbench.usage.hero.activeDetail": "Across {count, plural, one {# day} other {# days}}",
     "workbench.usage.hero.activeTime": "Active time",
     "workbench.usage.hero.cacheDetail": "{rate} hit rate",
+    "workbench.usage.hero.cacheHelp": "Prompt tokens served from the provider's prompt cache. Hit rate = cache read ÷ (fresh input + cache read + cache write).",
     "workbench.usage.hero.costDetail": "At effective prices",
     "workbench.usage.hero.costUnpriced": "Plus unpriced usage",
     "workbench.usage.hero.projectsDetail": "Top: {name} · {share}",
     "workbench.usage.hero.sessionsDetail": "Median {median} · p90 {p90} tokens",
     "workbench.usage.hero.tokensDetail": "Prompt {input} · Out {output}",
+    "workbench.usage.hero.tokensHelp": "Every token in the range: fresh input + output + cache write + cache read. The menu bar popover's token totals count the same four parts.",
     "workbench.usage.range.quarter": "90 days",
     "workbench.usage.ranking.emptyModels": "No model recorded in this range",
     "workbench.usage.ranking.emptyProjects": "No project recorded in this range",
@@ -7002,6 +7103,13 @@ export const messages: {
     "workbench.usage.skills.lastUsed": "Last used {when}",
     "workbench.usage.skills.projects": "In {projects}",
     "workbench.usage.skills.subtitle": "From analyzed Codex and Claude Code sessions",
+    "workbench.usage.speed.byHarness": "By harness",
+    "workbench.usage.speed.byModel": "By model",
+    "workbench.usage.speed.empty": "No timed requests in this range. Speed comes from Claude Code and Codex logs (Claude Cowork and ChatGPT Work included).",
+    "workbench.usage.speed.p90Help": "Median {median} · p90 {p90} tok/s",
+    "workbench.usage.speed.samples": "{count, plural, one {# timed request} other {# timed requests}}",
+    "workbench.usage.speed.subtitle": "Median output speed and time to first token, read from local session logs",
+    "workbench.usage.speed.title": "Response speed",
     "workbench.usage.status.analyzing": "Reading sessions in the background · {ready} of {total} ready",
     "workbench.usage.status.hourlyFrom": "Hourly cards cover {date} onward; older days only have daily totals.",
     "workbench.usage.status.indexEmpty": "Sessions appear once the session index is built. It is being built now.",
@@ -8576,11 +8684,13 @@ export const messages: {
     "usage.table.cacheReadWrite": "读 {read} · 写 {write}",
     "usage.table.column.average": "每请求均价",
     "usage.table.column.day": "日",
+    "usage.table.column.firstToken": "首字",
     "usage.table.column.harness": "Harness",
     "usage.table.column.hour": "小时",
     "usage.table.column.input": "输入",
     "usage.table.column.model": "模型",
     "usage.table.column.requests": "请求数",
+    "usage.table.column.speed": "速度",
     "usage.table.column.tier": "档位",
     "usage.table.column.time": "时间",
     "usage.table.column.weekOf": "周起始",
@@ -8590,6 +8700,9 @@ export const messages: {
     "usage.table.emptyProjects": "所选范围内没有归属到项目的 Codex 或 Claude 用量",
     "usage.table.emptyProviders": "所选范围内没有厂商合计",
     "usage.table.emptyRequests": "所选范围内没有请求级记录",
+    "usage.table.firstTokenHelp": "从发出请求到第一个内容块完成的时间。本地日志只在内容块完成后才写入，因此这是真实首字延迟的上界。统计范围为 Claude Code 与 Codex 的日志（含 Claude Cowork 与 ChatGPT Work）。",
+    "usage.table.firstTokenMillis": "≈{milliseconds} 毫秒",
+    "usage.table.firstTokenSeconds": "≈{seconds} 秒",
     "usage.table.harnessHelp": "{company} · {harness}",
     "usage.table.inputHelp": "新增输入：{input}\n缓存读取：{read}\n缓存写入：{write}",
     "usage.table.loadMore": "加载更多（剩余 {remaining} 条）",
@@ -8601,6 +8714,8 @@ export const messages: {
     "usage.table.requestsLabel": "请求用量表格",
     "usage.table.requestsLoaded": "已加载 {loaded} / {total} 条请求",
     "usage.table.showMorePeriods": "再显示 {count} 个，共 {total} 个周期",
+    "usage.table.speedHelp": "输出 token 数除以从发出请求到写入最后一个内容块的墙钟时间。数据来自本地会话日志，因此包含网络与排队时间。统计范围为 Claude Code 与 Codex 的日志（含 Claude Cowork 与 ChatGPT Work）。",
+    "usage.table.speedValue": "≈{value} tok/s",
     "usage.table.statRow": "{name}，{requests, plural, other {# 条请求}}，{tokens}，{cost}",
     "usage.table.unpriced": "未计价",
     "usage.table.unpricedHelp": "该请求没有可用价格",
@@ -9040,7 +9155,13 @@ export const messages: {
     "workbench.skills.convertConfirmMessage": "Vibe Bar 会读取一次链接的文件夹，把它复制到 ~/.agents/skills，并用这份副本替换链接。原文件夹保持不变，之后在那里的修改不会再影响这个技能。",
     "workbench.skills.convertConfirmTitle": "把 {skill} 转为副本？",
     "workbench.skills.convertToCopy": "转为副本",
+    "workbench.skills.copies.adoptCompared": "替换共享后收编",
+    "workbench.skills.copies.adoptManaged": "收编为托管投影",
+    "workbench.skills.copies.adoptNotice": "此副本将成为托管投影，当前内容会备份到 {path}。请选择保留共享内容，或先用此副本替换共享。若要按文件合并，请取消并选择共享库为 Base，先完成合并。Agent 启用设置保持不变。",
+    "workbench.skills.copies.adoptShared": "采用共享内容并收编",
+    "workbench.skills.copies.allMatch": "所有副本一致",
     "workbench.skills.copies.appFolder": "{app} 目录",
+    "workbench.skills.copies.backupNotice": "替换前会将当前内容备份到 {path}。托管副本会同步共享内容。",
     "workbench.skills.copies.backupTitle": "{date} 的备份",
     "workbench.skills.copies.baselineUnavailable": "共享副本已被修改，但 Vibe Bar 只保存了上次记录版本的指纹，无法显示修改前的内容。这里列出的备份是更早的快照。",
     "workbench.skills.copies.builtIn": "{app} 内置",
@@ -9068,8 +9189,14 @@ export const messages: {
     "workbench.skills.copies.diff.unified": "合并视图",
     "workbench.skills.copies.diff.unreadable": "无法读取此文件",
     "workbench.skills.copies.diff.unreadableVersion": "无法读取此版本",
+    "workbench.skills.copies.differCount": "{count, plural, other {# 个副本与共享不同}}",
     "workbench.skills.copies.differs": "与共享副本不同",
+    "workbench.skills.copies.errorChanged": "技能自比较后已发生变化，请刷新副本后重试。",
+    "workbench.skills.copies.errorIncomplete": "比较结果不完整，请缩小技能目录后再合并。",
+    "workbench.skills.copies.errorStructure": "所选文件与目录或链接冲突，请调整文件选择。",
+    "workbench.skills.copies.errorUnresolved": "仍有差异文件未选择处理方式，请逐项选择后合并。",
     "workbench.skills.copies.identical": "与共享副本相同",
+    "workbench.skills.copies.keepBase": "保留 Base",
     "workbench.skills.copies.kind.backup": "备份",
     "workbench.skills.copies.kind.builtIn": "内置只读",
     "workbench.skills.copies.kind.independentCopy": "独立拷贝",
@@ -9081,15 +9208,23 @@ export const messages: {
     "workbench.skills.copies.linkTarget": "指向 {path}",
     "workbench.skills.copies.linkToShared": "链接到共享副本",
     "workbench.skills.copies.linkedNotCompared": "这个技能的来源在 Vibe Bar 管理范围之外，因此不会比较它的文件。",
+    "workbench.skills.copies.mergeBaseHint": "选择共享库为 Base，即可按文件合并。",
+    "workbench.skills.copies.mergeReady": "已处理全部差异文件",
+    "workbench.skills.copies.mergeShared": "合并到共享",
     "workbench.skills.copies.noShared": "不在共享库中",
     "workbench.skills.copies.notCompared": "无法对比",
+    "workbench.skills.copies.overwriteCopy": "用共享覆盖此副本",
     "workbench.skills.copies.recordedBaseline": "上次记录的版本",
     "workbench.skills.copies.replaceConfirmMessage": "会先备份。所有链接到共享副本的 harness 都会看到新内容。",
     "workbench.skills.copies.replaceConfirmTitle": "替换 {skill} 的共享副本？",
     "workbench.skills.copies.replaceShared": "用此副本替换共享副本",
+    "workbench.skills.copies.restoreShared": "恢复到共享",
     "workbench.skills.copies.shadowsShared": "{app} 会加载此副本而非共享副本",
     "workbench.skills.copies.subtitle": "此 skill 在这台 Mac 上的所有位置。选择两个版本查看差异。",
     "workbench.skills.copies.title": "{skill} 的副本",
+    "workbench.skills.copies.unresolved": "{count, plural, other {还需处理 # 个文件才能合并}}",
+    "workbench.skills.copies.updated": "已更新技能副本",
+    "workbench.skills.copies.useCompared": "采用 Compared",
     "workbench.skills.countFiltered": "{total} 个技能中的 {shown} 个",
     "workbench.skills.countTotal": "{count, plural, other {# 个技能}}",
     "workbench.skills.discover": "发现",
@@ -9305,11 +9440,13 @@ export const messages: {
     "workbench.usage.hero.activeDetail": "分布在 {count, plural, other {# 天}}",
     "workbench.usage.hero.activeTime": "活跃时长",
     "workbench.usage.hero.cacheDetail": "命中率 {rate}",
+    "workbench.usage.hero.cacheHelp": "由服务商提示词缓存提供的输入 token。命中率 = 缓存读取 ÷（新输入 + 缓存读取 + 缓存写入）。",
     "workbench.usage.hero.costDetail": "按生效价格计",
     "workbench.usage.hero.costUnpriced": "另有未计价用量",
     "workbench.usage.hero.projectsDetail": "最多：{name} · {share}",
     "workbench.usage.hero.sessionsDetail": "中位 {median} · p90 {p90} token",
     "workbench.usage.hero.tokensDetail": "提示词 {input} · 输出 {output}",
+    "workbench.usage.hero.tokensHelp": "范围内的全部 token：新输入 + 输出 + 缓存写入 + 缓存读取。菜单栏面板的 token 合计按相同的四部分计算。",
     "workbench.usage.range.quarter": "90 天",
     "workbench.usage.ranking.emptyModels": "此范围内没有模型记录",
     "workbench.usage.ranking.emptyProjects": "此范围内没有项目记录",
@@ -9338,6 +9475,13 @@ export const messages: {
     "workbench.usage.skills.lastUsed": "最近使用 {when}",
     "workbench.usage.skills.projects": "用于 {projects}",
     "workbench.usage.skills.subtitle": "来自已分析的 Codex 与 Claude Code 会话",
+    "workbench.usage.speed.byHarness": "按 harness",
+    "workbench.usage.speed.byModel": "按模型",
+    "workbench.usage.speed.empty": "此范围内没有带计时的请求。速度数据来自 Claude Code 与 Codex 的日志（含 Claude Cowork 与 ChatGPT Work）。",
+    "workbench.usage.speed.p90Help": "中位 {median} · p90 {p90} tok/s",
+    "workbench.usage.speed.samples": "{count, plural, other {# 个计时请求}}",
+    "workbench.usage.speed.subtitle": "输出速度与首字延迟的中位数，来自本地会话日志",
+    "workbench.usage.speed.title": "响应速度",
     "workbench.usage.status.analyzing": "正在后台读取会话 · {ready}/{total} 已就绪",
     "workbench.usage.status.hourlyFrom": "按小时的卡片从 {date} 起；更早的日期只有每日汇总。",
     "workbench.usage.status.indexEmpty": "会话索引建立后才会显示会话，正在建立。",

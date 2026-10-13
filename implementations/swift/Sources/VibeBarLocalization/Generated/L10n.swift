@@ -10249,6 +10249,28 @@ public enum L10n {
             /// en: "No request-level rows in this range"
             public static var emptyRequests: String { L10nSupport.string("usage.table.emptyRequests") }
 
+            /// Tooltip on the First token column header of the Requests table and the speed card.
+            ///
+            /// Key: `usage.table.firstTokenHelp`
+            /// en: "Time from sending the request until its first content block finished. Local logs record a block only once it is complete, so this is an upper bound on the true time to first token. Measured from Claude Code and Codex logs (Claude Cowork and ChatGPT Work included)."
+            public static var firstTokenHelp: String { L10nSupport.string("usage.table.firstTokenHelp") }
+
+            /// Requests table cell and Usage page speed card: approximate time to the first content block, under one second. {milliseconds} is a locale-formatted whole number.
+            ///
+            /// Key: `usage.table.firstTokenMillis`
+            /// en: "≈{milliseconds} ms"
+            public static func firstTokenMillis(milliseconds: String) -> String {
+                L10nSupport.format("usage.table.firstTokenMillis", milliseconds)
+            }
+
+            /// Requests table cell and Usage page speed card: approximate time to the first content block, one second or longer. {seconds} is a locale-formatted number of seconds.
+            ///
+            /// Key: `usage.table.firstTokenSeconds`
+            /// en: "≈{seconds}s"
+            public static func firstTokenSeconds(seconds: String) -> String {
+                L10nSupport.format("usage.table.firstTokenSeconds", seconds)
+            }
+
             /// Tooltip on a request row's harness cell; both arguments are names and are never translated. distinct-from: popover.header.updatedLine — the value is two placeholders and a separator, so the placeholder names are the only part of it that carries meaning; one key cannot name both halves of six different pairs.
             ///
             /// Key: `usage.table.harnessHelp`
@@ -10335,6 +10357,20 @@ public enum L10n {
                 L10nSupport.format("usage.table.showMorePeriods", count, total)
             }
 
+            /// Tooltip on the Speed column header of the Requests table and the speed card.
+            ///
+            /// Key: `usage.table.speedHelp`
+            /// en: "Output tokens divided by the wall-clock time from sending the request to writing its last content block. Read from local session logs, so network and queueing time count. Measured from Claude Code and Codex logs (Claude Cowork and ChatGPT Work included)."
+            public static var speedHelp: String { L10nSupport.string("usage.table.speedHelp") }
+
+            /// Requests table cell and Usage page speed card: approximate output speed. {value} is a locale-formatted number; tok/s means tokens per second.
+            ///
+            /// Key: `usage.table.speedValue`
+            /// en: "≈{value} tok/s"
+            public static func speedValue(value: String) -> String {
+                L10nSupport.format("usage.table.speedValue", value)
+            }
+
             /// Screen-reader label for a Providers, Projects or Models row; name is a company, project or model name and tokens and cost arrive formatted.
             ///
             /// Key: `usage.table.statRow`
@@ -10368,6 +10404,12 @@ public enum L10n {
                 /// en: "Day"
                 public static var day: String { L10nSupport.string("usage.table.column.day") }
 
+                /// Requests table column header and Usage page speed card column: time from sending a request until its first content block was written, measured from local session logs.
+                ///
+                /// Key: `usage.table.column.firstToken`
+                /// en: "First token"
+                public static var firstToken: String { L10nSupport.string("usage.table.column.firstToken") }
+
                 /// Column header on the Requests table, where the call site uppercases it, and the Sessions filter menu that ticks individual harnesses, where it is read as written. 'Harness' is the usage-axis unit and stays as spelled.
                 ///
                 /// Key: `usage.table.column.harness`
@@ -10397,6 +10439,12 @@ public enum L10n {
                 /// Key: `usage.table.column.requests`
                 /// en: "Requests"
                 public static var requests: String { L10nSupport.string("usage.table.column.requests") }
+
+                /// Requests table column header and Usage page speed card column: a request's output speed in tokens per second, measured from local session logs.
+                ///
+                /// Key: `usage.table.column.speed`
+                /// en: "Speed"
+                public static var speed: String { L10nSupport.string("usage.table.column.speed") }
 
                 /// Requests table column header, the service tier a request was billed at; the call site uppercases it.
                 ///
@@ -13602,12 +13650,52 @@ public enum L10n {
             }
 
             public enum Copies {
+                /// Skills copies sheet resolution: adoptCompared.
+                ///
+                /// Key: `workbench.skills.copies.adoptCompared`
+                /// en: "Replace Shared, Then Adopt"
+                public static var adoptCompared: String { L10nSupport.string("workbench.skills.copies.adoptCompared") }
+
+                /// Skills copies sheet resolution: adoptManaged.
+                ///
+                /// Key: `workbench.skills.copies.adoptManaged`
+                /// en: "Adopt as Managed"
+                public static var adoptManaged: String { L10nSupport.string("workbench.skills.copies.adoptManaged") }
+
+                /// Skills copies sheet resolution: adoptNotice.
+                ///
+                /// Key: `workbench.skills.copies.adoptNotice`
+                /// en: "This copy will become a managed projection. Its current content will be backed up in {path}. Choose whether to keep shared content or replace shared content first. To combine files, cancel and select Shared Library as Base to merge first. Agent enable settings stay as they are."
+                public static func adoptNotice(path: String) -> String {
+                    L10nSupport.format("workbench.skills.copies.adoptNotice", path)
+                }
+
+                /// Skills copies sheet resolution: adoptShared.
+                ///
+                /// Key: `workbench.skills.copies.adoptShared`
+                /// en: "Adopt Using Shared Content"
+                public static var adoptShared: String { L10nSupport.string("workbench.skills.copies.adoptShared") }
+
+                /// Skills copies sheet resolution: allMatch.
+                ///
+                /// Key: `workbench.skills.copies.allMatch`
+                /// en: "All copies match"
+                public static var allMatch: String { L10nSupport.string("workbench.skills.copies.allMatch") }
+
                 /// Location label for a real directory inside a harness's own skills folder.
                 ///
                 /// Key: `workbench.skills.copies.appFolder`
                 /// en: "{app} folder"
                 public static func appFolder(app: String) -> String {
                     L10nSupport.format("workbench.skills.copies.appFolder", app)
+                }
+
+                /// Skills copies sheet resolution: backupNotice.
+                ///
+                /// Key: `workbench.skills.copies.backupNotice`
+                /// en: "The current content will be backed up in {path} before it is replaced. Managed copies will follow the shared content."
+                public static func backupNotice(path: String) -> String {
+                    L10nSupport.format("workbench.skills.copies.backupNotice", path)
                 }
 
                 /// Title of a backup snapshot row in the copies sheet; date formatted by the client.
@@ -13652,17 +13740,55 @@ public enum L10n {
                 /// en: "Copy Into Shared Library"
                 public static var copyToShared: String { L10nSupport.string("workbench.skills.copies.copyToShared") }
 
+                /// Skills copies sheet resolution: differCount.
+                ///
+                /// Key: `workbench.skills.copies.differCount`
+                /// en: "{count, plural, one {# copy differs from shared} other {# copies differ from shared}}"
+                public static func differCount(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.copies.differCount", count)
+                }
+
                 /// Comparison line under a copy.
                 ///
                 /// Key: `workbench.skills.copies.differs`
                 /// en: "Differs from the shared copy"
                 public static var differs: String { L10nSupport.string("workbench.skills.copies.differs") }
 
+                /// Skills copies sheet resolution: errorChanged.
+                ///
+                /// Key: `workbench.skills.copies.errorChanged`
+                /// en: "The skill changed since it was compared. Refresh the copies and try again."
+                public static var errorChanged: String { L10nSupport.string("workbench.skills.copies.errorChanged") }
+
+                /// Skills copies sheet resolution: errorIncomplete.
+                ///
+                /// Key: `workbench.skills.copies.errorIncomplete`
+                /// en: "The comparison is incomplete. Reduce the skill size before merging."
+                public static var errorIncomplete: String { L10nSupport.string("workbench.skills.copies.errorIncomplete") }
+
+                /// Skills copies sheet resolution: errorStructure.
+                ///
+                /// Key: `workbench.skills.copies.errorStructure`
+                /// en: "The selected files conflict with a directory or link. Choose a consistent set of files."
+                public static var errorStructure: String { L10nSupport.string("workbench.skills.copies.errorStructure") }
+
+                /// Skills copies sheet resolution: errorUnresolved.
+                ///
+                /// Key: `workbench.skills.copies.errorUnresolved`
+                /// en: "Some differing files have no resolution. Review every file before merging."
+                public static var errorUnresolved: String { L10nSupport.string("workbench.skills.copies.errorUnresolved") }
+
                 /// Comparison line under a copy.
                 ///
                 /// Key: `workbench.skills.copies.identical`
                 /// en: "Identical to the shared copy"
                 public static var identical: String { L10nSupport.string("workbench.skills.copies.identical") }
+
+                /// Skills copies sheet resolution: keepBase.
+                ///
+                /// Key: `workbench.skills.copies.keepBase`
+                /// en: "Keep Base"
+                public static var keepBase: String { L10nSupport.string("workbench.skills.copies.keepBase") }
 
                 /// Under a symlink version whose target is missing.
                 ///
@@ -13696,6 +13822,24 @@ public enum L10n {
                 /// en: "This skill's source is outside Vibe Bar's management, so its files are not compared."
                 public static var linkedNotCompared: String { L10nSupport.string("workbench.skills.copies.linkedNotCompared") }
 
+                /// Skills copies sheet resolution: mergeBaseHint.
+                ///
+                /// Key: `workbench.skills.copies.mergeBaseHint`
+                /// en: "Choose Shared Library as Base to merge files into it."
+                public static var mergeBaseHint: String { L10nSupport.string("workbench.skills.copies.mergeBaseHint") }
+
+                /// Skills copies sheet resolution: mergeReady.
+                ///
+                /// Key: `workbench.skills.copies.mergeReady`
+                /// en: "All differing files resolved"
+                public static var mergeReady: String { L10nSupport.string("workbench.skills.copies.mergeReady") }
+
+                /// Skills copies sheet resolution: mergeShared.
+                ///
+                /// Key: `workbench.skills.copies.mergeShared`
+                /// en: "Merge into Shared"
+                public static var mergeShared: String { L10nSupport.string("workbench.skills.copies.mergeShared") }
+
                 /// Comparison line when the skill has no shared copy to compare against.
                 ///
                 /// Key: `workbench.skills.copies.noShared`
@@ -13707,6 +13851,12 @@ public enum L10n {
                 /// Key: `workbench.skills.copies.notCompared`
                 /// en: "Could not be compared"
                 public static var notCompared: String { L10nSupport.string("workbench.skills.copies.notCompared") }
+
+                /// Skills copies sheet resolution: overwriteCopy.
+                ///
+                /// Key: `workbench.skills.copies.overwriteCopy`
+                /// en: "Overwrite This With Shared"
+                public static var overwriteCopy: String { L10nSupport.string("workbench.skills.copies.overwriteCopy") }
 
                 /// Tag on the backup whose content matches what Vibe Bar last recorded for the shared copy: the state before local edits.
                 ///
@@ -13734,6 +13884,12 @@ public enum L10n {
                 /// en: "Replace Shared Copy With This"
                 public static var replaceShared: String { L10nSupport.string("workbench.skills.copies.replaceShared") }
 
+                /// Skills copies sheet resolution: restoreShared.
+                ///
+                /// Key: `workbench.skills.copies.restoreShared`
+                /// en: "Restore to Shared"
+                public static var restoreShared: String { L10nSupport.string("workbench.skills.copies.restoreShared") }
+
                 /// Warning under an app-folder copy that hides the shared copy from that harness.
                 ///
                 /// Key: `workbench.skills.copies.shadowsShared`
@@ -13755,6 +13911,26 @@ public enum L10n {
                 public static func title(skill: String) -> String {
                     L10nSupport.format("workbench.skills.copies.title", skill)
                 }
+
+                /// Skills copies sheet resolution: unresolved.
+                ///
+                /// Key: `workbench.skills.copies.unresolved`
+                /// en: "{count, plural, one {Resolve # more file before merging} other {Resolve # more files before merging}}"
+                public static func unresolved(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.copies.unresolved", count)
+                }
+
+                /// Skills copies sheet resolution: updated.
+                ///
+                /// Key: `workbench.skills.copies.updated`
+                /// en: "Skill copies updated"
+                public static var updated: String { L10nSupport.string("workbench.skills.copies.updated") }
+
+                /// Skills copies sheet resolution: useCompared.
+                ///
+                /// Key: `workbench.skills.copies.useCompared`
+                /// en: "Use Compared"
+                public static var useCompared: String { L10nSupport.string("workbench.skills.copies.useCompared") }
 
                 public enum Diff {
                     /// One side of a file comparison where the file does not exist.
@@ -15196,6 +15372,12 @@ public enum L10n {
                     L10nSupport.format("workbench.usage.hero.cacheDetail", rate)
                 }
 
+                /// Tooltip on the Usage page hero Cache read tile: what the figure and its hit rate mean.
+                ///
+                /// Key: `workbench.usage.hero.cacheHelp`
+                /// en: "Prompt tokens served from the provider's prompt cache. Hit rate = cache read ÷ (fresh input + cache read + cache write)."
+                public static var cacheHelp: String { L10nSupport.string("workbench.usage.hero.cacheHelp") }
+
                 /// Usage page hero tile under the cost when every request had a price.
                 ///
                 /// Key: `workbench.usage.hero.costDetail`
@@ -15231,6 +15413,12 @@ public enum L10n {
                 public static func tokensDetail(input: String, output: String) -> String {
                     L10nSupport.format("workbench.usage.hero.tokensDetail", input, output)
                 }
+
+                /// Tooltip on the Usage page hero Tokens tile: how the total is defined.
+                ///
+                /// Key: `workbench.usage.hero.tokensHelp`
+                /// en: "Every token in the range: fresh input + output + cache write + cache read. The menu bar popover's token totals count the same four parts."
+                public static var tokensHelp: String { L10nSupport.string("workbench.usage.hero.tokensHelp") }
             }
 
             public enum Range {
@@ -15439,6 +15627,54 @@ public enum L10n {
                 /// Key: `workbench.usage.skills.subtitle`
                 /// en: "From analyzed Codex and Claude Code sessions"
                 public static var subtitle: String { L10nSupport.string("workbench.usage.skills.subtitle") }
+            }
+
+            public enum Speed {
+                /// Usage page speed card: heading of the per-harness half. Harness = the CLI or app that sent the requests.
+                ///
+                /// Key: `workbench.usage.speed.byHarness`
+                /// en: "By harness"
+                public static var byHarness: String { L10nSupport.string("workbench.usage.speed.byHarness") }
+
+                /// Usage page speed card: heading of the per-model half.
+                ///
+                /// Key: `workbench.usage.speed.byModel`
+                /// en: "By model"
+                public static var byModel: String { L10nSupport.string("workbench.usage.speed.byModel") }
+
+                /// Usage page speed card with no request that carries timing.
+                ///
+                /// Key: `workbench.usage.speed.empty`
+                /// en: "No timed requests in this range. Speed comes from Claude Code and Codex logs (Claude Cowork and ChatGPT Work included)."
+                public static var empty: String { L10nSupport.string("workbench.usage.speed.empty") }
+
+                /// Tooltip on a speed card row's speed. {median} and {p90} are locale-formatted tokens-per-second values.
+                ///
+                /// Key: `workbench.usage.speed.p90Help`
+                /// en: "Median {median} · p90 {p90} tok/s"
+                public static func p90Help(median: String, p90: String) -> String {
+                    L10nSupport.format("workbench.usage.speed.p90Help", median, p90)
+                }
+
+                /// Usage page speed card: how many requests in the range carry timing; also the per-row sample count.
+                ///
+                /// Key: `workbench.usage.speed.samples`
+                /// en: "{count, plural, one {# timed request} other {# timed requests}}"
+                public static func samples(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.usage.speed.samples", count)
+                }
+
+                /// Usage page speed card subtitle.
+                ///
+                /// Key: `workbench.usage.speed.subtitle`
+                /// en: "Median output speed and time to first token, read from local session logs"
+                public static var subtitle: String { L10nSupport.string("workbench.usage.speed.subtitle") }
+
+                /// Usage page card title: median output speed and time to first token per harness and per model.
+                ///
+                /// Key: `workbench.usage.speed.title`
+                /// en: "Response speed"
+                public static var title: String { L10nSupport.string("workbench.usage.speed.title") }
             }
 
             public enum Status {
@@ -17186,11 +17422,13 @@ enum L10nCatalogFacts {
         "usage.table.cacheReadWrite",
         "usage.table.column.average",
         "usage.table.column.day",
+        "usage.table.column.firstToken",
         "usage.table.column.harness",
         "usage.table.column.hour",
         "usage.table.column.input",
         "usage.table.column.model",
         "usage.table.column.requests",
+        "usage.table.column.speed",
         "usage.table.column.tier",
         "usage.table.column.time",
         "usage.table.column.weekOf",
@@ -17200,6 +17438,9 @@ enum L10nCatalogFacts {
         "usage.table.emptyProjects",
         "usage.table.emptyProviders",
         "usage.table.emptyRequests",
+        "usage.table.firstTokenHelp",
+        "usage.table.firstTokenMillis",
+        "usage.table.firstTokenSeconds",
         "usage.table.harnessHelp",
         "usage.table.inputHelp",
         "usage.table.loadMore",
@@ -17211,6 +17452,8 @@ enum L10nCatalogFacts {
         "usage.table.requestsLabel",
         "usage.table.requestsLoaded",
         "usage.table.showMorePeriods",
+        "usage.table.speedHelp",
+        "usage.table.speedValue",
         "usage.table.statRow",
         "usage.table.unpriced",
         "usage.table.unpricedHelp",
@@ -17650,7 +17893,13 @@ enum L10nCatalogFacts {
         "workbench.skills.convertConfirmMessage",
         "workbench.skills.convertConfirmTitle",
         "workbench.skills.convertToCopy",
+        "workbench.skills.copies.adoptCompared",
+        "workbench.skills.copies.adoptManaged",
+        "workbench.skills.copies.adoptNotice",
+        "workbench.skills.copies.adoptShared",
+        "workbench.skills.copies.allMatch",
         "workbench.skills.copies.appFolder",
+        "workbench.skills.copies.backupNotice",
         "workbench.skills.copies.backupTitle",
         "workbench.skills.copies.baselineUnavailable",
         "workbench.skills.copies.builtIn",
@@ -17678,8 +17927,14 @@ enum L10nCatalogFacts {
         "workbench.skills.copies.diff.unified",
         "workbench.skills.copies.diff.unreadable",
         "workbench.skills.copies.diff.unreadableVersion",
+        "workbench.skills.copies.differCount",
         "workbench.skills.copies.differs",
+        "workbench.skills.copies.errorChanged",
+        "workbench.skills.copies.errorIncomplete",
+        "workbench.skills.copies.errorStructure",
+        "workbench.skills.copies.errorUnresolved",
         "workbench.skills.copies.identical",
+        "workbench.skills.copies.keepBase",
         "workbench.skills.copies.kind.backup",
         "workbench.skills.copies.kind.builtIn",
         "workbench.skills.copies.kind.independentCopy",
@@ -17691,15 +17946,23 @@ enum L10nCatalogFacts {
         "workbench.skills.copies.linkTarget",
         "workbench.skills.copies.linkToShared",
         "workbench.skills.copies.linkedNotCompared",
+        "workbench.skills.copies.mergeBaseHint",
+        "workbench.skills.copies.mergeReady",
+        "workbench.skills.copies.mergeShared",
         "workbench.skills.copies.noShared",
         "workbench.skills.copies.notCompared",
+        "workbench.skills.copies.overwriteCopy",
         "workbench.skills.copies.recordedBaseline",
         "workbench.skills.copies.replaceConfirmMessage",
         "workbench.skills.copies.replaceConfirmTitle",
         "workbench.skills.copies.replaceShared",
+        "workbench.skills.copies.restoreShared",
         "workbench.skills.copies.shadowsShared",
         "workbench.skills.copies.subtitle",
         "workbench.skills.copies.title",
+        "workbench.skills.copies.unresolved",
+        "workbench.skills.copies.updated",
+        "workbench.skills.copies.useCompared",
         "workbench.skills.countFiltered",
         "workbench.skills.countTotal",
         "workbench.skills.discover",
@@ -17915,11 +18178,13 @@ enum L10nCatalogFacts {
         "workbench.usage.hero.activeDetail",
         "workbench.usage.hero.activeTime",
         "workbench.usage.hero.cacheDetail",
+        "workbench.usage.hero.cacheHelp",
         "workbench.usage.hero.costDetail",
         "workbench.usage.hero.costUnpriced",
         "workbench.usage.hero.projectsDetail",
         "workbench.usage.hero.sessionsDetail",
         "workbench.usage.hero.tokensDetail",
+        "workbench.usage.hero.tokensHelp",
         "workbench.usage.range.quarter",
         "workbench.usage.ranking.emptyModels",
         "workbench.usage.ranking.emptyProjects",
@@ -17948,6 +18213,13 @@ enum L10nCatalogFacts {
         "workbench.usage.skills.lastUsed",
         "workbench.usage.skills.projects",
         "workbench.usage.skills.subtitle",
+        "workbench.usage.speed.byHarness",
+        "workbench.usage.speed.byModel",
+        "workbench.usage.speed.empty",
+        "workbench.usage.speed.p90Help",
+        "workbench.usage.speed.samples",
+        "workbench.usage.speed.subtitle",
+        "workbench.usage.speed.title",
         "workbench.usage.status.analyzing",
         "workbench.usage.status.hourlyFrom",
         "workbench.usage.status.indexEmpty",
@@ -18040,6 +18312,8 @@ enum L10nCatalogFacts {
         "workbench.skills.builtInCount",
         "workbench.skills.bulk.confirmDisableTitle",
         "workbench.skills.bulk.confirmEnableTitle",
+        "workbench.skills.copies.differCount",
+        "workbench.skills.copies.unresolved",
         "workbench.skills.countTotal",
         "workbench.skills.discover.installs",
         "workbench.skills.import.apply",
@@ -18060,6 +18334,7 @@ enum L10nCatalogFacts {
         "workbench.usage.shape.bin",
         "workbench.usage.shape.samples",
         "workbench.usage.skills.harnessUses",
+        "workbench.usage.speed.samples",
         "workbench.usage.status.skipped",
         "workbench.usage.tools.more",
         "workbench.usage.tools.week",
@@ -19611,11 +19886,13 @@ enum L10nCatalogFacts {
         "usage.table.cacheReadWrite": 2,
         "usage.table.column.average": 0,
         "usage.table.column.day": 0,
+        "usage.table.column.firstToken": 0,
         "usage.table.column.harness": 0,
         "usage.table.column.hour": 0,
         "usage.table.column.input": 0,
         "usage.table.column.model": 0,
         "usage.table.column.requests": 0,
+        "usage.table.column.speed": 0,
         "usage.table.column.tier": 0,
         "usage.table.column.time": 0,
         "usage.table.column.weekOf": 0,
@@ -19625,6 +19902,9 @@ enum L10nCatalogFacts {
         "usage.table.emptyProjects": 0,
         "usage.table.emptyProviders": 0,
         "usage.table.emptyRequests": 0,
+        "usage.table.firstTokenHelp": 0,
+        "usage.table.firstTokenMillis": 1,
+        "usage.table.firstTokenSeconds": 1,
         "usage.table.harnessHelp": 2,
         "usage.table.inputHelp": 3,
         "usage.table.loadMore": 1,
@@ -19636,6 +19916,8 @@ enum L10nCatalogFacts {
         "usage.table.requestsLabel": 0,
         "usage.table.requestsLoaded": 2,
         "usage.table.showMorePeriods": 2,
+        "usage.table.speedHelp": 0,
+        "usage.table.speedValue": 1,
         "usage.table.statRow": 4,
         "usage.table.unpriced": 0,
         "usage.table.unpricedHelp": 0,
@@ -20075,7 +20357,13 @@ enum L10nCatalogFacts {
         "workbench.skills.convertConfirmMessage": 0,
         "workbench.skills.convertConfirmTitle": 1,
         "workbench.skills.convertToCopy": 0,
+        "workbench.skills.copies.adoptCompared": 0,
+        "workbench.skills.copies.adoptManaged": 0,
+        "workbench.skills.copies.adoptNotice": 1,
+        "workbench.skills.copies.adoptShared": 0,
+        "workbench.skills.copies.allMatch": 0,
         "workbench.skills.copies.appFolder": 1,
+        "workbench.skills.copies.backupNotice": 1,
         "workbench.skills.copies.backupTitle": 1,
         "workbench.skills.copies.baselineUnavailable": 0,
         "workbench.skills.copies.builtIn": 1,
@@ -20103,8 +20391,14 @@ enum L10nCatalogFacts {
         "workbench.skills.copies.diff.unified": 0,
         "workbench.skills.copies.diff.unreadable": 0,
         "workbench.skills.copies.diff.unreadableVersion": 0,
+        "workbench.skills.copies.differCount": 1,
         "workbench.skills.copies.differs": 0,
+        "workbench.skills.copies.errorChanged": 0,
+        "workbench.skills.copies.errorIncomplete": 0,
+        "workbench.skills.copies.errorStructure": 0,
+        "workbench.skills.copies.errorUnresolved": 0,
         "workbench.skills.copies.identical": 0,
+        "workbench.skills.copies.keepBase": 0,
         "workbench.skills.copies.kind.backup": 0,
         "workbench.skills.copies.kind.builtIn": 0,
         "workbench.skills.copies.kind.independentCopy": 0,
@@ -20116,15 +20410,23 @@ enum L10nCatalogFacts {
         "workbench.skills.copies.linkTarget": 1,
         "workbench.skills.copies.linkToShared": 0,
         "workbench.skills.copies.linkedNotCompared": 0,
+        "workbench.skills.copies.mergeBaseHint": 0,
+        "workbench.skills.copies.mergeReady": 0,
+        "workbench.skills.copies.mergeShared": 0,
         "workbench.skills.copies.noShared": 0,
         "workbench.skills.copies.notCompared": 0,
+        "workbench.skills.copies.overwriteCopy": 0,
         "workbench.skills.copies.recordedBaseline": 0,
         "workbench.skills.copies.replaceConfirmMessage": 0,
         "workbench.skills.copies.replaceConfirmTitle": 1,
         "workbench.skills.copies.replaceShared": 0,
+        "workbench.skills.copies.restoreShared": 0,
         "workbench.skills.copies.shadowsShared": 1,
         "workbench.skills.copies.subtitle": 0,
         "workbench.skills.copies.title": 1,
+        "workbench.skills.copies.unresolved": 1,
+        "workbench.skills.copies.updated": 0,
+        "workbench.skills.copies.useCompared": 0,
         "workbench.skills.countFiltered": 2,
         "workbench.skills.countTotal": 1,
         "workbench.skills.discover": 0,
@@ -20340,11 +20642,13 @@ enum L10nCatalogFacts {
         "workbench.usage.hero.activeDetail": 1,
         "workbench.usage.hero.activeTime": 0,
         "workbench.usage.hero.cacheDetail": 1,
+        "workbench.usage.hero.cacheHelp": 0,
         "workbench.usage.hero.costDetail": 0,
         "workbench.usage.hero.costUnpriced": 0,
         "workbench.usage.hero.projectsDetail": 2,
         "workbench.usage.hero.sessionsDetail": 2,
         "workbench.usage.hero.tokensDetail": 2,
+        "workbench.usage.hero.tokensHelp": 0,
         "workbench.usage.range.quarter": 0,
         "workbench.usage.ranking.emptyModels": 0,
         "workbench.usage.ranking.emptyProjects": 0,
@@ -20373,6 +20677,13 @@ enum L10nCatalogFacts {
         "workbench.usage.skills.lastUsed": 1,
         "workbench.usage.skills.projects": 1,
         "workbench.usage.skills.subtitle": 0,
+        "workbench.usage.speed.byHarness": 0,
+        "workbench.usage.speed.byModel": 0,
+        "workbench.usage.speed.empty": 0,
+        "workbench.usage.speed.p90Help": 2,
+        "workbench.usage.speed.samples": 1,
+        "workbench.usage.speed.subtitle": 0,
+        "workbench.usage.speed.title": 0,
         "workbench.usage.status.analyzing": 2,
         "workbench.usage.status.hourlyFrom": 1,
         "workbench.usage.status.indexEmpty": 0,
