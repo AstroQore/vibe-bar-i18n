@@ -5865,8 +5865,26 @@
 /* Button in the convert-to-copy confirmation dialog. distinct-from: workbench.skills.menuConvertToCopy — the menu item's ellipsis promises the confirmation dialog; this is the button inside it. */
 "workbench.skills.convertToCopy" = "Convert to Copy";
 
+/* Skills copies sheet resolution: adoptCompared. */
+"workbench.skills.copies.adoptCompared" = "Replace Shared, Then Adopt";
+
+/* Skills copies sheet resolution: adoptManaged. */
+"workbench.skills.copies.adoptManaged" = "Adopt as Managed";
+
+/* Skills copies sheet resolution: adoptNotice. */
+"workbench.skills.copies.adoptNotice" = "This copy will become a managed projection. Its current content will be backed up in %@. Choose whether to keep shared content or replace shared content first. To combine files, cancel and select Shared Library as Base to merge first. Agent enable settings stay as they are.";
+
+/* Skills copies sheet resolution: adoptShared. */
+"workbench.skills.copies.adoptShared" = "Adopt Using Shared Content";
+
+/* Skills copies sheet resolution: allMatch. */
+"workbench.skills.copies.allMatch" = "All copies match";
+
 /* Location label for a real directory inside a harness's own skills folder. */
 "workbench.skills.copies.appFolder" = "%@ folder";
+
+/* Skills copies sheet resolution: backupNotice. */
+"workbench.skills.copies.backupNotice" = "The current content will be backed up in %@ before it is replaced. Managed copies will follow the shared content.";
 
 /* Title of a backup snapshot row in the copies sheet; date formatted by the client. */
 "workbench.skills.copies.backupTitle" = "Backup from %@";
@@ -5952,8 +5970,23 @@
 /* Comparison line under a copy. */
 "workbench.skills.copies.differs" = "Differs from the shared copy";
 
+/* Skills copies sheet resolution: errorChanged. */
+"workbench.skills.copies.errorChanged" = "The skill changed since it was compared. Refresh the copies and try again.";
+
+/* Skills copies sheet resolution: errorIncomplete. */
+"workbench.skills.copies.errorIncomplete" = "The comparison is incomplete. Reduce the skill size before merging.";
+
+/* Skills copies sheet resolution: errorStructure. */
+"workbench.skills.copies.errorStructure" = "The selected files conflict with a directory or link. Choose a consistent set of files.";
+
+/* Skills copies sheet resolution: errorUnresolved. */
+"workbench.skills.copies.errorUnresolved" = "Some differing files have no resolution. Review every file before merging.";
+
 /* Comparison line under a copy. */
 "workbench.skills.copies.identical" = "Identical to the shared copy";
+
+/* Skills copies sheet resolution: keepBase. */
+"workbench.skills.copies.keepBase" = "Keep Base";
 
 /* Chip on a backup snapshot listed as a version in the copies sheet. */
 "workbench.skills.copies.kind.backup" = "Backup";
@@ -5988,11 +6021,23 @@
 /* Note in the copies sheet of a linked skill: its folder is never read, so no version is compared with it. */
 "workbench.skills.copies.linkedNotCompared" = "This skill's source is outside Vibe Bar's management, so its files are not compared.";
 
+/* Skills copies sheet resolution: mergeBaseHint. */
+"workbench.skills.copies.mergeBaseHint" = "Choose Shared Library as Base to merge files into it.";
+
+/* Skills copies sheet resolution: mergeReady. */
+"workbench.skills.copies.mergeReady" = "All differing files resolved";
+
+/* Skills copies sheet resolution: mergeShared. */
+"workbench.skills.copies.mergeShared" = "Merge into Shared";
+
 /* Comparison line when the skill has no shared copy to compare against. */
 "workbench.skills.copies.noShared" = "Not in the shared library";
 
 /* Under a version whose content could not be hashed against the shared copy. */
 "workbench.skills.copies.notCompared" = "Could not be compared";
+
+/* Skills copies sheet resolution: overwriteCopy. */
+"workbench.skills.copies.overwriteCopy" = "Overwrite This With Shared";
 
 /* Tag on the backup whose content matches what Vibe Bar last recorded for the shared copy: the state before local edits. */
 "workbench.skills.copies.recordedBaseline" = "Last recorded version";
@@ -6006,6 +6051,9 @@
 /* Action under a copy that differs from the shared one. */
 "workbench.skills.copies.replaceShared" = "Replace Shared Copy With This";
 
+/* Skills copies sheet resolution: restoreShared. */
+"workbench.skills.copies.restoreShared" = "Restore to Shared";
+
 /* Warning under an app-folder copy that hides the shared copy from that harness. */
 "workbench.skills.copies.shadowsShared" = "%@ loads this copy instead of the shared one";
 
@@ -6014,6 +6062,12 @@
 
 /* Title of the popover listing every copy of one skill. */
 "workbench.skills.copies.title" = "Copies of %@";
+
+/* Skills copies sheet resolution: updated. */
+"workbench.skills.copies.updated" = "Skill copies updated";
+
+/* Skills copies sheet resolution: useCompared. */
+"workbench.skills.copies.useCompared" = "Use Compared";
 
 /* Skills page count caption while the search field filters the list. */
 "workbench.skills.countFiltered" = "%1$lld of %2$lld skills";

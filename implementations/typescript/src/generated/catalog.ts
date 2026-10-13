@@ -2030,7 +2030,13 @@ export type MessageKey =
   | "workbench.skills.convertConfirmMessage"
   | "workbench.skills.convertConfirmTitle"
   | "workbench.skills.convertToCopy"
+  | "workbench.skills.copies.adoptCompared"
+  | "workbench.skills.copies.adoptManaged"
+  | "workbench.skills.copies.adoptNotice"
+  | "workbench.skills.copies.adoptShared"
+  | "workbench.skills.copies.allMatch"
   | "workbench.skills.copies.appFolder"
+  | "workbench.skills.copies.backupNotice"
   | "workbench.skills.copies.backupTitle"
   | "workbench.skills.copies.baselineUnavailable"
   | "workbench.skills.copies.builtIn"
@@ -2058,8 +2064,14 @@ export type MessageKey =
   | "workbench.skills.copies.diff.unified"
   | "workbench.skills.copies.diff.unreadable"
   | "workbench.skills.copies.diff.unreadableVersion"
+  | "workbench.skills.copies.differCount"
   | "workbench.skills.copies.differs"
+  | "workbench.skills.copies.errorChanged"
+  | "workbench.skills.copies.errorIncomplete"
+  | "workbench.skills.copies.errorStructure"
+  | "workbench.skills.copies.errorUnresolved"
   | "workbench.skills.copies.identical"
+  | "workbench.skills.copies.keepBase"
   | "workbench.skills.copies.kind.backup"
   | "workbench.skills.copies.kind.builtIn"
   | "workbench.skills.copies.kind.independentCopy"
@@ -2071,15 +2083,23 @@ export type MessageKey =
   | "workbench.skills.copies.linkTarget"
   | "workbench.skills.copies.linkToShared"
   | "workbench.skills.copies.linkedNotCompared"
+  | "workbench.skills.copies.mergeBaseHint"
+  | "workbench.skills.copies.mergeReady"
+  | "workbench.skills.copies.mergeShared"
   | "workbench.skills.copies.noShared"
   | "workbench.skills.copies.notCompared"
+  | "workbench.skills.copies.overwriteCopy"
   | "workbench.skills.copies.recordedBaseline"
   | "workbench.skills.copies.replaceConfirmMessage"
   | "workbench.skills.copies.replaceConfirmTitle"
   | "workbench.skills.copies.replaceShared"
+  | "workbench.skills.copies.restoreShared"
   | "workbench.skills.copies.shadowsShared"
   | "workbench.skills.copies.subtitle"
   | "workbench.skills.copies.title"
+  | "workbench.skills.copies.unresolved"
+  | "workbench.skills.copies.updated"
+  | "workbench.skills.copies.useCompared"
   | "workbench.skills.countFiltered"
   | "workbench.skills.countTotal"
   | "workbench.skills.discover"
@@ -4386,7 +4406,13 @@ export interface MessageParams {
   "workbench.skills.convertConfirmMessage": undefined;
   "workbench.skills.convertConfirmTitle": { "skill": string };
   "workbench.skills.convertToCopy": undefined;
+  "workbench.skills.copies.adoptCompared": undefined;
+  "workbench.skills.copies.adoptManaged": undefined;
+  "workbench.skills.copies.adoptNotice": { "path": string };
+  "workbench.skills.copies.adoptShared": undefined;
+  "workbench.skills.copies.allMatch": undefined;
   "workbench.skills.copies.appFolder": { "app": string };
+  "workbench.skills.copies.backupNotice": { "path": string };
   "workbench.skills.copies.backupTitle": { "date": string };
   "workbench.skills.copies.baselineUnavailable": undefined;
   "workbench.skills.copies.builtIn": { "app": string };
@@ -4414,8 +4440,14 @@ export interface MessageParams {
   "workbench.skills.copies.diff.unified": undefined;
   "workbench.skills.copies.diff.unreadable": undefined;
   "workbench.skills.copies.diff.unreadableVersion": undefined;
+  "workbench.skills.copies.differCount": { "count": number };
   "workbench.skills.copies.differs": undefined;
+  "workbench.skills.copies.errorChanged": undefined;
+  "workbench.skills.copies.errorIncomplete": undefined;
+  "workbench.skills.copies.errorStructure": undefined;
+  "workbench.skills.copies.errorUnresolved": undefined;
   "workbench.skills.copies.identical": undefined;
+  "workbench.skills.copies.keepBase": undefined;
   "workbench.skills.copies.kind.backup": undefined;
   "workbench.skills.copies.kind.builtIn": undefined;
   "workbench.skills.copies.kind.independentCopy": undefined;
@@ -4427,15 +4459,23 @@ export interface MessageParams {
   "workbench.skills.copies.linkTarget": { "path": string };
   "workbench.skills.copies.linkToShared": undefined;
   "workbench.skills.copies.linkedNotCompared": undefined;
+  "workbench.skills.copies.mergeBaseHint": undefined;
+  "workbench.skills.copies.mergeReady": undefined;
+  "workbench.skills.copies.mergeShared": undefined;
   "workbench.skills.copies.noShared": undefined;
   "workbench.skills.copies.notCompared": undefined;
+  "workbench.skills.copies.overwriteCopy": undefined;
   "workbench.skills.copies.recordedBaseline": undefined;
   "workbench.skills.copies.replaceConfirmMessage": undefined;
   "workbench.skills.copies.replaceConfirmTitle": { "skill": string };
   "workbench.skills.copies.replaceShared": undefined;
+  "workbench.skills.copies.restoreShared": undefined;
   "workbench.skills.copies.shadowsShared": { "app": string };
   "workbench.skills.copies.subtitle": undefined;
   "workbench.skills.copies.title": { "skill": string };
+  "workbench.skills.copies.unresolved": { "count": number };
+  "workbench.skills.copies.updated": undefined;
+  "workbench.skills.copies.useCompared": undefined;
   "workbench.skills.countFiltered": { "shown": number; "total": number };
   "workbench.skills.countTotal": { "count": number };
   "workbench.skills.discover": undefined;
@@ -6743,7 +6783,13 @@ export const messages: {
     "workbench.skills.convertConfirmMessage": "Vibe Bar reads the linked folder once, copies it into ~/.agents/skills, and replaces the link with that copy. The original folder is left unchanged, and later edits there no longer reach this skill.",
     "workbench.skills.convertConfirmTitle": "Convert {skill} to a copy?",
     "workbench.skills.convertToCopy": "Convert to Copy",
+    "workbench.skills.copies.adoptCompared": "Replace Shared, Then Adopt",
+    "workbench.skills.copies.adoptManaged": "Adopt as Managed",
+    "workbench.skills.copies.adoptNotice": "This copy will become a managed projection. Its current content will be backed up in {path}. Choose whether to keep shared content or replace shared content first. To combine files, cancel and select Shared Library as Base to merge first. Agent enable settings stay as they are.",
+    "workbench.skills.copies.adoptShared": "Adopt Using Shared Content",
+    "workbench.skills.copies.allMatch": "All copies match",
     "workbench.skills.copies.appFolder": "{app} folder",
+    "workbench.skills.copies.backupNotice": "The current content will be backed up in {path} before it is replaced. Managed copies will follow the shared content.",
     "workbench.skills.copies.backupTitle": "Backup from {date}",
     "workbench.skills.copies.baselineUnavailable": "The shared copy was edited, but Vibe Bar kept only a fingerprint of the version it last recorded, so the content before the edit cannot be shown. Backups listed here are earlier snapshots.",
     "workbench.skills.copies.builtIn": "{app} built-in",
@@ -6771,8 +6817,14 @@ export const messages: {
     "workbench.skills.copies.diff.unified": "Unified",
     "workbench.skills.copies.diff.unreadable": "This file could not be read",
     "workbench.skills.copies.diff.unreadableVersion": "This version cannot be read",
+    "workbench.skills.copies.differCount": "{count, plural, one {# copy differs from shared} other {# copies differ from shared}}",
     "workbench.skills.copies.differs": "Differs from the shared copy",
+    "workbench.skills.copies.errorChanged": "The skill changed since it was compared. Refresh the copies and try again.",
+    "workbench.skills.copies.errorIncomplete": "The comparison is incomplete. Reduce the skill size before merging.",
+    "workbench.skills.copies.errorStructure": "The selected files conflict with a directory or link. Choose a consistent set of files.",
+    "workbench.skills.copies.errorUnresolved": "Some differing files have no resolution. Review every file before merging.",
     "workbench.skills.copies.identical": "Identical to the shared copy",
+    "workbench.skills.copies.keepBase": "Keep Base",
     "workbench.skills.copies.kind.backup": "Backup",
     "workbench.skills.copies.kind.builtIn": "Read-only built-in",
     "workbench.skills.copies.kind.independentCopy": "Independent copy",
@@ -6784,15 +6836,23 @@ export const messages: {
     "workbench.skills.copies.linkTarget": "Points to {path}",
     "workbench.skills.copies.linkToShared": "Links to the shared copy",
     "workbench.skills.copies.linkedNotCompared": "This skill's source is outside Vibe Bar's management, so its files are not compared.",
+    "workbench.skills.copies.mergeBaseHint": "Choose Shared Library as Base to merge files into it.",
+    "workbench.skills.copies.mergeReady": "All differing files resolved",
+    "workbench.skills.copies.mergeShared": "Merge into Shared",
     "workbench.skills.copies.noShared": "Not in the shared library",
     "workbench.skills.copies.notCompared": "Could not be compared",
+    "workbench.skills.copies.overwriteCopy": "Overwrite This With Shared",
     "workbench.skills.copies.recordedBaseline": "Last recorded version",
     "workbench.skills.copies.replaceConfirmMessage": "A backup is taken first. Every harness linked to the shared copy sees the new content.",
     "workbench.skills.copies.replaceConfirmTitle": "Replace the shared copy of {skill}?",
     "workbench.skills.copies.replaceShared": "Replace Shared Copy With This",
+    "workbench.skills.copies.restoreShared": "Restore to Shared",
     "workbench.skills.copies.shadowsShared": "{app} loads this copy instead of the shared one",
     "workbench.skills.copies.subtitle": "Every place this skill exists on this Mac. Pick two versions to see what differs.",
     "workbench.skills.copies.title": "Copies of {skill}",
+    "workbench.skills.copies.unresolved": "{count, plural, one {Resolve # more file before merging} other {Resolve # more files before merging}}",
+    "workbench.skills.copies.updated": "Skill copies updated",
+    "workbench.skills.copies.useCompared": "Use Compared",
     "workbench.skills.countFiltered": "{shown} of {total} skills",
     "workbench.skills.countTotal": "{count, plural, one {# skill} other {# skills}}",
     "workbench.skills.discover": "Discover",
@@ -9095,7 +9155,13 @@ export const messages: {
     "workbench.skills.convertConfirmMessage": "Vibe Bar 会读取一次链接的文件夹，把它复制到 ~/.agents/skills，并用这份副本替换链接。原文件夹保持不变，之后在那里的修改不会再影响这个技能。",
     "workbench.skills.convertConfirmTitle": "把 {skill} 转为副本？",
     "workbench.skills.convertToCopy": "转为副本",
+    "workbench.skills.copies.adoptCompared": "替换共享后收编",
+    "workbench.skills.copies.adoptManaged": "收编为托管投影",
+    "workbench.skills.copies.adoptNotice": "此副本将成为托管投影，当前内容会备份到 {path}。请选择保留共享内容，或先用此副本替换共享。若要按文件合并，请取消并选择共享库为 Base，先完成合并。Agent 启用设置保持不变。",
+    "workbench.skills.copies.adoptShared": "采用共享内容并收编",
+    "workbench.skills.copies.allMatch": "所有副本一致",
     "workbench.skills.copies.appFolder": "{app} 目录",
+    "workbench.skills.copies.backupNotice": "替换前会将当前内容备份到 {path}。托管副本会同步共享内容。",
     "workbench.skills.copies.backupTitle": "{date} 的备份",
     "workbench.skills.copies.baselineUnavailable": "共享副本已被修改，但 Vibe Bar 只保存了上次记录版本的指纹，无法显示修改前的内容。这里列出的备份是更早的快照。",
     "workbench.skills.copies.builtIn": "{app} 内置",
@@ -9123,8 +9189,14 @@ export const messages: {
     "workbench.skills.copies.diff.unified": "合并视图",
     "workbench.skills.copies.diff.unreadable": "无法读取此文件",
     "workbench.skills.copies.diff.unreadableVersion": "无法读取此版本",
+    "workbench.skills.copies.differCount": "{count, plural, other {# 个副本与共享不同}}",
     "workbench.skills.copies.differs": "与共享副本不同",
+    "workbench.skills.copies.errorChanged": "技能自比较后已发生变化，请刷新副本后重试。",
+    "workbench.skills.copies.errorIncomplete": "比较结果不完整，请缩小技能目录后再合并。",
+    "workbench.skills.copies.errorStructure": "所选文件与目录或链接冲突，请调整文件选择。",
+    "workbench.skills.copies.errorUnresolved": "仍有差异文件未选择处理方式，请逐项选择后合并。",
     "workbench.skills.copies.identical": "与共享副本相同",
+    "workbench.skills.copies.keepBase": "保留 Base",
     "workbench.skills.copies.kind.backup": "备份",
     "workbench.skills.copies.kind.builtIn": "内置只读",
     "workbench.skills.copies.kind.independentCopy": "独立拷贝",
@@ -9136,15 +9208,23 @@ export const messages: {
     "workbench.skills.copies.linkTarget": "指向 {path}",
     "workbench.skills.copies.linkToShared": "链接到共享副本",
     "workbench.skills.copies.linkedNotCompared": "这个技能的来源在 Vibe Bar 管理范围之外，因此不会比较它的文件。",
+    "workbench.skills.copies.mergeBaseHint": "选择共享库为 Base，即可按文件合并。",
+    "workbench.skills.copies.mergeReady": "已处理全部差异文件",
+    "workbench.skills.copies.mergeShared": "合并到共享",
     "workbench.skills.copies.noShared": "不在共享库中",
     "workbench.skills.copies.notCompared": "无法对比",
+    "workbench.skills.copies.overwriteCopy": "用共享覆盖此副本",
     "workbench.skills.copies.recordedBaseline": "上次记录的版本",
     "workbench.skills.copies.replaceConfirmMessage": "会先备份。所有链接到共享副本的 harness 都会看到新内容。",
     "workbench.skills.copies.replaceConfirmTitle": "替换 {skill} 的共享副本？",
     "workbench.skills.copies.replaceShared": "用此副本替换共享副本",
+    "workbench.skills.copies.restoreShared": "恢复到共享",
     "workbench.skills.copies.shadowsShared": "{app} 会加载此副本而非共享副本",
     "workbench.skills.copies.subtitle": "此 skill 在这台 Mac 上的所有位置。选择两个版本查看差异。",
     "workbench.skills.copies.title": "{skill} 的副本",
+    "workbench.skills.copies.unresolved": "{count, plural, other {还需处理 # 个文件才能合并}}",
+    "workbench.skills.copies.updated": "已更新技能副本",
+    "workbench.skills.copies.useCompared": "采用 Compared",
     "workbench.skills.countFiltered": "{total} 个技能中的 {shown} 个",
     "workbench.skills.countTotal": "{count, plural, other {# 个技能}}",
     "workbench.skills.discover": "发现",

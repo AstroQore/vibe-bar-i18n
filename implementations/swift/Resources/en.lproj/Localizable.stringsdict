@@ -1007,6 +1007,38 @@
 			<string>%2$lld skills</string>
 		</dict>
 	</dict>
+	<key>workbench.skills.copies.differCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld copy differs from shared</string>
+			<key>other</key>
+			<string>%lld copies differ from shared</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.copies.unresolved</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>Resolve %lld more file before merging</string>
+			<key>other</key>
+			<string>Resolve %lld more files before merging</string>
+		</dict>
+	</dict>
 	<key>workbench.skills.countTotal</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>

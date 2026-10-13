@@ -7051,6 +7051,66 @@
     },
     "workbench.usage.trend.splitFlow": {
       "value": "提示词 · 输出"
+    },
+    "workbench.skills.copies.overwriteCopy": {
+      "value": "用共享覆盖此副本"
+    },
+    "workbench.skills.copies.adoptManaged": {
+      "value": "收编为托管投影"
+    },
+    "workbench.skills.copies.restoreShared": {
+      "value": "恢复到共享"
+    },
+    "workbench.skills.copies.allMatch": {
+      "value": "所有副本一致"
+    },
+    "workbench.skills.copies.differCount": {
+      "value": "{count, plural, other {# 个副本与共享不同}}"
+    },
+    "workbench.skills.copies.backupNotice": {
+      "value": "替换前会将当前内容备份到 {path}。托管副本会同步共享内容。"
+    },
+    "workbench.skills.copies.adoptNotice": {
+      "value": "此副本将成为托管投影，当前内容会备份到 {path}。请选择保留共享内容，或先用此副本替换共享。若要按文件合并，请取消并选择共享库为 Base，先完成合并。Agent 启用设置保持不变。"
+    },
+    "workbench.skills.copies.adoptShared": {
+      "value": "采用共享内容并收编"
+    },
+    "workbench.skills.copies.adoptCompared": {
+      "value": "替换共享后收编"
+    },
+    "workbench.skills.copies.mergeShared": {
+      "value": "合并到共享"
+    },
+    "workbench.skills.copies.keepBase": {
+      "value": "保留 Base"
+    },
+    "workbench.skills.copies.useCompared": {
+      "value": "采用 Compared"
+    },
+    "workbench.skills.copies.unresolved": {
+      "value": "{count, plural, other {还需处理 # 个文件才能合并}}"
+    },
+    "workbench.skills.copies.mergeReady": {
+      "value": "已处理全部差异文件"
+    },
+    "workbench.skills.copies.mergeBaseHint": {
+      "value": "选择共享库为 Base，即可按文件合并。"
+    },
+    "workbench.skills.copies.updated": {
+      "value": "已更新技能副本"
+    },
+    "workbench.skills.copies.errorIncomplete": {
+      "value": "比较结果不完整，请缩小技能目录后再合并。"
+    },
+    "workbench.skills.copies.errorUnresolved": {
+      "value": "仍有差异文件未选择处理方式，请逐项选择后合并。"
+    },
+    "workbench.skills.copies.errorChanged": {
+      "value": "技能自比较后已发生变化，请刷新副本后重试。"
+    },
+    "workbench.skills.copies.errorStructure": {
+      "value": "所选文件与目录或链接冲突，请调整文件选择。"
     }
   }
 }

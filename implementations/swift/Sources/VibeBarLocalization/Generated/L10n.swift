@@ -13650,12 +13650,52 @@ public enum L10n {
             }
 
             public enum Copies {
+                /// Skills copies sheet resolution: adoptCompared.
+                ///
+                /// Key: `workbench.skills.copies.adoptCompared`
+                /// en: "Replace Shared, Then Adopt"
+                public static var adoptCompared: String { L10nSupport.string("workbench.skills.copies.adoptCompared") }
+
+                /// Skills copies sheet resolution: adoptManaged.
+                ///
+                /// Key: `workbench.skills.copies.adoptManaged`
+                /// en: "Adopt as Managed"
+                public static var adoptManaged: String { L10nSupport.string("workbench.skills.copies.adoptManaged") }
+
+                /// Skills copies sheet resolution: adoptNotice.
+                ///
+                /// Key: `workbench.skills.copies.adoptNotice`
+                /// en: "This copy will become a managed projection. Its current content will be backed up in {path}. Choose whether to keep shared content or replace shared content first. To combine files, cancel and select Shared Library as Base to merge first. Agent enable settings stay as they are."
+                public static func adoptNotice(path: String) -> String {
+                    L10nSupport.format("workbench.skills.copies.adoptNotice", path)
+                }
+
+                /// Skills copies sheet resolution: adoptShared.
+                ///
+                /// Key: `workbench.skills.copies.adoptShared`
+                /// en: "Adopt Using Shared Content"
+                public static var adoptShared: String { L10nSupport.string("workbench.skills.copies.adoptShared") }
+
+                /// Skills copies sheet resolution: allMatch.
+                ///
+                /// Key: `workbench.skills.copies.allMatch`
+                /// en: "All copies match"
+                public static var allMatch: String { L10nSupport.string("workbench.skills.copies.allMatch") }
+
                 /// Location label for a real directory inside a harness's own skills folder.
                 ///
                 /// Key: `workbench.skills.copies.appFolder`
                 /// en: "{app} folder"
                 public static func appFolder(app: String) -> String {
                     L10nSupport.format("workbench.skills.copies.appFolder", app)
+                }
+
+                /// Skills copies sheet resolution: backupNotice.
+                ///
+                /// Key: `workbench.skills.copies.backupNotice`
+                /// en: "The current content will be backed up in {path} before it is replaced. Managed copies will follow the shared content."
+                public static func backupNotice(path: String) -> String {
+                    L10nSupport.format("workbench.skills.copies.backupNotice", path)
                 }
 
                 /// Title of a backup snapshot row in the copies sheet; date formatted by the client.
@@ -13700,17 +13740,55 @@ public enum L10n {
                 /// en: "Copy Into Shared Library"
                 public static var copyToShared: String { L10nSupport.string("workbench.skills.copies.copyToShared") }
 
+                /// Skills copies sheet resolution: differCount.
+                ///
+                /// Key: `workbench.skills.copies.differCount`
+                /// en: "{count, plural, one {# copy differs from shared} other {# copies differ from shared}}"
+                public static func differCount(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.copies.differCount", count)
+                }
+
                 /// Comparison line under a copy.
                 ///
                 /// Key: `workbench.skills.copies.differs`
                 /// en: "Differs from the shared copy"
                 public static var differs: String { L10nSupport.string("workbench.skills.copies.differs") }
 
+                /// Skills copies sheet resolution: errorChanged.
+                ///
+                /// Key: `workbench.skills.copies.errorChanged`
+                /// en: "The skill changed since it was compared. Refresh the copies and try again."
+                public static var errorChanged: String { L10nSupport.string("workbench.skills.copies.errorChanged") }
+
+                /// Skills copies sheet resolution: errorIncomplete.
+                ///
+                /// Key: `workbench.skills.copies.errorIncomplete`
+                /// en: "The comparison is incomplete. Reduce the skill size before merging."
+                public static var errorIncomplete: String { L10nSupport.string("workbench.skills.copies.errorIncomplete") }
+
+                /// Skills copies sheet resolution: errorStructure.
+                ///
+                /// Key: `workbench.skills.copies.errorStructure`
+                /// en: "The selected files conflict with a directory or link. Choose a consistent set of files."
+                public static var errorStructure: String { L10nSupport.string("workbench.skills.copies.errorStructure") }
+
+                /// Skills copies sheet resolution: errorUnresolved.
+                ///
+                /// Key: `workbench.skills.copies.errorUnresolved`
+                /// en: "Some differing files have no resolution. Review every file before merging."
+                public static var errorUnresolved: String { L10nSupport.string("workbench.skills.copies.errorUnresolved") }
+
                 /// Comparison line under a copy.
                 ///
                 /// Key: `workbench.skills.copies.identical`
                 /// en: "Identical to the shared copy"
                 public static var identical: String { L10nSupport.string("workbench.skills.copies.identical") }
+
+                /// Skills copies sheet resolution: keepBase.
+                ///
+                /// Key: `workbench.skills.copies.keepBase`
+                /// en: "Keep Base"
+                public static var keepBase: String { L10nSupport.string("workbench.skills.copies.keepBase") }
 
                 /// Under a symlink version whose target is missing.
                 ///
@@ -13744,6 +13822,24 @@ public enum L10n {
                 /// en: "This skill's source is outside Vibe Bar's management, so its files are not compared."
                 public static var linkedNotCompared: String { L10nSupport.string("workbench.skills.copies.linkedNotCompared") }
 
+                /// Skills copies sheet resolution: mergeBaseHint.
+                ///
+                /// Key: `workbench.skills.copies.mergeBaseHint`
+                /// en: "Choose Shared Library as Base to merge files into it."
+                public static var mergeBaseHint: String { L10nSupport.string("workbench.skills.copies.mergeBaseHint") }
+
+                /// Skills copies sheet resolution: mergeReady.
+                ///
+                /// Key: `workbench.skills.copies.mergeReady`
+                /// en: "All differing files resolved"
+                public static var mergeReady: String { L10nSupport.string("workbench.skills.copies.mergeReady") }
+
+                /// Skills copies sheet resolution: mergeShared.
+                ///
+                /// Key: `workbench.skills.copies.mergeShared`
+                /// en: "Merge into Shared"
+                public static var mergeShared: String { L10nSupport.string("workbench.skills.copies.mergeShared") }
+
                 /// Comparison line when the skill has no shared copy to compare against.
                 ///
                 /// Key: `workbench.skills.copies.noShared`
@@ -13755,6 +13851,12 @@ public enum L10n {
                 /// Key: `workbench.skills.copies.notCompared`
                 /// en: "Could not be compared"
                 public static var notCompared: String { L10nSupport.string("workbench.skills.copies.notCompared") }
+
+                /// Skills copies sheet resolution: overwriteCopy.
+                ///
+                /// Key: `workbench.skills.copies.overwriteCopy`
+                /// en: "Overwrite This With Shared"
+                public static var overwriteCopy: String { L10nSupport.string("workbench.skills.copies.overwriteCopy") }
 
                 /// Tag on the backup whose content matches what Vibe Bar last recorded for the shared copy: the state before local edits.
                 ///
@@ -13782,6 +13884,12 @@ public enum L10n {
                 /// en: "Replace Shared Copy With This"
                 public static var replaceShared: String { L10nSupport.string("workbench.skills.copies.replaceShared") }
 
+                /// Skills copies sheet resolution: restoreShared.
+                ///
+                /// Key: `workbench.skills.copies.restoreShared`
+                /// en: "Restore to Shared"
+                public static var restoreShared: String { L10nSupport.string("workbench.skills.copies.restoreShared") }
+
                 /// Warning under an app-folder copy that hides the shared copy from that harness.
                 ///
                 /// Key: `workbench.skills.copies.shadowsShared`
@@ -13803,6 +13911,26 @@ public enum L10n {
                 public static func title(skill: String) -> String {
                     L10nSupport.format("workbench.skills.copies.title", skill)
                 }
+
+                /// Skills copies sheet resolution: unresolved.
+                ///
+                /// Key: `workbench.skills.copies.unresolved`
+                /// en: "{count, plural, one {Resolve # more file before merging} other {Resolve # more files before merging}}"
+                public static func unresolved(count: Int) -> String {
+                    L10nSupport.localizedFormat("workbench.skills.copies.unresolved", count)
+                }
+
+                /// Skills copies sheet resolution: updated.
+                ///
+                /// Key: `workbench.skills.copies.updated`
+                /// en: "Skill copies updated"
+                public static var updated: String { L10nSupport.string("workbench.skills.copies.updated") }
+
+                /// Skills copies sheet resolution: useCompared.
+                ///
+                /// Key: `workbench.skills.copies.useCompared`
+                /// en: "Use Compared"
+                public static var useCompared: String { L10nSupport.string("workbench.skills.copies.useCompared") }
 
                 public enum Diff {
                     /// One side of a file comparison where the file does not exist.
@@ -17765,7 +17893,13 @@ enum L10nCatalogFacts {
         "workbench.skills.convertConfirmMessage",
         "workbench.skills.convertConfirmTitle",
         "workbench.skills.convertToCopy",
+        "workbench.skills.copies.adoptCompared",
+        "workbench.skills.copies.adoptManaged",
+        "workbench.skills.copies.adoptNotice",
+        "workbench.skills.copies.adoptShared",
+        "workbench.skills.copies.allMatch",
         "workbench.skills.copies.appFolder",
+        "workbench.skills.copies.backupNotice",
         "workbench.skills.copies.backupTitle",
         "workbench.skills.copies.baselineUnavailable",
         "workbench.skills.copies.builtIn",
@@ -17793,8 +17927,14 @@ enum L10nCatalogFacts {
         "workbench.skills.copies.diff.unified",
         "workbench.skills.copies.diff.unreadable",
         "workbench.skills.copies.diff.unreadableVersion",
+        "workbench.skills.copies.differCount",
         "workbench.skills.copies.differs",
+        "workbench.skills.copies.errorChanged",
+        "workbench.skills.copies.errorIncomplete",
+        "workbench.skills.copies.errorStructure",
+        "workbench.skills.copies.errorUnresolved",
         "workbench.skills.copies.identical",
+        "workbench.skills.copies.keepBase",
         "workbench.skills.copies.kind.backup",
         "workbench.skills.copies.kind.builtIn",
         "workbench.skills.copies.kind.independentCopy",
@@ -17806,15 +17946,23 @@ enum L10nCatalogFacts {
         "workbench.skills.copies.linkTarget",
         "workbench.skills.copies.linkToShared",
         "workbench.skills.copies.linkedNotCompared",
+        "workbench.skills.copies.mergeBaseHint",
+        "workbench.skills.copies.mergeReady",
+        "workbench.skills.copies.mergeShared",
         "workbench.skills.copies.noShared",
         "workbench.skills.copies.notCompared",
+        "workbench.skills.copies.overwriteCopy",
         "workbench.skills.copies.recordedBaseline",
         "workbench.skills.copies.replaceConfirmMessage",
         "workbench.skills.copies.replaceConfirmTitle",
         "workbench.skills.copies.replaceShared",
+        "workbench.skills.copies.restoreShared",
         "workbench.skills.copies.shadowsShared",
         "workbench.skills.copies.subtitle",
         "workbench.skills.copies.title",
+        "workbench.skills.copies.unresolved",
+        "workbench.skills.copies.updated",
+        "workbench.skills.copies.useCompared",
         "workbench.skills.countFiltered",
         "workbench.skills.countTotal",
         "workbench.skills.discover",
@@ -18164,6 +18312,8 @@ enum L10nCatalogFacts {
         "workbench.skills.builtInCount",
         "workbench.skills.bulk.confirmDisableTitle",
         "workbench.skills.bulk.confirmEnableTitle",
+        "workbench.skills.copies.differCount",
+        "workbench.skills.copies.unresolved",
         "workbench.skills.countTotal",
         "workbench.skills.discover.installs",
         "workbench.skills.import.apply",
@@ -20207,7 +20357,13 @@ enum L10nCatalogFacts {
         "workbench.skills.convertConfirmMessage": 0,
         "workbench.skills.convertConfirmTitle": 1,
         "workbench.skills.convertToCopy": 0,
+        "workbench.skills.copies.adoptCompared": 0,
+        "workbench.skills.copies.adoptManaged": 0,
+        "workbench.skills.copies.adoptNotice": 1,
+        "workbench.skills.copies.adoptShared": 0,
+        "workbench.skills.copies.allMatch": 0,
         "workbench.skills.copies.appFolder": 1,
+        "workbench.skills.copies.backupNotice": 1,
         "workbench.skills.copies.backupTitle": 1,
         "workbench.skills.copies.baselineUnavailable": 0,
         "workbench.skills.copies.builtIn": 1,
@@ -20235,8 +20391,14 @@ enum L10nCatalogFacts {
         "workbench.skills.copies.diff.unified": 0,
         "workbench.skills.copies.diff.unreadable": 0,
         "workbench.skills.copies.diff.unreadableVersion": 0,
+        "workbench.skills.copies.differCount": 1,
         "workbench.skills.copies.differs": 0,
+        "workbench.skills.copies.errorChanged": 0,
+        "workbench.skills.copies.errorIncomplete": 0,
+        "workbench.skills.copies.errorStructure": 0,
+        "workbench.skills.copies.errorUnresolved": 0,
         "workbench.skills.copies.identical": 0,
+        "workbench.skills.copies.keepBase": 0,
         "workbench.skills.copies.kind.backup": 0,
         "workbench.skills.copies.kind.builtIn": 0,
         "workbench.skills.copies.kind.independentCopy": 0,
@@ -20248,15 +20410,23 @@ enum L10nCatalogFacts {
         "workbench.skills.copies.linkTarget": 1,
         "workbench.skills.copies.linkToShared": 0,
         "workbench.skills.copies.linkedNotCompared": 0,
+        "workbench.skills.copies.mergeBaseHint": 0,
+        "workbench.skills.copies.mergeReady": 0,
+        "workbench.skills.copies.mergeShared": 0,
         "workbench.skills.copies.noShared": 0,
         "workbench.skills.copies.notCompared": 0,
+        "workbench.skills.copies.overwriteCopy": 0,
         "workbench.skills.copies.recordedBaseline": 0,
         "workbench.skills.copies.replaceConfirmMessage": 0,
         "workbench.skills.copies.replaceConfirmTitle": 1,
         "workbench.skills.copies.replaceShared": 0,
+        "workbench.skills.copies.restoreShared": 0,
         "workbench.skills.copies.shadowsShared": 1,
         "workbench.skills.copies.subtitle": 0,
         "workbench.skills.copies.title": 1,
+        "workbench.skills.copies.unresolved": 1,
+        "workbench.skills.copies.updated": 0,
+        "workbench.skills.copies.useCompared": 0,
         "workbench.skills.countFiltered": 2,
         "workbench.skills.countTotal": 1,
         "workbench.skills.discover": 0,
