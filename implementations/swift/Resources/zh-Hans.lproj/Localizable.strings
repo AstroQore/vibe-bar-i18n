@@ -4536,6 +4536,9 @@
 /* Periods table leading column header when the series is bucketed by day; the call site uppercases it. distinct-from: cost.granularity.day — a chart bucket one day wide is a duration; a period column's header names the date its row covers — Simplified Chinese already writes 天 and 日. */
 "usage.table.column.day" = "日";
 
+/* Requests table column header and Usage page speed card column: time from sending a request until its first content block was written, measured from local session logs. */
+"usage.table.column.firstToken" = "首字";
+
 /* Column header on the Requests table, where the call site uppercases it, and the Sessions filter menu that ticks individual harnesses, where it is read as written. 'Harness' is the usage-axis unit and stays as spelled. */
 "usage.table.column.harness" = "Harness";
 
@@ -4550,6 +4553,9 @@
 
 /* Providers, Projects and Models table column header; the call site uppercases it. distinct-from: usage.breakdown.requests — the breakdown tab lists one row per request; the table column counts them — Simplified Chinese already writes 请求 and 请求数. */
 "usage.table.column.requests" = "请求数";
+
+/* Requests table column header and Usage page speed card column: a request's output speed in tokens per second, measured from local session logs. */
+"usage.table.column.speed" = "速度";
 
 /* Requests table column header, the service tier a request was billed at; the call site uppercases it. */
 "usage.table.column.tier" = "档位";
@@ -4574,6 +4580,15 @@
 
 /* Empty state in place of the Requests table. */
 "usage.table.emptyRequests" = "所选范围内没有请求级记录";
+
+/* Tooltip on the First token column header of the Requests table and the speed card. */
+"usage.table.firstTokenHelp" = "从发出请求到第一个内容块完成的时间。本地日志只在内容块完成后才写入，因此这是真实首字延迟的上界。统计范围为 Claude Code 与 Codex 的日志（含 Claude Cowork 与 ChatGPT Work）。";
+
+/* Requests table cell and Usage page speed card: approximate time to the first content block, under one second. {milliseconds} is a locale-formatted whole number. */
+"usage.table.firstTokenMillis" = "≈%@ 毫秒";
+
+/* Requests table cell and Usage page speed card: approximate time to the first content block, one second or longer. {seconds} is a locale-formatted number of seconds. */
+"usage.table.firstTokenSeconds" = "≈%@ 秒";
 
 /* Tooltip on a request row's harness cell; both arguments are names and are never translated. distinct-from: popover.header.updatedLine — the value is two placeholders and a separator, so the placeholder names are the only part of it that carries meaning; one key cannot name both halves of six different pairs. */
 "usage.table.harnessHelp" = "%1$@ · %2$@";
@@ -4601,6 +4616,12 @@
 
 /* Button under a clamped Periods table that reveals the next page of rows. */
 "usage.table.showMorePeriods" = "再显示 %1$lld 个，共 %2$lld 个周期";
+
+/* Tooltip on the Speed column header of the Requests table and the speed card. */
+"usage.table.speedHelp" = "输出 token 数除以从发出请求到写入最后一个内容块的墙钟时间。数据来自本地会话日志，因此包含网络与排队时间。统计范围为 Claude Code 与 Codex 的日志（含 Claude Cowork 与 ChatGPT Work）。";
+
+/* Requests table cell and Usage page speed card: approximate output speed. {value} is a locale-formatted number; tok/s means tokens per second. */
+"usage.table.speedValue" = "≈%@ tok/s";
 
 /* Cost cell of a request no price could be resolved for. */
 "usage.table.unpriced" = "未计价";
@@ -6588,6 +6609,9 @@
 /* Usage page hero tile under cache reads. {rate} is a formatted percentage. */
 "workbench.usage.hero.cacheDetail" = "命中率 %@";
 
+/* Tooltip on the Usage page hero Cache read tile: what the figure and its hit rate mean. */
+"workbench.usage.hero.cacheHelp" = "由服务商提示词缓存提供的输入 token。命中率 = 缓存读取 ÷（新输入 + 缓存读取 + 缓存写入）。";
+
 /* Usage page hero tile under the cost when every request had a price. */
 "workbench.usage.hero.costDetail" = "按生效价格计";
 
@@ -6602,6 +6626,9 @@
 
 /* Usage page hero tile under the token total. Prompt is everything sent to the model (fresh input plus cache read and write), Out the output. */
 "workbench.usage.hero.tokensDetail" = "提示词 %1$@ · 输出 %2$@";
+
+/* Tooltip on the Usage page hero Tokens tile: how the total is defined. */
+"workbench.usage.hero.tokensHelp" = "范围内的全部 token：新输入 + 输出 + 缓存写入 + 缓存读取。菜单栏面板的 token 合计按相同的四部分计算。";
 
 /* Usage page range control: the last 90 local calendar days, today included. */
 "workbench.usage.range.quarter" = "90 天";
@@ -6677,6 +6704,24 @@
 
 /* Subtitle of the Usage page skills card. */
 "workbench.usage.skills.subtitle" = "来自已分析的 Codex 与 Claude Code 会话";
+
+/* Usage page speed card: heading of the per-harness half. Harness = the CLI or app that sent the requests. */
+"workbench.usage.speed.byHarness" = "按 harness";
+
+/* Usage page speed card: heading of the per-model half. */
+"workbench.usage.speed.byModel" = "按模型";
+
+/* Usage page speed card with no request that carries timing. */
+"workbench.usage.speed.empty" = "此范围内没有带计时的请求。速度数据来自 Claude Code 与 Codex 的日志（含 Claude Cowork 与 ChatGPT Work）。";
+
+/* Tooltip on a speed card row's speed. {median} and {p90} are locale-formatted tokens-per-second values. */
+"workbench.usage.speed.p90Help" = "中位 %1$@ · p90 %2$@ tok/s";
+
+/* Usage page speed card subtitle. */
+"workbench.usage.speed.subtitle" = "输出速度与首字延迟的中位数，来自本地会话日志";
+
+/* Usage page card title: median output speed and time to first token per harness and per model. */
+"workbench.usage.speed.title" = "响应速度";
 
 /* Usage page status line while session files are parsed for tools, skills and per-session cost. */
 "workbench.usage.status.analyzing" = "正在后台读取会话 · %1$lld/%2$lld 已就绪";

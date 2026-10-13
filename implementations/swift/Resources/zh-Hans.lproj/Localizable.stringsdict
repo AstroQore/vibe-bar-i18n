@@ -1161,6 +1161,20 @@
 			<string>%2$lld 次</string>
 		</dict>
 	</dict>
+	<key>workbench.usage.speed.samples</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个计时请求</string>
+		</dict>
+	</dict>
 	<key>workbench.usage.status.skipped</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>

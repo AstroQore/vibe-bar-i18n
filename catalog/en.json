@@ -6032,6 +6032,14 @@
       "value": "Week of",
       "comment": "Periods table leading column header when the series is bucketed by week; the cell holds the week's first day."
     },
+    "usage.table.column.speed": {
+      "value": "Speed",
+      "comment": "Requests table column header and Usage page speed card column: a request's output speed in tokens per second, measured from local session logs."
+    },
+    "usage.table.column.firstToken": {
+      "value": "First token",
+      "comment": "Requests table column header and Usage page speed card column: time from sending a request until its first content block was written, measured from local session logs."
+    },
     "usage.table.companyCount": {
       "value": "{count, plural, one {1 company} other {# companies}}",
       "comment": "Row count over the Providers table; the rows are L1 companies.",
@@ -6158,6 +6166,35 @@
     "usage.table.unpricedHelp": {
       "value": "No price was available for this request",
       "comment": "Tooltip on the cost cell of a request no price could be resolved for."
+    },
+    "usage.table.speedValue": {
+      "value": "≈{value} tok/s",
+      "comment": "Requests table cell and Usage page speed card: approximate output speed. {value} is a locale-formatted number; tok/s means tokens per second.",
+      "placeholders": {
+        "value": "string"
+      }
+    },
+    "usage.table.firstTokenSeconds": {
+      "value": "≈{seconds}s",
+      "comment": "Requests table cell and Usage page speed card: approximate time to the first content block, one second or longer. {seconds} is a locale-formatted number of seconds.",
+      "placeholders": {
+        "seconds": "string"
+      }
+    },
+    "usage.table.firstTokenMillis": {
+      "value": "≈{milliseconds} ms",
+      "comment": "Requests table cell and Usage page speed card: approximate time to the first content block, under one second. {milliseconds} is a locale-formatted whole number.",
+      "placeholders": {
+        "milliseconds": "string"
+      }
+    },
+    "usage.table.speedHelp": {
+      "value": "Output tokens divided by the wall-clock time from sending the request to writing its last content block. Read from local session logs, so network and queueing time count. Measured from Claude Code and Codex logs (Claude Cowork and ChatGPT Work included).",
+      "comment": "Tooltip on the Speed column header of the Requests table and the speed card."
+    },
+    "usage.table.firstTokenHelp": {
+      "value": "Time from sending the request until its first content block finished. Local logs record a block only once it is complete, so this is an upper bound on the true time to first token. Measured from Claude Code and Codex logs (Claude Cowork and ChatGPT Work included).",
+      "comment": "Tooltip on the First token column header of the Requests table and the speed card."
     },
     "usage.tokens.cacheRead": {
       "value": "Cache read",
@@ -10529,6 +10566,14 @@
         "rate": "string"
       }
     },
+    "workbench.usage.hero.tokensHelp": {
+      "value": "Every token in the range: fresh input + output + cache write + cache read. The menu bar popover's token totals count the same four parts.",
+      "comment": "Tooltip on the Usage page hero Tokens tile: how the total is defined."
+    },
+    "workbench.usage.hero.cacheHelp": {
+      "value": "Prompt tokens served from the provider's prompt cache. Hit rate = cache read ÷ (fresh input + cache read + cache write).",
+      "comment": "Tooltip on the Usage page hero Cache read tile: what the figure and its hit rate mean."
+    },
     "workbench.usage.hero.activeTime": {
       "value": "Active time",
       "comment": "Usage page hero tile title: clock hours with at least one request."
@@ -10891,6 +10936,41 @@
     "workbench.usage.health.empty": {
       "value": "No harness activity in this range",
       "comment": "Usage page harness health section with nothing to show."
+    },
+    "workbench.usage.speed.title": {
+      "value": "Response speed",
+      "comment": "Usage page card title: median output speed and time to first token per harness and per model."
+    },
+    "workbench.usage.speed.subtitle": {
+      "value": "Median output speed and time to first token, read from local session logs",
+      "comment": "Usage page speed card subtitle."
+    },
+    "workbench.usage.speed.byHarness": {
+      "value": "By harness",
+      "comment": "Usage page speed card: heading of the per-harness half. Harness = the CLI or app that sent the requests."
+    },
+    "workbench.usage.speed.byModel": {
+      "value": "By model",
+      "comment": "Usage page speed card: heading of the per-model half."
+    },
+    "workbench.usage.speed.samples": {
+      "value": "{count, plural, one {# timed request} other {# timed requests}}",
+      "comment": "Usage page speed card: how many requests in the range carry timing; also the per-row sample count.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.usage.speed.empty": {
+      "value": "No timed requests in this range. Speed comes from Claude Code and Codex logs (Claude Cowork and ChatGPT Work included).",
+      "comment": "Usage page speed card with no request that carries timing."
+    },
+    "workbench.usage.speed.p90Help": {
+      "value": "Median {median} · p90 {p90} tok/s",
+      "comment": "Tooltip on a speed card row's speed. {median} and {p90} are locale-formatted tokens-per-second values.",
+      "placeholders": {
+        "median": "string",
+        "p90": "string"
+      }
     },
     "workbench.usage.recent.title": {
       "value": "Recent sessions",
