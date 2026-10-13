@@ -5844,8 +5844,26 @@
 /* Button in the convert-to-copy confirmation dialog. distinct-from: workbench.skills.menuConvertToCopy — the menu item's ellipsis promises the confirmation dialog; this is the button inside it. */
 "workbench.skills.convertToCopy" = "转为副本";
 
+/* Skills copies sheet resolution: adoptCompared. */
+"workbench.skills.copies.adoptCompared" = "替换共享后收编";
+
+/* Skills copies sheet resolution: adoptManaged. */
+"workbench.skills.copies.adoptManaged" = "收编为托管投影";
+
+/* Skills copies sheet resolution: adoptNotice. */
+"workbench.skills.copies.adoptNotice" = "此副本将成为托管投影，当前内容会备份到 %@。请选择保留共享内容，或先用此副本替换共享。若要按文件合并，请取消并选择共享库为 Base，先完成合并。Agent 启用设置保持不变。";
+
+/* Skills copies sheet resolution: adoptShared. */
+"workbench.skills.copies.adoptShared" = "采用共享内容并收编";
+
+/* Skills copies sheet resolution: allMatch. */
+"workbench.skills.copies.allMatch" = "所有副本一致";
+
 /* Location label for a real directory inside a harness's own skills folder. */
 "workbench.skills.copies.appFolder" = "%@ 目录";
+
+/* Skills copies sheet resolution: backupNotice. */
+"workbench.skills.copies.backupNotice" = "替换前会将当前内容备份到 %@。托管副本会同步共享内容。";
 
 /* Title of a backup snapshot row in the copies sheet; date formatted by the client. */
 "workbench.skills.copies.backupTitle" = "%@ 的备份";
@@ -5931,8 +5949,23 @@
 /* Comparison line under a copy. */
 "workbench.skills.copies.differs" = "与共享副本不同";
 
+/* Skills copies sheet resolution: errorChanged. */
+"workbench.skills.copies.errorChanged" = "技能自比较后已发生变化，请刷新副本后重试。";
+
+/* Skills copies sheet resolution: errorIncomplete. */
+"workbench.skills.copies.errorIncomplete" = "比较结果不完整，请缩小技能目录后再合并。";
+
+/* Skills copies sheet resolution: errorStructure. */
+"workbench.skills.copies.errorStructure" = "所选文件与目录或链接冲突，请调整文件选择。";
+
+/* Skills copies sheet resolution: errorUnresolved. */
+"workbench.skills.copies.errorUnresolved" = "仍有差异文件未选择处理方式，请逐项选择后合并。";
+
 /* Comparison line under a copy. */
 "workbench.skills.copies.identical" = "与共享副本相同";
+
+/* Skills copies sheet resolution: keepBase. */
+"workbench.skills.copies.keepBase" = "保留 Base";
 
 /* Chip on a backup snapshot listed as a version in the copies sheet. */
 "workbench.skills.copies.kind.backup" = "备份";
@@ -5967,11 +6000,23 @@
 /* Note in the copies sheet of a linked skill: its folder is never read, so no version is compared with it. */
 "workbench.skills.copies.linkedNotCompared" = "这个技能的来源在 Vibe Bar 管理范围之外，因此不会比较它的文件。";
 
+/* Skills copies sheet resolution: mergeBaseHint. */
+"workbench.skills.copies.mergeBaseHint" = "选择共享库为 Base，即可按文件合并。";
+
+/* Skills copies sheet resolution: mergeReady. */
+"workbench.skills.copies.mergeReady" = "已处理全部差异文件";
+
+/* Skills copies sheet resolution: mergeShared. */
+"workbench.skills.copies.mergeShared" = "合并到共享";
+
 /* Comparison line when the skill has no shared copy to compare against. */
 "workbench.skills.copies.noShared" = "不在共享库中";
 
 /* Under a version whose content could not be hashed against the shared copy. */
 "workbench.skills.copies.notCompared" = "无法对比";
+
+/* Skills copies sheet resolution: overwriteCopy. */
+"workbench.skills.copies.overwriteCopy" = "用共享覆盖此副本";
 
 /* Tag on the backup whose content matches what Vibe Bar last recorded for the shared copy: the state before local edits. */
 "workbench.skills.copies.recordedBaseline" = "上次记录的版本";
@@ -5985,6 +6030,9 @@
 /* Action under a copy that differs from the shared one. */
 "workbench.skills.copies.replaceShared" = "用此副本替换共享副本";
 
+/* Skills copies sheet resolution: restoreShared. */
+"workbench.skills.copies.restoreShared" = "恢复到共享";
+
 /* Warning under an app-folder copy that hides the shared copy from that harness. */
 "workbench.skills.copies.shadowsShared" = "%@ 会加载此副本而非共享副本";
 
@@ -5993,6 +6041,12 @@
 
 /* Title of the popover listing every copy of one skill. */
 "workbench.skills.copies.title" = "%@ 的副本";
+
+/* Skills copies sheet resolution: updated. */
+"workbench.skills.copies.updated" = "已更新技能副本";
+
+/* Skills copies sheet resolution: useCompared. */
+"workbench.skills.copies.useCompared" = "采用 Compared";
 
 /* Skills page count caption while the search field filters the list. */
 "workbench.skills.countFiltered" = "%2$lld 个技能中的 %1$lld 个";

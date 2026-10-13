@@ -10951,6 +10951,98 @@
     "workbench.usage.trend.splitFlow": {
       "value": "Prompt · Out",
       "comment": "Usage page trend control: stack each bar as prompt under output (the other choice splits it by harness)."
+    },
+    "workbench.skills.copies.overwriteCopy": {
+      "value": "Overwrite This With Shared",
+      "comment": "Skills copies sheet resolution: overwriteCopy."
+    },
+    "workbench.skills.copies.adoptManaged": {
+      "value": "Adopt as Managed",
+      "comment": "Skills copies sheet resolution: adoptManaged."
+    },
+    "workbench.skills.copies.restoreShared": {
+      "value": "Restore to Shared",
+      "comment": "Skills copies sheet resolution: restoreShared."
+    },
+    "workbench.skills.copies.allMatch": {
+      "value": "All copies match",
+      "comment": "Skills copies sheet resolution: allMatch."
+    },
+    "workbench.skills.copies.differCount": {
+      "value": "{count, plural, one {# copy differs from shared} other {# copies differ from shared}}",
+      "comment": "Skills copies sheet resolution: differCount.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.skills.copies.backupNotice": {
+      "value": "The current content will be backed up in {path} before it is replaced. Managed copies will follow the shared content.",
+      "comment": "Skills copies sheet resolution: backupNotice.",
+      "placeholders": {
+        "path": "string"
+      }
+    },
+    "workbench.skills.copies.adoptNotice": {
+      "value": "This copy will become a managed projection. Its current content will be backed up in {path}. Choose whether to keep shared content or replace shared content first. To combine files, cancel and select Shared Library as Base to merge first. Agent enable settings stay as they are.",
+      "comment": "Skills copies sheet resolution: adoptNotice.",
+      "placeholders": {
+        "path": "string"
+      }
+    },
+    "workbench.skills.copies.adoptShared": {
+      "value": "Adopt Using Shared Content",
+      "comment": "Skills copies sheet resolution: adoptShared."
+    },
+    "workbench.skills.copies.adoptCompared": {
+      "value": "Replace Shared, Then Adopt",
+      "comment": "Skills copies sheet resolution: adoptCompared."
+    },
+    "workbench.skills.copies.mergeShared": {
+      "value": "Merge into Shared",
+      "comment": "Skills copies sheet resolution: mergeShared."
+    },
+    "workbench.skills.copies.keepBase": {
+      "value": "Keep Base",
+      "comment": "Skills copies sheet resolution: keepBase."
+    },
+    "workbench.skills.copies.useCompared": {
+      "value": "Use Compared",
+      "comment": "Skills copies sheet resolution: useCompared."
+    },
+    "workbench.skills.copies.unresolved": {
+      "value": "{count, plural, one {Resolve # more file before merging} other {Resolve # more files before merging}}",
+      "comment": "Skills copies sheet resolution: unresolved.",
+      "placeholders": {
+        "count": "int"
+      }
+    },
+    "workbench.skills.copies.mergeReady": {
+      "value": "All differing files resolved",
+      "comment": "Skills copies sheet resolution: mergeReady."
+    },
+    "workbench.skills.copies.mergeBaseHint": {
+      "value": "Choose Shared Library as Base to merge files into it.",
+      "comment": "Skills copies sheet resolution: mergeBaseHint."
+    },
+    "workbench.skills.copies.updated": {
+      "value": "Skill copies updated",
+      "comment": "Skills copies sheet resolution: updated."
+    },
+    "workbench.skills.copies.errorIncomplete": {
+      "value": "The comparison is incomplete. Reduce the skill size before merging.",
+      "comment": "Skills copies sheet resolution: errorIncomplete."
+    },
+    "workbench.skills.copies.errorUnresolved": {
+      "value": "Some differing files have no resolution. Review every file before merging.",
+      "comment": "Skills copies sheet resolution: errorUnresolved."
+    },
+    "workbench.skills.copies.errorChanged": {
+      "value": "The skill changed since it was compared. Refresh the copies and try again.",
+      "comment": "Skills copies sheet resolution: errorChanged."
+    },
+    "workbench.skills.copies.errorStructure": {
+      "value": "The selected files conflict with a directory or link. Choose a consistent set of files.",
+      "comment": "Skills copies sheet resolution: errorStructure."
     }
   }
 }

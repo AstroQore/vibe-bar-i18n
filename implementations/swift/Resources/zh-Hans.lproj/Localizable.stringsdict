@@ -881,6 +881,34 @@
 			<string>%2$lld 个 skill</string>
 		</dict>
 	</dict>
+	<key>workbench.skills.copies.differCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>%lld 个副本与共享不同</string>
+		</dict>
+	</dict>
+	<key>workbench.skills.copies.unresolved</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>other</key>
+			<string>还需处理 %lld 个文件才能合并</string>
+		</dict>
+	</dict>
 	<key>workbench.skills.countTotal</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
