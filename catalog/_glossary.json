@@ -96,6 +96,11 @@
       "note": "Deliberately listed on both axes: the quota SubProvider under SpaceXAI (Cursor's grok_bot_weekly bucket) and, separately, the harness that spends it."
     },
     {
+      "term": "X Subscription",
+      "kind": "product",
+      "note": "SpaceXAI's bundle of Grok, Grok Bot, Cursor and X Premium (2026-10-12): the plan row on the SpaceXAI card names it. Always the English name, 'The' dropped in UI."
+    },
+    {
       "term": "Muse Code",
       "kind": "subProvider",
       "note": "Deliberately listed on both axes: the quota SubProvider under Meta AI and, separately, the harness that spends it."
