@@ -655,6 +655,8 @@ export type MessageKey =
   | "quota.upcoming.resetsAt"
   | "quota.upcoming.title"
   | "quota.update.failed"
+  | "quota.usedByProduct.belowOne"
+  | "quota.usedByProduct.title"
   | "quota.usedPercent"
   | "quota.window.dayOfDays"
   | "quota.window.elapsedOfWindow"
@@ -3031,6 +3033,8 @@ export interface MessageParams {
   "quota.upcoming.resetsAt": { "countdown": string; "absolute": string };
   "quota.upcoming.title": undefined;
   "quota.update.failed": { "reason": string };
+  "quota.usedByProduct.belowOne": undefined;
+  "quota.usedByProduct.title": undefined;
   "quota.usedPercent": { "percent": number };
   "quota.window.dayOfDays": { "day": number; "total": number; "value": string };
   "quota.window.elapsedOfWindow": { "elapsed": string; "window": string; "value": string };
@@ -5408,6 +5412,8 @@ export const messages: {
     "quota.upcoming.resetsAt": "resets {countdown} · {absolute}",
     "quota.upcoming.title": "Upcoming Resets",
     "quota.update.failed": "Update failed: {reason}",
+    "quota.usedByProduct.belowOne": "<1%",
+    "quota.usedByProduct.title": "Used by product",
     "quota.usedPercent": "{percent}% used",
     "quota.window.dayOfDays": "Day {day} of {total} · {value}",
     "quota.window.elapsedOfWindow": "{elapsed} of {window} · {value}",
@@ -7780,6 +7786,8 @@ export const messages: {
     "quota.upcoming.resetsAt": "{countdown}后重置 · {absolute}",
     "quota.upcoming.title": "即将重置",
     "quota.update.failed": "更新失败：{reason}",
+    "quota.usedByProduct.belowOne": "<1%",
+    "quota.usedByProduct.title": "按产品用量",
     "quota.usedPercent": "已用 {percent}%",
     "quota.window.dayOfDays": "第 {day}/{total} 天 · {value}",
     "quota.window.elapsedOfWindow": "{window} 已过 {elapsed} · {value}",

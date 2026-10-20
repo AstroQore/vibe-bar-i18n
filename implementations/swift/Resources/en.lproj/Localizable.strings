@@ -1881,6 +1881,12 @@
 /* Inline error row; reason is a provider message and is not translated */
 "quota.update.failed" = "Update failed: %@";
 
+/* Legend value in the used-by-product line for a product that used something but less than half a percentage point of the pool. */
+"quota.usedByProduct.belowOne" = "<1%%";
+
+/* Small uppercase label above the thin segmented bar under a quota row that splits what the pool has used by product (Claude Code, Chats, Grok Build, Imagine …). */
+"quota.usedByProduct.title" = "Used by product";
+
 /* The forecast figure in Used mode, used inside the status line */
 "quota.usedPercent" = "%lld%% used";
 
