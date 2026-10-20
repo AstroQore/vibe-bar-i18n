@@ -1850,6 +1850,12 @@
     "quota.window.resetsSoon": {
       "value": "即将重置 · {value}"
     },
+    "quota.usedByProduct.title": {
+      "value": "按产品用量"
+    },
+    "quota.usedByProduct.belowOne": {
+      "value": "<1%"
+    },
     "resetHistory.a11y.empty": {
       "value": "重置历史对比。{verdict}"
     },

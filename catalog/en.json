@@ -2991,6 +2991,14 @@
         "value": "string"
       }
     },
+    "quota.usedByProduct.title": {
+      "value": "Used by product",
+      "comment": "Small uppercase label above the thin segmented bar under a quota row that splits what the pool has used by product (Claude Code, Chats, Grok Build, Imagine …)."
+    },
+    "quota.usedByProduct.belowOne": {
+      "value": "<1%",
+      "comment": "Legend value in the used-by-product line for a product that used something but less than half a percentage point of the pool."
+    },
     "resetHistory.a11y.empty": {
       "value": "Reset history comparison. {verdict}",
       "comment": "Screen-reader summary when there are no lanes",

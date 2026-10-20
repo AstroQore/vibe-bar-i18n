@@ -4413,6 +4413,20 @@ public enum L10n {
             }
         }
 
+        public enum UsedByProduct {
+            /// Legend value in the used-by-product line for a product that used something but less than half a percentage point of the pool.
+            ///
+            /// Key: `quota.usedByProduct.belowOne`
+            /// en: "<1%"
+            public static var belowOne: String { L10nSupport.string("quota.usedByProduct.belowOne") }
+
+            /// Small uppercase label above the thin segmented bar under a quota row that splits what the pool has used by product (Claude Code, Chats, Grok Build, Imagine …).
+            ///
+            /// Key: `quota.usedByProduct.title`
+            /// en: "Used by product"
+            public static var title: String { L10nSupport.string("quota.usedByProduct.title") }
+        }
+
         public enum Window {
             /// Window progress line for a window measured in whole days
             ///
@@ -16518,6 +16532,8 @@ enum L10nCatalogFacts {
         "quota.upcoming.resetsAt",
         "quota.upcoming.title",
         "quota.update.failed",
+        "quota.usedByProduct.belowOne",
+        "quota.usedByProduct.title",
         "quota.usedPercent",
         "quota.window.dayOfDays",
         "quota.window.elapsedOfWindow",
@@ -18982,6 +18998,8 @@ enum L10nCatalogFacts {
         "quota.upcoming.resetsAt": 2,
         "quota.upcoming.title": 0,
         "quota.update.failed": 1,
+        "quota.usedByProduct.belowOne": 0,
+        "quota.usedByProduct.title": 0,
         "quota.usedPercent": 1,
         "quota.window.dayOfDays": 3,
         "quota.window.elapsedOfWindow": 3,
