@@ -813,6 +813,12 @@ public enum L10n {
         /// en: "Credential rejected"
         public static var credentialRejected: String { L10nSupport.string("error.credentialRejected") }
 
+        /// Shown beside an API key field when removal could not be confirmed; the saved state is retained.
+        ///
+        /// Key: `error.keychainRemove`
+        /// en: "Could not confirm key removal from Keychain; try again."
+        public static var keychainRemove: String { L10nSupport.string("error.keychainRemove") }
+
         /// Shown beside a credential field when the Keychain write failed.
         ///
         /// Key: `error.keychainSave`
@@ -850,6 +856,12 @@ public enum L10n {
         /// Key: `error.notImplemented`
         /// en: "Not yet supported"
         public static var notImplemented: String { L10nSupport.string("error.notImplemented") }
+
+        /// Shown when the Go usage API rejects a key because its account lacks the subscription.
+        ///
+        /// Key: `error.openCodeGoSubscriptionRequired`
+        /// en: "OpenCode Go subscription required."
+        public static var openCodeGoSubscriptionRequired: String { L10nSupport.string("error.openCodeGoSubscriptionRequired") }
 
         /// QuotaError: the payload no longer parses and the adapter had nothing to add
         ///
@@ -4142,6 +4154,12 @@ public enum L10n {
         }
 
         public enum Misc {
+            /// Label beside the dollar balance reported by a provider wallet.
+            ///
+            /// Key: `quota.misc.creditBalance`
+            /// en: "Credit balance"
+            public static var creditBalance: String { L10nSupport.string("quota.misc.creditBalance") }
+
             /// Caption under a misc provider that holds more than one independently configured account
             ///
             /// Key: `quota.misc.independentCopies`
@@ -4149,6 +4167,12 @@ public enum L10n {
             public static func independentCopies(count: Int) -> String {
                 L10nSupport.localizedFormat("quota.misc.independentCopies", count)
             }
+
+            /// Label beside the monthly dollar-credit consumption reported by a provider wallet.
+            ///
+            /// Key: `quota.misc.monthlyCreditsUsed`
+            /// en: "Monthly credits used"
+            public static var monthlyCreditsUsed: String { L10nSupport.string("quota.misc.monthlyCreditsUsed") }
 
             /// Body of a misc provider card that has no credential yet
             ///
@@ -8000,6 +8024,12 @@ public enum L10n {
             /// en: "API key saved in Keychain."
             public static var apiKeySaved: String { L10nSupport.string("settings.misc.apiKeySaved") }
 
+            /// Explains secure storage before the user has saved an API key.
+            ///
+            /// Key: `settings.misc.apiKeyStorageNote`
+            /// en: "API keys are stored in macOS Keychain."
+            public static var apiKeyStorageNote: String { L10nSupport.string("settings.misc.apiKeyStorageNote") }
+
             /// Tooltip on the button that forgets a stored workspace id
             ///
             /// Key: `settings.misc.clearWorkspace`
@@ -8065,6 +8095,12 @@ public enum L10n {
             /// Key: `settings.misc.noCookiesYet`
             /// en: "No cookies imported yet — import from your browser or paste below."
             public static var noCookiesYet: String { L10nSupport.string("settings.misc.noCookiesYet") }
+
+            /// Validation error for a pasted Ollama header that contains no supported session credential.
+            ///
+            /// Key: `settings.misc.ollamaCookieMissing`
+            /// en: "No Ollama session cookie found; copy the ollama.com Cookie header while signed in, including wos-session or a legacy session cookie."
+            public static var ollamaCookieMissing: String { L10nSupport.string("settings.misc.ollamaCookieMissing") }
 
             /// Button that runs a local CLI probe
             ///
@@ -8207,6 +8243,18 @@ public enum L10n {
                 /// en: "Paste MiniMax Token Plan API key (sk-cp-... or MINIMAX_CODING_API_KEY)"
                 public static var minimax: String { L10nSupport.string("settings.misc.prompt.minimax") }
 
+                /// Manual Ollama browser-session input; cookie names are identifiers.
+                ///
+                /// Key: `settings.misc.prompt.ollama`
+                /// en: "Paste ollama.com Cookie header (wos-session=… or a legacy session cookie)"
+                public static var ollama: String { L10nSupport.string("settings.misc.prompt.ollama") }
+
+                /// Placeholder for the OpenCode Go subscription usage API key.
+                ///
+                /// Key: `settings.misc.prompt.openCodeGo`
+                /// en: "OpenCode Go API key"
+                public static var openCodeGo: String { L10nSupport.string("settings.misc.prompt.openCodeGo") }
+
                 /// Field placeholder
                 ///
                 /// Key: `settings.misc.prompt.openRouter`
@@ -8280,6 +8328,20 @@ public enum L10n {
                 /// Key: `settings.misc.region.zaiGlobal`
                 /// en: "Global (api.z.ai)"
                 public static var zaiGlobal: String { L10nSupport.string("settings.misc.region.zaiGlobal") }
+            }
+
+            public enum Setup {
+                /// Setup guidance for Ollama browser-session quota and wallet reads.
+                ///
+                /// Key: `settings.misc.setup.ollama`
+                /// en: "Sign in at ollama.com, then import your browser session to read Ollama Cloud usage."
+                public static var ollama: String { L10nSupport.string("settings.misc.setup.ollama") }
+
+                /// Setup guidance for the OpenCode Go API-key credential row.
+                ///
+                /// Key: `settings.misc.setup.openCodeGo`
+                /// en: "Use an API key from the OpenCode workspace that owns your Go subscription."
+                public static var openCodeGo: String { L10nSupport.string("settings.misc.setup.openCodeGo") }
             }
         }
 
@@ -16009,12 +16071,14 @@ enum L10nCatalogFacts {
         "cost.topModel.share",
         "cost.topModel.title",
         "error.credentialRejected",
+        "error.keychainRemove",
         "error.keychainSave",
         "error.needsReLogin",
         "error.network",
         "error.networkWithReason",
         "error.noAccountFound",
         "error.notImplemented",
+        "error.openCodeGoSubscriptionRequired",
         "error.parseFailure",
         "error.rateLimited",
         "error.unknown",
@@ -16495,7 +16559,9 @@ enum L10nCatalogFacts {
         "quota.mini.railTitle",
         "quota.mini.resets",
         "quota.mini.rowHelp",
+        "quota.misc.creditBalance",
         "quota.misc.independentCopies",
+        "quota.misc.monthlyCreditsUsed",
         "quota.misc.notConfigured",
         "quota.misc.refreshCopies",
         "quota.misc.refreshProvider",
@@ -17060,6 +17126,7 @@ enum L10nCatalogFacts {
         "settings.misc.accessKeyId",
         "settings.misc.akSkSaved",
         "settings.misc.apiKeySaved",
+        "settings.misc.apiKeyStorageNote",
         "settings.misc.clearWorkspace",
         "settings.misc.clone",
         "settings.misc.consoleLink",
@@ -17070,11 +17137,14 @@ enum L10nCatalogFacts {
         "settings.misc.kiroHint",
         "settings.misc.noCookieSpec",
         "settings.misc.noCookiesYet",
+        "settings.misc.ollamaCookieMissing",
         "settings.misc.probe",
         "settings.misc.prompt.copilotHost",
         "settings.misc.prompt.dashscope",
         "settings.misc.prompt.kilo",
         "settings.misc.prompt.minimax",
+        "settings.misc.prompt.ollama",
+        "settings.misc.prompt.openCodeGo",
         "settings.misc.prompt.openRouter",
         "settings.misc.prompt.openRouterHost",
         "settings.misc.prompt.warp",
@@ -17098,6 +17168,8 @@ enum L10nCatalogFacts {
         "settings.misc.removeGithubToken",
         "settings.misc.rename",
         "settings.misc.secretAccessKey",
+        "settings.misc.setup.ollama",
+        "settings.misc.setup.openCodeGo",
         "settings.misc.signIn",
         "settings.misc.signInViaWeb",
         "settings.misc.tencentTokenPlanNote",
@@ -18475,12 +18547,14 @@ enum L10nCatalogFacts {
         "cost.topModel.share": 1,
         "cost.topModel.title": 0,
         "error.credentialRejected": 0,
+        "error.keychainRemove": 0,
         "error.keychainSave": 0,
         "error.needsReLogin": 0,
         "error.network": 0,
         "error.networkWithReason": 1,
         "error.noAccountFound": 0,
         "error.notImplemented": 0,
+        "error.openCodeGoSubscriptionRequired": 0,
         "error.parseFailure": 0,
         "error.rateLimited": 0,
         "error.unknown": 0,
@@ -18961,7 +19035,9 @@ enum L10nCatalogFacts {
         "quota.mini.railTitle": 1,
         "quota.mini.resets": 1,
         "quota.mini.rowHelp": 3,
+        "quota.misc.creditBalance": 0,
         "quota.misc.independentCopies": 1,
+        "quota.misc.monthlyCreditsUsed": 0,
         "quota.misc.notConfigured": 0,
         "quota.misc.refreshCopies": 1,
         "quota.misc.refreshProvider": 1,
@@ -19526,6 +19602,7 @@ enum L10nCatalogFacts {
         "settings.misc.accessKeyId": 0,
         "settings.misc.akSkSaved": 0,
         "settings.misc.apiKeySaved": 0,
+        "settings.misc.apiKeyStorageNote": 0,
         "settings.misc.clearWorkspace": 0,
         "settings.misc.clone": 1,
         "settings.misc.consoleLink": 1,
@@ -19536,11 +19613,14 @@ enum L10nCatalogFacts {
         "settings.misc.kiroHint": 0,
         "settings.misc.noCookieSpec": 1,
         "settings.misc.noCookiesYet": 0,
+        "settings.misc.ollamaCookieMissing": 0,
         "settings.misc.probe": 0,
         "settings.misc.prompt.copilotHost": 0,
         "settings.misc.prompt.dashscope": 0,
         "settings.misc.prompt.kilo": 0,
         "settings.misc.prompt.minimax": 0,
+        "settings.misc.prompt.ollama": 0,
+        "settings.misc.prompt.openCodeGo": 0,
         "settings.misc.prompt.openRouter": 0,
         "settings.misc.prompt.openRouterHost": 0,
         "settings.misc.prompt.warp": 0,
@@ -19564,6 +19644,8 @@ enum L10nCatalogFacts {
         "settings.misc.removeGithubToken": 0,
         "settings.misc.rename": 0,
         "settings.misc.secretAccessKey": 0,
+        "settings.misc.setup.ollama": 0,
+        "settings.misc.setup.openCodeGo": 0,
         "settings.misc.signIn": 0,
         "settings.misc.signInViaWeb": 0,
         "settings.misc.tencentTokenPlanNote": 0,

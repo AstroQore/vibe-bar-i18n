@@ -132,12 +132,14 @@ export type MessageKey =
   | "cost.topModel.share"
   | "cost.topModel.title"
   | "error.credentialRejected"
+  | "error.keychainRemove"
   | "error.keychainSave"
   | "error.needsReLogin"
   | "error.network"
   | "error.networkWithReason"
   | "error.noAccountFound"
   | "error.notImplemented"
+  | "error.openCodeGoSubscriptionRequired"
   | "error.parseFailure"
   | "error.rateLimited"
   | "error.unknown"
@@ -618,7 +620,9 @@ export type MessageKey =
   | "quota.mini.railTitle"
   | "quota.mini.resets"
   | "quota.mini.rowHelp"
+  | "quota.misc.creditBalance"
   | "quota.misc.independentCopies"
+  | "quota.misc.monthlyCreditsUsed"
   | "quota.misc.notConfigured"
   | "quota.misc.refreshCopies"
   | "quota.misc.refreshProvider"
@@ -1183,6 +1187,7 @@ export type MessageKey =
   | "settings.misc.accessKeyId"
   | "settings.misc.akSkSaved"
   | "settings.misc.apiKeySaved"
+  | "settings.misc.apiKeyStorageNote"
   | "settings.misc.clearWorkspace"
   | "settings.misc.clone"
   | "settings.misc.consoleLink"
@@ -1193,11 +1198,14 @@ export type MessageKey =
   | "settings.misc.kiroHint"
   | "settings.misc.noCookieSpec"
   | "settings.misc.noCookiesYet"
+  | "settings.misc.ollamaCookieMissing"
   | "settings.misc.probe"
   | "settings.misc.prompt.copilotHost"
   | "settings.misc.prompt.dashscope"
   | "settings.misc.prompt.kilo"
   | "settings.misc.prompt.minimax"
+  | "settings.misc.prompt.ollama"
+  | "settings.misc.prompt.openCodeGo"
   | "settings.misc.prompt.openRouter"
   | "settings.misc.prompt.openRouterHost"
   | "settings.misc.prompt.warp"
@@ -1221,6 +1229,8 @@ export type MessageKey =
   | "settings.misc.removeGithubToken"
   | "settings.misc.rename"
   | "settings.misc.secretAccessKey"
+  | "settings.misc.setup.ollama"
+  | "settings.misc.setup.openCodeGo"
   | "settings.misc.signIn"
   | "settings.misc.signInViaWeb"
   | "settings.misc.tencentTokenPlanNote"
@@ -2510,12 +2520,14 @@ export interface MessageParams {
   "cost.topModel.share": { "percent": number };
   "cost.topModel.title": undefined;
   "error.credentialRejected": undefined;
+  "error.keychainRemove": undefined;
   "error.keychainSave": undefined;
   "error.needsReLogin": undefined;
   "error.network": undefined;
   "error.networkWithReason": { "reason": string };
   "error.noAccountFound": undefined;
   "error.notImplemented": undefined;
+  "error.openCodeGoSubscriptionRequired": undefined;
   "error.parseFailure": undefined;
   "error.rateLimited": undefined;
   "error.unknown": undefined;
@@ -2996,7 +3008,9 @@ export interface MessageParams {
   "quota.mini.railTitle": { "days": number };
   "quota.mini.resets": { "countdown": string };
   "quota.mini.rowHelp": { "subProvider": string; "row": string; "percent": number };
+  "quota.misc.creditBalance": undefined;
   "quota.misc.independentCopies": { "count": number };
+  "quota.misc.monthlyCreditsUsed": undefined;
   "quota.misc.notConfigured": undefined;
   "quota.misc.refreshCopies": { "provider": string };
   "quota.misc.refreshProvider": { "provider": string };
@@ -3561,6 +3575,7 @@ export interface MessageParams {
   "settings.misc.accessKeyId": undefined;
   "settings.misc.akSkSaved": undefined;
   "settings.misc.apiKeySaved": undefined;
+  "settings.misc.apiKeyStorageNote": undefined;
   "settings.misc.clearWorkspace": undefined;
   "settings.misc.clone": { "provider": string };
   "settings.misc.consoleLink": { "title": string };
@@ -3571,11 +3586,14 @@ export interface MessageParams {
   "settings.misc.kiroHint": undefined;
   "settings.misc.noCookieSpec": { "provider": string };
   "settings.misc.noCookiesYet": undefined;
+  "settings.misc.ollamaCookieMissing": undefined;
   "settings.misc.probe": undefined;
   "settings.misc.prompt.copilotHost": undefined;
   "settings.misc.prompt.dashscope": undefined;
   "settings.misc.prompt.kilo": undefined;
   "settings.misc.prompt.minimax": undefined;
+  "settings.misc.prompt.ollama": undefined;
+  "settings.misc.prompt.openCodeGo": undefined;
   "settings.misc.prompt.openRouter": undefined;
   "settings.misc.prompt.openRouterHost": undefined;
   "settings.misc.prompt.warp": undefined;
@@ -3599,6 +3617,8 @@ export interface MessageParams {
   "settings.misc.removeGithubToken": undefined;
   "settings.misc.rename": undefined;
   "settings.misc.secretAccessKey": undefined;
+  "settings.misc.setup.ollama": undefined;
+  "settings.misc.setup.openCodeGo": undefined;
   "settings.misc.signIn": undefined;
   "settings.misc.signInViaWeb": undefined;
   "settings.misc.tencentTokenPlanNote": undefined;
@@ -4889,12 +4909,14 @@ export const messages: {
     "cost.topModel.share": "{percent}% share",
     "cost.topModel.title": "TOP MODEL",
     "error.credentialRejected": "Credential rejected",
+    "error.keychainRemove": "Could not confirm key removal from Keychain; try again.",
     "error.keychainSave": "Could not save to your Keychain.",
     "error.needsReLogin": "Needs re-login",
     "error.network": "Network error",
     "error.networkWithReason": "Network error: {reason}",
     "error.noAccountFound": "No account found",
     "error.notImplemented": "Not yet supported",
+    "error.openCodeGoSubscriptionRequired": "OpenCode Go subscription required.",
     "error.parseFailure": "Response format changed",
     "error.rateLimited": "Rate limited, try later",
     "error.unknown": "Error",
@@ -5375,7 +5397,9 @@ export const messages: {
     "quota.mini.railTitle": "QUOTA RESETS · NEXT {days} DAYS",
     "quota.mini.resets": "resets {countdown}",
     "quota.mini.rowHelp": "{subProvider} — {row}: {percent}%",
+    "quota.misc.creditBalance": "Credit balance",
     "quota.misc.independentCopies": "{count, plural, one {1 independent copy} other {# independent copies}}",
+    "quota.misc.monthlyCreditsUsed": "Monthly credits used",
     "quota.misc.notConfigured": "Not configured.",
     "quota.misc.refreshCopies": "Refresh {provider} copies",
     "quota.misc.refreshProvider": "Refresh {provider}",
@@ -5940,6 +5964,7 @@ export const messages: {
     "settings.misc.accessKeyId": "Access Key ID (AKLT…)",
     "settings.misc.akSkSaved": "AK/SK saved in Keychain.",
     "settings.misc.apiKeySaved": "API key saved in Keychain.",
+    "settings.misc.apiKeyStorageNote": "API keys are stored in macOS Keychain.",
     "settings.misc.clearWorkspace": "Clear saved workspace",
     "settings.misc.clone": "Clone {provider}",
     "settings.misc.consoleLink": "{title} →",
@@ -5950,11 +5975,14 @@ export const messages: {
     "settings.misc.kiroHint": "Run `kiro-cli login`, then Vibe Bar probes `kiro-cli chat --no-interactive /usage`.",
     "settings.misc.noCookieSpec": "No cookie spec is registered for {provider}.",
     "settings.misc.noCookiesYet": "No cookies imported yet — import from your browser or paste below.",
+    "settings.misc.ollamaCookieMissing": "No Ollama session cookie found; copy the ollama.com Cookie header while signed in, including wos-session or a legacy session cookie.",
     "settings.misc.probe": "Probe",
     "settings.misc.prompt.copilotHost": "GitHub Enterprise host (optional, e.g. github.example.com)",
     "settings.misc.prompt.dashscope": "Paste DashScope API key (sk-...) — optional",
     "settings.misc.prompt.kilo": "Paste Kilo API key (optional)",
     "settings.misc.prompt.minimax": "Paste MiniMax Token Plan API key (sk-cp-... or MINIMAX_CODING_API_KEY)",
+    "settings.misc.prompt.ollama": "Paste ollama.com Cookie header (wos-session=… or a legacy session cookie)",
+    "settings.misc.prompt.openCodeGo": "OpenCode Go API key",
     "settings.misc.prompt.openRouter": "Paste OpenRouter API key (sk-or-v1-...)",
     "settings.misc.prompt.openRouterHost": "OpenRouter API URL (optional, defaults to https://openrouter.ai/api/v1)",
     "settings.misc.prompt.warp": "Paste Warp API key (wk-...)",
@@ -5978,6 +6006,8 @@ export const messages: {
     "settings.misc.removeGithubToken": "Remove stored GitHub device token",
     "settings.misc.rename": "Rename this copy",
     "settings.misc.secretAccessKey": "Secret Access Key",
+    "settings.misc.setup.ollama": "Sign in at ollama.com, then import your browser session to read Ollama Cloud usage.",
+    "settings.misc.setup.openCodeGo": "Use an API key from the OpenCode workspace that owns your Go subscription.",
     "settings.misc.signIn": "Sign in",
     "settings.misc.signInViaWeb": "Sign in via Web",
     "settings.misc.tencentTokenPlanNote": "Personal Token Plan is currently available only in China mainland (cn-beijing). Clone this row to track Team and Personal together.",
@@ -7263,12 +7293,14 @@ export const messages: {
     "cost.topModel.share": "占比 {percent}%",
     "cost.topModel.title": "最常用模型",
     "error.credentialRejected": "凭据被拒绝",
+    "error.keychainRemove": "无法确认密钥已从 Keychain 移除，请重试。",
     "error.keychainSave": "无法写入 Keychain。",
     "error.needsReLogin": "需重新登录",
     "error.network": "网络错误",
     "error.networkWithReason": "网络错误：{reason}",
     "error.noAccountFound": "未找到账号",
     "error.notImplemented": "暂不支持",
+    "error.openCodeGoSubscriptionRequired": "需要有效的 OpenCode Go 订阅。",
     "error.parseFailure": "响应格式已变化",
     "error.rateLimited": "请求过于频繁，请稍后重试",
     "error.unknown": "错误",
@@ -7749,7 +7781,9 @@ export const messages: {
     "quota.mini.railTitle": "额度重置 · 未来 {days} 天",
     "quota.mini.resets": "{countdown}重置",
     "quota.mini.rowHelp": "{subProvider} — {row}：{percent}%",
+    "quota.misc.creditBalance": "余额",
     "quota.misc.independentCopies": "{count, plural, other {# 份}}独立配置",
+    "quota.misc.monthlyCreditsUsed": "月度已用",
     "quota.misc.notConfigured": "尚未配置。",
     "quota.misc.refreshCopies": "刷新 {provider} 的全部副本",
     "quota.misc.refreshProvider": "刷新 {provider}",
@@ -8314,6 +8348,7 @@ export const messages: {
     "settings.misc.accessKeyId": "Access Key ID（AKLT…）",
     "settings.misc.akSkSaved": "AK/SK 已保存到 Keychain。",
     "settings.misc.apiKeySaved": "API key 已保存到 Keychain。",
+    "settings.misc.apiKeyStorageNote": "API 密钥保存在 macOS Keychain 中。",
     "settings.misc.clearWorkspace": "清除已保存的工作区",
     "settings.misc.clone": "复制 {provider}",
     "settings.misc.consoleLink": "{title} →",
@@ -8324,11 +8359,14 @@ export const messages: {
     "settings.misc.kiroHint": "运行 `kiro-cli login`，之后 Vibe Bar 会探测 `kiro-cli chat --no-interactive /usage`。",
     "settings.misc.noCookieSpec": "{provider} 未注册 cookie 规格。",
     "settings.misc.noCookiesYet": "尚未导入 cookies — 可从浏览器导入或在下方粘贴。",
+    "settings.misc.ollamaCookieMissing": "未找到 Ollama 会话 Cookie。请登录后复制 ollama.com Cookie 标头，其中需包含 wos-session 或旧版会话 Cookie。",
     "settings.misc.probe": "探测",
     "settings.misc.prompt.copilotHost": "GitHub Enterprise 主机（可选，例如 github.example.com）",
     "settings.misc.prompt.dashscope": "粘贴 DashScope API key（sk-...）— 可选",
     "settings.misc.prompt.kilo": "粘贴 Kilo API key（可选）",
     "settings.misc.prompt.minimax": "粘贴 MiniMax Token Plan API key（sk-cp-... 或 MINIMAX_CODING_API_KEY）",
+    "settings.misc.prompt.ollama": "粘贴 ollama.com Cookie 标头（wos-session=… 或旧版会话 Cookie）",
+    "settings.misc.prompt.openCodeGo": "OpenCode Go API 密钥",
     "settings.misc.prompt.openRouter": "粘贴 OpenRouter API key（sk-or-v1-...）",
     "settings.misc.prompt.openRouterHost": "OpenRouter API URL（可选，默认为 https://openrouter.ai/api/v1）",
     "settings.misc.prompt.warp": "粘贴 Warp API key（wk-...）",
@@ -8352,6 +8390,8 @@ export const messages: {
     "settings.misc.removeGithubToken": "移除已保存的 GitHub 设备令牌",
     "settings.misc.rename": "重命名此副本",
     "settings.misc.secretAccessKey": "Secret Access Key",
+    "settings.misc.setup.ollama": "登录 ollama.com 后导入浏览器会话，即可读取 Ollama Cloud 用量。",
+    "settings.misc.setup.openCodeGo": "使用已开通 Go 订阅的 OpenCode 工作区 API 密钥。",
     "settings.misc.signIn": "登录",
     "settings.misc.signInViaWeb": "通过网页登录",
     "settings.misc.tencentTokenPlanNote": "个人版 Token Plan 目前仅在中国大陆（cn-beijing）提供。复制此行即可同时跟踪团队版与个人版。",

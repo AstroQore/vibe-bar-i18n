@@ -339,6 +339,9 @@
 /* QuotaError: the provider rejected the key we hold */
 "error.credentialRejected" = "凭据被拒绝";
 
+/* Shown beside an API key field when removal could not be confirmed; the saved state is retained. */
+"error.keychainRemove" = "无法确认密钥已从 Keychain 移除，请重试。";
+
 /* Shown beside a credential field when the Keychain write failed. */
 "error.keychainSave" = "无法写入 Keychain。";
 
@@ -356,6 +359,9 @@
 
 /* QuotaError: this provider has no quota path yet */
 "error.notImplemented" = "暂不支持";
+
+/* Shown when the Go usage API rejects a key because its account lacks the subscription. */
+"error.openCodeGoSubscriptionRequired" = "需要有效的 OpenCode Go 订阅。";
 
 /* QuotaError: the payload no longer parses and the adapter had nothing to add */
 "error.parseFailure" = "响应格式已变化";
@@ -1778,6 +1784,12 @@
 
 /* Tooltip on a mini window row; subProvider and row are names, percent the current reading */
 "quota.mini.rowHelp" = "%1$@ — %2$@：%3$lld%%";
+
+/* Label beside the dollar balance reported by a provider wallet. */
+"quota.misc.creditBalance" = "余额";
+
+/* Label beside the monthly dollar-credit consumption reported by a provider wallet. */
+"quota.misc.monthlyCreditsUsed" = "月度已用";
 
 /* Body of a misc provider card that has no credential yet */
 "quota.misc.notConfigured" = "尚未配置。";
@@ -3432,6 +3444,9 @@
 /* Confirmation under a credential field */
 "settings.misc.apiKeySaved" = "API key 已保存到 Keychain。";
 
+/* Explains secure storage before the user has saved an API key. */
+"settings.misc.apiKeyStorageNote" = "API 密钥保存在 macOS Keychain 中。";
+
 /* Tooltip on the button that forgets a stored workspace id */
 "settings.misc.clearWorkspace" = "清除已保存的工作区";
 
@@ -3462,6 +3477,9 @@
 /* Empty state in the cookie slot list */
 "settings.misc.noCookiesYet" = "尚未导入 cookies — 可从浏览器导入或在下方粘贴。";
 
+/* Validation error for a pasted Ollama header that contains no supported session credential. */
+"settings.misc.ollamaCookieMissing" = "未找到 Ollama 会话 Cookie。请登录后复制 ollama.com Cookie 标头，其中需包含 wos-session 或旧版会话 Cookie。";
+
 /* Button that runs a local CLI probe */
 "settings.misc.probe" = "探测";
 
@@ -3476,6 +3494,12 @@
 
 /* Field placeholder */
 "settings.misc.prompt.minimax" = "粘贴 MiniMax Token Plan API key（sk-cp-... 或 MINIMAX_CODING_API_KEY）";
+
+/* Manual Ollama browser-session input; cookie names are identifiers. */
+"settings.misc.prompt.ollama" = "粘贴 ollama.com Cookie 标头（wos-session=… 或旧版会话 Cookie）";
+
+/* Placeholder for the OpenCode Go subscription usage API key. */
+"settings.misc.prompt.openCodeGo" = "OpenCode Go API 密钥";
 
 /* Field placeholder */
 "settings.misc.prompt.openRouter" = "粘贴 OpenRouter API key（sk-or-v1-...）";
@@ -3545,6 +3569,12 @@
 
 /* Field placeholder for the SK half of an AK/SK pair. The term is the provider's own and stays as spelled. */
 "settings.misc.secretAccessKey" = "Secret Access Key";
+
+/* Setup guidance for Ollama browser-session quota and wallet reads. */
+"settings.misc.setup.ollama" = "登录 ollama.com 后导入浏览器会话，即可读取 Ollama Cloud 用量。";
+
+/* Setup guidance for the OpenCode Go API-key credential row. */
+"settings.misc.setup.openCodeGo" = "使用已开通 Go 订阅的 OpenCode 工作区 API 密钥。";
 
 /* Button that starts a device-flow sign-in */
 "settings.misc.signIn" = "登录";
