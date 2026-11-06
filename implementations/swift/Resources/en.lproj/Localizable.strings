@@ -339,6 +339,9 @@
 /* QuotaError: the provider rejected the key we hold */
 "error.credentialRejected" = "Credential rejected";
 
+/* Shown beside an API key field when removal could not be confirmed; the saved state is retained. */
+"error.keychainRemove" = "Could not confirm key removal from Keychain; try again.";
+
 /* Shown beside a credential field when the Keychain write failed. */
 "error.keychainSave" = "Could not save to your Keychain.";
 
@@ -356,6 +359,9 @@
 
 /* QuotaError: this provider has no quota path yet */
 "error.notImplemented" = "Not yet supported";
+
+/* Shown when the Go usage API rejects a key because its account lacks the subscription. */
+"error.openCodeGoSubscriptionRequired" = "OpenCode Go subscription required.";
 
 /* QuotaError: the payload no longer parses and the adapter had nothing to add */
 "error.parseFailure" = "Response format changed";
@@ -1778,6 +1784,12 @@
 
 /* Tooltip on a mini window row; subProvider and row are names, percent the current reading */
 "quota.mini.rowHelp" = "%1$@ — %2$@: %3$lld%%";
+
+/* Label beside the dollar balance reported by a provider wallet. */
+"quota.misc.creditBalance" = "Credit balance";
+
+/* Label beside the monthly dollar-credit consumption reported by a provider wallet. */
+"quota.misc.monthlyCreditsUsed" = "Monthly credits used";
 
 /* Body of a misc provider card that has no credential yet */
 "quota.misc.notConfigured" = "Not configured.";
@@ -3432,6 +3444,9 @@
 /* Confirmation under a credential field */
 "settings.misc.apiKeySaved" = "API key saved in Keychain.";
 
+/* Explains secure storage before the user has saved an API key. */
+"settings.misc.apiKeyStorageNote" = "API keys are stored in macOS Keychain.";
+
 /* Tooltip on the button that forgets a stored workspace id */
 "settings.misc.clearWorkspace" = "Clear saved workspace";
 
@@ -3462,6 +3477,9 @@
 /* Empty state in the cookie slot list */
 "settings.misc.noCookiesYet" = "No cookies imported yet — import from your browser or paste below.";
 
+/* Validation error for a pasted Ollama header that contains no supported session credential. */
+"settings.misc.ollamaCookieMissing" = "No Ollama session cookie found; copy the ollama.com Cookie header while signed in, including wos-session or a legacy session cookie.";
+
 /* Button that runs a local CLI probe */
 "settings.misc.probe" = "Probe";
 
@@ -3476,6 +3494,12 @@
 
 /* Field placeholder */
 "settings.misc.prompt.minimax" = "Paste MiniMax Token Plan API key (sk-cp-... or MINIMAX_CODING_API_KEY)";
+
+/* Manual Ollama browser-session input; cookie names are identifiers. */
+"settings.misc.prompt.ollama" = "Paste ollama.com Cookie header (wos-session=… or a legacy session cookie)";
+
+/* Placeholder for the OpenCode Go subscription usage API key. */
+"settings.misc.prompt.openCodeGo" = "OpenCode Go API key";
 
 /* Field placeholder */
 "settings.misc.prompt.openRouter" = "Paste OpenRouter API key (sk-or-v1-...)";
@@ -3545,6 +3569,12 @@
 
 /* Field placeholder for the SK half of an AK/SK pair. The term is the provider's own and stays as spelled. */
 "settings.misc.secretAccessKey" = "Secret Access Key";
+
+/* Setup guidance for Ollama browser-session quota and wallet reads. */
+"settings.misc.setup.ollama" = "Sign in at ollama.com, then import your browser session to read Ollama Cloud usage.";
+
+/* Setup guidance for the OpenCode Go API-key credential row. */
+"settings.misc.setup.openCodeGo" = "Use an API key from the OpenCode workspace that owns your Go subscription.";
 
 /* Button that starts a device-flow sign-in */
 "settings.misc.signIn" = "Sign in";

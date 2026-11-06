@@ -11131,6 +11131,46 @@
     "workbench.skills.copies.errorStructure": {
       "value": "The selected files conflict with a directory or link. Choose a consistent set of files.",
       "comment": "Skills copies sheet resolution: errorStructure."
+    },
+    "error.keychainRemove": {
+      "value": "Could not confirm key removal from Keychain; try again.",
+      "comment": "Shown beside an API key field when removal could not be confirmed; the saved state is retained."
+    },
+    "error.openCodeGoSubscriptionRequired": {
+      "value": "OpenCode Go subscription required.",
+      "comment": "Shown when the Go usage API rejects a key because its account lacks the subscription."
+    },
+    "settings.misc.apiKeyStorageNote": {
+      "value": "API keys are stored in macOS Keychain.",
+      "comment": "Explains secure storage before the user has saved an API key."
+    },
+    "settings.misc.prompt.openCodeGo": {
+      "value": "OpenCode Go API key",
+      "comment": "Placeholder for the OpenCode Go subscription usage API key."
+    },
+    "settings.misc.setup.openCodeGo": {
+      "value": "Use an API key from the OpenCode workspace that owns your Go subscription.",
+      "comment": "Setup guidance for the OpenCode Go API-key credential row."
+    },
+    "settings.misc.prompt.ollama": {
+      "value": "Paste ollama.com Cookie header (wos-session=… or a legacy session cookie)",
+      "comment": "Manual Ollama browser-session input; cookie names are identifiers."
+    },
+    "settings.misc.setup.ollama": {
+      "value": "Sign in at ollama.com, then import your browser session to read Ollama Cloud usage.",
+      "comment": "Setup guidance for Ollama browser-session quota and wallet reads."
+    },
+    "settings.misc.ollamaCookieMissing": {
+      "value": "No Ollama session cookie found; copy the ollama.com Cookie header while signed in, including wos-session or a legacy session cookie.",
+      "comment": "Validation error for a pasted Ollama header that contains no supported session credential."
+    },
+    "quota.misc.creditBalance": {
+      "value": "Credit balance",
+      "comment": "Label beside the dollar balance reported by a provider wallet."
+    },
+    "quota.misc.monthlyCreditsUsed": {
+      "value": "Monthly credits used",
+      "comment": "Label beside the monthly dollar-credit consumption reported by a provider wallet."
     }
   }
 }

@@ -7117,6 +7117,36 @@
     },
     "workbench.skills.copies.errorStructure": {
       "value": "所选文件与目录或链接冲突，请调整文件选择。"
+    },
+    "error.keychainRemove": {
+      "value": "无法确认密钥已从 Keychain 移除，请重试。"
+    },
+    "error.openCodeGoSubscriptionRequired": {
+      "value": "需要有效的 OpenCode Go 订阅。"
+    },
+    "settings.misc.apiKeyStorageNote": {
+      "value": "API 密钥保存在 macOS Keychain 中。"
+    },
+    "settings.misc.prompt.openCodeGo": {
+      "value": "OpenCode Go API 密钥"
+    },
+    "settings.misc.setup.openCodeGo": {
+      "value": "使用已开通 Go 订阅的 OpenCode 工作区 API 密钥。"
+    },
+    "settings.misc.prompt.ollama": {
+      "value": "粘贴 ollama.com Cookie 标头（wos-session=… 或旧版会话 Cookie）"
+    },
+    "settings.misc.setup.ollama": {
+      "value": "登录 ollama.com 后导入浏览器会话，即可读取 Ollama Cloud 用量。"
+    },
+    "settings.misc.ollamaCookieMissing": {
+      "value": "未找到 Ollama 会话 Cookie。请登录后复制 ollama.com Cookie 标头，其中需包含 wos-session 或旧版会话 Cookie。"
+    },
+    "quota.misc.creditBalance": {
+      "value": "余额"
+    },
+    "quota.misc.monthlyCreditsUsed": {
+      "value": "月度已用"
     }
   }
 }
